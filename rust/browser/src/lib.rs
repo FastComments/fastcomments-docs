@@ -4,7 +4,10 @@
 //! Behavior parity reference: `src/app-screenshot-generator.js`.
 
 pub mod cache;
+pub mod pool;
 pub mod screenshot;
+
+pub use pool::BrowserPool;
 
 use std::path::PathBuf;
 

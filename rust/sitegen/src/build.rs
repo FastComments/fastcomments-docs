@@ -10,6 +10,7 @@ use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
 use anyhow::{Context, Result};
+use fcdocs_browser::BrowserPool;
 use fcdocs_shared::guides::{Guide, GuideMeta, GuidesRoot, MetaItem};
 use fcdocs_shared::locales::Locales;
 use fcdocs_shared::pipeline::full::{
@@ -18,6 +19,7 @@ use fcdocs_shared::pipeline::full::{
 use fcdocs_shared::sidecar::SidecarClient;
 use fcdocs_shared::templates::TemplateRegistry;
 use fcdocs_shared::translations::Translations;
+use futures::stream::{FuturesUnordered, StreamExt};
 use serde_json::{json, Value};
 use tracing::{info, warn};
 
@@ -64,48 +66,152 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     info!(url = %sidecar_url, "content sidecar up");
     let sidecar = Arc::new(SidecarClient::new(sidecar_url));
 
-    let cfg = FullPipelineConfig {
+    // Two pipeline configs — same shape but `write_snippets` flips per
+    // locale. Sitegen does default locale first (sequentially writes all
+    // snippet pages), then the rest in parallel.
+    let cfg_default = Arc::new(FullPipelineConfig {
         snippets_dir: snippets_dir.clone(),
         static_generated_dir: static_generated_dir.clone(),
         template_dir: templates_dir.clone(),
-    };
+        write_snippets: true,
+    });
+    let cfg_other = Arc::new(FullPipelineConfig {
+        snippets_dir: snippets_dir.clone(),
+        static_generated_dir: static_generated_dir.clone(),
+        template_dir: templates_dir.clone(),
+        write_snippets: false,
+    });
+    let static_generated_dir = Arc::new(static_generated_dir);
+    let guide_order = Arc::new(guide_order);
 
     // Pre-walk default-locale guides for sitemap + ordering metadata.
     let default_guides = root.walk(&locales.default_locale)?;
     register_link_anchors(&default_guides);
+    let default_guides = Arc::new(default_guides);
 
-    // Build each guide × locale.
-    let mut total_pages = 0usize;
+    // Shared browser pool for screenshot capture. Lazily launches the
+    // chrome process on first use; reused across every page+locale that
+    // needs a fresh screenshot.
+    let browser_pool = Arc::new(BrowserPool::new(fcdocs_browser::ScreenshotHost::default()));
+
+    // Concurrency cap for guide×locale tasks. Defaults to logical CPUs;
+    // overridable via SITEGEN_PARALLEL. Each task does I/O, JS eval, and
+    // marker handling — CPU-bound enough to want parallelism, but not
+    // memory-heavy enough to need careful tuning.
+    let parallelism: usize = std::env::var("SITEGEN_PARALLEL")
+        .ok()
+        .and_then(|s| s.parse().ok())
+        .filter(|n: &usize| *n > 0)
+        .unwrap_or_else(num_cpus::get);
+    info!(parallelism, "guide build parallelism");
+
     let started = std::time::Instant::now();
-    for guide in &default_guides {
-        for locale in &locale_keys {
-            // Skip non-default locales with no translated content (matches
-            // build-search-index-worker.js:88-94 behavior, except for the
-            // site build we still emit the page with isFallback=true so
-            // users see the English fallback). The Node site builder
-            // always builds for every locale; we match that.
-            if let Err(e) = build_one_guide(
+    let mut total_pages = 0usize;
+
+    // Phase A: default-locale pass, parallel across guides. This is the
+    // pass that writes snippet pages (`code-*.html`); the file content
+    // is then fixed for the rest of the build.
+    let default_locale = locales.default_locale.clone();
+    {
+        let mut tasks = FuturesUnordered::new();
+        let mut iter = default_guides.iter().cloned();
+        while tasks.len() < parallelism {
+            let Some(guide) = iter.next() else { break };
+            tasks.push(spawn_guide_task(
                 guide,
-                locale,
-                &root,
-                &locales,
-                &translations,
-                &templates,
-                &cfg,
-                &sidecar,
-                &guide_order,
-                &static_generated_dir,
-            )
-            .await
-            {
-                warn!(guide = %guide.id, locale, error = %format!("{e:#}"), "skipping guide");
-                continue;
+                default_locale.clone(),
+                root.clone(),
+                locales.clone(),
+                translations.clone(),
+                templates.clone(),
+                cfg_default.clone(),
+                sidecar.clone(),
+                guide_order.clone(),
+                static_generated_dir.clone(),
+                browser_pool.clone(),
+            ));
+        }
+        while let Some(joined) = tasks.next().await {
+            match joined {
+                Ok(Ok(())) => total_pages += 1,
+                Ok(Err(e)) => warn!(error = %format!("{e:#}"), "skipping guide (default locale)"),
+                Err(e) => warn!(error = %e, "guide task panicked (default locale)"),
             }
-            total_pages += 1;
+            if let Some(guide) = iter.next() {
+                tasks.push(spawn_guide_task(
+                    guide,
+                    default_locale.clone(),
+                    root.clone(),
+                    locales.clone(),
+                    translations.clone(),
+                    templates.clone(),
+                    cfg_default.clone(),
+                    sidecar.clone(),
+                    guide_order.clone(),
+                    static_generated_dir.clone(),
+                    browser_pool.clone(),
+                ));
+            }
         }
     }
 
-    // Index pages per locale.
+    // Phase B: non-default locales, parallel across (guide × locale).
+    // Snippet writing is suppressed on this pass.
+    {
+        let mut tasks = FuturesUnordered::new();
+        let non_default: Vec<String> = locale_keys
+            .iter()
+            .filter(|k| **k != default_locale)
+            .cloned()
+            .collect();
+        let mut iter = default_guides
+            .iter()
+            .cloned()
+            .flat_map(|g| {
+                let locales = non_default.clone();
+                locales.into_iter().map(move |loc| (g.clone(), loc))
+            });
+        while tasks.len() < parallelism {
+            let Some((guide, locale)) = iter.next() else { break };
+            tasks.push(spawn_guide_task(
+                guide,
+                locale,
+                root.clone(),
+                locales.clone(),
+                translations.clone(),
+                templates.clone(),
+                cfg_other.clone(),
+                sidecar.clone(),
+                guide_order.clone(),
+                static_generated_dir.clone(),
+                browser_pool.clone(),
+            ));
+        }
+        while let Some(joined) = tasks.next().await {
+            match joined {
+                Ok(Ok(())) => total_pages += 1,
+                Ok(Err(e)) => warn!(error = %format!("{e:#}"), "skipping guide"),
+                Err(e) => warn!(error = %e, "guide task panicked"),
+            }
+            if let Some((guide, locale)) = iter.next() {
+                tasks.push(spawn_guide_task(
+                    guide,
+                    locale,
+                    root.clone(),
+                    locales.clone(),
+                    translations.clone(),
+                    templates.clone(),
+                    cfg_other.clone(),
+                    sidecar.clone(),
+                    guide_order.clone(),
+                    static_generated_dir.clone(),
+                    browser_pool.clone(),
+                ));
+            }
+        }
+    }
+
+    // Index pages per locale (cheap; serial is fine).
     for locale in &locale_keys {
         if let Err(e) = build_index_page(
             locale,
@@ -127,6 +233,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     // Sitemap.
     write_sitemap(&static_generated_dir, &default_guides, &locales)?;
 
+    browser_pool.shutdown().await;
     sidecar_supervisor::shutdown(sidecar_child).await;
     info!(
         pages = total_pages,
@@ -134,6 +241,38 @@ pub async fn run(args: Vec<String>) -> Result<()> {
         "sitegen build complete"
     );
     Ok(())
+}
+
+#[allow(clippy::too_many_arguments)]
+fn spawn_guide_task(
+    guide: Guide,
+    locale: String,
+    root: Arc<GuidesRoot>,
+    locales: Arc<Locales>,
+    translations: Arc<Translations>,
+    templates: Arc<TemplateRegistry>,
+    cfg: Arc<FullPipelineConfig>,
+    sidecar: Arc<SidecarClient>,
+    guide_order: Arc<Vec<String>>,
+    static_generated_dir: Arc<PathBuf>,
+    browser_pool: Arc<BrowserPool>,
+) -> tokio::task::JoinHandle<Result<()>> {
+    tokio::spawn(async move {
+        build_one_guide(
+            &guide,
+            &locale,
+            &root,
+            &locales,
+            &translations,
+            &templates,
+            &cfg,
+            &sidecar,
+            &guide_order,
+            &static_generated_dir,
+            &browser_pool,
+        )
+        .await
+    })
 }
 
 #[allow(clippy::too_many_arguments)]
@@ -148,6 +287,7 @@ async fn build_one_guide(
     sidecar: &SidecarClient,
     guide_order: &[String],
     static_generated_dir: &Path,
+    browser_pool: &BrowserPool,
 ) -> Result<()> {
     // Load meta — prefer locale-translated meta.
     let meta = load_meta_for_locale(root, &guide.id, locale)?;
@@ -164,6 +304,7 @@ async fn build_one_guide(
             cfg,
             sidecar,
             static_generated_dir,
+            browser_pool,
         )
         .await
         {
@@ -185,6 +326,7 @@ async fn build_one_guide(
         cfg,
         sidecar,
         static_generated_dir,
+        browser_pool,
     )
     .await?;
     let conclusion_html = read_optional_markdown(
@@ -192,6 +334,7 @@ async fn build_one_guide(
         cfg,
         sidecar,
         static_generated_dir,
+        browser_pool,
     )
     .await?;
 
@@ -290,6 +433,7 @@ async fn build_one_item(
     cfg: &FullPipelineConfig,
     sidecar: &SidecarClient,
     static_generated_dir: &Path,
+    browser_pool: &BrowserPool,
 ) -> Result<(Value, bool)> {
     let (path, fallback) = root.resolve_item_path(guide_id, &meta_item.file, locale);
     if !path.exists() {
@@ -309,6 +453,7 @@ async fn build_one_item(
         processed.html,
         &processed.screenshots,
         static_generated_dir,
+        browser_pool,
     )
     .await?;
 
@@ -340,6 +485,7 @@ async fn process_screenshots(
     html: String,
     placeholders: &[ScreenshotPlaceholder],
     static_generated_dir: &Path,
+    browser_pool: &BrowserPool,
 ) -> Result<String> {
     if placeholders.is_empty() {
         return Ok(html);
@@ -351,8 +497,7 @@ async fn process_screenshots(
     // (so pulldown-cmark sees it as block HTML, not text). All this
     // function does is capture/refresh the underlying PNG when the
     // image cache is stale.
-    use fcdocs_browser::{cache::ImageCache, screenshot, ScreenshotArgs, ScreenshotHost};
-    let host = ScreenshotHost::default();
+    use fcdocs_browser::{cache::ImageCache, screenshot, ScreenshotArgs};
     let images_dir = static_generated_dir.join("images");
     std::fs::create_dir_all(&images_dir)?;
     let cache = ImageCache::new(static_generated_dir.join("image-cache"));
@@ -371,14 +516,23 @@ async fn process_screenshots(
         if !cache.is_stale(&args_json, &target_path, &file_name) {
             continue;
         }
-        match screenshot_one(&args, &target_path, &host).await {
+        let width = args.width.unwrap_or(screenshot::DEFAULT_WIDTH);
+        let url_for_log = args.url.clone();
+        let cap_res = browser_pool
+            .with_page(width, |page, host| {
+                Box::pin(async move {
+                    screenshot::capture(page, &args, &target_path, host, None, None).await
+                })
+            })
+            .await;
+        match cap_res {
             Ok(()) => {
                 if let Err(e) = cache.update(&args_json, &file_name) {
                     warn!(error = %e, "image cache write failed");
                 }
             }
             Err(e) => {
-                warn!(url = %args.url, error = %format!("{e:#}"), "screenshot failed; HTML still references the (possibly missing) image");
+                warn!(url = %url_for_log, error = %format!("{e:#}"), "screenshot failed; HTML still references the (possibly missing) image");
             }
         }
     }
@@ -412,34 +566,12 @@ fn build_cache_key_json(parsed: &serde_json::Value) -> String {
     serde_json::to_string(&Value::Object(map)).unwrap_or_default()
 }
 
-async fn screenshot_one(
-    args: &fcdocs_browser::ScreenshotArgs,
-    target_path: &Path,
-    host: &fcdocs_browser::ScreenshotHost,
-) -> Result<()> {
-    let width = args.width.unwrap_or(fcdocs_browser::screenshot::DEFAULT_WIDTH);
-    let height = fcdocs_browser::screenshot::DEFAULT_HEIGHT;
-    let (mut browser, page, handler_task) =
-        fcdocs_browser::screenshot::launch_logged_in(width, height, host).await?;
-    let capture_res = fcdocs_browser::screenshot::capture(
-        &page,
-        args,
-        target_path,
-        host,
-        None,
-        None,
-    )
-    .await;
-    let _ = browser.close().await;
-    handler_task.abort();
-    capture_res
-}
-
 async fn read_optional_markdown(
     path: &Option<PathBuf>,
     cfg: &FullPipelineConfig,
     sidecar: &SidecarClient,
     static_generated_dir: &Path,
+    browser_pool: &BrowserPool,
 ) -> Result<String> {
     let Some(p) = path else { return Ok(String::new()) };
     let raw = std::fs::read_to_string(p)?;
@@ -454,7 +586,13 @@ async fn read_optional_markdown(
     // directly for those at src/guides.js:204 / 214 without the
     // post-item style append.
     let processed = full::process_markdown_with(&raw, basename, cfg, sidecar, false).await?;
-    let html = process_screenshots(processed.html, &processed.screenshots, static_generated_dir).await?;
+    let html = process_screenshots(
+        processed.html,
+        &processed.screenshots,
+        static_generated_dir,
+        browser_pool,
+    )
+    .await?;
     Ok(html)
 }
 

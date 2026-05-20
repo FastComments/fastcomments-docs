@@ -49,6 +49,11 @@ pub struct FullPipelineConfig {
     /// `src/templates/` — for the `code.html` template used to build
     /// per-snippet runnable pages.
     pub template_dir: PathBuf,
+    /// When true, this invocation may write `code-*.html` snippet pages.
+    /// Sitegen only sets this for the default locale so parallel
+    /// guide×locale workers don't race on the same target filename.
+    /// Snippet contents are then deterministic + stable across builds.
+    pub write_snippets: bool,
 }
 
 #[derive(Debug, Clone)]
@@ -917,6 +922,12 @@ fn code_snippet_id(file_basename: &str, title: &str) -> String {
     format!("code-{file_basename}-{}", title.replace(' ', ""))
 }
 
+/// Per-process dedup so an already-written snippet file is rewritten
+/// only once per build (the same default-locale guide can reference
+/// the same snippet ID from multiple items).
+static SNIPPET_WRITTEN: once_cell::sync::Lazy<dashmap::DashSet<String>> =
+    once_cell::sync::Lazy::new(dashmap::DashSet::new);
+
 fn write_code_snippet_page(
     cfg: &FullPipelineConfig,
     code_html: &str,
@@ -925,6 +936,15 @@ fn write_code_snippet_page(
     lines_to_highlight: &[usize],
 ) -> Result<()> {
     use handlebars::Handlebars;
+    // Sitegen sets `write_snippets = true` only on the default-locale
+    // pass; non-default passes skip writing so parallel locale workers
+    // can't race on the same target_file_name.
+    if !cfg.write_snippets {
+        return Ok(());
+    }
+    if !SNIPPET_WRITTEN.insert(target_file_name.to_string()) {
+        return Ok(());
+    }
     let template_path = cfg.template_dir.join("code.html");
     let tpl = std::fs::read_to_string(&template_path)
         .with_context(|| format!("read code template {template_path:?}"))?;

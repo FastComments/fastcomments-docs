@@ -706,6 +706,7 @@ name = "fcdocs-shared"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "dashmap",
  "ego-tree",
  "fcdocs-browser",
  "handlebars",
@@ -738,6 +739,7 @@ dependencies = [
  "handlebars",
  "md-5",
  "nanoid",
+ "num_cpus",
  "once_cell",
  "pulldown-cmark",
  "quick-xml",

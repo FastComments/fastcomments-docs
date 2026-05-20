@@ -31,3 +31,4 @@ reqwest = { workspace = true }
 regex = { workspace = true }
 futures = { workspace = true }
 urlencoding = { workspace = true }
+num_cpus = "1"
