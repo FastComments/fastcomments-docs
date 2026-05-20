@@ -117,6 +117,28 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
+### Filtering by Date Range
+
+You can narrow comments to a date range using `fromDate` and/or `toDate`. Both are milliseconds since the Unix epoch.
+
+The call must include at least one narrowing filter (`urlId`, `userId`, `hashTag`, `fromDate`, or `toDate`).
+
+When the call is scoped to your whole tenant (none of `urlId`, `userId`, or `hashTag` is given), the credit cost is multiplied by `10x`. Combine `fromDate`/`toDate` with `urlId`, `userId`, or `hashTag` to keep the cost at the standard rate.
+
+For best results across many URLs, also set `direction=NF` (Newest First).
+
+[inline-code-attrs-start title = 'All Comments In The Last 7 Days (tenant-wide, 10x credit cost)'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request GET \
+  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=NF&fromDate=1747008000000&limit=100'
+[inline-code-end]
+
+[inline-code-attrs-start title = 'Comments For A Page Between Two Dates'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request GET \
+  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&urlId=test&direction=NF&fromDate=1747008000000&toDate=1747612800000'
+[inline-code-end]
+
 ### All Request Params
 
 [inline-code-attrs-start title = 'Comments Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
@@ -152,6 +174,10 @@ interface CommentsRequestQueryParams {
     asTree?: boolean
     /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
     maxTreeDepth?: number
+    /** Only return comments posted on or after this date (milliseconds since the Unix epoch). **/
+    fromDate?: number
+    /** Only return comments posted on or before this date (milliseconds since the Unix epoch). **/
+    toDate?: number
 }
 [inline-code-end]
 
