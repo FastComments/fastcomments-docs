@@ -25,11 +25,21 @@ pub async fn run() -> Result<()> {
     let guides_dir = repo.join("src/content/guides");
     let translations_path = repo.join("src/translations.json");
     let cache_path = repo.join("src/translation-cache.json");
+    let ui_cache_path = repo.join("src/ui-translation-cache.json");
     let locales_path = repo.join("src/locales.json");
 
     let locales = Locales::load_from(&locales_path)?;
     let cache: CacheMap = if cache_path.exists() {
         serde_json::from_slice(&std::fs::read(&cache_path)?).unwrap_or_default()
+    } else {
+        CacheMap::default()
+    };
+    // UI cache: `{locale}/{key}` -> md5(default-locale source value).
+    // Stale = cache entry differs from current source hash (the EN
+    // copy was edited but the per-locale translation wasn't refreshed).
+    // Matches Node src/check-translations.js:283-296.
+    let ui_cache: CacheMap = if ui_cache_path.exists() {
+        serde_json::from_slice(&std::fs::read(&ui_cache_path)?).unwrap_or_default()
     } else {
         CacheMap::default()
     };
@@ -115,35 +125,26 @@ pub async fn run() -> Result<()> {
         }
     }
 
-    // UI translations gap check.
-    let mut ui_gaps = 0usize;
-    if let Some(default_obj) = translations_json
-        .get(&locales.default_locale)
-        .and_then(|v| v.as_object())
-    {
-        for (locale_key, _) in &locales.locales {
-            if locale_key == &locales.default_locale {
-                continue;
-            }
-            let locale_obj = translations_json
-                .get(locale_key)
-                .and_then(|v| v.as_object());
-            for default_key in default_obj.keys() {
-                if locale_obj
-                    .and_then(|m| m.get(default_key))
-                    .is_none()
-                {
-                    ui_gaps += 1;
-                }
-            }
-        }
-    }
+    // UI translations gap check. See audit_ui_translations.
+    let ui_audit = audit_ui_translations(&translations_json, &ui_cache, &locales);
+    let ui_missing = ui_audit.missing;
+    let ui_stale = ui_audit.stale_count;
+    let stale_sample = ui_audit.stale_sample;
 
     info!(
         missing_translations = gaps,
-        missing_ui_strings = ui_gaps,
+        missing_ui_strings = ui_missing,
+        stale_ui_strings = ui_stale,
         inline_code_mismatches = inline_code_errors.len(),
     );
+    if !stale_sample.is_empty() {
+        info!("first 10 stale UI strings (source value edited since translation):");
+        for (l, k) in &stale_sample {
+            info!("  {l}/{k}");
+        }
+    }
+    // Combine for the final exit gate. Both classes block the build.
+    let ui_gaps = ui_missing + ui_stale;
     if !inline_code_errors.is_empty() {
         info!("first 10 inline-code mismatches:");
         for (g, l, f, (es, ee), (as_, ae)) in inline_code_errors.iter().take(10) {
@@ -171,6 +172,82 @@ pub async fn run() -> Result<()> {
     Ok(())
 }
 
+/// Outcome of a UI-translation audit: counts of each failure mode +
+/// a bounded sample of stale (locale, key) pairs for log output.
+struct UiAudit {
+    missing: usize,
+    stale_count: usize,
+    stale_sample: Vec<(String, String)>,
+}
+
+/// Walk `translations_json` (the `src/translations.json` shape) and
+/// flag two failure modes:
+///
+///   * missing — key exists in the default locale but not in the target.
+///   * stale  — key exists in both, but md5(default-locale source value)
+///     differs from `ui_cache["{locale}/{key}"]`. That's the case the
+///     prior Rust port silently passed because it only checked presence.
+///     Mirrors Node `src/check-translations.js:283-296`.
+///
+/// Factored out of `run` so tests can drive it without
+/// `std::process::exit`.
+fn audit_ui_translations(
+    translations_json: &serde_json::Value,
+    ui_cache: &CacheMap,
+    locales: &Locales,
+) -> UiAudit {
+    const SAMPLE_CAP: usize = 10;
+    let mut missing = 0usize;
+    let mut stale_count = 0usize;
+    let mut stale_sample: Vec<(String, String)> = Vec::new();
+    let Some(default_obj) = translations_json
+        .get(&locales.default_locale)
+        .and_then(|v| v.as_object())
+    else {
+        return UiAudit {
+            missing,
+            stale_count,
+            stale_sample,
+        };
+    };
+    for (locale_key, _) in &locales.locales {
+        if locale_key == &locales.default_locale {
+            continue;
+        }
+        let locale_obj = translations_json
+            .get(locale_key)
+            .and_then(|v| v.as_object());
+        for (default_key, source_val) in default_obj {
+            match locale_obj.and_then(|m| m.get(default_key)) {
+                None => missing += 1,
+                Some(_) => {
+                    let Some(src_str) = source_val.as_str() else {
+                        continue;
+                    };
+                    let expected = hash_content(src_str);
+                    let cache_key = format!("{locale_key}/{default_key}");
+                    let fresh = ui_cache
+                        .0
+                        .get(&cache_key)
+                        .map(|cached| cached == &expected)
+                        .unwrap_or(false);
+                    if !fresh {
+                        stale_count += 1;
+                        if stale_sample.len() < SAMPLE_CAP {
+                            stale_sample.push((locale_key.clone(), default_key.clone()));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    UiAudit {
+        missing,
+        stale_count,
+        stale_sample,
+    }
+}
+
 fn count_inline_code(content: &str) -> (usize, usize) {
     // Mirrors `countInlineCode` in src/check-translations.js:72-76.
     let start = content.matches("[inline-code-start]").count();
@@ -189,5 +266,141 @@ fn repo_root() -> Result<PathBuf> {
             Some(p) => cur = p,
             None => anyhow::bail!("could not locate repo root from {cwd:?}"),
         }
+    }
+}
+
+#[cfg(test)]
+mod ui_audit_tests {
+    use super::*;
+    use fcdocs_shared::locales::Locale;
+    use indexmap::IndexMap;
+    use serde_json::json;
+
+    fn locales_en_fr() -> Locales {
+        let mut m: IndexMap<String, Locale> = IndexMap::new();
+        for k in ["en", "fr_fr"] {
+            m.insert(
+                k.to_string(),
+                Locale {
+                    name: k.into(),
+                    native_name: k.into(),
+                    hreflang: k.into(),
+                    flag: None,
+                },
+            );
+        }
+        Locales {
+            default_locale: "en".into(),
+            locales: m,
+        }
+    }
+
+    fn cache_map<I, K, V>(entries: I) -> CacheMap
+    where
+        I: IntoIterator<Item = (K, V)>,
+        K: Into<String>,
+        V: Into<String>,
+    {
+        let mut b = BTreeMap::new();
+        for (k, v) in entries {
+            b.insert(k.into(), v.into());
+        }
+        CacheMap(b)
+    }
+
+    #[test]
+    fn missing_key_is_flagged() {
+        let t = json!({
+            "en": {"GREETING": "Hello"},
+            "fr_fr": {}
+        });
+        let r = audit_ui_translations(&t, &cache_map([] as [(String, String); 0]), &locales_en_fr());
+        assert_eq!(r.missing, 1);
+        assert_eq!(r.stale_count, 0);
+    }
+
+    #[test]
+    fn stale_translation_is_flagged_when_source_value_edited() {
+        // EN source: "Hello, world" — translated to fr_fr.
+        // The translation was cached against MD5("Hello, world").
+        // Now EN changed to "Hello, world!" — cache hash no longer
+        // matches → stale (and the prior Rust port would have silently
+        // returned "all translations up to date").
+        let original = "Hello, world";
+        let original_hash = hash_content(original);
+        let edited = "Hello, world!";
+
+        let t = json!({
+            "en": {"GREETING": edited},
+            "fr_fr": {"GREETING": "Bonjour le monde"}
+        });
+        let cache = cache_map([(format!("fr_fr/GREETING"), original_hash)]);
+        let r = audit_ui_translations(&t, &cache, &locales_en_fr());
+        assert_eq!(r.missing, 0, "no missing — key exists in both locales");
+        assert_eq!(r.stale_count, 1, "stale: fr_fr/GREETING source value changed");
+        assert_eq!(r.stale_sample, vec![("fr_fr".into(), "GREETING".into())]);
+        // Sanity: pinning the expected stale hash is unnecessary; the
+        // staleness criterion is just `cached != md5(source)`.
+        let _ = edited;
+    }
+
+    #[test]
+    fn fresh_translation_is_not_flagged() {
+        let value = "Documentation";
+        let h = hash_content(value);
+        let t = json!({
+            "en": {"TITLE": value},
+            "fr_fr": {"TITLE": "Documentation"}
+        });
+        let cache = cache_map([(format!("fr_fr/TITLE"), h)]);
+        let r = audit_ui_translations(&t, &cache, &locales_en_fr());
+        assert_eq!(r.missing, 0);
+        assert_eq!(r.stale_count, 0);
+    }
+
+    #[test]
+    fn translation_present_but_no_cache_entry_is_stale() {
+        // Translation file exists for a key but the UI cache has no
+        // entry. Node treats this as stale (the translation was
+        // hand-written without going through the cache-aware tooling).
+        let t = json!({
+            "en": {"K": "X"},
+            "fr_fr": {"K": "Y"}
+        });
+        let r = audit_ui_translations(&t, &cache_map([] as [(String, String); 0]), &locales_en_fr());
+        assert_eq!(r.missing, 0);
+        assert_eq!(r.stale_count, 1);
+    }
+
+    #[test]
+    fn non_string_source_values_are_skipped() {
+        // Defensive: if translations.json ever contains a non-string
+        // value (nested object, number), don't crash and don't flag —
+        // matches Node hashContent which only operates on strings.
+        let t = json!({
+            "en": {"NUMERIC": 42, "NESTED": {"x": "y"}, "OK": "fine"},
+            "fr_fr": {"NUMERIC": 42, "NESTED": {"x": "y"}, "OK": "bien"}
+        });
+        let h = hash_content("fine");
+        let cache = cache_map([(format!("fr_fr/OK"), h)]);
+        let r = audit_ui_translations(&t, &cache, &locales_en_fr());
+        assert_eq!(r.missing, 0);
+        assert_eq!(r.stale_count, 0);
+    }
+
+    #[test]
+    fn sample_caps_at_10_but_count_does_not() {
+        // 12 stale entries — sample should hold 10, count should be 12.
+        let mut en = serde_json::Map::new();
+        let mut fr = serde_json::Map::new();
+        for i in 0..12 {
+            en.insert(format!("KEY{i}"), json!(format!("v{i}")));
+            fr.insert(format!("KEY{i}"), json!(format!("t{i}")));
+        }
+        let t = json!({"en": en, "fr_fr": fr});
+        let r = audit_ui_translations(&t, &cache_map([] as [(String, String); 0]), &locales_en_fr());
+        assert_eq!(r.missing, 0);
+        assert_eq!(r.stale_count, 12);
+        assert_eq!(r.stale_sample.len(), 10);
     }
 }
