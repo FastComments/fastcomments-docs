@@ -66,16 +66,12 @@ pub async fn process_markdown(
 // Stage 1: handlebars
 // ------------------------------------------------------------------
 
-/// Substitute `{{ExampleTenantId}}` (the only context var passed by the Node
-/// pipeline at `src/guides.js:141-143`).
-///
-/// Using a regex instead of pulling in a full handlebars compiler keeps this
-/// hot and predictable. If the markdown ever introduces more variables, swap
-/// to the `handlebars` crate.
+/// Substitute `{{ExampleTenantId}}` / `{{{ExampleTenantId}}}` via the
+/// shared helper. Forwarded so the local module retains a stable
+/// name; both pipelines must use `super::substitute_example_tenant_id`
+/// to avoid a recurrence of the indexer-vs-sitegen regex drift.
 fn apply_handlebars(input: &str) -> String {
-    static RE: Lazy<Regex> =
-        Lazy::new(|| Regex::new(r"\{\{\s*ExampleTenantId\s*\}\}").expect("regex"));
-    RE.replace_all(input, EXAMPLE_TENANT_ID).into_owned()
+    super::substitute_example_tenant_id(input)
 }
 
 // ------------------------------------------------------------------
@@ -693,6 +689,21 @@ mod tests {
     fn handlebars_handles_whitespace() {
         let out = apply_handlebars("{{ ExampleTenantId }}");
         assert_eq!(out, "aKa2Z4Q=");
+    }
+
+    /// Pins the divergence the indexer used to have: triple-brace
+    /// `{{{ExampleTenantId}}}` was matched only by the sitegen regex,
+    /// so the indexer left stray `{aKa2Z4Q=}` braces in search text.
+    /// Every real content occurrence (tenant-id.md × 29 locales) uses
+    /// the triple form.
+    #[test]
+    fn handlebars_handles_triple_brace_form() {
+        let out = apply_handlebars("see {{{ExampleTenantId}}} here");
+        assert_eq!(out, "see aKa2Z4Q= here");
+        // Inside a JS string literal — the exact shape tenant-id.md
+        // uses.
+        let real = "tenantId: '{{{ExampleTenantId}}}'";
+        assert_eq!(apply_handlebars(real), "tenantId: 'aKa2Z4Q='");
     }
 
     #[test]

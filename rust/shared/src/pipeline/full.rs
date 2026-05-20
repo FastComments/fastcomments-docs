@@ -284,14 +284,12 @@ fn encode_apostrophes(html: &str) -> String {
 // ------------------------------------------------------------------
 
 fn apply_handlebars(input: &str) -> String {
-    // Match both `{{ExampleTenantId}}` (escaped) and
-    // `{{{ExampleTenantId}}}` (unescaped/raw). Handlebars uses the same
-    // value for both — only escaping differs, and our context value
-    // has no HTML-special chars anyway.
-    static RE: Lazy<Regex> = Lazy::new(|| {
-        Regex::new(r"\{\{\{?\s*ExampleTenantId\s*\}?\}\}").expect("regex")
-    });
-    RE.replace_all(input, EXAMPLE_TENANT_ID).into_owned()
+    // Routes through super::substitute_example_tenant_id so the
+    // indexer pipeline can't drift away on the same input shape (the
+    // two had different regexes — indexer matched double-brace only,
+    // sitegen matched both; every real content occurrence today uses
+    // triple-brace `{{{ExampleTenantId}}}`).
+    super::substitute_example_tenant_id(input)
 }
 
 // ------------------------------------------------------------------
