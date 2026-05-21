@@ -697,6 +697,15 @@ async fn process_screenshots(
 /// addProxySelect, cacheBuster}`), in the same insertion order, with
 /// fields the script didn't set dropped entirely (mirrors V8 shorthand
 /// destructuring → `undefined` → `JSON.stringify` omits the key).
+///
+/// One non-obvious normalization: Node's
+/// `src/app-screenshot-generator.js:330` wraps the singular
+/// `args.clickSelector` into `[args.clickSelector]` BEFORE it reaches
+/// the `clickSelectors` slot of the cache key. ~350 markers in the
+/// corpus use the singular form; without this normalization Rust
+/// omits the field entirely and every Node-built cache entry misses
+/// on the first Rust build (chromium re-takes the screenshot, then
+/// writes a different key shape).
 fn build_cache_key_json(parsed: &serde_json::Value) -> String {
     use serde_json::Value;
     let mut map = serde_json::Map::new();
@@ -712,6 +721,23 @@ fn build_cache_key_json(parsed: &serde_json::Value) -> String {
         "cacheBuster",
     ];
     for key in order {
+        if key == "clickSelectors" {
+            // Match Node's ternary at app-screenshot-generator.js:330:
+            //   args.clickSelector ? [args.clickSelector] : args.clickSelectors
+            // When singular is set it OVERRIDES plural (the plural
+            // branch is never consulted).
+            if let Some(single) = parsed.get("clickSelector") {
+                map.insert(
+                    "clickSelectors".to_string(),
+                    Value::Array(vec![single.clone()]),
+                );
+                continue;
+            }
+            if let Some(v) = parsed.get("clickSelectors") {
+                map.insert("clickSelectors".to_string(), v.clone());
+            }
+            continue;
+        }
         if let Some(v) = parsed.get(key) {
             map.insert(key.to_string(), v.clone());
         }
@@ -1232,6 +1258,120 @@ impl GuideMetaExt for GuideMeta {
 
     fn faq_value(&self) -> Option<Value> {
         self.extra.get("faq").cloned()
+    }
+}
+
+#[cfg(test)]
+mod cache_key_tests {
+    use super::*;
+    use serde_json::json;
+
+    /// Pre-fix: Node's `args.clickSelector ? [args.clickSelector] : ...`
+    /// wrapped the singular form into a one-element array before
+    /// keying the image cache. Rust read `clickSelectors` raw and
+    /// silently omitted the field when only the singular was present,
+    /// so every Node-built cache entry missed on the first Rust build.
+    /// The fix mirrors the wrap. Verified end-to-end against the live
+    /// Node cache via the same JSON shape.
+    #[test]
+    fn singular_click_selector_normalizes_to_one_element_array() {
+        let cfg = json!({
+            "url": "/x",
+            "width": 1920,
+            "clickSelector": ".foo",
+            "selector": "body",
+            "title": "T",
+        });
+        let key = build_cache_key_json(&cfg);
+        // Field present + shaped as Node's wrapped array.
+        assert!(
+            key.contains(r#""clickSelectors":[".foo"]"#),
+            "expected wrapped clickSelectors in {key}"
+        );
+        // And the raw singular field is NOT in the cache key (Node
+        // never put it there).
+        assert!(
+            !key.contains(r#""clickSelector""#) || key.contains(r#""clickSelectors""#),
+            "raw singular key must not appear in the cache key: {key}"
+        );
+    }
+
+    /// Two configs that differ only in singular-vs-plural form must
+    /// produce identical cache keys. This is the actual contract the
+    /// bug violated.
+    #[test]
+    fn singular_and_wrapped_plural_produce_identical_keys() {
+        let with_singular = build_cache_key_json(&json!({
+            "url": "/x",
+            "width": 1920,
+            "clickSelector": ".foo",
+            "selector": "body",
+            "title": "T",
+        }));
+        let with_plural = build_cache_key_json(&json!({
+            "url": "/x",
+            "width": 1920,
+            "clickSelectors": [".foo"],
+            "selector": "body",
+            "title": "T",
+        }));
+        assert_eq!(
+            with_singular, with_plural,
+            "singular and pre-wrapped plural must key identically"
+        );
+    }
+
+    /// Match Node's ternary: when both forms are set, the singular
+    /// wins (the plural branch is never consulted). Edge case, but
+    /// the contract the bug fix mirrors verbatim.
+    #[test]
+    fn singular_wins_when_both_are_set() {
+        let key = build_cache_key_json(&json!({
+            "url": "/x",
+            "clickSelector": ".singular",
+            "clickSelectors": [".one", ".two"],
+            "selector": "body",
+            "title": "T",
+        }));
+        assert!(
+            key.contains(r#""clickSelectors":[".singular"]"#),
+            "singular must override the plural array entirely: {key}"
+        );
+        assert!(
+            !key.contains(".one") && !key.contains(".two"),
+            "the unused plural array must not leak into the cache key: {key}"
+        );
+    }
+
+    /// Sanity: nothing set means the field is omitted (matches Node
+    /// JSON.stringify dropping undefined).
+    #[test]
+    fn neither_form_omits_field_from_key() {
+        let key = build_cache_key_json(&json!({
+            "url": "/x",
+            "selector": "body",
+            "title": "T",
+        }));
+        assert!(
+            !key.contains("clickSelectors"),
+            "missing both forms should produce no clickSelectors field: {key}"
+        );
+    }
+
+    /// Sanity: pre-wrapped plural with multiple entries passes
+    /// through unchanged.
+    #[test]
+    fn plural_with_multiple_entries_passes_through() {
+        let key = build_cache_key_json(&json!({
+            "url": "/x",
+            "clickSelectors": [".a", ".b"],
+            "selector": "body",
+            "title": "T",
+        }));
+        assert!(
+            key.contains(r#""clickSelectors":[".a",".b"]"#),
+            "multi-element plural must pass through verbatim: {key}"
+        );
     }
 }
 
