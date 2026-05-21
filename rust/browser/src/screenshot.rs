@@ -13,6 +13,7 @@
 //!    the target PNG path.
 
 use std::path::Path;
+use std::sync::Arc;
 use std::time::Duration;
 
 use anyhow::{Context, Result};
@@ -62,12 +63,21 @@ pub enum Action {
 }
 
 /// Host configuration for the demo-user login. Constructed once and
-/// passed to `launch_logged_in`.
+/// passed to `launch_logged_in`. Also carries the optional
+/// `proxy-select` assets (script + style) so they can be injected on
+/// pages where the marker config sets `addProxySelect=true` — mirrors
+/// Node's `addProxySelectToPage` in `src/app-screenshot-generator.js:16-21`.
 #[derive(Debug, Clone)]
 pub struct ScreenshotHost {
     pub host: String,
     pub username: String,
     pub email: String,
+    /// JavaScript loaded from `src/static/js/proxy-select.js`. Wrapped
+    /// in `Arc` because every per-task capture clones the host config,
+    /// and the script is ~11 KiB; sharing avoids per-screenshot copies.
+    pub proxy_script: Option<Arc<String>>,
+    /// CSS loaded from `src/static/css/proxy-select.css`.
+    pub proxy_style: Option<Arc<String>>,
 }
 
 impl Default for ScreenshotHost {
@@ -76,6 +86,8 @@ impl Default for ScreenshotHost {
             host: HOST.to_string(),
             username: "demo".to_string(),
             email: "demo@fastcomments.com".to_string(),
+            proxy_script: None,
+            proxy_style: None,
         }
     }
 }
@@ -164,22 +176,32 @@ pub async fn capture(
     args: &ScreenshotArgs,
     target_path: &Path,
     host_cfg: &ScreenshotHost,
-    proxy_script: Option<&str>,
-    proxy_style: Option<&str>,
 ) -> Result<()> {
     let url = ensure_host(&args.url, &host_cfg.host);
     page.goto(&url).await.with_context(|| format!("goto {url}"))?;
 
     if args.add_proxy_select {
-        if let Some(s) = proxy_script {
-            let _ = page.evaluate(s).await;
-        }
-        if let Some(css) = proxy_style {
-            let inject_css = format!(
-                "(()=>{{const s=document.createElement('style');s.textContent={};document.head.appendChild(s);}})()",
-                serde_json::to_string(css).unwrap_or_else(|_| "''".to_string())
-            );
-            let _ = page.evaluate(inject_css).await;
+        // Mirrors Node `addProxySelectToPage` (src/app-screenshot-generator.js:16-21):
+        // inject the proxy-select script then the CSS. Without this,
+        // native `<select>` dropdowns rendered by the OS are invisible
+        // to Chromium's screenshot APIs, so a screenshot taken with an
+        // OPEN dropdown captures only the closed select. The script
+        // replaces every `<select>` with a DOM-rendered styled list.
+        match (&host_cfg.proxy_script, &host_cfg.proxy_style) {
+            (Some(script), Some(css)) => {
+                let _ = page.evaluate(script.as_str()).await;
+                let inject_css = format!(
+                    "(()=>{{const s=document.createElement('style');s.textContent={};document.head.appendChild(s);}})()",
+                    serde_json::to_string(css.as_str()).unwrap_or_else(|_| "''".to_string())
+                );
+                let _ = page.evaluate(inject_css).await;
+            }
+            _ => {
+                tracing::warn!(
+                    url = %url,
+                    "marker requested addProxySelect=true but proxy-select assets not loaded in ScreenshotHost; screenshot will lack visible <select> dropdowns"
+                );
+            }
         }
     }
 

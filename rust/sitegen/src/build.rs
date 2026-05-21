@@ -133,8 +133,13 @@ pub async fn run(args: Vec<String>) -> Result<()> {
 
     // Shared browser pool for screenshot capture. Lazily launches the
     // chrome process on first use; reused across every page+locale that
-    // needs a fresh screenshot.
-    let browser_pool = Arc::new(BrowserPool::new(fcdocs_browser::ScreenshotHost::default()));
+    // needs a fresh screenshot. The host config carries the optional
+    // proxy-select assets — markers that set `addProxySelect=true`
+    // need them injected to make `<select>` dropdowns visible in
+    // screenshots (mirrors Node addProxySelectToPage). Missing files
+    // degrade gracefully: the marker still captures, just without the
+    // styled dropdown overlay (capture() logs a warn if it runs).
+    let browser_pool = Arc::new(BrowserPool::new(load_screenshot_host(&repo)));
 
     // Concurrency cap for guide×locale tasks. Defaults to logical CPUs;
     // overridable via SITEGEN_PARALLEL. Each task does I/O, JS eval, and
@@ -669,7 +674,7 @@ async fn process_screenshots(
         let cap_res = browser_pool
             .with_page(width, |page, host| {
                 Box::pin(async move {
-                    screenshot::capture(page, &args, &target_path, host, None, None).await
+                    screenshot::capture(page, &args, &target_path, host).await
                 })
             })
             .await;
@@ -1161,6 +1166,39 @@ fn render_inline_markdown(input: &str) -> String {
     out
 }
 
+/// Build a [`fcdocs_browser::ScreenshotHost`] populated with the
+/// proxy-select script + style read from `src/static/`. Each missing
+/// asset is logged at WARN and left as `None`; downstream
+/// `screenshot::capture` calls then degrade gracefully (the marker
+/// still captures, just without the styled-dropdown overlay).
+///
+/// Mirrors the behavior of Node `addProxySelectToPage`
+/// (src/app-screenshot-generator.js:16-21). Lifted to a free function
+/// so a unit test can pin "post-fix the assets are actually loaded"
+/// without spinning up sitegen.
+fn load_screenshot_host(repo: &Path) -> fcdocs_browser::ScreenshotHost {
+    let mut host = fcdocs_browser::ScreenshotHost::default();
+    let script_path = repo.join("src/static/js/proxy-select.js");
+    match std::fs::read_to_string(&script_path) {
+        Ok(s) => host.proxy_script = Some(Arc::new(s)),
+        Err(e) => warn!(
+            path = %script_path.display(),
+            error = %e,
+            "proxy-select.js missing; addProxySelect markers will degrade"
+        ),
+    }
+    let style_path = repo.join("src/static/css/proxy-select.css");
+    match std::fs::read_to_string(&style_path) {
+        Ok(s) => host.proxy_style = Some(Arc::new(s)),
+        Err(e) => warn!(
+            path = %style_path.display(),
+            error = %e,
+            "proxy-select.css missing; addProxySelect markers will degrade"
+        ),
+    }
+    host
+}
+
 pub fn repo_root() -> Result<PathBuf> {
     let cwd = std::env::current_dir()?;
     let mut cur: &Path = cwd.as_path();
@@ -1194,6 +1232,72 @@ impl GuideMetaExt for GuideMeta {
 
     fn faq_value(&self) -> Option<Value> {
         self.extra.get("faq").cloned()
+    }
+}
+
+#[cfg(test)]
+mod proxy_select_tests {
+    use super::*;
+
+    /// Pin the post-fix invariant: sitegen reads
+    /// `src/static/{js/proxy-select.js, css/proxy-select.css}` and
+    /// populates `ScreenshotHost`. Pre-fix this was None/None and
+    /// `screenshot::capture` was called with None/None too, so
+    /// `addProxySelect=true` markers degraded silently. The test
+    /// looks up the actual repo (walking up from CARGO_MANIFEST_DIR)
+    /// so a future maintainer deleting the asset files surfaces here
+    /// instead of at screenshot-capture time.
+    #[test]
+    fn live_repo_assets_load_into_screenshot_host() {
+        let manifest = Path::new(env!("CARGO_MANIFEST_DIR"));
+        // sitegen/Cargo.toml is at rust/sitegen/; repo root is two up.
+        let repo = manifest.parent().unwrap().parent().unwrap();
+        let host = load_screenshot_host(repo);
+        let script = host.proxy_script.expect("proxy-select.js must load");
+        let style = host.proxy_style.expect("proxy-select.css must load");
+        // Sanity-check the content actually carries the surface the
+        // injection relies on. If someone replaces proxy-select.js
+        // with an empty stub, this fires before screenshots silently
+        // break.
+        assert!(
+            script.contains("proxifySelect"),
+            "proxy-select.js missing core function — expected proxifySelect symbol"
+        );
+        assert!(
+            style.contains("cb-pvt-dropdown"),
+            "proxy-select.css missing core class — expected .cb-pvt-dropdown"
+        );
+    }
+
+    /// Default host has no proxy assets — that's the gate that lets
+    /// `screenshot::capture` log a warn when a marker requests
+    /// injection on a setup that never loaded them (tests, eg).
+    #[test]
+    fn default_host_has_no_proxy_assets() {
+        let h = fcdocs_browser::ScreenshotHost::default();
+        assert!(h.proxy_script.is_none());
+        assert!(h.proxy_style.is_none());
+    }
+
+    /// Missing asset files don't panic — they degrade. (Sitegen
+    /// keeps building; the marker just gets a closed `<select>` in
+    /// the screenshot.)
+    #[test]
+    fn missing_assets_degrade_to_none() {
+        let tmp = std::env::temp_dir().join(format!(
+            "fcdocs-proxy-test-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap_or_default()
+                .as_nanos()
+        ));
+        std::fs::create_dir_all(&tmp).unwrap();
+        // No src/static/ underneath -> both reads fail.
+        let host = load_screenshot_host(&tmp);
+        assert!(host.proxy_script.is_none());
+        assert!(host.proxy_style.is_none());
+        let _ = std::fs::remove_dir_all(&tmp);
     }
 }
 
