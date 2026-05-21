@@ -32,3 +32,6 @@ regex = { workspace = true }
 futures = { workspace = true }
 urlencoding = { workspace = true }
 num_cpus = "1"
+
+[dev-dependencies]
+indexmap = { workspace = true }

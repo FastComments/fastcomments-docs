@@ -1042,12 +1042,38 @@ fn build_index_page(
     Ok(())
 }
 
+/// Compute the sitemap URL count using the same formula as Node
+/// `src/app.js:176`:
+///
+/// > allLocaleKeys.length + guides.filter(g => !g.id.startsWith('code-')).length * allLocaleKeys.length
+///
+/// = (1 + non_code_guides) × locales. Lifted into a free function so
+/// the URL cap can be tested without building the full sitemap string.
+fn sitemap_url_count(guides: &[Guide], locales: &Locales) -> usize {
+    let locale_count = locales.locales.len();
+    let non_code_guides = guides.iter().filter(|g| !g.id.starts_with("code-")).count();
+    locale_count + non_code_guides * locale_count
+}
+
 fn write_sitemap(
     static_generated_dir: &Path,
     guides: &[Guide],
     locales: &Locales,
 ) -> Result<()> {
     const BASE: &str = "https://docs.fastcomments.com/";
+    // Sitemap protocol cap, mirrored from Node src/app.js:178-185. We
+    // check URL count BEFORE building the string so a runaway config
+    // (eg: someone adds a third dimension to the URL space) fails
+    // fast rather than buffering 50+ MB of pointless XML first.
+    const MAX_URLS: usize = 50_000;
+    const MAX_BYTES: usize = 50 * 1024 * 1024;
+    let url_count = sitemap_url_count(guides, locales);
+    if url_count > MAX_URLS {
+        anyhow::bail!(
+            "sitemap exceeds max URL count: {url_count} > {MAX_URLS}"
+        );
+    }
+
     let mut sitemap = String::new();
     sitemap.push_str("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
     sitemap.push_str("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n");
@@ -1098,11 +1124,18 @@ fn write_sitemap(
     sitemap.push_str("</urlset>\n");
 
     let bytes = sitemap.as_bytes().len();
-    const MAX_BYTES: usize = 50 * 1024 * 1024;
     if bytes > MAX_BYTES {
-        anyhow::bail!("sitemap exceeds 50 MB ({} bytes)", bytes);
+        anyhow::bail!(
+            "sitemap exceeds max file size: {:.1}MB > 50MB",
+            bytes as f64 / 1024.0 / 1024.0
+        );
     }
     std::fs::write(static_generated_dir.join("sitemap.xml"), sitemap)?;
+    info!(
+        urls = url_count,
+        mb = format!("{:.1}", bytes as f64 / 1024.0 / 1024.0),
+        "sitemap written"
+    );
     Ok(())
 }
 
@@ -1258,6 +1291,123 @@ impl GuideMetaExt for GuideMeta {
 
     fn faq_value(&self) -> Option<Value> {
         self.extra.get("faq").cloned()
+    }
+}
+
+#[cfg(test)]
+mod sitemap_cap_tests {
+    use super::*;
+    use fcdocs_shared::locales::Locale;
+    use indexmap::IndexMap;
+
+    fn loc(name: &str) -> Locale {
+        Locale {
+            name: name.to_string(),
+            native_name: name.to_string(),
+            hreflang: name.replace('_', "-"),
+            flag: None,
+        }
+    }
+
+    fn locales_with(n: usize) -> Locales {
+        let mut map: IndexMap<String, Locale> = IndexMap::new();
+        for i in 0..n {
+            map.insert(format!("l{i}"), loc(&format!("l{i}")));
+        }
+        Locales {
+            default_locale: "l0".to_string(),
+            locales: map,
+        }
+    }
+
+    fn guide(id: &str) -> Guide {
+        Guide {
+            id: id.to_string(),
+            meta: GuideMeta::default(),
+            items_dir: std::path::PathBuf::new(),
+        }
+    }
+
+    /// Mirrors Node's formula at src/app.js:176 verbatim:
+    ///   allLocaleKeys.length + non_code_guides * allLocaleKeys.length
+    /// = (1 + non_code_guides) * locales
+    #[test]
+    fn url_count_matches_node_formula() {
+        let l = locales_with(28);
+        let g: Vec<Guide> = (0..15).map(|i| guide(&format!("g{i}"))).collect();
+        // (1 + 15) * 28 = 448
+        assert_eq!(sitemap_url_count(&g, &l), 448);
+    }
+
+    /// `code-*` guides are excluded from the sitemap (Node:
+    /// `guides.filter(g => !g.id.startsWith('code-'))`). Pre-fix Rust
+    /// didn't enforce a URL cap at all, so this property wasn't
+    /// pinned anywhere.
+    #[test]
+    fn code_prefix_guides_excluded_from_count() {
+        let l = locales_with(2);
+        let g = vec![
+            guide("real-1"),
+            guide("code-snippet-x"),
+            guide("real-2"),
+            guide("code-snippet-y"),
+        ];
+        // 2 locales + 2 real guides * 2 locales = 6
+        assert_eq!(sitemap_url_count(&g, &l), 6);
+    }
+
+    /// Pre-fix: only the 50 MB byte cap fired. The URL cap (50000) is
+    /// the protocol limit and would have bailed Node's build first
+    /// for any config that drifted high enough.
+    #[test]
+    fn cap_bails_on_overflow() {
+        // (1 + 4999) * 11 = 55000 > 50000 — trips URL cap, NOT byte
+        // cap (sitemap stays well under 50MB at this scale).
+        let l = locales_with(11);
+        let g: Vec<Guide> = (0..4999).map(|i| guide(&format!("g{i}"))).collect();
+        let count = sitemap_url_count(&g, &l);
+        assert!(count > 50_000, "test fixture should exceed cap, got {count}");
+
+        let tmp = std::env::temp_dir().join(format!(
+            "fcdocs-sitemap-cap-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap_or_default()
+                .as_nanos()
+        ));
+        std::fs::create_dir_all(&tmp).unwrap();
+        let err = write_sitemap(&tmp, &g, &l).unwrap_err().to_string();
+        assert!(
+            err.contains("max URL count") && err.contains("50000"),
+            "expected URL-cap error, got: {err}"
+        );
+        // Sitemap file must NOT exist — we bail before writing.
+        assert!(
+            !tmp.join("sitemap.xml").exists(),
+            "sitemap.xml should not be written when URL cap trips"
+        );
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    /// Sanity: a typical-shape build (15 guides, 28 locales) writes
+    /// the sitemap and is well under both caps.
+    #[test]
+    fn typical_build_passes_both_caps() {
+        let l = locales_with(28);
+        let g: Vec<Guide> = (0..15).map(|i| guide(&format!("g{i}"))).collect();
+        let tmp = std::env::temp_dir().join(format!(
+            "fcdocs-sitemap-ok-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap_or_default()
+                .as_nanos()
+        ));
+        std::fs::create_dir_all(&tmp).unwrap();
+        write_sitemap(&tmp, &g, &l).expect("typical config must pass caps");
+        assert!(tmp.join("sitemap.xml").exists());
+        let _ = std::fs::remove_dir_all(&tmp);
     }
 }
 

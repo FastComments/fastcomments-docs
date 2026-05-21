@@ -741,6 +741,7 @@ dependencies = [
  "fcdocs-shared",
  "futures",
  "handlebars",
+ "indexmap",
  "md-5",
  "nanoid",
  "num_cpus",
