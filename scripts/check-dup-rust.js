@@ -27,9 +27,27 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 // listing in their terminal AND gives us a machine-readable report
 // to gate on. We honor the rest of .jscpd.json (pattern, ignore,
 // threshold, etc.) by passing nothing else — jscpd auto-loads it.
+//
+// We call the project-local binary directly (`node_modules/.bin/jscpd`)
+// instead of npx. npx --no-install would fail on a fresh CI box if
+// the binary isn't cached; npx without --no-install would silently
+// fetch an unpinned version. The local binary is guaranteed present
+// after `npm install` because jscpd is in devDependencies.
+const jscpdBin = path.join(
+    REPO_ROOT,
+    'node_modules',
+    '.bin',
+    process.platform === 'win32' ? 'jscpd.cmd' : 'jscpd',
+);
+if (!fs.existsSync(jscpdBin)) {
+    console.error(
+        `missing ${jscpdBin}. Run \`npm install\` to fetch jscpd from devDependencies.`
+    );
+    process.exit(2);
+}
 const result = spawnSync(
-    'npx',
-    ['--no-install', 'jscpd', '--reporters', 'json,console', '--output', OUT_DIR],
+    jscpdBin,
+    ['--reporters', 'json,console', '--output', OUT_DIR],
     { cwd: REPO_ROOT, stdio: 'inherit' }
 );
 if (result.error) {

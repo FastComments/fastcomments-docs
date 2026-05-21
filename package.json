@@ -46,6 +46,7 @@
 		"sdkgen": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-sdkgen"
 	},
 	"devDependencies": {
+		"jscpd": "^4.2.3",
 		"serve": "^11.2.0"
 	}
 }
