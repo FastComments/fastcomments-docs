@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "步驟 1：匯入現有留言",
-      "file": "shopify-step-1.md",
+      "name": "安裝 FastComments 應用程式",
+      "file": "shopify-install.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "步驟 2：停用預設留言系統",
-      "file": "shopify-step-2.md",
+      "name": "在部落格文章與商品頁新增留言",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "步驟 3：開啟部落格主題範本",
-      "file": "shopify-step-3.md",
+      "name": "新增留言數量徽章",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "步驟 4：加入 FastComments.com 代碼",
-      "file": "shopify-step-4.md",
+      "name": "新增近期留言串流",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "成功",
-      "file": "shopify-success.md",
+      "name": "新增近期討論串流",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "新增熱門頁面列表",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "新增評價摘要",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "Shopify 顧客自動登入",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "匯入現有留言",
+      "file": "shopify-import.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "shopify-customize.md",
       "subCat": "Shopify 安裝"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "自訂",
-      "file": "shopify-customize.md",
+      "name": "手動安裝（進階）",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify 安裝"
     }
   ]

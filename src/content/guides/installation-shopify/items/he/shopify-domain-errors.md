@@ -1,15 +1,12 @@
----
-ייתכן שתראה שגיאת הרשאה, כפי שמוצג להלן:
+אם התקנת את FastComments מחנות האפליקציות של Shopify, הדומיין של החנות שלך נוסף אוטומטית לדומיינים המורשים של ה-tenant ולא אמורה להופיע שגיאת דומיין. דף זה חל אם ביצעת את נתיב ההתקנה הידני, או אם החזית החנות שלך מוגשת על דומיין מותאם אישית שלא נרשם ב-Shopify בזמן התקנת האפליקציה.
+
+ייתכן שתקבל שגיאת הרשאה שנראית כך:
 
 <div class="screenshot white-bg">
-    <div class="title">תצורת הדומיין חסרה</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain Configuration Missing" />
+    <div class="title">הגדרת דומיין חסרה</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="הגדרת דומיין חסרה" />
 </div>
 
-זאת מכיוון ש-FastComments אינה יודעת שהיא אמורה לאשר שימוש בחשבון שלך בדומיין זה.
+זה אומר ש-FastComments לא מזהה את הדומיין שעליו הווידג'ט נטען כמאושר עבור ה-tenant שלך.
 
-במקרה זה, התיקון פשוט. כל שעליך לעשות הוא להוסיף את האתר שלך לחשבון FastComments.com שלך.
-
-[לחץ כאן כדי להוסיף את האתר שלך לחשבונך.](https://fastcomments.com/auth/my-account/configure-domains)
-
----
+כדי לתקן זאת, הוסף את הדומיין לחשבון FastComments שלך: [Configure Domains](https://fastcomments.com/auth/my-account/configure-domains).

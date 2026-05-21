@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Шаг 1: Импорт существующих комментариев",
-      "file": "shopify-step-1.md",
+      "name": "Установить приложение FastComments",
+      "file": "shopify-install.md",
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Шаг 2: Отключение стандартной системы комментариев",
-      "file": "shopify-step-2.md",
+      "name": "Добавить комментарии к записям блога и товарам",
+      "file": "shopify-add-comments.md",
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Шаг 3: Откройте шаблон темы блога",
-      "file": "shopify-step-3.md",
+      "name": "Добавить значок количества комментариев",
+      "file": "shopify-comment-count.md",
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Шаг 4: Добавьте код FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "Добавить ленту последних комментариев",
+      "file": "shopify-recent-comments.md",
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Готово",
-      "file": "shopify-success.md",
+      "name": "Добавить ленту последних обсуждений",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Добавить список популярных страниц",
+      "file": "shopify-top-pages.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Добавить сводку отзывов",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Автоматический вход клиентов Shopify",
+      "file": "shopify-sso.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Импорт существующих комментариев",
+      "file": "shopify-import.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Настройка",
+      "file": "shopify-customize.md",
       "subCat": "Установка Shopify"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Настройка",
-      "file": "shopify-customize.md",
+      "name": "Ручная установка (для продвинутых)",
+      "file": "shopify-manual-install.md",
       "subCat": "Установка Shopify"
     }
   ]

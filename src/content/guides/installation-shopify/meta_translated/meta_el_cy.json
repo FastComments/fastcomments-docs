@@ -4,38 +4,63 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Εισαγωγή υπαρχόντων σχολίων",
-      "file": "shopify-step-1.md",
+      "name": "Εγκαταστήστε την εφαρμογή FastComments",
+      "file": "shopify-install.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Βήμα 2: Απενεργοποίηση του προεπιλεγμένου συστήματος σχολιασμού",
-      "file": "shopify-step-2.md",
+      "name": "Προσθήκη σχολίων σε αναρτήσεις ιστολογίου και προϊόντα",
+      "file": "shopify-add-comments.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Βήμα 3: Άνοιγμα του προτύπου θέματος για το ιστολόγιο",
-      "file": "shopify-step-3.md",
+      "name": "Προσθήκη ετικέτας με αριθμό σχολίων",
+      "file": "shopify-comment-count.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Βήμα 4: Προσθήκη του κώδικα του FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "Προσθήκη ροής πρόσφατων σχολίων",
+      "file": "shopify-recent-comments.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Επιτυχία",
-      "file": "shopify-success.md",
+      "name": "Προσθήκη ροής πρόσφατων συζητήσεων",
+      "file": "shopify-recent-discussions.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Σφάλματα τομέα",
-      "file": "shopify-domain-errors.md",
+      "name": "Προσθήκη λίστας κορυφαίων σελίδων",
+      "file": "shopify-top-pages.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Προσθήκη περίληψης κριτικών",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Αυτόματη σύνδεση πελατών Shopify",
+      "file": "shopify-sso.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Εισαγωγή υπαρχόντων σχολίων",
+      "file": "shopify-import.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
       "name": "Προσαρμογή",
       "file": "shopify-customize.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Σφάλματα ονόματος τομέα",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Χειροκίνητη εγκατάσταση (Για προχωρημένους)",
+      "file": "shopify-manual-install.md",
       "subCat": "Εγκατάσταση Shopify"
     }
   ]

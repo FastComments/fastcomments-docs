@@ -1,15 +1,12 @@
----
-Potresti ricevere un errore di autorizzazione, come il seguente:
+Se hai installato FastComments dallo Shopify App Store, il dominio del tuo negozio viene aggiunto automaticamente ai domini autorizzati del tenant e non dovresti vedere un errore relativo al dominio. Questa pagina si applica se hai seguito il percorso di installazione manuale, o se il tuo storefront è servito su un dominio personalizzato che non era registrato con Shopify al momento dell'installazione dell'app.
+
+Potresti ricevere un errore di autorizzazione simile a questo:
 
 <div class="screenshot white-bg">
     <div class="title">Configurazione del dominio mancante</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Configurazione del dominio mancante" />
 </div>
 
-Questo perché FastComments non sa che dovrebbe consentire l'utilizzo del tuo account su questo dominio.
+Questo significa che FastComments non riconosce il dominio su cui viene caricato il widget come autorizzato per il tuo tenant.
 
-In questo caso, la soluzione è semplice. Devi solo aggiungere il tuo sito al tuo account FastComments.com.
-
-[Vai qui per aggiungere il tuo sito al tuo account.](https://fastcomments.com/auth/my-account/configure-domains)
-
----
+Per risolvere, aggiungi il dominio al tuo account FastComments: [Configura domini](https://fastcomments.com/auth/my-account/configure-domains).

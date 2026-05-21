@@ -1,5 +1,8 @@
-FastComments を使えば、任意の Shopify サイトにライブコメント機能を簡単に追加できます。
+---
+FastCommentsは[Shopify App Store](https://apps.shopify.com/fastcomments)で利用できます。アプリをインストールし、Shopifyテーマエディタから任意のブログ投稿、商品ページ、またはカスタムページにFastCommentsブロックを配置してください。コード編集は不要です。
 
-以下の手順は Shopify 上に構築されたブログ向けですが、埋め込みコードは他のテーマファイルを編集して任意のページに手動で追加することもできます。FastComments サポートでも支援を行っています。
+アプリをインストールすると、ShopifyがFastCommentsアカウントをプロビジョニングし、ストアドメインを接続し、請求を自動的に有効にします。fastcomments.comで別途サインアップする必要はありません。
 
-このチュートリアルを実行するには FastComments アカウントが必要です。先にサインアップしてからここに戻ってくることをお勧めします。[こちらでアカウントを作成できます。](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+このガイドのページでは、アプリが提供する各FastCommentsブロック、Shopify顧客向けのシングルサインオンの仕組み、切り替え前に既存のShopifyコメントをインポートする方法を説明します。
+
+---

@@ -1,6 +1,5 @@
----
-FastComments został zaprojektowany tak, aby można go było dostosować do Twojej witryny.
+Kolory, czcionki, zasady moderacji, dozwolony HTML i anonimowe komentowanie można konfigurować, aby pasowały do identyfikacji wizualnej Twojego sklepu.
 
-Jeśli chcesz dodać niestandardowe style lub zmodyfikować konfigurację, [Zapoznaj się z dokumentacją dotyczącą dostosowywania](/guide-customizations-and-configuration.html), aby dowiedzieć się, jak.
+Otwórz aplikację FastComments w panelu administracyjnym Shopify i kliknij kafelek **Dostosuj**, aby otworzyć ekran dostosowywania widżetu. Korzysta on z jednorazowego linku logowania, więc nie potrzebujesz oddzielnego logowania.
 
----
+Aby zobaczyć pełną listę opcji dostosowywania, zobacz [Przewodnik dotyczący dostosowań i konfiguracji](/guide-customizations-and-configuration.html).

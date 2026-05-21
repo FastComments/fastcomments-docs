@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Uvoz postojećih komentara",
-      "file": "shopify-step-1.md",
+      "name": "Instalirajte FastComments aplikaciju",
+      "file": "shopify-install.md",
       "subCat": "Instalacija Shopify"
     },
     {
-      "name": "Korak 2: Onemogućite podrazumevani sistem komentarisanja",
-      "file": "shopify-step-2.md",
+      "name": "Dodajte komentare na blog postove i proizvode",
+      "file": "shopify-add-comments.md",
       "subCat": "Instalacija Shopify"
     },
     {
-      "name": "Korak 3: Otvorite šablon teme bloga",
-      "file": "shopify-step-3.md",
+      "name": "Dodajte bedž sa brojem komentara",
+      "file": "shopify-comment-count.md",
       "subCat": "Instalacija Shopify"
     },
     {
-      "name": "Korak 4: Dodajte FastComments.com kod",
-      "file": "shopify-step-4.md",
+      "name": "Dodajte feed sa najnovijim komentarima",
+      "file": "shopify-recent-comments.md",
       "subCat": "Instalacija Shopify"
     },
     {
-      "name": "Uspeh",
-      "file": "shopify-success.md",
+      "name": "Dodajte feed sa najnovijim diskusijama",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Instalacija Shopify"
+    },
+    {
+      "name": "Dodajte listu najposećenijih stranica",
+      "file": "shopify-top-pages.md",
+      "subCat": "Instalacija Shopify"
+    },
+    {
+      "name": "Dodajte sažetak recenzija",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Instalacija Shopify"
+    },
+    {
+      "name": "Automatsko prijavljivanje Shopify kupaca",
+      "file": "shopify-sso.md",
+      "subCat": "Instalacija Shopify"
+    },
+    {
+      "name": "Uvezite postojeće komentare",
+      "file": "shopify-import.md",
+      "subCat": "Instalacija Shopify"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "shopify-customize.md",
       "subCat": "Instalacija Shopify"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Instalacija Shopify"
     },
     {
-      "name": "Prilagođavanje",
-      "file": "shopify-customize.md",
+      "name": "Ručno instaliranje (napredno)",
+      "file": "shopify-manual-install.md",
       "subCat": "Instalacija Shopify"
     }
   ]

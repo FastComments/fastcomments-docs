@@ -1,6 +1,5 @@
----
-FastComments er designet til at kunne tilpasses, så det matcher dit websted.
+Farver, skrifttyper, moderationsregler, tilladt HTML og anonyme kommentarer kan alle konfigureres, så de matcher din butiks branding.
 
-Hvis du gerne vil tilføje brugerdefineret styling, eller justere konfigurationen, [Se vores tilpasningsdokumentation](/guide-customizations-and-configuration.html) for at lære hvordan.
+Åbn FastComments-appen i din Shopify-administration og klik på flisen **Tilpas** for at åbne widgetens tilpasningsskærm. Den bruger et engangs-loginlink, så du behøver ikke et separat login.
 
----
+For den fulde liste over tilpasningsmuligheder, se [Guiden til tilpasninger og konfiguration](/guide-customizations-and-configuration.html).

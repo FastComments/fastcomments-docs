@@ -1,31 +1,56 @@
 {
   "name": "Shopify Kurulumu",
-  "pageHeader": "Shopify Sitelerine Yorum Ekleme",
+  "pageHeader": "Shopify Sitelerine Yorum Ekle",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Var Olan Yorumları İçe Aktar",
-      "file": "shopify-step-1.md",
+      "name": "FastComments Uygulamasını Kurun",
+      "file": "shopify-install.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Adım 2: Varsayılan Yorum Sistemini Devre Dışı Bırak",
-      "file": "shopify-step-2.md",
+      "name": "Blog Gönderilerine ve Ürünlere Yorum Ekleyin",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Adım 3: Blog Tema Şablonunu Aç",
-      "file": "shopify-step-3.md",
+      "name": "Yorum Sayısı Rozeti Ekleyin",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Adım 4: FastComments.com Kodunu Ekle",
-      "file": "shopify-step-4.md",
+      "name": "Son Yorumlar Akışı Ekleyin",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Başarılı",
-      "file": "shopify-success.md",
+      "name": "Son Tartışmalar Akışı Ekleyin",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "En Popüler Sayfalar Listesi Ekleyin",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "İncelemeler Özeti Ekleyin",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Shopify Müşterileri için Otomatik Oturum Açma",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Mevcut Yorumları İçe Aktar",
+      "file": "shopify-import.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "shopify-customize.md",
       "subCat": "Shopify Kurulumu"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Özelleştirme",
-      "file": "shopify-customize.md",
+      "name": "Manuel Kurulum (Gelişmiş)",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify Kurulumu"
     }
   ]

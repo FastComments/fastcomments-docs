@@ -1,31 +1,56 @@
 {
   "name": "Namestitev Shopify",
-  "pageHeader": "Dodajanje komentarjev na Shopify strani",
+  "pageHeader": "Dodajte komentarje na spletne strani Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Uvozi obstoječe komentarje",
-      "file": "shopify-step-1.md",
+      "name": "Namestite aplikacijo FastComments",
+      "file": "shopify-install.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Korak 2: Onemogoči privzeti sistem komentarjev",
-      "file": "shopify-step-2.md",
+      "name": "Dodajte komentarje k objavam na blogu in izdelkom",
+      "file": "shopify-add-comments.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Korak 3: Odpri predlogo teme za blog",
-      "file": "shopify-step-3.md",
+      "name": "Dodajte značko s številom komentarjev",
+      "file": "shopify-comment-count.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Korak 4: Dodaj kodo FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "Dodajte vir zadnjih komentarjev",
+      "file": "shopify-recent-comments.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Uspeh",
-      "file": "shopify-success.md",
+      "name": "Dodajte vir zadnjih razprav",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Namestitev Shopify"
+    },
+    {
+      "name": "Dodajte seznam najbolj obiskanih strani",
+      "file": "shopify-top-pages.md",
+      "subCat": "Namestitev Shopify"
+    },
+    {
+      "name": "Dodajte povzetek ocen",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Namestitev Shopify"
+    },
+    {
+      "name": "Samodejna prijava strank Shopify",
+      "file": "shopify-sso.md",
+      "subCat": "Namestitev Shopify"
+    },
+    {
+      "name": "Uvoz obstoječih komentarjev",
+      "file": "shopify-import.md",
+      "subCat": "Namestitev Shopify"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "shopify-customize.md",
       "subCat": "Namestitev Shopify"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Prilagajanje",
-      "file": "shopify-customize.md",
+      "name": "Ročna namestitev (napredno)",
+      "file": "shopify-manual-install.md",
       "subCat": "Namestitev Shopify"
     }
   ]

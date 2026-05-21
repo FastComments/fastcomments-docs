@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "步骤 1：导入现有评论",
-      "file": "shopify-step-1.md",
+      "name": "安装 FastComments 应用",
+      "file": "shopify-install.md",
       "subCat": "Shopify 安装"
     },
     {
-      "name": "步骤 2：禁用默认评论系统",
-      "file": "shopify-step-2.md",
+      "name": "为博客文章和产品添加评论",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify 安装"
     },
     {
-      "name": "步骤 3：打开博客主题模板",
-      "file": "shopify-step-3.md",
+      "name": "添加评论计数徽章",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify 安装"
     },
     {
-      "name": "步骤 4：添加 FastComments.com 的代码",
-      "file": "shopify-step-4.md",
+      "name": "添加最新评论信息流",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify 安装"
     },
     {
-      "name": "成功",
-      "file": "shopify-success.md",
+      "name": "添加最近讨论信息流",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "添加热门页面列表",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "添加评价摘要",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "自动登录 Shopify 客户",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "导入现有评论",
+      "file": "shopify-import.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "shopify-customize.md",
       "subCat": "Shopify 安装"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify 安装"
     },
     {
-      "name": "自定义",
-      "file": "shopify-customize.md",
+      "name": "手动安装（高级）",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify 安装"
     }
   ]

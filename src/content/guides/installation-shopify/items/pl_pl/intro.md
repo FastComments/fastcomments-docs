@@ -1,8 +1,5 @@
----
-Dzięki FastComments możemy łatwo dodać komentarze na żywo do dowolnej strony Shopify.
+FastComments jest dostępny w [Sklepie z aplikacjami Shopify](https://apps.shopify.com/fastcomments). Zainstaluj aplikację i przeciągnij bloki FastComments na dowolny wpis na blogu, stronę produktu lub stronę niestandardową z edytora motywów Shopify. Nie jest wymagana edycja kodu.
 
-Poniższe instrukcje dotyczą bloga zbudowanego na Shopify, ale kod osadzenia można również ręcznie dodać do dowolnej strony poprzez edycję innych plików motywu. Wsparcie FastComments może również w tym pomóc.
+Po zainstalowaniu aplikacji Shopify skonfiguruje Twoje konto FastComments, podłączy domenę sklepu i automatycznie uruchomi rozliczenia. Nie musisz rejestrować się oddzielnie na fastcomments.com.
 
-Uwaga: ten samouczek wymaga konta FastComments. Zaleca się najpierw zarejestrować się, a następnie wrócić tutaj. [Możesz założyć konto tutaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----
+Strony w tym przewodniku opisują każdy blok FastComments udostępniany przez aplikację, sposób działania jednokrotnego logowania (single sign-on) dla klientów Shopify oraz jak zaimportować istniejące komentarze Shopify przed przełączeniem.
