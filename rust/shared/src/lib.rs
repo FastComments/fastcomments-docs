@@ -13,6 +13,7 @@ pub mod translations;
 pub mod link_validator;
 pub mod sidecar_supervisor;
 pub mod templates;
+pub mod repo;
 
 pub use locales::{Locale, Locales};
 pub use guides::{Guide, MetaItem, GuideItem};

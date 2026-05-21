@@ -1258,19 +1258,7 @@ fn load_screenshot_host(repo: &Path) -> fcdocs_browser::ScreenshotHost {
     host
 }
 
-pub fn repo_root() -> Result<PathBuf> {
-    let cwd = std::env::current_dir()?;
-    let mut cur: &Path = cwd.as_path();
-    loop {
-        if cur.join("package.json").exists() && cur.join("src/locales.json").exists() {
-            return Ok(cur.to_path_buf());
-        }
-        match cur.parent() {
-            Some(p) => cur = p,
-            None => anyhow::bail!("could not locate repo root from {cwd:?}"),
-        }
-    }
-}
+pub use fcdocs_shared::repo::repo_root;
 
 // ------------------------------------------------------------------
 // GuideMeta accessor helpers

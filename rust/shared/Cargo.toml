@@ -23,6 +23,7 @@ ego-tree = { workspace = true }
 html-escape = { workspace = true }
 regex = { workspace = true }
 tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
 once_cell = { workspace = true }
 rquickjs = { workspace = true }
 indexmap = { workspace = true }

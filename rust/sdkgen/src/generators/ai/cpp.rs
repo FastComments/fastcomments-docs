@@ -48,7 +48,7 @@ impl DocGenerator for CppAiGenerator {
             std::sync::Arc::new(ctx.sdk.clone()),
             ai.models_path,
             prompts::cpp_prompt,
-            build_method_section,
+            common::build_method_section::<Method>,
         )
         .await;
         Ok(GeneratedDocs {
@@ -60,35 +60,3 @@ impl DocGenerator for CppAiGenerator {
     }
 }
 
-fn build_method_section(
-    method: &Method,
-    code_example: &str,
-    sdk: &crate::config::SdkConfig,
-    models_path_rel: &str,
-) -> Option<DocSection> {
-    let params: Vec<(String, String, bool)> = method
-        .parameters
-        .iter()
-        .map(|(k, v)| (k.clone(), v.type_.clone(), v.required))
-        .collect();
-    common::render_method_section(
-        common::SectionInput {
-            name: &method.name,
-            description: &method.description,
-            parameters: &params,
-            response_type: &method.response_type,
-            response_display: &method.response_type,
-            nested_file_path: method
-                .nested_types
-                .get(&method.response_type)
-                .map(|n| n.file_path.as_str()),
-            code_example,
-            lang_tag: "cpp",
-            prepend_models_path: true,
-            tag: method.tag.as_deref(),
-            path: method.path.as_deref(),
-        },
-        sdk,
-        models_path_rel,
-    )
-}

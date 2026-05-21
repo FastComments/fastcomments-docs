@@ -32,12 +32,7 @@ const EVENT_CHANNEL_CAP: usize = 32;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt()
-        .with_env_filter(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
-        )
-        .init();
+    fcdocs_shared::repo::init_tracing();
 
     let repo = repo_root()?;
     let sitegen = resolve_sitegen()
@@ -210,16 +205,4 @@ fn resolve_sitegen() -> Option<PathBuf> {
     None
 }
 
-fn repo_root() -> Result<PathBuf> {
-    let cwd = std::env::current_dir()?;
-    let mut cur: &std::path::Path = cwd.as_path();
-    loop {
-        if cur.join("package.json").exists() && cur.join("src/locales.json").exists() {
-            return Ok(cur.to_path_buf());
-        }
-        match cur.parent() {
-            Some(p) => cur = p,
-            None => anyhow::bail!("could not locate repo root from {cwd:?}"),
-        }
-    }
-}
+use fcdocs_shared::repo::repo_root;

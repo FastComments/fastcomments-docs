@@ -464,25 +464,32 @@ mod tests {
         assert!(prompt.contains("\"guideName\": \"My Guide\""));
     }
 
-    fn test_locales() -> Locales {
+    fn locales_from_pairs(pairs: &[(&str, &str)]) -> Locales {
         use fcdocs_shared::locales::Locale;
         use indexmap::IndexMap;
         let mut m: IndexMap<String, Locale> = IndexMap::new();
-        for (k, n) in [("en", "English"), ("fr_fr", "Français (France)")] {
+        for (k, n) in pairs {
             m.insert(
-                k.into(),
+                (*k).into(),
                 Locale {
-                    name: k.into(),
-                    native_name: n.into(),
-                    hreflang: k.into(),
+                    name: (*k).into(),
+                    native_name: (*n).into(),
+                    hreflang: (*k).into(),
                     flag: None,
                 },
             );
         }
         Locales {
-            default_locale: "en".into(),
+            default_locale: pairs
+                .first()
+                .map(|(k, _)| (*k).into())
+                .unwrap_or_else(|| "en".into()),
             locales: m,
         }
+    }
+
+    fn test_locales() -> Locales {
+        locales_from_pairs(&[("en", "English"), ("fr_fr", "Français (France)")])
     }
 
     // --- filter + force behavior on build_task_list ---
@@ -494,28 +501,11 @@ mod tests {
     }
 
     fn locales_en_fr_de() -> Locales {
-        use fcdocs_shared::locales::Locale;
-        use indexmap::IndexMap;
-        let mut m: IndexMap<String, Locale> = IndexMap::new();
-        for (k, n) in [
+        locales_from_pairs(&[
             ("en", "English"),
             ("fr_fr", "Français (France)"),
             ("de_de", "Deutsch"),
-        ] {
-            m.insert(
-                k.into(),
-                Locale {
-                    name: k.into(),
-                    native_name: n.into(),
-                    hreflang: k.into(),
-                    flag: None,
-                },
-            );
-        }
-        Locales {
-            default_locale: "en".into(),
-            locales: m,
-        }
+        ])
     }
 
     #[tokio::test]

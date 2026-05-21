@@ -628,6 +628,7 @@ name = "fcdocs-indexer"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "fcdocs-indexschema",
  "fcdocs-shared",
  "num_cpus",
  "once_cell",
@@ -639,6 +640,13 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "fcdocs-indexschema"
+version = "0.1.0"
+dependencies = [
+ "tantivy",
 ]
 
 [[package]]
@@ -688,6 +696,7 @@ dependencies = [
  "anyhow",
  "axum",
  "dashmap",
+ "fcdocs-indexschema",
  "fcdocs-shared",
  "futures",
  "indexmap",
@@ -728,6 +737,7 @@ dependencies = [
  "thiserror 1.0.69",
  "tokio",
  "tracing",
+ "tracing-subscriber",
  "walkdir",
 ]
 

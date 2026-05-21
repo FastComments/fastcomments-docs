@@ -281,6 +281,41 @@ pub struct SectionInput<'a> {
     pub path: Option<&'a str>,
 }
 
+/// `(type, required)` parameter info shared by cpp/rust/typescript
+/// parsers. nim has an extra `is_array` field so it keeps its own
+/// local variant. The serialized shape (`{"type": "...", "required":
+/// true}`) is what every Method's `IndexMap<String, ParamInfo>` ends
+/// up with through `serialize_indexmap`, so cache keys stay byte-
+/// identical to the Node original.
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+pub struct ParamInfo {
+    #[serde(rename = "type")]
+    pub type_: String,
+    pub required: bool,
+}
+
+/// Serialize an [`indexmap::IndexMap`] with insertion order
+/// preserved. Every per-language parser's `Method` carries the same
+/// `#[serde(serialize_with = "serialize_indexmap")] parameters:
+/// IndexMap<...>` annotation; they used to declare this helper
+/// locally because no shared crate hosted it.
+pub fn serialize_indexmap<S, K, V>(
+    map: &indexmap::IndexMap<K, V>,
+    ser: S,
+) -> Result<S::Ok, S::Error>
+where
+    S: serde::Serializer,
+    K: serde::Serialize + Eq + std::hash::Hash,
+    V: serde::Serialize,
+{
+    use serde::ser::SerializeMap;
+    let mut m = ser.serialize_map(Some(map.len()))?;
+    for (k, v) in map {
+        m.serialize_entry(k, v)?;
+    }
+    m.end()
+}
+
 /// Per-language `Method` types implement this to share the
 /// operationId-enrichment body. Every field has the same `Option<String>`
 /// shape across languages EXCEPT `description`, which is `Option<String>`
@@ -293,6 +328,35 @@ pub trait EnrichableMethod {
     fn set_tag(&mut self, v: Option<String>);
     fn set_auth_type(&mut self, v: Option<String>);
     fn override_description_with_openapi(&mut self, openapi_description: Option<&str>);
+}
+
+/// Provide the trivial setters for an `EnrichableMethod` impl. The
+/// description rule is the only language-specific piece, so it stays
+/// out of this macro — the caller writes the `override_description...`
+/// fn explicitly. Saves four identical `self.xxx = v` lines per
+/// language × four languages.
+#[macro_export]
+macro_rules! impl_enrichable_method_setters {
+    ($t:ty) => {
+        impl $crate::generators::ai::common::EnrichableMethod for $t {
+            fn set_http_method(&mut self, v: Option<String>) { self.http_method = v; }
+            fn set_path(&mut self, v: Option<String>) { self.path = v; }
+            fn set_tag(&mut self, v: Option<String>) { self.tag = v; }
+            fn set_auth_type(&mut self, v: Option<String>) { self.auth_type = v; }
+            fn override_description_with_openapi(&mut self, d: Option<&str>) {
+                <Self as $crate::generators::ai::common::DescriptionOverride>::override_description(self, d);
+            }
+        }
+    };
+}
+
+/// Companion to [`impl_enrichable_method_setters!`]: the only piece
+/// the macro can't capture is how the language treats
+/// description-overrides (Option<String> raw assign vs String
+/// non-empty override). Each language implements just this one
+/// method.
+pub trait DescriptionOverride {
+    fn override_description(&mut self, d: Option<&str>);
 }
 
 /// Apply an OpenAPI operation's metadata to a parsed method, mirroring
@@ -343,6 +407,61 @@ pub fn params_to_rows_filtered<P>(
         .filter(|(k, _)| keep(k))
         .map(|(k, v)| (k.clone(), type_of(v).to_string(), required_of(v)))
         .collect()
+}
+
+/// Per-language `Method` types implement this to drive the shared
+/// `build_method_section` helper. Each generator previously carried
+/// a ~25-line wrapper that constructed a [`SectionInput`] inline;
+/// the trait lifts the per-language quirks (description shape,
+/// param-filtering, response wrapping, language tag, URL strategy)
+/// into focused accessor methods so the construction lives once.
+pub trait MethodForSection {
+    /// Language tag for the `inline-code-attrs type='...'` attribute.
+    const LANG_TAG: &'static str;
+    /// Whether [`type_github_url`] should prepend `models_path_rel`.
+    /// True for cpp/typescript/rust; false for nim.
+    const PREPEND_MODELS_PATH: bool;
+    fn section_name(&self) -> &str;
+    fn section_description(&self) -> &str;
+    /// Parameter rows (post-filtering, e.g. nim drops `httpClient`).
+    fn section_params(&self) -> Vec<(String, String, bool)>;
+    fn section_response_type(&self) -> &str;
+    /// What to print in `Returns: ...`. Same as `response_type` for
+    /// most languages; nim wraps it as `Option[T]`.
+    fn section_response_display(&self) -> String;
+    fn section_nested_file_path(&self) -> Option<&str>;
+    fn section_tag(&self) -> Option<&str>;
+    fn section_path(&self) -> Option<&str>;
+}
+
+/// Render a doc section for any method that implements
+/// [`MethodForSection`]. Replaces each per-language
+/// `build_method_section` wrapper.
+pub fn build_method_section<M: MethodForSection>(
+    method: &M,
+    code_example: &str,
+    sdk: &crate::config::SdkConfig,
+    models_path_rel: &str,
+) -> Option<DocSection> {
+    let params = method.section_params();
+    let response_display = method.section_response_display();
+    render_method_section(
+        SectionInput {
+            name: method.section_name(),
+            description: method.section_description(),
+            parameters: &params,
+            response_type: method.section_response_type(),
+            response_display: &response_display,
+            nested_file_path: method.section_nested_file_path(),
+            code_example,
+            lang_tag: M::LANG_TAG,
+            prepend_models_path: M::PREPEND_MODELS_PATH,
+            tag: method.section_tag(),
+            path: method.section_path(),
+        },
+        sdk,
+        models_path_rel,
+    )
 }
 
 /// Shared body of `build_method_section` for every per-language AI

@@ -143,12 +143,7 @@ struct ErrorResponse {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt()
-        .with_env_filter(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
-        )
-        .init();
+    fcdocs_shared::repo::init_tracing();
 
     let repo_root = repo_root()?;
     let index_dir = repo_root.join("index");
@@ -703,19 +698,7 @@ async fn shutdown_signal() {
     info!("shutdown signal received");
 }
 
-fn repo_root() -> Result<PathBuf> {
-    let cwd = std::env::current_dir()?;
-    let mut cur: &std::path::Path = cwd.as_path();
-    loop {
-        if cur.join("package.json").exists() && cur.join("src").join("locales.json").exists() {
-            return Ok(cur.to_path_buf());
-        }
-        match cur.parent() {
-            Some(p) => cur = p,
-            None => anyhow::bail!("could not locate repo root from {:?}", cwd),
-        }
-    }
-}
+use fcdocs_shared::repo::repo_root;
 
 #[cfg(test)]
 mod fallback_tests {
@@ -734,26 +717,9 @@ mod fallback_tests {
         IndexRecordOption, Schema, TextFieldIndexing, TextOptions, STORED, STRING,
     };
 
-    fn build_test_schema() -> Schema {
-        // Must match what the indexer writes (see rust/indexer/src/main.rs
-        // build_schema). Drift here would mean the test indexes a doc
-        // the server can't read.
-        let mut b = Schema::builder();
-        b.add_text_field("doc_id", STRING | STORED);
-        let text_idx = TextFieldIndexing::default()
-            .set_tokenizer("docs_text")
-            .set_index_option(IndexRecordOption::WithFreqsAndPositions);
-        let text_opts = TextOptions::default()
-            .set_indexing_options(text_idx)
-            .set_stored();
-        b.add_text_field("title", text_opts.clone());
-        b.add_text_field("parent_title", text_opts.clone());
-        b.add_text_field("url", text_opts.clone());
-        b.add_text_field("parent_url", text_opts.clone());
-        b.add_text_field("icon", STRING | STORED);
-        b.add_text_field("search_text", text_opts);
-        b.build()
-    }
+    /// Server uses the SAME schema the indexer writes — the shared
+    /// crate guarantees they can't drift.
+    use fcdocs_indexschema::build_schema as build_test_schema;
 
     fn write_en_index_with_install_doc(en_dir: &std::path::Path) {
         std::fs::create_dir_all(en_dir).unwrap();

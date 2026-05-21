@@ -49,7 +49,7 @@ impl DocGenerator for NimAiGenerator {
             std::sync::Arc::new(ctx.sdk.clone()),
             ai.models_path,
             prompts::nim_prompt,
-            build_method_section,
+            common::build_method_section::<Method>,
         )
         .await;
         Ok(GeneratedDocs {
@@ -61,43 +61,7 @@ impl DocGenerator for NimAiGenerator {
     }
 }
 
-fn build_method_section(
-    method: &Method,
-    code_example: &str,
-    sdk: &crate::config::SdkConfig,
-    models_path_rel: &str,
-) -> Option<DocSection> {
-    // Nim-specific quirks vs the shared section builder:
-    //   1. Skip the `httpClient` param (nim-ai-generator.js:282 —
-    //      "not user-facing").
-    //   2. Wrap the response type as `Option[T]` for display.
-    //   3. URL builder uses the file path AS-IS (no modelsPath
-    //      prepend, unlike cpp/typescript/rust).
-    let params: Vec<(String, String, bool)> = method
-        .parameters
-        .iter()
-        .filter(|(name, _)| name.as_str() != "httpClient")
-        .map(|(k, v)| (k.clone(), v.type_.clone(), v.required))
-        .collect();
-    let wrapped_display = format!("Option[{}]", method.response_type);
-    common::render_method_section(
-        common::SectionInput {
-            name: &method.name,
-            description: &method.description,
-            parameters: &params,
-            response_type: &method.response_type,
-            response_display: &wrapped_display,
-            nested_file_path: method
-                .nested_types
-                .get(&method.response_type)
-                .map(|n| n.file_path.as_str()),
-            code_example,
-            lang_tag: "nim",
-            prepend_models_path: false,
-            tag: method.tag.as_deref(),
-            path: method.path.as_deref(),
-        },
-        sdk,
-        models_path_rel,
-    )
-}
+// nim quirks (httpClient filter, Option[T] response wrap, no
+// modelsPath prepend) live on `impl MethodForSection for Method` in
+// nim_parser.rs. The shared `common::build_method_section` consumes
+// them.

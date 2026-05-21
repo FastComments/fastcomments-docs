@@ -13,22 +13,17 @@ use serde::{Deserialize, Serialize};
 
 use super::typescript_parser::NestedType;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ParamInfo {
-    #[serde(rename = "type")]
-    pub type_: String,
-    pub required: bool,
-}
+pub use super::common::ParamInfo;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Method {
     pub name: String,
     #[serde(rename = "responseType")]
     pub response_type: String,
-    #[serde(serialize_with = "serialize_indexmap")]
+    #[serde(serialize_with = "super::common::serialize_indexmap")]
     pub parameters: indexmap::IndexMap<String, ParamInfo>,
     pub description: String,
-    #[serde(rename = "nestedTypes", serialize_with = "serialize_indexmap")]
+    #[serde(rename = "nestedTypes", serialize_with = "super::common::serialize_indexmap")]
     pub nested_types: indexmap::IndexMap<String, NestedType>,
     #[serde(rename = "httpMethod", default, skip_serializing_if = "Option::is_none")]
     pub http_method: Option<String>,
@@ -40,14 +35,10 @@ pub struct Method {
     pub auth_type: Option<String>,
 }
 
-impl super::common::EnrichableMethod for Method {
-    fn set_http_method(&mut self, v: Option<String>) { self.http_method = v; }
-    fn set_path(&mut self, v: Option<String>) { self.path = v; }
-    fn set_tag(&mut self, v: Option<String>) { self.tag = v; }
-    fn set_auth_type(&mut self, v: Option<String>) { self.auth_type = v; }
-    /// cpp Method.description is `String`; only overridden when the
-    /// OpenAPI description is non-empty (cpp-ai-generator.js:69).
-    fn override_description_with_openapi(&mut self, d: Option<&str>) {
+crate::impl_enrichable_method_setters!(Method);
+impl super::common::DescriptionOverride for Method {
+    /// String override only when OpenAPI desc non-empty (cpp-ai-generator.js:69).
+    fn override_description(&mut self, d: Option<&str>) {
         if let Some(s) = d {
             if !s.is_empty() {
                 self.description = s.to_string();
@@ -56,21 +47,21 @@ impl super::common::EnrichableMethod for Method {
     }
 }
 
-fn serialize_indexmap<S, K, V>(
-    map: &indexmap::IndexMap<K, V>,
-    ser: S,
-) -> Result<S::Ok, S::Error>
-where
-    S: serde::Serializer,
-    K: serde::Serialize + Eq + std::hash::Hash,
-    V: serde::Serialize,
-{
-    use serde::ser::SerializeMap;
-    let mut m = ser.serialize_map(Some(map.len()))?;
-    for (k, v) in map {
-        m.serialize_entry(k, v)?;
+impl super::common::MethodForSection for Method {
+    const LANG_TAG: &'static str = "cpp";
+    const PREPEND_MODELS_PATH: bool = true;
+    fn section_name(&self) -> &str { &self.name }
+    fn section_description(&self) -> &str { &self.description }
+    fn section_params(&self) -> Vec<(String, String, bool)> {
+        self.parameters.iter().map(|(k, v)| (k.clone(), v.type_.clone(), v.required)).collect()
     }
-    m.end()
+    fn section_response_type(&self) -> &str { &self.response_type }
+    fn section_response_display(&self) -> String { self.response_type.clone() }
+    fn section_nested_file_path(&self) -> Option<&str> {
+        self.nested_types.get(&self.response_type).map(|n| n.file_path.as_str())
+    }
+    fn section_tag(&self) -> Option<&str> { self.tag.as_deref() }
+    fn section_path(&self) -> Option<&str> { self.path.as_deref() }
 }
 
 pub struct CppParser {

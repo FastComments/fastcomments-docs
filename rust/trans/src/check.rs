@@ -377,16 +377,38 @@ fn count_inline_code(content: &str) -> (usize, usize) {
     (start, end)
 }
 
-fn repo_root() -> Result<PathBuf> {
-    let cwd = std::env::current_dir()?;
-    let mut cur: &Path = cwd.as_path();
-    loop {
-        if cur.join("package.json").exists() && cur.join("src/locales.json").exists() {
-            return Ok(cur.to_path_buf());
+use fcdocs_shared::repo::repo_root;
+
+#[cfg(test)]
+mod test_fixtures {
+    use super::*;
+    use fcdocs_shared::locales::Locale;
+    use indexmap::IndexMap;
+
+    /// Build a `Locales` fixture with the given keys (first key is the
+    /// default). Each `Locale` gets stub names/hreflang derived from
+    /// the key. Hoisted out of the per-test-mod helpers so the two
+    /// audit-test modules don't carry their own copies.
+    pub fn locales_with(keys: &[&str]) -> Locales {
+        let mut m: IndexMap<String, Locale> = IndexMap::new();
+        for k in keys {
+            m.insert(
+                (*k).to_string(),
+                Locale {
+                    name: (*k).into(),
+                    native_name: (*k).into(),
+                    hreflang: (*k).into(),
+                    flag: None,
+                },
+            );
         }
-        match cur.parent() {
-            Some(p) => cur = p,
-            None => anyhow::bail!("could not locate repo root from {cwd:?}"),
+        Locales {
+            default_locale: keys
+                .first()
+                .copied()
+                .expect("locales_with requires at least one key")
+                .to_string(),
+            locales: m,
         }
     }
 }
@@ -394,27 +416,11 @@ fn repo_root() -> Result<PathBuf> {
 #[cfg(test)]
 mod ui_audit_tests {
     use super::*;
-    use fcdocs_shared::locales::Locale;
-    use indexmap::IndexMap;
+    use super::test_fixtures::locales_with;
     use serde_json::json;
 
     fn locales_en_fr() -> Locales {
-        let mut m: IndexMap<String, Locale> = IndexMap::new();
-        for k in ["en", "fr_fr"] {
-            m.insert(
-                k.to_string(),
-                Locale {
-                    name: k.into(),
-                    native_name: k.into(),
-                    hreflang: k.into(),
-                    flag: None,
-                },
-            );
-        }
-        Locales {
-            default_locale: "en".into(),
-            locales: m,
-        }
+        locales_with(&["en", "fr_fr"])
     }
 
     fn cache_map<I, K, V>(entries: I) -> CacheMap
@@ -530,26 +536,10 @@ mod ui_audit_tests {
 #[cfg(test)]
 mod meta_audit_tests {
     use super::*;
-    use fcdocs_shared::locales::Locale;
-    use indexmap::IndexMap;
+    use super::test_fixtures::locales_with;
 
     fn locales_en_fr_de() -> Locales {
-        let mut m: IndexMap<String, Locale> = IndexMap::new();
-        for k in ["en", "fr_fr", "de_de"] {
-            m.insert(
-                k.to_string(),
-                Locale {
-                    name: k.into(),
-                    native_name: k.into(),
-                    hreflang: k.into(),
-                    flag: None,
-                },
-            );
-        }
-        Locales {
-            default_locale: "en".into(),
-            locales: m,
-        }
+        locales_with(&["en", "fr_fr", "de_de"])
     }
 
     fn make_guide_with_meta(

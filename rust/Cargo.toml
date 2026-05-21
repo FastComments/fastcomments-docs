@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["shared", "indexer", "server", "llm", "browser", "sitegen", "sdkgen", "trans", "watcher"]
+members = ["shared", "indexer", "server", "llm", "browser", "sitegen", "sdkgen", "trans", "watcher", "indexschema"]
 
 [workspace.package]
 edition = "2021"

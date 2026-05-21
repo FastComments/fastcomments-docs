@@ -39,12 +39,7 @@ const SIDECAR_SCRIPT: &str = "src/content-sidecar.js";
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt()
-        .with_env_filter(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
-        )
-        .init();
+    fcdocs_shared::repo::init_tracing();
 
     let repo_root = repo_root()?;
     let guides_dir = repo_root.join(DEFAULT_GUIDES_DIR);
@@ -368,23 +363,7 @@ async fn build_item(
     Ok(Some((item_id, full_url, processed.indexable_text)))
 }
 
-fn build_schema() -> Schema {
-    let mut b: SchemaBuilder = Schema::builder();
-    b.add_text_field("doc_id", STRING | STORED);
-    let text_idx = TextFieldIndexing::default()
-        .set_tokenizer("docs_text")
-        .set_index_option(IndexRecordOption::WithFreqsAndPositions);
-    let text_opts = TextOptions::default()
-        .set_indexing_options(text_idx)
-        .set_stored();
-    b.add_text_field("title", text_opts.clone());
-    b.add_text_field("parent_title", text_opts.clone());
-    b.add_text_field("url", text_opts.clone());
-    b.add_text_field("parent_url", text_opts.clone());
-    b.add_text_field("icon", STRING | STORED);
-    b.add_text_field("search_text", text_opts);
-    b.build()
-}
+use fcdocs_indexschema::build_schema;
 
 /// Register the per-locale tokenizer named `docs_text`.
 ///
@@ -464,20 +443,5 @@ fn parse_locale_filter(args: impl Iterator<Item = String>) -> Option<Vec<String>
     None
 }
 
-fn repo_root() -> Result<PathBuf> {
-    // The binary should be invoked from the repo root or via build.sh. We walk
-    // up from the current working directory until we find `package.json` so
-    // it works either way.
-    let cwd = std::env::current_dir()?;
-    let mut cur: &Path = cwd.as_path();
-    loop {
-        if cur.join("package.json").exists() && cur.join("src").join("locales.json").exists() {
-            return Ok(cur.to_path_buf());
-        }
-        match cur.parent() {
-            Some(p) => cur = p,
-            None => anyhow::bail!("could not locate repo root from {:?}", cwd),
-        }
-    }
-}
+use fcdocs_shared::repo::repo_root;
 

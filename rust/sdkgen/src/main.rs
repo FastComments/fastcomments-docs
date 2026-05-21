@@ -28,12 +28,7 @@ use anyhow::Result;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt()
-        .with_env_filter(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
-        )
-        .init();
+    fcdocs_shared::repo::init_tracing();
 
     // Optional `--sdk <id>` filter, mirroring src/sdk-guide-generator.js:319-320.
     let sdk_filter = parse_sdk_filter(std::env::args().skip(1));

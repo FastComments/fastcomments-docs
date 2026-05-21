@@ -6,6 +6,44 @@
 
 use super::typescript_parser::{Method, NestedType, ParamInfo};
 
+/// Append the "Type Definitions: { Name: [object Object] }" block
+/// that typescript_prompt and rust_prompt both emit verbatim. The
+/// `[object Object]` literal is preserved for byte-parity with Node's
+/// `${typeDef}` -> stringification bug.
+fn push_nested_types_obj_object(
+    lines: &mut Vec<String>,
+    nested_types: &indexmap::IndexMap<String, NestedType>,
+) {
+    if nested_types.is_empty() {
+        return;
+    }
+    lines.push(String::new());
+    lines.push("Type Definitions:".to_string());
+    for (type_name, _td) in nested_types {
+        lines.push(format!("  {type_name}: [object Object]"));
+    }
+}
+
+/// Append the "Type Definitions: { Name: summary | 'Type definition' }"
+/// block that cpp_prompt and nim_prompt both emit. Falls back to
+/// "Type definition" when the summary is empty, matching Node.
+fn push_nested_types_with_summary<N>(
+    lines: &mut Vec<String>,
+    nested_types: &indexmap::IndexMap<String, N>,
+    summary_of: impl Fn(&N) -> &str,
+) {
+    if nested_types.is_empty() {
+        return;
+    }
+    lines.push(String::new());
+    lines.push("Type Definitions:".to_string());
+    for (type_name, td) in nested_types {
+        let s = summary_of(td);
+        let summary = if s.is_empty() { "Type definition" } else { s };
+        lines.push(format!("  {type_name}: {summary}"));
+    }
+}
+
 pub fn typescript_prompt(method: &Method) -> String {
     let mut lines: Vec<String> = Vec::new();
     lines.push(format!(
@@ -35,19 +73,7 @@ pub fn typescript_prompt(method: &Method) -> String {
     };
     lines.push(format!("Return Type: {rt}"));
 
-    if !method.nested_types.is_empty() {
-        lines.push(String::new());
-        lines.push("Type Definitions:".to_string());
-        for (type_name, type_def) in &method.nested_types {
-            // The TypeScript prompt template stringifies the NESTED
-            // type def directly (Object), which produces "[object Object]"
-            // when concatenated. Node's actual output is the literal
-            // `${typeDef}` of an object — which IS `[object Object]`.
-            // So we emit that string verbatim to match.
-            let _ = type_def;
-            lines.push(format!("  {type_name}: [object Object]"));
-        }
-    }
+    push_nested_types_obj_object(&mut lines, &method.nested_types);
 
     lines.push(String::new());
     lines.push("Requirements:".to_string());
@@ -130,14 +156,7 @@ pub fn rust_prompt(method: &super::rust_parser::Method) -> String {
         method.response_type.clone()
     };
     lines.push(format!("Return Type: Result<{rt}, Error>"));
-    if !method.nested_types.is_empty() {
-        lines.push(String::new());
-        lines.push("Type Definitions:".to_string());
-        for (type_name, _td) in &method.nested_types {
-            // Node's `${typeDef}` -> `[object Object]` again.
-            lines.push(format!("  {type_name}: [object Object]"));
-        }
-    }
+    push_nested_types_obj_object(&mut lines, &method.nested_types);
     lines.push(String::new());
     lines.push("Requirements:".to_string());
     lines.push("1. Do NOT include any use statements or imports".to_string());
@@ -192,18 +211,7 @@ pub fn cpp_prompt(method: &super::cpp_parser::Method) -> String {
     }
     lines.push(String::new());
     lines.push(format!("Return Type: pplx::task<std::shared_ptr<{rt}>>"));
-    if !method.nested_types.is_empty() {
-        lines.push(String::new());
-        lines.push("Type Definitions:".to_string());
-        for (type_name, td) in &method.nested_types {
-            let summary = if td.summary.is_empty() {
-                "Type definition".to_string()
-            } else {
-                td.summary.clone()
-            };
-            lines.push(format!("  {type_name}: {summary}"));
-        }
-    }
+    push_nested_types_with_summary(&mut lines, &method.nested_types, |td| &td.summary);
     lines.push(String::new());
     lines.push("Requirements:".to_string());
     lines.push("1. Do NOT include any #include statements or namespace declarations".to_string());
@@ -262,18 +270,7 @@ pub fn nim_prompt(method: &super::nim_parser::Method) -> String {
     }
     lines.push(String::new());
     lines.push(format!("Return Type: (Option[{rt}], Response)"));
-    if !method.nested_types.is_empty() {
-        lines.push(String::new());
-        lines.push("Type Definitions:".to_string());
-        for (type_name, td) in &method.nested_types {
-            let summary = if td.summary.is_empty() {
-                "Type definition".to_string()
-            } else {
-                td.summary.clone()
-            };
-            lines.push(format!("  {type_name}: {summary}"));
-        }
-    }
+    push_nested_types_with_summary(&mut lines, &method.nested_types, |td| &td.summary);
     lines.push(String::new());
     lines.push("Requirements:".to_string());
     lines.push("1. Do NOT include any import statements".to_string());

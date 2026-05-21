@@ -12,6 +12,7 @@ path = "src/main.rs"
 
 [dependencies]
 fcdocs-shared = { path = "../shared" }
+fcdocs-indexschema = { path = "../indexschema" }
 tokio = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
