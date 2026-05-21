@@ -44,6 +44,18 @@ pub struct Method {
     pub description: Option<String>,
 }
 
+impl super::common::EnrichableMethod for Method {
+    fn set_http_method(&mut self, v: Option<String>) { self.http_method = v; }
+    fn set_path(&mut self, v: Option<String>) { self.path = v; }
+    fn set_tag(&mut self, v: Option<String>) { self.tag = v; }
+    fn set_auth_type(&mut self, v: Option<String>) { self.auth_type = v; }
+    /// rust Method.description is `Option<String>` — mirrors
+    /// rust-ai-generator.js raw `m.description = info.description`.
+    fn override_description_with_openapi(&mut self, d: Option<&str>) {
+        self.description = d.map(|s| s.to_string());
+    }
+}
+
 fn serialize_indexmap<S, K, V>(
     map: &indexmap::IndexMap<K, V>,
     ser: S,

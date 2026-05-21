@@ -39,6 +39,22 @@ pub struct Method {
     pub auth_type: Option<String>,
 }
 
+impl super::common::EnrichableMethod for Method {
+    fn set_http_method(&mut self, v: Option<String>) { self.http_method = v; }
+    fn set_path(&mut self, v: Option<String>) { self.path = v; }
+    fn set_tag(&mut self, v: Option<String>) { self.tag = v; }
+    fn set_auth_type(&mut self, v: Option<String>) { self.auth_type = v; }
+    /// nim Method.description is `String`; only overridden when the
+    /// OpenAPI description is non-empty (nim-ai-generator.js parity).
+    fn override_description_with_openapi(&mut self, d: Option<&str>) {
+        if let Some(s) = d {
+            if !s.is_empty() {
+                self.description = s.to_string();
+            }
+        }
+    }
+}
+
 fn serialize_indexmap<S, K, V>(
     map: &indexmap::IndexMap<K, V>,
     ser: S,

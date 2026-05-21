@@ -58,6 +58,16 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   done
   echo "Rust build complete."
 
+  # Rust duplicate-code gate. Threshold + scope configured in
+  # .jscpd.json; the wrapper script handles jscpd 4.2.3's broken
+  # exit-code behavior on threshold breach.
+  echo "Checking Rust workspace for duplicate code..."
+  if ! node scripts/check-dup-rust.js; then
+    echo "ERROR: Rust duplicate-code threshold exceeded (see jscpd output above)"
+    exit 1
+  fi
+  echo "Duplicate-code check passed."
+
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
   # SDK documentation. Rust sdkgen owns the full pipeline now:

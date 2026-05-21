@@ -55,6 +55,18 @@ pub struct Method {
     pub description: Option<String>,
 }
 
+impl super::common::EnrichableMethod for Method {
+    fn set_http_method(&mut self, v: Option<String>) { self.http_method = v; }
+    fn set_path(&mut self, v: Option<String>) { self.path = v; }
+    fn set_tag(&mut self, v: Option<String>) { self.tag = v; }
+    fn set_auth_type(&mut self, v: Option<String>) { self.auth_type = v; }
+    /// typescript Method.description is `Option<String>` — mirrors
+    /// Node's `m.description = info.description` raw assignment.
+    fn override_description_with_openapi(&mut self, d: Option<&str>) {
+        self.description = d.map(|s| s.to_string());
+    }
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct NestedType {
     pub summary: String,
