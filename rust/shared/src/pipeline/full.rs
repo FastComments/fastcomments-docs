@@ -221,27 +221,97 @@ fn slugify_for_heading(text: &str) -> String {
 }
 
 fn encode_apostrophes(html: &str) -> String {
-    let mut out = String::with_capacity(html.len());
-    let mut depth = 0i32;
-    for c in html.chars() {
+    let bytes = html.as_bytes();
+    let mut out: Vec<u8> = Vec::with_capacity(bytes.len());
+    let mut depth: i32 = 0;
+    let mut i = 0;
+    while i < bytes.len() {
+        // At top level, `<script>` and `<style>` are HTML raw-text
+        // elements — their bodies must pass through untouched (encoding
+        // `'` inside JS breaks `'foo'` into `&#39;foo&#39;`). Detect a
+        // raw-text element opener and copy through to its closing tag.
+        if depth == 0 && bytes[i] == b'<' {
+            if let Some(end) = consume_raw_text_element(bytes, i) {
+                out.extend_from_slice(&bytes[i..end]);
+                i = end;
+                continue;
+            }
+        }
+        let c = bytes[i];
         match c {
-            '<' => {
+            b'<' => {
                 depth += 1;
                 out.push(c);
             }
-            '>' => {
+            b'>' => {
                 depth = (depth - 1).max(0);
                 out.push(c);
             }
             // Encode `'` and `"` only in text content (outside element
             // tags). Marked's default escape behavior produces &#39;
             // and &quot; in text nodes; pulldown-cmark doesn't.
-            '\'' if depth == 0 => out.push_str("&#39;"),
-            '"' if depth == 0 => out.push_str("&quot;"),
+            b'\'' if depth == 0 => out.extend_from_slice(b"&#39;"),
+            b'"' if depth == 0 => out.extend_from_slice(b"&quot;"),
             _ => out.push(c),
         }
+        i += 1;
     }
-    out
+    // Safe: input is valid UTF-8 and we only emitted original bytes plus
+    // ASCII entity substitutions.
+    String::from_utf8(out).expect("utf-8 in, utf-8 out")
+}
+
+/// If `bytes[i]` begins a `<script>` or `<style>` opening tag, return the
+/// byte index just past the matching closing tag (`</script>` /
+/// `</style>`). Otherwise return None. If the element is unterminated,
+/// returns the input length so the caller passes the remainder through
+/// verbatim.
+fn consume_raw_text_element(bytes: &[u8], i: usize) -> Option<usize> {
+    const TAGS: &[&[u8]] = &[b"script", b"style"];
+    for tag in TAGS {
+        let name_start = i + 1;
+        let name_end = name_start + tag.len();
+        if name_end > bytes.len() {
+            continue;
+        }
+        if !bytes[name_start..name_end].eq_ignore_ascii_case(tag) {
+            continue;
+        }
+        // Next char must delimit the tag name (whitespace, `>`, `/`).
+        let next = bytes[name_end];
+        if !matches!(next, b' ' | b'\t' | b'\r' | b'\n' | b'>' | b'/') {
+            continue;
+        }
+        // Skip past the opening tag's `>`.
+        let mut j = name_end;
+        while j < bytes.len() && bytes[j] != b'>' {
+            j += 1;
+        }
+        if j >= bytes.len() {
+            return Some(bytes.len());
+        }
+        j += 1;
+        // Scan for matching `</tag>` (case-insensitive).
+        while j + 2 + tag.len() <= bytes.len() {
+            if bytes[j] == b'<'
+                && bytes[j + 1] == b'/'
+                && bytes[j + 2..j + 2 + tag.len()].eq_ignore_ascii_case(tag)
+            {
+                let mut k = j + 2 + tag.len();
+                while k < bytes.len()
+                    && matches!(bytes[k], b' ' | b'\t' | b'\r' | b'\n')
+                {
+                    k += 1;
+                }
+                if k < bytes.len() && bytes[k] == b'>' {
+                    return Some(k + 1);
+                }
+            }
+            j += 1;
+        }
+        return Some(bytes.len());
+    }
+    None
 }
 
 // ------------------------------------------------------------------
@@ -1008,6 +1078,42 @@ mod tests {
         assert!(out.contains("Related Parameter in Code"));
         assert!(out.contains("foo"));
         assert!(out.contains("string"));
+    }
+
+    #[test]
+    fn encode_apostrophes_preserves_script_body() {
+        // Apostrophes inside <script> bodies must NOT be encoded — that
+        // breaks JS syntax (e.g. `'foo'` becomes `&#39;foo&#39;`).
+        let input = "<p>hi 'there'</p>\n<script>\n    var s = 'L177';\n    var t = \"x\";\n</script>\n";
+        let out = encode_apostrophes(input);
+        assert!(out.contains("&#39;there&#39;"), "text apostrophes should still encode");
+        assert!(
+            out.contains("var s = 'L177';"),
+            "script body apostrophes must stay raw, got:\n{out}"
+        );
+        assert!(
+            out.contains("var t = \"x\";"),
+            "script body double-quotes must stay raw, got:\n{out}"
+        );
+    }
+
+    #[test]
+    fn encode_apostrophes_preserves_style_body() {
+        let input = "<p>hi 'there'</p>\n<style>\n    a::before { content: 'x'; }\n</style>\n";
+        let out = encode_apostrophes(input);
+        assert!(out.contains("&#39;there&#39;"));
+        assert!(
+            out.contains("content: 'x';"),
+            "style body apostrophes must stay raw, got:\n{out}"
+        );
+    }
+
+    #[test]
+    fn encode_apostrophes_handles_script_with_attrs() {
+        let input = "<script type=\"text/javascript\">var s = 'a';</script>\n<p>'after'</p>";
+        let out = encode_apostrophes(input);
+        assert!(out.contains("var s = 'a';"));
+        assert!(out.contains("&#39;after&#39;"));
     }
 
     #[test]
