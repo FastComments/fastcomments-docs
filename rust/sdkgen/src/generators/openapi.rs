@@ -8,7 +8,7 @@
 //! the SDK's own code example block (extracted from the generated docs).
 
 use std::collections::HashMap;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 
 use anyhow::{Context, Result};
 use async_trait::async_trait;
@@ -123,8 +123,6 @@ struct Operation {
     method: String,
     path: String,
     parameters: Vec<Value>,
-    /// Full `responses` object from the spec.
-    responses: Value,
     tags: Vec<String>,
 }
 
@@ -187,7 +185,6 @@ fn group_operations(spec: &Value) -> HashMap<String, Vec<Operation>> {
                 method: method.to_uppercase(),
                 path: path_str.clone(),
                 parameters,
-                responses: op.get("responses").cloned().unwrap_or(Value::Null),
                 tags,
             };
             grouped.entry(resource).or_default().push(operation);

@@ -5,15 +5,13 @@
 //! info, looks up the existing cache file for the (method, prompt,
 //! model) tuple, and emits a markdown section.
 
-use std::sync::Arc;
-
 use anyhow::Result;
 use async_trait::async_trait;
 
 use super::common;
 use super::prompts;
 use super::typescript_parser::{Method, TypescriptParser};
-use crate::generators::base::{DocGenerator, DocSection, GeneratedDocs, GeneratorCtx};
+use crate::generators::base::{DocGenerator, GeneratedDocs, GeneratorCtx};
 
 pub struct TypescriptAiGenerator;
 

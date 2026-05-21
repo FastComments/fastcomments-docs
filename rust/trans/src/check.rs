@@ -7,11 +7,10 @@
 //! per-locale `items/<locale>/` structure (matches Node behavior).
 
 use std::collections::BTreeMap;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 
-use anyhow::{Context, Result};
+use anyhow::Result;
 use fcdocs_shared::locales::Locales;
-use serde::{Deserialize, Serialize};
 use tracing::{info, warn};
 
 use crate::discover::default_locale_files;

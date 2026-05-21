@@ -377,37 +377,6 @@ pub fn apply_operation_info<M: EnrichableMethod>(method: &mut M, info: &Operatio
     method.override_description_with_openapi(info.description.as_deref());
 }
 
-/// Convert any `IndexMap<String, ParamInfo>`-shaped parameter map
-/// into the `(name, type, required)` row vec that
-/// [`render_method_section`] consumes. Per-language `ParamInfo`
-/// types differ in extra fields (e.g. nim has `is_array`) so the
-/// helper is generic via a small accessor closure.
-pub fn params_to_rows<P>(
-    params: &indexmap::IndexMap<String, P>,
-    type_of: impl Fn(&P) -> &str,
-    required_of: impl Fn(&P) -> bool,
-) -> Vec<(String, String, bool)> {
-    params
-        .iter()
-        .map(|(k, v)| (k.clone(), type_of(v).to_string(), required_of(v)))
-        .collect()
-}
-
-/// Like [`params_to_rows`] but skips entries where `keep(name)`
-/// returns false. Used by nim to filter out the non-user-facing
-/// `httpClient` parameter (nim-ai-generator.js:282).
-pub fn params_to_rows_filtered<P>(
-    params: &indexmap::IndexMap<String, P>,
-    type_of: impl Fn(&P) -> &str,
-    required_of: impl Fn(&P) -> bool,
-    keep: impl Fn(&str) -> bool,
-) -> Vec<(String, String, bool)> {
-    params
-        .iter()
-        .filter(|(k, _)| keep(k))
-        .map(|(k, v)| (k.clone(), type_of(v).to_string(), required_of(v)))
-        .collect()
-}
 
 /// Try each candidate operationId against the OpenAPI map (in order)
 /// and apply the first match's info to the method. Returns whether

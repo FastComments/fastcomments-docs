@@ -7,7 +7,7 @@ use async_trait::async_trait;
 use super::common;
 use super::prompts;
 use super::rust_parser::{snake_to_camel_case, Method, RustParser};
-use crate::generators::base::{DocGenerator, DocSection, GeneratedDocs, GeneratorCtx};
+use crate::generators::base::{DocGenerator, GeneratedDocs, GeneratorCtx};
 
 pub struct RustAiGenerator;
 

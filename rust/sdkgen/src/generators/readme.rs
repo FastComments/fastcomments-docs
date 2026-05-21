@@ -185,10 +185,6 @@ fn remove_front_matter(content: &str) -> String {
     FM.replace(content, "").into_owned()
 }
 
-fn convert_relative_links(content: &str, repo_url: &str, branch: &str, prefix: &str) -> String {
-    convert_relative_links_for_sdk(content, repo_url, branch, prefix, None, None)
-}
-
 /// Full port of `convertRelativeLinks` in
 /// src/sdk-doc-generators/base-generator.js:155-206. When `sdk_id` and
 /// `repo_path` are provided, image links get copied to

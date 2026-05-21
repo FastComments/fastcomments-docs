@@ -9,7 +9,7 @@
 //! `src/build-search-index-worker.js` line-for-line so a regression harness
 //! can diff text content one-to-one.
 
-use std::path::{Path, PathBuf};
+use std::path::Path;
 use std::sync::Arc;
 use std::time::Instant;
 

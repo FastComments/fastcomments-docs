@@ -6,7 +6,7 @@
 //! the matching `models/*.ts` files.
 
 use std::collections::BTreeMap;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 use once_cell::sync::Lazy;
 use regex::Regex;
@@ -92,7 +92,6 @@ pub struct TypescriptParser {
 
 #[derive(Debug, Clone)]
 struct TypeDef {
-    name: String,
     kind: &'static str, // "enum" or "interface"
     properties: indexmap::IndexMap<String, ParamInfo>,
     summary: String,
@@ -332,7 +331,6 @@ impl TypescriptParser {
                     .join(" | ")
             );
             let td = TypeDef {
-                name: type_name.to_string(),
                 kind: "enum",
                 properties: indexmap::IndexMap::new(),
                 summary,
@@ -347,7 +345,6 @@ impl TypescriptParser {
         if let Some(iface) = self.extract_interface(type_name, &content) {
             let summary = self.summarize_interface(&iface);
             let td = TypeDef {
-                name: type_name.to_string(),
                 kind: "interface",
                 properties: iface.properties,
                 summary,

@@ -605,9 +605,7 @@ fn into_owned_event(ev: pulldown_cmark::Event<'_>) -> pulldown_cmark::Event<'sta
         CowStr::Boxed(s.to_string().into_boxed_str())
     }
     fn own_tag(t: Tag<'_>) -> Tag<'static> {
-        use pulldown_cmark::{
-            BlockQuoteKind, CodeBlockKind, HeadingLevel, LinkType, MetadataBlockKind,
-        };
+        use pulldown_cmark::{CodeBlockKind, MetadataBlockKind};
         match t {
             Tag::Paragraph => Tag::Paragraph,
             Tag::Heading {
@@ -673,7 +671,6 @@ fn into_owned_event(ev: pulldown_cmark::Event<'_>) -> pulldown_cmark::Event<'sta
             Tag::MetadataBlock(MetadataBlockKind::PlusesStyle) => {
                 Tag::MetadataBlock(MetadataBlockKind::PlusesStyle)
             }
-            _ => Tag::Paragraph,
         }
     }
     match ev {

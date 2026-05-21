@@ -28,7 +28,6 @@ use fcdocs_shared::locales::Locales;
 use futures::stream::{FuturesUnordered, StreamExt};
 use once_cell::sync::Lazy;
 use regex::Regex;
-use serde::{Deserialize, Serialize};
 use tokio::sync::Mutex;
 use tracing::{info, warn};
 

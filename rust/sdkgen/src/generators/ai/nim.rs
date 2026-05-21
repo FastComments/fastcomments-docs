@@ -7,7 +7,7 @@ use async_trait::async_trait;
 use super::common;
 use super::nim_parser::{snake_to_camel, Method, NimParser};
 use super::prompts;
-use crate::generators::base::{DocGenerator, DocSection, GeneratedDocs, GeneratorCtx};
+use crate::generators::base::{DocGenerator, GeneratedDocs, GeneratorCtx};
 
 pub struct NimAiGenerator;
 

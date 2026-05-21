@@ -29,7 +29,7 @@ use std::path::{Path, PathBuf};
 use anyhow::{Context, Result};
 use once_cell::sync::Lazy;
 use regex::Regex;
-use scraper::{Html, Node, Selector};
+use scraper::{Html, Node};
 
 use crate::markers::qjs;
 use crate::sidecar::{MarkerKind, SidecarClient};

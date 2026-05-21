@@ -14,14 +14,14 @@
 //! matching Node's worker pool at translate-with-gpt.js:934-937.
 
 use std::collections::BTreeMap;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 
 use anyhow::{Context, Result};
 use fcdocs_shared::locales::Locales;
 use futures::stream::{FuturesUnordered, StreamExt};
-use serde_json::{json, Value};
+use serde_json::Value;
 use tokio::sync::Mutex;
 use tracing::{info, warn};
 
@@ -379,6 +379,7 @@ fn build_system_and_prompt(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use serde_json::json;
 
     #[test]
     fn build_to_translate_flat_keys() {

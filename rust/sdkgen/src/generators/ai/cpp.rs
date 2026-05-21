@@ -7,7 +7,7 @@ use async_trait::async_trait;
 use super::common;
 use super::cpp_parser::{CppParser, Method};
 use super::prompts;
-use crate::generators::base::{DocGenerator, DocSection, GeneratedDocs, GeneratorCtx};
+use crate::generators::base::{DocGenerator, GeneratedDocs, GeneratorCtx};
 
 pub struct CppAiGenerator;
 

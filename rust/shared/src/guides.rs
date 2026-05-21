@@ -18,15 +18,6 @@ pub fn is_valid_id(s: &str) -> bool {
     !s.is_empty() && s.len() <= 128 && ID_OK.is_match(s)
 }
 
-fn check_id(field: &str, value: &str) -> Result<()> {
-    if !is_valid_id(value) {
-        anyhow::bail!(
-            "invalid {field}: {value:?} (allowed: ^[A-Za-z0-9_-]+$, max 128 chars)"
-        );
-    }
-    Ok(())
-}
-
 /// Mirrors the meta.json `itemsOrdered[]` entry shape used by `src/guides.js`.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct MetaItem {

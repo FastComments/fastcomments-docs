@@ -707,9 +707,6 @@ mod fallback_tests {
     use fcdocs_shared::locales::Locale;
     use indexmap::IndexMap;
     use tantivy::doc;
-    use tantivy::schema::{
-        IndexRecordOption, Schema, TextFieldIndexing, TextOptions, STORED, STRING,
-    };
 
     /// Server uses the SAME schema the indexer writes — the shared
     /// crate guarantees they can't drift.
