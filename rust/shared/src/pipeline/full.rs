@@ -36,9 +36,18 @@ pub const EXAMPLE_TENANT_ID: &str = "aKa2Z4Q=";
 /// Bundled highlight.js Monokai Sublime stylesheet. Inlined at build time
 /// so the binary doesn't need `node_modules/highlight.js/` at runtime.
 /// Mirrors the appendage at `src/guides.js:152`.
-pub const HLJS_STYLE_CSS: &str = include_str!(
-    "../../../../node_modules/highlight.js/styles/monokai-sublime.css"
-);
+///
+/// Vendored under `rust/shared/assets/` instead of `include_str!`-ing
+/// out of `node_modules/highlight.js/styles/` because `npm ci` (used
+/// in build.sh) rewrites every node_modules file on every build —
+/// even with byte-identical content the new mtime invalidates
+/// cargo's fingerprint for fcdocs-shared, which then cascade-
+/// rebuilds the 6 other workspace crates that depend on it. Caused
+/// a steady-state ~60s cargo recompile per deploy. Refresh by
+/// `cp node_modules/highlight.js/styles/monokai-sublime.css
+///    rust/shared/assets/hljs-monokai-sublime.css` after a real
+/// highlight.js upgrade.
+pub const HLJS_STYLE_CSS: &str = include_str!("../../assets/hljs-monokai-sublime.css");
 
 #[derive(Debug, Clone)]
 pub struct FullPipelineConfig {
