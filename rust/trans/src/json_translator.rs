@@ -1,11 +1,16 @@
-//! Shared OpenAI chat/completions client used by the UI + meta.json
-//! translation paths. Mirrors the request shape + retry/backoff + model
-//! fallback chain at `src/translate-with-gpt.js:451-573` and :659-810.
+//! OpenAI chat/completions client for paths that expect a JSON
+//! response: the UI strings translator (translates a dict, expects a
+//! dict back) and the meta.json translator (same shape). Mirrors the
+//! request shape + retry/backoff + model fallback chain at
+//! `src/translate-with-gpt.js:451-573` and :659-810. The "Json" in
+//! the name is load-bearing: this client strips ```json fences and
+//! `serde_json::from_str`s the body before returning.
 //!
-//! Output is parsed as a JSON object (Node strips ```json / ```
-//! fences then `JSON.parse`s). The markdown items path in
-//! `run.rs::call_openai` doesn't go through here — it returns raw
-//! markdown text, not JSON — but it could be unified in a follow-up.
+//! The markdown items translator does NOT live here — it returns
+//! raw markdown text, not JSON, so it has its own minimal
+//! `call_openai` in `run.rs`. Don't expand THIS client to cover
+//! markdown without also moving its fence-stripping + JSON-parse
+//! behavior behind a flag, or rename it back to something generic.
 
 use std::sync::Arc;
 use std::time::Duration;

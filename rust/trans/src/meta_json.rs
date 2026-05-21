@@ -25,7 +25,7 @@ use serde_json::{json, Value};
 use tokio::sync::Mutex;
 use tracing::{info, warn};
 
-use crate::openai::JsonTranslator;
+use crate::json_translator::JsonTranslator;
 use crate::snapshot::hash_content;
 
 #[derive(Debug, Default)]

@@ -39,6 +39,19 @@ struct Session {
     handler_task: tokio::task::JoinHandle<()>,
 }
 
+impl Drop for Session {
+    /// Always abort the chromiumoxide handler loop when the session
+    /// goes away — covers the success-path cleanup (where shutdown
+    /// uses `try_lock` and may skip a slot under contention), the
+    /// error-path takedown in `with_page`, and process-exit drops.
+    /// `browser.close()` is async so we can't call it here; abort
+    /// stops the handler from polling a now-dead CDP socket, which
+    /// is what would have leaked the task.
+    fn drop(&mut self) {
+        self.handler_task.abort();
+    }
+}
+
 impl BrowserPool {
     pub fn new(host: ScreenshotHost) -> Self {
         let max_browsers: usize = std::env::var("MAX_BROWSERS")

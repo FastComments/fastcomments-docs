@@ -78,25 +78,12 @@ fn apply_handlebars(input: &str) -> String {
 // Stage 2: marker expansion
 // ------------------------------------------------------------------
 
-const INLINE_CODE_START: &str = "[inline-code-start]";
-const INLINE_CODE_END: &str = "[inline-code-end]";
-const INLINE_CODE_ATTRS_START: &str = "[inline-code-attrs-start";
-const INLINE_CODE_ATTRS_END: &str = "inline-code-attrs-end]";
-
-const CODE_EXAMPLE_START: &str = "[code-example-start";
-const CODE_EXAMPLE_END: &str = "code-example-end]";
-
-const API_RES_START: &str = "[api-resource-header-start";
-const API_RES_END: &str = "api-resource-header-end]";
-
-const RELATED_PARAM_START: &str = "[related-parameter-start";
-const RELATED_PARAM_END: &str = "related-parameter-end]";
-
-const APP_SCREENSHOT_START: &str = "[app-screenshot-start";
-const APP_SCREENSHOT_END: &str = "app-screenshot-end]";
-
-const FLOW_DIAGRAM_START: &str = "[flow-diagram-start";
-const FLOW_DIAGRAM_END: &str = "flow-diagram-end]";
+use super::marker_names::{
+    API_RES_END, API_RES_START, APP_SCREENSHOT_END, APP_SCREENSHOT_START,
+    CODE_EXAMPLE_END, CODE_EXAMPLE_START, FLOW_DIAGRAM_END, FLOW_DIAGRAM_START,
+    INLINE_CODE_ATTRS_END, INLINE_CODE_ATTRS_START, INLINE_CODE_END, INLINE_CODE_START,
+    RELATED_PARAM_END, RELATED_PARAM_START,
+};
 
 /// Apply the three marker transforms in the same order as
 /// `src/guide-dynamic-content-transformer.js` (skipping
@@ -139,19 +126,13 @@ fn strip_marker_block(input: &str, start_token: &str, end_token: &str, replaceme
 }
 
 async fn expand_related_parameter(input: &str, _sidecar: &SidecarClient) -> Result<String> {
+    // Shared emission with the full pipeline. The optional <a> wrap
+    // around typeLink is preserved in both — downstream html_to_text
+    // strips it for the indexed search_text either way, but using
+    // ONE emission point means a typo in the HTML can't drift
+    // silently between pipelines.
     super::rewrite_blocks_sync(input, RELATED_PARAM_START, RELATED_PARAM_END, |config_source| {
-        let parsed = qjs::eval_marker_sync(MarkerKind::RelatedParameter, config_source)
-            .context("parse related-parameter config via qjs")?;
-        let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
-        let type_ = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("");
-        // Mirrors src/related-parameter-generator.js:7-16. We skip the
-        // optional <a href=typeLink> wrapping because text content is
-        // identical with or without the anchor.
-        Ok(format!(
-            "<div class=\"related-parameter\">Related Parameter in Code: <span>{name}</span> <span class=\"as\">as</span> <span>{type_}</span></div>",
-            name = html_escape::encode_text(name),
-            type_ = html_escape::encode_text(type_),
-        ))
+        super::render_related_parameter(config_source)
     })
 }
 
@@ -344,20 +325,7 @@ async fn expand_api_resource_header(input: &str, _sidecar: &SidecarClient) -> Re
     })
 }
 
-fn format_with_commas(n: i64) -> String {
-    let s = n.abs().to_string();
-    let mut out = String::new();
-    for (i, c) in s.chars().rev().enumerate() {
-        if i > 0 && i % 3 == 0 {
-            out.push(',');
-        }
-        out.push(c);
-    }
-    if n < 0 {
-        out.push('-');
-    }
-    out.chars().rev().collect()
-}
+use super::format_with_commas;
 
 // ------------------------------------------------------------------
 // Stage 3: markdown -> HTML

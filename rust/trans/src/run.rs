@@ -34,7 +34,7 @@ use tracing::{info, warn};
 
 use crate::discover::default_locale_files;
 use crate::meta_json;
-use crate::openai::JsonTranslator;
+use crate::json_translator::JsonTranslator;
 use crate::snapshot::hash_content;
 use crate::ui;
 

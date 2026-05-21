@@ -181,57 +181,13 @@ fn post_process_marked_compat(html: &str) -> String {
     encode_apostrophes(&with_ids)
 }
 
-fn autolink_urls_in_text(html: &str) -> String {
-    static URL_RE: Lazy<Regex> = Lazy::new(|| {
-        // URLs in text: protocol + non-whitespace chars, stopping at
-        // common sentence-ending punctuation that's likely not part
-        // of the URL.
-        Regex::new(r"https?://[A-Za-z0-9\-._~:/?#\[\]@!$&'*+,;=%]+")
-            .expect("regex")
-    });
-    let mut out = String::with_capacity(html.len() + 64);
-    let mut depth = 0i32;
-    let mut text_start = 0usize;
-    let chars: Vec<(usize, char)> = html.char_indices().collect();
-    let mut i = 0;
-    while i < chars.len() {
-        let (byte_idx, c) = chars[i];
-        if c == '<' {
-            if depth == 0 && byte_idx > text_start {
-                // We were in text; flush text with autolinks applied.
-                let chunk = &html[text_start..byte_idx];
-                out.push_str(&autolink_text_chunk(&URL_RE, chunk));
-            }
-            depth += 1;
-            out.push(c);
-            text_start = byte_idx + c.len_utf8();
-        } else if c == '>' {
-            depth = (depth - 1).max(0);
-            out.push(c);
-            text_start = byte_idx + c.len_utf8();
-        } else if depth > 0 {
-            out.push(c);
-            text_start = byte_idx + c.len_utf8();
-        }
-        i += 1;
-    }
-    if text_start < html.len() && depth == 0 {
-        let chunk = &html[text_start..];
-        out.push_str(&autolink_text_chunk(&URL_RE, chunk));
-    }
-    out
-}
-
-fn autolink_text_chunk(re: &Regex, chunk: &str) -> String {
-    re.replace_all(chunk, |caps: &regex::Captures| {
-        let url = &caps[0];
-        // Don't wrap if URL is followed by an already-closing tag in
-        // its containing string — too risky to detect here, but we
-        // already skip everything inside tags above.
-        format!("<a href=\"{url}\">{url}</a>")
-    })
-    .into_owned()
-}
+// Note: an HTML-level URL autolinker would live here if we ever
+// reverse the design decision documented above. Keeping the code
+// removed (last present in commit b8f69b9af) — `git log -S` for
+// `autolink_urls_in_text` is enough to recover it. We don't carry it
+// behind `#[allow(dead_code)]` because the marked-vs-pulldown
+// autolink semantics differ enough that any future port should be
+// rewritten against the then-current corpus.
 
 fn slugify_for_heading(text: &str) -> String {
     // GitHub/marked-style slug:
@@ -296,8 +252,7 @@ fn apply_handlebars(input: &str) -> String {
 // Stage 2a: app-screenshot placeholders
 // ------------------------------------------------------------------
 
-const APP_SCREENSHOT_START: &str = "[app-screenshot-start";
-const APP_SCREENSHOT_END: &str = "app-screenshot-end]";
+use super::marker_names::{APP_SCREENSHOT_END, APP_SCREENSHOT_START};
 
 fn extract_app_screenshot_placeholders(
     input: &str,
@@ -332,8 +287,7 @@ fn extract_app_screenshot_placeholders(
     Ok((rewritten, out_placeholders))
 }
 
-const FLOW_DIAGRAM_START: &str = "[flow-diagram-start";
-const FLOW_DIAGRAM_END: &str = "flow-diagram-end]";
+use super::marker_names::{FLOW_DIAGRAM_END, FLOW_DIAGRAM_START};
 
 fn strip_flow_diagram(input: &str) -> String {
     // Lenient (matches prior behavior): if an end token is missing, just
@@ -348,8 +302,7 @@ fn strip_flow_diagram(input: &str) -> String {
 // Stage 2b: code-example markers
 // ------------------------------------------------------------------
 
-const CODE_EXAMPLE_START: &str = "[code-example-start";
-const CODE_EXAMPLE_END: &str = "code-example-end]";
+use super::marker_names::{CODE_EXAMPLE_END, CODE_EXAMPLE_START};
 
 async fn expand_code_example(
     input: &str,
@@ -433,10 +386,9 @@ async fn expand_code_example(
 // Stage 2c: inline-code markers
 // ------------------------------------------------------------------
 
-const INLINE_CODE_START: &str = "[inline-code-start]";
-const INLINE_CODE_END: &str = "[inline-code-end]";
-const INLINE_CODE_ATTRS_START: &str = "[inline-code-attrs-start";
-const INLINE_CODE_ATTRS_END: &str = "inline-code-attrs-end]";
+use super::marker_names::{
+    INLINE_CODE_ATTRS_END, INLINE_CODE_ATTRS_START, INLINE_CODE_END, INLINE_CODE_START,
+};
 
 async fn expand_inline_code(
     input: &str,
@@ -530,10 +482,7 @@ async fn expand_inline_code(
 // Stage 2d/e: api-resource-header + related-parameter
 // ------------------------------------------------------------------
 
-const API_RES_START: &str = "[api-resource-header-start";
-const API_RES_END: &str = "api-resource-header-end]";
-const RELATED_PARAM_START: &str = "[related-parameter-start";
-const RELATED_PARAM_END: &str = "related-parameter-end]";
+use super::marker_names::{API_RES_END, API_RES_START, RELATED_PARAM_END, RELATED_PARAM_START};
 
 async fn expand_api_resource_header(input: &str) -> Result<String> {
     super::rewrite_blocks_sync(input, API_RES_START, API_RES_END, |config_source| {
@@ -559,40 +508,11 @@ async fn expand_api_resource_header(input: &str) -> Result<String> {
 
 async fn expand_related_parameter(input: &str) -> Result<String> {
     super::rewrite_blocks_sync(input, RELATED_PARAM_START, RELATED_PARAM_END, |config_source| {
-        let parsed = qjs::eval_marker_sync(MarkerKind::RelatedParameter, config_source)
-            .context("eval related-parameter config")?;
-        let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
-        let type_ = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("");
-        let type_link = parsed.get("typeLink").and_then(|v| v.as_str());
-        let type_html = match type_link {
-            Some(href) if !href.is_empty() => format!(
-                "<a href=\"{href}\" target=\"_blank\">{t}</a>",
-                href = html_escape::encode_text(href),
-                t = html_escape::encode_text(type_),
-            ),
-            _ => html_escape::encode_text(type_).to_string(),
-        };
-        Ok(format!(
-            "<div class=\"related-parameter\">Related Parameter in Code: <span>{name}</span> <span class=\"as\">as</span> <span>{type_html}</span></div>",
-            name = html_escape::encode_text(name),
-        ))
+        super::render_related_parameter(config_source)
     })
 }
 
-fn format_with_commas(n: i64) -> String {
-    let s = n.abs().to_string();
-    let mut out = String::new();
-    for (i, c) in s.chars().rev().enumerate() {
-        if i > 0 && i % 3 == 0 {
-            out.push(',');
-        }
-        out.push(c);
-    }
-    if n < 0 {
-        out.push('-');
-    }
-    out.chars().rev().collect()
-}
+use super::format_with_commas;
 
 // ------------------------------------------------------------------
 // Stage 3: markdown -> HTML with per-block highlighting

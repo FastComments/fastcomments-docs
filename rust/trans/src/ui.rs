@@ -22,7 +22,7 @@ use fcdocs_shared::locales::Locales;
 use serde_json::{json, Value};
 use tracing::{info, warn};
 
-use crate::openai::JsonTranslator;
+use crate::json_translator::JsonTranslator;
 use crate::snapshot::hash_content;
 
 #[derive(Debug, Default)]

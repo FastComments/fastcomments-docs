@@ -10,13 +10,80 @@
 //! Both share the same upstream stages (handlebars substitution, marker
 //! tokenization, snippet processing) — diverging at where side effects
 //! are emitted.
+//!
+//! Pieces explicitly shared between the two pipelines (no per-pipeline
+//! copies):
+//!
+//!   - [`marker_names`] — the `[inline-code-start]`, `[code-example-…`,
+//!     etc. token strings. Drift = typo silently lurking in one pipeline.
+//!   - [`format_with_commas`] — the credit-cost number formatter used by
+//!     the code-example marker.
+//!   - [`render_related_parameter`] — the `[related-parameter-…]` HTML
+//!     emitter. The indexer used to skip the typeLink `<a>` wrap and
+//!     rely on downstream `html_to_text` to make that "safe"; we now
+//!     share one emission and the downstream strip is an implementation
+//!     detail of the indexer rather than load-bearing coupling.
+//!   - [`substitute_example_tenant_id`] — `{{ExampleTenantId}}` /
+//!     `{{{ExampleTenantId}}}` handlebars substitution.
+//!   - [`rewrite_blocks_sync`] / [`rewrite_blocks_async`] — linear
+//!     `[start…end]` block-rewriting helpers.
 
 pub mod indexer;
 pub mod full;
+pub mod marker_names;
 
 // Re-export the indexer API so existing callers (rust/indexer) work
 // unchanged after the directory move.
 pub use indexer::{process_markdown, ProcessedItem, EXAMPLE_TENANT_ID};
+
+/// Emit the `<div class="related-parameter">…</div>` HTML for a
+/// related-parameter marker body. Mirrors
+/// `src/related-parameter-generator.js:7-16`. Both pipelines call
+/// through here so a typo in the HTML can't drift between them:
+/// indexer's downstream `html_to_text` strips the `<a>` wrap, but
+/// that's an implementation detail of the indexer, not a contract
+/// the marker emitter should care about.
+pub(crate) fn render_related_parameter(config_source: &str) -> anyhow::Result<String> {
+    use crate::markers::qjs;
+    use crate::sidecar::MarkerKind;
+    let parsed = qjs::eval_marker_sync(MarkerKind::RelatedParameter, config_source)
+        .map_err(|e| anyhow::anyhow!("eval related-parameter config: {e}"))?;
+    let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
+    let type_ = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("");
+    let type_link = parsed.get("typeLink").and_then(|v| v.as_str());
+    let type_html = match type_link {
+        Some(href) if !href.is_empty() => format!(
+            "<a href=\"{href}\" target=\"_blank\">{t}</a>",
+            href = html_escape::encode_text(href),
+            t = html_escape::encode_text(type_),
+        ),
+        _ => html_escape::encode_text(type_).to_string(),
+    };
+    Ok(format!(
+        "<div class=\"related-parameter\">Related Parameter in Code: <span>{name}</span> <span class=\"as\">as</span> <span>{type_html}</span></div>",
+        name = html_escape::encode_text(name),
+    ))
+}
+
+/// Format an integer with thousands separators (`10000 -> "10,000"`).
+/// Used by the code-example marker for `[creditsThisMonth]` text
+/// substitution — both pipelines need it because the marker
+/// processor runs on both sides. Lifted out of each pipeline so a
+/// future locale-aware separator switch happens in one place.
+pub fn format_with_commas(n: i64) -> String {
+    let s = n.abs().to_string();
+    let mut out = String::new();
+    for (i, c) in s.chars().rev().enumerate() {
+        if i > 0 && i % 3 == 0 {
+            out.push(',');
+        }
+        out.push(c);
+    }
+    if n < 0 {
+        out.push('-');
+    }
+    out.chars().rev().collect()
+}
 
 /// Substitute every `{{ExampleTenantId}}` AND `{{{ExampleTenantId}}}`
 /// occurrence in `input` with `EXAMPLE_TENANT_ID`.
@@ -112,6 +179,26 @@ where
     }
     out.push_str(&input[cursor..]);
     Ok(out)
+}
+
+#[cfg(test)]
+mod format_with_commas_tests {
+    use super::*;
+
+    #[test]
+    fn basic() {
+        assert_eq!(format_with_commas(0), "0");
+        assert_eq!(format_with_commas(999), "999");
+        assert_eq!(format_with_commas(1_000), "1,000");
+        assert_eq!(format_with_commas(10_000), "10,000");
+        assert_eq!(format_with_commas(10_000_000), "10,000,000");
+    }
+
+    #[test]
+    fn negative() {
+        assert_eq!(format_with_commas(-1_000), "-1,000");
+        assert_eq!(format_with_commas(-1), "-1");
+    }
 }
 
 #[cfg(test)]
