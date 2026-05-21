@@ -18,13 +18,6 @@ use fcdocs_shared::guides::{Guide, GuidesRoot, MetaItem};
 use fcdocs_shared::locales::Locales;
 use fcdocs_shared::pipeline;
 use fcdocs_shared::sidecar::SidecarClient;
-use tantivy::schema::{
-    IndexRecordOption, Schema, SchemaBuilder, TextFieldIndexing, TextOptions, STORED, STRING,
-};
-use tantivy::tokenizer::{
-    AsciiFoldingFilter, Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer,
-    TextAnalyzer,
-};
 use tantivy::{Index, TantivyDocument};
 use tokio::sync::Semaphore;
 use tracing::{info, warn};
@@ -384,27 +377,12 @@ use fcdocs_indexschema::build_schema;
 /// change that would need re-baselined fixtures + queries in each
 /// affected locale. Until then: parity wins.
 ///
-/// The SAME logic lives in `rust/server/src/main.rs::build_docs_text_analyzer`.
-/// Drift between the two re-introduces the analyzer-mismatch class of
-/// bugs (queries tokenize one way; indexed terms another). Keep both
-/// arms in sync.
-fn register_tokenizers(index: &Index, _locale: &str) {
-    // Chain: SimpleTokenizer -> RemoveLong -> LowerCaser -> AsciiFolding
-    //         -> EnglishPorter. AsciiFolding mirrors SQLite FTS5's
-    //         `unicode61` default `remove_diacritics=1` setting; without
-    //         it French/German users searching ASCII forms ("cafe",
-    //         "uber") silently missed accented terms that Node matched.
-    //         Folding goes before the stemmer so the Porter rules
-    //         (ASCII-only) operate on the same shape they saw in Node.
-    //         The same chain lives in
-    //         rust/server/src/main.rs::build_docs_text_analyzer.
-    let analyzer: TextAnalyzer = TextAnalyzer::builder(SimpleTokenizer::default())
-        .filter(RemoveLongFilter::limit(40))
-        .filter(LowerCaser)
-        .filter(AsciiFoldingFilter)
-        .filter(Stemmer::new(Language::English))
-        .build();
-    index.tokenizers().register("docs_text", analyzer);
+/// Delegates to [`fcdocs_indexschema::register_docs_text_analyzer`]
+/// — the single source of truth shared with the server. Drift
+/// between the indexer-side analyzer and the server-side query
+/// analyzer is what the indexschema crate exists to prevent.
+fn register_tokenizers(index: &Index, locale: &str) {
+    fcdocs_indexschema::register_docs_text_analyzer(index, locale);
 }
 
 fn dir_size_bytes(path: &Path) -> Result<u64> {

@@ -59,10 +59,13 @@ const BOOST_SEARCH_TEXT: f32 = 1.0;
 /// Hard cap on the `query` string. Anything longer is rejected at the
 /// edge: it can't help recall, but it can drive OpenAI tokens and CPU.
 const MAX_QUERY_LEN: usize = 256;
-/// Tokens-per-second + burst, per remote IP. Matches "a human typing
-/// search queries" rather than a scraper.
-const RATE_PER_SEC: f64 = 5.0;
-const RATE_BURST: f64 = 20.0;
+/// Tokens-per-second + burst, per remote IP. Sized for a busy
+/// docs reader (jumping between guides, typing several searches
+/// in a session) plus headroom for the search-as-you-type fast
+/// path on the docs JS — but still cuts off scrapers within a
+/// few seconds of sustained load.
+const RATE_PER_SEC: f64 = 60.0;
+const RATE_BURST: f64 = 200.0;
 
 #[derive(Clone)]
 struct AppState {
@@ -520,17 +523,8 @@ fn get_locale_slot(state: &AppState, locale: &str) -> Result<LocaleSlot> {
 /// matching Node's `tokenize='porter unicode61'` at
 /// `src/build-search-index-worker.js:70`. See the longer rationale
 /// in the indexer's register_tokenizers doc-comment.
-fn build_docs_text_analyzer(_locale: &str) -> tantivy::tokenizer::TextAnalyzer {
-    use tantivy::tokenizer::{
-        AsciiFoldingFilter, Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer,
-        TextAnalyzer,
-    };
-    TextAnalyzer::builder(SimpleTokenizer::default())
-        .filter(RemoveLongFilter::limit(40))
-        .filter(LowerCaser)
-        .filter(AsciiFoldingFilter)
-        .filter(Stemmer::new(Language::English))
-        .build()
+fn build_docs_text_analyzer(locale: &str) -> tantivy::tokenizer::TextAnalyzer {
+    fcdocs_indexschema::build_docs_text_analyzer(locale)
 }
 
 /// Mirrors src/server-search-engine.js:234-241.

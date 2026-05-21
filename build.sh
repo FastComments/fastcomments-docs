@@ -13,24 +13,16 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   mkdir -p src/static/csv
   mkdir -p src/static/images
   mkdir -p src/static/js
-  # `db/` is the legacy SQLite path used by src/server-search-engine.js.
-  # Production now runs the Rust server which reads Tantivy from
-  # `index/<locale>/`; the dir is still created so the legacy Node
-  # server can be started in dev if anyone needs it for comparison.
-  mkdir -p db
   mkdir -p index
 
+  # `npm install` is still required: the content-sidecar runs
+  # highlight.js from npm, and jscpd lives in devDependencies for
+  # the duplicate-code gate below.
   echo "Installing dependencies..."
   if ! npm install; then
     echo "ERROR: npm install failed"
     exit 1
   fi
-
-  # better-sqlite3 is only used by the legacy Node search server +
-  # legacy indexer scripts. Production search no longer touches it,
-  # but `npm install` may still need a native rebuild for dev users.
-  echo "Rebuilding native modules..."
-  npm rebuild better-sqlite3
 
   echo "Building Rust workspace (indexer + server)..."
   if ! cargo build --release --manifest-path rust/Cargo.toml; then
@@ -107,8 +99,7 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
 
   echo "Generating custom styling guide (Rust)..."
-  if ! "$HOME/.cache/cargo-target/release/sitegen" custom-styling \
-       && ! ./rust/target/release/sitegen custom-styling; then
+  if ! ./rust/target/release/sitegen custom-styling; then
     echo "ERROR: Custom styling guide generation failed"
     exit 1
   fi
@@ -159,8 +150,11 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "All translations up to date."
   fi
 
-  echo "Building content..."
-  if ! NODE_OPTIONS="--max-old-space-size=8192" MAX_BROWSERS=1 npm run build-content; then
+  # MAX_BROWSERS=1 caps chromiumoxide concurrency for the screenshot
+  # marker. The Rust sitegen replaced `node src/app` here; the
+  # legacy NODE_OPTIONS=--max-old-space-size flag is gone with it.
+  echo "Building content (Rust)..."
+  if ! MAX_BROWSERS=1 ./rust/target/release/sitegen build; then
     echo "ERROR: Content build failed"
     exit 1
   fi
@@ -168,8 +162,7 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
 
   # Static file copies (Rust replaces bash build-static.sh).
   echo "Building static (Rust)..."
-  if ! "$HOME/.cache/cargo-target/release/sitegen" build-static \
-       && ! ./rust/target/release/sitegen build-static; then
+  if ! ./rust/target/release/sitegen build-static; then
     echo "ERROR: Static build failed"
     exit 1
   fi
