@@ -29,30 +29,22 @@ impl DocGenerator for RustAiGenerator {
             for mut m in methods {
                 let camel = snake_to_camel_case(&m.name);
                 let cap = common::capitalize_first(&camel);
-                if let Some(info) = ai.op_map.get(&camel).or_else(|| ai.op_map.get(&cap)) {
-                    common::apply_operation_info(&mut m, info);
-                } else {
-                    tracing::warn!(method = %m.name, "no OpenAPI operation found");
+                let method_name = m.name.clone();
+                if !common::enrich_with_first_match(&ai.op_map, &mut m, &[&camel, &cap]) {
+                    tracing::warn!(method = %method_name, "no OpenAPI operation found");
                 }
                 all_methods.push(m);
             }
         }
 
-        let (sections, _miss) = common::fanout_methods(
+        Ok(common::run_ai_generator(
             all_methods,
-            std::sync::Arc::new(ai.llm),
-            std::sync::Arc::new(ctx.sdk.clone()),
-            ai.models_path,
+            ai,
+            ctx.sdk.clone(),
             prompts::rust_prompt,
             common::build_method_section::<Method>,
         )
-        .await;
-        Ok(GeneratedDocs {
-            intro: None,
-            conclusion: None,
-            sections,
-            validation_errors: Vec::new(),
-        })
+        .await)
     }
 }
 

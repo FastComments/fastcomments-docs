@@ -154,17 +154,8 @@ impl LinkValidator {
                 issue: format!("Item '{target}' not found in guide '{guide_id}'"),
                 available: format_available(items),
             });
-        } else if let Some(a) = anchor {
-            if !items.unwrap().contains(a) {
-                out.push(LinkError {
-                    file_path: file_path.to_string(),
-                    line,
-                    text: text.to_string(),
-                    href: href.to_string(),
-                    issue: format!("Anchor '{a}' not found in guide '{guide_id}'"),
-                    available: format_available(items),
-                });
-            }
+        } else {
+            push_missing_anchor(items, anchor, file_path, text, href, line, guide_id, out);
         }
     }
 
@@ -207,18 +198,38 @@ impl LinkValidator {
             });
             return;
         }
-        if let Some(a) = anchor {
-            if !items.unwrap().contains(a) {
-                out.push(LinkError {
-                    file_path: file_path.to_string(),
-                    line,
-                    text: text.to_string(),
-                    href: href.to_string(),
-                    issue: format!("Anchor '{a}' not found in guide '{guide_id}'"),
-                    available: format_available(items),
-                });
-            }
-        }
+        push_missing_anchor(items, anchor, file_path, text, href, line, &guide_id, out);
+    }
+}
+
+/// Push a "Anchor 'X' not found in guide 'Y'" error iff the link has
+/// an anchor and the guide's item-set doesn't contain it. The
+/// guide-existence + item-existence check is the caller's job; this
+/// only handles the trailing anchor-membership check that both
+/// `check_relative` and `check_absolute` carried inline.
+#[allow(clippy::too_many_arguments)]
+fn push_missing_anchor(
+    items: Option<&HashSet<String>>,
+    anchor: Option<&str>,
+    file_path: &str,
+    text: &str,
+    href: &str,
+    line: usize,
+    guide_id: &str,
+    out: &mut Vec<LinkError>,
+) {
+    let (Some(a), Some(set)) = (anchor, items) else {
+        return;
+    };
+    if !set.contains(a) {
+        out.push(LinkError {
+            file_path: file_path.to_string(),
+            line,
+            text: text.to_string(),
+            href: href.to_string(),
+            issue: format!("Anchor '{a}' not found in guide '{guide_id}'"),
+            available: format_available(items),
+        });
     }
 }
 

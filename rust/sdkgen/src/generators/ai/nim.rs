@@ -31,33 +31,24 @@ impl DocGenerator for NimAiGenerator {
                 let lower_first = common::lowercase_first(&m.name);
                 let upper_first = common::capitalize_first(&m.name);
                 let camel = snake_to_camel(&m.name);
-                let info = ai.op_map
-                    .get(&m.name)
-                    .or_else(|| ai.op_map.get(&lower_first))
-                    .or_else(|| ai.op_map.get(&upper_first))
-                    .or_else(|| ai.op_map.get(&camel));
-                if let Some(info) = info {
-                    common::apply_operation_info(&mut m, info);
-                }
+                let name = m.name.clone();
+                common::enrich_with_first_match(
+                    &ai.op_map,
+                    &mut m,
+                    &[&name, &lower_first, &upper_first, &camel],
+                );
                 all_methods.push(m);
             }
         }
 
-        let (sections, _miss) = common::fanout_methods(
+        Ok(common::run_ai_generator(
             all_methods,
-            std::sync::Arc::new(ai.llm),
-            std::sync::Arc::new(ctx.sdk.clone()),
-            ai.models_path,
+            ai,
+            ctx.sdk.clone(),
             prompts::nim_prompt,
             common::build_method_section::<Method>,
         )
-        .await;
-        Ok(GeneratedDocs {
-            intro: None,
-            conclusion: None,
-            sections,
-            validation_errors: Vec::new(),
-        })
+        .await)
     }
 }
 

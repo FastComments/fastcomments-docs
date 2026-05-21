@@ -34,13 +34,10 @@ impl DocGenerator for TypescriptAiGenerator {
             let methods = parser.extract_api_methods(api_file);
             tracing::info!(file = %api_file, count = methods.len(), "parsed");
             for mut m in methods {
-                if let Some(info) = ai.op_map
-                    .get(&m.name)
-                    .or_else(|| ai.op_map.get(&common::capitalize_first(&m.name)))
-                {
-                    common::apply_operation_info(&mut m, info);
-                } else {
-                    tracing::warn!(method = %m.name, "no OpenAPI operation found");
+                let cap = common::capitalize_first(&m.name);
+                let method_name = m.name.clone();
+                if !common::enrich_with_first_match(&ai.op_map, &mut m, &[&method_name, &cap]) {
+                    tracing::warn!(method = %method_name, "no OpenAPI operation found");
                 }
                 all_methods.push(m);
             }
@@ -49,22 +46,14 @@ impl DocGenerator for TypescriptAiGenerator {
         // Resolve cache + emit sections, in parallel across methods. The
         // cache lookups dominate, but on cache-cold builds the OpenAI
         // calls are the bottleneck — both benefit from parallelism.
-        let (sections, _miss) = common::fanout_methods(
+        Ok(common::run_ai_generator(
             all_methods,
-            Arc::new(ai.llm),
-            Arc::new(ctx.sdk.clone()),
-            ai.models_path,
+            ai,
+            ctx.sdk.clone(),
             prompts::typescript_prompt,
             common::build_method_section::<Method>,
         )
-        .await;
-
-        Ok(GeneratedDocs {
-            intro: None,
-            conclusion: None,
-            sections,
-            validation_errors: Vec::new(),
-        })
+        .await)
     }
 }
 

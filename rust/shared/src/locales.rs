@@ -35,6 +35,16 @@ impl Locales {
     pub fn keys(&self) -> impl Iterator<Item = &str> {
         self.locales.keys().map(|s| s.as_str())
     }
+
+    /// Return the locale's `native_name`, falling back to the key
+    /// itself when the locale is unknown. Every translator-prompt
+    /// builder in `trans/` used to inline this same lookup.
+    pub fn native_name_or_key(&self, key: &str) -> String {
+        self.locales
+            .get(key)
+            .map(|l| l.native_name.clone())
+            .unwrap_or_else(|| key.to_string())
+    }
 }
 
 /// Convert hreflang format (e.g. "zh-CN") to locale key format ("zh_cn").

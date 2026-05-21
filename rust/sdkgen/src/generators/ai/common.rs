@@ -409,6 +409,24 @@ pub fn params_to_rows_filtered<P>(
         .collect()
 }
 
+/// Try each candidate operationId against the OpenAPI map (in order)
+/// and apply the first match's info to the method. Returns whether
+/// a match was found — the caller decides whether to log a warning
+/// (Node typescript-ai-generator warns; cpp/nim silently skip).
+pub fn enrich_with_first_match<M: EnrichableMethod>(
+    op_map: &indexmap::IndexMap<String, OperationInfo>,
+    method: &mut M,
+    candidate_ids: &[&str],
+) -> bool {
+    for id in candidate_ids {
+        if let Some(info) = op_map.get(*id) {
+            apply_operation_info(method, info);
+            return true;
+        }
+    }
+    false
+}
+
 /// Per-language `Method` types implement this to drive the shared
 /// `build_method_section` helper. Each generator previously carried
 /// a ~25-line wrapper that constructed a [`SectionInput`] inline;
@@ -609,6 +627,37 @@ where
         tracing::warn!(cache_misses, sdk = %sdk.id, "AI cache misses");
     }
     (sections, cache_misses)
+}
+
+/// End-to-end driver every per-language AI generator delegates to.
+/// Bundles `fanout_methods` + the trailing `GeneratedDocs`
+/// construction so each generator's `generate()` collapses to a
+/// single `await`.
+pub async fn run_ai_generator<M>(
+    methods: Vec<M>,
+    ai: AiContext,
+    sdk: crate::config::SdkConfig,
+    prompt_fn: fn(&M) -> String,
+    section_fn: fn(&M, &str, &crate::config::SdkConfig, &str) -> Option<DocSection>,
+) -> crate::generators::base::GeneratedDocs
+where
+    M: Send + Sync + Serialize + 'static,
+{
+    let (sections, _miss) = fanout_methods(
+        methods,
+        Arc::new(ai.llm),
+        Arc::new(sdk),
+        ai.models_path,
+        prompt_fn,
+        section_fn,
+    )
+    .await;
+    crate::generators::base::GeneratedDocs {
+        intro: None,
+        conclusion: None,
+        sections,
+        validation_errors: Vec::new(),
+    }
 }
 
 #[cfg(test)]

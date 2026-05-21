@@ -650,11 +650,7 @@ fn cache_key(guide_id: &str, locale: &str, filename: &str) -> String {
 
 /// Verbatim port of `getSystemMessage` at translate-with-gpt.js:139-148.
 fn system_message(locale: &str, locales: &Locales) -> String {
-    let native = locales
-        .locales
-        .get(locale)
-        .map(|l| l.native_name.clone())
-        .unwrap_or_else(|| locale.to_string());
+    let native = locales.native_name_or_key(locale);
     format!(
         "You are an expert technical translator specializing in software documentation.\n\
          You translate from English to {native} ({locale}).\n\
@@ -666,11 +662,7 @@ fn system_message(locale: &str, locales: &Locales) -> String {
 
 /// Verbatim port of `buildPrompt` at translate-with-gpt.js:156-188.
 fn build_prompt(content: &str, locale: &str, locales: &Locales) -> String {
-    let native = locales
-        .locales
-        .get(locale)
-        .map(|l| l.native_name.clone())
-        .unwrap_or_else(|| locale.to_string());
+    let native = locales.native_name_or_key(locale);
     let mut lines: Vec<String> = Vec::new();
     lines.push(format!(
         "Translate the following FastComments documentation from English to {native}."

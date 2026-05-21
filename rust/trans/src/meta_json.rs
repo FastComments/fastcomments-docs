@@ -360,11 +360,7 @@ fn build_system_and_prompt(
     locale_key: &str,
     to_translate: &serde_json::Map<String, Value>,
 ) -> (String, String) {
-    let native = locales
-        .locales
-        .get(locale_key)
-        .map(|l| l.native_name.clone())
-        .unwrap_or_else(|| locale_key.to_string());
+    let native = locales.native_name_or_key(locale_key);
     let system = format!(
         "You are an expert translator. Translate metadata from English to {native} ({locale_key}).\n\
          Return ONLY a valid JSON object with the same keys but translated values.\n\

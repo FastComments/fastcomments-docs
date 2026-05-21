@@ -6,6 +6,42 @@
 
 use super::typescript_parser::{Method, NestedType, ParamInfo};
 
+/// Append the standard "Function Parameters:" block, mirroring the
+/// shape every per-language prompt emits. The only variations are:
+///   - `header`: typescript/cpp/nim use "Function Parameters:"; rust
+///     uses "Function Parameters (inside the params struct):".
+///   - `optional_label`: typescript/nim "optional"; cpp
+///     "optional (boost::optional<T>)"; rust "optional (Option<T>)".
+///   - `skip`: nim drops `httpClient`; the others keep everything.
+/// Generic over the per-language `ParamInfo` so each parser's own
+/// type stays intact.
+fn push_parameters_block<P>(
+    lines: &mut Vec<String>,
+    header: &str,
+    params: &indexmap::IndexMap<String, P>,
+    type_of: impl Fn(&P) -> &str,
+    required_of: impl Fn(&P) -> bool,
+    optional_label: &str,
+    skip: impl Fn(&str) -> bool,
+) {
+    lines.push(header.to_string());
+    if params.is_empty() {
+        lines.push("  (none)".to_string());
+        return;
+    }
+    for (name, info) in params {
+        if skip(name) {
+            continue;
+        }
+        let required_str = if required_of(info) {
+            "required"
+        } else {
+            optional_label
+        };
+        lines.push(format!("  - {name}: {ty} ({required_str})", ty = type_of(info)));
+    }
+}
+
 /// Append the "Type Definitions: { Name: [object Object] }" block
 /// that typescript_prompt and rust_prompt both emit verbatim. The
 /// `[object Object]` literal is preserved for byte-parity with Node's
@@ -53,18 +89,15 @@ pub fn typescript_prompt(method: &Method) -> String {
     lines.push(String::new());
     lines.push("Pretend this function is globally available (do not import it or create an API instance).".to_string());
     lines.push(String::new());
-    lines.push("Function Parameters:".to_string());
-    if method.parameters.is_empty() {
-        lines.push("  (none)".to_string());
-    } else {
-        for (name, info) in &method.parameters {
-            let required = if info.required { "required" } else { "optional" };
-            lines.push(format!(
-                "  - {name}: {ty} ({required})",
-                ty = info.type_
-            ));
-        }
-    }
+    push_parameters_block(
+        &mut lines,
+        "Function Parameters:",
+        &method.parameters,
+        |p| &p.type_,
+        |p| p.required,
+        "optional",
+        |_| false,
+    );
     lines.push(String::new());
     let rt = if method.response_type.is_empty() {
         "void".to_string()
@@ -133,22 +166,15 @@ pub fn rust_prompt(method: &super::rust_parser::Method) -> String {
         method.name, method.params_type, method.response_type
     ));
     lines.push(String::new());
-    lines.push("Function Parameters (inside the params struct):".to_string());
-    if method.parameters.is_empty() {
-        lines.push("  (none)".to_string());
-    } else {
-        for (name, info) in &method.parameters {
-            let required = if info.required {
-                "required".to_string()
-            } else {
-                "optional (Option<T>)".to_string()
-            };
-            lines.push(format!(
-                "  - {name}: {ty} ({required})",
-                ty = info.type_
-            ));
-        }
-    }
+    push_parameters_block(
+        &mut lines,
+        "Function Parameters (inside the params struct):",
+        &method.parameters,
+        |p| &p.type_,
+        |p| p.required,
+        "optional (Option<T>)",
+        |_| false,
+    );
     lines.push(String::new());
     let rt = if method.response_type.is_empty() {
         "unit".to_string()
@@ -193,22 +219,15 @@ pub fn cpp_prompt(method: &super::cpp_parser::Method) -> String {
     lines.push("The method returns:".to_string());
     lines.push(format!("pplx::task<std::shared_ptr<{rt}>>"));
     lines.push(String::new());
-    lines.push("Function Parameters:".to_string());
-    if method.parameters.is_empty() {
-        lines.push("  (none)".to_string());
-    } else {
-        for (name, info) in &method.parameters {
-            let required = if info.required {
-                "required".to_string()
-            } else {
-                "optional (boost::optional<T>)".to_string()
-            };
-            lines.push(format!(
-                "  - {name}: {ty} ({required})",
-                ty = info.type_
-            ));
-        }
-    }
+    push_parameters_block(
+        &mut lines,
+        "Function Parameters:",
+        &method.parameters,
+        |p| &p.type_,
+        |p| p.required,
+        "optional (boost::optional<T>)",
+        |_| false,
+    );
     lines.push(String::new());
     lines.push(format!("Return Type: pplx::task<std::shared_ptr<{rt}>>"));
     push_nested_types_with_summary(&mut lines, &method.nested_types, |td| &td.summary);
@@ -251,23 +270,16 @@ pub fn nim_prompt(method: &super::nim_parser::Method) -> String {
     lines.push("The function returns:".to_string());
     lines.push(format!("(Option[{rt}], Response)"));
     lines.push(String::new());
-    lines.push("Function Parameters:".to_string());
-    if method.parameters.is_empty() {
-        lines.push("  (none)".to_string());
-    } else {
-        for (name, info) in &method.parameters {
-            // Skip the httpClient parameter (matches
-            // openai-client.js:322).
-            if name == "httpClient" {
-                continue;
-            }
-            let required = if info.required { "required" } else { "optional" };
-            lines.push(format!(
-                "  - {name}: {ty} ({required})",
-                ty = info.type_
-            ));
-        }
-    }
+    push_parameters_block(
+        &mut lines,
+        "Function Parameters:",
+        &method.parameters,
+        |p| &p.type_,
+        |p| p.required,
+        "optional",
+        // Skip the httpClient parameter (matches openai-client.js:322).
+        |name| name == "httpClient",
+    );
     lines.push(String::new());
     lines.push(format!("Return Type: (Option[{rt}], Response)"));
     push_nested_types_with_summary(&mut lines, &method.nested_types, |td| &td.summary);

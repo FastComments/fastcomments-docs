@@ -27,36 +27,28 @@ impl DocGenerator for CppAiGenerator {
             let methods = parser.extract_api_methods(api_file);
             tracing::info!(file = %api_file, count = methods.len(), "parsed");
             for mut m in methods {
-                // Mirrors cpp-ai-generator.js:48-72 — try exact match,
-                // then lowercase-first, then uppercase-first.
+                // Mirrors cpp-ai-generator.js:48-72: exact, lowercase-first,
+                // uppercase-first.
                 let lower_first = common::lowercase_first(&m.name);
                 let upper_first = common::capitalize_first(&m.name);
-                let info = ai.op_map
-                    .get(&m.name)
-                    .or_else(|| ai.op_map.get(&lower_first))
-                    .or_else(|| ai.op_map.get(&upper_first));
-                if let Some(info) = info {
-                    common::apply_operation_info(&mut m, info);
-                }
+                let name = m.name.clone();
+                common::enrich_with_first_match(
+                    &ai.op_map,
+                    &mut m,
+                    &[&name, &lower_first, &upper_first],
+                );
                 all_methods.push(m);
             }
         }
 
-        let (sections, _miss) = common::fanout_methods(
+        Ok(common::run_ai_generator(
             all_methods,
-            std::sync::Arc::new(ai.llm),
-            std::sync::Arc::new(ctx.sdk.clone()),
-            ai.models_path,
+            ai,
+            ctx.sdk.clone(),
             prompts::cpp_prompt,
             common::build_method_section::<Method>,
         )
-        .await;
-        Ok(GeneratedDocs {
-            intro: None,
-            conclusion: None,
-            sections,
-            validation_errors: Vec::new(),
-        })
+        .await)
     }
 }
 

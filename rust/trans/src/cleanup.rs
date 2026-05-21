@@ -138,26 +138,14 @@ pub async fn run_with(opts: Options) -> Result<()> {
         info!("--- empty translation files ---");
         for p in &translation_candidates {
             info!("  {}", p.display());
-            if opts.delete {
-                if let Err(e) = std::fs::remove_file(p) {
-                    warn!(path = %p.display(), error = %e, "failed to remove");
-                } else {
-                    removed += 1;
-                }
-            }
+            removed += try_delete(p, opts.delete);
         }
     }
     if !generated_candidates.is_empty() {
         info!("--- generated SDK files with empty/minimal code blocks ---");
         for (p, reason) in &generated_candidates {
             info!("  {}  [{reason}]", p.display());
-            if opts.delete {
-                if let Err(e) = std::fs::remove_file(p) {
-                    warn!(path = %p.display(), error = %e, "failed to remove");
-                } else {
-                    removed += 1;
-                }
-            }
+            removed += try_delete(p, opts.delete);
         }
     }
 
@@ -172,42 +160,59 @@ pub async fn run_with(opts: Options) -> Result<()> {
     Ok(())
 }
 
+/// Iterate every immediate-child directory of `dir`, calling `cb` on
+/// each. Silently skips IO failures (matches Node's behavior of
+/// quietly walking past unreadable entries during cleanup scans).
+fn for_each_subdir(dir: &Path, mut cb: impl FnMut(&Path)) {
+    let Ok(entries) = std::fs::read_dir(dir) else {
+        return;
+    };
+    for entry in entries.flatten() {
+        let Ok(ft) = entry.file_type() else { continue };
+        if ft.is_dir() {
+            cb(&entry.path());
+        }
+    }
+}
+
+/// Helper for the cleanup-action loop. Returns 1 if a file was
+/// removed, 0 otherwise (including dry-run and IO failure). Exists
+/// because both candidate categories want exactly the same
+/// "log → remove iff --delete → count" dance.
+fn try_delete(path: &Path, delete: bool) -> usize {
+    if !delete {
+        return 0;
+    }
+    match std::fs::remove_file(path) {
+        Ok(()) => 1,
+        Err(e) => {
+            warn!(path = %path.display(), error = %e, "failed to remove");
+            0
+        }
+    }
+}
+
 /// Mirrors `cleanup-empty-translations.js`: finds every
 /// `guides/<id>/items/<locale>/{intro,conclusion}.md` whose content
 /// (after trim) is `""`, `"---"`, or `"---\n\n---"`.
 fn find_empty_translations(guides_dir: &Path) -> Result<Vec<PathBuf>> {
     let mut out = Vec::new();
-    let Ok(entries) = std::fs::read_dir(guides_dir) else {
-        return Ok(out);
-    };
-    for entry in entries.flatten() {
-        let Ok(ft) = entry.file_type() else { continue };
-        if !ft.is_dir() {
-            continue;
-        }
-        let items_path = entry.path().join("items");
-        let Ok(locale_dirs) = std::fs::read_dir(&items_path) else {
-            continue;
-        };
-        for loc_entry in locale_dirs.flatten() {
-            let Ok(lft) = loc_entry.file_type() else { continue };
-            if !lft.is_dir() {
-                continue;
-            }
+    for_each_subdir(guides_dir, |guide_path| {
+        let items_path = guide_path.join("items");
+        for_each_subdir(&items_path, |locale_path| {
             for special in ["intro.md", "conclusion.md"] {
-                let p = loc_entry.path().join(special);
+                let p = locale_path.join(special);
                 if !p.exists() {
                     continue;
                 }
-                let Ok(body) = std::fs::read_to_string(&p) else {
-                    continue;
-                };
-                if is_empty_translation_body(&body) {
-                    out.push(p);
+                if let Ok(body) = std::fs::read_to_string(&p) {
+                    if is_empty_translation_body(&body) {
+                        out.push(p);
+                    }
                 }
             }
-        }
-    }
+        });
+    });
     Ok(out)
 }
 
@@ -232,50 +237,37 @@ pub fn is_empty_translation_body(content: &str) -> bool {
 /// length threshold) matches Node line 21-46.
 fn find_empty_generated(guides_dir: &Path) -> Result<Vec<(PathBuf, String)>> {
     let mut out = Vec::new();
-    let Ok(entries) = std::fs::read_dir(guides_dir) else {
-        return Ok(out);
-    };
-    for entry in entries.flatten() {
-        let Ok(ft) = entry.file_type() else { continue };
-        if !ft.is_dir() {
-            continue;
-        }
-        let name = entry.file_name().to_string_lossy().into_owned();
+    for_each_subdir(guides_dir, |guide_path| {
+        let name = guide_path
+            .file_name()
+            .map(|s| s.to_string_lossy().into_owned())
+            .unwrap_or_default();
         if !name.starts_with("sdk-") {
-            continue;
+            return;
         }
-        let items = entry.path().join("items");
+        let items = guide_path.join("items");
         if !items.exists() {
-            continue;
+            return;
         }
         // Walk every items/<subdir>/*-api-generated.md regardless of
         // whether <subdir> is `generated/` (legacy Node layout) or
         // `<default_locale>/` (Rust sdkgen layout). Skips other locale
         // subdirs because translated copies of empty files would
         // already match the translation-cleanup path above.
-        let Ok(sub_dirs) = std::fs::read_dir(&items) else {
-            continue;
-        };
-        for sub in sub_dirs.flatten() {
-            let Ok(st) = sub.file_type() else { continue };
-            if !st.is_dir() {
-                continue;
-            }
-            let sub_name = sub.file_name().to_string_lossy().into_owned();
-            // Match Node behavior: it only inspected `generated/`.
-            // We also include `en` (default locale) since that's where
-            // Rust sdkgen writes today. Other locale dirs hold
-            // translations of these files; if the source code block
-            // is empty, the translations also are, and the
-            // translation cleanup handles those when they're empty
-            // intro/conclusion — for *-api-generated.md, we let the
-            // translation pipeline re-pull from a fixed source rather
-            // than orphan-deleting per-locale translations.
+        for_each_subdir(&items, |sub_path| {
+            let sub_name = sub_path
+                .file_name()
+                .map(|s| s.to_string_lossy().into_owned())
+                .unwrap_or_default();
+            // Node only inspected `generated/`; we also include `en`
+            // (default locale) since that's where Rust sdkgen writes
+            // today. Other locale dirs are translations and handled
+            // by the translation-cleanup path above.
             if sub_name != "generated" && sub_name != "en" {
-                continue;
+                return;
             }
-            let Ok(files) = std::fs::read_dir(sub.path()) else {
-                continue;
+            let Ok(files) = std::fs::read_dir(sub_path) else {
+                return;
             };
             for f in files.flatten() {
                 let fp = f.path();
@@ -292,8 +284,8 @@ fn find_empty_generated(guides_dir: &Path) -> Result<Vec<(PathBuf, String)>> {
                     out.push((fp, reason));
                 }
             }
-        }
-    }
+        });
+    });
     Ok(out)
 }
 

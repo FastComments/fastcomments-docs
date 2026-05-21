@@ -246,11 +246,7 @@ fn build_system_and_prompt(
     locale_key: &str,
     to_translate: &serde_json::Map<String, Value>,
 ) -> (String, String) {
-    let native = locales
-        .locales
-        .get(locale_key)
-        .map(|l| l.native_name.clone())
-        .unwrap_or_else(|| locale_key.to_string());
+    let native = locales.native_name_or_key(locale_key);
     let system = format!(
         "You are an expert translator. Translate UI strings from English to {native} ({locale_key}).\n\
          Return ONLY a valid JSON object with the same keys but translated values.\n\
@@ -269,7 +265,12 @@ fn build_system_and_prompt(
     (system, prompt)
 }
 
-async fn write_translations_atomic(path: &Path, value: &Value) -> Result<()> {
+/// Write `value` as pretty JSON to `path` via tmp-file + rename, so
+/// readers never see a partially-written file. Both
+/// `write_translations_atomic` (Value) and `write_ui_cache_atomic`
+/// (BTreeMap<String, String>) used to carry identical bodies; this
+/// generic over `serde::Serialize` covers both.
+async fn write_json_atomic<T: serde::Serialize>(path: &Path, value: &T) -> Result<()> {
     let bytes = serde_json::to_vec_pretty(value)?;
     let tmp = path.with_extension("json.tmp");
     tokio::fs::write(&tmp, &bytes)
@@ -281,16 +282,12 @@ async fn write_translations_atomic(path: &Path, value: &Value) -> Result<()> {
     Ok(())
 }
 
+async fn write_translations_atomic(path: &Path, value: &Value) -> Result<()> {
+    write_json_atomic(path, value).await
+}
+
 async fn write_ui_cache_atomic(path: &Path, cache: &BTreeMap<String, String>) -> Result<()> {
-    let bytes = serde_json::to_vec_pretty(cache)?;
-    let tmp = path.with_extension("json.tmp");
-    tokio::fs::write(&tmp, &bytes)
-        .await
-        .with_context(|| format!("write tmp {tmp:?}"))?;
-    tokio::fs::rename(&tmp, path)
-        .await
-        .with_context(|| format!("rename {tmp:?} -> {path:?}"))?;
-    Ok(())
+    write_json_atomic(path, cache).await
 }
 
 #[cfg(test)]
