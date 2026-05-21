@@ -23,6 +23,15 @@ if [ ! -x "$BIN" ]; then
     exit 1
 fi
 
+# The Rust server resolves its `index/` dir via repo_root(), which
+# walks UP from CWD looking for `package.json` + `src/locales.json`.
+# Under systemd the CWD defaults to `/`, so we'd fail the walk
+# immediately. The old Node server didn't care because it used
+# `__dirname`. The unit file also sets WorkingDirectory= as a
+# defense-in-depth, but cd-ing here keeps manual `bash run.sh`
+# invocations working too.
+cd "$DEPLOY_DIR"
+
 # `env $(cat env)` preserves the legacy contract: each line in the env
 # file is `KEY=value`, no quoting, one var per line. The Rust server
 # reads them via std::env::var, same as the old Node server.
