@@ -14,14 +14,18 @@
 
 [inline-code-attrs-start title = 'updateTenantPackage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3b7f9d-prod";
-const id: string = "pkg_enterprise_2026";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: "Enterprise Plus",
-  isActive: true,
-  // опционална поља намерно изостављена (нпр. description, limits)
-} as UpdateTenantPackageBody;
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+(async () => {
+  const tenantId: string = "tenant_sf_001";
+  const id: string = "pkg-premium-v2";
+  const updateTenantPackageBody: UpdateTenantPackageBody = {
+    name: "San Francisco Premium",
+    enabled: true,
+    customConfig: { maxComments: 500 },
+    tosConfig: { required: true } // опционална поља су приказана присуством; остала су изостављена
+  } as UpdateTenantPackageBody;
+  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

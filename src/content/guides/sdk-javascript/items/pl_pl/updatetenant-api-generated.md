@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
@@ -14,14 +14,10 @@ Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Przykład updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4821";
-const id: string = "flag_7b9e";
-const billingInfo: BillingInfo | undefined = undefined; // opcjonalne, pomiń, aby zachować bieżące informacje rozliczeniowe
-const updateTenantBody: UpdateTenantBody = {
-  name: "Acme News Comments",
-  defaultDomain: "comments.acme.com",
-  ...(billingInfo ? { billingInfo } : {})
-};
+const tenantId: string = 'acme-corp-001';
+const id: string = 'tenant-42';
+const billingInfo: BillingInfo = { billingEmail: 'billing@acme.com', address: '123 Market St' } as BillingInfo;
+const updateTenantBody: UpdateTenantBody = { displayName: 'Acme Corporation', billingInfo } as UpdateTenantBody;
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
 

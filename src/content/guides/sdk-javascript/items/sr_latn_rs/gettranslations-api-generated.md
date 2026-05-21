@@ -13,10 +13,10 @@ Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'getTranslations Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsBase: GetTranslationsResponse = await getTranslations("acme-site-482", "commentThread");
-const translationsSpanishFullIds: GetTranslationsResponse = await getTranslations("acme-site-482", "commentThread", "es-ES", true);
+const translationsDefault: GetTranslationsResponse = await getTranslations("payments", "checkout");
+const translationsFrenchDetailed: GetTranslationsResponse = await getTranslations("payments", "checkout", "fr-FR", true);
 [inline-code-end]
 
 ---

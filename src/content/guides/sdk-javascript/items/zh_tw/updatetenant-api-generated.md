@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -14,13 +14,11 @@
 
 [inline-code-attrs-start title = 'updateTenant 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4821";
-const id: string = "flag_7b9e";
-const billingInfo: BillingInfo | undefined = undefined; // 選填，省略以保留目前的帳單資訊
-const updateTenantBody: UpdateTenantBody = {
-  name: "Acme News Comments",
-  defaultDomain: "comments.acme.com",
-  ...(billingInfo ? { billingInfo } : {})
-};
+const tenantId: string = 'acme-corp-001';
+const id: string = 'tenant-42';
+const billingInfo: BillingInfo = { billingEmail: 'billing@acme.com', address: '123 Market St' } as BillingInfo;
+const updateTenantBody: UpdateTenantBody = { displayName: 'Acme Corporation', billingInfo } as UpdateTenantBody;
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
+
+---

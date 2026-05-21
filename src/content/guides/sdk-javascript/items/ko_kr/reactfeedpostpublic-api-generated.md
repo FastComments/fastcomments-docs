@@ -2,15 +2,15 @@
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| reactBodyParams | ReactBodyParams | Yes |  |
-| isUndo | boolean | No |  |
-| broadcastId | string | No |  |
-| urlId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| postId | string | 예 |  |
+| reactBodyParams | ReactBodyParams | 예 |  |
+| isUndo | boolean | 아니요 |  |
+| broadcastId | string | 아니요 |  |
+| urlId | string | 아니요 |  |
+| sso | string | 아니요 |  |
 
-## 반환
+## 응답
 
 반환: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublic200Response.ts)
 
@@ -18,13 +18,13 @@
 
 [inline-code-attrs-start title = 'reactFeedPostPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f2b1';
-const postId: string = 'post_12ac9e';
-const reactBodyParams: ReactBodyParams = { emoji: 'thumbs_up', intensity: 1 };
+const tenantId: string = "global-markets";
+const postId: string = "8e2c3f9a-4b6d-4f1a-9c2d-e8a1b2c3d4e5";
+const reactBodyParams: ReactBodyParams = { reactionType: "like", clientApp: "web-ui", timestamp: new Date().toISOString() };
 const isUndo: boolean = false;
-const broadcastId: string = 'broadcast_20260503_01';
-const urlId: string = 'article-4527';
-const sso: string = 'sso_token_7f3b2c';
+const broadcastId: string = "broadcast-2026-05-20";
+const urlId: string = "feed-post-8e2c";
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload";
 
 const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);
 [inline-code-end]

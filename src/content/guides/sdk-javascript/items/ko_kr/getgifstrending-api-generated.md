@@ -1,11 +1,11 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| locale | string | 아니오 |  |
-| rating | string | 아니오 |  |
-| page | number | 아니오 |  |
+| locale | string | 아니요 |  |
+| rating | string | 아니요 |  |
+| page | number | 아니요 |  |
 
 ## 응답
 
@@ -15,11 +15,11 @@
 
 [inline-code-attrs-start title = 'getGifsTrending 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-01";
-const trendingBasic: GifSearchResponse = await getGifsTrending(tenantId);
-
-const locale: string = "en-GB";
-const rating: string = "pg";
+const tenantId: string = 'tenant_42';
+const locale: string = 'en-US';
+const rating: string = 'PG';
 const page: number = 1;
-const trendingWithOptions: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
+const result: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
 [inline-code-end]
+
+---

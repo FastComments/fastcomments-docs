@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Sì |  |
+| id | string | Sì |  |
 
 ## Risposta
 
@@ -13,10 +13,10 @@ Restituisce: [`GetUser200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'Esempio di getUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b3f42';
-const id: string = 'user_9c4d2a';
-const userResponse: GetUser200Response = await getUser(tenantId, id);
-console.log(userResponse);
+const idSuffix: string | undefined = undefined;
+const tenantId: string = "acme-enterprises";
+const id: string = idSuffix ?? "user_98765";
+const response: GetUser200Response = await getUser({ tenantId, id });
 [inline-code-end]
 
 ---

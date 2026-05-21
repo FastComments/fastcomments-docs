@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | locale | string | いいえ |  |
@@ -15,11 +15,11 @@
 
 [inline-code-attrs-start title = 'getGifsTrending の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-01";
-const trendingBasic: GifSearchResponse = await getGifsTrending(tenantId);
-
-const locale: string = "en-GB";
-const rating: string = "pg";
+const tenantId: string = 'tenant_42';
+const locale: string = 'en-US';
+const rating: string = 'PG';
 const page: number = 1;
-const trendingWithOptions: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
+const result: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
 [inline-code-end]
+
+---

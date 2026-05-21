@@ -1,7 +1,7 @@
 ## Parametri
 
-| Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
+| Name | Type | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
 | updateTenantPackageBody | UpdateTenantPackageBody | Sì |  |
@@ -14,14 +14,18 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3b7f9d-prod";
-const id: string = "pkg_enterprise_2026";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: "Enterprise Plus",
-  isActive: true,
-  // campi opzionali omessi intenzionalmente (es., description, limits)
-} as UpdateTenantPackageBody;
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+(async () => {
+  const tenantId: string = "tenant_sf_001";
+  const id: string = "pkg-premium-v2";
+  const updateTenantPackageBody: UpdateTenantPackageBody = {
+    name: "San Francisco Premium",
+    enabled: true,
+    customConfig: { maxComments: 500 },
+    tosConfig: { required: true } // campi opzionali dimostrati dalla presenza; gli altri omessi
+  } as UpdateTenantPackageBody;
+  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

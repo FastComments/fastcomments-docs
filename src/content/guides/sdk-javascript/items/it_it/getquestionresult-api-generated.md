@@ -1,9 +1,9 @@
 ## Parametri
 
-| Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
-| tenantId | string | Sì |  |
-| id | string | Sì |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Risposta
 
@@ -13,10 +13,11 @@ Restituisce: [`GetQuestionResult200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di getQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const post: { title: string; questionId?: string } = { title: 'Product feedback' };
-const tenantId: string = 'acme-corp-tenant-01';
-const id: string = post.questionId ?? 'q-8f3a7b2c4d9e';
+const tenantId: string = 'acme-corp-42';
+const id: string = 'question-9f8b7c';
+const includeComments: boolean | undefined = true; // esempio di parametro opzionale
 const result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);
+console.log(result);
 [inline-code-end]
 
 ---

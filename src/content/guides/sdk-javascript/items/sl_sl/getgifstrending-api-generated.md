@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | locale | string | Ne |  |
@@ -9,19 +9,17 @@
 
 ## Odgovor
 
-Vrne: [`GifSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifSearchResponse.ts)
+Vrača: [`GifSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifSearchResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer uporabe getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-01";
-const trendingBasic: GifSearchResponse = await getGifsTrending(tenantId);
-
-const locale: string = "en-GB";
-const rating: string = "pg";
+const tenantId: string = 'tenant_42';
+const locale: string = 'en-US';
+const rating: string = 'PG';
 const page: number = 1;
-const trendingWithOptions: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
+const result: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
 [inline-code-end]
 
 ---

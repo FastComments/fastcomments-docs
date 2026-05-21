@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必要 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -17,16 +17,14 @@
 
 [inline-code-attrs-start title = 'updateComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp_01";
-const id: string = "comment_20260325_4592";
+const tenantId: string = "tenant_3f47b2a1";
+const id: string = "comment_9a12b3c4";
 const updatableCommentParams: UpdatableCommentParams = {
-  body: "Updated the response to include a link to the RFC and fixed a typo in the second paragraph.",
-  editedByUserId: "user_8721",
-  isVisible: true
+  body: "Thanks for the update — I've adjusted my view accordingly."
 };
 const contextUserId: string = "user_8721";
 const doSpamCheck: boolean = true;
-const isLive: boolean = true;
+const isLive: boolean = false;
 const result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
 [inline-code-end]
 

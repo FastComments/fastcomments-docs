@@ -2,9 +2,9 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantBody | UpdateTenantBody | Yes |  |
+| tenantId | string | Ja |  |
+| id | string | Ja |  |
+| updateTenantBody | UpdateTenantBody | Ja |  |
 
 ## Antwort
 
@@ -12,16 +12,12 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4821";
-const id: string = "flag_7b9e";
-const billingInfo: BillingInfo | undefined = undefined; // optional, weglassen, um die aktuellen Abrechnungsinformationen beizubehalten
-const updateTenantBody: UpdateTenantBody = {
-  name: "Acme News Comments",
-  defaultDomain: "comments.acme.com",
-  ...(billingInfo ? { billingInfo } : {})
-};
+const tenantId: string = 'acme-corp-001';
+const id: string = 'tenant-42';
+const billingInfo: BillingInfo = { billingEmail: 'billing@acme.com', address: '123 Market St' } as BillingInfo;
+const updateTenantBody: UpdateTenantBody = { displayName: 'Acme Corporation', billingInfo } as UpdateTenantBody;
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
 

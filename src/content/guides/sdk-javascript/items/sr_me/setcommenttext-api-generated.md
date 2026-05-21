@@ -1,31 +1,31 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Да |  |
-| commentTextUpdateRequest | CommentTextUpdateRequest | Да |  |
-| editKey | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| broadcastId | string | Da |  |
+| commentTextUpdateRequest | CommentTextUpdateRequest | Da |  |
+| editKey | string | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentText200Response.ts)
+Vraća: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentText200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'setCommentText Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer setCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6721f4';
-const commentId: string = 'cmt_9a3b2d';
-const broadcastId: string = 'live_2026_03_25';
-const editKey: string = 'edit_k_4f7b9';
-const sso: string = 'sso_tok_eyJhbGciOiJIUzI1';
-const commentTextUpdateRequest: CommentTextUpdateRequest = {
-  text: 'Updated to clarify the timeline and link the relevant docs.',
-  mentions: [{ userId: 'user_102', displayName: 'Alex Rivera' }],
-  hashtags: [{ tag: 'product-update' }]
+const tenantId: string = 'tenant-42';
+const commentId: string = 'cmt-8932';
+const broadcastId: string = 'brd-2023-07';
+const updateRequest: CommentTextUpdateRequest = {
+  text: 'Updated comment text for the product launch — congrats team!',
+  mentions: [{ userId: 'user-17', displayName: 'Ava Nguyen' }] as CommentUserMentionInfo[],
+  hashtags: [{ tag: 'ProductLaunch' }] as CommentUserHashTagInfo[]
 };
-const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);
+const editKey: string = 'edtk-9f7b';
+const sso: string = 'sso-token-abc123';
+const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, updateRequest, editKey, sso);
 [inline-code-end]

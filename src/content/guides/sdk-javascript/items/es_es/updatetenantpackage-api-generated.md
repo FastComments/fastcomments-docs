@@ -14,14 +14,18 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Ejemplo de updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3b7f9d-prod";
-const id: string = "pkg_enterprise_2026";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: "Enterprise Plus",
-  isActive: true,
-  // campos opcionales omitidos intencionalmente (p. ej., description, limits)
-} as UpdateTenantPackageBody;
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+(async () => {
+  const tenantId: string = "tenant_sf_001";
+  const id: string = "pkg-premium-v2";
+  const updateTenantPackageBody: UpdateTenantPackageBody = {
+    name: "San Francisco Premium",
+    enabled: true,
+    customConfig: { maxComments: 500 },
+    tosConfig: { required: true } // campos opcionales demostrados por su presencia; los demás omitidos
+  } as UpdateTenantPackageBody;
+  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

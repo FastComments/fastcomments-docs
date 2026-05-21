@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | locale | string | Não |  |
@@ -13,15 +13,13 @@ Retorna: [`GifSearchResponse`](https://github.com/FastComments/fastcomments-sdk-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-01";
-const trendingBasic: GifSearchResponse = await getGifsTrending(tenantId);
-
-const locale: string = "en-GB";
-const rating: string = "pg";
+const tenantId: string = 'tenant_42';
+const locale: string = 'en-US';
+const rating: string = 'PG';
 const page: number = 1;
-const trendingWithOptions: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
+const result: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
 [inline-code-end]
 
 ---

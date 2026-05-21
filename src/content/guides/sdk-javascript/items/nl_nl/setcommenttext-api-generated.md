@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Vereist | Omschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | broadcastId | string | Ja |  |
@@ -15,19 +15,19 @@ Retourneert: [`SetCommentText200Response`](https://github.com/FastComments/fastc
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'setCommentText Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van setCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6721f4';
-const commentId: string = 'cmt_9a3b2d';
-const broadcastId: string = 'live_2026_03_25';
-const editKey: string = 'edit_k_4f7b9';
-const sso: string = 'sso_tok_eyJhbGciOiJIUzI1';
-const commentTextUpdateRequest: CommentTextUpdateRequest = {
-  text: 'Updated to clarify the timeline and link the relevant docs.',
-  mentions: [{ userId: 'user_102', displayName: 'Alex Rivera' }],
-  hashtags: [{ tag: 'product-update' }]
+const tenantId: string = 'tenant-42';
+const commentId: string = 'cmt-8932';
+const broadcastId: string = 'brd-2023-07';
+const updateRequest: CommentTextUpdateRequest = {
+  text: 'Updated comment text for the product launch — congrats team!',
+  mentions: [{ userId: 'user-17', displayName: 'Ava Nguyen' }] as CommentUserMentionInfo[],
+  hashtags: [{ tag: 'ProductLaunch' }] as CommentUserHashTagInfo[]
 };
-const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);
+const editKey: string = 'edtk-9f7b';
+const sso: string = 'sso-token-abc123';
+const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, updateRequest, editKey, sso);
 [inline-code-end]
 
 ---

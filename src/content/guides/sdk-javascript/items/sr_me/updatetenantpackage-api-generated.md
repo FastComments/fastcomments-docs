@@ -1,27 +1,29 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Name | Type | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Да |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример за updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3b7f9d-prod";
-const id: string = "pkg_enterprise_2026";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: "Enterprise Plus",
-  isActive: true,
-  // опциона поља су намјерно изостављена (нпр. description, limits)
-} as UpdateTenantPackageBody;
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+(async () => {
+  const tenantId: string = "tenant_sf_001";
+  const id: string = "pkg-premium-v2";
+  const updateTenantPackageBody: UpdateTenantPackageBody = {
+    name: "San Francisco Premium",
+    enabled: true,
+    customConfig: { maxComments: 500 },
+    tosConfig: { required: true } // opciona polja su demonstrirana prisustvom; ostala su izostavljena
+  } as UpdateTenantPackageBody;
+  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]
-
----

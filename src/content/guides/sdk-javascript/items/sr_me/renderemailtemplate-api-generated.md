@@ -1,29 +1,26 @@
-## Параметри
+---
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| renderEmailTemplateBody | RenderEmailTemplateBody | Да |  |
-| locale | string | Не |  |
+| tenantId | string | Da |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
+| locale | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplate200Response.ts)
+Vraća: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplate200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'renderEmailTemplate Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_b6f3c2';
+const tenantId: string = 'acme-corp-987';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'comment-notification',
-  recipient: { name: 'Ava Thompson', email: 'ava.thompson@publisher.com' },
-  context: {
-    siteName: 'City Gazette',
-    commentText: 'Thanks for the in-depth coverage — very helpful.',
-    articleTitle: 'Downtown Redevelopment Plan Advances',
-    threadUrl: 'https://citygazette.example/articles/2026/redevelopment#comments'
-  }
+  templateId: 'user-invite',
+  subject: "You're invited to Acme",
+  placeholders: { firstName: 'Alex' },
+  metadata: { source: 'signup-flow' }
 };
 const locale: string = 'en-US';
 const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);

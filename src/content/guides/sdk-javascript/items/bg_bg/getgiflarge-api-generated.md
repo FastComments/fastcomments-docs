@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -14,11 +13,10 @@
 
 [inline-code-attrs-start title = 'Пример за getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // незадължителен флаг, който повикващият може да използва
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // незадължителни метаданни, когато са налични
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 | updateTenantPackageBody | UpdateTenantPackageBody | כן |  |
 
-## תגובה
+## Response
 
 מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -14,14 +14,16 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3b7f9d-prod";
-const id: string = "pkg_enterprise_2026";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: "Enterprise Plus",
-  isActive: true,
-  // שדות אופציונליים הושמטו במכוון (למשל, description, limits)
-} as UpdateTenantPackageBody;
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+(async () => {
+  const tenantId: string = "tenant_sf_001";
+  const id: string = "pkg-premium-v2";
+  const updateTenantPackageBody: UpdateTenantPackageBody = {
+    name: "San Francisco Premium",
+    enabled: true,
+    customConfig: { maxComments: 500 },
+    tosConfig: { required: true } // שדות אופציונליים מוצגים כאן; שאר השדות הושמטו
+  } as UpdateTenantPackageBody;
+  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]
-
----

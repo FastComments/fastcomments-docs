@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -15,12 +14,11 @@ Renvoie: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Exemple de sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme-42';
-const id: string = 'comment_8f3b21a7';
-const fromName: string = 'Elena Morales';
-const replyToEmail: string | undefined = undefined;
-
-const result: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName, replyToEmail);
+const tenantId: string = 'acme-corp-128';
+const id: string = 'comment-8421f';
+const fromName: string = 'Marcus Lindström';
+const note: string | undefined = undefined; // exemple de paramètre facultatif
+const response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
 [inline-code-end]
 
 ---

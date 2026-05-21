@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | postId | string | 是 |  |
@@ -12,19 +12,19 @@
 
 ## 响应
 
-返回: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublic200Response.ts)
+返回：[`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublic200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'reactFeedPostPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f2b1';
-const postId: string = 'post_12ac9e';
-const reactBodyParams: ReactBodyParams = { emoji: 'thumbs_up', intensity: 1 };
+const tenantId: string = "global-markets";
+const postId: string = "8e2c3f9a-4b6d-4f1a-9c2d-e8a1b2c3d4e5";
+const reactBodyParams: ReactBodyParams = { reactionType: "like", clientApp: "web-ui", timestamp: new Date().toISOString() };
 const isUndo: boolean = false;
-const broadcastId: string = 'broadcast_20260503_01';
-const urlId: string = 'article-4527';
-const sso: string = 'sso_token_7f3b2c';
+const broadcastId: string = "broadcast-2026-05-20";
+const urlId: string = "feed-post-8e2c";
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload";
 
 const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);
 [inline-code-end]

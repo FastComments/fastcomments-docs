@@ -2,9 +2,9 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| updateTenantBody | UpdateTenantBody | 예 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantBody | UpdateTenantBody | Yes |  |
 
 ## 응답
 
@@ -14,14 +14,10 @@
 
 [inline-code-attrs-start title = 'updateTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4821";
-const id: string = "flag_7b9e";
-const billingInfo: BillingInfo | undefined = undefined; // 선택 사항, 현재 청구 정보를 유지하려면 생략
-const updateTenantBody: UpdateTenantBody = {
-  name: "Acme News Comments",
-  defaultDomain: "comments.acme.com",
-  ...(billingInfo ? { billingInfo } : {})
-};
+const tenantId: string = 'acme-corp-001';
+const id: string = 'tenant-42';
+const billingInfo: BillingInfo = { billingEmail: 'billing@acme.com', address: '123 Market St' } as BillingInfo;
+const updateTenantBody: UpdateTenantBody = { displayName: 'Acme Corporation', billingInfo } as UpdateTenantBody;
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
 

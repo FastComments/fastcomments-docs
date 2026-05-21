@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -11,12 +12,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const post: { title: string; questionId?: string } = { title: 'Product feedback' };
-const tenantId: string = 'acme-corp-tenant-01';
-const id: string = post.questionId ?? 'q-8f3a7b2c4d9e';
+const tenantId: string = 'acme-corp-42';
+const id: string = 'question-9f8b7c';
+const includeComments: boolean | undefined = true; // דוגמה לפרמטר אופציונלי
 const result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);
+console.log(result);
 [inline-code-end]
 
 ---

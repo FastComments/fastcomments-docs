@@ -1,22 +1,23 @@
+---
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| userId | string | No |  |
-| tenantId | string | No |  |
-| urlId | string | No |  |
-| page | number | No |  |
-| direction | SortDirections | No |  |
-| lastGenDate | number | No |  |
-| repliesToUserId | string | No |  |
-| fetchPageForCommentId | string | No |  |
-| includei10n | boolean | No |  |
-| useFullTranslationIds | boolean | No |  |
-| locale | string | No |  |
-| includeConfig | boolean | No |  |
-| includeNotificationCount | boolean | No |  |
-| countAll | boolean | No |  |
-| sso | string | No |  |
+| userId | string | 아니오 |  |
+| tenantId | string | 아니오 |  |
+| urlId | string | 아니오 |  |
+| page | number | 아니오 |  |
+| direction | SortDirections | 아니오 |  |
+| lastGenDate | number | 아니오 |  |
+| repliesToUserId | string | 아니오 |  |
+| fetchPageForCommentId | string | 아니오 |  |
+| includei10n | boolean | 아니오 |  |
+| useFullTranslationIds | boolean | 아니오 |  |
+| locale | string | 아니오 |  |
+| includeConfig | boolean | 아니오 |  |
+| includeNotificationCount | boolean | 아니오 |  |
+| countAll | boolean | 아니오 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
@@ -26,31 +27,18 @@
 
 [inline-code-attrs-start title = 'getCommentsForUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = "user_92b7f4";
-const tenantId: string = "news-tenant-uk";
-const urlId: string = "https://news.example.co.uk/articles/2026/05/01/local-election";
-const page: number = 1;
-const lastGenDate: number = Date.now() - 24 * 60 * 60 * 1000;
-const fetchPageForCommentId: string = "c_987654321";
+const userId: string = 'user_82f9b';
+const tenantId: string = 'tenant_22';
+const page: number = 2;
+const lastGenDate: number = Date.now();
 const includei10n: boolean = true;
-const locale: string = "en-GB";
+const useFullTranslationIds: boolean = false;
+const locale: string = 'en-US';
 const includeConfig: boolean = true;
-const includeNotificationCount: boolean = false;
-const result: GetCommentsForUserResponse = await getCommentsForUser(
-  userId,
-  tenantId,
-  urlId,
-  page,
-  undefined,
-  lastGenDate,
-  undefined,
-  fetchPageForCommentId,
-  includei10n,
-  false,
-  locale,
-  includeConfig,
-  includeNotificationCount,
-  false,
-  undefined
-);
+const includeNotificationCount: boolean = true;
+const countAll: boolean = false;
+const sso: string = 'sso-token-1a2b';
+const commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(userId, tenantId, undefined, page, undefined, lastGenDate, undefined, undefined, includei10n, useFullTranslationIds, locale, includeConfig, includeNotificationCount, countAll, sso);
 [inline-code-end]
+
+---

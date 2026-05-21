@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,10 +13,11 @@
 
 [inline-code-attrs-start title = 'getQuestionResult 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const post: { title: string; questionId?: string } = { title: 'Product feedback' };
-const tenantId: string = 'acme-corp-tenant-01';
-const id: string = post.questionId ?? 'q-8f3a7b2c4d9e';
+const tenantId: string = 'acme-corp-42';
+const id: string = 'question-9f8b7c';
+const includeComments: boolean | undefined = true; // 선택적 매개변수 예시
 const result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);
+console.log(result);
 [inline-code-end]
 
 ---

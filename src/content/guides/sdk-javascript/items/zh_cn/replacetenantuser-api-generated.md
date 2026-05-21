@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 说明 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -15,16 +15,15 @@
 
 [inline-code-attrs-start title = 'replaceTenantUser 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9d8f4b2c';
-const id: string = 'user_f47ac10b';
+const tenantId: string = "tenant_acmeCorp";
+const id: string = "user_84b2";
 const replaceTenantUserBody: ReplaceTenantUserBody = {
-  externalId: 'ext-5234',
-  email: 'jane.doe@acme.com',
-  displayName: 'Jane Doe',
-  roles: ['moderator'],
-  metadata: { department: 'product', region: 'us-east-1' }
-};
-const updateComments: string = 'propagate-display-name-to-comments';
+  email: "alice.jenkins@acmecorp.com",
+  displayName: "Alice Jenkins",
+  roles: ["moderator", "editor"],
+  disabled: false
+} as ReplaceTenantUserBody;
+const updateComments: string = "Migrated user account and reattributed historical comments";
 
 const result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
 [inline-code-end]

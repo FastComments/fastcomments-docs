@@ -1,11 +1,11 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | largeInternalURLSanitized | string | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
@@ -13,11 +13,8 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // προαιρετική σημαία που μπορεί να χρησιμοποιήσει αυτός που καλεί
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // προαιρετικά μεταδεδομένα όταν είναι διαθέσιμα
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
-
----

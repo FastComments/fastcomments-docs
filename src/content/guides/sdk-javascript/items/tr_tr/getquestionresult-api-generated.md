@@ -13,10 +13,11 @@ Döndürür: [`GetQuestionResult200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getQuestionResult Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const post: { title: string; questionId?: string } = { title: 'Product feedback' };
-const tenantId: string = 'acme-corp-tenant-01';
-const id: string = post.questionId ?? 'q-8f3a7b2c4d9e';
+const tenantId: string = 'acme-corp-42';
+const id: string = 'question-9f8b7c';
+const includeComments: boolean | undefined = true; // isteğe bağlı parametre örneği
 const result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);
+console.log(result);
 [inline-code-end]
 
 ---

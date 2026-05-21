@@ -1,27 +1,23 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantBody | UpdateTenantBody | Yes |  |
+| tenantId | string | Oui |  |
+| id | string | Oui |  |
+| updateTenantBody | UpdateTenantBody | Oui |  |
 
 ## Réponse
 
-Retourne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4821";
-const id: string = "flag_7b9e";
-const billingInfo: BillingInfo | undefined = undefined; // optionnel, omettre pour conserver les informations de facturation actuelles
-const updateTenantBody: UpdateTenantBody = {
-  name: "Acme News Comments",
-  defaultDomain: "comments.acme.com",
-  ...(billingInfo ? { billingInfo } : {})
-};
+const tenantId: string = 'acme-corp-001';
+const id: string = 'tenant-42';
+const billingInfo: BillingInfo = { billingEmail: 'billing@acme.com', address: '123 Market St' } as BillingInfo;
+const updateTenantBody: UpdateTenantBody = { displayName: 'Acme Corporation', billingInfo } as UpdateTenantBody;
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
 

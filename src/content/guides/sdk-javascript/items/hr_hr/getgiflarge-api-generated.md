@@ -13,9 +13,10 @@ Vraća: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'Primjer getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // neobavezna zastavica koju pozivatelj može koristiti
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // neobavezni metapodaci kada su dostupni
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
+
+---

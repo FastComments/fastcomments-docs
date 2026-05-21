@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | largeInternalURLSanitized | string | 是 |  |
@@ -13,11 +13,10 @@
 
 [inline-code-attrs-start title = 'getGifLarge 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // 调用者可能使用的可选标志
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // 可用时的可选元数据
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

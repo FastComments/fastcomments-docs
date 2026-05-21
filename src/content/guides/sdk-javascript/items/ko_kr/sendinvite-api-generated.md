@@ -1,10 +1,10 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| fromName | string | 예 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| fromName | string | Yes |  |
 
 ## 응답
 
@@ -14,12 +14,11 @@
 
 [inline-code-attrs-start title = 'sendInvite 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme-42';
-const id: string = 'comment_8f3b21a7';
-const fromName: string = 'Elena Morales';
-const replyToEmail: string | undefined = undefined;
-
-const result: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName, replyToEmail);
+const tenantId: string = 'acme-corp-128';
+const id: string = 'comment-8421f';
+const fromName: string = 'Marcus Lindström';
+const note: string | undefined = undefined; // 선택적 매개변수 예시
+const response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
 [inline-code-end]
 
 ---

@@ -2,10 +2,10 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| largeInternalURLSanitized | string | Yes |  |
+| tenantId | string | כן |  |
+| largeInternalURLSanitized | string | כן |  |
 
-## תגובה
+## תשובה
 
 מחזיר: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
@@ -13,11 +13,10 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // דגל אופציונלי שהפונה עשוי להשתמש בו
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // מטא-נתונים אופציונליים אם זמינים
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

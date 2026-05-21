@@ -1,7 +1,6 @@
----
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | largeInternalURLSanitized | string | Ja |  |
@@ -12,13 +11,12 @@ Returnerer: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getGifLarge-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifLarge Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // valgfrit flag som den kaldende kan bruge
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // valgfri metadata, når tilgængelig
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

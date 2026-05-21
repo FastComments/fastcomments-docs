@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| largeInternalURLSanitized | string | Yes |  |
+| tenantId | string | Так |  |
+| largeInternalURLSanitized | string | Так |  |
 
 ## Відповідь
 
@@ -13,11 +13,10 @@
 
 [inline-code-attrs-start title = 'Приклад getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // необов'язковий прапорець, який може використовувати викликач
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const tenantId: string = 'tenant_8a92f4';
+const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
+let maybeStatus: APIStatus | undefined = undefined; // необов'язкові метадані, якщо доступні
+const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

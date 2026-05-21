@@ -1,3 +1,4 @@
+---
 ## 매개변수
 
 | 이름 | 형식 | 필수 | 설명 |
@@ -13,10 +14,10 @@
 
 [inline-code-attrs-start title = 'getUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b3f42';
-const id: string = 'user_9c4d2a';
-const userResponse: GetUser200Response = await getUser(tenantId, id);
-console.log(userResponse);
+const idSuffix: string | undefined = undefined;
+const tenantId: string = "acme-enterprises";
+const id: string = idSuffix ?? "user_98765";
+const response: GetUser200Response = await getUser({ tenantId, id });
 [inline-code-end]
 
 ---

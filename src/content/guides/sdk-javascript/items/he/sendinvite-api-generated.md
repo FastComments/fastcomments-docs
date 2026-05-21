@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -12,14 +13,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme-42';
-const id: string = 'comment_8f3b21a7';
-const fromName: string = 'Elena Morales';
-const replyToEmail: string | undefined = undefined;
-
-const result: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName, replyToEmail);
+const tenantId: string = 'acme-corp-128';
+const id: string = 'comment-8421f';
+const fromName: string = 'Marcus Lindström';
+const note: string | undefined = undefined; // דוגמה לפרמטר אופציונלי
+const response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
 [inline-code-end]
 
 ---

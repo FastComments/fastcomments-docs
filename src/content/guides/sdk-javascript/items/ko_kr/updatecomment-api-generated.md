@@ -1,13 +1,13 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| updatableCommentParams | UpdatableCommentParams | 예 |  |
-| contextUserId | string | 아니요 |  |
-| doSpamCheck | boolean | 아니요 |  |
-| isLive | boolean | 아니요 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean | No |  |
 
 ## 응답
 
@@ -17,15 +17,15 @@
 
 [inline-code-attrs-start title = 'updateComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp_01";
-const id: string = "comment_20260325_4592";
+const tenantId: string = "tenant_3f47b2a1";
+const id: string = "comment_9a12b3c4";
 const updatableCommentParams: UpdatableCommentParams = {
-  body: "Updated the response to include a link to the RFC and fixed a typo in the second paragraph.",
-  editedByUserId: "user_8721",
-  isVisible: true
+  body: "Thanks for the update — I've adjusted my view accordingly."
 };
 const contextUserId: string = "user_8721";
 const doSpamCheck: boolean = true;
-const isLive: boolean = true;
+const isLive: boolean = false;
 const result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
 [inline-code-end]
+
+---

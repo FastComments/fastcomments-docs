@@ -26,31 +26,16 @@ Returns: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getCommentsForUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = "user_92b7f4";
-const tenantId: string = "news-tenant-uk";
-const urlId: string = "https://news.example.co.uk/articles/2026/05/01/local-election";
-const page: number = 1;
-const lastGenDate: number = Date.now() - 24 * 60 * 60 * 1000;
-const fetchPageForCommentId: string = "c_987654321";
+const userId: string = 'user_82f9b';
+const tenantId: string = 'tenant_22';
+const page: number = 2;
+const lastGenDate: number = Date.now();
 const includei10n: boolean = true;
-const locale: string = "en-GB";
+const useFullTranslationIds: boolean = false;
+const locale: string = 'en-US';
 const includeConfig: boolean = true;
-const includeNotificationCount: boolean = false;
-const result: GetCommentsForUserResponse = await getCommentsForUser(
-  userId,
-  tenantId,
-  urlId,
-  page,
-  undefined,
-  lastGenDate,
-  undefined,
-  fetchPageForCommentId,
-  includei10n,
-  false,
-  locale,
-  includeConfig,
-  includeNotificationCount,
-  false,
-  undefined
-);
+const includeNotificationCount: boolean = true;
+const countAll: boolean = false;
+const sso: string = 'sso-token-1a2b';
+const commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(userId, tenantId, undefined, page, undefined, lastGenDate, undefined, undefined, includei10n, useFullTranslationIds, locale, includeConfig, includeNotificationCount, countAll, sso);
 [inline-code-end]

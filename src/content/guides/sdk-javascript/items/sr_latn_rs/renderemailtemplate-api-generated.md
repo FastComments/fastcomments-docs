@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
@@ -12,21 +12,15 @@ Vraća: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastc
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_b6f3c2';
+const tenantId: string = 'acme-corp-987';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'comment-notification',
-  recipient: { name: 'Ava Thompson', email: 'ava.thompson@publisher.com' },
-  context: {
-    siteName: 'City Gazette',
-    commentText: 'Thanks for the in-depth coverage — very helpful.',
-    articleTitle: 'Downtown Redevelopment Plan Advances',
-    threadUrl: 'https://citygazette.example/articles/2026/redevelopment#comments'
-  }
+  templateId: 'user-invite',
+  subject: "You're invited to Acme",
+  placeholders: { firstName: 'Alex' },
+  metadata: { source: 'signup-flow' }
 };
 const locale: string = 'en-US';
 const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
 [inline-code-end]
-
----
