@@ -739,6 +739,11 @@ fn count_inline_code(content: &str) -> (usize, usize) {
     )
 }
 
+/// Markdown items translation hits this. Routes through the shared
+/// [`crate::openai_client::CompletionClient`] so it gets the same
+/// retry+backoff+model-fallback behavior the JSON paths have always
+/// had. Pre-fix this was a bare single POST; one transient 429 / 5xx
+/// on any of 28 locales x hundreds of files aborted the whole build.
 async fn call_openai(
     client: &reqwest::Client,
     api_key: &str,
@@ -747,37 +752,13 @@ async fn call_openai(
     prompt: &str,
     filename: &str,
 ) -> Result<String> {
-    let body = serde_json::json!({
-        "model": model,
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt},
-        ],
-        "max_completion_tokens": 16000,
-    });
-    let resp = client
-        .post("https://api.openai.com/v1/chat/completions")
-        .bearer_auth(api_key)
-        .json(&body)
-        .send()
-        .await
-        .with_context(|| format!("POST OpenAI for {filename}"))?;
-    let status = resp.status();
-    if !status.is_success() {
-        let text = resp.text().await.unwrap_or_default();
-        anyhow::bail!("OpenAI API error {status}: {text}");
-    }
-    let value: serde_json::Value = resp.json().await?;
-    let text = value
-        .pointer("/choices/0/message/content")
-        .and_then(|v| v.as_str())
-        .unwrap_or_default()
-        .trim()
-        .to_string();
-    if text.is_empty() {
-        anyhow::bail!("OpenAI returned empty content");
-    }
-    Ok(text)
+    let cc = crate::openai_client::CompletionClient::new(
+        Arc::new(client.clone()),
+        Arc::new(api_key.to_string()),
+        model.to_string(),
+    );
+    let completion = cc.complete(system, prompt, filename).await?;
+    Ok(completion.text)
 }
 
 use fcdocs_shared::repo::repo_root;

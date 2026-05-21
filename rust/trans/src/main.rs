@@ -17,6 +17,7 @@ mod cleanup;
 mod discover;
 mod meta_json;
 mod json_translator;
+mod openai_client;
 mod run;
 mod snapshot;
 mod ui;

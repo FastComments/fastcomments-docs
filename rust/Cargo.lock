@@ -774,6 +774,7 @@ name = "fcdocs-trans"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "axum",
  "fcdocs-llm",
  "fcdocs-shared",
  "futures",

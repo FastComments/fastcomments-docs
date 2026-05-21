@@ -1,35 +1,26 @@
-//! OpenAI chat/completions client for paths that expect a JSON
-//! response: the UI strings translator (translates a dict, expects a
-//! dict back) and the meta.json translator (same shape). Mirrors the
-//! request shape + retry/backoff + model fallback chain at
-//! `src/translate-with-gpt.js:451-573` and :659-810. The "Json" in
-//! the name is load-bearing: this client strips ```json fences and
+//! OpenAI client for paths that expect a JSON response: the UI
+//! strings translator (translates a dict, expects a dict back) and
+//! the meta.json translator (same shape). The "Json" in the name is
+//! load-bearing: this client strips ```json fences and
 //! `serde_json::from_str`s the body before returning.
 //!
-//! The markdown items translator does NOT live here — it returns
-//! raw markdown text, not JSON, so it has its own minimal
-//! `call_openai` in `run.rs`. Don't expand THIS client to cover
-//! markdown without also moving its fence-stripping + JSON-parse
-//! behavior behind a flag, or rename it back to something generic.
+//! The retry/backoff/model-fallback loop lives in
+//! [`crate::openai_client::CompletionClient`] — shared with the
+//! markdown items translator in `run.rs` so all three paths agree
+//! on transient-failure handling. This module is just the
+//! JSON-response post-processing on top.
 
 use std::sync::Arc;
-use std::time::Duration;
 
 use anyhow::{Context, Result};
-use serde_json::{json, Value};
-use tracing::{info, warn};
+use serde_json::Value;
+use tracing::info;
 
-/// Node's translate-with-gpt.js ALTERNATE_MODELS at line 66. Tried in
-/// order after the primary model if length truncation hits.
-const ALTERNATE_MODELS: &[&str] = &["gpt-4.1", "gpt-5.2"];
-/// Node maxRetries at translate-with-gpt.js:465 / :688.
-const MAX_RETRIES: u32 = 5;
-const BASE_DELAY: Duration = Duration::from_millis(1000);
-/// Node max_completion_tokens at translate-with-gpt.js:486 / :709.
-const MAX_COMPLETION_TOKENS: u32 = 16000;
+use crate::openai_client::CompletionClient;
 
-/// Shared OpenAI JSON-translation client. Wraps the reqwest client +
-/// API key + primary model + the same fallback chain Node uses.
+/// Wraps a [`CompletionClient`] with JSON-response post-processing
+/// (fence stripping + parse). Cheap to clone (the underlying
+/// CompletionClient is Arc-backed).
 #[derive(Clone)]
 pub struct JsonTranslator {
     pub client: Arc<reqwest::Client>,
@@ -38,10 +29,17 @@ pub struct JsonTranslator {
 }
 
 impl JsonTranslator {
+    fn completion_client(&self) -> CompletionClient {
+        CompletionClient::new(
+            self.client.clone(),
+            self.api_key.clone(),
+            self.primary_model.clone(),
+        )
+    }
+
     /// Translate one prompt (system + user) and return the parsed JSON
-    /// object. Implements the Node retry/backoff loop with model
-    /// fallback on length-truncation, code-fence stripping, and JSON
-    /// parsing. `label` is a debug tag for log lines (e.g.
+    /// object. Uses the shared retry+fallback loop, then strips
+    /// fences and parses. `label` is a debug tag for log lines (e.g.
     /// `"UI strings for fr_fr"` or `"meta.json for guide-sso/fr_fr"`).
     pub async fn translate_to_json(
         &self,
@@ -49,93 +47,8 @@ impl JsonTranslator {
         prompt: &str,
         label: &str,
     ) -> Result<serde_json::Map<String, Value>> {
-        // Node builds modelsToTry = [primary, ...ALTERNATE_MODELS].
-        let models: Vec<String> = std::iter::once(self.primary_model.clone())
-            .chain(ALTERNATE_MODELS.iter().map(|m| (*m).to_string()))
-            .collect();
-
-        let mut last_err: Option<anyhow::Error> = None;
-        for current_model in &models {
-            for attempt in 1..=MAX_RETRIES {
-                match self
-                    .single_call(current_model, system, prompt, label)
-                    .await
-                {
-                    Ok(CallResult::Ok(obj)) => return Ok(obj),
-                    Ok(CallResult::LengthTruncated) => {
-                        // Don't retry the same model — move to the next
-                        // fallback. Matches Node's "break inner loop on
-                        // length" behavior at line 516/736.
-                        warn!(model = %current_model, %label, "OpenAI length truncation, trying next fallback");
-                        break;
-                    }
-                    Err(e) => {
-                        // Always log, like Node line 548/788.
-                        warn!(model = %current_model, %label, attempt, error = %e, "OpenAI call failed");
-                        last_err = Some(e);
-                        if attempt == MAX_RETRIES {
-                            // Move to next model.
-                            break;
-                        }
-                        let delay = BASE_DELAY * 2u32.pow(attempt - 1);
-                        tokio::time::sleep(delay).await;
-                    }
-                }
-            }
-        }
-        Err(last_err.unwrap_or_else(|| anyhow::anyhow!("exhausted all models without success")))
-    }
-
-    async fn single_call(
-        &self,
-        model: &str,
-        system: &str,
-        prompt: &str,
-        label: &str,
-    ) -> Result<CallResult> {
-        let body = json!({
-            "model": model,
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user", "content": prompt}
-            ],
-            "max_completion_tokens": MAX_COMPLETION_TOKENS,
-        });
-        let resp = self
-            .client
-            .post("https://api.openai.com/v1/chat/completions")
-            .bearer_auth(self.api_key.as_str())
-            .json(&body)
-            .send()
-            .await
-            .with_context(|| format!("POST OpenAI for {label}"))?;
-        let status = resp.status();
-        if !status.is_success() {
-            let text = resp.text().await.unwrap_or_default();
-            anyhow::bail!("OpenAI API error {status}: {text}");
-        }
-        let data: Value = resp.json().await.context("parse OpenAI response")?;
-        let raw_content = data
-            .pointer("/choices/0/message/content")
-            .and_then(|v| v.as_str())
-            .unwrap_or("")
-            .trim()
-            .to_string();
-        let finish_reason = data
-            .pointer("/choices/0/finish_reason")
-            .and_then(|v| v.as_str())
-            .unwrap_or("");
-
-        if raw_content.is_empty() {
-            if finish_reason == "length" {
-                return Ok(CallResult::LengthTruncated);
-            }
-            anyhow::bail!(
-                "OpenAI returned empty content (finish_reason={finish_reason})"
-            );
-        }
-
-        let cleaned = strip_json_fences(&raw_content);
+        let completion = self.completion_client().complete(system, prompt, label).await?;
+        let cleaned = strip_json_fences(&completion.text);
         let parsed: Value = serde_json::from_str(&cleaned).with_context(|| {
             format!(
                 "parse OpenAI response as JSON for {label} (first 200 chars: {first}...)",
@@ -145,14 +58,9 @@ impl JsonTranslator {
         let obj = parsed.as_object().ok_or_else(|| {
             anyhow::anyhow!("OpenAI response for {label} was not a JSON object")
         })?;
-        info!(model = %model, %label, "translated");
-        Ok(CallResult::Ok(obj.clone()))
+        info!(model = %completion.model_used, %label, "translated");
+        Ok(obj.clone())
     }
-}
-
-enum CallResult {
-    Ok(serde_json::Map<String, Value>),
-    LengthTruncated,
 }
 
 /// Mirrors Node's strip-markdown-code-block logic at
