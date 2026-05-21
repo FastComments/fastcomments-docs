@@ -207,6 +207,17 @@ pub async fn run_with(opts: Options) -> Result<()> {
         guide = opts.guide.as_deref().unwrap_or("*"),
         "markdown translation tasks"
     );
+    // Per-task plan dump at INFO. Asked-for behavior so build logs
+    // show exactly which files this run will translate, in order,
+    // before any HTTP traffic. Cheap (one line per task) and grep-
+    // friendly. The runtime per-file [translating]/[translated]
+    // logs match this list.
+    for t in &tasks {
+        info!(
+            "[queued] {}/{}/{}",
+            t.guide_id, t.locale, t.filename
+        );
+    }
 
     // OPENAI_API_KEY only required when we'll actually call out. Dry
     // runs (Node line 891: `if (dryRun) { skip }`) need to work
@@ -458,7 +469,10 @@ async fn process_one_task(
         .await
         .with_context(|| format!("read source {:?}", task.source_path))?;
 
-    if source.trim().len() < 10 {
+    if crate::snapshot::source_is_too_small_to_translate(&source) {
+        // Defense in depth — build_task_list_filtered already
+        // filters these out, but a manual `trans run --force` could
+        // still send one through. Cache it so future runs agree.
         info!(
             "[skipped] {}/{}/{} (too small)",
             task.guide_id, task.locale, task.filename
@@ -466,6 +480,16 @@ async fn process_one_task(
         record_cache(cache, dirty, task).await;
         return Ok(Outcome::Skipped);
     }
+
+    // Per-file BEFORE log — visible at INFO so a live build shows
+    // what's actually in flight (previously the success path was
+    // silent and 5000-task runs looked stalled in the orchestrator
+    // log for many minutes at a time).
+    info!(
+        "[translating] {}/{}/{}",
+        task.guide_id, task.locale, task.filename
+    );
+    let started = std::time::Instant::now();
 
     // en_us special-case: copy source verbatim. Mirrors
     // translate-with-gpt.js:362-366.
@@ -504,6 +528,14 @@ async fn process_one_task(
         .with_context(|| format!("write {target_path:?}"))?;
 
     record_cache(cache, dirty, task).await;
+    let elapsed = started.elapsed();
+    info!(
+        "[translated] {}/{}/{} in {:.2}s",
+        task.guide_id,
+        task.locale,
+        task.filename,
+        elapsed.as_secs_f64(),
+    );
     Ok(Outcome::Success)
 }
 
@@ -611,6 +643,14 @@ fn build_task_list_filtered(
             let Ok(content) = std::fs::read_to_string(&src.source_path) else {
                 continue;
             };
+            // Skip sources too small to translate. Without this the
+            // task gets queued, hits the "too small" check at
+            // runtime, gets dropped without writing a target file,
+            // and check.rs flags it as missing again next run.
+            // See snapshot::source_is_too_small_to_translate.
+            if crate::snapshot::source_is_too_small_to_translate(&content) {
+                continue;
+            }
             let source_hash = hash_content(&content);
 
             for (locale, _) in &locales.locales {
@@ -1088,6 +1128,85 @@ mod cli_tests {
         )
         .unwrap();
         assert_eq!(forced.len(), 2, "--force re-includes every (file × locale)");
+    }
+
+    /// Regression: a "too small" source file must NOT be enqueued.
+    /// Pre-fix the task got queued, hit the "too small" skip in
+    /// process_one_task without writing a target, and check.rs then
+    /// re-enqueued it forever (the 5470-task production loop).
+    #[test]
+    fn build_task_list_skips_too_small_sources() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        // Empty intro.md at guide root (common pattern: placeholder
+        // file with no real content). Source length 0, way under
+        // the 10-char threshold.
+        std::fs::create_dir_all(g.join("g")).unwrap();
+        std::fs::write(g.join("g").join("intro.md"), "").unwrap();
+        // A real translatable file in the same guide — proves we
+        // didn't accidentally skip legitimate work.
+        write_md(g, "g", "en", "real.md", "Source content that is plenty long to translate.");
+
+        let cache = CacheMap::new();
+        let tasks =
+            build_task_list_filtered(g, &locales_en_fr_de(), &cache, None, None, false).unwrap();
+
+        let names: Vec<&str> = tasks.iter().map(|t| t.filename.as_str()).collect();
+        assert!(
+            !names.contains(&"intro.md"),
+            "empty intro.md must not be queued; was: {names:?}"
+        );
+        // The real file should still be queued for both non-default locales.
+        assert_eq!(
+            tasks.iter().filter(|t| t.filename == "real.md").count(),
+            2,
+            "real translatable file should fan out to 2 non-default locales"
+        );
+    }
+
+    /// Symmetric regression on the run-time skip: even with --force,
+    /// a too-small source must skip with `Outcome::Skipped` and NOT
+    /// write a target (the cache record alone is enough since check
+    /// now also filters them).
+    #[tokio::test]
+    async fn process_one_task_skips_too_small_source() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        std::fs::create_dir_all(g.join("g")).unwrap();
+        let src = g.join("g").join("intro.md");
+        std::fs::write(&src, "tiny").unwrap();
+        let task = Task {
+            guide_id: "g".into(),
+            locale: "fr_fr".into(),
+            filename: "intro.md".into(),
+            source_hash: hash_content("tiny"),
+            source_path: src.clone(),
+        };
+        let cache = Mutex::new(CacheMap::default());
+        let dirty = AtomicBool::new(false);
+        let http = reqwest::Client::new();
+        let res = process_one_task(
+            &task,
+            g,
+            &cache,
+            &dirty,
+            &locales_en_fr_de(),
+            &http,
+            "test-key",
+            "gpt-5-mini",
+            false,
+        )
+        .await
+        .expect("too-small skip should succeed");
+        assert!(matches!(res, Outcome::Skipped));
+        // Target file should NOT have been created.
+        assert!(
+            !g.join("g/items/fr_fr/intro.md").exists(),
+            "skipped tasks must not leave phantom target files"
+        );
+        // Cache entry SHOULD have been recorded so check stays consistent.
+        let c = cache.lock().await;
+        assert!(c.contains_key("g/fr_fr/intro.md"));
     }
 }
 

@@ -1,4 +1,6 @@
-//! Content-hashing helper for the translation-cache.
+//! Content-hashing helper for the translation-cache + a tiny
+//! "is this file even worth translating?" predicate that BOTH
+//! `check.rs` (gap detection) and `run.rs` (skip-at-runtime) share.
 //!
 //! Originally also held a `Snapshot` type that mirrored Node's
 //! `translation-snapshot.json` shape, but the Rust paths in
@@ -6,6 +8,27 @@
 //! `BTreeMap<String, String>` caches instead, so the Snapshot
 //! type was dead-code-warned and got removed. Only the MD5 helper
 //! survived because every cache compares against it.
+
+/// Minimum source-file size (after `.trim()`) below which translation
+/// is a no-op. Mirrors the historic Node skip at
+/// `translate-with-gpt.js` for tiny `intro.md` / `conclusion.md` files
+/// that don't carry meaningful text.
+///
+/// Used in TWO places that MUST agree:
+///   - `check.rs` — when gauging "is this file missing?", skip files
+///     whose source is too small. Otherwise we enqueue them on every
+///     run only for `run.rs` to skip them with no work done; the
+///     target file never gets created and `check` flags them as
+///     missing AGAIN next time. Infinite re-translate loop.
+///   - `run.rs` — same predicate, called per-task to short-circuit
+///     the OpenAI round-trip.
+pub const MIN_SOURCE_LEN_FOR_TRANSLATION: usize = 10;
+
+/// Should this source file be skipped because it's too small to bother
+/// translating? Trim before measuring (matches Node behavior).
+pub fn source_is_too_small_to_translate(source: &str) -> bool {
+    source.trim().len() < MIN_SOURCE_LEN_FOR_TRANSLATION
+}
 
 /// MD5 hex digest of `content`. Matches Node `crypto.createHash('md5').update(content).digest('hex')`
 /// so existing `translation-cache.json` entries remain valid hits.

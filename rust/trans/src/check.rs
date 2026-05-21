@@ -90,6 +90,15 @@ pub async fn run() -> Result<()> {
         for src in default_locale_files(&entry.path(), &locales.default_locale) {
             let filename = src.filename.clone();
             let raw = std::fs::read_to_string(&src.source_path)?;
+            // Source too small to translate (e.g. empty intro.md /
+            // conclusion.md placeholders). run.rs would just skip
+            // these with no work and no target write, so check
+            // shouldn't pretend they're missing — that creates an
+            // infinite re-enqueue loop where each run "translates"
+            // the same set without ever satisfying check.
+            if crate::snapshot::source_is_too_small_to_translate(&raw) {
+                continue;
+            }
             let source_hash = hash_content(&raw);
             let default_counts = count_inline_code(&raw);
 
