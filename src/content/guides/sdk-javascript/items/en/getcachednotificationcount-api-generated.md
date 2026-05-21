@@ -13,8 +13,9 @@ Returns: [`GetCachedNotificationCount200Response`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'getCachedNotificationCount Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const id: string = 'user_00012345';
-const includeUnreadOnly: boolean | undefined = true; // optional parameter flag (demonstrated)
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
+const tenantId: string = "acme-corp";
+const userId: string = "user-1024";
+const tenantOverride: string | undefined = undefined; // optional override
+const effectiveTenantId: string = tenantOverride ?? tenantId;
+const notificationCount: GetCachedNotificationCount200Response = await getCachedNotificationCount(effectiveTenantId, userId);
 [inline-code-end]

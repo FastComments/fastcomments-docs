@@ -14,14 +14,12 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_76a4b2";
-const id: string = "template_9f3c1e";
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'emailTemplate_pwd_reset_9f3c';
 const updateEmailTemplateBody: UpdateEmailTemplateBody = {
-  name: "Comment Flag Notification",
-  subject: "A comment was flagged on your-site.com",
-  bodyHtml: "<p>Admin,</p><p>User \{{commenterName}} flagged a comment: “\{{commentText}}”</p>",
-  isEnabled: true,
-  description: "Email sent to moderators when a comment is flagged (optional field included)"
-};
+  name: 'Password Reset Notification',
+  subject: 'Reset your ACME password',
+  html: '<p>Click <a href="\{{reset_link}}">here</a> to reset your password.</p>'
+} as UpdateEmailTemplateBody;
 const result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
 [inline-code-end]

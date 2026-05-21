@@ -13,13 +13,12 @@ Returns: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'createTenantUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_74b3a9f4b";
+const tenantId: string = 'tenant-54b2';
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@acmecorp.com",
-  displayName: "Jane Doe",
-  role: "moderator",
-  sendWelcomeEmail: true, // optional parameter demonstrated
-  metadata: { department: "Customer Support" }
+  email: 'jane.doe@acme.com',
+  displayName: 'Jane Doe',
+  role: 'editor',
+  sendInvite: true
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]

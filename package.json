@@ -22,20 +22,31 @@
 		"build-content": "node src/app",
 		"build-windows": "build.bat",
 		"build-posix": "bash build.sh",
-		"build-static": "bash build-static.sh",
 		"build-sdks-content": "node src/sdk-guide-generator.js",
 		"serve": "serve src/static/generated",
 		"build-search-index": "node src/build-search-index-parallel.js",
+		"build-search-index-rs": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-indexer",
+		"build-static-legacy": "bash build-static.sh",
+		"custom-styling-legacy": "node src/custom-styling-guide-generator.js",
+		"check-translations-legacy": "node src/check-translations.js",
+		"cleanup-empty-translations-legacy": "node src/cleanup-empty-translations.js",
+		"watch-legacy": "node src/watch.js",
 		"start-search-engine": "node src/server-search-engine.js",
-		"watch": "node src/watch",
-		"check-translations": "node src/check-translations.js",
+		"start-search-engine-rs": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-server",
+		"start-content-sidecar": "node src/content-sidecar.js",
+		"dump-locales": "node scripts/dump-locales.js",
+		"watch": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-watcher",
+		"check-translations": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-trans -- check",
 		"translate": "node src/translate-with-gpt.js",
 		"migrate-locale-structure": "node src/migrate-to-locale-structure.js",
 		"populate-snapshot": "node src/populate-snapshot.js",
 		"fix-composer": "node src/content/sdks-checkout/sdk-php/fix-composer.js",
-		"cleanup-empty-translations": "node src/cleanup-empty-translations.js"
+		"cleanup-empty-translations": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-trans -- cleanup",
+		"sitegen": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-sitegen --",
+		"sdkgen": "cargo run --release --manifest-path rust/Cargo.toml -p fcdocs-sdkgen"
 	},
 	"devDependencies": {
+		"jscpd": "^4.2.3",
 		"serve": "^11.2.0"
 	}
 }

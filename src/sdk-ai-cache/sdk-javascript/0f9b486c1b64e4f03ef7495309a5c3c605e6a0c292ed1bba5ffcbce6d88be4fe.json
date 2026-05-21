@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "0f9b486c1b64e4f03ef7495309a5c3c605e6a0c292ed1bba5ffcbce6d88be4fe",
+  "generatedAt": "2026-05-20T18:33:31.344Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8a1f';\n  const id: string = 'pkg_bronze_2026';\n  const replaceTenantPackageBody: ReplaceTenantPackageBody = {\n    name: 'Bronze Plan',\n    description: 'Entry tier with basic moderation and analytics',\n    apiStatus: { status: 'active' },\n    customConfigParameters: { maxCommentsPerUser: 100 }\n  } as ReplaceTenantPackageBody;\n  const result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

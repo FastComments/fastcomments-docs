@@ -14,10 +14,12 @@ Returns: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'getTicket Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const ticketId: string = 'tkt-20260325-42';
-const userId: string = 'user-8452';
-
-const ticketResponseWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
-const ticketResponseWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
+(async () => {
+  const tenantId: string = 'tenant_acme_01';
+  const id: string = 'TCK-20260520-001';
+  const ticket: GetTicket200Response = await getTicket(tenantId, id);
+  const userId: string = 'user_98765';
+  const userTicket: GetTicket200Response = await getTicket(tenantId, 'TCK-20260520-002', userId);
+  console.log(ticket, userTicket);
+})();
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "15974d0cc79e3c28b9f6080256b267154c4bd9fcc20b5b49f269ce62a1895575",
+  "generatedAt": "2026-05-20T18:33:25.919Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'olympus_inc';\n  const id: string = 'badge-73a9b2';\n  const includeDetails: boolean | undefined = true;\n  const response: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

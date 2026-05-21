@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "986bd75e95c5fb1cc934610268511433ba7db1d40dd4aa2614e0874513486a07",
+  "generatedAt": "2026-05-20T18:33:22.829Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp_01';\nconst id: string = 'questionResult_87b4f2a9';\nconst result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);",
+  "model": "gpt-5-mini"
+}

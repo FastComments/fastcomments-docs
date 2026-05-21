@@ -17,16 +17,12 @@ Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'saveComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "acme-tenant-17";
 const createCommentParams: CreateCommentParams = {
-  content: 'Great article — helped me fix a production issue in minutes.',
-  url: 'https://app.acme.com/blog/performance-tips',
-  author: { name: 'Maya Chen', email: 'maya.chen@acme.com' },
-  metadata: { locale: 'en-US', appVersion: '4.2.1' }
-} as CreateCommentParams;
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const result: SaveComment200Response = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+  body: "Thanks — this clarified the deployment. Suggest adding a note about step 3.",
+  authorId: "user_789",
+  threadId: "article_342",
+  clientCreatedAt: new Date().toISOString()
+};
+const saveResult: SaveComment200Response = await saveComment(tenantId, createCommentParams, true, false, true, true);
 [inline-code-end]

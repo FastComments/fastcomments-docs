@@ -1,0 +1,7 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "9d359de9c53213054fec232816d049b721575b943f825e2d0c929c490f94ba10",
+  "generatedAt": "2026-05-20T18:33:20.668Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-42';\nconst id: string = 'usr-73a1b2';\nconst updateAPISSOUserData: UpdateAPISSOUserData = {\n  email: 'marcus.ingram@acme.com',\n  givenName: 'Marcus',\n  familyName: 'Ingram',\n  roles: ['editor', 'project_owner'],\n  enabled: true\n};\nconst result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);",
+  "model": "gpt-5-mini"
+}

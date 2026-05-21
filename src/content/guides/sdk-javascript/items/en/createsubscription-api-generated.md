@@ -13,14 +13,13 @@ Returns: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'createSubscription Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-123";
-const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "user_98765",
-  planId: "pro_monthly",
-  paymentMethod: { type: "card", cardId: "card_abc123" },
+const tenantId: string = "acme-enterprises-987";
+const createData: CreateAPIUserSubscriptionData = {
+  apiUserId: "user_72f4a1",
+  planId: "enterprise_annual",
+  startDate: "2026-06-01T00:00:00Z",
   autoRenew: true,
-  trialDays: 14, // optional parameter demonstrated
-  metadata: { campaign: "spring_launch" } // optional parameter demonstrated
+  trialPeriodDays: 30
 };
-const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
+const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createData);
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "dea608d32c1b4ade80f461f8cfe3183b1e12eb1fd914e41fbf9ece8f48340d3d",
+  "generatedAt": "2026-05-20T18:33:21.123Z",
+  "codeExample": "const tenantId: string = 'tenant_8b7f2c';\nconst limit: number = 20;\nconst tags: Array<string> = ['product-updates', 'community'];\nconst firstPage: GetFeedPosts200Response = await getFeedPosts(tenantId, undefined, limit, tags);\nconst afterId: string = 'post_9c3d2e';\nconst secondPage: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit);",
+  "model": "gpt-5-mini"
+}

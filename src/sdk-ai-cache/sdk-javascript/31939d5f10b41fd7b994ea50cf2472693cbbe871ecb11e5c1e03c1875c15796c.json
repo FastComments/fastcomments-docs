@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "31939d5f10b41fd7b994ea50cf2472693cbbe871ecb11e5c1e03c1875c15796c",
+  "generatedAt": "2026-05-20T18:33:26.961Z",
+  "codeExample": "const tenantId: string = \"tenant_7f9b3\";\nconst createUserBadgeParams: CreateUserBadgeParams = {\n  userId: \"user_8421\",\n  badge: {\n    id: \"badge_12\",\n    title: \"Expert Contributor\",\n    description: \"Awarded for 100 helpful answers\"\n  },\n  notify: true\n} as CreateUserBadgeParams;\nconst result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);",
+  "model": "gpt-5-mini"
+}

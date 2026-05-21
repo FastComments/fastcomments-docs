@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "7256f362fdba4b0f218f685a918beb8cef9046b25b2f2a0e90f9332dae5ff0a6",
+  "generatedAt": "2026-05-20T18:33:24.423Z",
+  "codeExample": "const tenantId: string = \"acme-corp-00042\";\nconst commentIds: string = \"cmt-1001,cmt-1002\";\nconst ssoToken: string = \"sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\nconst checkedWithSso: CheckedCommentsForBlocked200Response = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);\nconst checkedWithoutSso: CheckedCommentsForBlocked200Response = await checkedCommentsForBlocked(tenantId, commentIds);",
+  "model": "gpt-5-mini"
+}

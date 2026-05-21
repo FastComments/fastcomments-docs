@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "bacf558e435e2116e0abb4937342d98dce0ac1b919092f214d3a88c059536adb",
+  "generatedAt": "2026-05-20T18:33:26.754Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises\";\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  title: \"Product Satisfaction\",\n  description: \"Quarterly feedback on overall product experience\",\n  isActive: true,\n  customOptions: [\n    { label: \"Very satisfied\", value: \"5\" },\n    { label: \"Somewhat satisfied\", value: \"4\" }\n  ] // optional fields like description are shown; others omitted\n};\nconst result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

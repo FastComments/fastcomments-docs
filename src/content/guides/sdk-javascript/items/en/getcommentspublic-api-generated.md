@@ -44,17 +44,17 @@ Returns: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getCommentsPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_eu-west_01';
-const urlId: string = 'https://www.financialtimes.com/articles/2026/market-update-q1';
-const response: GetCommentsPublic200Response = await getCommentsPublic(
+const tenantId: string = 'acme-corp';
+const urlId: string = '/news/2026/product-launch';
+const result: GetCommentsPublic200Response = await getCommentsPublic(
   tenantId,
   urlId,
-  2,
+  1,
   undefined,
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.tokenPayload.signature',
-  undefined,
+  'sso_jwt_123456',
   0,
-  50,
+  0,
+  25,
   5,
   true,
   undefined,
@@ -62,16 +62,16 @@ const response: GetCommentsPublic200Response = await getCommentsPublic(
   false,
   true,
   'en-US',
-  'reactions,moderation',
+  'comments,likes',
   false,
   true,
   true,
   3,
   false,
   undefined,
-  'performance',
-  ['feature','fastcomments'],
-  'user_9876',
+  'great product',
+  ['product', 'launch'],
+  'user_98765',
   undefined,
   undefined,
   undefined

@@ -13,10 +13,8 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-tenant-93b2';
-  const domain: string = 'comments.acme.com';
-  const domainConfig: GetDomainConfig200Response = await getDomainConfig(tenantId, domain);
-  console.log(domainConfig);
-})();
+const tenantId: string = 'tenant-8a3b2f';
+const subdomain: string | undefined = 'payments'; // optional segment
+const domain: string = subdomain ? `${subdomain}.acme-corp.com` : 'acme-corp.com';
+const domainConfig: GetDomainConfig200Response = await getDomainConfig(tenantId, domain);
 [inline-code-end]

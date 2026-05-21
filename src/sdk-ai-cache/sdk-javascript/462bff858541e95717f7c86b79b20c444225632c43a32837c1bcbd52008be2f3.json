@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "462bff858541e95717f7c86b79b20c444225632c43a32837c1bcbd52008be2f3",
+  "generatedAt": "2026-05-20T18:33:20.289Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_acme_93';\n  const id: string = 'user_72f9b';\n  const redirectURL: string = 'https://app.mycompany.com/welcome';\n  const result: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

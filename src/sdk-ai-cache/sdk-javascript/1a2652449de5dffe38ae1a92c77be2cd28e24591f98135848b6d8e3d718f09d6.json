@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "1a2652449de5dffe38ae1a92c77be2cd28e24591f98135848b6d8e3d718f09d6",
+  "generatedAt": "2026-05-20T18:33:27.676Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_sf_001\";\n  const id: string = \"pkg-premium-v2\";\n  const updateTenantPackageBody: UpdateTenantPackageBody = {\n    name: \"San Francisco Premium\",\n    enabled: true,\n    customConfig: { maxComments: 500 },\n    tosConfig: { required: true } // optional fields demonstrated by presence; others omitted\n  } as UpdateTenantPackageBody;\n  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "767ebe24b24049ed61463fd459ebdd79daceab7e950ebe6d1db023ecf357f940",
+  "generatedAt": "2026-05-20T18:33:24.558Z",
+  "codeExample": "const tenantId: string = 'acme-corp-128';\nconst id: string = 'comment-8421f';\nconst fromName: string = 'Marcus Lindström';\nconst note: string | undefined = undefined; // optional parameter example\nconst response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);",
+  "model": "gpt-5-mini"
+}

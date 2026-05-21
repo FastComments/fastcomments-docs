@@ -15,12 +15,8 @@ Returns: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getVotesForUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = "local-news-ny";
-  const urlId: string = "articles/2026-03-25/ev-infrastructure-update";
-  const userId: string = "user_78b6f3d9";
-  const anonUserId: string = "anon_9c3f7a1b";
-  const result: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
-  console.log(result);
-})();
+const tenantId: string = 'acme-tenant-42';
+const urlId: string = 'release-notes';
+const userId: string = 'user_10293';
+const votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId);
 [inline-code-end]

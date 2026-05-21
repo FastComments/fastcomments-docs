@@ -13,17 +13,15 @@ Returns: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_9f4a2b';
-  const createEmailTemplateBody: CreateEmailTemplateBody = {
-    name: 'Weekly Digest',
-    subject: 'Your weekly discussion highlights',
-    html: '<!doctype html><body><h1>Hello \{{user.name}}</h1><p>Top comments this week...</p></body>',
-    fromAddress: 'no-reply@fastcomments-example.com',
-    replyTo: 'moderation@fastcomments-example.com',
-    isDefault: false
-  };
-  const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
-  console.log(result);
-})();
+const tenantId: string = "acme-corp-42";
+const createEmailTemplateBody: CreateEmailTemplateBody = {
+  templateId: "welcome_v1",
+  name: "New User Welcome",
+  subject: "Welcome to Acme Corp — next steps",
+  htmlBody: "<p>Hi \{{firstName}}, welcome to Acme Corp! Use code <strong>GETSTARTED</strong>.</p>",
+  description: "Onboarding welcome email for newly registered users", // optional parameter demonstrated
+  isActive: true,
+  previewText: "Start using your Acme account today" // another optional field
+};
+const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
 [inline-code-end]

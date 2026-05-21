@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "2b2ac8d45711e481ea1b5d2e9d89ea5e60cc126512367f6f39a49fe82cca4fe8",
+  "generatedAt": "2026-05-20T18:33:21.601Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst postId: string = 'post_9f2b4a';\nconst updateFeedPostParams: UpdateFeedPostParams = {\n  title: 'Q2 Release Notes',\n  body: 'We rolled out feature X, fixed critical bugs, and improved load times.',\n  mediaItems: [\n    {\n      id: 'media_123',\n      type: 'image',\n      assets: [{ url: 'https://cdn.acme.com/images/release.png', mimeType: 'image/png' }]\n    }\n  ],\n  links: [{ url: 'https://acme.com/releases/q2', title: 'Full release notes' }],\n  isPublished: true\n};\nconst broadcastId: string = 'broadcast_20260520';\nconst sso: string = 'sso_token_ab12cd34';\nconst result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

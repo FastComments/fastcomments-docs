@@ -1,0 +1,7 @@
+{
+  "method": "flagComment",
+  "signatureHash": "9150e992593068404287acb5bc906c218f5c12323c725352244cd648c7207b2b",
+  "generatedAt": "2026-05-20T18:33:21.123Z",
+  "codeExample": "const tenantId: string = 'tenant_8a3f';\nconst id: string = 'cmt_b7f9e2';\nconst userId: string = 'user_1024';\nconst result: FlagComment200Response = await flagComment(tenantId, id, userId);",
+  "model": "gpt-5-mini"
+}

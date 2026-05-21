@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "4abbcf950232bb3326e08831e20d1eaf98e67e980ab7e629e9e068fa48277eec",
+  "generatedAt": "2026-05-20T18:33:20.240Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-42';\nconst usersFirstPage: GetTenantUsers200Response = await getTenantUsers(tenantId);\nconst usersSecondPage: GetTenantUsers200Response = await getTenantUsers(tenantId, 50);",
+  "model": "gpt-5-mini"
+}

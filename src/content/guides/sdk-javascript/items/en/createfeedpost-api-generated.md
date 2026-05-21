@@ -17,21 +17,13 @@ Returns: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'createFeedPost Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_87f3b2';
-const mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/post-123.jpg', mimeType: 'image/jpeg', width: 1200, height: 800, size: 245000 };
-const mediaItem: FeedPostMediaItem = { id: 'media_1', type: 'image', assets: [mediaAsset], altText: 'Conference keynote stage' };
-const link: FeedPostLink = { url: 'https://news.example.com/keynote-recap', title: 'Keynote recap' };
-const createFeedPostParams: CreateFeedPostParams = {
-  title: 'Product Launch Highlights',
-  content: 'Highlights from today’s product launch and roadmap updates.',
-  authorId: 'user_42',
-  mediaItems: [mediaItem],
-  links: [link],
-  tags: ['product', 'launch', 'announcement']
-};
-const broadcastId: string = 'broadcast_20260424';
-const isLive: boolean = true;
+const tenantId: string = 'tenant-7421';
+const imageAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/launch.jpg', mimeType: 'image/jpeg', width: 1200, height: 630 };
+const mediaItem: FeedPostMediaItem = { type: 'image', assets: [imageAsset], caption: 'Highlights from today’s release' };
+const link: FeedPostLink = { url: 'https://www.example.com/releases/v2', title: 'Release notes' };
+const createFeedPostParams: CreateFeedPostParams = { title: 'Version 2.0 Released', body: 'We shipped major performance improvements and new features.', media: [mediaItem], link };
+const broadcastId: string = 'broadcast-602';
+const isLive: boolean = false;
 const doSpamCheck: boolean = true;
-const skipDupCheck: boolean = false;
-const result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
+const result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck);
 [inline-code-end]

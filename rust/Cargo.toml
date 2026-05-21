@@ -1,0 +1,56 @@
+[workspace]
+resolver = "2"
+members = ["shared", "indexer", "server", "llm", "browser", "sitegen", "sdkgen", "trans", "watcher", "indexschema"]
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.75"
+license = "UNLICENSED"
+publish = false
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+anyhow = "1"
+thiserror = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+tantivy = "0.22"
+pulldown-cmark = { version = "0.12", default-features = false, features = ["html"] }
+handlebars = "6"
+scraper = "0.20"
+ego-tree = "0.6"
+html-escape = "0.2"
+regex = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+num_cpus = "1"
+once_cell = "1"
+dashmap = "6"
+axum = "0.7"
+tower-http = { version = "0.6", features = ["cors"] }
+futures = "0.3"
+tempfile = "3"
+# New for Phase 2
+rquickjs = { version = "0.6", features = ["loader", "macro"] }
+chromiumoxide = { version = "0.7", default-features = false, features = ["tokio-runtime"] }
+notify = "7"
+notify-debouncer-mini = "0.4"
+git2 = { version = "0.19", default-features = false, features = ["https", "vendored-libgit2"] }
+md-5 = "0.10"
+sha2 = "0.10"
+nanoid = "0.4"
+openapiv3 = "2"
+walkdir = "2"
+quick-xml = { version = "0.36", features = ["serialize"] }
+serde_yaml = "0.9"
+urlencoding = "2"
+pulldown-cmark-escape = "0.11"
+async-trait = "0.1"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+indexmap = { version = "2", features = ["serde"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

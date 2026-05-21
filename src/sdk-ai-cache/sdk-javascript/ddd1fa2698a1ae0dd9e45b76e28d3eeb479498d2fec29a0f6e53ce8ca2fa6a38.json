@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "ddd1fa2698a1ae0dd9e45b76e28d3eeb479498d2fec29a0f6e53ce8ca2fa6a38",
+  "generatedAt": "2026-05-20T18:33:21.327Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-001';\nconst urlId: string = 'kb-article-421';\nconst url: string = 'https://support.acme.com/kb/configuring-single-sign-on';\nconst pageTitle: string = 'Configuring Single Sign-On for Support Portal';\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =\n  UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;\nconst sso: string = 'saml:acme-tenant-001';\n\nconst result: UpdateUserNotificationStatus200Response =\n  await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);",
+  "model": "gpt-5-mini"
+}

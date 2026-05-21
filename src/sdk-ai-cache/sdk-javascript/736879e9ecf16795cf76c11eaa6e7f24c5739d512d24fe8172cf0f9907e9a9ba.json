@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "736879e9ecf16795cf76c11eaa6e7f24c5739d512d24fe8172cf0f9907e9a9ba",
+  "generatedAt": "2026-05-20T18:33:24.493Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp';\nconst packageId: string = 'pkg-9b2f4c';\nconst reason: string | undefined = 'Remove obsolete feature set';\nconst result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);",
+  "model": "gpt-5-mini"
+}

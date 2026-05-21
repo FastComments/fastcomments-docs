@@ -13,7 +13,10 @@ Returns: [`GetModerators200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'getModerators Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-12345-prod';
-const moderatorsPage1: GetModerators200Response = await getModerators(tenantId);
-const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, 50);
+(async () => {
+  const tenantId: string = "tenant_acme_42";
+  const moderatorsDefault: GetModerators200Response = await getModerators(tenantId);
+  const moderatorsWithSkip: GetModerators200Response = await getModerators(tenantId, 25);
+  console.log(moderatorsDefault, moderatorsWithSkip);
+})();
 [inline-code-end]

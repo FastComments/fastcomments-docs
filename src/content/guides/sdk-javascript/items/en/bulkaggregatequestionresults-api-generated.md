@@ -14,15 +14,16 @@ Returns: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_42";
-const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {
-  questions: [
-    { questionId: "q-001", threadId: "thread-1001", questionType: "rating" },
-    { questionId: "q-002", threadId: "thread-1002", questionType: "yes_no" }
+const tenantId: string = 'tenant_8b3d72';
+const request: BulkAggregateQuestionResultsRequest = {
+  items: [
+    {
+      questionId: 'q-00123',
+      includeSubQuestions: true,
+      timeRange: { start: '2025-01-01T00:00:00Z', end: '2025-01-31T23:59:59Z' }
+    }
   ],
-  timeRange: { from: "2026-03-01T00:00:00Z", to: "2026-04-01T00:00:00Z" },
-  groupBy: ["questionId", "threadId"]
-};
-const forceRecalculate: boolean = true;
-const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
+  bucket: { interval: 'day' }
+} as BulkAggregateQuestionResultsRequest;
+const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, request, true);
 [inline-code-end]

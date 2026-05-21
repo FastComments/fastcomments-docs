@@ -14,8 +14,9 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteModerator Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b7c6d';
-const id: string = 'mod_4a3e11ec9d1f0242ac120003';
-const sendEmail: string = 'true';
-const result: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
+const tenantId: string = 'acme-corp-42';
+const moderatorId: string = 'mod_9374';
+const sendEmail: string | undefined = 'notifications@acme-corp.com';
+const result: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId, sendEmail);
+
 [inline-code-end]

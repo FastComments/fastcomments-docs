@@ -16,20 +16,22 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f4b2";
-const postId: string = "post_21a8e";
+const tenantId: string = 'acme-corp';
+const postId: string = 'post_9f2b4a';
 const updateFeedPostParams: UpdateFeedPostParams = {
-  title: "Quarterly product update",
-  body: "Major performance improvements and bug fixes deployed today. See release notes and schedule.",
-  links: [{ url: "https://status.example.com/release-notes", title: "Release notes" }],
-  media: [
+  title: 'Q2 Release Notes',
+  body: 'We rolled out feature X, fixed critical bugs, and improved load times.',
+  mediaItems: [
     {
-      type: "image",
-      assets: [{ url: "https://cdn.example.com/updates/q2.png", mimeType: "image/png", width: 1200, height: 628 }]
+      id: 'media_123',
+      type: 'image',
+      assets: [{ url: 'https://cdn.acme.com/images/release.png', mimeType: 'image/png' }]
     }
-  ]
+  ],
+  links: [{ url: 'https://acme.com/releases/q2', title: 'Full release notes' }],
+  isPublished: true
 };
-const broadcastId: string = "broadcast_live_202603";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature";
+const broadcastId: string = 'broadcast_20260520';
+const sso: string = 'sso_token_ab12cd34';
 const result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
 [inline-code-end]

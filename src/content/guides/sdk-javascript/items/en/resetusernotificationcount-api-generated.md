@@ -14,10 +14,10 @@ Returns: [`ResetUserNotifications200Response`](https://github.com/FastComments/f
 [inline-code-attrs-start title = 'resetUserNotificationCount Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "tenant_9f3b2c4a";
-  const ssoToken: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9._sample_payload_.signature";
-  const responseWithSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);
-  const responseWithoutSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);
-  console.log(responseWithSSO, responseWithoutSSO);
+  const tenantId: string = 'acme-tenant-78f3';
+  const noSsoResult: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);
+  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+  const withSsoResult: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);
+  console.log(noSsoResult, withSsoResult);
 })();
 [inline-code-end]

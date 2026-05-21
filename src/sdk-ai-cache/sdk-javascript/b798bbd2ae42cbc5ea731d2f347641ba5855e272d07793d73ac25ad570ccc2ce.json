@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "b798bbd2ae42cbc5ea731d2f347641ba5855e272d07793d73ac25ad570ccc2ce",
+  "generatedAt": "2026-05-20T18:33:30.646Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-01';\nconst id: string = 'feedpost-2026-0001';\nconst mediaAsset: FeedPostMediaItemAsset = { assetId: 'asset-9876', url: 'https://cdn.acme.com/assets/asset-9876.jpg' } as FeedPostMediaItemAsset;\nconst mediaItem: FeedPostMediaItem = { id: 'media-1', type: 'image', asset: mediaAsset } as FeedPostMediaItem;\nconst feedPost: FeedPost = { title: 'Product Launch', body: 'We launched the new product today.', media: [mediaItem], isPinned: true } as FeedPost;\nconst result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);",
+  "model": "gpt-5-mini"
+}

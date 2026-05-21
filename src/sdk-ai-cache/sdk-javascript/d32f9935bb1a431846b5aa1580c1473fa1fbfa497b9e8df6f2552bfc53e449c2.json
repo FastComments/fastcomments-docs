@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "d32f9935bb1a431846b5aa1580c1473fa1fbfa497b9e8df6f2552bfc53e449c2",
+  "generatedAt": "2026-05-20T18:33:22.329Z",
+  "codeExample": "const tenantId: string = 'tenant_42';\nconst userId: string | undefined = 'user_7';\nconst urlId: string | undefined = undefined;\nconst fromCommentId: string | undefined = undefined;\nconst viewed: boolean | undefined = true;\nconst type: string | undefined = 'mention';\nconst notificationCount: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type);",
+  "model": "gpt-5-mini"
+}

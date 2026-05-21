@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "9944882a6a8b764990bceb2711c85f762947c167368990ed943fdd78f9e746d8",
+  "generatedAt": "2026-05-20T18:33:20.722Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp_01';\nconst id: string = 'welcome_email_template_2025';\nconst errorId: string = 'render_error_9001';\nlet note: string | undefined = 'stale renderer failure'; // optional metadata example\nconst result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);",
+  "model": "gpt-5-mini"
+}

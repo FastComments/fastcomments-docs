@@ -15,14 +15,13 @@ Returns: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'unBlockCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42e8a1';
-const commentId: string = 'cmt_9b3f2d';
+const tenantId: string = 'tenant_acme_corp_001';
+const commentId: string = 'comment_20260519_334';
 const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: 'abusive_language',
-  blockedByModeratorId: 'mod_17',
-  note: 'Targeted harassment; review complete',
-  unblockRequestedAt: new Date().toISOString()
-};
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
+  reason: 'User appeal approved',
+  clearedBy: 'moderator.alice',
+  clearedAt: new Date().toISOString()
+} as PublicBlockFromCommentParams;
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso-sample-token';
 const result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]

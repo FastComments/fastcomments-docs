@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "7f248b4eb099afc692c7fa437fea55f28e057c5fcf55bf2189ece879825c665d",
+  "generatedAt": "2026-05-20T18:33:23.691Z",
+  "codeExample": "const tenantId: string = 'tenant_acmecorp_001';\nconst createModeratorBody: CreateModeratorBody = {\n  userId: 'mod-982',\n  displayName: 'Ava Johnson',\n  email: 'ava.johnson@acme.com',\n  roles: ['global_moderator'],\n  customConfig: { enableNotifications: true, maxDailyActions: 500 } as CustomConfigParameters\n};\nconst result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);",
+  "model": "gpt-5-mini"
+}

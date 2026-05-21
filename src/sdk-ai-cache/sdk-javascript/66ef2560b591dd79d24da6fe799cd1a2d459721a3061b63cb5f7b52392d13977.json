@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "66ef2560b591dd79d24da6fe799cd1a2d459721a3061b63cb5f7b52392d13977",
+  "generatedAt": "2026-05-20T18:33:34.140Z",
+  "codeExample": "const userId: string = 'user_82f9b';\nconst tenantId: string = 'tenant_22';\nconst page: number = 2;\nconst lastGenDate: number = Date.now();\nconst includei10n: boolean = true;\nconst useFullTranslationIds: boolean = false;\nconst locale: string = 'en-US';\nconst includeConfig: boolean = true;\nconst includeNotificationCount: boolean = true;\nconst countAll: boolean = false;\nconst sso: string = 'sso-token-1a2b';\nconst commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(userId, tenantId, undefined, page, undefined, lastGenDate, undefined, undefined, includei10n, useFullTranslationIds, locale, includeConfig, includeNotificationCount, countAll, sso);",
+  "model": "gpt-5-mini"
+}

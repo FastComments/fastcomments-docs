@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "4c70198aa6688feb5d4d1d444cbe0c70b2bdec5e794394c7f086c8882c3553d5",
+  "generatedAt": "2026-05-20T18:33:24.967Z",
+  "codeExample": "const tenantId: string = 'tenant_98765';\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: 'Weekly Product Update',\n  body: 'Released performance improvements and bug fixes across the mobile app.',\n  media: [\n    {\n      url: 'https://cdn.example.com/images/update-2026-05-20.jpg',\n      type: 'image',\n      assets: [{ url: 'https://cdn.example.com/images/update-2026-05-20.jpg', mimeType: 'image/jpeg' }]\n    } as FeedPostMediaItem\n  ],\n  links: [{ url: 'https://example.com/release-notes/2026-05-20', title: 'Full release notes' } as FeedPostLink],\n  tags: ['release', 'mobile', 'performance']\n};\nconst broadcastId: string = 'broadcast_20260520';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

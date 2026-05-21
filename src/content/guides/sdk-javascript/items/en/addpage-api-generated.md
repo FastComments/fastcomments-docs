@@ -13,13 +13,14 @@ Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'addPage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-prod-01";
+const tenantId: string = 'tenant_9b3f2c1a';
 const createData: CreateAPIPageData = {
-  url: "/docs/2026/comment-moderation",
-  title: "Comment Moderation Guide",
-  description: "Step-by-step instructions to configure moderation workflows for community posts.",
-  language: "en-US", // optional field
-  metadata: { productArea: "support", owner: "platform-team" } // optional field
+  title: 'Q3 Product Roadmap',
+  slug: 'q3-product-roadmap',
+  content: '<h1>Goals</h1><p>Focus on performance and reliability improvements.</p>',
+  authorId: 'user_84c2',
+  published: false,            // optional flag demonstrated
+  tags: ['product', 'roadmap'] // optional metadata demonstrated
 };
 const result: AddPageAPIResponse = await addPage(tenantId, createData);
 [inline-code-end]

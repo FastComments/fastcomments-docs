@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "a0d7d6cdd5bb7ec8afa08bde4fbede7bdc8576da4b83aee03f43d35e6cc0f6d2",
+  "generatedAt": "2026-05-20T18:33:32.592Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst createParams: CreateCommentParams[] = [\n  {\n    content: \"Finished the draft for the Q2 report, please review.\",\n    authorId: \"user_789\",\n    mentions: [{ userId: \"user_456\", startIndex: 34, length: 4 } as CommentUserMentionInfo],\n    hashtags: [{ tag: \"Q2\", indices: [28, 30] } as CommentUserHashTagInfo]\n  } as CreateCommentParams\n];\nconst saveResult: SaveComment200Response[] = await saveCommentsBulk(\n  tenantId,\n  createParams,\n  true,   // isLive\n  true,   // doSpamCheck\n  false,  // sendEmails\n  true    // populateNotifications\n);",
+  "model": "gpt-5-mini"
+}

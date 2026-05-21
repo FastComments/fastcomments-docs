@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "e53c1f340d04e0d9b388545f80452dc9d5bdc9643a3b0be38cc535f6470991a6",
+  "generatedAt": "2026-05-20T18:33:23.822Z",
+  "codeExample": "const tenantId: string = \"tenant_3f47b2a1\";\nconst id: string = \"comment_9a12b3c4\";\nconst updatableCommentParams: UpdatableCommentParams = {\n  body: \"Thanks for the update — I've adjusted my view accordingly.\"\n};\nconst contextUserId: string = \"user_8721\";\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = false;\nconst result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);",
+  "model": "gpt-5-mini"
+}

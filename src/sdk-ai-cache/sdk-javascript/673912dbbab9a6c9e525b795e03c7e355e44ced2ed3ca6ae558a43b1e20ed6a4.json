@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "673912dbbab9a6c9e525b795e03c7e355e44ced2ed3ca6ae558a43b1e20ed6a4",
+  "generatedAt": "2026-05-20T18:33:24.634Z",
+  "codeExample": "(async function run(): Promise<void> {\n  const tenantId: string = 'tenant_company_82';\n  const id: string = 'moderator_4932';\n  const response: GetModerator200Response = await getModerator(tenantId, id);\n  const moderatorName: string | undefined = response.moderator?.name;\n  console.log(moderatorName);\n})();",
+  "model": "gpt-5-mini"
+}

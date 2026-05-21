@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "07bcd36915d56cf0b624bfe61f4382c079a16bb4f00df3200f8d2faacb7f010a",
+  "generatedAt": "2026-05-20T18:33:26.450Z",
+  "codeExample": "const tenantId: string = 'tenant-7421';\nconst imageAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/launch.jpg', mimeType: 'image/jpeg', width: 1200, height: 630 };\nconst mediaItem: FeedPostMediaItem = { type: 'image', assets: [imageAsset], caption: 'Highlights from today’s release' };\nconst link: FeedPostLink = { url: 'https://www.example.com/releases/v2', title: 'Release notes' };\nconst createFeedPostParams: CreateFeedPostParams = { title: 'Version 2.0 Released', body: 'We shipped major performance improvements and new features.', media: [mediaItem], link };\nconst broadcastId: string = 'broadcast-602';\nconst isLive: boolean = false;\nconst doSpamCheck: boolean = true;\nconst result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck);",
+  "model": "gpt-5-mini"
+}

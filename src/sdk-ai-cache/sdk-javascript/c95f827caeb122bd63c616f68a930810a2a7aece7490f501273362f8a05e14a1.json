@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "c95f827caeb122bd63c616f68a930810a2a7aece7490f501273362f8a05e14a1",
+  "generatedAt": "2026-05-20T18:33:22.323Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b21';\nconst createHashTagBody: CreateHashTagBody = { name: '#product-launch', description: 'Tags for the Q3 product launch campaign', isPublic: true };\nconst response: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);\n\nconst createHashTagBodyOnly: CreateHashTagBody = { name: '#user-feedback', description: 'Aggregated user feedback', isPublic: false };\nconst responseWithoutTenant: AddHashTag200Response = await addHashTag(undefined, createHashTagBodyOnly);",
+  "model": "gpt-5-mini"
+}

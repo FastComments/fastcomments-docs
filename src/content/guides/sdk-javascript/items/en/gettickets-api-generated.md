@@ -16,11 +16,10 @@ Returns: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'getTickets Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_92f3b4c1";
-const userId: string = "user_742a9f3e";
-const state: number = 1;
-const skip: number = 0;
-const limit: number = 25;
-const ticketsFull: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);
-const ticketsMinimal: GetTickets200Response = await getTickets("tenant_92f3b4c1");
+const tenantId: string = 'acme-corp-001';
+const userId: string | undefined = 'user-42';
+const state: number | undefined = 2;
+const skip: number | undefined = 0;
+const limit: number | undefined = 50;
+const tickets: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "deletePage",
+  "signatureHash": "c781a42c31cb6205a92d23950666dd593174280e2a173f5220434d6a8c6652b4",
+  "generatedAt": "2026-05-20T18:33:34.498Z",
+  "codeExample": "async function run(deleteImmediately?: boolean): Promise<void> {\n  const tenantId: string = 'acme_corp_tenant_01';\n  const id: string = 'page_5f8b3a9e';\n  const result: DeletePageAPIResponse = await deletePage(tenantId, id);\n  const logAction: boolean = deleteImmediately ?? false;\n  if (logAction) console.log('Deleted page', id, result);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "ffbc1590624ca6e06f6c2b3827a8a2701e3e8cec9b8b1fa0fa999f0c7b5418a9",
+  "generatedAt": "2026-05-20T18:33:21.894Z",
+  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst skip: number = 25;\nconst response: GetSSOUsers200Response = await getSSOUsers(tenantId);\nconst responseWithSkip: GetSSOUsers200Response = await getSSOUsers(tenantId, skip);",
+  "model": "gpt-5-mini"
+}

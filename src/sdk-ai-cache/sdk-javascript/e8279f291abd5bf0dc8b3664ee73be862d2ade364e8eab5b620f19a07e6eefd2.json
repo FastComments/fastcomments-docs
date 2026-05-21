@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "e8279f291abd5bf0dc8b3664ee73be862d2ade364e8eab5b620f19a07e6eefd2",
+  "generatedAt": "2026-05-20T18:33:25.911Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst id: string = 'user-6f3a2b';\nconst includeHistory: boolean | undefined = true; // optional parameter example\nconst result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);",
+  "model": "gpt-5-mini"
+}

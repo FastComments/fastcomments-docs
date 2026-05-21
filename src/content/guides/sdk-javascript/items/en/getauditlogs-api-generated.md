@@ -17,10 +17,11 @@ Returns: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getAuditLogs Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9a8b7c';
-const limit: number = 100;
+const tenantId: string = 'tenant_9f1b3c';
+const limit: number = 50;
 const skip: number = 0;
-const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 days ago
+const order: SORTDIR = SORTDIR.DESC;
+const after: number = Date.now() - 1000 * 60 * 60 * 24;
 const before: number = Date.now();
-const auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);
+const response: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after, before);
 [inline-code-end]

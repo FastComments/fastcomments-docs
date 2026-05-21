@@ -15,15 +15,10 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateNotification Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_8f4b2c';
-const id: string = 'notification_61a2e9';
-const userId: string = 'moderator_107';
-const updateNotificationBody: UpdateNotificationBody = {
-  name: 'Flagged Comment Notification',
-  enabled: true,
-  channels: ['email', 'inbox'],
-  templateId: 'tmpl_mod_alerts_01',
-  severity: 'high'
-};
-const result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);
+const tenantId: string = 'acme-inc';
+const id: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+const updateNotificationBody: UpdateNotificationBody = { resolved: true, reason: 'Offensive language detected', notes: 'Marked by moderator' };
+const userId: string = 'user_1024';
+const resultWithUser: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);
+const resultWithoutUser: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody);
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "a25d8f1ed294a09ae2f8e85a20a0e967e8861dcaa05548784be4730066a891ff",
+  "generatedAt": "2026-05-20T18:33:26.146Z",
+  "codeExample": "const tenantId: string = \"tenant_acmeCorp\";\nconst id: string = \"user_84b2\";\nconst replaceTenantUserBody: ReplaceTenantUserBody = {\n  email: \"alice.jenkins@acmecorp.com\",\n  displayName: \"Alice Jenkins\",\n  roles: [\"moderator\", \"editor\"],\n  disabled: false\n} as ReplaceTenantUserBody;\nconst updateComments: string = \"Migrated user account and reattributed historical comments\";\n\nconst result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);",
+  "model": "gpt-5-mini"
+}

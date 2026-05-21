@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "fdeab8ee17c4c9e6dc3bbc141fd97dbececc6ade5486adda872abf7b7c5fc8b3",
+  "generatedAt": "2026-05-20T18:33:19.455Z",
+  "codeExample": "const tenantId: string = 'acme-corp-01';\nconst postIds: string[] = ['6f1e2d3c-4b5a-6789-0abc-def123456789', '9a8b7c6d-5e4f-3210-0fed-cba987654321'];\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature';\n\nconst responseMinimal: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId);\nconst responseWithOptions: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);",
+  "model": "gpt-5-mini"
+}

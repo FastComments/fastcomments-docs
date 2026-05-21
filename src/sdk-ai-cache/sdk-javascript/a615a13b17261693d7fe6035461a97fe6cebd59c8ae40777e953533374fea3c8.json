@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "a615a13b17261693d7fe6035461a97fe6cebd59c8ae40777e953533374fea3c8",
+  "generatedAt": "2026-05-20T18:33:18.724Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_acme_42\";\n  const moderatorsDefault: GetModerators200Response = await getModerators(tenantId);\n  const moderatorsWithSkip: GetModerators200Response = await getModerators(tenantId, 25);\n  console.log(moderatorsDefault, moderatorsWithSkip);\n})();",
+  "model": "gpt-5-mini"
+}

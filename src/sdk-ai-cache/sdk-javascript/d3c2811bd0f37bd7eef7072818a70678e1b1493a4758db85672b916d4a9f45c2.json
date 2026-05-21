@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "d3c2811bd0f37bd7eef7072818a70678e1b1493a4758db85672b916d4a9f45c2",
+  "generatedAt": "2026-05-20T18:33:51.531Z",
+  "codeExample": "async function fetchDeletedEventOptional(tenantId: string, id: string, includeRelated?: boolean): Promise<FlagCommentPublic200Response> {\n  const res: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);\n  if (includeRelated) { /* optionally process related data */ }\n  return res;\n}\n\nconst tenantId: string = 'acme-corp-tenant-42';\nconst webhookId: string = 'wh_evt_20260520_9f2b7';\nconst deletedEvent: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, webhookId);",
+  "model": "gpt-5-mini"
+}

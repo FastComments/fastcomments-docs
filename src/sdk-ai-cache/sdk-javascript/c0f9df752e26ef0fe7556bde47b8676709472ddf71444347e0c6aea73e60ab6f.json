@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "c0f9df752e26ef0fe7556bde47b8676709472ddf71444347e0c6aea73e60ab6f",
+  "generatedAt": "2026-05-20T18:33:32.387Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant-4f2b';\n  const id: string = 'site-91a7';\n  const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);\n  const billingInfo: BillingInfo | undefined = (tenantResponse as unknown as { billing?: BillingInfo }).billing;\n})();",
+  "model": "gpt-5-mini"
+}

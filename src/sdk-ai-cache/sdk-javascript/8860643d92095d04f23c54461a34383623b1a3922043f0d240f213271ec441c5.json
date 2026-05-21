@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "8860643d92095d04f23c54461a34383623b1a3922043f0d240f213271ec441c5",
+  "generatedAt": "2026-05-20T18:33:21.507Z",
+  "codeExample": "const tenantId: string = \"acme-corp-42\";\nconst createEmailTemplateBody: CreateEmailTemplateBody = {\n  templateId: \"welcome_v1\",\n  name: \"New User Welcome\",\n  subject: \"Welcome to Acme Corp — next steps\",\n  htmlBody: \"<p>Hi {{firstName}}, welcome to Acme Corp! Use code <strong>GETSTARTED</strong>.</p>\",\n  description: \"Onboarding welcome email for newly registered users\", // optional parameter demonstrated\n  isActive: true,\n  previewText: \"Start using your Acme account today\" // another optional field\n};\nconst result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

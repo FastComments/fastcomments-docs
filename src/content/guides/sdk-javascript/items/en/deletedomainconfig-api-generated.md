@@ -13,10 +13,8 @@ Returns: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'deleteDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8d3f2b4a9c';
-const domain: string = 'comments.myproduct.io';
-const response: DeleteDomainConfig200Response = await deleteDomainConfig(tenantId, domain);
-// Optional post-delete handler (demonstrates optional parameter usage)
-const onDeleted?: (res: DeleteDomainConfig200Response) => void = (res) => { /* notify admin, refresh UI */ };
-onDeleted?.(response);
+const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+const domain: string = 'auth.acmecorp.io';
+const options: { notifyAdmin?: boolean } = { notifyAdmin: true };
+const result: DeleteDomainConfig200Response = await deleteDomainConfig(tenantId, domain);
 [inline-code-end]

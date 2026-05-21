@@ -1,0 +1,7 @@
+{
+  "method": "getUser",
+  "signatureHash": "36eaaff66c277cd8d120abb9e9445effdb51c79e59288c2d5f5f83465f0d6d99",
+  "generatedAt": "2026-05-20T18:33:24.490Z",
+  "codeExample": "const idSuffix: string | undefined = undefined;\nconst tenantId: string = \"acme-enterprises\";\nconst id: string = idSuffix ?? \"user_98765\";\nconst response: GetUser200Response = await getUser({ tenantId, id });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "8231d82fcf033e8e3af24fe04eec51a4c23d3e74f2fd1b97bda54d53b8778f19",
+  "generatedAt": "2026-05-20T18:33:18.004Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-corp-01';\n  const id: string = 'user-84f3b2';\n  const deleteComments: string = 'Permanently remove legacy flagged comments from 2020';\n  const commentDeleteMode: string = 'hard';\n  const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

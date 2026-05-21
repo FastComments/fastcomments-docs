@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "4672c899dd2012e181f147a8d4725c63831766208c1cd44699932090a9458790",
+  "generatedAt": "2026-05-20T18:33:21.839Z",
+  "codeExample": "const tag: string = \"outdated-policy\";\nconst tenantId: string = \"acme_corp_42\";\nconst deleteHashTagRequest: DeleteHashTagRequest = {};\nconst result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);",
+  "model": "gpt-5-mini"
+}

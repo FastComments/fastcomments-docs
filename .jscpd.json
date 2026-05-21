@@ -1,0 +1,19 @@
+{
+  "pattern": "rust/**/*.rs",
+  "ignore": [
+    "**/target/**",
+    "**/tests/**",
+    "**/node_modules/**",
+    "**/*-fixture*"
+  ],
+  "format": ["rust"],
+  "threshold": 3,
+  "minLines": 5,
+  "minTokens": 50,
+  "reporters": ["console"],
+  "absolute": true,
+  "gitignore": true,
+  "blame": false,
+  "silent": false,
+  "exitCode": 1
+}

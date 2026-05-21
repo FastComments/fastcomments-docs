@@ -14,18 +14,13 @@ Returns: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'updateUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_987';
-  const id: string = 'badge_top_contributor_42';
-  const updateUserBadgeParams: UpdateUserBadgeParams = {
-    title: 'Top Contributor',
-    description: 'Awarded for reaching 100 high-quality comments',
-    color: '#FFD700',
-    iconUrl: 'https://cdn.acme.com/badges/top-contributor.svg',
-    active: true,
-    notifyUsers: true
-  } as UpdateUserBadgeParams;
-  const result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);
-  console.log(result);
-})();
+const tenantId: string = "acme-corp-tenant-01";
+const id: string = "user_81234";
+const updateUserBadgeParams: UpdateUserBadgeParams = {
+  badgeId: "top_contributor",
+  title: "Top Contributor",
+  description: "Awarded for sustained high-quality community contributions",
+  expiresAt: "2026-12-31T23:59:59Z" // optional parameter demonstrated
+} as UpdateUserBadgeParams;
+const result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);
 [inline-code-end]

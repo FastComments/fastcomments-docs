@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "d5138dab7fe6a9243b7ae06e3e5bb1f5cbec4856898193fd330de8ddeac30afe",
+  "generatedAt": "2026-05-20T18:33:34.434Z",
+  "codeExample": "const tenantId: string = \"acme-corp-001\";\nconst userId: string = \"user_8742\";\nconst id: string = \"TCK-2026-00042\";\nconst changeTicketStateBody: ChangeTicketStateBody = {\n  state: \"closed\",\n  comment: \"Fixed in backend service; verified by QA\",\n  notifyFollowers: false\n} as ChangeTicketStateBody;\nconst result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);",
+  "model": "gpt-5-mini"
+}

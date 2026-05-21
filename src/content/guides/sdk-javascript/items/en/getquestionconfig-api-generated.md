@@ -13,13 +13,10 @@ Returns: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getQuestionConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-92';
-const id: string = 'question-2026-07-42';
-const response: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
-
-function summarize(cfg: GetQuestionConfig200Response, includeDetails?: boolean): string {
-  return includeDetails ? 'Question config (detailed)' : 'Question config (summary)';
-}
-
-const summary: string = summarize(response);
+(async () => {
+  const tenantId: string = 'acme-enterprises';
+  const id: string = 'question-987654321';
+  const config: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
+  console.log(config);
+})();
 [inline-code-end]

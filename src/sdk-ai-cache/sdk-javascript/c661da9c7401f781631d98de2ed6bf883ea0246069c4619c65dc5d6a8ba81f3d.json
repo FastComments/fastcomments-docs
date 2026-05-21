@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "c661da9c7401f781631d98de2ed6bf883ea0246069c4619c65dc5d6a8ba81f3d",
+  "generatedAt": "2026-05-20T18:33:31.368Z",
+  "codeExample": "const tenantId: string = 'acme-corp-927';\nconst id: string = 'questionCfg-4f1d';\nconst customOption: QuestionConfigCustomOptionsInner = { label: 'Mobile app', value: 'mobile_users' } as QuestionConfigCustomOptionsInner;\nconst updateQuestionConfigBody: UpdateQuestionConfigBody = {\n  title: 'Post-purchase satisfaction',\n  enabled: true,\n  customOptions: [customOption],\n  description: 'Collect quick feedback after checkout'\n} as UpdateQuestionConfigBody;\nconst result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

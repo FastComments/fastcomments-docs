@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "a752f7b21a570afd9e88ac845ae06450c242e44c5f61dfc6d5c1d8f20c9100cf",
+  "generatedAt": "2026-05-20T18:33:23.650Z",
+  "codeExample": "const tenantId: string = \"tenant_4f7a9c\";\nconst userId: string | undefined = \"user_83a2\";\nconst urlId: string | undefined = \"https://app.example.com/posts/123\";\nconst fromCommentId: string | undefined = \"cmt_1024\";\nconst viewed: boolean | undefined = false;\nconst type: string | undefined = \"mention\";\nconst skip: number | undefined = 25;\nconst notifications: GetNotifications200Response = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);",
+  "model": "gpt-5-mini"
+}

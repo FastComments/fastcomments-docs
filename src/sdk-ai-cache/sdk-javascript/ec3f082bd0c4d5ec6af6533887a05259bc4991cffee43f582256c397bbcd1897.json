@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "ec3f082bd0c4d5ec6af6533887a05259bc4991cffee43f582256c397bbcd1897",
+  "generatedAt": "2026-05-20T18:33:24.820Z",
+  "codeExample": "const tenantId: string = 'tenant-8a3b2f';\nconst subdomain: string | undefined = 'payments'; // optional segment\nconst domain: string = subdomain ? `${subdomain}.acme-corp.com` : 'acme-corp.com';\nconst domainConfig: GetDomainConfig200Response = await getDomainConfig(tenantId, domain);",
+  "model": "gpt-5-mini"
+}

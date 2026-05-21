@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "9e92d0034c4912493c7bf065be5ff4eaf22bbeee0115f09eef957563b5ad27be",
+  "generatedAt": "2026-05-20T18:33:20.515Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst urlId: string = 'site-2026';\nconst usernameStartsWith: string = 'mar';\nconst mentionGroupIds: Array<string> = ['engineering', 'product-design'];\nconst sso: string = 'saml';\nconst result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);",
+  "model": "gpt-5-mini"
+}

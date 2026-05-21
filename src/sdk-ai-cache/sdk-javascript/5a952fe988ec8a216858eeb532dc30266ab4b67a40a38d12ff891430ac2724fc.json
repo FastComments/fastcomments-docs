@@ -1,0 +1,7 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "5a952fe988ec8a216858eeb532dc30266ab4b67a40a38d12ff891430ac2724fc",
+  "generatedAt": "2026-05-20T18:33:17.918Z",
+  "codeExample": "const tenantId: string = \"acme-corp-84\";\nconst id: string = \"sub_92f1b3a7\";\nconst responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, id);\n\nconst userId: string = \"user-2983\";\nconst responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, id, userId);",
+  "model": "gpt-5-mini"
+}

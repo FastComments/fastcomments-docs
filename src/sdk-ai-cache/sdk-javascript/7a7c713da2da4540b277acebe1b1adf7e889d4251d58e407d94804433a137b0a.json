@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "7a7c713da2da4540b277acebe1b1adf7e889d4251d58e407d94804433a137b0a",
+  "generatedAt": "2026-05-20T18:33:24.091Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_9b3f\";\n  const urlId: string = \"survey-2026-spring\";\n  const userId: string = \"user_00123\";\n  const startDate: string = \"2026-04-01T00:00:00Z\";\n  const questionIds: string = \"q_42,q_43\";\n  const skip: number = 0;\n  const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "219d4fb3ddf36a992901cff9f8a49868b595098bc3e6a3d41c50009d85acbe20",
+  "generatedAt": "2026-05-20T18:33:19.549Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"global-media\";\n  const search: string = \"laughing baby\";\n  const locale: string = \"en-US\";\n  const rating: string = \"pg\";\n  const page: number = 2;\n  const result: GifSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

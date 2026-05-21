@@ -18,12 +18,12 @@ Returns: [`GetNotifications200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getNotifications Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_84b3f2";
-const userId: string = "user_1279";
-const urlId: string = "https://www.example.com/articles/2026/03/25/new-feature";
-const fromCommentId: string = "cmt_5421";
-const viewed: boolean = false;
-const type: string = "mention";
-const skip: number = 0;
+const tenantId: string = "tenant_4f7a9c";
+const userId: string | undefined = "user_83a2";
+const urlId: string | undefined = "https://app.example.com/posts/123";
+const fromCommentId: string | undefined = "cmt_1024";
+const viewed: boolean | undefined = false;
+const type: string | undefined = "mention";
+const skip: number | undefined = 25;
 const notifications: GetNotifications200Response = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);
 [inline-code-end]

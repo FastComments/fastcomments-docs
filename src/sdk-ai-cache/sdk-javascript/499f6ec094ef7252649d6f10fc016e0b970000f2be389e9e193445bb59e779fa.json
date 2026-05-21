@@ -1,0 +1,7 @@
+{
+  "method": "getPages",
+  "signatureHash": "499f6ec094ef7252649d6f10fc016e0b970000f2be389e9e193445bb59e779fa",
+  "generatedAt": "2026-05-20T18:33:31.260Z",
+  "codeExample": "const tenantId: string = \"tenant_3f8d9b2a\";\nconst options: { page?: number; pageSize?: number } = { page: 1, pageSize: 25 };\nconst pagesResponse: GetPagesAPIResponse = await getPages(tenantId, options);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "0629356fd8330cc75947a9db23427e45886775147e63e1c95df6d1aadef926c1",
+  "generatedAt": "2026-05-20T18:33:25.065Z",
+  "codeExample": "const tenantId: string = 'tenant_12345';\nconst notificationId: string = 'notif_98765';\nconst commentId: string = 'cmt_54321';\nconst optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum = UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptedIn;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: UpdateUserNotificationStatus200Response = await updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso);",
+  "model": "gpt-5-mini"
+}

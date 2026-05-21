@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "97782441bcb94941cdef573a825d2ec06afbd8bd4c62d994f1f1bf87e1576baa",
+  "generatedAt": "2026-05-20T18:33:24.752Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst id: string = 'emailTemplate_pwd_reset_9f3c';\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  name: 'Password Reset Notification',\n  subject: 'Reset your ACME password',\n  html: '<p>Click <a href=\"{{reset_link}}\">here</a> to reset your password.</p>'\n} as UpdateEmailTemplateBody;\nconst result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

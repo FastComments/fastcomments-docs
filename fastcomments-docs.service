@@ -6,6 +6,12 @@ Type=simple
 Restart=always
 RestartSec=1
 User=winrid
+# WorkingDirectory makes the Rust server's repo_root() walk start
+# from the deploy dir instead of `/` (systemd's default CWD).
+# run.sh also `cd`s as a belt-and-suspenders measure for manual
+# invocations, but keeping it declared here matches systemd best
+# practice and survives anyone bypassing run.sh.
+WorkingDirectory=/home/winrid/fastcomments-docs
 ExecStart=/usr/bin/env sh /home/winrid/fastcomments-docs/run.sh
 
 [Install]

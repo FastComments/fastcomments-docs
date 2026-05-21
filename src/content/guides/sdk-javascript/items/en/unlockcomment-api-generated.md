@@ -15,10 +15,10 @@ Returns: [`LockComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'unLockComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9d4f2b';
-const commentId: string = 'cmt_8a3e1f';
-const broadcastId: string = 'broadcast_2026_03_25';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
-
-const result: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId, sso);
+const tenantId: string = "tenant_7b3f2d";
+const commentId: string = "cmt-92f4b1";
+const broadcastId: string = "brd-20260520-01";
+const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NjciLCJpYXQiOjE2ODYyMzQ1MDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+const resultWithoutSSO: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId);
+const resultWithSSO: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId, ssoToken);
 [inline-code-end]

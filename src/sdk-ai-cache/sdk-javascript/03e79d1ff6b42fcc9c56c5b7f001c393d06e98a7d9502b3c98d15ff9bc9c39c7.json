@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "03e79d1ff6b42fcc9c56c5b7f001c393d06e98a7d9502b3c98d15ff9bc9c39c7",
+  "generatedAt": "2026-05-20T18:33:21.839Z",
+  "codeExample": "const tenantId: string = 'tenant-4a1c2b9f';\nconst id: string = 'tmpl-7c3b21';\nconst preferredLocale: string | undefined = 'en-US';\n\nconst template: GetEmailTemplate200Response = await getEmailTemplate(tenantId, id);",
+  "model": "gpt-5-mini"
+}

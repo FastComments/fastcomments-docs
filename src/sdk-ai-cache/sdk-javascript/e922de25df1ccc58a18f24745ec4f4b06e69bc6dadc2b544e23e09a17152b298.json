@@ -1,0 +1,7 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "e922de25df1ccc58a18f24745ec4f4b06e69bc6dadc2b544e23e09a17152b298",
+  "generatedAt": "2026-05-20T18:33:20.385Z",
+  "codeExample": "const tenantId: string = \"tenant_8f3a4b2c\";\nconst id: string = \"sso_user_72b9a1\";\nconst updateAPISSOUserData: UpdateAPISSOUserData = {\n  email: \"jane.doe@acme-corp.com\",\n  displayName: \"Jane Doe\",\n  department: \"Product\",\n  roles: [\"user\", \"editor\"]\n};\nconst updateComments: boolean = true;\nconst result: PatchSSOUserAPIResponse = await patchSSOUser(tenantId, id, updateAPISSOUserData, updateComments)",
+  "model": "gpt-5-mini"
+}

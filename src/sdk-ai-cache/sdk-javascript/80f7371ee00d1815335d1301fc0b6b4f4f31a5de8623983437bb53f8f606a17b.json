@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "80f7371ee00d1815335d1301fc0b6b4f4f31a5de8623983437bb53f8f606a17b",
+  "generatedAt": "2026-05-20T18:33:27.676Z",
+  "codeExample": "const tenantId: string = \"acme_corp_tenant_42\";\nconst id: string = \"moderator_9f3b\";\nconst updateModeratorBody: UpdateModeratorBody = { role: \"lead_moderator\" } as UpdateModeratorBody;\nconst result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);",
+  "model": "gpt-5-mini"
+}

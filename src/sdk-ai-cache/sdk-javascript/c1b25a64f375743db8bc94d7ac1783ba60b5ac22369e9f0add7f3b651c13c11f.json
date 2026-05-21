@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "c1b25a64f375743db8bc94d7ac1783ba60b5ac22369e9f0add7f3b651c13c11f",
+  "generatedAt": "2026-05-20T18:33:22.323Z",
+  "codeExample": "const response: GetFeedPostsPublic200Response = await getFeedPostsPublic({\n  tenantId: 'tenant_acme_corp',\n  afterId: 'f8e7c6d5',\n  limit: 25,\n  tags: ['product', 'release'],\n  sso: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTYifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',\n  isCrawler: false,\n  includeUserInfo: true\n});",
+  "model": "gpt-5-mini"
+}

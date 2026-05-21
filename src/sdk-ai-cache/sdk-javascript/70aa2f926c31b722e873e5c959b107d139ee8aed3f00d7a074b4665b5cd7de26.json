@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "70aa2f926c31b722e873e5c959b107d139ee8aed3f00d7a074b4665b5cd7de26",
+  "generatedAt": "2026-05-20T18:33:21.384Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises';\nconst userId: string = 'user_9f2b3c';\nconst result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

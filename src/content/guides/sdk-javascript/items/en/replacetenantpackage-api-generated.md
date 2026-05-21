@@ -14,15 +14,16 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'replaceTenantPackage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-9f3c2a";
-const id: string = "pkg_4f8b21";
-const replaceTenantPackageBody: ReplaceTenantPackageBody = {
-  packageName: "Premium Moderation Pack",
-  enabled: true,
-  apiStatus: { mode: "active" } as APIStatus,
-  customConfigParameters: { maxFlagsBeforeReview: 5 } as CustomConfigParameters,
-  voteStyle: "thumbs" as VoteStyle,
-  tosConfig: { requireAcceptance: true } as TOSConfig
-};
-const result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
+(async () => {
+  const tenantId: string = 'tenant_8a1f';
+  const id: string = 'pkg_bronze_2026';
+  const replaceTenantPackageBody: ReplaceTenantPackageBody = {
+    name: 'Bronze Plan',
+    description: 'Entry tier with basic moderation and analytics',
+    apiStatus: { status: 'active' },
+    customConfigParameters: { maxCommentsPerUser: 100 }
+  } as ReplaceTenantPackageBody;
+  const result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]

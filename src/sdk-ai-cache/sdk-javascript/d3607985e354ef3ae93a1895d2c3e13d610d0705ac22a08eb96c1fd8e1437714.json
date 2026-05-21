@@ -1,0 +1,7 @@
+{
+  "method": "addPage",
+  "signatureHash": "d3607985e354ef3ae93a1895d2c3e13d610d0705ac22a08eb96c1fd8e1437714",
+  "generatedAt": "2026-05-20T18:33:23.426Z",
+  "codeExample": "const tenantId: string = 'tenant_9b3f2c1a';\nconst createData: CreateAPIPageData = {\n  title: 'Q3 Product Roadmap',\n  slug: 'q3-product-roadmap',\n  content: '<h1>Goals</h1><p>Focus on performance and reliability improvements.</p>',\n  authorId: 'user_84c2',\n  published: false,            // optional flag demonstrated\n  tags: ['product', 'roadmap'] // optional metadata demonstrated\n};\nconst result: AddPageAPIResponse = await addPage(tenantId, createData);",
+  "model": "gpt-5-mini"
+}

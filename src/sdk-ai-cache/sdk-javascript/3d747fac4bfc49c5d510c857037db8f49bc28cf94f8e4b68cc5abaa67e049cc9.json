@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "3d747fac4bfc49c5d510c857037db8f49bc28cf94f8e4b68cc5abaa67e049cc9",
+  "generatedAt": "2026-05-20T18:33:35.254Z",
+  "codeExample": "const tenantId: string = 'tenant_8b3d72';\nconst request: BulkAggregateQuestionResultsRequest = {\n  items: [\n    {\n      questionId: 'q-00123',\n      includeSubQuestions: true,\n      timeRange: { start: '2025-01-01T00:00:00Z', end: '2025-01-31T23:59:59Z' }\n    }\n  ],\n  bucket: { interval: 'day' }\n} as BulkAggregateQuestionResultsRequest;\nconst result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, request, true);",
+  "model": "gpt-5-mini"
+}

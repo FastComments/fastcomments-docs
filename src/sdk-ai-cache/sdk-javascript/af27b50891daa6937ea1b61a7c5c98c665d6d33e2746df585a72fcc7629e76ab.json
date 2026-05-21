@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "af27b50891daa6937ea1b61a7c5c98c665d6d33e2746df585a72fcc7629e76ab",
+  "generatedAt": "2026-05-20T18:33:29.826Z",
+  "codeExample": "async function fetchStats(): Promise<void> {\n  const tenantId: string = 'tenant-4c2b1a';\n  const postIds: string[] = ['post_7f1e3a', 'post_9b2c6d'];\n  const sso: string | undefined = 'sso_tok_9XyZ123';\n  const result: GetFeedPostsStats200Response = await getFeedPostsStats(tenantId, postIds, sso);\n  console.log(result);\n}\nfetchStats();",
+  "model": "gpt-5-mini"
+}

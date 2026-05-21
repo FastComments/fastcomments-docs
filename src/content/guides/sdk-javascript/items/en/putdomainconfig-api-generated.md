@@ -14,14 +14,14 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_92b4c1a7";
-const domainToUpdate: string = "blog.company-example.com";
+const tenantId: string = 'tenant_88a2b7';
+const domainToUpdate: string = 'login.enterprise-acme.com';
 const updateDomainConfigParams: UpdateDomainConfigParams = {
-  enableComments: true,
-  moderationMode: "pre-moderation",
-  allowedOrigins: ["https://company-example.com", "https://studio.company-example.com"],
-  // optional parameter demonstrated by including redirectToCanonical (may be omitted)
-  redirectToCanonical: true
+  enabled: true,
+  ttlSeconds: 3600,
+  redirectToHttps: true,
+  aliases: ['login.acme-staging.com'], // optional parameter demonstrated
+  metadata: { owner: 'platform-team', environment: 'production' }
 };
-const response: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
+const updatedConfig: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
 [inline-code-end]

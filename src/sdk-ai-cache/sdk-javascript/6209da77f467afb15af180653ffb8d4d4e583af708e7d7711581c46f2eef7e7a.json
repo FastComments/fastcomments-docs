@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "6209da77f467afb15af180653ffb8d4d4e583af708e7d7711581c46f2eef7e7a",
+  "generatedAt": "2026-05-20T18:33:20.677Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant-8f4b2c';\n  const skip: number = 40;\n  const responseWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);\n  const responseWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);\n  console.log(responseWithoutSkip, responseWithSkip);\n})();",
+  "model": "gpt-5-mini"
+}

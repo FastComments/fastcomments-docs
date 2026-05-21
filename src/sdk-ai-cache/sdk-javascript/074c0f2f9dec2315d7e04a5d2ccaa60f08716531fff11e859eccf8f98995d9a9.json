@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "074c0f2f9dec2315d7e04a5d2ccaa60f08716531fff11e859eccf8f98995d9a9",
+  "generatedAt": "2026-05-20T18:33:27.291Z",
+  "codeExample": "const tenantId: string = 'acme-company-001';\nconst userId: string = 'u_78f4b2';\nconst createTicketBody: CreateTicketBody = {\n  title: 'Unable to access project dashboard',\n  description: 'Receiving 403 when accessing /dashboard for project X',\n  priority: 'high',\n  tags: ['dashboard', 'access'] // optional field demonstrated\n};\nconst result: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);",
+  "model": "gpt-5-mini"
+}

@@ -15,13 +15,12 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteTenantUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme_corp_tenant_9f1a2b";
-  const id: string = "user_4d2a1b6c";
-  const deleteComments: string = "true"; // remove user's comments as well
-  const commentDeleteMode: string = "permanent"; // "permanent" or "soft"
+(async () => {
+  const tenantId: string = 'acme-corp-01';
+  const id: string = 'user-84f3b2';
+  const deleteComments: string = 'Permanently remove legacy flagged comments from 2020';
+  const commentDeleteMode: string = 'hard';
   const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
   console.log(result);
-}
-run();
+})();
 [inline-code-end]

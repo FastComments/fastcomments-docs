@@ -216,6 +216,10 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
         return imageTemplate;
     }
 
+    if (process.env.SKIP_SCREENSHOTS === '1') {
+        return imageTemplate;
+    }
+
     return await withPooledBrowser(width, async ({browser, page}) => {
         console.log('app-screenshot-generator authenticated...');
         await page.bringToFront();

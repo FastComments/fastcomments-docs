@@ -15,9 +15,11 @@ Returns: [`FlagComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'unFlagComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-001';
-const commentId: string = 'cmt_9f8e7d6c';
-const userId: string = 'user_72b4a1c9';
-const anonUserId: string = 'anon_3d2c1b0a';
-const response: FlagComment200Response = await unFlagComment(tenantId, commentId, userId, anonUserId);
+const tenantId: string = 'tenant_8247';
+const id: string = 'cmt_48291';
+const userId: string = 'user_jdoe42';
+const anonUserId: string = 'anon_5f9a';
+
+const resultWithUser: FlagComment200Response = await unFlagComment(tenantId, id, userId);
+const resultWithAnon: FlagComment200Response = await unFlagComment(tenantId, id, undefined, anonUserId);
 [inline-code-end]

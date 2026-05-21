@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "f0ef0cbc1ceeea4bc3c2c2f666518f84822f1927d45ba155ce30a9fae7ea5922",
+  "generatedAt": "2026-05-20T18:33:21.123Z",
+  "codeExample": "const tenantId: string = \"acme-tenant-001\";\nconst domainToUpdate: string = \"billing.acme-corp.com\";\nconst patchDomainConfigParams: PatchDomainConfigParams = {\n  ssl: { enabled: true, certificateId: \"cert-prod-12345\" }, // optional fields included\n  redirect: { from: \"http://billing.acme-corp.com\", to: \"https://billing.acme-corp.com\", permanent: true }\n};\nconst updatedConfig: GetDomainConfig200Response = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);",
+  "model": "gpt-5-mini"
+}

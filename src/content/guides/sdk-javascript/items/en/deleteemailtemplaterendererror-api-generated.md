@@ -14,12 +14,9 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1d2f9b";
-const id: string = "email_template_42b1";
-const errorId: string = "render_err_2026-04-24_7f3c";
-const includeStackTrace: boolean | undefined = undefined; // optional flag example
-
-const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-// If an optional options object were supported it might look like:
-// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+const tenantId: string = 'tenant_acme_corp_01';
+const id: string = 'welcome_email_template_2025';
+const errorId: string = 'render_error_9001';
+let note: string | undefined = 'stale renderer failure'; // optional metadata example
+const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "9dd88bd253a5847d28fb75bb9ef5596b9d672149060b49c9627d49803d0bab26",
+  "generatedAt": "2026-05-20T18:33:24.519Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b2c';\nconst customConfig: CustomConfigParameters = { importance: 'low', notifyOnChange: false };\nconst tag: BulkCreateHashTagsBodyTagsInner = {\n  name: 'feature-ui',\n  description: 'Marks UI-related feature work',\n  color: '#1E90FF',\n  customConfig\n};\nconst bulkCreateHashTagsBody: BulkCreateHashTagsBody = { tags: [tag] };\nconst resultWithTenant: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);\nconst resultWithoutTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);",
+  "model": "gpt-5-mini"
+}

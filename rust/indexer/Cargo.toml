@@ -1,0 +1,26 @@
+[package]
+name = "fcdocs-indexer"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "indexer"
+path = "src/main.rs"
+
+[dependencies]
+fcdocs-shared = { path = "../shared" }
+fcdocs-indexschema = { path = "../indexschema" }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tantivy = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+num_cpus = { workspace = true }
+once_cell = { workspace = true }
+tempfile = { workspace = true }
+reqwest = { workspace = true }

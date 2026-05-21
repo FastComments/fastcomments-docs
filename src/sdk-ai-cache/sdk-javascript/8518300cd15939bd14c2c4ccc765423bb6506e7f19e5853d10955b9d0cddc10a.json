@@ -1,0 +1,7 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "8518300cd15939bd14c2c4ccc765423bb6506e7f19e5853d10955b9d0cddc10a",
+  "generatedAt": "2026-05-20T18:33:28.904Z",
+  "codeExample": "const tenantId: string = 'acme-organization-92';\nconst createAPISSOUserData: CreateAPISSOUserData = {\n  email: 'sarah.connor@skynetpartners.com',\n  firstName: 'Sarah',\n  lastName: 'Connor',\n  externalId: 'okta|678901234',\n  roles: ['admin', 'developer'], // optional field demonstrated\n  displayName: 'Sarah Connor'    // optional field demonstrated\n};\nconst addUserResult: AddSSOUserAPIResponse = await addSSOUser(tenantId, createAPISSOUserData);",
+  "model": "gpt-5-mini"
+}
