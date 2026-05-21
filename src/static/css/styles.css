@@ -234,7 +234,6 @@ a:hover {
 
 .content h3 {
     font-family: var(--fc-font-display);
-    font-weight: 600;
     color: var(--fc-text);
 }
 
