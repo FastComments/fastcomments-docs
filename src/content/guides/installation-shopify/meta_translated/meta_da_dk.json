@@ -1,31 +1,56 @@
 {
   "name": "Shopify-installation",
-  "pageHeader": "Tilføj kommentarer til Shopify-sider",
+  "pageHeader": "Tilføj kommentarer til Shopify-websteder",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Trin 1: Importer eksisterende kommentarer",
-      "file": "shopify-step-1.md",
+      "name": "Installer FastComments-appen",
+      "file": "shopify-install.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Trin 2: Deaktiver standardkommentarsystemet",
-      "file": "shopify-step-2.md",
+      "name": "Tilføj kommentarer til blogindlæg og produkter",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Trin 3: Åbn skabelonen for blogtemaet",
-      "file": "shopify-step-3.md",
+      "name": "Tilføj et badge med antal kommentarer",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Trin 4: Tilføj FastComments.com-koden",
-      "file": "shopify-step-4.md",
+      "name": "Tilføj et feed med nyeste kommentarer",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Succes",
-      "file": "shopify-success.md",
+      "name": "Tilføj et feed med nyeste diskussioner",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify-installation"
+    },
+    {
+      "name": "Tilføj en liste over mest populære sider",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify-installation"
+    },
+    {
+      "name": "Tilføj et sammendrag af anmeldelser",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify-installation"
+    },
+    {
+      "name": "Automatisk log ind for Shopify-kunder",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify-installation"
+    },
+    {
+      "name": "Importer eksisterende kommentarer",
+      "file": "shopify-import.md",
+      "subCat": "Shopify-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "shopify-customize.md",
       "subCat": "Shopify-installation"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Tilpasning",
-      "file": "shopify-customize.md",
+      "name": "Manuel installation (avanceret)",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify-installation"
     }
   ]

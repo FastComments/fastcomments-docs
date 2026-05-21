@@ -1,31 +1,56 @@
 {
   "name": "Инсталација Shopify-а",
-  "pageHeader": "Додајте коментаре на Shopify сајтове",
+  "pageHeader": "Додавање коментара на Shopify сајтове",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Увезите постојеће коментаре",
-      "file": "shopify-step-1.md",
+      "name": "Инсталација FastComments апликације",
+      "file": "shopify-install.md",
       "subCat": "Инсталација Shopify-а"
     },
     {
-      "name": "Корак 2: Онемогућите подразумевани систем коментирања",
-      "file": "shopify-step-2.md",
+      "name": "Додавање коментара на блог постове и производе",
+      "file": "shopify-add-comments.md",
       "subCat": "Инсталација Shopify-а"
     },
     {
-      "name": "Корак 3: Отворите шаблон теме блога",
-      "file": "shopify-step-3.md",
+      "name": "Додавање ознаке са бројем коментара",
+      "file": "shopify-comment-count.md",
       "subCat": "Инсталација Shopify-а"
     },
     {
-      "name": "Корак 4: Додајте код са FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "Додавање фида са најновијим коментарима",
+      "file": "shopify-recent-comments.md",
       "subCat": "Инсталација Shopify-а"
     },
     {
-      "name": "Успјех",
-      "file": "shopify-success.md",
+      "name": "Додавање фида са најновијим дискусијама",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Инсталација Shopify-а"
+    },
+    {
+      "name": "Листа најпосећенијих страница",
+      "file": "shopify-top-pages.md",
+      "subCat": "Инсталација Shopify-а"
+    },
+    {
+      "name": "Сажетак рецензија",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Инсталација Shopify-а"
+    },
+    {
+      "name": "Аутоматско пријављивање Shopify купаца",
+      "file": "shopify-sso.md",
+      "subCat": "Инсталација Shopify-а"
+    },
+    {
+      "name": "Увоз постојећих коментара",
+      "file": "shopify-import.md",
+      "subCat": "Инсталација Shopify-а"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "shopify-customize.md",
       "subCat": "Инсталација Shopify-а"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Инсталација Shopify-а"
     },
     {
-      "name": "Прилагођавање",
-      "file": "shopify-customize.md",
+      "name": "Ручна инсталација (напредно)",
+      "file": "shopify-manual-install.md",
       "subCat": "Инсталација Shopify-а"
     }
   ]

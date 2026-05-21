@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Step 1: Import Existing Comments",
-      "file": "shopify-step-1.md",
+      "name": "Install the FastComments App",
+      "file": "shopify-install.md",
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Step 2: Disable Default Commenting System",
-      "file": "shopify-step-2.md",
+      "name": "Add Comments to Blog Posts and Products",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Step 3: Open The Blog Theme Template",
-      "file": "shopify-step-3.md",
+      "name": "Add a Comment Count Badge",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Step 4: Add The FastComments.com Code",
-      "file": "shopify-step-4.md",
+      "name": "Add a Recent Comments Feed",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Success",
-      "file": "shopify-success.md",
+      "name": "Add a Recent Discussions Feed",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Add a Top Pages List",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Add a Reviews Summary",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Auto-Login Shopify Customers",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Import Existing Comments",
+      "file": "shopify-import.md",
+      "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "shopify-customize.md",
       "subCat": "Shopify Installation"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Customization",
-      "file": "shopify-customize.md",
+      "name": "Manual Install (Advanced)",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify Installation"
     }
   ]

@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "ステップ 1: 既存のコメントをインポート",
-      "file": "shopify-step-1.md",
+      "name": "FastComments アプリをインストールする",
+      "file": "shopify-install.md",
       "subCat": "Shopify のインストール"
     },
     {
-      "name": "ステップ 2: デフォルトのコメント機能を無効化",
-      "file": "shopify-step-2.md",
+      "name": "ブログ投稿と商品にコメントを追加する",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify のインストール"
     },
     {
-      "name": "ステップ 3: ブログのテーマテンプレートを開く",
-      "file": "shopify-step-3.md",
+      "name": "コメント数バッジを追加する",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify のインストール"
     },
     {
-      "name": "ステップ 4: FastComments.com のコードを追加",
-      "file": "shopify-step-4.md",
+      "name": "最近のコメントフィードを追加する",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify のインストール"
     },
     {
-      "name": "完了",
-      "file": "shopify-success.md",
+      "name": "最近のディスカッションフィードを追加する",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "人気ページ一覧を追加する",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "レビューの概要を追加する",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "Shopify の顧客を自動ログインさせる",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "既存のコメントをインポートする",
+      "file": "shopify-import.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "shopify-customize.md",
       "subCat": "Shopify のインストール"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify のインストール"
     },
     {
-      "name": "カスタマイズ",
-      "file": "shopify-customize.md",
+      "name": "手動インストール（上級者向け）",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify のインストール"
     }
   ]

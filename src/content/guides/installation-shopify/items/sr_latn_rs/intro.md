@@ -1,5 +1,5 @@
-Pomoću FastComments-a možemo lako dodati komentare uživo na bilo koji Shopify sajt.
+FastComments je dostupan na [Shopify App Store](https://apps.shopify.com/fastcomments). Instalirajte aplikaciju i prevucite FastComments blokove na bilo koji blog post, stranicu proizvoda ili prilagođenu stranicu iz Shopify uređivača tema. Nije potrebno uređivanje koda.
 
-Uputstva ispod su za blog napravljen na Shopify-ju, ali embed kod se takođe može ručno dodati na bilo koju stranicu uređivanjem drugih fajlova teme. Podrška FastComments-a takođe može pomoći sa ovim.
+Kada instalirate aplikaciju, Shopify obezbeđuje vaš FastComments nalog, povezuje domen vaše prodavnice i automatski povezuje naplatu. Nije potrebno da se posebno prijavljujete na fastcomments.com.
 
-Imajte na umu da ovaj tutorijal zahteva FastComments nalog. Preporučuje se da se prvo registrujete, pa se onda vratite ovamo. [Možete kreirati nalog ovde.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+Stranice u ovom vodiču objašnjavaju svaki FastComments blok koji aplikacija pruža, kako jedinstvena prijava (single sign-on) funkcioniše za vaše Shopify kupce i kako uvesti postojeće komentare iz Shopifyja pre prebacivanja.

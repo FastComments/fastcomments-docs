@@ -1,5 +1,8 @@
-使用 FastComments，我们可以轻松地为任何 Shopify 站点添加实时评论。
+---
+FastComments 可在 [Shopify 应用商店](https://apps.shopify.com/fastcomments) 获取。安装该应用后，可从 Shopify 主题编辑器将 FastComments 区块拖放到任何博客文章、产品页面或自定义页面上。无需编辑代码。
 
-下面的说明适用于在 Shopify 上构建的博客，但嵌入代码也可以通过编辑其他主题文件手动添加到任何页面中。FastComments 支持也可以提供帮助。
+当您安装该应用时，Shopify 会为您的 FastComments 帐户进行配置，连接您的商店域名，并自动设置计费。您无需单独在 fastcomments.com 注册。
 
-请注意，本教程需要一个 FastComments 帐户。建议您先注册，然后再回来此处。[您可以在此处创建一个帐户。](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+本指南中的页面介绍了应用提供的每个 FastComments 区块、Shopify 客户的单点登录（SSO）如何工作，以及在切换之前如何导入现有的 Shopify 评论。
+
+---

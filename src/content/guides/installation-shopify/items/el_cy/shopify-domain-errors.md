@@ -1,15 +1,15 @@
 ---
-Ενδέχεται να λάβετε σφάλμα εξουσιοδότησης, όπως το ακόλουθο:
+Εάν εγκαταστήσατε το FastComments από το Shopify App Store, το domain του καταστήματός σας προστίθεται αυτόματα στους εξουσιοδοτημένους τομείς του tenant και δεν θα πρέπει να βλέπετε σφάλμα τομέα. Αυτή η σελίδα ισχύει αν ακολουθήσατε τη χειροκίνητη διαδρομή εγκατάστασης, ή αν το storefront σας εξυπηρετείται σε προσαρμοσμένο domain που δεν είχε εγγραφεί στο Shopify τη στιγμή που εγκαταστάθηκε η εφαρμογή.
+
+Μπορεί να λάβετε ένα σφάλμα εξουσιοδότησης που μοιάζει με το παρακάτω:
 
 <div class="screenshot white-bg">
-    <div class="title">Λείπει διαμόρφωση τομέα</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Λείπει διαμόρφωση τομέα" />
+    <div class="title">Έλλειψη Διαμόρφωσης Τομέα</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Έλλειψη Διαμόρφωσης Τομέα" />
 </div>
 
-Αυτό συμβαίνει επειδή το FastComments δεν γνωρίζει ότι πρέπει να επιτρέψει τη χρήση του λογαριασμού σας σε αυτόν τον τομέα.
+Αυτό σημαίνει ότι το FastComments δεν αναγνωρίζει το domain στο οποίο φορτώνει το widget ως εξουσιοδοτημένο για τον tenant σας.
 
-Σε αυτή την περίπτωση, η διόρθωση είναι απλή. Απλά πρέπει να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας στο FastComments.com.
-
-[Μεταβείτε εδώ για να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας.](https://fastcomments.com/auth/my-account/configure-domains)
+Για να το διορθώσετε, προσθέστε το domain στον λογαριασμό FastComments σας: [Διαμόρφωση Τομέων](https://fastcomments.com/auth/my-account/configure-domains).
 
 ---

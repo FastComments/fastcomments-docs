@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "שלב 1: ייבא תגובות קיימות",
-      "file": "shopify-step-1.md",
+      "name": "התקנת אפליקציית FastComments",
+      "file": "shopify-install.md",
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "שלב 2: השבת את מערכת התגובות המוגדרת כברירת מחדל",
-      "file": "shopify-step-2.md",
+      "name": "הוספת תגובות לפוסטים בבלוג ולמוצרים",
+      "file": "shopify-add-comments.md",
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "שלב 3: פתח את תבנית הנושא של הבלוג",
-      "file": "shopify-step-3.md",
+      "name": "הוספת סמל המציג את מספר התגובות",
+      "file": "shopify-comment-count.md",
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "שלב 4: הוסף את קוד FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "הוספת פיד של תגובות אחרונות",
+      "file": "shopify-recent-comments.md",
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "הצלחה",
-      "file": "shopify-success.md",
+      "name": "הוספת פיד של דיונים אחרונים",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "הוספת רשימת הדפים המובילים",
+      "file": "shopify-top-pages.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "הוספת סיכום ביקורות",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "התחברות אוטומטית של לקוחות Shopify",
+      "file": "shopify-sso.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "ייבוא תגובות קיימות",
+      "file": "shopify-import.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "shopify-customize.md",
       "subCat": "התקנת Shopify"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "התאמה אישית",
-      "file": "shopify-customize.md",
+      "name": "התקנה ידנית (מתקדם)",
+      "file": "shopify-manual-install.md",
       "subCat": "התקנת Shopify"
     }
   ]

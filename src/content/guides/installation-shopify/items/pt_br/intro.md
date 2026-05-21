@@ -1,5 +1,5 @@
-Com o FastComments podemos adicionar facilmente comentários em tempo real a qualquer site do Shopify.
+FastComments está disponível na [Shopify App Store](https://apps.shopify.com/fastcomments). Instale o aplicativo e adicione blocos do FastComments em qualquer postagem de blog, página de produto ou página personalizada pelo editor de temas da Shopify. Não é necessário editar código.
 
-As instruções abaixo são para um blog criado no Shopify, mas o código de incorporação também pode ser adicionado manualmente a qualquer página editando outros arquivos do tema. O suporte do FastComments também pode ajudar com isso.
+Ao instalar o aplicativo, a Shopify provisiona sua conta FastComments, configura o domínio da sua loja e conecta o faturamento automaticamente. Você não precisa se cadastrar separadamente em fastcomments.com.
 
-Observe que este tutorial requer uma conta do FastComments. Recomenda-se que você crie uma conta primeiro e depois retorne aqui. [Você pode criar uma conta aqui.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+As páginas deste guia cobrem cada bloco do FastComments que o aplicativo fornece, como o single sign-on funciona para seus clientes da Shopify e como importar comentários existentes do Shopify antes de migrar.

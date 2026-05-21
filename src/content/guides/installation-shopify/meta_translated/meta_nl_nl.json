@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Bestaande reacties importeren",
-      "file": "shopify-step-1.md",
+      "name": "Installeer de FastComments-app",
+      "file": "shopify-install.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Stap 2: Standaard reactiesysteem uitschakelen",
-      "file": "shopify-step-2.md",
+      "name": "Voeg reacties toe aan blogposts en producten",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Stap 3: Open het blogsjabloon van het thema",
-      "file": "shopify-step-3.md",
+      "name": "Voeg een badge met aantal reacties toe",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Stap 4: Voeg de FastComments.com-code toe",
-      "file": "shopify-step-4.md",
+      "name": "Voeg een feed met recente reacties toe",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Succes",
-      "file": "shopify-success.md",
+      "name": "Voeg een feed met recente discussies toe",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify-installatie"
+    },
+    {
+      "name": "Voeg een lijst met populairste pagina's toe",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify-installatie"
+    },
+    {
+      "name": "Voeg een overzicht van beoordelingen toe",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify-installatie"
+    },
+    {
+      "name": "Automatisch inloggen voor Shopify-klanten",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify-installatie"
+    },
+    {
+      "name": "Bestaande reacties importeren",
+      "file": "shopify-import.md",
+      "subCat": "Shopify-installatie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "shopify-customize.md",
       "subCat": "Shopify-installatie"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Aanpassingen",
-      "file": "shopify-customize.md",
+      "name": "Handmatige installatie (Geavanceerd)",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify-installatie"
     }
   ]

@@ -1,6 +1,5 @@
----
-FastComments je dizajniran da se prilagodi vašem sajtu.
+Boje, fontovi, pravila moderacije, dozvoljeni HTML i anonimno komentarisanje mogu da se konfigurišu tako da odgovaraju brendiranju vaše prodavnice.
 
-Ako želite da dodate prilagođeni stil ili promenite konfiguraciju, [Pogledajte našu dokumentaciju za prilagođavanje](/guide-customizations-and-configuration.html) da saznate kako.
+Otvorite FastComments aplikaciju u svom Shopify adminu i kliknite na pločicu **Prilagodi** da biste otvorili ekran za prilagođavanje widgeta. Koristi se link za jednokratnu prijavu, tako da vam nije potrebno odvojeno prijavljivanje.
 
----
+Za potpuni spisak opcija prilagođavanja pogledajte [Vodič za prilagođavanje i konfiguraciju](/guide-customizations-and-configuration.html).

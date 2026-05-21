@@ -1,31 +1,56 @@
 {
   "name": "Shopify 설치",
-  "pageHeader": "Shopify 사이트에 댓글 추가하기",
+  "pageHeader": "Shopify 사이트에 댓글 추가",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "1단계: 기존 댓글 가져오기",
-      "file": "shopify-step-1.md",
+      "name": "FastComments 앱 설치",
+      "file": "shopify-install.md",
       "subCat": "Shopify 설치"
     },
     {
-      "name": "2단계: 기본 댓글 시스템 비활성화",
-      "file": "shopify-step-2.md",
+      "name": "블로그 게시물 및 상품에 댓글 추가",
+      "file": "shopify-add-comments.md",
       "subCat": "Shopify 설치"
     },
     {
-      "name": "3단계: 블로그 테마 템플릿 열기",
-      "file": "shopify-step-3.md",
+      "name": "댓글 수 배지 추가",
+      "file": "shopify-comment-count.md",
       "subCat": "Shopify 설치"
     },
     {
-      "name": "4단계: FastComments.com 코드 추가",
-      "file": "shopify-step-4.md",
+      "name": "최근 댓글 피드 추가",
+      "file": "shopify-recent-comments.md",
       "subCat": "Shopify 설치"
     },
     {
-      "name": "성공",
-      "file": "shopify-success.md",
+      "name": "최근 토론 피드 추가",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "상위 페이지 목록 추가",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "리뷰 요약 추가",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "Shopify 고객 자동 로그인",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "기존 댓글 가져오기",
+      "file": "shopify-import.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "shopify-customize.md",
       "subCat": "Shopify 설치"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Shopify 설치"
     },
     {
-      "name": "맞춤 설정",
-      "file": "shopify-customize.md",
+      "name": "수동 설치(고급)",
+      "file": "shopify-manual-install.md",
       "subCat": "Shopify 설치"
     }
   ]

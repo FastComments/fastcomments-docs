@@ -4,38 +4,63 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Імпорт існуючих коментарів",
-      "file": "shopify-step-1.md",
+      "name": "Встановити додаток FastComments",
+      "file": "shopify-install.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Крок 2: Вимкнення стандартної системи коментарів",
-      "file": "shopify-step-2.md",
+      "name": "Додати коментарі до публікацій блогу та товарів",
+      "file": "shopify-add-comments.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Крок 3: Відкриття шаблону теми блогу",
-      "file": "shopify-step-3.md",
+      "name": "Додати бейдж з кількістю коментарів",
+      "file": "shopify-comment-count.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Крок 4: Додавання коду FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "Додати стрічку останніх коментарів",
+      "file": "shopify-recent-comments.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Успіх",
-      "file": "shopify-success.md",
+      "name": "Додати стрічку останніх обговорень",
+      "file": "shopify-recent-discussions.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Помилки доменів",
-      "file": "shopify-domain-errors.md",
+      "name": "Додати список найпопулярніших сторінок",
+      "file": "shopify-top-pages.md",
+      "subCat": "Встановлення Shopify"
+    },
+    {
+      "name": "Додати зведення відгуків",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Встановлення Shopify"
+    },
+    {
+      "name": "Автоматичний вхід для клієнтів Shopify",
+      "file": "shopify-sso.md",
+      "subCat": "Встановлення Shopify"
+    },
+    {
+      "name": "Імпортувати існуючі коментарі",
+      "file": "shopify-import.md",
       "subCat": "Встановлення Shopify"
     },
     {
       "name": "Налаштування",
       "file": "shopify-customize.md",
+      "subCat": "Встановлення Shopify"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Встановлення Shopify"
+    },
+    {
+      "name": "Ручна установка (для просунутих)",
+      "file": "shopify-manual-install.md",
       "subCat": "Встановлення Shopify"
     }
   ]

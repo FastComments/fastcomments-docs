@@ -4,28 +4,53 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Importer les commentaires existants",
-      "file": "shopify-step-1.md",
+      "name": "Installer l'application FastComments",
+      "file": "shopify-install.md",
       "subCat": "Installation de Shopify"
     },
     {
-      "name": "Étape 2 : Désactiver le système de commentaires par défaut",
-      "file": "shopify-step-2.md",
+      "name": "Ajouter des commentaires aux articles de blog et aux produits",
+      "file": "shopify-add-comments.md",
       "subCat": "Installation de Shopify"
     },
     {
-      "name": "Étape 3 : Ouvrir le modèle de thème du blogue",
-      "file": "shopify-step-3.md",
+      "name": "Ajouter un badge affichant le nombre de commentaires",
+      "file": "shopify-comment-count.md",
       "subCat": "Installation de Shopify"
     },
     {
-      "name": "Étape 4 : Ajouter le code de FastComments.com",
-      "file": "shopify-step-4.md",
+      "name": "Ajouter un flux de commentaires récents",
+      "file": "shopify-recent-comments.md",
       "subCat": "Installation de Shopify"
     },
     {
-      "name": "Succès",
-      "file": "shopify-success.md",
+      "name": "Ajouter un flux de discussions récentes",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Installation de Shopify"
+    },
+    {
+      "name": "Ajouter une liste des pages populaires",
+      "file": "shopify-top-pages.md",
+      "subCat": "Installation de Shopify"
+    },
+    {
+      "name": "Ajouter un résumé des avis",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Installation de Shopify"
+    },
+    {
+      "name": "Connexion automatique des clients Shopify",
+      "file": "shopify-sso.md",
+      "subCat": "Installation de Shopify"
+    },
+    {
+      "name": "Importer des commentaires existants",
+      "file": "shopify-import.md",
+      "subCat": "Installation de Shopify"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "shopify-customize.md",
       "subCat": "Installation de Shopify"
     },
     {
@@ -34,8 +59,8 @@
       "subCat": "Installation de Shopify"
     },
     {
-      "name": "Personnalisation",
-      "file": "shopify-customize.md",
+      "name": "Installation manuelle (avancée)",
+      "file": "shopify-manual-install.md",
       "subCat": "Installation de Shopify"
     }
   ]

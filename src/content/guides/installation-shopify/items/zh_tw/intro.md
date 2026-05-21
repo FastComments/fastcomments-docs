@@ -1,8 +1,5 @@
----
-使用 FastComments，我們可以輕鬆將即時留言加入任何 Shopify 網站。
+FastComments 可在 [Shopify 應用程式商店](https://apps.shopify.com/fastcomments) 取得。從 Shopify 主題編輯器安裝此應用程式，並將 FastComments 區塊拖放到任何部落格文章、產品頁面或自訂頁面上。無需編輯程式碼。
 
-以下說明適用於在 Shopify 上建立的部落格，但嵌入程式碼也可以透過編輯其他主題檔案手動加入任何頁面。FastComments 支援也可以協助處理此事。
+當您安裝此應用程式時，Shopify 會為您設定 FastComments 帳戶、連結您的商店網域，並自動設定計費。您不需要另行在 fastcomments.com 註冊。
 
-請注意，本教學需要 FastComments 帳戶。建議您先註冊，然後再回來。 [您可以在此建立帳戶。](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----
+本指南中的頁面說明應用程式所提供的各個 FastComments 區塊、Shopify 客戶如何使用單一登入（SSO），以及在切換前如何匯入現有的 Shopify 評論。

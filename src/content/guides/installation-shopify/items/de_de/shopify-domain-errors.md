@@ -1,15 +1,12 @@
----
-Sie können einen Autorisierungsfehler erhalten, wie der folgende:
+Wenn Sie FastComments aus dem Shopify App Store installiert haben, wird die Domain Ihres Shops automatisch zu den autorisierten Domains des Tenants hinzugefügt und Sie sollten keinen Domain-Fehler sehen. Diese Seite gilt, wenn Sie den manuellen Installationsweg gewählt haben oder wenn Ihr Storefront auf einer benutzerdefinierten Domain gehostet wird, die zum Zeitpunkt der App-Installation nicht bei Shopify registriert war.
+
+Möglicherweise erhalten Sie einen Autorisierungsfehler, der wie folgt aussieht:
 
 <div class="screenshot white-bg">
-    <div class="title">Domänenkonfiguration fehlt</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domänenkonfiguration fehlt" />
+    <div class="title">Domain-Konfiguration fehlt</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain-Konfiguration fehlt" />
 </div>
 
-Das liegt daran, dass FastComments nicht weiß, dass Ihr Konto für diese Domain verwendet werden darf.
+Das bedeutet, dass FastComments die Domain, auf der das Widget geladen wird, nicht als für Ihren Tenant autorisiert erkennt.
 
-In diesem Fall ist die Lösung einfach. Sie müssen nur Ihre Website zu Ihrem FastComments.com-Konto hinzufügen.
-
-[Klicken Sie hier, um Ihre Website zu Ihrem Konto hinzuzufügen.](https://fastcomments.com/auth/my-account/configure-domains)
-
----
+Um das zu beheben, fügen Sie die Domain zu Ihrem FastComments-Konto hinzu: [Domains konfigurieren](https://fastcomments.com/auth/my-account/configure-domains).

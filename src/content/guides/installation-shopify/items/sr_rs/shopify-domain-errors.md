@@ -1,14 +1,12 @@
-Може да се појави грешка ауторизације, као следећа:
+Ако сте инсталирали FastComments из Shopify App Store-а, домен ваше продавнице се аутоматски додаје у овлашћене домене тенанта и не бисте требали видети грешку у вези са доменом. Ова страница важи ако сте прошли ручну инсталацију, или ако се ваш продавнички сајт сервира на прилагођеном домену који није био регистрован код Shopify у тренутку када је апликација инсталирана.
+
+Можда ћете добити грешку ауторизације која изгледа овако:
 
 <div class="screenshot white-bg">
-    <div class="title">Конфигурација домена недостаје</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Конфигурација домена недостаје" />
+    <div class="title">Недостаје конфигурација домена</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Недостаје конфигурација домена" />
 </div>
 
-Разлог је што FastComments не зна да треба да дозволи коришћење вашег налога на овом домену.
+Ово значи да FastComments не препознаје домен на коме се видџет учитава као овлашћен за ваш тенант.
 
-У том случају, решење је једноставно. Потребно је само да додате свој сајт у ваш FastComments.com налог.
-
-[Кликните овде да додате свој сајт у налог.](https://fastcomments.com/auth/my-account/configure-domains)
-
----
+Да бисте то исправили, додајте домен на ваш FastComments налог: [Конфигуришите домене](https://fastcomments.com/auth/my-account/configure-domains).
