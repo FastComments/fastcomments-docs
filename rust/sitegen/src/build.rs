@@ -50,12 +50,17 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     )?;
 
     let locale_filter = parse_locale_filter(args.iter().cloned());
+    let guide_filter = parse_guide_filter(args.iter().cloned());
     let locale_keys: Vec<String> = locales
         .keys()
         .filter(|k| locale_filter.as_ref().map_or(true, |f| f.iter().any(|x| x == k)))
         .map(|s| s.to_string())
         .collect();
-    info!(locales = locale_keys.len(), "starting sitegen build");
+    info!(
+        locales = locale_keys.len(),
+        guides = ?guide_filter,
+        "starting sitegen build"
+    );
 
     // Start the Node sidecar (just /highlight at this point — /eval-marker
     // is handled in-process by rquickjs but still served by the sidecar
@@ -84,17 +89,47 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     let guide_order = Arc::new(guide_order);
 
     // Pre-walk default-locale guides for sitemap + ordering metadata.
-    let default_guides = root.walk(&locales.default_locale)?;
+    // `all_guides` always holds the FULL guide set — used by index +
+    // sitemap + link validator so an incremental --guide build doesn't
+    // drop links to the unfiltered guides.
+    let all_guides = root.walk(&locales.default_locale)?;
+    // Filtered set used for the per-guide HTML build loops. When
+    // --guide is absent this is just a clone of all_guides; the
+    // watcher passes the flag in dev to skip rebuilding untouched
+    // guides.
+    let selected_guides: Vec<Guide> = match &guide_filter {
+        Some(allow) => {
+            let filtered: Vec<Guide> = all_guides
+                .iter()
+                .filter(|g| allow.iter().any(|id| id == &g.id))
+                .cloned()
+                .collect();
+            if filtered.is_empty() {
+                warn!(
+                    requested = ?allow,
+                    "--guide filter matched no guides; nothing to rebuild"
+                );
+            } else {
+                let names: Vec<&str> = filtered.iter().map(|g| g.id.as_str()).collect();
+                info!(building = ?names, "--guide filter active");
+            }
+            filtered
+        }
+        None => all_guides.clone(),
+    };
     // Build the link validator BEFORE any per-guide tasks run, so every
     // guide's item set is registered when validate() fires. Mirrors
     // src/guides.js:322 (`linkValidator.registerGuideItems(...)` walked
-    // before the per-guide build loop).
-    let link_validator = Arc::new(build_link_validator(&default_guides));
+    // before the per-guide build loop). Always uses the FULL set so a
+    // partial rebuild doesn't false-positive on links pointing at
+    // unfiltered guides.
+    let link_validator = Arc::new(build_link_validator(&all_guides));
     // Shared bag of broken-link errors. Built across all parallel
     // default-locale workers and drained at end-of-run.
     let link_errors: Arc<std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>> =
         Arc::new(std::sync::Mutex::new(Vec::new()));
-    let default_guides = Arc::new(default_guides);
+    let all_guides = Arc::new(all_guides);
+    let selected_guides = Arc::new(selected_guides);
 
     // Shared browser pool for screenshot capture. Lazily launches the
     // chrome process on first use; reused across every page+locale that
@@ -119,9 +154,21 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     // pass that writes snippet pages (`code-*.html`); the file content
     // is then fixed for the rest of the build.
     let default_locale = locales.default_locale.clone();
+    let default_locale_selected =
+        locale_filter.as_ref().map_or(true, |f| f.iter().any(|l| l == &default_locale));
     {
+        if !default_locale_selected {
+            info!(
+                locale = %default_locale,
+                "--locale filter excludes default locale; skipping phase A"
+            );
+        }
         let mut tasks = FuturesUnordered::new();
-        let mut iter = default_guides.iter().cloned();
+        let mut iter: Box<dyn Iterator<Item = Guide> + Send> = if default_locale_selected {
+            Box::new(selected_guides.iter().cloned())
+        } else {
+            Box::new(std::iter::empty())
+        };
         while tasks.len() < parallelism {
             let Some(guide) = iter.next() else { break };
             tasks.push(spawn_guide_task(
@@ -175,7 +222,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
             .filter(|k| **k != default_locale)
             .cloned()
             .collect();
-        let mut iter = default_guides
+        let mut iter = selected_guides
             .iter()
             .cloned()
             .flat_map(|g| {
@@ -269,8 +316,10 @@ pub async fn run(args: Vec<String>) -> Result<()> {
 
     std::fs::write(static_generated_dir.join("build-id"), &build_id)?;
 
-    // Sitemap.
-    write_sitemap(&static_generated_dir, &default_guides, &locales)?;
+    // Sitemap. Always emit the full guide set — an incremental --guide
+    // build still needs the sitemap to reference every page on the
+    // site, not just the rebuilt ones.
+    write_sitemap(&static_generated_dir, &all_guides, &locales)?;
 
     browser_pool.shutdown().await;
     sidecar_proc.shutdown().await;
@@ -1042,43 +1091,62 @@ fn build_link_validator(guides: &[Guide]) -> fcdocs_shared::link_validator::Link
 }
 
 fn parse_locale_filter(args: impl Iterator<Item = String>) -> Option<Vec<String>> {
+    parse_csv_filter(args, &["--locale", "--locales"], "locale")
+}
+
+/// Watcher passes `--guide=foo,bar` so a content-file change only
+/// rebuilds the affected guide(s) instead of the full 28-locale × 15-
+/// guide matrix. Index + sitemap still iterate the full guide set so
+/// the unfiltered guides' links stay valid.
+fn parse_guide_filter(args: impl Iterator<Item = String>) -> Option<Vec<String>> {
+    parse_csv_filter(args, &["--guide", "--guides"], "guide")
+}
+
+/// Common shape for `--<name>=a,b,c` / `--<name> a,b,c` filters.
+/// Returns None when the flag isn't present (treat as "no filter"),
+/// `Some(vec)` otherwise. The CSV is validated against
+/// [`fcdocs_shared::guides::is_valid_id`] since the values end up in
+/// `Path::join` — invalid entries are dropped with a warning rather
+/// than widening the filter to "everything".
+fn parse_csv_filter(
+    args: impl Iterator<Item = String>,
+    flag_names: &[&str],
+    label: &'static str,
+) -> Option<Vec<String>> {
     let raw: Option<Vec<String>> = {
         let mut iter = args.peekable();
         let mut out = None;
-        while let Some(arg) = iter.next() {
-            if arg == "--locale" || arg == "--locales" {
-                out = iter.next().map(|v| {
-                    v.split(',')
-                        .map(|s| s.trim().to_string())
-                        .filter(|s| !s.is_empty())
-                        .collect()
-                });
-                break;
-            } else if let Some(rest) = arg.strip_prefix("--locale=") {
-                out = Some(
-                    rest.split(',')
-                        .map(|s| s.trim().to_string())
-                        .filter(|s| !s.is_empty())
-                        .collect(),
-                );
-                break;
+        'outer: while let Some(arg) = iter.next() {
+            for name in flag_names {
+                if arg == *name {
+                    out = iter.next().map(split_csv);
+                    break 'outer;
+                }
+                let prefix = format!("{name}=");
+                if let Some(rest) = arg.strip_prefix(&prefix) {
+                    out = Some(split_csv(rest.to_string()));
+                    break 'outer;
+                }
             }
         }
         out
     };
-    // Validate each provided locale flows into Path::join in many sites
-    // — reject anything outside the locale-id allowlist before we reach
-    // the filesystem. Drop invalid entries with a warning so a typo
-    // doesn't accidentally widen the build to everything (which
-    // returning `None` would do).
-    raw.map(|locales| {
-        let (ok, bad): (Vec<String>, Vec<String>) =
-            locales.into_iter().partition(|l| fcdocs_shared::guides::is_valid_id(l));
+    raw.map(|values| {
+        let (ok, bad): (Vec<String>, Vec<String>) = values
+            .into_iter()
+            .partition(|v| fcdocs_shared::guides::is_valid_id(v));
         for b in &bad {
-            warn!(locale = %b, "ignoring --locale entry: invalid id");
+            warn!(value = %b, kind = label, "ignoring CSV filter entry: invalid id");
         }
         ok
     })
+}
+
+fn split_csv(v: String) -> Vec<String> {
+    v.split(',')
+        .map(|s| s.trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect()
 }
 
 /// Run pulldown-cmark on the input. Used for `index.md.html` files
@@ -1126,5 +1194,71 @@ impl GuideMetaExt for GuideMeta {
 
     fn faq_value(&self) -> Option<Value> {
         self.extra.get("faq").cloned()
+    }
+}
+
+#[cfg(test)]
+mod filter_tests {
+    use super::*;
+
+    fn args(v: &[&str]) -> Vec<String> {
+        v.iter().map(|s| s.to_string()).collect()
+    }
+
+    #[test]
+    fn locale_filter_basic() {
+        assert_eq!(
+            parse_locale_filter(args(&["--locale=fr_fr,de_de"]).into_iter()),
+            Some(vec!["fr_fr".to_string(), "de_de".to_string()])
+        );
+        assert_eq!(
+            parse_locale_filter(args(&["--locale", "ja_jp"]).into_iter()),
+            Some(vec!["ja_jp".to_string()])
+        );
+        assert_eq!(parse_locale_filter(args(&[]).into_iter()), None);
+    }
+
+    #[test]
+    fn guide_filter_basic() {
+        assert_eq!(
+            parse_guide_filter(args(&["--guide=acme,beta"]).into_iter()),
+            Some(vec!["acme".to_string(), "beta".to_string()])
+        );
+        assert_eq!(
+            parse_guide_filter(args(&["--guides", "acme"]).into_iter()),
+            Some(vec!["acme".to_string()])
+        );
+        assert_eq!(parse_guide_filter(args(&[]).into_iter()), None);
+    }
+
+    /// Mixing both filters in one args vec must parse independently.
+    /// Pre-incremental-rebuild this didn't matter because only --locale
+    /// existed; once the watcher started passing both, we needed each
+    /// parser to walk past the other's flag without consuming it.
+    #[test]
+    fn guide_and_locale_filters_coexist() {
+        let argv = args(&["--guide=acme", "--locale=fr_fr,de_de"]);
+        assert_eq!(
+            parse_guide_filter(argv.iter().cloned()),
+            Some(vec!["acme".to_string()])
+        );
+        assert_eq!(
+            parse_locale_filter(argv.iter().cloned()),
+            Some(vec!["fr_fr".to_string(), "de_de".to_string()])
+        );
+    }
+
+    /// Invalid ids (path-traversal attempt) drop with a warning rather
+    /// than widening the filter to "everything" by returning None.
+    #[test]
+    fn invalid_ids_drop_quietly() {
+        assert_eq!(
+            parse_guide_filter(args(&["--guide=../etc/passwd,good"]).into_iter()),
+            Some(vec!["good".to_string()])
+        );
+        assert_eq!(
+            parse_locale_filter(args(&["--locale=../../../etc"]).into_iter()),
+            Some(vec![])
+        );
     }
 }

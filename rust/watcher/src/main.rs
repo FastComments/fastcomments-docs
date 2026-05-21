@@ -1,11 +1,17 @@
 //! Replaces `src/watch.js`. Watches `src/content/`, `src/templates/`,
-//! `src/static/`, and `src/translations.json`. On change, debounces and
-//! re-runs the sitegen binary as a subprocess.
+//! `src/static/`, and `src/translations.json`. On change, debounces,
+//! classifies the changed paths into the minimal set of sitegen
+//! invocations needed to bring the output back in sync, and runs each
+//! as a subprocess.
 //!
 //! Spawning the binary instead of calling the library directly keeps this
-//! crate's dep graph tiny (no chromium, no quickjs). For dev-mode latency
-//! that doesn't matter — sitegen's incremental case still completes in a
-//! few hundred ms per locale.
+//! crate's dep graph tiny (no chromium, no quickjs). The classification
+//! work lives in [`plan`] so per-edit dev rebuilds touch only the
+//! changed guide+locale (mirrors src/watch.js:74-156 + adds locale
+//! granularity that the original Node watcher lacked because there was
+//! effectively one locale at the time).
+
+mod plan;
 
 use std::path::PathBuf;
 use std::sync::Arc;
@@ -16,6 +22,8 @@ use notify_debouncer_mini::{new_debouncer, notify::RecursiveMode};
 use tokio::process::Command;
 use tokio::sync::Mutex;
 use tracing::{info, warn};
+
+use crate::plan::{classify, Action};
 
 /// Cap how many pending change batches we buffer behind the debouncer.
 /// Above this, we drop the oldest — the rebuild that runs next will
@@ -87,27 +95,13 @@ async fn main() -> Result<()> {
                 let mut paths: Vec<PathBuf> = evs.into_iter().map(|e| e.path).collect();
                 paths.sort();
                 paths.dedup();
-                let mut only_static = true;
-                for p in &paths {
-                    let rel = p.strip_prefix(&repo).unwrap_or(p);
-                    if !(rel.starts_with("src/static/css")
-                        || rel.starts_with("src/static/images")
-                        || rel.starts_with("src/static/js")
-                        || rel.starts_with("src/static/csv"))
-                    {
-                        only_static = false;
-                        break;
-                    }
+                let plan = classify(&repo, &paths);
+                if plan.actions.is_empty() {
+                    continue;
                 }
-                let cmd = if only_static {
-                    info!("change in src/static — running sitegen build-static");
-                    "build-static"
-                } else {
-                    info!("change detected — running sitegen build");
-                    "build"
-                };
 
-                // Cancel any running build first.
+                // Cancel any in-flight rebuild before queueing the new
+                // batch — its inputs are already stale.
                 {
                     let mut guard = running.lock().await;
                     if let Some(mut prev) = guard.take() {
@@ -115,39 +109,60 @@ async fn main() -> Result<()> {
                     }
                 }
 
-                let mut child = match Command::new(&sitegen)
-                    .arg(cmd)
-                    .current_dir(&repo)
-                    .kill_on_drop(true)
-                    .spawn()
-                {
-                    Ok(c) => c,
-                    Err(e) => {
-                        warn!("failed to spawn sitegen: {e}");
-                        continue;
+                for action in &plan.actions {
+                    let args = action.to_args();
+                    match action {
+                        Action::BuildStatic => info!("running: sitegen build-static"),
+                        Action::Build { guides, locales } => info!(
+                            guides = ?guides,
+                            locales = ?locales,
+                            "running: sitegen build"
+                        ),
                     }
-                };
-                let pid = child.id();
-                let stored = running.clone();
-                // Wait in a separate task so the next event can preempt.
-                let log_pid = pid;
-                let new_handle = child;
-                {
-                    let mut guard = stored.lock().await;
-                    *guard = Some(new_handle);
-                }
-                let stored2 = stored.clone();
-                tokio::spawn(async move {
-                    // Take ownership of the child for waiting.
-                    let mut child_opt = stored2.lock().await.take();
+
+                    let mut cmd = Command::new(&sitegen);
+                    cmd.args(&args).current_dir(&repo).kill_on_drop(true);
+                    let child = match cmd.spawn() {
+                        Ok(c) => c,
+                        Err(e) => {
+                            warn!(args = ?args, "failed to spawn sitegen: {e}");
+                            continue;
+                        }
+                    };
+                    let pid = child.id();
+                    // Park the running child so the NEXT debounced batch
+                    // can preempt it. We then wait inline so this batch's
+                    // actions run sequentially — a static copy must
+                    // finish before the content rebuild that wraps
+                    // around it kicks off.
+                    {
+                        let mut guard = running.lock().await;
+                        *guard = Some(child);
+                    }
+                    let mut child_opt = {
+                        let mut guard = running.lock().await;
+                        guard.take()
+                    };
                     if let Some(child) = &mut child_opt {
                         match child.wait().await {
-                            Ok(s) if s.success() => info!(pid = ?log_pid, "rebuild done"),
-                            Ok(s) => warn!(pid = ?log_pid, "sitegen exited with status {s}"),
-                            Err(e) => warn!(pid = ?log_pid, "sitegen wait: {e}"),
+                            Ok(s) if s.success() => {
+                                info!(pid = ?pid, args = ?args, "step done")
+                            }
+                            Ok(s) => warn!(
+                                pid = ?pid,
+                                args = ?args,
+                                "sitegen exited with status {s}"
+                            ),
+                            Err(e) => warn!(pid = ?pid, args = ?args, "sitegen wait: {e}"),
                         }
+                    } else {
+                        // Preempted by a new batch — stop this batch's
+                        // remaining actions and let the next batch
+                        // classify from the new filesystem state.
+                        info!("rebuild preempted by newer change batch");
+                        break;
                     }
-                });
+                }
             }
             Err(e) => {
                 warn!("watch error: {e:?}");
