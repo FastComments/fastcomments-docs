@@ -7,7 +7,7 @@
  * (vm.runInContext) was previously here but moved in-process to
  * Rust via QuickJS — see rust/shared/src/markers/qjs.rs.
  *
- *   POST /highlight  -> wraps highlight.js (matches src/guides.js:26-33).
+ *   POST /highlight  -> wraps highlight.js for fenced + inline code blocks.
  *   GET  /health     -> liveness check used by Rust supervisors.
  *
  * The Rust indexer/sitegen auto-starts this process, reads the port from
@@ -34,11 +34,9 @@ app.post('/highlight', (req, res) => {
     const body = req.body || {};
     const code = body.code;
     const lang = body.lang;
-    // `trim` defaults to true to match the marked highlight callback at
-    // src/guides.js:26-33 (used for fenced markdown code blocks).
-    // inline-code and code-example callers pass trim=false so leading/
-    // trailing whitespace is preserved (Node passes the raw inlineCode
-    // straight to hljs.highlight without trimming).
+    // `trim` defaults to true for fenced markdown code blocks. Inline-code
+    // and code-example callers pass trim=false to preserve leading/trailing
+    // whitespace.
     const shouldTrim = body.trim !== false;
     if (typeof code !== 'string') {
         return res.status(400).send({ error: 'code is required (string)' });

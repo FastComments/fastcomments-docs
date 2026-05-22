@@ -89,18 +89,10 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
 
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
-  # SDK documentation. Rust sdkgen owns the full pipeline now:
-  #   - README parser + per-section emission
-  #   - OpenAPI generator (fails the build on missing methods / missing
-  #     return types, matching the contract Node's
-  #     src/sdk-guide-generator.js:268-309 enforced)
-  #   - 4 AI generators (typescript/rust/cpp/nim) with the shared
-  #     LlmClient hitting src/sdk-ai-cache/ for committed code examples
-  #   - meta.json emission with the Node-shaped ordering/categories
-  # Output was verified byte-identical to `node src/sdk-guide-generator.js`
-  # across all 26 SDKs before this cutover. The Node script remains in
-  # the tree for parity comparisons during the transition window but is
-  # no longer on the build path.
+  # SDK documentation. Rust sdkgen owns the full pipeline:
+  # README parser, OpenAPI generator (fails on missing methods/return
+  # types), 4 AI generators (typescript/rust/cpp/nim) sharing LlmClient
+  # against src/sdk-ai-cache/, and meta.json emission.
   sdkgen_run() { ./rust/target/release/sdkgen; }
   if ! phase "sdkgen" sdkgen_run; then
     echo "ERROR: SDK documentation generation failed"
@@ -130,12 +122,10 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     exit 1
   fi
 
-  # Translation pipeline. Rust trans owns all three phases now
-  # (markdown items, UI strings, meta.json — see rust/trans/src/main.rs).
+  # Translation pipeline. Rust trans owns all three phases (markdown
+  # items, UI strings, meta.json - see rust/trans/src/main.rs).
   # `trans check` flags any gap as a non-zero exit; on miss we branch
-  # into `trans run` which translates+writes back. The Node script
-  # src/translate-with-gpt.js remains in tree as a parity reference
-  # but is no longer on the build path.
+  # into `trans run` which translates+writes back.
   trans_check_t0=$SECONDS
   echo "[phase: trans check] start"
   ./rust/target/release/trans check
@@ -177,16 +167,14 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "All translations up to date."
   fi
 
-  # MAX_BROWSERS=1 caps chromiumoxide concurrency for the screenshot
-  # marker. The Rust sitegen replaced `node src/app` here; the
-  # legacy NODE_OPTIONS=--max-old-space-size flag is gone with it.
+  # MAX_BROWSERS=1 caps chromiumoxide concurrency for the screenshot marker.
   sitegen_build() { MAX_BROWSERS=1 ./rust/target/release/sitegen build; }
   if ! phase "sitegen build" sitegen_build; then
     echo "ERROR: Content build failed"
     exit 1
   fi
 
-  # Static file copies (Rust replaces bash build-static.sh).
+  # Static file copies.
   sitegen_static() { ./rust/target/release/sitegen build-static; }
   if ! phase "sitegen build-static" sitegen_static; then
     echo "ERROR: Static build failed"
