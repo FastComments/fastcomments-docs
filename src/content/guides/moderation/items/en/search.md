@@ -2,6 +2,8 @@ Comments can be searched with the following example syntax:
 
 - Fuzzy word search: `cats love`
 - Exact phrase match: `I love cats.`
+- Exact full-comment match: `exact="I love cats."`
+  - Matches only comments whose entire text is exactly this value (case-sensitive), rather than comments that merely contain it.
 - By Page Title: `page:"Page Title"`
   - Supports autocomplete.
 - By Page URL: `page:"https://example.com/some-page"`
