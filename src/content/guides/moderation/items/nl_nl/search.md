@@ -1,7 +1,9 @@
 Opmerkingen kunnen worden doorzocht met de volgende voorbeeldsyntaxis:
 
 - Vage woordzoekopdracht: `cats love`
-- Exacte zinsnede: `I love cats.`
+- Exacte frase-overeenkomst: `I love cats.`
+- Exacte volledige overeenstemming: `exact="I love cats."`
+  - Komt alleen overeen met opmerkingen waarvan de volledige tekst precies deze waarde is (hoofdlettergevoelig), in plaats van opmerkingen die deze tekst alleen maar bevatten.
 - Op paginatitel: `page:"Page Title"`
   - Ondersteunt automatisch aanvullen.
 - Op pagina-URL: `page:"https://example.com/some-page"`
@@ -10,5 +12,5 @@ Opmerkingen kunnen worden doorzocht met de volgende voorbeeldsyntaxis:
 - Op gebruiker: `user:"Bob"`
   - Ondersteunt automatisch aanvullen.
 
-U kunt zoekresultaten delen met andere moderators of beheerders door de pagina-URL van de moderatiepagina te delen. The search field
-waarde will be included in the URL in your browser after you hit "Go".
+Je kunt zoekresultaten delen met andere moderators of beheerders door de pagina-URL van de moderatiepagina te delen. Het zoekveld
+waarde wordt in de URL van je browser opgenomen nadat je op "Ga" hebt geklikt.

@@ -1,15 +1,15 @@
-Komentare možete pretraživati pomoću sljedeće primjerne sintakse:
+Коментаре можете претраживати користећи сљедећу примерну синтаксу:
 
-- Približno pretraživanje riječi: `cats love`
-- Tačno podudaranje fraze: `I love cats.`
-- Po naslovu stranice: `page:"Page Title"`
-  - Podržava automatsko dovršavanje.
-- Po URL-u stranice: `page:"https://example.com/some-page"`
-  - Podržava automatsko dovršavanje.
-- Po sajtu/domeni: `site:mysite.com` or `domain:othersite.com`
-- Po korisniku: `user:"Bob"`
-  - Podržava automatsko dovršavanje.
+- Приближно претраживање ријечи: `cats love`
+- Тачно подударање фразе: `I love cats.`
+- Тачно подударање цијелог коментара: `exact="I love cats."`
+  - Подудара се само са коментарима чији је цијели текст тачно ова вриједност (осјетљиво на велика и мала слова), а не са коментарима који је само садрже.
+- Према наслову странице: `page:"Page Title"`
+  - Подржава аутоматско довршавање.
+- Према URL-у странице: `page:"https://example.com/some-page"`
+  - Подржава аутоматско довршавање.
+- Према сајту/домену: `site:mysite.com` или `domain:othersite.com`
+- По кориснику: `user:"Bob"`
+  - Подржава аутоматско довршавање.
 
-Možete podijeliti rezultate pretrage s drugim moderatorima ili administratorima dijeljenjem URL-a stranice sa stranice za moderaciju. Vrijednost polja za pretragu bit će uključena u URL u vašem pregledniku nakon što kliknete "Idi".
-
----
+Можете подијелити резултате претраге са другим модераторима или администраторима тако што ћете подијелити URL странице са странице за модерацију. Вриједност поља за претрагу биће укључена у URL у вашем прегледачу након што кликнете на "Go".

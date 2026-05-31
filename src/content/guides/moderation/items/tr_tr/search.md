@@ -1,13 +1,16 @@
-Yorumlar aşağıdaki örnek sözdizimiyle aranabilir:
+Yorumlar aşağıdaki örnek sözdizimi kullanılarak aranabilir:
 
-- Yaklaşık kelime araması: `cats love`
-- Tam ifade eşleşmesi: `I love cats.`
-- Sayfa Başlığına Göre: `page:"Page Title"`
+- Fuzzy word search: `cats love`
+- Exact phrase match: `I love cats.`
+- Exact full-comment match: `exact="I love cats."`
+  - Bu, yalnızca tüm metni tam olarak bu değere (büyük/küçük harf duyarlı) eşit olan yorumlarla eşleşir; yalnızca içinde bu değeri bulunduran yorumlarla değil.
+- By Page Title: `page:"Page Title"`
   - Otomatik tamamlama desteklenir.
-- Sayfa URL'sine Göre: `page:"https://example.com/some-page"`
+- By Page URL: `page:"https://example.com/some-page"`
   - Otomatik tamamlama desteklenir.
-- Site/Alan Adına Göre: `site:mysite.com` veya `domain:othersite.com`
-- Kullanıcıya Göre: `user:"Bob"`
+- By Site/Domain: `site:mysite.com` or `domain:othersite.com`
+- By User: `user:"Bob"`
   - Otomatik tamamlama desteklenir.
 
-Arama sonuçlarını moderasyon sayfasından sayfa URL'sini paylaşarak diğer moderatörlere veya yöneticilere iletebilirsiniz. Arama alanı değeri, "Git"e tıkladıktan sonra tarayıcınızdaki URL'ye eklenecektir.
+Arama sonuçlarını diğer moderatörlerle veya yöneticilerle, moderasyon sayfasındaki sayfa URL'sini paylaşarak iletebilirsiniz. Arama alanı
+değeri tarayıcınızdaki URL'ye "Git" düğmesine bastıktan sonra eklenecektir.
