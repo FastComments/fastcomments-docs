@@ -320,6 +320,26 @@
       "description": "Embed live commenting, chat, and review widgets in your Eleventy (11ty) site."
     },
     {
+      "id": "lib-jekyll",
+      "name": "Jekyll Library",
+      "pageHeader": "Add Comments to Your Jekyll Site",
+      "repo": "https://github.com/FastComments/fastcomments-jekyll",
+      "branch": "main",
+      "language": "ruby",
+      "docGenerators": ["readme"],
+      "description": "Embed live commenting, chat, and review widgets in your Jekyll site."
+    },
+    {
+      "id": "lib-hugo",
+      "name": "Hugo Library",
+      "pageHeader": "Add Comments to Your Hugo Site",
+      "repo": "https://github.com/FastComments/fastcomments-hugo",
+      "branch": "main",
+      "language": "go",
+      "docGenerators": ["readme"],
+      "description": "Embed live commenting, chat, and review widgets in your Hugo site."
+    },
+    {
       "id": "lib-laravel",
       "name": "Laravel Package",
       "pageHeader": "Add Comments to Your Laravel App",
