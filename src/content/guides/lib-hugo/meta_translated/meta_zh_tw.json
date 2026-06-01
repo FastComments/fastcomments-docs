@@ -1,11 +1,71 @@
 {
   "name": "Hugo 資源庫",
-  "pageHeader": "在你的 Hugo 網站加入評論",
+  "pageHeader": "在您的 Hugo 網站新增留言",
   "itemsOrdered": [
     {
-      "name": "概覽",
-      "file": "overview.md",
+      "name": "線上示範",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "線上展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "install-readme-generated.md",
       "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "快速上手",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "短碼",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "主題整合",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "批量留言計數",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "設定",
+      "file": "configuration-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "小工具設定參考",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API 參考",
+      "type": "readme"
+    },
+    {
+      "name": "連結",
+      "file": "links-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "維護狀態",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文件",
       "type": "readme"
     }
   ]

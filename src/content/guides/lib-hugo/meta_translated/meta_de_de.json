@@ -3,9 +3,69 @@
   "pageHeader": "Kommentare zu Ihrer Hugo-Website hinzufügen",
   "itemsOrdered": [
     {
-      "name": "Überblick",
-      "file": "overview.md",
+      "name": "Live-Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-Präsentation",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "install-readme-generated.md",
       "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Schnellstart",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Shortcodes",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Theme-Integration",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Massen-Kommentaranzahlen",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Referenz zur Widget-Konfiguration",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API-Referenz",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Wartungsstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     }
   ]

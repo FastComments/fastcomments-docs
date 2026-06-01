@@ -1,0 +1,5 @@
+---
+- [תיעוד FastComments](https://docs.fastcomments.com)
+- [התאמה וקונפיגורציה](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [תיעוד Hugo](https://gohugo.io/documentation/)
+---

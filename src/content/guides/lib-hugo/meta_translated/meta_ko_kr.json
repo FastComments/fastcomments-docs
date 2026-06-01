@@ -1,11 +1,71 @@
 {
-  "name": "휴고 라이브러리",
-  "pageHeader": "휴고 사이트에 댓글 추가",
+  "name": "Hugo 라이브러리",
+  "pageHeader": "Hugo 사이트에 댓글 추가하기",
   "itemsOrdered": [
     {
-      "name": "개요",
-      "file": "overview.md",
+      "name": "라이브 데모",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "라이브 쇼케이스",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설치",
+      "file": "install-readme-generated.md",
       "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "빠른 시작",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "숏코드",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "테마 연동",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "일괄 댓글 수",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설정",
+      "file": "configuration-readme-generated.md",
+      "subCat": "설정",
+      "type": "readme"
+    },
+    {
+      "name": "위젯 구성 참조",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API 참조",
+      "type": "readme"
+    },
+    {
+      "name": "링크",
+      "file": "links-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "유지보수 상태",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "문서",
       "type": "readme"
     }
   ]

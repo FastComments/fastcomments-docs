@@ -1,0 +1,5 @@
+---
+- [Documentazione FastComments](https://docs.fastcomments.com)
+- [Personalizzazione e Configurazione](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Documentazione Hugo](https://gohugo.io/documentation/)
+---

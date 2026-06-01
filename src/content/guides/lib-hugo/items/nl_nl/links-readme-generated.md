@@ -1,0 +1,5 @@
+---
+- [FastComments Documentatie](https://docs.fastcomments.com)
+- [Aanpassingen & Configuratie](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Hugo Documentatie](https://gohugo.io/documentation/)
+---

@@ -1,11 +1,71 @@
 {
   "name": "Бібліотека Hugo",
-  "pageHeader": "Додавання коментарів на сайт Hugo",
+  "pageHeader": "Додайте коментарі на ваш сайт Hugo",
   "itemsOrdered": [
     {
-      "name": "Огляд",
-      "file": "overview.md",
+      "name": "Жива демонстрація",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Жива презентація",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення",
+      "file": "install-readme-generated.md",
       "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Шорткоди",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Інтеграція теми",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Масові підрахунки коментарів",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Налаштування",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Налаштування",
+      "type": "readme"
+    },
+    {
+      "name": "Довідник з налаштувань віджета",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "Довідник API",
+      "type": "readme"
+    },
+    {
+      "name": "Посилання",
+      "file": "links-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Статус обслуговування",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документація",
       "type": "readme"
     }
   ]

@@ -1,11 +1,71 @@
 {
-  "name": "Библиотека Hugo",
-  "pageHeader": "Добавяне на коментари към вашия сайт на Hugo",
+  "name": "Hugo библиотека",
+  "pageHeader": "Добавете коментари към вашия сайт на Hugo",
   "itemsOrdered": [
     {
-      "name": "Преглед",
-      "file": "overview.md",
+      "name": "Живо демо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Демонстрация на живо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталиране",
+      "file": "install-readme-generated.md",
       "subCat": "Първи стъпки",
+      "type": "readme"
+    },
+    {
+      "name": "Бърз старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Шорткодове",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграция с тема",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Масово преброяване на коментари",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Референция за конфигурация на джаджа",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "Документация на API",
+      "type": "readme"
+    },
+    {
+      "name": "Връзки",
+      "file": "links-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус на поддръжката",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документация",
       "type": "readme"
     }
   ]

@@ -1,0 +1,1 @@
+Her widget'i canlı olarak <https://fastcomments.com/commenting-system-for-hugo> adresinde deneyin.

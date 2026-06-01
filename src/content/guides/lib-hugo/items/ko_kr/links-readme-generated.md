@@ -1,0 +1,5 @@
+---
+- [FastComments 문서](https://docs.fastcomments.com)
+- [사용자 지정 및 구성](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Hugo 문서](https://gohugo.io/documentation/)
+---

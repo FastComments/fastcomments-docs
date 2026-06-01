@@ -1,0 +1,5 @@
+---
+- [FastComments 文件說明](https://docs.fastcomments.com)
+- [客製化與設定](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Hugo 文件說明](https://gohugo.io/documentation/)
+---

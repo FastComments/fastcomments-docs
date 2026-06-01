@@ -1,11 +1,71 @@
 {
   "name": "Hugo 库",
-  "pageHeader": "向你的 Hugo 站点添加评论",
+  "pageHeader": "向您的 Hugo 站点添加评论",
   "itemsOrdered": [
     {
-      "name": "概述",
-      "file": "overview.md",
+      "name": "实时演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "实时展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "install-readme-generated.md",
       "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "快速开始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "短代码",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "主题集成",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "批量评论计数",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "配置",
+      "file": "configuration-readme-generated.md",
+      "subCat": "配置",
+      "type": "readme"
+    },
+    {
+      "name": "小部件配置参考",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API 参考",
+      "type": "readme"
+    },
+    {
+      "name": "链接",
+      "file": "links-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文档",
       "type": "readme"
     }
   ]
