@@ -1,0 +1,54 @@
+{
+  "name": "Jekyll-bibliotheek",
+  "pageHeader": "Voeg reacties toe aan je Jekyll-site",
+  "itemsOrdered": [
+    {
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live-presentatie",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installatie",
+      "file": "install-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Snelstart",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Tags",
+      "file": "tags-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Configuratie",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

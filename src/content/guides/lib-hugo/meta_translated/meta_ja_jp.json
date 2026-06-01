@@ -1,0 +1,12 @@
+{
+  "name": "Hugo ライブラリ",
+  "pageHeader": "Hugo サイトにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "概要",
+      "file": "overview.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    }
+  ]
+}

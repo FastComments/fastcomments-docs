@@ -1,0 +1,12 @@
+{
+  "name": "Hugo-bibliotek",
+  "pageHeader": "Tilføj kommentarer til dit Hugo-websted",
+  "itemsOrdered": [
+    {
+      "name": "Oversigt",
+      "file": "overview.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    }
+  ]
+}

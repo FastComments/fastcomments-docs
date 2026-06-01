@@ -1,0 +1,54 @@
+{
+  "name": "Jekyll knjižnica",
+  "pageHeader": "Dodajte komentare na svoju Jekyll stranicu",
+  "itemsOrdered": [
+    {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Prikaz uživo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Instalacija",
+      "file": "install-readme-generated.md",
+      "subCat": "Početak rada",
+      "type": "readme"
+    },
+    {
+      "name": "Brzi početak",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Oznake",
+      "file": "tags-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Konfiguracija",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Konfiguracija",
+      "type": "readme"
+    },
+    {
+      "name": "Poveznice",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status održavanja",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

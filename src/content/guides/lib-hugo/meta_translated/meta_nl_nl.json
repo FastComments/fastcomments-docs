@@ -1,0 +1,12 @@
+{
+  "name": "Hugo-bibliotheek",
+  "pageHeader": "Voeg reacties toe aan je Hugo-site",
+  "itemsOrdered": [
+    {
+      "name": "Overzicht",
+      "file": "overview.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    }
+  ]
+}

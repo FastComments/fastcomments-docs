@@ -1,0 +1,3 @@
+- [FastComments Dokumentacija](https://docs.fastcomments.com)
+- [Prilagajanje in konfiguracija](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Jekyll Dokumentacija](https://jekyllrb.com/docs/)

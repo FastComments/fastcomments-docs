@@ -1,0 +1,5 @@
+---
+- [FastComments 文件](https://docs.fastcomments.com)
+- [自訂與設定](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Jekyll 文件](https://jekyllrb.com/docs/)
+---

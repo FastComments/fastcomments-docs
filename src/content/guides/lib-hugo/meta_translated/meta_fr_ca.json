@@ -1,0 +1,12 @@
+{
+  "name": "Bibliothèque Hugo",
+  "pageHeader": "Ajouter des commentaires à votre site Hugo",
+  "itemsOrdered": [
+    {
+      "name": "Aperçu",
+      "file": "overview.md",
+      "subCat": "Premiers pas",
+      "type": "readme"
+    }
+  ]
+}

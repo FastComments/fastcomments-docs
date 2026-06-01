@@ -1,0 +1,54 @@
+{
+  "name": "Jekyll Kütüphanesi",
+  "pageHeader": "Jekyll sitenize yorum ekleyin",
+  "itemsOrdered": [
+    {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "install-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Etiketler",
+      "file": "tags-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Yapılandırma",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Yapılandırma",
+      "type": "readme"
+    },
+    {
+      "name": "Bağlantılar",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

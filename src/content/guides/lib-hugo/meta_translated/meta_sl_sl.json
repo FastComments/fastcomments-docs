@@ -1,0 +1,12 @@
+{
+  "name": "Hugo knjižnica",
+  "pageHeader": "Dodajte komentarje na svojo Hugo spletno stran",
+  "itemsOrdered": [
+    {
+      "name": "Pregled",
+      "file": "overview.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    }
+  ]
+}

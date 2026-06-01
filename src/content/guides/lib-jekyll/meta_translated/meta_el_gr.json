@@ -1,0 +1,54 @@
+{
+  "name": "Βιβλιοθήκη Jekyll",
+  "pageHeader": "Προσθήκη σχολίων στον ιστότοπο Jekyll σας",
+  "itemsOrdered": [
+    {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή παρουσίαση",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "install-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ετικέτες",
+      "file": "tags-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Διαμόρφωση",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Διαμόρφωση",
+      "type": "readme"
+    },
+    {
+      "name": "Σύνδεσμοι",
+      "file": "links-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Бібліотека Hugo",
+  "pageHeader": "Додавання коментарів на сайт Hugo",
+  "itemsOrdered": [
+    {
+      "name": "Огляд",
+      "file": "overview.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    }
+  ]
+}

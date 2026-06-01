@@ -1,0 +1,12 @@
+{
+  "name": "Hugo Kütüphanesi",
+  "pageHeader": "Hugo Sitenize Yorum Ekleme",
+  "itemsOrdered": [
+    {
+      "name": "Genel Bakış",
+      "file": "overview.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    }
+  ]
+}

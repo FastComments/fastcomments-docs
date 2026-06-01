@@ -1,0 +1,54 @@
+{
+  "name": "Biblioteca Jekyll",
+  "pageHeader": "Adicione comentários ao seu site Jekyll",
+  "itemsOrdered": [
+    {
+      "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Apresentação ao vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Instalação",
+      "file": "install-readme-generated.md",
+      "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Início rápido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Tags",
+      "file": "tags-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Configuração",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuração",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Status de manutenção",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    }
+  ]
+}

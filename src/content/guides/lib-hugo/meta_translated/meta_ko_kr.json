@@ -1,0 +1,12 @@
+{
+  "name": "휴고 라이브러리",
+  "pageHeader": "휴고 사이트에 댓글 추가",
+  "itemsOrdered": [
+    {
+      "name": "개요",
+      "file": "overview.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    }
+  ]
+}

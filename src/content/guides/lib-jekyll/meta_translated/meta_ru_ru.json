@@ -1,0 +1,54 @@
+{
+  "name": "Библиотека Jekyll",
+  "pageHeader": "Добавьте комментарии на свой сайт Jekyll",
+  "itemsOrdered": [
+    {
+      "name": "Живая демонстрация",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живой пример",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Установка",
+      "file": "install-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Быстрый старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Теги",
+      "file": "tags-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Ссылки",
+      "file": "links-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус обслуживания",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

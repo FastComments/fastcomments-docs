@@ -1,0 +1,12 @@
+{
+  "name": "ספריית Hugo",
+  "pageHeader": "הוספת תגובות לאתר ה-Hugo שלך",
+  "itemsOrdered": [
+    {
+      "name": "סקירה כללית",
+      "file": "overview.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    }
+  ]
+}

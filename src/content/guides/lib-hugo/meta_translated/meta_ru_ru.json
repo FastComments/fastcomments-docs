@@ -1,0 +1,12 @@
+{
+  "name": "Библиотека Hugo",
+  "pageHeader": "Добавление комментариев на ваш сайт Hugo",
+  "itemsOrdered": [
+    {
+      "name": "Обзор",
+      "file": "overview.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    }
+  ]
+}

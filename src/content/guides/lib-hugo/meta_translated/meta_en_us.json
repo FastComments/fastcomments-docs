@@ -1,0 +1,12 @@
+{
+  "name": "Hugo Library",
+  "pageHeader": "Add Comments to Your Hugo Site",
+  "itemsOrdered": [
+    {
+      "name": "Overview",
+      "file": "overview.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    }
+  ]
+}

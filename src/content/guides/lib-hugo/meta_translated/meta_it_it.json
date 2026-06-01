@@ -1,0 +1,12 @@
+{
+  "name": "Libreria Hugo",
+  "pageHeader": "Aggiungi commenti al tuo sito Hugo",
+  "itemsOrdered": [
+    {
+      "name": "Panoramica",
+      "file": "overview.md",
+      "subCat": "Per iniziare",
+      "type": "readme"
+    }
+  ]
+}

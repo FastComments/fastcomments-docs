@@ -1,0 +1,12 @@
+{
+  "name": "Βιβλιοθήκη Hugo",
+  "pageHeader": "Προσθήκη σχολίων στον ιστότοπό σας Hugo",
+  "itemsOrdered": [
+    {
+      "name": "Επισκόπηση",
+      "file": "overview.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    }
+  ]
+}

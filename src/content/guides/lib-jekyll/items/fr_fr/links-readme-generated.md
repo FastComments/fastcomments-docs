@@ -1,0 +1,5 @@
+---
+- [Documentation de FastComments](https://docs.fastcomments.com)
+- [Personnalisation & Configuration](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Documentation de Jekyll](https://jekyllrb.com/docs/)
+---

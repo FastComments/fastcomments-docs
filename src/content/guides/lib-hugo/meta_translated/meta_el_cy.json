@@ -1,0 +1,12 @@
+{
+  "name": "Βιβλιοθήκη Hugo",
+  "pageHeader": "Προσθέστε σχόλια στην ιστοσελίδα Hugo σας",
+  "itemsOrdered": [
+    {
+      "name": "Επισκόπηση",
+      "file": "overview.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    }
+  ]
+}

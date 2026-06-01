@@ -1,0 +1,12 @@
+{
+  "name": "Hugo 库",
+  "pageHeader": "向你的 Hugo 站点添加评论",
+  "itemsOrdered": [
+    {
+      "name": "概述",
+      "file": "overview.md",
+      "subCat": "入门",
+      "type": "readme"
+    }
+  ]
+}
