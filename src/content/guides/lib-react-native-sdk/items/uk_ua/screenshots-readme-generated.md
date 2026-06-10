@@ -1,35 +1,36 @@
-#### Оформлення: Erebus
-![Оформлення: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
-#### Оформлення: За замовчуванням
-![Оформлення: За замовчуванням](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
-#### Нативний WYSIWYG-редактор із підтримкою зображень!
-![Нативний WYSIWYG-редактор із підтримкою зображень](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
+#### Skin: Erebus
+![Тема: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
+#### Skin: Default
+![Тема: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
+#### Native WYSIWYG Editor with Image Support!
+![Нативний WYSIWYG-редактор з підтримкою зображень](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
 
-### Редактор форматованого тексту
+### Rich Text Editor
 
-Ця бібліотека використовує редактор 10tap для функціоналу редагування форматованого тексту, що забезпечує потужний WYSIWYG-досвід редагування.
+This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
 
-### Параметри конфігурації
+`react-native-enriched` requires the React Native New Architecture (Fabric) on native, and a bundler that resolves package `exports` conditions (Metro with package exports / RN 0.72+). Web support is currently experimental.
 
-Ця бібліотека прагне підтримувати всі параметри конфігурації, визначені в [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), так само як і веб-реалізація.
+### Configuration Options
 
-### Поняття FastComments
+This library aims to support all configuration options defined in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), just like the web implementation.
 
-Основні поняття, які потрібно знати для початку роботи — це `tenantId` та `urlId`. `tenantId` — це ідентифікатор вашого облікового запису на FastComments.com. `urlId` — це те, до чого будуть прив'язані потоки коментарів. Це може бути URL сторінки, або id продукту, id статті тощо.
+### FastComments Concepts
 
-### Сповіщення користувачів
+Основні поняття, які потрібно знати для початку роботи — це `tenantId` та `urlId`. `tenantId` — це ідентифікатор вашого облікового запису на FastComments.com. `urlId` — це прив’язка, до якої будуть прикріплені потоки коментарів. Це може бути URL сторінки, ідентифікатор продукту, ідентифікатор статті тощо.
 
-FastComments підтримує сповіщення для [багатьох сценаріїв](https://docs.fastcomments.com/guide-notifications.html). Сповіщення налаштовуються,
-від них можна відмовитися глобально або на рівні конкретного сповіщення/коментаря, і підтримуються підписки на рівні сторінки, щоб користувачі могли підписатися на потоки коментарів певної сторінки чи статті.
+### User Notifications
 
-Наприклад, можна використовувати Secure SSO для автентифікації користувача, а потім періодично опитувати непрочитані сповіщення та надсилати їх користувачу.
+FastComments supports notifications for [many scenarios](https://docs.fastcomments.com/guide-notifications.html). Сповіщення налаштовуються, можна відмовитися від них глобально або на рівні конкретного сповіщення/коментаря, а також підтримуються підписки на рівні сторінки, щоб користувачі могли підписуватися на потоки конкретної сторінки або статті.
 
-Див. [приклад AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx), щоб дізнатися, як отримувати та перекладати непрочитані сповіщення користувача.
+Наприклад, можна використовувати Secure SSO для аутентифікації користувача, а потім періодично опитувати на наявність непрочитаних сповіщень і надсилати їх користувачу.
 
-### Переглядач GIF
+Дивіться [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx), щоб дізнатися, як отримувати та перекладати непрочитані сповіщення користувача.
 
-За замовчуванням вибір зображень або GIF не активовано. Див. [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx), щоб дізнатися, як підтримати завантаження зображень і GIF. У цій бібліотеці є Переглядач GIF, який анонімізує пошукові запити та надані зображення — потрібно лише його використовувати.
+### Gif Browser
 
-### Продуктивність
+За замовчуванням вибір зображень або GIF не увімкнено. Дивіться [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx), щоб дізнатися, як підтримувати завантаження зображень і GIF. У цій бібліотеці є переглядач GIF, який анонімізує пошуки та зображення — вам потрібно лише його використати.
 
-Будь ласка, відкрийте тікет із прикладом для відтворення, включно з інформацією про пристрій, якщо ви виявите будь-які проблеми з продуктивністю. Продуктивність має високий пріоритет у всіх бібліотеках FastComments.
+### Performance
+
+Будь ласка, відкрийте тікет із прикладом для відтворення, включаючи використаний пристрій, якщо ви виявите проблеми з продуктивністю. Продуктивність є пріоритетом для всіх бібліотек FastComments.

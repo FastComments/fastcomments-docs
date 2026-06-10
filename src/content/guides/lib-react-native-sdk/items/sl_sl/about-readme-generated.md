@@ -1,15 +1,15 @@
-Ta knjižnica je popolna react-native implementacija [FastComments](https://fastcomments.com).
+Ta knjižnica je popolna implementacija za react-native [FastComments](https://fastcomments.com).
 
-Podpira komentiranje v živo, klepet, niti, emotikone, obvestila, SSO, skins in popolno prilagoditev z uporabo objekta stylesheet. Vse assets je mogoče tudi prilagoditi, podprta pa je tudi preklapljanja različnih assets glede na temni način.
+Podpira komentiranje v živo, klepet, niti (threads), emotikone, obvestila, SSO, teme (skins) in popolno prilagoditev z posredovanjem objekta s slogi. Vse vire (assets) je mogoče tudi prilagoditi, podpira pa preklapljanje med različnimi viri glede na temni način (dark mode).
 
-Prednost te knjižnice je v večji prilagodljivosti kot pri wrapperju `fastcomments-react-native`. Komentarji so upodobljeni z nativnimi komponentami namesto znotraj webviewa. Opomba: `react-native-webview` je še vedno potreben kot posredna odvisnost bogatega urejevalnika besedila (`@10play/tentap-editor`).
+Prednost te knjižnice je, da je bolj prilagodljiva kot ovojnica `fastcomments-react-native`. Komentarji so upodobljeni z nativnimi komponentami namesto znotraj webviewa.
 
-Vse teče na FastComments backendu, zato morate vključiti le UI:
+Vse deluje na FastComments backendu, zato morate vključiti le uporabniški vmesnik (UI):
 
 ```tsx
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Za več primerov si oglejte [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src).
+Oglejte si [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) za več primerov.
 
-Dodajte klepet v živo v obstoječo React Native aplikacijo ali pa zgradite družbeno omrežje!
+Dodajte klepet v živo v vašo obstoječo aplikacijo React Native, ali pa celo zgradite družbeno omrežje!

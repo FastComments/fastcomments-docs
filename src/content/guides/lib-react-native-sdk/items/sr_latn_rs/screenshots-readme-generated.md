@@ -1,40 +1,36 @@
----
 #### Tema: Erebus
 ![Tema: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
 #### Tema: Default
 ![Tema: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
-#### Nativni WYSIWYG uređivač sa podrškom za slike!
-![Nativni WYSIWYG uređivač sa podrškom za slike](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
+#### Nativni WYSIWYG editor sa podrškom za slike!
+![Nativni WYSIWYG editor sa podrškom za slike](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
 
-### Uređivač bogatog teksta
+### Editor za bogat tekst
 
-Ova biblioteka koristi 10tap editor za funkcionalnost uređivanja bogatog teksta, koji pruža moćno WYSIWYG iskustvo uređivanja.
+Ova biblioteka koristi [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) za uređivanje bogatog teksta, što obezbeđuje moćno WYSIWYG iskustvo uređivanja. Isti editor pokreće iOS, Android i web (putem `react-native-web`), tako da se uređivač ponaša konzistentno na svim platformama uz jednu implementaciju.
+
+`react-native-enriched` zahteva React Native New Architecture (Fabric) na nativnim platformama, i bundler koji rešava uslove `exports` paketa (Metro sa package exports / RN 0.72+). Podrška za web je trenutno eksperimentalna.
 
 ### Opcije konfiguracije
 
-Ova biblioteka teži da podrži sve opcije konfiguracije definisane u [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), isto kao i web implementacija.
+Ova biblioteka ima za cilj da podrži sve opcije konfiguracije definisane u [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), isto kao i web implementacija.
 
 ### Koncepti FastComments
 
-Glavni koncepti koje treba razumeti da biste počeli su `tenantId` i `urlId`. `tenantId` je identifikator vašeg FastComments.com naloga. `urlId` je za šta će biti vezane niti komentara. To može biti URL stranice, ili ID proizvoda, ID članka, itd.
+Glavni koncepti koje treba znati za početak su `tenantId` i `urlId`. `tenantId` je identifikator vašeg FastComments.com naloga. `urlId` označava za šta će biti vezane niti komentara. To može biti URL stranice, id proizvoda, id članka itd.
 
-### Obaveštenja korisnika
+### Korisničke obaveštenja
 
-FastComments podržava obaveštenja za [mnoge scenarije](https://docs.fastcomments.com/guide-notifications.html). Obaveštenja su konfigurisanja,
-mogu se isključiti globalno ili na nivou obaveštenja/komentara, i podržavaju pretplate na nivou stranice tako da se korisnici mogu pretplatiti na niti
-konkretne stranice ili članka.
+FastComments podržava obaveštenja za [mnoge scenarije](https://docs.fastcomments.com/guide-notifications.html). Obaveštenja se mogu konfigurisati, moguće je odjaviti se globalno ili na nivou pojedinačnog obaveštenja/komentara, i podržane su pretplate po stranici tako da se korisnici mogu pretplatiti na niti određene stranice ili članka.
 
-Na primer, moguće je koristiti Secure SSO za autentifikaciju korisnika i zatim periodično proveravati nepročitana obaveštenja i slati ih korisniku.
+Na primer, moguće je koristiti Secure SSO za autentifikaciju korisnika, a zatim periodično proveravati nepročitana obaveštenja i slati ih korisniku.
 
-Pogledajte [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) za to kako dobiti i prevesti nepročitana korisnička obaveštenja.
+Pogledajte [primer AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) za to kako dobiti i prevesti nepročitana korisnička obaveštenja.
 
-### Gif pregledač
+### Pregledač GIF-ova
 
-Podrazumevano, izbor slika ili gifova nije omogućen. Pogledajte [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) za to kako
-podržati otpremanje slika i gifova. U ovoj biblioteci postoji Gif pregledač koji anonimizuje pretrage i slike koje pruža, dovoljno je samo da ga koristite.
+Po defaultu, izbor slika ili gifova nije omogućen. Pogledajte [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) kako podržati otpremanje slika i gifova. Postoji Pregledač GIF-ova koji anonimizuje pretrage i slike dostavljene u ovoj biblioteci — potrebno je samo da ga koristite.
 
 ### Performanse
 
-Molimo otvorite tiket sa primerom za reprodukciju, uključujući korišćeni uređaj, ako uočite bilo kakve probleme sa performansama. Performanse su prioritet
-u svim FastComments bibliotekama.
----
+Ako primetite probleme sa performansama, otvorite tiket sa primerom za reprodukciju, uključujući uređaj koji je korišćen. Performanse su prioritet u svim FastComments bibliotekama.

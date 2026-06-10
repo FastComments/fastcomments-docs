@@ -1,11 +1,11 @@
-Ta biblioteka jest kompletną implementacją react-native [FastComments](https://fastcomments.com).
+Ta biblioteka jest kompletną implementacją react-native dla [FastComments](https://fastcomments.com).
 
-Obsługuje komentowanie na żywo, chat, wątki, emotikony, powiadomienia, SSO, skórki oraz pełną personalizację poprzez przekazanie obiektu arkusza stylów. Wszystkie zasoby
+Obsługuje komentowanie na żywo, czat, wątki, emotikony, powiadomienia, SSO, motywy oraz pełną personalizację poprzez przekazanie obiektu stylesheet. Wszystkie zasoby
 mogą być również dostosowywane, a biblioteka obsługuje przełączanie różnych zasobów w zależności od trybu ciemnego.
 
-Zaletą tej biblioteki jest to, że jest bardziej elastyczna niż wrapper `fastcomments-react-native`. Komentarze są renderowane za pomocą natywnych komponentów, a nie wewnątrz webview. Uwaga: `react-native-webview` jest nadal wymagana jako zależność pośrednia dla edytora tekstu sformatowanego (`@10play/tentap-editor`).
+Zaletą tej biblioteki jest to, że jest bardziej elastyczna niż wrapper `fastcomments-react-native`. Komentarze są renderowane za pomocą natywnych komponentów zamiast wewnątrz webview.
 
-Wszystko działa na backendzie FastComments, więc musisz jedynie zaimplementować interfejs użytkownika (UI):
+Wszystko działa na backendzie FastComments, więc musisz jedynie zaimplementować UI:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
@@ -13,4 +13,4 @@ Wszystko działa na backendzie FastComments, więc musisz jedynie zaimplementowa
 
 Zobacz [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) aby uzyskać więcej przykładów.
 
-Dodaj czat na żywo do istniejącej aplikacji React Native albo nawet zbuduj sieć społecznościową!
+Dodaj czat na żywo do istniejącej aplikacji React Native, albo nawet zbuduj sieć społecznościową!

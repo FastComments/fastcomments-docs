@@ -7,7 +7,9 @@
 
 ### Rich Text Editor
 
-This library uses the 10tap editor for rich text editing functionality, which provides a powerful WYSIWYG editing experience.
+This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
+
+`react-native-enriched` requires the React Native New Architecture (Fabric) on native, and a bundler that resolves package `exports` conditions (Metro with package exports / RN 0.72+). Web support is currently experimental.
 
 ### Configuration Options
 

@@ -1,34 +1,36 @@
-#### Tema: Erebus
-![Tema: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
-#### Tema: Default
-![Tema: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
-#### Nativni WYSIWYG uređivač sa podrškom za slike!
-![Nativni WYSIWYG uređivač sa podrškom za slike](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
+#### Тема: Erebus
+![Тема: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
+#### Тема: Default
+![Тема: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
+#### Нативни WYSIWYG уређивач са подршком за слике!
+![Нативни WYSIWYG уређивач са подршком за слике](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
 
-### Uređivač bogatog teksta
+### Уређивач богатог текста
 
-Ova biblioteka koristi 10tap editor za funkcionalnost uređivanja bogatog teksta, koji pruža moćno WYSIWYG iskustvo uređivanja.
+Ова библиотека користи [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) за уређивање богатог текста, што пружа снажно WYSIWYG искуство уређивања. Исти уређивач покреће iOS, Android и веб (путем `react-native-web`), па се уређивач понаша доследно на свим платформама са једном имплементацијом.
 
-### Opcije konfiguracije
+`react-native-enriched` захтијева React Native New Architecture (Fabric) на нативној страни, као и пакер који решава услове `exports` пакета (Metro са package exports / RN 0.72+). Подршка за веб је тренутно експериментална.
 
-Ova biblioteka ima za cilj podržati sve opcije konfiguracije definirane u [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), isto kao i web implementacija.
+### Опције конфигурације
 
-### Koncepti FastComments
+Ова библиотека има за циљ да подржи све опције конфигурације дефинисане у [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), баш као и веб имплементација.
 
-Glavni koncepti koje treba znati za početak su `tenantId` i `urlId`. `tenantId` je identifikator vašeg FastComments.com naloga. `urlId` označava za šta će biti vezane niti komentara. To može biti URL stranice, ili id proizvoda, id članka, itd.
+### Основни појмови FastComments
 
-### Obavještenja korisnika
+Главни појмови којима треба обратити пажњу за почетак су `tenantId` и `urlId`. `tenantId` је идентификатор вашег FastComments.com налога. `urlId` је где ће нити коментара бити повезане. То може бити URL странице, или ид производа, или ид чланка итд.
 
-FastComments podržava obavještenja za [mnoge scenarije](https://docs.fastcomments.com/guide-notifications.html). Obavještenja su konfigurabilna, korisnik se može odjaviti globalno ili na nivou pojedinačnog obavještenja/komentara, i podržava pretplate na nivou stranice tako da se korisnici mogu pretplatiti na niti komentara određene stranice ili članka.
+### Обавештења корисника
 
-Na primjer, moguće je koristiti Secure SSO za autentifikaciju korisnika i zatim periodično provjeravati nepročitana obavještenja i slati ih korisniku.
+FastComments подржава нотификације за [много сценарија](https://docs.fastcomments.com/guide-notifications.html). Нотификације су конфигурисане, могуће је отказати их глобално или на нивоу појединачне нотификације/коментара, и подржавају претплате на нивоу странице тако да се корисници могу пријавити за нити одређене странице или чланка.
 
-Pogledajte [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) za način kako dobiti i prevesti nepročitana obavještenja korisnika.
+На пример, могуће је користити Secure SSO за аутентификацију корисника и затим периодично провјеравати непрочитане нотификације и гурати их кориснику.
 
-### Pregledač GIF-ova
+Погледајте [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) за начин како добити и превести непрочитана корисничка обавештења.
 
-Po defaultu nije omogućeno odabiranje slika ili GIF-ova. Pogledajte [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) kako podržati upload slika i GIF-ova. U ovoj biblioteci postoji Pregledač GIF-ova koji anonimizira pretrage i slike, samo ga trebate koristiti.
+### GIF прегледач
 
-### Performanse
+По подразумеваној поставци, избор слика или GIF-ова није омогућен. Погледајте [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) за начин како подржати отпремање слика и GIF-ова. У овој библиотеци постоји GIF прегледач који анонимизује претраге и слике које обезбјеђује библиотека, само га морате користити.
 
-Molimo otvorite ticket sa primjerom za reprodukciju, uključujući uređaj koji ste koristili, ako primijetite bilo kakve probleme s performansama. Performanse su prioritet u svim FastComments bibliotekama.
+### Перформансе
+
+Ако идентификујете било какве проблеме са перформансама, отворите тикет са примером за репродукцију, укључујући уређај који је кориштен. Перформансе су приоритет свих FastComments библиотека.

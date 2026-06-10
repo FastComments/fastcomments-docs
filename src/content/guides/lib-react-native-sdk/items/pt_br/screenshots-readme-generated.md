@@ -1,3 +1,4 @@
+---
 #### Tema: Erebus
 ![Tema: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
 #### Tema: Padrão
@@ -7,7 +8,9 @@
 
 ### Editor de Texto Rico
 
-Esta biblioteca utiliza o editor 10tap para a funcionalidade de edição de texto rico, que fornece uma experiência poderosa de edição WYSIWYG.
+This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
+
+`react-native-enriched` requires the React Native New Architecture (Fabric) on native, and a bundler that resolves package `exports` conditions (Metro with package exports / RN 0.72+). Web support is currently experimental.
 
 ### Opções de Configuração
 
@@ -15,22 +18,21 @@ Esta biblioteca tem como objetivo suportar todas as opções de configuração d
 
 ### Conceitos do FastComments
 
-Os principais conceitos a serem considerados para começar são `tenantId` e `urlId`. `tenantId` é o identificador da sua conta FastComments.com. `urlId` é onde os threads de comentários estarão vinculados. Isso pode ser a URL de uma página, ou um id de produto, um id de artigo, etc.
+Os principais conceitos a conhecer para começar são `tenantId` e `urlId`. `tenantId` é o identificador da sua conta no FastComments.com. `urlId` é onde os tópicos de comentários ficarão vinculados. Isso pode ser a URL de uma página, ou o id de um produto, o id de um artigo, etc.
 
 ### Notificações de Usuário
 
-O FastComments suporta notificações para [muitos cenários](https://docs.fastcomments.com/guide-notifications.html). As notificações são configuráveis,
-podem ser desativadas globalmente ou no nível de notificação/comentário, e suportam assinaturas ao nível da página para que os usuários possam se inscrever em threads de uma
-página ou artigo específico.
+O FastComments suporta notificações para [muitos cenários](https://docs.fastcomments.com/guide-notifications.html). As notificações são configuráveis, podem ser desativadas globalmente ou no nível de uma notificação/comentário, e suportam inscrições por página para que os usuários possam assinar os tópicos de uma página ou artigo específico.
 
-Por exemplo, é possível usar Secure SSO para autenticar o usuário e então consultar periodicamente as notificações não lidas e enviá-las ao usuário.
+Por exemplo, é possível usar Secure SSO para autenticar o usuário e então periodicamente consultar por notificações não lidas e enviá-las ao usuário.
 
-Veja [o exemplo AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) sobre como obter e traduzir notificações não lidas do usuário.
+Veja [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) para saber como obter e traduzir notificações não lidas do usuário.
 
 ### Navegador de GIFs
 
-Por padrão, nenhuma seleção de imagem ou GIF está habilitada. Veja [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) para saber como suportar uploads de imagens e GIFs. Há um Navegador de GIFs que anonimiza pesquisas e imagens fornecidas nesta biblioteca, você simplesmente precisa usá-lo.
+Por padrão, nenhuma seleção de imagem ou gif está habilitada. Veja [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) para ver como suportar uploads de imagens e gifs. Há um Navegador de GIFs que anonimiza as buscas e as imagens fornecidas nesta biblioteca; você só precisa usá-lo.
 
 ### Desempenho
 
-Por favor, abra um ticket com um exemplo para reproduzir, incluindo o dispositivo utilizado, se identificar quaisquer problemas de desempenho. O desempenho é tratado como prioridade em todas as bibliotecas FastComments.
+Por favor, abra um ticket com um exemplo para reproduzir, incluindo o dispositivo usado, se você identificar quaisquer problemas de desempenho. O desempenho é tratado como prioridade em todas as bibliotecas FastComments.
+---

@@ -1,34 +1,36 @@
-#### Tema: Erebus
+#### Skin: Erebus
 ![Skin: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
-#### Tema: Predefinito
+#### Skin: Default
 ![Skin: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
 #### Editor WYSIWYG nativo con supporto alle immagini!
 ![Native WYSIWYG Editor with Image Support](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
 
 ### Editor di testo ricco
 
-Questa libreria utilizza l'editor 10tap per la funzionalità di editing di testo ricco, che fornisce un'esperienza WYSIWYG potente.
+Questa libreria utilizza [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) per l'editing di testo ricco, che fornisce un'esperienza WYSIWYG potente. Lo stesso editor alimenta iOS, Android e il web (tramite `react-native-web`), quindi il compositore si comporta in modo coerente su tutte le piattaforme con un'unica implementazione.
+
+`react-native-enriched` richiede la React Native New Architecture (Fabric) su native, e un bundler che risolva le condizioni di `exports` dei pacchetti (Metro con package exports / RN 0.72+). Il supporto web è attualmente sperimentale.
 
 ### Opzioni di configurazione
 
-Questa libreria mira a supportare tutte le opzioni di configurazione definite in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), esattamente come l'implementazione web.
+Questa libreria mira a supportare tutte le opzioni di configurazione definite in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), proprio come l'implementazione web.
 
-### Concetti di FastComments
+### Concetti FastComments
 
-I concetti principali da conoscere per iniziare sono `tenantId` e `urlId`. `tenantId` è l'identificativo del tuo account FastComments.com. `urlId` è l'entità a cui verranno legati i thread di commento. Questo può essere un URL di pagina, o un id prodotto, un id articolo, ecc.
+I concetti principali di cui tenere conto per iniziare sono `tenantId` e `urlId`. `tenantId` è l'identificativo del tuo account FastComments.com. `urlId` è l'elemento a cui verranno legati i thread dei commenti. Questo potrebbe essere un URL di pagina, oppure un id prodotto, un id articolo, ecc.
 
 ### Notifiche utente
 
-FastComments supporta le notifiche per [molteplici scenari](https://docs.fastcomments.com/guide-notifications.html). Le notifiche sono configurabili, è possibile rinunciare globalmente oppure a livello di singola notifica/commento, e supportano le iscrizioni a livello di pagina in modo che gli utenti possano iscriversi ai thread di una pagina o articolo specifico.
+FastComments supporta le notifiche per [molti scenari](https://docs.fastcomments.com/guide-notifications.html). Le notifiche sono configurabili, è possibile disattivarle globalmente o a livello di notifica/commento, e supportano le sottoscrizioni a livello di pagina in modo che gli utenti possano iscriversi ai thread di una pagina o articolo specifico.
 
-Ad esempio, è possibile usare Secure SSO per autenticare l'utente e poi interrogare periodicamente le notifiche non lette e inviarle all'utente.
+Ad esempio, è possibile utilizzare Secure SSO per autenticare l'utente e poi eseguire periodicamente polling per le notifiche non lette e inoltrarle all'utente.
 
-Vedi [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) per sapere come ottenere e tradurre le notifiche utente non lette.
+Vedi [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) per come ottenere e tradurre le notifiche utente non lette.
 
 ### Browser GIF
 
-Per impostazione predefinita, non è abilitata la selezione di immagini o gif. Vedi [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) per sapere come supportare l'upload di immagini e gif. In questa libreria è fornito un Browser GIF che anonimizza le ricerche e le immagini fornite, basta usarlo.
+Per impostazione predefinita, non è abilitata alcuna selezione di immagini o gif. Vedi [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) per come supportare caricamenti di immagini e gif. Questa libreria include un Browser GIF che anonimizza le ricerche e le immagini fornite, devi solo utilizzarlo.
 
 ### Prestazioni
 
-Per favore apri un ticket con un esempio che riproduca il problema, includendo il dispositivo usato, se identifichi problemi di prestazioni. Le prestazioni sono di primaria importanza in tutte le librerie FastComments.
+Apri un ticket con un esempio riproducibile, incluso il dispositivo utilizzato, se individui problemi di prestazioni. Le prestazioni sono una priorità di prima classe in tutte le librerie FastComments.

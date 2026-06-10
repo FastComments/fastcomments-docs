@@ -1,15 +1,16 @@
-הספרייה הזו היא מימוש מלא ל-react-native של [FastComments](https://fastcomments.com).
+ספרייה זו היא מימוש מלא של react-native עבור [FastComments](https://fastcomments.com).
 
-היא תומכת בתגובות בזמן אמת, בצ'אט, בשרשורים, באמוטיקונים, בהתראות, ב-SSO, ב-skins ובהתאמה מלאה על ידי העברת אובייקט stylesheet. כל ה-assets ניתנים גם הם להתאמה, והיא תומכת בהחלפת assets שונים בהתאם למצב כהה.
+היא תומכת בהערות בזמן אמת, צ'אט, שרשורים (threads), אימוג'ים, התראות, SSO, סקינים, והתאמה אישית מלאה על ידי העברת אובייקט גיליון סגנונות. כל הנכסים
+ניתנים גם הם להתאמה אישית, והיא תומכת במעבר בין נכסים שונים בהתאם למצב כהה.
 
-היתרון של ספרייה זו הוא שהיא גמישה יותר מה-wrapper `fastcomments-react-native`. התגובות מוצגות עם native components במקום בתוך webview. הערה: `react-native-webview` עדיין נדרשת כתלות טרנזיטיבית של עורך הטקסט המתקדם (`@10play/tentap-editor`).
+היתרון של ספרייה זו הוא שהיא גמישה יותר מאשר ה-wrapper `fastcomments-react-native`. ההערות מוצגות עם רכיבים נייטיב במקום בתוך webview.
 
-הכל רץ על ה-backend של FastComments, כך שכל מה שעליכם לשלב הוא את ה-UI:
+הכול רץ על ה-backend של FastComments, כך שעליך לשלב רק את ה-UI:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-ראה [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) לעוד דוגמאות.
+עיין ב-[example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) לדוגמאות נוספות.
 
-הוסיפו צ'אט בזמן אמת לאפליקציית React Native קיימת שלכם, או אפילו בנו רשת חברתית!
+הוסף צ'אט חי לאפליקציית React Native קיימת שלך, או אפילו בנה רשת חברתית!
