@@ -1,26 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| broadcastId | string | Da |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`LockComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockComment200Response.ts)
+Vraća: [`LockComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockComment200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'lockComment пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lockComment Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_8f3a2b";
-const commentId: string = "cmt_5d7e9a92";
-const broadcastId: string = "broadcast_2026_03_25_1400";
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature";
-const resultWithSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId, ssoToken);
-const resultWithoutSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId);
-[inline-code-end]
+const tenantId: string = 'tenant_42f6c1';
+const commentId: string = 'cmt-9a8b7c';
+const broadcastId: string = 'brd_2026_06_15';
+const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTY1MDAwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
----
+const lockedWithSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+const lockedWithoutSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId);
+[inline-code-end]

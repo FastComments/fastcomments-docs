@@ -15,8 +15,9 @@ Returns: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getVotesForUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const urlId: string = 'release-notes';
-const userId: string = 'user_10293';
-const votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId);
+const tenantId: string = 'tenant_9b8f7c6d';
+const urlId: string = 'articles/product-update-2026';
+const userId: string = 'user_c12345';
+const anonUserId: string = 'anon_7f4e2a';
+const votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
 [inline-code-end]

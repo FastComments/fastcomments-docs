@@ -17,21 +17,24 @@ Returns: `Array<SaveComment200Response`
 
 [inline-code-attrs-start title = 'saveCommentsBulk Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const createParams: CreateCommentParams[] = [
+const tenantId: string = "tenant_42a1b7";
+const mentions: CommentUserMentionInfo[] = [{ userId: "user_2b9", displayName: "Alex Chen" }];
+const hashtags: CommentUserHashTagInfo[] = [{ tag: "performance" }];
+const createCommentParams: CreateCommentParams[] = [
   {
-    content: "Finished the draft for the Q2 report, please review.",
-    authorId: "user_789",
-    mentions: [{ userId: "user_456", startIndex: 34, length: 4 } as CommentUserMentionInfo],
-    hashtags: [{ tag: "Q2", indices: [28, 30] } as CommentUserHashTagInfo]
-  } as CreateCommentParams
+    content: "Thanks for the detailed article — the alternative approach worked for me.",
+    authorId: "user_8f3c2",
+    authorName: "Maya Patel",
+    authorEmail: "maya.patel@example.com",
+    url: "/articles/optimizing-ts-performance",
+    createdAt: new Date().toISOString(),
+    mentions,
+    hashtags
+  }
 ];
-const saveResult: SaveComment200Response[] = await saveCommentsBulk(
-  tenantId,
-  createParams,
-  true,   // isLive
-  true,   // doSpamCheck
-  false,  // sendEmails
-  true    // populateNotifications
-);
+const isLive: boolean = true;
+const doSpamCheck: boolean = false;
+const sendEmails: boolean = true;
+const populateNotifications: boolean = true;
+const result: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
 [inline-code-end]

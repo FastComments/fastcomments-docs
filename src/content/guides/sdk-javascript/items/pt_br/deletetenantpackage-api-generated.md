@@ -1,7 +1,8 @@
+---
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 
@@ -13,12 +14,10 @@ Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Exemplo de deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_8f3a2b4c9d01";
-  const packageId: string = "pkg_2026-04-security-patch";
-  const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
-  console.log(result);
-})();
+const tenantId: string = 'acme-corp-tenant-01';
+const packageId: string = 'pkg-2026-06-15-001';
+const dryRun: boolean | undefined = undefined; // exemplo de flag opcional (não exigido pela função)
+const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 
 ---

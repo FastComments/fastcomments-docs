@@ -17,13 +17,26 @@ Returns: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'createFeedPost Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-7421';
-const imageAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/launch.jpg', mimeType: 'image/jpeg', width: 1200, height: 630 };
-const mediaItem: FeedPostMediaItem = { type: 'image', assets: [imageAsset], caption: 'Highlights from today’s release' };
-const link: FeedPostLink = { url: 'https://www.example.com/releases/v2', title: 'Release notes' };
-const createFeedPostParams: CreateFeedPostParams = { title: 'Version 2.0 Released', body: 'We shipped major performance improvements and new features.', media: [mediaItem], link };
-const broadcastId: string = 'broadcast-602';
+const tenantId: string = 'tenant_4f2b1c';
+const createFeedPostParams: CreateFeedPostParams = {
+  content: 'Launching our summer collection today — check it out!',
+  authorId: 'user_879',
+  media: [
+    {
+      type: 'image',
+      assets: [
+        { url: 'https://cdn.myshop.com/uploads/summer-look.jpg', width: 1200, height: 800 } as FeedPostMediaItemAsset
+      ]
+    } as FeedPostMediaItem
+  ],
+  links: [
+    { url: 'https://myshop.com/new-arrival', title: 'Summer Collection' } as FeedPostLink
+  ],
+  allowComments: true
+};
+const broadcastId: string = 'broadcast-2026-06-15-001';
 const isLive: boolean = false;
 const doSpamCheck: boolean = true;
-const result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck);
+const skipDupCheck: boolean = false;
+const response: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
 [inline-code-end]

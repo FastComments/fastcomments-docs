@@ -2,8 +2,8 @@
 
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
-|------|------|------|-------------|
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | aggregationRequest | AggregationRequest | 是 |  |
 | parentTenantId | string | 否 |  |
@@ -11,6 +11,23 @@
 
 ## 响应
 
-返回：[`AggregationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregationResponse.ts)
+返回: [`Aggregate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/Aggregate200Response.ts)
+
+## 示例
+
+[inline-code-attrs-start title = 'aggregate 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_78a9';
+const parentTenantId: string = 'parent_tenant_01';
+const includeStats: boolean = true;
+const aggregationRequest: AggregationRequest = {
+  operation: { type: 'COUNT' },
+  groupBy: ['pageUrl'],
+  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },
+  sort: [{ field: 'count', direction: 'DESC' }],
+  limit: 25
+};
+const result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
+[inline-code-end]
 
 ---

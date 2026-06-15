@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -13,13 +13,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за deleteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_01";
-const id: string = "comment_5f3a2b7c";
-const contextUserId: string = "user_1229";
-const isLive: boolean = true;
-const response: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);
+const tenantId: string = 'tenant_84a9f2';
+const id: string = 'comment_5f3b21';
+const contextUserId: string | undefined = 'user_1122';
+const isLive: boolean | undefined = true;
+
+async function run(): Promise<void> {
+  const result: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);
+  console.log(result);
+}
+
+run();
 [inline-code-end]
 
 ---

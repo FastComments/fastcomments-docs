@@ -1,8 +1,8 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | page | number | No |  |
 | limit | number | No |  |
 | skip | number | No |  |
@@ -17,6 +17,8 @@
 | hashTag | string | No |  |
 | parentId | string | No |  |
 | direction | SortDirections | No |  |
+| fromDate | number | No |  |
+| toDate | number | No |  |
 
 ## Risposta
 
@@ -26,21 +28,8 @@ Restituisce: [`GetComments200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Esempio di getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // page (pagina)
-  20, // limit (limite)
-  0, // skip (salto)
-  true, // asTree (comeAlbero)
-  1, // skipChildren (saltaFigli)
-  3, // limitChildren (limiteFigli)
-  4, // maxTreeDepth (profonditàMassimaAlbero)
-  'articles/2026/new-product-launch', // urlId (idUrl)
-  'user_7890', // userId (idUtente)
-  'anon_4f3b2', // anonUserId (idUtenteAnonimo)
-  undefined, // contextUserId (idUtenteContesto)
-  '#launch', // hashTag (hashtag)
-  undefined // parentId (idGenitore)
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

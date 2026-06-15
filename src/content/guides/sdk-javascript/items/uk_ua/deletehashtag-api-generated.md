@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tag | string | Так |  |
 | tenantId | string | Ні |  |
@@ -12,14 +12,14 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "spring-sale-2026";
-const tenantId: string = "tenant-9876";
+const tag: string = "breaking-news";
+const tenantId: string = "tenant_72a1";
 const deleteHashTagRequest: DeleteHashTagRequest = {
-  requestedBy: "admin@retailco.com",
-  reason: "Campaign ended; remove associated auto-tags",
-  cascadeDelete: true
+  reason: "consolidate-duplicates",
+  requestedBy: "moderator@dailypress.com",
+  forceDelete: true
 };
 const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]

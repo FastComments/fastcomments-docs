@@ -2,9 +2,9 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
 
 ## Одговор
 
@@ -12,20 +12,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateTenantPackage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_sf_001";
-  const id: string = "pkg-premium-v2";
-  const updateTenantPackageBody: UpdateTenantPackageBody = {
-    name: "San Francisco Premium",
-    enabled: true,
-    customConfig: { maxComments: 500 },
-    tosConfig: { required: true } // опционална поља су приказана присуством; остала су изостављена
-  } as UpdateTenantPackageBody;
-  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9f3b2a';
+const id: string = 'pkg_pro_2026';
+const updateTenantPackageBody: UpdateTenantPackageBody = {
+  name: 'Pro Plan',
+  monthlyPriceUsd: 49,
+  isActive: true,
+  features: ['moderation', 'analytics', 'sso'],
+  trialDays: 14 // необавезни параметар (пример)
+};
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
 
 ---

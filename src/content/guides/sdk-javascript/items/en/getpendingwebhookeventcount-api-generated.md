@@ -18,20 +18,18 @@ Returns: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42';
-const commentId: string | undefined = 'cmt-98765';
-const externalId: string | undefined = 'order-5643';
-const eventType: string | undefined = 'comment.created';
-const typeParam: string | undefined = 'webhook';
-const domain: string | undefined = 'app.mycompany.com';
-const attemptCountGT: number | undefined = 2;
+const tenantId: string = 'tenant_9f8b3b';
+const commentId: string = 'cmt_1a2b3c';
+const eventType: string = 'comment.created';
+const domain: string = 'news-site.com';
+const attemptCountGT: number = 2;
 
 const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
   tenantId,
   commentId,
-  externalId,
+  undefined, // externalId omitted
   eventType,
-  typeParam,
+  undefined, // type omitted
   domain,
   attemptCountGT
 );

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | page | number | Не |  |
@@ -11,10 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getHashTags Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getHashTags'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const pageNumber: number = 2;
-const responseWithPage: GetHashTags200Response = await getHashTags(tenantId, pageNumber);
-const responseWithoutPage: GetHashTags200Response = await getHashTags(tenantId);
+const tenantId: string = 'tenant_7f4b2c3a';
+const tagsFirstPage: GetHashTags200Response = await getHashTags(tenantId);
+const tagsSecondPage: GetHashTags200Response = await getHashTags(tenantId, 2);
+console.log(tagsFirstPage, tagsSecondPage);
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -13,15 +13,11 @@
 
 [inline-code-attrs-start title = 'getQuestionConfig 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-92';
-const id: string = 'question-2026-07-42';
-const response: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
-
-function summarize(cfg: GetQuestionConfig200Response, includeDetails?: boolean): string {
-  return includeDetails ? 'Question config (detailed)' : 'Question config (summary)';
-}
-
-const summary: string = summarize(response);
+const tenantId: string = "acme-corp-47";
+const questionId: string = "q-4f2b9a";
+const includeDrafts: boolean | undefined = undefined; // 可选参数占位符
+const result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);
+console.log(result);
 [inline-code-end]
 
 ---

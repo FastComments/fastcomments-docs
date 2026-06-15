@@ -1,7 +1,6 @@
----
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 
@@ -13,9 +12,12 @@
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_eu_01';
-const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-console.log('Email template definitions loaded for', tenantId, templates);
+(async () => {
+  const tenantId: string = 'tenant_acme_001';
+  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // 선택적 매개변수 예시
+  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
+  console.log(templates);
+})();
 [inline-code-end]
 
 ---

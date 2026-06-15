@@ -2,15 +2,15 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| badgeId | string | No |  |
-| type | number | No |  |
-| displayedOnComments | boolean | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
+| tenantId | string | Ναι |  |
+| userId | string | Όχι |  |
+| badgeId | string | Όχι |  |
+| type | number | Όχι |  |
+| displayedOnComments | boolean | Όχι |  |
+| limit | number | Όχι |  |
+| skip | number | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadges200Response.ts)
 
@@ -18,15 +18,14 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const userId: string = 'user_5f4d3c2a';
+const tenantId: string = 'tenant_7f9a12';
+const userId: string = 'user_42b7';
 const badgeId: string = 'badge_top_contributor';
-const type: number = 1;
+const type: number = 2;
 const displayedOnComments: boolean = true;
-const limit: number = 50;
+const limit: number = 25;
 const skip: number = 0;
-
-const result: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);
+const badges: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);
 [inline-code-end]
 
 ---

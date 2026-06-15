@@ -14,11 +14,9 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'sendLoginLink Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_93';
-  const id: string = 'user_72f9b';
-  const redirectURL: string = 'https://app.mycompany.com/welcome';
-  const result: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
-  console.log(result);
-})();
+const tenantId: string = "tenant_0a1b2c3d";
+const id: string = "user_984321";
+const redirectURL: string = "https://app.acme-corp.com/welcome";
+const responseWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
+const responseWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);
 [inline-code-end]

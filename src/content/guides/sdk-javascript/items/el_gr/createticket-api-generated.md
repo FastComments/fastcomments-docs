@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | userId | string | Ναι |  |
@@ -14,15 +14,16 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα createTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-company-001';
-const userId: string = 'u_78f4b2';
+const tenantId: string = 'tenant_acme_corp';
+const userId: string = 'moderator_jane';
 const createTicketBody: CreateTicketBody = {
-  title: 'Unable to access project dashboard',
-  description: 'Receiving 403 when accessing /dashboard for project X',
+  subject: 'Mass spam reports on article 789',
+  description: 'Multiple identical spam comments posted under article 789. Needs moderation and bulk removal.',
   priority: 'high',
-  tags: ['dashboard', 'access'] // προαιρετικό πεδίο για επίδειξη
+  contactEmail: 'jane@acme-corp.com',
+  metadata: { articleId: '789', reportedCount: 12 } // προαιρετικά μεταδεδομένα για παράδειγμα
 };
-const result: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
+const ticket: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
 [inline-code-end]
 
 ---

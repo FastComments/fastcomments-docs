@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantBody | CreateTenantBody | 예 |  |
@@ -13,13 +13,14 @@
 
 [inline-code-attrs-start title = 'createTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-001';
+const tenantId: string = 'acme-news-01';
 const createTenantBody: CreateTenantBody = {
-  name: 'Acme Corporation',
-  domainConfiguration: { primaryDomain: 'comments.acme.com', enforceHttps: true } as APIDomainConfiguration,
-  billingInfo: { planId: 'enterprise', contactEmail: 'billing@acme.com' } as BillingInfo
-  // ssoConfig 또는 customConfig와 같은 선택적 필드는 의도적으로 생략됨
-} as CreateTenantBody;
-
+  name: 'Acme News',
+  domainConfiguration: { primaryDomain: 'news.acme.com', redirectHttps: true } as APIDomainConfiguration,
+  importedSites: [{ siteId: 'site-92', url: 'https://news.acme.com' }] as ImportedSiteType[],
+  billingInfo: { planId: 'business_monthly', contactEmail: 'billing@acme.com' } as BillingInfo
+};
 const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
 [inline-code-end]
+
+---

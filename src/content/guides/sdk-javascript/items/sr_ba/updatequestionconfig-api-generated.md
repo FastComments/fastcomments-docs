@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Да |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | Da |  |
 
 ## Odgovor
 
@@ -14,21 +14,20 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Primjer updateQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42e8b';
-const id: string = 'question_9f4a2';
+const tenantId: string = "tenant_9f3b8a2e-4c6d-4b4f-a1b2-9e8f7d6c5b3a";
+const id: string = "q_7c2e1b4a-5d6f-4a8b-9c3d-2e1f0b9a4c5d";
+const options: QuestionConfigCustomOptionsInner[] = [
+  { value: "1", label: "Very dissatisfied" },
+  { value: "2", label: "Dissatisfied" },
+  { value: "3", label: "Neutral" },
+  { value: "4", label: "Satisfied" },
+  { value: "5", label: "Very satisfied" }
+];
 const updateQuestionConfigBody: UpdateQuestionConfigBody = {
-  questionText: 'How helpful was this article?',
-  description: 'Shown to users below the question (optional)',
-  required: true,
-  renderingType: 'Likert' as QuestionRenderingType,
-  customOptions: [
-    { label: 'Very helpful', value: '5' } as QuestionConfigCustomOptionsInner,
-    { label: 'Somewhat helpful', value: '3' } as QuestionConfigCustomOptionsInner,
-    { label: 'Not helpful', value: '1' } as QuestionConfigCustomOptionsInner
-  ],
-  whenSave: 'notify' as QuestionWhenSave
+  label: "How satisfied are you with the article?",
+  enabled: true,
+  required: false, // neobavezni parametar (prikazano)
+  options
 };
 const result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);
 [inline-code-end]
-
----

@@ -4,17 +4,20 @@
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 
-## תגובה
+## Response
 
 מחזיר: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getEmailTemplateDefinitions דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_eu_01';
-const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-console.log('Email template definitions loaded for', tenantId, templates);
+(async () => {
+  const tenantId: string = 'tenant_acme_001';
+  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // פרמטר אופציונלי להדגמה
+  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
+  console.log(templates);
+})();
 [inline-code-end]
 
 ---

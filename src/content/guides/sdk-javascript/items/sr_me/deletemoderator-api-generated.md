@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -12,12 +12,13 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'deleteModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b7c6d';
-const id: string = 'mod_4a3e11ec9d1f0242ac120003';
+const tenantId: string = 'tenant_4f3b2c9a';
+const id: string = 'mod_9c2d1f7b';
 const sendEmail: string = 'true';
-const result: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
+const response: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
+console.log(response);
 [inline-code-end]
 
 ---

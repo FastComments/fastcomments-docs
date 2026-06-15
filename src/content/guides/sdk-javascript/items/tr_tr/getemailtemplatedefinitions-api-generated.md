@@ -2,19 +2,20 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
+| tenantId | string | Yes |  |
 
-## Dönüş
+## Yanıt
 
-Dönüş: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+Döndürür: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_eu_01';
-const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-console.log('Email template definitions loaded for', tenantId, templates);
+(async () => {
+  const tenantId: string = 'tenant_acme_001';
+  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // isteğe bağlı parametre gösterimi
+  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
+  console.log(templates);
+})();
 [inline-code-end]
-
----

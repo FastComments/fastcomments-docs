@@ -2,9 +2,9 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| feedPost | FeedPost | Yes |  |
+| tenantId | string | Ναι |  |
+| id | string | Ναι |  |
+| feedPost | FeedPost | Ναι |  |
 
 ## Απόκριση
 
@@ -14,34 +14,22 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα updateFeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-global-tenant-42';
-const id: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
-
-const asset: FeedPostMediaItemAsset = {
-  url: 'https://cdn.acme.com/images/product-launch.jpg',
-  mimeType: 'image/jpeg',
-  width: 1200,
-  height: 630
-};
-
-const mediaItem: FeedPostMediaItem = {
-  id: 'media-001',
-  type: 'image',
-  asset
-};
-
-const link: FeedPostLink = {
-  url: 'https://acme.com/blog/product-launch',
-  title: 'Product Launch Details'
-};
+const tenantId: string = "tenant_72f3b4c9";
+const id: string = "post_ba4f6e18-2d3c-4b7a-91f2-8c0e3a6b5d4f";
 
 const feedPost: FeedPost = {
-  title: 'Introducing the Q3 Product Suite',
-  body: 'We are excited to unveil our new lineup for Q3, focusing on performance and security improvements.',
-  media: [mediaItem],     // προαιρετικός πίνακας περιλαμβάνεται
-  links: [link],          // προαιρετικοί σύνδεσμοι περιλαμβάνονται
-  isPublished: true       // προαιρετική σημαία δημοσίευσης που χρησιμοποιείται εδώ
-};
+  title: "June feature rollout",
+  body: "Announcing performance improvements and moderation updates available to all sites.",
+  authorName: "Platform Team",
+  mediaItems: [
+    {
+      type: "image",
+      caption: "Release banner",
+      asset: { url: "https://cdn.fastcomments.com/assets/june-banner.jpg", mimeType: "image/jpeg", width: 1200, height: 600 }
+    }
+  ],
+  links: [{ title: "Release notes", url: "https://docs.fastcomments.com/releases/june-2026" }]
+} as FeedPost;
 
 const result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);
 [inline-code-end]

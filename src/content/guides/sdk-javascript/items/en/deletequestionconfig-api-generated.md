@@ -13,7 +13,7 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteQuestionConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises';
-const id: string = 'question-config_7a1b2c';
+const tenantId: string = 'acme-corp-47a9';
+const id: string = 'qcfg_20260615_001';
 const result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);
 [inline-code-end]

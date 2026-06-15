@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | page | number | Nej |  |
@@ -17,8 +17,10 @@
 | hashTag | string | Nej |  |
 | parentId | string | Nej |  |
 | direction | SortDirections | Nej |  |
+| fromDate | number | Nej |  |
+| toDate | number | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
 
@@ -26,21 +28,8 @@ Returnerer: [`GetComments200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getComments Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // side
-  20, // antal pr. side
-  0, // spring over
-  true, // som træstruktur
-  1, // spring børn over
-  3, // begræns antal børn
-  4, // maksimal trædybde
-  'articles/2026/new-product-launch', // url-id
-  'user_7890', // bruger-id
-  'anon_4f3b2', // anonym bruger-id
-  undefined, // kontekst-bruger-id
-  '#launch', // hashtag
-  undefined // overordnet id
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

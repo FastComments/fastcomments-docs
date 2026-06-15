@@ -1,47 +1,35 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| page | number | Ne |  |
-| limit | number | Ne |  |
-| skip | number | Ne |  |
-| asTree | boolean | Ne |  |
-| skipChildren | number | Ne |  |
-| limitChildren | number | Ne |  |
-| maxTreeDepth | number | Ne |  |
-| urlId | string | Ne |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
-| contextUserId | string | Ne |  |
-| hashTag | string | Ne |  |
-| parentId | string | Ne |  |
- 
-## Odgovor
+| tenantId | string | Да |  |
+| page | number | Не |  |
+| limit | number | Не |  |
+| skip | number | Не |  |
+| asTree | boolean | Не |  |
+| skipChildren | number | Не |  |
+| limitChildren | number | Не |  |
+| maxTreeDepth | number | Не |  |
+| urlId | string | Не |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
+| contextUserId | string | Не |  |
+| hashTag | string | Не |  |
+| parentId | string | Не |  |
+| direction | SortDirections | Не |  |
+| fromDate | number | Не |  |
+| toDate | number | Не |  |
 
-Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
+## Одговор
 
-## Primjer
+Враћа: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
 
-[inline-code-attrs-start title = 'Primjer getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+## Пример
+
+[inline-code-attrs-start title = 'Пример getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // stranica
-  20, // broj po strani
-  0, // preskoči
-  true, // kao stablo
-  1, // preskoči djecu
-  3, // ograničenje djece
-  4, // maksimalna dubina stabla
-  'articles/2026/new-product-launch', // ID URL-a
-  'user_7890', // ID korisnika
-  'anon_4f3b2', // anonimni ID korisnika
-  undefined, // ID kontekstualnog korisnika
-  '#launch', // hashtag
-  undefined // ID roditelja
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
 
 ---

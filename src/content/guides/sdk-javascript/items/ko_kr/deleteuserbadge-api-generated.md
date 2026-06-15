@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,12 +13,9 @@
 
 [inline-code-attrs-start title = 'deleteUserBadge 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-type DeleteOptions = { notifyModerators?: boolean };
-
-const tenantId: string = 'tenant_8a3f21';
-const id: string = 'badge_71f2b';
-const options: DeleteOptions = { notifyModerators: true };
-
+const tenantId: string = "tenant_8b3f2c7a";
+const badgeIdOptional: string | undefined = Math.random() > 0.5 ? "badge_4f9a21" : undefined;
+const id: string = badgeIdOptional ?? "badge_backup_01";
 const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);
 [inline-code-end]
 

@@ -1,20 +1,24 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
+| tenantId | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+Враћа: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getEmailTemplateDefinitions Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_eu_01';
-const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-console.log('Email template definitions loaded for', tenantId, templates);
+(async () => {
+  const tenantId: string = 'tenant_acme_001';
+  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // демонстрација опционог параметра
+  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
+  console.log(templates);
+})();
 [inline-code-end]
 
 ---

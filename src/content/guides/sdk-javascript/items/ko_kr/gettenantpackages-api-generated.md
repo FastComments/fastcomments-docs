@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| skip | number | 아니오 |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## 응답
 
@@ -13,10 +13,9 @@
 
 [inline-code-attrs-start title = 'getTenantPackages 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-7b3c2f';
-const skipCount: number = 10;
-const packages: GetTenantPackages200Response = await getTenantPackages(tenantId, skipCount);
-const packagesFromStart: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const tenantId: string = 'tenant_8421';
+const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, 25);
+const packagesWithoutSkip: GetTenantPackages200Response = await getTenantPackages(tenantId);
 [inline-code-end]
 
 ---

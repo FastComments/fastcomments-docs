@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
@@ -14,16 +14,14 @@ Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Exemple de updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f8b3c';
-const id: string = 'questionResult_4621';
+const tenantId: string = "tenant_prod_84b2";
+const id: string = "question_9f3a";
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  questionId: 'q_1024',
-  result: 'flagged',
-  score: 0.92,
-  notes: 'Automated moderation flagged for review',
-  meta: [{ key: 'source', value: 'ai-moderator' }] as MetaItem[], // métadonnées facultatives
-  status: { code: 'review_pending' } as APIStatus
-} as UpdateQuestionResultBody;
+  outcome: "accepted",
+  confidence: 0.88,
+  moderatorId: "moderator_17",
+  notes: "Validated by automated review" // champ optionnel inclus
+};
 const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
 

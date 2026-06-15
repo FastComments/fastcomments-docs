@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язкове | Опис |
 |------|------|----------|-------------|
 | namespace | string | Так |  |
 | component | string | Так |  |
@@ -9,14 +10,18 @@
 
 ## Відповідь
 
-Повертає: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
+Повертає: [`GetTranslations200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslations200Response.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад використання getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsDefault: GetTranslationsResponse = await getTranslations("payments", "checkout");
-const translationsFrenchDetailed: GetTranslationsResponse = await getTranslations("payments", "checkout", "fr-FR", true);
+const namespaceName: string = 'site-ui';
+const componentName: string = 'comment-widget';
+const locale: string = 'fr-FR';
+const useFullTranslationIds: boolean = true;
+const translationsWithLocale: GetTranslations200Response = await getTranslations(namespaceName, componentName, locale, useFullTranslationIds);
+const translationsDefault: GetTranslations200Response = await getTranslations(namespaceName, componentName);
 [inline-code-end]
 
 ---

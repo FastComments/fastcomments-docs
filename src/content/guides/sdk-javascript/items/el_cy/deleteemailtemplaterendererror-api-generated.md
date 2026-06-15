@@ -2,11 +2,11 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Ναι |  |
-| errorId | string | Ναι |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| errorId | string | Yes |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -14,14 +14,11 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1d2f9b";
-const id: string = "email_template_42b1";
-const errorId: string = "render_err_2026-04-24_7f3c";
-const includeStackTrace: boolean | undefined = undefined; // παράδειγμα προαιρετικής σημαίας
-
-const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-// Εάν υποστηριζόταν ένα προαιρετικό αντικείμενο επιλογών, θα μπορούσε να μοιάζει ως εξής:
-// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+const tenantId: string = 'tenant-72f3b4';
+const templateId: string = 'email_template-9c3a1';
+let providedErrorId: string | undefined = undefined; // προαιρετική τιμή, μπορεί να οριστεί αλλού
+const errorId: string = providedErrorId ?? 'render_err-5d2f7';
+const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 [inline-code-end]
 
 ---

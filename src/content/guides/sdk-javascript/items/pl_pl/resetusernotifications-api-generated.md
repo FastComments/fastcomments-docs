@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Typ | Wymagane | Opis |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | afterId | string | Nie |  |
@@ -18,13 +18,22 @@ Zwraca: [`ResetUserNotifications200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Przykład resetUserNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_4a9f12";
-const afterId: string = "notification_87213";
-const afterCreatedAt: number = Math.floor(Date.now() / 1000) - 3600;
+const tenantId: string = "tenant_9b1f2";
+const afterId: string = "notification_0001";
+const afterCreatedAt: number = Date.now() - 60 * 60 * 1000; // godzinę temu
 const unreadOnly: boolean = true;
 const dmOnly: boolean = false;
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.payload";
-const result: ResetUserNotifications200Response = await resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, undefined, sso);
+const noDm: boolean = false;
+const sso: string = "sso_session_7f2d";
+const result: ResetUserNotifications200Response = await resetUserNotifications(
+  tenantId,
+  afterId,
+  afterCreatedAt,
+  unreadOnly,
+  dmOnly,
+  noDm,
+  sso
+);
 [inline-code-end]
 
 ---

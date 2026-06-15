@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| 名稱 | 型別 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createModeratorBody | CreateModeratorBody | 是 |  |
@@ -13,17 +14,20 @@
 
 [inline-code-attrs-start title = 'createModerator 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b6c";
-const optionalConfig: CustomConfigParameters = { moderationThreshold: 5, escalateOnRepeatedOffenses: true };
-const newModerator: CreateModeratorBody = {
-  email: "lina.gomez@dailynews.com",
-  fullName: "Lina Gomez",
-  role: "senior_moderator",
-  enabled: true,
-  notifyByEmail: true,
-  customConfig: optionalConfig
+const tenantId: string = 'tenant_9f3b21';
+const createModeratorBody: CreateModeratorBody = {
+  moderator: {
+    name: 'Alex Rivera',
+    email: 'alex.rivera@fastcomments.io',
+    role: 'global_moderator',
+    enabled: true,
+  },
+  // 示範可選參數：
+  notifyUser: true,
+  permissions: ['delete_comment', 'edit_comment', 'ban_user'],
+  customConfig: { dashboardTheme: 'dark' } as unknown as CustomConfigParameters
 };
-const response: CreateModerator200Response = await createModerator(tenantId, newModerator);
+const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
 [inline-code-end]
 
 ---

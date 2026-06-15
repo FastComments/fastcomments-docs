@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -13,10 +13,8 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Ejemplo de deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-42";
-const idSuffix: string | undefined = "-archived";
-const templateId: string = "email_tmpl_6a1b2c" + (idSuffix ?? "");
-const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
+const tenantId: string = "tenant_9c4f1b2a";
+const id: string = "emailtmpl_4d2b9a5e";
+const requestorNote: string | undefined = undefined; // metadatos opcionales (no requeridos por la función)
+const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);
 [inline-code-end]
-
----

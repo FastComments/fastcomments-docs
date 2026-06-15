@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | skip | number | לא |  |
@@ -13,14 +13,13 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const tenantId: string = 'tenant_5f3a9c2b';
-  const templates: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
-  const skip: number = 20;
-  const pagedTemplates: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);
-  console.log(templates, pagedTemplates);
+async function run(): Promise<void> {
+  const tenantId: string = "acme-marketing-tenant-001";
+  const templatesDefault: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
+  const templatesPaged: GetEmailTemplates200Response = await getEmailTemplates(tenantId, 25);
+  console.log(templatesDefault, templatesPaged);
 }
-main();
+run();
 [inline-code-end]
 
 ---

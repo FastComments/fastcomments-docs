@@ -17,10 +17,11 @@ Returns: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'searchUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const urlId: string = 'site-2026';
+const tenantId: string = 'tenant_7890';
+const urlId: string = 'news/2026-06-15-world-cup-final';
 const usernameStartsWith: string = 'mar';
-const mentionGroupIds: Array<string> = ['engineering', 'product-design'];
-const sso: string = 'saml';
-const result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);
+const mentionGroupIds: string[] = ['staff', 'trusted-commenters'];
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Commenters;
+const response: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);
 [inline-code-end]

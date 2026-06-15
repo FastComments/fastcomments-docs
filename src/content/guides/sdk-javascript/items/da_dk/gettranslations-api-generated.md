@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | namespace | string | Ja |  |
 | component | string | Ja |  |
@@ -9,14 +9,16 @@
 
 ## Svar
 
-Returnerer: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
+Returnerer: [`GetTranslations200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslations200Response.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTranslations Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsDefault: GetTranslationsResponse = await getTranslations("payments", "checkout");
-const translationsFrenchDetailed: GetTranslationsResponse = await getTranslations("payments", "checkout", "fr-FR", true);
+const namespaceName: string = 'site-ui';
+const componentName: string = 'comment-widget';
+const locale: string = 'fr-FR';
+const useFullTranslationIds: boolean = true;
+const translationsWithLocale: GetTranslations200Response = await getTranslations(namespaceName, componentName, locale, useFullTranslationIds);
+const translationsDefault: GetTranslations200Response = await getTranslations(namespaceName, componentName);
 [inline-code-end]
-
----

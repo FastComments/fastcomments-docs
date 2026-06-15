@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,10 +13,10 @@
 
 [inline-code-attrs-start title = 'deleteEmailTemplate 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-42";
-const idSuffix: string | undefined = "-archived";
-const templateId: string = "email_tmpl_6a1b2c" + (idSuffix ?? "");
-const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
+const tenantId: string = "tenant_9c4f1b2a";
+const id: string = "emailtmpl_4d2b9a5e";
+const requestorNote: string | undefined = undefined; // 선택적 메타데이터 (함수에 필요하지 않음)
+const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);
 [inline-code-end]
 
 ---

@@ -1,12 +1,12 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| yearNumber | number | 아니오 |  |
-| monthNumber | number | 아니오 |  |
-| dayNumber | number | 아니오 |  |
-| skip | number | 아니오 |  |
+| yearNumber | number | 아니요 |  |
+| monthNumber | number | 아니요 |  |
+| dayNumber | number | 아니요 |  |
+| skip | number | 아니요 |  |
 
 ## 응답
 
@@ -16,13 +16,8 @@
 
 [inline-code-attrs-start title = 'getTenantDailyUsages 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f4a3b2c-1d6e-4f9a-b9d8-123456789abc';
-const yearNumber: number = 2026;
-const monthNumber: number = 3;
-const dayNumber: number = 24;
-const skip: number = 0;
-
-const result: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
+const tenantId: string = 'tenant_7a3c2e';
+const dailyUsages: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, 2026, 6, undefined, 0);
 [inline-code-end]
 
 ---

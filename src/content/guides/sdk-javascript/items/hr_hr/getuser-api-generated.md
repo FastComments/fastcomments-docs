@@ -13,10 +13,11 @@ Vraća: [`GetUser200Response`](https://github.com/FastComments/fastcomments-sdk-
 
 [inline-code-attrs-start title = 'getUser Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const idSuffix: string | undefined = undefined;
-const tenantId: string = "acme-enterprises";
-const id: string = idSuffix ?? "user_98765";
-const response: GetUser200Response = await getUser({ tenantId, id });
+const tenantId: string = 'fastcomments_corp';
+const id: string = 'user_9f8b7c6d-5e4a-3b2c-1f0e-123456789abc';
+const response: GetUser200Response = await getUser(tenantId, id);
+const userEmail: string | undefined = response.user?.email;
+const displayName: string | undefined = response.user?.displayName
 [inline-code-end]
 
 ---

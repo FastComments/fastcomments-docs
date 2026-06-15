@@ -1,34 +1,26 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| broadcastId | string | 是 |  |
+| editKey | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 回應
 
-回傳: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentPublic200Response.ts)
+回傳：[`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentPublic200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteCommentPublic 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2c9b';
-const commentId: string = 'comment-7c3a9f2d';
-const broadcastId: string = 'article-2026-03-20';
-const editKey: string | undefined = 'ek_pub_abc12345';
-const sso: string | undefined = 'sso_eyJhbGciOiJIUzI1Ni';
+const tenantId: string = 'tenant_acme_42';
+const commentId: string = 'c0mment-9f8b7a6';
+const broadcastId: string = 'site_homepage_2026-06-15';
+const editKey: string = 'ek_3b7a1f59-4d2c-11eb-8dcd-0242ac130003';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';
 
-const result: DeleteCommentPublic200Response = await deleteCommentPublic(
-  tenantId,
-  commentId,
-  broadcastId,
-  editKey,
-  sso
-);
+const result: DeleteCommentPublic200Response = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
 [inline-code-end]
-
----

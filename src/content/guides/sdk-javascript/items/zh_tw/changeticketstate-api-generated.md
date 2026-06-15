@@ -1,7 +1,7 @@
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | userId | string | 是 |  |
 | id | string | 是 |  |
@@ -9,20 +9,19 @@
 
 ## 回應
 
-回傳: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketState200Response.ts)
+回傳：[`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketState200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'changeTicketState 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b2c9a";
-const userId: string = "user_5a1d9fb2";
-const id: string = "ticket_3e8a1b6f";
+const tenantId: string = 'tenant_8a7d3f4b';
+const userId: string = 'user_5d1a9b2c';
+const id: string = 'ticket_1024';
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  reason: "Fixed in backend release 2.4.1",
-  notifyUsers: true,
-  metadata: { resolutionOwner: "agent_12", priority: "high" } // 示範可選欄位
+  state: 'closed',
+  notifyParticipants: true, // 示範可選參數
+  comment: 'Resolved by support — follow-up not required.'
 };
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]

@@ -15,9 +15,9 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'updateUserNotificationStatus Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'd8f4a2b0-6b3e-4c9a-9f1a-1234567890ab';
-const notificationId: string = 'notif-20260520-001';
+const tenantId: string = 'tenant_5f2a8b9c';
+const notificationId: string = 'notif_987654321';
 const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Read;
-const sso: string = 'sso-token-7f3b9c';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload.signature';
 const result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
 [inline-code-end]

@@ -11,12 +11,12 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deletePendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deletePendingWebhookEvent Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b2a";
-const webhookEventId: string = "wh_evt_9a8c7d1234";
-const dryRun: boolean | undefined = undefined; // παράδειγμα προαιρετικής σημαίας (δεν απαιτείται για αυτήν την κλήση)
-const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, webhookEventId);
+const tenantId: string = "tenant_5f8d7a34";
+const id: string = "webhook_evt_987654321";
+const requestNote: string | undefined = undefined;
+const response: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | 是 |  |
@@ -8,22 +8,26 @@
 
 ## 回應
 
-回傳：[`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResults200Response.ts)
+回傳： [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResults200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_42";
+const tenantId: string = "tenant_0012";
 const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {
-  questions: [
-    { questionId: "q-001", threadId: "thread-1001", questionType: "rating" },
-    { questionId: "q-002", threadId: "thread-1002", questionType: "yes_no" }
+  items: [
+    {
+      questionId: "quality_score",
+      startTime: "2026-06-01T00:00:00Z",
+      endTime: "2026-06-14T00:00:00Z",
+      timeBucket: "day",
+      dimensions: ["threadId"]
+    }
   ],
-  timeRange: { from: "2026-03-01T00:00:00Z", to: "2026-04-01T00:00:00Z" },
-  groupBy: ["questionId", "threadId"]
+  includeTotals: true
 };
-const forceRecalculate: boolean = true;
+const forceRecalculate: boolean = false;
 const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
 [inline-code-end]
 

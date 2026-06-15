@@ -1,24 +1,24 @@
----
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| postIds | Array<string> | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| postIds | Array<string> | No |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublic200Response.ts)
+Vraća: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getUserReactsPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUserReactsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-8a4d2c";
-const postIds: string[] = ["post-645a2f", "post-645a30"];
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY2MTYwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const result: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
+const tenantId: string = 'fastcomments-tenant-4f2b9c';
+const postIds: Array<string> = ['post_7a1f9e', 'post_2b3c88'];
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQ0MDAwMH0.signature';
+
+const response: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
 [inline-code-end]
 
 ---

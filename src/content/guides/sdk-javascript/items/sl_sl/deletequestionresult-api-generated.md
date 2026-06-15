@@ -7,16 +7,16 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vrača: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'deleteQuestionResult Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer deleteQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantIdEnv: string | undefined = process.env.FASTCOMMENTS_TENANT_ID;
-const tenantId: string = tenantIdEnv ?? 'tenant_78b3f2';
-const id: string = 'qres-9f2a3b1c';
+const tenantId: string = "acme-corp-tenant-01";
+const id: string = "qres_9f8b7c3a";
 const response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
+const optionalResponse: FlagCommentPublic200Response | undefined = response;
 [inline-code-end]
 
 ---

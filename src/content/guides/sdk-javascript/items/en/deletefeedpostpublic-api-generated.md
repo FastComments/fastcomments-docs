@@ -15,9 +15,9 @@ Returns: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "greenwood-enterprises";
-const postId: string = "post_84f3a2b7-9d6c-4e3a-8b2f";
-const broadcastId: string = "broadcast-20260520-01";
-const sso: string = "sso-token-7f9b3c";
-const result: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
+const tenantId: string = 'acme-tenant-42';
+const postId: string = 'post_8f3d2a7c';
+const broadcastId: string = 'broadcast_2026-06-15_01';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';
+const response: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
 [inline-code-end]

@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlIdWS | string | 是 |  |
@@ -8,17 +9,17 @@
 
 ## 回應
 
-回傳: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatuses200Response.ts)
+回傳：[`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatuses200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3a2b';
-const urlIdWS: string = 'articles/2026/03/25/fastcomments-integration';
-const maybeUserIds: string | undefined = 'user_123,user_456'; // 可選來源
-const userIds: string = maybeUserIds ?? 'user_123';
-const presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'tenant_42';
+const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
+const userIds: string = 'user_9012,user_3478';
+const includePresenceMetadata: boolean | undefined = true; // 可選參數範例
+const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
 [inline-code-end]
 
 ---

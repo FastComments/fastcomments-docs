@@ -2,8 +2,8 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | Yes |  |
+| tenantId | string | Sim |  |
+| createTenantUserBody | CreateTenantUserBody | Sim |  |
 
 ## Resposta
 
@@ -13,15 +13,17 @@ Retorna: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Exemplo de createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_74b3a9f4b";
+const tenantId: string = "tenant_7f4a2b";
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@acmecorp.com",
-  displayName: "Jane Doe",
-  role: "moderator",
-  sendWelcomeEmail: true, // parâmetro opcional demonstrado
-  metadata: { department: "Customer Support" }
+  email: "jane.doe@example.com",
+  firstName: "Jane",
+  lastName: "Doe",
+  role: "commenter",
+  approved: true,
+  displayName: "Jane D." // opcional: fornecendo um nome de exibição amigável
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
+console.log(result);
 [inline-code-end]
 
 ---

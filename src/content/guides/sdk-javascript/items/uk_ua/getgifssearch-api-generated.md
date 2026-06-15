@@ -2,29 +2,26 @@
 
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| search | string | Yes |  |
-| locale | string | No |  |
-| rating | string | No |  |
-| page | number | No |  |
+| tenantId | string | Так |  |
+| search | string | Так |  |
+| locale | string | Ні |  |
+| rating | string | Ні |  |
+| page | number | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GifSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifSearchResponse.ts)
+Повертає: [`GetGifsSearch200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearch200Response.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getGifsSearch'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "global-media";
-  const search: string = "laughing baby";
-  const locale: string = "en-US";
-  const rating: string = "pg";
-  const page: number = 2;
-  const result: GifSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
-  console.log(result);
-})();
+const tenantId: string = "tenant_acme_9876";
+const search: string = "cat playing piano";
+const locale: string = "en-US";
+const rating: string = "pg";
+const page: number = 1;
+const result: GetGifsSearch200Response = await getGifsSearch(tenantId, search, locale, rating, page);
 [inline-code-end]
 
 ---

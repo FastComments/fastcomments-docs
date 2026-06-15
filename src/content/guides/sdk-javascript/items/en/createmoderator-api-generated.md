@@ -13,13 +13,18 @@ Returns: [`CreateModerator200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'createModerator Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acmecorp_001';
+const tenantId: string = 'tenant_9f3b21';
 const createModeratorBody: CreateModeratorBody = {
-  userId: 'mod-982',
-  displayName: 'Ava Johnson',
-  email: 'ava.johnson@acme.com',
-  roles: ['global_moderator'],
-  customConfig: { enableNotifications: true, maxDailyActions: 500 } as CustomConfigParameters
+  moderator: {
+    name: 'Alex Rivera',
+    email: 'alex.rivera@fastcomments.io',
+    role: 'global_moderator',
+    enabled: true,
+  },
+  // optional parameters demonstrated:
+  notifyUser: true,
+  permissions: ['delete_comment', 'edit_comment', 'ban_user'],
+  customConfig: { dashboardTheme: 'dark' } as unknown as CustomConfigParameters
 };
 const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
 [inline-code-end]

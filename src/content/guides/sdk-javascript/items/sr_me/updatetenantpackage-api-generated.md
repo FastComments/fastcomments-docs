@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -14,16 +14,16 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Primjer updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_sf_001";
-  const id: string = "pkg-premium-v2";
-  const updateTenantPackageBody: UpdateTenantPackageBody = {
-    name: "San Francisco Premium",
-    enabled: true,
-    customConfig: { maxComments: 500 },
-    tosConfig: { required: true } // opciona polja su demonstrirana prisustvom; ostala su izostavljena
-  } as UpdateTenantPackageBody;
-  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9f3b2a';
+const id: string = 'pkg_pro_2026';
+const updateTenantPackageBody: UpdateTenantPackageBody = {
+  name: 'Pro Plan',
+  monthlyPriceUsd: 49,
+  isActive: true,
+  features: ['moderation', 'analytics', 'sso'],
+  trialDays: 14 // opcioni parametar demonstriran
+};
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
+
+---

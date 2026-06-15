@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | userId | string | 예 |  |
@@ -13,11 +13,16 @@
 
 [inline-code-attrs-start title = 'getUserBadgeProgressByUserId 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f9c2d3b';
-const maybeUserId: string | undefined = 'user_4b8e1f9a'; // 선택적 소스(없을 수 있음)
-const userId: string = maybeUserId ?? 'user_fallback0001';
-const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
-console.log(result);
+const tenantId: string = 'acme-inc-tenant-01';
+const userId: string = 'user_73c9b2';
+const progress: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
+
+async function maybeFetchProgress(tenant: string, user?: string): Promise<GetUserBadgeProgressById200Response | null> {
+  if (!user) return null;
+  return await getUserBadgeProgressByUserId(tenant, user);
+}
+
+const optionalResult: GetUserBadgeProgressById200Response | null = await maybeFetchProgress(tenantId, userId);
 [inline-code-end]
 
 ---

@@ -1,22 +1,23 @@
 ## Parametre
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Navn | Type | Obligatorisk | Beskrivelse |
+|------|------|--------------|-------------|
 | tenantId | string | Ja |  |
 | largeInternalURLSanitized | string | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
+Returnerer: [`GetGifLarge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLarge200Response.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getGifLarge Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a92f4';
-const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
-let maybeStatus: APIStatus | undefined = undefined; // valgfri metadata, når tilgængelig
-const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+const tenantId: string = "tenant_9f8b7c";
+const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/07d3f6_large.gif";
+const preferWebP: boolean | undefined = true; // valgfri præference
+const urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(".gif", ".webp") : largeInternalURLSanitized;
+const response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);
 [inline-code-end]
 
 ---

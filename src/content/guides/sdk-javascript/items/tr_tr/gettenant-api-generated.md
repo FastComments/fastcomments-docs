@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
@@ -13,11 +13,11 @@ Döndürür: [`GetTenant200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'getTenant Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f4b2c1a";
-const idOverride: string | undefined = undefined; // isteğe bağlı geçersiz kılma, mevcutsa
-const id: string = idOverride ?? "site_3e7a6b2f";
-const response: GetTenant200Response = await getTenant(tenantId, id);
-console.log(response);
+const tenantId: string = 'fc_tenant_6b3e2a';
+const id: string = 'site_42f1';
+const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+const tenant: APITenant | undefined = tenantResponse.tenant;
+const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
 [inline-code-end]
 
 ---

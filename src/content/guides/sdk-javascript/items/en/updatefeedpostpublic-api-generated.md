@@ -16,22 +16,16 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const postId: string = 'post_9f2b4a';
+const tenantId: string = 'tenant_acme_01';
+const postId: string = 'post_20260615_001';
 const updateFeedPostParams: UpdateFeedPostParams = {
-  title: 'Q2 Release Notes',
-  body: 'We rolled out feature X, fixed critical bugs, and improved load times.',
-  mediaItems: [
-    {
-      id: 'media_123',
-      type: 'image',
-      assets: [{ url: 'https://cdn.acme.com/images/release.png', mimeType: 'image/png' }]
-    }
-  ],
-  links: [{ url: 'https://acme.com/releases/q2', title: 'Full release notes' }],
-  isPublished: true
+  title: 'Weekly Update: Product Launch',
+  content: 'We shipped the 2.0 release today — highlights and links below.',
+  media: [{ url: 'https://cdn.acme.com/releases/launch.jpg', type: 'image' }],
+  tags: ['release', 'product'],
+  isPublic: true
 };
-const broadcastId: string = 'broadcast_20260520';
-const sso: string = 'sso_token_ab12cd34';
+const broadcastId: string = 'broadcast_live_42';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
 const result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
 [inline-code-end]

@@ -13,10 +13,14 @@ Returns: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'addHashTag Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b21';
-const createHashTagBody: CreateHashTagBody = { name: '#product-launch', description: 'Tags for the Q3 product launch campaign', isPublic: true };
-const response: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
-
-const createHashTagBodyOnly: CreateHashTagBody = { name: '#user-feedback', description: 'Aggregated user feedback', isPublic: false };
-const responseWithoutTenant: AddHashTag200Response = await addHashTag(undefined, createHashTagBodyOnly);
+const tenantId: string | undefined = "tenant_3c9f7b";
+const createHashTagBody: CreateHashTagBody = {
+  name: "support",
+  title: "Support",
+  description: "Questions about product usage, bugs, and account issues",
+  color: "#0066CC",
+  isActive: true,
+  aliases: ["help", "customer-service"]
+};
+const result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
 [inline-code-end]

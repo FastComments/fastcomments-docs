@@ -3,6 +3,7 @@
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
+| urlId | string | No |  |
 | pageSize | number | No |  |
 | afterId | string | No |  |
 | includeContext | boolean | No |  |
@@ -11,6 +12,7 @@
 | dmOnly | boolean | No |  |
 | noDm | boolean | No |  |
 | includeTranslations | boolean | No |  |
+| includeTenantNotifications | boolean | No |  |
 | sso | string | No |  |
 
 ## Response
@@ -21,16 +23,31 @@ Returns: [`GetUserNotifications200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getUserNotifications Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const response: GetUserNotifications200Response = await getUserNotifications(
-  'tenant_8f3a12',
-  25,
-  'notif_4b2d1',
-  true,
-  Date.now() - 7 * 24 * 60 * 60 * 1000,
-  true,
-  undefined,
-  undefined,
-  true,
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY4MDAwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+const tenantId: string = "tenant_8271";
+const urlId: string = "https://www.news-site.com/articles/2026/06/15/ai-updates";
+const pageSize: number = 25;
+const afterId: string = "notif_abc123";
+const includeContext: boolean = true;
+const afterCreatedAt: number = Date.now() - 86_400_000;
+const unreadOnly: boolean = true;
+const dmOnly: boolean = false;
+const noDm: boolean = false;
+const includeTranslations: boolean = true;
+const includeTenantNotifications: boolean = true;
+const sso: string = "sso_token_xyz_987";
+
+const notifications: GetUserNotifications200Response = await getUserNotifications(
+  tenantId,
+  urlId,
+  pageSize,
+  afterId,
+  includeContext,
+  afterCreatedAt,
+  unreadOnly,
+  dmOnly,
+  noDm,
+  includeTranslations,
+  includeTenantNotifications,
+  sso
 );
 [inline-code-end]

@@ -17,6 +17,8 @@
 | hashTag | string | Ne |  |
 | parentId | string | Ne |  |
 | direction | SortDirections | Ne |  |
+| fromDate | number | Ne |  |
+| toDate | number | Ne |  |
 
 ## Odgovor
 
@@ -24,23 +26,10 @@ Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComments Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // stranica
-  20, // broj po stranici
-  0, // preskoči
-  true, // kao stablo
-  1, // preskoči djecu
-  3, // ograničenje djece
-  4, // maksimalna dubina stabla
-  'articles/2026/new-product-launch', // identifikator URL-a
-  'user_7890', // identifikator korisnika
-  'anon_4f3b2', // identifikator anonimnog korisnika
-  undefined, // identifikator kontekstnog korisnika
-  '#launch', // hashtag
-  undefined // identifikator roditelja
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

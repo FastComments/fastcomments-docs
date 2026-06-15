@@ -13,10 +13,9 @@ Returns: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'getTenant Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant-4f2b';
-  const id: string = 'site-91a7';
-  const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
-  const billingInfo: BillingInfo | undefined = (tenantResponse as unknown as { billing?: BillingInfo }).billing;
-})();
+const tenantId: string = 'fc_tenant_6b3e2a';
+const id: string = 'site_42f1';
+const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+const tenant: APITenant | undefined = tenantResponse.tenant;
+const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
 [inline-code-end]

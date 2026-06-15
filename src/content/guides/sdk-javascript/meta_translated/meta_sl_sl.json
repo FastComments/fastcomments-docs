@@ -11,7 +11,7 @@
     {
       "name": "Dokumentacija API",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "API referenca",
+      "subCat": "Referenca API",
       "type": "readme"
     },
     {
@@ -27,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "Javni in zavarovani API-ji",
+      "name": "Javni in zaščiteni API-ji",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "API referenca",
+      "subCat": "Referenca API",
       "type": "readme"
     },
     {
-      "name": "Integracija SSO (enotna prijava)",
+      "name": "Integracija SSO (Single Sign-On)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -51,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Broadcast IDs",
+      "name": "ID-ji za oddajanje",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -233,91 +233,91 @@
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domen",
+      "subCat": "Konfiguracije domene",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domen",
+      "subCat": "Konfiguracije domene",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domen",
+      "subCat": "Konfiguracije domene",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Konfiguracije domen",
+      "subCat": "Konfiguracije domene",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domen",
+      "subCat": "Konfiguracije domene",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domen",
+      "subCat": "Konfiguracije domene",
       "type": "api"
     },
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "Predloge elektronske pošte",
       "type": "api"
     },
     {
@@ -395,7 +395,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Označi komentar",
+      "subCat": "Prijavi komentar",
       "type": "api"
     },
     {
@@ -513,6 +513,48 @@
       "type": "api"
     },
     {
+      "name": "createV1PageReact",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
+      "name": "createV2PageReact",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
+      "name": "deleteV1PageReact",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
+      "name": "deleteV2PageReact",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
+      "name": "getV1PageLikes",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
+      "name": "getV2PageReacts",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
+      "name": "getV2PageReactUsers",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Reakcije strani",
+      "type": "api"
+    },
+    {
       "name": "addPage",
       "file": "addpage-api-generated.md",
       "subCat": "Strani",
@@ -521,6 +563,18 @@
     {
       "name": "deletePage",
       "file": "deletepage-api-generated.md",
+      "subCat": "Strani",
+      "type": "api"
+    },
+    {
+      "name": "getOfflineUsers",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Strani",
+      "type": "api"
+    },
+    {
+      "name": "getOnlineUsers",
+      "file": "getonlineusers-api-generated.md",
       "subCat": "Strani",
       "type": "api"
     },
@@ -537,6 +591,18 @@
       "type": "api"
     },
     {
+      "name": "getPagesPublic",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Strani",
+      "type": "api"
+    },
+    {
+      "name": "getUsersInfo",
+      "file": "getusersinfo-api-generated.md",
+      "subCat": "Strani",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Strani",
@@ -545,49 +611,49 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Čakajoči dogodki webhook",
+      "subCat": "Čakajoči webhook dogodki",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Čakajoči dogodki webhook",
+      "subCat": "Čakajoči webhook dogodki",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Čakajoči dogodki webhook",
+      "subCat": "Čakajoči webhook dogodki",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Konfiguracije vprašanj",
+      "subCat": "Nastavitve vprašanj",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Konfiguracije vprašanj",
+      "subCat": "Nastavitve vprašanj",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Konfiguracije vprašanj",
+      "subCat": "Nastavitve vprašanj",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Konfiguracije vprašanj",
+      "subCat": "Nastavitve vprašanj",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Konfiguracije vprašanj",
+      "subCat": "Nastavitve vprašanj",
       "type": "api"
     },
     {
@@ -707,7 +773,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dnevna poraba najemnika",
+      "subCat": "Dnevna uporaba najemnika",
       "type": "api"
     },
     {
@@ -857,49 +923,49 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredek značke uporabnika",
+      "subCat": "Napredek značk uporabnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredek značke uporabnika",
+      "subCat": "Napredek značk uporabnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredek značke uporabnika",
+      "subCat": "Napredek značk uporabnika",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Značke uporabnikov",
+      "subCat": "Značke uporabnika",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Značke uporabnikov",
+      "subCat": "Značke uporabnika",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Značke uporabnikov",
+      "subCat": "Značke uporabnika",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Značke uporabnikov",
+      "subCat": "Značke uporabnika",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Značke uporabnikov",
+      "subCat": "Značke uporabnika",
       "type": "api"
     },
     {
@@ -947,7 +1013,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Stanja prisotnosti uporabnika",
+      "subCat": "Status prisotnosti uporabnika",
       "type": "api"
     },
     {

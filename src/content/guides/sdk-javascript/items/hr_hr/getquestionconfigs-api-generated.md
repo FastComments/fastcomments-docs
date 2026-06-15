@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | skip | number | Ne |  |
@@ -11,11 +11,12 @@ Vraća: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastco
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfigs Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_9876";
-const configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);
+const tenantId: string = "tenant_4c9f2b";
+const responseWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
+const skip: number = 50;
+const responseWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);
 [inline-code-end]
 
 ---

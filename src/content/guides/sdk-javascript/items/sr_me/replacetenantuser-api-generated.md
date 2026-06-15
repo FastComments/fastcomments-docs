@@ -1,31 +1,31 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | Da |  |
-| updateComments | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | Да |  |
+| updateComments | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer replaceTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример replaceTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acmeCorp";
-const id: string = "user_84b2";
+const tenantId: string = "f3b9a2d1-8b4e-4c6a-9f2b-1d5c4e6a7b8c";
+const id: string = "user_92f7c3b1";
 const replaceTenantUserBody: ReplaceTenantUserBody = {
-  email: "alice.jenkins@acmecorp.com",
-  displayName: "Alice Jenkins",
-  roles: ["moderator", "editor"],
-  disabled: false
-} as ReplaceTenantUserBody;
-const updateComments: string = "Migrated user account and reattributed historical comments";
-
-const result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
+  externalId: "auth0|1234567890",
+  email: "jane.doe@company.com",
+  displayName: "Jane Doe",
+  roles: ["moderator"],
+  metadata: { department: "support" }
+};
+const updateComments: string = "reassign-comments-to-new-user";
+const response: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
@@ -15,15 +15,16 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα updateNotification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_8f4b2c';
-const id: string = 'notification_61a2e9';
-const userId: string = 'moderator_107';
+const tenantId: string = 'tenant_9f3b2c';
+const id: string = 'notification_4a1d2e';
 const updateNotificationBody: UpdateNotificationBody = {
-  name: 'Flagged Comment Notification',
   enabled: true,
-  channels: ['email', 'inbox'],
-  templateId: 'tmpl_mod_alerts_01',
-  severity: 'high'
-};
+  channels: ['email', 'push'],
+  frequency: 'immediate',
+  templateId: 'tmpl_77aa'
+} as UpdateNotificationBody;
+const userId: string = 'user_2468';
 const result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);
 [inline-code-end]
+
+---

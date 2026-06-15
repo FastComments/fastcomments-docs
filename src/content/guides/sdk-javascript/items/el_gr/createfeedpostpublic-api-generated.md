@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | createFeedPostParams | CreateFeedPostParams | Ναι |  |
 | broadcastId | string | Όχι |  |
 | sso | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublic200Response.ts)
 
@@ -15,20 +15,23 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα createFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_987654321";
-const asset: FeedPostMediaItemAsset = { url: "https://cdn.fastcomments.com/uploads/team-photo.jpg", mimeType: "image/jpeg", sizeBytes: 324512 };
-const mediaItem: FeedPostMediaItem = { type: "image", assets: [asset], caption: "Team launch day" };
-const link: FeedPostLink = { url: "https://www.example.com/blog/product-update-march-2026", title: "Product update — March 2026" };
-const createFeedPostParams: CreateFeedPostParams = {
-  title: "Product update — March 2026",
-  content: "<p>We shipped performance improvements and two new integrations.</p>",
-  media: [mediaItem],
-  link,
-  visibility: "public",
-  tags: ["product","release","march-2026"],
-  customConfig: { allowComments: true, requireTOS: false }
-};
-const broadcastId: string = "broadcast_2026_03_25_live";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsImlhdCI6MTY5MDI0MDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
+(async () => {
+  const tenantId: string = "tenant_9f8b7c";
+  const media: FeedPostMediaItem[] = [{ type: "image", assets: [{ url: "https://cdn.example.com/roadmap.jpg", mimeType: "image/jpeg" }] }];
+  const links: FeedPostLink[] = [{ url: "https://company.example.com/roadmap", title: "Full roadmap" }];
+  const createFeedPostParams: CreateFeedPostParams = {
+    title: "Weekly Product Roadmap Update",
+    body: "This week we shipped enhancements to search relevance and fixed top customer bugs.",
+    authorId: "user_8321",
+    media,
+    links,
+    visibility: "public"
+  };
+  const broadcastId: string = "broadcast_2026_06_15";
+  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload";
+  const response: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
+  console.log(response);
+})();
 [inline-code-end]
+
+---

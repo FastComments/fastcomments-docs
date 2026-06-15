@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -11,12 +11,12 @@ Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fas
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplate Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-42";
-const idSuffix: string | undefined = "-archived";
-const templateId: string = "email_tmpl_6a1b2c" + (idSuffix ?? "");
-const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
+const tenantId: string = "tenant_9c4f1b2a";
+const id: string = "emailtmpl_4d2b9a5e";
+const requestorNote: string | undefined = undefined; // valgfri metadata (ikke påkrævet af funktionen)
+const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);
 [inline-code-end]
 
 ---

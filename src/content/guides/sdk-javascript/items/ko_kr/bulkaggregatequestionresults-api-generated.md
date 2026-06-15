@@ -1,10 +1,10 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | 예 |  |
-| forceRecalculate | boolean | 아니요 |  |
+| tenantId | string | Yes |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Yes |  |
+| forceRecalculate | boolean | No |  |
 
 ## 응답
 
@@ -14,16 +14,20 @@
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_42";
+const tenantId: string = "tenant_0012";
 const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {
-  questions: [
-    { questionId: "q-001", threadId: "thread-1001", questionType: "rating" },
-    { questionId: "q-002", threadId: "thread-1002", questionType: "yes_no" }
+  items: [
+    {
+      questionId: "quality_score",
+      startTime: "2026-06-01T00:00:00Z",
+      endTime: "2026-06-14T00:00:00Z",
+      timeBucket: "day",
+      dimensions: ["threadId"]
+    }
   ],
-  timeRange: { from: "2026-03-01T00:00:00Z", to: "2026-04-01T00:00:00Z" },
-  groupBy: ["questionId", "threadId"]
+  includeTotals: true
 };
-const forceRecalculate: boolean = true;
+const forceRecalculate: boolean = false;
 const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
 [inline-code-end]
 

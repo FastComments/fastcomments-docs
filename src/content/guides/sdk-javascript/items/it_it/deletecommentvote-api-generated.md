@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Tipo | Obbligatorio | Descrizione |
+| Name | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | commentId | string | Sì |  |
@@ -18,23 +18,12 @@ Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-87e4fd';
-const commentId: string = 'cmt-9a12b3f4';
-const voteId: string = 'vote-4f6d21b9';
-const urlId: string = 'https://www.acme.com/articles/2026/03/25/how-to-test';
-const broadcastId: string = 'broadcast-20260325-01';
-const editKey: string = 'editkey-6b7c8d9e';
-const sso: string = 'sso-jwt-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-
-const response: DeleteCommentVote200Response = await deleteCommentVote(
-  tenantId,
-  commentId,
-  voteId,
-  urlId,
-  broadcastId,
-  editKey,
-  sso
-);
+const tenantId: string = 'tenant_8f3a2b7c';
+const commentId: string = 'cmt-5a1f3d92';
+const voteId: string = 'vote-3b9c7e1a';
+const urlId: string = 'articles/2026/06/typescript-best-practices';
+const broadcastId: string = 'broadcast-77f4d2';
+const editKey: string = 'edk-9b2f4c';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature';
+const result: DeleteCommentVote200Response = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);
 [inline-code-end]
-
----

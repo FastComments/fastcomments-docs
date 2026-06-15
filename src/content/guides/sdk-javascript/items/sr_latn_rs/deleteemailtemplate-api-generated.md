@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -11,12 +11,12 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'deleteEmailTemplate Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-42";
-const idSuffix: string | undefined = "-archived";
-const templateId: string = "email_tmpl_6a1b2c" + (idSuffix ?? "");
-const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
+const tenantId: string = "tenant_9c4f1b2a";
+const id: string = "emailtmpl_4d2b9a5e";
+const requestorNote: string | undefined = undefined; // opcionalni metapodaci (nisu zahtevani funkcijom)
+const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);
 [inline-code-end]
 
 ---

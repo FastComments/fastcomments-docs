@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | urlIdWS | string | Tak |  |
@@ -12,13 +12,13 @@ Zwraca: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/f
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getUserPresenceStatuses Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3a2b';
-const urlIdWS: string = 'articles/2026/03/25/fastcomments-integration';
-const maybeUserIds: string | undefined = 'user_123,user_456'; // opcjonalne źródło
-const userIds: string = maybeUserIds ?? 'user_123';
-const presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'tenant_42';
+const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
+const userIds: string = 'user_9012,user_3478';
+const includePresenceMetadata: boolean | undefined = true; // przykład opcjonalnego parametru
+const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
 [inline-code-end]
 
 ---

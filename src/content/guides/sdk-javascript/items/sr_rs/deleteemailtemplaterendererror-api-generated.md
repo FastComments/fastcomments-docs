@@ -1,6 +1,7 @@
-## Параметри
+---
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -12,16 +13,13 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1d2f9b";
-const id: string = "email_template_42b1";
-const errorId: string = "render_err_2026-04-24_7f3c";
-const includeStackTrace: boolean | undefined = undefined; // пример опционалног флага
-
-const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-// Ако би био подржан опционални објекат опција, могао би изгледати овако:
-// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+const tenantId: string = 'tenant-72f3b4';
+const templateId: string = 'email_template-9c3a1';
+let providedErrorId: string | undefined = undefined; // опционална вредност, може бити подешена на другом месту
+const errorId: string = providedErrorId ?? 'render_err-5d2f7';
+const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 [inline-code-end]
 
 ---

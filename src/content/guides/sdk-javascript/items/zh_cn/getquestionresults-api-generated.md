@@ -1,34 +1,31 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| startDate | string | No |  |
-| questionId | string | No |  |
-| questionIds | string | No |  |
-| skip | number | No |  |
+| tenantId | string | 是 |  |
+| urlId | string | 否 |  |
+| userId | string | 否 |  |
+| startDate | string | 否 |  |
+| questionId | string | 否 |  |
+| questionIds | string | 否 |  |
+| skip | number | 否 |  |
 
 ## 响应
 
-返回：[`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResults200Response.ts)
+返回: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResults200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getQuestionResults 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_9b3f";
-  const urlId: string = "survey-2026-spring";
-  const userId: string = "user_00123";
-  const startDate: string = "2026-04-01T00:00:00Z";
-  const questionIds: string = "q_42,q_43";
-  const skip: number = 0;
-  const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);
-  console.log(result);
-})();
+const tenantId: string = 'fc-tenant-7a9c';
+const urlId: string = 'news/article-2026-06-15';
+const userId: string = 'user-8421';
+const startDate: string = '2026-05-01T00:00:00Z';
+const questionId: string = 'q-13';
+const questionIds: string = 'q-13,q-14';
+const skip: number = 20;
+const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);
 [inline-code-end]
 
 ---

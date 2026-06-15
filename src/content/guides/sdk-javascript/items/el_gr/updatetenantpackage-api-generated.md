@@ -1,29 +1,30 @@
-## Παράμετροι
+---
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
 | updateTenantPackageBody | UpdateTenantPackageBody | Ναι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_sf_001";
-  const id: string = "pkg-premium-v2";
-  const updateTenantPackageBody: UpdateTenantPackageBody = {
-    name: "San Francisco Premium",
-    enabled: true,
-    customConfig: { maxComments: 500 },
-    tosConfig: { required: true } // προαιρετικά πεδία εμφανίζονται με την παρουσία; τα υπόλοιπα παραλείπονται
-  } as UpdateTenantPackageBody;
-  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9f3b2a';
+const id: string = 'pkg_pro_2026';
+const updateTenantPackageBody: UpdateTenantPackageBody = {
+  name: 'Pro Plan',
+  monthlyPriceUsd: 49,
+  isActive: true,
+  features: ['moderation', 'analytics', 'sso'],
+  trialDays: 14 // προαιρετική παράμετρος για επίδειξη
+};
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
+
+---

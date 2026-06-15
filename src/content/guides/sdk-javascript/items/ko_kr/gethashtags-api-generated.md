@@ -1,11 +1,11 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| page | number | 아니요 |  |
+| page | number | 아니오 |  |
 
-## 응답
+## 반환
 
 반환: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTags200Response.ts)
 
@@ -13,10 +13,10 @@
 
 [inline-code-attrs-start title = 'getHashTags 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const pageNumber: number = 2;
-const responseWithPage: GetHashTags200Response = await getHashTags(tenantId, pageNumber);
-const responseWithoutPage: GetHashTags200Response = await getHashTags(tenantId);
+const tenantId: string = 'tenant_7f4b2c3a';
+const tagsFirstPage: GetHashTags200Response = await getHashTags(tenantId);
+const tagsSecondPage: GetHashTags200Response = await getHashTags(tenantId, 2);
+console.log(tagsFirstPage, tagsSecondPage);
 [inline-code-end]
 
 ---

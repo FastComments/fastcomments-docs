@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 
@@ -12,9 +12,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_eu_01';
-const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-console.log('Email template definitions loaded for', tenantId, templates);
+(async () => {
+  const tenantId: string = 'tenant_acme_001';
+  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // προαιρετική παράμετρος για παράδειγμα
+  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
+  console.log(templates);
+})();
 [inline-code-end]
-
----

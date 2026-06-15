@@ -1,6 +1,7 @@
+---
 ## 参数
 
-| Name | Type | Required | Description |
+| Name | Type | 必需 | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | page | number | 否 |  |
@@ -17,6 +18,8 @@
 | hashTag | string | 否 |  |
 | parentId | string | 否 |  |
 | direction | SortDirections | 否 |  |
+| fromDate | number | 否 |  |
+| toDate | number | 否 |  |
 
 ## 响应
 
@@ -26,21 +29,8 @@
 
 [inline-code-attrs-start title = 'getComments 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // 页码
-  20, // 每页数量
-  0, // 跳过
-  true, // 是否以树形
-  1, // 跳过子评论
-  3, // 子评论限制
-  4, // 最大树深度
-  'articles/2026/new-product-launch', // URL 标识
-  'user_7890', // 用户 ID
-  'anon_4f3b2', // 匿名用户 ID
-  undefined, // 上下文用户 ID
-  '#launch', // 话题标签
-  undefined // 父评论 ID
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

@@ -12,27 +12,21 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregationResponse.ts)
+Returns: [`Aggregate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/Aggregate200Response.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'aggregate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme_corp_123";
-const parentTenantId: string = "global_acme_1";
+const tenantId: string = 'tenant_78a9';
+const parentTenantId: string = 'parent_tenant_01';
 const includeStats: boolean = true;
-
-const predicateValue: QueryPredicateValue = { stringValue: "active" };
-const predicate: QueryPredicate = { field: "status", operator: "EQ", value: predicateValue };
-const operation: AggregationOperation = { type: "COUNT", field: "id", alias: "total" };
-const sort: AggregationRequestSort = { field: "total", direction: "DESC" };
-
 const aggregationRequest: AggregationRequest = {
-  query: { predicates: [predicate] },
-  operations: [operation],
-  sort: [sort],
-  limit: 100
+  operation: { type: 'COUNT' },
+  groupBy: ['pageUrl'],
+  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },
+  sort: [{ field: 'count', direction: 'DESC' }],
+  limit: 25
 };
-
-const response: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
+const result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
 [inline-code-end]

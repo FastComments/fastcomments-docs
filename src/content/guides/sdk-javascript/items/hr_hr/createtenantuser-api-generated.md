@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obvezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Da |  |
@@ -11,17 +11,19 @@ Vraća: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomm
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_74b3a9f4b";
+const tenantId: string = "tenant_7f4a2b";
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@acmecorp.com",
-  displayName: "Jane Doe",
-  role: "moderator",
-  sendWelcomeEmail: true, // neobavezan parametar
-  metadata: { department: "Customer Support" }
+  email: "jane.doe@example.com",
+  firstName: "Jane",
+  lastName: "Doe",
+  role: "commenter",
+  approved: true,
+  displayName: "Jane D." // neobavezno: pružanje prikaznog imena
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
+console.log(result);
 [inline-code-end]
 
 ---

@@ -2,9 +2,9 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|------------|-----------|
-| tenantId | string | Sim |  |
-| id | string | Sim |  |
-| skip | number | Não |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| skip | number | No |  |
 
 ## Resposta
 
@@ -12,15 +12,14 @@ Retorna: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getEmailTemplateRenderErrors'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getEmailTemplateRenderErrors'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-tenant-42';
-  const id: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';
-  const skip: number = 20;
-  const result: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id, skip);
-  console.log(result);
-})();
+const tenantId: string = 'acme-tenant-01';
+const id: string = 'tmpl_7f9a2b4c';
+const skip: number = 20;
+
+const errorsWithSkip: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id, skip);
+const errorsFirstPage: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id);
 [inline-code-end]
 
 ---

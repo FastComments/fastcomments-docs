@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -17,30 +18,19 @@
 | hashTag | string | Ne |  |
 | parentId | string | Ne |  |
 | direction | SortDirections | Ne |  |
+| fromDate | number | Ne |  |
+| toDate | number | Ne |  |
 
 ## Odgovor
 
-Vrača: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
+Vrne: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // stran
-  20, // omejitev
-  0, // preskoči
-  true, // kot drevo
-  1, // preskoči podrejene
-  3, // omeji podrejene
-  4, // največja globina drevesa
-  'articles/2026/new-product-launch', // urlId
-  'user_7890', // userId
-  'anon_4f3b2', // anonUserId
-  undefined, // contextUserId
-  '#launch', // hashTag
-  undefined // parentId
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

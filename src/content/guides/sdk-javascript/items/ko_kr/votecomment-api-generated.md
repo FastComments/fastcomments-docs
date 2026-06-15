@@ -1,14 +1,14 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| urlId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| voteBodyParams | VoteBodyParams | Yes |  |
-| sessionId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| commentId | string | 예 |  |
+| urlId | string | 예 |  |
+| broadcastId | string | 예 |  |
+| voteBodyParams | VoteBodyParams | 예 |  |
+| sessionId | string | 아니요 |  |
+| sso | string | 아니요 |  |
 
 ## 응답
 
@@ -18,14 +18,23 @@
 
 [inline-code-attrs-start title = 'voteComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b7c';
-const commentId: string = 'cmt_42f3a1';
-const urlId: string = 'articles/ai-trends-2026';
-const broadcastId: string = 'web';
-const voteBodyParams: VoteBodyParams = { vote: 1, reason: 'Insightful and on-topic' };
-const sessionId: string = 'sess_6d2b4c9e';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);
+const tenantId: string = 'tenant_7f9d2e';
+const commentId: string = '5a1d3f9b-2c4e-4a2b-bf7b-1234567890ab';
+const urlId: string = 'articles/2026/06/15/typescript-api-patterns';
+const broadcastId: string = 'broadcast-20260615-01';
+const voteBodyParams: VoteBodyParams = { vote: 'up' };
+const sessionId: string = 'sess_9d2f3b45';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY5NzE2MDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+
+const response: VoteComment200Response = await voteComment(
+  tenantId,
+  commentId,
+  urlId,
+  broadcastId,
+  voteBodyParams,
+  sessionId,
+  sso
+);
 [inline-code-end]
 
 ---

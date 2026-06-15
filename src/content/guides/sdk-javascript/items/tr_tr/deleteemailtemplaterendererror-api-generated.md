@@ -1,10 +1,10 @@
 ## Parametreler
 
-| Ad | Type | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| id | string | Evet |  |
-| errorId | string | Evet |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| errorId | string | Yes |  |
 
 ## Yanıt
 
@@ -14,12 +14,9 @@ Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1d2f9b";
-const id: string = "email_template_42b1";
-const errorId: string = "render_err_2026-04-24_7f3c";
-const includeStackTrace: boolean | undefined = undefined; // isteğe bağlı bir bayrak örneği
-
-const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-// Eğer isteğe bağlı bir seçenek nesnesi desteklenseydi şöyle görünebilirdi:
-// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+const tenantId: string = 'tenant-72f3b4';
+const templateId: string = 'email_template-9c3a1';
+let providedErrorId: string | undefined = undefined; // isteğe bağlı bir değer, başka bir yerde ayarlanmış olabilir
+const errorId: string = providedErrorId ?? 'render_err-5d2f7';
+const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,11 +13,11 @@
 
 [inline-code-attrs-start title = 'getTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f4b2c1a";
-const idOverride: string | undefined = undefined; // 선택적 재정의(가능한 경우)
-const id: string = idOverride ?? "site_3e7a6b2f";
-const response: GetTenant200Response = await getTenant(tenantId, id);
-console.log(response);
+const tenantId: string = 'fc_tenant_6b3e2a';
+const id: string = 'site_42f1';
+const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+const tenant: APITenant | undefined = tenantResponse.tenant;
+const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
 [inline-code-end]
 
 ---

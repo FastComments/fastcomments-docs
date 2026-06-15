@@ -1,7 +1,7 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+| Name | Type | Erforderlich | Beschreibung |
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | updateNotificationBody | UpdateNotificationBody | Ja |  |
@@ -13,17 +13,18 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für updateNotification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateNotification Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_8f4b2c';
-const id: string = 'notification_61a2e9';
-const userId: string = 'moderator_107';
+const tenantId: string = 'tenant_9f3b2c';
+const id: string = 'notification_4a1d2e';
 const updateNotificationBody: UpdateNotificationBody = {
-  name: 'Flagged Comment Notification',
   enabled: true,
-  channels: ['email', 'inbox'],
-  templateId: 'tmpl_mod_alerts_01',
-  severity: 'high'
-};
+  channels: ['email', 'push'],
+  frequency: 'immediate',
+  templateId: 'tmpl_77aa'
+} as UpdateNotificationBody;
+const userId: string = 'user_2468';
 const result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);
 [inline-code-end]
+
+---

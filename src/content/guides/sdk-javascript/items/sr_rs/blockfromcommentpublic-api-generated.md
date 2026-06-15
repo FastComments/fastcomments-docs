@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
@@ -13,18 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockFromCommentPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "site_7f9b2e";
-const commentId: string = "comment_2026-03-25_001";
+const tenantId: string = 'tenant_6b3f9a2d';
+const commentId: string = 'cmt_8f4b12a9';
 const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: "Repeated harassment and targeted abuse",
-  blockDurationDays: 90,
-  includeHistory: true,
-  notifyModeratorTeam: true
+  reason: 'Repeated promotional links',
+  durationMinutes: 60 * 24 * 30, // 30 дана
+  escalateToModeration: true
 };
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature";
+const sso: string = 'sso_token_3fH7kLw';
+
 const result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]
-
----

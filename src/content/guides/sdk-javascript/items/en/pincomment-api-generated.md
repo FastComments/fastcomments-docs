@@ -15,9 +15,11 @@ Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'pinComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4472';
-const commentId: string = 'cmt_8a9f3b';
-const broadcastId: string = 'broadcast_2026-05-20_01';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.signature';
-const result: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, sso);
+const tenantId: string = "acme-corp-tenant-72";
+const commentId: string = "cmt_8f3a2b4c9d";
+const broadcastId: string = "live_2026-06-15_21z";
+const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload.signature";
+
+const responseNoSSO: PinComment200Response = await pinComment(tenantId, commentId, broadcastId);
+const responseWithSSO: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, ssoToken);
 [inline-code-end]

@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createQuestionResultBody | CreateQuestionResultBody | 예 |  |
@@ -13,16 +14,15 @@
 
 [inline-code-attrs-start title = 'createQuestionResult 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
-const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: 'q-34567',
-  respondentId: 'user-8923',
-  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
-  score: 5,
-  meta: [{ key: 'platform', value: 'web' }],
-  notifyModerators: false // 선택적 매개변수
+const tenantId: string = 'fc-tenant-512';
+const meta: MetaItem[] = [{ key: 'source', value: 'article' }];
+const body: CreateQuestionResultBody = {
+  questionId: 'q-94',
+  userId: 'user_332',
+  answers: [{ optionId: 'opt_a', score: 1 }],
+  meta, // 제공된 선택적 메타데이터
 } as CreateQuestionResultBody;
-const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
+const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);
 [inline-code-end]
 
 ---

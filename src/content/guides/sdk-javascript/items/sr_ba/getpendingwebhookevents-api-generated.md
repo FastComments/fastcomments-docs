@@ -1,39 +1,37 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Не |  |
-| externalId | string | Не |  |
-| eventType | string | Не |  |
-| type | string | Не |  |
-| domain | string | Не |  |
-| attemptCountGT | number | Не |  |
-| skip | number | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Ne |  |
+| externalId | string | Ne |  |
+| eventType | string | Ne |  |
+| type | string | Ne |  |
+| domain | string | Ne |  |
+| attemptCountGT | number | Ne |  |
+| skip | number | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
+Vraća: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getPendingWebhookEvents Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b3f7c';
-const commentId: string | undefined = undefined;
-const externalId: string | undefined = 'external-572a';
-const eventType: string | undefined = 'comment.updated';
-const type: string | undefined = 'outbound';
-const domain: string | undefined = 'reviews.example.com';
-const attemptCountGT: number | undefined = 1;
-const skip: number | undefined = 20;
+const tenantId: string = 'tenant_9f3b2a';
+const commentId: string = 'cmt_8a7d1';
+const eventType: string = 'comment.created';
+const domain: string = 'reviews.myshop.com';
+const attemptCountGT: number = 1;
+const skip: number = 0;
 
 const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
   tenantId,
   commentId,
-  externalId,
+  undefined,
   eventType,
-  type,
+  undefined,
   domain,
   attemptCountGT,
   skip

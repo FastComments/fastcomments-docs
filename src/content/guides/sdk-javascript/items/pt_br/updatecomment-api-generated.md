@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 | updatableCommentParams | UpdatableCommentParams | Sim |  |
@@ -17,15 +17,16 @@ Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Exemplo de updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3f47b2a1";
-const id: string = "comment_9a12b3c4";
+const tenantId: string = 'tenant_7f3c1b2a';
+const commentId: string = 'cmt_8d9f2a4b';
 const updatableCommentParams: UpdatableCommentParams = {
-  body: "Thanks for the update — I've adjusted my view accordingly."
+  body: 'Updating this comment to clarify the feature behavior and include a timestamp.',
+  metadata: { category: 'support', editedReason: 'clarify instructions' },
+  visible: true
 };
-const contextUserId: string = "user_8721";
+const contextUserId: string = 'user_42';
 const doSpamCheck: boolean = true;
-const isLive: boolean = false;
-const result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
+const result: FlagCommentPublic200Response = await updateComment(tenantId, commentId, updatableCommentParams, contextUserId, doSpamCheck);
 [inline-code-end]
 
 ---

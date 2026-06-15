@@ -11,29 +11,34 @@
 
 ## Antwort
 
-Rückgabe: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPost200Response.ts)
+Gibt zurück: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPost200Response.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'createFeedPost Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für createFeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_87f3b2';
-const mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/post-123.jpg', mimeType: 'image/jpeg', width: 1200, height: 800, size: 245000 };
-const mediaItem: FeedPostMediaItem = { id: 'media_1', type: 'image', assets: [mediaAsset], altText: 'Conference keynote stage' };
-const link: FeedPostLink = { url: 'https://news.example.com/keynote-recap', title: 'Keynote recap' };
+const tenantId: string = 'tenant_4f2b1c';
 const createFeedPostParams: CreateFeedPostParams = {
-  title: 'Product Launch Highlights',
-  content: 'Highlights from today’s product launch and roadmap updates.',
-  authorId: 'user_42',
-  mediaItems: [mediaItem],
-  links: [link],
-  tags: ['product', 'launch', 'announcement']
+  content: 'Launching our summer collection today — check it out!',
+  authorId: 'user_879',
+  media: [
+    {
+      type: 'image',
+      assets: [
+        { url: 'https://cdn.myshop.com/uploads/summer-look.jpg', width: 1200, height: 800 } as FeedPostMediaItemAsset
+      ]
+    } as FeedPostMediaItem
+  ],
+  links: [
+    { url: 'https://myshop.com/new-arrival', title: 'Summer Collection' } as FeedPostLink
+  ],
+  allowComments: true
 };
-const broadcastId: string = 'broadcast_20260424';
-const isLive: boolean = true;
+const broadcastId: string = 'broadcast-2026-06-15-001';
+const isLive: boolean = false;
 const doSpamCheck: boolean = true;
 const skipDupCheck: boolean = false;
-const result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
+const response: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | commentId | string | Так |  |
@@ -16,11 +16,11 @@
 
 [inline-code-attrs-start title = 'Приклад createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2a9b';
-const commentId: string = 'cmt_3b7e21';
+const tenantId: string = 'fastcomments-tenant-001';
+const commentId: string = 'cmt_8f3b2a9d';
 const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Up;
-const anonUserId: string = 'anon_9x7k2p';
-const voteResult: VoteComment200Response = await createVote(tenantId, commentId, direction, undefined, anonUserId);
-[inline-code-end]
+const userId: string = 'user_5021';
+const anonUserId: string = 'anon_7a9c';
 
----
+const voteResponse: VoteComment200Response = await createVote(tenantId, commentId, direction, userId, anonUserId);
+[inline-code-end]

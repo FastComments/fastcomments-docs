@@ -1,9 +1,9 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | 是 |  |
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
 ## 响应
 
@@ -13,19 +13,23 @@
 
 [inline-code-attrs-start title = 'createQuestionConfig 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_01";
+const tenantId: string = "tenant_9f3b1c2a";
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  title: "Post-purchase feedback",
-  description: "Quick survey about your recent order",
+  name: "Product feedback",
+  key: "product_quality",
+  description: "Short survey question shown after posting a comment",
   required: true,
-  renderingType: "single_choice",
-  options: [
-    { label: "Very dissatisfied", value: "1" },
-    { label: "Dissatisfied", value: "2" },
-    { label: "Neutral", value: "3" },
-    { label: "Satisfied", value: "4" },
-    { label: "Very satisfied", value: "5" }
-  ] as QuestionConfigCustomOptionsInner[]
-} as CreateQuestionConfigBody;
+  renderingType: "singleChoice",
+  customOptions: [
+    { label: "Excellent", value: "5" },
+    { label: "Good", value: "4" },
+    { label: "Fair", value: "3" }
+  ] as QuestionConfigCustomOptionsInner[],
+  notifyModerators: false // 演示可选参数
+};
+
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
+
+---

@@ -16,9 +16,6 @@ Returns: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getTenantDailyUsages Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-7';
-const yearNumber: number = 2026;
-const monthNumber: number = 4;
-const skip: number = 10;
-const result: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, undefined, skip);
+const tenantId: string = 'tenant_7a3c2e';
+const dailyUsages: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, 2026, 6, undefined, 0);
 [inline-code-end]

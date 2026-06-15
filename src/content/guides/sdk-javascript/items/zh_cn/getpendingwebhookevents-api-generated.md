@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 否 |  |
@@ -13,27 +13,25 @@
 
 ## 响应
 
-返回: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
+返回：[`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b3f7c';
-const commentId: string | undefined = undefined;
-const externalId: string | undefined = 'external-572a';
-const eventType: string | undefined = 'comment.updated';
-const type: string | undefined = 'outbound';
-const domain: string | undefined = 'reviews.example.com';
-const attemptCountGT: number | undefined = 1;
-const skip: number | undefined = 20;
+const tenantId: string = 'tenant_9f3b2a';
+const commentId: string = 'cmt_8a7d1';
+const eventType: string = 'comment.created';
+const domain: string = 'reviews.myshop.com';
+const attemptCountGT: number = 1;
+const skip: number = 0;
 
 const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
   tenantId,
   commentId,
-  externalId,
+  undefined,
   eventType,
-  type,
+  undefined,
   domain,
   attemptCountGT,
   skip

@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,9 +14,9 @@
 
 [inline-code-attrs-start title = 'getTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b2c8';
-const packageId: string = 'pkg_standard_2026';
-const requestOptions: { includeConfig?: boolean } = { includeConfig: true };
+const tenantId: string = 'tenant_4b8c2a9f';
+const packageId: string = 'pkg_7d3e1b5c';
+const includeMetadata: boolean | undefined = true;
 const packageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);
 [inline-code-end]
 

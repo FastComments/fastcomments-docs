@@ -17,32 +17,19 @@
 | hashTag | string | לא |  |
 | parentId | string | לא |  |
 | direction | SortDirections | לא |  |
+| fromDate | number | לא |  |
+| toDate | number | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
+מוחזר: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // page (עמוד)
-  20, // limit (הגבלה)
-  0, // skip (דילוג)
-  true, // asTree (כעץ)
-  1, // skipChildren (דילוג על ילדים)
-  3, // limitChildren (הגבלת ילדים)
-  4, // maxTreeDepth (עומק מרבי של העץ)
-  'articles/2026/new-product-launch', // urlId (מזהה URL)
-  'user_7890', // userId (מזהה משתמש)
-  'anon_4f3b2', // anonUserId (מזהה משתמש אנונימי)
-  undefined, // contextUserId (מזהה משתמש בהקשר)
-  '#launch', // hashTag (האשטאג)
-  undefined // parentId (מזהה הורה)
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
 
 ---

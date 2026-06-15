@@ -1,27 +1,27 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Потребно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | Yes |  |
+| tenantId | string | Da |  |
+| createTenantUserBody | CreateTenantUserBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+Vraća: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_74b3a9f4b";
+const tenantId: string = "tenant_7f4a2b";
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@acmecorp.com",
-  displayName: "Jane Doe",
-  role: "moderator",
-  sendWelcomeEmail: true, // опциони параметар демонстриран
-  metadata: { department: "Customer Support" }
+  email: "jane.doe@example.com",
+  firstName: "Jane",
+  lastName: "Doe",
+  role: "commenter",
+  approved: true,
+  displayName: "Jane D." // opcionalno: davanje prikaznog imena
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
+console.log(result);
 [inline-code-end]
-
----

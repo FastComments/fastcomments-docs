@@ -13,10 +13,8 @@ Returns: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getHashTags Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_78b2a9f4';
-  const firstPageResult: GetHashTags200Response = await getHashTags(tenantId);
-  const secondPageResult: GetHashTags200Response = await getHashTags(tenantId, 2);
-  console.log(firstPageResult, secondPageResult);
-})();
+const tenantId: string = 'tenant_7f4b2c3a';
+const tagsFirstPage: GetHashTags200Response = await getHashTags(tenantId);
+const tagsSecondPage: GetHashTags200Response = await getHashTags(tenantId, 2);
+console.log(tagsFirstPage, tagsSecondPage);
 [inline-code-end]

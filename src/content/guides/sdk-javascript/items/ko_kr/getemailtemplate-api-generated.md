@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,12 +14,10 @@
 
 [inline-code-attrs-start title = 'getEmailTemplate 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-marketing-042";
-const templateId: string = "tpl_welcome_2026";
-const result: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);
-const template: CustomEmailTemplate | undefined = result.template;
-const subject: string | undefined = template?.subject;
-const customParams: CustomConfigParameters | undefined = template?.customConfigParameters;
+const tenantId: string = 'tenant_7f3b2c';
+const templateId: string = 'welcome-email-2024';
+const includeDrafts: boolean | undefined = undefined;
+const emailTemplate: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);
 [inline-code-end]
 
 ---

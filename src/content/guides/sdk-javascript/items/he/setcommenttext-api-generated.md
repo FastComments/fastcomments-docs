@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | commentId | string | כן |  |
@@ -17,15 +18,13 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-setCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-42';
-const commentId: string = 'cmt-8932';
-const broadcastId: string = 'brd-2023-07';
-const updateRequest: CommentTextUpdateRequest = {
-  text: 'Updated comment text for the product launch — congrats team!',
-  mentions: [{ userId: 'user-17', displayName: 'Ava Nguyen' }] as CommentUserMentionInfo[],
-  hashtags: [{ tag: 'ProductLaunch' }] as CommentUserHashTagInfo[]
-};
-const editKey: string = 'edtk-9f7b';
-const sso: string = 'sso-token-abc123';
-const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, updateRequest, editKey, sso);
+const tenantId: string = 'tenant_4f9a2b'
+const commentId: string = 'cmt-8421'
+const broadcastId: string = 'brd-2026-06-15'
+const commentTextUpdateRequest: CommentTextUpdateRequest = { text: 'Updated comment text to clarify the schedule.', mentions: [], hashtags: [] }
+const editKey: string = 'editkey_9b12'
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso.signature'
+const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)
 [inline-code-end]
+
+---

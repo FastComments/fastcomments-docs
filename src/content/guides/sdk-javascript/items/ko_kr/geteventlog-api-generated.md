@@ -11,7 +11,7 @@ userIdWS
 | urlId | string | 예 |  |
 | userIdWS | string | 예 |  |
 | startTime | number | 예 |  |
-| endTime | number | 예 |  |
+| endTime | number | 아니오 |  |
 
 ## 응답
 
@@ -21,19 +21,12 @@ userIdWS
 
 [inline-code-attrs-start title = 'getEventLog 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
-const urlId: string = 'article-2026-03-25';
-const userIdWS: string | undefined = undefined; // 선택적 업스트림 값
-const startTime: number = Date.parse('2026-03-01T00:00:00Z');
-const endTime: number = Date.parse('2026-03-25T23:59:59Z');
-
-const eventLogResponse: GetEventLog200Response = await getEventLog(
-  tenantId,
-  urlId,
-  userIdWS ?? 'ws_user_8b1f',
-  startTime,
-  endTime
-);
+const tenantId: string = 'tenant_9f3a2b';
+const urlId: string = 'news/2026/06/fastcomments-release';
+const userIdWS: string = 'ws_user_48291';
+const startTime: number = Date.now() - 86_400_000;
+const endTime: number = Date.now();
+const result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
 [inline-code-end]
 
 ---

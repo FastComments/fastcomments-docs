@@ -1,9 +1,10 @@
+---
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
+| tenantId | string | 是 |  |
+| urlId | string | 是 |  |
 
 ## 响应
 
@@ -13,10 +14,10 @@
 
 [inline-code-attrs-start title = 'getVotes 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-42c-eu';
-const urlId: string = 'article-7f9b';
-const includeMetadata: boolean | undefined = true;
+const tenantId: string = 'tenant_7f8e91c2';
+const urlId: string = 'https://www.sportsdaily.com/news/2026/06/15/championship-game-recap';
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+console.log(votes);
 [inline-code-end]
 
 ---

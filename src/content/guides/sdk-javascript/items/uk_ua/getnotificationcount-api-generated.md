@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | userId | string | Ні |  |
@@ -17,12 +17,14 @@
 
 [inline-code-attrs-start title = 'Приклад getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_abc123';
-const userId: string = 'user_987654321';
-const urlId: string = 'https://example.com/news/2026/new-features';
+const tenantId: string = 'tenant_82a3b9f';
+const userId: string = 'user_43721';
+const urlId: string = 'https://news.example.com/articles/2026/06/15/coverage-123';
+const fromCommentId: string = 'comment_98765';
 const viewed: boolean = false;
-const type: string = 'reply';
-const notificationCountResponse: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, undefined, viewed, type);
+const notificationType: string = 'mention';
+
+const result: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, notificationType);
 [inline-code-end]
 
 ---

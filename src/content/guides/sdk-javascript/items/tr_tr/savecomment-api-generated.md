@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createCommentParams | CreateCommentParams | Evet |  |
@@ -17,13 +17,15 @@ Döndürür: [`SaveComment200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'saveComment Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "fastcomments-tenant-42";
 const createCommentParams: CreateCommentParams = {
-  content: 'Great article — helped me fix a production issue in minutes.',
-  url: 'https://app.acme.com/blog/performance-tips',
-  author: { name: 'Maya Chen', email: 'maya.chen@acme.com' },
-  metadata: { locale: 'en-US', appVersion: '4.2.1' }
-} as CreateCommentParams;
+  threadId: "article-2026-06-0142",
+  content: "Great write-up — I followed the migration steps and everything worked as described.",
+  userId: "u_9c72b",
+  userName: "Ava R.",
+  userAvatarUrl: "https://cdn.example.com/avatars/u_9c72b.png",
+  metadata: { platform: "web", locale: "en-US" }
+};
 const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const sendEmails: boolean = false;

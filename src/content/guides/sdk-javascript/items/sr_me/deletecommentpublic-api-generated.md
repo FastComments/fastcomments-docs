@@ -1,34 +1,28 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Да |  |
-| editKey | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| broadcastId | string | Da |  |
+| editKey | string | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentPublic200Response.ts)
+Vraća: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteCommentPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer deleteCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2c9b';
-const commentId: string = 'comment-7c3a9f2d';
-const broadcastId: string = 'article-2026-03-20';
-const editKey: string | undefined = 'ek_pub_abc12345';
-const sso: string | undefined = 'sso_eyJhbGciOiJIUzI1Ni';
+const tenantId: string = 'tenant_acme_42';
+const commentId: string = 'c0mment-9f8b7a6';
+const broadcastId: string = 'site_homepage_2026-06-15';
+const editKey: string = 'ek_3b7a1f59-4d2c-11eb-8dcd-0242ac130003';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';
 
-const result: DeleteCommentPublic200Response = await deleteCommentPublic(
-  tenantId,
-  commentId,
-  broadcastId,
-  editKey,
-  sso
-);
+const result: DeleteCommentPublic200Response = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
 [inline-code-end]
 
 ---

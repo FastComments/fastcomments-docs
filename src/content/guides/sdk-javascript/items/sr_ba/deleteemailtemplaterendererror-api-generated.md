@@ -1,28 +1,24 @@
----
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| errorId | string | Да |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| errorId | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1d2f9b";
-const id: string = "email_template_42b1";
-const errorId: string = "render_err_2026-04-24_7f3c";
-const includeStackTrace: boolean | undefined = undefined; // пример опционалног флага
-
-const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-// Ако би био подржан опциони објекат опција он би могао изгледати овако:
-// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+const tenantId: string = 'tenant-72f3b4';
+const templateId: string = 'email_template-9c3a1';
+let providedErrorId: string | undefined = undefined; // opcionalna vrijednost, može biti postavljena negdje drugdje
+const errorId: string = providedErrorId ?? 'render_err-5d2f7';
+const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 [inline-code-end]
 
 ---

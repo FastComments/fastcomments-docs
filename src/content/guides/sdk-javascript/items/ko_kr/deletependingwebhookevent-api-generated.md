@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -14,10 +13,10 @@
 
 [inline-code-attrs-start title = 'deletePendingWebhookEvent 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b2a";
-const webhookEventId: string = "wh_evt_9a8c7d1234";
-const dryRun: boolean | undefined = undefined; // 선택적 플래그 예제 (이 호출에서 필요하지 않음)
-const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, webhookEventId);
+const tenantId: string = "tenant_5f8d7a34";
+const id: string = "webhook_evt_987654321";
+const requestNote: string | undefined = undefined;
+const response: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);
 [inline-code-end]
 
 ---

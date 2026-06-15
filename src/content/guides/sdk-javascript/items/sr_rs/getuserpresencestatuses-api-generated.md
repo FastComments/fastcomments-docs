@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlIdWS | string | Да |  |
@@ -12,11 +12,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserPresenceStatuses Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3a2b';
-const urlIdWS: string = 'articles/2026/03/25/fastcomments-integration';
-const maybeUserIds: string | undefined = 'user_123,user_456'; // опциони извор
-const userIds: string = maybeUserIds ?? 'user_123';
-const presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'tenant_42';
+const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
+const userIds: string = 'user_9012,user_3478';
+const includePresenceMetadata: boolean | undefined = true; // пример опционалног параметра
+const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
 [inline-code-end]

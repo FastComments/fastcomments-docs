@@ -1,22 +1,24 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| page | number | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| asTree | boolean | No |  |
-| skipChildren | number | No |  |
-| limitChildren | number | No |  |
-| maxTreeDepth | number | No |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
-| contextUserId | string | No |  |
-| hashTag | string | No |  |
-| parentId | string | No |  |
-| direction | SortDirections | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Sim |  |
+| page | number | Não |  |
+| limit | number | Não |  |
+| skip | number | Não |  |
+| asTree | boolean | Não |  |
+| skipChildren | number | Não |  |
+| limitChildren | number | Não |  |
+| maxTreeDepth | number | Não |  |
+| urlId | string | Não |  |
+| userId | string | Não |  |
+| anonUserId | string | Não |  |
+| contextUserId | string | Não |  |
+| hashTag | string | Não |  |
+| parentId | string | Não |  |
+| direction | SortDirections | Não |  |
+| fromDate | number | Não |  |
+| toDate | number | Não |  |
 
 ## Resposta
 
@@ -26,23 +28,8 @@ Retorna: [`GetComments200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'Exemplo de getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // page
-  20, // limit
-  0, // skip
-  true, // asTree
-  1, // skipChildren
-  3, // limitChildren
-  4, // maxTreeDepth
-  'articles/2026/new-product-launch', // urlId
-  'user_7890', // userId
-  'anon_4f3b2', // anonUserId
-  undefined, // contextUserId
-  '#launch', // hashTag
-  undefined // parentId
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
 
 ---

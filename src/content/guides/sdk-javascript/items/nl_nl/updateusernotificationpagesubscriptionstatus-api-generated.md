@@ -1,9 +1,11 @@
-Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich op een pagina hebben geabonneerd, worden meldingen aangemaakt voor nieuwe root-opmerkingen, en ook
+---
+Schakel meldingen in of uit voor een pagina. Wanneer gebruikers op een pagina geabonneerd zijn, worden er meldingen aangemaakt
+voor nieuwe root-opmerkingen, en ook
 
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|---------|--------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | url | string | Ja |  |
@@ -11,7 +13,7 @@ Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich op een pagi
 | subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Ja |  |
 | sso | string | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatus200Response.ts)
 
@@ -19,11 +21,13 @@ Retourneert: [`UpdateUserNotificationStatus200Response`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const urlId: string = 'blog-launch-2026';
-const url: string = 'https://acme.example.com/blog/launch-march-2026';
-const pageTitle: string = 'Acme Product Launch — March 2026';
+const tenantId: string = 'tenant_7f3b2';
+const urlId: string = 'article_987';
+const url: string = 'https://www.news-site.com/articles/2026/pasta-guide';
+const pageTitle: string = 'The Definitive Guide to Cooking Pasta';
 const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const response: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
+const sso: string = 'sso-token-62b9f1';
+const result: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
 [inline-code-end]
+
+---

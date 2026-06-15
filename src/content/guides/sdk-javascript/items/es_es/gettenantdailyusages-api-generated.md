@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | yearNumber | number | No |  |
@@ -16,13 +17,8 @@ Devuelve: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Ejemplo de getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f4a3b2c-1d6e-4f9a-b9d8-123456789abc';
-const yearNumber: number = 2026;
-const monthNumber: number = 3;
-const dayNumber: number = 24;
-const skip: number = 0;
-
-const result: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
+const tenantId: string = 'tenant_7a3c2e';
+const dailyUsages: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, 2026, 6, undefined, 0);
 [inline-code-end]
 
 ---

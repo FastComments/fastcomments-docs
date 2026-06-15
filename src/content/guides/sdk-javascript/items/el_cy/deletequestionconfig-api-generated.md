@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
@@ -13,8 +13,8 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_42fa9b7c";
-const id: string = "qcfg-0f8fad5b-d9cb-469f-a165-70867728950e";
+const tenantId: string = 'acme-corp-47a9';
+const id: string = 'qcfg_20260615_001';
 const result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);
 [inline-code-end]
 

@@ -2,7 +2,7 @@ Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operac
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | aggregationRequest | AggregationRequest | Da |  |
@@ -11,6 +11,21 @@ Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operac
 
 ## Odgovor
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregationResponse.ts)
+Vraća: [`Aggregate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/Aggregate200Response.ts)
 
----
+## Primjer
+
+[inline-code-attrs-start title = 'Primjer za aggregate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_78a9';
+const parentTenantId: string = 'parent_tenant_01';
+const includeStats: boolean = true;
+const aggregationRequest: AggregationRequest = {
+  operation: { type: 'COUNT' },
+  groupBy: ['pageUrl'],
+  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },
+  sort: [{ field: 'count', direction: 'DESC' }],
+  limit: 25
+};
+const result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
+[inline-code-end]

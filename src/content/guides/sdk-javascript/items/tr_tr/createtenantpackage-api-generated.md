@@ -1,6 +1,7 @@
+---
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createTenantPackageBody | CreateTenantPackageBody | Evet |  |
@@ -13,15 +14,18 @@ Döndürür: [`CreateTenantPackage200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'createTenantPackage Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_001";
+const tenantId: string = "tenant_7890";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  name: "Acme Standard Package",
-  description: "Default package for Acme Corp comments with moderation and SSO enabled",
-  enabled: true,
-  maxCommentsPerThread: 500,
-  voteStyle: "thumbs",
-  gifRating: "PG-13",
-  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // isteğe bağlı parametre gösterimi
+  packageName: "Growth Plan",
+  maxSeats: 2500,
+  features: {
+    moderation: true,
+    analytics: true,
+    sso: { enabled: true, provider: "saml" }
+  },
+  billing: { interval: "monthly", priceCents: 19900 },
+  // isteğe bağlı parametre gösterimi: notes gerekli değil ama sağlandı
+  notes: "Onboarding bundle with priority support"
 };
 const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]

@@ -1,7 +1,7 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+| Name | Type | Erforderlich | Beschreibung |
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | createCommentParams | Array<CreateCommentParams> | Ja |  |
 | isLive | boolean | Nein |  |
@@ -17,28 +17,26 @@ Gibt zurück: `Array<SaveComment200Response`
 
 [inline-code-attrs-start title = 'saveCommentsBulk Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-01';
-const mentions1: CommentUserMentionInfo[] = [{ userId: 'user-123', displayName: 'Jane Doe' }];
-const hashtags1: CommentUserHashTagInfo[] = [{ tag: 'typescript' }];
+const tenantId: string = "tenant_42a1b7";
+const mentions: CommentUserMentionInfo[] = [{ userId: "user_2b9", displayName: "Alex Chen" }];
+const hashtags: CommentUserHashTagInfo[] = [{ tag: "performance" }];
 const createCommentParams: CreateCommentParams[] = [
   {
-    content: 'Great insights on async/await patterns.',
-    authorName: 'John Smith',
-    authorEmail: 'john.smith@acme.com',
-    externalId: 'comment-001',
-    createdAt: '2026-03-25T10:15:00Z',
-    userMentions: mentions1,
-    userHashTags: hashtags1
-  },
-  {
-    content: 'I prefer using Promise.all for bulk ops.',
-    authorName: 'Emily Turner',
-    authorEmail: 'emily.turner@acme.com',
-    externalId: 'comment-002',
-    createdAt: '2026-03-25T10:20:00Z'
+    content: "Thanks for the detailed article — the alternative approach worked for me.",
+    authorId: "user_8f3c2",
+    authorName: "Maya Patel",
+    authorEmail: "maya.patel@example.com",
+    url: "/articles/optimizing-ts-performance",
+    createdAt: new Date().toISOString(),
+    mentions,
+    hashtags
   }
 ];
-const result: SaveComment200Response[] = await saveCommentsBulk(tenantId, createCommentParams, true, true, false, true);
+const isLive: boolean = true;
+const doSpamCheck: boolean = false;
+const sendEmails: boolean = true;
+const populateNotifications: boolean = true;
+const result: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
 [inline-code-end]
 
 ---

@@ -1,30 +1,28 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Ne |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Ne |  |
+| tenantId | string | No |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulk200Response.ts)
+Враћа: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulk200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_corp_01';
+const tenantId: string = "tenant_acme_corp_987";
 const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
   tags: [
-    { name: 'feature-request', slug: 'feature-request', description: 'Requests for new capabilities', isActive: true, customConfig: { visibility: 'public' } as unknown as CustomConfigParameters }
-  ]
+    { name: "product-update", description: "Announcements about new product releases", visible: true },
+    { name: "customer-support", description: "Customer support related discussions", visible: false }
+  ],
+  createdBy: "moderator_jane"
 };
-const addHashTagsResponse: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-
-const bulkCreateHashTagsBodyNoTenant: BulkCreateHashTagsBody = {
-  tags: [
-    { name: 'ux-feedback', slug: 'ux-feedback', description: 'User experience suggestions', isActive: true }
-  ]
-};
-const addHashTagsResponseNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBodyNoTenant);
+const resultWithTenant: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
+const resultWithoutTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);
 [inline-code-end]
+
+---

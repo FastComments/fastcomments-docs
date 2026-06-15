@@ -1,32 +1,30 @@
----
 ## パラメータ
 
-| Name | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| updatableCommentParams | UpdatableCommentParams | はい |  |
-| contextUserId | string | いいえ |  |
-| doSpamCheck | boolean | いいえ |  |
-| isLive | boolean | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean | No |  |
 
 ## レスポンス
 
-返却値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3f47b2a1";
-const id: string = "comment_9a12b3c4";
+const tenantId: string = 'tenant_7f3c1b2a';
+const commentId: string = 'cmt_8d9f2a4b';
 const updatableCommentParams: UpdatableCommentParams = {
-  body: "Thanks for the update — I've adjusted my view accordingly."
+  body: 'Updating this comment to clarify the feature behavior and include a timestamp.',
+  metadata: { category: 'support', editedReason: 'clarify instructions' },
+  visible: true
 };
-const contextUserId: string = "user_8721";
+const contextUserId: string = 'user_42';
 const doSpamCheck: boolean = true;
-const isLive: boolean = false;
-const result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
+const result: FlagCommentPublic200Response = await updateComment(tenantId, commentId, updatableCommentParams, contextUserId, doSpamCheck);
 [inline-code-end]
-
----

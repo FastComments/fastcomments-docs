@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Oui |  |
 | id | string | Oui |  |
@@ -15,14 +15,13 @@ Renvoie : [`ChangeTicketState200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Exemple de changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b2c9a";
-const userId: string = "user_5a1d9fb2";
-const id: string = "ticket_3e8a1b6f";
+const tenantId: string = 'tenant_8a7d3f4b';
+const userId: string = 'user_5d1a9b2c';
+const id: string = 'ticket_1024';
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  reason: "Fixed in backend release 2.4.1",
-  notifyUsers: true,
-  metadata: { resolutionOwner: "agent_12", priority: "high" } // champs optionnels illustrés
+  state: 'closed',
+  notifyParticipants: true, // paramètre optionnel démontré
+  comment: 'Resolved by support — follow-up not required.'
 };
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]
