@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "3486b92e7d3fcdcf0970d22d39e5270a72fccd8791aa05aa4a6b5eb53f9e1ea9",
+  "generatedAt": "2026-06-15T20:33:35.528Z",
+  "codeExample": "const namespaceName: string = 'site-ui';\nconst componentName: string = 'comment-widget';\nconst locale: string = 'fr-FR';\nconst useFullTranslationIds: boolean = true;\nconst translationsWithLocale: GetTranslations200Response = await getTranslations(namespaceName, componentName, locale, useFullTranslationIds);\nconst translationsDefault: GetTranslations200Response = await getTranslations(namespaceName, componentName);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "41cbe705f609d1c40c6e6ca1f470d06314fbedce114a908865cec195c0257185",
+  "generatedAt": "2026-06-15T20:33:49.801Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-241';\nconst badgeId: string = 'user-78b3d-badge-3';\nconst response: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, badgeId);\nconst progress: UserBadgeProgress | undefined = (response as unknown as { progress?: UserBadgeProgress }).progress;\nconst percentComplete: number | undefined = progress?.percentage;\nconsole.log('Badge progress percent complete:', percentComplete);",
+  "model": "gpt-5-mini"
+}

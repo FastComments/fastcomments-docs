@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "b29b4ab02a5c4f37340fef840b853a0c0c83955958b5e53e9e72ba6236e39930",
+  "generatedAt": "2026-06-15T20:33:34.116Z",
+  "codeExample": "const tenantId: string = \"tenant_9c4f1b2a\";\nconst id: string = \"emailtmpl_4d2b9a5e\";\nconst requestorNote: string | undefined = undefined; // optional metadata (not required by function)\nconst result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "8a232d2c0d3ebea2664d79b1307998c75847f5d9811db3af5ae91b079d9e8146",
+  "generatedAt": "2026-06-15T20:33:35.677Z",
+  "codeExample": "const tenantId: string = 'tenant_6f1a2b';\nconst commentId: string = 'cmt_4d9e8f';\nconst includeReplies: boolean | undefined = true; // optional parameter example (not passed to getComment)\nconst result: GetComment200Response = await getComment(tenantId, commentId);\nconsole.log('Fetched comment for tenant:', tenantId, 'comment id:', commentId);\nconsole.log('API response received:', result);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "55cb176343dd4e592e0e8215065e31a40548fe4b07730b5a5d837366d67e1efd",
+  "generatedAt": "2026-06-15T20:33:36.203Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3a2b';\nconst urlId: string = 'news/2026/06/fastcomments-release';\nconst userIdWS: string = 'ws_user_48291';\nconst startTime: number = Date.now() - 86_400_000;\nconst endTime: number = Date.now();\nconst result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "d826179fe014bd33fc9eabdd5e6baaa41e0f586ff60baad2bee1442415c43ead",
+  "generatedAt": "2026-06-15T20:33:37.674Z",
+  "codeExample": "const tenantId: string = \"tenant_prod_84b2\";\nconst id: string = \"question_9f3a\";\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  outcome: \"accepted\",\n  confidence: 0.88,\n  moderatorId: \"moderator_17\",\n  notes: \"Validated by automated review\" // optional field included\n};\nconst result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "model": "gpt-5-mini"
+}

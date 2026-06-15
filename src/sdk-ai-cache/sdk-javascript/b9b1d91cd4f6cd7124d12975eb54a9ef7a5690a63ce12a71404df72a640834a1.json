@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "b9b1d91cd4f6cd7124d12975eb54a9ef7a5690a63ce12a71404df72a640834a1",
+  "generatedAt": "2026-06-15T20:33:42.580Z",
+  "codeExample": "const tenantId: string = 'tenant_9a1b2c';\nconst urlId: string = 'https://www.news-site.com/article/67890';\nconst broadcastId: string = 'broadcast_2026-06-15-01';\nconst sessionId: string | undefined = 'sess_abc123xyz';\nconst sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiam9yZGFuIiwiaWF0IjoxNjI0MDAwMDB9.signature';\nconst commentData: CommentData = {\n  content: 'Insightful piece — I appreciated the data-backed points and sources cited.',\n  authorDisplayName: 'Jordan Miles'\n} as CommentData;\nconst result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
+  "model": "gpt-5-mini"
+}

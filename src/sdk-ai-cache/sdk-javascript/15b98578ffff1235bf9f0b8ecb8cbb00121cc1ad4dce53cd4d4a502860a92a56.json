@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "15b98578ffff1235bf9f0b8ecb8cbb00121cc1ad4dce53cd4d4a502860a92a56",
+  "generatedAt": "2026-06-15T20:33:36.775Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2c';\nconst id: string = 'notification_4a1d2e';\nconst updateNotificationBody: UpdateNotificationBody = {\n  enabled: true,\n  channels: ['email', 'push'],\n  frequency: 'immediate',\n  templateId: 'tmpl_77aa'\n} as UpdateNotificationBody;\nconst userId: string = 'user_2468';\nconst result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);",
+  "model": "gpt-5-mini"
+}

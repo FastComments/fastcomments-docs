@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "b786ad4f2c9440ec78320873b9a4afa8eda7165a1b8fa3153860068a6318627e",
+  "generatedAt": "2026-06-15T20:33:40.136Z",
+  "codeExample": "const tenantId: string = \"tenant_42a1b7\";\nconst mentions: CommentUserMentionInfo[] = [{ userId: \"user_2b9\", displayName: \"Alex Chen\" }];\nconst hashtags: CommentUserHashTagInfo[] = [{ tag: \"performance\" }];\nconst createCommentParams: CreateCommentParams[] = [\n  {\n    content: \"Thanks for the detailed article — the alternative approach worked for me.\",\n    authorId: \"user_8f3c2\",\n    authorName: \"Maya Patel\",\n    authorEmail: \"maya.patel@example.com\",\n    url: \"/articles/optimizing-ts-performance\",\n    createdAt: new Date().toISOString(),\n    mentions,\n    hashtags\n  }\n];\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = false;\nconst sendEmails: boolean = true;\nconst populateNotifications: boolean = true;\nconst result: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);",
+  "model": "gpt-5-mini"
+}

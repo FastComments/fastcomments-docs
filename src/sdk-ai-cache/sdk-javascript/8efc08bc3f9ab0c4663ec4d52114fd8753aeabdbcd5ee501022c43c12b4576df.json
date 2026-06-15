@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "8efc08bc3f9ab0c4663ec4d52114fd8753aeabdbcd5ee501022c43c12b4576df",
+  "generatedAt": "2026-06-15T20:33:33.731Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_corp_987\";\nconst bulkCreateHashTagsBody: BulkCreateHashTagsBody = {\n  tags: [\n    { name: \"product-update\", description: \"Announcements about new product releases\", visible: true },\n    { name: \"customer-support\", description: \"Customer support related discussions\", visible: false }\n  ],\n  createdBy: \"moderator_jane\"\n};\nconst resultWithTenant: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);\nconst resultWithoutTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);",
+  "model": "gpt-5-mini"
+}

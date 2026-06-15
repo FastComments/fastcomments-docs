@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "4103af7334338c3621f401864a747b4105ca18b6f75c7c23fcf1b24942a7c1a8",
+  "generatedAt": "2026-06-15T20:33:31.068Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-4f2b9c';\nconst postIds: Array<string> = ['post_7a1f9e', 'post_2b3c88'];\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQ0MDAwMH0.signature';\n\nconst response: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);",
+  "model": "gpt-5-mini"
+}

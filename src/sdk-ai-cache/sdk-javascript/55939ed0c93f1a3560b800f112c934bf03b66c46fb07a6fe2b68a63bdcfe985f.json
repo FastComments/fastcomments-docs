@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "55939ed0c93f1a3560b800f112c934bf03b66c46fb07a6fe2b68a63bdcfe985f",
+  "generatedAt": "2026-06-15T20:33:35.508Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'b12f3c4d-5678-90ab-cdef-1234567890ab';\n  const urlId: string = 'https://www.news-site.com/world/2026/election-results';\n  const title: string = 'Election results: key takeaways and analysis';\n  const responseWithTitle: CreateV1PageReact200Response = await createV1PageReact(tenantId, urlId, title);\n  const responseWithoutTitle: CreateV1PageReact200Response = await createV1PageReact(tenantId, urlId);\n  console.log(responseWithTitle, responseWithoutTitle);\n})();",
+  "model": "gpt-5-mini"
+}

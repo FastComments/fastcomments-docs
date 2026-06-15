@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "7cbd0cfc9e35bef53a291a243e908baa322469e43b2f91782c56ca81ee1b5809",
+  "generatedAt": "2026-06-15T20:33:36.913Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-81';\nconst id: string = 'mod_7f3a2b';\nconst updateModeratorBody: UpdateModeratorBody = {\n  email: 'j.reyes@acme-corp.com',\n  displayName: 'Jordan Reyes',\n  roles: ['moderator', 'content_reviewer'],\n  active: true,\n  notes: 'Promoted to senior moderator; monitor flagged content weekly'\n};\nconst result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);",
+  "model": "gpt-5-mini"
+}

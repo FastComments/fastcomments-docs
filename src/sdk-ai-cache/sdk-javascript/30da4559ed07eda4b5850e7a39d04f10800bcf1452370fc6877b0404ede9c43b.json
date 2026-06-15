@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "30da4559ed07eda4b5850e7a39d04f10800bcf1452370fc6877b0404ede9c43b",
+  "generatedAt": "2026-06-15T20:33:32.330Z",
+  "codeExample": "const tenantId: string = 'tenant_42b7e9';\nconst commentId: string = 'cmt_9f3a2b';\nconst editKey: string = 'edk_3f1b7c9d';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\n\nconst result: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);",
+  "model": "gpt-5-mini"
+}

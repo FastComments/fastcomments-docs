@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "a7c5947bb8fa6de23f8d2b081843d42d68ee64fc8ad72cc355bc8187025f46fc",
+  "generatedAt": "2026-06-15T20:33:37.043Z",
+  "codeExample": "const tenantId: string = 'tenant_7f9d2e';\nconst commentId: string = '5a1d3f9b-2c4e-4a2b-bf7b-1234567890ab';\nconst urlId: string = 'articles/2026/06/15/typescript-api-patterns';\nconst broadcastId: string = 'broadcast-20260615-01';\nconst voteBodyParams: VoteBodyParams = { vote: 'up' };\nconst sessionId: string = 'sess_9d2f3b45';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY5NzE2MDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n\nconst response: VoteComment200Response = await voteComment(\n  tenantId,\n  commentId,\n  urlId,\n  broadcastId,\n  voteBodyParams,\n  sessionId,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

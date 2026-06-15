@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "d5b8f810fa0ebb083f9bdb27bb708ab985d38ace51db5e70b12b04aaf43d4275",
+  "generatedAt": "2026-06-15T20:33:36.082Z",
+  "codeExample": "const tenantId: string | undefined = \"tenant_3c9f7b\";\nconst createHashTagBody: CreateHashTagBody = {\n  name: \"support\",\n  title: \"Support\",\n  description: \"Questions about product usage, bugs, and account issues\",\n  color: \"#0066CC\",\n  isActive: true,\n  aliases: [\"help\", \"customer-service\"]\n};\nconst result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);",
+  "model": "gpt-5-mini"
+}

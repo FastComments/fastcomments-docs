@@ -1,0 +1,7 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "058d9ee7c6056431d958e849429ad28eabb3af82c68bb493b5a4cdb4d1806354",
+  "generatedAt": "2026-06-15T20:33:32.036Z",
+  "codeExample": "const tenantId: string = \"tenant-8f3b2c4a\";\nconst commentId: string = \"cmt_92a7f3e6\";\nconst broadcastId: string = \"brd_1b4c9d20\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst result: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

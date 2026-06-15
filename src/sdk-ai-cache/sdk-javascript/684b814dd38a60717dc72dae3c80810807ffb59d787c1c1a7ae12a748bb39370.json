@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "684b814dd38a60717dc72dae3c80810807ffb59d787c1c1a7ae12a748bb39370",
+  "generatedAt": "2026-06-15T20:33:44.312Z",
+  "codeExample": "const tenantId: string = \"tenant_9f3b8a2e-4c6d-4b4f-a1b2-9e8f7d6c5b3a\";\nconst id: string = \"q_7c2e1b4a-5d6f-4a8b-9c3d-2e1f0b9a4c5d\";\nconst options: QuestionConfigCustomOptionsInner[] = [\n  { value: \"1\", label: \"Very dissatisfied\" },\n  { value: \"2\", label: \"Dissatisfied\" },\n  { value: \"3\", label: \"Neutral\" },\n  { value: \"4\", label: \"Satisfied\" },\n  { value: \"5\", label: \"Very satisfied\" }\n];\nconst updateQuestionConfigBody: UpdateQuestionConfigBody = {\n  label: \"How satisfied are you with the article?\",\n  enabled: true,\n  required: false, // optional parameter demonstrated\n  options\n};\nconst result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "f691300eb16ea3e3fb436c8ec944d2d4cafd54d28f6fbe5e0231017dd88b909a",
+  "generatedAt": "2026-06-15T20:33:35.488Z",
+  "codeExample": "const tenantId: string = \"tenant_9a8b7c\";\nconst id: string = \"badge_a1b2c3\";\nconst updateUserBadgeParams: UpdateUserBadgeParams = {\n  title: \"Community Helper\",\n  description: \"Awarded for providing 50 helpful answers\",\n  iconUrl: \"https://cdn.fastcomments.com/badges/community-helper.png\",\n  isActive: true,\n  expiryDate: undefined\n};\nconst result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);",
+  "model": "gpt-5-mini"
+}

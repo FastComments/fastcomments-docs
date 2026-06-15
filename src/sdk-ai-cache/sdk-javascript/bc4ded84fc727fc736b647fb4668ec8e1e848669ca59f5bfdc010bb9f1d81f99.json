@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "bc4ded84fc727fc736b647fb4668ec8e1e848669ca59f5bfdc010bb9f1d81f99",
+  "generatedAt": "2026-06-15T20:33:33.028Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst commentId: string = 'c0mment-9f8b7a6';\nconst broadcastId: string = 'site_homepage_2026-06-15';\nconst editKey: string = 'ek_3b7a1f59-4d2c-11eb-8dcd-0242ac130003';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';\n\nconst result: DeleteCommentPublic200Response = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);",
+  "model": "gpt-5-mini"
+}

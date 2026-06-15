@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "911a867343f902971724272e61460dcd9938147ec61c27c38298bf7bf4d09c85",
+  "generatedAt": "2026-06-15T20:33:32.989Z",
+  "codeExample": "const tenantId: string = \"tenant_7890\";\nconst createTenantPackageBody: CreateTenantPackageBody = {\n  packageName: \"Growth Plan\",\n  maxSeats: 2500,\n  features: {\n    moderation: true,\n    analytics: true,\n    sso: { enabled: true, provider: \"saml\" }\n  },\n  billing: { interval: \"monthly\", priceCents: 19900 },\n  // optional parameter demonstrated: notes is not required but provided\n  notes: \"Onboarding bundle with priority support\"\n};\nconst result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

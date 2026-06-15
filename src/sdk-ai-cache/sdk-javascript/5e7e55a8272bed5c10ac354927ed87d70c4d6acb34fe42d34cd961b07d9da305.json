@@ -1,0 +1,7 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "5e7e55a8272bed5c10ac354927ed87d70c4d6acb34fe42d34cd961b07d9da305",
+  "generatedAt": "2026-06-15T20:33:36.738Z",
+  "codeExample": "const tenantId: string = 'tenant_12345';\nconst questionId: string = 'q_98765';\nconst questionIds: string[] = ['q_98765', 'q_12345'];\nconst urlId: string = 'url_abc123';\nconst startDate: Date = new Date('2026-01-01T00:00:00Z');\nconst forceRecalculate: boolean = true;\nconst minValue: number = 0;\nconst maxValue: number = 5;\nconst limit: number = 50;\nconst result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults(\n  tenantId,\n  questionId,\n  questionIds,\n  urlId,\n  startDate,\n  forceRecalculate,\n  minValue,\n  maxValue,\n  limit\n);",
+  "model": "gpt-5-mini"
+}

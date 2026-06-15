@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "fae724a79e3fac8c6914bf65618fa09cb9c8144d9c21bfd774ebef0b74a239cb",
+  "generatedAt": "2026-06-15T20:33:33.408Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3c1b2a';\nconst commentId: string = 'cmt_8d9f2a4b';\nconst updatableCommentParams: UpdatableCommentParams = {\n  body: 'Updating this comment to clarify the feature behavior and include a timestamp.',\n  metadata: { category: 'support', editedReason: 'clarify instructions' },\n  visible: true\n};\nconst contextUserId: string = 'user_42';\nconst doSpamCheck: boolean = true;\nconst result: FlagCommentPublic200Response = await updateComment(tenantId, commentId, updatableCommentParams, contextUserId, doSpamCheck);",
+  "model": "gpt-5-mini"
+}

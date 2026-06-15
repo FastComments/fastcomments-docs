@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "12f2966e3e59fba50474f0a7aff0cf61d50bdb060e2a7718cd84e4103f15f655",
+  "generatedAt": "2026-06-15T20:33:41.101Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-23';\nconst id: string = 'user_987654';\nconst cachedCount: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);\n\nconst maybeId: string | undefined = Math.random() > 0.5 ? 'user_123456' : undefined;\nif (maybeId) {\n  const optionalCachedCount: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, maybeId);\n}",
+  "model": "gpt-5-mini"
+}

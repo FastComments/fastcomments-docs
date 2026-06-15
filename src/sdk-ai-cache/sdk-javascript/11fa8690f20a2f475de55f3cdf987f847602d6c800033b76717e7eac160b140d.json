@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "11fa8690f20a2f475de55f3cdf987f847602d6c800033b76717e7eac160b140d",
+  "generatedAt": "2026-06-15T20:33:39.974Z",
+  "codeExample": "const tenantId: string = 'tenant_42';\nconst urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';\nconst userIds: string = 'user_9012,user_3478';\nconst includePresenceMetadata: boolean | undefined = true; // optional parameter example\nconst presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);",
+  "model": "gpt-5-mini"
+}

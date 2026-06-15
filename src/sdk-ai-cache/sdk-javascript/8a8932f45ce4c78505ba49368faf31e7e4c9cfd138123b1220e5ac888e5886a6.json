@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "8a8932f45ce4c78505ba49368faf31e7e4c9cfd138123b1220e5ac888e5886a6",
+  "generatedAt": "2026-06-15T20:33:35.600Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b3b';\nconst commentId: string = 'cmt_1a2b3c';\nconst eventType: string = 'comment.created';\nconst domain: string = 'news-site.com';\nconst attemptCountGT: number = 2;\n\nconst result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(\n  tenantId,\n  commentId,\n  undefined, // externalId omitted\n  eventType,\n  undefined, // type omitted\n  domain,\n  attemptCountGT\n);",
+  "model": "gpt-5-mini"
+}

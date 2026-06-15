@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "6b1ed44ae802ea5432c9fc5b4c50cb30f374c8eb111fe2883980cb55743a8fda",
+  "generatedAt": "2026-06-15T20:33:31.482Z",
+  "codeExample": "const tenantId: string = 'tenant_5f3d2e1b';\nconst id: string = 'notification_9a4b1c2';\nconst result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, id);",
+  "model": "gpt-5-mini"
+}

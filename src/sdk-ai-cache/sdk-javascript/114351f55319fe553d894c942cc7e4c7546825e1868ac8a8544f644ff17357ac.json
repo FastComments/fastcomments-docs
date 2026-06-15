@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "114351f55319fe553d894c942cc7e4c7546825e1868ac8a8544f644ff17357ac",
+  "generatedAt": "2026-06-15T20:33:31.982Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst userId: string = 'user_87b3';\nconst state: number = 2;\nconst skip: number = 0;\nconst limit: number = 50;\n\nconst tickets: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "afb779945d358fd28885e2df921571eb1458a13a3b907ec02c6e2c806affa065",
+  "generatedAt": "2026-06-15T20:33:37.761Z",
+  "codeExample": "const tenantId: string = \"tenant_79021\";\nconst urlId: string = \"blog/my-first-post\";\nconst id: string = \"reaction_9f8b7c\";\nlet includeHistory: boolean | undefined = undefined; // optional flag, used in some calls\n\nconst result: DeleteV2PageReact200Response = await deleteV2PageReact(tenantId, urlId, id);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "68dd1d42b044a4f90a6c924ce75beeea235d28cb5f71c9d759095cfab1d32a30",
+  "generatedAt": "2026-06-15T20:33:35.719Z",
+  "codeExample": "const tenantId: string = \"tenant-42-production\";\nconst commentId: string = \"comment_7f3b2a9d\";\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: \"flag reviewed and determined not to violate policy\",\n  restoredBy: \"moderator_jane\",\n  restoredAt: new Date().toISOString()\n};\nconst sso: string = \"sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\nconst result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini"
+}

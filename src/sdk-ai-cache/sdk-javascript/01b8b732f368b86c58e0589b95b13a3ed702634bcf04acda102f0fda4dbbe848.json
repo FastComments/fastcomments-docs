@@ -1,0 +1,7 @@
+{
+  "method": "aggregate",
+  "signatureHash": "01b8b732f368b86c58e0589b95b13a3ed702634bcf04acda102f0fda4dbbe848",
+  "generatedAt": "2026-06-15T20:33:34.485Z",
+  "codeExample": "const tenantId: string = 'tenant_78a9';\nconst parentTenantId: string = 'parent_tenant_01';\nconst includeStats: boolean = true;\nconst aggregationRequest: AggregationRequest = {\n  operation: { type: 'COUNT' },\n  groupBy: ['pageUrl'],\n  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },\n  sort: [{ field: 'count', direction: 'DESC' }],\n  limit: 25\n};\nconst result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);",
+  "model": "gpt-5-mini"
+}

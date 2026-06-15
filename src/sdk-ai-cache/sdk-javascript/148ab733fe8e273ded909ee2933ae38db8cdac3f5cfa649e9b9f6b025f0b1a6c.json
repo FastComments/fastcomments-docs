@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "148ab733fe8e273ded909ee2933ae38db8cdac3f5cfa649e9b9f6b025f0b1a6c",
+  "generatedAt": "2026-06-15T20:33:28.908Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst ticketId: string = 'TCKT-20250615-42';\nconst userId: string = 'user_84b2';\n\nconst ticketWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);\nconst ticketWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);\n\nconsole.log(ticketWithUser.id, ticketWithoutUser.id);",
+  "model": "gpt-5-mini"
+}

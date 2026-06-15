@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "ea86cf7c782dce0ead9eb604010b889657165e49c9b7cb691967dfebb6e3b2e0",
+  "generatedAt": "2026-06-15T20:33:35.966Z",
+  "codeExample": "const tenantId: string = 'acme-news-01';\nconst createTenantBody: CreateTenantBody = {\n  name: 'Acme News',\n  domainConfiguration: { primaryDomain: 'news.acme.com', redirectHttps: true } as APIDomainConfiguration,\n  importedSites: [{ siteId: 'site-92', url: 'https://news.acme.com' }] as ImportedSiteType[],\n  billingInfo: { planId: 'business_monthly', contactEmail: 'billing@acme.com' } as BillingInfo\n};\nconst result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "afaf2ec9be349945045b62e5f2b0703b1e1c3bfaaf2a56429312618cc8affca2",
+  "generatedAt": "2026-06-15T20:33:50.955Z",
+  "codeExample": "const tenantId: string = 'acme-news';\nconst urlId: string = '/articles/2026/fastcomments-update';\nconst page: number = 1;\nconst skip: number = 0;\nconst limit: number = 25;\nconst countChildren: boolean = true;\nconst includeConfig: boolean = true;\nconst result: GetCommentsPublic200Response = await getCommentsPublic(\n  tenantId,\n  urlId,\n  page,\n  undefined,\n  undefined,\n  skip,\n  undefined,\n  limit,\n  undefined,\n  countChildren,\n  undefined,\n  includeConfig\n);",
+  "model": "gpt-5-mini"
+}

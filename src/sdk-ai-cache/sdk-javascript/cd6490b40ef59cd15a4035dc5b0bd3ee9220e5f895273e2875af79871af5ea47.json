@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "cd6490b40ef59cd15a4035dc5b0bd3ee9220e5f895273e2875af79871af5ea47",
+  "generatedAt": "2026-06-15T20:33:42.061Z",
+  "codeExample": "const tenantId: string = 'acme-inc-tenant-01';\nconst userId: string = 'user_73c9b2';\nconst progress: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);\n\nasync function maybeFetchProgress(tenant: string, user?: string): Promise<GetUserBadgeProgressById200Response | null> {\n  if (!user) return null;\n  return await getUserBadgeProgressByUserId(tenant, user);\n}\n\nconst optionalResult: GetUserBadgeProgressById200Response | null = await maybeFetchProgress(tenantId, userId);",
+  "model": "gpt-5-mini"
+}

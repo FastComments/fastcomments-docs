@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "b5226092b08ba4a212f0bb3319a2a1d6c1f76181be46f3976514585943587e16",
+  "generatedAt": "2026-06-15T20:33:33.696Z",
+  "codeExample": "const tenantId: string = \"fastcomments-tenant-42\";\nconst createCommentParams: CreateCommentParams = {\n  threadId: \"article-2026-06-0142\",\n  content: \"Great write-up — I followed the migration steps and everything worked as described.\",\n  userId: \"u_9c72b\",\n  userName: \"Ava R.\",\n  userAvatarUrl: \"https://cdn.example.com/avatars/u_9c72b.png\",\n  metadata: { platform: \"web\", locale: \"en-US\" }\n};\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst sendEmails: boolean = false;\nconst populateNotifications: boolean = true;\nconst result: SaveComment200Response = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "ec6c23a4577277b4f8ace42df715e8ae0a90ccd1a6cd5e95f54c87aa23a9c6fa",
+  "generatedAt": "2026-06-15T20:33:38.755Z",
+  "codeExample": "const tenantId: string = 'acme-corp-123';\nconst id: string = 'template-789';\nconst locale: string | undefined = 'en-US';\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  subject: 'Welcome to Acme — Get started',\n  bodyHtml: '<p>Hi {{firstName}}, welcome to Acme. Start by visiting your dashboard.</p>',\n  fromName: 'Acme Support',\n  fromEmail: 'support@acme.com',\n  enabled: true,\n  ...(locale ? { locale } : {})\n};\nconst result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

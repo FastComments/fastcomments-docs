@@ -1,0 +1,7 @@
+{
+  "method": "getUser",
+  "signatureHash": "3e0a3198b8bb3ab92b62abf312288b80913eac994433cff3d242f6d7b1e324c4",
+  "generatedAt": "2026-06-15T20:33:38.174Z",
+  "codeExample": "const tenantId: string = 'fastcomments_corp';\nconst id: string = 'user_9f8b7c6d-5e4a-3b2c-1f0e-123456789abc';\nconst response: GetUser200Response = await getUser(tenantId, id);\nconst userEmail: string | undefined = response.user?.email;\nconst displayName: string | undefined = response.user?.displayName",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "d76ad912caf36752d358711a9dd66f8780af2a732824089b7398c5ad60f769bc",
+  "generatedAt": "2026-06-15T20:33:32.674Z",
+  "codeExample": "const tenantId: string = \"tenant_4f1b2a9c\";\nconst commentId: string = \"comment_8d3e6f12\";\nconst isFlagged: boolean = true;\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst result: FlagCommentPublic200Response = await flagCommentPublic(tenantId, commentId, isFlagged, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "30aa977bd465a7a08a7cd6638cf2c4a04bb8b9ecf7ea3b77e9d580b105056cb0",
+  "generatedAt": "2026-06-15T20:33:36.370Z",
+  "codeExample": "const tenantId: string = \"tenant_9f3b1c2a\";\n\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  name: \"Product feedback\",\n  key: \"product_quality\",\n  description: \"Short survey question shown after posting a comment\",\n  required: true,\n  renderingType: \"singleChoice\",\n  customOptions: [\n    { label: \"Excellent\", value: \"5\" },\n    { label: \"Good\", value: \"4\" },\n    { label: \"Fair\", value: \"3\" }\n  ] as QuestionConfigCustomOptionsInner[],\n  notifyModerators: false // optional parameter demonstrated\n};\n\nconst result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

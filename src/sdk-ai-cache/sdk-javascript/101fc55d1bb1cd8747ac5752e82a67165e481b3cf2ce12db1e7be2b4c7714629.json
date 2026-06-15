@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "101fc55d1bb1cd8747ac5752e82a67165e481b3cf2ce12db1e7be2b4c7714629",
+  "generatedAt": "2026-06-15T20:33:39.409Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2a';\nconst id: string = 'pkg_pro_2026';\nconst updateTenantPackageBody: UpdateTenantPackageBody = {\n  name: 'Pro Plan',\n  monthlyPriceUsd: 49,\n  isActive: true,\n  features: ['moderation', 'analytics', 'sso'],\n  trialDays: 14 // optional parameter demonstrated\n};\nconst result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

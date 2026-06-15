@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "e97cfe113810f5f9b405c084b97523ae1d1aa9832bd094bdad604f9006a78593",
+  "generatedAt": "2026-06-15T20:33:37.496Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-007';\nconst userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];\nconst separator: string | undefined = undefined; // optional; if undefined default to comma\nconst ids: string = userIdsList.join(separator ?? ',');\nconst usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "e686227bbae6279a02b05316f3e83a1bfd8a1f907b21bee9d101b9f620b9ee2a",
+  "generatedAt": "2026-06-15T20:33:38.523Z",
+  "codeExample": "const tenantId: string = \"tenant_8271\";\nconst urlId: string = \"https://www.news-site.com/articles/2026/06/15/ai-updates\";\nconst pageSize: number = 25;\nconst afterId: string = \"notif_abc123\";\nconst includeContext: boolean = true;\nconst afterCreatedAt: number = Date.now() - 86_400_000;\nconst unreadOnly: boolean = true;\nconst dmOnly: boolean = false;\nconst noDm: boolean = false;\nconst includeTranslations: boolean = true;\nconst includeTenantNotifications: boolean = true;\nconst sso: string = \"sso_token_xyz_987\";\n\nconst notifications: GetUserNotifications200Response = await getUserNotifications(\n  tenantId,\n  urlId,\n  pageSize,\n  afterId,\n  includeContext,\n  afterCreatedAt,\n  unreadOnly,\n  dmOnly,\n  noDm,\n  includeTranslations,\n  includeTenantNotifications,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

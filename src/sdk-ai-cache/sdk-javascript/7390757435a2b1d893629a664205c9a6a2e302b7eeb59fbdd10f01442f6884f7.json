@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "7390757435a2b1d893629a664205c9a6a2e302b7eeb59fbdd10f01442f6884f7",
+  "generatedAt": "2026-06-15T20:33:35.719Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_acme_01';\n  const afterId: string = 'post_20250610_842';\n  const limit: number = 25;\n  const tags: string[] = ['news', 'technology'];\n  const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1Ni';\n  const isCrawler: boolean = false;\n  const includeUserInfo: boolean = true;\n\n  const response: GetFeedPostsPublic200Response = await getFeedPostsPublic(\n    tenantId,\n    afterId,\n    limit,\n    tags,\n    sso,\n    isCrawler,\n    includeUserInfo\n  );\n\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

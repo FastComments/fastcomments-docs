@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "9ce7a27cf92114e39ad58af3f56c3d719f3413e8f30f6213da3a61ea2f7e870e",
+  "generatedAt": "2026-06-15T20:33:50.748Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_9f8b7c\";\n  const media: FeedPostMediaItem[] = [{ type: \"image\", assets: [{ url: \"https://cdn.example.com/roadmap.jpg\", mimeType: \"image/jpeg\" }] }];\n  const links: FeedPostLink[] = [{ url: \"https://company.example.com/roadmap\", title: \"Full roadmap\" }];\n  const createFeedPostParams: CreateFeedPostParams = {\n    title: \"Weekly Product Roadmap Update\",\n    body: \"This week we shipped enhancements to search relevance and fixed top customer bugs.\",\n    authorId: \"user_8321\",\n    media,\n    links,\n    visibility: \"public\"\n  };\n  const broadcastId: string = \"broadcast_2026_06_15\";\n  const sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload\";\n  const response: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

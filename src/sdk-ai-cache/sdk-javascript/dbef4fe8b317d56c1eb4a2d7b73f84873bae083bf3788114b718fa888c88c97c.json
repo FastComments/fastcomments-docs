@@ -1,0 +1,7 @@
+{
+  "method": "getPagesPublic",
+  "signatureHash": "dbef4fe8b317d56c1eb4a2d7b73f84873bae083bf3788114b718fa888c88c97c",
+  "generatedAt": "2026-06-15T20:33:33.500Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b2c';\nconst cursor: string = 'eyJwYWdlIjoiMTIwIn0';\nconst limit: number = 25;\nconst q: string = 'homepage hero';\nconst hasComments: boolean = true;\n\nconst response: GetPagesPublic200Response = await getPagesPublic(\n  tenantId,\n  cursor,\n  limit,\n  q,\n  undefined,\n  hasComments\n);",
+  "model": "gpt-5-mini"
+}

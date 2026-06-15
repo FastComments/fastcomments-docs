@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "744aec07ac8105c5e157d1a6e098b5163907ea4a0286c2e19e8bb9b47df47d73",
+  "generatedAt": "2026-06-15T20:33:36.047Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_6b8f2a1c';\n  const id: string = 'badge_9f3d4b2a';\n  const response: GetUserBadge200Response = await getUserBadge(tenantId, id);\n  const badge: UserBadge | undefined = response.userBadge;\n  const badgeName: string | undefined = badge?.name;\n  console.log('Retrieved badge name:', badgeName);\n})();",
+  "model": "gpt-5-mini"
+}

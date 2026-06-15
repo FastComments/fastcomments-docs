@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "0853a46bdb87ba29c250923b9308b6f0a2645d2e21955f41f7e0cb68c47fdc04",
+  "generatedAt": "2026-06-15T20:33:34.505Z",
+  "codeExample": "const tenantId: string = 'tenant_7b9c2a';\nconst id: string = 'comment_4f8e1d';\nconst unBlockFromCommentParams: UnBlockFromCommentParams = {\n  reason: 'User submitted appeal and provided additional context',\n  effectiveAt: new Date().toISOString()\n};\nconst userId: string = 'user_92a3f6';\nconst result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);",
+  "model": "gpt-5-mini"
+}

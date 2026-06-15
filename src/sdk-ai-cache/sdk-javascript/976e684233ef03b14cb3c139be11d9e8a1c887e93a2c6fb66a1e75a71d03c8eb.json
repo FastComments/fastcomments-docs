@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "976e684233ef03b14cb3c139be11d9e8a1c887e93a2c6fb66a1e75a71d03c8eb",
+  "generatedAt": "2026-06-15T20:33:38.140Z",
+  "codeExample": "const tenantId: string = 'fc-tenant-512';\nconst meta: MetaItem[] = [{ key: 'source', value: 'article' }];\nconst body: CreateQuestionResultBody = {\n  questionId: 'q-94',\n  userId: 'user_332',\n  answers: [{ optionId: 'opt_a', score: 1 }],\n  meta, // optional metadata provided\n} as CreateQuestionResultBody;\nconst result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);",
+  "model": "gpt-5-mini"
+}

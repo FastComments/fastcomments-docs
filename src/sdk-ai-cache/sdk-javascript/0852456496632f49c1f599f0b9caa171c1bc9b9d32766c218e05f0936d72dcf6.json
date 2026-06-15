@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "0852456496632f49c1f599f0b9caa171c1bc9b9d32766c218e05f0936d72dcf6",
+  "generatedAt": "2026-06-15T20:33:29.676Z",
+  "codeExample": "const tenantId: string = \"fcom-tenant-8b4f2a1c\";\nconst meta: string = \"include=domains,billing&status=active\";\nconst skip: number = 20;\nconst response: GetTenants200Response = await getTenants(tenantId, meta, skip);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

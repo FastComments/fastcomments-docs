@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "628a5c9e995f10f6bdce33d7f6ae67e471d01b56664fac1a77b280aca802f7f0",
+  "generatedAt": "2026-06-15T20:33:31.836Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b21';\nconst createModeratorBody: CreateModeratorBody = {\n  moderator: {\n    name: 'Alex Rivera',\n    email: 'alex.rivera@fastcomments.io',\n    role: 'global_moderator',\n    enabled: true,\n  },\n  // optional parameters demonstrated:\n  notifyUser: true,\n  permissions: ['delete_comment', 'edit_comment', 'ban_user'],\n  customConfig: { dashboardTheme: 'dark' } as unknown as CustomConfigParameters\n};\nconst result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);",
+  "model": "gpt-5-mini"
+}

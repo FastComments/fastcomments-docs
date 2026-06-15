@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "3fa6d29b6313647d4fb1cb7fe7035fee55b8ca962316f4eaad1b03a39a3d8735",
+  "generatedAt": "2026-06-15T20:33:40.503Z",
+  "codeExample": "const tenantId: string = 'fastcomments-742';\nconst urlId: string = 'sports/2026/06/15/world-cup-preview';\nconst pageLikes: GetV1PageLikes200Response = await getV1PageLikes(tenantId, urlId);",
+  "model": "gpt-5-mini"
+}

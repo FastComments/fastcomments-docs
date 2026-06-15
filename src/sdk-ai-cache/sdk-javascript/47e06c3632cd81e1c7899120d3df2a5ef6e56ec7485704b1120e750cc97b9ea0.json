@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "47e06c3632cd81e1c7899120d3df2a5ef6e56ec7485704b1120e750cc97b9ea0",
+  "generatedAt": "2026-06-15T20:33:32.709Z",
+  "codeExample": "const tenantId: string = 'tenant_84a9f2';\nconst id: string = 'comment_5f3b21';\nconst contextUserId: string | undefined = 'user_1122';\nconst isLive: boolean | undefined = true;\n\nasync function run(): Promise<void> {\n  const result: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);\n  console.log(result);\n}\n\nrun();",
+  "model": "gpt-5-mini"
+}

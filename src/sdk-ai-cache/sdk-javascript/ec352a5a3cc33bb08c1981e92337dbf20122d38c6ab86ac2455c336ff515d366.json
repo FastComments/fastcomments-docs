@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "ec352a5a3cc33bb08c1981e92337dbf20122d38c6ab86ac2455c336ff515d366",
+  "generatedAt": "2026-06-15T20:33:34.757Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8421';\n  const id: string = 'vote_3f9b7c2a';\n  const editKey: string = 'edit_7Xk9LpQ';\n  const responseWithoutEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id);\n  const responseWithEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);\n  console.log(responseWithoutEdit, responseWithEdit);\n})();",
+  "model": "gpt-5-mini"
+}
