@@ -1,41 +1,82 @@
-#### Скин: Erebus
-![Скин: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
-#### Скин: Default
-![Скин: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
-#### Нативный WYSIWYG-редактор с поддержкой изображений!
-![Нативный WYSIWYG-редактор с поддержкой изображений](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
+Живая дискуссия с ветвлением комментариев, аватарами, вложенными ответами, голосованиями и встроенным WYSIWYG-композером для форматированного текста, плюс тёмная тема и пресет живого чата (здесь показано через `react-native-web`):
 
-### Редактор форматированного текста
+<table>
+  <tr>
+    <td align="center"><b>Живые комментарии</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Живые комментарии, светлая тема"/></td>
+    <td align="center"><b>Тёмная тема</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Живые комментарии, тёмная тема"/></td>
+    <td align="center"><b>Живой чат</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Пресет живого чата"/></td>
+  </tr>
+</table>
 
-This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
+### Редактор богатого текста
 
-`react-native-enriched` requires the React Native New Architecture (Fabric) on native, and a bundler that resolves package `exports` conditions (Metro with package exports / RN 0.72+). Web support is currently experimental.
+Эта библиотека использует [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) для редактирования форматированного текста, что обеспечивает мощный WYSIWYG-опыт редактирования. Тот же редактор используется на iOS, Android и в вебе (через `react-native-web`), поэтому поведение композера согласовано на всех платформах при единой реализации.
+
+`react-native-enriched` требует React Native New Architecture (Fabric) на нативных платформах (по умолчанию с RN 0.76, опционально в RN 0.72–0.75), и бандлер, который корректно обрабатывает условия экспорта пакетов. Этот SDK разрабатывается и тестируется для RN 0.81 / React 19. Тот же редактор также работает в вебе через `react-native-web`; веб-сборка enriched-редактора всё ещё помечена как экспериментальная на уровне upstream.
+
+### Виджеты
+
+SDK поставляется с тремя виджетами, повторяющими функциональность FastComments Android SDK:
+
+- `FastCommentsLiveCommenting` - ветвящиеся комментарии с голосованиями, ответами, пагинацией, упоминаниями, уведомлениями и живыми обновлениями.
+- `FastCommentsLiveChat` - пресет чата на той же базе: хронологичные сообщения с новыми внизу, композер снизу от списка, живой заголовок (индикатор подключения + число пользователей), бесконечная история, загружаемая при прокрутке вверх, автопрокрутка к новым сообщениям, без голосований и ветвления ответов. Любой пресет можно переопределить через `config`.
+- `FastCommentsFeed` - социальная лента с композером поста, медиа, реакциями, подписками и баннерами о новых постах в реальном времени.
+
+```tsx
+    <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
+```
+
+### Темизация
+
+Внешний вид по умолчанию генерируется из набора семантических дизайн-токенов (`FastCommentsTheme`): цвета, отступы, радиусы, размеры шрифтов, веса шрифтов и размеры аватаров. Передавайте частичные переопределения токенов (типизированные как `FastCommentsThemeOverrides`) через проп `theme` в любом виджете, и всё дерево стилей будет последовательно переоформлено:
+
+```tsx
+    <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
+```
+
+Тёмный режим — это всего лишь другой набор токенов:
+
+```tsx
+    import { getDarkTheme } from 'fastcomments-react-native-sdk';
+
+    <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
+```
+
+Проп `styles` по-прежнему принимает необработанное дерево `IFastCommentsStyles` для точечной настройки. Когда заданы и `theme`, и `styles`, явные стили имеют приоритет над тематическим деревом; когда задан только `styles`, он полностью заменяет значения по умолчанию (оригинальное поведение, чтобы существующие интеграции и скины не ломались). `setupDarkModeSkin` устарел в пользу пропа `theme`.
 
 ### Параметры конфигурации
 
-This library aims to support all configuration options defined in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), just like the web implementation.
+Эта библиотека стремится поддерживать все опции конфигурации, определённые в [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), как и веб-реализация.
+
+Кроме них, React Native добавляет несколько специфичных для SDK опций через `FastCommentsRNConfig`:
+
+- `hideTopBar` - скрыть полосу с вошедшим пользователем / иконкой уведомлений, отображаемую над панелью ввода.
+- `usePressToEdit` - долгий тап по комментарию открывает его меню.
+- `disableDownVoting` - скрыть кнопки голосования «против».
+- `renderCommentInline` - отображать информацию об авторе в том же HTML-блоке, что и содержание комментария.
+- `renderLikesToRight` - переместить область голосов/лайков вправо от комментария вместо размещения под ним.
+- `renderDateBelowComment` - отображать дату под комментарием.
+- `showLiveStatus` - показать заголовок в стиле чата «Live» + количество пользователей над комментариями.
+- `useInlineSubmitButton` - отображать кнопку отправки как иконку внутри композера.
+- `countAboveToggle` - вместе с `useShowCommentsToggle`, сколько комментариев показывается над переключателем «Показать комментарии».
+- `preserveFeedScrollPosition` - `FastCommentsFeed` запоминает смещение прокрутки при размонтировании/повторном монтировании (по умолчанию true).
 
 ### Концепции FastComments
 
-The main concepts to be aware of to get started are `tenantId` and `urlId`. `tenantId` is your FastComments.com account identifier. `urlId` is where comment threads
-will be tied to. This could be a page URL, or a product id, an article id, etc.
+Главные концепции, которые нужно понимать для начала работы — это `tenantId` и `urlId`. `tenantId` — это идентификатор вашего аккаунта на FastComments.com. `urlId` — к чему будут привязаны потоки комментариев. Это может быть URL страницы, либо id продукта, id статьи и т.д.
 
 ### Уведомления пользователей
 
-FastComments supports notifications for [many scenarios](https://docs.fastcomments.com/guide-notifications.html). Notifications are configurable,
-can be opted-out globally or at a notification/comment level, and supports page-level subscriptions so that users can subscribe to threads of a
-specific page or article.
+FastComments поддерживает уведомления для [многих сценариев](https://docs.fastcomments.com/guide-notifications.html). Уведомления настраиваемы, от них можно отказаться глобально или на уровне конкретного уведомления/комментария, и поддерживаются подписки на уровне страницы, чтобы пользователи могли подписываться на потоки конкретной страницы или статьи.
 
-For example, it is possible to use Secure SSO to authenticate the user and then periodically poll for unread notifications and push them to the user.
+Например, можно использовать Secure SSO для аутентификации пользователя, затем периодически опрашивать непрочитанные уведомления и отправлять их пользователю.
 
-See [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for how to get and translate unread user notifications.
+См. [пример AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) о том, как получать и переводить непрочитанные уведомления пользователя.
 
-### Браузер GIF
+### Просмотрщик GIF
 
-By default, no image or gif selection is enabled. See [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for how
-to support image and gif uploads. There is a Gif Browser that anonymizes searches and images provided in this library, you simply have to use it.
+По умолчанию функция выбора изображений или GIF не включена. Смотрите [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx), чтобы узнать, как поддержать загрузку изображений и GIF. В этой библиотеке есть Gif Browser, который анонимизирует поисковые запросы и предоставляемые изображения — вам просто нужно его использовать.
 
 ### Производительность
 
-Please open a ticket with an example to reproduce, including device used, if you identify any performance problems. Performance is a first-class citizen
-of all FastComments libraries.
+Если вы обнаружите проблемы с производительностью, откройте тикет с примером, позволяющим воспроизвести проблему, включая используемое устройство. Производительность является приоритетной задачей во всех библиотеках FastComments.

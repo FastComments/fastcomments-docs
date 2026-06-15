@@ -1,36 +1,82 @@
-#### Εμφάνιση: Erebus
-![Εμφάνιση: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
-#### Εμφάνιση: Default
-![Εμφάνιση: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
-#### Ενσωματωμένος WYSIWYG επεξεργαστής με υποστήριξη εικόνων!
-![Ενσωματωμένος WYSIWYG επεξεργαστής με υποστήριξη εικόνων](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
+Ζωντανή σχηματοποιημένη σχολιαστική λειτουργία με avatars, εμφωλευμένες απαντήσεις, ψήφους και τον ενσωματωμένο συντάκτη μορφοποιημένου κειμένου, καθώς και ένα σκοτεινό θέμα και ένα preset ζωντανής συνομιλίας (εμφανίζεται εδώ αποδοσμένο μέσω `react-native-web`):
 
-### Επεξεργαστής Μορφοποιημένου Κειμένου
+<table>
+  <tr>
+    <td align="center"><b>Ζωντανά Σχόλια</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Ζωντανά σχόλια, φωτεινό θέμα"/></td>
+    <td align="center"><b>Σκοτεινό Θέμα</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Ζωντανά σχόλια, σκοτεινό θέμα"/></td>
+    <td align="center"><b>Ζωντανή Συνομιλία</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Preset ζωντανής συνομιλίας"/></td>
+  </tr>
+</table>
 
-Αυτή η βιβλιοθήκη χρησιμοποιεί [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) για επεξεργασία μορφοποιημένου κειμένου, προσφέροντας μια ισχυρή εμπειρία WYSIWYG. Ο ίδιος επεξεργαστής τροφοδοτεί iOS, Android και το web (μέσω `react-native-web`), έτσι ώστε ο συντάκτης να συμπεριφέρεται συνεπώς σε όλες τις πλατφόρμες με μια μόνο υλοποίηση.
+### Συντάκτης Μορφοποιημένου Κειμένου
 
-`react-native-enriched` απαιτεί το React Native New Architecture (Fabric) στο native, και έναν bundler που επιλύει τις συνθήκες `exports` του πακέτου (Metro με package exports / RN 0.72+). Η υποστήριξη για το web είναι προς το παρόν πειραματική.
+Αυτή η βιβλιοθήκη χρησιμοποιεί [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) για την επεξεργασία μορφοποιημένου κειμένου, που παρέχει μια ισχυρή WYSIWYG εμπειρία επεξεργασίας. Ο ίδιος επεξεργαστής τροφοδοτεί iOS, Android και τον ιστό (μέσω `react-native-web`), έτσι ο συντάκτης συμπεριφέρεται με συνέπεια σε κάθε πλατφόρμα με μία υλοποίηση.
+
+Το `react-native-enriched` απαιτεί τη Νέα Αρχιτεκτονική του React Native (Fabric) στις native πλατφόρμες (το προεπιλεγμένο από RN 0.76, προαιρετικό σε RN 0.72-0.75), και έναν bundler που επιλύει τις συνθήκες `exports` των πακέτων. Αυτό το SDK αναπτύσσεται και δοκιμάζεται ενάντια σε RN 0.81 / React 19. Ο ίδιος επεξεργαστής τρέχει επίσης στον ιστό μέσω του `react-native-web`; το web build του enriched επεξεργαστή εξακολουθεί να χαρακτηρίζεται πειραματικό από το upstream.
+
+### Widgets
+
+Το SDK περιλαμβάνει τρία widgets, αντιστοιχώντας στο FastComments Android SDK:
+
+- `FastCommentsLiveCommenting` - σχολιασμός με νήματα, ψήφους, απαντήσεις, σελιδοποίηση, mentions, ειδοποιήσεις και ζωντανές ενημερώσεις.
+- `FastCommentsLiveChat` - ένα preset συνομιλίας πάνω στην ίδια μηχανή: χρονολογημένα μηνύματα με τα νεότερα στο κάτω μέρος, ο συντάκτης κάτω από τη λίστα, μια ζωντανή κεφαλίδα (σημείο σύνδεσης + πλήθος χρηστών), απεριόριστο ιστορικό που φορτώνεται με κύλιση προς τα πάνω, αυτόματο κύλισμα σε νέα μηνύματα, χωρίς ψήφους ή threading απαντήσεων. Κάθε preset μπορεί να παρεμβληθεί μέσω του `config`.
+- `FastCommentsFeed` - ένα κοινωνικό feed με συντάκτη δημοσίευσης, μέσα, αντιδράσεις, ακολουθίες και ζωντανές μπάνερ για νέες δημοσιεύσεις.
+
+```tsx
+    <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
+```
+
+### Θεματοποίηση
+
+Η προεπιλεγμένη εμφάνιση παράγεται από ένα σύνολο σημειωτικών tokens σχεδίασης (`FastCommentsTheme`): χρώματα, αποστάσεις, ακτίνες, μεγέθη γραμματοσειρών, βάρη γραμματοσειρών και μεγέθη avatar. Δώστε μερικές αντικαταστάσεις tokens (typed `FastCommentsThemeOverrides`) μέσω της prop `theme` σε οποιοδήποτε widget και ολόκληρο το δέντρο στυλ θα ανανεωθεί συνεπώς:
+
+```tsx
+    <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
+```
+
+Το σκοτεινό θέμα είναι ένα σύνολο tokens μακριά:
+
+```tsx
+    import { getDarkTheme } from 'fastcomments-react-native-sdk';
+
+    <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
+```
+
+Η prop `styles` εξακολουθεί να δέχεται ένα ακατέργαστο δέντρο `IFastCommentsStyles` για ενδελεχή έλεγχο. Όταν παρέχονται και `theme` και `styles`, τα ρητά στυλ υπερισχύουν του θεματικού δέντρου· όταν παρέχεται μόνο `styles`, αντικαθιστά πλήρως τις προεπιλογές (η αρχική συμπεριφορά, ώστε οι υπάρχουσες ενσωματώσεις και skins να μη θιγούν). Το `setupDarkModeSkin` είναι deprecated υπέρ της prop `theme`.
 
 ### Επιλογές Διαμόρφωσης
 
-Αυτή η βιβλιοθήκη στοχεύει να υποστηρίξει όλες τις επιλογές διαμόρφωσης που ορίζονται στο [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), όπως και η web υλοποίηση.
+Αυτή η βιβλιοθήκη στοχεύει να υποστηρίζει όλες τις επιλογές διαμόρφωσης που ορίζονται στο [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), όπως και η υλοποίηση για τον ιστό.
 
-### Έννοιες FastComments
+Πέρα από αυτές, το React Native προσθέτει μερικές επιλογές ειδικές για το SDK μέσω του `FastCommentsRNConfig`:
 
-Οι βασικές έννοιες που πρέπει να γνωρίζετε για να ξεκινήσετε είναι τα `tenantId` και `urlId`. Το `tenantId` είναι το αναγνωριστικό του λογαριασμού σας στο FastComments.com. Το `urlId` είναι το σημείο στο οποίο θα συνδεθούν τα νήματα σχολίων. Αυτό μπορεί να είναι ένα URL σελίδας, ή ένα αναγνωριστικό προϊόντος, ένα αναγνωριστικό άρθρου, κ.λπ.
+- `hideTopBar` - απόκρυψη της λωρίδας με τον συνδεδεμένο χρήστη / εικονίδιο ειδοποιήσεων που εμφανίζεται πάνω από τον συντάκτη.
+- `usePressToEdit` - πατήστε και κρατήστε ένα σχόλιο για να ανοίξει το μενού του.
+- `disableDownVoting` - απόκρυψη κουμπιών κατά-ψήφου.
+- `renderCommentInline` - απόδοση των πληροφοριών του σχολιαστή μέσα στο ίδιο HTML μπλοκ με το περιεχόμενο του σχολίου.
+- `renderLikesToRight` - μετακίνηση της περιοχής ψήφων/likes δεξιά του σχολίου αντί κάτω από αυτό.
+- `renderDateBelowComment` - απόδοση της ημερομηνίας κάτω από το σχόλιο.
+- `showLiveStatus` - εμφάνιση της κεφαλίδας στυλ συνομιλίας "Live" + πλήθος χρηστών πάνω από τα σχόλια.
+- `useInlineSubmitButton` - απόδοση του κουμπιού υποβολής ως εικονίδιο μέσα στον συντάκτη.
+- `countAboveToggle` - με το `useShowCommentsToggle`, πόσα σχόλια εμφανίζονται πάνω από το κουμπί "Show Comments".
+- `preserveFeedScrollPosition` - το `FastCommentsFeed` θυμάται την απόσταση κύλισης του μεταξύ unmount/remount (προεπιλογή true).
+
+### Βασικές έννοιες FastComments
+
+Οι κύριες έννοιες που χρειάζεται να γνωρίζετε για να ξεκινήσετε είναι το `tenantId` και το `urlId`. Το `tenantId` είναι το αναγνωριστικό του λογαριασμού σας στο FastComments.com. Το `urlId` είναι το σημείο στο οποίο θα συνδεθούν τα νήματα σχολίων. Αυτό μπορεί να είναι ένα URL σελίδας, ένα id προϊόντος, ένα id άρθρου, κ.λπ.
 
 ### Ειδοποιήσεις Χρηστών
 
-Το FastComments υποστηρίζει ειδοποιήσεις για [πολλά σενάρια](https://docs.fastcomments.com/guide-notifications.html). Οι ειδοποιήσεις είναι ρυθμιζόμενες, μπορούν να απενεργοποιηθούν συνολικά ή σε επίπεδο ειδοποίησης/σχολίου, και υποστηρίζουν εγγραφές σε επίπεδο σελίδας ώστε οι χρήστες να μπορούν να εγγραφούν σε νήματα μιας συγκεκριμένης σελίδας ή άρθρου.
+Το FastComments υποστηρίζει ειδοποιήσεις για [πολλά σενάρια](https://docs.fastcomments.com/guide-notifications.html). Οι ειδοποιήσεις είναι παραμετροποιήσιμες, μπορούν να απενεργοποιηθούν παγκοσμίως ή σε επίπεδο ειδοποίησης/σχολίου, και υποστηρίζει εγγραφές σε επίπεδο σελίδας ώστε οι χρήστες να μπορούν να εγγραφούν σε νήματα μιας συγκεκριμένης σελίδας ή άρθρου.
 
-Για παράδειγμα, είναι δυνατό να χρησιμοποιήσετε Secure SSO για να αυθεντικοποιήσετε τον χρήστη και στη συνέχεια περιοδικά να ελέγχετε για μη αναγνωσμένες ειδοποιήσεις και να τις στέλνετε στον χρήστη.
+Για παράδειγμα, είναι δυνατό να χρησιμοποιηθεί Secure SSO για την πιστοποίηση του χρήστη και στη συνέχεια να γίνονται περιοδικά polling για μη αναγνώσμες ειδοποιήσεις και να τις προωθείτε στον χρήστη.
 
-Δείτε [το παράδειγμα AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) για το πώς να λαμβάνετε και να μεταφράζετε τις μη αναγνωσμένες ειδοποιήσεις χρηστών.
+Δείτε το [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) για το πώς να λαμβάνετε και να μεταφράζετε τις μη αναγνωσμένες ειδοποιήσεις χρήστη.
 
 ### Περιηγητής GIF
 
-Εξ ορισμού, δεν είναι ενεργοποιημένη καμία επιλογή εικόνας ή GIF. Δείτε [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) για το πώς να υποστηρίξετε μεταφορτώσεις εικόνων και GIF. Υπάρχει ένας Περιηγητής GIF που ανωνυμοποιεί τις αναζητήσεις και τις εικόνες που παρέχονται σε αυτή τη βιβλιοθήκη — απλώς πρέπει να τον χρησιμοποιήσετε.
+Από προεπιλογή, δεν είναι ενεργοποιημένη καμία επιλογή εικόνας ή gif. Δείτε το [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) για το πώς να υποστηρίξετε ανέβασμα εικόνων και gif. Υπάρχει ένας Περιηγητής GIF που ανωνυμοποιεί τις αναζητήσεις και τις εικόνες που παρέχονται σε αυτή τη βιβλιοθήκη — απλά πρέπει να τον χρησιμοποιήσετε.
 
-### Απόδοση
+### Επιδόσεις
 
-Παρακαλώ ανοίξτε ένα ticket με ένα παράδειγμα που αναπαράγει το πρόβλημα, συμπεριλαμβανομένης της συσκευής που χρησιμοποιήθηκε, αν εντοπίσετε οποιαδήποτε προβλήματα απόδοσης. Η απόδοση είναι πρωταρχικής σημασίας σε όλες τις βιβλιοθήκες FastComments.
+Παρακαλώ ανοίξτε ένα ticket με ένα παράδειγμα αναπαραγωγής, συμπεριλαμβανομένης της συσκευής που χρησιμοποιήθηκε, αν εντοπίσετε οποιοδήποτε πρόβλημα επιδόσεων. Οι επιδόσεις είναι πρωταρχικής σημασίας σε όλες τις βιβλιοθήκες FastComments.

@@ -1,36 +1,83 @@
-#### Udseende: Erebus
-![Udseende: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
-#### Udseende: Default
-![Udseende: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
-#### Indbygget WYSIWYG-editor med billedunderstøttelse!
-![Indbygget WYSIWYG-editor med billedunderstøttelse](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
+Live trådede kommentarer med avatars, indlejrede svar, stemmer og den indbyggede rich-text-komponist, plus et mørkt tema og en live-chat-forudindstilling (vist her gengivet via `react-native-web`):
 
-### Rich Text-editor
+<table>
+  <tr>
+    <td align="center"><b>Live-kommentering</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Live-kommentering, lyst tema"/></td>
+    <td align="center"><b>Mørkt tema</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Live-kommentering, mørkt tema"/></td>
+    <td align="center"><b>Live-chat</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Live-chat-forudindstilling"/></td>
+  </tr>
+</table>
 
-This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
+### Rich Text Editor
 
-`react-native-enriched` requires the React Native New Architecture (Fabric) on native, and a bundler that resolves package `exports` conditions (Metro with package exports / RN 0.72+). Web support is currently experimental.
+Dette bibliotek bruger [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) til rich text-redigering, hvilket giver en kraftfuld WYSIWYG-redigeringsoplevelse. Den samme editor driver iOS, Android og web (via `react-native-web`), så komponisten opfører sig konsekvent på tværs af alle platforme med én enkelt implementation.
 
-### Konfigurationsindstillinger
+`react-native-enriched` kræver React Native New Architecture (Fabric) på native (standard siden RN 0.76, opt-in på RN 0.72-0.75), samt en bundler der løser package `exports`-betingelser. Dette SDK er udviklet og testet mod RN 0.81 / React 19. Den samme editor kører også på web via `react-native-web`; enriched-editorens web-build er stadig markeret som eksperimentel upstream.
+
+### Widgets
+
+SDK'et leveres med tre widgets, som spejler FastComments Android SDK:
+
+- `FastCommentsLiveCommenting` - trådet kommentering med stemmer, svar, paginering, mentions, notifikationer og live-opdateringer.
+- `FastCommentsLiveChat` - en chat-forudindstilling over samme motor: kronologiske beskeder med nye nederst, komponisten under listen, en live header-strip (forbindelsesprik + brugerantal), uendelig historik indlæst ved at scrolle op, auto-scroll til nye beskeder, ingen stemmer eller svar-tråde. Hver forudindstilling kan overskrives via `config`.
+- `FastCommentsFeed` - et socialt feed med indholds-komponist, medier, reaktioner, følgere og live bannere for nye opslag.
+
+```tsx
+    <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
+```
+
+### Theming
+
+Standardudseendet genereres fra et sæt semantiske designtokens (`FastCommentsTheme`): farver, spacing, radius, fontstørrelser, fontvægte og avatarstørrelser. Send delvise token-overrides (typet `FastCommentsThemeOverrides`) gennem `theme`-props på enhver widget, og hele stiltræet restyles konsekvent:
+
+```tsx
+    <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
+```
+
+Mørk tilstand er kun et token-sæt væk:
+
+```tsx
+    import { getDarkTheme } from 'fastcomments-react-native-sdk';
+
+    <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
+```
+
+`styles`-proppen accepterer stadig et råt `IFastCommentsStyles`-træ for kirurgisk kontrol. Når både `theme` og `styles` leveres, vinder de eksplicitte styles over det themed træ; når kun `styles` leveres, erstatter det standarderne fuldstændigt (den oprindelige adfærd, så eksisterende integrationer og skins påvirkes ikke). `setupDarkModeSkin` er forældet til fordel for `theme`-proppen.
+
+### Configuration Options
 
 Dette bibliotek har til formål at understøtte alle konfigurationsmuligheder defineret i [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), ligesom web-implementeringen.
 
-### FastComments-konceptet
+Udover disse tilføjer React Native nogle få SDK-specifikke muligheder via `FastCommentsRNConfig`:
 
-De vigtigste begreber at være opmærksom på for at komme i gang er `tenantId` og `urlId`. `tenantId` er din FastComments.com-kontoidentifikator. `urlId` er, hvor kommentartråde vil blive knyttet til. Dette kan være en side-URL, et produkt-id, en artikel-id osv.
+- `hideTopBar` - skjul strippen med den indloggede bruger / notifikationsklokke, som vises over komponisten.
+- `usePressToEdit` - tryk-og-hold på en kommentar for at åbne dens menu.
+- `disableDownVoting` - skjul nedstemme-knapper.
+- `renderCommentInline` - gengiv kommentatorinfo inde i samme HTML-blok som kommentarindholdet.
+- `renderLikesToRight` - flyt stemme/like-området til højre for kommentaren i stedet for under den.
+- `renderDateBelowComment` - gengiv datoen under kommentaren.
+- `showLiveStatus` - vis chat-stil "Live" + brugerantal header-strip over kommentarer.
+- `useInlineSubmitButton` - gengiv sendeknappen som et ikon inde i komponisten.
+- `countAboveToggle` - med `useShowCommentsToggle`, hvor mange kommentarer der gengives over "Show Comments"-toggle.
+- `preserveFeedScrollPosition` - `FastCommentsFeed` husker sin scroll-offset på tværs af unmount/remount (standard true).
 
-### Brugernotifikationer
+### FastComments Concepts
 
-FastComments understøtter notifikationer for [mange scenarier](https://docs.fastcomments.com/guide-notifications.html). Notifikationer kan konfigureres, der kan fravælges globalt eller på notifikation/kommentar-niveau, og understøtter side-niveau abonnementer, så brugere kan abonnere på tråde for en specifik side eller artikel.
+De vigtigste begreber at kende for at komme i gang er `tenantId` og `urlId`. `tenantId` er din FastComments.com kontoidentifikator. `urlId` er det, som kommentartråde vil blive knyttet til. Dette kan være en side-URL, et produkt-id, et artikel-id osv.
 
-For eksempel er det muligt at bruge Secure SSO til at autentificere brugeren og derefter periodisk poll'e for ulæste notifikationer og sende dem til brugeren.
+### User Notifications
 
-Se [eksempel AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for, hvordan man henter og oversætter ulæste brugernotifikationer.
+FastComments understøtter notifikationer for [mange scenarier](https://docs.fastcomments.com/guide-notifications.html). Notifikationer er konfigurerbare, kan fravælges globalt eller på notifikation/kommentar-niveau, og understøtter side-niveau abonnementer, så brugere kan abonnere på tråde for en bestemt side eller artikel.
 
-### Gif-browser
+For eksempel er det muligt at bruge Secure SSO til at autentificere brugeren og derefter periodisk poll'e for ulæste notifikationer og skubbe dem til brugeren.
 
-Som standard er der ingen billed- eller gif-udvælgelse aktiveret. Se [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for, hvordan man understøtter billede- og gif-upload. Der er en Gif Browser, der anonymiserer søgninger og billeder leveret i dette bibliotek — du skal blot bruge den.
+Se [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for hvordan man henter og oversætter ulæste bruger-notifikationer.
 
-### Ydeevne
+### Gif Browser
 
-Åbn venligst en ticket med et eksempel til reproduktion, inklusive den anvendte enhed, hvis du identificerer eventuelle ydeevneproblemer. Ydeevne er et førsteordens hensyn i alle FastComments-biblioteker.
+Som standard er ingen billed- eller gif-selektion aktiveret. Se [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for hvordan
+man understøtter billede- og gif-upload. Der er en Gif Browser i dette bibliotek, som anonymiserer søgninger og billeder leveret i dette bibliotek — du skal blot bruge den.
+
+### Performance
+
+Opret venligst en ticket med et eksempel der kan reproduceres, inklusive hvilken enhed der blev brugt, hvis du identificerer nogen performance-problemer. Performance er en topprioritet i alle FastComments-biblioteker.
