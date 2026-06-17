@@ -3,13 +3,19 @@
   "pageHeader": "Добавяне на коментари към вашето React Native приложение",
   "itemsOrdered": [
     {
-      "name": "Инсталиране",
+      "name": "Демонстрация на живо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталация",
       "file": "installation-readme-generated.md",
       "subCat": "Първи стъпки",
       "type": "readme"
     },
     {
-      "name": "Относно",
+      "name": "За",
       "file": "about-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

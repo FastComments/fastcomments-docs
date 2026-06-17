@@ -3,6 +3,12 @@
   "pageHeader": "Aggiungi commenti alla tua app React Native",
   "itemsOrdered": [
     {
+      "name": "Demo live",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
       "subCat": "Primi passi",

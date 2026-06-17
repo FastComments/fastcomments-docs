@@ -1,0 +1,1 @@
+Experimente cada widget ao vivo em <https://fastcomments.com/commenting-system-for-react-native> (o navegador de componentes, renderizado com react-native-web).

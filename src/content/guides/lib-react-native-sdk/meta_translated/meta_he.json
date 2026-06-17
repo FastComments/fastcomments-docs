@@ -1,7 +1,13 @@
 {
-  "name": "SDK של React Native",
+  "name": "ערכת הפיתוח של React Native",
   "pageHeader": "הוספת תגובות לאפליקציית React Native שלך",
   "itemsOrdered": [
+    {
+      "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",

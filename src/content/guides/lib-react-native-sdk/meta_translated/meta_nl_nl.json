@@ -1,7 +1,13 @@
 {
   "name": "React Native SDK",
-  "pageHeader": "Voeg opmerkingen toe aan je React Native-app",
+  "pageHeader": "Voeg reacties toe aan uw React Native-app",
   "itemsOrdered": [
+    {
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Installatie",
       "file": "installation-readme-generated.md",

@@ -1,0 +1,1 @@
+Попробуйте каждый виджет вживую по адресу <https://fastcomments.com/commenting-system-for-react-native> (обозреватель компонентов, отрисованный с помощью react-native-web).

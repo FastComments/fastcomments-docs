@@ -1,0 +1,1 @@
+נסו כל ווידג'ט בשידור חי ב <https://fastcomments.com/commenting-system-for-react-native> (דפדפן הרכיבים, מוצג באמצעות react-native-web).

@@ -1,7 +1,13 @@
 {
   "name": "React Native SDK",
-  "pageHeader": "React Native Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "React Native uygulamanıza yorum ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
@@ -11,13 +17,13 @@
     {
       "name": "Hakkında",
       "file": "about-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
       "name": "Ekran Görüntüleri",
       "file": "screenshots-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     }
   ]
