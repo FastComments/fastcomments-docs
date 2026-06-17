@@ -1,1 +1,1 @@
-Preizkusite vsak pripomoček v živo na <https://fastcomments.com/commenting-system-for-react-native> (brskalnik komponent, upodobljen z react-native-web).
+Preizkusite vse gradnike v živo na <https://fastcomments.com/commenting-system-for-react-native>.

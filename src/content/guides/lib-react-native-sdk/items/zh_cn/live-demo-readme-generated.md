@@ -1,1 +1,1 @@
-在 <https://fastcomments.com/commenting-system-for-react-native> 实时试用每个组件 (组件浏览器，使用 react-native-web 渲染).
+在 <https://fastcomments.com/commenting-system-for-react-native> 在线试用所有小部件。

@@ -1,1 +1,1 @@
-Probeer elke widget live op <https://fastcomments.com/commenting-system-for-react-native> (de componentenbrowser, gerenderd met react-native-web).
+Probeer elke widget live op <https://fastcomments.com/commenting-system-for-react-native>.

@@ -1,1 +1,1 @@
-Перегляньте всі віджети наживо на <https://fastcomments.com/commenting-system-for-react-native> (браузер компонентів, відрендерений за допомогою react-native-web).
+Спробуйте кожен віджет наживо за адресою <https://fastcomments.com/commenting-system-for-react-native>.

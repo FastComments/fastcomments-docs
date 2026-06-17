@@ -1,1 +1,1 @@
-Испробајте сваки видгет уживо на <https://fastcomments.com/commenting-system-for-react-native> (прегледач компоненти, приказан помоћу react-native-web).
+Испробајте сваки видџет уживо на <https://fastcomments.com/commenting-system-for-react-native>.

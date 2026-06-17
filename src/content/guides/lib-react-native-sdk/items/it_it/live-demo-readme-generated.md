@@ -1,1 +1,3 @@
-Prova ogni widget in diretta su <https://fastcomments.com/commenting-system-for-react-native> (il browser dei componenti, renderizzato con react-native-web).
+---
+Prova ogni widget dal vivo su <https://fastcomments.com/commenting-system-for-react-native>.
+---

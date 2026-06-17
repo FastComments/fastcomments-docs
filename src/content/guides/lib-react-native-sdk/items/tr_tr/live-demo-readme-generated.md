@@ -1,1 +1,1 @@
-Her widget'ı canlı olarak <https://fastcomments.com/commenting-system-for-react-native> adresinde deneyin (bileşen tarayıcısı, react-native-web ile render edilmiştir).
+Tüm widget'ları canlı olarak şurada deneyin: <https://fastcomments.com/commenting-system-for-react-native>.

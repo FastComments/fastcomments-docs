@@ -1,1 +1,1 @@
-Isprobajte svaki widget uživo na <https://fastcomments.com/commenting-system-for-react-native> (preglednik komponenti, renderiran pomoću react-native-web).
+Isprobajte svaki widget uživo na <https://fastcomments.com/commenting-system-for-react-native>.

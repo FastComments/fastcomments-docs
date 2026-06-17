@@ -1,1 +1,1 @@
-Δοκιμάστε κάθε widget ζωντανά στο <https://fastcomments.com/commenting-system-for-react-native> (ο περιηγητής στοιχείων που αποδίδεται με react-native-web).
+Δοκιμάστε κάθε widget ζωντανά στο <https://fastcomments.com/commenting-system-for-react-native>.

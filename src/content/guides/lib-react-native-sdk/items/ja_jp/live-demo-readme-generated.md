@@ -1,1 +1,1 @@
-すべてのウィジェットをライブで試すには <https://fastcomments.com/commenting-system-for-react-native> （react-native-webでレンダリングされたコンポーネントブラウザ）をご覧ください。
+すべてのウィジェットをライブでお試しください <https://fastcomments.com/commenting-system-for-react-native>.
