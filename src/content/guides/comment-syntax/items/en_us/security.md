@@ -41,3 +41,5 @@ The HTML tags we allow are as follows:
 - `<ol>`
 - `<li>`
 - `<br>`
+
+The `<iframe>` tag is not allowed by default. If you turn on Allow Media Embeds, iframes are also permitted, but only when their source is one of a built-in list of trusted providers (such as YouTube, Vimeo, SoundCloud, and Spotify) or a hostname you have explicitly added. Iframes from any other source are removed.

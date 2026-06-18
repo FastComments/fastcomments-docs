@@ -1,28 +1,28 @@
-Postoji više aspekata bezbednosti kada ljudima dozvoljavamo dodavanje sadržaja na veb stranicu i zatim prikazivanje tog sadržaja na mnogim različitim vrstama uređaja.
+Postoji više aspekata bezbednosti kada ljudima dozvolite da dodaju sadržaj na veb-sajt i potom prikažete taj sadržaj na mnogim različitim tipovima uređaja.
 
 ### Sprečavanje zloupotrebe formatiranja
 
 Ljudi mogu pisati sadržaj koji je namerno vizuelno ometajući i umanjuje vrednost diskusija zloupotrebom formatiranja teksta.
 
-FastComments čini nekoliko stvari da bi sprečio zloupotrebu u vezi sa formatiranjem:
+FastComments preduzima niz mera da spreči zloupotrebe vezane za formatiranje:
 
-- Veliki ponovljeni uzastopni prelomi redova se sažimaju.
-- Ne prikazujemo naslove (postaju običan tekst).
+- Veliki uzastopni prazni redovi se skraćuju.
+- Ne prikazujemo naslove (oni postaju običan tekst).
 - Ne dozvoljavamo CSS ili prilagođene boje.
 
-### Sprečavanje eksploita
+### Sprečavanje eksploatacija
 
-Eksploiti se mogu stvoriti u sistemima koji prikazuju HTML. FastComments čini nekoliko stvari da bi to sprečio:
+Eksploatacije se mogu stvoriti u sistemima koji renderuju HTML. FastComments preduzima nekoliko mera da to spreči:
 
-- Dozvoljavamo samo eksplicitno definisan skup HTML oznaka.
-- Dozvoljavamo samo eksplicitno definisan skup atributa HTML oznaka.
-- Prečišćavamo i sanitizujemo sve unose.
-  - To se radi putem [DOMPurify](https://www.npmjs.com/package/dompurify) i [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) biblioteka.
-  - Odabrali smo ove biblioteke jer su dobro testirane (sa više od 4 i 1 milion preuzimanja nedeljno, respektivno).
+- Dozvoljavamo samo eksplicitno definisan skup HTML tagova.
+- Dozvoljavamo samo eksplicitno definisan skup atributa HTML tagova.
+- Pročišćavamo i sanitizujemo sve ulaze.
+  - Ovo se radi putem biblioteka [DOMPurify](https://www.npmjs.com/package/dompurify) i [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
+  - Izabrali smo ove biblioteke jer su dobro testirane (imaju više od 4 i 1 milion preuzimanja nedeljno, respektivno).
 
-To znači da korisnici ne mogu raditi stvari poput pisanja `<script>` ili `<style>` oznaka, ili pokušavati dodati `onload=alert()` tipa skripte slikama ili drugom sadržaju.
+To znači da korisnici ne mogu, na primer, pisati `<script>` ili `<style>` tagove, niti pokušavati da dodaju skripte tipa `onload=alert()` na slike ili drugi sadržaj.
 
-HTML oznake koje dozvoljavamo su sledeće:
+HTML tagovi koje dozvoljavamo su sledeći:
 
 - `<b>`
 - `<em>`
@@ -39,3 +39,5 @@ HTML oznake koje dozvoljavamo su sledeće:
 - `<ol>`
 - `<li>`
 - `<br>`
+
+The `<iframe>` tag is not allowed by default. If you turn on Allow Media Embeds, iframes are also permitted, but only when their source is one of a built-in list of trusted providers (such as YouTube, Vimeo, SoundCloud, and Spotify) or a hostname you have explicitly added. Iframes from any other source are removed.

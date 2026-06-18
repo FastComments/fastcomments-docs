@@ -1,26 +1,28 @@
-Er zijn meerdere aspecten van beveiliging wanneer je mensen toestaat inhoud toe te voegen aan een website en die inhoud vervolgens weer te geven op veel verschillende soorten apparaten.
+Er zijn meerdere aspecten aan beveiliging wanneer je mensen content laat toevoegen aan een website
+en die content vervolgens op veel verschillende soorten apparaten weergeeft.
 
-### Voorkomen van opmaakmisbruik
+### Voorkomen van misbruik van opmaak
 
-Mensen kunnen inhoud schrijven die opzettelijk visueel afleidend is en de waarde van discussies vermindert door misbruik te maken van tekstopmaak.
+Mensen kunnen inhoud schrijven die opzettelijk visueel afleidt
+en de waarde van discussies vermindert door misbruik te maken van tekstopmaak.
 
 FastComments doet een aantal dingen om misbruik met betrekking tot opmaak te voorkomen:
 
-- Grote herhaalde opeenvolgende regeleinden worden samengevouwen.
-- We renderen geen koppen (ze worden normale tekst).
+- Grote herhaalde opeenvolgende lege regels worden samengevoegd.
+- We tonen geen koppen (ze worden normale tekst).
 - We staan geen CSS of aangepaste kleuren toe.
 
 ### Voorkomen van exploits
 
-Exploits kunnen worden gemaakt in systemen die HTML renderen. FastComments doet verschillende dingen om dit te voorkomen:
+In systemen die HTML renderen kunnen exploits ontstaan. FastComments doet een aantal dingen om dit te voorkomen:
 
 - We staan alleen een expliciet gedefinieerde set HTML-tags toe.
-- We staan alleen een expliciet gedefinieerde set HTML-tag-attributen toe.
+- We staan alleen een expliciet gedefinieerde set HTML-tagattributen toe.
 - We zuiveren en saneren alle invoer.
-  - Dit wordt gedaan via de [DOMPurify](https://www.npmjs.com/package/dompurify) en [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) bibliotheken.
-  - We kozen deze bibliotheken omdat ze goed getest zijn (met meer dan 4 en 1 miljoen downloads per week, respectievelijk).
+  - Dit gebeurt via de [DOMPurify](https://www.npmjs.com/package/dompurify) en [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) bibliotheken.
+  - We hebben deze bibliotheken gekozen omdat ze goed getest zijn (met respectievelijk meer dan 4 en 1 miljoen downloads per week).
 
-Dit betekent dat gebruikers geen dingen kunnen doen zoals `<script>`- of `<style>`-tags schrijven, of proberen `onload=alert()`-type scripts toe te voegen aan afbeeldingen of andere inhoud.
+Dit betekent dat gebruikers niet dingen kunnen doen zoals het schrijven van `<script>` of `<style>` tags, of proberen `onload=alert()`-achtige scripts toe te voegen aan afbeeldingen of andere content.
 
 De HTML-tags die we toestaan zijn als volgt:
 
@@ -39,3 +41,5 @@ De HTML-tags die we toestaan zijn als volgt:
 - `<ol>`
 - `<li>`
 - `<br>`
+
+De `<iframe>`-tag is standaard niet toegestaan. Als je 'Media-embeds toestaan' inschakelt, zijn iframes ook toegestaan, maar alleen wanneer hun bron één is van een ingebouwde lijst met vertrouwde providers (zoals YouTube, Vimeo, SoundCloud en Spotify) of een hostnaam die je expliciet hebt toegevoegd. Iframes van andere bronnen worden verwijderd.

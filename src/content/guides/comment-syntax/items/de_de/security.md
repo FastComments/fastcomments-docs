@@ -1,28 +1,28 @@
-Es gibt mehrere Aspekte der Sicherheit, wenn man Menschen erlaubt, Inhalte zu einer Website hinzuzufügen und diese Inhalte dann auf vielen verschiedenen Gerätetypen anzuzeigen.
+Beim Zulassen von Inhalten durch Nutzer auf einer Website und deren Darstellung auf vielen verschiedenen Gerätetypen gibt es mehrere Sicherheitsaspekte.
 
 ### Verhinderung von Formatierungsmissbrauch
 
-Menschen können Inhalte schreiben, die absichtlich visuell ablenkend sind und den Wert von Diskussionen durch Missbrauch von Textformatierung mindern.
+Nutzer können Inhalte verfassen, die durch missbräuchliche Textformatierung absichtlich optisch ablenken und den Wert von Diskussionen mindern.
 
-FastComments unternimmt eine Reihe von Maßnahmen, um Missbrauch in Bezug auf Formatierung zu verhindern:
+FastComments unternimmt mehrere Maßnahmen, um Missbrauch bei der Formatierung zu verhindern:
 
-- Große wiederholte aufeinanderfolgende Zeilenumbrüche werden zusammengefasst.
+- Große, wiederholt aufeinanderfolgende Zeilenumbrüche werden zusammengeführt.
 - Wir rendern keine Überschriften (sie werden zu normalem Text).
 - Wir erlauben kein CSS oder benutzerdefinierte Farben.
 
-### Verhinderung von Exploits
+### Schutz vor Exploits
 
-Exploits können in Systemen erstellt werden, die HTML rendern. FastComments unternimmt mehrere Maßnahmen, um dies zu verhindern:
+In Systemen, die HTML rendern, können Exploits entstehen. FastComments ergreift mehrere Maßnahmen, um dies zu verhindern:
 
-- Wir erlauben nur einen explizit definierten Satz von HTML-Tags.
-- Wir erlauben nur einen explizit definierten Satz von HTML-Tag-Attributen.
-- Wir bereinigen und sanitisieren alle Eingaben.
-  - Dies geschieht über die Bibliotheken [DOMPurify](https://www.npmjs.com/package/dompurify) und [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
-  - Wir haben diese Bibliotheken gewählt, da sie gut getestet sind (mit über 4 bzw. 1 Million Downloads pro Woche).
+- Wir erlauben nur eine explizit definierte Menge von HTML-Tags.
+- Wir erlauben nur eine explizit definierte Menge von HTML-Tag-Attributen.
+- Wir bereinigen und säubern alle Eingaben.
+  - Dies erfolgt mithilfe der Bibliotheken [DOMPurify](https://www.npmjs.com/package/dompurify) und [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
+  - Wir haben diese Bibliotheken gewählt, weil sie gut getestet sind (mit über 4 bzw. 1 Million Downloads pro Woche).
 
-Dies bedeutet, dass Benutzer keine Dinge wie `<script>`- oder `<style>`-Tags schreiben oder versuchen können, `onload=alert()`-Skripte zu Bildern oder anderen Inhalten hinzuzufügen.
+Das bedeutet, dass Nutzer nicht etwas wie `<script>`- oder `<style>`-Tags schreiben können, oder versuchen, `onload=alert()`-artige Skripte zu Bildern oder anderem Inhalt hinzuzufügen.
 
-Die HTML-Tags, die wir erlauben, sind wie folgt:
+Die von uns erlaubten HTML-Tags sind wie folgt:
 
 - `<b>`
 - `<em>`
@@ -39,3 +39,5 @@ Die HTML-Tags, die wir erlauben, sind wie folgt:
 - `<ol>`
 - `<li>`
 - `<br>`
+
+Der `<iframe>`-Tag ist standardmäßig nicht erlaubt. Wenn Sie Medieneinbettungen zulassen, sind iframes ebenfalls erlaubt, aber nur, wenn deren Quelle einer der eingebauten vertrauenswürdigen Anbieter (wie YouTube, Vimeo, SoundCloud und Spotify) oder einem von Ihnen explizit hinzugefügten Hostnamen entspricht. Iframes von anderen Quellen werden entfernt.

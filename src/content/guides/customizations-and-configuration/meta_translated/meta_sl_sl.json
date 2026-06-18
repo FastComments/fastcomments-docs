@@ -3,7 +3,7 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identifikacija vašega računa",
+      "name": "Prepoznavanje vašega računa",
       "file": "tenant-id.md",
       "subCat": "Osnove"
     },
@@ -20,212 +20,217 @@
     {
       "name": "Prilagojeno oblikovanje",
       "file": "custom-css.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Pisave po meri",
+      "name": "Prilagojene pisave",
       "file": "custom-fonts.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Odstranjevanje blagovne znamke",
       "file": "remove-branding.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Podpora temnim ozadjem (temni način)",
       "file": "has-dark-background.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Preklapljanje temnega načina",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Prepisovanje besedila",
       "file": "translations.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Sprememba privzetega avatarja",
       "file": "default-avatar-src.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogočanje avatarjev",
       "file": "hide-avatars.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogočanje vseh privzetih slogov",
       "file": "no-styles.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Povezovanje komentarjev s stranmi",
+      "name": "Povezave iz komentarjev na strani",
       "file": "url.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Privzeto skrči odgovore",
+      "name": "Privzeto zlaganje odgovorov",
       "file": "collapse-replies.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Omogoči urejevalnik WYSIWYG",
+      "name": "Omogoči WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogočanje orodne vrstice",
       "file": "disable-toolbar.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogočanje blokiranja",
       "file": "disable-blocking.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Določanje, katero stran prikazati",
       "file": "starting-page.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Preklapljanje med nitmi komentarjev brez ponovnega nalaganja strani",
+      "name": "Preklapljanje niti komentarjev brez ponovnega nalaganja strani",
       "file": "switching-comment-threads.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Absolutni datumi (onemogoči prijazne časovne žige)",
+      "name": "Absolutni datumi (onemogoči človeško prijazne časovne žige)",
       "file": "absolute-dates.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Prikazovanje absolutnih in relativnih datumov",
+      "name": "Prikazovanje tako absolutnih kot relativnih datumov",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Dodajanje besedila glave",
+      "name": "Dodajanje besedila v glavo",
       "file": "header-html.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Prikaži povezave kot besedilo",
       "file": "render-links-as-text.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Preklapljanje komentarjev z gumbom",
+      "name": "Preklapljanje komentarjev s gumbom",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Prilagajanje besedila števila komentarjev",
       "file": "comment-count-format.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Onemogoči preusmeritev slik",
+      "name": "Onemogoči preusmerjanje slik",
       "file": "disable-image-redirect.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogoči samodejno ustvarjanje hashtagov",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Onemogoči obvestilni zvonec",
+      "name": "Onemogoči zvonec za obvestila",
       "file": "disable-notification-bell.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogoči profile",
       "file": "disable-profiles.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogoči komentarje na profilih",
       "file": "disable-profile-comments.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Onemogoči zasebna sporočila na profilih",
+      "name": "Onemogoči neposredna sporočila na profilih",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogoči sporočilo o uspehu",
       "file": "disable-success-message.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Spremeni oceno vsebine GIF-ov",
       "file": "gif-rating.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Moderiranje vsebine slik",
       "file": "image-content-moderation.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Spremeni slog glasovanja",
+      "name": "Spremeni način glasovanja",
       "file": "vote-style.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogoči brisanje",
       "file": "disable-deleting.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogoči urejanje",
       "file": "disable-editing.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Označevanje novih komentarjev",
+      "name": "Poudarjanje novih komentarjev",
       "file": "highlighting-new-comments.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Velikosti strani",
       "file": "page-size.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Predloge e-pošte",
       "file": "email-templates.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Oblike uporabniških imen",
       "file": "user-name-formats.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Onemogočanje nalaganja slik",
       "file": "no-image-uploads.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
+    },
+    {
+      "name": "Dovoli vdelavo medijev",
+      "file": "allow-media-embeds.md",
+      "subCat": "Videz"
     },
     {
       "name": "Omogoči iskalno polje",
       "file": "enable-search.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Omogoči spojlerje",
+      "name": "Omogoči spoilerje",
       "file": "enable-spoilers.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Omogoči prikaz števila ogledov komentarjev",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
       "name": "Prikaži komentarje v živo takoj",
@@ -233,12 +238,12 @@
       "subCat": "Komentiranje v živo"
     },
     {
-      "name": "Onemogočanje komentarjev v živo",
+      "name": "Onemogočanje komentiranja v živo",
       "file": "disable-live-commenting.md",
       "subCat": "Komentiranje v živo"
     },
     {
-      "name": "Postavi nove komentarje v živo na dno",
+      "name": "Postavljanje novih komentarjev v živo na dno",
       "file": "new-comments-to-bottom.md",
       "subCat": "Komentiranje v živo"
     },
@@ -248,49 +253,49 @@
       "subCat": "Straničenje in razvrščanje"
     },
     {
-      "name": "Sprememba privzete smeri razvrščanja",
+      "name": "Spreminjanje privzete smeri razvrščanja",
       "file": "default-sort-direction.md",
       "subCat": "Straničenje in razvrščanje"
     },
     {
-      "name": "Prikaz vseh komentarjev naenkrat – onemogoči straničenje",
+      "name": "Prikaz vseh komentarjev naenkrat - onemogoči razdelitev na strani",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Straničenje in razvrščanje"
     },
     {
-      "name": "Premik polja za odgovor za komentarje",
+      "name": "Premik polja za odgovore pod komentarje",
       "file": "input-after-comments.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Omejevanje dolžine komentarjev",
       "file": "max-comment-character-length.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Onemogoči večvrstično komentiranje",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Omeji število komentarjev na uporabnika",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
-      "name": "Prepreči nove komentarje najvišje ravni",
+      "name": "Prepreči nove komentarje najvišjega nivoja",
       "file": "no-new-root-comments.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Največja globina odgovorov",
       "file": "max-reply-depth.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Zahtevaj sprejem pogojev uporabe",
       "file": "terms-of-service.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Pregled enotne prijave (SSO)",
@@ -308,12 +313,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "Prilagojene integracije - migracija s Disqus SSO",
+      "name": "Prilagojene integracije - migracija iz Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagojene integracije - migracija s Commento SSO",
+      "name": "Prilagojene integracije - migracija iz Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
@@ -338,7 +343,7 @@
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Onemogoči oznako Nepreverjeno",
+      "name": "Onemogoči oznako 'nepreverjeno'",
       "file": "disable-unverified-label.md",
       "subCat": "Anonimno komentiranje"
     },
@@ -353,12 +358,12 @@
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Povratne funkcije",
+      "name": "Povratni klici",
       "file": "callbacks.md",
       "subCat": "Razno"
     },
     {
-      "name": "Ročno določanje lokalizacije uporabnika",
+      "name": "Ročno določanje jezika uporabnika",
       "file": "locale.md",
       "subCat": "Razno"
     },
@@ -373,7 +378,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prepreči nove odgovore in onemogoči glasove",
+      "name": "Prepreči nove odgovore in onemogoči glasovanje",
       "file": "readonly.md",
       "subCat": "Razno"
     },
@@ -383,7 +388,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Štetje komentarjev in štetje vseh gnezdenih odgovorov",
+      "name": "Število komentarjev in štetje vseh vnorenih odgovorov",
       "file": "count-all.md",
       "subCat": "Razno"
     },
@@ -415,12 +420,12 @@
     {
       "name": "Prikaži značke v zgornji vrstici",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     },
     {
-      "name": "Prikaži seznam uporabnikov na spletu",
+      "name": "Prikaži seznam prisotnih uporabnikov",
       "file": "users-list.md",
-      "subCat": "Videz in občutek"
+      "subCat": "Videz"
     }
   ]
 }

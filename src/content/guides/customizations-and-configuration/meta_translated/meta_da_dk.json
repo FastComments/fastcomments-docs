@@ -13,7 +13,7 @@
       "subCat": "Grundlæggende"
     },
     {
-      "name": "Gengivelse af de samme kommentarer på forskellige sider",
+      "name": "Vise de samme kommentarer på forskellige sider",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "Grundlæggende"
     },
@@ -33,12 +33,12 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Understøttelse af mørke baggrunde (mørk tilstand)",
+      "name": "Understøtte mørke baggrunde (mørkt tema)",
       "file": "has-dark-background.md",
       "subCat": "Udseende"
     },
     {
-      "name": "Skifte mørk tilstand",
+      "name": "Skifte mørkt tema",
       "file": "has-dark-background-toggle.md",
       "subCat": "Udseende"
     },
@@ -58,7 +58,7 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Deaktivere alle standardstilarter",
+      "name": "Deaktivere alle standardstile",
       "file": "no-styles.md",
       "subCat": "Udseende"
     },
@@ -68,12 +68,12 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Skjul svar som standard",
+      "name": "Sammenklap svar som standard",
       "file": "collapse-replies.md",
       "subCat": "Udseende"
     },
     {
-      "name": "Aktivér WYSIWYG",
+      "name": "Aktiver WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Udseende"
     },
@@ -88,7 +88,7 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Bestemme, hvilken side der skal gengives",
+      "name": "Bestemme hvilken side der skal gengives",
       "file": "starting-page.md",
       "subCat": "Udseende"
     },
@@ -98,7 +98,7 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Absolutte datoer (deaktiver menneskevenlige tidsangivelser)",
+      "name": "Absolutte datoer (deaktiver menneskevenlige tidsstempler)",
       "file": "absolute-dates.md",
       "subCat": "Udseende"
     },
@@ -123,7 +123,7 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Tilpasse teksten for kommentartællingen",
+      "name": "Tilpasse teksten for antal kommentarer",
       "file": "comment-count-format.md",
       "subCat": "Udseende"
     },
@@ -133,7 +133,7 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Deaktivere automatisk oprettelse af hashtags",
+      "name": "Deaktivere automatisk hashtag-oprettelse",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Udseende"
     },
@@ -163,12 +163,12 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Ændre indholdsvurdering af GIF'er",
+      "name": "Ændre indholdsbedømmelse af GIF'er",
       "file": "gif-rating.md",
       "subCat": "Udseende"
     },
     {
-      "name": "Moderering af billedindhold",
+      "name": "Moderation af billedindhold",
       "file": "image-content-moderation.md",
       "subCat": "Udseende"
     },
@@ -213,17 +213,22 @@
       "subCat": "Udseende"
     },
     {
-      "name": "Aktivér søgefelt",
+      "name": "Tillad indlejring af medier",
+      "file": "allow-media-embeds.md",
+      "subCat": "Udseende"
+    },
+    {
+      "name": "Aktiver søgefelt",
       "file": "enable-search.md",
       "subCat": "Udseende"
     },
     {
-      "name": "Aktivér spoilere",
+      "name": "Aktiver spoilere",
       "file": "enable-spoilers.md",
       "subCat": "Udseende"
     },
     {
-      "name": "Aktivér visningstællinger for kommentarer",
+      "name": "Aktiver visningstælling for kommentarer",
       "file": "enable-comment-view-counts.md",
       "subCat": "Udseende"
     },
@@ -243,7 +248,7 @@
       "subCat": "Live-kommentering"
     },
     {
-      "name": "Aktivér uendelig rulning",
+      "name": "Aktivere uendelig rulning",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Sideinddeling og sortering"
     },
@@ -253,44 +258,44 @@
       "subCat": "Sideinddeling og sortering"
     },
     {
-      "name": "Gengive alle kommentarer på én gang - deaktiver sideinddeling",
+      "name": "Vis alle kommentarer på én gang - deaktiver paginering",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Sideinddeling og sortering"
     },
     {
-      "name": "Flytte svarfeltet efter kommentarerne",
+      "name": "Flytte svarboksen til efter kommentarerne",
       "file": "input-after-comments.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
       "name": "Begrænse kommentarens længde",
       "file": "max-comment-character-length.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
       "name": "Deaktivere kommentarer på flere linjer",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
-      "name": "Begræns antal kommentarer per bruger",
+      "name": "Begræns antal kommentarer pr. bruger",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
       "name": "Forhindre nye topniveau-kommentarer",
       "file": "no-new-root-comments.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
       "name": "Maksimal svardybde",
       "file": "max-reply-depth.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
       "name": "Krav om accept af servicevilkår",
       "file": "terms-of-service.md",
-      "subCat": "Svarfeltet"
+      "subCat": "Svarboksen"
     },
     {
       "name": "Oversigt over Single Sign-On (SSO)",
@@ -298,22 +303,22 @@
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - sikker Single Sign-On (SSO)",
+      "name": "Tilpassede integrationer - Sikker Single Sign-On (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - enkel Single Sign-On (SSO)",
+      "name": "Tilpassede integrationer - Enkel Single Sign-On (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - migrering fra Disqus SSO",
+      "name": "Tilpassede integrationer - Migrering fra Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - migrering fra Commento SSO",
+      "name": "Tilpassede integrationer - Migrering fra Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
@@ -328,7 +333,7 @@
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Forhindre, at anonyme kommentarer udløber",
+      "name": "Forhindre anonyme kommentarer i at udløbe",
       "file": "allow-anon-retain-comments.md",
       "subCat": "Anonym kommentering"
     },
@@ -338,7 +343,7 @@
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Deaktivere uverificeret-mærkat",
+      "name": "Deaktivere mærket 'Uverificeret'",
       "file": "disable-unverified-label.md",
       "subCat": "Anonym kommentering"
     },
@@ -348,17 +353,17 @@
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Indstille standardbrugernavn",
+      "name": "Indstille et standardbrugernavn",
       "file": "default-username.md",
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Callback-funktioner",
+      "name": "Callbacks",
       "file": "callbacks.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Manuel angivelse af brugerens lokalitet",
+      "name": "Manuelt definere brugerens lokale",
       "file": "locale.md",
       "subCat": "Diverse"
     },
@@ -378,27 +383,27 @@
       "subCat": "Diverse"
     },
     {
-      "name": "Begrænse linkdomæner",
+      "name": "Begræns linkdomæner",
       "file": "restricting-link-domains.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Kommentartælling og optælling af alle indlejrede svar",
+      "name": "Kommentarantal og tælling af alle indlejrede svar",
       "file": "count-all.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Aktivere kommentatorlinks",
+      "name": "Aktivere links for kommentatorer",
       "file": "enable-commenter-links.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Moderatorgrupper",
+      "name": "Moderationsgrupper",
       "file": "moderation-group-ids.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Gruppe-id'er til omtaler",
+      "name": "Gruppes ID'er til omtale",
       "file": "mention-group-ids.md",
       "subCat": "Diverse"
     },
@@ -408,17 +413,17 @@
       "subCat": "Diverse"
     },
     {
-      "name": "Sletning af kommentarer med svar",
+      "name": "Slette kommentarer med svar",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Vis badges i topbjælken",
+      "name": "Vis badges i topbaren",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Udseende"
     },
     {
-      "name": "Vis liste over onlinebrugere",
+      "name": "Vis liste over online brugere",
       "file": "users-list.md",
       "subCat": "Udseende"
     }

@@ -1,28 +1,30 @@
-Istnieje wiele aspektów bezpieczeństwa, gdy pozwalamy ludziom dodawać treści do strony internetowej, a następnie renderować te treści na wielu różnych typach urządzeń.
+Istnieje wiele aspektów związanych z bezpieczeństwem, gdy pozwalasz użytkownikom dodawać treści na stronę internetową
+a następnie renderujesz te treści na różnych typach urządzeń.
 
 ### Zapobieganie nadużyciom formatowania
 
-Ludzie mogą pisać treści, które są celowo wizualnie rozpraszające i obniżają wartość dyskusji poprzez nadużywanie formatowania tekstu.
+Użytkownicy mogą pisać treści, które są celowo wizualnie rozpraszające
+i obniżają wartość dyskusji przez nadużywanie formatowania tekstu.
 
-FastComments robi wiele rzeczy, aby zapobiec nadużyciom w zakresie formatowania:
+FastComments wykonuje szereg działań, aby zapobiegać nadużyciom związanym z formatowaniem:
 
-- Duże powtarzające się kolejne znaki nowej linii są zwijane.
+- Długie powtarzające się kolejne nowe linie są łączone.
 - Nie renderujemy nagłówków (stają się zwykłym tekstem).
 - Nie zezwalamy na CSS ani niestandardowe kolory.
 
 ### Zapobieganie exploitom
 
-Exploity mogą być tworzone w systemach renderujących HTML. FastComments robi kilka rzeczy, aby temu zapobiec:
+Eksploity mogą powstawać w systemach, które renderują HTML. FastComments wykonuje kilka działań, aby temu zapobiec:
 
-- Zezwalamy tylko na jawnie zdefiniowany zestaw tagów HTML.
-- Zezwalamy tylko na jawnie zdefiniowany zestaw atrybutów tagów HTML.
-- Oczyszczamy i sanityzujemy wszystkie dane wejściowe.
+- Zezwalamy tylko na wyraźnie zdefiniowany zbiór tagów HTML.
+- Zezwalamy tylko na wyraźnie zdefiniowany zbiór atrybutów tagów HTML.
+- Oczyszczamy i sanitizujemy wszystkie dane wejściowe.
   - Odbywa się to za pomocą bibliotek [DOMPurify](https://www.npmjs.com/package/dompurify) i [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
-  - Wybraliśmy te biblioteki jako dobrze przetestowane (z ponad 4 i 1 milionem pobrań tygodniowo, odpowiednio).
+  - Wybraliśmy te biblioteki, ponieważ są dobrze przetestowane (mają odpowiednio ponad 4 i 1 milion pobrań tygodniowo).
 
-Oznacza to, że użytkownicy nie mogą robić rzeczy takich jak pisanie tagów `<script>` lub `<style>`, ani próbować dodawać skryptów typu `onload=alert()` do obrazów lub innych treści.
+To oznacza, że użytkownicy nie mogą robić rzeczy takich jak pisać tagów `<script>` lub `<style>`, ani próbować dodawać skryptów typu `onload=alert()` do obrazów lub innych treści.
 
-Tagi HTML, które zezwalamy, są następujące:
+Zezwalane tagi HTML to:
 
 - `<b>`
 - `<em>`
@@ -39,3 +41,5 @@ Tagi HTML, które zezwalamy, są następujące:
 - `<ol>`
 - `<li>`
 - `<br>`
+
+Tag `<iframe>` nie jest domyślnie dozwolony. Jeśli włączysz opcję Zezwalaj na osadzanie mediów, tagi `<iframe>` są również dozwolone, ale tylko wtedy, gdy ich źródło pochodzi z wbudowanej listy zaufanych dostawców (takich jak YouTube, Vimeo, SoundCloud i Spotify) lub z nazwy hosta, którą wyraźnie dodałeś. Tagi `<iframe>` z innych źródeł są usuwane.

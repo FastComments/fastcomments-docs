@@ -1,28 +1,30 @@
-İnsanların bir web sitesine içerik eklemesine ve ardından bu içeriği birçok farklı cihaz türünde görüntülemesine izin verildiğinde güvenliğin birden fazla yönü vardır.
+İnsanların bir web sitesine içerik eklemesine izin verildiğinde
+ve sonra bu içeriği birçok farklı cihaz türünde görüntülediğinizde güvenlikle ilgili birden fazla yön vardır.
 
-### Biçimlendirme kötüye kullanımını önleme
+### Biçimlendirme Suistimalinin Önlenmesi
 
-İnsanlar, metin biçimlendirmesini kötüye kullanarak kasıtlı olarak görsel açıdan dikkat dağıtıcı ve tartışmaların değerini azaltan içerikler yazabilir.
+İnsanlar, metin biçimlendirmesini kötüye kullanarak kasıtlı olarak görsel olarak dikkat dağıtan
+ve tartışmalardan değeri azaltan içerikler yazabilir.
 
-FastComments, biçimlendirmeyle ilgili kötüye kullanımı önlemek için bir dizi şey yapar:
+FastComments, biçimlendirmeyle ilgili suistimalleri önlemek için bir dizi önlem alır:
 
-- Büyük tekrarlanan ardışık satır sonları daraltılır.
-- Başlıkları render etmiyoruz (normal metin haline gelirler).
-- CSS veya özel renklere izin vermiyoruz.
+- Ardışık tekrar eden fazla satır sonları birleştirilir.
+- Başlıkları render etmiyoruz (normal metne dönüşürler).
+- CSS'e veya özel renklere izin vermiyoruz.
 
-### Açıkları önleme
+### İstismarların Önlenmesi
 
-HTML render eden sistemlerde açıklar oluşturulabilir. FastComments bunu önlemek için çeşitli şeyler yapar:
+HTML render eden sistemlerde istismar oluşturulabilir. FastComments bunu önlemek için birkaç şey yapar:
 
-- Yalnızca açıkça tanımlanmış bir HTML etiketi kümesine izin veriyoruz.
-- Yalnızca açıkça tanımlanmış bir HTML etiketi özniteliği kümesine izin veriyoruz.
-- Tüm girdileri arındırıyor ve sterilize ediyoruz.
+- Açıkça tanımlanmış bir HTML etiketleri kümesine izin veriyoruz.
+- Açıkça tanımlanmış bir HTML etiket öznitelikleri kümesine izin veriyoruz.
+- Tüm girdileri temizler ve arındırırız.
   - Bu, [DOMPurify](https://www.npmjs.com/package/dompurify) ve [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) kütüphaneleri aracılığıyla yapılır.
-  - Bu kütüphaneleri iyi test edilmiş oldukları için seçtik (sırasıyla haftada 4 ve 1 milyonun üzerinde indirme ile).
+  - Bu kütüphaneleri iyi test edilmiş oldukları için seçtik (sırasıyla haftada 4 ve 1 milyondan fazla indirme alıyorlar).
 
-Bu, kullanıcıların `<script>` veya `<style>` etiketleri yazma veya resimlere veya diğer içeriklere `onload=alert()` türü komut dosyaları eklemeye çalışma gibi şeyler yapamayacağı anlamına gelir.
+Bu, kullanıcıların `<script>` veya `<style>` etiketleri yazması ya da görüntülere veya diğer içeriğe `onload=alert()` türü betikler eklemeye çalışması gibi şeyler yapamayacağı anlamına gelir.
 
-İzin verdiğimiz HTML etiketleri aşağıdaki gibidir:
+İzin verdiğimiz HTML etiketleri şunlardır:
 
 - `<b>`
 - `<em>`
@@ -39,3 +41,5 @@ Bu, kullanıcıların `<script>` veya `<style>` etiketleri yazma veya resimlere 
 - `<ol>`
 - `<li>`
 - `<br>`
+
+`<iframe>` etiketi varsayılan olarak izin verilmez. Eğer Allow Media Embeds'i açarsanız, iframe'lere de izin verilir, fakat yalnızca kaynakları yerleşik güvenilir sağlayıcılar listesinden biri (ör. YouTube, Vimeo, SoundCloud ve Spotify) veya sizin açıkça eklediğiniz bir alan adı olduğunda. Diğer herhangi bir kaynaktan gelen iframe'ler kaldırılır.

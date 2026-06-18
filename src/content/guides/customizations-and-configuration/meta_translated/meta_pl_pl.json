@@ -8,22 +8,22 @@
       "subCat": "Podstawy"
     },
     {
-      "name": "Jak komentarze są powiązane ze stronami i artykułami",
+      "name": "Powiązywanie komentarzy ze stronami i artykułami",
       "file": "url-id.md",
       "subCat": "Podstawy"
     },
     {
-      "name": "Renderowanie tych samych komentarzy na różnych stronach",
+      "name": "Wyświetlanie tych samych komentarzy na różnych stronach",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "Podstawy"
     },
     {
-      "name": "Własne style",
+      "name": "Niestandardowe style",
       "file": "custom-css.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Własne czcionki",
+      "name": "Niestandardowe czcionki",
       "file": "custom-fonts.md",
       "subCat": "Wygląd"
     },
@@ -53,12 +53,12 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz awatary",
+      "name": "Wyłączanie awatarów",
       "file": "hide-avatars.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz wszystkie domyślne style",
+      "name": "Wyłączanie wszystkich domyślnych stylów",
       "file": "no-styles.md",
       "subCat": "Wygląd"
     },
@@ -68,27 +68,27 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Zwijanie odpowiedzi domyślnie",
+      "name": "Domyślne zwijanie odpowiedzi",
       "file": "collapse-replies.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Włącz WYSIWYG",
+      "name": "Włączenie edytora WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz pasek narzędzi",
+      "name": "Wyłączanie paska narzędzi",
       "file": "disable-toolbar.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz blokowanie",
+      "name": "Wyłączanie blokowania",
       "file": "disable-blocking.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Określanie, którą stronę renderować",
+      "name": "Wybór strony do renderowania",
       "file": "starting-page.md",
       "subCat": "Wygląd"
     },
@@ -98,12 +98,12 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Daty bezwzględne (wyłącz przyjazne dla człowieka znaczniki czasu)",
+      "name": "Daty bezwzględne (wyłącz przyjazne znaczniki czasu)",
       "file": "absolute-dates.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyświetlanie dat bezwzględnych i względnych jednocześnie",
+      "name": "Wyświetlanie dat bezwzględnych i względnych",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Wygląd"
     },
@@ -113,12 +113,12 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Renderuj linki jako tekst",
+      "name": "Wyświetlanie linków jako tekst",
       "file": "render-links-as-text.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Przełączanie komentarzy przyciskiem",
+      "name": "Przełączanie komentarzy za pomocą przycisku",
       "file": "use-show-comments-toggle.md",
       "subCat": "Wygląd"
     },
@@ -148,12 +148,12 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz komentarze na profilach",
+      "name": "Wyłącz komentarze w profilach",
       "file": "disable-profile-comments.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz prywatne wiadomości na profilach",
+      "name": "Wyłącz wiadomości prywatne w profilach",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Wygląd"
     },
@@ -163,7 +163,7 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Zmień ocenę treści GIF-ów",
+      "name": "Zmiana oceny treści GIF-ów",
       "file": "gif-rating.md",
       "subCat": "Wygląd"
     },
@@ -173,7 +173,7 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Zmień styl głosowania",
+      "name": "Zmiana stylu głosowania",
       "file": "vote-style.md",
       "subCat": "Wygląd"
     },
@@ -198,7 +198,7 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Szablony e-mail",
+      "name": "Szablony wiadomości e-mail",
       "file": "email-templates.md",
       "subCat": "Wygląd"
     },
@@ -208,8 +208,13 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Wyłącz przesyłanie obrazów",
+      "name": "Wyłączanie przesyłania obrazów",
       "file": "no-image-uploads.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Zezwalaj na osadzanie mediów",
+      "file": "allow-media-embeds.md",
       "subCat": "Wygląd"
     },
     {
@@ -228,32 +233,32 @@
       "subCat": "Wygląd"
     },
     {
-      "name": "Pokazuj komentarze na żywo od razu",
+      "name": "Wyświetlaj komentarze na żywo od razu",
       "file": "show-live-right-away.md",
-      "subCat": "Komentowanie na żywo"
+      "subCat": "Komentarze na żywo"
     },
     {
-      "name": "Wyłącz komentowanie na żywo",
+      "name": "Wyłączanie komentarzy na żywo",
       "file": "disable-live-commenting.md",
-      "subCat": "Komentowanie na żywo"
+      "subCat": "Komentarze na żywo"
     },
     {
-      "name": "Nowe komentarze na żywo na dół",
+      "name": "Nowe komentarze na żywo na dole",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Komentowanie na żywo"
+      "subCat": "Komentarze na żywo"
     },
     {
-      "name": "Włącz przewijanie nieskończone",
+      "name": "Włączenie nieskończonego przewijania",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Paginacja i sortowanie"
     },
     {
-      "name": "Zmienianie domyślnego kierunku sortowania",
+      "name": "Zmiana domyślnego kierunku sortowania",
       "file": "default-sort-direction.md",
       "subCat": "Paginacja i sortowanie"
     },
     {
-      "name": "Renderowanie wszystkich komentarzy naraz - wyłącz paginację",
+      "name": "Wyświetlanie wszystkich komentarzy na raz - wyłącz stronicowanie",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginacja i sortowanie"
     },
@@ -268,7 +273,7 @@
       "subCat": "Pole odpowiedzi"
     },
     {
-      "name": "Wyłącz wielolinijkowe komentowanie",
+      "name": "Wyłącz komentowanie wielowierszowe",
       "file": "use-single-line-comment-input.md",
       "subCat": "Pole odpowiedzi"
     },
@@ -278,7 +283,7 @@
       "subCat": "Pole odpowiedzi"
     },
     {
-      "name": "Zabroń nowych komentarzy najwyższego poziomu",
+      "name": "Zablokuj dodawanie nowych komentarzy najwyższego poziomu",
       "file": "no-new-root-comments.md",
       "subCat": "Pole odpowiedzi"
     },
@@ -293,37 +298,37 @@
       "subCat": "Pole odpowiedzi"
     },
     {
-      "name": "Przegląd logowania jednokrotnego (SSO)",
+      "name": "Omówienie logowania jednokrotnego (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integracje niestandardowe - Bezpieczne logowanie jednokrotne (SSO)",
+      "name": "Integracje niestandardowe — bezpieczne logowanie jednokrotne (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integracje niestandardowe - Proste logowanie jednokrotne (SSO)",
+      "name": "Integracje niestandardowe — proste logowanie jednokrotne (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integracje niestandardowe - Migracja z Disqus SSO",
+      "name": "Integracje niestandardowe — migracja z Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integracje niestandardowe - Migracja z Commento SSO",
+      "name": "Integracje niestandardowe — migracja z Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
     {
-      "name": "Ochrona wątków komentarzy za pomocą logowania jednokrotnego",
+      "name": "Ochrona wątków komentarzy za pomocą logowania jednokrotnego (SSO)",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
-      "name": "Zezwól na anonimowe komentowanie",
+      "name": "Zezwalaj na anonimowe komentowanie",
       "file": "allow-anon.md",
       "subCat": "Anonimowe komentowanie"
     },
@@ -338,12 +343,12 @@
       "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Wyłącz etykietę 'niezweryfikowany'",
+      "name": "Wyłącz etykietę 'Niezweryfikowany'",
       "file": "disable-unverified-label.md",
       "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Zezwól na anonimowe głosowanie",
+      "name": "Zezwalaj na anonimowe głosowanie",
       "file": "allow-anon-votes.md",
       "subCat": "Anonimowe komentowanie"
     },
@@ -383,12 +388,12 @@
       "subCat": "Różne"
     },
     {
-      "name": "Liczba komentarzy i zliczanie wszystkich zagnieżdżonych odpowiedzi",
+      "name": "Licznik komentarzy i zliczanie wszystkich zagnieżdżonych odpowiedzi",
       "file": "count-all.md",
       "subCat": "Różne"
     },
     {
-      "name": "Włącz linki komentujących",
+      "name": "Włączanie linków do komentujących",
       "file": "enable-commenter-links.md",
       "subCat": "Różne"
     },
@@ -398,12 +403,12 @@
       "subCat": "Różne"
     },
     {
-      "name": "Identyfikatory grup do wzmianek",
+      "name": "Identyfikatory grup do wzmiankowania",
       "file": "mention-group-ids.md",
       "subCat": "Różne"
     },
     {
-      "name": "Omijanie ciasteczek stron trzecich",
+      "name": "Ominięcie ciasteczek stron trzecich",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Różne"
     },
@@ -413,12 +418,12 @@
       "subCat": "Różne"
     },
     {
-      "name": "Pokaż odznaki na górnym pasku",
+      "name": "Wyświetlaj odznaki na górnym pasku",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Wygląd"
     },
     {
-      "name": "Pokaż listę użytkowników online",
+      "name": "Wyświetl listę użytkowników online",
       "file": "users-list.md",
       "subCat": "Wygląd"
     }

@@ -13,7 +13,7 @@
       "subCat": "基础"
     },
     {
-      "name": "在不同页面上显示相同的评论",
+      "name": "在不同页面渲染相同的评论",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "基础"
     },
@@ -73,7 +73,7 @@
       "subCat": "外观与体验"
     },
     {
-      "name": "启用所见即所得（WYSIWYG）",
+      "name": "启用所见即所得 (WYSIWYG)",
       "file": "enable-wysiwyg.md",
       "subCat": "外观与体验"
     },
@@ -103,22 +103,22 @@
       "subCat": "外观与体验"
     },
     {
-      "name": "同时显示绝对和相对日期",
+      "name": "同时显示绝对与相对日期",
       "file": "absolute-and-relative-dates.md",
       "subCat": "外观与体验"
     },
     {
-      "name": "添加标题文本",
+      "name": "添加页眉文本",
       "file": "header-html.md",
       "subCat": "外观与体验"
     },
     {
-      "name": "将链接呈现为文本",
+      "name": "将链接渲染为文本",
       "file": "render-links-as-text.md",
       "subCat": "外观与体验"
     },
     {
-      "name": "通过按钮切换评论",
+      "name": "使用按钮切换评论",
       "file": "use-show-comments-toggle.md",
       "subCat": "外观与体验"
     },
@@ -163,7 +163,7 @@
       "subCat": "外观与体验"
     },
     {
-      "name": "更改 GIF 的内容分级",
+      "name": "更改 GIF 的内容评级",
       "file": "gif-rating.md",
       "subCat": "外观与体验"
     },
@@ -213,12 +213,17 @@
       "subCat": "外观与体验"
     },
     {
+      "name": "允许媒体嵌入",
+      "file": "allow-media-embeds.md",
+      "subCat": "外观与体验"
+    },
+    {
       "name": "启用搜索框",
       "file": "enable-search.md",
       "subCat": "外观与体验"
     },
     {
-      "name": "启用剧透标记",
+      "name": "启用剧透",
       "file": "enable-spoilers.md",
       "subCat": "外观与体验"
     },
@@ -238,7 +243,7 @@
       "subCat": "实时评论"
     },
     {
-      "name": "将新实时评论显示在底部",
+      "name": "将新实时评论置于底部",
       "file": "new-comments-to-bottom.md",
       "subCat": "实时评论"
     },
@@ -253,7 +258,7 @@
       "subCat": "分页与排序"
     },
     {
-      "name": "一次性渲染所有评论 - 禁用分页",
+      "name": "一次渲染所有评论 - 禁用分页",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分页与排序"
     },
@@ -273,12 +278,12 @@
       "subCat": "回复框"
     },
     {
-      "name": "限制每用户评论数量",
+      "name": "限制每位用户的评论数量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回复框"
     },
     {
-      "name": "禁止新增顶级评论",
+      "name": "阻止新的顶级评论",
       "file": "no-new-root-comments.md",
       "subCat": "回复框"
     },
@@ -293,17 +298,17 @@
       "subCat": "回复框"
     },
     {
-      "name": "单点登录（SSO）概览",
+      "name": "单点登录 (SSO) 概述",
       "file": "sso.md",
       "subCat": "单点登录 (SSO)"
     },
     {
-      "name": "自定义集成 - 安全单点登录（SSO）",
+      "name": "自定义集成 - 安全单点登录 (SSO)",
       "file": "sso-secure.md",
       "subCat": "单点登录 (SSO)"
     },
     {
-      "name": "自定义集成 - 简易单点登录（SSO）",
+      "name": "自定义集成 - 简易单点登录 (SSO)",
       "file": "sso-simple.md",
       "subCat": "单点登录 (SSO)"
     },
@@ -333,7 +338,7 @@
       "subCat": "匿名评论"
     },
     {
-      "name": "禁用邮箱输入",
+      "name": "禁用电子邮件输入",
       "file": "disable-email-inputs.md",
       "subCat": "匿名评论"
     },
@@ -358,7 +363,7 @@
       "subCat": "其他"
     },
     {
-      "name": "手动定义用户的区域设置",
+      "name": "手动定义用户的语言环境",
       "file": "locale.md",
       "subCat": "其他"
     },
@@ -383,7 +388,7 @@
       "subCat": "其他"
     },
     {
-      "name": "评论计数及统计所有嵌套回复",
+      "name": "评论计数与统计所有嵌套回复",
       "file": "count-all.md",
       "subCat": "其他"
     },
@@ -403,7 +408,7 @@
       "subCat": "其他"
     },
     {
-      "name": "绕过第三方 Cookie",
+      "name": "第三方 Cookie 绕过",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "其他"
     },
