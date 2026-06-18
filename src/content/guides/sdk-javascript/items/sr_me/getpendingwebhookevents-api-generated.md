@@ -19,23 +19,23 @@
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b3f7c';
-const commentId: string | undefined = undefined;
-const externalId: string | undefined = 'external-572a';
-const eventType: string | undefined = 'comment.updated';
-const type: string | undefined = 'outbound';
-const domain: string | undefined = 'reviews.example.com';
-const attemptCountGT: number | undefined = 1;
-const skip: number | undefined = 20;
+const tenantId: string = 'tenant_9f3b2a';
+const commentId: string = 'cmt_8a7d1';
+const eventType: string = 'comment.created';
+const domain: string = 'reviews.myshop.com';
+const attemptCountGT: number = 1;
+const skip: number = 0;
 
 const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
   tenantId,
   commentId,
-  externalId,
+  undefined,
   eventType,
-  type,
+  undefined,
   domain,
   attemptCountGT,
   skip
 );
 [inline-code-end]
+
+---

@@ -13,19 +13,18 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za updateTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a9d";
-const id: string = "user_52c9f1ab";
+const tenantId: string = 'acme-corp';
+const userId: string = 'u_72b9f4';
 const updateTenantUserBody: UpdateTenantUserBody = {
-  email: "jane.doe@example.com",
-  displayName: "Jane Doe",
-  roles: ["moderator"],
-  isActive: true,
-  metadata: { signupSource: "sso", locale: "en-US" }
+  email: 'jane.doe@acme.com',
+  displayName: 'Jane Doe',
+  roles: ['moderator'],
+  suspended: false
 };
-const updateComments: string = "Promoted to moderator and updated display name";
-const result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);
+const updateComments: string = 'Promoted to moderator after review of activity and community feedback';
+const result: FlagCommentPublic200Response = await updateTenantUser(tenantId, userId, updateTenantUserBody, updateComments);
 [inline-code-end]
 
 ---

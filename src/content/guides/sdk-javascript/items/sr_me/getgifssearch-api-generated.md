@@ -1,28 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| search | string | Da |  |
-| locale | string | Ne |  |
-| rating | string | Ne |  |
-| page | number | Ne |  |
+| tenantId | string | Да |  |
+| search | string | Да |  |
+| locale | string | Не |  |
+| rating | string | Не |  |
+| page | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GifSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifSearchResponse.ts)
+Враћа: [`GetGifsSearch200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearch200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getGifsSearch'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "global-media";
-  const search: string = "laughing baby";
-  const locale: string = "en-US";
-  const rating: string = "pg";
-  const page: number = 2;
-  const result: GifSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
-  console.log(result);
-})();
+const tenantId: string = "tenant_acme_9876";
+const search: string = "cat playing piano";
+const locale: string = "en-US";
+const rating: string = "pg";
+const page: number = 1;
+const result: GetGifsSearch200Response = await getGifsSearch(tenantId, search, locale, rating, page);
 [inline-code-end]
+
+---

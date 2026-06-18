@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "f907d97ec8ae22fc3517cfaa9b1f75dca792b9dc6cecab7b36f772ea6b70e383",
+  "generatedAt": "2026-06-15T20:33:32.308Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = 'tenant_8b3f2c';\n  const locale: string = 'en-US';\n  const rating: string = 'pg';\n  const page: number = 1;\n  const result: GetGifsTrending200Response = await getGifsTrending(tenantId, locale, rating, page);\n  console.log(result);\n}\nmain();",
+  "model": "gpt-5-mini"
+}

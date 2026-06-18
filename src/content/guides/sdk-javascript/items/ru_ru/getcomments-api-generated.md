@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | page | number | Нет |  |
@@ -17,6 +17,8 @@
 | hashTag | string | Нет |  |
 | parentId | string | Нет |  |
 | direction | SortDirections | Нет |  |
+| fromDate | number | Нет |  |
+| toDate | number | Нет |  |
 
 ## Ответ
 
@@ -26,23 +28,8 @@
 
 [inline-code-attrs-start title = 'Пример getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // страница
-  20, // лимит
-  0, // пропустить
-  true, // в виде дерева
-  1, // пропустить дочерние
-  3, // лимит дочерних
-  4, // максимальная глубина дерева
-  'articles/2026/new-product-launch', // urlId
-  'user_7890', // идентификатор пользователя
-  'anon_4f3b2', // идентификатор анонимного пользователя
-  undefined, // идентификатор контекстного пользователя
-  '#launch', // хэштег
-  undefined // идентификатор родителя
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
 
 ---

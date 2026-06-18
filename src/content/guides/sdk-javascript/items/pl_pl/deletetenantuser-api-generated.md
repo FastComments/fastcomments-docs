@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
@@ -15,15 +15,11 @@ Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Przykład deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme_corp_tenant_9f1a2b";
-  const id: string = "user_4d2a1b6c";
-  const deleteComments: string = "true"; // usuń także komentarze użytkownika
-  const commentDeleteMode: string = "permanent"; // "permanent" lub "soft"
-  const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
-  console.log(result);
-}
-run();
+const tenantId: string = "tenant_8f3a2b1c4d";
+const id: string = "user_62a4f9e0b7";
+const deleteComments: string = "true";
+const commentDeleteMode: string = "permanent";
+const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
 [inline-code-end]
 
 ---

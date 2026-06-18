@@ -1,22 +1,26 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 
 ## 响应
 
-返回: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCount200Response.ts)
+返回：[`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCount200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getCachedNotificationCount 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const id: string = 'user_00012345';
-const includeUnreadOnly: boolean | undefined = true; // 可选参数标志（示例）
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
+const tenantId: string = 'fastcomments-tenant-23';
+const id: string = 'user_987654';
+const cachedCount: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
+
+const maybeId: string | undefined = Math.random() > 0.5 ? 'user_123456' : undefined;
+if (maybeId) {
+  const optionalCachedCount: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, maybeId);
+}
 [inline-code-end]
 
 ---

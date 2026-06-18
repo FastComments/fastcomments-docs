@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "37a25cf39d1a88c5b929bdb483de5c70b545c50c7d9801ae4888d63107a62c23",
+  "generatedAt": "2026-06-15T20:33:37.258Z",
+  "codeExample": "const tenantId: string = 'tenant_7f8e91c2';\nconst urlId: string = 'https://www.sportsdaily.com/news/2026/06/15/championship-game-recap';\nconst votes: GetVotes200Response = await getVotes(tenantId, urlId);\nconsole.log(votes);",
+  "model": "gpt-5-mini"
+}

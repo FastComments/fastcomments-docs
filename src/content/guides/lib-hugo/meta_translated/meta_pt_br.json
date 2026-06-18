@@ -1,11 +1,71 @@
 {
-  "name": "Biblioteca do Hugo",
-  "pageHeader": "Adicione comentários ao seu site Hugo",
+  "name": "Biblioteca Hugo",
+  "pageHeader": "Adicionar comentários ao seu site Hugo",
   "itemsOrdered": [
     {
-      "name": "Visão geral",
-      "file": "overview.md",
+      "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Apresentação ao vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Instalação",
+      "file": "install-readme-generated.md",
       "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Início rápido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Shortcodes",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Integração com tema",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Contagem em massa de comentários",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Configuração",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuração",
+      "type": "readme"
+    },
+    {
+      "name": "Referência de configuração do widget",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "Referência da API",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Status de manutenção",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentação",
       "type": "readme"
     }
   ]

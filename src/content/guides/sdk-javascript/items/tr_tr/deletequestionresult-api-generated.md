@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tip | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
@@ -13,8 +13,10 @@ Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteQuestionResult Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantIdEnv: string | undefined = process.env.FASTCOMMENTS_TENANT_ID;
-const tenantId: string = tenantIdEnv ?? 'tenant_78b3f2';
-const id: string = 'qres-9f2a3b1c';
+const tenantId: string = "acme-corp-tenant-01";
+const id: string = "qres_9f8b7c3a";
 const response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
+const optionalResponse: FlagCommentPublic200Response | undefined = response;
 [inline-code-end]
+
+---

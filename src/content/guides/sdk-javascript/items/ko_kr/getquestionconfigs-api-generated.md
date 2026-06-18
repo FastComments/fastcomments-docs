@@ -1,9 +1,9 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| skip | number | 아니요 |  |
+| skip | number | 아니오 |  |
 
 ## 응답
 
@@ -13,9 +13,10 @@
 
 [inline-code-attrs-start title = 'getQuestionConfigs 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_9876";
-const configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);
+const tenantId: string = "tenant_4c9f2b";
+const responseWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
+const skip: number = 50;
+const responseWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);
 [inline-code-end]
 
 ---

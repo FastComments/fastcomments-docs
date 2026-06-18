@@ -1,9 +1,9 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| userId | string | Ja |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
 
 ## Svar
 
@@ -11,13 +11,18 @@ Returnerer: [`GetUserBadgeProgressById200Response`](https://github.com/FastComme
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getUserBadgeProgressByUserId'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressByUserId Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f9c2d3b';
-const maybeUserId: string | undefined = 'user_4b8e1f9a'; // valgfri kilde (kan være undefined)
-const userId: string = maybeUserId ?? 'user_fallback0001';
-const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
-console.log(result);
+const tenantId: string = 'acme-inc-tenant-01';
+const userId: string = 'user_73c9b2';
+const progress: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
+
+async function maybeFetchProgress(tenant: string, user?: string): Promise<GetUserBadgeProgressById200Response | null> {
+  if (!user) return null;
+  return await getUserBadgeProgressByUserId(tenant, user);
+}
+
+const optionalResult: GetUserBadgeProgressById200Response | null = await maybeFetchProgress(tenantId, userId);
 [inline-code-end]
 
 ---

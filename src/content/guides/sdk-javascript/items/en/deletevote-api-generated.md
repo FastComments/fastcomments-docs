@@ -14,9 +14,12 @@ Returns: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteVote Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8b3f2a9c';
-const id: string = 'comment-4721';
-const editKey: string = 'edk_4f2a9b7c';
-const responseWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
-const responseWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id);
+(async () => {
+  const tenantId: string = 'tenant_8421';
+  const id: string = 'vote_3f9b7c2a';
+  const editKey: string = 'edit_7Xk9LpQ';
+  const responseWithoutEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id);
+  const responseWithEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
+  console.log(responseWithoutEdit, responseWithEdit);
+})();
 [inline-code-end]

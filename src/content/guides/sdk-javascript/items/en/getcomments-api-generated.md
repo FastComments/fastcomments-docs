@@ -17,6 +17,8 @@
 | hashTag | string | No |  |
 | parentId | string | No |  |
 | direction | SortDirections | No |  |
+| fromDate | number | No |  |
+| toDate | number | No |  |
 
 ## Response
 
@@ -26,23 +28,6 @@ Returns: [`GetComments200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getComments Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_5f2b9a";
-const page: number = 1;
-const limit: number = 20;
-const asTree: boolean = true;
-const maxTreeDepth: number = 2;
-const urlId: string = "news/2026/05/20/new-feature";
-const userId: string = "user_8d34";
-const result: GetComments200Response = await getComments(
-  tenantId,
-  page,
-  limit,
-  undefined,
-  asTree,
-  undefined,
-  undefined,
-  maxTreeDepth,
-  urlId,
-  userId
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]

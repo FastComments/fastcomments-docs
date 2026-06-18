@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -13,11 +13,11 @@ Vraća: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'Primer getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f4b2c1a";
-const idOverride: string | undefined = undefined; // opciono preklapanje, ako je dostupno
-const id: string = idOverride ?? "site_3e7a6b2f";
-const response: GetTenant200Response = await getTenant(tenantId, id);
-console.log(response);
+const tenantId: string = 'fc_tenant_6b3e2a';
+const id: string = 'site_42f1';
+const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+const tenant: APITenant | undefined = tenantResponse.tenant;
+const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
 [inline-code-end]
 
 ---

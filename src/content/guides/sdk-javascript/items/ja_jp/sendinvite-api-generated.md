@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | はい |  |
@@ -12,13 +12,15 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'sendInvite の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendInviteの例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-128';
-const id: string = 'comment-8421f';
-const fromName: string = 'Marcus Lindström';
-const note: string | undefined = undefined; // オプションのパラメータ例
-const response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
+(async () => {
+  const tenantId: string = "tenant_acme_42";
+  const id: string = "cmt_8f3b21";
+  const fromName: string = "Ava Thompson";
+  const inviteResult: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
+  console.log(inviteResult);
+})();
 [inline-code-end]
 
 ---

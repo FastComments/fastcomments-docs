@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
@@ -12,14 +12,13 @@ Vraća: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastc
 
 ## Primjer
 
-[inline-code-attrs-start title = 'renderEmailTemplate Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-987';
+const tenantId: string = '7f7e2b90-3a2b-4d9b-9df1-5f0b6b2e8a1c';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'user-invite',
-  subject: "You're invited to Acme",
-  placeholders: { firstName: 'Alex' },
-  metadata: { source: 'signup-flow' }
+  templateId: 'welcome_email',
+  recipient: { email: 'jordan.smith@acme.co', name: 'Jordan Smith' },
+  variables: { siteName: 'Acme Forum', verificationUrl: 'https://acme.forum/verify?code=abc123' }
 };
 const locale: string = 'en-US';
 const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);

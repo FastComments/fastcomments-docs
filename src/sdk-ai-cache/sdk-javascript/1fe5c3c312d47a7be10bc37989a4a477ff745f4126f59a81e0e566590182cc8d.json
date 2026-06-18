@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "1fe5c3c312d47a7be10bc37989a4a477ff745f4126f59a81e0e566590182cc8d",
+  "generatedAt": "2026-06-15T20:33:32.180Z",
+  "codeExample": "const tenantId: string = 'tenant_prod_001';\nconst urlId: string = 'article-2026-06-15-how-ai-impacts';\nconst afterName: string = 'michael.smith';\nconst afterUserId: string = 'user_72b9';\n\nconst response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);",
+  "model": "gpt-5-mini"
+}

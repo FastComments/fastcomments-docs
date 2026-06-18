@@ -11,7 +11,7 @@ userIdWS
 | urlId | string | Ναι |  |
 | userIdWS | string | Ναι |  |
 | startTime | number | Ναι |  |
-| endTime | number | Ναι |  |
+| endTime | number | Όχι |  |
 
 ## Απόκριση
 
@@ -21,12 +21,12 @@ userIdWS
 
 [inline-code-attrs-start title = 'Παράδειγμα getGlobalEventLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-84b2f1";
-const urlId: string = "article-6721";
-const userIdWS: string = "ws-conn-9a3c";
-const startTime: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // 7 ημέρες πριν
-const endTimeOptional: number | undefined = undefined; // προαιρετικό τέλος χρονικού διαστήματος
-const endTime: number = endTimeOptional ?? Date.now();
+const tenantId: string = "tenant_639b7f12";
+const urlId: string = "https://www.news-site.com/articles/2026/06/15/important-update-987";
+const userIdWS: string = "user_ws_42b7";
+const startTime: number = new Date("2026-06-14T00:00:00Z").getTime();
+const endTime: number = Date.now();
+
 const eventLog: GetEventLog200Response = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
 [inline-code-end]
 

@@ -13,15 +13,14 @@ Returns: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'addHashTagsBulk Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const customConfig: CustomConfigParameters = { importance: 'low', notifyOnChange: false };
-const tag: BulkCreateHashTagsBodyTagsInner = {
-  name: 'feature-ui',
-  description: 'Marks UI-related feature work',
-  color: '#1E90FF',
-  customConfig
+const tenantId: string = "tenant_acme_corp_987";
+const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
+  tags: [
+    { name: "product-update", description: "Announcements about new product releases", visible: true },
+    { name: "customer-support", description: "Customer support related discussions", visible: false }
+  ],
+  createdBy: "moderator_jane"
 };
-const bulkCreateHashTagsBody: BulkCreateHashTagsBody = { tags: [tag] };
 const resultWithTenant: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
 const resultWithoutTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);
 [inline-code-end]

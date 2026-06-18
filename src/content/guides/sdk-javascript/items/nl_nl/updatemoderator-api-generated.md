@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -14,14 +14,14 @@ Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'updateModerator Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises-42";
-const id: string = "moderator_517";
+const tenantId: string = 'acme-tenant-81';
+const id: string = 'mod_7f3a2b';
 const updateModeratorBody: UpdateModeratorBody = {
-  displayName: "Sofia Martinez",
-  email: "sofia.martinez@acme.com",
-  permissions: ["approve_comments", "flag_spam", "suspend_users"],
+  email: 'j.reyes@acme-corp.com',
+  displayName: 'Jordan Reyes',
+  roles: ['moderator', 'content_reviewer'],
   active: true,
-  avatarUrl: "https://cdn.acme.com/avatars/sofia.jpg" // optioneel veld ter demonstratie
+  notes: 'Promoted to senior moderator; monitor flagged content weekly'
 };
 const result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);
 [inline-code-end]

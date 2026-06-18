@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "fda4a00599846f0f559e237d7d9ab75409d6c3e84b9cd6490532d180a02ad8a9",
+  "generatedAt": "2026-06-15T20:33:36.414Z",
+  "codeExample": "const tenantId: string = 'tenant_7890';\nconst urlId: string = 'news/2026-06-15-world-cup-final';\nconst usernameStartsWith: string = 'mar';\nconst mentionGroupIds: string[] = ['staff', 'trusted-commenters'];\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Commenters;\nconst response: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);",
+  "model": "gpt-5-mini"
+}

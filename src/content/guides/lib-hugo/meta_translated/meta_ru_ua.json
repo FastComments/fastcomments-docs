@@ -1,11 +1,71 @@
 {
   "name": "Библиотека Hugo",
-  "pageHeader": "Добавление комментариев на ваш сайт Hugo",
+  "pageHeader": "Добавьте комментарии на свой сайт Hugo",
   "itemsOrdered": [
     {
-      "name": "Обзор",
-      "file": "overview.md",
+      "name": "Онлайн-демо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Онлайн-презентация",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Установка",
+      "file": "install-readme-generated.md",
       "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Быстрый старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Шорткоды",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграция с темой",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Массовый подсчет комментариев",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Справочник по конфигурации виджета",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "Справочник API",
+      "type": "readme"
+    },
+    {
+      "name": "Ссылки",
+      "file": "links-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус обслуживания",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документация",
       "type": "readme"
     }
   ]

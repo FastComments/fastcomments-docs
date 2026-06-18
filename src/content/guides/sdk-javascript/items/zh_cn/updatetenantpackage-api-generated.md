@@ -1,8 +1,7 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
+|------|------|------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 | updateTenantPackageBody | UpdateTenantPackageBody | 是 |  |
@@ -15,18 +14,16 @@
 
 [inline-code-attrs-start title = 'updateTenantPackage 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_sf_001";
-  const id: string = "pkg-premium-v2";
-  const updateTenantPackageBody: UpdateTenantPackageBody = {
-    name: "San Francisco Premium",
-    enabled: true,
-    customConfig: { maxComments: 500 },
-    tosConfig: { required: true } // 示例展示了可选字段；其他字段已省略
-  } as UpdateTenantPackageBody;
-  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9f3b2a';
+const id: string = 'pkg_pro_2026';
+const updateTenantPackageBody: UpdateTenantPackageBody = {
+  name: 'Pro Plan',
+  monthlyPriceUsd: 49,
+  isActive: true,
+  features: ['moderation', 'analytics', 'sso'],
+  trialDays: 14 // 可选参数示例
+};
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
 
 ---

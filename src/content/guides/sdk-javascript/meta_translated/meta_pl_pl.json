@@ -1,6 +1,6 @@
 {
-  "name": "JavaScript/TypeScript SDK",
-  "pageHeader": "FastComments JavaScript/TypeScript SDK",
+  "name": "SDK JavaScript/TypeScript",
+  "pageHeader": "FastComments SDK dla JavaScript/TypeScript",
   "itemsOrdered": [
     {
       "name": "Instalacja",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Zgodność przeglądarek i serwerów",
+      "name": "Zgodność przeglądarki i serwera",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Publiczne i zabezpieczone API",
+      "name": "API publiczne i zabezpieczone",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Referencja API",
       "type": "readme"
@@ -77,19 +77,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokuj z komentarza",
+      "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokuj z komentarza",
+      "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Sprawdź zablokowane komentarze",
+      "subCat": "Sprawdzanie zablokowanych komentarzy",
       "type": "api"
     },
     {
@@ -233,37 +233,37 @@
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domen",
+      "subCat": "Konfiguracje domeny",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domen",
+      "subCat": "Konfiguracje domeny",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domen",
+      "subCat": "Konfiguracje domeny",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Konfiguracje domen",
+      "subCat": "Konfiguracje domeny",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domen",
+      "subCat": "Konfiguracje domeny",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domen",
+      "subCat": "Konfiguracje domeny",
       "type": "api"
     },
     {
@@ -395,25 +395,25 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Zgłoś komentarz",
+      "subCat": "Zgłaszanie komentarza",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "Gify",
+      "subCat": "GIF-y",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "Gify",
+      "subCat": "GIF-y",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "Gify",
+      "subCat": "GIF-y",
       "type": "api"
     },
     {
@@ -513,6 +513,48 @@
       "type": "api"
     },
     {
+      "name": "createV1PageReact",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
+      "name": "createV2PageReact",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
+      "name": "deleteV1PageReact",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
+      "name": "deleteV2PageReact",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
+      "name": "getV1PageLikes",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
+      "name": "getV2PageReacts",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
+      "name": "getV2PageReactUsers",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Reakcje strony",
+      "type": "api"
+    },
+    {
       "name": "addPage",
       "file": "addpage-api-generated.md",
       "subCat": "Strony",
@@ -525,6 +567,18 @@
       "type": "api"
     },
     {
+      "name": "getOfflineUsers",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
+      "name": "getOnlineUsers",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
       "name": "getPageByURLId",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Strony",
@@ -533,6 +587,18 @@
     {
       "name": "getPages",
       "file": "getpages-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
+      "name": "getPagesPublic",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
+      "name": "getUsersInfo",
+      "file": "getusersinfo-api-generated.md",
       "subCat": "Strony",
       "type": "api"
     },

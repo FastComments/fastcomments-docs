@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -11,13 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getQuestionResult пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-42';
-const id: string = 'question-9f8b7c';
-const includeComments: boolean | undefined = true; // пример опционалног параметра
-const result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);
-console.log(result);
+const tenantId: string = 'tenant_9f3b2a7c9';
+const questionId: string = 'q_8d4f1b2c3a';
+const options: { includeMeta?: boolean } = { includeMeta: true }; // демонстрација необавезног параметра
+const result: GetQuestionResult200Response = await getQuestionResult(tenantId, questionId);
+const apiStatus: APIStatus | undefined = (result as unknown as { apiStatus?: APIStatus }).apiStatus;
+const question: QuestionResult | undefined = (result as unknown as { question?: QuestionResult }).question;
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Type | Requerido | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | skip | number | No |  |
@@ -13,9 +13,10 @@ Devuelve: [`GetModerators200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Ejemplo de getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-12345-prod';
-const moderatorsPage1: GetModerators200Response = await getModerators(tenantId);
-const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, 50);
+const tenantId: string = 'tenant_0a1b2c3d';
+const moderators: GetModerators200Response = await getModerators(tenantId);
+const skip: number = 20;
+const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, skip);
 [inline-code-end]
 
 ---

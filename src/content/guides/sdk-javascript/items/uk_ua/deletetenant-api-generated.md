@@ -1,7 +1,7 @@
 ## Параметри
 
-| Name | Type | Обов'язково | Опис |
-|------|------|-------------|------|
+| Назва | Тип | Обов'язково | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
 | sure | string | Ні |  |
@@ -14,10 +14,11 @@
 
 [inline-code-attrs-start title = 'Приклад використання deleteTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42c9f1';
-const id: string = 'flag_9a7b3c';
-const sure: string = 'confirm-delete';
-const result: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
+const tenantId: string = 'tenant_742b9c';
+const flagId: string = 'flag_1a2b3c';
+const resultWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, flagId);
+const sureConfirmation: string = 'confirmed';
+const resultWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, flagId, sureConfirmation);
 [inline-code-end]
 
 ---

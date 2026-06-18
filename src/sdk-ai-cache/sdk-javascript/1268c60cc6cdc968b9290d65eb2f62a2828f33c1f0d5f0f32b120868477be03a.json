@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "1268c60cc6cdc968b9290d65eb2f62a2828f33c1f0d5f0f32b120868477be03a",
+  "generatedAt": "2026-06-15T20:33:34.821Z",
+  "codeExample": "const tenantId: string = 'tenant_6b3f9a2d';\nconst commentId: string = 'cmt_8f4b12a9';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: 'Repeated promotional links',\n  durationMinutes: 60 * 24 * 30, // 30 days\n  escalateToModeration: true\n};\nconst sso: string = 'sso_token_3fH7kLw';\n\nconst result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini"
+}

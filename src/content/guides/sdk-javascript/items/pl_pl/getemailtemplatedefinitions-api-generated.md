@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -10,11 +11,14 @@ Zwraca: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastCommen
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_eu_01';
-const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-console.log('Email template definitions loaded for', tenantId, templates);
+(async () => {
+  const tenantId: string = 'tenant_acme_001';
+  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // pokazuje użycie opcjonalnego parametru
+  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
+  console.log(templates);
+})();
 [inline-code-end]
 
 ---

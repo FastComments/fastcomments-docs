@@ -1,24 +1,26 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| page | number | Όχι |  |
-| limit | number | Όχι |  |
-| skip | number | Όχι |  |
-| asTree | boolean | Όχι |  |
-| skipChildren | number | Όχι |  |
-| limitChildren | number | Όχι |  |
-| maxTreeDepth | number | Όχι |  |
-| urlId | string | Όχι |  |
-| userId | string | Όχι |  |
-| anonUserId | string | Όχι |  |
-| contextUserId | string | Όχι |  |
-| hashTag | string | Όχι |  |
-| parentId | string | Όχι |  |
-| direction | SortDirections | Όχι |  |
+| tenantId | string | Yes |  |
+| page | number | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
+| asTree | boolean | No |  |
+| skipChildren | number | No |  |
+| limitChildren | number | No |  |
+| maxTreeDepth | number | No |  |
+| urlId | string | No |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
+| contextUserId | string | No |  |
+| hashTag | string | No |  |
+| parentId | string | No |  |
+| direction | SortDirections | No |  |
+| fromDate | number | No |  |
+| toDate | number | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
 
@@ -26,21 +28,6 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // page
-  20, // limit
-  0, // skip
-  true, // asTree
-  1, // skipChildren
-  3, // limitChildren
-  4, // maxTreeDepth
-  'articles/2026/new-product-launch', // urlId
-  'user_7890', // userId
-  'anon_4f3b2', // anonUserId
-  undefined, // contextUserId
-  '#launch', // hashTag
-  undefined // parentId
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]

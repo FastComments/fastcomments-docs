@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "413ef8ee249bc5affa088a7282c6e8507f93ea4c8411fc28e676bf6641121a8d",
+  "generatedAt": "2026-06-15T20:33:34.661Z",
+  "codeExample": "const tenantId: string = \"tenant_82f4b3a9\";\nconst urlId: string = \"https://news.site.com/articles/2026/06/15/product-launch\";\nconst response: GetV2PageReacts200Response = await getV2PageReacts(tenantId, urlId);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

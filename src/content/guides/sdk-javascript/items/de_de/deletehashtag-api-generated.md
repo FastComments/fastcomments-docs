@@ -1,7 +1,7 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tag | string | Ja |  |
 | tenantId | string | Nein |  |
 | deleteHashTagRequest | DeleteHashTagRequest | Nein |  |
@@ -12,14 +12,14 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'deleteHashTag Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für deleteHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "spring-sale-2026";
-const tenantId: string = "tenant-9876";
+const tag: string = "breaking-news";
+const tenantId: string = "tenant_72a1";
 const deleteHashTagRequest: DeleteHashTagRequest = {
-  requestedBy: "admin@retailco.com",
-  reason: "Campaign ended; remove associated auto-tags",
-  cascadeDelete: true
+  reason: "consolidate-duplicates",
+  requestedBy: "moderator@dailypress.com",
+  forceDelete: true
 };
 const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]

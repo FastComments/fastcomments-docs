@@ -1,32 +1,32 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| broadcastId | string | Да |  |
-| commentData | CommentData | Да |  |
-| sessionId | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| broadcastId | string | Da |  |
+| commentData | CommentData | Da |  |
+| sessionId | string | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateCommentPublic200Response.ts)
+Vraća: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateCommentPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример createCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_42';
-const urlId: string = 'article-2026-03-25-tech-deep-dive';
-const broadcastId: string = 'live-broadcast-001';
-const sessionId: string = 'sess_9f8e7d6a3b';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
+const tenantId: string = 'tenant_9a1b2c';
+const urlId: string = 'https://www.news-site.com/article/67890';
+const broadcastId: string = 'broadcast_2026-06-15-01';
+const sessionId: string | undefined = 'sess_abc123xyz';
+const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiam9yZGFuIiwiaWF0IjoxNjI0MDAwMDB9.signature';
 const commentData: CommentData = {
-  content: 'Great reporting — appreciated the depth on performance tradeoffs.',
-  authorName: 'Jordan M.',
-  language: 'en-US',
-  metadata: { client: 'web' }
-};
+  content: 'Insightful piece — I appreciated the data-backed points and sources cited.',
+  authorDisplayName: 'Jordan Miles'
+} as CommentData;
 const result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);
 [inline-code-end]
+
+---

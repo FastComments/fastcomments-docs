@@ -1,14 +1,13 @@
----
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | כן |  |
+| limit | number | לא |  |
+| skip | number | לא |  |
+| order | SORTDIR | לא |  |
+| after | number | לא |  |
+| before | number | לא |  |
 
 ## תגובה
 
@@ -16,14 +15,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9a8b7c';
+const tenantId: string = 'tenant_5f8d7c3a';
 const limit: number = 100;
 const skip: number = 0;
-const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // לפני 30 יום
+const order: SORTDIR = 'DESC' as SORTDIR;
+const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // לפני שבוע
 const before: number = Date.now();
-const auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);
+const result: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after, before);
 [inline-code-end]
 
 ---

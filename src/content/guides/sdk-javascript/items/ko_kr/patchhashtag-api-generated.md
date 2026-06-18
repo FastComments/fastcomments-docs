@@ -2,9 +2,9 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tag | string | 예 |  |
-| tenantId | string | 아니오 |  |
-| updateHashTagBody | UpdateHashTagBody | 아니오 |  |
+| tag | string | Yes |  |
+| tenantId | string | No |  |
+| updateHashTagBody | UpdateHashTagBody | No |  |
 
 ## 응답
 
@@ -14,15 +14,14 @@
 
 [inline-code-attrs-start title = 'patchHashTag 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "feature-ux-refresh";
-const tenantId: string = "tenant_4f92c1";
+const tag: string = "feature-request";
+const tenantId: string = "tenant_8f7a3b2c";
 const updateHashTagBody: UpdateHashTagBody = {
-  label: "UX Refresh",
-  description: "Track comments related to the 2026 UX redesign",
-  isActive: true,
-  metadata: { owner: "product-design", rolloutPhase: "phase-2" }
+  displayName: "Feature Request",
+  description: "Use this tag for requests to add new features to the product",
+  enabled: true
 };
-const response: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
+const result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
 [inline-code-end]
 
 ---

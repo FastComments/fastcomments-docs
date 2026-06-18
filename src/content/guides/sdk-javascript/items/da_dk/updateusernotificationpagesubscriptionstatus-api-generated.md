@@ -1,10 +1,10 @@
-Aktivér eller deaktiver notifikationer for en side. Når brugere er tilmeldt en side, oprettes notifikationer
-for nye topniveau-kommentarer, og også
+Aktiver eller deaktiver notifikationer for en side. Når brugere abonnerer på en side, oprettes notifikationer
+for nye root-kommentarer, og også
 
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
-|------|------|----------|-------------|
+| Navn | Type | Krævet | Beskrivelse |
+|------|------|--------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | url | string | Ja |  |
@@ -18,13 +18,15 @@ Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastC
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel for updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const urlId: string = 'blog-launch-2026';
-const url: string = 'https://acme.example.com/blog/launch-march-2026';
-const pageTitle: string = 'Acme Product Launch — March 2026';
+const tenantId: string = 'tenant_7f3b2';
+const urlId: string = 'article_987';
+const url: string = 'https://www.news-site.com/articles/2026/pasta-guide';
+const pageTitle: string = 'The Definitive Guide to Cooking Pasta';
 const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const response: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
+const sso: string = 'sso-token-62b9f1';
+const result: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
 [inline-code-end]
+
+---

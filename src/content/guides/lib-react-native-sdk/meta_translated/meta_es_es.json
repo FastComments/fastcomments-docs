@@ -1,7 +1,13 @@
 {
   "name": "SDK de React Native",
-  "pageHeader": "Agregar comentarios a tu aplicación React Native",
+  "pageHeader": "Agregar comentarios a tu aplicación de React Native",
   "itemsOrdered": [
+    {
+      "name": "Demostración en vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",

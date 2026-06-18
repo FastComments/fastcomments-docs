@@ -1,3 +1,4 @@
+---
 req
 tenantId
 afterId
@@ -13,14 +14,18 @@ afterId
 
 ## 响应
 
-返回: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPosts200Response.ts)
+返回： [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPosts200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getFeedPosts 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const initialPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', undefined, 20, ['sports', 'local']);
-const nextPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', 'post_abc123', 20, ['sports', 'local']);
+const tenantId: string = "tenant_74321";
+const afterId: string = "post_20250610_9b2f3";
+const limit: number = 25;
+const tags: Array<string> = ["product-updates", "announcements"];
+
+const response: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit, tags);
 [inline-code-end]
 
 ---

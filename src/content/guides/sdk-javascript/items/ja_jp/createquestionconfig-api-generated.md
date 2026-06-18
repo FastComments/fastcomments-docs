@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | はい |  |
@@ -13,20 +14,22 @@
 
 [inline-code-attrs-start title = 'createQuestionConfig の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_01";
+const tenantId: string = "tenant_9f3b1c2a";
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  title: "Post-purchase feedback",
-  description: "Quick survey about your recent order",
+  name: "Product feedback",
+  key: "product_quality",
+  description: "Short survey question shown after posting a comment",
   required: true,
-  renderingType: "single_choice",
-  options: [
-    { label: "Very dissatisfied", value: "1" },
-    { label: "Dissatisfied", value: "2" },
-    { label: "Neutral", value: "3" },
-    { label: "Satisfied", value: "4" },
-    { label: "Very satisfied", value: "5" }
-  ] as QuestionConfigCustomOptionsInner[]
-} as CreateQuestionConfigBody;
+  renderingType: "singleChoice",
+  customOptions: [
+    { label: "Excellent", value: "5" },
+    { label: "Good", value: "4" },
+    { label: "Fair", value: "3" }
+  ] as QuestionConfigCustomOptionsInner[],
+  notifyModerators: false // オプションのパラメータの例を示す
+};
+
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
 

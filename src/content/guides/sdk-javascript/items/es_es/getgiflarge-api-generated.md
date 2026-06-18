@@ -1,22 +1,23 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | largeInternalURLSanitized | string | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
+Devuelve: [`GetGifLarge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLarge200Response.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a92f4';
-const largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';
-let maybeStatus: APIStatus | undefined = undefined; // metadatos opcionales cuando estén disponibles
-const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+const tenantId: string = "tenant_9f8b7c";
+const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/07d3f6_large.gif";
+const preferWebP: boolean | undefined = true; // preferencia opcional
+const urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(".gif", ".webp") : largeInternalURLSanitized;
+const response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);
 [inline-code-end]
 
 ---

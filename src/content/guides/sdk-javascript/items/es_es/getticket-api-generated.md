@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -14,12 +14,14 @@ Devuelve: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Ejemplo de getTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const ticketId: string = 'tkt-20260325-42';
-const userId: string = 'user-8452';
+const tenantId: string = 'acme-corp';
+const ticketId: string = 'TCKT-20250615-42';
+const userId: string = 'user_84b2';
 
-const ticketResponseWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
-const ticketResponseWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
+const ticketWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
+const ticketWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
+
+console.log(ticketWithUser.id, ticketWithoutUser.id);
 [inline-code-end]
 
 ---

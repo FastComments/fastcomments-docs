@@ -1,10 +1,10 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| updateModeratorBody | UpdateModeratorBody | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateModeratorBody | UpdateModeratorBody | Yes |  |
 
 ## 回應
 
@@ -14,14 +14,14 @@
 
 [inline-code-attrs-start title = 'updateModerator 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises-42";
-const id: string = "moderator_517";
+const tenantId: string = 'acme-tenant-81';
+const id: string = 'mod_7f3a2b';
 const updateModeratorBody: UpdateModeratorBody = {
-  displayName: "Sofia Martinez",
-  email: "sofia.martinez@acme.com",
-  permissions: ["approve_comments", "flag_spam", "suspend_users"],
+  email: 'j.reyes@acme-corp.com',
+  displayName: 'Jordan Reyes',
+  roles: ['moderator', 'content_reviewer'],
   active: true,
-  avatarUrl: "https://cdn.acme.com/avatars/sofia.jpg" // 示範的可選欄位
+  notes: 'Promoted to senior moderator; monitor flagged content weekly'
 };
 const result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);
 [inline-code-end]

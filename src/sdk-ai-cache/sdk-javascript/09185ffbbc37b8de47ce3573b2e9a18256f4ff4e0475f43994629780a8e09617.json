@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "09185ffbbc37b8de47ce3573b2e9a18256f4ff4e0475f43994629780a8e09617",
+  "generatedAt": "2026-06-15T20:33:41.234Z",
+  "codeExample": "const tenantId: string = \"tenant_72f3b4c9\";\nconst id: string = \"post_ba4f6e18-2d3c-4b7a-91f2-8c0e3a6b5d4f\";\n\nconst feedPost: FeedPost = {\n  title: \"June feature rollout\",\n  body: \"Announcing performance improvements and moderation updates available to all sites.\",\n  authorName: \"Platform Team\",\n  mediaItems: [\n    {\n      type: \"image\",\n      caption: \"Release banner\",\n      asset: { url: \"https://cdn.fastcomments.com/assets/june-banner.jpg\", mimeType: \"image/jpeg\", width: 1200, height: 600 }\n    }\n  ],\n  links: [{ title: \"Release notes\", url: \"https://docs.fastcomments.com/releases/june-2026\" }]\n} as FeedPost;\n\nconst result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);",
+  "model": "gpt-5-mini"
+}

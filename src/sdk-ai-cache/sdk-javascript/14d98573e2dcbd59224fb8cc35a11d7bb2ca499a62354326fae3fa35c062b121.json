@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "14d98573e2dcbd59224fb8cc35a11d7bb2ca499a62354326fae3fa35c062b121",
+  "generatedAt": "2026-06-15T20:33:33.616Z",
+  "codeExample": "const tenantId: string = 'tenant_5f2a8b9c';\nconst notificationId: string = 'notif_987654321';\nconst newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Read;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload.signature';\nconst result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);",
+  "model": "gpt-5-mini"
+}

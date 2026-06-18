@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "2473bb072e97a49a816ee3eaa6c96e8203d0ccc8f8106605bd9daa6725bec449",
+  "generatedAt": "2026-06-15T20:33:35.098Z",
+  "codeExample": "const tenantId: string = 'acme-media-58';\nconst id: string = 'mod-82f3b9c1';\nconst moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);",
+  "model": "gpt-5-mini"
+}

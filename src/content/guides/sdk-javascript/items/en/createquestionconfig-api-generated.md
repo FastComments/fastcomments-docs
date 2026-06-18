@@ -13,15 +13,21 @@ Returns: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createQuestionConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
+const tenantId: string = "tenant_9f3b1c2a";
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  title: "Product Satisfaction",
-  description: "Quarterly feedback on overall product experience",
-  isActive: true,
+  name: "Product feedback",
+  key: "product_quality",
+  description: "Short survey question shown after posting a comment",
+  required: true,
+  renderingType: "singleChoice",
   customOptions: [
-    { label: "Very satisfied", value: "5" },
-    { label: "Somewhat satisfied", value: "4" }
-  ] // optional fields like description are shown; others omitted
+    { label: "Excellent", value: "5" },
+    { label: "Good", value: "4" },
+    { label: "Fair", value: "3" }
+  ] as QuestionConfigCustomOptionsInner[],
+  notifyModerators: false // optional parameter demonstrated
 };
+
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]

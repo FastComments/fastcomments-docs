@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "c71f04903e503b8f5c53cf2a7b4b02386ce3437835695460141fe722230dae46",
+  "generatedAt": "2026-06-15T20:33:36.915Z",
+  "codeExample": "const userId: string = \"550e8400-e29b-41d4-a716-446655440000\";\nconst page: number = 2;\nconst includei10n: boolean = true;\nconst locale: string = \"en-US\";\nconst isCrawler: boolean = false;\n\nconst comments: GetCommentsForUser200Response = await getCommentsForUser(\n  userId,\n  undefined, // direction omitted\n  undefined, // repliesToUserId omitted\n  page,\n  includei10n,\n  locale,\n  isCrawler\n);\n\nconsole.log(comments);",
+  "model": "gpt-5-mini"
+}

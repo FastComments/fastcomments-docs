@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "eb5bfe595cce7d97f650229eeb1d58157d11ba42ed6958854c6fa0bbf2a55f45",
+  "generatedAt": "2026-06-15T20:33:29.788Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"acme-marketing-tenant-001\";\n  const templatesDefault: GetEmailTemplates200Response = await getEmailTemplates(tenantId);\n  const templatesPaged: GetEmailTemplates200Response = await getEmailTemplates(tenantId, 25);\n  console.log(templatesDefault, templatesPaged);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

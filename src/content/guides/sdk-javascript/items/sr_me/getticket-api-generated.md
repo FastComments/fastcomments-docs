@@ -1,25 +1,27 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| userId | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| userId | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicket200Response.ts)
+Vraća: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicket200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getTicket Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const ticketId: string = 'tkt-20260325-42';
-const userId: string = 'user-8452';
+const tenantId: string = 'acme-corp';
+const ticketId: string = 'TCKT-20250615-42';
+const userId: string = 'user_84b2';
 
-const ticketResponseWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
-const ticketResponseWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
+const ticketWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
+const ticketWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
+
+console.log(ticketWithUser.id, ticketWithoutUser.id);
 [inline-code-end]
 
 ---

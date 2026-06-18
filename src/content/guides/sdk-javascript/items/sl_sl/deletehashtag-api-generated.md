@@ -1,25 +1,26 @@
-## Parameters
+---
+## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
 | tag | string | Da |  |
 | tenantId | string | Ne |  |
 | deleteHashTagRequest | DeleteHashTagRequest | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "spring-sale-2026";
-const tenantId: string = "tenant-9876";
+const tag: string = "breaking-news";
+const tenantId: string = "tenant_72a1";
 const deleteHashTagRequest: DeleteHashTagRequest = {
-  requestedBy: "admin@retailco.com",
-  reason: "Campaign ended; remove associated auto-tags",
-  cascadeDelete: true
+  reason: "consolidate-duplicates",
+  requestedBy: "moderator@dailypress.com",
+  forceDelete: true
 };
 const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "5d09d506115949377b9735b0af7c0c78e77fbe7d379d0ee9b051884902ca599e",
+  "generatedAt": "2026-06-15T20:33:35.263Z",
+  "codeExample": "const tenantId: string = \"tenant_7f4a2b\";\nconst createTenantUserBody: CreateTenantUserBody = {\n  email: \"jane.doe@example.com\",\n  firstName: \"Jane\",\n  lastName: \"Doe\",\n  role: \"commenter\",\n  approved: true,\n  displayName: \"Jane D.\" // optional: providing a friendly name\n};\nconst result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

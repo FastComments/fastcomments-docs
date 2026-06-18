@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "ce0303dc1a6fece3cb780f14b8893030187c9d0df3338aa9a52479d1841192c4",
+  "generatedAt": "2026-06-15T20:33:35.343Z",
+  "codeExample": "const tenantId: string = 'tenant_14f9c3';\nconst urlId: string = 'article_20250615';\nconst afterName: string = 'marie.curie';\nconst afterUserId: string = 'u_92b7';\nconst result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);",
+  "model": "gpt-5-mini"
+}

@@ -1,12 +1,11 @@
----
 req
 tenantId
 afterId
 
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|-------------|
 | tenantId | string | 是 |  |
 | afterId | string | 否 |  |
 | limit | number | 否 |  |
@@ -20,8 +19,12 @@ afterId
 
 [inline-code-attrs-start title = 'getFeedPosts 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const initialPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', undefined, 20, ['sports', 'local']);
-const nextPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', 'post_abc123', 20, ['sports', 'local']);
+const tenantId: string = "tenant_74321";
+const afterId: string = "post_20250610_9b2f3";
+const limit: number = 25;
+const tags: Array<string> = ["product-updates", "announcements"];
+
+const response: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit, tags);
 [inline-code-end]
 
 ---

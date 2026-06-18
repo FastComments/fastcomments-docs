@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "921e6f993704c5219a8085cee4f5e92bf9bb5cc32702964e2a31827faef798e8",
+  "generatedAt": "2026-06-15T20:33:39.626Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-01';\nconst packageId: string = 'pkg-2026-06-15-001';\nconst dryRun: boolean | undefined = undefined; // optional flag example (not required by function)\nconst result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);",
+  "model": "gpt-5-mini"
+}

@@ -13,15 +13,17 @@ Gibt zurück: [`CreateTenantUser200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'createTenantUser Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_74b3a9f4b";
+const tenantId: string = "tenant_7f4a2b";
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@acmecorp.com",
-  displayName: "Jane Doe",
-  role: "moderator",
-  sendWelcomeEmail: true, // optionaler Parameter demonstriert
-  metadata: { department: "Customer Support" }
+  email: "jane.doe@example.com",
+  firstName: "Jane",
+  lastName: "Doe",
+  role: "commenter",
+  approved: true,
+  displayName: "Jane D." // optional: Angabe eines benutzerfreundlichen Namens
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
+console.log(result);
 [inline-code-end]
 
 ---

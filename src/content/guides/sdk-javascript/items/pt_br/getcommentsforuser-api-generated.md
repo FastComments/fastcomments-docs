@@ -1,43 +1,40 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|------------|-------------|
 | userId | string | Não |  |
-| tenantId | string | Não |  |
-| urlId | string | Não |  |
-| page | number | Não |  |
 | direction | SortDirections | Não |  |
-| lastGenDate | number | Não |  |
 | repliesToUserId | string | Não |  |
-| fetchPageForCommentId | string | Não |  |
+| page | number | Não |  |
 | includei10n | boolean | Não |  |
-| useFullTranslationIds | boolean | Não |  |
 | locale | string | Não |  |
-| includeConfig | boolean | Não |  |
-| includeNotificationCount | boolean | Não |  |
-| countAll | boolean | Não |  |
-| sso | string | Não |  |
+| isCrawler | boolean | Não |  |
 
 ## Resposta
 
-Retorna: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
+Retorna: [`GetCommentsForUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUser200Response.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de getCommentsForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = 'user_82f9b';
-const tenantId: string = 'tenant_22';
+const userId: string = "550e8400-e29b-41d4-a716-446655440000";
 const page: number = 2;
-const lastGenDate: number = Date.now();
 const includei10n: boolean = true;
-const useFullTranslationIds: boolean = false;
-const locale: string = 'en-US';
-const includeConfig: boolean = true;
-const includeNotificationCount: boolean = true;
-const countAll: boolean = false;
-const sso: string = 'sso-token-1a2b';
-const commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(userId, tenantId, undefined, page, undefined, lastGenDate, undefined, undefined, includei10n, useFullTranslationIds, locale, includeConfig, includeNotificationCount, countAll, sso);
+const locale: string = "en-US";
+const isCrawler: boolean = false;
+
+const comments: GetCommentsForUser200Response = await getCommentsForUser(
+  userId,
+  undefined, // direction omitido
+  undefined, // repliesToUserId omitido
+  page,
+  includei10n,
+  locale,
+  isCrawler
+);
+
+console.log(comments);
 [inline-code-end]
 
 ---

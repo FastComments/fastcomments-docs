@@ -1,31 +1,26 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'updateQuestionResult Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f8b3c';
-const id: string = 'questionResult_4621';
+const tenantId: string = "tenant_prod_84b2";
+const id: string = "question_9f3a";
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  questionId: 'q_1024',
-  result: 'flagged',
-  score: 0.92,
-  notes: 'Automated moderation flagged for review',
-  meta: [{ key: 'source', value: 'ai-moderator' }] as MetaItem[], // neobavezni metapodaci
-  status: { code: 'review_pending' } as APIStatus
-} as UpdateQuestionResultBody;
+  outcome: "accepted",
+  confidence: 0.88,
+  moderatorId: "moderator_17",
+  notes: "Validated by automated review" // опционо поље укључено
+};
 const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
-
----

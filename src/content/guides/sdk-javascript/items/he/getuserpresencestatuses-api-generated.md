@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlIdWS | string | כן |  |
@@ -14,11 +14,11 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3a2b';
-const urlIdWS: string = 'articles/2026/03/25/fastcomments-integration';
-const maybeUserIds: string | undefined = 'user_123,user_456'; // מקור אופציונלי
-const userIds: string = maybeUserIds ?? 'user_123';
-const presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'tenant_42';
+const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
+const userIds: string = 'user_9012,user_3478';
+const includePresenceMetadata: boolean | undefined = true; // דוגמה לפרמטר אופציונלי
+const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
 [inline-code-end]
 
 ---

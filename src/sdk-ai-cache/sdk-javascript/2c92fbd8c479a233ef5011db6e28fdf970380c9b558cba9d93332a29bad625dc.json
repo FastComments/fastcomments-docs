@@ -1,0 +1,7 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "2c92fbd8c479a233ef5011db6e28fdf970380c9b558cba9d93332a29bad625dc",
+  "generatedAt": "2026-06-15T20:33:38.512Z",
+  "codeExample": "const tenantId: string = 'tenant_6f2b3c';\nconst questionIds: Array<string> = ['q-7a1b2c', 'q-8d3e4f'];\nconst urlId: string = 'url_9f8e7d';\nconst startDate: Date = new Date('2025-01-01T00:00:00Z');\nconst result: AggregateQuestionResults200Response = await aggregateQuestionResults(tenantId, undefined, questionIds, urlId, undefined, startDate, true);",
+  "model": "gpt-5-mini"
+}

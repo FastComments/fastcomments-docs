@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "0ad9fbb23a50477908ec3563dda0d539e465bf6e06336549bcc1bc3a0985b371",
+  "generatedAt": "2026-06-15T20:33:38.143Z",
+  "codeExample": "const tenantId: string = 'tenant_4f9a2b'\nconst commentId: string = 'cmt-8421'\nconst broadcastId: string = 'brd-2026-06-15'\nconst commentTextUpdateRequest: CommentTextUpdateRequest = { text: 'Updated comment text to clarify the schedule.', mentions: [], hashtags: [] }\nconst editKey: string = 'editkey_9b12'\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso.signature'\nconst result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)",
+  "model": "gpt-5-mini"
+}

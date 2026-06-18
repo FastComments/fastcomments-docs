@@ -14,9 +14,10 @@ Returns: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'getEmailTemplateRenderErrors Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b3f2c";
-const templateId: string = "email_tpl_42";
-const skipCount: number = 20;
-const resultNoSkip: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, templateId);
-const resultWithSkip: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, templateId, skipCount);
+const tenantId: string = 'acme-tenant-01';
+const id: string = 'tmpl_7f9a2b4c';
+const skip: number = 20;
+
+const errorsWithSkip: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id, skip);
+const errorsFirstPage: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id);
 [inline-code-end]

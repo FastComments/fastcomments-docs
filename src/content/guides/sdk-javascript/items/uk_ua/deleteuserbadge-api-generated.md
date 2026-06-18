@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
@@ -13,12 +13,9 @@
 
 [inline-code-attrs-start title = 'Приклад deleteUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-type DeleteOptions = { notifyModerators?: boolean };
-
-const tenantId: string = 'tenant_8a3f21';
-const id: string = 'badge_71f2b';
-const options: DeleteOptions = { notifyModerators: true };
-
+const tenantId: string = "tenant_8b3f2c7a";
+const badgeIdOptional: string | undefined = Math.random() > 0.5 ? "badge_4f9a21" : undefined;
+const id: string = badgeIdOptional ?? "badge_backup_01";
 const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);
 [inline-code-end]
 

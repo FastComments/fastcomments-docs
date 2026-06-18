@@ -18,18 +18,21 @@ Returnerer: [`GetPendingWebhookEventCount200Response`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d3b7a2f";
-const commentId: string | undefined = "comment_79a2b";
-const eventType: string | undefined = "comment.created";
-const domain: string | undefined = "forum.acme-corp.com";
-const attemptCountGT: number | undefined = 1;
+const tenantId: string = 'tenant_9f8b3b';
+const commentId: string = 'cmt_1a2b3c';
+const eventType: string = 'comment.created';
+const domain: string = 'news-site.com';
+const attemptCountGT: number = 2;
+
 const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
   tenantId,
   commentId,
-  undefined,
+  undefined, // externalId udeladt
   eventType,
-  undefined,
+  undefined, // type udeladt
   domain,
   attemptCountGT
 );
 [inline-code-end]
+
+---

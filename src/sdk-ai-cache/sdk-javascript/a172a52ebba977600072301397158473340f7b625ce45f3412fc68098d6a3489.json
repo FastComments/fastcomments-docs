@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "a172a52ebba977600072301397158473340f7b625ce45f3412fc68098d6a3489",
+  "generatedAt": "2026-06-15T20:33:36.109Z",
+  "codeExample": "const tenantId: string = \"acme-corp-47\";\nconst questionId: string = \"q-4f2b9a\";\nconst includeDrafts: boolean | undefined = undefined; // optional parameter placeholder\nconst result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

@@ -9,12 +9,14 @@
 
 Враћа: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'getVotes Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotes Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-42c-eu';
-const urlId: string = 'article-7f9b';
-const includeMetadata: boolean | undefined = true;
+const tenantId: string = 'tenant_7f8e91c2';
+const urlId: string = 'https://www.sportsdaily.com/news/2026/06/15/championship-game-recap';
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+console.log(votes);
 [inline-code-end]
+
+---

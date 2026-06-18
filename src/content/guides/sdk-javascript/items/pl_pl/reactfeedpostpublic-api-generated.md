@@ -1,13 +1,12 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | postId | string | Tak |  |
 | reactBodyParams | ReactBodyParams | Tak |  |
 | isUndo | boolean | Nie |  |
 | broadcastId | string | Nie |  |
-| urlId | string | Nie |  |
 | sso | string | Nie |  |
 
 ## Odpowiedź
@@ -18,15 +17,21 @@ Zwraca: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Przykład reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "global-markets";
-const postId: string = "8e2c3f9a-4b6d-4f1a-9c2d-e8a1b2c3d4e5";
-const reactBodyParams: ReactBodyParams = { reactionType: "like", clientApp: "web-ui", timestamp: new Date().toISOString() };
+const tenantId: string = 'acme-tenant-001';
+const postId: string = 'feedpost_78901';
+const reactBodyParams: ReactBodyParams = { reaction: 'like', emoji: '👍' };
 const isUndo: boolean = false;
-const broadcastId: string = "broadcast-2026-05-20";
-const urlId: string = "feed-post-8e2c";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload";
+const broadcastId: string = 'broadcast_2026_06_15_01';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signature';
 
-const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);
+const response: ReactFeedPostPublic200Response = await reactFeedPostPublic(
+  tenantId,
+  postId,
+  reactBodyParams,
+  isUndo,
+  broadcastId,
+  sso
+);
 [inline-code-end]
 
 ---

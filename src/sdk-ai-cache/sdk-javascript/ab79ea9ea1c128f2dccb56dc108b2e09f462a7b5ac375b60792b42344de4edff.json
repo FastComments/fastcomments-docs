@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "ab79ea9ea1c128f2dccb56dc108b2e09f462a7b5ac375b60792b42344de4edff",
+  "generatedAt": "2026-06-15T20:33:37.452Z",
+  "codeExample": "const tenantId: string = \"tenant_0012\";\nconst bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {\n  items: [\n    {\n      questionId: \"quality_score\",\n      startTime: \"2026-06-01T00:00:00Z\",\n      endTime: \"2026-06-14T00:00:00Z\",\n      timeBucket: \"day\",\n      dimensions: [\"threadId\"]\n    }\n  ],\n  includeTotals: true\n};\nconst forceRecalculate: boolean = false;\nconst result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);",
+  "model": "gpt-5-mini"
+}

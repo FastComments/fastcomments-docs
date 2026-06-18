@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "7c8ba93f9021fbf3136de29745b32bdc96201c2f3a54a9fc6ff5a4224cb86355",
+  "generatedAt": "2026-06-15T20:33:35.361Z",
+  "codeExample": "const tenantId: string = \"tenant_4f2b1c9e\";\nconst createEmailTemplateBody: CreateEmailTemplateBody = {\n  name: \"New Comment Notification\",\n  subject: \"Someone replied to your discussion\",\n  fromName: \"Community Team\",\n  fromAddress: \"no-reply@community.example.com\",\n  htmlBody: \"<p>{{comment.author}} replied: {{comment.text}}</p>\",\n  plaintextBody: \"{{comment.author}} replied: {{comment.text}}\",\n  previewText: \"A new reply on a discussion you follow\",\n  isDefault: false // optional flag demonstrating optional parameter usage\n};\nconst result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

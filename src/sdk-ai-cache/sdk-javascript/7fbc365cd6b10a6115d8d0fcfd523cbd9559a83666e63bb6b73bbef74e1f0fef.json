@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "7fbc365cd6b10a6115d8d0fcfd523cbd9559a83666e63bb6b73bbef74e1f0fef",
+  "generatedAt": "2026-06-15T20:33:34.122Z",
+  "codeExample": "const tag: string = \"feature-request\";\nconst tenantId: string = \"tenant_8f7a3b2c\";\nconst updateHashTagBody: UpdateHashTagBody = {\n  displayName: \"Feature Request\",\n  description: \"Use this tag for requests to add new features to the product\",\n  enabled: true\n};\nconst result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);",
+  "model": "gpt-5-mini"
+}

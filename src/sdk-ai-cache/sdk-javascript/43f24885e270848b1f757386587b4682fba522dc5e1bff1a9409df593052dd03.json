@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "43f24885e270848b1f757386587b4682fba522dc5e1bff1a9409df593052dd03",
+  "generatedAt": "2026-06-15T20:33:34.581Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3a2b7c';\nconst commentId: string = 'cmt-5a1f3d92';\nconst voteId: string = 'vote-3b9c7e1a';\nconst urlId: string = 'articles/2026/06/typescript-best-practices';\nconst broadcastId: string = 'broadcast-77f4d2';\nconst editKey: string = 'edk-9b2f4c';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature';\nconst result: DeleteCommentVote200Response = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);",
+  "model": "gpt-5-mini"
+}

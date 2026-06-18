@@ -44,36 +44,25 @@ Returns: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getCommentsPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const urlId: string = '/news/2026/product-launch';
+const tenantId: string = 'acme-news';
+const urlId: string = '/articles/2026/fastcomments-update';
+const page: number = 1;
+const skip: number = 0;
+const limit: number = 25;
+const countChildren: boolean = true;
+const includeConfig: boolean = true;
 const result: GetCommentsPublic200Response = await getCommentsPublic(
   tenantId,
   urlId,
-  1,
-  undefined,
-  'sso_jwt_123456',
-  0,
-  0,
-  25,
-  5,
-  true,
-  undefined,
-  true,
-  false,
-  true,
-  'en-US',
-  'comments,likes',
-  false,
-  true,
-  true,
-  3,
-  false,
-  undefined,
-  'great product',
-  ['product', 'launch'],
-  'user_98765',
+  page,
   undefined,
   undefined,
-  undefined
+  skip,
+  undefined,
+  limit,
+  undefined,
+  countChildren,
+  undefined,
+  includeConfig
 );
 [inline-code-end]

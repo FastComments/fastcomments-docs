@@ -1,26 +1,25 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createQuestionResultBody | CreateQuestionResultBody | Да |  |
+| tenantId | string | Da |  |
+| createQuestionResultBody | CreateQuestionResultBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
+Vraća: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример за createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
-const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: 'q-34567',
-  respondentId: 'user-8923',
-  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
-  score: 5,
-  meta: [{ key: 'platform', value: 'web' }],
-  notifyModerators: false // необавезни параметар
+const tenantId: string = 'fc-tenant-512';
+const meta: MetaItem[] = [{ key: 'source', value: 'article' }];
+const body: CreateQuestionResultBody = {
+  questionId: 'q-94',
+  userId: 'user_332',
+  answers: [{ optionId: 'opt_a', score: 1 }],
+  meta, // opcionalni metapodaci
 } as CreateQuestionResultBody;
-const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
+const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);
 [inline-code-end]

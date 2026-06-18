@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | namespace | string | כן |  |
 | component | string | כן |  |
@@ -9,12 +9,18 @@
 
 ## תגובה
 
-מחזיר: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
+מחזיר: [`GetTranslations200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslations200Response.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsDefault: GetTranslationsResponse = await getTranslations("payments", "checkout");
-const translationsFrenchDetailed: GetTranslationsResponse = await getTranslations("payments", "checkout", "fr-FR", true);
+const namespaceName: string = 'site-ui';
+const componentName: string = 'comment-widget';
+const locale: string = 'fr-FR';
+const useFullTranslationIds: boolean = true;
+const translationsWithLocale: GetTranslations200Response = await getTranslations(namespaceName, componentName, locale, useFullTranslationIds);
+const translationsDefault: GetTranslations200Response = await getTranslations(namespaceName, componentName);
 [inline-code-end]
+
+---

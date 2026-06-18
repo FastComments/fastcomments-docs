@@ -1,0 +1,1 @@
+Tüm widget'ları canlı olarak şurada deneyin: <https://fastcomments.com/commenting-system-for-react-native>.

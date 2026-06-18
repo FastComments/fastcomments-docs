@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "39b42dc5e9078f89a9d82d47def2ceed015f51b318bc8ad8f5796d29e1abfcef",
+  "generatedAt": "2026-06-15T20:33:41.368Z",
+  "codeExample": "const tenantId: string = 'tenant_84f12';\nconst id: string = 'flag_192b';\nconst updateTenantBody: UpdateTenantBody = {\n  name: 'Acme Media',\n  billingInfo: { plan: 'enterprise', seats: 25, nextBillingDate: '2026-07-01' },\n  apiDomainConfiguration: { primaryDomain: 'comments.acme.com', additionalDomains: ['acme.com'] },\n  importedSites: [{ siteUrl: 'https://blog.acme.com', archived: false }], // optional\n  commentSettings: { htmlRenderingMode: 'sanitized', deletionMode: 'soft' } // optional\n} as UpdateTenantBody;\nconst result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);",
+  "model": "gpt-5-mini"
+}

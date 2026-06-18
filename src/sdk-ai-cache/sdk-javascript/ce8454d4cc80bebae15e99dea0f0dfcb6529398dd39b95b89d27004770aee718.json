@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "ce8454d4cc80bebae15e99dea0f0dfcb6529398dd39b95b89d27004770aee718",
+  "generatedAt": "2026-06-15T20:33:34.274Z",
+  "codeExample": "const tenantId: string = 'tenant_ab12c3';\nconst id: string = 'user_9f8e7d';\nconst response: GetTenantUser200Response = await getTenantUser(tenantId, id);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

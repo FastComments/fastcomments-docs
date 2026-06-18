@@ -13,17 +13,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getUserBadgeProgressList דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_4f8c2b9d';
-  const userId: string = 'user_9a7e215c';
-  const limit: number = 25;
-  const skip: number = 0;
-  const resultMinimal: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId);
-  const resultFull: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(resultMinimal, resultFull);
-})();
+const tenantId: string = 'tenant_4f3a2b9c';
+const userId: string = 'user_7721d';
+const limit: number = 20;
+const skip: number = 0;
+const result: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
 [inline-code-end]
 
 ---

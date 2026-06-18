@@ -14,13 +14,13 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateQuestionResult Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-marketing";
-const id: string = "7f3a2c1e-4b6d-4c9f-8a2e-0d9b6f1c2e3a";
+const tenantId: string = "tenant_prod_84b2";
+const id: string = "question_9f3a";
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  verdict: "correct",
-  note: "Peer-reviewed and confirmed",
-  meta: [] as MetaItem[] // optional metadata omitted/empty
-} as UpdateQuestionResultBody;
+  outcome: "accepted",
+  confidence: 0.88,
+  moderatorId: "moderator_17",
+  notes: "Validated by automated review" // optional field included
+};
 const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
-
 [inline-code-end]

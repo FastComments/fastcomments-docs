@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
@@ -13,10 +13,12 @@
 
 [inline-code-attrs-start title = 'Приклад getUserBadgeProgressById'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const optionalTenantSuffix: string | undefined = undefined;
-const tenantId: string = `5f8d0d55-1234-4ab1-9e2a-3f2b5c6d7e8f${optionalTenantSuffix ?? ''}`;
-const id: string = '3a2b1c4d-5678-4ef0-9abc-def123456789';
-const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);
+const tenantId: string = 'fastcomments-tenant-241';
+const badgeId: string = 'user-78b3d-badge-3';
+const response: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, badgeId);
+const progress: UserBadgeProgress | undefined = (response as unknown as { progress?: UserBadgeProgress }).progress;
+const percentComplete: number | undefined = progress?.percentage;
+console.log('Badge progress percent complete:', percentComplete);
 [inline-code-end]
 
 ---

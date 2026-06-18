@@ -1,9 +1,10 @@
+---
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sì |  |
-| id | string | Sì |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Risposta
 
@@ -11,13 +12,13 @@ Restituisce: [`GetTenant200Response`](https://github.com/FastComments/fastcommen
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f4b2c1a";
-const idOverride: string | undefined = undefined; // override opzionale, se disponibile
-const id: string = idOverride ?? "site_3e7a6b2f";
-const response: GetTenant200Response = await getTenant(tenantId, id);
-console.log(response);
+const tenantId: string = 'fc_tenant_6b3e2a';
+const id: string = 'site_42f1';
+const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+const tenant: APITenant | undefined = tenantResponse.tenant;
+const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
 [inline-code-end]
 
 ---

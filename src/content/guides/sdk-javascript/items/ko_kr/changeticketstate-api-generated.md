@@ -1,11 +1,11 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| id | string | Yes |  |
-| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
+| tenantId | string | 예 |  |
+| userId | string | 예 |  |
+| id | string | 예 |  |
+| changeTicketStateBody | ChangeTicketStateBody | 예 |  |
 
 ## 응답
 
@@ -15,14 +15,13 @@
 
 [inline-code-attrs-start title = 'changeTicketState 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b2c9a";
-const userId: string = "user_5a1d9fb2";
-const id: string = "ticket_3e8a1b6f";
+const tenantId: string = 'tenant_8a7d3f4b';
+const userId: string = 'user_5d1a9b2c';
+const id: string = 'ticket_1024';
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  reason: "Fixed in backend release 2.4.1",
-  notifyUsers: true,
-  metadata: { resolutionOwner: "agent_12", priority: "high" } // 선택적 필드 예시
+  state: 'closed',
+  notifyParticipants: true, // 선택적 매개변수 예시
+  comment: 'Resolved by support — follow-up not required.'
 };
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]

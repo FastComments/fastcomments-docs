@@ -3,6 +3,12 @@
   "pageHeader": "Adicione comentários ao seu aplicativo React Native",
   "itemsOrdered": [
     {
+      "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
       "subCat": "Primeiros passos",

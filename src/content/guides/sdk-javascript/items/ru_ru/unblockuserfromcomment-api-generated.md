@@ -2,11 +2,11 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Да |  |
-| userId | string | Нет |  |
-| anonUserId | string | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Ответ
 
@@ -16,16 +16,14 @@
 
 [inline-code-attrs-start title = 'Пример unBlockUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_87f3e1';
-const id: string = 'comment_9b2a4f';
+const tenantId: string = 'tenant_7b9c2a';
+const id: string = 'comment_4f8e1d';
 const unBlockFromCommentParams: UnBlockFromCommentParams = {
-  reason: 'Reviewed by moderation team — reinstated',
-  moderatorId: 'mod_21',
-  unblockedAt: new Date().toISOString()
+  reason: 'User submitted appeal and provided additional context',
+  effectiveAt: new Date().toISOString()
 };
-const userId: string = 'user_42';
-const anonUserId: string = 'anon_e7f9';
-const result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId, anonUserId);
+const userId: string = 'user_92a3f6';
+const result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);
 [inline-code-end]
 
 ---

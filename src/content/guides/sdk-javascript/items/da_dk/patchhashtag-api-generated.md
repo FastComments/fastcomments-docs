@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tag | string | Ja |  |
 | tenantId | string | Nej |  |
@@ -14,13 +14,14 @@ Returnerer: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'patchHashTag Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "feature-ux-refresh";
-const tenantId: string = "tenant_4f92c1";
+const tag: string = "feature-request";
+const tenantId: string = "tenant_8f7a3b2c";
 const updateHashTagBody: UpdateHashTagBody = {
-  label: "UX Refresh",
-  description: "Track comments related to the 2026 UX redesign",
-  isActive: true,
-  metadata: { owner: "product-design", rolloutPhase: "phase-2" }
+  displayName: "Feature Request",
+  description: "Use this tag for requests to add new features to the product",
+  enabled: true
 };
-const response: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
+const result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
 [inline-code-end]
+
+---

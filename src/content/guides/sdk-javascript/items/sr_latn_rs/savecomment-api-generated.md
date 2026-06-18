@@ -1,13 +1,13 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createCommentParams | CreateCommentParams | Da |  |
-| isLive | boolean | Ne |  |
-| doSpamCheck | boolean | Ne |  |
-| sendEmails | boolean | Ne |  |
-| populateNotifications | boolean | Ne |  |
+| tenantId | string | Yes |  |
+| createCommentParams | CreateCommentParams | Yes |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| sendEmails | boolean | No |  |
+| populateNotifications | boolean | No |  |
 
 ## Odgovor
 
@@ -15,15 +15,17 @@ Vraća: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer poziva saveComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer saveComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "fastcomments-tenant-42";
 const createCommentParams: CreateCommentParams = {
-  content: 'Great article — helped me fix a production issue in minutes.',
-  url: 'https://app.acme.com/blog/performance-tips',
-  author: { name: 'Maya Chen', email: 'maya.chen@acme.com' },
-  metadata: { locale: 'en-US', appVersion: '4.2.1' }
-} as CreateCommentParams;
+  threadId: "article-2026-06-0142",
+  content: "Great write-up — I followed the migration steps and everything worked as described.",
+  userId: "u_9c72b",
+  userName: "Ava R.",
+  userAvatarUrl: "https://cdn.example.com/avatars/u_9c72b.png",
+  metadata: { platform: "web", locale: "en-US" }
+};
 const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const sendEmails: boolean = false;

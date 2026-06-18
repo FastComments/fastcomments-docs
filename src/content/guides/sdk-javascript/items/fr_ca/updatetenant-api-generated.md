@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
@@ -8,15 +8,20 @@
 
 ## Réponse
 
-Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Retourne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-001';
-const id: string = 'tenant-42';
-const billingInfo: BillingInfo = { billingEmail: 'billing@acme.com', address: '123 Market St' } as BillingInfo;
-const updateTenantBody: UpdateTenantBody = { displayName: 'Acme Corporation', billingInfo } as UpdateTenantBody;
+const tenantId: string = 'tenant_84f12';
+const id: string = 'flag_192b';
+const updateTenantBody: UpdateTenantBody = {
+  name: 'Acme Media',
+  billingInfo: { plan: 'enterprise', seats: 25, nextBillingDate: '2026-07-01' },
+  apiDomainConfiguration: { primaryDomain: 'comments.acme.com', additionalDomains: ['acme.com'] },
+  importedSites: [{ siteUrl: 'https://blog.acme.com', archived: false }], // optional
+  commentSettings: { htmlRenderingMode: 'sanitized', deletionMode: 'soft' } // optional
+} as UpdateTenantBody;
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]

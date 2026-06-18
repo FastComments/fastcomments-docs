@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "98c14e3458774ce4c5a0a8c795b57fd321ac949af75870e3869a1d7c757788dd",
+  "generatedAt": "2026-06-15T20:33:36.456Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_acme_42\";\n  const id: string = \"cmt_8f3b21\";\n  const fromName: string = \"Ava Thompson\";\n  const inviteResult: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);\n  console.log(inviteResult);\n})();",
+  "model": "gpt-5-mini"
+}

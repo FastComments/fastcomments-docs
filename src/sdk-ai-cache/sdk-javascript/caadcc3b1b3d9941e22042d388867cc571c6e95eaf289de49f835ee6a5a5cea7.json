@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "caadcc3b1b3d9941e22042d388867cc571c6e95eaf289de49f835ee6a5a5cea7",
+  "generatedAt": "2026-06-15T20:33:41.238Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_acme_001';\n  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // optional parameter demonstrated\n  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);\n  console.log(templates);\n})();",
+  "model": "gpt-5-mini"
+}

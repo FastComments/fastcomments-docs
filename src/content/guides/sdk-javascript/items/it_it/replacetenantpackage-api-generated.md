@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
 | replaceTenantPackageBody | ReplaceTenantPackageBody | Sì |  |
@@ -14,15 +14,15 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di replaceTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-9f3c2a";
-const id: string = "pkg_4f8b21";
+const tenantId: string = "fastcomments-tenant-114";
+const id: string = "pkg-enterprise-2026-06";
 const replaceTenantPackageBody: ReplaceTenantPackageBody = {
-  packageName: "Premium Moderation Pack",
+  name: "EnterpriseModeration",
+  version: "2.4.7",
   enabled: true,
-  apiStatus: { mode: "active" } as APIStatus,
-  customConfigParameters: { maxFlagsBeforeReview: 5 } as CustomConfigParameters,
-  voteStyle: "thumbs" as VoteStyle,
-  tosConfig: { requireAcceptance: true } as TOSConfig
+  apiStatus: { state: "active", lastUpdated: "2026-06-10T12:00:00Z" },
+  customConfigParameters: { maxCommentLength: 1200, allowImages: true }, // impostazioni opzionali incluse
+  voteStyle: { style: "updown" }
 };
 const result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
 [inline-code-end]

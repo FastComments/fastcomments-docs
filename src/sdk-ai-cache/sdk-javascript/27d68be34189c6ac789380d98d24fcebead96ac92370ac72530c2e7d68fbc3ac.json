@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "27d68be34189c6ac789380d98d24fcebead96ac92370ac72530c2e7d68fbc3ac",
+  "generatedAt": "2026-06-15T20:33:35.855Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp';\nconst userId: string = 'moderator_jane';\nconst createTicketBody: CreateTicketBody = {\n  subject: 'Mass spam reports on article 789',\n  description: 'Multiple identical spam comments posted under article 789. Needs moderation and bulk removal.',\n  priority: 'high',\n  contactEmail: 'jane@acme-corp.com',\n  metadata: { articleId: '789', reportedCount: 12 } // optional metadata demonstrated\n};\nconst ticket: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);",
+  "model": "gpt-5-mini"
+}

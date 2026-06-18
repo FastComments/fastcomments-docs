@@ -1,11 +1,71 @@
 {
   "name": "Hugo-bibliotek",
-  "pageHeader": "Tilføj kommentarer til dit Hugo-websted",
+  "pageHeader": "Tilføj kommentarer til dit Hugo-site",
   "itemsOrdered": [
     {
-      "name": "Oversigt",
-      "file": "overview.md",
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-præsentation",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "install-readme-generated.md",
       "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Hurtigstart",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Kortkoder",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Temaintegration",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Optælling af kommentarer i bulk",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Widget-konfigurationsreference",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API-reference",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Vedligeholdelsesstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     }
   ]

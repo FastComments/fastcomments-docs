@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "3921f65594e54f1136c3a7b6aa0c8a054df3c7dfc5b5f029640bdb428bedf720",
+  "generatedAt": "2026-06-15T20:33:35.831Z",
+  "codeExample": "const tenantId: string = '7f7e2b90-3a2b-4d9b-9df1-5f0b6b2e8a1c';\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: 'welcome_email',\n  recipient: { email: 'jordan.smith@acme.co', name: 'Jordan Smith' },\n  variables: { siteName: 'Acme Forum', verificationUrl: 'https://acme.forum/verify?code=abc123' }\n};\nconst locale: string = 'en-US';\nconst result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
+  "model": "gpt-5-mini"
+}

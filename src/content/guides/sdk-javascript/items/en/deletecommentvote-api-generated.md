@@ -18,12 +18,12 @@ Returns: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteCommentVote Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4b2f9';
-const commentId: string = 'cmt_921f3';
-const voteId: string = 'vote_3a8b1';
-const urlId: string = 'https://news.site/articles/2026/05/20/launch';
-const broadcastId: string = 'broadcast_20260520_01';
-const editKey: string = 'editkey_7d2c';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';
+const tenantId: string = 'tenant_8f3a2b7c';
+const commentId: string = 'cmt-5a1f3d92';
+const voteId: string = 'vote-3b9c7e1a';
+const urlId: string = 'articles/2026/06/typescript-best-practices';
+const broadcastId: string = 'broadcast-77f4d2';
+const editKey: string = 'edk-9b2f4c';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature';
 const result: DeleteCommentVote200Response = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);
 [inline-code-end]

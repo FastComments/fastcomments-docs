@@ -13,7 +13,8 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteQuestionResult Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_corp_01';
-const id: string = 'questionResult_87b4f2a9';
-const result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
+const tenantId: string = "acme-corp-tenant-01";
+const id: string = "qres_9f8b7c3a";
+const response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
+const optionalResponse: FlagCommentPublic200Response | undefined = response;
 [inline-code-end]

@@ -4,7 +4,7 @@ urlId
 
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | urlId | string | Evet |  |
@@ -43,38 +43,25 @@ Döndürür: [`GetCommentsPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getCommentsPublic Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_eu-west_01';
-const urlId: string = 'https://www.financialtimes.com/articles/2026/market-update-q1';
-const response: GetCommentsPublic200Response = await getCommentsPublic(
+const tenantId: string = 'acme-news';
+const urlId: string = '/articles/2026/fastcomments-update';
+const page: number = 1;
+const skip: number = 0;
+const limit: number = 25;
+const countChildren: boolean = true;
+const includeConfig: boolean = true;
+const result: GetCommentsPublic200Response = await getCommentsPublic(
   tenantId,
   urlId,
-  2,
-  undefined,
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.tokenPayload.signature',
-  undefined,
-  0,
-  50,
-  5,
-  true,
-  undefined,
-  true,
-  false,
-  true,
-  'en-US',
-  'reactions,moderation',
-  false,
-  true,
-  true,
-  3,
-  false,
-  undefined,
-  'performance',
-  ['feature','fastcomments'],
-  'user_9876',
+  page,
   undefined,
   undefined,
-  undefined
+  skip,
+  undefined,
+  limit,
+  undefined,
+  countChildren,
+  undefined,
+  includeConfig
 );
 [inline-code-end]
-
----

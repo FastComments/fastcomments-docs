@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "b8d189153b5a55b4522339c5f70e5a123c952d0ce688c0979e8a97b3b9000d2e",
+  "generatedAt": "2026-06-15T20:33:37.829Z",
+  "codeExample": "const tenantId: string = \"fastcomments-tenant-114\";\nconst id: string = \"pkg-enterprise-2026-06\";\nconst replaceTenantPackageBody: ReplaceTenantPackageBody = {\n  name: \"EnterpriseModeration\",\n  version: \"2.4.7\",\n  enabled: true,\n  apiStatus: { state: \"active\", lastUpdated: \"2026-06-10T12:00:00Z\" },\n  customConfigParameters: { maxCommentLength: 1200, allowImages: true }, // optional settings included\n  voteStyle: { style: \"updown\" }\n};\nconst result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

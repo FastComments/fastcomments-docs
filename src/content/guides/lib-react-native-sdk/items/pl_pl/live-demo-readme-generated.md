@@ -1,0 +1,1 @@
+Wypróbuj każdy widżet na żywo pod <https://fastcomments.com/commenting-system-for-react-native>.

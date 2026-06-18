@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 是否必填 | 描述 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -13,10 +13,12 @@
 
 [inline-code-attrs-start title = 'getUserBadgeProgressById 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const optionalTenantSuffix: string | undefined = undefined;
-const tenantId: string = `5f8d0d55-1234-4ab1-9e2a-3f2b5c6d7e8f${optionalTenantSuffix ?? ''}`;
-const id: string = '3a2b1c4d-5678-4ef0-9abc-def123456789';
-const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);
+const tenantId: string = 'fastcomments-tenant-241';
+const badgeId: string = 'user-78b3d-badge-3';
+const response: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, badgeId);
+const progress: UserBadgeProgress | undefined = (response as unknown as { progress?: UserBadgeProgress }).progress;
+const percentComplete: number | undefined = progress?.percentage;
+console.log('Badge progress percent complete:', percentComplete);
 [inline-code-end]
 
 ---

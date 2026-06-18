@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | editKey | string | Nee |  |
@@ -15,10 +15,10 @@ Retourneert: [`GetCommentText200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'getCommentText Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
-const commentId: string = 'cmt_7890b';
-const editKey: string = 'edit_4f2d9b7c';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const tenantId: string = 'tenant_42b7e9';
+const commentId: string = 'cmt_9f3a2b';
+const editKey: string = 'edk_3f1b7c9d';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';
 
 const result: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);
 [inline-code-end]

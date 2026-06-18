@@ -1,9 +1,9 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
+| tenantId | string | 예 |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | 예 |  |
 
 ## 응답
 
@@ -13,19 +13,23 @@
 
 [inline-code-attrs-start title = 'createQuestionConfig 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_01";
+const tenantId: string = "tenant_9f3b1c2a";
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  title: "Post-purchase feedback",
-  description: "Quick survey about your recent order",
+  name: "Product feedback",
+  key: "product_quality",
+  description: "Short survey question shown after posting a comment",
   required: true,
-  renderingType: "single_choice",
-  options: [
-    { label: "Very dissatisfied", value: "1" },
-    { label: "Dissatisfied", value: "2" },
-    { label: "Neutral", value: "3" },
-    { label: "Satisfied", value: "4" },
-    { label: "Very satisfied", value: "5" }
-  ] as QuestionConfigCustomOptionsInner[]
-} as CreateQuestionConfigBody;
+  renderingType: "singleChoice",
+  customOptions: [
+    { label: "Excellent", value: "5" },
+    { label: "Good", value: "4" },
+    { label: "Fair", value: "3" }
+  ] as QuestionConfigCustomOptionsInner[],
+  notifyModerators: false // 선택적 매개변수 예시
+};
+
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
+
+---

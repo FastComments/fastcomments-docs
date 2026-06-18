@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "4f2d6992e9ce1c0469d3b4f9aa305d5e312ddf28d09a8d03cdef1a2d30b0ee64",
+  "generatedAt": "2026-06-15T20:33:35.334Z",
+  "codeExample": "const tenantId: string = \"f3b9a2d1-8b4e-4c6a-9f2b-1d5c4e6a7b8c\";\nconst id: string = \"user_92f7c3b1\";\nconst replaceTenantUserBody: ReplaceTenantUserBody = {\n  externalId: \"auth0|1234567890\",\n  email: \"jane.doe@company.com\",\n  displayName: \"Jane Doe\",\n  roles: [\"moderator\"],\n  metadata: { department: \"support\" }\n};\nconst updateComments: string = \"reassign-comments-to-new-user\";\nconst response: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);",
+  "model": "gpt-5-mini"
+}

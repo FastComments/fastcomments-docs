@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Задължителен | Описание |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
@@ -13,16 +13,13 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getVotesForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotesForUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = "local-news-ny";
-  const urlId: string = "articles/2026-03-25/ev-infrastructure-update";
-  const userId: string = "user_78b6f3d9";
-  const anonUserId: string = "anon_9c3f7a1b";
-  const result: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9b8f7c6d';
+const urlId: string = 'articles/product-update-2026';
+const userId: string = 'user_c12345';
+const anonUserId: string = 'anon_7f4e2a';
+const votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
 [inline-code-end]
 
 ---

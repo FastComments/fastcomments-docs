@@ -116,6 +116,7 @@ body { margin: 0; padding: 0; }
     .comment-reply .comment-reply-top-bar .logged-in-info .avatar.animated-background img { opacity: 0.1; }
     .comment-reply .comment-reply-top-bar .logged-in-info .avatar img { width: 25px; height: 25px; object-fit: cover; }
     .comment-reply .comment-reply-top-bar .logged-in-info .username { display: inline-block; max-width: calc(50% - 25px); overflow: hidden; vertical-align: middle; text-overflow: ellipsis; font-weight: 700; white-space: nowrap; }
+    .comment-reply .comment-reply-top-bar .logged-in-info .username.open-profile { cursor: pointer; }
     .comment-reply .comment-reply-top-bar .logged-in-info .badges { display: inline-block; margin-left: 5px; }
     .comment-reply .comment-reply-top-bar .right { float: right; }
     .comment-reply .comment-reply-top-bar .right > * { display: inline-block; }

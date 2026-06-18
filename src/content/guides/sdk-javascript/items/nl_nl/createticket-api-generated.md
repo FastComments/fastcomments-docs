@@ -6,7 +6,7 @@
 | userId | string | Ja |  |
 | createTicketBody | CreateTicketBody | Ja |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicket200Response.ts)
 
@@ -14,15 +14,14 @@ Retourneert: [`CreateTicket200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'createTicket Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-company-001';
-const userId: string = 'u_78f4b2';
+const tenantId: string = 'tenant_acme_corp';
+const userId: string = 'moderator_jane';
 const createTicketBody: CreateTicketBody = {
-  title: 'Unable to access project dashboard',
-  description: 'Receiving 403 when accessing /dashboard for project X',
+  subject: 'Mass spam reports on article 789',
+  description: 'Multiple identical spam comments posted under article 789. Needs moderation and bulk removal.',
   priority: 'high',
-  tags: ['dashboard', 'access'] // optional field demonstrated
+  contactEmail: 'jane@acme-corp.com',
+  metadata: { articleId: '789', reportedCount: 12 } // optionele metadata ter demonstratie
 };
-const result: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
+const ticket: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
 [inline-code-end]
-
----

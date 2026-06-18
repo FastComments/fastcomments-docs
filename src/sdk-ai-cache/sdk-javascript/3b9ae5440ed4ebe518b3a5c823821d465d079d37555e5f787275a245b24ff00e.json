@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "3b9ae5440ed4ebe518b3a5c823821d465d079d37555e5f787275a245b24ff00e",
+  "generatedAt": "2026-06-15T20:33:39.201Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c\";\nconst largeInternalURLSanitized: string = \"https://cdn.fastcomments.com/gifs/07d3f6_large.gif\";\nconst preferWebP: boolean | undefined = true; // optional preference\nconst urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(\".gif\", \".webp\") : largeInternalURLSanitized;\nconst response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);",
+  "model": "gpt-5-mini"
+}

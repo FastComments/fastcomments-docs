@@ -1,10 +1,11 @@
+---
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
+| tenantId | string | Ja |  |
+| id | string | Ja |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Ja |  |
 
 ## Svar
 
@@ -14,16 +15,14 @@ Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'Eksempel på updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f8b3c';
-const id: string = 'questionResult_4621';
+const tenantId: string = "tenant_prod_84b2";
+const id: string = "question_9f3a";
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  questionId: 'q_1024',
-  result: 'flagged',
-  score: 0.92,
-  notes: 'Automated moderation flagged for review',
-  meta: [{ key: 'source', value: 'ai-moderator' }] as MetaItem[], // valgfri metadata
-  status: { code: 'review_pending' } as APIStatus
-} as UpdateQuestionResultBody;
+  outcome: "accepted",
+  confidence: 0.88,
+  moderatorId: "moderator_17",
+  notes: "Validated by automated review" // valgfrit felt inkluderet
+};
 const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
 

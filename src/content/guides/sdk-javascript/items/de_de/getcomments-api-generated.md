@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | page | number | Nein |  |
@@ -17,6 +17,8 @@
 | hashTag | string | Nein |  |
 | parentId | string | Nein |  |
 | direction | SortDirections | Nein |  |
+| fromDate | number | Nein |  |
+| toDate | number | Nein |  |
 
 ## Antwort
 
@@ -26,23 +28,8 @@ Gibt zurück: [`GetComments200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getComments Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // Seite
-  20, // Limit
-  0, // Überspringen
-  true, // als Baumstruktur
-  1, // Kinder überspringen
-  3, // maximale Kinderanzahl
-  4, // maximale Baumtiefe
-  'articles/2026/new-product-launch', // URL-ID
-  'user_7890', // Benutzer-ID
-  'anon_4f3b2', // anonyme Benutzer-ID
-  undefined, // Kontext-Benutzer-ID
-  '#launch', // Hashtag
-  undefined // Eltern-ID
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
 
 ---

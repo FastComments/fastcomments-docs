@@ -1,3 +1,4 @@
+---
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -5,22 +6,22 @@
 | tenantId | string | Nee |  |
 | createHashTagBody | CreateHashTagBody | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTag200Response.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van addHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string | undefined = undefined;
+const tenantId: string | undefined = "tenant_3c9f7b";
 const createHashTagBody: CreateHashTagBody = {
-  name: 'release-2026',
-  description: 'Feedback and bug reports for the April 2026 product release',
-  synonyms: ['v2-release', 'launch-2026'],
-  color: '#1d72b8',
+  name: "support",
+  title: "Support",
+  description: "Questions about product usage, bugs, and account issues",
+  color: "#0066CC",
   isActive: true,
-  createdBy: 'product.manager@acme-corp.com'
+  aliases: ["help", "customer-service"]
 };
 const result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
 [inline-code-end]

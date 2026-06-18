@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "c6517d991ed4df9eca48eca446f505715fecb031e018d08676d7c2ed5398d809",
+  "generatedAt": "2026-06-15T20:33:40.935Z",
+  "codeExample": "const tenantId: string = 'tenant_4f2b1c';\nconst createFeedPostParams: CreateFeedPostParams = {\n  content: 'Launching our summer collection today — check it out!',\n  authorId: 'user_879',\n  media: [\n    {\n      type: 'image',\n      assets: [\n        { url: 'https://cdn.myshop.com/uploads/summer-look.jpg', width: 1200, height: 800 } as FeedPostMediaItemAsset\n      ]\n    } as FeedPostMediaItem\n  ],\n  links: [\n    { url: 'https://myshop.com/new-arrival', title: 'Summer Collection' } as FeedPostLink\n  ],\n  allowComments: true\n};\nconst broadcastId: string = 'broadcast-2026-06-15-001';\nconst isLive: boolean = false;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\nconst response: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini"
+}

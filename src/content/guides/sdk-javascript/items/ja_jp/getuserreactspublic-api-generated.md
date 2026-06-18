@@ -1,10 +1,10 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postIds | Array<string> | No |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| postIds | Array<string> | いいえ |  |
+| sso | string | いいえ |  |
 
 ## レスポンス
 
@@ -14,10 +14,11 @@
 
 [inline-code-attrs-start title = 'getUserReactsPublic の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-8a4d2c";
-const postIds: string[] = ["post-645a2f", "post-645a30"];
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY2MTYwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const result: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
+const tenantId: string = 'fastcomments-tenant-4f2b9c';
+const postIds: Array<string> = ['post_7a1f9e', 'post_2b3c88'];
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQ0MDAwMH0.signature';
+
+const response: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
 [inline-code-end]
 
 ---

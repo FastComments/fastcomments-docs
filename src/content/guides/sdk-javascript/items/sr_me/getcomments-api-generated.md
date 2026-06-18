@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | page | number | Не |  |
@@ -17,6 +17,8 @@
 | hashTag | string | Не |  |
 | parentId | string | Не |  |
 | direction | SortDirections | Не |  |
+| fromDate | number | Не |  |
+| toDate | number | Не |  |
 
 ## Одговор
 
@@ -26,21 +28,8 @@
 
 [inline-code-attrs-start title = 'getComments Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // страница
-  20, // ограничење
-  0, // прескочи
-  true, // као дрво
-  1, // прескочи децу
-  3, // ограничење за децу
-  4, // максимална дубина дрвета
-  'articles/2026/new-product-launch', // ид URL-а
-  'user_7890', // ид корисника
-  'anon_4f3b2', // ид анонимног корисника
-  undefined, // ид корисника у контексту
-  '#launch', // хаштага
-  undefined // ид родитеља
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

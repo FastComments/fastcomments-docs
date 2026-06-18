@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "87582eb55a5c490b201a7f75b25ac9ddba7135a39661f41b4379ddffcc789e98",
+  "generatedAt": "2026-06-15T20:33:30.744Z",
+  "codeExample": "const tenantId: string = 'tenant_7a3c2e';\nconst dailyUsages: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, 2026, 6, undefined, 0);",
+  "model": "gpt-5-mini"
+}

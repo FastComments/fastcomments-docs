@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createQuestionResultBody | CreateQuestionResultBody | Да |  |
@@ -11,18 +11,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
-const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: 'q-34567',
-  respondentId: 'user-8923',
-  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
-  score: 5,
-  meta: [{ key: 'platform', value: 'web' }],
-  notifyModerators: false // опционални параметар
+const tenantId: string = 'fc-tenant-512';
+const meta: MetaItem[] = [{ key: 'source', value: 'article' }];
+const body: CreateQuestionResultBody = {
+  questionId: 'q-94',
+  userId: 'user_332',
+  answers: [{ optionId: 'opt_a', score: 1 }],
+  meta, // опциони метаподаци
 } as CreateQuestionResultBody;
-const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
+const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);
 [inline-code-end]
-
----

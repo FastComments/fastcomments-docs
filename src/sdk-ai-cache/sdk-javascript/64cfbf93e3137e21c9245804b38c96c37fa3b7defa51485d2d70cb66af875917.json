@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "64cfbf93e3137e21c9245804b38c96c37fa3b7defa51485d2d70cb66af875917",
+  "generatedAt": "2026-06-15T20:33:33.997Z",
+  "codeExample": "const tenantId: string = 'tenant_4f3b2c9a';\nconst id: string = 'mod_9c2d1f7b';\nconst sendEmail: string = 'true';\nconst response: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

@@ -1,15 +1,14 @@
----
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| urlId | string | 아니요 |  |
-| userId | string | 아니요 |  |
-| startDate | string | 아니요 |  |
-| questionId | string | 아니요 |  |
-| questionIds | string | 아니요 |  |
-| skip | number | 아니요 |  |
+| urlId | string | 아니오 |  |
+| userId | string | 아니오 |  |
+| startDate | string | 아니오 |  |
+| questionId | string | 아니오 |  |
+| questionIds | string | 아니오 |  |
+| skip | number | 아니오 |  |
 
 ## 응답
 
@@ -19,16 +18,14 @@
 
 [inline-code-attrs-start title = 'getQuestionResults 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_9b3f";
-  const urlId: string = "survey-2026-spring";
-  const userId: string = "user_00123";
-  const startDate: string = "2026-04-01T00:00:00Z";
-  const questionIds: string = "q_42,q_43";
-  const skip: number = 0;
-  const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);
-  console.log(result);
-})();
+const tenantId: string = 'fc-tenant-7a9c';
+const urlId: string = 'news/article-2026-06-15';
+const userId: string = 'user-8421';
+const startDate: string = '2026-05-01T00:00:00Z';
+const questionId: string = 'q-13';
+const questionIds: string = 'q-13,q-14';
+const skip: number = 20;
+const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);
 [inline-code-end]
 
 ---

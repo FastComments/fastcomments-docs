@@ -1,23 +1,28 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Oui |  |
 
-## Réponse
+## Response
 
-Renvoie: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressById200Response.ts)
+Retourne : [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressById200Response.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getUserBadgeProgressByUserId'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f9c2d3b';
-const maybeUserId: string | undefined = 'user_4b8e1f9a'; // source optionnelle (peut être undefined)
-const userId: string = maybeUserId ?? 'user_fallback0001';
-const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
-console.log(result);
+const tenantId: string = 'acme-inc-tenant-01';
+const userId: string = 'user_73c9b2';
+const progress: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
+
+async function maybeFetchProgress(tenant: string, user?: string): Promise<GetUserBadgeProgressById200Response | null> {
+  if (!user) return null;
+  return await getUserBadgeProgressByUserId(tenant, user);
+}
+
+const optionalResult: GetUserBadgeProgressById200Response | null = await maybeFetchProgress(tenantId, userId);
 [inline-code-end]
 
 ---

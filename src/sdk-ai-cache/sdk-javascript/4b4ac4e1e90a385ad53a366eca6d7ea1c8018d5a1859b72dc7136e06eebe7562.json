@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "4b4ac4e1e90a385ad53a366eca6d7ea1c8018d5a1859b72dc7136e06eebe7562",
+  "generatedAt": "2026-06-15T20:33:31.814Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b7c6a';\nconst userId: string = 'user_5a4b3c2d';\nconst urlId: string = 'post_84f2a1b9';\nconst fromCommentId: string = 'cmt_0a1b2c3d';\nconst viewed: boolean = false;\nconst type: string = 'reply';\nconst skip: number = 0;\n\nconst notifications: GetNotifications200Response = await getNotifications(\n  tenantId,\n  userId,\n  urlId,\n  fromCommentId,\n  viewed,\n  type,\n  skip\n);",
+  "model": "gpt-5-mini"
+}

@@ -7,7 +7,6 @@
 | reactBodyParams | ReactBodyParams | Sì |  |
 | isUndo | boolean | No |  |
 | broadcastId | string | No |  |
-| urlId | string | No |  |
 | sso | string | No |  |
 
 ## Risposta
@@ -16,17 +15,23 @@ Restituisce: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/
 
 ## Esempio
 
-[inline-code-attrs-start title = 'reactFeedPostPublic Esempio'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "global-markets";
-const postId: string = "8e2c3f9a-4b6d-4f1a-9c2d-e8a1b2c3d4e5";
-const reactBodyParams: ReactBodyParams = { reactionType: "like", clientApp: "web-ui", timestamp: new Date().toISOString() };
+const tenantId: string = 'acme-tenant-001';
+const postId: string = 'feedpost_78901';
+const reactBodyParams: ReactBodyParams = { reaction: 'like', emoji: '👍' };
 const isUndo: boolean = false;
-const broadcastId: string = "broadcast-2026-05-20";
-const urlId: string = "feed-post-8e2c";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload";
+const broadcastId: string = 'broadcast_2026_06_15_01';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signature';
 
-const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);
+const response: ReactFeedPostPublic200Response = await reactFeedPostPublic(
+  tenantId,
+  postId,
+  reactBodyParams,
+  isUndo,
+  broadcastId,
+  sso
+);
 [inline-code-end]
 
 ---

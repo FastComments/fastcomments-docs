@@ -1,29 +1,33 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | はい |  |
-| forceRecalculate | boolean | いいえ |  |
+| tenantId | string | Yes |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Yes |  |
+| forceRecalculate | boolean | No |  |
 
-## Response
+## レスポンス
 
-返り値: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResults200Response.ts)
+戻り値: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResults200Response.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_42";
+const tenantId: string = "tenant_0012";
 const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {
-  questions: [
-    { questionId: "q-001", threadId: "thread-1001", questionType: "rating" },
-    { questionId: "q-002", threadId: "thread-1002", questionType: "yes_no" }
+  items: [
+    {
+      questionId: "quality_score",
+      startTime: "2026-06-01T00:00:00Z",
+      endTime: "2026-06-14T00:00:00Z",
+      timeBucket: "day",
+      dimensions: ["threadId"]
+    }
   ],
-  timeRange: { from: "2026-03-01T00:00:00Z", to: "2026-04-01T00:00:00Z" },
-  groupBy: ["questionId", "threadId"]
+  includeTotals: true
 };
-const forceRecalculate: boolean = true;
+const forceRecalculate: boolean = false;
 const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
 [inline-code-end]
 

@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "7f267afc993c65fa670df65f99e2debad7a1b234163805789444b06c068a4dc3",
+  "generatedAt": "2026-06-15T20:33:41.508Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2a7c9';\nconst questionId: string = 'q_8d4f1b2c3a';\nconst options: { includeMeta?: boolean } = { includeMeta: true }; // optional parameter demonstration\nconst result: GetQuestionResult200Response = await getQuestionResult(tenantId, questionId);\nconst apiStatus: APIStatus | undefined = (result as unknown as { apiStatus?: APIStatus }).apiStatus;\nconst question: QuestionResult | undefined = (result as unknown as { question?: QuestionResult }).question;",
+  "model": "gpt-5-mini"
+}

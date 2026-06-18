@@ -1,11 +1,71 @@
 {
   "name": "Βιβλιοθήκη Hugo",
-  "pageHeader": "Προσθέστε σχόλια στην ιστοσελίδα Hugo σας",
+  "pageHeader": "Προσθέστε σχόλια στον ιστότοπό σας Hugo",
   "itemsOrdered": [
     {
-      "name": "Επισκόπηση",
-      "file": "overview.md",
+      "name": "Ζωντανή Επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή Παρουσίαση",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "install-readme-generated.md",
       "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη Εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Συντομεύσεις",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενσωμάτωση Θέματος",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Μαζικοί μετρητές σχολίων",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ρυθμίσεις",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Ρυθμίσεις",
+      "type": "readme"
+    },
+    {
+      "name": "Αναφορά ρυθμίσεων widget",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Συνδέσμοι",
+      "file": "links-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση Συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
       "type": "readme"
     }
   ]

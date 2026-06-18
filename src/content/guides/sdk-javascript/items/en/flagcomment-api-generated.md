@@ -15,8 +15,8 @@ Returns: [`FlagComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'flagComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a3f';
-const id: string = 'cmt_b7f9e2';
-const userId: string = 'user_1024';
-const result: FlagComment200Response = await flagComment(tenantId, id, userId);
+const tenantId: string = "tenant_4f21c9a";
+const commentId: string = "cmt_7a12b3e9";
+const userId: string = "user_82bd123";
+const result: FlagComment200Response = await flagComment(tenantId, commentId, userId);
 [inline-code-end]

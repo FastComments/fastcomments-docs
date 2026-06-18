@@ -1,30 +1,39 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| afterId | string | Не |  |
-| afterCreatedAt | number | Не |  |
-| unreadOnly | boolean | Не |  |
-| dmOnly | boolean | Не |  |
-| noDm | boolean | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| afterId | string | Ne |  |
+| afterCreatedAt | number | Ne |  |
+| unreadOnly | boolean | Ne |  |
+| dmOnly | boolean | Ne |  |
+| noDm | boolean | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotifications200Response.ts)
+Vraća: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotifications200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_4a9f12";
-const afterId: string = "notification_87213";
-const afterCreatedAt: number = Math.floor(Date.now() / 1000) - 3600;
+const tenantId: string = "tenant_9b1f2";
+const afterId: string = "notification_0001";
+const afterCreatedAt: number = Date.now() - 60 * 60 * 1000; // prije sat vremena
 const unreadOnly: boolean = true;
 const dmOnly: boolean = false;
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.payload";
-const result: ResetUserNotifications200Response = await resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, undefined, sso);
+const noDm: boolean = false;
+const sso: string = "sso_session_7f2d";
+const result: ResetUserNotifications200Response = await resetUserNotifications(
+  tenantId,
+  afterId,
+  afterCreatedAt,
+  unreadOnly,
+  dmOnly,
+  noDm,
+  sso
+);
 [inline-code-end]
 
 ---

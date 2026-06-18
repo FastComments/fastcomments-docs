@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Non |  |
@@ -9,19 +9,17 @@
 
 ## Réponse
 
-Retourne: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressList200Response.ts)
+Renvoie : [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressList200Response.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_4f8c2b9d';
-  const userId: string = 'user_9a7e215c';
-  const limit: number = 25;
-  const skip: number = 0;
-  const resultMinimal: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId);
-  const resultFull: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(resultMinimal, resultFull);
-})();
+const tenantId: string = 'tenant_4f3a2b9c';
+const userId: string = 'user_7721d';
+const limit: number = 20;
+const skip: number = 0;
+const result: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
 [inline-code-end]
+
+---

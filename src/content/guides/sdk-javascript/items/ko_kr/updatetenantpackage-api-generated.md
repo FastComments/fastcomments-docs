@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -14,16 +14,16 @@
 
 [inline-code-attrs-start title = 'updateTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_sf_001";
-  const id: string = "pkg-premium-v2";
-  const updateTenantPackageBody: UpdateTenantPackageBody = {
-    name: "San Francisco Premium",
-    enabled: true,
-    customConfig: { maxComments: 500 },
-    tosConfig: { required: true } // 선택적 필드는 예시로 포함됨; 나머지는 생략됨
-  } as UpdateTenantPackageBody;
-  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9f3b2a';
+const id: string = 'pkg_pro_2026';
+const updateTenantPackageBody: UpdateTenantPackageBody = {
+  name: 'Pro Plan',
+  monthlyPriceUsd: 49,
+  isActive: true,
+  features: ['moderation', 'analytics', 'sso'],
+  trialDays: 14 // 선택적 매개변수 예시
+};
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
+
+---

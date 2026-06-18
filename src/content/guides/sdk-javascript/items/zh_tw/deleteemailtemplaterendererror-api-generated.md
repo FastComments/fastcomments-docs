@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
@@ -14,12 +14,11 @@
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1d2f9b";
-const id: string = "email_template_42b1";
-const errorId: string = "render_err_2026-04-24_7f3c";
-const includeStackTrace: boolean | undefined = undefined; // 可選旗標範例
-
-const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-// 若支援可選的 options 物件，它可能看起來像：
- // await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+const tenantId: string = 'tenant-72f3b4';
+const templateId: string = 'email_template-9c3a1';
+let providedErrorId: string | undefined = undefined; // 可選值，可能在其他地方設定
+const errorId: string = providedErrorId ?? 'render_err-5d2f7';
+const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 [inline-code-end]
+
+---

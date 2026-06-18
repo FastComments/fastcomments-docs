@@ -3,13 +3,19 @@
   "pageHeader": "Додајте коментаре у вашу React Native апликацију",
   "itemsOrdered": [
     {
+      "name": "Демонстрација уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
       "subCat": "Почетак рада",
       "type": "readme"
     },
     {
-      "name": "О",
+      "name": "О апликацији",
       "file": "about-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

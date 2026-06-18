@@ -1,0 +1,1 @@
+Спробуйте кожен віджет наживо за адресою <https://fastcomments.com/commenting-system-for-react-native>.

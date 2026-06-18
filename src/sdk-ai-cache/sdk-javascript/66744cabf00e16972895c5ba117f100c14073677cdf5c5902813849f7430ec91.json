@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "66744cabf00e16972895c5ba117f100c14073677cdf5c5902813849f7430ec91",
+  "generatedAt": "2026-06-15T20:33:30.671Z",
+  "codeExample": "const tenantId: string = \"tenant_74321\";\nconst afterId: string = \"post_20250610_9b2f3\";\nconst limit: number = 25;\nconst tags: Array<string> = [\"product-updates\", \"announcements\"];\n\nconst response: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit, tags);",
+  "model": "gpt-5-mini"
+}

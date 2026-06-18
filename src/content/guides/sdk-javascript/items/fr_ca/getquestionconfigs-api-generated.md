@@ -1,21 +1,22 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| skip | number | Non |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Réponse
 
-Renvoie : [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigs200Response.ts)
+Renvoie: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigs200Response.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_9876";
-const configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);
+const tenantId: string = "tenant_4c9f2b";
+const responseWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
+const skip: number = 50;
+const responseWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);
 [inline-code-end]
 
 ---

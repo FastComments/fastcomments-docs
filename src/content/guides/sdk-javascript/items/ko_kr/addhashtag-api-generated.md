@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 아니요 |  |
-| createHashTagBody | CreateHashTagBody | 아니요 |  |
+| tenantId | string | 아니오 |  |
+| createHashTagBody | CreateHashTagBody | 아니오 |  |
 
 ## 응답
 
@@ -13,14 +13,14 @@
 
 [inline-code-attrs-start title = 'addHashTag 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string | undefined = undefined;
+const tenantId: string | undefined = "tenant_3c9f7b";
 const createHashTagBody: CreateHashTagBody = {
-  name: 'release-2026',
-  description: 'Feedback and bug reports for the April 2026 product release',
-  synonyms: ['v2-release', 'launch-2026'],
-  color: '#1d72b8',
+  name: "support",
+  title: "Support",
+  description: "Questions about product usage, bugs, and account issues",
+  color: "#0066CC",
   isActive: true,
-  createdBy: 'product.manager@acme-corp.com'
+  aliases: ["help", "customer-service"]
 };
 const result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
 [inline-code-end]

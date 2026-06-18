@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "7b41eef80cc986f43f37f6971a544d386dbe6830897db450ae559121233a3236",
+  "generatedAt": "2026-06-15T20:33:36.232Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_fa3b2c9e';\n  const commentIds: string = 'cmt_112233,cmt_445566';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0Njc4IiwidGVuYW50IjoidGVuYW50X2ZhM2IifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n  const resultWithSSO: CheckedCommentsForBlocked200Response = await checkedCommentsForBlocked(tenantId, commentIds, sso);\n  const resultWithoutSSO: CheckedCommentsForBlocked200Response = await checkedCommentsForBlocked(tenantId, commentIds);\n  console.log(resultWithSSO, resultWithoutSSO);\n})();",
+  "model": "gpt-5-mini"
+}

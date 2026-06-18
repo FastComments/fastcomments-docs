@@ -1,10 +1,9 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantBody | CreateTenantBody | Yes |  |
+| tenantId | string | Ναι |  |
+| createTenantBody | CreateTenantBody | Ναι |  |
 
 ## Απόκριση
 
@@ -14,14 +13,13 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα createTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-001';
+const tenantId: string = 'acme-news-01';
 const createTenantBody: CreateTenantBody = {
-  name: 'Acme Corporation',
-  domainConfiguration: { primaryDomain: 'comments.acme.com', enforceHttps: true } as APIDomainConfiguration,
-  billingInfo: { planId: 'enterprise', contactEmail: 'billing@acme.com' } as BillingInfo
-  // τα προαιρετικά πεδία όπως ssoConfig ή customConfig παραλείπονται σκόπιμα
-} as CreateTenantBody;
-
+  name: 'Acme News',
+  domainConfiguration: { primaryDomain: 'news.acme.com', redirectHttps: true } as APIDomainConfiguration,
+  importedSites: [{ siteId: 'site-92', url: 'https://news.acme.com' }] as ImportedSiteType[],
+  billingInfo: { planId: 'business_monthly', contactEmail: 'billing@acme.com' } as BillingInfo
+};
 const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
 [inline-code-end]
 

@@ -1,12 +1,11 @@
----
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| skip | number | 아니요 |  |
+| skip | number | 아니오 |  |
 
-## Response
+## 응답
 
 반환: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsers200Response.ts)
 
@@ -14,10 +13,10 @@
 
 [inline-code-attrs-start title = 'getTenantUsers 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_8a3f2c';
+const tenantId: string = 'tenant_7b8f3a2c-9e4d-4f1a';
 const skip: number = 50;
-const usersWithSkip: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);
-const usersNoSkip: GetTenantUsers200Response = await getTenantUsers(tenantId);
+const usersResponseDefault: GetTenantUsers200Response = await getTenantUsers(tenantId);
+const usersResponsePaged: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);
 [inline-code-end]
 
 ---

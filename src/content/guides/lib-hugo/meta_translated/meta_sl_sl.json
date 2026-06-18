@@ -1,11 +1,71 @@
 {
   "name": "Hugo knjižnica",
-  "pageHeader": "Dodajte komentarje na svojo Hugo spletno stran",
+  "pageHeader": "Dodajte komentarje na svojo Hugo stran",
   "itemsOrdered": [
     {
-      "name": "Pregled",
-      "file": "overview.md",
+      "name": "Predogled v živo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Predstavitev v živo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Namestitev",
+      "file": "install-readme-generated.md",
       "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Hitri začetek",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Kratke kode",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Integracija teme",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Masovno štetje komentarjev",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Konfiguracija",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Konfiguracija",
+      "type": "readme"
+    },
+    {
+      "name": "Referenca konfiguracije gradnika",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "Referenca API",
+      "type": "readme"
+    },
+    {
+      "name": "Povezave",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status vzdrževanja",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

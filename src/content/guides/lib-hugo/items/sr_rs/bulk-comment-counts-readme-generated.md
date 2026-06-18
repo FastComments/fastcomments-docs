@@ -1,0 +1,26 @@
+Да бисте приказали број коментара поред више страница одједном (индекс блога, листа одељка), користите видгет за масовно бројање. Он преузима све бројеве на страници у једном захтеву. Састоји се из два дела: маркера поред сваке ставке и једног иницијализационог позива након листе.
+
+У шаблону листе (`layouts/_default/list.html`):
+
+```go-html-template
+<ul>
+  \{{ range .Pages }}
+    <li>
+      <a href="\{{ .RelPermalink }}">\{{ .Title }}</a>
+      \{{ partial "fastcomments/count-marker.html" . }}
+    </li>
+  \{{ end }}
+</ul>
+\{{ partial "fastcomments/bulk-count.html" (dict "page" .) }}
+```
+
+`count-marker.html` рендерује `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, користећи исти идентификатор који видгет за коментаре користи за ту страницу (`urlId` странице, или permalink странице када `urlId` није подешен), тако да се бројеви поклапају са стварним нитима. `bulk-count.html` шаље један захтев који их попуњава.
+
+Ако маркере пишете сами (на пример у Markdown-у странице), користите шорткод да бисте уместо тога емитовали иницијализациони позив:
+
+```text
+<span class="fast-comments-count" data-fast-comments-url-id="article-1"></span>
+<span class="fast-comments-count" data-fast-comments-url-id="article-2"></span>
+
+\{{< fastcomments-comment-count-bulk >}}
+```

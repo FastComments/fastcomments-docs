@@ -2,26 +2,29 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createTenantPackageBody | CreateTenantPackageBody | Da |  |
+| tenantId | string | Yes |  |
+| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
 
 ## Odgovor
 
-Vrne: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
+Vrača: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_001";
+const tenantId: string = "tenant_7890";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  name: "Acme Standard Package",
-  description: "Default package for Acme Corp comments with moderation and SSO enabled",
-  enabled: true,
-  maxCommentsPerThread: 500,
-  voteStyle: "thumbs",
-  gifRating: "PG-13",
-  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // prikazan izbirni parameter
+  packageName: "Growth Plan",
+  maxSeats: 2500,
+  features: {
+    moderation: true,
+    analytics: true,
+    sso: { enabled: true, provider: "saml" }
+  },
+  billing: { interval: "monthly", priceCents: 19900 },
+  // prikazan neobvezen parameter: notes ni obvezen, vendar je naveden
+  notes: "Onboarding bundle with priority support"
 };
 const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]

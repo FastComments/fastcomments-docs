@@ -1,9 +1,9 @@
-Cette bibliothèque est une implémentation complète pour react-native de [FastComments](https://fastcomments.com).
+Cette bibliothèque est une implémentation complète de [FastComments](https://fastcomments.com) pour react-native.
 
-Elle prend en charge les commentaires en direct, le chat, les fils de discussion, les émoticônes, les notifications, le SSO, les thèmes, et une personnalisation complète en passant un objet de feuille de style. Tous les assets
-peuvent également être personnalisés, et elle permet de basculer entre différents assets en fonction du mode sombre.
+Elle prend en charge les commentaires en direct, le chat, les fils de discussion, les émoticônes, les notifications, le SSO, les thèmes, et une personnalisation complète en passant un objet de feuille de style. Toutes les ressources
+peuvent également être personnalisées, et elle prend en charge l'activation de différentes ressources en fonction du mode sombre.
 
-L'avantage de cette bibliothèque est qu'elle est plus flexible que le wrapper `fastcomments-react-native`. Les commentaires sont rendus avec des composants natifs plutôt qu'à l'intérieur d'une webview. Remarque : `react-native-webview` est toujours requis en tant que dépendance transitive de l'éditeur de texte enrichi (`@10play/tentap-editor`).
+L'avantage de cette bibliothèque est qu'elle est plus flexible que le wrapper `fastcomments-react-native`. Les commentaires sont rendus avec des composants natifs plutôt qu'à l'intérieur d'une webview.
 
 Tout fonctionne sur le backend FastComments, vous n'avez donc qu'à intégrer l'interface utilisateur :
 
@@ -13,4 +13,4 @@ Tout fonctionne sur le backend FastComments, vous n'avez donc qu'à intégrer l'
 
 Voir [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) pour plus d'exemples.
 
-Ajoutez un chat en direct à votre application React Native existante, ou même créez un réseau social !
+Ajoutez un chat en direct à votre application React Native existante, ou créez même un réseau social !

@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "22ba4456adf8ac2481f51af2be2fbd0d2178cbdde3215f1d23411222a8c93949",
+  "generatedAt": "2026-06-15T20:33:34.252Z",
+  "codeExample": "const tenantId: string = \"tenant_0a1b2c3d\";\nconst id: string = \"user_984321\";\nconst redirectURL: string = \"https://app.acme-corp.com/welcome\";\nconst responseWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);\nconst responseWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);",
+  "model": "gpt-5-mini"
+}

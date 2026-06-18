@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Name | Type | Обов'язково | Опис |
+|------|------|-------------|------|
 | tenantId | string | Так |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | Так |  |
 
@@ -11,21 +11,20 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'createEmailTemplate Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад createEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_9f4a2b';
-  const createEmailTemplateBody: CreateEmailTemplateBody = {
-    name: 'Weekly Digest',
-    subject: 'Your weekly discussion highlights',
-    html: '<!doctype html><body><h1>Hello \{{user.name}}</h1><p>Top comments this week...</p></body>',
-    fromAddress: 'no-reply@fastcomments-example.com',
-    replyTo: 'moderation@fastcomments-example.com',
-    isDefault: false
-  };
-  const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
-  console.log(result);
-})();
+const tenantId: string = "tenant_4f2b1c9e";
+const createEmailTemplateBody: CreateEmailTemplateBody = {
+  name: "New Comment Notification",
+  subject: "Someone replied to your discussion",
+  fromName: "Community Team",
+  fromAddress: "no-reply@community.example.com",
+  htmlBody: "<p>\{{comment.author}} replied: \{{comment.text}}</p>",
+  plaintextBody: "\{{comment.author}} replied: \{{comment.text}}",
+  previewText: "A new reply on a discussion you follow",
+  isDefault: false // необов'язковий прапорець, що демонструє використання необов'язкового параметра
+};
+const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
 [inline-code-end]
 
 ---

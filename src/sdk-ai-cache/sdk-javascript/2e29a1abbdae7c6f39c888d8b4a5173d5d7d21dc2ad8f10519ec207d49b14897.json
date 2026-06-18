@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "2e29a1abbdae7c6f39c888d8b4a5173d5d7d21dc2ad8f10519ec207d49b14897",
+  "generatedAt": "2026-06-15T20:33:31.162Z",
+  "codeExample": "const tenantId: string = 'tenant_0a1b2c3d';\nconst moderators: GetModerators200Response = await getModerators(tenantId);\nconst skip: number = 20;\nconst moderatorsPage2: GetModerators200Response = await getModerators(tenantId, skip);",
+  "model": "gpt-5-mini"
+}

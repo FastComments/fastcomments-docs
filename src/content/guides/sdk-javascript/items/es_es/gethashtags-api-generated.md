@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | page | number | No |  |
@@ -13,10 +13,10 @@ Devuelve: [`GetHashTags200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Ejemplo de getHashTags'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const pageNumber: number = 2;
-const responseWithPage: GetHashTags200Response = await getHashTags(tenantId, pageNumber);
-const responseWithoutPage: GetHashTags200Response = await getHashTags(tenantId);
+const tenantId: string = 'tenant_7f4b2c3a';
+const tagsFirstPage: GetHashTags200Response = await getHashTags(tenantId);
+const tagsSecondPage: GetHashTags200Response = await getHashTags(tenantId, 2);
+console.log(tagsFirstPage, tagsSecondPage);
 [inline-code-end]
 
 ---

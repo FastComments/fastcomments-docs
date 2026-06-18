@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "af5f1661b54db9549918ea73c64d0d84a9075823ae8b4ff246382e1bbb52470a",
+  "generatedAt": "2026-06-15T20:33:32.572Z",
+  "codeExample": "const tenantId: string = \"fastcomments-tenant-72\";\nconst urlId: string = \"articles/2026/06/15/product-update\";\nconst id: string = \"page-8f3b2a\";\nconst title: string = \"Product Update: June 15, 2026\";\n\n(async function run(): Promise<void> {\n  const response: CreateV2PageReact200Response = await createV2PageReact(tenantId, urlId, id, title);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

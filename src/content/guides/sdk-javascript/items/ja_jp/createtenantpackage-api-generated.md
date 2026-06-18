@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | createTenantPackageBody | CreateTenantPackageBody | はい |  |
@@ -13,17 +13,18 @@
 
 [inline-code-attrs-start title = 'createTenantPackage の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_001";
+const tenantId: string = "tenant_7890";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  name: "Acme Standard Package",
-  description: "Default package for Acme Corp comments with moderation and SSO enabled",
-  enabled: true,
-  maxCommentsPerThread: 500,
-  voteStyle: "thumbs",
-  gifRating: "PG-13",
-  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // オプションパラメータの例を示す
+  packageName: "Growth Plan",
+  maxSeats: 2500,
+  features: {
+    moderation: true,
+    analytics: true,
+    sso: { enabled: true, provider: "saml" }
+  },
+  billing: { interval: "monthly", priceCents: 19900 },
+  // オプションのパラメータの例: notes は必須ではありませんが指定しています
+  notes: "Onboarding bundle with priority support"
 };
 const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]
-
----

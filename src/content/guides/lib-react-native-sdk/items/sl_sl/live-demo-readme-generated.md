@@ -1,0 +1,1 @@
+Preizkusite vse gradnike v živo na <https://fastcomments.com/commenting-system-for-react-native>.

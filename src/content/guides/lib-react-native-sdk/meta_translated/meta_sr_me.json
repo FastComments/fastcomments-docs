@@ -1,11 +1,17 @@
 {
-  "name": "React Native SDK",
-  "pageHeader": "Додавање коментара у вашу React Native апликацију",
+  "name": "React Native СДК",
+  "pageHeader": "Додајте коментаре у вашу React Native апликацију",
   "itemsOrdered": [
+    {
+      "name": "Демонстрација уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Почетак рада",
       "type": "readme"
     },
     {

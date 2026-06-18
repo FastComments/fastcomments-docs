@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "fba1e16dc13608088433e33142202bc2abab08f0cb45c248670eef4275578a71",
+  "generatedAt": "2026-06-15T20:33:37.716Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3b2';\nconst urlId: string = 'article_987';\nconst url: string = 'https://www.news-site.com/articles/2026/pasta-guide';\nconst pageTitle: string = 'The Definitive Guide to Cooking Pasta';\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;\nconst sso: string = 'sso-token-62b9f1';\nconst result: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);",
+  "model": "gpt-5-mini"
+}

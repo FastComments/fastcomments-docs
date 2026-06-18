@@ -1,0 +1,29 @@
+## 매개변수
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | 예 |  |
+| urlId | string | 예 |  |
+| id | string | 예 |  |
+| title | string | 아니요 |  |
+
+## 응답
+
+반환: [`CreateV2PageReact200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV2PageReact200Response.ts)
+
+## 예제
+
+[inline-code-attrs-start title = 'createV2PageReact 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "fastcomments-tenant-72";
+const urlId: string = "articles/2026/06/15/product-update";
+const id: string = "page-8f3b2a";
+const title: string = "Product Update: June 15, 2026";
+
+(async function run(): Promise<void> {
+  const response: CreateV2PageReact200Response = await createV2PageReact(tenantId, urlId, id, title);
+  console.log(response);
+})();
+[inline-code-end]
+
+---

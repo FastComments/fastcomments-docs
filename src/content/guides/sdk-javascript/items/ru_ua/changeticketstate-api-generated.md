@@ -1,6 +1,6 @@
 ## Параметры
 
-| Параметр | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | userId | string | Да |  |
@@ -13,16 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-001";
-const userId: string = "user_8742";
-const id: string = "TCK-2026-00042";
+const tenantId: string = 'tenant_8a7d3f4b';
+const userId: string = 'user_5d1a9b2c';
+const id: string = 'ticket_1024';
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  comment: "Fixed in backend service; verified by QA",
-  notifyFollowers: false
-} as ChangeTicketStateBody;
+  state: 'closed',
+  notifyParticipants: true, // необязательный параметр — демонстрация
+  comment: 'Resolved by support — follow-up not required.'
+};
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]
 

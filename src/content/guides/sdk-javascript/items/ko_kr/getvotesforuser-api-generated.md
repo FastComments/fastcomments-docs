@@ -1,11 +1,11 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
-| userId | string | 아니요 |  |
-| anonUserId | string | 아니요 |  |
+| userId | string | 아니오 |  |
+| anonUserId | string | 아니오 |  |
 
 ## 응답
 
@@ -15,14 +15,11 @@
 
 [inline-code-attrs-start title = 'getVotesForUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = "local-news-ny";
-  const urlId: string = "articles/2026-03-25/ev-infrastructure-update";
-  const userId: string = "user_78b6f3d9";
-  const anonUserId: string = "anon_9c3f7a1b";
-  const result: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_9b8f7c6d';
+const urlId: string = 'articles/product-update-2026';
+const userId: string = 'user_c12345';
+const anonUserId: string = 'anon_7f4e2a';
+const votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
 [inline-code-end]
 
 ---

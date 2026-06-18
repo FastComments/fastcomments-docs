@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "3c01d5b73eabba8e4bb1a8e1410e459898fbd3ab186eff2bc87264e7b343f016",
+  "generatedAt": "2026-06-15T20:33:36.341Z",
+  "codeExample": "const tenantId: string = 'tenant_5f8d7c3a';\nconst limit: number = 100;\nconst skip: number = 0;\nconst order: SORTDIR = 'DESC' as SORTDIR;\nconst after: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // one week ago\nconst before: number = Date.now();\nconst result: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after, before);",
+  "model": "gpt-5-mini"
+}

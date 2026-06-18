@@ -1,11 +1,71 @@
 {
   "name": "Hugo Kütüphanesi",
-  "pageHeader": "Hugo Sitenize Yorum Ekleme",
+  "pageHeader": "Hugo Sitenize Yorum Ekleyin",
   "itemsOrdered": [
     {
-      "name": "Genel Bakış",
-      "file": "overview.md",
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "install-readme-generated.md",
       "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kısa Kodlar",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Tema Entegrasyonu",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Toplu yorum sayıları",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Yapılandırma",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Yapılandırma",
+      "type": "readme"
+    },
+    {
+      "name": "Widget yapılandırma referansı",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API Referansı",
+      "type": "readme"
+    },
+    {
+      "name": "Bağlantılar",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     }
   ]

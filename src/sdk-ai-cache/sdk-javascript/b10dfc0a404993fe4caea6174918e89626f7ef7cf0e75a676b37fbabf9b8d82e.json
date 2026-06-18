@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "b10dfc0a404993fe4caea6174918e89626f7ef7cf0e75a676b37fbabf9b8d82e",
+  "generatedAt": "2026-06-15T20:33:35.665Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-001';\nconst commentId: string = 'cmt_8f3b2a9d';\nconst direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Up;\nconst userId: string = 'user_5021';\nconst anonUserId: string = 'anon_7a9c';\n\nconst voteResponse: VoteComment200Response = await createVote(tenantId, commentId, direction, userId, anonUserId);",
+  "model": "gpt-5-mini"
+}

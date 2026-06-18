@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
@@ -13,10 +14,10 @@ Restituisce: [`GetTenantUsers200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Esempio di getTenantUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_8a3f2c';
+const tenantId: string = 'tenant_7b8f3a2c-9e4d-4f1a';
 const skip: number = 50;
-const usersWithSkip: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);
-const usersNoSkip: GetTenantUsers200Response = await getTenantUsers(tenantId);
+const usersResponseDefault: GetTenantUsers200Response = await getTenantUsers(tenantId);
+const usersResponsePaged: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);
 [inline-code-end]
 
 ---

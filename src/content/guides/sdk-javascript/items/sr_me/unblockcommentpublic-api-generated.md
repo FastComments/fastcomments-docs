@@ -1,28 +1,29 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Da |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockCommentPublic200Response.ts)
+Vraća: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockCommentPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример unBlockCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer unBlockCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42e8a1';
-const commentId: string = 'cmt_9b3f2d';
+const tenantId: string = "tenant-42-production";
+const commentId: string = "comment_7f3b2a9d";
 const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: 'abusive_language',
-  blockedByModeratorId: 'mod_17',
-  note: 'Targeted harassment; review complete',
-  unblockRequestedAt: new Date().toISOString()
+  reason: "flag reviewed and determined not to violate policy",
+  restoredBy: "moderator_jane",
+  restoredAt: new Date().toISOString()
 };
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
+const sso: string = "sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
 const result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]
+
+---

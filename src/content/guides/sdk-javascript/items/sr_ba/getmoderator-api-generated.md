@@ -1,20 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerator200Response.ts)
+Vraća: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerator200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerator Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-123';
-const id: string = 'mod-987654321';
+const tenantId: string = 'acme-media-58';
+const id: string = 'mod-82f3b9c1';
 const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 

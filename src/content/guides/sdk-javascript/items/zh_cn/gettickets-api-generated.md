@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | userId | string | 否 |  |
@@ -16,13 +16,13 @@
 
 [inline-code-attrs-start title = 'getTickets 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_92f3b4c1";
-const userId: string = "user_742a9f3e";
-const state: number = 1;
+const tenantId: string = 'tenant_acme_01';
+const userId: string = 'user_87b3';
+const state: number = 2;
 const skip: number = 0;
-const limit: number = 25;
-const ticketsFull: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);
-const ticketsMinimal: GetTickets200Response = await getTickets("tenant_92f3b4c1");
+const limit: number = 50;
+
+const tickets: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);
 [inline-code-end]
 
 ---

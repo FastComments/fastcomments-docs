@@ -14,12 +14,12 @@ Returns: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'patchHashTag Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "release-2026";
-const tenantId: string = "tenant_7b3f";
+const tag: string = "feature-request";
+const tenantId: string = "tenant_8f7a3b2c";
 const updateHashTagBody: UpdateHashTagBody = {
-  label: "Release 2026",
-  description: "Tag used to group issues and features for the 2026 product launch",
-  isActive: true
+  displayName: "Feature Request",
+  description: "Use this tag for requests to add new features to the product",
+  enabled: true
 };
 const result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
 [inline-code-end]

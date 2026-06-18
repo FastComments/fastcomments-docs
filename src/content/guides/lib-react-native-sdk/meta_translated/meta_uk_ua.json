@@ -1,7 +1,13 @@
 {
   "name": "SDK для React Native",
-  "pageHeader": "Додайте коментарі до вашого додатку React Native",
+  "pageHeader": "Додайте коментарі до вашого додатка React Native",
   "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Встановлення",
       "file": "installation-readme-generated.md",

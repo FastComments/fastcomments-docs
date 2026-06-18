@@ -1,25 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| renderEmailTemplateBody | RenderEmailTemplateBody | Да |  |
-| locale | string | Не |  |
+| tenantId | string | Da |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
+| locale | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplate200Response.ts)
+Vraća: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplate200Response.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-987';
+const tenantId: string = '7f7e2b90-3a2b-4d9b-9df1-5f0b6b2e8a1c';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'user-invite',
-  subject: "You're invited to Acme",
-  placeholders: { firstName: 'Alex' },
-  metadata: { source: 'signup-flow' }
+  templateId: 'welcome_email',
+  recipient: { email: 'jordan.smith@acme.co', name: 'Jordan Smith' },
+  variables: { siteName: 'Acme Forum', verificationUrl: 'https://acme.forum/verify?code=abc123' }
 };
 const locale: string = 'en-US';
 const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);

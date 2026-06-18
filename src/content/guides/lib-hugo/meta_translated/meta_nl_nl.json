@@ -3,9 +3,69 @@
   "pageHeader": "Voeg reacties toe aan je Hugo-site",
   "itemsOrdered": [
     {
-      "name": "Overzicht",
-      "file": "overview.md",
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live-presentatie",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installeren",
+      "file": "install-readme-generated.md",
       "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Snelle start",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Shortcodes",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Thema-integratie",
+      "file": "theme-integration-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Bulk aantal reacties",
+      "file": "bulk-comment-counts-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Configuratie",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Referentie voor widgetconfiguratie",
+      "file": "widget-configuration-reference-readme-generated.md",
+      "subCat": "API-referentie",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentatie",
       "type": "readme"
     }
   ]

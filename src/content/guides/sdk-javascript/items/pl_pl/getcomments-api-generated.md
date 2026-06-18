@@ -1,22 +1,24 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| page | number | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| asTree | boolean | No |  |
-| skipChildren | number | No |  |
-| limitChildren | number | No |  |
-| maxTreeDepth | number | No |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
-| contextUserId | string | No |  |
-| hashTag | string | No |  |
-| parentId | string | No |  |
-| direction | SortDirections | No |  |
+| tenantId | string | Tak |  |
+| page | number | Nie |  |
+| limit | number | Nie |  |
+| skip | number | Nie |  |
+| asTree | boolean | Nie |  |
+| skipChildren | number | Nie |  |
+| limitChildren | number | Nie |  |
+| maxTreeDepth | number | Nie |  |
+| urlId | string | Nie |  |
+| userId | string | Nie |  |
+| anonUserId | string | Nie |  |
+| contextUserId | string | Nie |  |
+| hashTag | string | Nie |  |
+| parentId | string | Nie |  |
+| direction | SortDirections | Nie |  |
+| fromDate | number | Nie |  |
+| toDate | number | Nie |  |
 
 ## Odpowiedź
 
@@ -26,21 +28,8 @@ Zwraca: [`GetComments200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Przykład getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
-  tenantId,
-  1, // strona
-  20, // limit
-  0, // pomiń
-  true, // jako drzewo
-  1, // pomiń dzieci
-  3, // limit dzieci
-  4, // maks. głębokość drzewa
-  'articles/2026/new-product-launch', // urlId
-  'user_7890', // identyfikator użytkownika
-  'anon_4f3b2', // identyfikator anonimowego użytkownika
-  undefined, // identyfikator użytkownika kontekstu
-  '#launch', // hashtag
-  undefined // identyfikator rodzica
-);
+const tenantId: string = "tenant_9a12b3";
+const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
 [inline-code-end]
+
+---

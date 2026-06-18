@@ -1,23 +1,27 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
 | editKey | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVote200Response.ts)
+Враћа: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVote200Response.ts)
 
-## Primer
+## Примјер
 
-[inline-code-attrs-start title = 'Primer deleteVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
-const id: string = 'vote-7a1b2c3d-9f8e-4b6a-8123-abcdef012345';
-const editKey: string = 'editKey_4f3e2d1c';
-
-const resultWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
-const resultWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id);
+(async () => {
+  const tenantId: string = 'tenant_8421';
+  const id: string = 'vote_3f9b7c2a';
+  const editKey: string = 'edit_7Xk9LpQ';
+  const responseWithoutEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id);
+  const responseWithEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
+  console.log(responseWithoutEdit, responseWithEdit);
+})();
 [inline-code-end]
+
+---

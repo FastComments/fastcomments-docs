@@ -1,7 +1,6 @@
----
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | skip | number | Όχι |  |
@@ -14,10 +13,9 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getTenantPackages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-7b3c2f';
-const skipCount: number = 10;
-const packages: GetTenantPackages200Response = await getTenantPackages(tenantId, skipCount);
-const packagesFromStart: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const tenantId: string = 'tenant_8421';
+const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, 25);
+const packagesWithoutSkip: GetTenantPackages200Response = await getTenantPackages(tenantId);
 [inline-code-end]
 
 ---

@@ -14,10 +14,22 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateFeedPost Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const id: string = 'feedpost-2026-0001';
-const mediaAsset: FeedPostMediaItemAsset = { assetId: 'asset-9876', url: 'https://cdn.acme.com/assets/asset-9876.jpg' } as FeedPostMediaItemAsset;
-const mediaItem: FeedPostMediaItem = { id: 'media-1', type: 'image', asset: mediaAsset } as FeedPostMediaItem;
-const feedPost: FeedPost = { title: 'Product Launch', body: 'We launched the new product today.', media: [mediaItem], isPinned: true } as FeedPost;
+const tenantId: string = "tenant_72f3b4c9";
+const id: string = "post_ba4f6e18-2d3c-4b7a-91f2-8c0e3a6b5d4f";
+
+const feedPost: FeedPost = {
+  title: "June feature rollout",
+  body: "Announcing performance improvements and moderation updates available to all sites.",
+  authorName: "Platform Team",
+  mediaItems: [
+    {
+      type: "image",
+      caption: "Release banner",
+      asset: { url: "https://cdn.fastcomments.com/assets/june-banner.jpg", mimeType: "image/jpeg", width: 1200, height: 600 }
+    }
+  ],
+  links: [{ title: "Release notes", url: "https://docs.fastcomments.com/releases/june-2026" }]
+} as FeedPost;
+
 const result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);
 [inline-code-end]

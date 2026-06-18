@@ -20,14 +20,11 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-001';
-const urlId: string = 'kb-article-421';
-const url: string = 'https://support.acme.com/kb/configuring-single-sign-on';
-const pageTitle: string = 'Configuring Single Sign-On for Support Portal';
-const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
-  UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-const sso: string = 'saml:acme-tenant-001';
-
-const result: UpdateUserNotificationStatus200Response =
-  await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
+const tenantId: string = 'tenant_7f3b2';
+const urlId: string = 'article_987';
+const url: string = 'https://www.news-site.com/articles/2026/pasta-guide';
+const pageTitle: string = 'The Definitive Guide to Cooking Pasta';
+const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
+const sso: string = 'sso-token-62b9f1';
+const result: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
 [inline-code-end]

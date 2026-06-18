@@ -1,13 +1,13 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| limit | number | 아니요 |  |
-| skip | number | 아니요 |  |
-| order | SORTDIR | 아니요 |  |
-| after | number | 아니요 |  |
-| before | number | 아니요 |  |
+| limit | number | 아니오 |  |
+| skip | number | 아니오 |  |
+| order | SORTDIR | 아니오 |  |
+| after | number | 아니오 |  |
+| before | number | 아니오 |  |
 
 ## 응답
 
@@ -17,12 +17,13 @@
 
 [inline-code-attrs-start title = 'getAuditLogs 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9a8b7c';
+const tenantId: string = 'tenant_5f8d7c3a';
 const limit: number = 100;
 const skip: number = 0;
-const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30일 전
+const order: SORTDIR = 'DESC' as SORTDIR;
+const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // 일주일 전
 const before: number = Date.now();
-const auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);
+const result: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after, before);
 [inline-code-end]
 
 ---

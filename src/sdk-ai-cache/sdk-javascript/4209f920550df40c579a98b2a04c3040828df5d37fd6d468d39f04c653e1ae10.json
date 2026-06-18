@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "4209f920550df40c579a98b2a04c3040828df5d37fd6d468d39f04c653e1ae10",
+  "generatedAt": "2026-06-15T20:33:34.732Z",
+  "codeExample": "const tenantId: string = 'tenant_9b8f7c6d';\nconst urlId: string = 'articles/product-update-2026';\nconst userId: string = 'user_c12345';\nconst anonUserId: string = 'anon_7f4e2a';\nconst votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);",
+  "model": "gpt-5-mini"
+}

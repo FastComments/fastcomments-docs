@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Type | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | commentId | string | Ne |  |
@@ -16,20 +16,23 @@ Vraća: [`GetPendingWebhookEventCount200Response`](https://github.com/FastCommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getPendingWebhookEventCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d3b7a2f";
-const commentId: string | undefined = "comment_79a2b";
-const eventType: string | undefined = "comment.created";
-const domain: string | undefined = "forum.acme-corp.com";
-const attemptCountGT: number | undefined = 1;
+const tenantId: string = 'tenant_9f8b3b';
+const commentId: string = 'cmt_1a2b3c';
+const eventType: string = 'comment.created';
+const domain: string = 'news-site.com';
+const attemptCountGT: number = 2;
+
 const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
   tenantId,
   commentId,
-  undefined,
+  undefined, // externalId omitted
   eventType,
-  undefined,
+  undefined, // type omitted
   domain,
   attemptCountGT
 );
 [inline-code-end]
+
+---

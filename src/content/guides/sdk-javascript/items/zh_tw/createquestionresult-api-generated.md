@@ -1,9 +1,9 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
+| tenantId | string | 是 |  |
+| createQuestionResultBody | CreateQuestionResultBody | 是 |  |
 
 ## 回應
 
@@ -13,16 +13,13 @@
 
 [inline-code-attrs-start title = 'createQuestionResult 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
-const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: 'q-34567',
-  respondentId: 'user-8923',
-  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
-  score: 5,
-  meta: [{ key: 'platform', value: 'web' }],
-  notifyModerators: false // 可選參數
+const tenantId: string = 'fc-tenant-512';
+const meta: MetaItem[] = [{ key: 'source', value: 'article' }];
+const body: CreateQuestionResultBody = {
+  questionId: 'q-94',
+  userId: 'user_332',
+  answers: [{ optionId: 'opt_a', score: 1 }],
+  meta, // 提供的選用元資料
 } as CreateQuestionResultBody;
-const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
+const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);
 [inline-code-end]
-
----

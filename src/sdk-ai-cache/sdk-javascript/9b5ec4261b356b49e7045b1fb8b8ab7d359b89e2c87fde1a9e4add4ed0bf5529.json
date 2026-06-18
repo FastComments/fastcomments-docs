@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "9b5ec4261b356b49e7045b1fb8b8ab7d359b89e2c87fde1a9e4add4ed0bf5529",
+  "generatedAt": "2026-06-15T20:33:32.546Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant-72\";\nconst commentId: string = \"cmt_8f3a2b4c9d\";\nconst broadcastId: string = \"live_2026-06-15_21z\";\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload.signature\";\n\nconst responseNoSSO: PinComment200Response = await pinComment(tenantId, commentId, broadcastId);\nconst responseWithSSO: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, ssoToken);",
+  "model": "gpt-5-mini"
+}

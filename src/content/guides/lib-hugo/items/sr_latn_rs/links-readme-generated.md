@@ -1,0 +1,3 @@
+- [FastComments Dokumentacija](https://docs.fastcomments.com)
+- [Prilagođavanje i konfiguracija](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Hugo Dokumentacija](https://gohugo.io/documentation/)

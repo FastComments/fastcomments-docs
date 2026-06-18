@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Requerido | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | commentId | string | Sí |  |
@@ -15,14 +15,13 @@ Devuelve: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'Ejemplo de getCommentVoteUserNames'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_4f2c1e';
-  const commentId: string = 'cmt_9a7b3d';
-  const dir: number = 1;
-  const resultUpvotes: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);
-  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakepayload.signature';
-  const dirDown: number = -1;
-  const resultDownvotes: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dirDown, sso);
-  console.log(resultUpvotes, resultDownvotes);
-})();
+const tenantId: string = "tenant_67890";
+const commentId: string = "comment_abc123";
+const dir: number = 1;
+const ssoToken: string = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
+
+const responseWithoutSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);
+const responseWithSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);
 [inline-code-end]
+
+---
