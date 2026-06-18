@@ -213,6 +213,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Allow Media Embeds",
+      "file": "allow-media-embeds.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Enable Search Box",
       "file": "enable-search.md",
       "subCat": "Look and Feel"
