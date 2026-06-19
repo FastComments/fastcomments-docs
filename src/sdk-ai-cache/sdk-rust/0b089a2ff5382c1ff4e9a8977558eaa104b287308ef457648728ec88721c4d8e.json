@@ -1,0 +1,7 @@
+{
+  "method": "get_api_comments",
+  "signatureHash": "0b089a2ff5382c1ff4e9a8977558eaa104b287308ef457648728ec88721c4d8e",
+  "generatedAt": "2026-06-19T21:44:59.523Z",
+  "codeExample": "async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params: GetApiCommentsParams = GetApiCommentsParams {\n        page: Some(1.0),\n        count: Some(20.0),\n        text_search: Some(String::from(\"breaking election results\")),\n        by_ip_from_comment: Some(String::from(\"203.0.113.45\")),\n        filters: Some(String::from(\"status:approved,thread:news/article\")),\n        search_filters: Some(String::from(\"author:john.doe@example.com\")),\n        sorts: Some(String::from(\"-created_at\")),\n        demo: Some(false),\n        sso: Some(String::from(\"acme-corp-tenant\")),\n    };\n    let response: ModerationApiGetCommentsResponse = get_api_comments(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

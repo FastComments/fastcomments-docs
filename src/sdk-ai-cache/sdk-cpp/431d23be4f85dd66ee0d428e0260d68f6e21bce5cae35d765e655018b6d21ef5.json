@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "431d23be4f85dd66ee0d428e0260d68f6e21bce5cae35d765e655018b6d21ef5",
+  "generatedAt": "2026-06-19T18:51:12.690Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> locale = boost::none;\napi->getEmailTemplateDefinitions(tenantId)\n.then([=](pplx::task<std::shared_ptr<GetEmailTemplateDefinitionsResponse>> task) {\n    try {\n        auto resp = task.get();\n        auto safeResp = resp ? resp : std::make_shared<GetEmailTemplateDefinitionsResponse>();\n        return safeResp;\n    } catch (const std::exception&) {\n        return std::make_shared<GetEmailTemplateDefinitionsResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

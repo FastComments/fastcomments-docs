@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "1a58b07f85e9aa47a0d6176e4c3e2b3628b27e20f352665fe6e76331890864e8",
+  "generatedAt": "2026-06-19T21:45:04.666Z",
+  "codeExample": "boost::optional<utility::string_t> textSearch(utility::string_t(\"spam content\"));\nboost::optional<utility::string_t> byIPFromComment(utility::string_t(\"203.0.113.45\"));\nboost::optional<utility::string_t> filters(utility::string_t(\"site:my-tenant-123 status:pending\"));\nboost::optional<utility::string_t> searchFilters(utility::string_t(\"created>2026-01-01\"));\nboost::optional<utility::string_t> sorts(utility::string_t(\"created:desc\"));\nboost::optional<utility::string_t> sso(utility::string_t(\"user@example.com\"));\n\nauto task = api->postApiExport(textSearch, byIPFromComment, filters, searchFilters, sorts, sso)\n.then([](pplx::task<std::shared_ptr<ModerationExportResponse>> t){\n    try {\n        auto resp = t.get();\n        return resp ? std::make_shared<ModerationExportResponse>(*resp) : std::make_shared<ModerationExportResponse>();\n    } catch(...) {\n        return std::shared_ptr<ModerationExportResponse>();\n    }\n});\n\ntask.wait();",
+  "model": "gpt-5-mini"
+}

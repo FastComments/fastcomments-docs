@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "4b10ec6a6e4636431633c5f8f274454733c0ca5a5ac659521f1309be074172ff",
+  "generatedAt": "2026-06-19T21:44:56.937Z",
+  "codeExample": "const searchValue: string = \"homepage-recent-threads\";\nconst ssoToken: string = \"sso_user_7f9b2c3d\";\nconst resultWithBoth: ModerationPageSearchResponse = await getSearchPages(searchValue, ssoToken);\nconst resultWithValueOnly: ModerationPageSearchResponse = await getSearchPages(searchValue);\nconst resultWithSSOOnly: ModerationPageSearchResponse = await getSearchPages(undefined, ssoToken);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "5898f535a06e493f43dfd77b4e39598772de205147ac793452718b927d2c22e1",
+  "generatedAt": "2026-06-19T21:44:51.576Z",
+  "codeExample": "let (response, httpResponse) = client.getSearchSuggest(textSearch = \"suspicious comment with spammy links\", sso = \"sso-user-789\")\nif response.isSome:\n  let suggest = response.get()\n  echo \"ModerationSuggestResponse:\"\n  echo suggest\nelse:\n  echo \"No moderation suggestions returned. HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

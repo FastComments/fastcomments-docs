@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "89e64a49190da051ec5ee51ffe9709eb0cbd4a7cf15cf9fde8d1c8e406b704fc",
+  "generatedAt": "2026-06-19T21:45:01.060Z",
+  "codeExample": "boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U(\"my-tenant-123\")));\napi->getUserBanPreference(sso).then([](std::shared_ptr<APIModerateGetUserBanPreferencesResponse> resp){\n    auto prefs = resp ? resp : std::make_shared<APIModerateGetUserBanPreferencesResponse>();\n    (void)prefs;\n});",
+  "model": "gpt-5-mini"
+}

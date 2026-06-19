@@ -1,0 +1,7 @@
+{
+  "method": "get_user_reacts_public",
+  "signatureHash": "cef6799ea220d4c1a0d3900f0a1555a1e403030549348c7cf763023f613b7736",
+  "generatedAt": "2026-06-19T18:51:10.613Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetUserReactsPublicParams = GetUserReactsPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: Some(vec![\n            \"news/article-123\".to_string(),\n            \"blog/post-456\".to_string(),\n        ]),\n        sso: Some(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\".to_string()),\n    };\n    let response: UserReactsResponse = get_user_reacts_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

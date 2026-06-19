@@ -1,0 +1,7 @@
+{
+  "method": "putCloseThread",
+  "signatureHash": "c1b20e086063691c17d85f0ded96530d3fef9896c66e6e79f82399c8abe5c2b5",
+  "generatedAt": "2026-06-19T21:44:57.625Z",
+  "codeExample": "utility::string_t urlId = utility::conversions::to_string_t(\"my-tenant-123/thread-98765\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"user@example.com\");\napi->putCloseThread(urlId, sso)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n    try {\n        auto resp = task.get();\n        if (!resp) resp = std::make_shared<APIEmptyResponse>();\n        return resp;\n    } catch (const std::exception&) {\n        return std::make_shared<APIEmptyResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

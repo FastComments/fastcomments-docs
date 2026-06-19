@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "9c9c0e6c5c2abe1278fcec0cd5f18001d0f3f5504cc5d68e61a084a59d5b2068",
+  "generatedAt": "2026-06-19T18:51:16.313Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-7f4b2a\");\nboost::optional<utility::string_t> editKey(utility::conversions::to_string_t(\"edit-xyz-789\"));\nboost::optional<utility::string_t> sso(utility::conversions::to_string_t(\"user@example.com\"));\napi->getCommentText(tenantId, commentId, editKey, sso)\n.then([](pplx::task<std::shared_ptr<PublicAPIGetCommentTextResponse>> t){\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : std::make_shared<PublicAPIGetCommentTextResponse>();\n    } catch (...) {\n        auto empty = std::make_shared<PublicAPIGetCommentTextResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

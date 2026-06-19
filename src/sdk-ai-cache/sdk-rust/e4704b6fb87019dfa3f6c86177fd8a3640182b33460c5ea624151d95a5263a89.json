@@ -1,0 +1,7 @@
+{
+  "method": "get_search_suggest",
+  "signatureHash": "e4704b6fb87019dfa3f6c86177fd8a3640182b33460c5ea624151d95a5263a89",
+  "generatedAt": "2026-06-19T21:44:53.970Z",
+  "codeExample": "async fn run_suggest() -> Result<(), Error> {\n    let params: GetSearchSuggestParams = GetSearchSuggestParams {\n        text_search: Some(\"news/article: presidential debate highlights\".to_string()),\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let suggestion: ModerationSuggestResponse = get_search_suggest(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

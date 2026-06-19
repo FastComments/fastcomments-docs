@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "79a1308002fa3b7850fc8fb5003d4cf7eadf58027f93e2e1950145bdbe7cd1be",
+  "generatedAt": "2026-06-19T21:44:55.417Z",
+  "codeExample": "(async () => {\n  const commentId: string = 'cmt_7f3b2a1e-54d3';\n  const resultWithoutSso: APIEmptyResponse = await postRestoreDeletedComment(commentId);\n  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYyMzQ1Njc4OX0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n  const resultWithSso: APIEmptyResponse = await postRestoreDeletedComment(commentId, ssoToken);\n  console.log(resultWithoutSso, resultWithSso);\n})();",
+  "model": "gpt-5-mini"
+}

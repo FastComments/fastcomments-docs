@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "ccc7a76e28d329738cb96950f2e6ab0e404634568cb19dd09835fa615122867b",
+  "generatedAt": "2026-06-19T21:44:59.186Z",
+  "codeExample": "auto paramsPtr = std::make_shared<BanUserUndoParams>();\nparamsPtr->setTenantId(U(\"my-tenant-123\"));\nparamsPtr->setUserEmail(U(\"jane.doe@example.com\"));\nparamsPtr->setModeratorId(U(\"mod-456\"));\nboost::optional<utility::string_t> sso = utility::string_t(U(\"https://sso.mycompany.com/session-token\"));\napi->postBanUserUndo(*paramsPtr, sso)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) std::cout << \"Ban undone successfully\\n\";\n            else std::cout << \"Ban undo returned empty response\\n\";\n        } catch (const std::exception& e) {\n            std::cout << \"postBanUserUndo failed: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini"
+}

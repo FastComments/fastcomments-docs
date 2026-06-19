@@ -1,0 +1,7 @@
+{
+  "method": "get_api_export_status",
+  "signatureHash": "399c5ef73faf43c9a2baedb68992513abc3e17c617ae929333041515cbd3452d",
+  "generatedAt": "2026-06-19T21:44:55.034Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetApiExportStatusParams = GetApiExportStatusParams {\n        batch_job_id: Some(\"export-job-2026-06-19-001\".to_string()),\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let status: ModerationExportStatusResponse = get_api_export_status(&configuration, params).await?;\n    println!(\"{:#?}\", status);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

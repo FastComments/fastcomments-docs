@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "b4073848d7ca61f43a0a0fee49b4876e8461f8d14d1dd7a39103bb9ac277a89e",
+  "generatedAt": "2026-06-19T18:51:06.127Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentText(tenantId = \"my-tenant-123\", commentId = \"cmt-987654321\", editKey = \"\", sso = \"\")\n\nif response.isSome:\n  let commentTextResp = response.get()\n  echo commentTextResp\nelse:\n  echo \"No comment text returned\"",
+  "model": "gpt-5-mini"
+}

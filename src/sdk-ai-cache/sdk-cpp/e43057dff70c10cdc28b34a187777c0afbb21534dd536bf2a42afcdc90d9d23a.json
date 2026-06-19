@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "e43057dff70c10cdc28b34a187777c0afbb21534dd536bf2a42afcdc90d9d23a",
+  "generatedAt": "2026-06-19T18:51:13.323Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"vote-987654321\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"edit-key-abc123\"));\n\napi->deleteVote(tenantId, id, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){\n    try {\n        auto resp = t.get();\n        auto finalResp = resp ? resp : std::make_shared<VoteDeleteResponse>();\n        (void)finalResp;\n    } catch (...) {\n        auto errorResp = std::make_shared<VoteDeleteResponse>();\n        (void)errorResp;\n    }\n});",
+  "model": "gpt-5-mini"
+}

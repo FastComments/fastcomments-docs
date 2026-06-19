@@ -1,0 +1,7 @@
+{
+  "method": "get_pages_public",
+  "signatureHash": "125c210b07a560d4924731f7f248dc9f50f6d49b13e44dcdcd5c5eab9b3c4819",
+  "generatedAt": "2026-06-19T18:51:09.036Z",
+  "codeExample": "let params: GetPagesPublicParams = GetPagesPublicParams {\n    tenant_id: String::from(\"acme-corp-tenant\"),\n    cursor: Some(String::from(\"cursor_eyJwZl9pZCI6IjEyMyJ9\")),\n    limit: Some(50),\n    q: Some(String::from(\"tag:release status:published\")),\n    sort_by: Some(models::PagesSortBy::CreatedAt),\n    has_comments: Some(true),\n};\nlet response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

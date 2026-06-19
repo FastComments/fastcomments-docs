@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "218b840abd42b1fdf34aac5e825eedbbdfe176bd6760d1b85c2d16adc2b71501",
+  "generatedAt": "2026-06-19T18:51:19.987Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"question-456\");\nboost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U(\"corr-12345\"));\nauto placeholder = std::make_shared<APIEmptyResponse>();\napi->deleteQuestionConfig(tenantId, id)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task)\n{\n    try {\n        auto resp = task.get();\n        if (resp) std::cout << \"Question config deleted\\n\";\n        else std::cout << \"No response body\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Delete failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "update_user_notification_status",
+  "signatureHash": "4a069d5a6a80c432ac26a183871ad2e0e59323a60c1cdd57afd6205937e0e38d",
+  "generatedAt": "2026-06-19T18:51:10.691Z",
+  "codeExample": "async fn run_update() -> Result<UpdateUserNotificationStatusResponse, Error> {\n    let params: UpdateUserNotificationStatusParams = UpdateUserNotificationStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        notification_id: \"notifications/8472\".to_string(),\n        new_status: \"dismissed\".to_string(),\n        sso: Some(\"sso-user-98765-token\".to_string()),\n    };\n    let response: UpdateUserNotificationStatusResponse =\n        update_user_notification_status(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

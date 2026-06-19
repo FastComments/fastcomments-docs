@@ -1,0 +1,7 @@
+{
+  "method": "create_vote",
+  "signatureHash": "1b7381ad80126dbf628e34c68227155508e9b7e82f1b45d49e435a0d4d6a4d07",
+  "generatedAt": "2026-06-19T18:51:08.752Z",
+  "codeExample": "async fn run() -> Result<VoteResponse, Error> {\n    let params: CreateVoteParams = CreateVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/12345/comment-9876\".to_string(),\n        direction: \"up\".to_string(),\n        user_id: Some(\"user-42\".to_string()),\n        anon_user_id: None,\n    };\n    let vote_response: VoteResponse = create_vote(&configuration, params).await?;\n    Ok(vote_response)\n}",
+  "model": "gpt-5-mini"
+}

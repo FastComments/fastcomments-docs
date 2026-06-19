@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "c6ea827102b9c8fee3b519ac6cb0f694969360318491de0c5bd6541da92b248f",
+  "generatedAt": "2026-06-19T18:51:11.727Z",
+  "codeExample": "boost::optional<utility::string_t> meta(U(\"user@example.com\"));\nboost::optional<double> skip(10.0);\napi->getTenants(U(\"my-tenant-123\"), meta, skip)\n    .then([](std::shared_ptr<GetTenantsResponse> resp) {\n        auto out = resp ? resp : std::make_shared<GetTenantsResponse>();\n        if (resp) std::cout << \"Fetched tenants successfully\\n\";\n        else std::cout << \"No tenants returned, using default\\n\";\n    });",
+  "model": "gpt-5-mini"
+}

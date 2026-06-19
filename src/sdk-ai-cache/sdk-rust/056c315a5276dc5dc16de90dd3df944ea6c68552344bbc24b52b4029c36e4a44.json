@@ -1,0 +1,7 @@
+{
+  "method": "delete_tenant",
+  "signatureHash": "056c315a5276dc5dc16de90dd3df944ea6c68552344bbc24b52b4029c36e4a44",
+  "generatedAt": "2026-06-19T18:51:09.775Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteTenantParams = DeleteTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"tenant-5f2d\".to_string(),\n        sure: Some(\"confirm\".to_string()),\n    };\n    let response: ApiEmptyResponse = delete_tenant(&configuration, params).await?;\n    let _ = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

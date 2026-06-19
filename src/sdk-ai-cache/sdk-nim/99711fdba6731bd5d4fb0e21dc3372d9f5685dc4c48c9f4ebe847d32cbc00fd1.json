@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "99711fdba6731bd5d4fb0e21dc3372d9f5685dc4c48c9f4ebe847d32cbc00fd1",
+  "generatedAt": "2026-06-19T21:44:54.287Z",
+  "codeExample": "let (response, httpResponse) = client.getModerationComment(commentId = \"cmt-8f3b2a9d\", includeEmail = false, includeIP = false, sso = \"\")\nif response.isSome:\n  let comment = response.get()\n  discard comment\nelse:\n  echo \"No moderation comment returned\"",
+  "model": "gpt-5-mini"
+}

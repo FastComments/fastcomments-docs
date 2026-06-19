@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "e21da9e1f848db87443d58891bbd1763c73abc5eb07edf05bb2c48eb4720a9cb",
+  "generatedAt": "2026-06-19T18:51:15.037Z",
+  "codeExample": "let (response, httpResponse) = client.getTranslations(\n  namespace = \"news-site\",\n  component = \"article-comments\",\n  locale = \"en-US\",\n  useFullTranslationIds = false\n)\nif response.isSome:\n  let translations = response.get()\n  discard translations\nelse:\n  echo \"No translations available\"",
+  "model": "gpt-5-mini"
+}

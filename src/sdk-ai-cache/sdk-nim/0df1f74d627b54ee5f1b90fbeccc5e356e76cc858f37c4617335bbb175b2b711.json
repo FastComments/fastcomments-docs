@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "0df1f74d627b54ee5f1b90fbeccc5e356e76cc858f37c4617335bbb175b2b711",
+  "generatedAt": "2026-06-19T21:44:54.041Z",
+  "codeExample": "let (response, httpResponse) = client.getTrustFactor(userId = \"user-1001\", sso = \"sso-token-6f7d9c\")\nif response.isSome:\n  let trust = response.get()\n  echo \"Received trust factor for user-1001\"\nelse:\n  echo \"No trust factor returned, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

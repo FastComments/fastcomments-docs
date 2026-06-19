@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "112e1e3c7080aa754c5636f8067ec9c56f4cc20395ebc9d640efca0d62f16309",
+  "generatedAt": "2026-06-19T18:51:15.010Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"https://www.example.com/posts/2026/06/19/introduction\");\nboost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U(\"alice@example.com\"));\nboost::optional<utility::string_t> afterUserId;\n\napi->getOnlineUsers(tenantId, urlId, afterName, afterUserId)\n.then([](pplx::task<std::shared_ptr<PageUsersOnlineResponse>> t){\n    try {\n        auto resp = t.get();\n        if(!resp) resp = std::make_shared<PageUsersOnlineResponse>();\n        return resp;\n    } catch(...) {\n        return std::make_shared<PageUsersOnlineResponse>();\n    }\n}).wait();",
+  "model": "gpt-5-mini"
+}

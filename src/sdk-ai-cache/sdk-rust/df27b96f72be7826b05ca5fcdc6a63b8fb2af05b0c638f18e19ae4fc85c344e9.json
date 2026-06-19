@@ -1,0 +1,7 @@
+{
+  "method": "post_ban_user_undo",
+  "signatureHash": "df27b96f72be7826b05ca5fcdc6a63b8fb2af05b0c638f18e19ae4fc85c344e9",
+  "generatedAt": "2026-06-19T21:45:01.549Z",
+  "codeExample": "async fn undo_ban_example() -> Result<ApiEmptyResponse, Error> {\n    let ban_params: models::BanUserUndoParams = models::BanUserUndoParams {\n        tenant_slug: \"acme-corp-tenant\".to_string(),\n        user_id: \"user-0042\".to_string(),\n        ban_id: \"ban-2025-08-15-0001\".to_string(),\n        undone_by: \"mod_stephanie\".to_string(),\n        note: Some(\"Ban reversed after review\".to_string()),\n    };\n    let params: PostBanUserUndoParams = PostBanUserUndoParams {\n        ban_user_undo_params: ban_params,\n        sso: Some(\"https://sso.acme-corp.com/saml/response\".to_string()),\n    };\n    let resp: ApiEmptyResponse = post_ban_user_undo(&configuration, params).await?;\n    Ok(resp)\n}",
+  "model": "gpt-5-mini"
+}

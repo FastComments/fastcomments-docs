@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "8b0c2c2eef6f69a4c8b18409a8730025ff4bd73814dbebcc333f8efe06b7fa28",
+  "generatedAt": "2026-06-19T18:51:19.834Z",
+  "codeExample": "auto tenantId = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\nCreateHashTagBody createBody;\ncreateBody.name = utility::string_t(U(\"release\"));\ncreateBody.createdBy = utility::string_t(U(\"admin@example.com\"));\nauto bodyOpt = boost::optional<CreateHashTagBody>(createBody);\n\napi->addHashTag(tenantId, bodyOpt).then([](pplx::task<std::shared_ptr<CreateHashTagResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            std::cout << \"HashTag created successfully\\n\";\n        } else {\n            auto fallback = std::make_shared<CreateHashTagResponse>();\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"AddHashTag failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini"
+}

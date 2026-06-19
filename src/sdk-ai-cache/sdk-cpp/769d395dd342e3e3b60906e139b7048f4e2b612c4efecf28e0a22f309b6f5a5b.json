@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "769d395dd342e3e3b60906e139b7048f4e2b612c4efecf28e0a22f309b6f5a5b",
+  "generatedAt": "2026-06-19T18:51:12.179Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t notificationId = U(\"notif-456\");\nutility::string_t optedInOrOut = U(\"opted_in\");\nutility::string_t commentId = U(\"cmt-789\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-jwt-abc123\"));\napi->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)\n.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {\n    try {\n        auto resp = t.get();\n        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();\n        std::cout << \"Subscription update completed\" << std::endl;\n    } catch(const std::exception& e) {\n        std::cout << \"Error updating subscription: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

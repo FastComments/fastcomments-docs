@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "f46e8edc6bdf49509b34900730904d2e166e2388674733df6d48075b778a1021",
+  "generatedAt": "2026-06-19T18:51:20.201Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nauto params = std::make_shared<UpdatableCommentParams>();\nparams->body = U(\"Updated comment to clarify the timeline and remove profanity\");\nboost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U(\"moderator@myapp.com\"));\nboost::optional<bool> doSpamCheck = boost::optional<bool>(true);\nboost::optional<bool> isLive = boost::optional<bool>(true);\napi->updateComment(tenantId, commentId, *params, contextUserId, doSpamCheck, isLive)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n    try {\n        auto resp = t.get();\n        (void)resp;\n    } catch(const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

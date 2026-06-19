@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "071c069386a651bbed5280a387e311a5817a79d9c567be143f78bc299136b5d4",
+  "generatedAt": "2026-06-19T18:51:13.364Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t eventId = U(\"wh_ev_987654321\");\nboost::optional<utility::string_t> requestId = U(\"req-20260619-01\");\napi->deletePendingWebhookEvent(tenantId, eventId).then([requestId](std::shared_ptr<APIEmptyResponse> resp) {\n    if (resp) {\n        auto ack = std::make_shared<APIEmptyResponse>(*resp);\n    }\n});",
+  "model": "gpt-5-mini"
+}

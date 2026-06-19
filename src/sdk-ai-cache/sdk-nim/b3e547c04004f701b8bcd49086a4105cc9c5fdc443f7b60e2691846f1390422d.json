@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "b3e547c04004f701b8bcd49086a4105cc9c5fdc443f7b60e2691846f1390422d",
+  "generatedAt": "2026-06-19T18:51:13.464Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = \"my-tenant-123\", id = \"\", skip = 0.0)\nif response.isSome:\n  let templateErrors = response.get()\n  discard templateErrors\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

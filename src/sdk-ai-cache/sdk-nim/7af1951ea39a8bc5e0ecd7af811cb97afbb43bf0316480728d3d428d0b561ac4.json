@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "7af1951ea39a8bc5e0ecd7af811cb97afbb43bf0316480728d3d428d0b561ac4",
+  "generatedAt": "2026-06-19T18:51:05.326Z",
+  "codeExample": "let (response, httpResponse) = client.getSSOUsers(tenantId = \"my-tenant-123\", skip = 0)\nif response.isSome:\n  let ssoUsers = response.get()\n  echo ssoUsers\nelse:\n  echo \"No SSO users returned; HTTP response:\", httpResponse",
+  "model": "gpt-5-mini"
+}

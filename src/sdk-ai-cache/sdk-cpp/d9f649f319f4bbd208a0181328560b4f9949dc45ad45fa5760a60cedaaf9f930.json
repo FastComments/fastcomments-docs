@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "d9f649f319f4bbd208a0181328560b4f9949dc45ad45fa5760a60cedaaf9f930",
+  "generatedAt": "2026-06-19T18:51:13.346Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"owner@example.com\");\nboost::optional<utility::string_t> sure = boost::optional<utility::string_t>(U(\"true\"));\nauto placeholder = std::make_shared<APIEmptyResponse>();\napi->deleteTenant(tenantId, id, sure)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n        if (resp) {\n            std::cout << \"Tenant deleted successfully\\n\";\n        } else {\n            std::cout << \"No response from deleteTenant\\n\";\n        }\n    })\n    .wait();",
+  "model": "gpt-5-mini"
+}

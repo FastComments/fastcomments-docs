@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "aa4450f32af33fe1fa83caca535d81ee2a7217f387eba420b8545a1772043467",
+  "generatedAt": "2026-06-19T18:51:14.071Z",
+  "codeExample": "let (response, httpResponse) = client.updateQuestionResult(\n  tenantId = \"my-tenant-123\",\n  id = \"question-result-456\",\n  updateQuestionResultBody = UpdateQuestionResultBody(\n    questionId: \"q-789\",\n    userId: \"user-42\",\n    score: 92,\n    passed: true,\n    tags: @[\"quiz\", \"math\"]\n  )\n)\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Question result updated successfully\"\nelse:\n  echo \"No response body; HTTP status: \", httpResponse.status.code",
+  "model": "gpt-5-mini"
+}

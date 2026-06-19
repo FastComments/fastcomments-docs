@@ -1,0 +1,7 @@
+{
+  "method": "put_remove_badge",
+  "signatureHash": "a6a2b98278f3d1deb3a5a5e04ec1bc27e3766b30ac3a6bd53a134483aed03661",
+  "generatedAt": "2026-06-19T21:44:56.013Z",
+  "codeExample": "let params: PutRemoveBadgeParams = PutRemoveBadgeParams {\n    badge_id: \"trusted-moderator-1\".to_string(),\n    user_id: Some(\"user-82f9\".to_string()),\n    comment_id: Some(\"comment-000123\".to_string()),\n    broadcast_id: Some(\"live-broadcast-nyc-2026\".to_string()),\n    sso: Some(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\".to_string()),\n};\n\nlet response: RemoveUserBadgeResponse = put_remove_badge(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

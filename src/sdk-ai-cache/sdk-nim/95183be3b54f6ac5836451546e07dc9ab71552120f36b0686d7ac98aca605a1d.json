@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "95183be3b54f6ac5836451546e07dc9ab71552120f36b0686d7ac98aca605a1d",
+  "generatedAt": "2026-06-19T21:44:56.115Z",
+  "codeExample": "let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = \"cmt-7890\", approved = false, sso = \"\")\nif response.isSome:\n  let setResp = response.get()\n  discard setResp",
+  "model": "gpt-5-mini"
+}

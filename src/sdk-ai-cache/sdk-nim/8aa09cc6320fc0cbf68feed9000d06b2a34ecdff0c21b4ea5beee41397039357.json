@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "8aa09cc6320fc0cbf68feed9000d06b2a34ecdff0c21b4ea5beee41397039357",
+  "generatedAt": "2026-06-19T18:51:12.075Z",
+  "codeExample": "let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/economy/market-rally-2026-06-19\",\n  url = \"\",\n  pageTitle = \"\",\n  subscribedOrUnsubscribed = \"\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let updateResp = response.get()\n  echo \"Subscription update received: \", updateResp\nelse:\n  echo \"No subscription update returned.\"",
+  "model": "gpt-5-mini"
+}

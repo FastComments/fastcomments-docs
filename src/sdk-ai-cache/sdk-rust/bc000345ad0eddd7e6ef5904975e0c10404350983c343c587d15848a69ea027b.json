@@ -1,0 +1,7 @@
+{
+  "method": "add_hash_tag",
+  "signatureHash": "bc000345ad0eddd7e6ef5904975e0c10404350983c343c587d15848a69ea027b",
+  "generatedAt": "2026-06-19T18:51:12.970Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: AddHashTagParams = AddHashTagParams {\n        tenant_id: Some(\"acme-corp-tenant\".to_string()),\n        create_hash_tag_body: Some(models::CreateHashTagBody {\n            name: \"breaking-news\".to_string(),\n            slug: \"news/breaking\".to_string(),\n        }),\n    };\n    let response: CreateHashTagResponse = add_hash_tag(&configuration, params).await?;\n    let _created_tag = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

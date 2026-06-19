@@ -1,0 +1,7 @@
+{
+  "method": "patch_page",
+  "signatureHash": "b1c8963d19990f155fb340c2ba449ff864d036593cbed4631eb632e6755e5c6d",
+  "generatedAt": "2026-06-19T18:51:12.017Z",
+  "codeExample": "async fn update_page() -> Result<PatchPageApiResponse, Error> {\n    let params: PatchPageParams = PatchPageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/product-update-2026\".to_string(),\n        update_api_page_data: models::UpdateApiPageData {\n            title: Some(\"June 2026 Product Update\".to_string()),\n            slug: Some(\"news/product-update-2026\".to_string()),\n            description: Some(\"Summarizes June releases and roadmap changes\".to_string()),\n            is_published: Some(true),\n            content: Some(\"<p>We shipped performance improvements and new integrations.</p>\".to_string()),\n        },\n    };\n\n    let response: PatchPageApiResponse = patch_page(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

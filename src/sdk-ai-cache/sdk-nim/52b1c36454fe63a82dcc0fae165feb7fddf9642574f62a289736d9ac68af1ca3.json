@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "52b1c36454fe63a82dcc0fae165feb7fddf9642574f62a289736d9ac68af1ca3",
+  "generatedAt": "2026-06-19T18:51:09.777Z",
+  "codeExample": "let (response, httpResponse) = client.deleteCommentPublic(tenantId = \"my-tenant-123\", commentId = \"cmt-987654321\", broadcastId = \"\", editKey = \"\", sso = \"\")\nif response.isSome:\n  let deleted = response.get()\n  echo \"Delete acknowledged, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

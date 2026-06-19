@@ -1,0 +1,7 @@
+{
+  "method": "get_email_template_render_errors",
+  "signatureHash": "f05a55ef261c6dcce59c17b55d69a5d33afc2dfa3f3aa6abddf335bfbe66a7a1",
+  "generatedAt": "2026-06-19T18:51:08.959Z",
+  "codeExample": "let params: GetEmailTemplateRenderErrorsParams = GetEmailTemplateRenderErrorsParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"welcome-email-v2\".to_string(),\n    skip: Some(10.0),\n};\nlet response: GetEmailTemplateRenderErrorsResponse = get_email_template_render_errors(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

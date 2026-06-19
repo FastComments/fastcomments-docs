@@ -1,0 +1,7 @@
+{
+  "method": "delete_notification_count",
+  "signatureHash": "422d0acbfa8c34f9377e99d8231240ead873dd0ac95d21ac88db8396777faa46",
+  "generatedAt": "2026-06-19T18:51:12.521Z",
+  "codeExample": "async fn delete_notification_count_example() -> Result<(), Error> {\n    let params = DeleteNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/notification-827b\".to_string(),\n        if_match: Some(\"W/\\\"etag-827b\\\"\".to_string()),\n    };\n    let _response: ApiEmptyResponse = delete_notification_count(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_user_notifications",
+  "signatureHash": "03a3ca9d73886e6b4a3347ef3c921a04c8842f18cfe4856adabe6e96250057d2",
+  "generatedAt": "2026-06-19T18:51:12.306Z",
+  "codeExample": "async fn fetch_notifications() -> Result<GetMyNotificationsResponse, Error> {\n    let params: GetUserNotificationsParams = GetUserNotificationsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: Some(String::from(\"news/product-launch\")),\n        page_size: Some(25),\n        after_id: Some(String::from(\"notif_1024\")),\n        include_context: Some(true),\n        after_created_at: Some(1_676_000_000i64),\n        unread_only: Some(true),\n        dm_only: Some(false),\n        no_dm: Some(false),\n        include_translations: Some(true),\n        include_tenant_notifications: Some(false),\n        sso: Some(String::from(\"sso_token_abc123\")),\n    };\n    let notifications: GetMyNotificationsResponse = get_user_notifications(&configuration, params).await?;\n    Ok(notifications)\n}",
+  "model": "gpt-5-mini"
+}

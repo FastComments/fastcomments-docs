@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "e43be36a383e3d511b283e2cc0b0681448905eefba2c981a30b4a7a387ae2af3",
+  "generatedAt": "2026-06-19T18:51:09.434Z",
+  "codeExample": "let (response, httpResponse) = client.getV1PageLikes(tenantId = \"my-tenant-123\", urlId = \"news/how-to-train-your-dragon\")\nif response.isSome:\n  let pageLikes = response.get()\n  echo \"Fetched page likes for url:\", \"news/how-to-train-your-dragon\"\nelse:\n  echo \"No likes returned for url:\", \"news/how-to-train-your-dragon\"",
+  "model": "gpt-5-mini"
+}

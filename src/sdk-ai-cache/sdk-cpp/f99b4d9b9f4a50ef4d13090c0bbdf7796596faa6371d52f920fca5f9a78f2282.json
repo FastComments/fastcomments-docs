@@ -1,0 +1,7 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "f99b4d9b9f4a50ef4d13090c0bbdf7796596faa6371d52f920fca5f9a78f2282",
+  "generatedAt": "2026-06-19T18:51:13.038Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-7890\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId;\napi->unFlagComment(tenantId, commentId, userId, anonUserId)\n.then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {\n    try {\n        auto resp = t.get();\n        auto fallback = std::make_shared<FlagCommentResponse>();\n        if (!resp) resp = fallback;\n        (void)resp;\n    } catch (const std::exception &e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "9e93e1b55e35ea410be77c166097fb4ce579f088e33be7447cad458058e60337",
+  "generatedAt": "2026-06-19T18:51:13.410Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto fallback = std::make_shared<GetUserNotificationCountResponse>();\napi->getUserNotificationCount(tenantId, sso)\n.then([fallback](std::shared_ptr<GetUserNotificationCountResponse> resp) {\n    auto result = resp ? resp : fallback;\n    std::cout << \"Received user notification count response (ptr=\" << (result.get() != nullptr) << \")\\n\";\n})\n.wait();",
+  "model": "gpt-5-mini"
+}

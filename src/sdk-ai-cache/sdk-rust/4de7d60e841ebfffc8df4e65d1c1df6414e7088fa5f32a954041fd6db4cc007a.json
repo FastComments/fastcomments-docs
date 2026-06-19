@@ -1,0 +1,7 @@
+{
+  "method": "add_domain_config",
+  "signatureHash": "4de7d60e841ebfffc8df4e65d1c1df6414e7088fa5f32a954041fd6db4cc007a",
+  "generatedAt": "2026-06-19T18:51:11.197Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: AddDomainConfigParams = AddDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        add_domain_config_params: models::AddDomainConfigParams {\n            domain: \"news.example.com\".to_string(),\n            path_prefix: Some(\"news/article\".to_string()),\n            allow_subdomains: Some(true),\n            allowed_origins: Some(vec![\n                \"https://www.example.com\".to_string(),\n                \"https://editor.example.com\".to_string()\n            ]),\n            default_moderation: Some(\"pre-moderation\".to_string()),\n            enabled: Some(true),\n        },\n    };\n\n    let response: AddDomainConfigResponse = add_domain_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

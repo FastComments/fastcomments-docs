@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "b1e6670bd300593ea01ef4aecd59a6a72f369dd55c87551a093249317c33dfa3",
+  "generatedAt": "2026-06-19T18:51:20.884Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t urlId = utility::conversions::to_string_t(\"page-55f3b2\");\nboost::optional<utility::string_t> maybeFilter = utility::conversions::to_string_t(\"recent\");\nauto fallback = std::make_shared<GetV2PageReacts>();\napi->getV2PageReacts(tenantId, urlId)\n.then([fallback](std::shared_ptr<GetV2PageReacts> resp){\n    auto result = resp ? resp : fallback;\n    std::cout << \"Received reacts object at \" << result.get() << std::endl;\n});",
+  "model": "gpt-5-mini"
+}

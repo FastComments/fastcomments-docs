@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadges",
+  "signatureHash": "72643a60345c1c8f2d63acec253558421d723b6e11747a42a4983fde64e9b2aa",
+  "generatedAt": "2026-06-19T21:44:55.451Z",
+  "codeExample": "const ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQyNjQwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst manualBadgesWithSso: GetTenantManualBadgesResponse = await getManualBadges(ssoToken);\nconst manualBadgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges();",
+  "model": "gpt-5-mini"
+}

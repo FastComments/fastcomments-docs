@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "11c11001c8863a0fce0e5880db15e21366be74c924af64f7ca04509cd023cc70",
+  "generatedAt": "2026-06-19T18:51:06.968Z",
+  "codeExample": "let (response, httpResponse) = client.updateComment(\n  tenantId = \"my-tenant-123\",\n  id = \"cmt-987654\",\n  updatableCommentParams = UpdatableCommentParams(\n    text = \"Updated comment: corrected facts and clarified wording.\",\n    isApproved = true,\n    tags = @[\"news\", \"update\"]\n  ),\n  contextUserId = \"user-456\",\n  doSpamCheck = true,\n  isLive = true\n)\n\nif response.isSome:\n  let apiResp = response.get()\n  discard apiResp",
+  "model": "gpt-5-mini"
+}

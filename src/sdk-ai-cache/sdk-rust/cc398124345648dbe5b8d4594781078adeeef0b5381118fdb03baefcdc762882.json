@@ -1,0 +1,7 @@
+{
+  "method": "update_user_badge",
+  "signatureHash": "cc398124345648dbe5b8d4594781078adeeef0b5381118fdb03baefcdc762882",
+  "generatedAt": "2026-06-19T18:51:14.013Z",
+  "codeExample": "async fn run_update_badge() -> Result<ApiEmptySuccessResponse, Error> {\n    let params: UpdateUserBadgeParams = UpdateUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-8742\".to_string(),\n        update_user_badge_params: models::UpdateUserBadgeParams {\n            name: Some(\"Top Contributor\".to_string()),\n            description: Some(\"Awarded for 100 helpful comments\".to_string()),\n            icon_url: Some(\"https://assets.acme.com/badges/top-contributor.png\".to_string()),\n            expires_at: None,\n            is_visible: Some(true),\n        },\n    };\n    let response: ApiEmptySuccessResponse = update_user_badge(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "50f8a670d2546e73d5d21621072919567e56eee54d79767acbb45d0b06e061d9",
+  "generatedAt": "2026-06-19T18:51:14.585Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-456\");\nutility::string_t userIdWS = U(\"user@example.com\");\nint64_t startTime = 1654041600000LL;\nboost::optional<int64_t> endTime = boost::optional<int64_t>(1656643200000LL);\napi->getEventLog(tenantId, urlId, userIdWS, startTime, endTime)\n    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){\n        try {\n            auto resp = t.get();\n            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();\n            std::cout << \"Event log fetched, pointer: \" << result.get() << std::endl;\n        } catch (const std::exception &e) {\n            std::cerr << \"getEventLog error: \" << e.what() << std::endl;\n        }\n    });",
+  "model": "gpt-5-mini"
+}

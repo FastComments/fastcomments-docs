@@ -1,0 +1,7 @@
+{
+  "method": "delete_comment",
+  "signatureHash": "5c1101a51df24394425da2027daccc0de6e116cdf5f1e97efcc365ec17eaab6c",
+  "generatedAt": "2026-06-19T18:51:11.486Z",
+  "codeExample": "async fn run_delete() -> Result<DeleteCommentResult, Error> {\n    let params: DeleteCommentParams = DeleteCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-6f8a21b4\".to_string(),\n        context_user_id: Some(\"editor-42\".to_string()),\n        is_live: Some(true),\n    };\n    let deleted: DeleteCommentResult = delete_comment(&configuration, params).await?;\n    Ok(deleted)\n}",
+  "model": "gpt-5-mini"
+}

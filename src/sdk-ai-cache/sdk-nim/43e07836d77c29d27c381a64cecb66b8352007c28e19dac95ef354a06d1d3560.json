@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "43e07836d77c29d27c381a64cecb66b8352007c28e19dac95ef354a06d1d3560",
+  "generatedAt": "2026-06-19T18:51:06.776Z",
+  "codeExample": "let (response, httpResponse) = client.getModerators(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let moderators = response.get()\n  echo \"Received moderators response:\", moderators\nelse:\n  echo \"No moderators returned\"",
+  "model": "gpt-5-mini"
+}

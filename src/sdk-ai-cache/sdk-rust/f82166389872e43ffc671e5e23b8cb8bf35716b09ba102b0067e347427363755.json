@@ -1,0 +1,7 @@
+{
+  "method": "delete_question_result",
+  "signatureHash": "f82166389872e43ffc671e5e23b8cb8bf35716b09ba102b0067e347427363755",
+  "generatedAt": "2026-06-19T18:51:14.351Z",
+  "codeExample": "async fn run_delete() -> Result<(), Error> {\n    let tenant_id: String = \"acme-corp-tenant\".to_string();\n    let id: String = \"news/article-12345/question-67890\".to_string();\n\n    let params = DeleteQuestionResultParams {\n        tenant_id,\n        id,\n    };\n\n    let response: ApiEmptyResponse = delete_question_result(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "37f3cba31857d517127a0e494c221eacfef2d19663a91993a6378b5fd39e37df",
+  "generatedAt": "2026-06-19T18:51:06.025Z",
+  "codeExample": "let (response, httpResponse) = client.getOfflineUsers(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-how-to-code\",\n  afterName = \"\",\n  afterUserId = \"\"\n)\n\nif response.isSome:\n  let offlinePage = response.get()\n  echo \"Received offline users page\"\n  discard httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

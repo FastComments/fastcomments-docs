@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "5c70e5136e975d11e168932d22eb2f8498e9893b0f67e3e23e55124572f50cb6",
+  "generatedAt": "2026-06-19T18:51:18.968Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto params = std::make_shared<CreateFeedPostParams>();\nparams->title = U(\"New feature release\");\nparams->content = U(\"We launched the new comment moderation feature today.\");\nparams->authorEmail = U(\"alice@example.com\");\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-456\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"alice@example.com\"));\napi->createFeedPostPublic(tenantId, *params, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<CreateFeedPostResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            utility::string_t postId = resp->postId;\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

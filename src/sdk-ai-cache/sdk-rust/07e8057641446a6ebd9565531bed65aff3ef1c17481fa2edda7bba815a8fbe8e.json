@@ -1,0 +1,7 @@
+{
+  "method": "get_domain_configs",
+  "signatureHash": "07e8057641446a6ebd9565531bed65aff3ef1c17481fa2edda7bba815a8fbe8e",
+  "generatedAt": "2026-06-19T18:51:09.779Z",
+  "codeExample": "async fn run_get_domain_configs_example() -> Result<GetDomainConfigsResponse, Error> {\n    let params: GetDomainConfigsParams = GetDomainConfigsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_filter: Some(\"news.example.com\".to_string()),\n    };\n    let response: GetDomainConfigsResponse = get_domain_configs(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

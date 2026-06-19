@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "6140cf3ea60813b8e5c209acc6a0d9a1280020d71b9af73108aa851c9dfad5b9",
+  "generatedAt": "2026-06-19T21:44:59.516Z",
+  "codeExample": "utility::string_t commentId = U(\"comment-98765\");\nutility::string_t voteId = U(\"vote-2468\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto task = api->deleteModerationVote(commentId, voteId, sso)\n    .then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto confirmation = resp;\n            } else {\n                auto fallback = std::make_shared<VoteDeleteResponse>();\n            }\n        } catch (const std::exception& e) {\n            auto errMsg = utility::conversions::to_string_t(e.what());\n        }\n    });",
+  "model": "gpt-5-mini"
+}

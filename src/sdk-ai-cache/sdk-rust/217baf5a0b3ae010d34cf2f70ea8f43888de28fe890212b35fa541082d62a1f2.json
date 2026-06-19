@@ -1,0 +1,7 @@
+{
+  "method": "replace_tenant_user",
+  "signatureHash": "217baf5a0b3ae010d34cf2f70ea8f43888de28fe890212b35fa541082d62a1f2",
+  "generatedAt": "2026-06-19T18:51:08.323Z",
+  "codeExample": "let params: ReplaceTenantUserParams = ReplaceTenantUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"user-123\".to_string(),\n    replace_tenant_user_body: models::ReplaceTenantUserBody {\n        user_id: \"user-123\".to_string(),\n        email: \"jane.doe@acme.com\".to_string(),\n        display_name: \"Jane Doe\".to_string(),\n        roles: vec![\"editor\".to_string()],\n    },\n    update_comments: Some(\"propagate\".to_string()),\n};\n\nlet response: ApiEmptyResponse = replace_tenant_user(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

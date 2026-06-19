@@ -1,0 +1,7 @@
+{
+  "method": "vote_comment",
+  "signatureHash": "5518ceb3cd1fd925559af3d8baea80a595585a734a9f827e4e0603de307f4b7e",
+  "generatedAt": "2026-06-19T18:51:08.660Z",
+  "codeExample": "let params: VoteCommentParams = VoteCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    comment_id: \"cmt_8392a1\".to_string(),\n    url_id: \"news/article-2026-06-19-rust-release\".to_string(),\n    broadcast_id: \"broadcast_2026_06\".to_string(),\n    vote_body_params: models::VoteBodyParams { value: 1 },\n    session_id: Some(\"sess_4f9b2c\".to_string()),\n    sso: Some(\"sso_token_abcd1234\".to_string()),\n};\nlet response: VoteResponse = vote_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

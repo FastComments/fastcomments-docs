@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "ad819e81101af020ca8f4692154d26379ad409285f900db6cf5b1c3bbb3a0ab0",
+  "generatedAt": "2026-06-19T18:51:06.168Z",
+  "codeExample": "let (response, httpResponse) = client.getFeedPostsStats(tenantId = \"my-tenant-123\", postIds = @[\"news/article-2026\", \"opinion/market-trends\"], sso = \"\")\nif response.isSome:\n  let stats = response.get()\n  echo \"Received feed posts stats for tenant:\", \" my-tenant-123\"\n  discard stats",
+  "model": "gpt-5-mini"
+}

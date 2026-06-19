@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "560397725df6d183bd5fe6db668b4cb6d0329ab88a92f2655a4ce63b2dc53ed7",
+  "generatedAt": "2026-06-19T18:51:23.002Z",
+  "codeExample": "utility::string_t tag = U(\"bug\");\nboost::optional<utility::string_t> tenantId{ U(\"my-tenant-123\") };\nUpdateHashTagBody body;\nboost::optional<UpdateHashTagBody> updateBody{ body };\napi->patchHashTag(tag, tenantId, updateBody)\n.then([](std::shared_ptr<UpdateHashTagResponse> resp)\n{\n    if (resp)\n    {\n        auto localCopy = std::make_shared<UpdateHashTagResponse>(*resp);\n    }\n});",
+  "model": "gpt-5-mini"
+}

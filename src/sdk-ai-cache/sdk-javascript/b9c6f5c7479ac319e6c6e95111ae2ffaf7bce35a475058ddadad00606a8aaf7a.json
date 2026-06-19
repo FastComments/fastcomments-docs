@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadgesForUser",
+  "signatureHash": "b9c6f5c7479ac319e6c6e95111ae2ffaf7bce35a475058ddadad00606a8aaf7a",
+  "generatedAt": "2026-06-19T21:44:55.797Z",
+  "codeExample": "const badgesUserId: string = 'user_83b2f4';\nconst commentId: string = 'comment_9a1c7';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature';\n\nconst userBadges: GetUserManualBadgesResponse = await getManualBadgesForUser(badgesUserId);\nconst commentBadges: GetUserManualBadgesResponse = await getManualBadgesForUser(badgesUserId, commentId, ssoToken);",
+  "model": "gpt-5-mini"
+}

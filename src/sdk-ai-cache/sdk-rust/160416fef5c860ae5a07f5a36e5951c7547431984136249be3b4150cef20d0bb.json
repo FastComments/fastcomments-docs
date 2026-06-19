@@ -1,0 +1,7 @@
+{
+  "method": "post_un_flag_comment",
+  "signatureHash": "160416fef5c860ae5a07f5a36e5951c7547431984136249be3b4150cef20d0bb",
+  "generatedAt": "2026-06-19T21:44:55.565Z",
+  "codeExample": "async fn run_unflag_comment() -> Result<ApiEmptyResponse, Error> {\n    let params: PostUnFlagCommentParams = PostUnFlagCommentParams {\n        comment_id: \"news/world/2026/06/19/comment-7890\".to_string(),\n        sso: Some(\"acme-corp-user-xyZ12Token\".to_string()),\n    };\n    let response: ApiEmptyResponse = post_un_flag_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

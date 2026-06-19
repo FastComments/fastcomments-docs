@@ -1,0 +1,7 @@
+{
+  "method": "get_trust_factor",
+  "signatureHash": "0fb8a342bcfb7fc98df719768729363fca457fb9aed5c8b1d6168302319a94d0",
+  "generatedAt": "2026-06-19T21:44:56.665Z",
+  "codeExample": "async fn fetch_trust_factor() -> Result<(), Error> {\n    let params: GetTrustFactorParams = GetTrustFactorParams {\n        user_id: Some(String::from(\"journalist-984\")),\n        sso: Some(String::from(\"google-oauth2|1029384756\")),\n    };\n    let trust_response: GetUserTrustFactorResponse = get_trust_factor(&configuration, params).await?;\n    println!(\"{:#?}\", trust_response);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_approval_status",
+  "signatureHash": "944df6b72784dc3ae3c142e1e0c7f8ecf391665c6d39a6828e2f851b33aff5b0",
+  "generatedAt": "2026-06-19T21:44:56.335Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: PostSetCommentApprovalStatusParams = PostSetCommentApprovalStatusParams {\n        comment_id: String::from(\"news/article/2026-06-19/post-42/comment-128\"),\n        approved: Some(true),\n        sso: Some(String::from(\"sso:user:acme:eyJhbGciOiJIUzI1Ni\")),\n    };\n    let response: SetCommentApprovedResponse = post_set_comment_approval_status(&configuration, params).await?;\n    let _response = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

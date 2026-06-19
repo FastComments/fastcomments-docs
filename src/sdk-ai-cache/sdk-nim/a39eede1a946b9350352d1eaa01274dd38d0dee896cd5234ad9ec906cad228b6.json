@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "a39eede1a946b9350352d1eaa01274dd38d0dee896cd5234ad9ec906cad228b6",
+  "generatedAt": "2026-06-19T18:51:07.587Z",
+  "codeExample": "let (response, httpResponse) = client.patchHashTag(tag = \"breaking-news\", tenantId = \"my-tenant-123\", updateHashTagBody = UpdateHashTagBody())\nif response.isSome:\n  let updatedHashTag = response.get()\n  echo updatedHashTag",
+  "model": "gpt-5-mini"
+}

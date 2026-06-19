@@ -1,0 +1,7 @@
+{
+  "method": "lock_comment",
+  "signatureHash": "ce0adefac3dbed901d4f639e2a238baac56d43aab26174b46d746f01c2e4bde3",
+  "generatedAt": "2026-06-19T18:51:08.370Z",
+  "codeExample": "async fn example_lock_comment() -> Result<ApiEmptyResponse, Error> {\n    let params: LockCommentParams = LockCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        comment_id: \"cmt-20240618-42\".to_owned(),\n        broadcast_id: \"news/article/2024-06-18\".to_owned(),\n        sso: Some(\"user-12345-sso-token\".to_owned()),\n    };\n    let response: ApiEmptyResponse = lock_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

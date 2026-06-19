@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "efb173735b1c2e2de57015863a5bb3f6adbefa84ad6331f5bf21018ff8eff6b1",
+  "generatedAt": "2026-06-19T18:51:09.461Z",
+  "codeExample": "let (response, httpResponse) = client.createV1PageReact(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2026/market-rally\",\n  title = \"Breaking News: Markets Rally Today\"\n)\n\nif response.isSome:\n  let pageReact = response.get()\n  echo \"Page react created: \", pageReact\nelse:\n  echo \"Failed to create page react: \", httpResponse",
+  "model": "gpt-5-mini"
+}

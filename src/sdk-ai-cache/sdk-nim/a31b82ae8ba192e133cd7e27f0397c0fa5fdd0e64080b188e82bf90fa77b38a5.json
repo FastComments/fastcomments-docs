@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "a31b82ae8ba192e133cd7e27f0397c0fa5fdd0e64080b188e82bf90fa77b38a5",
+  "generatedAt": "2026-06-19T21:44:55.705Z",
+  "codeExample": "let (response, httpResponse) = client.postUnFlagComment(commentId = \"comment-8f3a2b4e\", sso = \"\")\nif response.isSome:\n  let apiEmpty = response.get()\n  echo \"Comment unflagged successfully, response: \", apiEmpty\nelse:\n  echo \"Failed to unflag comment. HTTP response: \", httpResponse",
+  "model": "gpt-5-mini"
+}

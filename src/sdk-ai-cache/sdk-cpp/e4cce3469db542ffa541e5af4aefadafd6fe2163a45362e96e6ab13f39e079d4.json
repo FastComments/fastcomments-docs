@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "e4cce3469db542ffa541e5af4aefadafd6fe2163a45362e96e6ab13f39e079d4",
+  "generatedAt": "2026-06-19T18:51:16.149Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nutility::string_t broadcastId = U(\"broadcast-789\");\nCommentTextUpdateRequest commentTextUpdateRequest;\ncommentTextUpdateRequest.text = U(\"Updated comment: clarified wording and fixed a typo.\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"editKey-abc123\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)\n    .then([](pplx::task<std::shared_ptr<PublicAPISetCommentTextResponse>> task) {\n        try {\n            auto resp = task.get();\n            if (!resp) resp = std::make_shared<PublicAPISetCommentTextResponse>();\n        } catch (const std::exception&) {}\n    });",
+  "model": "gpt-5-mini"
+}

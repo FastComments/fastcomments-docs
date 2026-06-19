@@ -1,0 +1,7 @@
+{
+  "method": "delete_hash_tag",
+  "signatureHash": "4ce02951662d88d6a5fcaab5e0d1a5283dd4747a7cfc70cb419adf2bb7bf785b",
+  "generatedAt": "2026-06-19T18:51:08.459Z",
+  "codeExample": "let params: DeleteHashTagParams = DeleteHashTagParams {\n    tag: \"news/article\".to_string(),\n    tenant_id: Some(\"acme-corp-tenant\".to_string()),\n    delete_hash_tag_request_body: Some(DeleteHashTagRequestBody {}),\n};\nlet response: ApiEmptyResponse = delete_hash_tag(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

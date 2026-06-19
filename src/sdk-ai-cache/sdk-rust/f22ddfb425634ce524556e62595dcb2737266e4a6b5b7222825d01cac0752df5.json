@@ -1,0 +1,7 @@
+{
+  "method": "delete_user_badge",
+  "signatureHash": "f22ddfb425634ce524556e62595dcb2737266e4a6b5b7222825d01cac0752df5",
+  "generatedAt": "2026-06-19T18:51:10.864Z",
+  "codeExample": "let params: DeleteUserBadgeParams = DeleteUserBadgeParams {\n    tenant_id: \"acme-newsroom-tenant\".to_string(),\n    id: \"badge-moderator-001\".to_string(),\n};\nlet include_related: Option<bool> = Some(false);\nlet result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

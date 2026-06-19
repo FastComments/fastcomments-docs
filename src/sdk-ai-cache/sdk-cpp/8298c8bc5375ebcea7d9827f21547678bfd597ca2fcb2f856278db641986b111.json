@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "8298c8bc5375ebcea7d9827f21547678bfd597ca2fcb2f856278db641986b111",
+  "generatedAt": "2026-06-19T21:45:05.161Z",
+  "codeExample": "api->getApiIds(\n    boost::optional<utility::string_t>(U(\"spam report\")),\n    boost::optional<utility::string_t>(U(\"203.0.113.45\")),\n    boost::optional<utility::string_t>(U(\"status:pending\")),\n    boost::optional<utility::string_t>(U(\"tenant:my-tenant-123\")),\n    boost::optional<utility::string_t>(U(\"cmt_987654321\")),\n    boost::optional<bool>(false),\n    boost::optional<utility::string_t>(U(\"user@example.com\"))\n).then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentIdsResponse>> task){\n    try {\n        auto resp = task.get();\n        auto safeResp = resp ? resp : std::make_shared<ModerationAPIGetCommentIdsResponse>();\n        (void)safeResp;\n    } catch (const std::exception &e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

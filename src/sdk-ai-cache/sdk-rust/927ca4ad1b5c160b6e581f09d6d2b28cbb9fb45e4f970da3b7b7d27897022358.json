@@ -1,0 +1,7 @@
+{
+  "method": "create_question_config",
+  "signatureHash": "927ca4ad1b5c160b6e581f09d6d2b28cbb9fb45e4f970da3b7b7d27897022358",
+  "generatedAt": "2026-06-19T18:51:10.345Z",
+  "codeExample": "let params: CreateQuestionConfigParams = CreateQuestionConfigParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_question_config_body: models::CreateQuestionConfigBody {\n        slug: \"news/article\".to_string(),\n        title: \"Article Comments\".to_string(),\n        description: Some(\"Questions configuration for news articles\".to_string()),\n        enabled: Some(true),\n        allow_anonymous: Some(false),\n        moderation_level: Some(\"pre_moderation\".to_string()),\n        custom_options: Some(vec![\n            models::QuestionConfigCustomOptionsInner { key: \"max_length\".to_string(), value: \"500\".to_string() }\n        ]),\n    },\n};\nlet response: CreateQuestionConfigResponse = create_question_config(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

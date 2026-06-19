@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "aa0ecdb128f25fd2d7dd5dcb55fffd48030328a2b51fa5d97d29a8c1f137330f",
+  "generatedAt": "2026-06-19T21:44:57.988Z",
+  "codeExample": "boost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U(\"cmt-987654\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"tenant-42|alice@example.com\"));\nauto placeholder = std::make_shared<GetUserInternalProfileResponse>();\napi->getUserInternalProfile(commentId, sso)\n    .then([](pplx::task<std::shared_ptr<GetUserInternalProfileResponse>> task) {\n        try {\n            auto resp = task.get();\n            if (resp) {\n                std::cout << \"User profile retrieved\\n\";\n            } else {\n                std::cout << \"No profile found\\n\";\n            }\n        } catch (const std::exception& e) {\n            std::cerr << \"Error: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini"
+}

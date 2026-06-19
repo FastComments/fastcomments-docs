@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "a7668d79426dee4965d5d37dd06bb12692a073338168534c94f3368dec93318a",
+  "generatedAt": "2026-06-19T18:51:17.893Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userOpt(U(\"alice@example.com\"));\nutility::string_t userId = userOpt.value_or(U(\"alice@example.com\"));\nauto ctx = std::make_shared<utility::string_t>(U(\"request-context-1\"));\napi->getUserBadge(tenantId, userId)\n.then([ctx](pplx::task<std::shared_ptr<APIGetUserBadgeResponse>> task) {\n    try {\n        auto resp = task.get();\n        if (resp) {\n            *ctx = U(\"badge-retrieved\");\n        }\n    } catch (const std::exception &e) {\n        *ctx = U(\"error\");\n    }\n});",
+  "model": "gpt-5-mini"
+}

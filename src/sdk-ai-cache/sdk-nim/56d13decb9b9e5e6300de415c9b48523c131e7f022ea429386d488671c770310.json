@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "56d13decb9b9e5e6300de415c9b48523c131e7f022ea429386d488671c770310",
+  "generatedAt": "2026-06-19T18:51:15.629Z",
+  "codeExample": "let updateBody = UpdateEmailTemplateBody(\n  subject = \"Welcome to Newsly\",\n  html = \"<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>\",\n  fromAddress = \"no-reply@newsly.example\",\n  fromName = \"Newsly Team\",\n  enabled = true\n)\nlet (response, httpResponse) = client.updateEmailTemplate(tenantId = \"my-tenant-123\", id = \"welcome-email\", updateEmailTemplateBody = updateBody)\nif response.isSome:\n  let result = response.get()\n  discard result\nelse:\n  discard httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

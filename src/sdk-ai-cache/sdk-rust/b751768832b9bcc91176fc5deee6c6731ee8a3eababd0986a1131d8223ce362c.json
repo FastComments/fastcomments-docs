@@ -1,0 +1,7 @@
+{
+  "method": "delete_email_template_render_error",
+  "signatureHash": "b751768832b9bcc91176fc5deee6c6731ee8a3eababd0986a1131d8223ce362c",
+  "generatedAt": "2026-06-19T18:51:14.331Z",
+  "codeExample": "let params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {\n    tenant_id: String::from(\"acme-corp-tenant\"),\n    id: String::from(\"marketing/newsletter/welcome\"),\n    error_id: String::from(\"render_err_2026-06-15-7a3f\"),\n    request_id: Some(String::from(\"req-83b2f9a1\")),\n};\n\nlet response: ApiEmptyResponse = delete_email_template_render_error(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

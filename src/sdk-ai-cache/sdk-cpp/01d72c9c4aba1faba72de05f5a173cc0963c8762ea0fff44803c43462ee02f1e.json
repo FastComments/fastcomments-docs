@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "01d72c9c4aba1faba72de05f5a173cc0963c8762ea0fff44803c43462ee02f1e",
+  "generatedAt": "2026-06-19T18:51:18.984Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"support-agent@example.com\");\nutility::string_t ticketId = U(\"ticket-98765\");\nauto bodyPtr = std::make_shared<ChangeTicketStateBody>();\nbodyPtr->state = U(\"closed\");\nbodyPtr->reason = boost::optional<utility::string_t>(U(\"Resolved by support team\"));\napi->changeTicketState(tenantId, userId, ticketId, *bodyPtr)\n.then([](pplx::task<std::shared_ptr<ChangeTicketStateResponse>> task) {\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Ticket state changed successfully\" << std::endl;\n        } else {\n            std::cout << \"No response received\" << std::endl;\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"Error changing ticket state: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getLogs",
+  "signatureHash": "69061239ef1687d5571cd50d1d2579f29bbb8794aa3e30b20781663307b2a1d2",
+  "generatedAt": "2026-06-19T21:44:55.450Z",
+  "codeExample": "let (response, httpResponse) = client.getLogs(commentId = \"cmt-8471f2d3\", sso = \"\")\nif response.isSome:\n  let logs = response.get()\n  echo \"Fetched logs:\", logs",
+  "model": "gpt-5-mini"
+}

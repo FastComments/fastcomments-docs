@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "852128ee36b5710b69328bd1cdd945f313ccb4e0009695bae9b2a2b792d223a2",
+  "generatedAt": "2026-06-19T18:51:11.638Z",
+  "codeExample": "boost::optional<utility::string_t> locale(U(\"en-US\"));\nboost::optional<bool> useFullTranslationIds(true);\napi->getTranslations(U(\"my-tenant-123\"), U(\"comment-widget\"), locale, useFullTranslationIds)\n.then([](pplx::task<std::shared_ptr<GetTranslationsResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto copied = std::make_shared<GetTranslationsResponse>(*resp);\n        }\n    } catch (const std::exception&) {\n        throw;\n    }\n});",
+  "model": "gpt-5-mini"
+}

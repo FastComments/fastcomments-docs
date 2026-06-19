@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "cbd995449c3ba284725317c9f94c2d7d8bbe93dedb3afc10073ffab1a1bbbadf",
+  "generatedAt": "2026-06-19T18:51:17.930Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId = utility::string_t(U(\"notif-456\"));\nboost::optional<int64_t> afterCreatedAt = int64_t(1625097600LL);\nboost::optional<bool> unreadOnly = true;\nboost::optional<bool> dmOnly = false;\nboost::optional<bool> noDm = true;\nboost::optional<utility::string_t> sso = utility::string_t(U(\"user@example.com\"));\napi->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)\n.then([](pplx::task<std::shared_ptr<ResetUserNotificationsResponse>> t){\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : std::make_shared<ResetUserNotificationsResponse>();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

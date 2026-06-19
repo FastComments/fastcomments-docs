@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadgesForUser",
+  "signatureHash": "278dd29f416316457efe50ffd71456465cd0dcbe6663ba7f9ffe08c5ceab6ac9",
+  "generatedAt": "2026-06-19T21:44:58.211Z",
+  "codeExample": "let (response, httpResponse) = client.getManualBadgesForUser(\n  badgesUserId = \"user-98765\",\n  commentId = \"comment-0a1b2c3d\",\n  sso = \"sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"\n)\nif response.isSome:\n  let badges = response.get()\n  echo \"Received manual badges for user\"\n  echo \"HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

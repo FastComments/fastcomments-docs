@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "063c91b6b34823e8260f7935b2900935ef1324515a1fa66e2eda51a17b1b9751",
+  "generatedAt": "2026-06-19T18:51:13.851Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto bodyPtr = std::make_shared<CreateTenantBody>();\nbodyPtr->setName(utility::string_t(U(\"Acme Corporation\")));\nbodyPtr->setAdminEmail(utility::string_t(U(\"admin@acme.com\")));\nbodyPtr->setSupportEmail(boost::optional<utility::string_t>(utility::string_t(U(\"support@acme.com\"))));\nbodyPtr->setPlan(boost::optional<utility::string_t>(utility::string_t(U(\"pro\"))));\napi->createTenant(tenantId, *bodyPtr).then([](pplx::task<std::shared_ptr<CreateTenantResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto newTenantId = resp->getTenantId();\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

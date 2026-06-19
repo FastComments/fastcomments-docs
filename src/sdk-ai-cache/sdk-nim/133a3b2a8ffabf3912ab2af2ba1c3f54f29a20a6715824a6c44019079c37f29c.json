@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "133a3b2a8ffabf3912ab2af2ba1c3f54f29a20a6715824a6c44019079c37f29c",
+  "generatedAt": "2026-06-19T18:51:07.041Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionConfig(tenantId = \"my-tenant-123\", id = \"qst-456\")\nif response.isSome:\n  let cfg = response.get()\n  discard cfg",
+  "model": "gpt-5-mini"
+}

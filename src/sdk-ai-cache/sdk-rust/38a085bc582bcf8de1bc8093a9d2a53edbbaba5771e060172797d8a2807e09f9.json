@@ -1,0 +1,7 @@
+{
+  "method": "get_v2_page_reacts",
+  "signatureHash": "38a085bc582bcf8de1bc8093a9d2a53edbbaba5771e060172797d8a2807e09f9",
+  "generatedAt": "2026-06-19T18:51:12.738Z",
+  "codeExample": "async fn fetch_reacts_example() -> Result<(), Error> {\n    let params: GetV2PageReactsParams = GetV2PageReactsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article/rust-async-await\".to_string(),\n        include_counts: Some(true),\n        limit: Some(50),\n        cursor: Some(\"cursor_abc123\".to_string()),\n    };\n    let reacts: GetV2PageReacts = get_v2_page_reacts(&configuration, params).await?;\n    let _ = reacts;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

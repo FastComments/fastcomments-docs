@@ -1,0 +1,7 @@
+{
+  "method": "get_manual_badges",
+  "signatureHash": "5dd46e0cd0292b9c0676dfacb55987ba57e4ef3fd489a25077d4ef84edc5356f",
+  "generatedAt": "2026-06-19T21:44:53.521Z",
+  "codeExample": "async fn example_get_manual_badges() -> Result<(), Error> {\n    let params: GetManualBadgesParams = GetManualBadgesParams {\n        sso: Some(String::from(\"https://sso.acme-corp.com/authorize?tenant=acme-corp-tenant\")),\n    };\n    let response: GetTenantManualBadgesResponse = get_manual_badges(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

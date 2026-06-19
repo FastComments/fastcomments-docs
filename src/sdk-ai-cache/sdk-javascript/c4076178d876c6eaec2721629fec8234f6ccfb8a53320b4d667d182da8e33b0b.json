@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "c4076178d876c6eaec2721629fec8234f6ccfb8a53320b4d667d182da8e33b0b",
+  "generatedAt": "2026-06-19T21:44:53.818Z",
+  "codeExample": "const commentId: string = 'cmt_4b8f2a1d';\nconst approved: boolean = true;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoSignature.example';\nconst result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(commentId, approved, sso);",
+  "model": "gpt-5-mini"
+}

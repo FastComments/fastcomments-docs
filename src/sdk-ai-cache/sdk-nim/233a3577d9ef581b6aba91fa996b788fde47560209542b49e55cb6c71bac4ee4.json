@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "233a3577d9ef581b6aba91fa996b788fde47560209542b49e55cb6c71bac4ee4",
+  "generatedAt": "2026-06-19T18:51:09.136Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = \"my-tenant-123\", commentId = \"cmt-987654\", dir = 0, sso = \"\")\nif response.isSome:\n  let success: GetCommentVoteUserNamesSuccessResponse = response.get()\n  discard success",
+  "model": "gpt-5-mini"
+}

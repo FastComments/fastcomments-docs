@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "0002863bd7f5c7d738c9c2e2b70765482c3fe5911b04c83b4c351cda233ef492",
+  "generatedAt": "2026-06-19T18:51:23.588Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domainToUpdate = U(\"example.com\");\nPatchDomainConfigParams patchParams;\npatchParams.enableComments = boost::optional<bool>(true);\npatchParams.moderatorEmail = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\nauto task = api->patchDomainConfig(tenantId, domainToUpdate, patchParams)\n    .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {\n        auto result = resp ? resp : std::make_shared<PatchDomainConfigResponse>();\n        return result;\n    });\ntask.wait();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "post_flag_comment",
+  "signatureHash": "6fd61d2ee410dfef595040cc96930a451ab44f2ef353b5c6e6c72a7d1fe24202",
+  "generatedAt": "2026-06-19T21:44:53.884Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: PostFlagCommentParams = PostFlagCommentParams {\n        comment_id: String::from(\"news/acme-corp/article-237/comment-8421\"),\n        sso: Some(String::from(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.acme-sso-payload\")),\n    };\n    let response: ApiEmptyResponse = post_flag_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

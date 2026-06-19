@@ -1,0 +1,7 @@
+{
+  "method": "pin_comment",
+  "signatureHash": "f0d20b60da45137da7639f02f1bbf79e72a181e60e237094b8449f6c436d73fc",
+  "generatedAt": "2026-06-19T18:51:06.326Z",
+  "codeExample": "async fn run_pin() -> Result<ChangeCommentPinStatusResponse, Error> {\n    let params: PinCommentParams = PinCommentParams {\n        tenant_id: \"acme-news\".to_string(),\n        comment_id: \"cmt-9f8b7d6\".to_string(),\n        broadcast_id: \"news/article/2026/06/19/article-12345\".to_string(),\n        sso: Some(\"user-ssotoken-abc123\".to_string()),\n    };\n    let response: ChangeCommentPinStatusResponse = pin_comment(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

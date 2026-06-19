@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "2d5c32671bfd0518794fff4a72caff38d983735d6715628f47a3ffc23ef0c419",
+  "generatedAt": "2026-06-19T18:51:09.253Z",
+  "codeExample": "let (response, httpResponse) = client.deleteModerator(tenantId = \"my-tenant-123\", id = \"\", sendEmail = \"\")\nif response.isSome:\n  let apiEmpty = response.get()\n  echo \"Moderator deleted successfully for tenant my-tenant-123\"\nelse:\n  echo \"No response returned; inspect httpResponse\"",
+  "model": "gpt-5-mini"
+}

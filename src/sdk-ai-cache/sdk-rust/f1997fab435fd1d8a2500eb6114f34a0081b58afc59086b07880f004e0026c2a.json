@@ -1,0 +1,7 @@
+{
+  "method": "get_feed_posts",
+  "signatureHash": "f1997fab435fd1d8a2500eb6114f34a0081b58afc59086b07880f004e0026c2a",
+  "generatedAt": "2026-06-19T18:51:13.514Z",
+  "codeExample": "async fn run() -> Result<GetFeedPostsResponse, Error> {\n    let cfg: &configuration::Configuration = &configuration;\n    let params: GetFeedPostsParams = GetFeedPostsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        after_id: Some(String::from(\"post_987654321\")),\n        limit: Some(25),\n        tags: Some(vec![String::from(\"product-updates\"), String::from(\"release\")]),\n    };\n    let response: GetFeedPostsResponse = get_feed_posts(cfg, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

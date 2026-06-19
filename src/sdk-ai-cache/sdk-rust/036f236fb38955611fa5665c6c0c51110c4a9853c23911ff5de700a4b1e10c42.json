@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badge_progress_by_id",
+  "signatureHash": "036f236fb38955611fa5665c6c0c51110c4a9853c23911ff5de700a4b1e10c42",
+  "generatedAt": "2026-06-19T18:51:10.109Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetUserBadgeProgressByIdParams = GetUserBadgeProgressByIdParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        id: \"badge-gold-2026\".to_owned(),\n        user_id: Some(\"user-987\".to_owned()),\n    };\n    let badge_progress: ApiGetUserBadgeProgressResponse =\n        get_user_badge_progress_by_id(&configuration, params).await?;\n    println!(\"{:#?}\", badge_progress);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

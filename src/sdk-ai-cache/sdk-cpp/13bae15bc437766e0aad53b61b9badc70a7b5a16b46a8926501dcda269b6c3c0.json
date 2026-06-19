@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "13bae15bc437766e0aad53b61b9badc70a7b5a16b46a8926501dcda269b6c3c0",
+  "generatedAt": "2026-06-19T18:51:16.583Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U(\"post_456\"));\nboost::optional<int32_t> limit = boost::optional<int32_t>(25);\nstd::vector<utility::string_t> tagList = { U(\"news\"), U(\"announcement\") };\nboost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(tagList);\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<bool> isCrawler = boost::optional<bool>(false);\nboost::optional<bool> includeUserInfo = boost::optional<bool>(true);\n\napi->getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)\n    .then([](pplx::task<std::shared_ptr<PublicFeedPostsResponse>> t){\n        try {\n            auto resp = t.get();\n            if(!resp) resp = std::make_shared<PublicFeedPostsResponse>();\n        } catch (const std::exception&) {\n            auto fallback = std::make_shared<PublicFeedPostsResponse>();\n        }\n    });",
+  "model": "gpt-5-mini"
+}

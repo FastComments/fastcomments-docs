@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "9fb46dfa8cfb38af13dae346d3bd058910506060fde12bd6ead46b7b6c5b6eec",
+  "generatedAt": "2026-06-19T18:51:11.759Z",
+  "codeExample": "let (response, httpResponse) = client.deleteNotificationCount(tenantId = \"my-tenant-123\", id = \"notification-789\")\nif response.isSome:\n  let emptyResp = response.get()\n  echo \"Notification count deleted for tenant: \", \"my-tenant-123\"\nelse:\n  echo \"Failed to delete notification count, status: \", $httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "patch_domain_config",
+  "signatureHash": "54eb47069a678776fdbf4bbac17e545a92c2e32f9ff34f2f0a69f610bbe7f97c",
+  "generatedAt": "2026-06-19T18:51:12.631Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: PatchDomainConfigParams = PatchDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_to_update: \"news/article\".to_string(),\n        patch_domain_config_params: models::PatchDomainConfigParams {\n            allowed_origins: Some(vec![\n                \"https://www.acme.com\".to_string(),\n                \"https://blog.acme.com\".to_string(),\n            ]),\n            enable_moderation: Some(true),\n            moderation_mode: Some(\"pre\".to_string()),\n            webhook_url: Some(\"https://hooks.acme.com/comments\".to_string()),\n            max_comment_length: Some(1000),\n        },\n    };\n    let response: PatchDomainConfigResponse = patch_domain_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

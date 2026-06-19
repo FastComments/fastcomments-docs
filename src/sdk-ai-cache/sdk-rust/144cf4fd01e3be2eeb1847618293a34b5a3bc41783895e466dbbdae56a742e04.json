@@ -1,0 +1,7 @@
+{
+  "method": "get_question_config",
+  "signatureHash": "144cf4fd01e3be2eeb1847618293a34b5a3bc41783895e466dbbdae56a742e04",
+  "generatedAt": "2026-06-19T18:51:20.319Z",
+  "codeExample": "async fn example_get_question_config() -> Result<GetQuestionConfigResponse, Error> {\n    let configuration: configuration::Configuration = configuration::Configuration::default();\n    let optional_tenant: Option<String> = Some(\"acme-corp-tenant\".to_string());\n    let tenant_id: String = optional_tenant.unwrap_or_else(|| \"acme-default\".to_string());\n    let params = GetQuestionConfigParams {\n        tenant_id,\n        id: \"news/article/2026-06-18\".to_string(),\n    };\n    let response: GetQuestionConfigResponse = get_question_config(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

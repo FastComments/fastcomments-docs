@@ -1,0 +1,7 @@
+{
+  "method": "post_comments_by_ids",
+  "signatureHash": "a879b9ed65c5e4252023e57bb399709817a0e8db4c3d17a3e056030b124c5927",
+  "generatedAt": "2026-06-19T21:44:58.973Z",
+  "codeExample": "let comments_by_ids = models::CommentsByIdsParams {\n    ids: vec![\"cmt-87a1\".to_string(), \"cmt-42b0\".to_string()],\n    tenant: \"acme-corp-tenant\".to_string(),\n    site: \"news/article\".to_string(),\n};\n\nlet params = PostCommentsByIdsParams {\n    comments_by_ids_params: comments_by_ids,\n    sso: Some(\"sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\".to_string()),\n};\n\nlet response: ModerationApiChildCommentsResponse = post_comments_by_ids(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

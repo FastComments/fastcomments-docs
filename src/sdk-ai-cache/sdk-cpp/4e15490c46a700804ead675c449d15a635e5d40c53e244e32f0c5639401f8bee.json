@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "4e15490c46a700804ead675c449d15a635e5d40c53e244e32f0c5639401f8bee",
+  "generatedAt": "2026-06-19T21:45:02.000Z",
+  "codeExample": "utility::string_t commentId = U(\"comment-98765\");\nauto continuation = api->postBanUserFromComment(\n    commentId,\n    boost::optional<bool>(true),\n    boost::optional<bool>(true),\n    boost::optional<bool>(false),\n    boost::optional<bool>(true),\n    boost::optional<utility::string_t>(U(\"2026-12-31T23:59:59Z\")),\n    boost::optional<bool>(false),\n    boost::optional<utility::string_t>(U(\"update-abc123\")),\n    boost::optional<utility::string_t>(U(\"User posted spam links\")),\n    boost::optional<utility::string_t>(U(\"sso-token-7f3\"))\n).then([](pplx::task<std::shared_ptr<BanUserFromCommentResult>> t){\n    try {\n        auto result = t.get();\n        if (!result) result = std::make_shared<BanUserFromCommentResult>();\n    } catch (...) {}\n});\ncontinuation.wait();",
+  "model": "gpt-5-mini"
+}

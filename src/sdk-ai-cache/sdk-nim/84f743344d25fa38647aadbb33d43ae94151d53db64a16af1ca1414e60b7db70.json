@@ -1,0 +1,7 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "84f743344d25fa38647aadbb33d43ae94151d53db64a16af1ca1414e60b7db70",
+  "generatedAt": "2026-06-19T18:51:13.938Z",
+  "codeExample": "let (response, httpResponse) = client.combineCommentsWithQuestionResults(\n  tenantId = \"my-tenant-123\",\n  questionId = \"\",\n  questionIds = @[],\n  urlId = \"news/article-2026-climate-change\",\n  startDate = \"\",\n  forceRecalculate = false,\n  minValue = 0.0,\n  maxValue = 0.0,\n  limit = 0.0\n)\n\nif response.isSome:\n  let combined = response.get()\n  echo \"Combined results received for tenant:\", \" my-tenant-123\"\nelse:\n  echo \"No combined results returned\"",
+  "model": "gpt-5-mini"
+}

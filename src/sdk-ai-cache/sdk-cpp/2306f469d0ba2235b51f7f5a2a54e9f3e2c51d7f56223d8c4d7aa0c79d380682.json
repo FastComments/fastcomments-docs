@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "2306f469d0ba2235b51f7f5a2a54e9f3e2c51d7f56223d8c4d7aa0c79d380682",
+  "generatedAt": "2026-06-19T18:51:17.773Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U(\"post_987\"));\nboost::optional<int32_t> limit = boost::optional<int32_t>(50);\nboost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{ U(\"release\"), U(\"security\") });\napi->getFeedPosts(tenantId, afterId, limit, tags)\n    .then([](pplx::task<std::shared_ptr<GetFeedPostsResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto result = resp ? resp : std::make_shared<GetFeedPostsResponse>();\n            std::cout << \"Received feed response\" << std::endl;\n        } catch (const std::exception& ex) {\n            std::cerr << \"getFeedPosts failed: \" << ex.what() << std::endl;\n        }\n    });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "921a6da7532f8c98ac74d5c1ee3547b3d2e0d492e427eefbd70b7b22718b5d01",
+  "generatedAt": "2026-06-19T18:51:08.080Z",
+  "codeExample": "let (response, httpResponse) = client.createUserBadge(\n  tenantId = \"my-tenant-123\",\n  createUserBadgeParams = CreateUserBadgeParams(\n    userId = \"user-456\",\n    badgeId = \"top-commenter\",\n    reason = \"Top commenter for June 2026\",\n    awardedBy = \"mod-team\",\n    metadata = @[\"news\",\"engagement\"]\n  )\n)\nif response.isSome:\n  let badgeResp = response.get()\n  discard badgeResp",
+  "model": "gpt-5-mini"
+}

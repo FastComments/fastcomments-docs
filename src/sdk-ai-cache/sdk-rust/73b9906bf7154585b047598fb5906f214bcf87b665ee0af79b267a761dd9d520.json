@@ -1,0 +1,7 @@
+{
+  "method": "post_vote",
+  "signatureHash": "73b9906bf7154585b047598fb5906f214bcf87b665ee0af79b267a761dd9d520",
+  "generatedAt": "2026-06-19T21:45:00.258Z",
+  "codeExample": "async fn submit_vote() -> Result<VoteResponse, Error> {\n    let params: PostVoteParams = PostVoteParams {\n        comment_id: String::from(\"news/article-1234/comment-5678\"),\n        direction: Some(String::from(\"up\")),\n        sso: Some(String::from(\"acme-corp-sso-token-abc123\")),\n    };\n    let vote_response: VoteResponse = post_vote(&configuration, params).await?;\n    Ok(vote_response)\n}",
+  "model": "gpt-5-mini"
+}

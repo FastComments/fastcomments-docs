@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "9930442ad441739d4441d9b06d0370e6fd1dc95e22c04a61ef44c9c4e744e483",
+  "generatedAt": "2026-06-19T18:51:14.545Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nbool isFlagged = true;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->flagCommentPublic(tenantId, commentId, isFlagged, sso)\n    .then([](std::shared_ptr<APIEmptyResponse> resp){\n        auto result = resp ? resp : std::make_shared<APIEmptyResponse>();\n        std::cout << \"Flag update completed\\n\";\n    });",
+  "model": "gpt-5-mini"
+}

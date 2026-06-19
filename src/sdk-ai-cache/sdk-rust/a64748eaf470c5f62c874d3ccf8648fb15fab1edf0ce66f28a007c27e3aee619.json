@@ -1,0 +1,7 @@
+{
+  "method": "react_feed_post_public",
+  "signatureHash": "a64748eaf470c5f62c874d3ccf8648fb15fab1edf0ce66f28a007c27e3aee619",
+  "generatedAt": "2026-06-19T18:51:08.917Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: ReactFeedPostPublicParams = ReactFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_id: \"news/article-2026-06-19\".to_string(),\n        react_body_params: models::ReactBodyParams {\n            reaction: \"like\".to_string(),\n            user_id: \"user-9876\".to_string(),\n            metadata: None,\n        },\n        is_undo: Some(false),\n        broadcast_id: Some(\"broadcast-42\".to_string()),\n        sso: Some(\"sso-token-abc123\".to_string()),\n    };\n    let response: ReactFeedPostResponse = react_feed_post_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

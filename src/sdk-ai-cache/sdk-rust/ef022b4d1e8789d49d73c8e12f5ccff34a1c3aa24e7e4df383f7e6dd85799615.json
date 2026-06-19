@@ -1,0 +1,7 @@
+{
+  "method": "post_api_export",
+  "signatureHash": "ef022b4d1e8789d49d73c8e12f5ccff34a1c3aa24e7e4df383f7e6dd85799615",
+  "generatedAt": "2026-06-19T21:44:57.932Z",
+  "codeExample": "async fn run_export() -> Result<ModerationExportResponse, Error> {\n    let params: PostApiExportParams = PostApiExportParams {\n        text_search: Some(\"climate policy debate\".to_string()),\n        by_ip_from_comment: Some(\"203.0.113.5\".to_string()),\n        filters: Some(r#\"{\"status\":\"approved\",\"channel\":\"news/article\"}\"#.to_string()),\n        search_filters: Some(\"created_after:2024-01-01\".to_string()),\n        sorts: Some(\"created_at:desc\".to_string()),\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let export_response: ModerationExportResponse = post_api_export(&configuration, params).await?;\n    Ok(export_response)\n}",
+  "model": "gpt-5-mini"
+}

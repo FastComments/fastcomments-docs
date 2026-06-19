@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "1e53b6fe444a8f5ce63955031b62dcb738cab69107e03669fdcb42198a907d30",
+  "generatedAt": "2026-06-19T18:51:08.021Z",
+  "codeExample": "let (response, httpResponse) = client.reactFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"news/article-2026-06-19\",\n  reactBodyParams = ReactBodyParams(reactType = \"heart\", tags = @[\"breaking\", \"editorial\"]),\n  isUndo = false,\n  broadcastId = \"broadcast-789\",\n  sso = \"sso-token-abc123\"\n)\nif response.isSome:\n  let react = response.get()\n  echo react\nelse:\n  echo \"No response from reactFeedPostPublic, HTTP status:\", httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

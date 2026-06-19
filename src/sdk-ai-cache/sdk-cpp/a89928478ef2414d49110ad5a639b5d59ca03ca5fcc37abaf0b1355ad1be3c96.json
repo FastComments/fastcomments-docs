@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "a89928478ef2414d49110ad5a639b5d59ca03ca5fcc37abaf0b1355ad1be3c96",
+  "generatedAt": "2026-06-19T21:44:58.029Z",
+  "codeExample": "boost::optional<utility::string_t> valueOpt = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> ssoOpt = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getSearchSites(valueOpt, ssoOpt)\n    .then([](std::shared_ptr<ModerationSiteSearchResponse> resp){\n        auto response = resp ? resp : std::make_shared<ModerationSiteSearchResponse>();\n        (void)response;\n    })\n    .wait();",
+  "model": "gpt-5-mini"
+}

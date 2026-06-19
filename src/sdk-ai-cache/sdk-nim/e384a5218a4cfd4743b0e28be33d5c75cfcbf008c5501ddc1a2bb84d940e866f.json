@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "e384a5218a4cfd4743b0e28be33d5c75cfcbf008c5501ddc1a2bb84d940e866f",
+  "generatedAt": "2026-06-19T18:51:10.739Z",
+  "codeExample": "let (response, httpResponse) = client.saveCommentsBulk(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = @[],\n  isLive = false,\n  doSpamCheck = false,\n  sendEmails = false,\n  populateNotifications = false,\n  id = \"\",\n  fromName = \"\"\n)\n\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Bulk save succeeded, tenant:\", \" my-tenant-123\"\nelse:\n  echo \"Bulk save returned no API response\"",
+  "model": "gpt-5-mini"
+}

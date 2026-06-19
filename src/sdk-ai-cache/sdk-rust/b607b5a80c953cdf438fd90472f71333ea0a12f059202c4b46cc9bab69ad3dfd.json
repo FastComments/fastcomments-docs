@@ -1,0 +1,7 @@
+{
+  "method": "get_comment",
+  "signatureHash": "b607b5a80c953cdf438fd90472f71333ea0a12f059202c4b46cc9bab69ad3dfd",
+  "generatedAt": "2026-06-19T18:51:09.684Z",
+  "codeExample": "async fn example_get_comment() -> Result<(), Error> {\n    let params: GetCommentParams = GetCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2026-06-19/comment-742\".to_string(),\n        include_replies: Some(true),\n    };\n    let comment: ApiGetCommentResponse = get_comment(&configuration, params).await?;\n    println!(\"{:#?}\", comment);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

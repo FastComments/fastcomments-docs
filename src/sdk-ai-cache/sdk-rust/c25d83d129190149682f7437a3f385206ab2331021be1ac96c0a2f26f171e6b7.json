@@ -1,0 +1,7 @@
+{
+  "method": "create_email_template",
+  "signatureHash": "c25d83d129190149682f7437a3f385206ab2331021be1ac96c0a2f26f171e6b7",
+  "generatedAt": "2026-06-19T18:51:12.744Z",
+  "codeExample": "let params = CreateEmailTemplateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_email_template_body: models::CreateEmailTemplateBody {\n        name: \"Weekly Newsletter\".to_string(),\n        slug: Some(\"news/weekly\".to_string()),\n        subject: Some(\"Acme Corp — Weekly Updates\".to_string()),\n        html_body: Some(\"<h1>Acme Weekly</h1><p>Top stories this week...</p>\".to_string()),\n        text_body: Some(\"Acme Weekly — Top stories this week...\".to_string()),\n        from_email: Some(\"newsletter@acme.com\".to_string()),\n        reply_to: Some(\"support@acme.com\".to_string()),\n        description: Some(\"Template used for the weekly customer newsletter\".to_string()),\n        is_active: Some(true),\n    },\n};\nlet created: CreateEmailTemplateResponse = create_email_template(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

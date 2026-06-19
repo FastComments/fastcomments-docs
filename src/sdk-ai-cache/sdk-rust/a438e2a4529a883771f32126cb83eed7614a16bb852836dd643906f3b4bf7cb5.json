@@ -1,0 +1,7 @@
+{
+  "method": "get_sso_users",
+  "signatureHash": "a438e2a4529a883771f32126cb83eed7614a16bb852836dd643906f3b4bf7cb5",
+  "generatedAt": "2026-06-19T18:51:13.037Z",
+  "codeExample": "async fn run() -> Result<GetSsoUsersResponse, Error> {\n    let params: GetSsoUsersParams = GetSsoUsersParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        skip: Some(10),\n    };\n    let sso_users: GetSsoUsersResponse = get_sso_users(&configuration, params).await?;\n    Ok(sso_users)\n}",
+  "model": "gpt-5-mini"
+}

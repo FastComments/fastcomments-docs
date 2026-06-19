@@ -1,0 +1,7 @@
+{
+  "method": "render_email_template",
+  "signatureHash": "082f24e32027e3d4c319ad8a1a7ec180a925c760c2fc5d3f33f70d6d16c3713e",
+  "generatedAt": "2026-06-19T18:51:19.214Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let render_body: models::RenderEmailTemplateBody = models::RenderEmailTemplateBody {\n        template_id: \"notifications/comment_reply\".to_string(),\n        subject: \"Someone replied to your comment\".to_string(),\n        recipient: \"jane.doe@example.com\".to_string(),\n        variables: std::collections::HashMap::from([\n            (\"commenter\".to_string(), \"Alice\".to_string()),\n            (\"post_title\".to_string(), \"How to Rust\".to_string()),\n        ]),\n    };\n\n    let params: RenderEmailTemplateParams = RenderEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        render_email_template_body: render_body,\n        locale: Some(\"en-US\".to_string()),\n    };\n\n    let response: RenderEmailTemplateResponse = render_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

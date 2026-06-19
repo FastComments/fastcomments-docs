@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "7e65f1a1dae38c5821fb2ba2c79d408a7af2d8cc19a3aa6c1c5f371db005f54c",
+  "generatedAt": "2026-06-19T21:44:55.732Z",
+  "codeExample": "let (response, httpResponse) = client.getCounts(sso = \"sso_my-tenant-123_token_AbCdEf123456\")\nif response.isSome:\n  let counts = response.get()\n  echo counts\nelse:\n  echo \"Request failed with status:\", httpResponse.status",
+  "model": "gpt-5-mini"
+}

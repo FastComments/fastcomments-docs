@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "437e498ccbd5ffa0df30f1e722ac7aad8346143904e289d0b58bec1e05a722a3",
+  "generatedAt": "2026-06-19T18:51:17.271Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto postId = utility::string_t(U(\"feedpost-456\"));\nauto post = std::make_shared<FeedPost>();\npost->title = utility::string_t(U(\"Weekly Update\"));\npost->content = utility::string_t(U(\"This week's changes include bug fixes and performance improvements.\"));\npost->authorEmail = boost::optional<utility::string_t>(utility::string_t(U(\"author@example.com\")));\npost->published = boost::optional<bool>(true);\napi->updateFeedPost(tenantId, postId, *post)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n    try {\n        auto resp = t.get();\n        (void)resp;\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini"
+}

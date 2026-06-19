@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "5e96cfa8903db64cbaf1b7c096371097d6a3049e7393f2f1eaea58f8b830a757",
+  "generatedAt": "2026-06-19T18:51:09.958Z",
+  "codeExample": "let (response, httpResponse) = client.getFeedPosts(\n  tenantId = \"my-tenant-123\",\n  afterId = \"\",\n  limit = 0,\n  tags = @[]\n)\nif response.isSome:\n  let feed = response.get()\n  echo \"Feed retrieved for tenant my-tenant-123\"",
+  "model": "gpt-5-mini"
+}

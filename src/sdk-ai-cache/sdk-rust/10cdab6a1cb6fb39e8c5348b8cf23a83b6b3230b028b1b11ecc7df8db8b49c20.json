@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_review_status",
+  "signatureHash": "10cdab6a1cb6fb39e8c5348b8cf23a83b6b3230b028b1b11ecc7df8db8b49c20",
+  "generatedAt": "2026-06-19T21:44:58.670Z",
+  "codeExample": "async fn set_comment_review_status() -> Result<ApiEmptyResponse, Error> {\n    let params: PostSetCommentReviewStatusParams = PostSetCommentReviewStatusParams {\n        comment_id: \"news/article-2026-06-18-cmt-9843\".to_string(),\n        reviewed: Some(true),\n        sso: Some(\"acme-sso-session-7f2e9b\".to_string()),\n    };\n    let response: ApiEmptyResponse = post_set_comment_review_status(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

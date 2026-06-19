@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "0de5d345a75f2542487205b8f5f8be3418b85a14170920470ac2d4f6a3272e95",
+  "generatedAt": "2026-06-19T18:51:12.786Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t packageId = U(\"pkg-456\");\nauto replaceBody = std::make_shared<ReplaceTenantPackageBody>();\nreplaceBody->name = U(\"Pro Plan\");\nreplaceBody->description = boost::optional<utility::string_t>(U(\"Enterprise package with enhanced support\"));\nreplaceBody->maxSeats = boost::optional<int>(500);\napi->replaceTenantPackage(tenantId, packageId, *replaceBody)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try {\n        auto resp = task.get();\n        std::cout << \"Package replaced successfully\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Error replacing package: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "915cb23a53f6a5ae50e541373b3f3d140da66edaa98d4a261c87a64c5c60e535",
+  "generatedAt": "2026-06-19T18:51:07.780Z",
+  "codeExample": "let patchParams: PatchDomainConfigParams = PatchDomainConfigParams(\n  allowedOrigins = @[\"https://news.example.com\", \"https://cdn.news.com\"],\n  enableComments = true,\n  moderationRequired = false,\n  maxCommentLength = 2000,\n  primaryDomain = \"comments.news-site.com\"\n)\nlet (response, httpResponse) = client.patchDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"comments.news-site.com\",\n  patchDomainConfigParams = patchParams\n)\nif response.isSome:\n  let cfg = response.get()\n  echo \"Patched domain config received:\", cfg\nelse:\n  echo \"No response body, HTTP status:\", httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

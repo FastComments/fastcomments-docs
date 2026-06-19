@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "fd1b3c4d22f893a7a4724fe2f0725709f6fb1596d603efb8c994606d3ad70cc2",
+  "generatedAt": "2026-06-19T18:51:12.388Z",
+  "codeExample": "let (response, httpResponse) = client.updateTenant(\n  tenantId = \"my-tenant-123\",\n  id = \"settings\",\n  updateTenantBody = UpdateTenantBody(\n    name = \"My Tenant 123\",\n    enableModeration = true,\n    allowedDomains = @[\"news.example.com\", \"blog.example.org\"],\n    maxCommentLength = 1000\n  )\n)\n\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Tenant updated successfully: \", apiResp\nelse:\n  echo \"Failed to update tenant, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

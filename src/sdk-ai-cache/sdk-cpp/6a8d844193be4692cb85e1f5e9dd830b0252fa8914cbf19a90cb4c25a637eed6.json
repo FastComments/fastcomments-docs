@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "6a8d844193be4692cb85e1f5e9dd830b0252fa8914cbf19a90cb4c25a637eed6",
+  "generatedAt": "2026-06-19T18:51:13.101Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto urlId = utility::string_t(U(\"article-456\"));\nboost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U(\"jane.doe@example.com\"));\nboost::optional<utility::string_t> afterUserId = boost::optional<utility::string_t>(U(\"user-789\"));\napi->getOfflineUsers(tenantId, urlId, afterName, afterUserId).then([](std::shared_ptr<PageUsersOfflineResponse> resp){\n    auto result = resp ? resp : std::make_shared<PageUsersOfflineResponse>();\n    (void)result;\n});",
+  "model": "gpt-5-mini"
+}

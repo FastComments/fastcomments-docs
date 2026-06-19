@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "7056fab9f49300900bd3dce849f6eff50fd94fa113545978578a6f02f7bd2ac7",
+  "generatedAt": "2026-06-19T21:45:02.549Z",
+  "codeExample": "utility::string_t badgeId = U(\"badge-elite-commenter\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"jane.doe@example.com\"));\nboost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U(\"cmt-8f3a2b\"));\nboost::optional<utility::string_t> broadcastId;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\n\napi->putAwardBadge(badgeId, userId, commentId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<AwardUserBadgeResponse>> t){\n    try {\n        auto resp = t.get();\n        auto out = resp ? resp : std::make_shared<AwardUserBadgeResponse>();\n        std::cout << \"Badge awarded successfully\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Award failed: \" << e.what() << '\\n';\n    }\n}).wait();",
+  "model": "gpt-5-mini"
+}

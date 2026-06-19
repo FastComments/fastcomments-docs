@@ -1,0 +1,7 @@
+{
+  "method": "get_counts",
+  "signatureHash": "66698fb4a70ae0352c3b6eca6e00ca3b3500f5387660ebd0788b1efba5249e3d",
+  "generatedAt": "2026-06-19T21:44:54.458Z",
+  "codeExample": "async fn example_get_counts() -> Result<(), Error> {\n    let params: GetCountsParams = GetCountsParams {\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let counts: GetBannedUsersCountResponse = get_counts(&configuration, params).await?;\n    println!(\"{:?}\", counts);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "un_pin_comment",
+  "signatureHash": "729d347c34a7e0422605727d57764616382fa8aea0159b7c60dc183beb039a23",
+  "generatedAt": "2026-06-19T18:51:09.168Z",
+  "codeExample": "async fn example() -> Result<ChangeCommentPinStatusResponse, Error> {\n    let params: UnPinCommentParams = UnPinCommentParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: String::from(\"cmt-8f3b2a1e\"),\n        broadcast_id: String::from(\"news/2024/product-launch\"),\n        sso: Some(String::from(\"sso-user-abcdef123456\")),\n    };\n    let response: ChangeCommentPinStatusResponse = un_pin_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

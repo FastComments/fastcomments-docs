@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "af446c2510537a426aef165ec6775bdef43ca35501367600693d2a118432d8c2",
+  "generatedAt": "2026-06-19T18:51:06.333Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplates(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let templates = response.get()\n  echo templates\nelse:\n  echo \"No email templates available\"",
+  "model": "gpt-5-mini"
+}

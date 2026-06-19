@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "1b8d4ec664531a2b84392e77e1efc5b7603f68a5cc75b187442f4695f3b3f294",
+  "generatedAt": "2026-06-19T18:51:12.852Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-456\");\nUpdateFeedPostParams updateFeedPostParams;\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-789\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<CreateFeedPostResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto updatedCopy = std::make_shared<CreateFeedPostResponse>(*resp);\n        }\n    } catch (const std::exception& e) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

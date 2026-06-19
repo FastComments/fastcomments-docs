@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "3829462408b5d50cddd3c73737bd2e6b0fbb879d702f7ba255608f42c3c38dc7",
+  "generatedAt": "2026-06-19T18:51:20.983Z",
+  "codeExample": "let (response, httpResponse) = client.updateFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"post-456\",\n  updateFeedPostParams = UpdateFeedPostParams(title = \"Weekly Product Update\", content = \"Released bug fixes and performance improvements in v2.1.\", tags = @[\"release\", \"product\"], pinned = false),\n  broadcastId = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let created = response.get()\n  echo \"Updated feed post id: \", created.postId\nelse:\n  echo \"Update failed with HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

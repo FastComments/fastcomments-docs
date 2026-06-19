@@ -1,0 +1,7 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "7c4de9e70c8de99165945a2ba62f6d77e7ab13b2ae8d5560c888ce61a8cb9152",
+  "generatedAt": "2026-06-19T18:51:17.154Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domain = U(\"example.com\");\nboost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U(\"corr-789\"));\napi->deleteDomainConfig(tenantId, domain).then([correlationId](pplx::task<std::shared_ptr<DeleteDomainConfigResponse>> t){\n    try {\n        auto resp = t.get();\n        if(!resp) resp = std::make_shared<DeleteDomainConfigResponse>();\n        utility::string_t cid = correlationId ? *correlationId : U(\"\");\n        (void)cid;\n    } catch(const std::exception &){\n        auto err = std::make_shared<DeleteDomainConfigResponse>();\n        (void)err;\n    }\n});",
+  "model": "gpt-5-mini"
+}

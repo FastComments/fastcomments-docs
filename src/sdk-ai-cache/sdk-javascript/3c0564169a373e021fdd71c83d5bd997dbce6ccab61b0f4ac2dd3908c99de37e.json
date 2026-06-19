@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "3c0564169a373e021fdd71c83d5bd997dbce6ccab61b0f4ac2dd3908c99de37e",
+  "generatedAt": "2026-06-19T21:44:53.768Z",
+  "codeExample": "const reopenResultWithSso: APIEmptyResponse = await putReopenThread(\"th_3c9b2a7f\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyM30.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\");\nconst reopenResultNoSso: APIEmptyResponse = await putReopenThread(\"th_7a4e5c1d\");",
+  "model": "gpt-5-mini"
+}

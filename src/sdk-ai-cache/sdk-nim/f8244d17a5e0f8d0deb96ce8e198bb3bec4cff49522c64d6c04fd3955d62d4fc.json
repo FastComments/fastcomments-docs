@@ -1,0 +1,7 @@
+{
+  "method": "putCloseThread",
+  "signatureHash": "f8244d17a5e0f8d0deb96ce8e198bb3bec4cff49522c64d6c04fd3955d62d4fc",
+  "generatedAt": "2026-06-19T21:44:54.147Z",
+  "codeExample": "let (response, httpResponse) = client.putCloseThread(urlId = \"news/article-title\", sso = \"\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Thread closed successfully:\", $apiResp\nelse:\n  echo \"Failed to close thread, HTTP response:\", $httpResponse",
+  "model": "gpt-5-mini"
+}

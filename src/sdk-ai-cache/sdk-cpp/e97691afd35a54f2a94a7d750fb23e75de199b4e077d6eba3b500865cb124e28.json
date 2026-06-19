@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "e97691afd35a54f2a94a7d750fb23e75de199b4e077d6eba3b500865cb124e28",
+  "generatedAt": "2026-06-19T21:44:56.462Z",
+  "codeExample": "utility::string_t value = U(\"getting-started\");\nutility::string_t sso = U(\"user@example.com\");\nboost::optional<utility::string_t> valueOpt = value;\nboost::optional<utility::string_t> ssoOpt = sso;\napi->getSearchPages(valueOpt, ssoOpt)\n.then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> t){\n    try {\n        auto resp = t.get();\n        auto safeResp = resp ? resp : std::make_shared<ModerationPageSearchResponse>();\n        (void)safeResp;\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

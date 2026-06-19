@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "40e280f1c13d3562cc918c11bfeb2a78edb5d4157a1f484d605ca3da38951d8e",
+  "generatedAt": "2026-06-19T18:51:18.995Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->resetUserNotificationCount(tenantId, sso)\n    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp){\n        if(!resp) resp = std::make_shared<ResetUserNotificationsResponse>();\n    })\n    .wait();",
+  "model": "gpt-5-mini"
+}

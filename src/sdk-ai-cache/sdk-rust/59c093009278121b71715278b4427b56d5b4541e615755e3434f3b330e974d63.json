@@ -1,0 +1,7 @@
+{
+  "method": "put_reopen_thread",
+  "signatureHash": "59c093009278121b71715278b4427b56d5b4541e615755e3434f3b330e974d63",
+  "generatedAt": "2026-06-19T21:44:56.237Z",
+  "codeExample": "async fn run_reopen_thread() -> Result<(), Error> {\n    let params: PutReopenThreadParams = PutReopenThreadParams {\n        url_id: String::from(\"acme-corp/news/article-2026-06-19\"),\n        sso: Some(String::from(\"sso-token-9f8e7d6c\")),\n    };\n    let response: ApiEmptyResponse = put_reopen_thread(configuration, params).await?;\n    let _response = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "26dd00dc08e31f4ae7e42e80898146a41132439c37e923390fe0ec0bd13b8666",
+  "generatedAt": "2026-06-19T18:51:14.722Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"email-template-789\");\nboost::optional<double> skip = boost::optional<double>(10.0);\napi->getEmailTemplateRenderErrors(tenantId, templateId, skip)\n    .then([](pplx::task<std::shared_ptr<GetEmailTemplateRenderErrorsResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto safeResp = resp ? resp : std::make_shared<GetEmailTemplateRenderErrorsResponse>();\n            (void)safeResp;\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    }).wait();",
+  "model": "gpt-5-mini"
+}

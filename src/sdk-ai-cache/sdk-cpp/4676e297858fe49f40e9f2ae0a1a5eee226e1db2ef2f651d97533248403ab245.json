@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "4676e297858fe49f40e9f2ae0a1a5eee226e1db2ef2f651d97533248403ab245",
+  "generatedAt": "2026-06-19T18:51:11.706Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentIds = utility::conversions::to_string_t(\"cmt-456,cmt-789\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"));\n\napi->checkedCommentsForBlocked(tenantId, commentIds, sso)\n    .then([](pplx::task<std::shared_ptr<CheckBlockedCommentsResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto result = resp ? resp : std::make_shared<CheckBlockedCommentsResponse>();\n            (void)result;\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini"
+}

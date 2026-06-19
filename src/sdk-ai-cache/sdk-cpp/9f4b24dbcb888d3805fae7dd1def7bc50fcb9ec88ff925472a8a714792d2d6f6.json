@@ -1,0 +1,7 @@
+{
+  "method": "getUser",
+  "signatureHash": "9f4b24dbcb888d3805fae7dd1def7bc50fcb9ec88ff925472a8a714792d2d6f6",
+  "generatedAt": "2026-06-19T18:51:16.865Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t userId = utility::conversions::to_string_t(\"user@example.com\");\nboost::optional<utility::string_t> ifNoneMatch = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"W/\\\"etag-98765\\\"\"));\napi->getUser(tenantId, userId)\n    .then([](pplx::task<std::shared_ptr<GetUserResponse>> task){\n        try {\n            auto resp = task.get();\n            if (resp) {\n                auto clone = std::make_shared<GetUserResponse>(*resp);\n            }\n        } catch (...) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "f6b13018c92746165ff3dfc153d5484f7c1fbf9fc524624bcda814833621507d",
+  "generatedAt": "2026-06-19T18:51:10.168Z",
+  "codeExample": "let (response, httpResponse) = client.pinComment(tenantId = \"my-tenant-123\", commentId = \"cmt-98765\", broadcastId = \"\", sso = \"\")\nif response.isSome:\n  let pinnedResp = response.get()\n  echo \"Pin status updated for comment cmt-98765\"\nelse:\n  echo \"No response received\"",
+  "model": "gpt-5-mini"
+}

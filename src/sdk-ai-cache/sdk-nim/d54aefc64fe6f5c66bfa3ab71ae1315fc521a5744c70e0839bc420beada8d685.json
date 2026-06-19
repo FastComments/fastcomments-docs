@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "d54aefc64fe6f5c66bfa3ab71ae1315fc521a5744c70e0839bc420beada8d685",
+  "generatedAt": "2026-06-19T18:51:12.078Z",
+  "codeExample": "let publicParams = PublicBlockFromCommentParams(\n  reason = \"Repeated spam links\",\n  durationMinutes = 1440,\n  blockAll = true,\n  notifyUser = false,\n  tags = @[\"spam\", \"auto-block\"]\n)\n\nlet (response, httpResponse) = client.blockFromCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-98765\",\n  publicBlockFromCommentParams = publicParams,\n  sso = \"\"\n)\n\nif response.isSome:\n  let blockResult = response.get()\n  echo \"Block succeeded: \", $blockResult\nelse:\n  echo \"Block failed, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

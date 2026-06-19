@@ -1,0 +1,7 @@
+{
+  "method": "delete_comment_vote",
+  "signatureHash": "6446e37720a8b2db0e5cbb2605aac0ebd64b07b70fb88935312cbac45dd16d8e",
+  "generatedAt": "2026-06-19T18:51:12.146Z",
+  "codeExample": "async fn example_delete_vote() -> Result<VoteDeleteResponse, Error> {\n    let params: DeleteCommentVoteParams = DeleteCommentVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-8f3a2b9e\".to_string(),\n        vote_id: \"vote-7d124f\".to_string(),\n        url_id: \"news/politics/2026-election\".to_string(),\n        broadcast_id: \"web-1234\".to_string(),\n        edit_key: Some(\"edit-abc123\".to_string()),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n\n    let response: VoteDeleteResponse = delete_comment_vote(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

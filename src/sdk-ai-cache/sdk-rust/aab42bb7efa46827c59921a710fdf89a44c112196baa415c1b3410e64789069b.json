@@ -1,0 +1,7 @@
+{
+  "method": "un_block_comment_public",
+  "signatureHash": "aab42bb7efa46827c59921a710fdf89a44c112196baa415c1b3410e64789069b",
+  "generatedAt": "2026-06-19T18:51:10.918Z",
+  "codeExample": "let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    comment_id: \"news/article/2026/06/19/cmt-987654\".to_string(),\n    public_block_from_comment_params: models::PublicBlockFromCommentParams {\n        reason: \"harassment\".to_string(),\n        duration_minutes: Some(1440),\n        notify_author: Some(true),\n    },\n    sso: Some(\"sso-token-7f3b9a\".to_string()),\n};\n\nlet unblock_success: UnblockSuccess = un_block_comment_public(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

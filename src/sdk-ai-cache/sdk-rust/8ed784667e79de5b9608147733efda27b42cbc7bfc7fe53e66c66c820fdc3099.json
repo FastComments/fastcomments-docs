@@ -1,0 +1,7 @@
+{
+  "method": "update_feed_post_public",
+  "signatureHash": "8ed784667e79de5b9608147733efda27b42cbc7bfc7fe53e66c66c820fdc3099",
+  "generatedAt": "2026-06-19T18:51:13.513Z",
+  "codeExample": "let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    post_id: \"news/product-launch-2026\".to_string(),\n    update_feed_post_params: models::UpdateFeedPostParams {\n        title: \"Acme Product Launch\".to_string(),\n        content: \"Acme releases version 2.0 with major performance and security improvements.\".to_string(),\n        media: Some(vec![\n            models::FeedPostMediaItem {\n                asset: models::FeedPostMediaItemAsset {\n                    url: \"https://cdn.acme.com/images/product-v2.jpg\".to_string(),\n                    mime_type: Some(\"image/jpeg\".to_string())\n                }\n            }\n        ]),\n        links: Some(vec![\n            models::FeedPostLink {\n                url: \"https://acme.com/blog/product-v2\".to_string(),\n                title: Some(\"Product v2 announcement\".to_string())\n            }\n        ]),\n        ..Default::default()\n    },\n    broadcast_id: Some(\"broadcast-789\".to_string()),\n    sso: Some(\"sso-token-eyJhbGciOiJIUzI1Ni\".to_string()),\n};\nlet response: CreateFeedPostResponse = update_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

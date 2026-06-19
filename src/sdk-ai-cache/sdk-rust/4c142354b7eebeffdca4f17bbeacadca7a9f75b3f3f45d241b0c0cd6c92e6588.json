@@ -1,0 +1,7 @@
+{
+  "method": "get_feed_posts_stats",
+  "signatureHash": "4c142354b7eebeffdca4f17bbeacadca7a9f75b3f3f45d241b0c0cd6c92e6588",
+  "generatedAt": "2026-06-19T18:51:06.460Z",
+  "codeExample": "async fn example_main(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: vec![\n            \"news/2026-product-launch\".to_string(),\n            \"blog/engineering-architecture\".to_string()\n        ],\n        sso: Some(\"sso.jwt.token.eyJhbGci...\".to_string()),\n    };\n    let stats: FeedPostsStatsResponse = get_feed_posts_stats(configuration, params).await?;\n    let _api_status: ApiStatus = /* use stats as needed */ stats.into();\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

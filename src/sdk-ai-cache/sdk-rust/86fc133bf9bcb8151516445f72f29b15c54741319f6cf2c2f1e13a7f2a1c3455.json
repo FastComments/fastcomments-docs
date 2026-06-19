@@ -1,0 +1,7 @@
+{
+  "method": "block_user_from_comment",
+  "signatureHash": "86fc133bf9bcb8151516445f72f29b15c54741319f6cf2c2f1e13a7f2a1c3455",
+  "generatedAt": "2026-06-19T18:51:15.549Z",
+  "codeExample": "async fn block_example() -> Result<BlockSuccess, Error> {\n    let params: BlockUserFromCommentParams = BlockUserFromCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comments/98765\".to_string(),\n        block_from_comment_params: models::BlockFromCommentParams {\n            reason: \"Repeated harassment\".to_string(),\n            duration_minutes: Some(60 * 24),\n            notify_user: Some(true),\n        },\n        user_id: Some(\"user_42\".to_string()),\n        anon_user_id: Some(\"anon-7a3f\".to_string()),\n    };\n    let success: BlockSuccess = block_user_from_comment(&configuration, params).await?;\n    Ok(success)\n}",
+  "model": "gpt-5-mini"
+}

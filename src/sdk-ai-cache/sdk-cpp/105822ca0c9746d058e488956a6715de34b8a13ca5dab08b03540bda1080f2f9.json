@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "105822ca0c9746d058e488956a6715de34b8a13ca5dab08b03540bda1080f2f9",
+  "generatedAt": "2026-06-19T18:51:19.618Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"template-456\");\nboost::optional<utility::string_t> errorIdOpt = U(\"err-98765\");\napi->deleteEmailTemplateRenderError(tenantId, templateId, (errorIdOpt ? *errorIdOpt : utility::string_t()))\n.then([=](pplx::task<std::shared_ptr<APIEmptyResponse>> task)\n{\n    try\n    {\n        auto resp = task.get();\n        auto result = resp ? resp : std::make_shared<APIEmptyResponse>();\n    }\n    catch (const std::exception &)\n    {\n        auto fallback = std::make_shared<APIEmptyResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

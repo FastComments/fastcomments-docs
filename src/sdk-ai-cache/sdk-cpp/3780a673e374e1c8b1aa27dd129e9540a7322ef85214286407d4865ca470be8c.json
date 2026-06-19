@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "3780a673e374e1c8b1aa27dd129e9540a7322ef85214286407d4865ca470be8c",
+  "generatedAt": "2026-06-19T18:51:21.976Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domainToUpdate = U(\"example.com\");\nboost::optional<utility::string_t> contactEmail = U(\"admin@example.com\");\nboost::optional<bool> enforceHttps = true;\nUpdateDomainConfigParams updateParams;\nupdateParams.contactEmail = contactEmail;\nupdateParams.enforceHttps = enforceHttps;\napi->putDomainConfig(tenantId, domainToUpdate, updateParams)\n.then([](pplx::task<std::shared_ptr<PutDomainConfigResponse>> t){\n    try {\n        auto resp = t.get();\n        return resp ? resp : std::make_shared<PutDomainConfigResponse>();\n    } catch(...) {\n        return std::make_shared<PutDomainConfigResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "ae47fbd757675371782c4a78882cff93517f487bacbc0c6d57f462d515637563",
+  "generatedAt": "2026-06-19T21:44:52.191Z",
+  "codeExample": "let (response, httpResponse) = client.getSearchUsers(value = \"john.doe@example.com\", sso = \"sso-acme-789\")\nif response.isSome:\n  let searchRes = response.get()\n  echo \"Search result:\", searchRes\nelse:\n  echo \"No users found\"",
+  "model": "gpt-5-mini"
+}

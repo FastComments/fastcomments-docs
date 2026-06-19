@@ -1,0 +1,7 @@
+{
+  "method": "getPreBanSummary",
+  "signatureHash": "5b1b09884479eaf8c90cdb4e6635000777ec78513e271093559d0da97a6274e3",
+  "generatedAt": "2026-06-19T21:44:53.557Z",
+  "codeExample": "const commentId: string = 'cmt-9f7b2e3d-45a1';\nconst includeByUserIdAndEmail: boolean = true;\nconst includeByIP: boolean = true;\nconst includeByEmailDomain: boolean = false;\nconst sso: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n\nconst summary: PreBanSummary = await getPreBanSummary(\n  commentId,\n  includeByUserIdAndEmail,\n  includeByIP,\n  includeByEmailDomain,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

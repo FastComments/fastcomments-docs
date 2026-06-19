@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "fb7cf4e4916660b407e8667e7b595bed032227fc4d513f1d939574d77aa7f4a9",
+  "generatedAt": "2026-06-19T21:44:57.877Z",
+  "codeExample": "const commentsByIdsParams: CommentsByIdsParams = {\n  ids: ['cmt_7f3b2a', 'cmt_9d1e4c'],\n  includeReplies: true,\n  limit: 25,\n  threadId: 'thread_21a9f0'\n};\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywiZW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst result: ModerationAPIChildCommentsResponse = await postCommentsByIds(commentsByIdsParams, ssoToken);",
+  "model": "gpt-5-mini"
+}

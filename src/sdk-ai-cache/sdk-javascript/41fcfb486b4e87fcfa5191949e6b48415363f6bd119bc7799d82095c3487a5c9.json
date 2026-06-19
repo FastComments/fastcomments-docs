@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "41fcfb486b4e87fcfa5191949e6b48415363f6bd119bc7799d82095c3487a5c9",
+  "generatedAt": "2026-06-19T21:45:00.056Z",
+  "codeExample": "const commentId: string = \"5f8d0a2e-3b9f-4c2b-9a37-1f4e6b2c7d8f\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSJ9.signature\";\nconst childrenResponse: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId);\nconst childrenResponseWithSso: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId, sso);",
+  "model": "gpt-5-mini"
+}

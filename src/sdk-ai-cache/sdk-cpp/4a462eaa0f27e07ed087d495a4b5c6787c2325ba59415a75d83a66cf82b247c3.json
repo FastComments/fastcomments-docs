@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "4a462eaa0f27e07ed087d495a4b5c6787c2325ba59415a75d83a66cf82b247c3",
+  "generatedAt": "2026-06-19T18:51:16.995Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId{ utility::string_t(U(\"user@example.com\")) };\nboost::optional<double> state{ 1.0 };\nboost::optional<double> skip{ 0.0 };\nboost::optional<double> limit{ 25.0 };\nauto emptyResp = std::make_shared<GetTicketsResponse>();\napi->getTickets(tenantId, userId, state, skip, limit)\n.then([](pplx::task<std::shared_ptr<GetTicketsResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) (void)resp;\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

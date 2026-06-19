@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "f212d07de830b58de02d7d15f80c768634bb5a037770050345d43bba7c8aedbe",
+  "generatedAt": "2026-06-19T21:44:57.254Z",
+  "codeExample": "const profileByCommentId: GetUserInternalProfileResponse = await getUserInternalProfile('comment_5f1e8a3b9c2d4');\nconst profileBySSOToken: GetUserInternalProfileResponse = await getUserInternalProfile(undefined, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummypayload.signature');",
+  "model": "gpt-5-mini"
+}

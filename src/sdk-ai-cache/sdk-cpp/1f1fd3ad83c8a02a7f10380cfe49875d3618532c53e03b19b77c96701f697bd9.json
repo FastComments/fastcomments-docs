@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "1f1fd3ad83c8a02a7f10380cfe49875d3618532c53e03b19b77c96701f697bd9",
+  "generatedAt": "2026-06-19T21:44:57.062Z",
+  "codeExample": "utility::string_t commentId = U(\"comment-12345\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getCommentChildren(commentId, sso).then([](std::shared_ptr<ModerationAPIChildCommentsResponse> resp){\n    auto result = resp ? std::make_shared<ModerationAPIChildCommentsResponse>(*resp)\n                       : std::make_shared<ModerationAPIChildCommentsResponse>();\n    return result;\n});",
+  "model": "gpt-5-mini"
+}

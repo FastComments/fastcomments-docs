@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "edfd90e12ff70fb1eefa12e575672da1bd6d4c4cbcb003e5472fdd83a8693b95",
+  "generatedAt": "2026-06-19T18:51:05.288Z",
+  "codeExample": "let (response, httpResponse) = client.getVotes(tenantId = \"my-tenant-123\", urlId = \"news/breaking-article-456\")\nif response.isSome:\n  let votesResp = response.get()\n  echo \"Received votes response:\", $votesResp\nelse:\n  echo \"No votes returned, HTTP response:\", $httpResponse",
+  "model": "gpt-5-mini"
+}

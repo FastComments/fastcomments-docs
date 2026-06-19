@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "c091f5ecdf95251d5d01636578df8f2b7ea65ee16852416af7fd4099c7523df9",
+  "generatedAt": "2026-06-19T18:51:14.240Z",
+  "codeExample": "let commentPayload = CommentData(\n  text = \"Great write-up on serverless architectures.\",\n  authorName = \"Jane Doe\",\n  authorEmail = \"jane.doe@example.com\",\n  isPublic = true,\n  tags = @[\"tech\", \"serverless\"]\n)\nlet (response, httpResponse) = client.createCommentPublic(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2026/06/fastcomments-sdk-update\",\n  broadcastId = \"broadcast-2026-06-19\",\n  commentData = commentPayload,\n  sessionId = \"sess-8a7b6c\",\n  sso = \"sso-jwt-abc123\"\n)\nif response.isSome:\n  let saved = response.get()\n  discard saved",
+  "model": "gpt-5-mini"
+}

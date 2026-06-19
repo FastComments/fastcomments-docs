@@ -1,0 +1,7 @@
+{
+  "method": "delete_tenant_user",
+  "signatureHash": "20cc94f671b5c0c1522713b79442033ba8efc38b35c77c692c7d827207634f4a",
+  "generatedAt": "2026-06-19T18:51:10.631Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteTenantUserParams = DeleteTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-8421\".to_string(),\n        delete_comments: Some(\"yes\".to_string()),\n        comment_delete_mode: Some(\"permanent\".to_string()),\n    };\n    let _response: ApiEmptyResponse = delete_tenant_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

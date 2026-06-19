@@ -1,0 +1,7 @@
+{
+  "method": "get_domain_config",
+  "signatureHash": "c6d9415ed146e316d611f5860d81a653bd098708748453c96c542080379b1987",
+  "generatedAt": "2026-06-19T18:51:20.892Z",
+  "codeExample": "async fn fetch_domain_config() -> Result<GetDomainConfigResponse, Error> {\n    let tenant_id: String = \"acme-corp-tenant\".to_string();\n    let domain_override: Option<String> = Some(\"news.example.com\".to_string());\n    let domain: String = domain_override.unwrap_or_else(|| \"blog.example.com\".to_string());\n    let params: GetDomainConfigParams = GetDomainConfigParams { tenant_id, domain };\n    let cfg: &configuration::Configuration = &configuration;\n    let response: GetDomainConfigResponse = get_domain_config(cfg, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

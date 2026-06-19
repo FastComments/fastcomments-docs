@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "9688991bcc74fc13b62e851aedb8abe784b5504274f09361c31970a28064d34d",
+  "generatedAt": "2026-06-19T18:51:18.836Z",
+  "codeExample": "utility::string_t tag = U(\"launch\");\nutility::string_t tenantId = U(\"my-tenant-123\");\nDeleteHashTagRequestBody body;\nboost::optional<utility::string_t> optTenant(tenantId);\nboost::optional<DeleteHashTagRequestBody> optBody(body);\napi->deleteHashTag(tag, optTenant, optBody)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto copied = std::make_shared<APIEmptyResponse>(*resp);\n            (void)copied;\n        }\n    } catch (const std::exception &e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

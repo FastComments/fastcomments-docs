@@ -1,0 +1,7 @@
+{
+  "method": "get_count",
+  "signatureHash": "fd8a90a1bd4e93924bbeb7689d20794a9affb6459c4fb26def5d899f1cbf35c3",
+  "generatedAt": "2026-06-19T21:44:59.374Z",
+  "codeExample": "async fn example_get_count() -> Result<ModerationApiCountCommentsResponse, Error> {\n    let params: GetCountParams = GetCountParams {\n        text_search: Some(\"breaking election coverage\".to_string()),\n        by_ip_from_comment: Some(\"203.0.113.45\".to_string()),\n        filter: Some(\"status:approved\".to_string()),\n        search_filters: Some(\"section:politics tag:analysis\".to_string()),\n        demo: Some(false),\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let response: ModerationApiCountCommentsResponse = get_count(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

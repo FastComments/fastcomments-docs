@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "5cd41bd366ce5e60018ee6cb96be755186126996dbb4da81f983b3462b734cce",
+  "generatedAt": "2026-06-19T18:51:08.549Z",
+  "codeExample": "let (response, httpResponse) = client.deleteQuestionConfig(tenantId = \"my-tenant-123\", id = \"\")\n\nif response.isSome:\n  let deleted = response.get()\n  echo \"Question config deleted for tenant: \", \"my-tenant-123\"\nelse:\n  echo \"Failed to delete question config\"",
+  "model": "gpt-5-mini"
+}

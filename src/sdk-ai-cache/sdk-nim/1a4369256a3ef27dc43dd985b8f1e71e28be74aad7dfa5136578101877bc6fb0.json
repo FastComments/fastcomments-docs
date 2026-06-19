@@ -1,0 +1,7 @@
+{
+  "method": "flagComment",
+  "signatureHash": "1a4369256a3ef27dc43dd985b8f1e71e28be74aad7dfa5136578101877bc6fb0",
+  "generatedAt": "2026-06-19T18:51:06.866Z",
+  "codeExample": "let (response, httpResponse) = client.flagComment(\n  tenantId = \"my-tenant-123\",\n  id = \"cmt-98765\",\n  userId = \"user-12345\",\n  anonUserId = \"\"\n)\n\nif response.isSome:\n  let flagResp = response.get()\n  echo \"Flag response received\"\nelse:\n  echo \"No flag response returned\"",
+  "model": "gpt-5-mini"
+}

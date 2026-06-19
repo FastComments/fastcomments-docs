@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "58cce782cf82ec4c271c72796d4759d0e339e0e11747340cc099665cc3ac6188",
+  "generatedAt": "2026-06-19T21:44:59.863Z",
+  "codeExample": "(async () => {\n  const textSearch: string = 'How do I reset my account password?';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSIsIm5hbWUiOiJKb2huIERvZSJ9.V1Qf4Qk6Zx7Yh2b9lK8e3P0sR2t9uF6a8gHjKlMnOpQ';\n  const suggestWithoutSso: ModerationSuggestResponse = await getSearchSuggest(textSearch);\n  const suggestWithSso: ModerationSuggestResponse = await getSearchSuggest(textSearch, sso);\n  console.log(suggestWithoutSso, suggestWithSso);\n})();",
+  "model": "gpt-5-mini"
+}

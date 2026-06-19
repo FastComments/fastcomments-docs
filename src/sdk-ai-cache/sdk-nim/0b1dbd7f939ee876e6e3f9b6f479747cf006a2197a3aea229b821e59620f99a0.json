@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "0b1dbd7f939ee876e6e3f9b6f479747cf006a2197a3aea229b821e59620f99a0",
+  "generatedAt": "2026-06-19T18:51:09.552Z",
+  "codeExample": "let (response, httpResponse) = client.sendLoginLink(tenantId = \"my-tenant-123\", id = \"user-456\", redirectURL = \"https://app.newsportal.com/welcome\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Login link sent successfully\"\nelse:\n  echo \"Failed to send login link, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

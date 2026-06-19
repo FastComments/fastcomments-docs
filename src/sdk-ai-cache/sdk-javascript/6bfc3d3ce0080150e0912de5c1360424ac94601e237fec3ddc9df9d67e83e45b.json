@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "6bfc3d3ce0080150e0912de5c1360424ac94601e237fec3ddc9df9d67e83e45b",
+  "generatedAt": "2026-06-19T21:44:56.070Z",
+  "codeExample": "const commentIdSimple: string = \"cmt_93a2b1d4\";\nconst resultSimple: APIEmptyResponse = await postSetCommentReviewStatus(commentIdSimple);\n\nconst commentIdWithOptions: string = \"cmt_7a8f2b6c\";\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjMifQ.signature\";\nconst resultWithOptions: APIEmptyResponse = await postSetCommentReviewStatus(commentIdWithOptions, true, ssoToken);",
+  "model": "gpt-5-mini"
+}

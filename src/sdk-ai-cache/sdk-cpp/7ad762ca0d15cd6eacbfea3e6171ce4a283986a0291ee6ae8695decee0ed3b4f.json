@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "7ad762ca0d15cd6eacbfea3e6171ce4a283986a0291ee6ae8695decee0ed3b4f",
+  "generatedAt": "2026-06-19T21:45:00.526Z",
+  "codeExample": "boost::optional<utility::string_t> value = boost::optional<utility::string_t>(U(\"hate speech\"));\nboost::optional<utility::string_t> filters = boost::optional<utility::string_t>(U(\"tenantId:my-tenant-123;moderationStatus:unreviewed\"));\nboost::optional<utility::string_t> searchFilters = boost::optional<utility::string_t>(U(\"authorEmail:moderator@example.com\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"my-sso-jwt-token-abc123\"));\napi->getSearchCommentsSummary(value, filters, searchFilters, sso)\n    .then([](std::shared_ptr<ModerationCommentSearchResponse> resp){\n        auto result = resp ? resp : std::make_shared<ModerationCommentSearchResponse>();\n        (void)result;\n    });",
+  "model": "gpt-5-mini"
+}

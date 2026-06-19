@@ -1,0 +1,7 @@
+{
+  "method": "get_users_info",
+  "signatureHash": "444df85e429f17db26dc1a5cc27611e4f2b996aba3ac60710e780017e5cc7c59",
+  "generatedAt": "2026-06-19T18:51:11.245Z",
+  "codeExample": "let params: GetUsersInfoParams = GetUsersInfoParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    ids: \"alice@example.com,bob@example.com,carol@example.com\".to_string(),\n    page_size: Some(100),\n};\nlet users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "333585e3987000472d76aa8bd6e1c306a910dee42141659fe694a8745dc9d470",
+  "generatedAt": "2026-06-19T18:51:20.203Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nBlockFromCommentParams params;\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId;\napi->blockUserFromComment(tenantId, commentId, params, userId, anonUserId)\n.then([](pplx::task<std::shared_ptr<BlockSuccess>> task){\n    try {\n        auto result = task.get();\n        auto ack = std::make_shared<BlockSuccess>();\n        bool blocked = (result != nullptr);\n        (void)ack; (void)blocked;\n    } catch(...) {}\n});",
+  "model": "gpt-5-mini"
+}

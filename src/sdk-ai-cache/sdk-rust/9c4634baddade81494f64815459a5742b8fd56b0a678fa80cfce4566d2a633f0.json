@@ -1,0 +1,7 @@
+{
+  "method": "update_comment",
+  "signatureHash": "9c4634baddade81494f64815459a5742b8fd56b0a678fa80cfce4566d2a633f0",
+  "generatedAt": "2026-06-19T18:51:15.565Z",
+  "codeExample": "let params: UpdateCommentParams = UpdateCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"news/article-2026/comments/12345\".to_string(),\n    updatable_comment_params: models::UpdatableCommentParams {\n        content: \"Thanks for the update — I corrected the typo and clarified the timeline.\".to_string(),\n        ..Default::default()\n    },\n    context_user_id: Some(\"editor-42\".to_string()),\n    do_spam_check: Some(true),\n    is_live: Some(true),\n};\n\nlet response: ApiEmptyResponse = update_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

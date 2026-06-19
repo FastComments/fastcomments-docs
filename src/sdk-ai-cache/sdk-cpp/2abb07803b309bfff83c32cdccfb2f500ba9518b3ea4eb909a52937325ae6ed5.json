@@ -1,0 +1,7 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "2abb07803b309bfff83c32cdccfb2f500ba9518b3ea4eb909a52937325ae6ed5",
+  "generatedAt": "2026-06-19T18:51:10.039Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nutility::string_t broadcastId = U(\"broadcast-42\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->unPinComment(tenantId, commentId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<ChangeCommentPinStatusResponse>();\n        std::cout << \"Unpin operation completed\\n\";\n    } catch (const std::exception& e) {\n        std::cerr << \"Unpin failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini"
+}

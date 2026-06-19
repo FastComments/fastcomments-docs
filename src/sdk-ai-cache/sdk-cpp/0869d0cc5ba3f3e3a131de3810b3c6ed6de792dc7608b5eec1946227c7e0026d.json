@@ -1,0 +1,7 @@
+{
+  "method": "getPagesPublic",
+  "signatureHash": "0869d0cc5ba3f3e3a131de3810b3c6ed6de792dc7608b5eec1946227c7e0026d",
+  "generatedAt": "2026-06-19T18:51:16.290Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> cursor = utility::string_t(U(\"cursor_abc\"));\nboost::optional<int32_t> limit = 50;\nboost::optional<utility::string_t> q = utility::string_t(U(\"status:published\"));\nboost::optional<PagesSortBy> sortBy = PagesSortBy::NEWEST;\nboost::optional<bool> hasComments = true;\napi->getPagesPublic(tenantId, cursor, limit, q, sortBy, hasComments)\n.then([](std::shared_ptr<GetPublicPagesResponse> resp){\n    if (!resp) resp = std::make_shared<GetPublicPagesResponse>();\n})\n.wait();",
+  "model": "gpt-5-mini"
+}

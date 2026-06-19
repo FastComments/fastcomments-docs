@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "6ca4db22b883f7aa088d7dc66e80880801a3955e6b16abc1429463c0e58b323e",
+  "generatedAt": "2026-06-19T18:51:12.667Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = utility::conversions::to_string_t(\"user@example.com\");\nboost::optional<utility::string_t> badgeId = utility::conversions::to_string_t(\"badge-elite-5\");\nboost::optional<double> type = 2.0;\nboost::optional<bool> displayedOnComments = true;\nboost::optional<double> limit = 50.0;\nboost::optional<double> skip = 0.0;\n\napi->getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)\n   .then([](pplx::task<std::shared_ptr<APIGetUserBadgesResponse>> t) {\n       try {\n           auto resp = t.get();\n           auto copy = std::make_shared<APIGetUserBadgesResponse>(*resp);\n           return copy;\n       } catch (...) {\n           return std::shared_ptr<APIGetUserBadgesResponse>();\n       }\n   });",
+  "model": "gpt-5-mini"
+}

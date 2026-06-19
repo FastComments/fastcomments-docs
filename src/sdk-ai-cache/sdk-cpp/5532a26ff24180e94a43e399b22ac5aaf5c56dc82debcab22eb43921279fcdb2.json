@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "5532a26ff24180e94a43e399b22ac5aaf5c56dc82debcab22eb43921279fcdb2",
+  "generatedAt": "2026-06-19T18:51:12.920Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"feed-post-456\");\nReactBodyParams reactBodyParams;\nreactBodyParams.reaction = U(\"like\");\nboost::optional<bool> isUndo = false;\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-01\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)\n.then([](std::shared_ptr<ReactFeedPostResponse> resp) {\n    if (resp) {\n        auto resultCopy = std::make_shared<ReactFeedPostResponse>(*resp);\n    }\n});",
+  "model": "gpt-5-mini"
+}

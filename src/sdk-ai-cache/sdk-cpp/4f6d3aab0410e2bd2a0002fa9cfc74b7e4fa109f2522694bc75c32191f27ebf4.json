@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "4f6d3aab0410e2bd2a0002fa9cfc74b7e4fa109f2522694bc75c32191f27ebf4",
+  "generatedAt": "2026-06-19T21:45:00.282Z",
+  "codeExample": "boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\napi->getCounts(sso).then([](pplx::task<std::shared_ptr<GetBannedUsersCountResponse>> task) {\n    try {\n        auto resp = task.get();\n        if(!resp) resp = std::make_shared<GetBannedUsersCountResponse>();\n    } catch(...) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

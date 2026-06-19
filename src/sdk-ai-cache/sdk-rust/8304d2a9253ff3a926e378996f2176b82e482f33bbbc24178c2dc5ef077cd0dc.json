@@ -1,0 +1,7 @@
+{
+  "method": "get_user_internal_profile",
+  "signatureHash": "8304d2a9253ff3a926e378996f2176b82e482f33bbbc24178c2dc5ef077cd0dc",
+  "generatedAt": "2026-06-19T21:44:54.924Z",
+  "codeExample": "async fn fetch_profile() -> Result<GetUserInternalProfileResponse, Error> {\n    let params: GetUserInternalProfileParams = GetUserInternalProfileParams {\n        comment_id: Some(String::from(\"cmt-72a1f4\")),\n        sso: Some(String::from(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlcjEyMyJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\")),\n    };\n    let profile: GetUserInternalProfileResponse = get_user_internal_profile(&configuration, params).await?;\n    Ok(profile)\n}",
+  "model": "gpt-5-mini"
+}

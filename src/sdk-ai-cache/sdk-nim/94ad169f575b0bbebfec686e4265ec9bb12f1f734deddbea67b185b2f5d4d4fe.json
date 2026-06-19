@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadges",
+  "signatureHash": "94ad169f575b0bbebfec686e4265ec9bb12f1f734deddbea67b185b2f5d4d4fe",
+  "generatedAt": "2026-06-19T21:44:54.430Z",
+  "codeExample": "let (response, httpResponse) = client.getManualBadges(sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\")\nif response.isSome:\n  let badges = response.get()\n  echo \"Manual badges received:\"\n  echo badges\nelse:\n  echo \"No manual badges returned.\"\n  echo httpResponse",
+  "model": "gpt-5-mini"
+}

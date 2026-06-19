@@ -1,0 +1,7 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "b4b12082aef6cbd00f1b17ada5e43b1066f332961f0d839152d10fdd1d3671ca",
+  "generatedAt": "2026-06-19T18:51:14.016Z",
+  "codeExample": "let config = AddDomainConfigParams(\n  domain: \"comments.example-news.com\",\n  enabled: true,\n  allowedOrigins: @[\"https://www.example-news.com\", \"https://m.example-news.com\"],\n  commentsPath: \"/news/world/election-coverage\",\n  priority: 5\n)\nlet (response, httpResponse) = client.addDomainConfig(tenantId = \"my-tenant-123\", addDomainConfigParams = config)\nif response.isSome:\n  let created = response.get()\n  echo \"Created domain config:\", created\nelse:\n  echo \"Failed to create domain config, HTTP status:\", httpResponse.status.code",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "e88cfc0efca5b338c735de09efae5bc3cf4ba8972d5342bc63a0bdb23d452c99",
+  "generatedAt": "2026-06-19T18:51:14.227Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto userId = utility::string_t(U(\"user@example.com\"));\nauto bodyPtr = std::make_shared<UpdateTenantUserBody>();\nboost::optional<utility::string_t> updateComments = boost::optional<utility::string_t>(U(\"true\"));\napi->updateTenantUser(tenantId, userId, *bodyPtr, updateComments)\n.then([](std::shared_ptr<APIEmptyResponse> resp) {\n    if (resp) std::cout << \"Tenant user updated successfully\\n\";\n    else std::cout << \"No response from updateTenantUser\\n\";\n});",
+  "model": "gpt-5-mini"
+}

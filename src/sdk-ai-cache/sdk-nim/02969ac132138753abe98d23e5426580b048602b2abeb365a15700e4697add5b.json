@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "02969ac132138753abe98d23e5426580b048602b2abeb365a15700e4697add5b",
+  "generatedAt": "2026-06-19T21:44:53.741Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentBanStatus(commentId = \"cmt-987654321\", sso = \"\")\n\nif response.isSome:\n  let banStatus = response.get()\n  echo \"Ban status for comment cmt-987654321: \", banStatus\nelse:\n  echo \"No ban status returned for comment cmt-987654321\"",
+  "model": "gpt-5-mini"
+}

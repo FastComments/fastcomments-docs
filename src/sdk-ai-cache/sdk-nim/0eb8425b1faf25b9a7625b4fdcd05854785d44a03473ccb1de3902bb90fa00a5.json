@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "0eb8425b1faf25b9a7625b4fdcd05854785d44a03473ccb1de3902bb90fa00a5",
+  "generatedAt": "2026-06-19T18:51:07.197Z",
+  "codeExample": "let (response, httpResponse) = client.getUserNotifications(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  pageSize = 0,\n  afterId = \"\",\n  includeContext = false,\n  afterCreatedAt = 0,\n  unreadOnly = false,\n  dmOnly = false,\n  noDm = false,\n  includeTranslations = false,\n  includeTenantNotifications = false,\n  sso = \"\"\n)\n\nif response.isSome:\n  let notifications = response.get()\n  echo notifications",
+  "model": "gpt-5-mini"
+}

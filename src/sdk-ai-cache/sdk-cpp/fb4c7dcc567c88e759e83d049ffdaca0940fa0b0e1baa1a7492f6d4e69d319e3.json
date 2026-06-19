@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "fb4c7dcc567c88e759e83d049ffdaca0940fa0b0e1baa1a7492f6d4e69d319e3",
+  "generatedAt": "2026-06-19T18:51:23.440Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateTenantPackageBody body;\nbody.name = U(\"Premium Support\");\nbody.contactEmail = U(\"admin@example.com\");\nbody.seats = boost::optional<int>(25);\nbody.expiresAt = boost::optional<utility::string_t>(U(\"2026-12-31\"));\n\napi->createTenantPackage(tenantId, body)\n.then([](std::shared_ptr<CreateTenantPackageResponse> resp){\n    auto pkg = std::make_shared<CreateTenantPackageResponse>();\n    if (resp) pkg = resp;\n    return pkg;\n})\n.then([](std::shared_ptr<CreateTenantPackageResponse> finalResp){\n    (void)finalResp;\n});",
+  "model": "gpt-5-mini"
+}

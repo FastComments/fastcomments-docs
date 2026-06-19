@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "701451bb42a9cc99ad9e3a039f4b405399712f9c673b39f30e2000eed066d122",
+  "generatedAt": "2026-06-19T18:51:08.999Z",
+  "codeExample": "let body = ReplaceTenantUserBody(\n  displayName = \"Jane Doe\",\n  email = \"jane.doe@example.com\",\n  externalId = \"jdoe-789\",\n  admin = false,\n  enabled = true,\n  tags = @[\"editor\", \"subscriber\"]\n)\n\nlet (response, httpResponse) = client.replaceTenantUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  replaceTenantUserBody = body,\n  updateComments = \"true\"\n)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  echo \"ReplaceTenantUser succeeded, http status:\", httpResponse.status",
+  "model": "gpt-5-mini"
+}

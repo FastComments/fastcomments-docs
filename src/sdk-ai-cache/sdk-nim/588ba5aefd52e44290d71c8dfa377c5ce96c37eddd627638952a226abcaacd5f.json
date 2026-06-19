@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "588ba5aefd52e44290d71c8dfa377c5ce96c37eddd627638952a226abcaacd5f",
+  "generatedAt": "2026-06-19T18:51:06.623Z",
+  "codeExample": "let (response, httpResponse) = client.deleteV2PageReact(tenantId = \"my-tenant-123\", urlId = \"news/2026/politics-election\", id = \"react-456\")\nif response.isSome:\n  let react = response.get()\n  echo react\nelse:\n  echo \"No reaction returned, status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

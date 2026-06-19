@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "274404691932ec5eac0b769c953e82a6965f54c2dc2352e2c6c8289681764f98",
+  "generatedAt": "2026-06-19T18:51:06.846Z",
+  "codeExample": "let body = ChangeTicketStateBody()\nlet (response, httpResponse) = client.changeTicketState(tenantId = \"my-tenant-123\", userId = \"user-456\", id = \"ticket-789\", changeTicketStateBody = body)\nif response.isSome:\n  let ticketResp = response.get()\n  echo \"Ticket state changed:\", ticketResp",
+  "model": "gpt-5-mini"
+}

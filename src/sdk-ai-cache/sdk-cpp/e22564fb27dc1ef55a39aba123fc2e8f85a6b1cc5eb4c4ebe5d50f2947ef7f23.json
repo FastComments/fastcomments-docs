@@ -1,0 +1,7 @@
+{
+  "method": "getBanUsersFromComment",
+  "signatureHash": "e22564fb27dc1ef55a39aba123fc2e8f85a6b1cc5eb4c4ebe5d50f2947ef7f23",
+  "generatedAt": "2026-06-19T21:44:56.521Z",
+  "codeExample": "utility::string_t commentId = U(\"comment-abc-123\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nstd::shared_ptr<GetBannedUsersFromCommentResponse> result;\napi->getBanUsersFromComment(commentId, sso).then([&result](pplx::task<std::shared_ptr<GetBannedUsersFromCommentResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) result = std::make_shared<GetBannedUsersFromCommentResponse>(*resp);\n    } catch (const std::exception&) {\n        result.reset();\n    }\n});",
+  "model": "gpt-5-mini"
+}

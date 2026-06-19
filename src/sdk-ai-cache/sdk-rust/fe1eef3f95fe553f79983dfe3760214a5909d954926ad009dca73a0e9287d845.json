@@ -1,0 +1,7 @@
+{
+  "method": "get_moderation_comment_text",
+  "signatureHash": "fe1eef3f95fe553f79983dfe3760214a5909d954926ad009dca73a0e9287d845",
+  "generatedAt": "2026-06-19T21:44:58.847Z",
+  "codeExample": "async fn fetch_comment_text() -> Result<(), Error> {\n    let params: GetModerationCommentTextParams = GetModerationCommentTextParams {\n        comment_id: String::from(\"news/technology/2026/06/19/ai-ethics-12345\"),\n        sso: Some(String::from(\"sso-token-7f3a9b2c\")),\n    };\n    let _response: GetCommentTextResponse = get_moderation_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

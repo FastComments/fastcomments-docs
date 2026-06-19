@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "b1c056938d332f0d128c8984f4182b99e50d7ef19210dd54593a21f387830230",
+  "generatedAt": "2026-06-19T18:51:05.505Z",
+  "codeExample": "let (response, httpResponse) = client.deleteEmailTemplateRenderError(tenantId = \"my-tenant-123\", id = \"welcome-email-template\", errorId = \"err-20250615-01\")\nif response.isSome:\n  let emptyResp = response.get()\n  echo \"Deleted render error, tenant:\", \"my-tenant-123\"\n  echo \"HTTP status:\", httpResponse.status\nelse:\n  echo \"No body returned, HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini"
+}

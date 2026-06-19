@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "22ac7165df9e9992448c22501fcd619ed7147143312d10f48b6a44957ac5b1f8",
+  "generatedAt": "2026-06-19T18:51:08.306Z",
+  "codeExample": "let (response, httpResponse) = client.getModerator(tenantId = \"my-tenant-123\", id = \"mod-456\")\nif response.isSome:\n  let moderator = response.get()\n  echo moderator\nelse:\n  echo \"Moderator not found, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

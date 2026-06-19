@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "01ceeb6fb38c5cf7d6388deb7e390743d9517c1b8cde591efdf8660e93e2597d",
+  "generatedAt": "2026-06-19T18:51:16.885Z",
+  "codeExample": "var body: CreateModeratorBody\nbody.username = \"alice.moderator\"\nbody.displayName = \"Alice Moderator\"\nbody.email = \"alice@news-site.com\"\nbody.enabled = true\nbody.roles = @[\"moderator\"]\nbody.notes = \"\"\n\nlet (response, httpResponse) = client.createModerator(tenantId = \"my-tenant-123\", createModeratorBody = body)\nif response.isSome:\n  let created = response.get()\n  echo \"Created moderator ID: \", created.id",
+  "model": "gpt-5-mini"
+}

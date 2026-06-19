@@ -1,0 +1,7 @@
+{
+  "method": "get_notifications",
+  "signatureHash": "0a549cc0d02a67038006c47a414fdd9dc2d325b7ebbd58c96af7ccd161615c93",
+  "generatedAt": "2026-06-19T18:51:08.426Z",
+  "codeExample": "async fn run_get_notifications() -> Result<(), Error> {\n    let params: GetNotificationsParams = GetNotificationsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-9a7b\".to_string()),\n        url_id: Some(\"news/article/launch-announcement\".to_string()),\n        from_comment_id: Some(\"cmt-1024\".to_string()),\n        viewed: Some(false),\n        skip: Some(0.0),\n    };\n    let notifications: GetNotificationsResponse = get_notifications(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

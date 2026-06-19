@@ -1,0 +1,7 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "141eb731d63240bffc4ab5d57d163bb946b0ebd5c2ed03be04e2c6c7cb893740",
+  "generatedAt": "2026-06-19T18:51:08.370Z",
+  "codeExample": "let (response, httpResponse) = client.deleteDomainConfig(tenantId = \"my-tenant-123\", domain = \"news.example.com\")\nif response.isSome:\n  let deleted = response.get()\n  echo \"DeleteDomainConfig succeeded for tenant \", \"my-tenant-123\"\nelse:\n  echo \"DeleteDomainConfig failed. HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

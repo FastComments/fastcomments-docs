@@ -1,0 +1,7 @@
+{
+  "method": "update_subscription",
+  "signatureHash": "871d6f68a8cd21b3060f01c3b93807eed6601bec33af065a4cd0c28bf71c4f2a",
+  "generatedAt": "2026-06-19T18:51:11.900Z",
+  "codeExample": "async fn run_update() -> Result<UpdateSubscriptionApiResponse, Error> {\n    let params: UpdateSubscriptionParams = UpdateSubscriptionParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"sub-8f3a2b\".to_string(),\n        update_api_user_subscription_data: models::UpdateApiUserSubscriptionData {\n            active: true,\n            plan: \"standard\".to_string(),\n            topics: vec![\"news/article\".to_string(), \"product/updates\".to_string()],\n        },\n        user_id: Some(\"user-987\".to_string()),\n    };\n    let updated: UpdateSubscriptionApiResponse = update_subscription(&configuration, params).await?;\n    Ok(updated)\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "eb435387b757ade01ec3e7b791dab4149fc4b17e227e667af4b53f170e3b9a4e",
+  "generatedAt": "2026-06-19T21:44:57.780Z",
+  "codeExample": "let (response, httpResponse) = client.getApiIds(\n  textSearch = \"urgent moderation review\",\n  byIPFromComment = \"203.0.113.45\",\n  filters = \"status:pending,flagged\",\n  searchFilters = \"author:jane.doe@example.com\",\n  afterId = \"cmt_9f8e7d6a\",\n  demo = false,\n  sso = \"sso-token-6b7f9a\"\n)\n\nif response.isSome:\n  let idsResp = response.get()\n  echo idsResp",
+  "model": "gpt-5-mini"
+}

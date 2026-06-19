@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "ae5105a36fe291bfe3730eab9e6a13c9d24723d2082127a27ed0d6099490231f",
+  "generatedAt": "2026-06-19T21:44:58.853Z",
+  "codeExample": "const query: string = 'renewable energy incentives';\nconst filters: string = 'status:approved AND created_at>2025-01-01';\nconst searchFilters: string | undefined = undefined;\nconst sso: string | undefined = undefined;\nconst summary: ModerationCommentSearchResponse = await getSearchCommentsSummary(query, filters, searchFilters, sso);",
+  "model": "gpt-5-mini"
+}

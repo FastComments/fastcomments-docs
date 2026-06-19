@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "c7105ed4a181a2440afb2f65d738c015067a23bd4799e8df882e2a95e0c1a002",
+  "generatedAt": "2026-06-19T18:51:12.787Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"admin-user-456\");\nauto updateTenantBody = std::make_shared<UpdateTenantBody>();\nupdateTenantBody->name = U(\"Acme Corporation\");\nupdateTenantBody->ownerEmail = boost::optional<utility::string_t>(U(\"owner@acme.com\"));\nupdateTenantBody->isActive = boost::optional<bool>(true);\napi->updateTenant(tenantId, id, updateTenantBody)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n    try {\n        auto resp = t.get();\n        (void)resp;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

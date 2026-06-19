@@ -1,0 +1,7 @@
+{
+  "method": "search_users",
+  "signatureHash": "11b74077a2714b12a5b6493ded323c6faf56c3e51b983d48d9d7cd22dd3367d8",
+  "generatedAt": "2026-06-19T18:51:09.456Z",
+  "codeExample": "async fn fetch_users() -> Result<(), Error> {\n    let params: SearchUsersParams = SearchUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article-2026-06\".to_string(),\n        username_starts_with: Some(\"jo\".to_string()),\n        mention_group_ids: Some(vec![\n            \"group-moderators\".to_string(),\n            \"group-editors\".to_string(),\n        ]),\n        sso: Some(\"google\".to_string()),\n        search_section: Some(\"comments\".to_string()),\n    };\n\n    let result: SearchUsersResult = search_users(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

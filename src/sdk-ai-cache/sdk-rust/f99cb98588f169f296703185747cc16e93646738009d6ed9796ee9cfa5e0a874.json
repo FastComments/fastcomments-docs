@@ -1,0 +1,7 @@
+{
+  "method": "patch_hash_tag",
+  "signatureHash": "f99cb98588f169f296703185747cc16e93646738009d6ed9796ee9cfa5e0a874",
+  "generatedAt": "2026-06-19T18:51:16.093Z",
+  "codeExample": "let cfg: &configuration::Configuration = &configuration;\nlet body: models::UpdateHashTagBody = Default::default();\nlet params: PatchHashTagParams = PatchHashTagParams {\n    tag: \"news/article\".to_string(),\n    tenant_id: Some(\"acme-corp-tenant\".to_string()),\n    update_hash_tag_body: Some(body),\n};\nlet response: UpdateHashTagResponse = patch_hash_tag(cfg, params).await?;",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "save_comment",
+  "signatureHash": "48e5b8e5d4c8852b8c587394ac6492afc8d07f611bd05a25a294a1553a00a25e",
+  "generatedAt": "2026-06-19T18:51:12.938Z",
+  "codeExample": "async fn run() -> Result<ApiSaveCommentResponse, Error> {\n    let create_comment_params: models::CreateCommentParams = models::CreateCommentParams {\n        content: \"Great in-depth coverage of the Rust 2026 release!\".to_string(),\n        author_id: Some(\"user-4821\".to_string()),\n        author_name: Some(\"Jamie Morgan\".to_string()),\n        permalink: Some(\"https://news.example.com/articles/2026/rust-release\".to_string()),\n        parent_id: None,\n        metadata: None,\n    };\n    let params: SaveCommentParams = SaveCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_comment_params,\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        send_emails: Some(false),\n        populate_notifications: Some(true),\n    };\n    let response: ApiSaveCommentResponse = save_comment(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

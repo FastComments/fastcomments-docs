@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "491074cdfa3ba0e0c655cd84652c07345c0403f919f553935ddd37f1a91966da",
+  "generatedAt": "2026-06-19T18:51:06.702Z",
+  "codeExample": "let (response, httpResponse) = client.getNotificationCount(tenantId = \"my-tenant-123\", userId = \"user-987\", urlId = \"news/2026/06/election-results\", fromCommentId = \"\", viewed = false)\nif response.isSome:\n  let notifyData = response.get()\n  echo notifyData",
+  "model": "gpt-5-mini"
+}

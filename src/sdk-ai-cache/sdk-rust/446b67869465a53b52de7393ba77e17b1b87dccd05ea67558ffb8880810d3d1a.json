@@ -1,0 +1,7 @@
+{
+  "method": "update_tenant_package",
+  "signatureHash": "446b67869465a53b52de7393ba77e17b1b87dccd05ea67558ffb8880810d3d1a",
+  "generatedAt": "2026-06-19T18:51:08.966Z",
+  "codeExample": "async fn run_update_package() -> Result<(), Error> {\n    let params: UpdateTenantPackageParams = UpdateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"package-premium\".to_string(),\n        update_tenant_package_body: models::UpdateTenantPackageBody {\n            name: Some(\"Premium\".to_string()),\n            description: Some(\"Premium moderation and analytics package\".to_string()),\n            price_cents: Some(2999),\n            features: Some(vec![\n                \"moderation\".to_string(),\n                \"analytics\".to_string(),\n                \"priority-support\".to_string(),\n            ]),\n            active: Some(true),\n        },\n    };\n\n    let _response: ApiEmptyResponse = update_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

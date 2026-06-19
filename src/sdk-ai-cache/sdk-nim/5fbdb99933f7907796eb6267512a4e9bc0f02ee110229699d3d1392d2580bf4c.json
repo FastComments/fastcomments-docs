@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "5fbdb99933f7907796eb6267512a4e9bc0f02ee110229699d3d1392d2580bf4c",
+  "generatedAt": "2026-06-19T18:51:15.492Z",
+  "codeExample": "let postParams = CreateFeedPostParams(\n  title = \"Major Acquisition by TechCorp\",\n  content = \"TechCorp has acquired SoftWorks in a deal valued at $1.2B, creating a new market leader.\",\n  url = \"news/tech/major-acquisition\",\n  tags = @[\"business\", \"technology\"],\n  authorId = \"journalist-321\"\n)\n\nlet (response, httpResponse) = client.createFeedPost(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = postParams,\n  broadcastId = \"\",\n  isLive = false,\n  doSpamCheck = false,\n  skipDupCheck = false\n)\n\nif response.isSome:\n  let created = response.get()\n  discard created",
+  "model": "gpt-5-mini"
+}

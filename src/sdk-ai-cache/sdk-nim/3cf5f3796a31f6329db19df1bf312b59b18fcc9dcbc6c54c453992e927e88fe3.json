@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "3cf5f3796a31f6329db19df1bf312b59b18fcc9dcbc6c54c453992e927e88fe3",
+  "generatedAt": "2026-06-19T18:51:13.340Z",
+  "codeExample": "let (response, httpResponse) = client.deleteTenant(tenantId = \"my-tenant-123\", id = \"\", sure = \"\")\nif response.isSome:\n  let emptyResp = response.get()\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

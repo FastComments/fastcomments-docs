@@ -1,0 +1,7 @@
+{
+  "method": "un_lock_comment",
+  "signatureHash": "b491af517a78ca7bb85527b0212ac215c376cb6fe094496c6c35fff001342d51",
+  "generatedAt": "2026-06-19T18:51:07.439Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: UnLockCommentParams = UnLockCommentParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: String::from(\"news/article-123#comment-4829\"),\n        broadcast_id: String::from(\"broadcast-2025-06-19\"),\n        sso: Some(String::from(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\")),\n    };\n    let response: ApiEmptyResponse = un_lock_comment(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "delete_moderator",
+  "signatureHash": "509d79c50af55f91e65c188c065744a39a37069fb1369aa112c8f5f43c31ecbe",
+  "generatedAt": "2026-06-19T18:51:07.205Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteModeratorParams = DeleteModeratorParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"moderator-93b1f\"),\n        send_email: Some(String::from(\"moderator@acme-corp.com\")),\n    };\n    let _response: ApiEmptyResponse = delete_moderator(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

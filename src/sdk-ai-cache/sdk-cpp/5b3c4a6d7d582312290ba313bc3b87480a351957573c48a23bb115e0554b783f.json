@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "5b3c4a6d7d582312290ba313bc3b87480a351957573c48a23bb115e0554b783f",
+  "generatedAt": "2026-06-19T18:51:20.153Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t questionId = U(\"qstn-456\");\nboost::optional<utility::string_t> ifNoneMatch = U(\"W/\\\"5a2f3c\\\"\");\napi->getQuestionConfig(tenantId, questionId)\n.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){\n    try {\n        auto resp = t.get();\n        if (ifNoneMatch) {\n            auto etag = *ifNoneMatch;\n            (void)etag;\n        }\n        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();\n        (void)cfg;\n    } catch (const std::exception &ex) {\n        (void)ex;\n    }\n});",
+  "model": "gpt-5-mini"
+}

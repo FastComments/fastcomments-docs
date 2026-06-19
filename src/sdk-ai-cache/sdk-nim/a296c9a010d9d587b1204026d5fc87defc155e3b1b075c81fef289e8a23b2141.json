@@ -1,0 +1,7 @@
+{
+  "method": "logoutPublic",
+  "signatureHash": "a296c9a010d9d587b1204026d5fc87defc155e3b1b075c81fef289e8a23b2141",
+  "generatedAt": "2026-06-19T18:51:09.493Z",
+  "codeExample": "let (response, httpResponse) = client.logoutPublic(tenantId = \"my-tenant-123\", sessionId = \"sess-9a8b7c6d\", userId = \"editor-87\", revokeAll = false, ipAddress = \"\")\nif response.isSome:\n  let emptyResp = response.get()\n  echo \"Logout successful for user: \", \"editor-87\"\nelse:\n  echo \"Logout failed\"",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "6133ab4ba3405f3c9479a0850a1ed17907afc81764cf681ed53f7def5f6e008b",
+  "generatedAt": "2026-06-19T18:51:08.309Z",
+  "codeExample": "let (response, httpResponse) = client.createV2PageReact(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2026/06/fastcomments-release\",\n  id = \"\",\n  title = \"\"\n)\nif response.isSome:\n  let react = response.get()\n  echo \"Created page react: \", $react\nelse:\n  echo \"No react returned, HTTP status: \", $httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

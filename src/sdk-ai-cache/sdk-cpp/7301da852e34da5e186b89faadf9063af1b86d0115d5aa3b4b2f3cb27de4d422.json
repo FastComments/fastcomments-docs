@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "7301da852e34da5e186b89faadf9063af1b86d0115d5aa3b4b2f3cb27de4d422",
+  "generatedAt": "2026-06-19T18:51:16.920Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t urlId = utility::conversions::to_string_t(\"homepage-landing\");\nutility::string_t id = utility::conversions::to_string_t(\"user-987@example.com\");\nboost::optional<utility::string_t> title = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Introducing FastComments\"));\n\napi->createV2PageReact(tenantId, urlId, id, title)\n    .then([](std::shared_ptr<CreateV1PageReact> resp){\n        auto createdCopy = std::make_shared<CreateV1PageReact>(*resp);\n        return createdCopy;\n    })\n    .then([](std::shared_ptr<CreateV1PageReact> created){\n        (void)created;\n    })\n    .wait();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getModerationCommentText",
+  "signatureHash": "96813c970851c28eb1fad542d017ee29241b111a64cd8029b92a1297cc38af03",
+  "generatedAt": "2026-06-19T21:44:56.254Z",
+  "codeExample": "let (response, httpResponse) = client.getModerationCommentText(commentId = \"comment-9f8b7a6c\", sso = \"\")\nif response.isSome:\n  let commentData = response.get()\n  echo \"Moderation comment text retrieved\"\nelse:\n  echo \"No moderation comment text available\"",
+  "model": "gpt-5-mini"
+}

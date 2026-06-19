@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "148362b976c8f64fe02dbdb430b2c7dfc3260b6ff13cd33477b0284ca4221d17",
+  "generatedAt": "2026-06-19T18:51:11.388Z",
+  "codeExample": "let createCommentParams = CreateCommentParams(\n  urlId = \"news/2026/major-policy-change\",\n  content = \"This is a thoughtful comment on the policy change and its potential impacts.\",\n  authorName = \"Morgan Lee\",\n  authorEmail = \"morgan.lee@example.org\",\n  tags = @[\"policy\",\"analysis\"],\n  extraData = @[])\n\nlet (response, httpResponse) = client.saveComment(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = createCommentParams,\n  isLive = true,\n  doSpamCheck = true,\n  sendEmails = false,\n  populateNotifications = true)\n\nif response.isSome:\n  let saved = response.get()\n  discard saved",
+  "model": "gpt-5-mini"
+}

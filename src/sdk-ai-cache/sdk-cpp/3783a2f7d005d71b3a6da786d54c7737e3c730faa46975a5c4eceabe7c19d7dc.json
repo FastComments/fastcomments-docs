@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "3783a2f7d005d71b3a6da786d54c7737e3c730faa46975a5c4eceabe7c19d7dc",
+  "generatedAt": "2026-06-19T18:51:17.002Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"pkg-basic-001\");\nboost::optional<utility::string_t> requestedBy = U(\"admin@example.com\");\nauto task = api->getTenantPackage(tenantId, id)\n    .then([requestedBy](std::shared_ptr<GetTenantPackageResponse> resp) -> std::shared_ptr<GetTenantPackageResponse> {\n        if(!resp) return std::make_shared<GetTenantPackageResponse>();\n        if(requestedBy) {}\n        return std::make_shared<GetTenantPackageResponse>(*resp);\n    });",
+  "model": "gpt-5-mini"
+}

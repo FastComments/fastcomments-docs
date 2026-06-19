@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "9c09722197ad02940bf7923d1c33a40e6bfcb182e2b08ced68c431afe1aac5dc",
+  "generatedAt": "2026-06-19T18:51:08.712Z",
+  "codeExample": "let (response, httpResponse) = client.getV2PageReacts(tenantId = \"my-tenant-123\", urlId = \"news/elections/2026/us-primary-results\")\nif response.isSome:\n  let reacts = response.get()\n  echo \"Received reacts: \", $reacts\nelse:\n  echo \"No reacts available\"",
+  "model": "gpt-5-mini"
+}

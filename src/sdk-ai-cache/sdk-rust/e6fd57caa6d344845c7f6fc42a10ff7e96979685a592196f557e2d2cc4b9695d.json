@@ -1,0 +1,7 @@
+{
+  "method": "post_remove_comment",
+  "signatureHash": "e6fd57caa6d344845c7f6fc42a10ff7e96979685a592196f557e2d2cc4b9695d",
+  "generatedAt": "2026-06-19T21:44:54.715Z",
+  "codeExample": "async fn run_remove_comment() -> Result<PostRemoveCommentResponse, Error> {\n    let params: PostRemoveCommentParams = PostRemoveCommentParams {\n        comment_id: String::from(\"cmt-9f8b6a3\"),\n        sso: Some(String::from(\"sso-token-6f4e9a2b\")),\n    };\n    let response: PostRemoveCommentResponse = post_remove_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

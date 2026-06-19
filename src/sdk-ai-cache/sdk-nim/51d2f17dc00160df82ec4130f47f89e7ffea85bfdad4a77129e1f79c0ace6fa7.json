@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "51d2f17dc00160df82ec4130f47f89e7ffea85bfdad4a77129e1f79c0ace6fa7",
+  "generatedAt": "2026-06-19T21:44:54.899Z",
+  "codeExample": "let (response, httpResponse) = client.postSetCommentReviewStatus(\n  commentId = \"cmt-98765-news-article\",\n  reviewed = false,\n  sso = \"\"\n)\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Review status updated\"\nelse:\n  echo \"Failed to update review status: \" & $httpResponse.status",
+  "model": "gpt-5-mini"
+}

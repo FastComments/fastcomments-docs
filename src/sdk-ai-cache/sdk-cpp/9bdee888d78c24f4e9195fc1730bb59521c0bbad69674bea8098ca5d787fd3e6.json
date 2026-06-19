@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "9bdee888d78c24f4e9195fc1730bb59521c0bbad69674bea8098ca5d787fd3e6",
+  "generatedAt": "2026-06-19T18:51:12.879Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t search = U(\"funny cats\");\nboost::optional<utility::string_t> locale(U(\"en-US\"));\nboost::optional<utility::string_t> rating(U(\"pg\"));\nboost::optional<double> page(1.0);\n\napi->getGifsSearch(tenantId, search, locale, rating, page)\n.then([](pplx::task<std::shared_ptr<GetGifsSearchResponse>> t) {\n    try {\n        auto resp = t.get();\n        auto finalResp = resp ? resp : std::make_shared<GetGifsSearchResponse>();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

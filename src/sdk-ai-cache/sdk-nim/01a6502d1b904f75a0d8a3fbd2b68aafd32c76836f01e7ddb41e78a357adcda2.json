@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "01a6502d1b904f75a0d8a3fbd2b68aafd32c76836f01e7ddb41e78a357adcda2",
+  "generatedAt": "2026-06-19T18:51:11.267Z",
+  "codeExample": "let (response, httpResponse) = client.createTenantPackage(tenantId = \"my-tenant-123\", createTenantPackageBody = CreateTenantPackageBody())\n\nif response.isSome:\n  let pkg = response.get()\n  echo \"Created tenant package: \", $pkg\nelse:\n  echo \"Failed to create tenant package, HTTP response: \", $httpResponse",
+  "model": "gpt-5-mini"
+}

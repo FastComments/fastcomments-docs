@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_ban_status",
+  "signatureHash": "8db81be0ecdf11f4aa7257f4e0054b2675a1afd35cdb74671b3546fee52feb1c",
+  "generatedAt": "2026-06-19T21:44:59.016Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetCommentBanStatusParams = GetCommentBanStatusParams {\n        comment_id: String::from(\"cmt-9f8b7a6e-4d3c-11ee-8c99-0242ac120002\"),\n        sso: Some(String::from(\"acme-corp-tenant\")),\n    };\n    let response: GetCommentBanStatusResponse = get_comment_ban_status(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_votes_for_user",
+  "signatureHash": "8a850d61bf194aacda2853a15b48b0c8e2ee0b176115e86c1a93e5f6f2321e27",
+  "generatedAt": "2026-06-19T18:51:11.110Z",
+  "codeExample": "async fn fetch_votes_for_user() -> Result<(), Error> {\n    let params: GetVotesForUserParams = GetVotesForUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/2026/06/15/market-update\".to_string(),\n        user_id: Some(\"user_98765\".to_string()),\n        anon_user_id: Some(\"anon-4f3b2a\".to_string()),\n    };\n    let response: GetVotesForUserResponse = get_votes_for_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

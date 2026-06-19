@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "503793e208bfef1742b8f1a8346775a06aaf4c6699b1a33a277b0592e6f26e44",
+  "generatedAt": "2026-06-19T21:44:57.816Z",
+  "codeExample": "utility::string_t commentId = U(\"comment-8b3f4a2d\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->postRestoreDeletedComment(commentId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n    try {\n        std::shared_ptr<APIEmptyResponse> resp = t.get();\n        if (!resp) resp = std::make_shared<APIEmptyResponse>();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

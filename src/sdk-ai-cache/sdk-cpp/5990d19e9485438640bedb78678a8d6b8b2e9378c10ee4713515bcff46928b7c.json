@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "5990d19e9485438640bedb78678a8d6b8b2e9378c10ee4713515bcff46928b7c",
+  "generatedAt": "2026-06-19T18:51:11.880Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nutility::string_t fromName = U(\"Acme Support\");\nboost::optional<utility::string_t> note = boost::optional<utility::string_t>(U(\"Invitation to join comments\"));\napi->sendInvite(tenantId, id, fromName)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n        try {\n            auto resp = t.get();\n            auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();\n            (void)finalResp;\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

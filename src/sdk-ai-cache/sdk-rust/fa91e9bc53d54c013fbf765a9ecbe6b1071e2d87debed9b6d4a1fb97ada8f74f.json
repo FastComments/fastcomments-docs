@@ -1,0 +1,7 @@
+{
+  "method": "post_adjust_comment_votes",
+  "signatureHash": "fa91e9bc53d54c013fbf765a9ecbe6b1071e2d87debed9b6d4a1fb97ada8f74f",
+  "generatedAt": "2026-06-19T21:44:58.298Z",
+  "codeExample": "let params: PostAdjustCommentVotesParams = PostAdjustCommentVotesParams {\n    comment_id: String::from(\"cmt-news-2026-0042\"),\n    adjust_comment_votes_params: models::AdjustCommentVotesParams {\n        delta: 1,\n        reason: Some(String::from(\"Added supporting source\")),\n    },\n    sso: Some(String::from(\"sso-acme-corp-tenant-xyz123\")),\n};\nlet response: AdjustVotesResponse = post_adjust_comment_votes(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

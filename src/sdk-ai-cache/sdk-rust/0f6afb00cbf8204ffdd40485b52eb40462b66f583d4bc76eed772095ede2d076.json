@@ -1,0 +1,7 @@
+{
+  "method": "get_search_users",
+  "signatureHash": "0f6afb00cbf8204ffdd40485b52eb40462b66f583d4bc76eed772095ede2d076",
+  "generatedAt": "2026-06-19T21:44:55.341Z",
+  "codeExample": "async fn example_search() -> Result<(), Error> {\n    let params: GetSearchUsersParams = GetSearchUsersParams {\n        value: Some(\"jane.doe@acme.com\".to_string()),\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let user_search: ModerationUserSearchResponse = get_search_users(&configuration, params).await?;\n    let _ = user_search;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

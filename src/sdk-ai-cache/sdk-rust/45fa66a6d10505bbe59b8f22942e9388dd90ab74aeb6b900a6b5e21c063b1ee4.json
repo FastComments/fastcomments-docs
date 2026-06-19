@@ -1,0 +1,7 @@
+{
+  "method": "get_comments_for_user",
+  "signatureHash": "45fa66a6d10505bbe59b8f22942e9388dd90ab74aeb6b900a6b5e21c063b1ee4",
+  "generatedAt": "2026-06-19T18:51:09.609Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: GetCommentsForUserParams = GetCommentsForUserParams {\n        user_id: Some(\"alice@acme-corp\".to_string()),\n        direction: Some(models::SortDirections::Descending),\n        replies_to_user_id: Some(\"editor-202\".to_string()),\n        page: Some(1.0),\n        includei10n: Some(true),\n        locale: Some(\"en-US\".to_string()),\n        is_crawler: Some(false),\n    };\n    let response: GetCommentsForUserResponse = get_comments_for_user(configuration, params).await?;\n    let _ = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

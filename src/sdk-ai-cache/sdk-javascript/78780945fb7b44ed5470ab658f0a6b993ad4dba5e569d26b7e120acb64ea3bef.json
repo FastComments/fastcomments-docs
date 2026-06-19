@@ -1,0 +1,7 @@
+{
+  "method": "setTrustFactor",
+  "signatureHash": "78780945fb7b44ed5470ab658f0a6b993ad4dba5e569d26b7e120acb64ea3bef",
+  "generatedAt": "2026-06-19T21:44:57.521Z",
+  "codeExample": "const userId: string = 'user_74219';\nconst trustFactor: string = 'high';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzc0MjE5In0.signature';\n\nconst responseWithoutSso: SetUserTrustFactorResponse = await setTrustFactor(userId, trustFactor);\nconst responseWithSso: SetUserTrustFactorResponse = await setTrustFactor(userId, trustFactor, ssoToken);",
+  "model": "gpt-5-mini"
+}

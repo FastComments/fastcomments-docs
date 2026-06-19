@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "d48fab9ce3b890ce19613720fdd09a3e1dadcb1c045e585c7b2c38f304a8195a",
+  "generatedAt": "2026-06-19T21:45:03.643Z",
+  "codeExample": "utility::string_t text = U(\"abusive language\");\nutility::string_t ip = U(\"203.0.113.45\");\nutility::string_t filter = U(\"status:flagged\");\nutility::string_t searchFilters = U(\"platform:mobile\");\nutility::string_t sso = U(\"admin@my-tenant-123.com\");\nauto textOpt = boost::optional<utility::string_t>(text);\nauto ipOpt = boost::optional<utility::string_t>(ip);\nauto filterOpt = boost::optional<utility::string_t>(filter);\nauto searchFiltersOpt = boost::optional<utility::string_t>(searchFilters);\nauto demoOpt = boost::optional<bool>(true);\nauto ssoOpt = boost::optional<utility::string_t>(sso);\napi->getCount(textOpt, ipOpt, filterOpt, searchFiltersOpt, demoOpt, ssoOpt)\n.then([](pplx::task<std::shared_ptr<ModerationAPICountCommentsResponse>> t){\n    try {\n        auto resp = t.get();\n        auto finalResp = resp ? resp : std::make_shared<ModerationAPICountCommentsResponse>();\n        (void)finalResp;\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini"
+}

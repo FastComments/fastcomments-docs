@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "4493c41590976ee9d4a9a35b3516f55109a95dc421a4f4a9d88addb59a608823",
+  "generatedAt": "2026-06-19T18:51:11.135Z",
+  "codeExample": "let (response, httpResponse) = client.deleteV1PageReact(tenantId = \"my-tenant-123\", urlId = \"news/article-title\")\nif response.isSome:\n  let deletedReact = response.get()\n  echo \"Deleted react:\", deletedReact\nelse:\n  echo \"No react returned for tenant: my-tenant-123, url: news/article-title\"",
+  "model": "gpt-5-mini"
+}

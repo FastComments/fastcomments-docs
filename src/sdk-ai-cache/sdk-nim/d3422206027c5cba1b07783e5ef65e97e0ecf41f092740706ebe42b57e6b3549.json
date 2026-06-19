@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "d3422206027c5cba1b07783e5ef65e97e0ecf41f092740706ebe42b57e6b3549",
+  "generatedAt": "2026-06-19T21:44:57.252Z",
+  "codeExample": "let (response, httpResponse) = client.getUserInternalProfile(commentId = \"cmt-2026-00042\", sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibXl1c2VyIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\")\nif response.isSome:\n  let profile = response.get()\n  discard profile",
+  "model": "gpt-5-mini"
+}

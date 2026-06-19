@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "2daba84354c0b8097b37ded2ec240b6a689d7a2f7a097d2cb847466d86818aec",
+  "generatedAt": "2026-06-19T21:44:57.076Z",
+  "codeExample": "let banParams = BanUserUndoParams(\n  tenantId = \"my-tenant-123\",\n  userId = \"user-987\",\n  undoneBy = \"moderator-42\",\n  reason = \"Reinstated after manual review\"\n)\nlet (response, httpResponse) = client.postBanUserUndo(banUserUndoParams = banParams, sso = \"sso-jwt-abc123\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Ban undo succeeded, http status: \" & $httpResponse.status\nelse:\n  echo \"Ban undo failed, http status: \" & $httpResponse.status",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "374b6348d21544948336ad2d41a3bdded00040901c7a01bf8673074b542915e5",
+  "generatedAt": "2026-06-19T18:51:10.654Z",
+  "codeExample": "let (response, httpResponse) = client.getVotesForUser(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  userId = \"user-789\",\n  anonUserId = \"\"\n)\nif response.isSome:\n  let votes = response.get()\n  echo \"User votes retrieved\"\nelse:\n  echo \"No votes found\"",
+  "model": "gpt-5-mini"
+}

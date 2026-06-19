@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badges",
+  "signatureHash": "d85a0abe475a194f760dc8c57758cea3680d9e718425a7e16e3021107121f501",
+  "generatedAt": "2026-06-19T18:51:08.237Z",
+  "codeExample": "async fn example_get_user_badges() -> Result<ApiGetUserBadgesResponse, Error> {\n    let params: GetUserBadgesParams = GetUserBadgesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user_7890\".to_string()),\n        badge_id: Some(\"top-commenter\".to_string()),\n        displayed_on_comments: Some(true),\n        limit: Some(25.0),\n        skip: Some(0.0),\n    };\n    let response: ApiGetUserBadgesResponse = get_user_badges(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "12621712ad7c7dea288ec003b9f2960cef12d1299c8dbcb78fed5be937815970",
+  "generatedAt": "2026-06-19T21:44:58.958Z",
+  "codeExample": "let (response, httpResponse) = client.postBanUserFromComment(\n  commentId = \"cmt-8f3a1b\",\n  banEmail = false,\n  banEmailDomain = false,\n  banIP = false,\n  deleteAllUsersComments = false,\n  bannedUntil = \"\",\n  isShadowBan = false,\n  updateId = \"\",\n  banReason = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let banResult = response.get()\n  discard banResult\nelse:\n  echo \"No ban result returned\"",
+  "model": "gpt-5-mini"
+}

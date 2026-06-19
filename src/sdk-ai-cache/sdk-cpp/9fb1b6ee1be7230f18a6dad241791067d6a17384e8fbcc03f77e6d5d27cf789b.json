@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "9fb1b6ee1be7230f18a6dad241791067d6a17384e8fbcc03f77e6d5d27cf789b",
+  "generatedAt": "2026-06-19T18:51:15.883Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> locale;\napi->getUserBadgeProgressByUserId(tenantId, userId)\n.then([=](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<APIGetUserBadgeProgressResponse>();\n        return resp;\n    } catch (...) {\n        return std::shared_ptr<APIGetUserBadgeProgressResponse>(nullptr);\n    }\n})\n.then([](std::shared_ptr<APIGetUserBadgeProgressResponse> resp) {\n    (void)resp;\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "0cbbf55fcdc57fafd804edcb1003c3df050d257fdca7c65c7bde88e9633e19c8",
+  "generatedAt": "2026-06-19T18:51:17.854Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t questionId = utility::conversions::to_string_t(\"question-456\");\nauto body = std::make_shared<UpdateQuestionResultBody>();\nbody->answeredBy = utility::conversions::to_string_t(\"user@example.com\");\nbody->correct = true;\nbody->score = boost::optional<int>(92);\nbody->notes = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Clarified response during review\"));\napi->updateQuestionResult(tenantId, questionId, *body)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n        try {\n            auto resp = t.get();\n            (void)resp;\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

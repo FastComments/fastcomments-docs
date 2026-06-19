@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "574092e90bf3041df04785d8485f5ef78a85f1256b08c2a3350b7d29a008d47a",
+  "generatedAt": "2026-06-19T18:51:09.626Z",
+  "codeExample": "let (response, httpResponse) = client.createTenant(\n  tenantId = \"my-tenant-123\",\n  createTenantBody = CreateTenantBody(\n    name = \"My Tenant 123\",\n    domain = \"news.example.com\",\n    allowAnonymous = false,\n    allowedOrigins = @[\"https://news.example.com\", \"https://api.news.example.com\"],\n    description = \"Comments for News Example\"\n  )\n)\nif response.isSome:\n  let created = response.get()\n  echo \"Created tenant: \", created.tenantId\nelse:\n  echo \"Failed to create tenant, status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

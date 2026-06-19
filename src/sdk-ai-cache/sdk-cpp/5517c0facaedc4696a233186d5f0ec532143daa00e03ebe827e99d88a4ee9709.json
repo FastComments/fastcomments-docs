@@ -1,0 +1,7 @@
+{
+  "method": "getLogs",
+  "signatureHash": "5517c0facaedc4696a233186d5f0ec532143daa00e03ebe827e99d88a4ee9709",
+  "generatedAt": "2026-06-19T21:44:57.836Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-987654321\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getLogs(commentId, sso)\n.then([](std::shared_ptr<ModerationAPIGetLogsResponse> resp){\n    if (!resp) return;\n    auto localCopy = std::make_shared<ModerationAPIGetLogsResponse>(*resp);\n}).wait();",
+  "model": "gpt-5-mini"
+}

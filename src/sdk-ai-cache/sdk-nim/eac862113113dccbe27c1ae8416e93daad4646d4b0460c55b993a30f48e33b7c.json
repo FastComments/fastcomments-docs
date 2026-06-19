@@ -1,0 +1,7 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "eac862113113dccbe27c1ae8416e93daad4646d4b0460c55b993a30f48e33b7c",
+  "generatedAt": "2026-06-19T18:51:10.327Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet commentId = \"cmt-987654321\"\nlet (response, httpResponse) = client.unLockComment(\n  tenantId = tenantId,\n  commentId = commentId,\n  broadcastId = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Unlocked comment \", commentId, \" for tenant \", tenantId\nelse:\n  echo \"Unlock failed, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

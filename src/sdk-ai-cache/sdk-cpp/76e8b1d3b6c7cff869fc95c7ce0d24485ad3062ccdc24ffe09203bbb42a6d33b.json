@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReactUsers",
+  "signatureHash": "76e8b1d3b6c7cff869fc95c7ce0d24485ad3062ccdc24ffe09203bbb42a6d33b",
+  "generatedAt": "2026-06-19T18:51:13.867Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"https://www.example.com/articles/fastcomments-integration\");\nutility::string_t id = U(\"page-98765\");\nboost::optional<int> pageSize = boost::optional<int>(100);\npplx::task<std::shared_ptr<GetV2PageReactUsersResponse>> task =\n    api->getV2PageReactUsers(tenantId, urlId, id)\n    .then([](std::shared_ptr<GetV2PageReactUsersResponse> resp) {\n        if (!resp) return std::shared_ptr<GetV2PageReactUsersResponse>();\n        return std::make_shared<GetV2PageReactUsersResponse>(*resp);\n    });",
+  "model": "gpt-5-mini"
+}

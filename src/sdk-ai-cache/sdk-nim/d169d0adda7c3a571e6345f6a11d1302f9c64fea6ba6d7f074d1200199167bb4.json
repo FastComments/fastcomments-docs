@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "d169d0adda7c3a571e6345f6a11d1302f9c64fea6ba6d7f074d1200199167bb4",
+  "generatedAt": "2026-06-19T18:51:10.857Z",
+  "codeExample": "let (response, httpResponse) = client.createVote(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654\",\n  direction = \"up\",\n  userId = \"user-42\",\n  anonUserId = \"\"\n)\nif response.isSome:\n  let vote = response.get()\n  echo \"Vote created:\", vote\nelse:\n  echo \"No vote returned\"",
+  "model": "gpt-5-mini"
+}

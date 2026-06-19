@@ -1,0 +1,7 @@
+{
+  "method": "update_question_result",
+  "signatureHash": "25e526cd85a724644cae91f0768c6309062e6c8f73e0054dfa878661b4c29ca6",
+  "generatedAt": "2026-06-19T18:51:14.553Z",
+  "codeExample": "async fn example_update_question_result() -> Result<(), Error> {\n    let body: models::UpdateQuestionResultBody = models::UpdateQuestionResultBody {\n        answered: Some(true),\n        confidence: Some(0.92),\n        responder: Some(\"editor-zoe\".to_string()),\n        notes: Some(\"Validated against article sources\".to_string()),\n    };\n    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {\n        tenant_id: \"acme-news-tenant\".to_string(),\n        id: \"news/article/5621/question/12\".to_string(),\n        update_question_result_body: body,\n    };\n    let _resp: ApiEmptyResponse = update_question_result(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

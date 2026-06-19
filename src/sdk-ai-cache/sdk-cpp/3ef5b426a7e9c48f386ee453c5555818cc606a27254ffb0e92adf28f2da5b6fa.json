@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "3ef5b426a7e9c48f386ee453c5555818cc606a27254ffb0e92adf28f2da5b6fa",
+  "generatedAt": "2026-06-19T18:51:18.788Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nBulkAggregateQuestionResultsRequest request;\nboost::optional<bool> forceRecalculate(true);\napi->bulkAggregateQuestionResults(tenantId, request, forceRecalculate)\n.then([](std::shared_ptr<BulkAggregateQuestionResultsResponse> resp) {\n    if (resp) {\n        auto respCopy = std::make_shared<BulkAggregateQuestionResultsResponse>(*resp);\n        std::cout << \"Aggregated question results received\\n\";\n    } else {\n        std::cout << \"No aggregated results\\n\";\n    }\n}).wait();",
+  "model": "gpt-5-mini"
+}

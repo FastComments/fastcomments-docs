@@ -1,0 +1,7 @@
+{
+  "method": "getPagesPublic",
+  "signatureHash": "00fa9b33e0a3d5886a650296a89af3e67b6493aa3b63a8b8c14de8175ee25c62",
+  "generatedAt": "2026-06-19T18:51:06.362Z",
+  "codeExample": "let (response, httpResponse) = client.getPagesPublic(\n  tenantId = \"my-tenant-123\",\n  cursor = \"\",\n  limit = 0,\n  q = \"\",\n  sortBy = PagesSortBy(0),\n  hasComments = false\n)\n\nif response.isSome:\n  let pages = response.get()\n  echo \"Retrieved public pages: \", $pages\nelse:\n  echo \"No pages returned, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

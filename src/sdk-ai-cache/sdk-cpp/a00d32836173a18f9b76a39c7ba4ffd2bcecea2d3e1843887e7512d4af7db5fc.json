@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "a00d32836173a18f9b76a39c7ba4ffd2bcecea2d3e1843887e7512d4af7db5fc",
+  "generatedAt": "2026-06-19T18:51:11.121Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nint32_t dir = 1;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getCommentVoteUserNames(tenantId, commentId, dir, sso)\n.then([](std::shared_ptr<GetCommentVoteUserNamesSuccessResponse> resp){\n    auto result = resp ? resp : std::make_shared<GetCommentVoteUserNamesSuccessResponse>();\n    std::cout << \"Fetched comment vote user names\" << std::endl;\n});",
+  "model": "gpt-5-mini"
+}

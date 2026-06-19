@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "f91e96c8e32415e8564d5af0b41ebb9465040fd62a3bd080d1d8be0e6ed04c7b",
+  "generatedAt": "2026-06-19T18:51:10.142Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nstd::vector<utility::string_t> postIds = { U(\"post-1001\"), U(\"post-1002\"), U(\"post-1003\") };\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getFeedPostsStats(tenantId, postIds, sso)\n    .then([](pplx::task<std::shared_ptr<FeedPostsStatsResponse>> previous) {\n        try {\n            auto stats = previous.get();\n            if (!stats) stats = std::make_shared<FeedPostsStatsResponse>();\n            // process stats here (e.g., inspect fields, update UI)\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

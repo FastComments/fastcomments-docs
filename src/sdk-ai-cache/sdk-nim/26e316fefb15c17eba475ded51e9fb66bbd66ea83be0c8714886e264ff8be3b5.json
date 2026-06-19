@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "26e316fefb15c17eba475ded51e9fb66bbd66ea83be0c8714886e264ff8be3b5",
+  "generatedAt": "2026-06-19T18:51:08.552Z",
+  "codeExample": "let (response, httpResponse) = client.deleteEmailTemplate(\n  tenantId = \"my-tenant-123\",\n  id = \"welcome-email-template-001\"\n)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  discard apiEmpty\n  echo \"Email template deleted successfully\"\nelse:\n  echo \"No response body\"",
+  "model": "gpt-5-mini"
+}

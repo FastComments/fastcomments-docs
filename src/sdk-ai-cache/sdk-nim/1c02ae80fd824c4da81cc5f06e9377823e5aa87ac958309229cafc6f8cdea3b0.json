@@ -1,0 +1,7 @@
+{
+  "method": "getPreBanSummary",
+  "signatureHash": "1c02ae80fd824c4da81cc5f06e9377823e5aa87ac958309229cafc6f8cdea3b0",
+  "generatedAt": "2026-06-19T21:44:58.757Z",
+  "codeExample": "let commentId = \"cmt-7423\"\nlet (response, httpResponse) = client.getPreBanSummary(\n  commentId = commentId,\n  includeByUserIdAndEmail = false,\n  includeByIP = false,\n  includeByEmailDomain = false,\n  sso = \"\"\n)\nif response.isSome:\n  let preBanSummary = response.get()\n  discard preBanSummary\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

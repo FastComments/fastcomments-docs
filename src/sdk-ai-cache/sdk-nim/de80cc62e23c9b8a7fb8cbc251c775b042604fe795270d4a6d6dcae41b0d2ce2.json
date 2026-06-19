@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "de80cc62e23c9b8a7fb8cbc251c775b042604fe795270d4a6d6dcae41b0d2ce2",
+  "generatedAt": "2026-06-19T18:51:06.416Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionResult(tenantId = \"my-tenant-123\", id = \"question-456\")\nif response.isSome:\n  let result = response.get()\n  echo \"Question result received:\"\n  echo result\nelse:\n  echo \"No question result returned, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "delete_vote",
+  "signatureHash": "75b4cf4e2122f7c85ec1b11d6adcd48deb14aebf4410c954c632f421b922bafe",
+  "generatedAt": "2026-06-19T18:51:07.143Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteVoteParams = DeleteVoteParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"article-5678-comment-1234\"),\n        edit_key: Some(String::from(\"editkey-9b2f4e\")),\n    };\n    let response: VoteDeleteResponse = delete_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

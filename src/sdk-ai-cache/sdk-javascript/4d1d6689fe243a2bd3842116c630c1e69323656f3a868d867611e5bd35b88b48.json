@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "4d1d6689fe243a2bd3842116c630c1e69323656f3a868d867611e5bd35b88b48",
+  "generatedAt": "2026-06-19T21:44:57.808Z",
+  "codeExample": "const textSearch: string = \"promo link to discounted sneakers\";\nconst byIPFromComment: string | undefined = \"203.0.113.45\";\nconst filters: string | undefined = \"status:pending,is_spam:true\";\nconst searchFilters: string | undefined = \"created_at>=2026-01-01\";\nconst afterId: string | undefined = \"cmt_9a7b3d\";\nconst demo: boolean | undefined = false;\nconst sso: string | undefined = undefined;\nconst result: ModerationAPIGetCommentIdsResponse = await getApiIds(textSearch, byIPFromComment, filters, searchFilters, afterId, demo, sso);",
+  "model": "gpt-5-mini"
+}

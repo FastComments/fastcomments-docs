@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "8c52b1d70ac568126efbd2825ffe314bb0bb54b88a1cee61eb06a483ddfb0e69",
+  "generatedAt": "2026-06-19T18:51:13.030Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = boost::optional<double>(0.0);\napi->getEmailTemplates(tenantId, skip)\n.then([](std::shared_ptr<GetEmailTemplatesResponse> resp) -> std::shared_ptr<GetEmailTemplatesResponse> {\n    auto finalResp = resp ? resp : std::make_shared<GetEmailTemplatesResponse>();\n    return finalResp;\n})\n.wait();",
+  "model": "gpt-5-mini"
+}

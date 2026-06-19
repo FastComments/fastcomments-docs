@@ -1,0 +1,7 @@
+{
+  "method": "post_bulk_pre_ban_summary",
+  "signatureHash": "132f4d38dddc4f5e86a849b967f354d746226387bd1fda85e27cbf3cda9a171d",
+  "generatedAt": "2026-06-19T21:45:02.790Z",
+  "codeExample": "let params: PostBulkPreBanSummaryParams = PostBulkPreBanSummaryParams {\n    bulk_pre_ban_params: models::BulkPreBanParams {\n        entries: vec![\n            models::BulkPreBanEntry {\n                user_id: Some(\"user-8472\".to_string()),\n                email: Some(\"malicious.signals@fraudmail.com\".to_string()),\n                ip: Some(\"198.51.100.23\".to_string()),\n            },\n            models::BulkPreBanEntry {\n                user_id: Some(\"user-9021\".to_string()),\n                email: Some(\"bot.account@spamnews.org\".to_string()),\n                ip: None,\n            },\n        ],\n        reason: Some(\"coordinated spam campaign\".to_string()),\n    },\n    include_by_user_id_and_email: Some(true),\n    include_by_ip: Some(true),\n    include_by_email_domain: Some(true),\n    sso: Some(\"acme-corp-sso\".to_string()),\n};\nlet summary: BulkPreBanSummary = post_bulk_pre_ban_summary(&configuration, params).await?",
+  "model": "gpt-5-mini"
+}

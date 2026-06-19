@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "8e4b98937ad8f03357531fcbd2475349c3ae5234df6a99df7d48c0632a1a089e",
+  "generatedAt": "2026-06-19T18:51:11.926Z",
+  "codeExample": "let (response, httpResponse) = client.deleteVote(tenantId = \"my-tenant-123\", id = \"vote-7f3b2a\", editKey = \"\")\nif response.isSome:\n  let voteDelete = response.get()\n  echo \"Vote deleted successfully\"\nelse:\n  echo \"Failed to delete vote\"",
+  "model": "gpt-5-mini"
+}

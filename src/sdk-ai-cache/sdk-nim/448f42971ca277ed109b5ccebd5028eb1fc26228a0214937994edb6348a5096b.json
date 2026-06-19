@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "448f42971ca277ed109b5ccebd5028eb1fc26228a0214937994edb6348a5096b",
+  "generatedAt": "2026-06-19T21:44:57.430Z",
+  "codeExample": "let (response, httpResponse) = client.putAwardBadge(\n  badgeId = \"gold-contributor\",\n  userId = \"user-8723\",\n  commentId = \"cmt-54a3b2\",\n  broadcastId = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let award = response.get()\n  echo \"Awarded badge received\"\nelse:\n  echo \"No award response\"",
+  "model": "gpt-5-mini"
+}

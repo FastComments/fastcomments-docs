@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "1bbb116c24e3c386a2a09d80dba4ada44da9383a1289e44d5a86c32def3bb546",
+  "generatedAt": "2026-06-19T18:51:16.938Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateQuestionConfigBody body;\nbody.questionText = U(\"Do you want to receive our newsletter?\");\nbody.isRequired = true;\nbody.moderatorEmail = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\napi->createQuestionConfig(tenantId, body)\n.then([](std::shared_ptr<CreateQuestionConfigResponse> resp){\n    auto result = std::make_shared<CreateQuestionConfigResponse>(*resp);\n    return result;\n})\n.then([](std::shared_ptr<CreateQuestionConfigResponse> finalResp){\n    (void)finalResp;\n})\n.wait();",
+  "model": "gpt-5-mini"
+}

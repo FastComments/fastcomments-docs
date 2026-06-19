@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "70fc4673a6e2162d830e83e6225cd321ac50d5e2b5117796e0f4da3a6067b610",
+  "generatedAt": "2026-06-19T21:44:54.270Z",
+  "codeExample": "const commentId: string = 'cmt_62b8f9a3e1d4';\nconst includeEmail: boolean = true;\nconst includeIP: boolean = false;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4In0.signature';\nconst response: ModerationAPICommentResponse = await getModerationComment(commentId, includeEmail, includeIP, sso);",
+  "model": "gpt-5-mini"
+}

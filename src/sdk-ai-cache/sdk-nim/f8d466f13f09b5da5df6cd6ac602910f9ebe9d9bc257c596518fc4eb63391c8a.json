@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "f8d466f13f09b5da5df6cd6ac602910f9ebe9d9bc257c596518fc4eb63391c8a",
+  "generatedAt": "2026-06-19T21:44:54.540Z",
+  "codeExample": "let (response, httpResponse) = client.putReopenThread(urlId = \"news/2026-election-analysis\", sso = \"\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Reopen succeeded, response: \", apiResp\nelse:\n  echo \"Reopen failed, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "76524b389aee2bd7c4867d10104e59a196197f2da39f317220e6e47177dbb87f",
+  "generatedAt": "2026-06-19T18:51:15.181Z",
+  "codeExample": "let (response, httpResponse) = client.createEmailTemplate(tenantId = \"my-tenant-123\",\n  createEmailTemplateBody = CreateEmailTemplateBody(\n    name = \"Weekly Newsletter\",\n    subject = \"This Week on NewsSite\",\n    html = \"<h1>Latest updates</h1><p>Read our latest article.</p>\",\n    fromAddress = \"no-reply@newssite.com\",\n    isDefault = false,\n    tags = @[\"news\", \"weekly\"]\n  )\n)\n\nif response.isSome:\n  let template = response.get()\n  echo \"Created email template id: \", template.id",
+  "model": "gpt-5-mini"
+}

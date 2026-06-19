@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "b4e77f18e52d82295918835659a70fd57375c59b776b10833c736dbeac8aecf4",
+  "generatedAt": "2026-06-19T21:44:55.930Z",
+  "codeExample": "const response: APIEmptyResponse = await postFlagComment('cmt_8f3b2a1f4e6');\nconst responseWithSso: APIEmptyResponse = await postFlagComment('cmt_9b4a7c2d5f1', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzEyMzQ1NiIsImlhdCI6MTYyNzcxMzYwMH0.sig-token-part');",
+  "model": "gpt-5-mini"
+}

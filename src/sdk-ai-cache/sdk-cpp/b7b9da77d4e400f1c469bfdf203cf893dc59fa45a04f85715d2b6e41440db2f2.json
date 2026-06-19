@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "b7b9da77d4e400f1c469bfdf203cf893dc59fa45a04f85715d2b6e41440db2f2",
+  "generatedAt": "2026-06-19T18:51:38.034Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"welcome-email-001\");\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U(\"en-US\"));\n\napi->getEmailTemplate(tenantId, templateId).then([locale](pplx::task<std::shared_ptr<GetEmailTemplateResponse>> t) {\n    try {\n        auto resp = t.get();\n        auto localCopy = std::make_shared<GetEmailTemplateResponse>(*resp);\n        std::cout << \"Email template fetched: \" << (resp ? \"success\" : \"null\") << std::endl;\n        if (locale) std::cout << \"Locale: \" << locale->c_str() << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"Failed to get template: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

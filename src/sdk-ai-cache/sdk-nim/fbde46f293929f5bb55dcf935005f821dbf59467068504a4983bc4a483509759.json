@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "fbde46f293929f5bb55dcf935005f821dbf59467068504a4983bc4a483509759",
+  "generatedAt": "2026-06-19T18:51:07.916Z",
+  "codeExample": "let (response, httpResponse) = client.renderEmailTemplate(\n  tenantId = \"my-tenant-123\",\n  renderEmailTemplateBody = RenderEmailTemplateBody(),\n  locale = \"en-US\"\n)\n\nif response.isSome:\n  let rendered = response.get()\n  echo rendered",
+  "model": "gpt-5-mini"
+}

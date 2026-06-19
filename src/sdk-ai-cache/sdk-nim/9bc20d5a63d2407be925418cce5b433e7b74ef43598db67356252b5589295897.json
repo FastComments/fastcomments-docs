@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "9bc20d5a63d2407be925418cce5b433e7b74ef43598db67356252b5589295897",
+  "generatedAt": "2026-06-19T18:51:11.796Z",
+  "codeExample": "let (response, httpResponse) = client.addHashTagsBulk(tenantId = \"my-tenant-123\", bulkCreateHashTagsBody = BulkCreateHashTagsBody(hashTags = @[\"news\", \"breaking\", \"politics\"], replaceExisting = false))\nif response.isSome:\n  let result = response.get()\n  echo \"Bulk tags response:\", result\nelse:\n  echo \"No response body, HTTP status:\", httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

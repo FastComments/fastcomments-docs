@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "9a145b54ec1424203a34662bc759c83fa37ce734100a68c55de7db4592003662",
+  "generatedAt": "2026-06-19T18:51:13.875Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t packageId = U(\"pkg-456\");\nboost::optional<utility::string_t> ifMatch = U(\"W/\\\"etag-789\\\"\");\n\napi->deleteTenantPackage(tenantId, packageId)\n.then([=](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n    try {\n        auto resp = task.get();\n        auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();\n    } catch (const std::exception& e) {\n        auto errorResp = std::make_shared<APIEmptyResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

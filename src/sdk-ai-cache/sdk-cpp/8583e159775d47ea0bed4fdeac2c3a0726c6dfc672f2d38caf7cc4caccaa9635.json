@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "8583e159775d47ea0bed4fdeac2c3a0726c6dfc672f2d38caf7cc4caccaa9635",
+  "generatedAt": "2026-06-19T18:51:18.776Z",
+  "codeExample": "boost::optional<utility::string_t> auditReason = U(\"admin-request\");\nutility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"john.doe@example.com\");\nauto fallback = std::make_shared<GetTenantUserResponse>();\napi->getTenantUser(tenantId, id).then([fallback, auditReason](pplx::task<std::shared_ptr<GetTenantUserResponse>> t){\n    try {\n        auto resp = t.get();\n        if(!resp) resp = fallback;\n        (void)auditReason;\n    } catch(const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

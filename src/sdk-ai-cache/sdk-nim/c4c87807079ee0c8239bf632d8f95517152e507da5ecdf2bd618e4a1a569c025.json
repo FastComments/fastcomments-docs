@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "c4c87807079ee0c8239bf632d8f95517152e507da5ecdf2bd618e4a1a569c025",
+  "generatedAt": "2026-06-19T18:51:11.141Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentsForUser(\n  userId = \"user-8421\",\n  direction = SortDirections.Newest,\n  repliesToUserId = \"\",\n  page = 1.0,\n  includei10n = true,\n  locale = \"en-US\",\n  isCrawler = false\n)\n\nif response.isSome:\n  let comments = response.get()\n  discard comments",
+  "model": "gpt-5-mini"
+}

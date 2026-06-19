@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "7b31fc6a6e9452bba2421d13df55a98743f3615fecd5fd020f02a6d6025d8f4a",
+  "generatedAt": "2026-06-19T18:51:11.970Z",
+  "codeExample": "let (response, httpResponse) = client.getComments(\n  tenantId = \"my-tenant-123\",\n  page = 1,\n  limit = 25,\n  skip = 0,\n  asTree = true,\n  skipChildren = 0,\n  limitChildren = 5,\n  maxTreeDepth = 3,\n  urlId = \"news/2026-global-economy\",\n  userId = \"user-789\",\n  anonUserId = \"\",\n  contextUserId = \"\",\n  hashTag = \"economy\",\n  parentId = \"\",\n  direction = SortDirections.Desc,\n  fromDate = 1710000000000'i64,\n  toDate = 1710100000000'i64\n)\nif response.isSome:\n  let commentsResp = response.get()\n  discard commentsResp",
+  "model": "gpt-5-mini"
+}

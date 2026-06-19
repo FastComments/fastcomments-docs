@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "dad01f6adc27d1db48f132dfec79ea54c315908b96a7b3de5158a5479a754a6e",
+  "generatedAt": "2026-06-19T18:51:10.357Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> domainOpt = U(\"app.example.com\");\nif (domainOpt) {\n    api->getDomainConfig(tenantId, *domainOpt)\n    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);\n            (void)cfgCopy;\n        } catch (const std::exception&) {\n        }\n    });\n}",
+  "model": "gpt-5-mini"
+}

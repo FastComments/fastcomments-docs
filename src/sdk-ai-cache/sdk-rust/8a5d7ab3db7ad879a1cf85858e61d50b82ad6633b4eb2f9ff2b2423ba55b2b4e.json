@@ -1,0 +1,7 @@
+{
+  "method": "get_pending_webhook_events",
+  "signatureHash": "8a5d7ab3db7ad879a1cf85858e61d50b82ad6633b4eb2f9ff2b2423ba55b2b4e",
+  "generatedAt": "2026-06-19T18:51:07.411Z",
+  "codeExample": "async fn run() -> Result<GetPendingWebhookEventsResponse, Error> {\n    let params: GetPendingWebhookEventsParams = GetPendingWebhookEventsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: Some(\"cmt_12345\".to_string()),\n        external_id: Some(\"ext-98765\".to_string()),\n        event_type: Some(\"comment.created\".to_string()),\n        domain: Some(\"news.example.com\".to_string()),\n        attempt_count_gt: Some(2.0),\n        skip: Some(0.0),\n    };\n    let response: GetPendingWebhookEventsResponse =\n        get_pending_webhook_events(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

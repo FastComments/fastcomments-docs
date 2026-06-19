@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "b9896441dcd1c0aa7abd126133d1a78b7acc8d72cf3a6f6614449bbde96092a3",
+  "generatedAt": "2026-06-19T18:51:16.735Z",
+  "codeExample": "boost::optional<int> limit = 50;\nauto fallback = std::make_shared<GetVotesResponse>();\napi->getVotes(utility::conversions::to_string_t(\"my-tenant-123\"), utility::conversions::to_string_t(\"article-9876\"))\n.then([fallback, limit](pplx::task<std::shared_ptr<GetVotesResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = fallback;\n        if (limit) {\n            auto processed = std::make_shared<GetVotesResponse>(*resp);\n        }\n    } catch (const std::exception& e) {\n        auto errorResp = std::make_shared<GetVotesResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

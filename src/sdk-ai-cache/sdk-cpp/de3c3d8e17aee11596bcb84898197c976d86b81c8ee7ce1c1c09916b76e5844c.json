@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "de3c3d8e17aee11596bcb84898197c976d86b81c8ee7ce1c1c09916b76e5844c",
+  "generatedAt": "2026-06-19T18:51:09.998Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 20;\nauto defaultResp = std::make_shared<GetTenantUsersResponse>();\napi->getTenantUsers(tenantId, skip)\n.then([defaultResp](std::shared_ptr<GetTenantUsersResponse> resp){\n    auto result = resp ? resp : defaultResp;\n    std::cout << (resp ? \"Tenant users retrieved successfully\\n\" : \"Using default response\\n\");\n}).wait();",
+  "model": "gpt-5-mini"
+}

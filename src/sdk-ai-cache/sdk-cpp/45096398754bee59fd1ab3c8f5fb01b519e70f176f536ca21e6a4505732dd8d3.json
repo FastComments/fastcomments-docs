@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "45096398754bee59fd1ab3c8f5fb01b519e70f176f536ca21e6a4505732dd8d3",
+  "generatedAt": "2026-06-19T21:45:04.540Z",
+  "codeExample": "boost::optional<utility::string_t> userId{ U(\"user@example.com\") };\nboost::optional<utility::string_t> sso{ U(\"my-tenant-123\") };\napi->getTrustFactor(userId, sso)\n    .then([](std::shared_ptr<GetUserTrustFactorResponse> resp) {\n        if (resp) {\n            auto tag = std::make_shared<utility::string_t>(U(\"trust-check\"));\n            (void)tag;\n        }\n    });",
+  "model": "gpt-5-mini"
+}

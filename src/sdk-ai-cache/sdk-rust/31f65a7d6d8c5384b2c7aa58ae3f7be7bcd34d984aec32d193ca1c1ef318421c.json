@@ -1,0 +1,7 @@
+{
+  "method": "create_v1_page_react",
+  "signatureHash": "31f65a7d6d8c5384b2c7aa58ae3f7be7bcd34d984aec32d193ca1c1ef318421c",
+  "generatedAt": "2026-06-19T18:51:09.872Z",
+  "codeExample": "async fn example() -> Result<CreateV1PageReact, Error> {\n    let params = CreateV1PageReactParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article/2026/06/launch\".to_string(),\n        title: Some(\"Acme Launch Coverage\".to_string()),\n    };\n    let reaction: CreateV1PageReact = create_v1_page_react(&configuration, params).await?;\n    Ok(reaction)\n}",
+  "model": "gpt-5-mini"
+}

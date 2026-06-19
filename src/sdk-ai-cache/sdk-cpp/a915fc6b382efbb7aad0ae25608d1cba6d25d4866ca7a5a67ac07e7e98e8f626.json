@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "a915fc6b382efbb7aad0ae25608d1cba6d25d4866ca7a5a67ac07e7e98e8f626",
+  "generatedAt": "2026-06-19T21:44:59.868Z",
+  "codeExample": "boost::optional<utility::string_t> value(boost::optional<utility::string_t>(U(\"john.doe@example.com\")));\nboost::optional<utility::string_t> sso(boost::optional<utility::string_t>(U(\"my-tenant-123\")));\napi->getSearchUsers(value, sso).then([](std::shared_ptr<ModerationUserSearchResponse> resp){\n    if (!resp) return;\n    auto copy = std::make_shared<ModerationUserSearchResponse>(*resp);\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_moderators",
+  "signatureHash": "a6542ee6c4ae032c1096d227acf905a88b7f84e549a7bb6ba2d33ff117baae8f",
+  "generatedAt": "2026-06-19T18:51:09.356Z",
+  "codeExample": "async fn fetch_moderators(configuration: &configuration::Configuration) -> Result<GetModeratorsResponse, Error> {\n    let params: GetModeratorsParams = GetModeratorsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(20.0),\n    };\n    let response: GetModeratorsResponse = get_moderators(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_gif_large",
+  "signatureHash": "a85d4a586181a15c11cf5d9d8196386cfe65042e9e4b4d4b00a38ed53fe38057",
+  "generatedAt": "2026-06-19T18:51:13.273Z",
+  "codeExample": "async fn example() -> Result<GifGetLargeResponse, Error> {\n    let params: GetGifLargeParams = GetGifLargeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        large_internal_url_sanitized: \"gifs/news/article/welcome-gif\".to_string(),\n        referrer: Some(\"https://news.example.com/article/123\".to_string()),\n    };\n    let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

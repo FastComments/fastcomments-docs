@@ -1,0 +1,7 @@
+{
+  "method": "create_feed_post",
+  "signatureHash": "1b67bac94a1f368c9cac5bbafc97fa6ecfd2951828f30af89d4fb9204a27d870",
+  "generatedAt": "2026-06-19T18:51:25.401Z",
+  "codeExample": "async fn run(configuration: &configuration::Configuration) -> Result<CreateFeedPostsResponse, Error> {\n    let create_feed: models::CreateFeedPostParams = models::CreateFeedPostParams {\n        title: \"Acme Product Launch\".to_string(),\n        body: \"Acme Corp today launched the next-generation WidgetPro, offering improved performance and battery life.\".to_string(),\n        ..Default::default()\n    };\n    let params: CreateFeedPostParams = CreateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_feed_post_params: create_feed,\n        broadcast_id: Some(\"launch-broadcast-2026\".to_string()),\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        skip_dup_check: Some(false),\n    };\n    let response: CreateFeedPostsResponse = create_feed_post(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

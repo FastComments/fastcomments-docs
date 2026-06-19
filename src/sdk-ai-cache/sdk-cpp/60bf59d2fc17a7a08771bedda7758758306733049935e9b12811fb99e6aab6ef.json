@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "60bf59d2fc17a7a08771bedda7758758306733049935e9b12811fb99e6aab6ef",
+  "generatedAt": "2026-06-19T18:51:15.368Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t countId = U(\"nc-00123\");\nboost::optional<utility::string_t> requestedBy = U(\"admin@company.com\");\n\napi->deleteNotificationCount(tenantId, countId)\n.then([requestedBy](pplx::task<std::shared_ptr<APIEmptyResponse>> task) -> std::shared_ptr<APIEmptyResponse> {\n    try {\n        auto resp = task.get();\n        (void)requestedBy;\n        return resp ? resp : std::make_shared<APIEmptyResponse>();\n    } catch (const std::exception&) {\n        return std::make_shared<APIEmptyResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "9d6ffaa0da02d8b0dc9154ef013393619b97eb7df5a6ca6b5bc229c8cdaed93a",
+  "generatedAt": "2026-06-19T18:51:11.036Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = \"my-tenant-123\", id = \"\")\nif response.isSome:\n  let badgeProgress = response.get()\n  echo badgeProgress\nelse:\n  echo \"No badge progress found\"",
+  "model": "gpt-5-mini"
+}

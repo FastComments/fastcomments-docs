@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "8325e21d3d5a1ceb6de41738bc28d0fe4a2a4484c120ebf6edf30ac153f627e2",
+  "generatedAt": "2026-06-19T18:51:08.694Z",
+  "codeExample": "let (response, httpResponse) = client.getComment(tenantId = \"my-tenant-123\", id = \"cmt-7890\")\nif response.isSome:\n  let comment = response.get()\n  discard comment\nelse:\n  echo \"Comment not found\"",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "flag_comment",
+  "signatureHash": "eb0329127e52094c2784d92179090715dd620a63abad0f82d089686e9b8079c0",
+  "generatedAt": "2026-06-19T18:51:08.597Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: FlagCommentParams = FlagCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2026-06-19/comment-98765\".to_string(),\n        user_id: Some(\"user-42\".to_string()),\n        anon_user_id: None,\n    };\n    let response: FlagCommentResponse = flag_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

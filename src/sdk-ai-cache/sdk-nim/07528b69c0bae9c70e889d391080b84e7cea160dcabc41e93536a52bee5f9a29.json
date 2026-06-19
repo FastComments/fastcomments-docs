@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "07528b69c0bae9c70e889d391080b84e7cea160dcabc41e93536a52bee5f9a29",
+  "generatedAt": "2026-06-19T18:51:09.889Z",
+  "codeExample": "let (response, httpResponse) = client.getGifLarge(tenantId = \"news-tenant-42\", largeInternalURLSanitized = \"\")\nif response.isSome:\n  let gif = response.get()\n  echo \"Received GifGetLargeResponse\"\n  discard gif\nelse:\n  echo \"No gif returned, HTTP status: \" & $httpResponse.status",
+  "model": "gpt-5-mini"
+}

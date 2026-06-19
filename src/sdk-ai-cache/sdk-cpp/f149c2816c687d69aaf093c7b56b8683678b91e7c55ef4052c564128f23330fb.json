@@ -1,0 +1,7 @@
+{
+  "method": "putRemoveBadge",
+  "signatureHash": "f149c2816c687d69aaf093c7b56b8683678b91e7c55ef4052c564128f23330fb",
+  "generatedAt": "2026-06-19T21:45:03.354Z",
+  "codeExample": "utility::string_t badgeId = U(\"badge-12345\");\nboost::optional<utility::string_t> userId(U(\"user@example.com\"));\nboost::optional<utility::string_t> commentId(U(\"cmt-4567\"));\nboost::optional<utility::string_t> broadcastId(U(\"broadcast-2022\"));\nboost::optional<utility::string_t> sso(U(\"sso-token-abc123\"));\napi->putRemoveBadge(badgeId, userId, commentId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<RemoveUserBadgeResponse>> t){\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<RemoveUserBadgeResponse>();\n    } catch (const std::exception&) {}\n});",
+  "model": "gpt-5-mini"
+}

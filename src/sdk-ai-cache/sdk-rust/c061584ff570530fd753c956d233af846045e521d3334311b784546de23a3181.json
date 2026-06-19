@@ -1,0 +1,7 @@
+{
+  "method": "get_question_results",
+  "signatureHash": "c061584ff570530fd753c956d233af846045e521d3334311b784546de23a3181",
+  "generatedAt": "2026-06-19T18:51:07.521Z",
+  "codeExample": "let params: GetQuestionResultsParams = GetQuestionResultsParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    url_id: Some(\"news/world/2026-election\".to_string()),\n    user_id: Some(\"user_12345\".to_string()),\n    start_date: Some(\"2026-01-01T00:00:00Z\".to_string()),\n    question_id: Some(\"q_987\".to_string()),\n    question_ids: Some(\"q_987,q_654\".to_string()),\n    skip: Some(20.0),\n};\n\nlet response: GetQuestionResultsResponse = get_question_results(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

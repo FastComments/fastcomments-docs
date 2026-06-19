@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "fab8f0a3bd523ed21b30d07d6dc1334e7aec0adb9b388c0b42a9391c8d61170a",
+  "generatedAt": "2026-06-19T18:51:15.223Z",
+  "codeExample": "let (response, httpResponse) = client.setCommentText(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  broadcastId = \"\",\n  commentTextUpdateRequest = CommentTextUpdateRequest(text: \"Updated comment text to fix a typo and clarify meaning.\"),\n  editKey = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let result = response.get()\n  discard result",
+  "model": "gpt-5-mini"
+}

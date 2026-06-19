@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "5bed57f75bcbd49c9d82b1eaf79c16042b6bd3c73ff31f04291adfef9c4ba1f9",
+  "generatedAt": "2026-06-19T18:51:15.230Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nUnBlockFromCommentParams params;\nboost::optional<utility::string_t> userId = utility::string_t(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId = utility::string_t(U(\"anon-98765\"));\nauto unblockTask = api->unBlockUserFromComment(tenantId, commentId, params, userId, anonUserId)\n    .then([](pplx::task<std::shared_ptr<UnblockSuccess>> t) -> std::shared_ptr<UnblockSuccess> {\n        try {\n            auto result = t.get();\n            return result ? result : std::make_shared<UnblockSuccess>();\n        } catch (...) {\n            return std::make_shared<UnblockSuccess>();\n        }\n    });",
+  "model": "gpt-5-mini"
+}

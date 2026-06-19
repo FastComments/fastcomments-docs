@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "a22fb07b6b8727dca62f7e76d7c7245951645229e32f4c602f90c33f7fb5fa35",
+  "generatedAt": "2026-06-19T18:51:07.886Z",
+  "codeExample": "let (response, httpResponse) = client.flagCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  isFlagged = true,\n  sso = \"\"\n)\n\nif response.isSome:\n  let apiResp = response.get()\n  discard apiResp\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "cc3d36c65ee726847e0359881ea73ef6fc449ba6c8b59d05b66c45415a038f50",
+  "generatedAt": "2026-06-19T18:51:07.075Z",
+  "codeExample": "let (response, httpResponse) = client.lockComment(tenantId = \"news-tenant-42\", commentId = \"cmt-8f3a2b9d\", broadcastId = \"\", sso = \"\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Locked comment successfully for tenant news-tenant-42\"\nelse:\n  echo \"Failed to lock comment, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

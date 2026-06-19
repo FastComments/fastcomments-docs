@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "25bf64744a765ded29500a5f707b16ed070c2080ff515e68968b1490b646968b",
+  "generatedAt": "2026-06-19T18:51:16.643Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentId = utility::conversions::to_string_t(\"cmt-456\");\nutility::string_t broadcastId = utility::conversions::to_string_t(\"video-789\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"editkey-xyz\"));\nboost::optional<utility::string_t> sso = boost::none;\napi->deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)\n.then([](pplx::task<std::shared_ptr<PublicAPIDeleteCommentResponse>> t){\n    try {\n        auto resp = t.get();\n        auto finalResp = resp ? resp : std::make_shared<PublicAPIDeleteCommentResponse>();\n        (void)finalResp;\n    } catch (const std::exception&) {}\n});",
+  "model": "gpt-5-mini"
+}

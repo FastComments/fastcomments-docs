@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "8c876011f79a67a4c1f182224031b256b91ca5b16710ffd0c9386299f6aae79f",
+  "generatedAt": "2026-06-19T21:44:55.057Z",
+  "codeExample": "let (response, httpResponse) = client.postFlagComment(commentId = \"comment-742\", sso = \"\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Comment flagged successfully\"\nelse:\n  echo \"Failed to flag comment\"",
+  "model": "gpt-5-mini"
+}

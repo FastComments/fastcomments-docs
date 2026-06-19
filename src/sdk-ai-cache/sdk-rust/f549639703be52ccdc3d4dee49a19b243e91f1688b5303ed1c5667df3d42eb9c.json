@@ -1,0 +1,7 @@
+{
+  "method": "save_comments_bulk",
+  "signatureHash": "f549639703be52ccdc3d4dee49a19b243e91f1688b5303ed1c5667df3d42eb9c",
+  "generatedAt": "2026-06-19T18:51:11.917Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let comment1: models::CreateCommentParams = models::CreateCommentParams {\n        thread_id: \"news/article/2026-06-19\".to_string(),\n        comment_text: \"Great reporting — very informative.\".to_string(),\n        user_id: \"user-12345\".to_string(),\n        parent_id: None,\n        mentions: Some(vec![\n            models::CommentUserMentionInfo { user_id: \"user-678\".to_string(), display_name: \"Jane Doe\".to_string() }\n        ]),\n        hashtags: Some(vec![\n            models::CommentUserHashTagInfo { tag: \"analysis\".to_string() }\n        ]),\n        ..Default::default()\n    };\n\n    let params: SaveCommentsBulkParams = SaveCommentsBulkParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_comment_params: vec![comment1],\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        send_emails: Some(false),\n        populate_notifications: Some(true),\n    };\n\n    let responses: Vec<models::SaveCommentsBulkResponse> = save_comments_bulk(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

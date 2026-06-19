@@ -1,0 +1,7 @@
+{
+  "method": "getModerationCommentText",
+  "signatureHash": "526d08ea1a1706f9d5264bf9ac6c0713091b1890ff040342ee86d7fb91d073a7",
+  "generatedAt": "2026-06-19T21:44:58.782Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-987654321\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getModerationCommentText(commentId, sso)\n.then([](pplx::task<std::shared_ptr<GetCommentTextResponse>> t) -> std::shared_ptr<GetCommentTextResponse> {\n    try {\n        auto resp = t.get();\n        return resp ? resp : std::make_shared<GetCommentTextResponse>();\n    } catch (...) {\n        return std::make_shared<GetCommentTextResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

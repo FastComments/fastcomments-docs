@@ -1,0 +1,7 @@
+{
+  "method": "put_award_badge",
+  "signatureHash": "6937ac6be5fb9cec2280abe9544d7490f8701fa9b87392e7903fe4b274c75dc1",
+  "generatedAt": "2026-06-19T21:44:55.598Z",
+  "codeExample": "async fn award_badge_example() -> Result<AwardUserBadgeResponse, Error> {\n    let params: PutAwardBadgeParams = PutAwardBadgeParams {\n        badge_id: \"community-champion\".to_string(),\n        user_id: Some(\"user-4821\".to_string()),\n        comment_id: Some(\"news/article/2026-06-18-comment-91\".to_string()),\n        broadcast_id: None,\n        sso: Some(\"acme-corp-sso-token-abc123\".to_string()),\n    };\n    let response: AwardUserBadgeResponse = put_award_badge(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

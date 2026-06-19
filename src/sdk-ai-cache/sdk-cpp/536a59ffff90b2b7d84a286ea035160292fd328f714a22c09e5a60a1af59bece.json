@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "536a59ffff90b2b7d84a286ea035160292fd328f714a22c09e5a60a1af59bece",
+  "generatedAt": "2026-06-19T21:44:56.941Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-12345\");\nboost::optional<bool> approved = boost::optional<bool>(true);\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto task = api->postSetCommentApprovalStatus(commentId, approved, sso)\n.then([](std::shared_ptr<SetCommentApprovedResponse> resp){\n    auto result = resp ? resp : std::make_shared<SetCommentApprovedResponse>();\n    return result;\n});",
+  "model": "gpt-5-mini"
+}

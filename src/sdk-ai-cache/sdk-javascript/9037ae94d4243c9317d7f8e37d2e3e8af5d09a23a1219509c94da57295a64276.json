@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "9037ae94d4243c9317d7f8e37d2e3e8af5d09a23a1219509c94da57295a64276",
+  "generatedAt": "2026-06-19T21:44:55.979Z",
+  "codeExample": "const bulkParams: BulkPreBanParams = {\n  accounts: [\n    { userId: 'u_8729', email: 'bot123@malicious.com', ip: '192.0.2.55' },\n    { userId: 'u_9901', email: 'spam.sender@cheapmeds.co', ip: '198.51.100.12' }\n  ],\n  reason: 'Automated pre-ban candidate import'\n};\nconst includeByUserIdAndEmail: boolean = true;\nconst includeByIP: boolean = true;\nconst includeByEmailDomain: boolean = false;\nconst sso: string = 'sso_58fd3b2c-token';\nconst result: BulkPreBanSummary = await postBulkPreBanSummary(bulkParams, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso);",
+  "model": "gpt-5-mini"
+}

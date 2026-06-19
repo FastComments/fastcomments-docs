@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "5203ebc567e8a273f3f5a54a4e6bc4e92b8d2a61029b4d253beea4b5ee09a403",
+  "generatedAt": "2026-06-19T18:51:09.464Z",
+  "codeExample": "let (response, httpResponse) = client.getTicket(tenantId = \"my-tenant-123\", id = \"ticket-456\", userId = \"user-789\")\nif response.isSome:\n  let ticket = response.get()\n  echo \"Got ticket:\", ticket\nelse:\n  echo \"No ticket returned; HTTP response:\", httpResponse",
+  "model": "gpt-5-mini"
+}

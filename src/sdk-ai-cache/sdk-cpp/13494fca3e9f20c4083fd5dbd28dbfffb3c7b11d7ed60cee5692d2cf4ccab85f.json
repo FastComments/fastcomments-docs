@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "13494fca3e9f20c4083fd5dbd28dbfffb3c7b11d7ed60cee5692d2cf4ccab85f",
+  "generatedAt": "2026-06-19T18:51:16.571Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-7890\");\nPublicBlockFromCommentParams params;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->unBlockCommentPublic(tenantId, commentId, params, sso)\n.then([](std::shared_ptr<UnblockSuccess> res) {\n    if (!res) res = std::make_shared<UnblockSuccess>();\n    return res;\n})\n.then([](std::shared_ptr<UnblockSuccess> finalResult){\n    (void)finalResult;\n});",
+  "model": "gpt-5-mini"
+}

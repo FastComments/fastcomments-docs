@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "bf884cbfa6a172c707fa6e925074ae6afde963ff12eea522d86842ff25c82d20",
+  "generatedAt": "2026-06-19T18:51:12.528Z",
+  "codeExample": "boost::optional<utility::string_t> reason(U(\"cleanup\"));\nutility::string_t tenantId(U(\"my-tenant-123\"));\nutility::string_t urlId(U(\"blog/post-2024\"));\nutility::string_t id(U(\"react-0a1b2c3d\"));\nauto deleteTask = api->deleteV2PageReact(tenantId, urlId, id)\n    .then([](std::shared_ptr<CreateV1PageReact> result){\n        auto out = result ? result : std::make_shared<CreateV1PageReact>();\n        return out;\n    });\ndeleteTask.wait();",
+  "model": "gpt-5-mini"
+}

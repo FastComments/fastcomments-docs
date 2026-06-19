@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "8a2a58ea3d1031fb8b0a4b59c1527828c2132764c745b9abbe7f3465abee1e69",
+  "generatedAt": "2026-06-19T18:51:11.358Z",
+  "codeExample": "let (response, httpResponse) = client.getUserReactsPublic(\n  tenantId = \"my-tenant-123\",\n  postIds = @[\"news/article-2026\", \"blog/opinion-987\"],\n  sso = \"\"\n)\nif response.isSome:\n  let reacts = response.get()\n  echo \"Received user reacts for tenant: \", \"my-tenant-123\"",
+  "model": "gpt-5-mini"
+}

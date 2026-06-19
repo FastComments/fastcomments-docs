@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "f77b4140fae7b093e83d14335f174abacb5ea265c8e4fd58fc541f92824f3d87",
+  "generatedAt": "2026-06-19T18:51:22.632Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-9876\");\nboost::optional<utility::string_t> requestId = U(\"req-456\");\nauto task = api->deleteV1PageReact(tenantId, urlId)\n    .then([requestId](pplx::task<std::shared_ptr<CreateV1PageReact>> t) {\n        try {\n            auto result = t.get();\n            if (!result) result = std::make_shared<CreateV1PageReact>();\n            return result;\n        } catch (const std::exception&) {\n            return std::make_shared<CreateV1PageReact>();\n        }\n    });\ntask.wait();",
+  "model": "gpt-5-mini"
+}

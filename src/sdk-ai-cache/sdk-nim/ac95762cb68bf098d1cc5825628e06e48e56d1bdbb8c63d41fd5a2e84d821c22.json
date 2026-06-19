@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "ac95762cb68bf098d1cc5825628e06e48e56d1bdbb8c63d41fd5a2e84d821c22",
+  "generatedAt": "2026-06-19T18:51:04.929Z",
+  "codeExample": "let (response, httpResponse) = client.getGifsTrending(tenantId = \"my-tenant-123\",\n  locale = \"en-US\",\n  rating = \"pg-13\",\n  page = 1.0)\nif response.isSome:\n  let trending = response.get()",
+  "model": "gpt-5-mini"
+}

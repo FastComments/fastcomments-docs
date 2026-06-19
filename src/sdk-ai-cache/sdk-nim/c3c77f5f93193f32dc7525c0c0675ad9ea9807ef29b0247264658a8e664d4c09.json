@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "c3c77f5f93193f32dc7525c0c0675ad9ea9807ef29b0247264658a8e664d4c09",
+  "generatedAt": "2026-06-19T18:51:08.241Z",
+  "codeExample": "let (response, httpResponse) = client.deleteHashTag(\n  tag = \"\",\n  tenantId = \"my-tenant-123\",\n  deleteHashTagRequestBody = DeleteHashTagRequestBody()\n)\n\nif response.isSome:\n  let emptyResp = response.get()\n  echo \"Deleted hashtag for tenant my-tenant-123; response:\", $emptyResp, \" status:\", $httpResponse.status\nelse:\n  echo \"No response body; status:\", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

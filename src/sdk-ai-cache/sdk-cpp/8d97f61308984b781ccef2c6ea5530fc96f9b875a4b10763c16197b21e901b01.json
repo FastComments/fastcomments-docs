@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "8d97f61308984b781ccef2c6ea5530fc96f9b875a4b10763c16197b21e901b01",
+  "generatedAt": "2026-06-19T21:44:59.630Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-2026-0001\");\nboost::optional<bool> reviewed = true;\nboost::optional<utility::string_t> sso = U(\"user@example.com\");\nauto fallback = std::make_shared<APIEmptyResponse>();\napi->postSetCommentReviewStatus(commentId, reviewed, sso)\n    .then([fallback](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n        try {\n            auto resp = t.get();\n            if (!resp) resp = fallback;\n            std::cout << \"Comment review status updated\\n\";\n        } catch (const std::exception &e) {\n            std::cerr << \"Failed to set review status: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini"
+}

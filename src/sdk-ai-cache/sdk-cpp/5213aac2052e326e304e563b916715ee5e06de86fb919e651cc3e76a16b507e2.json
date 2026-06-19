@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadgesForUser",
+  "signatureHash": "5213aac2052e326e304e563b916715ee5e06de86fb919e651cc3e76a16b507e2",
+  "generatedAt": "2026-06-19T21:45:00.052Z",
+  "codeExample": "boost::optional<utility::string_t> badgesUserId(boost::optional<utility::string_t>(U(\"user@example.com\")));\nboost::optional<utility::string_t> commentId(boost::optional<utility::string_t>(U(\"cmt-789\")));\nboost::optional<utility::string_t> sso(boost::optional<utility::string_t>(U(\"my-tenant-123|sso-token-abc\")));\nauto task = api->getManualBadgesForUser(badgesUserId, commentId, sso)\n.then([](pplx::task<std::shared_ptr<GetUserManualBadgesResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<GetUserManualBadgesResponse>();\n        return resp;\n    } catch (...) {\n        return std::make_shared<GetUserManualBadgesResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

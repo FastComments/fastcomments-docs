@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badge_progress_by_user_id",
+  "signatureHash": "1fad7fc129d1514892c52bb5bd004542d4bf66a5f324ac7ce89d61a6300c06bd",
+  "generatedAt": "2026-06-19T18:51:18.978Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let user_id_opt: Option<&str> = Some(\"user-7823\");\n    let params: GetUserBadgeProgressByUserIdParams = GetUserBadgeProgressByUserIdParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: user_id_opt.unwrap().to_string(),\n    };\n    let response: ApiGetUserBadgeProgressResponse =\n        get_user_badge_progress_by_user_id(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

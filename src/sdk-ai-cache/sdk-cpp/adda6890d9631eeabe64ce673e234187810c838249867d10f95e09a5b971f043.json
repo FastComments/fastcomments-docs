@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "adda6890d9631eeabe64ce673e234187810c838249867d10f95e09a5b971f043",
+  "generatedAt": "2026-06-19T21:45:00.846Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-7890\");\nboost::optional<bool> spam = true;\nboost::optional<bool> permNotSpam = false;\nboost::optional<utility::string_t> sso = U(\"user@example.com\");\n\napi->postSetCommentSpamStatus(commentId, spam, permNotSpam, sso)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n    try {\n        auto resp = task.get();\n        auto ack = std::make_shared<APIEmptyResponse>();\n        if (resp) *ack = *resp;\n        return ack;\n    } catch (...) {\n        return std::make_shared<APIEmptyResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

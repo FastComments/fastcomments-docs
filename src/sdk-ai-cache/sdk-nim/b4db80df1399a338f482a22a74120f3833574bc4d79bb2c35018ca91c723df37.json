@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "b4db80df1399a338f482a22a74120f3833574bc4d79bb2c35018ca91c723df37",
+  "generatedAt": "2026-06-19T18:51:08.442Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet badgeId = \"badge-456\"\n\nlet (response, httpResponse) = client.deleteUserBadge(tenantId = tenantId, id = badgeId)\n\nif response.isSome:\n  let success = response.get()\n  echo \"Badge deleted successfully for tenant: \", tenantId, \" id: \", badgeId\nelse:\n  echo \"Failed to delete badge. HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

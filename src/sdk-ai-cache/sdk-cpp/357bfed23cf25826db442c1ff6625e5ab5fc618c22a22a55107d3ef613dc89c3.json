@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "357bfed23cf25826db442c1ff6625e5ab5fc618c22a22a55107d3ef613dc89c3",
+  "generatedAt": "2026-06-19T18:51:13.116Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto packageId = utility::string_t(U(\"pkg-987\"));\nauto body = std::make_shared<UpdateTenantPackageBody>();\nbody->plan = utility::string_t(U(\"premium\"));\nbody->seats = boost::optional<int>(50);\nbody->expiresAt = boost::optional<utility::string_t>(U(\"2026-12-31T23:59:59Z\"));\nbody->contactEmail = boost::optional<utility::string_t>(U(\"ops@acme-corp.com\"));\napi->updateTenantPackage(tenantId, packageId, body)\n.then([](std::shared_ptr<APIEmptyResponse> resp){\n    if(!resp) throw std::runtime_error(\"Failed to update tenant package\");\n});",
+  "model": "gpt-5-mini"
+}

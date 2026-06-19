@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "90dc38383e2bf1d485a24910a2cf19bfebd46068cd3a2c879a4b415b37077d5f",
+  "generatedAt": "2026-06-19T18:51:08.293Z",
+  "codeExample": "let (response, httpResponse) = client.updateUserBadge(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  updateUserBadgeParams = UpdateUserBadgeParams()\n)\n\nif response.isSome:\n  let success = response.get()\n  echo \"Badge updated successfully\"\nelse:\n  echo \"Badge update failed\"",
+  "model": "gpt-5-mini"
+}

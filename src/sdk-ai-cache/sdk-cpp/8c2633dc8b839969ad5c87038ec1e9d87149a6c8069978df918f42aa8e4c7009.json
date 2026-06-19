@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "8c2633dc8b839969ad5c87038ec1e9d87149a6c8069978df918f42aa8e4c7009",
+  "generatedAt": "2026-06-19T18:51:21.500Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(\"my-tenant-123\");\nauto paramsPtr = std::make_shared<CreateFeedPostParams>();\nparamsPtr->content = utility::string_t(\"Deployment completed successfully. All services are operational.\");\nparamsPtr->authorEmail = utility::string_t(\"ops@company.com\");\nparamsPtr->authorName = utility::string_t(\"Deploy Bot\");\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(utility::string_t(\"broadcast-456\"));\nboost::optional<bool> isLive = boost::optional<bool>(true);\nboost::optional<bool> doSpamCheck = boost::optional<bool>(true);\nboost::optional<bool> skipDupCheck = boost::optional<bool>(false);\napi->createFeedPost(tenantId, *paramsPtr, broadcastId, isLive, doSpamCheck, skipDupCheck)\n    .then([](pplx::task<std::shared_ptr<CreateFeedPostsResponse>> t){\n        try {\n            auto resp = t.get();\n            (void)resp;\n        } catch (...) {}\n    });",
+  "model": "gpt-5-mini"
+}

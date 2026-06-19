@@ -1,0 +1,7 @@
+{
+  "method": "delete_feed_post_public",
+  "signatureHash": "7adfe50c7e78b470d79dc043ba55ab71394a30cc940333f61938ce3eb4a7a193",
+  "generatedAt": "2026-06-19T18:51:10.580Z",
+  "codeExample": "async fn run(configuration: &configuration::Configuration) -> Result<DeleteFeedPostPublicResponse, Error> {\n    let params: DeleteFeedPostPublicParams = DeleteFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_id: \"news/article-2026-06-19\".to_string(),\n        broadcast_id: Some(\"broadcast-789\".to_string()),\n        sso: Some(\"sso-token-abc123\".to_string()),\n    };\n    let response: DeleteFeedPostPublicResponse = delete_feed_post_public(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

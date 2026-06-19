@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "a7b9551ba06def9cad9d0089af755fd71904bc136b0980170bea01c55691120b",
+  "generatedAt": "2026-06-19T21:45:04.518Z",
+  "codeExample": "boost::optional<double> pageOpt(1.0);\nboost::optional<double> countOpt(25.0);\nboost::optional<utility::string_t> textSearchOpt(utility::conversions::to_string_t(\"offensive content\"));\nboost::optional<utility::string_t> byIPFromCommentOpt(utility::conversions::to_string_t(\"203.0.113.45\"));\nboost::optional<utility::string_t> filtersOpt(utility::conversions::to_string_t(\"{\\\"status\\\":\\\"pending\\\"}\"));\nboost::optional<utility::string_t> searchFiltersOpt(utility::conversions::to_string_t(\"author:john.doe@example.com\"));\nboost::optional<utility::string_t> sortsOpt(utility::conversions::to_string_t(\"createdAt:desc\"));\nboost::optional<bool> demoOpt(false);\nboost::optional<utility::string_t> ssoOpt(utility::conversions::to_string_t(\"tenant-123\"));\n\napi->getApiComments(pageOpt, countOpt, textSearchOpt, byIPFromCommentOpt, filtersOpt, searchFiltersOpt, sortsOpt, demoOpt, ssoOpt)\n.then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentsResponse>> t){\n    try {\n        auto resp = t.get();\n        auto safeResp = resp ? resp : std::make_shared<ModerationAPIGetCommentsResponse>();\n    } catch (const std::exception&) {}\n})\n.wait();",
+  "model": "gpt-5-mini"
+}

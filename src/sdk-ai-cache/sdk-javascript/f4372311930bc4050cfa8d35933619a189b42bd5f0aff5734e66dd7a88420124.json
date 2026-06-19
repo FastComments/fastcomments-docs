@@ -1,0 +1,7 @@
+{
+  "method": "putRemoveBadge",
+  "signatureHash": "f4372311930bc4050cfa8d35933619a189b42bd5f0aff5734e66dd7a88420124",
+  "generatedAt": "2026-06-19T21:44:55.460Z",
+  "codeExample": "(async () => {\n  const badgeId: string = 'badge_7392';\n  const userId: string = 'user_1284';\n  const commentId: string = 'cmt_5583';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyODQifQ.signature';\n  const response: RemoveUserBadgeResponse = await putRemoveBadge(badgeId, userId, commentId, undefined, sso);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

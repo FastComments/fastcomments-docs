@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "2b8131ad9760e50a70f8df7c8e3400c7517c1d2b55e34d79ebecc0b0768b6fb7",
+  "generatedAt": "2026-06-19T18:51:07.723Z",
+  "codeExample": "let (response, httpResponse) = client.getTenantDailyUsages(\n  tenantId = \"my-tenant-123\",\n  yearNumber = 2026.0,\n  monthNumber = 6.0,\n  dayNumber = 19.0,\n  skip = 0.0\n)\n\nif response.isSome:\n  let usage = response.get()\n  discard usage",
+  "model": "gpt-5-mini"
+}

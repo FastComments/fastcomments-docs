@@ -1,0 +1,7 @@
+{
+  "method": "update_notification",
+  "signatureHash": "0f37d6f6fe231f3d491d4f96d8316a4cbb625a8277c32aff767722709a171721",
+  "generatedAt": "2026-06-19T18:51:09.281Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let update_notification_body: models::UpdateNotificationBody = models::UpdateNotificationBody {\n        enabled: true,\n        event: \"comment.posted\".into(),\n        channels: vec![\"email\".into(), \"webhook\".into()],\n        template_id: \"tmpl-new-comment\".into(),\n    };\n    let params: UpdateNotificationParams = UpdateNotificationParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"notif-12345\".to_string(),\n        update_notification_body,\n        user_id: Some(\"admin-user-99\".to_string()),\n    };\n    let response: ApiEmptyResponse = update_notification(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

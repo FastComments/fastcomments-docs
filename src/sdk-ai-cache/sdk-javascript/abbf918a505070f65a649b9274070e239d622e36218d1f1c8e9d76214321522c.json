@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "abbf918a505070f65a649b9274070e239d622e36218d1f1c8e9d76214321522c",
+  "generatedAt": "2026-06-19T21:44:53.621Z",
+  "codeExample": "const ssoToken: string = \"sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\nconst resultWithoutSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference();\nconst resultWithSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(ssoToken);",
+  "model": "gpt-5-mini"
+}

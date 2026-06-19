@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "bc34387714cd197d18209f33a7ff28328e3601d6a1a46f89e558bd1e96c1bc28",
+  "generatedAt": "2026-06-19T18:51:16.668Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto questionId = utility::string_t(U(\"qst-456789\"));\nboost::optional<utility::string_t> operatorNote = boost::optional<utility::string_t>(U(\"admin-request-001\"));\n\napi->deleteQuestionResult(tenantId, questionId)\n    .then([operatorNote](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto result = resp ? resp : std::make_shared<APIEmptyResponse>();\n            if (operatorNote) std::cout << \"Deleted (note): \" << utility::conversions::to_utf8string(*operatorNote) << std::endl;\n            else std::cout << \"Deleted\" << std::endl;\n            return result;\n        } catch (const std::exception& e) {\n            std::cerr << \"Delete failed: \" << e.what() << std::endl;\n            return std::shared_ptr<APIEmptyResponse>(nullptr);\n        }\n    });",
+  "model": "gpt-5-mini"
+}

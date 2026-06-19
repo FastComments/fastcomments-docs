@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_children",
+  "signatureHash": "1a52793b7e4f6ee06c675940bff21fd418b2084a1e66752c91dab0f74c4356ab",
+  "generatedAt": "2026-06-19T21:44:58.910Z",
+  "codeExample": "async fn fetch_children() -> Result<ModerationApiChildCommentsResponse, Error> {\n    let params: GetCommentChildrenParams = GetCommentChildrenParams {\n        comment_id: \"news/article-2026-06-19-cmt-42\".to_string(),\n        sso: Some(\"sso-token-user-8f3d2a\".to_string()),\n    };\n    let children: ModerationApiChildCommentsResponse = get_comment_children(&configuration, params).await?;\n    Ok(children)\n}",
+  "model": "gpt-5-mini"
+}

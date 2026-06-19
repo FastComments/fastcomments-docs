@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "8ba10d0fef2ecde4d240755f9ced28ed4e07eeeb37696b48edceb6393e83fb48",
+  "generatedAt": "2026-06-19T21:44:57.552Z",
+  "codeExample": "boost::optional<utility::string_t> textSearch = utility::string_t(U(\"preventing spam in comments\"));\nboost::optional<utility::string_t> sso = utility::string_t(U(\"user@example.com\"));\napi->getSearchSuggest(textSearch, sso)\n    .then([](pplx::task<std::shared_ptr<ModerationSuggestResponse>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto copy = std::make_shared<ModerationSuggestResponse>(*resp);\n            }\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

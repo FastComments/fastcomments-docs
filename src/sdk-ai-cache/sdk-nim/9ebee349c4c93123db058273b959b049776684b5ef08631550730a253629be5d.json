@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "9ebee349c4c93123db058273b959b049776684b5ef08631550730a253629be5d",
+  "generatedAt": "2026-06-19T18:51:06.714Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionConfigs(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let configs = response.get()\n  echo \"Received question configs for tenant my-tenant-123\"\n  echo configs\nelse:\n  echo \"No question configs returned\"",
+  "model": "gpt-5-mini"
+}

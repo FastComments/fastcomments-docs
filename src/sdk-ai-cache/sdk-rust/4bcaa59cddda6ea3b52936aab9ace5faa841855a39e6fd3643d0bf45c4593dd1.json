@@ -1,0 +1,7 @@
+{
+  "method": "get_logs",
+  "signatureHash": "4bcaa59cddda6ea3b52936aab9ace5faa841855a39e6fd3643d0bf45c4593dd1",
+  "generatedAt": "2026-06-19T21:44:55.528Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetLogsParams = GetLogsParams {\n        comment_id: \"news/article/2026/06/fastcomments-thread-12345\".to_string(),\n        sso: Some(\"acme-corp|user:john.doe@example.com\".to_string()),\n    };\n    let logs: ModerationApiGetLogsResponse = get_logs(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

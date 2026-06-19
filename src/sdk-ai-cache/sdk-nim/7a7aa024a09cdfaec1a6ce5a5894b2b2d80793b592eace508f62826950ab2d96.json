@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "7a7aa024a09cdfaec1a6ce5a5894b2b2d80793b592eace508f62826950ab2d96",
+  "generatedAt": "2026-06-19T18:51:08.062Z",
+  "codeExample": "let (response, httpResponse) = client.getHashTags(tenantId = \"news-portal-987\", page = 2.0)\nif response.isSome:\n  let tagsResp = response.get()\n  echo \"Received hashtags response\"\nelse:\n  echo \"No hashtags returned\"",
+  "model": "gpt-5-mini"
+}

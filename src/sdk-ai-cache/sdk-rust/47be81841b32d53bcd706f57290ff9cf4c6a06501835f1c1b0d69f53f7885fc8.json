@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant_packages",
+  "signatureHash": "47be81841b32d53bcd706f57290ff9cf4c6a06501835f1c1b0d69f53f7885fc8",
+  "generatedAt": "2026-06-19T18:51:08.093Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetTenantPackagesParams = GetTenantPackagesParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        skip: Some(10.0),\n    };\n    let response: GetTenantPackagesResponse = get_tenant_packages(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "cdc9bf54e8fe153385d36f3599f54611dc44fd14ea8c1f1a006c3bf86030d908",
+  "generatedAt": "2026-06-19T18:51:15.008Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nutility::string_t broadcastId = U(\"broadcast-987\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->pinComment(tenantId, commentId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> task){\n    try {\n        auto resp = task.get();\n        auto copy = std::make_shared<ChangeCommentPinStatusResponse>(*resp);\n        std::cout << \"Pin operation completed. Response present: \" << (resp != nullptr) << std::endl;\n    } catch (const std::exception& e) {\n        std::cerr << \"Pin failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

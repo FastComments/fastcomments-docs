@@ -1,0 +1,7 @@
+{
+  "method": "get_user_presence_statuses",
+  "signatureHash": "bca7438903c39e0505947299874487556156a4873613e0ad1eddecd63e216bda",
+  "generatedAt": "2026-06-19T18:51:14.679Z",
+  "codeExample": "let cfg: &configuration::Configuration = &configuration;\nlet params: GetUserPresenceStatusesParams = GetUserPresenceStatusesParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    url_id_ws: \"news/article\".to_string(),\n    user_ids: \"user-123,user-456\".to_string(),\n    include_offline: Some(false),\n};\nlet response: GetUserPresenceStatusesResponse = get_user_presence_statuses(cfg, params).await?;",
+  "model": "gpt-5-mini"
+}

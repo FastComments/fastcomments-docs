@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "c3d0ebe5f845b48d442f1d3772505244a6ce35cbc2a9803803eaa465a6d3a80f",
+  "generatedAt": "2026-06-19T21:45:04.732Z",
+  "codeExample": "CommentsByIdsParams params;\nparams.tenantId = utility::string_t(U(\"my-tenant-123\"));\nparams.commentIds = std::vector<utility::string_t>{ U(\"cmt-1001\"), U(\"cmt-1002\") };\nboost::optional<utility::string_t> sso(U(\"user@example.com\"));\napi->postCommentsByIds(params, sso).then([](pplx::task<std::shared_ptr<ModerationAPIChildCommentsResponse>> t) {\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : std::make_shared<ModerationAPIChildCommentsResponse>();\n        std::cout << \"Fetched child comments response: \" << (result ? \"present\" : \"empty\") << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"Request failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

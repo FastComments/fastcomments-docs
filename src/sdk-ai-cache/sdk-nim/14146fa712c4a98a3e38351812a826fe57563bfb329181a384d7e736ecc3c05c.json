@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "14146fa712c4a98a3e38351812a826fe57563bfb329181a384d7e736ecc3c05c",
+  "generatedAt": "2026-06-19T18:51:09.426Z",
+  "codeExample": "let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = \"my-tenant-123\", urlIdWS = \"news/article-title\", userIds = \"user-123,user-456\")\nif response.isSome:\n  let presenceStatuses = response.get()\n  echo presenceStatuses\nelse:\n  echo \"No presence data\"",
+  "model": "gpt-5-mini"
+}

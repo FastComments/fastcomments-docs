@@ -1,0 +1,7 @@
+{
+  "method": "get_offline_users",
+  "signatureHash": "d42a46eee01e9e2c46537c85406462422f373fbc1c5eee0583fb3ceb1e70fbbc",
+  "generatedAt": "2026-06-19T18:51:10.116Z",
+  "codeExample": "async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {\n    let params: GetOfflineUsersParams = GetOfflineUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/world/today\".to_string(),\n        after_name: Some(\"jane.smith\".to_string()),\n        after_user_id: Some(\"user-1024\".to_string()),\n    };\n    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

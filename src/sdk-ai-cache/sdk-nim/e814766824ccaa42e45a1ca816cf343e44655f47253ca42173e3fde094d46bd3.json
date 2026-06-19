@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "e814766824ccaa42e45a1ca816cf343e44655f47253ca42173e3fde094d46bd3",
+  "generatedAt": "2026-06-19T21:44:54.249Z",
+  "codeExample": "let (response, httpResponse) = client.postRestoreDeletedComment(commentId = \"comment-8a7b6c5d\", sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.SAMPLE_SIGNATURE\")\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Comment restored:\", apiResp\nelse:\n  echo \"Restore request failed\"",
+  "model": "gpt-5-mini"
+}

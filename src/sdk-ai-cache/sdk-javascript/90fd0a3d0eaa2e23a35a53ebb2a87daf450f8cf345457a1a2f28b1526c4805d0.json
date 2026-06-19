@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "90fd0a3d0eaa2e23a35a53ebb2a87daf450f8cf345457a1a2f28b1526c4805d0",
+  "generatedAt": "2026-06-19T21:44:55.389Z",
+  "codeExample": "const badgeId: string = 'gold-medal-2023';\nconst userId: string = 'usr_100234';\nconst commentId: string = 'c_78910';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';\nconst response: AwardUserBadgeResponse = await putAwardBadge(badgeId, userId, commentId, undefined, sso);",
+  "model": "gpt-5-mini"
+}

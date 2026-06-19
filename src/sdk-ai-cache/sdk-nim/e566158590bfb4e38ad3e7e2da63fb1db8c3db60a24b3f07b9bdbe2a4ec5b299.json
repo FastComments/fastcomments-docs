@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "e566158590bfb4e38ad3e7e2da63fb1db8c3db60a24b3f07b9bdbe2a4ec5b299",
+  "generatedAt": "2026-06-19T21:44:55.343Z",
+  "codeExample": "let (response, httpResponse) = client.getCount(\n  textSearch = \"climate change\",\n  byIPFromComment = \"203.0.113.5\",\n  filter = \"status:approved\",\n  searchFilters = \"author:john.doe@example.com;tag:opinion\",\n  demo = false,\n  sso = \"sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"\n)\nif response.isSome:\n  let countResp = response.get()\n  discard countResp\n  echo \"Count response received\"\nelse:\n  echo \"No count data returned\"",
+  "model": "gpt-5-mini"
+}

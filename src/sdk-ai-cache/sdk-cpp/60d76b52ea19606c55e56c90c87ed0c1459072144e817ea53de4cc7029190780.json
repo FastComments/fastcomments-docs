@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "60d76b52ea19606c55e56c90c87ed0c1459072144e817ea53de4cc7029190780",
+  "generatedAt": "2026-06-19T18:51:12.772Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-abc-789\");\nboost::optional<utility::string_t> title = boost::optional<utility::string_t>(U(\"Introducing New Features\"));\n\napi->createV1PageReact(tenantId, urlId, title)\n    .then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task) {\n        try {\n            auto result = task.get();\n            if (result) {\n                auto copy = std::make_shared<CreateV1PageReact>(*result);\n            }\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

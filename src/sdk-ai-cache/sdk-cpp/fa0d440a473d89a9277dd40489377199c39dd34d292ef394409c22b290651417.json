@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "fa0d440a473d89a9277dd40489377199c39dd34d292ef394409c22b290651417",
+  "generatedAt": "2026-06-19T18:51:10.462Z",
+  "codeExample": "boost::optional<utility::string_t> userId(U(\"alice@example.com\"));\nboost::optional<utility::string_t> anonUserId;\napi->createVote(U(\"my-tenant-123\"), U(\"cmt-456\"), U(\"upvote\"), userId, anonUserId)\n.then([](pplx::task<std::shared_ptr<VoteResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<VoteResponse>();\n    } catch (const std::exception&) {\n        auto fallback = std::make_shared<VoteResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

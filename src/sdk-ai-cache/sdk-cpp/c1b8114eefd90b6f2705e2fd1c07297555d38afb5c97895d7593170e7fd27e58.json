@@ -1,0 +1,7 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "c1b8114eefd90b6f2705e2fd1c07297555d38afb5c97895d7593170e7fd27e58",
+  "generatedAt": "2026-06-19T18:51:22.731Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nAddDomainConfigParams params;\nparams.domain = U(\"comments.example.com\");\nparams.ownerEmail = U(\"admin@example.com\");\nparams.enforceHttps = boost::optional<bool>(true);\nparams.note = boost::optional<utility::string_t>(U(\"Primary comments host for example.com\"));\napi->addDomainConfig(tenantId, params)\n.then([](std::shared_ptr<AddDomainConfigResponse> resp){\n    if(!resp) throw std::runtime_error(\"addDomainConfig returned null\");\n    return std::make_shared<AddDomainConfigResponse>(*resp);\n})\n.then([](std::shared_ptr<AddDomainConfigResponse> finalResp){\n    (void)finalResp;\n});",
+  "model": "gpt-5-mini"
+}

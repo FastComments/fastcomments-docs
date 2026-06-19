@@ -1,0 +1,7 @@
+{
+  "method": "delete_domain_config",
+  "signatureHash": "859f894503233931afa25253012f6aa4f1b494b2955b414552905f1051d38188",
+  "generatedAt": "2026-06-19T18:51:10.867Z",
+  "codeExample": "async fn run_delete_domain_config() -> Result<DeleteDomainConfigResponse, Error> {\n    let params = DeleteDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        domain: \"news/acme-corp\".to_owned(),\n        force: Some(true),\n    };\n    let response: DeleteDomainConfigResponse = delete_domain_config(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

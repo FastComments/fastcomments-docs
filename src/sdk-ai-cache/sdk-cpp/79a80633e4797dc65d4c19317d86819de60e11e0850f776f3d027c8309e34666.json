@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "79a80633e4797dc65d4c19317d86819de60e11e0850f776f3d027c8309e34666",
+  "generatedAt": "2026-06-19T18:51:14.541Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U(\"en-US\"));\nboost::optional<utility::string_t> rating = boost::optional<utility::string_t>(U(\"pg\"));\nboost::optional<double> page = boost::optional<double>(2.0);\nauto defaultResp = std::make_shared<GetGifsTrendingResponse>();\napi->getGifsTrending(tenantId, locale, rating, page)\n    .then([defaultResp](std::shared_ptr<GetGifsTrendingResponse> resp) {\n        auto r = resp ? resp : defaultResp;\n        std::cout << \"Received trending GIFs response pointer: \" << static_cast<const void*>(r.get()) << std::endl;\n    });",
+  "model": "gpt-5-mini"
+}

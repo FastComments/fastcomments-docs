@@ -1,0 +1,7 @@
+{
+  "method": "create_feed_post_public",
+  "signatureHash": "1e04ad8256585c1f5c0da363355cdc31c27f1d945e590cfc14d46125192f853a",
+  "generatedAt": "2026-06-19T18:51:29.440Z",
+  "codeExample": "async fn run() -> Result<CreateFeedPostResponse, Error> {\n    let params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_feed_post_params: models::CreateFeedPostParams {\n            title: \"Acme Product Launch\".to_string(),\n            content: \"We're excited to launch our new product line today.\".to_string(),\n            path: \"news/product-launch\".to_string(),\n            media: vec![models::FeedPostMediaItem {\n                asset: models::FeedPostMediaItemAsset {\n                    url: \"https://cdn.acme.com/images/launch.jpg\".to_string(),\n                    mime_type: Some(\"image/jpeg\".to_string()),\n                },\n                caption: Some(\"Launch hero image\".to_string()),\n            }],\n            ..Default::default()\n        },\n        broadcast_id: Some(\"broadcast-2026-06\".to_string()),\n        sso: Some(\"sso-user-jane-xyz\".to_string()),\n    };\n    let response: CreateFeedPostResponse = create_feed_post_public(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

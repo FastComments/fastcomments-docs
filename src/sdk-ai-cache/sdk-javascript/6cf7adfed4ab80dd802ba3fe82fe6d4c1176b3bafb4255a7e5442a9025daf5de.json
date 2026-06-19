@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "6cf7adfed4ab80dd802ba3fe82fe6d4c1176b3bafb4255a7e5442a9025daf5de",
+  "generatedAt": "2026-06-19T21:44:56.255Z",
+  "codeExample": "const commentId: string = 'cmt_9f8b3a2e';\nconst spam: boolean = false;\nconst permNotSpam: boolean = true;\nconst sso: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signedToken';\nconst result: APIEmptyResponse = await postSetCommentSpamStatus(commentId, spam, permNotSpam, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "update_feed_post",
+  "signatureHash": "4aa995e38a5fada0107fc253e03fc7c05649a1fe8b7d8e1d338c83756b51ea7a",
+  "generatedAt": "2026-06-19T18:51:44.407Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let _response: ApiEmptyResponse = update_feed_post(&configuration, UpdateFeedPostParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/quarterly-product-update\"),\n        feed_post: models::FeedPost {\n            title: Some(String::from(\"Quarterly Product Update\")),\n            content: Some(String::from(\"We shipped new features and improvements across the platform.\")),\n            tags: Some(vec![String::from(\"product\"), String::from(\"release\")]),\n            media: Some(vec![models::FeedPostMediaItem {\n                asset: Some(models::FeedPostMediaItemAsset {\n                    url: String::from(\"https://cdn.acme.com/images/update.jpg\"),\n                    mime_type: Some(String::from(\"image/jpeg\")),\n                }),\n                caption: Some(String::from(\"New dashboard view\")),\n                order: Some(0),\n            }]),\n            links: Some(vec![models::FeedPostLink {\n                url: String::from(\"https://acme.com/blog/product-update\"),\n                title: Some(String::from(\"Read the full post\")),\n            }]),\n        },\n    }).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

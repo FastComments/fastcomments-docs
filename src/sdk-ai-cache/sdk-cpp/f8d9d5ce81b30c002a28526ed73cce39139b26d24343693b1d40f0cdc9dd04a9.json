@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "f8d9d5ce81b30c002a28526ed73cce39139b26d24343693b1d40f0cdc9dd04a9",
+  "generatedAt": "2026-06-19T18:51:15.620Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t userId = utility::conversions::to_string_t(\"alice@acme.com\");\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"en-US\"));\nauto task = api->getUserBadgeProgressById(tenantId, userId)\n    .then([locale](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) -> std::shared_ptr<APIGetUserBadgeProgressResponse> {\n        try {\n            std::shared_ptr<APIGetUserBadgeProgressResponse> resp = t.get();\n            if (!resp) return std::shared_ptr<APIGetUserBadgeProgressResponse>();\n            auto result = std::make_shared<APIGetUserBadgeProgressResponse>(*resp);\n            if (locale) { auto lang = *locale; (void)lang; }\n            return result;\n        } catch (...) {\n            return std::shared_ptr<APIGetUserBadgeProgressResponse>();\n        }\n    });",
+  "model": "gpt-5-mini"
+}

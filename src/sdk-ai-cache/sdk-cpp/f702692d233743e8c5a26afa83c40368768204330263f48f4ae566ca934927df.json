@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "f702692d233743e8c5a26afa83c40368768204330263f48f4ae566ca934927df",
+  "generatedAt": "2026-06-19T18:51:24.942Z",
+  "codeExample": "boost::optional<utility::string_t> tenantId(utility::conversions::to_string_t(\"my-tenant-123\"));\nauto bodyPtr = std::make_shared<BulkCreateHashTagsBody>();\nboost::optional<BulkCreateHashTagsBody> bodyOpt(*bodyPtr);\napi->addHashTagsBulk(tenantId, bodyOpt)\n    .then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task) {\n        try {\n            auto resp = task.get();\n            if (resp) {\n                std::cout << \"Bulk hashtags created successfully\\n\";\n            } else {\n                std::cout << \"No response received\\n\";\n            }\n        } catch (const std::exception &e) {\n            std::cerr << \"API error: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini"
+}

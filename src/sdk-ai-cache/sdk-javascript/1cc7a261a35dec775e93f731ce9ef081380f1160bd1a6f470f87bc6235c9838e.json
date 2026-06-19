@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "1cc7a261a35dec775e93f731ce9ef081380f1160bd1a6f470f87bc6235c9838e",
+  "generatedAt": "2026-06-19T21:44:58.002Z",
+  "codeExample": "(async () => {\n  const searchValue: string = 'jane.doe@acme-corp.com';\n  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n  const responseWithSso: ModerationUserSearchResponse = await getSearchUsers(searchValue, ssoToken);\n  const searchValue2: string = 'michael.brown';\n  const responseWithoutSso: ModerationUserSearchResponse = await getSearchUsers(searchValue2);\n  console.log(responseWithSso, responseWithoutSso);\n})();",
+  "model": "gpt-5-mini"
+}

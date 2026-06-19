@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "66ff97401a04599aa2b9a4122fdabd3c65eddf079ccaa1a0153552888d7d214a",
+  "generatedAt": "2026-06-19T18:51:09.292Z",
+  "codeExample": "let (response, httpResponse) = client.resetUserNotifications(\n  tenantId = \"my-tenant-123\",\n  afterId = \"\",\n  afterCreatedAt = 0'i64,\n  unreadOnly = false,\n  dmOnly = false,\n  noDm = false,\n  sso = \"\"\n)\nif response.isSome:\n  let resetResp = response.get()\n  echo \"ResetUserNotificationsResponse received\"\nelse:\n  echo \"No ResetUserNotificationsResponse\"",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "25725a91b408dee4ee1b02a6b3dc3c4f84ec6027aa5851cb721d74c52206bd9d",
+  "generatedAt": "2026-06-19T21:44:56.667Z",
+  "codeExample": "(async () => {\n  const countResult: ModerationAPICountCommentsResponse = await getCount(\n    \"reported harassment\",\n    \"203.0.113.7\",\n    \"status:pending\",\n    undefined,\n    false,\n    \"sso_user_789.jwt.token\"\n  );\n  console.log(countResult);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "create_subscription",
+  "signatureHash": "8e27eace157bf309234fc3779e4447080bb42e0450c523959140df50201256f5",
+  "generatedAt": "2026-06-19T18:51:10.897Z",
+  "codeExample": "let params: CreateSubscriptionParams = CreateSubscriptionParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_api_user_subscription_data: models::CreateApiUserSubscriptionData {\n        user_id: \"user-987\".to_string(),\n        plan_id: \"pro-monthly\".to_string(),\n        source: Some(\"website\".to_string()),\n        topics: Some(vec![\"news/article\".to_string(), \"product/updates\".to_string()]),\n        auto_renew: Some(true),\n        metadata: Some(std::collections::HashMap::from([(\"ref\".to_string(), \"signup_form\".to_string())])),\n    },\n};\nlet response: CreateSubscriptionApiResponse = create_subscription(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

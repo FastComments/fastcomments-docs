@@ -1,0 +1,7 @@
+{
+  "method": "get_ban_users_from_comment",
+  "signatureHash": "7d988568cc07702d6c0f4774daf92f7824d98f87051f8a3121e6c4ee05ee5744",
+  "generatedAt": "2026-06-19T21:44:55.598Z",
+  "codeExample": "async fn fetch_banned_users_from_comment() -> Result<GetBannedUsersFromCommentResponse, Error> {\n    let params: GetBanUsersFromCommentParams = GetBanUsersFromCommentParams {\n        comment_id: String::from(\"news/tech/acme-launch/comment-42\"),\n        sso: Some(String::from(\"acme-corp-sso-token-2026-06\")),\n    };\n    let response: GetBannedUsersFromCommentResponse =\n        get_ban_users_from_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

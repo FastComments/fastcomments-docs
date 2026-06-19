@@ -1,0 +1,7 @@
+{
+  "method": "create_ticket",
+  "signatureHash": "0f9042a497e6406c55a91aec6cf0c82e69e210db6aa3e780a8c59542aa00ccc0",
+  "generatedAt": "2026-06-19T18:51:12.815Z",
+  "codeExample": "async fn create_ticket_example() -> Result<CreateTicketResponse, Error> {\n    let params: CreateTicketParams = CreateTicketParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: \"alice-7d9\".to_string(),\n        create_ticket_body: models::CreateTicketBody {\n            subject: \"Payment issue: double charge on subscription\".to_string(),\n            message: \"I was charged twice for the July subscription. Please refund one charge.\".to_string(),\n            priority: Some(\"high\".to_string()),\n            tags: Some(vec![\"billing\".to_string(), \"subscription\".to_string()]),\n            contact_email: Some(\"alice@acme-corp.com\".to_string()),\n        },\n    };\n\n    let response: CreateTicketResponse = create_ticket(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

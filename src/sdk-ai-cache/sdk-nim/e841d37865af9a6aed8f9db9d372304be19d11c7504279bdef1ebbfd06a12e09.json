@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "e841d37865af9a6aed8f9db9d372304be19d11c7504279bdef1ebbfd06a12e09",
+  "generatedAt": "2026-06-19T18:51:08.724Z",
+  "codeExample": "let (response, httpResponse) = client.getTenant(tenantId = \"my-tenant-123\", id = \"tenant-789\")\nif response.isSome:\n  let tenant = response.get()\n  discard tenant\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "153fc1e12ad261a73be8bc5f774976a493b2c9a197241501a20ca3074d227dc9",
+  "generatedAt": "2026-06-19T18:51:22.558Z",
+  "codeExample": "utility::string_t tenantId(U(\"my-tenant-123\"));\nboost::optional<int32_t> page = 1;\nboost::optional<int32_t> limit = 50;\nboost::optional<bool> asTree = true;\nboost::optional<utility::string_t> userId = utility::string_t(U(\"user@example.com\"));\nboost::optional<int64_t> fromDate = 1622505600LL;\nboost::optional<int64_t> toDate = 1625097600LL;\n\napi->getComments(tenantId,\n                 page,\n                 limit,\n                 boost::optional<int32_t>(),\n                 asTree,\n                 boost::optional<int32_t>(),\n                 boost::optional<int32_t>(),\n                 boost::optional<int32_t>(),\n                 boost::optional<utility::string_t>(),\n                 userId,\n                 boost::optional<utility::string_t>(),\n                 boost::optional<utility::string_t>(),\n                 boost::optional<utility::string_t>(),\n                 boost::optional<utility::string_t>(),\n                 boost::optional<SortDirections>(),\n                 fromDate,\n                 toDate)\n.then([](pplx::task<std::shared_ptr<APIGetCommentsResponse>> t){\n    try {\n        auto resp = t.get();\n        auto holder = std::make_shared<std::shared_ptr<APIGetCommentsResponse>>(resp);\n        (void)holder;\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini"
+}

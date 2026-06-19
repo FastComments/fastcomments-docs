@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "4a795a096bc06fc0557f63da3784b93574304cf860bcadce76a0bedb72e03cd4",
+  "generatedAt": "2026-06-19T18:51:10.330Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionResults(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2026/election-analysis\",\n  userId = \"user-42\",\n  startDate = \"2026-06-01T00:00:00Z\",\n  questionId = \"q-6789\",\n  questionIds = @[\"q-6789\", \"q-6790\"],\n  skip = 0.0\n)\nif response.isSome:\n  let results = response.get()\n  echo \"Received question results\"\nelse:\n  echo \"No results returned\"",
+  "model": "gpt-5-mini"
+}

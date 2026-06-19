@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "35f322da3675db78c0df037e4bc7288b6ff2d5e386e80e011ef6c82199c60cc2",
+  "generatedAt": "2026-06-19T21:44:59.623Z",
+  "codeExample": "utility::string_t commentId = utility::conversions::to_string_t(\"cmt-8f3a2b9e\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"));\napi->postFlagComment(commentId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try {\n        std::shared_ptr<APIEmptyResponse> resp = task.get();\n        if (resp) {\n            auto copy = std::make_shared<APIEmptyResponse>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

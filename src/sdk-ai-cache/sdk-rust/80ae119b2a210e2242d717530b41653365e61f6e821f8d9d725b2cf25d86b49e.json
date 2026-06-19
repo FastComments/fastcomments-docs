@@ -1,0 +1,7 @@
+{
+  "method": "get_manual_badges_for_user",
+  "signatureHash": "80ae119b2a210e2242d717530b41653365e61f6e821f8d9d725b2cf25d86b49e",
+  "generatedAt": "2026-06-19T21:44:56.844Z",
+  "codeExample": "async fn example_get_manual_badges() -> Result<GetUserManualBadgesResponse, Error> {\n    let params: GetManualBadgesForUserParams = GetManualBadgesForUserParams {\n        badges_user_id: Some(String::from(\"acme-user-42\")),\n        comment_id: Some(String::from(\"news/article-5678\")),\n        sso: Some(String::from(\"sso-token-abc123\")),\n    };\n    let response: GetUserManualBadgesResponse = get_manual_badges_for_user(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

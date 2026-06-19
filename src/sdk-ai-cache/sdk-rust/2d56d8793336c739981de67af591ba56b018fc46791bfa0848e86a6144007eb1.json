@@ -1,0 +1,7 @@
+{
+  "method": "create_user_badge",
+  "signatureHash": "2d56d8793336c739981de67af591ba56b018fc46791bfa0848e86a6144007eb1",
+  "generatedAt": "2026-06-19T18:51:16.534Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateUserBadgeParams = CreateUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_user_badge_params: models::CreateUserBadgeParams {\n            user_id: \"user-7890\".to_string(),\n            badge_key: \"top-commenter\".to_string(),\n            title: \"Top Commenter\".to_string(),\n            description: Some(\"Consistently provided insightful comments\".to_string()),\n            image_url: Some(\"https://assets.news.example.com/badges/top-commenter.png\".to_string()),\n            is_visible: Some(true),\n            expires_at: None,\n        },\n    };\n\n    let response: ApiCreateUserBadgeResponse = create_user_badge(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

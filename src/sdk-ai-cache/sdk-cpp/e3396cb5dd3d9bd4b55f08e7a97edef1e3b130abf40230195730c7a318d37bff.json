@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "e3396cb5dd3d9bd4b55f08e7a97edef1e3b130abf40230195730c7a318d37bff",
+  "generatedAt": "2026-06-19T18:51:18.331Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-789\");\nPublicBlockFromCommentParams publicBlockFromCommentParams;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-abc\"));\napi->blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)\n    .then([](pplx::task<std::shared_ptr<BlockSuccess>> t){\n        try {\n            std::shared_ptr<BlockSuccess> res = t.get();\n            auto copy = std::make_shared<BlockSuccess>(*res);\n        } catch (const std::exception&) {}\n    });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_gifs_trending",
+  "signatureHash": "a8c4a8d37cca19019ea2a4500e67a4e7fa341ac407b0867ca31956f2fa672cfd",
+  "generatedAt": "2026-06-19T18:51:10.183Z",
+  "codeExample": "async fn fetch_trending_gifs() -> Result<GetGifsTrendingResponse, Error> {\n    let params: GetGifsTrendingParams = GetGifsTrendingParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        locale: Some(String::from(\"en-US\")),\n        rating: Some(String::from(\"pg-13\")),\n        page: Some(1.0),\n    };\n    let trending: GetGifsTrendingResponse = get_gifs_trending(&configuration, params).await?;\n    Ok(trending)\n}",
+  "model": "gpt-5-mini"
+}

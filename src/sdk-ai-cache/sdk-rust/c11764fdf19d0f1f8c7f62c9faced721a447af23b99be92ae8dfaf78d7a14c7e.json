@@ -1,0 +1,7 @@
+{
+  "method": "get_tickets",
+  "signatureHash": "c11764fdf19d0f1f8c7f62c9faced721a447af23b99be92ae8dfaf78d7a14c7e",
+  "generatedAt": "2026-06-19T18:51:07.829Z",
+  "codeExample": "async fn example_get_tickets() -> Result<(), Error> {\n    let params: GetTicketsParams = GetTicketsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        user_id: Some(String::from(\"journalist-42\")),\n        state: Some(1.0),\n        skip: Some(0.0),\n        limit: Some(50.0),\n    };\n    let tickets: GetTicketsResponse = get_tickets(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

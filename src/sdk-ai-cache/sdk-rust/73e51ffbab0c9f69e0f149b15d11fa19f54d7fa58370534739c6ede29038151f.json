@@ -1,0 +1,7 @@
+{
+  "method": "un_block_user_from_comment",
+  "signatureHash": "73e51ffbab0c9f69e0f149b15d11fa19f54d7fa58370534739c6ede29038151f",
+  "generatedAt": "2026-06-19T18:51:12.339Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/comments/42\".to_string(),\n        un_block_from_comment_params: models::UnBlockFromCommentParams {\n            reason: Some(\"mistaken moderation\".to_string()),\n            unblock_children: Some(true),\n        },\n        user_id: Some(\"user-12345\".to_string()),\n        anon_user_id: None,\n    };\n    let success: UnblockSuccess = un_block_user_from_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

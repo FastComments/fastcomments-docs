@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "f7288a645ee0e95f558042fbc8b21d98e6fc73c033cc0f35351f3ecd2fd4ccd0",
+  "generatedAt": "2026-06-19T18:51:14.376Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateTenantUserBody body;\nbody.email = utility::string_t(U(\"jane.doe@example.com\"));\nbody.displayName = utility::string_t(U(\"Jane Doe\"));\nbody.role = utility::string_t(U(\"moderator\"));\nbody.sendInvite = boost::optional<bool>(true);\napi->createTenantUser(tenantId, body).then([](std::shared_ptr<CreateTenantUserResponse> resp) {\n    if (resp) {\n        auto created = std::make_shared<CreateTenantUserResponse>(*resp);\n        std::cout << \"Created tenant user successfully\" << std::endl;\n    } else {\n        std::cout << \"Create tenant user returned null\" << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

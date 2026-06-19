@@ -1,0 +1,7 @@
+{
+  "method": "change_ticket_state",
+  "signatureHash": "f167b76f577763f9e96169cc2e64b9c3d6f9520d04a0ff4260edb62d14e6047c",
+  "generatedAt": "2026-06-19T18:51:09.480Z",
+  "codeExample": "let change_ticket_state_body: models::ChangeTicketStateBody = models::ChangeTicketStateBody {\n    state: Some(\"resolved\".to_string()),\n    comment: Some(\"Fixed in release 1.2.3\".to_string()),\n    notify_subscribers: Some(true),\n};\n\nlet params: ChangeTicketStateParams = ChangeTicketStateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    user_id: \"john.doe@acme.com\".to_string(),\n    id: \"ticket-98765\".to_string(),\n    change_ticket_state_body,\n};\n\nlet response: ChangeTicketStateResponse = change_ticket_state(configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "e33146547deb95f38b96bcd8a0fb16b74d87472eac6c5d36c6cf5060bb6a59a2",
+  "generatedAt": "2026-06-19T18:51:15.097Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t largeUrl = U(\"https://cdn.fastcomments.com/gifs/large/abc123.gif\");\nboost::optional<utility::string_t> acceptLanguage = boost::optional<utility::string_t>(U(\"en-US\"));\napi->getGifLarge(tenantId, largeUrl)\n    .then([=](pplx::task<std::shared_ptr<GifGetLargeResponse>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                std::cout << \"GIF retrieved successfully\\n\";\n            } else {\n                auto fallback = std::make_shared<GifGetLargeResponse>();\n                std::cout << \"Empty response, using fallback\\n\";\n            }\n        } catch (const std::exception &e) {\n            std::cout << \"Request failed: \" << e.what() << '\\n';\n        }\n    }).wait();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "b728db72f3713f547c6e4c499bffe65bf8507175ae2567d61d3c4e70df830ba4",
+  "generatedAt": "2026-06-19T21:44:56.870Z",
+  "codeExample": "(async () => {\n  const commentId: string = 'd3b07384-d9f1-4b3a-9f82-1a2b3c4d5e6f';\n  const banStatusDefault: GetCommentBanStatusResponse = await getCommentBanStatus(commentId);\n  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjM0IiwiaWF0IjoxNjMwMDAwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n  const banStatusWithSso: GetCommentBanStatusResponse = await getCommentBanStatus(commentId, ssoToken);\n  console.log(banStatusDefault, banStatusWithSso);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "b05d15fe9d6f02fb19b3aedfa0b9ce1cce9c7d257a0c16e892beb2044d6ec821",
+  "generatedAt": "2026-06-19T21:44:57.961Z",
+  "codeExample": "const page: number = 2;\nconst count: number = 25;\nconst textSearch: string = 'comments failing to load after posting';\nconst filters: string = 'status:pending,moderation:required';\nconst sorts: string = 'createdAt:desc';\nconst demo: boolean = false;\nconst sso: string = 'sso-usr-7f3b2a';\n\nconst response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);",
+  "model": "gpt-5-mini"
+}

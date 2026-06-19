@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "aeb8c59a968d2ccd0c42cbdd29c54b9d6bad5cbbfe29bc15170337e406034342",
+  "generatedAt": "2026-06-19T18:51:23.181Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 10.0;\napi->getQuestionConfigs(tenantId, skip)\n.then([](pplx::task<std::shared_ptr<GetQuestionConfigsResponse>> task){\n    try {\n        auto resp = task.get();\n        auto finalResp = resp ? resp : std::make_shared<GetQuestionConfigsResponse>();\n        (void)finalResp;\n    } catch (...) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

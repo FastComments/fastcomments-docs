@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "d82283bd0a6e1b488b4867087de5b855971e92a9c8b8b8dbe65def967e842048",
+  "generatedAt": "2026-06-19T18:51:10.156Z",
+  "codeExample": "let (response, httpResponse) = client.updateTenantUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-987\",\n  updateTenantUserBody = UpdateTenantUserBody(\n    displayName = \"Jane Doe\",\n    email = \"jane.doe@example.com\",\n    roles = @[\"moderator\", \"editor\"],\n    isActive = true\n  ),\n  updateComments = \"true\"\n)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  discard apiEmpty",
+  "model": "gpt-5-mini"
+}

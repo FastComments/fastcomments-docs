@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadges",
+  "signatureHash": "5d51c7877da35cabd817121cec84dc0a49abcbaeb8c0ed2ce5220ca0fda5b44b",
+  "generatedAt": "2026-06-19T21:44:58.791Z",
+  "codeExample": "boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"https://auth.example.com/sso?tenant=my-tenant-123&user=user@example.com\"));\napi->getManualBadges(sso).then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto copied = std::make_shared<GetTenantManualBadgesResponse>(*resp);\n        }\n    } catch (const std::exception& ex) {\n        (void)ex;\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "63b3867778df770f4eb9f5c8ef3c45baa64945b52a1daacd4747d518907dc67d",
+  "generatedAt": "2026-06-19T18:51:11.832Z",
+  "codeExample": "boost::optional<utility::string_t> region = boost::none;\nutility::string_t tenantId = U(\"my-tenant-123\");\napi->getDomainConfigs(tenantId)\n.then([tenantId, region](std::shared_ptr<GetDomainConfigsResponse> resp) {\n    auto result = resp ? resp : std::make_shared<GetDomainConfigsResponse>();\n    std::cout << \"Received domain configs for \" << tenantId << std::endl;\n    return result;\n})\n.then([](std::shared_ptr<GetDomainConfigsResponse> finalResp) {\n    if (finalResp) {\n        std::cout << \"Configs available\" << std::endl;\n    } else {\n        std::cout << \"No configs returned\" << std::endl;\n    }\n})\n.wait();",
+  "model": "gpt-5-mini"
+}

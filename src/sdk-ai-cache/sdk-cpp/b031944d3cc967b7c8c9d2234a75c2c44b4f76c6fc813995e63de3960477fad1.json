@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "b031944d3cc967b7c8c9d2234a75c2c44b4f76c6fc813995e63de3960477fad1",
+  "generatedAt": "2026-06-19T18:51:13.854Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<std::vector<utility::string_t>> postIds = std::vector<utility::string_t>{ U(\"post-7f3a\"), U(\"post-b2c9\") };\nboost::optional<utility::string_t> sso = U(\"user@example.com\");\napi->getUserReactsPublic(tenantId, postIds, sso)\n    .then([](pplx::task<std::shared_ptr<UserReactsResponse>> task) {\n        try {\n            auto resp = task.get();\n            if (!resp) resp = std::make_shared<UserReactsResponse>();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

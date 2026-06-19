@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "b46ce3a3c720dd57c4249c178d72fe3bf6568b4e8c0cf03fd8a6b6c6ba2da121",
+  "generatedAt": "2026-06-19T18:51:11.245Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t moderatorId = U(\"moderator-456\");\nboost::optional<utility::string_t> sendEmail = boost::optional<utility::string_t>(U(\"notify@example.com\"));\napi->deleteModerator(tenantId, moderatorId, sendEmail)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n    try {\n        auto resp = task.get();\n        auto result = resp ? resp : std::make_shared<APIEmptyResponse>();\n    } catch (...) {\n        throw;\n    }\n}).wait();",
+  "model": "gpt-5-mini"
+}

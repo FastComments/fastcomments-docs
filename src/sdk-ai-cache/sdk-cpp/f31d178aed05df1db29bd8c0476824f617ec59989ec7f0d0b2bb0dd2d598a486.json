@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "f31d178aed05df1db29bd8c0476824f617ec59989ec7f0d0b2bb0dd2d598a486",
+  "generatedAt": "2026-06-19T18:51:14.829Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentId = utility::conversions::to_string_t(\"cmt-987654321\");\nutility::string_t broadcastId = utility::conversions::to_string_t(\"live-456\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"));\nauto lockTask = api->lockComment(tenantId, commentId, broadcastId, sso)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) -> std::shared_ptr<APIEmptyResponse> {\n        try {\n            auto resp = t.get();\n            if (!resp) resp = std::make_shared<APIEmptyResponse>();\n            return resp;\n        } catch (...) {\n            return std::make_shared<APIEmptyResponse>();\n        }\n    });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "ff7999a91bcd595314b80c83c07de7bd86005e8143f903439d12e825d688b647",
+  "generatedAt": "2026-06-19T18:51:07.676Z",
+  "codeExample": "let (response, httpResponse) = client.createQuestionResult(\n  tenantId = \"my-tenant-123\",\n  createQuestionResultBody = CreateQuestionResultBody(\n    questionId = \"q-2026-001\",\n    userId = \"user-42\",\n    correct = true,\n    score = 95,\n    tags = @[\"news\",\"reader-question\"]\n  )\n)\nif response.isSome:\n  let result = response.get()\n  echo \"Created question result id: \", result.id\n  echo \"HTTP status: \", httpResponse.status.code",
+  "model": "gpt-5-mini"
+}

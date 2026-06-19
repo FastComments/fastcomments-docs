@@ -1,0 +1,7 @@
+{
+  "method": "get_notification_count",
+  "signatureHash": "815e8262a0dad4af2df7b1dee12de5b6eda22d9ef1742d0911beffd0fc18ee43",
+  "generatedAt": "2026-06-19T18:51:07.083Z",
+  "codeExample": "let params: GetNotificationCountParams = GetNotificationCountParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    user_id: Some(\"user-123\".to_string()),\n    url_id: Some(\"news/article/2026/06/19\".to_string()),\n    from_comment_id: Some(\"cmt-98765\".to_string()),\n    viewed: Some(false),\n};\nlet notification_count: GetNotificationCountResponse = get_notification_count(configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

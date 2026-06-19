@@ -1,0 +1,7 @@
+{
+  "method": "replace_tenant_package",
+  "signatureHash": "0d9c82b36d09027cccadecf497bf2adb70429d1191f0d43a5d6a424abaa976c5",
+  "generatedAt": "2026-06-19T18:51:11.711Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: ReplaceTenantPackageParams = ReplaceTenantPackageParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/article-package\"),\n        replace_tenant_package_body: models::ReplaceTenantPackageBody {\n            name: Some(String::from(\"Article Comments Package\")),\n            plan: Some(String::from(\"pro\")),\n            enabled: Some(true),\n            features: Some(vec![String::from(\"moderation\"), String::from(\"reactions\")]),\n            metadata: Some(std::collections::HashMap::from([\n                (String::from(\"region\"), String::from(\"us-east-1\")),\n                (String::from(\"contact\"), String::from(\"ops@acme.example\")),\n            ])),\n        },\n    };\n\n    let _response: ApiEmptyResponse = replace_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

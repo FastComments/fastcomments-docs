@@ -1,0 +1,7 @@
+{
+  "method": "block_from_comment_public",
+  "signatureHash": "bcc3054ced0cc1a27842a2d8c9cf86f68627c1d03df78cc0891c4fb10341726d",
+  "generatedAt": "2026-06-19T18:51:15.953Z",
+  "codeExample": "async fn example_block_comment() -> Result<(), Error> {\n    let params: BlockFromCommentPublicParams = BlockFromCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-news-20250615-9876\".to_string(),\n        public_block_from_comment_params: models::PublicBlockFromCommentParams {\n            reason: \"Repeated harassment and targeted insults\".to_string(),\n            duration_hours: Some(24),\n        },\n        sso: Some(\"sso:eyJhbGciOiJIUzI1Ni...\".to_string()),\n    };\n    let block_result: BlockSuccess = block_from_comment_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

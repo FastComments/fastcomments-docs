@@ -1,0 +1,7 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "a1372e589d3b50cb73004b1c608398a5ff03016df834588fe26cc77c6bfbb183",
+  "generatedAt": "2026-06-19T18:51:12.319Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-456\");\nutility::string_t userIdWS = U(\"user@example.com\");\nint64_t startTime = 1622505600000LL;\nboost::optional<int64_t> endTime = boost::optional<int64_t>(1622592000000LL);\nauto task = api->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)\n    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){\n        try {\n            auto resp = t.get();\n            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini"
+}

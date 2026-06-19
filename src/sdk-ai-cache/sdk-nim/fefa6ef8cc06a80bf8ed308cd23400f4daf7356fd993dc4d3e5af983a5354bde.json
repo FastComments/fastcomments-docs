@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "fefa6ef8cc06a80bf8ed308cd23400f4daf7356fd993dc4d3e5af983a5354bde",
+  "generatedAt": "2026-06-19T21:44:55.329Z",
+  "codeExample": "let (response, httpResponse) = client.deleteModerationVote(commentId = \"my-tenant-123/news/article-title/comment-987\", voteId = \"vote-456\", sso = \"sso-token-abc\")\nif response.isSome:\n  let voteResp = response.get()\n  echo \"Vote deleted:\", voteResp\nelse:\n  echo \"Delete failed:\", httpResponse",
+  "model": "gpt-5-mini"
+}

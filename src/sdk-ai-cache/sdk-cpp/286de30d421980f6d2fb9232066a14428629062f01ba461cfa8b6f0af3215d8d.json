@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "286de30d421980f6d2fb9232066a14428629062f01ba461cfa8b6f0af3215d8d",
+  "generatedAt": "2026-06-19T18:51:22.461Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nCreateTicketBody createTicketBody;\ncreateTicketBody.subject = U(\"Unable to post comment\");\ncreateTicketBody.description = U(\"Submitting a comment results in a spinner and no response on desktop Chrome.\");\ncreateTicketBody.priority = boost::optional<utility::string_t>(U(\"high\"));\ncreateTicketBody.requesterEmail = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto context = std::make_shared<utility::string_t>(U(\"web-portal\"));\napi->createTicket(tenantId, userId, createTicketBody)\n.then([context](pplx::task<std::shared_ptr<CreateTicketResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Ticket created successfully\" << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"createTicket failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

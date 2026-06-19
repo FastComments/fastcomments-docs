@@ -1,0 +1,7 @@
+{
+  "method": "delete_tenant_package",
+  "signatureHash": "ecb5a93a30565a34667637c2a7cf0c0ac334daed5a6ee76f3ba1e1342758f901",
+  "generatedAt": "2026-06-19T18:51:10.251Z",
+  "codeExample": "async fn run_delete_example() -> Result<(), Error> {\n    let params: DeleteTenantPackageParams = DeleteTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"premium-comment-moderation\".to_string(),\n    };\n    let response: ApiEmptyResponse = delete_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

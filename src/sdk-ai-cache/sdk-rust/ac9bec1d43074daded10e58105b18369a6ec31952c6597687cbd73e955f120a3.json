@@ -1,0 +1,7 @@
+{
+  "method": "get_votes",
+  "signatureHash": "ac9bec1d43074daded10e58105b18369a6ec31952c6597687cbd73e955f120a3",
+  "generatedAt": "2026-06-19T18:51:10.857Z",
+  "codeExample": "async fn fetch_votes() -> Result<GetVotesResponse, Error> {\n    let params: GetVotesParams = GetVotesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/2026/06/product-launch\".to_string(),\n        page_size: Some(25),\n        cursor: Some(\"cursor_2026_06_ab12\".to_string()),\n    };\n    let votes: GetVotesResponse = get_votes(&configuration, params).await?;\n    Ok(votes)\n}",
+  "model": "gpt-5-mini"
+}

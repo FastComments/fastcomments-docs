@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "ede7cddf4eea53f70c49742d9dacb03b3f98ecdbe9f8a97ab19f75c9bcda1797",
+  "generatedAt": "2026-06-19T18:51:16.653Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateUserBadgeParams params;\nparams.userEmail = utility::string_t(U(\"jane.doe@example.com\"));\nparams.badgeSlug = utility::string_t(U(\"community-moderator\"));\nparams.issuedBy = utility::string_t(U(\"admin@my-tenant.com\"));\nparams.expiresAt = boost::optional<utility::string_t>(utility::string_t(U(\"2026-12-31T23:59:59Z\")));\nauto task = api->createUserBadge(tenantId, params)\n    .then([](pplx::task<std::shared_ptr<APICreateUserBadgeResponse>> t){\n        auto resp = t.get();\n        if (resp) return resp;\n        return std::make_shared<APICreateUserBadgeResponse>();\n    });",
+  "model": "gpt-5-mini"
+}

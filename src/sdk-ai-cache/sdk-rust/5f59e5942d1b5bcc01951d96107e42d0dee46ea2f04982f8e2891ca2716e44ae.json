@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_text",
+  "signatureHash": "5f59e5942d1b5bcc01951d96107e42d0dee46ea2f04982f8e2891ca2716e44ae",
+  "generatedAt": "2026-06-19T18:51:20.779Z",
+  "codeExample": "async fn fetch_comment_text() -> Result<PublicApiGetCommentTextResponse, Error> {\n    let params = GetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-2026-06-19#cmt-8421\".to_string(),\n        edit_key: Some(\"editkey-73a1b2c\".to_string()),\n        sso: Some(\"sso.jwt.token.eyJhbGci\".to_string()),\n    };\n    let response: PublicApiGetCommentTextResponse = get_comment_text(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

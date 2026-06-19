@@ -1,0 +1,7 @@
+{
+  "method": "get_pages",
+  "signatureHash": "fef1e709133585168ea7f2855ee77021233aa25e7c61f13b725085da1cad6378",
+  "generatedAt": "2026-06-19T18:51:12.562Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetPagesParams = GetPagesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        path: Some(\"news/article\".to_string()),\n        limit: Some(25),\n        cursor: Some(\"cursor_01AZ\".to_string()),\n    };\n    let pages: GetPagesApiResponse = get_pages(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

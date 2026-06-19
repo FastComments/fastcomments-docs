@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "f957d7a35b7c38c8a282bf28232246aec92ebb755ec5e066fe781f9c32f8a7a6",
+  "generatedAt": "2026-06-19T18:51:08.990Z",
+  "codeExample": "let (response, httpResponse) = client.replaceTenantPackage(\n  tenantId = \"my-tenant-123\",\n  id = \"pkg-987\",\n  replaceTenantPackageBody = ReplaceTenantPackageBody(\n    name = \"Premium Plan\",\n    priceCents = 999,\n    seats = 50,\n    enabled = true,\n    features = @[\"moderation\", \"analytics\", \"priority-support\"]\n  )\n)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  discard apiEmpty",
+  "model": "gpt-5-mini"
+}

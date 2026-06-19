@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "5de00b38cdbb39c50f94ce89b7d85eb550f101a0068e77f2d9231448ee58af3c",
+  "generatedAt": "2026-06-19T18:51:20.125Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> redirectUrl = boost::optional<utility::string_t>(U(\"https://app.example.com/welcome\"));\napi->sendLoginLink(tenantId, userId, redirectUrl).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n    try {\n        auto resp = task.get();\n        auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();\n        (void)finalResp;\n    } catch (...) {\n        auto fallback = std::make_shared<APIEmptyResponse>();\n        (void)fallback;\n    }\n});",
+  "model": "gpt-5-mini"
+}

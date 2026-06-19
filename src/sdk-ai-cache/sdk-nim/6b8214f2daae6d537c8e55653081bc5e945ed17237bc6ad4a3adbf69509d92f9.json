@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "6b8214f2daae6d537c8e55653081bc5e945ed17237bc6ad4a3adbf69509d92f9",
+  "generatedAt": "2026-06-19T21:44:54.268Z",
+  "codeExample": "let (response, httpResponse) = client.getApiExportStatus(batchJobId = \"export-job-2026-06-01\", sso = \"sso-abc123token\")\nif response.isSome:\n  let exportStatus = response.get()\n  echo repr(exportStatus)\nelse:\n  echo \"No export status available, HTTP code: \", httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

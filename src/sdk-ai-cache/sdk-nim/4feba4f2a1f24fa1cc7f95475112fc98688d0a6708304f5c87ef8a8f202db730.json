@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "4feba4f2a1f24fa1cc7f95475112fc98688d0a6708304f5c87ef8a8f202db730",
+  "generatedAt": "2026-06-19T18:51:08.225Z",
+  "codeExample": "let (response, httpResponse) = client.getPendingWebhookEventCount(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456abc\",\n  externalId = \"ext-7890\",\n  eventType = \"comment_created\",\n  domain = \"news.example.com\",\n  attemptCountGT = 2.0\n)\n\nif response.isSome:\n  let pending = response.get()\n  echo pending\nelse:\n  echo \"No pending webhook event count returned; HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

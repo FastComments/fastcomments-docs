@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "69d91f5d1e2c3b84fcccde2b3ff1ba391e794daa830288612c6fb070c4cc7302",
+  "generatedAt": "2026-06-19T21:44:57.652Z",
+  "codeExample": "let (response, httpResponse) = client.postSetCommentText(commentId = \"comment-4821\",\n  setCommentTextParams = SetCommentTextParams(text = \"Updated comment to clarify the main point and fix a typo.\"),\n  sso = \"sso-user-8f3b9c\")\n\nif response.isSome:\n  let setCommentResp = response.get()\n  echo \"Received SetCommentTextResponse\"",
+  "model": "gpt-5-mini"
+}

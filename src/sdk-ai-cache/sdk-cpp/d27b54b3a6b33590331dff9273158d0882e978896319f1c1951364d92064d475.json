@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "d27b54b3a6b33590331dff9273158d0882e978896319f1c1951364d92064d475",
+  "generatedAt": "2026-06-19T18:51:11.414Z",
+  "codeExample": "boost::optional<utility::string_t> tenant = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> moderatorId = utility::string_t(U(\"moderator-456\"));\napi->getModerator(tenant.value(), moderatorId.value())\n    .then([](pplx::task<std::shared_ptr<GetModeratorResponse>> task) {\n        try {\n            auto resp = task.get();\n            if (resp) return std::make_shared<GetModeratorResponse>(*resp);\n            return std::shared_ptr<GetModeratorResponse>();\n        } catch (...) {\n            return std::shared_ptr<GetModeratorResponse>();\n        }\n    })\n    .then([](std::shared_ptr<GetModeratorResponse> result) {\n        if (result) {\n            /* use result */\n        }\n    });",
+  "model": "gpt-5-mini"
+}

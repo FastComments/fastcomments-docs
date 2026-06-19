@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "fe253de8d8ccf813eeef95e0d128e8ea8c0bb1157dd5947aa5d029c897e928bc",
+  "generatedAt": "2026-06-19T21:44:58.279Z",
+  "codeExample": "let (response, httpResponse) = client.getSearchCommentsSummary(\n  value = \"news/climate-change-2026\",\n  filters = \"{\\\"tenantId\\\":\\\"my-tenant-123\\\",\\\"siteId\\\":\\\"main-site\\\",\\\"status\\\":\\\"approved\\\"}\",\n  searchFilters = \"author:journalist@news.com OR content:climate\",\n  sso = \"sso-xyz-7890\"\n)\nif response.isSome:\n  let summary = response.get()\n  echo \"Received summary: \", $summary\nelse:\n  echo \"No summary returned, HTTP response: \", $httpResponse",
+  "model": "gpt-5-mini"
+}

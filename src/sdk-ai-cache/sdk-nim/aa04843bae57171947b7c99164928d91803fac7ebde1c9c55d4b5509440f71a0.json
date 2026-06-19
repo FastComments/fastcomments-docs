@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "aa04843bae57171947b7c99164928d91803fac7ebde1c9c55d4b5509440f71a0",
+  "generatedAt": "2026-06-19T18:51:06.209Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplate(tenantId = \"my-tenant-123\", id = \"welcome-email-01\")\nif response.isSome:\n  let template = response.get()\n  discard template",
+  "model": "gpt-5-mini"
+}

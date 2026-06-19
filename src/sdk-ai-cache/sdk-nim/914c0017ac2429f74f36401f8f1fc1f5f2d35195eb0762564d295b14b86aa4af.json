@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "914c0017ac2429f74f36401f8f1fc1f5f2d35195eb0762564d295b14b86aa4af",
+  "generatedAt": "2026-06-19T18:51:11.840Z",
+  "codeExample": "let (response, httpResponse) = client.putDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"blog.example.com\",\n  updateDomainConfigParams = UpdateDomainConfigParams(\n    allowAnonymous = false,\n    moderationEnabled = true,\n    maxCommentLength = 800,\n    allowedOrigins = @[\"https://blog.example.com\", \"https://cdn.blog.example.com\"],\n    enableThreadedComments = true\n  )\n)\n\nif response.isSome:\n  let cfg = response.get()\n  echo cfg\nelse:\n  echo \"Failed to update domain config, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

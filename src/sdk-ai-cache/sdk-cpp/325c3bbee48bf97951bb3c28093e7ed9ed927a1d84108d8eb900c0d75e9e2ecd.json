@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "325c3bbee48bf97951bb3c28093e7ed9ed927a1d84108d8eb900c0d75e9e2ecd",
+  "generatedAt": "2026-06-19T18:51:19.875Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"admin@company.com\");\nboost::optional<utility::string_t> includeMetadata = boost::optional<utility::string_t>(U(\"true\"));\nauto fallback = std::make_shared<GetTenantResponse>();\napi->getTenant(tenantId, id).then([fallback](pplx::task<std::shared_ptr<GetTenantResponse>> task) {\n    try {\n        auto resp = task.get();\n        auto result = resp ? resp : fallback;\n        std::cout << \"Tenant retrieved successfully\" << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"getTenant error: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

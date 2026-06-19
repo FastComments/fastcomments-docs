@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant",
+  "signatureHash": "d8a5bcc2b5b387e5b7420edda5ba73f9d448682edc8d85559e56fcc456fa1d18",
+  "generatedAt": "2026-06-19T18:51:15.804Z",
+  "codeExample": "async fn example_get_tenant() -> Result<(), Error> {\n    let params: GetTenantParams = GetTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n    };\n    let include_subdomains: Option<bool> = Some(true);\n    let tenant: GetTenantResponse = get_tenant(&configuration, params).await?;\n    println!(\"{:#?}\", tenant);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

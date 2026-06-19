@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "18efe10ba009c6fd72adae357b0d0b1245c729e5dc5b327e7e23c073c61c9606",
+  "generatedAt": "2026-06-19T18:51:08.261Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 10.0;\napi->getModerators(tenantId, skip)\n    .then([=](pplx::task<std::shared_ptr<GetModeratorsResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto safeResp = resp ? resp : std::make_shared<GetModeratorsResponse>();\n            (void)safeResp;\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_search_pages",
+  "signatureHash": "544bcaf7a9564977d4879519c362798de104735af93da6a2d2d1daf2f5a17c0b",
+  "generatedAt": "2026-06-19T21:44:54.090Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetSearchPagesParams {\n        value: Some(\"news/article/world/2026-summit\".to_string()),\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let moderation_response: ModerationPageSearchResponse =\n        get_search_pages(&configuration, params).await?;\n    let _status: ApiStatus = moderation_response.status;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "d0b5cb5f404d1e7ec9df572ee897fa6a6210dc691741983cd5e56ab551aa99eb",
+  "generatedAt": "2026-06-19T18:51:13.154Z",
+  "codeExample": "let (response, httpResponse) = client.createQuestionConfig(\n  tenantId = \"my-tenant-123\",\n  createQuestionConfigBody = CreateQuestionConfigBody(\n    label = \"Article Question\",\n    required = true,\n    minLength = 20,\n    maxLength = 1000,\n    allowedTags = @[\"comment\",\"question\",\"feedback\"],\n    notifyModerators = false\n  )\n)\nif response.isSome:\n  let cfg = response.get()\n  echo \"Created question config id: \", cfg.id",
+  "model": "gpt-5-mini"
+}

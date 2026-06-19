@@ -1,0 +1,7 @@
+{
+  "method": "postRemoveComment",
+  "signatureHash": "d7f3433504a1f03d3b14790114679e9d7e91930d8d28c48bd15f25da51a1bd0f",
+  "generatedAt": "2026-06-19T21:45:01.743Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-987654\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->postRemoveComment(commentId, sso)\n    .then([](pplx::task<std::shared_ptr<PostRemoveCommentResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto result = resp ? resp : std::make_shared<PostRemoveCommentResponse>();\n            if (result) std::cout << \"Comment removed successfully\\n\";\n        } catch (const std::exception &e) {\n            std::cerr << \"Remove failed: \" << e.what() << \"\\n\";\n        }\n    });",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "bulk_aggregate_question_results",
+  "signatureHash": "b2a07ef3ed2ea9f08321a2ff6b8c31a33239668c7fa4f2f7dd2f60195bd0c228",
+  "generatedAt": "2026-06-19T18:51:13.686Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: BulkAggregateQuestionResultsParams = BulkAggregateQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        bulk_aggregate_question_results_request: models::BulkAggregateQuestionResultsRequest {\n            items: vec![\n                models::BulkAggregateQuestionItem {\n                    question_id: \"article-engagement\".to_string(),\n                    path: \"news/article/987\".to_string(),\n                    include_subpaths: true,\n                }\n            ],\n            time_bucket: models::AggregateTimeBucket::Daily,\n            range_start: \"2026-05-01T00:00:00Z\".to_string(),\n            range_end: \"2026-05-31T23:59:59Z\".to_string(),\n        },\n        force_recalculate: Some(true),\n    };\n    let result: BulkAggregateQuestionResultsResponse = bulk_aggregate_question_results(&configuration, params).await?;\n    println!(\"{:#?}\", result);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

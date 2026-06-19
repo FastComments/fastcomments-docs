@@ -1,0 +1,7 @@
+{
+  "method": "create_moderator",
+  "signatureHash": "437b2af3dd7af1c80d5c64893843a35eeeb2192252d75a9993d8ff30f17fc4c0",
+  "generatedAt": "2026-06-19T18:51:08.480Z",
+  "codeExample": "let params: CreateModeratorParams = CreateModeratorParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_moderator_body: models::CreateModeratorBody {\n        email: \"jane.doe@acme-corp.com\".to_string(),\n        display_name: Some(\"Jane Doe\".to_string()),\n        username: Some(\"jdoe\".to_string()),\n        role: Some(\"moderator\".to_string()),\n        sections: Some(vec![\"news/article\".to_string(), \"tech/reviews\".to_string()]),\n        notify: Some(true),\n    },\n};\nlet response: CreateModeratorResponse = create_moderator(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

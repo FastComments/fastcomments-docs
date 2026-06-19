@@ -1,0 +1,7 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "99448ba4d00a40a5816af1511a637ae6a102ebdad2eda4c9dcbb19c268e3136d",
+  "generatedAt": "2026-06-19T18:51:42.565Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> questionId = utility::conversions::to_string_t(\"q-456\");\nstd::vector<utility::string_t> qlist = { utility::conversions::to_string_t(\"q-101\"), utility::conversions::to_string_t(\"q-102\") };\nboost::optional<std::vector<utility::string_t>> questionIds = qlist;\nboost::optional<utility::string_t> urlId = utility::conversions::to_string_t(\"page-789\");\nboost::optional<utility::datetime> startDate = utility::datetime::from_string(utility::conversions::to_string_t(\"2025-01-01T00:00:00Z\"));\nboost::optional<bool> forceRecalculate = true;\nboost::optional<double> minValue = 0.0;\nboost::optional<double> maxValue = 5.0;\nboost::optional<double> limit = 100.0;\n\napi->combineCommentsWithQuestionResults(\n    tenantId,\n    questionId,\n    questionIds,\n    urlId,\n    startDate,\n    forceRecalculate,\n    minValue,\n    maxValue,\n    limit\n).then([](std::shared_ptr<CombineQuestionResultsWithCommentsResponse> resp){\n    auto result = resp ? resp : std::make_shared<CombineQuestionResultsWithCommentsResponse>();\n    return result;\n});",
+  "model": "gpt-5-mini"
+}

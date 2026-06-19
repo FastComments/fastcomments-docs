@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "16d4b96775d260b2ba3cc72876b989ee4c43001e4a95a62e510385bcc7579999",
+  "generatedAt": "2026-06-19T18:51:14.906Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateQuestionResultBody body;\nbody.setQuestionId(U(\"q-9876\"));\nbody.setUserId(U(\"user-42\"));\nbody.setAnswer(U(\"I prefer option B\"));\nbody.setScore(4);\nbody.setUserEmail(boost::optional<utility::string_t>(U(\"jane.doe@example.com\")));\nbody.setNotes(boost::optional<utility::string_t>(U(\"Followed up via email\")));\napi->createQuestionResult(tenantId, body)\n.then([](pplx::task<std::shared_ptr<CreateQuestionResultResponse>> t){\n    try {\n        auto resp = t.get();\n        if (!resp) return;\n        auto resultCopy = std::make_shared<CreateQuestionResultResponse>(*resp);\n        (void)resultCopy;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

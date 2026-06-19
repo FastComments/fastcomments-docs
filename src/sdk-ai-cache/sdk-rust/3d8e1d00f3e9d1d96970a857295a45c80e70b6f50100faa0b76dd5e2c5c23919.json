@@ -1,0 +1,7 @@
+{
+  "method": "delete_pending_webhook_event",
+  "signatureHash": "3d8e1d00f3e9d1d96970a857295a45c80e70b6f50100faa0b76dd5e2c5c23919",
+  "generatedAt": "2026-06-19T18:51:13.845Z",
+  "codeExample": "async fn perform_delete() -> Result<ApiEmptyResponse, Error> {\n    let tenant_id: Option<String> = Some(String::from(\"acme-corp-tenant\"));\n    let id: Option<String> = Some(String::from(\"wh_evt_2026_09f3\"));\n    let params: DeletePendingWebhookEventParams = DeletePendingWebhookEventParams {\n        tenant_id: tenant_id.unwrap(),\n        id: id.unwrap(),\n    };\n    let response: ApiEmptyResponse = delete_pending_webhook_event(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

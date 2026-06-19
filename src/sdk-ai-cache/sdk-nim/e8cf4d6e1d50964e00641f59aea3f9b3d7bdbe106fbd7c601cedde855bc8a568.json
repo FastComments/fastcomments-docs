@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "e8cf4d6e1d50964e00641f59aea3f9b3d7bdbe106fbd7c601cedde855bc8a568",
+  "generatedAt": "2026-06-19T18:51:09.581Z",
+  "codeExample": "let (response, httpResponse) = client.getPendingWebhookEvents(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654\",\n  externalId = \"\",\n  eventType = \"\",\n  domain = \"\",\n  attemptCountGT = 0.0,\n  skip = 0.0\n)\nif response.isSome:\n  let pending = response.get()\n  discard pending",
+  "model": "gpt-5-mini"
+}

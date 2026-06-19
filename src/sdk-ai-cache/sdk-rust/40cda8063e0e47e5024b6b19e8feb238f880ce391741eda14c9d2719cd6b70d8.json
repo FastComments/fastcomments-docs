@@ -1,0 +1,7 @@
+{
+  "method": "put_domain_config",
+  "signatureHash": "40cda8063e0e47e5024b6b19e8feb238f880ce391741eda14c9d2719cd6b70d8",
+  "generatedAt": "2026-06-19T18:51:09.714Z",
+  "codeExample": "async fn update_domain_config_example() -> Result<(), Error> {\n    let update_params: models::UpdateDomainConfigParams = models::UpdateDomainConfigParams {\n        enable_comments: Some(true),\n        moderation_mode: Some(\"pre_moderation\".to_string()),\n        allowed_origins: Some(vec![\n            \"https://news.example.com\".to_string(),\n            \"https://www.news.example.com\".to_string(),\n        ]),\n        require_https: Some(true),\n        max_comment_length: Some(1000),\n    };\n\n    let params: PutDomainConfigParams = PutDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_to_update: \"news.example.com\".to_string(),\n        update_domain_config_params: update_params,\n    };\n\n    let response: PutDomainConfigResponse = put_domain_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

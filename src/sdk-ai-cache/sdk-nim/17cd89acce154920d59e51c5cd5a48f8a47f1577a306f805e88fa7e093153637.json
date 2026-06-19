@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "17cd89acce154920d59e51c5cd5a48f8a47f1577a306f805e88fa7e093153637",
+  "generatedAt": "2026-06-19T18:51:11.069Z",
+  "codeExample": "let feedPost: FeedPost = FeedPost(title: \"City Council Approves New Waterfront Park\",\n  content: \"The council voted 5-2 to approve funding and a timeline for construction.\",\n  tags: @[\"local\", \"parks\", \"city\"],\n  published: true)\n\nlet (response, httpResponse) = client.updateFeedPost(tenantId = \"my-tenant-123\", id = \"post-456\", feedPost = feedPost)\n\nif response.isSome:\n  let apiResp = response.get()\n  echo \"Feed post updated successfully\"\n  echo apiResp\nelse:\n  echo \"Failed to update feed post\"\n  echo httpResponse",
+  "model": "gpt-5-mini"
+}

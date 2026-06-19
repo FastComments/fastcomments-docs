@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "f543ed1c74f6233cf4a5ac1382a6225efee1a0016c08bfe304d4a527e4b2be9a",
+  "generatedAt": "2026-06-19T21:45:06.746Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-9a8b7c6d\");\nauto paramsPtr = std::make_shared<SetCommentTextParams>();\nparamsPtr->text = U(\"Updated comment: I've rephrased for clarity.\");\nparamsPtr->editedBy = U(\"moderator@example.com\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-abc123\"));\n\napi->postSetCommentText(commentId, *paramsPtr, sso)\n    .then([](pplx::task<std::shared_ptr<SetCommentTextResponse>> task) {\n        try {\n            auto resp = task.get();\n            if (resp) (void)resp;\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

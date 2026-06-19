@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "111e1a51ab8185e2506c4a04e95618b1ae4dacfd29d46db16b5a4d0109676ffe",
+  "generatedAt": "2026-06-19T21:44:54.401Z",
+  "codeExample": "const statusByBatch: ModerationExportStatusResponse = await getApiExportStatus('export_20260615_84c2');\nconst statusBySso: ModerationExportStatusResponse = await getApiExportStatus(undefined, 'sso_84c2f1b2');",
+  "model": "gpt-5-mini"
+}

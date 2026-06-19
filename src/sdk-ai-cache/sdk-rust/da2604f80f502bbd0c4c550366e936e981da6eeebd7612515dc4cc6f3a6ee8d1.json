@@ -1,0 +1,7 @@
+{
+  "method": "flag_comment_public",
+  "signatureHash": "da2604f80f502bbd0c4c550366e936e981da6eeebd7612515dc4cc6f3a6ee8d1",
+  "generatedAt": "2026-06-19T18:51:06.375Z",
+  "codeExample": "async fn run_flag_comment() -> Result<(), Error> {\n    let params: FlagCommentPublicParams = FlagCommentPublicParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: String::from(\"comment-89b3\"),\n        is_flagged: true,\n        sso: Some(String::from(\"sso-uid-7a2f\")),\n    };\n\n    let _response: ApiEmptyResponse = flag_comment_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

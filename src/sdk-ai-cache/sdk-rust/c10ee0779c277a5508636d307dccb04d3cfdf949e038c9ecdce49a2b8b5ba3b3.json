@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant_user",
+  "signatureHash": "c10ee0779c277a5508636d307dccb04d3cfdf949e038c9ecdce49a2b8b5ba3b3",
+  "generatedAt": "2026-06-19T18:51:15.201Z",
+  "codeExample": "async fn example_get_tenant_user() -> Result<GetTenantUserResponse, Error> {\n    let params: GetTenantUserParams = GetTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-7b9a2\".to_string(),\n        include_profile: Some(true),\n    };\n    let response: GetTenantUserResponse = get_tenant_user(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

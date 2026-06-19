@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "f17cb5298d2a068d36afedaa0da21d80de2fa93a2c6508a147665d9823ab7f8a",
+  "generatedAt": "2026-06-19T21:44:57.414Z",
+  "codeExample": "let (response, httpResponse) = client.postVote(commentId = \"comment-4f3a9e\", direction = \"up\", sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlci0xMjMifQ.signedPart\")\nif response.isSome:\n  let vote = response.get()\n  echo \"Vote recorded:\", vote\nelse:\n  echo \"No vote returned\"",
+  "model": "gpt-5-mini"
+}

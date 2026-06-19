@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "c864da85331b145f39769477641283ba472ba04fda7764be31119fad16a280cf",
+  "generatedAt": "2026-06-19T21:44:58.742Z",
+  "codeExample": "let (response, httpResponse) = client.getApiComments(\n  page = 1.0,\n  count = 25.0,\n  textSearch = \"opinion on climate summit\",\n  byIPFromComment = \"198.51.100.23\",\n  filters = \"status:approved\",\n  searchFilters = \"section:world\",\n  sorts = \"-createdAt\",\n  demo = false,\n  sso = \"sso-user-982bf\"\n)\n\nif response.isSome:\n  let commentsResp = response.get()\n  echo \"Retrieved comments response\"\nelse:\n  echo \"No comments returned, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

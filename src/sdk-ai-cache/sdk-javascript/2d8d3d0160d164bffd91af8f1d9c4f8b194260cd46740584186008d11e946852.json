@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "2d8d3d0160d164bffd91af8f1d9c4f8b194260cd46740584186008d11e946852",
+  "generatedAt": "2026-06-19T21:45:00.097Z",
+  "codeExample": "(async () => {\n  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzI0IiwiaWF0IjoxNjg5MDAwMDB9.KyZ4l1X2f3Q'\n  const countsWithSso: GetBannedUsersCountResponse = await getCounts(ssoToken)\n  const countsWithoutSso: GetBannedUsersCountResponse = await getCounts()\n  console.log(countsWithSso, countsWithoutSso)\n})()",
+  "model": "gpt-5-mini"
+}

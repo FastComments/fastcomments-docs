@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "b93e277d055b5ee227155e0e367022f6ffcd5daa3cb76ffc4eb22e8a1dd00034",
+  "generatedAt": "2026-06-19T21:44:56.250Z",
+  "codeExample": "(async () => {\n  const commentId: string = '5f8d04b2-9c3a-4d13-bb8a-123456789abc';\n  const resultWithoutSso: APIEmptyResponse = await postUnFlagComment(commentId);\n  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.signature';\n  const resultWithSso: APIEmptyResponse = await postUnFlagComment(commentId, ssoToken);\n  console.log(resultWithoutSso, resultWithSso);\n})();",
+  "model": "gpt-5-mini"
+}

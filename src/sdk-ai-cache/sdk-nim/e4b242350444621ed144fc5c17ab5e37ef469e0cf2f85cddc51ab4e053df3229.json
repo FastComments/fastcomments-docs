@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "e4b242350444621ed144fc5c17ab5e37ef469e0cf2f85cddc51ab4e053df3229",
+  "generatedAt": "2026-06-19T21:44:56.189Z",
+  "codeExample": "let commentsParams = CommentsByIdsParams(ids = @[\"cmt-1001\", \"cmt-1002\"], includeReplies = true, maxDepth = 2)\nlet (response, httpResponse) = client.postCommentsByIds(commentsByIdsParams = commentsParams, sso = \"sso-user-7f3a9b\")\nif response.isSome:\n  let result = response.get()\n  echo \"Received child comments response: \", result",
+  "model": "gpt-5-mini"
+}

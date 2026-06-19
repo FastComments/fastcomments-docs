@@ -1,0 +1,7 @@
+{
+  "method": "get_email_template",
+  "signatureHash": "5dce734beb532e2e63ed1619848cae4a6e762dc36f7b9d7c08f51d9517e25bac",
+  "generatedAt": "2026-06-19T18:51:09.036Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetEmailTemplateParams = GetEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"marketing/welcome_v2\".to_string(),\n    };\n    let template: GetEmailTemplateResponse = get_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

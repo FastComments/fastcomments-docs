@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "628ca11014a724393be11c83a3d631279de480c18edbf9eb10b9505a12546080",
+  "generatedAt": "2026-06-19T18:51:13.094Z",
+  "codeExample": "auto updateBody = std::make_shared<UpdateModeratorBody>();\nupdateBody->email = utility::string_t(U(\"moderator@example.com\"));\nupdateBody->displayName = boost::optional<utility::string_t>(utility::string_t(U(\"Jane Moderator\")));\nupdateBody->role = boost::optional<utility::string_t>(utility::string_t(U(\"senior-moderator\")));\nupdateBody->active = boost::optional<bool>(true);\napi->updateModerator(utility::string_t(U(\"my-tenant-123\")), utility::string_t(U(\"moderator-456\")), *updateBody)\n    .then([](std::shared_ptr<APIEmptyResponse> resp){\n        if (resp) {\n            auto result = resp;\n        }\n        return resp;\n    });",
+  "model": "gpt-5-mini"
+}

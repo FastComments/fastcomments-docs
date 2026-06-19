@@ -1,0 +1,7 @@
+{
+  "method": "post_ban_user_from_comment",
+  "signatureHash": "14436688bb1dfc1c46c8cbe2915b3a26d71cbf63b0bf57a65373fb8721d3e5bc",
+  "generatedAt": "2026-06-19T21:44:55.616Z",
+  "codeExample": "let params: PostBanUserFromCommentParams = PostBanUserFromCommentParams {\n    comment_id: \"news-article-98765-comment-123\".to_string(),\n    ban_email: Some(true),\n    ban_email_domain: Some(false),\n    ban_ip: Some(true),\n    delete_all_users_comments: Some(true),\n    banned_until: Some(\"2026-12-31T23:59:59Z\".to_string()),\n    is_shadow_ban: Some(false),\n    update_id: Some(\"moderator-42\".to_string()),\n    ban_reason: Some(\"Repeated spam and abusive language\".to_string()),\n    sso: Some(\"sso-user-token-8a7f\".to_string()),\n};\nlet ban_result: BanUserFromCommentResult = post_ban_user_from_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

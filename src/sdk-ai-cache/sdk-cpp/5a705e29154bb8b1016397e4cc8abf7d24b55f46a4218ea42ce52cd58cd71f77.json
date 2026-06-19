@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "5a705e29154bb8b1016397e4cc8abf7d24b55f46a4218ea42ce52cd58cd71f77",
+  "generatedAt": "2026-06-19T18:51:21.262Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(\"my-tenant-123\");\nutility::string_t notificationId = utility::string_t(\"notif-456\");\nutility::string_t newStatus = utility::string_t(\"read\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(\"sso-token-xyz\"));\n\napi->updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)\n.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatusResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto localCopy = std::make_shared<UpdateUserNotificationStatusResponse>(*resp);\n            (void)localCopy;\n        }\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

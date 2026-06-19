@@ -1,0 +1,7 @@
+{
+  "method": "logoutPublic",
+  "signatureHash": "a2f709f8b28fc69724a5e34a6d3319911ecf628e9ae5f66b9d8912a633deafc2",
+  "generatedAt": "2026-06-19T18:51:20.343Z",
+  "codeExample": "boost::optional<utility::string_t> tenantId = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> sessionToken = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->logoutPublic()\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Logout successful\\n\";\n            return std::make_shared<APIEmptyResponse>(*resp);\n        }\n        std::cout << \"Logout returned empty response\\n\";\n        return std::make_shared<APIEmptyResponse>();\n    } catch (const std::exception& e) {\n        std::cout << \"Logout failed: \" << e.what() << '\\n';\n        return std::make_shared<APIEmptyResponse>();\n    }\n}).wait();",
+  "model": "gpt-5-mini"
+}

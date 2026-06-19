@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "13317e6e2228450763b04b5d381c64525e2af5b4b02be4e8d125f0f81a222225",
+  "generatedAt": "2026-06-19T18:51:22.439Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t badgeId = U(\"badge-456\");\nboost::optional<utility::string_t> requestId = boost::optional<utility::string_t>(U(\"req-789\"));\napi->deleteUserBadge(tenantId, badgeId)\n    .then([tenantId, requestId](std::shared_ptr<APIEmptySuccessResponse> resp) {\n        auto result = resp ? resp : std::make_shared<APIEmptySuccessResponse>();\n        std::cout << \"Deleted badge '\" << badgeId << \"' for tenant '\" << tenantId << \"'\\n\";\n        return result;\n    })\n    .then([](std::shared_ptr<APIEmptySuccessResponse>){\n    })\n    .wait();",
+  "model": "gpt-5-mini"
+}

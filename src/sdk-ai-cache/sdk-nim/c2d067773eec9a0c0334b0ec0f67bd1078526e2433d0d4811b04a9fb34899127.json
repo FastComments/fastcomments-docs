@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "c2d067773eec9a0c0334b0ec0f67bd1078526e2433d0d4811b04a9fb34899127",
+  "generatedAt": "2026-06-19T18:51:09.204Z",
+  "codeExample": "let (response, httpResponse) = client.deleteTenantPackage(tenantId = \"my-tenant-123\", id = \"package-987\")\nif response.isSome:\n  let emptyResp = response.get()\n  echo emptyResp\nelse:\n  echo \"Failed to delete tenant package\"",
+  "model": "gpt-5-mini"
+}

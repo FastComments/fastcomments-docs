@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "92bee1165c9609785ba27d1e2f99f66da0e6fdda6342d6d448341b13ba81d727",
+  "generatedAt": "2026-06-19T18:51:11.629Z",
+  "codeExample": "let (response, httpResponse) = client.addHashTag(tenantId = \"my-tenant-123\",\n  createHashTagBody = CreateHashTagBody(name = \"Breaking News\",\n    slug = \"breaking-news\",\n    description = \"Major breaking news items\",\n    color = \"#ff0000\",\n    isTrending = true,\n    aliases = @[\"breaking\", \"news\"]))\nif response.isSome:\n  let created = response.get()\n  echo created",
+  "model": "gpt-5-mini"
+}

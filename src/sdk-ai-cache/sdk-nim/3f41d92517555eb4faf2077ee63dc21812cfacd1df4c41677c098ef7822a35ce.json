@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "3f41d92517555eb4faf2077ee63dc21812cfacd1df4c41677c098ef7822a35ce",
+  "generatedAt": "2026-06-19T18:51:11.457Z",
+  "codeExample": "let (response, httpResponse) = client.getDomainConfig(tenantId = \"my-tenant-123\", domain = \"news/top-story-2026\")\nif response.isSome:\n  let cfg = response.get()\n  discard cfg\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

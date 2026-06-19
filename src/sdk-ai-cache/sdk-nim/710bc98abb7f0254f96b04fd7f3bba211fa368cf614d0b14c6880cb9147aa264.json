@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "710bc98abb7f0254f96b04fd7f3bba211fa368cf614d0b14c6880cb9147aa264",
+  "generatedAt": "2026-06-19T18:51:10.850Z",
+  "codeExample": "let (response, httpResponse) = client.updateNotification(\n  tenantId = \"my-tenant-123\",\n  id = \"notif-456\",\n  updateNotificationBody = UpdateNotificationBody(\n    enabled = true,\n    channels = @[\"email\", \"push\"],\n    frequency = \"immediate\"\n  ),\n  userId = \"user-789\"\n)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  discard apiEmpty",
+  "model": "gpt-5-mini"
+}

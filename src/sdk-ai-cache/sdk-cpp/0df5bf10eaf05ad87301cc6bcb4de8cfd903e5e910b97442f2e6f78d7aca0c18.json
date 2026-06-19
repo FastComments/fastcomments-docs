@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "0df5bf10eaf05ad87301cc6bcb4de8cfd903e5e910b97442f2e6f78d7aca0c18",
+  "generatedAt": "2026-06-19T18:51:10.341Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nboost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<bool> isLive = boost::optional<bool>(true);\n\napi->deleteComment(tenantId, commentId, contextUserId, isLive)\n    .then([](std::shared_ptr<DeleteCommentResult> result){\n        auto res = result ? result : std::make_shared<DeleteCommentResult>();\n        std::cout << \"DeleteCommentResult ptr=\" << static_cast<const void*>(res.get()) << std::endl;\n    });",
+  "model": "gpt-5-mini"
+}

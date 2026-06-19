@@ -1,0 +1,7 @@
+{
+  "method": "flagComment",
+  "signatureHash": "7dfa2f1a8691655dc31b48dfcb9c88407d6e73a0553521b217a33793a73b5057",
+  "generatedAt": "2026-06-19T18:51:10.689Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-98765\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId = boost::none;\napi->flagComment(tenantId, commentId, userId, anonUserId)\n    .then([](std::shared_ptr<FlagCommentResponse> resp) -> std::shared_ptr<FlagCommentResponse> {\n        if (resp) return resp;\n        return std::make_shared<FlagCommentResponse>();\n    })\n    .wait();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "6d6133cb80024f67209a2ba96c3fb1cc4c95889dc0dbb39be3fab722e0b45129",
+  "generatedAt": "2026-06-19T21:44:57.854Z",
+  "codeExample": "const commentId: string = 'cmt_5f6d3a2b9c1e';\nconst minimalResponse: VoteResponse = await postVote(commentId);\n\nconst direction: string = 'up';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiamRvZSIsImlhdCI6MTYwOTAwMDAwMH0.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk';\nconst fullResponse: VoteResponse = await postVote(commentId, direction, ssoToken);",
+  "model": "gpt-5-mini"
+}

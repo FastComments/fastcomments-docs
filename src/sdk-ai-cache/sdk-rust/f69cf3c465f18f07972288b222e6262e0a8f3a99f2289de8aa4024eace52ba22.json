@@ -1,0 +1,7 @@
+{
+  "method": "put_close_thread",
+  "signatureHash": "f69cf3c465f18f07972288b222e6262e0a8f3a99f2289de8aa4024eace52ba22",
+  "generatedAt": "2026-06-19T21:44:54.121Z",
+  "codeExample": "async fn close_thread() -> Result<(), Error> {\n    let params: PutCloseThreadParams = PutCloseThreadParams {\n        url_id: String::from(\"news/2026/07/acme-launch-coverage\"),\n        sso: Some(String::from(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature\")),\n    };\n    let response: ApiEmptyResponse = put_close_thread(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

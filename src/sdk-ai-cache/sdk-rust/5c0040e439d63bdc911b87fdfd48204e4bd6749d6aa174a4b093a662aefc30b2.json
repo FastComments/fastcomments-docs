@@ -1,0 +1,7 @@
+{
+  "method": "update_user_notification_page_subscription_status",
+  "signatureHash": "5c0040e439d63bdc911b87fdfd48204e4bd6749d6aa174a4b093a662aefc30b2",
+  "generatedAt": "2026-06-19T18:51:14.546Z",
+  "codeExample": "async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {\n    let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/rocket-launch-2026\".to_string(),\n        url: \"https://acme.example.com/news/rocket-launch-2026\".to_string(),\n        page_title: \"Acme Rocket Launch — June 2026\".to_string(),\n        subscribed_or_unsubscribed: \"subscribed\".to_string(),\n        sso: Some(\"user:alice@acme.com\".to_string()),\n    };\n    let response: UpdateUserNotificationPageSubscriptionStatusResponse =\n        update_user_notification_page_subscription_status(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

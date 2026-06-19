@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "5149c25cf8330f3f00dd1812097a8b9d909b3b07561063aff45f60633892219a",
+  "generatedAt": "2026-06-19T18:51:14.807Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"/articles/2026/new-release\");\nboost::optional<utility::string_t> includeMeta = boost::optional<utility::string_t>(U(\"true\"));\napi->getV1PageLikes(tenantId, urlId).then([](pplx::task<std::shared_ptr<GetV1PageLikes>> task){\n    try {\n        auto result = task.get();\n        auto localCopy = std::make_shared<GetV1PageLikes>(*result);\n        (void)localCopy;\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini"
+}

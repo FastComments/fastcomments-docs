@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "b2653332db57080741bba86adece43d8d41985d2246768257e1f984af01d9df7",
+  "generatedAt": "2026-06-19T21:44:58.512Z",
+  "codeExample": "boost::optional<utility::string_t> batchId = utility::string_t(U(\"export-batch-2026-06-19\"));\nboost::optional<utility::string_t> sso = utility::string_t(U(\"audit@my-tenant-123.com\"));\napi->getApiExportStatus(batchId, sso)\n    .then([](std::shared_ptr<ModerationExportStatusResponse> resp) {\n        if (!resp) return;\n        auto statusCopy = std::make_shared<ModerationExportStatusResponse>(*resp);\n    });",
+  "model": "gpt-5-mini"
+}

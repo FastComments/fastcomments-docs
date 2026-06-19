@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "9ec788939b5232ba62925542261377bee85f0a6bca56d79f2494628fdd0e736b",
+  "generatedAt": "2026-06-19T18:51:15.831Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nboost::optional<utility::string_t> include = boost::optional<utility::string_t>(U(\"author,replies\"));\n\napi->getComment(tenantId, commentId).then([include](std::shared_ptr<APIGetCommentResponse> resp) {\n    if (resp) {\n        auto copy = std::make_shared<APIGetCommentResponse>(*resp);\n        std::cout << \"Comment retrieved for tenant\" << std::endl;\n    } else {\n        std::cout << \"Comment not found\" << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

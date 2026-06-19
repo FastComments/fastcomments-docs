@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "0e20cf308dfbed38d616a7cdc8c68f60f269ba920f0f322537d2209b06642bec",
+  "generatedAt": "2026-06-19T21:45:01.616Z",
+  "codeExample": "utility::string_t urlId = utility::conversions::to_string_t(\"my-tenant-123/thread-456\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"sso-token-abc123\");\nauto reopenTask = api->putReopenThread(urlId, sso)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) -> std::shared_ptr<APIEmptyResponse> {\n        try {\n            return t.get();\n        } catch (...) {\n            return std::make_shared<APIEmptyResponse>();\n        }\n    });",
+  "model": "gpt-5-mini"
+}

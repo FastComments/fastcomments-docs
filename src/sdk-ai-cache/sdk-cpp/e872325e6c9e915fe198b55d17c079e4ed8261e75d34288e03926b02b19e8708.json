@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "e872325e6c9e915fe198b55d17c079e4ed8261e75d34288e03926b02b19e8708",
+  "generatedAt": "2026-06-19T21:45:01.204Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-987654\");\nboost::optional<bool> includeEmail = boost::optional<bool>(true);\nboost::optional<bool> includeIP = boost::optional<bool>(false);\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->getModerationComment(commentId, includeEmail, includeIP, sso)\n.then([](std::shared_ptr<ModerationAPICommentResponse> resp) {\n    auto result = resp ? resp : std::make_shared<ModerationAPICommentResponse>();\n    if (resp)\n        std::cout << \"Comment fetched successfully\" << std::endl;\n    else\n        std::cout << \"No comment returned; using placeholder\" << std::endl;\n}).wait();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "add_page",
+  "signatureHash": "40b3ccebcbcd1aec0b37b9533423c257d89f39a29171fc00d923e1a21ef24f5c",
+  "generatedAt": "2026-06-19T18:51:10.956Z",
+  "codeExample": "let create_api_page_data: models::CreateApiPageData = models::CreateApiPageData {\n    path: \"news/article\".to_string(),\n    title: \"Breaking: Market Rally\".to_string(),\n    url: Some(\"https://acme.example.com/news/market-rally\".to_string()),\n    meta_description: Some(\"Markets surge after earnings beat expectations\".to_string()),\n    tags: Some(vec![\"finance\".to_string(), \"markets\".to_string()]),\n};\n\nlet params: AddPageParams = AddPageParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_api_page_data,\n};\n\nlet response: AddPageApiResponse = add_page(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

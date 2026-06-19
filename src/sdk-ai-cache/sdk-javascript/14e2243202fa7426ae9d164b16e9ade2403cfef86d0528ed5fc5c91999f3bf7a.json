@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "14e2243202fa7426ae9d164b16e9ade2403cfef86d0528ed5fc5c91999f3bf7a",
+  "generatedAt": "2026-06-19T21:44:56.467Z",
+  "codeExample": "const searchValue: string = 'fastcomments.com';\nconst ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst responseWithSSO: ModerationSiteSearchResponse = await getSearchSites(searchValue, ssoToken);\nconst responseWithoutSSO: ModerationSiteSearchResponse = await getSearchSites('news.fastcompany.com');",
+  "model": "gpt-5-mini"
+}

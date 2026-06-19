@@ -1,0 +1,7 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "ebd7b3a718a0e48d93d72ab537898f1c22f05281ead194a6487d5cd5b9c83223",
+  "generatedAt": "2026-06-19T18:51:11.106Z",
+  "codeExample": "let (response, httpResponse) = client.getEventLog(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-2026-solar-panels\",\n  userIdWS = \"user-456\",\n  startTime = 1688000000'i64,\n  endTime = 1688086400'i64\n)\nif response.isSome:\n  let eventLog = response.get()\n  discard eventLog",
+  "model": "gpt-5-mini"
+}

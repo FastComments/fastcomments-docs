@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "5a4fa06bcb6c63e6691085775078a803ed1ceea009d2cc0dcf6a6f663eb3e0ef",
+  "generatedAt": "2026-06-19T18:51:15.982Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\napi->getUserNotifications(\n    tenantId,\n    boost::optional<utility::string_t>(U(\"post-456\")),\n    boost::optional<int32_t>(50),\n    boost::optional<utility::string_t>(U(\"notif-789\")),\n    boost::optional<bool>(true),\n    boost::optional<int64_t>(1625097600000LL),\n    boost::optional<bool>(true),\n    boost::optional<bool>(false),\n    boost::optional<bool>(false),\n    boost::optional<bool>(true),\n    boost::optional<bool>(false),\n    boost::optional<utility::string_t>(U(\"user@example.com\"))\n).then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> t){\n    try {\n        auto resp = t.get();\n        if(!resp) resp = std::make_shared<GetMyNotificationsResponse>();\n        // use resp, e.g. inspect fields\n    } catch(const std::exception &e) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

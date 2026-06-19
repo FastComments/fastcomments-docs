@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "000c9ce133529c9687cce7bc2a0635f72addffda62295e008ced0b05a6af49c3",
+  "generatedAt": "2026-06-19T18:51:09.637Z",
+  "codeExample": "let (response, httpResponse) = client.createTenantUser(tenantId = \"my-tenant-123\",\n  createTenantUserBody = CreateTenantUserBody(userId = \"user-456\",\n    email = \"jane.doe@example.com\",\n    displayName = \"Jane Doe\",\n    roles = @[\"editor\"],\n    isAdmin = false))\nif response.isSome:\n  let created = response.get()\n  discard created",
+  "model": "gpt-5-mini"
+}

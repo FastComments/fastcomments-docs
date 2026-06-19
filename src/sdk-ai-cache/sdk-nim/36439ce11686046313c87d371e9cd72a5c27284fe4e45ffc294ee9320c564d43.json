@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "36439ce11686046313c87d371e9cd72a5c27284fe4e45ffc294ee9320c564d43",
+  "generatedAt": "2026-06-19T18:51:10.160Z",
+  "codeExample": "let (response, httpResponse) = client.voteComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654321\",\n  urlId = \"news/article-2026-inflation\",\n  broadcastId = \"\",\n  voteBodyParams = VoteBodyParams(),\n  sessionId = \"\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let voteResp = response.get()\n  discard voteResp\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini"
+}

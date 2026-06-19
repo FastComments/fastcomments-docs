@@ -1,0 +1,7 @@
+{
+  "method": "create_tenant_package",
+  "signatureHash": "fbd78b877ab93f1feee663462207f8575af722cea936d2d8c8e6e5e91e070842",
+  "generatedAt": "2026-06-19T18:51:11.912Z",
+  "codeExample": "async fn run() -> Result<CreateTenantPackageResponse, Error> {\n    let create_tenant_package_body: models::CreateTenantPackageBody = models::CreateTenantPackageBody {\n        name: \"Premium Support\".to_string(),\n        plan: \"enterprise\".to_string(),\n        seats: Some(50),\n        price_cents: Some(19900),\n        currency: Some(\"USD\".to_string()),\n        features: Some(vec![\"priority-support\".to_string(), \"white-label\".to_string()]),\n        auto_renew: Some(true),\n        notes: Some(\"Includes monthly account review\".to_string()),\n    };\n    let params: CreateTenantPackageParams = CreateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_tenant_package_body,\n    };\n    let response: CreateTenantPackageResponse = create_tenant_package(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

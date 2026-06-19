@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "739ce1680701ba7fa89f81d47b530bdcf2a7ff7c95d03170a33299842fd5e294",
+  "generatedAt": "2026-06-19T18:51:11.901Z",
+  "codeExample": "let body = CreateTicketBody(\n  subject = \"Comment moderation issue\",\n  message = \"Several abusive comments reported on article, please review and moderate.\",\n  tags = @[\"moderation\", \"abuse\", \"urgent\"],\n  url = \"https://news.example.com/world/2026-election\",\n  priority = \"high\"\n)\n\nlet (response, httpResponse) = client.createTicket(tenantId = \"my-tenant-123\", userId = \"user-789\", createTicketBody = body)\n\nif response.isSome:\n  let ticket = response.get()\n  echo \"Created ticket ID: \", ticket.id",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "746d4002df9bdf0878432eafb5bf80cd2185e55070aca45c9c6085b6e5241ac9",
+  "generatedAt": "2026-06-19T18:51:11.708Z",
+  "codeExample": "let (response, httpResponse) = client.getTenants(tenantId = \"my-tenant-123\", meta = \"env=production\", skip = 0.0)\nif response.isSome:\n  let tenantsResp = response.get()\n  discard tenantsResp\n  echo \"Tenants fetched successfully\"\nelse:\n  echo \"Request failed with status \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

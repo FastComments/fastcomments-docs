@@ -1,0 +1,7 @@
+{
+  "method": "delete_email_template",
+  "signatureHash": "7f7f28850628a9f0f2e681c1679b32ef2cbf90f42e9604dd4e4ead0641783f3a",
+  "generatedAt": "2026-06-19T18:51:15.404Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let version: Option<&str> = Some(\"2025\");\n    let template_id: String = if let Some(ver) = version {\n        format!(\"welcome-email-{}\", ver)\n    } else {\n        \"welcome-email\".to_owned()\n    };\n    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        id: template_id,\n    };\n    let _response: ApiEmptyResponse = delete_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

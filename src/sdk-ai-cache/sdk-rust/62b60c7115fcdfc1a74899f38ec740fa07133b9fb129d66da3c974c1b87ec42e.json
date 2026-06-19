@@ -1,0 +1,7 @@
+{
+  "method": "get_pending_webhook_event_count",
+  "signatureHash": "62b60c7115fcdfc1a74899f38ec740fa07133b9fb129d66da3c974c1b87ec42e",
+  "generatedAt": "2026-06-19T18:51:10.561Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let cfg: &configuration::Configuration = &configuration;\n    let params: GetPendingWebhookEventCountParams = GetPendingWebhookEventCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: Some(\"cmt_92a7b3\".to_string()),\n        external_id: Some(\"article-2026-06-19\".to_string()),\n        event_type: Some(\"comment.created\".to_string()),\n        domain: Some(\"acme.com\".to_string()),\n        attempt_count_gt: Some(1.0),\n    };\n    let count_response: GetPendingWebhookEventCountResponse = get_pending_webhook_event_count(cfg, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

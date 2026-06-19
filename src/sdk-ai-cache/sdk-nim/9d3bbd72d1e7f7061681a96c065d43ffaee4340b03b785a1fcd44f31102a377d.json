@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "9d3bbd72d1e7f7061681a96c065d43ffaee4340b03b785a1fcd44f31102a377d",
+  "generatedAt": "2026-06-19T18:51:11.427Z",
+  "codeExample": "let (response, httpResponse) = client.getFeedPostsPublic(\n  tenantId = \"my-tenant-123\",\n  afterId = \"\",\n  limit = 0,\n  tags = @[],\n  sso = \"\",\n  isCrawler = false,\n  includeUserInfo = false\n)\nif response.isSome:\n  let feed = response.get()\n  discard feed",
+  "model": "gpt-5-mini"
+}

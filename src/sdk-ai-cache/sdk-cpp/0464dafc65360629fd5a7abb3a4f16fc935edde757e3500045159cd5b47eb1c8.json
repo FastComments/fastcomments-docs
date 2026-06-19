@@ -1,0 +1,7 @@
+{
+  "method": "postAdjustCommentVotes",
+  "signatureHash": "0464dafc65360629fd5a7abb3a4f16fc935edde757e3500045159cd5b47eb1c8",
+  "generatedAt": "2026-06-19T21:45:00.009Z",
+  "codeExample": "AdjustCommentVotesParams params;\nparams.userId = utility::string_t(U(\"user-742\"));\nparams.adjustment = 1;\nparams.reason = utility::string_t(U(\"Marked as helpful\"));\n\nboost::optional<utility::string_t> sso = utility::string_t(U(\"sso-token-98765\"));\n\napi->postAdjustCommentVotes(utility::string_t(U(\"comment-5f3a9b2\")), params, sso)\n.then([](pplx::task<std::shared_ptr<AdjustVotesResponse>> t) {\n    try {\n        auto resp = t.get();\n        auto finalResp = resp ? resp : std::make_shared<AdjustVotesResponse>();\n        (void)finalResp;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "dedda8f508aa6200f4626a01630d0be80b9620b88a906f0bd865bd54c27d7ef9",
+  "generatedAt": "2026-06-19T21:44:56.429Z",
+  "codeExample": "const commentId: string = \"cmt_a1b2c3d4\";\nconst setCommentTextParams: SetCommentTextParams = {\n  text: \"Updated timeline and added a reference to the original report for clarity.\",\n  editedByUserId: \"user_9876\",\n  editReason: \"clarified timeline and added source\",\n  editedAt: \"2026-06-19T12:00:00Z\"\n};\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature\";\nconst result: SetCommentTextResponse = await postSetCommentText(commentId, setCommentTextParams, sso);",
+  "model": "gpt-5-mini"
+}

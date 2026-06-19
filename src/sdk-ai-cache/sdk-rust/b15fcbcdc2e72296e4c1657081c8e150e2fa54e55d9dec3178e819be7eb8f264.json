@@ -1,0 +1,7 @@
+{
+  "method": "get_pre_ban_summary",
+  "signatureHash": "b15fcbcdc2e72296e4c1657081c8e150e2fa54e55d9dec3178e819be7eb8f264",
+  "generatedAt": "2026-06-19T21:44:52.765Z",
+  "codeExample": "let params: GetPreBanSummaryParams = GetPreBanSummaryParams {\n    comment_id: String::from(\"news/article-9876-comment-42\"),\n    include_by_user_id_and_email: Some(true),\n    include_by_ip: Some(false),\n    include_by_email_domain: Some(true),\n    sso: Some(String::from(\"sso-acme-corp-2026\")),\n};\nlet pre_ban_summary: PreBanSummary = get_pre_ban_summary(configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "98bdd96b08f5ff2d00cf1932c3eb2c27f5b945f24d23905cc1c582ec59cbdc29",
+  "generatedAt": "2026-06-19T18:51:16.952Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"welcome-email-001\");\nboost::optional<utility::string_t> auditReason = boost::none;\napi->deleteEmailTemplate(tenantId, templateId).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try {\n        auto resp = task.get();\n        if(!resp) {\n            auto fallback = std::make_shared<APIEmptyResponse>();\n        }\n    } catch(const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

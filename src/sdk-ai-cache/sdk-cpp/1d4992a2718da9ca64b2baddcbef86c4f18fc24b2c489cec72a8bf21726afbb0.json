@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "1d4992a2718da9ca64b2baddcbef86c4f18fc24b2c489cec72a8bf21726afbb0",
+  "generatedAt": "2026-06-19T18:51:24.440Z",
+  "codeExample": "boost::optional<utility::string_t> userId = utility::string_t(U(\"user@example.com\"));\nboost::optional<SortDirections> direction = SortDirections::DESC;\nboost::optional<utility::string_t> repliesToUserId = utility::string_t(U(\"author-456\"));\nboost::optional<double> page = 1.0;\nboost::optional<bool> includei10n = true;\nboost::optional<utility::string_t> locale = utility::string_t(U(\"en-US\"));\nboost::optional<bool> isCrawler = false;\napi->getCommentsForUser(userId, direction, repliesToUserId, page, includei10n, locale, isCrawler)\n.then([](pplx::task<std::shared_ptr<GetCommentsForUserResponse>> task){\n  try {\n    auto resp = task.get();\n    auto marker = std::make_shared<std::string>(\"comments-retrieved\");\n    if (resp) std::cout << \"Comments fetched for user\\n\";\n  } catch (const std::exception &e) {\n    std::cerr << \"Error fetching comments: \" << e.what() << \"\\n\";\n  }\n});",
+  "model": "gpt-5-mini"
+}

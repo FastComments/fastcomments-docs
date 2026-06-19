@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "43dc4e871c530a327bb75bfcd881592616556864266df8567bb5bac70032fa0d",
+  "generatedAt": "2026-06-19T18:51:20.604Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> urlId(U(\"page-456\"));\nboost::optional<utility::string_t> userId(U(\"user@example.com\"));\nboost::optional<utility::string_t> startDate(U(\"2023-01-01T00:00:00Z\"));\nboost::optional<utility::string_t> questionId(U(\"q-789\"));\nboost::optional<utility::string_t> questionIds(U(\"q-789,q-790\"));\nboost::optional<double> skip(10.0);\napi->getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip)\n.then([](pplx::task<std::shared_ptr<GetQuestionResultsResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<GetQuestionResultsResponse>();\n        return resp;\n    } catch (...) {\n        return std::make_shared<GetQuestionResultsResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

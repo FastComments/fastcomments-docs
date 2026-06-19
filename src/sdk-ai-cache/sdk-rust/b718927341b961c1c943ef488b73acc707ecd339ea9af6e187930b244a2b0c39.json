@@ -1,0 +1,7 @@
+{
+  "method": "set_comment_text",
+  "signatureHash": "b718927341b961c1c943ef488b73acc707ecd339ea9af6e187930b244a2b0c39",
+  "generatedAt": "2026-06-19T18:51:13.424Z",
+  "codeExample": "async fn update_comment() -> Result<PublicApiSetCommentTextResponse, Error> {\n    let params: SetCommentTextParams = SetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-72f3a9\".to_string(),\n        broadcast_id: \"news/article/2026/06/19/product-launch\".to_string(),\n        comment_text_update_request: models::CommentTextUpdateRequest {\n            text: \"Updated: Congratulations on the launch! Clarified a few points.\".to_string(),\n        },\n        edit_key: Some(\"edit-key-9f8b\".to_string()),\n        sso: Some(\"sso-token-user-abc123\".to_string()),\n    };\n    let response = set_comment_text(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

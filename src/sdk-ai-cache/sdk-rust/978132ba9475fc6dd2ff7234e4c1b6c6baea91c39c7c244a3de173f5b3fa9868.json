@@ -1,0 +1,7 @@
+{
+  "method": "update_question_config",
+  "signatureHash": "978132ba9475fc6dd2ff7234e4c1b6c6baea91c39c7c244a3de173f5b3fa9868",
+  "generatedAt": "2026-06-19T18:51:15.582Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: UpdateQuestionConfigParams = UpdateQuestionConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"question-config-789\".to_string(),\n        update_question_config_body: models::UpdateQuestionConfigBody {\n            label: Some(\"Article feedback\".to_string()),\n            enabled: Some(true),\n            require_login: Some(false),\n            custom_options: Some(vec![\n                models::QuestionConfigCustomOptionsInner {\n                    key: \"category\".to_string(),\n                    value: \"news\".to_string(),\n                },\n            ]),\n        },\n    };\n\n    let _response: ApiEmptyResponse = update_question_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

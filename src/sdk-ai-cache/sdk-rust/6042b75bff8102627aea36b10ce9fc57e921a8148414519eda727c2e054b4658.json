@@ -1,0 +1,7 @@
+{
+  "method": "get_search_comments_summary",
+  "signatureHash": "6042b75bff8102627aea36b10ce9fc57e921a8148414519eda727c2e054b4658",
+  "generatedAt": "2026-06-19T21:44:57.075Z",
+  "codeExample": "async fn fetch_summary() -> Result<ModerationCommentSearchResponse, Error> {\n    let params: GetSearchCommentsSummaryParams = GetSearchCommentsSummaryParams {\n        value: Some(\"climate change\".to_string()),\n        filters: Some(r#\"{\"tenant\":\"acme-corp-tenant\",\"stream\":\"news/article\"}\"#.to_string()),\n        search_filters: Some(r#\"{\"author_email\":\"reporter@news.example.com\",\"moderation_status\":\"reviewed\"}\"#.to_string()),\n        sso: Some(\"sso:acme:user:67890\".to_string()),\n    };\n    let summary: ModerationCommentSearchResponse = get_search_comments_summary(&configuration, params).await?;\n    Ok(summary)\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "a2dfc5a62f3ceb9c8fb2261aba76eeeac69edfb87a22b12f0e55faaaef341230",
+  "generatedAt": "2026-06-19T21:44:53.928Z",
+  "codeExample": "const commentId: string = \"cmt_7f9d3a2b-4e6c-4b1a-9b3d-2a5f8e1c9d0f\";\nconst voteId: string = \"vote_91a2b3c4-d5e6-47f8-9a0b-c1d2e3f4a5b6\";\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.examplePayload.signature\";\n\nconst resultWithSso: VoteDeleteResponse = await deleteModerationVote(commentId, voteId, ssoToken);\nconst resultWithoutSso: VoteDeleteResponse = await deleteModerationVote(commentId, voteId);",
+  "model": "gpt-5-mini"
+}

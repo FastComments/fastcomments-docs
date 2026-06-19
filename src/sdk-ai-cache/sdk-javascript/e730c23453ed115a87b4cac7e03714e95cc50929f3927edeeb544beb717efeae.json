@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "e730c23453ed115a87b4cac7e03714e95cc50929f3927edeeb544beb717efeae",
+  "generatedAt": "2026-06-19T21:44:57.414Z",
+  "codeExample": "const userId: string = '550e8400-e29b-41d4-a716-446655440000';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.VXNlckRhdGE.signature';\nconst trustFactor: GetUserTrustFactorResponse = await getTrustFactor(userId, sso);\nconst trustFactorAnonymous: GetUserTrustFactorResponse = await getTrustFactor();",
+  "model": "gpt-5-mini"
+}

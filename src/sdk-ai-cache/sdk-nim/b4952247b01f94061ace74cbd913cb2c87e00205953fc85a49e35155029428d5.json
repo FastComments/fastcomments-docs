@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "b4952247b01f94061ace74cbd913cb2c87e00205953fc85a49e35155029428d5",
+  "generatedAt": "2026-06-19T18:51:11.830Z",
+  "codeExample": "let (response, httpResponse) = client.updateUserNotificationStatus(\n  tenantId = \"my-tenant-123\",\n  notificationId = \"notif-456\",\n  newStatus = \"read\",\n  sso = \"sso-token-abc123\"\n)\nif response.isSome:\n  let updated = response.get()\n  echo \"Notification status updated successfully\"\nelse:\n  echo \"No update response received\"",
+  "model": "gpt-5-mini"
+}

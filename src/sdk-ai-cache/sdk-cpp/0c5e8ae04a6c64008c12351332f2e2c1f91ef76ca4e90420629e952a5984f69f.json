@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "0c5e8ae04a6c64008c12351332f2e2c1f91ef76ca4e90420629e952a5984f69f",
+  "generatedAt": "2026-06-19T18:51:17.114Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nutility::string_t voteId = U(\"vote-abc123\");\nutility::string_t urlId = U(\"https://example.com/articles/42\");\nutility::string_t broadcastId = U(\"bcast-001\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"edit-key-789\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)\n.then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){\n    try {\n        auto respPtr = t.get();\n        std::shared_ptr<VoteDeleteResponse> result = respPtr ? std::make_shared<VoteDeleteResponse>(*respPtr) : std::make_shared<VoteDeleteResponse>();\n        (void)result;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

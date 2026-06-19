@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "a869c6cb5ff0850eb9bebdb396cefd2d86e961ab8814b498d7b26d480de092ae",
+  "generatedAt": "2026-06-19T18:51:05.321Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBadgeProgressList(\n  tenantId = \"my-tenant-123\",\n  userId = \"user-789\",\n  limit = 25.0,\n  skip = 0.0\n)\n\nif response.isSome:\n  let badgeProgress = response.get()\n  echo \"Received badge progress:\", badgeProgress\nelse:\n  echo \"No badge progress; HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini"
+}

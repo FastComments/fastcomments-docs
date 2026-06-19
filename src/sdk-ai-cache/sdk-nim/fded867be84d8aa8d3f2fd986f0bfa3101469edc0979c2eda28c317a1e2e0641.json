@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "fded867be84d8aa8d3f2fd986f0bfa3101469edc0979c2eda28c317a1e2e0641",
+  "generatedAt": "2026-06-19T18:51:08.229Z",
+  "codeExample": "let (response, httpResponse) = client.searchUsers(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/top-story\",\n  usernameStartsWith = \"\",\n  mentionGroupIds = @[],\n  sso = \"\",\n  searchSection = \"\"\n)\n\nif response.isSome:\n  let searchResult = response.get()\n  echo \"SearchUsersResult:\", searchResult\nelse:\n  echo \"No result or error. HTTP response:\", httpResponse",
+  "model": "gpt-5-mini"
+}

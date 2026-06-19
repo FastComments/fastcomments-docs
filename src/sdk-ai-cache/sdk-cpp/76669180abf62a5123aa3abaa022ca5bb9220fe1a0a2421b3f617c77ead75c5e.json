@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "76669180abf62a5123aa3abaa022ca5bb9220fe1a0a2421b3f617c77ead75c5e",
+  "generatedAt": "2026-06-19T18:51:17.621Z",
+  "codeExample": "boost::optional<utility::string_t> sso(utility::conversions::to_string_t(\"sso-token-abc123\"));\napi->updateUserNotificationPageSubscriptionStatus(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"article-456\"),\n    utility::conversions::to_string_t(\"https://www.example.com/posts/456\"),\n    utility::conversions::to_string_t(\"How to Test C++ SDK\"),\n    utility::conversions::to_string_t(\"subscribed\"),\n    sso\n).then([](pplx::task<std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse>> t){\n    try {\n        auto resp = t.get();\n        auto copy = std::make_shared<UpdateUserNotificationPageSubscriptionStatusResponse>(*resp);\n        (void)copy;\n    } catch (const std::exception&) { }\n});",
+  "model": "gpt-5-mini"
+}

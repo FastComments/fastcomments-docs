@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "13b3f91b2eef23c93b039061d30a0de01cf3da9e72e0353ebd84a648a8c94261",
+  "generatedAt": "2026-06-19T18:51:15.019Z",
+  "codeExample": "let modBody: UpdateModeratorBody = UpdateModeratorBody(\n  displayName = \"Alice Moderator\",\n  email = \"alice@newsdaily.com\",\n  isActive = true,\n  permissions = @[\"delete_comments\", \"ban_users\"]\n)\n\nlet (response, httpResponse) = client.updateModerator(tenantId = \"news-tenant-456\", id = \"moderator-789\", updateModeratorBody = modBody)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  echo \"Moderator updated successfully. HTTP status: \", httpResponse.status\nelse:\n  echo \"Failed to update moderator. HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini"
+}

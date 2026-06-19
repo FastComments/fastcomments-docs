@@ -1,0 +1,7 @@
+{
+  "method": "setTrustFactor",
+  "signatureHash": "d698786c250086e106812bdcd6d8a90ea5ee56b87997969f3a6fec9f05edc1bd",
+  "generatedAt": "2026-06-19T21:44:58.729Z",
+  "codeExample": "boost::optional<utility::string_t> userId = utility::conversions::to_string_t(\"user-9876\");\nboost::optional<utility::string_t> trustFactor = utility::conversions::to_string_t(\"verified\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"sso-token-abc123\");\napi->setTrustFactor(userId, trustFactor, sso)\n.then([](pplx::task<std::shared_ptr<SetUserTrustFactorResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copy = std::make_shared<SetUserTrustFactorResponse>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

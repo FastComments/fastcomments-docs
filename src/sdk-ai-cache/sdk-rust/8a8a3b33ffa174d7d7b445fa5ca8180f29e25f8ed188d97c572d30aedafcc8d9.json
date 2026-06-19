@@ -1,0 +1,7 @@
+{
+  "method": "update_email_template",
+  "signatureHash": "8a8a3b33ffa174d7d7b445fa5ca8180f29e25f8ed188d97c572d30aedafcc8d9",
+  "generatedAt": "2026-06-19T18:51:08.562Z",
+  "codeExample": "async fn run_update() -> Result<(), Error> {\n    let params: UpdateEmailTemplateParams = UpdateEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"weekly-newsletter\".to_string(),\n        update_email_template_body: models::UpdateEmailTemplateBody {\n            name: Some(\"Weekly Newsletter\".to_string()),\n            subject: Some(\"Your Weekly Acme Updates\".to_string()),\n            html: Some(\"<h1>Acme News</h1><p>Latest product and engineering updates.</p>\".to_string()),\n            plain_text: Some(\"Acme News - Latest product and engineering updates.\".to_string()),\n            enabled: Some(true),\n            sender_name: Some(\"Acme Team\".to_string()),\n            sender_email: Some(\"newsletter@acme.com\".to_string()),\n            locale: Some(\"en-US\".to_string()),\n        },\n    };\n    update_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

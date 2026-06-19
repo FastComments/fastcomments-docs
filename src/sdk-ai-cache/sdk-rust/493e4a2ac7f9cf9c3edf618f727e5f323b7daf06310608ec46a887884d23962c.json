@@ -1,0 +1,7 @@
+{
+  "method": "delete_v1_page_react",
+  "signatureHash": "493e4a2ac7f9cf9c3edf618f727e5f323b7daf06310608ec46a887884d23962c",
+  "generatedAt": "2026-06-19T18:51:20.832Z",
+  "codeExample": "async fn run_delete_react() -> Result<(), Error> {\n    let tenant_id: String = \"acme-corp-tenant\".to_string();\n    let maybe_url_id: Option<String> = Some(\"news/politics/2026-election\".to_string());\n    let url_id: String = maybe_url_id.unwrap();\n    let params: DeleteV1PageReactParams = DeleteV1PageReactParams { tenant_id, url_id };\n    let deleted: CreateV1PageReact = delete_v1_page_react(&configuration, params).await?;\n    let _result: CreateV1PageReact = deleted;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

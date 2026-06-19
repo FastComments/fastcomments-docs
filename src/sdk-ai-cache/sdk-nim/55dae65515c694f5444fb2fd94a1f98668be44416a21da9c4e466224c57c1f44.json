@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "55dae65515c694f5444fb2fd94a1f98668be44416a21da9c4e466224c57c1f44",
+  "generatedAt": "2026-06-19T18:51:10.560Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet resultId = \"question-result-456\"\nlet (response, httpResponse) = client.deleteQuestionResult(tenantId = tenantId, id = resultId)\nif response.isSome:\n  let emptyResp = response.get()\n  echo \"Deleted question result:\", resultId",
+  "model": "gpt-5-mini"
+}

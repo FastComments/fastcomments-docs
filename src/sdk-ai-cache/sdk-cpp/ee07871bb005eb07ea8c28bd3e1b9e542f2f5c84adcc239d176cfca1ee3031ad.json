@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "ee07871bb005eb07ea8c28bd3e1b9e542f2f5c84adcc239d176cfca1ee3031ad",
+  "generatedAt": "2026-06-19T18:51:09.086Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> page = 1.0;\napi->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<GetHashTagsResponse>();\n    } catch (const std::exception&) {\n        auto resp = std::make_shared<GetHashTagsResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

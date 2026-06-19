@@ -1,0 +1,7 @@
+{
+  "method": "send_login_link",
+  "signatureHash": "2fcb1d5ac6e5eda8e4817a90d3bb7120f496674d16f17388745c68559670d749",
+  "generatedAt": "2026-06-19T18:51:10.358Z",
+  "codeExample": "async fn send_link_example() -> Result<(), Error> {\n    let params: SendLoginLinkParams = SendLoginLinkParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-9876\".to_string(),\n        redirect_url: Some(\"https://acme.example.com/welcome\".to_string()),\n    };\n    let response: ApiEmptyResponse = send_login_link(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

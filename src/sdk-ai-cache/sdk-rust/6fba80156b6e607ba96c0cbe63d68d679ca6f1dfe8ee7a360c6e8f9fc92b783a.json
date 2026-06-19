@@ -1,0 +1,7 @@
+{
+  "method": "get_user_ban_preference",
+  "signatureHash": "6fba80156b6e607ba96c0cbe63d68d679ca6f1dfe8ee7a360c6e8f9fc92b783a",
+  "generatedAt": "2026-06-19T21:44:52.556Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: GetUserBanPreferenceParams = GetUserBanPreferenceParams {\n        sso: Some(\"acme-corp-tenant\".to_string()),\n    };\n    let response: ApiModerateGetUserBanPreferencesResponse =\n        get_user_ban_preference(&configuration, params).await?;\n    println!(\"{:#?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

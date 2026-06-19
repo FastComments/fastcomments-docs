@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "4f28ad11390443e81c735ab6137c6dabc56b3f799b9738270764d4afc9a146ae",
+  "generatedAt": "2026-06-19T18:51:07.912Z",
+  "codeExample": "let (response, httpResponse) = client.getUserNotificationCount(tenantId = \"news-tenant-123\", sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTI0NyIsImlhdCI6MTYw945600fQ.sflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\")\nif response.isSome:\n  let countResp = response.get()\n  echo \"Received user notification count response: \", countResp\nelse:\n  echo \"No notification count returned\"",
+  "model": "gpt-5-mini"
+}

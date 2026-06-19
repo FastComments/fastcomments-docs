@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "3758249cc4a65fe522dc49ac02d3f6612fc02bf057c204f74d0e862e0a52650d",
+  "generatedAt": "2026-06-19T21:45:03.720Z",
+  "codeExample": "BulkPreBanParams params;\nparams.tenantId = utility::string_t(U(\"my-tenant-123\"));\nparams.emails = std::vector<utility::string_t>{ U(\"alice@example.com\"), U(\"bob@example.org\") };\nparams.ipAddresses = std::vector<utility::string_t>{ U(\"203.0.113.45\"), U(\"198.51.100.22\") };\nboost::optional<bool> includeByUserIdAndEmail(true);\nboost::optional<bool> includeByIP(false);\nboost::optional<bool> includeByEmailDomain(true);\nboost::optional<utility::string_t> sso(utility::string_t(U(\"sso-token-xyz\")));\napi->postBulkPreBanSummary(params, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso)\n.then([](pplx::task<std::shared_ptr<BulkPreBanSummary>> t){\n    try {\n        auto summary = t.get();\n        if (summary) {\n            auto summaryCopy = std::make_shared<BulkPreBanSummary>(*summary);\n        }\n    } catch (const std::exception&) {}\n});",
+  "model": "gpt-5-mini"
+}

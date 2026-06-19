@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "8ad84f32d891821cb804716db99aa9c02db04a8831b6720a5045de13333c6428",
+  "generatedAt": "2026-06-19T18:51:07.436Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBadges(\n  tenantId = \"my-tenant-123\",\n  userId = \"user-9876\",\n  badgeId = \"top-commenter\",\n  displayedOnComments = true,\n  limit = 20.0,\n  skip = 0.0\n)\n\nif response.isSome:\n  let badges = response.get()\n  echo \"Badges response:\", badges\nelse:\n  echo \"No badges found (HTTP status: \", httpResponse.status, \")\"",
+  "model": "gpt-5-mini"
+}

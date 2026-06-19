@@ -1,0 +1,7 @@
+{
+  "method": "get_user",
+  "signatureHash": "31ef7fae1d682574980f8191b31c8669f13b95401e8c914afcdd19ab46a3de94",
+  "generatedAt": "2026-06-19T18:51:13.630Z",
+  "codeExample": "async fn example_get_user() -> Result<(), Error> {\n    let params = GetUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-7b9a2c\".to_string(),\n        include_roles: Some(true),\n    };\n    let user: GetUserResponse = get_user(&configuration, params).await?;\n    println!(\"{:#?}\", user);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

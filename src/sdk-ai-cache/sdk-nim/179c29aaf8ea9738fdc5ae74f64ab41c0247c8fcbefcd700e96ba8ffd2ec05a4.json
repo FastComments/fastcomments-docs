@@ -1,0 +1,7 @@
+{
+  "method": "getBanUsersFromComment",
+  "signatureHash": "179c29aaf8ea9738fdc5ae74f64ab41c0247c8fcbefcd700e96ba8ffd2ec05a4",
+  "generatedAt": "2026-06-19T21:44:57.788Z",
+  "codeExample": "let (response, httpResponse) = client.getBanUsersFromComment(commentId = \"comment-98765\", sso = \"\")\nif response.isSome:\n  let bannedResp = response.get()\n  discard bannedResp\nelse:\n  echo \"No banned users found or request failed\"",
+  "model": "gpt-5-mini"
+}

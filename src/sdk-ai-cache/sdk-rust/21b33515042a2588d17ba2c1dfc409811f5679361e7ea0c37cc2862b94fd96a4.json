@@ -1,0 +1,7 @@
+{
+  "method": "get_event_log",
+  "signatureHash": "21b33515042a2588d17ba2c1dfc409811f5679361e7ea0c37cc2862b94fd96a4",
+  "generatedAt": "2026-06-19T18:51:08.390Z",
+  "codeExample": "async fn fetch_event_log() -> Result<(), Error> {\n    let params = GetEventLogParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article/2024-product-launch\".to_string(),\n        user_id_ws: \"user_98765_ws\".to_string(),\n        start_time: 1710700800i64,\n        end_time: Some(1710787200i64),\n    };\n    let response: GetEventLogResponse = get_event_log(&configuration, params).await?;\n    println!(\"{:#?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

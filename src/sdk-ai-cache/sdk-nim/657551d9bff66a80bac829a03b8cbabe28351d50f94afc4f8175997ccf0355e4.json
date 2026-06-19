@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "657551d9bff66a80bac829a03b8cbabe28351d50f94afc4f8175997ccf0355e4",
+  "generatedAt": "2026-06-19T18:51:12.530Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentsPublic(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  page = 2,\n  direction = SortDirections.Descending,\n  sso = \"\",\n  skip = 0,\n  skipChildren = 0,\n  limit = 25,\n  limitChildren = 5,\n  countChildren = false,\n  fetchPageForCommentId = \"\",\n  includeConfig = true,\n  countAll = false,\n  includei10n = true,\n  locale = \"en-US\",\n  modules = \"reactions,moderation\",\n  isCrawler = false,\n  includeNotificationCount = true,\n  asTree = true,\n  maxTreeDepth = 3,\n  useFullTranslationIds = false,\n  parentId = \"\",\n  searchText = \"climate change\",\n  hashTags = @[\"climate\", \"research\"],\n  userId = \"user-789\",\n  customConfigStr = \"\",\n  afterCommentId = \"\",\n  beforeCommentId = \"\"\n)\n\nif response.isSome:\n  let commentsResp = response.get()\n  echo \"Received comments response:\"\n  echo commentsResp\nelse:\n  echo \"No comments returned. HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini"
+}

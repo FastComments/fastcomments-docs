@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "12f0edec0767f1591480164968f55b0d5f12697f2f9f1e610c0e010ae3270f60",
+  "generatedAt": "2026-06-19T18:51:17.116Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = U(\"user@example.com\");\nboost::optional<utility::string_t> urlId = U(\"article-456\");\nboost::optional<utility::string_t> fromCommentId = U(\"cmt-789\");\nboost::optional<bool> viewed = true;\nboost::optional<utility::string_t> type = U(\"mention\");\n\nauto task = api->getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type)\n.then([](pplx::task<std::shared_ptr<GetNotificationCountResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) return std::make_shared<GetNotificationCountResponse>();\n        return resp;\n    } catch (...) {\n        return std::make_shared<GetNotificationCountResponse>();\n    }\n});",
+  "model": "gpt-5-mini"
+}

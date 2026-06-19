@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "8ce95f536b25ff5b92eb00d677c4058651db488dde35817eedafcf7ecde52748",
+  "generatedAt": "2026-06-19T18:51:20.384Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t templateId = utility::conversions::to_string_t(\"tmpl_welcome_001\");\nauto bodyPtr = std::make_shared<UpdateEmailTemplateBody>();\nbodyPtr->subject = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Welcome to ExampleApp\"));\nbodyPtr->htmlBody = utility::conversions::to_string_t(\"<p>Hi {{user.name}}, welcome to ExampleApp!</p>\");\nbodyPtr->enabled = boost::optional<bool>(true);\napi->updateEmailTemplate(tenantId, templateId, *bodyPtr)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n  try {\n    auto resp = task.get();\n    (void)resp;\n  } catch (const std::exception &e) {\n  }\n});",
+  "model": "gpt-5-mini"
+}

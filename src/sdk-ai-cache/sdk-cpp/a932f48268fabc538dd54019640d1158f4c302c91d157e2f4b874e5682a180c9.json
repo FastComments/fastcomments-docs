@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "a932f48268fabc538dd54019640d1158f4c302c91d157e2f4b874e5682a180c9",
+  "generatedAt": "2026-06-19T18:51:15.131Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"/articles/2026/optimizing-cpp\");\nboost::optional<utility::string_t> usernameStartsWith(U(\"alice\"));\nstd::vector<boost::optional<utility::string_t>> mentionGroupIds{\n    boost::optional<utility::string_t>(U(\"editors\")),\n    boost::optional<utility::string_t>(U(\"reviewers\"))\n};\nboost::optional<utility::string_t> sso(U(\"sso-jwt-42\"));\nboost::optional<utility::string_t> searchSection(U(\"comments\"));\n\napi->searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection)\n.then([](pplx::task<std::shared_ptr<SearchUsersResult>> task){\n    try {\n        auto res = task.get();\n        auto finalRes = res ? res : std::make_shared<SearchUsersResult>();\n        (void)finalRes;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

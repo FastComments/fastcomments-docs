@@ -1,0 +1,7 @@
+{
+  "method": "delete_v2_page_react",
+  "signatureHash": "4da1ca787238848c67d6db1c862a7e4b77b94a49c84431955f0a957832841799",
+  "generatedAt": "2026-06-19T18:51:15.818Z",
+  "codeExample": "async fn run_delete() -> Result<(), Error> {\n    let params: DeleteV2PageReactParams = DeleteV2PageReactParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article/2026/06/feature-ml\".to_string(),\n        id: \"react_987654321\".to_string(),\n    };\n    let request_id: Option<String> = Some(\"req-20260619-01\".to_string());\n    let deleted: CreateV1PageReact = delete_v2_page_react(&configuration, params).await?;\n    let _ = request_id;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

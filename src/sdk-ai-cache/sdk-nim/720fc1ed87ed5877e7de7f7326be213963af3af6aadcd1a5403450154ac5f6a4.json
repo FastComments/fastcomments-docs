@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "720fc1ed87ed5877e7de7f7326be213963af3af6aadcd1a5403450154ac5f6a4",
+  "generatedAt": "2026-06-19T18:51:07.350Z",
+  "codeExample": "let (response, httpResponse) = client.updateQuestionConfig(tenantId = \"my-tenant-123\", id = \"question-config-456\", updateQuestionConfigBody = default(UpdateQuestionConfigBody))\nif response.isSome:\n  let apiEmpty = response.get()\n  discard apiEmpty",
+  "model": "gpt-5-mini"
+}

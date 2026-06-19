@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "5876e02c2bc9a668b678f558d6c0800a280ecf08636c3352ef29849ed9839720",
+  "generatedAt": "2026-06-19T18:51:21.672Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nboost::optional<utility::string_t> preferredLocale = boost::none;\nauto fallback = std::make_shared<GetCachedNotificationCountResponse>();\napi->getCachedNotificationCount(tenantId, id)\n.then([fallback](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> t) {\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : fallback;\n        std::cout << \"cachedNotificationCount: \" << result->count << std::endl;\n    } catch (const std::exception& e) {\n        std::cerr << \"Error fetching cached notification count: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "create_v2_page_react",
+  "signatureHash": "e201ecedfe7de0d8466e462a95283ac6a0cbd2ef2b1c2b9ba52539510646cdb8",
+  "generatedAt": "2026-06-19T18:51:09.670Z",
+  "codeExample": "async fn example_create_react() -> Result<CreateV1PageReact, Error> {\n    let params: CreateV2PageReactParams = CreateV2PageReactParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"news/2026/product-launch\"),\n        id: String::from(\"react-like\"),\n        title: Some(String::from(\"Product Launch Coverage\")),\n    };\n    let response: CreateV1PageReact = create_v2_page_react(&config, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

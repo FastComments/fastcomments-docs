@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "f5ff9a3dec338a2f44b68a0707c9a48cb8ebfbcdaef60041eecf931391d0a17e",
+  "generatedAt": "2026-06-19T21:44:52.945Z",
+  "codeExample": "let (response, httpResponse) = client.getSearchPages(value = \"news/politics/election-2024\", sso = \"sso-user-7f3b9c\")\nif response.isSome:\n  let pageSearch = response.get()\n  echo \"Moderation page search returned\"\nelse:\n  echo \"No moderation pages found\"",
+  "model": "gpt-5-mini"
+}

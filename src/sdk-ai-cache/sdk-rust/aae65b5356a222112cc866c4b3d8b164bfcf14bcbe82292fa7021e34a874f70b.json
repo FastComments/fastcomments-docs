@@ -1,0 +1,7 @@
+{
+  "method": "get_moderator",
+  "signatureHash": "aae65b5356a222112cc866c4b3d8b164bfcf14bcbe82292fa7021e34a874f70b",
+  "generatedAt": "2026-06-19T18:51:14.672Z",
+  "codeExample": "async fn fetch_moderator() -> Result<GetModeratorResponse, Error> {\n    let params: GetModeratorParams = GetModeratorParams {\n        tenant_id: \"acme-newsroom\".to_string(),\n        id: \"mod-jane-smith-001\".to_string(),\n    };\n    let include_permissions: Option<bool> = Some(true);\n    let moderator: GetModeratorResponse = get_moderator(&configuration, params).await?;\n    Ok(moderator)\n}",
+  "model": "gpt-5-mini"
+}

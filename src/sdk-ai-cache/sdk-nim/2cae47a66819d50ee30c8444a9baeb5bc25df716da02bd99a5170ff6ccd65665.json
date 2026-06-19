@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "2cae47a66819d50ee30c8444a9baeb5bc25df716da02bd99a5170ff6ccd65665",
+  "generatedAt": "2026-06-19T18:51:09.856Z",
+  "codeExample": "let (response, httpResponse) = client.getUsersInfo(tenantId = \"my-tenant-123\", ids = \"user-42,user-87\")\nif response.isSome:\n  let usersInfo = response.get()\n  echo \"Retrieved users info:\", usersInfo\nelse:\n  echo \"No users info returned. HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini"
+}

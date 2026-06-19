@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "9517b2fe52434cca15c63bcc8bc12d62c1314c1963b7ea505e50a3c0639e963c",
+  "generatedAt": "2026-06-19T21:44:54.487Z",
+  "codeExample": "let (response, httpResponse) = client.postSetCommentSpamStatus(\n  commentId = \"cmt-20250619-842\",\n  spam = false,\n  permNotSpam = false,\n  sso = \"\"\n)\nif response.isSome:\n  let apiEmpty = response.get()\n  discard apiEmpty",
+  "model": "gpt-5-mini"
+}

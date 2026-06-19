@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant_daily_usages",
+  "signatureHash": "b9a42e63f5916a4030668809f7a224a73f4dc569d6454c799d3a5e7a24b00292",
+  "generatedAt": "2026-06-19T18:51:07.373Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetTenantDailyUsagesParams = GetTenantDailyUsagesParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        year_number: Some(2026.0),\n        month_number: Some(6.0),\n        day_number: Some(19.0),\n        skip: Some(0.0),\n    };\n    let daily_usages: GetTenantDailyUsagesResponse =\n        get_tenant_daily_usages(&configuration, params).await?;\n    let _ = daily_usages;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

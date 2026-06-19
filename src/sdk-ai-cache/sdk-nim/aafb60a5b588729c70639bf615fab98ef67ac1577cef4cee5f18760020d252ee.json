@@ -1,0 +1,7 @@
+{
+  "method": "postAdjustCommentVotes",
+  "signatureHash": "aafb60a5b588729c70639bf615fab98ef67ac1577cef4cee5f18760020d252ee",
+  "generatedAt": "2026-06-19T21:44:59.029Z",
+  "codeExample": "let (response, httpResponse) = client.postAdjustCommentVotes(commentId = \"cmt-987654\", adjustCommentVotesParams = nil, sso = \"sso-token-abc123\")\nif response.isSome:\n  let adjusted = response.get()\n  discard adjusted",
+  "model": "gpt-5-mini"
+}

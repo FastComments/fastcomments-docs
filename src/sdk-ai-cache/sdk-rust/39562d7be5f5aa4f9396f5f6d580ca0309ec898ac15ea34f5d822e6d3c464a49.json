@@ -1,0 +1,7 @@
+{
+  "method": "get_moderation_comment",
+  "signatureHash": "39562d7be5f5aa4f9396f5f6d580ca0309ec898ac15ea34f5d822e6d3c464a49",
+  "generatedAt": "2026-06-19T21:44:56.255Z",
+  "codeExample": "async fn fetch_comment() -> Result<ModerationApiCommentResponse, Error> {\n    let params: GetModerationCommentParams = GetModerationCommentParams {\n        comment_id: String::from(\"cmt-48291\"),\n        include_email: Some(true),\n        include_ip: Some(false),\n        sso: Some(String::from(\"sso-acme-corp-2026-token\")),\n    };\n    let response: ModerationApiCommentResponse = get_moderation_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

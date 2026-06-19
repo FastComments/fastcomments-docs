@@ -1,0 +1,7 @@
+{
+  "method": "setTrustFactor",
+  "signatureHash": "2f5dcc0e53ca06a561672dd40d3cde6173e5ded35d77443d25979e5dc91fbf4d",
+  "generatedAt": "2026-06-19T21:44:56.625Z",
+  "codeExample": "let (response, httpResponse) = client.setTrustFactor(userId = \"user-9876\", trustFactor = \"high\", sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTk4NzYiLCJpYXQiOjE2MjQwMDAwMDB9.signature\")\nif response.isSome:\n  let resultObj = response.get()\n  echo resultObj\nelse:\n  echo \"No response received\"",
+  "model": "gpt-5-mini"
+}

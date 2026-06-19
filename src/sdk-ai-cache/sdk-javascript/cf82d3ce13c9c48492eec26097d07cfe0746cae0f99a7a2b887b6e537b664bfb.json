@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "cf82d3ce13c9c48492eec26097d07cfe0746cae0f99a7a2b887b6e537b664bfb",
+  "generatedAt": "2026-06-19T21:44:57.012Z",
+  "codeExample": "const textSearch: string = \"suspicious link\";\nconst byIPFromComment: string = \"203.0.113.45\";\nconst filters: string = \"status:flagged,platform:web\";\nconst searchFilters: string | undefined = undefined;\nconst sorts: string = \"-createdAt\";\nconst sso: string = \"sso_token_3f9b8\";\n\nconst exportResponse: ModerationExportResponse = await postApiExport(\n  textSearch,\n  byIPFromComment,\n  filters,\n  searchFilters,\n  sorts,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

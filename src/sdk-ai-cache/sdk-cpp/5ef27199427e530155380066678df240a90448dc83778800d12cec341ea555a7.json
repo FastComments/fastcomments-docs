@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "5ef27199427e530155380066678df240a90448dc83778800d12cec341ea555a7",
+  "generatedAt": "2026-06-19T18:51:22.906Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(U(\"my-tenant-123\"));\nutility::string_t userId = utility::string_t(U(\"user@example.com\"));\nauto body = std::make_shared<ReplaceTenantUserBody>();\nbody->email = utility::string_t(U(\"user@example.com\"));\nbody->name = utility::string_t(U(\"Jane Doe\"));\nbody->role = utility::string_t(U(\"member\"));\nboost::optional<utility::string_t> updateComments = boost::optional<utility::string_t>(utility::string_t(U(\"true\")));\napi->replaceTenantUser(tenantId, userId, *body, updateComments)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try {\n        auto resp = task.get();\n        (void)resp;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "2e54c985788c6cd632861f022eb613770209c8a42ca30ceb78e2bc22f80c6643",
+  "generatedAt": "2026-06-19T18:51:15.393Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t ids = U(\"alice@example.com,bob@example.com\");\nboost::optional<utility::string_t> statusFilter = U(\"active\");\napi->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){\n    try {\n        auto res = t.get();\n        if (res) {\n            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);\n        }\n    } catch (const std::exception&) {}\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "74ec12872dbf4276bf68efabdec65fe21e3e446d5e43a45be28f3bd36097d19b",
+  "generatedAt": "2026-06-19T18:51:10.152Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 20.0;\nauto placeholder = std::make_shared<GetTenantPackagesResponse>();\napi->getTenantPackages(tenantId, skip).then([placeholder](pplx::task<std::shared_ptr<GetTenantPackagesResponse>> t) {\n    try {\n        auto resp = t.get();\n        std::cout << \"Received packages: \" << (resp ? \"yes\" : \"no\") << std::endl;\n    } catch (const std::exception& e) {\n        std::cerr << \"Error fetching packages: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini"
+}

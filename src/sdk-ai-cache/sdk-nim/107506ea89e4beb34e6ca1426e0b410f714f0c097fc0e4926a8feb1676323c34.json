@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "107506ea89e4beb34e6ca1426e0b410f714f0c097fc0e4926a8feb1676323c34",
+  "generatedAt": "2026-06-19T18:51:05.163Z",
+  "codeExample": "let (response, httpResponse) = client.getOnlineUsers(tenantId = \"my-tenant-123\", urlId = \"news/politics/top-story\", afterName = \"\", afterUserId = \"\")\nif response.isSome:\n  let page = response.get()\n  echo \"Received online users page:\"\n  echo page\nelse:\n  echo \"No online users returned. HTTP status: \", httpResponse.statusCode",
+  "model": "gpt-5-mini"
+}

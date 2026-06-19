@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "76e5af776ffdb293352131551fd01b4a9c49d8c1dec0683b1ceee33efd578bad",
+  "generatedAt": "2026-06-19T21:45:02.593Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-987654321\");\nboost::optional<utility::string_t> direction = U(\"up\");\nboost::optional<utility::string_t> sso = U(\"sso-token-abc123\");\napi->postVote(commentId, direction, sso)\n.then([](pplx::task<std::shared_ptr<VoteResponse>> task) {\n    try {\n        auto resp = task.get();\n        if (!resp) resp = std::make_shared<VoteResponse>();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini"
+}

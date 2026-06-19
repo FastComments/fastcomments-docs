@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "17677222fb1f4a7eac9ae50482beacf46968feada5807ce4cd4a3f84132a5fe5",
+  "generatedAt": "2026-06-19T21:44:53.024Z",
+  "codeExample": "let (response, httpResponse) = client.getSearchSites(value = \"news/2026-olympics\", sso = \"sso-user-9876-token\")\nif response.isSome:\n  let searchResponse: ModerationSiteSearchResponse = response.get()\n  echo \"Found sites for search:\", searchResponse",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "5e8699f4c47778e3f9f16d27b9cad2c7fc1b2d3e4e3ada675b8dc53d8a408fd0",
+  "generatedAt": "2026-06-19T21:44:58.949Z",
+  "codeExample": "let bulkParams = BulkPreBanParams(\n  tenantId = \"my-tenant-123\",\n  userIds = @[\"user-456\", \"user-789\"],\n  emails = @[\"spammer@example.com\", \"bot@malicious.org\"],\n  ipAddresses = @[\"203.0.113.5\", \"198.51.100.42\"],\n  emailDomains = @[\"malicious.org\"]\n)\n\nlet (response, httpResponse) = client.postBulkPreBanSummary(\n  bulkPreBanParams = bulkParams,\n  includeByUserIdAndEmail = true,\n  includeByIP = true,\n  includeByEmailDomain = false,\n  sso = \"sso-token-abc123\"\n)\n\nif response.isSome:\n  let summary = response.get()\n  echo \"Pre-ban summary:\", summary",
+  "model": "gpt-5-mini"
+}

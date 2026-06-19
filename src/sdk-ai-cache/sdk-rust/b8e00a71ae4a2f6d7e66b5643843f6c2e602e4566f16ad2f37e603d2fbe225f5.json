@@ -1,0 +1,7 @@
+{
+  "method": "create_tenant",
+  "signatureHash": "b8e00a71ae4a2f6d7e66b5643843f6c2e602e4566f16ad2f37e603d2fbe225f5",
+  "generatedAt": "2026-06-19T18:51:11.922Z",
+  "codeExample": "async fn create_tenant_example() -> Result<CreateTenantResponse, Error> {\n    let params: CreateTenantParams = CreateTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_tenant_body: models::CreateTenantBody {\n            name: \"Acme Corporation\".to_string(),\n            primary_domain: \"acme-corp.com\".to_string(),\n            contact_email: \"ops@acme-corp.com\".to_string(),\n            api_domain_configuration: Some(ApiDomainConfiguration {\n                enabled: true,\n                domain: \"comments.acme-corp.com\".to_string(),\n            }),\n            billing_info: Some(BillingInfo {\n                plan: \"pro\".to_string(),\n                billing_contact_email: \"billing@acme-corp.com\".to_string(),\n            }),\n            imported_sites: Some(vec![ImportedSiteType {\n                site_type: \"news/article\".to_string(),\n                site_id: \"acme-news\".to_string(),\n            }]),\n        },\n    };\n    let response: CreateTenantResponse = create_tenant(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

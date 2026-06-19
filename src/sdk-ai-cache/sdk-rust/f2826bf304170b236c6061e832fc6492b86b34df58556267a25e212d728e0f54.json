@@ -1,0 +1,7 @@
+{
+  "method": "delete_moderation_vote",
+  "signatureHash": "f2826bf304170b236c6061e832fc6492b86b34df58556267a25e212d728e0f54",
+  "generatedAt": "2026-06-19T21:44:54.087Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteModerationVoteParams = DeleteModerationVoteParams {\n        comment_id: \"news/article-2026-06-19-12345\".to_string(),\n        vote_id: \"vote-9a7c3b1d\".to_string(),\n        sso: Some(\"user-9876@acme-corp\".to_string()),\n    };\n    let response: VoteDeleteResponse = delete_moderation_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

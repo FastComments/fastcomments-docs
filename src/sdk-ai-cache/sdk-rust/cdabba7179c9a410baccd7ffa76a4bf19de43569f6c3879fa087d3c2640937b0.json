@@ -1,0 +1,7 @@
+{
+  "method": "get_online_users",
+  "signatureHash": "cdabba7179c9a410baccd7ffa76a4bf19de43569f6c3879fa087d3c2640937b0",
+  "generatedAt": "2026-06-19T18:51:11.119Z",
+  "codeExample": "async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {\n    let params: GetOnlineUsersParams = GetOnlineUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/world/article-2026\".to_string(),\n        after_name: Some(\"jane.doe\".to_string()),\n        after_user_id: Some(\"user_98765\".to_string()),\n    };\n    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

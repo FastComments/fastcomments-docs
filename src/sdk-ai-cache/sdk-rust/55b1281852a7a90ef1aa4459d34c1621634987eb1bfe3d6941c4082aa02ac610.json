@@ -1,0 +1,7 @@
+{
+  "method": "get_question_result",
+  "signatureHash": "55b1281852a7a90ef1aa4459d34c1621634987eb1bfe3d6941c4082aa02ac610",
+  "generatedAt": "2026-06-19T18:51:14.224Z",
+  "codeExample": "async fn example_call() -> Result<(), Error> {\n    let params: GetQuestionResultParams = GetQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2026-07-poll-question-1\".to_string(),\n        include_details: Some(true),\n        locale: Some(\"en-US\".to_string()),\n    };\n    let result: GetQuestionResultResponse = get_question_result(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

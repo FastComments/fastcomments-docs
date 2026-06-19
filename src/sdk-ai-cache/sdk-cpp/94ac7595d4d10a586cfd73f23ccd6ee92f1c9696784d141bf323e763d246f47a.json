@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "94ac7595d4d10a586cfd73f23ccd6ee92f1c9696784d141bf323e763d246f47a",
+  "generatedAt": "2026-06-19T18:51:15.807Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto configId = utility::string_t(U(\"question-config-456\"));\nauto updateBody = std::make_shared<UpdateQuestionConfigBody>();\nupdateBody->allowAnonymous = boost::optional<bool>(false);\nupdateBody->moderationRequired = boost::optional<bool>(true);\nupdateBody->defaultAssignee = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\napi->updateQuestionConfig(tenantId, configId, *updateBody)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n        try {\n            auto resp = t.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini"
+}

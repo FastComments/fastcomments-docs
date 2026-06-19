@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "ef10738e483932b2c68ccb2ff7af115a7f85f0ae21cbfdf6833035f1970e4db2",
+  "generatedAt": "2026-06-19T18:51:22.106Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto body = std::make_shared<RenderEmailTemplateBody>();\nbody->templateId = U(\"welcome-email\");\nbody->recipientEmail = U(\"user@example.com\");\nboost::optional<utility::string_t> locale = U(\"en-US\");\napi->renderEmailTemplate(tenantId, *body, locale)\n    .then([](pplx::task<std::shared_ptr<RenderEmailTemplateResponse>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                std::cout << \"Rendered email template received for tenant\\n\";\n            }\n        } catch (const std::exception& e) {\n            std::cerr << \"Error: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini"
+}

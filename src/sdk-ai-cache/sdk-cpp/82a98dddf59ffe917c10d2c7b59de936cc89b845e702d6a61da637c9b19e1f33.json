@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "82a98dddf59ffe917c10d2c7b59de936cc89b845e702d6a61da637c9b19e1f33",
+  "generatedAt": "2026-06-19T21:44:59.464Z",
+  "codeExample": "utility::string_t commentId = U(\"cmt-8f3a21b7\");\nboost::optional<utility::string_t> sso = utility::string_t(U(\"user@example.com\"));\napi->postUnFlagComment(commentId, sso)\n.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<APIEmptyResponse>();\n    } catch (const std::exception &e) {\n    }\n}).wait();",
+  "model": "gpt-5-mini"
+}

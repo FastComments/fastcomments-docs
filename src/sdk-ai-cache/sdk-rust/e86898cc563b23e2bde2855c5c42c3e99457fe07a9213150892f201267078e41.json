@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badge",
+  "signatureHash": "e86898cc563b23e2bde2855c5c42c3e99457fe07a9213150892f201267078e41",
+  "generatedAt": "2026-06-19T18:51:15.893Z",
+  "codeExample": "async fn fetch_user_badge() -> Result<ApiGetUserBadgeResponse, Error> {\n    let params: GetUserBadgeParams = GetUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-moderator\".to_string(),\n        include_inactive: Some(false),\n    };\n    let badge: ApiGetUserBadgeResponse = get_user_badge(&configuration, params).await?;\n    Ok(badge)\n}",
+  "model": "gpt-5-mini"
+}

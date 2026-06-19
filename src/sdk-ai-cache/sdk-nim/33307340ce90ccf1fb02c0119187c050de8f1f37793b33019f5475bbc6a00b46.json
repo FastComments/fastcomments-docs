@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "33307340ce90ccf1fb02c0119187c050de8f1f37793b33019f5475bbc6a00b46",
+  "generatedAt": "2026-06-19T18:51:05.950Z",
+  "codeExample": "let (response, httpResponse) = client.getNotifications(tenantId = \"my-tenant-123\", userId = \"user-456\", urlId = \"news/article-title\", fromCommentId = \"cmt-789\", viewed = false, skip = 0.0)\nif response.isSome:\n  let notifications = response.get()\n  echo notifications",
+  "model": "gpt-5-mini"
+}

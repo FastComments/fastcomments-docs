@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "22ff7cabb996484be32b98e91ed4487989b31d5bf6ed798dccdb0b89a41313f1",
+  "generatedAt": "2026-06-19T18:51:12.865Z",
+  "codeExample": "let (response, httpResponse) = client.getAuditLogs(\n  tenantId = \"my-tenant-123\",\n  limit = 50.0,\n  skip = 0.0,\n  order = SORTDIR.DESC,\n  after = 1622505600.0,\n  before = 1625097600.0\n)\n\nif response.isSome:\n  let logs = response.get()\n  echo logs\nelse:\n  echo \"No audit logs returned\"",
+  "model": "gpt-5-mini"
+}

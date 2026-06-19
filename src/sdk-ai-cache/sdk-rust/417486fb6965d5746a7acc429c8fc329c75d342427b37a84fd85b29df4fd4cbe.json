@@ -1,0 +1,7 @@
+{
+  "method": "send_invite",
+  "signatureHash": "417486fb6965d5746a7acc429c8fc329c75d342427b37a84fd85b29df4fd4cbe",
+  "generatedAt": "2026-06-19T18:51:09.078Z",
+  "codeExample": "async fn run_send_invite() -> Result<ApiEmptyResponse, Error> {\n    let params: SendInviteParams = SendInviteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2026-06-19\".to_string(),\n        from_name: \"Acme News Team\".to_string(),\n        subject: Some(\"Invitation to comment\".to_string()),\n        message: Some(\"We value your feedback on this article — join the conversation.\".to_string()),\n        ..Default::default()\n    };\n\n    let response: ApiEmptyResponse = send_invite(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

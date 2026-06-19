@@ -1,0 +1,7 @@
+{
+  "method": "get_tenants",
+  "signatureHash": "531f0bf8aaf94053002c2fc98a27f45c24d4fe56869a670095291ae4049f27a1",
+  "generatedAt": "2026-06-19T18:51:07.258Z",
+  "codeExample": "async fn run_get_tenants() -> Result<(), Error> {\n    let params: GetTenantsParams = GetTenantsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        meta: Some(\"include=domains,billing\".to_string()),\n        skip: Some(10.0),\n    };\n    let tenants: GetTenantsResponse = get_tenants(&configuration, params).await?;\n    println!(\"{:#?}\", tenants);\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

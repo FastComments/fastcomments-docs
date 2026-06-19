@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_text",
+  "signatureHash": "6a1f99d1f978f1194d784f56ac8cc97e3523a7313a7dfcaa11222d0297cc49ff",
+  "generatedAt": "2026-06-19T21:45:00.874Z",
+  "codeExample": "async fn update_comment_text() -> Result<(), Error> {\n    let params: PostSetCommentTextParams = PostSetCommentTextParams {\n        comment_id: \"comment-73b2a9\".to_string(),\n        set_comment_text_params: models::SetCommentTextParams {\n            text: \"Updated: The event now starts at 9:00 AM local time.\".to_string(),\n        },\n        sso: Some(\"sso-session-8a7f3b\".to_string()),\n    };\n\n    let response: SetCommentTextResponse = post_set_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini"
+}

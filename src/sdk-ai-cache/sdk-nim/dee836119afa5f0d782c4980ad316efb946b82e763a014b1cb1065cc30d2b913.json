@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "dee836119afa5f0d782c4980ad316efb946b82e763a014b1cb1065cc30d2b913",
+  "generatedAt": "2026-06-19T21:44:55.537Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBanPreference(sso = \"sso-jwt-7f3a9b\")\nif response.isSome:\n  let prefs = response.get()\n  echo \"User ban preferences:\", prefs\nelse:\n  echo \"No ban preference found\"",
+  "model": "gpt-5-mini"
+}

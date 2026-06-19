@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "cefe0de4b296b6ba7b31d98e6a86e94e1e521c2ae2faa9f517c9074b6b832a74",
+  "generatedAt": "2026-06-19T18:51:22.743Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentId = utility::conversions::to_string_t(\"comment-456\");\nutility::string_t urlId = utility::conversions::to_string_t(\"/articles/how-to-cpp\");\nutility::string_t broadcastId = utility::conversions::to_string_t(\"broadcast-001\");\nVoteBodyParams voteBodyParams;\nboost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"session-abc-123\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"));\napi->voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)\n.then([](std::shared_ptr<VoteResponse> resp){\n    auto safeResp = resp ? resp : std::make_shared<VoteResponse>();\n    return safeResp;\n});",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "create_question_result",
+  "signatureHash": "c1620e21056ae88c51d8226ae0853330770b23f54ac179c9c51e0aff80dc2fb9",
+  "generatedAt": "2026-06-19T18:51:12.285Z",
+  "codeExample": "let params: CreateQuestionResultParams = CreateQuestionResultParams {\n    tenant_id: String::from(\"acme-corp-tenant\"),\n    create_question_result_body: models::CreateQuestionResultBody {\n        question_id: String::from(\"news/article/1234\"),\n        user_id: Some(String::from(\"reader-9876\")),\n        answer: String::from(\"B\"),\n        correct: Some(false),\n        score: Some(0.0),\n    },\n};\nlet response: CreateQuestionResultResponse = create_question_result(&configuration, params).await?;",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "19440e77e751846403c32aa00b974680483ca7f744eb479b22169a06f61adb24",
+  "generatedAt": "2026-06-19T18:51:12.544Z",
+  "codeExample": "let (response, httpResponse) = client.unBlockUserFromComment(\n  tenantId = \"my-tenant-123\",\n  id = \"comment-9f3b2a\",\n  unBlockFromCommentParams = UnBlockFromCommentParams(),\n  userId = \"user-1024\",\n  anonUserId = \"anon-77b\"\n)\n\nif response.isSome:\n  let unblockResult = response.get()\n  echo unblockResult\nelse:\n  echo \"Unblock failed\"",
+  "model": "gpt-5-mini"
+}

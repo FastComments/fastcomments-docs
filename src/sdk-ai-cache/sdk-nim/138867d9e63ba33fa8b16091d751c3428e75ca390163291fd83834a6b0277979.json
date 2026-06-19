@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "138867d9e63ba33fa8b16091d751c3428e75ca390163291fd83834a6b0277979",
+  "generatedAt": "2026-06-19T18:51:09.354Z",
+  "codeExample": "let (response, httpResponse) = client.deletePendingWebhookEvent(tenantId = \"my-tenant-123\", id = \"wh_evt_9f8b7a6c\")\nif response.isSome:\n  let apiEmpty = response.get()\n  echo \"Pending webhook event deleted for tenant my-tenant-123\"\nelse:\n  echo \"Failed to delete pending webhook event\"",
+  "model": "gpt-5-mini"
+}

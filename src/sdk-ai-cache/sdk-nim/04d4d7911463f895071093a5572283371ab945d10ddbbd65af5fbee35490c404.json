@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "04d4d7911463f895071093a5572283371ab945d10ddbbd65af5fbee35490c404",
+  "generatedAt": "2026-06-19T18:51:10.836Z",
+  "codeExample": "let (response, httpResponse) = client.bulkAggregateQuestionResults(\n  tenantId = \"my-tenant-123\",\n  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),\n  forceRecalculate = false\n)\n\nif response.isSome:\n  let aggregated = response.get()\n  echo \"Aggregated question results received\"",
+  "model": "gpt-5-mini"
+}

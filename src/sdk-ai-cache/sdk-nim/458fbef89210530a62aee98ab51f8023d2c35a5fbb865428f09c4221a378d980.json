@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "458fbef89210530a62aee98ab51f8023d2c35a5fbb865428f09c4221a378d980",
+  "generatedAt": "2026-06-19T21:44:52.793Z",
+  "codeExample": "let (response, httpResponse) = client.postApiExport(\n  textSearch = \"offensive language and spam\",\n  byIPFromComment = \"203.0.113.45\",\n  filters = \"{\\\"status\\\":\\\"pending\\\",\\\"severity\\\":\\\"high\\\"}\",\n  searchFilters = \"authorEmail:editor@news-site.com\",\n  sorts = \"-createdAt\",\n  sso = \"sso-session-token-9f8b7c\"\n)\nif response.isSome:\n  let exportResp = response.get()\n  echo \"Moderation export received:\", exportResp\nelse:\n  echo \"No export returned, HTTP status:\", httpResponse.status.code",
+  "model": "gpt-5-mini"
+}

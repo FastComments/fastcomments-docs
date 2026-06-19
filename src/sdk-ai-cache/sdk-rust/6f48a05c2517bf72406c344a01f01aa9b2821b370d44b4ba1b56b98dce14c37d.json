@@ -1,0 +1,7 @@
+{
+  "method": "update_user_notification_comment_subscription_status",
+  "signatureHash": "6f48a05c2517bf72406c344a01f01aa9b2821b370d44b4ba1b56b98dce14c37d",
+  "generatedAt": "2026-06-19T18:51:08.325Z",
+  "codeExample": "async fn example() -> Result<UpdateUserNotificationCommentSubscriptionStatusResponse, Error> {\n    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        notification_id: \"news/winter-2026-update\".to_string(),\n        opted_in_or_out: \"opted_in\".to_string(),\n        comment_id: \"article-42-comment-7\".to_string(),\n        sso: Some(\"user-123|eyJhbGciOi...\".to_string()),\n    };\n    let response: UpdateUserNotificationCommentSubscriptionStatusResponse =\n        update_user_notification_comment_subscription_status(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini"
+}

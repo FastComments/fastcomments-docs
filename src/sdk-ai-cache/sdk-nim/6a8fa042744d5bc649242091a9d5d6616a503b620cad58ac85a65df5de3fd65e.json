@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "6a8fa042744d5bc649242091a9d5d6616a503b620cad58ac85a65df5de3fd65e",
+  "generatedAt": "2026-06-19T18:51:12.313Z",
+  "codeExample": "let packageBody = UpdateTenantPackageBody(\n  name: \"Pro Plan\",\n  priceCents: 1999,\n  active: true,\n  features: @[\"priority-support\", \"advanced-moderation\"]\n)\n\nlet (response, httpResponse) = client.updateTenantPackage(\n  tenantId = \"my-tenant-123\",\n  id = \"pkg-789\",\n  updateTenantPackageBody = packageBody\n)\n\nif response.isSome:\n  let apiEmpty = response.get()\n  echo \"Tenant package updated successfully, HTTP status: \" & $httpResponse.status",
+  "model": "gpt-5-mini"
+}
