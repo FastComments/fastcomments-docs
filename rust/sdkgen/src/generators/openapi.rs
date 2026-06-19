@@ -361,6 +361,13 @@ fn determine_api_class(op: &Operation, api_classes: &[String]) -> String {
     if op.tags.iter().any(|t| t == "Public") {
         return public_class;
     }
+    if op.tags.iter().any(|t| t == "Moderation") {
+        return api_classes
+            .iter()
+            .find(|c| c.contains("Moderation"))
+            .cloned()
+            .unwrap_or_else(|| default_class.clone());
+    }
     if op.tags.iter().any(|t| t == "Hidden") {
         return "HiddenApi".to_string();
     }
