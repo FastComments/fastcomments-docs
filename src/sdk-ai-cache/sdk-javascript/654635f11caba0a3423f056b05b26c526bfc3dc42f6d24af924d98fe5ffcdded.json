@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "654635f11caba0a3423f056b05b26c526bfc3dc42f6d24af924d98fe5ffcdded",
+  "generatedAt": "2026-06-19T07:08:26.890Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3b2c44';\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: 'welcome_v2',\n  recipient: { name: 'Lucas Moreno', email: 'lucas@startup.io' },\n  variables: { siteName: 'TechDaily', activationLink: 'https://techdaily.io/activate/abc123' }\n};\nconst locale: string = 'en-US';\nconst result: RenderEmailTemplateResponse = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
+  "model": "gpt-5-mini"
+}

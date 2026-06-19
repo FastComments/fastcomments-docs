@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "b7e7a05ade1d9d52fa5913994bc4195b8f282ae7f37199bac7efbfbd70c8f831",
+  "generatedAt": "2026-06-19T07:08:36.681Z",
+  "codeExample": "type DomainModeration = { moderation?: { enabled?: boolean; mode?: string } };\n\nconst tenantId: string = \"tc_4b6f9d2a9e1f\";\nconst domain: string = \"comments.newsdaily.com\";\nconst config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);\n\nconst moderationEnabled: boolean | undefined = (config as unknown as DomainModeration).moderation?.enabled;\nconst moderationMode: string | undefined = (config as unknown as DomainModeration).moderation?.mode;",
+  "model": "gpt-5-mini"
+}

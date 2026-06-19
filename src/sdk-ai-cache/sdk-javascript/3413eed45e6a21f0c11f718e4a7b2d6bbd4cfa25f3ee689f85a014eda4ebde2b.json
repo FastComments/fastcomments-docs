@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "3413eed45e6a21f0c11f718e4a7b2d6bbd4cfa25f3ee689f85a014eda4ebde2b",
+  "generatedAt": "2026-06-19T07:08:25.174Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_prod_01';\nconst commentId: string = 'cmt_5f2d9b8a-3e7c-4a1b';\nconst editKey: string = 'edit_8b3f6c2d4a9e';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';\nconst response: PublicAPIGetCommentTextResponse = await getCommentText(tenantId, commentId, editKey, sso);",
+  "model": "gpt-5-mini"
+}

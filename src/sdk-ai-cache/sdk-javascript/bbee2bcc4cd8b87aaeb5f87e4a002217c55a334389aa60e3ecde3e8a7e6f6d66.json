@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "bbee2bcc4cd8b87aaeb5f87e4a002217c55a334389aa60e3ecde3e8a7e6f6d66",
+  "generatedAt": "2026-06-19T07:08:27.844Z",
+  "codeExample": "const tenantId: string = 'tenant_83f4b7a2';\nconst createModeratorBody: CreateModeratorBody = {\n  email: 'renee.alvarez@acme-corp.com',\n  fullName: 'Renee Alvarez',\n  roles: ['content_moderator'],\n  notify: true // optional parameter demonstrated\n};\nconst result: CreateModeratorResponse = await createModerator(tenantId, createModeratorBody);",
+  "model": "gpt-5-mini"
+}

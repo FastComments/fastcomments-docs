@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "905e92f6008b28c28ef30b72c5cf096f2261eb0110cdfa7017a5a966987c2a7e",
+  "generatedAt": "2026-06-19T07:08:32.464Z",
+  "codeExample": "const tenantId: string = 'fc_tenant_9b3c2a';\nconst packageId: string = 'pkg_pro_monthly_2026';\nconst result: GetTenantPackageResponse = await getTenantPackage(tenantId, packageId);\nconst tenantPackage: TenantPackage | undefined = (result as unknown as { tenantPackage?: TenantPackage }).tenantPackage;\nconst status: APIStatus | undefined = (result as unknown as { status?: APIStatus }).status",
+  "model": "gpt-5-mini"
+}

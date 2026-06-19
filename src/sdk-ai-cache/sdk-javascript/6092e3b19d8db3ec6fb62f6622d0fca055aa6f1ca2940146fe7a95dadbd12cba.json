@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "6092e3b19d8db3ec6fb62f6622d0fca055aa6f1ca2940146fe7a95dadbd12cba",
+  "generatedAt": "2026-06-19T07:08:30.665Z",
+  "codeExample": "const tenantId: string = 'tenant_8b4a2f9c';\nconst id: string = 'cmt_5f3b2a9e';\nconst unBlockFromCommentParams: UnBlockFromCommentParams = { reason: 'Appeal accepted', effectiveAt: '2026-06-19T12:00:00Z' };\nconst userId: string = 'user_42f7';\nconst result: UnblockSuccess = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);",
+  "model": "gpt-5-mini"
+}

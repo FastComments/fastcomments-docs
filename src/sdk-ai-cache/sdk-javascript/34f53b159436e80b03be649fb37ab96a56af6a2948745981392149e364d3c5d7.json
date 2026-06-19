@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "34f53b159436e80b03be649fb37ab96a56af6a2948745981392149e364d3c5d7",
+  "generatedAt": "2026-06-19T07:08:29.380Z",
+  "codeExample": "async function removePendingWebhookEvent(tenantId?: string): Promise<APIEmptyResponse | undefined> {\n  if (!tenantId) return;\n  const tenant: string = tenantId;\n  const eventId: string = 'evt_7f2c1a9b';\n  const response: APIEmptyResponse = await deletePendingWebhookEvent(tenant, eventId);\n  return response;\n}",
+  "model": "gpt-5-mini"
+}

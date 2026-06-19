@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "5d9ea6a3a9bb7a20e2c28d4a16292bc50044a3abc2dee0274b37fa1487cd7b03",
+  "generatedAt": "2026-06-19T07:08:26.149Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_7f3b2a9c';\n  const skip: number = 20; // optional parameter demonstrated\n  const result: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "446b8f7c7148f6e99b161905431c642f096b82cccaf020e11573d0802317065a",
+  "generatedAt": "2026-06-19T07:08:25.433Z",
+  "codeExample": "const tenantId: string = 'tenant_42f6';\nconst urlId: string = 'product-page-123';\nconst userId: string = 'user_789';\nconst startDate: string = '2024-05-01';\nconst questionIds: string = 'q-112,q-113';\nconst skip: number = 20;\nconst results: GetQuestionResultsResponse = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "bdf92989f4dd5b62686fca73c51a4b0253dc14ff7d96f3d40e629eabe2b921f1",
+  "generatedAt": "2026-06-19T07:08:32.426Z",
+  "codeExample": "const tenantId: string = 'bright-media-12';\nconst id: string = 'user-8f4d2';\nconst fromName: string = 'Sofia Park';\nconst optionalNote: string | undefined = undefined;\nconst result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);",
+  "model": "gpt-5-mini"
+}

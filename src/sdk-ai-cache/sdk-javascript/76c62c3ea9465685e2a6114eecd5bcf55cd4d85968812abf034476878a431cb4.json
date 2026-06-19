@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "76c62c3ea9465685e2a6114eecd5bcf55cd4d85968812abf034476878a431cb4",
+  "generatedAt": "2026-06-19T07:08:30.797Z",
+  "codeExample": "const tenantId: string = 'acme-corp-42';\nconst badgeId: string = 'badge_9f8b2c1d';\nconst includeAudit: boolean | undefined = undefined; // optional flag (not required by deleteUserBadge)\nconst result: APIEmptySuccessResponse = await deleteUserBadge(tenantId, badgeId);",
+  "model": "gpt-5-mini"
+}

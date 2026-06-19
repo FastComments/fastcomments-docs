@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "0b8509bcbd559edbfcc725d352632c2881d030099d34b2f5161c29df6b51cea0",
+  "generatedAt": "2026-06-19T07:08:32.355Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_78f9';\nconst ids: string = 'user_10234,user_10235,user_10236';\nconst usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);\n// getUsersInfo only requires tenantId and ids; optional parameters are not applicable here.",
+  "model": "gpt-5-mini"
+}

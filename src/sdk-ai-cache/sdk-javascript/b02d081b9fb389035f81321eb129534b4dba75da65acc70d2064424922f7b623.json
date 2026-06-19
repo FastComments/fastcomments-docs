@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "b02d081b9fb389035f81321eb129534b4dba75da65acc70d2064424922f7b623",
+  "generatedAt": "2026-06-19T07:08:36.745Z",
+  "codeExample": "const tenantId: string = 'acme-corp-42';\nconst largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';\nconst correlationId?: string = 'req-20260619-01';\nconst result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);",
+  "model": "gpt-5-mini"
+}

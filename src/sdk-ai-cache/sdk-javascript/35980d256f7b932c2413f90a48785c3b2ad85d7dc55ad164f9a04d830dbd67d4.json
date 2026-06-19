@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "35980d256f7b932c2413f90a48785c3b2ad85d7dc55ad164f9a04d830dbd67d4",
+  "generatedAt": "2026-06-19T07:08:26.049Z",
+  "codeExample": "const tag: string = \"release-notes\";\nconst tenantId: string = \"tenant_7b2f9c\";\nconst deleteHashTagRequestBody: DeleteHashTagRequestBody = { removedBy: \"ops@acme-corp.com\", force: true };\nconst result: APIEmptyResponse = await deleteHashTag(tag, tenantId, deleteHashTagRequestBody);",
+  "model": "gpt-5-mini"
+}

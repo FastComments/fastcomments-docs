@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "05037b9b430b7b480f5cf3ad386459ee8f24ddaa63cd53b99628a91ec5d5b9eb",
+  "generatedAt": "2026-06-19T07:08:27.695Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-1\";\nconst templateId: string = \"welcome-onboard-v2\";\nconst result: GetEmailTemplateResponse = await getEmailTemplate(tenantId, templateId);\nconst status: APIStatus | undefined = result.status;\nconst template: CustomEmailTemplate | undefined = result.template;\nconst subject: string | undefined = template?.subject",
+  "model": "gpt-5-mini"
+}

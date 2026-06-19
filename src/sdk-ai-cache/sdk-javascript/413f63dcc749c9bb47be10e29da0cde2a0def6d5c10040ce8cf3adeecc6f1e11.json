@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "413f63dcc749c9bb47be10e29da0cde2a0def6d5c10040ce8cf3adeecc6f1e11",
+  "generatedAt": "2026-06-19T07:08:23.018Z",
+  "codeExample": "const tenantId: string = \"acme-corp-9f3b\";\nconst packagesPage1: GetTenantPackagesResponse = await getTenantPackages(tenantId);\nconst packagesPage2: GetTenantPackagesResponse = await getTenantPackages(tenantId, 10);",
+  "model": "gpt-5-mini"
+}

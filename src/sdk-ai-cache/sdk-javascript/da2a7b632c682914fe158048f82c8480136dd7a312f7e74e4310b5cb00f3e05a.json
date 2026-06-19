@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "da2a7b632c682914fe158048f82c8480136dd7a312f7e74e4310b5cb00f3e05a",
+  "generatedAt": "2026-06-19T07:08:31.454Z",
+  "codeExample": "const tenantId: string = 'acme_corp_tenant_12';\nconst createCommentParams: Array<CreateCommentParams> = [\n  {\n    content: 'Really helpful breakdown of the migration steps.',\n    threadId: 'thread_2026_08',\n    authorName: 'Maya Singh',\n    authorEmail: 'maya.singh@startup.io',\n    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],\n    hashtags: [{ tag: 'migration' }],\n    createdAt: '2026-06-19T12:00:00Z'\n  }\n];\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst sendEmails: boolean = false;\nconst populateNotifications: boolean = true;\nconst responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);",
+  "model": "gpt-5-mini"
+}

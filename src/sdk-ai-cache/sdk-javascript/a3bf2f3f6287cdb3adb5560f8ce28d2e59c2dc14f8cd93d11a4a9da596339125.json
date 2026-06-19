@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "a3bf2f3f6287cdb3adb5560f8ce28d2e59c2dc14f8cd93d11a4a9da596339125",
+  "generatedAt": "2026-06-19T07:08:29.391Z",
+  "codeExample": "const tenantId: string = 'tenant_92a1c4';\nconst notificationId: string = 'notif_3f7b2e9a-4d1b-11ec-8d3d-0242ac130003';\nconst optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =\n  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OPTED_IN;\nconst commentId: string = 'cmt_8f4b2e7a';\nconst sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload';\nconst response: UpdateUserNotificationCommentSubscriptionStatusResponse =\n  await updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso);",
+  "model": "gpt-5-mini"
+}

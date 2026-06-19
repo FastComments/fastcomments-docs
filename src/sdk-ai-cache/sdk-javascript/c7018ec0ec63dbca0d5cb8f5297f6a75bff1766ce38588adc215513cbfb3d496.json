@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "c7018ec0ec63dbca0d5cb8f5297f6a75bff1766ce38588adc215513cbfb3d496",
+  "generatedAt": "2026-06-19T07:08:40.530Z",
+  "codeExample": "const tenantId: string = \"tenant_82b4a1\";\nconst asset: FeedPostMediaItemAsset = { url: \"https://cdn.company.com/uploads/launch.jpg\", mimeType: \"image/jpeg\", width: 1200, height: 800 };\nconst mediaItem: FeedPostMediaItem = { type: \"image\", caption: \"Launch screenshot\", assets: [asset] };\nconst link: FeedPostLink = { url: \"https://company.com/blog/launch-offline-sync\", title: \"Offline sync release notes\" };\nconst createFeedPostParams: CreateFeedPostParams = { message: \"Offline sync is now available — try it on mobile for faster access.\", media: [mediaItem], links: [link], visibility: \"public\" };\nconst broadcastId: string = \"brdcst_20260619_01\";\nconst isLive: boolean = false;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\nconst result: CreateFeedPostsResponse = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini"
+}

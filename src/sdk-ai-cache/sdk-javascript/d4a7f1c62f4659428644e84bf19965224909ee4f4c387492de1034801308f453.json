@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "d4a7f1c62f4659428644e84bf19965224909ee4f4c387492de1034801308f453",
+  "generatedAt": "2026-06-19T07:08:33.923Z",
+  "codeExample": "const tenantId: string = \"tenant_98765\";\nconst createCommentParams: CreateCommentParams = {\n  content: \"This fixed my build pipeline — switching the environment variable resolved the missing dependency.\",\n  threadId: \"blog-post-2026-06-19-ci-troubleshooting\",\n  userSession: { userId: \"user_7542\", displayName: \"Aisha Khan\", email: \"aisha.k@example.com\" }\n};\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst sendEmails: boolean = false;\nconst populateNotifications: boolean = true;\nconst response: APISaveCommentResponse = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);",
+  "model": "gpt-5-mini"
+}

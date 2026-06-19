@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "6385e3685e1ba7497d5c84b0f7ab7d924403879168aebb1be62b4b6bb8a891ad",
+  "generatedAt": "2026-06-19T07:08:26.028Z",
+  "codeExample": "(async (): Promise<void> => {\n  const tenantId: string = 'acme-corp-78';\n  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);\n  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);\n  console.log(responseWithoutSkip, responseWithSkip);\n})();",
+  "model": "gpt-5-mini"
+}

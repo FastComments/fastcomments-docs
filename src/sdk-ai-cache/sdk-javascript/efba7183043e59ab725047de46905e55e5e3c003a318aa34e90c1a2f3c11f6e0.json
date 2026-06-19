@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "efba7183043e59ab725047de46905e55e5e3c003a318aa34e90c1a2f3c11f6e0",
+  "generatedAt": "2026-06-19T07:08:32.796Z",
+  "codeExample": "const tenantId: string = 'tenant_7f4b2a';\nconst digestFreq: DigestEmailFrequency = { interval: 'daily' };\nconst agentApprovalFreq: ImportedAgentApprovalNotificationFrequency = { mode: 'immediate' };\nconst createTenantUserBody: CreateTenantUserBody = {\n  email: 'sara.martin@acme.co',\n  name: 'Sara Martin',\n  role: 'moderator',\n  avatarUrl: 'https://cdn.acme.co/avatars/sara.jpg',\n  notifyByEmail: true,                     // optional parameter demonstrated\n  digestEmailFrequency: digestFreq,\n  importedAgentApprovalNotificationFrequency: agentApprovalFreq\n};\nconst result: CreateTenantUserResponse = await createTenantUser(tenantId, createTenantUserBody);",
+  "model": "gpt-5-mini"
+}

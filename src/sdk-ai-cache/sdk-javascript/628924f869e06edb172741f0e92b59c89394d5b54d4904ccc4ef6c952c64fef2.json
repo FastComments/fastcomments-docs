@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "628924f869e06edb172741f0e92b59c89394d5b54d4904ccc4ef6c952c64fef2",
+  "generatedAt": "2026-06-19T07:08:28.797Z",
+  "codeExample": "const tenantId: string = \"acme-web-tenant-7\";\nconst id: string = \"badge_48f2a9\";\nconst updateUserBadgeParams: UpdateUserBadgeParams = {\n  label: \"Community Champion\",\n  description: \"Awarded for exceptional moderation and sustained helpful responses\",\n  active: true,\n  expiresAt: \"2026-12-31T23:59:59Z\", // optional expiry demonstrated\n  notifyUsers: true,\n  metadata: { awardedBy: \"moderator_jane\" }\n};\nconst result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateUserBadgeParams);",
+  "model": "gpt-5-mini"
+}

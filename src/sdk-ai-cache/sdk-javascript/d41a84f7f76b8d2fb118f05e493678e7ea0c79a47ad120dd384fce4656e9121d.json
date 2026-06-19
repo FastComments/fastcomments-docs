@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "d41a84f7f76b8d2fb118f05e493678e7ea0c79a47ad120dd384fce4656e9121d",
+  "generatedAt": "2026-06-19T07:08:29.873Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-779';\nconst id: string = 'post_5f1b9c3a';\nconst asset: FeedPostMediaItemAsset = {\n  url: 'https://cdn.acme.com/images/cover.jpg',\n  type: 'image/jpeg',\n  width: 1200,\n  height: 800\n};\nconst mediaItem: FeedPostMediaItem = {\n  id: 'media_12f',\n  caption: 'Event highlight',\n  assets: [asset]\n};\nconst link: FeedPostLink = {\n  url: 'https://acme.com/events/2026',\n  title: 'Event details'\n};\nconst feedPost: FeedPost = {\n  title: 'June Product Launch',\n  content: '<p>Join us for the new product demo.</p>',\n  published: true,\n  media: [mediaItem],\n  links: [link],\n  authorId: 'user_93d'\n};\nconst result: APIEmptyResponse = await updateFeedPost(tenantId, id, feedPost);",
+  "model": "gpt-5-mini"
+}

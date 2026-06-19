@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "71aacc9c734c8efff71ebb82ecb7d96b7c756c4c5dd06c09407a1d960f3573c4",
+  "generatedAt": "2026-06-19T07:08:27.762Z",
+  "codeExample": "const tenantId: string = 'fastcomments-7f3a2b';\nconst templateId: string = 'tmpl-9c3e1a2b';\nconst errorId: string = 'err-2026-06-19-001';\nconst result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);",
+  "model": "gpt-5-mini"
+}

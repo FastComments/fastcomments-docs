@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "3916f3183f9b9810a4440dcf9c5a4db731935d9d0f4a5d7544e3f6ab102ba9c7",
+  "generatedAt": "2026-06-19T07:08:31.587Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-84f2';\n  const id: string = '5d6a8b2f-1c4e-4a7b-9f3d-e2c123456789';\n  const customOption: QuestionConfigCustomOptionsInner = { label: 'Helpful', value: 'helpful' };\n  const updateQuestionConfigBody: UpdateQuestionConfigBody = {\n    enabled: true,\n    title: 'Is this information helpful?',\n    // optional parameter demonstrated:\n    customOptions: [customOption]\n  };\n  const result: APIEmptyResponse = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

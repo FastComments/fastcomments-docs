@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReactUsers",
+  "signatureHash": "3bb051dfa6380c43e040c25a8c79335d9c705ecb75e8f6c5bb41449fb4c0677a",
+  "generatedAt": "2026-06-19T07:08:33.267Z",
+  "codeExample": "const tenantId: string = \"fc_tenant_7b4c9d1\";\nconst rawUrlId: string | undefined = undefined; // may come from route params\nconst urlId: string = rawUrlId ?? \"page-home-9a3f2b\";\nconst id: string = \"user_823b5c\";\n\nconst response: GetV2PageReactUsersResponse = await getV2PageReactUsers(tenantId, urlId, id);",
+  "model": "gpt-5-mini"
+}

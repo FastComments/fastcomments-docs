@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "7eef75e1c77d93bf5941dd048ba13b50d3f2fa5a2c78d3d9db251f9f838a9759",
+  "generatedAt": "2026-06-19T07:08:23.589Z",
+  "codeExample": "const tenantId: string = \"tenant_8f3b2a1c\";\nconst usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);\nconst skip: number = 50;\nconst usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);",
+  "model": "gpt-5-mini"
+}

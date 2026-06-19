@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "43b7267d30c31917835910538929b926abdba735ab496d13b8d192aaddc7649a",
+  "generatedAt": "2026-06-19T07:08:27.776Z",
+  "codeExample": "const tenantId: string = \"tenant_acme-corp_01\";\nconst id: string = \"question_9f2d1b\";\nconst metaItem: MetaItem = { key: \"platform\", value: \"web\" };\nconst status: APIStatus = { code: 0, message: \"scored\" };\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  score: 92,\n  passed: true,\n  status,\n  meta: [metaItem] // optional field demonstrated\n};\nconst result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "model": "gpt-5-mini"
+}

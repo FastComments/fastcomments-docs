@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "5331c266f590dcad1f792309c92db1c2f9aa6e5c0f677992e0526f513e8517a7",
+  "generatedAt": "2026-06-19T07:08:26.285Z",
+  "codeExample": "const tenantId: string = \"tenant_8f4a2b7c\";\nconst id: string = \"user_74d9c1a3\";\nconst updateTenantUserBody: UpdateTenantUserBody = {\n  email: \"jane.doe@acme-corp.com\",\n  displayName: \"Jane Doe\",\n  roles: [\"moderator\"],\n  active: true\n};\nconst updateComments: string = \"Promoted to moderator for customer support\";\nconst response: APIEmptyResponse = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "a1131c1baf4271c55a440c5cebf828829121abe4c47e2ae608176e16e5c3eb07",
+  "generatedAt": "2026-06-19T07:08:29.267Z",
+  "codeExample": "const tenantId: string = \"tenant_9b2f4a\";\nconst postId: string = \"post_4f8c21\";\nconst updateFeedPostParams: UpdateFeedPostParams = {\n  title: \"Weekly product update\",\n  content: \"We've shipped improvements to search relevance and mobile layout.\",\n  media: [\n    {\n      type: \"image\",\n      assets: [{ url: \"https://cdn.company.com/images/update-cover.jpg\", width: 1200, height: 627 }]\n    }\n  ],\n  links: [{ url: \"https://company.com/blog/release-notes\", title: \"Release notes\" }],\n  published: true\n};\nconst broadcastId: string = \"broadcast_2026_06_19\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature\";\nconst response: CreateFeedPostResponse = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

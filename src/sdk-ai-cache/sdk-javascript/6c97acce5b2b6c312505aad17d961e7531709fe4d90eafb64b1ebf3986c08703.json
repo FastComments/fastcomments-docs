@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "6c97acce5b2b6c312505aad17d961e7531709fe4d90eafb64b1ebf3986c08703",
+  "generatedAt": "2026-06-19T07:08:31.304Z",
+  "codeExample": "const tenantId: string = \"tenant_52b9f3a1\";\nconst commentId: string = \"cmt_4f9d2a7b\";\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: \"spam\",\n  moderatorId: \"mod_783\",\n  durationMinutes: 1440,\n  notifyUser: true\n};\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example\";\nconst result: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini"
+}

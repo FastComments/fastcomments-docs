@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "447ccc49d64ed62c6ec513e20dc742b1462345c411a4cac5f7c5556a2b726a6e",
+  "generatedAt": "2026-06-19T07:08:28.738Z",
+  "codeExample": "const tenantId: string = 'tenant_a1b2c3';\nconst commentId: string = 'cmt_9f8e7d';\nconst eventType: string = 'comment.created';\nconst domain: string = 'comments.acme-corp.com';\nconst attemptCountGT: number = 2;\nconst skip: number = 5;\n\nconst result: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(\n  tenantId,\n  commentId,\n  undefined,\n  eventType,\n  undefined,\n  domain,\n  attemptCountGT,\n  skip\n);",
+  "model": "gpt-5-mini"
+}

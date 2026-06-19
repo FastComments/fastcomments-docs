@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "8a3882cad9131ac8acd64da7315e58b97bcf38d1ece715be2cad03684ea87f19",
+  "generatedAt": "2026-06-19T07:08:25.517Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises\";\nconst userId: string | undefined = \"u_56321\";\nconst state: number | undefined = 1;\nconst skip: number = 0;\nconst limit: number = 50;\nconst response: GetTicketsResponse = await getTickets(tenantId, userId, state, skip, limit);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "248f0fd234a6a0818fa395912306eb67948c2a113097f94388a97bf7d88c9916",
+  "generatedAt": "2026-06-19T07:08:25.395Z",
+  "codeExample": "const tenantId: string = 'tenant_87f9a4';\nconst limit: number = 100;\nconst skip: number = 0;\nconst order: SORTDIR = SORTDIR.DESC;\nconst after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 days ago\nconst auditLogsResponse: GetAuditLogsResponse = await getAuditLogs(tenantId, limit, skip, order, after);\nconsole.log((auditLogsResponse as unknown) ? 'Audit logs fetched' : 'No logs');",
+  "model": "gpt-5-mini"
+}

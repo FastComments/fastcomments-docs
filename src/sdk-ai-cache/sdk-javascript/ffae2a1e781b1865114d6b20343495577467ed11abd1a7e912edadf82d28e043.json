@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "ffae2a1e781b1865114d6b20343495577467ed11abd1a7e912edadf82d28e043",
+  "generatedAt": "2026-06-19T07:08:27.668Z",
+  "codeExample": "const idPrefix: string | undefined = 'count';\nconst notificationId: string = `${idPrefix ? idPrefix + '-' : ''}8b3a9f6c-3e8f-4f6a-a2f3-1a2b3c4d5e6f`;\nconst tenantId: string = 'acme-media-tenant-42';\nconst result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);",
+  "model": "gpt-5-mini"
+}

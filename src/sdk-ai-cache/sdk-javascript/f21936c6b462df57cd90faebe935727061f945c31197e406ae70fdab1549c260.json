@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "f21936c6b462df57cd90faebe935727061f945c31197e406ae70fdab1549c260",
+  "generatedAt": "2026-06-19T07:08:35.111Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-72a1';\nconst id: string = 'badge_5d8f3c9';\nconst response: APIGetUserBadgeResponse = await getUserBadge(tenantId, id);\nconst status: APIStatus = response.status;\nconst badgeTitle: string | undefined = response.userBadge?.title;",
+  "model": "gpt-5-mini"
+}

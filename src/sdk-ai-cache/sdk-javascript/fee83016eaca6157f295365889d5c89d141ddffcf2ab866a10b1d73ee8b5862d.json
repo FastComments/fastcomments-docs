@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "fee83016eaca6157f295365889d5c89d141ddffcf2ab866a10b1d73ee8b5862d",
+  "generatedAt": "2026-06-19T07:08:31.201Z",
+  "codeExample": "const tenantId: string = \"tenant_4b7c9a2f\";\nconst id: string = \"pkg_91f2d3b8\";\nconst updateTenantPackageBody: UpdateTenantPackageBody = {\n  planId: \"business_annual\",\n  seats: 50,\n  autoRenew: true,\n  couponCode: \"WELCOME2025\" // optional parameter demonstrated\n};\nconst result: APIEmptyResponse = await updateTenantPackage(tenantId, id, updateTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

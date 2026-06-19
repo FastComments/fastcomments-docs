@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "d26603dd39c9b3ea915971dc849833d5b83fb5692eb9be8db407d7cbcbd8e85f",
+  "generatedAt": "2026-06-19T07:08:27.834Z",
+  "codeExample": "const tenantId: string = \"tenant_9f1b3c\";\nconst commentId: string = \"comment_6a7b8c9d\";\nconst voteId: string = \"vote_55a1\";\nconst urlId: string = \"news/2026/06/19/typescript-updates\";\nconst broadcastId: string = \"broadcast_20260619_live_01\";\nconst editKey: string = \"edit_3f2a9b\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature\";\nconst result: VoteDeleteResponse = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);",
+  "model": "gpt-5-mini"
+}

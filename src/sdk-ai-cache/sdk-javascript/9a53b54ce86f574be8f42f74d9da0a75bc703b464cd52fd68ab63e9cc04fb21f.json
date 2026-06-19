@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "9a53b54ce86f574be8f42f74d9da0a75bc703b464cd52fd68ab63e9cc04fb21f",
+  "generatedAt": "2026-06-19T07:08:29.355Z",
+  "codeExample": "const tenantId: string = 'tenant-prod-01';\nconst id: string = 'cmt-000127';\nconst updatableCommentParams: UpdatableCommentParams = {\n  body: 'Thanks — I updated the steps to include the missing config flag.',\n  isHidden: false\n};\nconst contextUserId: string = 'moderator_77';\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = true;\nconst result: APIEmptyResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);",
+  "model": "gpt-5-mini"
+}

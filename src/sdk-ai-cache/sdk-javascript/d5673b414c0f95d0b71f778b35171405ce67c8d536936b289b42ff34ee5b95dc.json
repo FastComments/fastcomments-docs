@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "d5673b414c0f95d0b71f778b35171405ce67c8d536936b289b42ff34ee5b95dc",
+  "generatedAt": "2026-06-19T07:08:31.732Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst customConfig: CustomConfigParameters = { displayColor: '#3178C6', priority: 1 };\nconst tags: BulkCreateHashTagsBodyTagsInner[] = [\n  {\n    name: 'typescript',\n    slug: 'typescript',\n    description: 'Questions and examples for TypeScript usage',\n    isActive: true,\n    customConfig\n  }\n];\nconst body: BulkCreateHashTagsBody = { tags };\n\nconst responseWithTenant: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId, body);\nconst responseWithoutTenant: BulkCreateHashTagsResponse = await addHashTagsBulk(undefined, body);",
+  "model": "gpt-5-mini"
+}

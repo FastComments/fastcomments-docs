@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "1e3e26d92695b58cffa19c558622ee514452793988c06af42447075e8dce2c32",
+  "generatedAt": "2026-06-19T07:08:25.846Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\nconst id: string = \"user_3a2b1c\";\nconst response: GetTenantUserResponse = await getTenantUser(tenantId, id);\nconst status: APIStatus | undefined = response?.status;\nconst user: User | undefined = response?.user;\nconst digestFrequency: DigestEmailFrequency | undefined = user?.digestEmailFrequency;\nconst importedAgentApprovalFrequency: ImportedAgentApprovalNotificationFrequency | undefined = user?.importedAgentApprovalNotificationFrequency;",
+  "model": "gpt-5-mini"
+}

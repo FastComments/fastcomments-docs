@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "99eb0433498764a5dce5281409658a6cb72a21bf135f02a5c928007fa2340dbc",
+  "generatedAt": "2026-06-19T07:08:29.185Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-72';\nconst commentId: string = 'cmt_5f9b3a2d';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {};\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.sig';\nconst result: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "5dc257f09a3f2a6d89eaef57a66815d1e9b2f04ec116d0a0f43ce08ea8b55b89",
+  "generatedAt": "2026-06-19T07:08:27.567Z",
+  "codeExample": "const tenantId: string = \"tenant_8d9f3c4b\";\nconst domainToUpdate: string = \"comments.newsroom.example.com\";\nconst patchDomainConfigParams: PatchDomainConfigParams = {\n  enabled: true,\n  enforceHttps: true, // optional parameter included\n  allowedOrigins: [\"https://newsroom.example.com\"] // optional parameter included\n};\nconst result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);",
+  "model": "gpt-5-mini"
+}

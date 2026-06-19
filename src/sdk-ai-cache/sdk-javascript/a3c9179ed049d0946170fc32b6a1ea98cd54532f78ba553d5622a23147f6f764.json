@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "a3c9179ed049d0946170fc32b6a1ea98cd54532f78ba553d5622a23147f6f764",
+  "generatedAt": "2026-06-19T07:08:32.183Z",
+  "codeExample": "const tenantId: string = 'tenant_7b2f9c';\nconst commentId: string = 'cmt_4a9e2d';\nconst urlId: string = 'articles/2026/new-features';\nconst broadcastId: string = 'brd_1f3a9b';\nconst voteBodyParams: VoteBodyParams = { vote: 'up' };\nconst sessionId: string = 'sess_ab12cd34';\nconst voteResponse: VoteResponse = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId);",
+  "model": "gpt-5-mini"
+}

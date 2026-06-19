@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "0ebdec67e834eea5875cb5b8cc00a15700a3008bbb5cf7521ccaaeca16aaba38",
+  "generatedAt": "2026-06-19T07:08:38.836Z",
+  "codeExample": "(async () => {\n  const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(\n    'news-tenant-42',\n    'article-2026-06-19-abc123',\n    1,\n    undefined,\n    'sso_eyJhbGciOiJIUzI1Ni',\n    0,\n    0,\n    25,\n    5,\n    true,\n    undefined,\n    true,\n    false,\n    true,\n    'en-US',\n    'reactions,moderation',\n    false,\n    true,\n    true,\n    3,\n    false,\n    undefined,\n    'climate change',\n    ['environment', 'policy'],\n    'user-789',\n    undefined,\n    undefined,\n    undefined\n  );\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "3201ffdb1c5a486e1df633edb51cdcca70dab4735772ca2874917ae1e26ab1d7",
+  "generatedAt": "2026-06-19T07:08:36.135Z",
+  "codeExample": "const tenantId: string = 'tenant_42f2a9';\nconst commentId: string = 'cmt_9b7d3e';\nconst broadcastId: string = 'brd_live_2026_06_19';\nconst editKey: string = 'edk_3f8d2c4a9';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\n\nconst mention: CommentUserMentionInfo = { userId: 'user_789', displayName: 'Jordan Mills' };\nconst hashtag: CommentUserHashTagInfo = { tag: 'product-launch' };\n\nconst commentTextUpdateRequest: CommentTextUpdateRequest = {\n  text: 'Updated: clarified the timeline and fixed a typo in the earlier comment.',\n  mentions: [mention],\n  hashtags: [hashtag]\n};\n\nconst result: PublicAPISetCommentTextResponse = await setCommentText(\n  tenantId,\n  commentId,\n  broadcastId,\n  commentTextUpdateRequest,\n  editKey,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

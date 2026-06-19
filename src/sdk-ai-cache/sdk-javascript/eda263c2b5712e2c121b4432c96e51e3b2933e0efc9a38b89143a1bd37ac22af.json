@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "eda263c2b5712e2c121b4432c96e51e3b2933e0efc9a38b89143a1bd37ac22af",
+  "generatedAt": "2026-06-19T07:08:30.716Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst userId: string = 'moderator_421';\nconst id: string = 'ticket_8421';\nconst changeTicketStateBody: ChangeTicketStateBody = { state: 'closed', reason: 'Resolved after user follow-up', notifyUsers: true } as ChangeTicketStateBody;\nconst result: ChangeTicketStateResponse = await changeTicketState(tenantId, userId, id, changeTicketStateBody);",
+  "model": "gpt-5-mini"
+}

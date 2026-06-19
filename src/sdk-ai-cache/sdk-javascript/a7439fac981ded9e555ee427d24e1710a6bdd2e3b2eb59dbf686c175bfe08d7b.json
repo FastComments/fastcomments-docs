@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "a7439fac981ded9e555ee427d24e1710a6bdd2e3b2eb59dbf686c175bfe08d7b",
+  "generatedAt": "2026-06-19T07:08:26.355Z",
+  "codeExample": "const tenantId: string = \"tenant_78f3b2\";\nconst id: string = \"tenant-site-01\";\nconst domainConfiguration: APIDomainConfiguration = { primaryDomain: \"comments.acme-corp.com\", cname: \"acme-corp.comments.fastly.net\", sslEnabled: true };\nconst importedSite: ImportedSiteType = { siteId: \"blog-42\", domain: \"blog.acme-corp.com\" };\nconst billingInfo: BillingInfo = { plan: \"business\", cardLast4: \"4242\", nextBillingDate: \"2026-07-01\" };\nconst updateTenantBody: UpdateTenantBody = { displayName: \"Acme Corp\", domainConfiguration, importedSites: [importedSite], billingInfo, status: { enabled: true } as APIStatus };\nconst result: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "e6c70ceb61d15127b74659dac70de10ae12ec59b0188f6b539ab9e808db04095",
+  "generatedAt": "2026-06-19T07:08:27.083Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-01';\nconst afterId: string | undefined = 'post_20250601_89';\nconst limit: number = 20;\nconst tags: string[] = ['product-update', 'engineering'];\nconst result: GetFeedPostsResponse = await getFeedPosts(tenantId, afterId, limit, tags);",
+  "model": "gpt-5-mini"
+}

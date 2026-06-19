@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "d1097b7e0e3397565af7e4fd98bd23f4d871a82abe3b3f6ed390e868f97d180a",
+  "generatedAt": "2026-06-19T07:08:30.554Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_84a2c6b2';\n  const createUserBadgeParams: CreateUserBadgeParams = {\n    name: 'Early Supporter',\n    description: 'Awarded to users who joined during the alpha launch',\n    iconUrl: 'https://cdn.fastcomments.com/badges/early-supporter.png',\n    criteria: 'Joined before 2021-06-01',\n    isActive: true,\n    notifyUsers: true // optional parameter\n  };\n  const result: APICreateUserBadgeResponse = await createUserBadge(tenantId, createUserBadgeParams);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

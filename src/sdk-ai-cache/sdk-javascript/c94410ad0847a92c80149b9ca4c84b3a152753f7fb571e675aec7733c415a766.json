@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "c94410ad0847a92c80149b9ca4c84b3a152753f7fb571e675aec7733c415a766",
+  "generatedAt": "2026-06-19T07:08:24.496Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"acme-tenant-98765\";\n  const moderatorsResponse: GetModeratorsResponse = await getModerators(tenantId);\n  const skip: number = 25;\n  const pagedResponse: GetModeratorsResponse = await getModerators(tenantId, skip);\n  console.log(moderatorsResponse, pagedResponse);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

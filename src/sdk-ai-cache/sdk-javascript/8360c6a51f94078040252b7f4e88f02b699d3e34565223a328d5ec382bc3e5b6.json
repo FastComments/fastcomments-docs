@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "8360c6a51f94078040252b7f4e88f02b699d3e34565223a328d5ec382bc3e5b6",
+  "generatedAt": "2026-06-19T07:08:25.964Z",
+  "codeExample": "const tenantId: string = 'tenant_82b1f9';\nconst commentId: string = 'cmt_9f8e7d6a';\nconst broadcastId: string = 'live_brdcst_2026_06_19';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\n\nconst responseWithoutSSO: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId);\nconst responseWithSSO: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

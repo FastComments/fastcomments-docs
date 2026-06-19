@@ -1,0 +1,7 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "24bd21d78e2bcf46f5c5a1a55f11351b7785c685593ea388ac5c98d692c6ce15",
+  "generatedAt": "2026-06-19T07:08:26.454Z",
+  "codeExample": "const tenantId: string = \"org_5b2f9c3a\";\nconst domain: string = \"comments.acme-corp.com\";\nconst result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);",
+  "model": "gpt-5-mini"
+}

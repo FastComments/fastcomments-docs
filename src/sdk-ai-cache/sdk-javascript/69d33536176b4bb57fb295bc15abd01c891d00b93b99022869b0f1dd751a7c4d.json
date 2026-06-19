@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "69d33536176b4bb57fb295bc15abd01c891d00b93b99022869b0f1dd751a7c4d",
+  "generatedAt": "2026-06-19T07:08:28.265Z",
+  "codeExample": "const tenantId: string = 'acme-media-214';\nconst commentId: string = 'cmt_4f3b9a2d';\nconst broadcastId: string = 'live-987654321';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzgiLCJuYW1lIjoiSmFuZSBEb2UifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n\nconst lockedWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, sso);\nconst lockedWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);",
+  "model": "gpt-5-mini"
+}

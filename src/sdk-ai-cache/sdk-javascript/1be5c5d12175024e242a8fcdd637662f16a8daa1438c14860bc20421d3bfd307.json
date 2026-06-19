@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "1be5c5d12175024e242a8fcdd637662f16a8daa1438c14860bc20421d3bfd307",
+  "generatedAt": "2026-06-19T07:08:30.833Z",
+  "codeExample": "const tenantId: string = \"7f12c9a4-3b6e-4d2f-9a1c-5f8b2e0a91c4\";\nconst domainToUpdate: string = \"comments.newsroom-prod.com\";\nconst updateParams: UpdateDomainConfigParams = {\n  forceHttps: true,\n  enableCORS: true,               // optional flag (demonstrates optional params)\n  corsAllowedOrigins: [\"https://newsroom-prod.com\"]\n};\nconst response: PutDomainConfigResponse = await putDomainConfig(tenantId, domainToUpdate, updateParams);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

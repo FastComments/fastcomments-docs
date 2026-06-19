@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "7d2b3339a11e3196bccc008125787f4e28b69c7b6eb85285203a479359d28d66",
+  "generatedAt": "2026-06-19T07:08:25.869Z",
+  "codeExample": "const tenantId: string = \"acme-corp-92\";\nconst id: string = \"user_7f9b2a\";\nconst replaceTenantUserBody: ReplaceTenantUserBody = {\n  email: \"maria.garcia@acme-corp.com\",\n  displayName: \"María García\",\n  role: \"moderator\",\n  externalId: \"ext-5271\"\n};\nconst updateComments: string = \"true\";\nconst result: APIEmptyResponse = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);",
+  "model": "gpt-5-mini"
+}

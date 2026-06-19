@@ -1,0 +1,7 @@
+{
+  "method": "aggregate",
+  "signatureHash": "26f2ec23b6003da682d72e1769c9561d5a32571f57835a200a6a70f6c3766eb3",
+  "generatedAt": "2026-06-19T07:08:38.986Z",
+  "codeExample": "const tenantId: string = \"tenant_72b3\";\nconst parentTenantId: string = \"parent_acme_corp\";\nconst aggregationRequest: AggregationRequest = {\n  groupBy: [\"postId\"],\n  predicates: [\n    { field: \"status\", operator: \"EQ\", value: { stringValue: \"published\" } as QueryPredicateValue }\n  ],\n  operations: [\n    { type: AggregationOpType.COUNT, field: \"id\", alias: \"commentCount\" } as AggregationOperation\n  ],\n  sort: [{ field: \"commentCount\", direction: \"DESC\" } as AggregationRequestSort],\n  limit: 25\n};\nconst response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);",
+  "model": "gpt-5-mini"
+}

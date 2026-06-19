@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "e102c6b57bdcdbdf1978c44d59aa95c5d60f63f44d8bca8f9892efca401d7b0b",
+  "generatedAt": "2026-06-19T07:08:32.012Z",
+  "codeExample": "(async function run(): Promise<void> {\n  const tenantId: string = 'fc_tenant_9f3b2c';\n  const id: string = 'user_42b7f';\n  const redirectURL: string = 'https://dashboard.acme-corp.com/welcome';\n  const responseWithoutRedirect: APIEmptyResponse = await sendLoginLink(tenantId, id);\n  const responseWithRedirect: APIEmptyResponse = await sendLoginLink(tenantId, id, redirectURL);\n  console.log(responseWithoutRedirect, responseWithRedirect);\n})();",
+  "model": "gpt-5-mini"
+}

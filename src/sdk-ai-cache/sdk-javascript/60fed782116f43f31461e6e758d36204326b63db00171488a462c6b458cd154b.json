@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "60fed782116f43f31461e6e758d36204326b63db00171488a462c6b458cd154b",
+  "generatedAt": "2026-06-19T07:08:30.439Z",
+  "codeExample": "const tenantId: string = 'tenant_4f2b3c';\nconst id: string = 'qcfg_9a8b7c';\nconst metadataNote: string | undefined = undefined; // optional metadata (not required by function)\nconst result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);\nmetadataNote;",
+  "model": "gpt-5-mini"
+}

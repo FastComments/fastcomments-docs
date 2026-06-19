@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "8339ae33897ed01d7dda5dc50efee63582c2563042c88aa69aeb0c7ab0433bc6",
+  "generatedAt": "2026-06-19T07:08:23.638Z",
+  "codeExample": "const translationsFull: GetTranslationsResponse = await getTranslations(\"site-comments\", \"comment-form\", \"fr-FR\", true);\nconst translationsDefault: GetTranslationsResponse = await getTranslations(\"admin-dashboard\", \"notification-center\");",
+  "model": "gpt-5-mini"
+}

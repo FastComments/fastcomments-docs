@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "0ab83c56ad32ff2fbcec4d8ec5ef3d5dd4f815dc76a19c6be854b71695103c34",
+  "generatedAt": "2026-06-19T07:08:23.646Z",
+  "codeExample": "const tenantId: string = 'tenant_42';\nconst commentIds: string = 'cmt_1001,cmt_1002';\nconst resultWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);\n\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy.payload';\nconst resultWithSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "18fcb5ca353eae459f75f2c03fbef9c2d4a3379f60b33ef92b448da6d4bf56c4",
+  "generatedAt": "2026-06-19T07:08:27.676Z",
+  "codeExample": "interface APIStatus { code: number; message?: string }\ninterface CreateV1PageReact { id: string; pageUrl: string; userId?: string; status?: APIStatus; deleted?: boolean }\n\nconst tenantId: string = 'tenant_prod_8621'\nconst urlId: string = 'page_home_001'\nconst id: string = 'react_5f9b1c3a'\n\nconst result: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, id)\nconst statusCode: number | undefined = result.status?.code\nconsole.log('Deleted reaction id:', result.id, 'statusCode:', statusCode)",
+  "model": "gpt-5-mini"
+}

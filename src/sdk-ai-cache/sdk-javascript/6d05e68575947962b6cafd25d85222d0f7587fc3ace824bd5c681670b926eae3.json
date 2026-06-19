@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "6d05e68575947962b6cafd25d85222d0f7587fc3ace824bd5c681670b926eae3",
+  "generatedAt": "2026-06-19T07:08:27.405Z",
+  "codeExample": "const tenantId: string = 'tenant_98b3f';\nconst userId: string = 'user_8a3f';\nconst urlId: string = '/blog/2026/new-feature';\nconst viewed: boolean = false;\nconst type: string = 'reply';\nconst skip: number = 10;\nconst notifications: GetNotificationsResponse = await getNotifications(tenantId, userId, urlId, undefined, viewed, type, skip);",
+  "model": "gpt-5-mini"
+}

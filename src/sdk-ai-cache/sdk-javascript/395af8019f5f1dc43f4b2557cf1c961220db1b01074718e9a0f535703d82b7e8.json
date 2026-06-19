@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "395af8019f5f1dc43f4b2557cf1c961220db1b01074718e9a0f535703d82b7e8",
+  "generatedAt": "2026-06-19T07:08:28.102Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b7c2a';\nconst configId: string = 'questioncfg_4d3e2a1b';\n\nconst response: GetQuestionConfigResponse = await getQuestionConfig(tenantId, configId);\n\nconst questionConfig: QuestionConfig | undefined = response.questionConfig;\nconst customOptions: QuestionConfigCustomOptionsInner[] | undefined = questionConfig?.customOptions;",
+  "model": "gpt-5-mini"
+}

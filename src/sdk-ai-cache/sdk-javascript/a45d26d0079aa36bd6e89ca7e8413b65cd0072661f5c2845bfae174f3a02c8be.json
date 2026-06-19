@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "a45d26d0079aa36bd6e89ca7e8413b65cd0072661f5c2845bfae174f3a02c8be",
+  "generatedAt": "2026-06-19T07:08:33.042Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-82';\nconst urlId: string = 'https://www.acmecorp.com/blog/product-launch-2026';\nconst reacts: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);\nconsole.log(reacts);",
+  "model": "gpt-5-mini"
+}

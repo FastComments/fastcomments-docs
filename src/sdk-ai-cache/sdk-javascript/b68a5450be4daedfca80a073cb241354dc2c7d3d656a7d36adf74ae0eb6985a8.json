@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "b68a5450be4daedfca80a073cb241354dc2c7d3d656a7d36adf74ae0eb6985a8",
+  "generatedAt": "2026-06-19T07:08:37.203Z",
+  "codeExample": "const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\nconst packageId: string = 'pkg_prod_delete_2026-06-19';\nconst onComplete: ((status?: APIStatus) => void) | undefined = undefined;\nconst response: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);\nonComplete?.();",
+  "model": "gpt-5-mini"
+}

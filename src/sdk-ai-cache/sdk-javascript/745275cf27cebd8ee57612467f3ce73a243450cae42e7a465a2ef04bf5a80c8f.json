@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "745275cf27cebd8ee57612467f3ce73a243450cae42e7a465a2ef04bf5a80c8f",
+  "generatedAt": "2026-06-19T07:08:30.722Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_5821b2\";\n  const createQuestionResultBody: CreateQuestionResultBody = {\n    questionId: \"q_9f3a7\",\n    userId: \"user_77\",\n    score: 4.5,\n    feedback: \"Answer was concise and addressed the core issue\",\n    // optional parameters demonstrated\n    sessionId: \"sess_a12f\",\n    meta: [{ key: \"device\", value: \"iPhone 13 Pro\" }],\n    status: { code: 201, message: \"Created\" }\n  };\n  const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

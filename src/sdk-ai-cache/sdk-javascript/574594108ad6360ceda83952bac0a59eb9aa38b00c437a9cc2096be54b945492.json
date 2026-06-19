@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "574594108ad6360ceda83952bac0a59eb9aa38b00c437a9cc2096be54b945492",
+  "generatedAt": "2026-06-19T07:08:25.750Z",
+  "codeExample": "const tenantId: string = 'acme-corp-72b';\nconst meta: string = 'include=domains,billing';\nconst skip: number = 20;\nconst result: GetTenantsResponse = await getTenants(tenantId, meta, skip);",
+  "model": "gpt-5-mini"
+}

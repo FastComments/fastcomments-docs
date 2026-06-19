@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "4abf698576c40e522b0118a10789b7755d62e06ecf53f994b5636e93d8f3acc9",
+  "generatedAt": "2026-06-19T07:08:30.469Z",
+  "codeExample": "const tenantId: string = 'd6f9b2a4-1b2c-4e5f-9a7b-3c2d1e4f5a6b';\nconst id: string = 'notification-78f1c3e4';\nconst updateNotificationBody: UpdateNotificationBody = {} as UpdateNotificationBody;\nconst userId: string = 'user-9b3f2a1c';\n\nconst responseWithUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody, userId);\nconst responseWithoutUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody);",
+  "model": "gpt-5-mini"
+}

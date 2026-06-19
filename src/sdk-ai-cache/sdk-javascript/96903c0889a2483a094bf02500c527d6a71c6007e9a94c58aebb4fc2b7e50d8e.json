@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "96903c0889a2483a094bf02500c527d6a71c6007e9a94c58aebb4fc2b7e50d8e",
+  "generatedAt": "2026-06-19T07:08:28.500Z",
+  "codeExample": "const tenantId: string = 'tenant_91f4b3b';\nconst urlId: string = 'https://news.site.com/articles/2026/06/fastcomments-integration';\nconst id: string = 'react_5f2c1a';\nconst title: string = 'FastComments Integration — June 2026';\n\nconst reactionWithTitle: CreateV1PageReact = await createV2PageReact(tenantId, urlId, id, title);\nconst reactionWithoutTitle: CreateV1PageReact = await createV2PageReact(tenantId, urlId, id);",
+  "model": "gpt-5-mini"
+}

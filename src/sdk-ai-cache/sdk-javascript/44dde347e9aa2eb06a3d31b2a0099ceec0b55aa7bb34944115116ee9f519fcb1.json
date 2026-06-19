@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "44dde347e9aa2eb06a3d31b2a0099ceec0b55aa7bb34944115116ee9f519fcb1",
+  "generatedAt": "2026-06-19T07:08:24.881Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-834';\nconst id: string = 'cmt_9f3b2d7a';\nconst contextUserId: string = 'user_4b2f6c88-1a2b-4c3d-9e5f-123456789abc';\nconst isLive: boolean = true;\nconst result: DeleteCommentResult = await deleteComment(tenantId, id, contextUserId, isLive);",
+  "model": "gpt-5-mini"
+}

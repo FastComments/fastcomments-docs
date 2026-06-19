@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "05948ea4ba0753bbf9e2fc5204604d85a219cc94274bb4febfa23d9960d3456d",
+  "generatedAt": "2026-06-19T07:08:28.233Z",
+  "codeExample": "const tenantId: string = \"tenant_789\";\nconst page: number = 1;\nconst limit: number = 25;\nconst asTree: boolean = true;\nconst maxTreeDepth: number = 3;\nconst urlId: string = \"articles/2026/fastcomments-intro\";\nconst userId: string = \"user_12345\";\nconst direction: SortDirections = \"desc\";\nconst fromDate: number = 1672531200000;\nconst toDate: number = Date.now();\n\nconst result: APIGetCommentsResponse = await getComments(\n  tenantId,\n  page,\n  limit,\n  0,\n  asTree,\n  0,\n  5,\n  maxTreeDepth,\n  urlId,\n  userId,\n  undefined,\n  undefined,\n  \"#release\",\n  undefined,\n  direction,\n  fromDate,\n  toDate\n);",
+  "model": "gpt-5-mini"
+}

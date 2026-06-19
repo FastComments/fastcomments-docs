@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "236beda3a93110b460c298b5a2b256bb020782d57a79f4536518b7bf4f073b30",
+  "generatedAt": "2026-06-19T07:08:32.944Z",
+  "codeExample": "const tenantId: string = \"fastcomments-tenant-8a9b3\";\nconst urlId: string = \"articles/how-to-optimize-comments-2026-06-19\";\nconst likes: GetV1PageLikes = await getV1PageLikes(tenantId, urlId);",
+  "model": "gpt-5-mini"
+}

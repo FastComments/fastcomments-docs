@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "004d19074a5377eea3bf306834bd482c586362b59a362cadcb652f1d06c254d3",
+  "generatedAt": "2026-06-19T07:08:32.448Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme_media';\n  const urlId: string = 'articles/sustainable-tech-2026';\n  const broadcastId: string = 'broadcast_video_abc123';\n  const sessionId: string = 'sess_9f8b7c2a';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakeSignature';\n  const mention: CommentUserMentionInfo = { userId: 'user_12345', displayName: 'Jane Doe' };\n  const hashtag: CommentUserHashTagInfo = { tag: 'sustainability' };\n  const commentData: CommentData = {\n    content: 'Great insights — I especially liked the section on energy efficiency.',\n    authorId: 'user_98765',\n    mentions: [mention],\n    hashtags: [hashtag],\n    metadata: { sentiment: 'positive' }\n  };\n  const response: SaveCommentsResponseWithPresence = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

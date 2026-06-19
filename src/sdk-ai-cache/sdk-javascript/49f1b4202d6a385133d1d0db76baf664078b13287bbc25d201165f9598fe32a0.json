@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "49f1b4202d6a385133d1d0db76baf664078b13287bbc25d201165f9598fe32a0",
+  "generatedAt": "2026-06-19T07:08:29.644Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-01';\nconst urlId: string = 'post-5f2a8b3c9d';\nconst deletedReaction: CreateV1PageReact = await deleteV1PageReact(tenantId, urlId);",
+  "model": "gpt-5-mini"
+}

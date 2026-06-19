@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "2c29edee063cfc1d1708465929175d41d61036653e46cce59fd1dded8831b1c1",
+  "generatedAt": "2026-06-19T07:08:33.997Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst id: string = 'tenant-987654321';\nconst options: { includeBilling?: boolean } = { includeBilling: true };\nconst response: GetTenantResponse = await getTenant(tenantId, id);\nconst billingInfo: BillingInfo | undefined = undefined",
+  "model": "gpt-5-mini"
+}

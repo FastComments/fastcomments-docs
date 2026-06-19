@@ -1,0 +1,7 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "97a7361dd66c7e4420858f41fa357fa1f387688d69de44124c8ad2f5ef378ae4",
+  "generatedAt": "2026-06-19T07:08:34.520Z",
+  "codeExample": "const tenantId: string = 'tenant_4f7b2a9c';\nconst urlId: string = 'article-87c1a2b';\nconst userIdWS: string = 'ws-1a2b3c4d';\nconst startTime: number = Date.now() - 60 * 60 * 1000; // 1 hour ago\nconst endTime: number = Date.now();\n\nconst responseWithEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);\nconst responseWithoutEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);",
+  "model": "gpt-5-mini"
+}

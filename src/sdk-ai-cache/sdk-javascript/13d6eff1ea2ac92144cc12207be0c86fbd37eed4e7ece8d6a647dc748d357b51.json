@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "13d6eff1ea2ac92144cc12207be0c86fbd37eed4e7ece8d6a647dc748d357b51",
+  "generatedAt": "2026-06-19T07:08:26.604Z",
+  "codeExample": "(async () => {\n  const userId: string = 'user_7421';\n  const direction: SortDirections = SortDirections.Newest;\n  const page: number = 2;\n  const includei10n: boolean = true;\n  const locale: string = 'en-GB';\n  const isCrawler: boolean = false;\n  const response: GetCommentsForUserResponse = await getCommentsForUser(userId, direction, undefined, page, includei10n, locale, isCrawler);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

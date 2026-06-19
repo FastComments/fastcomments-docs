@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "325dd96a283373a65ac31ecfb645c1c895c358d5765edc1bbda809b02a758b80",
+  "generatedAt": "2026-06-19T07:08:27.921Z",
+  "codeExample": "const tenantId: string = \"org-7b3d1e9f\";\nconst customOption: QuestionConfigCustomOptionsInner = {\n  key: \"priority\",\n  label: \"Priority\",\n  values: [\"low\", \"medium\", \"high\"],\n  defaultValue: \"medium\"\n};\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  name: \"Customer Support Questions\",\n  description: \"Configuration for support-related question flows\",\n  enabled: true,\n  moderation: { required: true, level: \"manual\" },\n  questionLimitPerUser: 5,\n  customOptions: [customOption],\n  allowAnonymous: false\n};\nconst response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

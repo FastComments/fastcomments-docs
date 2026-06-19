@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "5de038a3844a2a680c84b27c567907ada9a908130576db17aadb0085b6a971ca",
+  "generatedAt": "2026-06-19T07:08:35.288Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_8421';\nconst urlId: string | undefined = 'posts/2026/06/typescript-api-examples';\nconst votes: GetVotesResponse = await getVotes(tenantId, urlId!);",
+  "model": "gpt-5-mini"
+}

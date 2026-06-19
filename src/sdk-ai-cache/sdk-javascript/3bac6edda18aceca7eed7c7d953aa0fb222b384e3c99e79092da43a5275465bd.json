@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "3bac6edda18aceca7eed7c7d953aa0fb222b384e3c99e79092da43a5275465bd",
+  "generatedAt": "2026-06-19T07:08:31.920Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-corp-tenant-92';\n  const id: string = '9f3b2c1a-4d6e-11ec-81d3-0242ac130003';\n  const updateModeratorBody: UpdateModeratorBody = {\n    email: 'moderator.lead@acmecorp.com',\n    displayName: 'Alex Rivera',\n    roles: ['moderator', 'team_lead'],\n    active: true,\n    notify: true // optional flag to notify the moderator about changes\n  };\n  const result: APIEmptyResponse = await updateModerator(tenantId, id, updateModeratorBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

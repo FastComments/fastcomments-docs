@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "0bdca64f4b19f7a1259a8ab9b6ec4b172e017e535d56b186f9c91acfa943808f",
+  "generatedAt": "2026-06-19T07:08:26.768Z",
+  "codeExample": "const tag: string = \"release-notes\";\nconst tenantId: string = \"tenant_8421\";\nconst updateHashTagBody: UpdateHashTagBody = {\n  name: \"Release Notes\",\n  description: \"Thread for discussing feature releases and changelogs\",\n  isActive: true\n};\nconst result: UpdateHashTagResponse = await patchHashTag(tag, tenantId, updateHashTagBody);",
+  "model": "gpt-5-mini"
+}

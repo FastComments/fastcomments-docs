@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "4d56cc117f67512aeb9ee2baf78b1058870128a193cbe6dc0a3db66387ad922d",
+  "generatedAt": "2026-06-19T07:08:34.278Z",
+  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst createTenantBody: CreateTenantBody = {\n  name: 'Acme Corporation',\n  adminEmail: 'platform-admin@acme.com',\n  apiDomainConfiguration: { domain: 'comments.acme.com', tlsEnabled: true },\n  importedSites: [{ siteId: 'main-site', url: 'https://www.acme.com', platform: 'nextjs' }],\n  billingInfo: { plan: 'enterprise', billingEmail: 'billing@acme.com', vatId: 'GB123456789' }\n};\nconst result: CreateTenantResponse = await createTenant(tenantId, createTenantBody);",
+  "model": "gpt-5-mini"
+}

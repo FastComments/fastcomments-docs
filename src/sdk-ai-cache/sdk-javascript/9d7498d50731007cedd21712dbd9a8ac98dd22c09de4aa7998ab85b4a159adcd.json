@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "9d7498d50731007cedd21712dbd9a8ac98dd22c09de4aa7998ab85b4a159adcd",
+  "generatedAt": "2026-06-19T07:08:24.936Z",
+  "codeExample": "const tenantId: string = \"northwind-io\";\nconst urlId: string = \"blog/2025/06/typescript-updates\";\nconst userId: string = \"u_72f9b1c4\";\nconst anonUserId: string = \"anon_e4d2a9\";\n\nconst votesForRegistered: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, userId);\nconst votesForAnonymous: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, undefined, anonUserId);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "ddd9c969f0a85608cfc017ea6761f93c2802eeb14781633c4d570641b12847d2",
+  "generatedAt": "2026-06-19T07:08:27.066Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-7f3b';\nconst commentId: string = 'cmt_8a7f2d4b';\nconst response: APIGetCommentResponse = await getComment(tenantId, commentId);\nconst status: APIStatus | undefined = response.status;\nconst comment: APIComment | undefined = response.comment;\nconst badges: CommentUserBadgeInfo[] | undefined = comment?.user?.badges;\nconst hashtags: CommentUserHashTagInfo[] | undefined = comment?.meta?.hashtags;\nconst mentions: CommentUserMentionInfo[] | undefined = comment?.user?.mentions;\nconst meta: APICommentBaseMeta | undefined = comment?.meta;",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "c275424edaff8f4ad25512918c126c596291a8e0c91cfc302bc4c0d4a2991c3e",
+  "generatedAt": "2026-06-19T07:08:26.348Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"b4f3a9c2-8d1e-4f3b-9c6e-2a7f4d5c1e0b\";\n  const yearNumber: number = 2026;\n  const monthNumber: number = 6;\n  const dayNumber: number = 19;\n  const skip: number = 0;\n  const fullResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);\n  const basicResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId);\n  console.log(fullResponse, basicResponse);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

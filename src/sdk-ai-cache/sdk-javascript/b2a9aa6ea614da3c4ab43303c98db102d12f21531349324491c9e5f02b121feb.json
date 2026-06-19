@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "b2a9aa6ea614da3c4ab43303c98db102d12f21531349324491c9e5f02b121feb",
+  "generatedAt": "2026-06-19T07:08:38.536Z",
+  "codeExample": "const tenantId: string = 'acct_7c9b21';\nconst urlIdWS: string = 'wss://ws.fastcomments.com/presence/room-231';\nconst userIds: string = 'user_102,user_203';\nconst presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);\nconst firstStatus: APIStatus | undefined = (presence as unknown as { statuses?: APIStatus[] }).statuses?.[0];",
+  "model": "gpt-5-mini"
+}

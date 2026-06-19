@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "efcb3073091d820e2bfabc78f7df0caec7883fa63d3ef05da4c34aba06a8d54f",
+  "generatedAt": "2026-06-19T07:08:28.267Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises\";\nconst userId: string = \"user_12039\";\nconst createTicketBody: CreateTicketBody = {\n  subject: \"Login failures for multiple users\",\n  description: \"Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.\",\n  priority: \"urgent\",\n  tags: [\"authentication\", \"outage\"]\n};\nconst result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);",
+  "model": "gpt-5-mini"
+}

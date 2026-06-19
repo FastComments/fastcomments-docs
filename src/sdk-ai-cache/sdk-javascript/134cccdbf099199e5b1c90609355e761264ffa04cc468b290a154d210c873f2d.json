@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "134cccdbf099199e5b1c90609355e761264ffa04cc468b290a154d210c873f2d",
+  "generatedAt": "2026-06-19T07:08:35.720Z",
+  "codeExample": "const tenantId: string = \"tenant_9b7e4f3c\";\nconst domainConfigs: GetDomainConfigsResponse = await getDomainConfigs(tenantId);\n\nasync function fetchDomainConfigs(tenant: string, useCache?: boolean): Promise<GetDomainConfigsResponse> {\n  if (useCache) return domainConfigs;\n  const fresh: GetDomainConfigsResponse = await getDomainConfigs(tenant);\n  return fresh;\n}\n\nconst freshConfigs: GetDomainConfigsResponse = await fetchDomainConfigs(tenantId, false);",
+  "model": "gpt-5-mini"
+}

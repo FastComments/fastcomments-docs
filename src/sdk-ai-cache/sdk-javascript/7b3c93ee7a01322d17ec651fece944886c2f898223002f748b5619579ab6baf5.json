@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "7b3c93ee7a01322d17ec651fece944886c2f898223002f748b5619579ab6baf5",
+  "generatedAt": "2026-06-19T07:08:26.259Z",
+  "codeExample": "const ticketResponse: GetTicketResponse = await getTicket(\"fc_tenant_1a2b3c\", \"TK-20260619-0042\", \"user_2481\");\nconst ticketResponseNoUser: GetTicketResponse = await getTicket(\"fc_tenant_1a2b3c\", \"TK-20260619-0043\");",
+  "model": "gpt-5-mini"
+}

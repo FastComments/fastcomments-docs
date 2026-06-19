@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "b532657d5d914f10749e7351c12eeb3b173f4c67fe24bf027d025198719760d7",
+  "generatedAt": "2026-06-19T07:08:27.748Z",
+  "codeExample": "async function example(): Promise<void> {\n  const tenantId: string = 'tenant_84f3b2';\n  const resetResultNoSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);\n\n  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n  const resetResultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);\n\n  console.log(resetResultNoSso, resetResultWithSso);\n}\n\nexample();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "096f7b3a34789e7e068d4945efaf69f58e07efe0383c285ce01de2e31f2e6f59",
+  "generatedAt": "2026-06-19T07:08:28.591Z",
+  "codeExample": "const tenantId: string = \"tenant_prod_7f9b2a\";\n\nconst customTemplate: CustomEmailTemplate = {\n  id: \"custtmpl_01\",\n  name: \"MinimalTransactional\",\n  html: \"<div style=\\\"font-family:Arial,Helvetica,sans-serif\\\">{{body}}</div>\"\n};\n\nconst createEmailTemplateBody: CreateEmailTemplateBody = {\n  name: \"User Welcome - Web\",\n  subject: \"Welcome to Acme — Get Started\",\n  html: \"<p>Hi {{firstName}}, welcome to Acme!</p>\",\n  previewText: \"Start exploring your new Acme account\",\n  enabled: true,\n  replyTo: \"support@acme.com\",\n  customTemplate // optional parameter demonstrated\n};\n\nconst result: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, createEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "1f46ed7b986dd76076d4d2469f77a83596a7f08b6d63c72937c21e27f327c566",
+  "generatedAt": "2026-06-19T07:08:30.740Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b1c';\nconst id: string = 'pkg_pro_2026';\nconst replaceTenantPackageBody: ReplaceTenantPackageBody = {\n  planCode: 'pro_annual',\n  seats: 12,\n  expiresAt: '2027-01-01T00:00:00Z',\n  autoRenew: true, // optional flag demonstrating optional parameter\n  notes: 'Upgrade for team collaboration'\n};\nconst result: APIEmptyResponse = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

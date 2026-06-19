@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "4554cb718ef47f7b8c5b2caa6e17ffa32947ad41edc7ea072d9086811eb0ba3f",
+  "generatedAt": "2026-06-19T07:08:30.615Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3a2b4c\";\nconst id: string = \"user_9812b\";\nconst result: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);",
+  "model": "gpt-5-mini"
+}

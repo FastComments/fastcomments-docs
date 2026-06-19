@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "2ea7a8e659e1867d1e8230bd7826301b5e3a3e16b0b231c0c04fd38ec87b807e",
+  "generatedAt": "2026-06-19T07:08:33.582Z",
+  "codeExample": "const tenantId: string = '9f3a2c7e-1b5d-4f8a-9a2e-123456789abc';\nconst userId: string = 'd4e8f0a1-6b3c-4d2e-8f1b-9876543210fe';\nconst result: APIGetUserBadgeProgressResponse = await getUserBadgeProgressByUserId(tenantId, userId);\nconst status: APIStatus | undefined = (result as unknown as { status?: APIStatus }).status;\nconst badgeProgress: UserBadgeProgress[] | undefined = (result as unknown as { badgeProgress?: UserBadgeProgress[] }).badgeProgress;",
+  "model": "gpt-5-mini"
+}

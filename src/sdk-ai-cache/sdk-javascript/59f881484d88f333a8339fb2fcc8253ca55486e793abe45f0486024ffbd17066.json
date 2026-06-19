@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "59f881484d88f333a8339fb2fcc8253ca55486e793abe45f0486024ffbd17066",
+  "generatedAt": "2026-06-19T07:08:23.673Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst search: string = 'golden hour sunset';\nconst locale: string = 'en-US';\nconst rating: string = 'pg';\nconst page: number = 1;\nconst result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);",
+  "model": "gpt-5-mini"
+}

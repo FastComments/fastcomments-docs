@@ -1,0 +1,7 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "e609b84e70fdc816f42e7b25474bd09115bb62d5ef5564cb001e1c8eec4f6343",
+  "generatedAt": "2026-06-19T07:08:26.453Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-72\";\n  const addDomainConfigParams: AddDomainConfigParams = {\n    domain: \"comments.acme-corp.com\",\n    primary: true,\n    enforceHttps: true,                // optional parameter demonstrated\n    allowedOrigins: [\"https://www.acme-corp.com\", \"https://app.acme-corp.com\"],\n    cnameTarget: \"fc-cname.fastcomments.net\"\n  };\n  const result: AddDomainConfigResponse = await addDomainConfig(tenantId, addDomainConfigParams);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

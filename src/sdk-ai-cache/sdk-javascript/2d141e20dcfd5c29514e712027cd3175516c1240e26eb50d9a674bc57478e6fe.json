@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "2d141e20dcfd5c29514e712027cd3175516c1240e26eb50d9a674bc57478e6fe",
+  "generatedAt": "2026-06-19T07:08:29.103Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst templateId: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';\nconst optionalStatus: APIStatus | undefined = undefined;\nconst result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);",
+  "model": "gpt-5-mini"
+}

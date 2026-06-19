@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "534094b214130b42dafdd20128077482294cd11f4d0002bdfbac33ae1b890cd1",
+  "generatedAt": "2026-06-19T07:08:29.447Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_82b1f\";\nconst id: string = \"emailTemplate_9f3b2c\";\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  name: \"Comment Notification\",\n  subject: \"New comment on your article\",\n  html: \"<p>Hello,</p><p>You have a new comment on your article. <a href=\\\"https://example.com\\\">View</a></p>\",\n  enabled: true\n};\nconst result: APIEmptyResponse = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

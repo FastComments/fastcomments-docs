@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "5f943238b554fbb02d0f071e90669549e4296da0e9cf3cde0e34a67293749537",
+  "generatedAt": "2026-06-19T07:08:25.658Z",
+  "codeExample": "const tenantId: string = 'tenant_9f7c2b1a';\nconst id: string = 'vote_4b6e9a23';\nconst editKey: string = 'editkey_02a8f3';\n\nconst deleteResultWithoutKey: VoteDeleteResponse = await deleteVote(tenantId, id);\nconst deleteResultWithKey: VoteDeleteResponse = await deleteVote(tenantId, id, editKey);",
+  "model": "gpt-5-mini"
+}

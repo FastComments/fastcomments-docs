@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "3b85b8b6188dfddc3926726b97eb0b3f87076eb47ba5d430b7588ad19490219d",
+  "generatedAt": "2026-06-19T07:08:27.322Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_8a4f2c\";\n  const createHashTagBody: CreateHashTagBody = {\n    name: \"performance-issue\",\n    displayName: \"Performance Issue\",\n    color: \"#FF4500\",\n    isActive: true,\n    priority: 5\n  };\n  const response: CreateHashTagResponse = await addHashTag(tenantId, createHashTagBody);\n  const responseDefaultTenant: CreateHashTagResponse = await addHashTag(undefined, createHashTagBody);\n  console.log(response, responseDefaultTenant);\n})();",
+  "model": "gpt-5-mini"
+}

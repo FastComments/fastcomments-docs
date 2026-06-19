@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "d9842b0d6d3af8146eba45b7e7afe1829886637a34be57c109c865a981de733a",
+  "generatedAt": "2026-06-19T07:08:28.777Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = 'tenant_acme_01';\n  const createTenantPackageBody: CreateTenantPackageBody = {\n    packageName: 'Pro Annual',\n    seats: 100,\n    billingCycle: 'annual',\n    autoRenew: true,\n    metadata: { region: 'us-west-2' } // optional metadata field\n  };\n  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);\n  console.log(result);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

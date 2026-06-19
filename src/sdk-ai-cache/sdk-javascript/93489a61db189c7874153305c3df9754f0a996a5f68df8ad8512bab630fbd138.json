@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "93489a61db189c7874153305c3df9754f0a996a5f68df8ad8512bab630fbd138",
+  "generatedAt": "2026-06-19T07:08:28.000Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-42';\nconst urlId: string = 'blog/how-we-reduce-latency';\nconst title: string | undefined = 'Reducing Frontend Latency with FastComments';\nconst createResponse: CreateV1PageReact = await createV1PageReact(tenantId, urlId, title);\nconst createResponseNoTitle: CreateV1PageReact = await createV1PageReact(tenantId, urlId);",
+  "model": "gpt-5-mini"
+}

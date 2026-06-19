@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "9e94d60c0c7c4ec326a1168c480e2158589bb0ecfe911bd296e2e447d522367c",
+  "generatedAt": "2026-06-19T07:08:29.598Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"fc_tenant_12345\";\n  const afterId: string = \"feedPost_98765\";\n  const limit: number = 20;\n  const tags: Array<string> = [\"announcement\", \"product\"];\n  const sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example\";\n  const isCrawler: boolean = false;\n  const includeUserInfo: boolean = true;\n\n  const response: PublicFeedPostsResponse = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

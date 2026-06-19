@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "fb9c912cd5ba20d9164b92cd32a9e67342c9c6bd62515c27572aa0bb615033e7",
+  "generatedAt": "2026-06-19T07:08:27.561Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-tenant-01\";\n  const userId: string | undefined = \"user-9e12b4\";\n  const limit: number | undefined = 20;\n  const skip: number | undefined = 0;\n  const result: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

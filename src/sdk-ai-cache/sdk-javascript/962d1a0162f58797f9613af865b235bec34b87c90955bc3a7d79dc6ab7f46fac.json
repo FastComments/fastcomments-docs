@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "962d1a0162f58797f9613af865b235bec34b87c90955bc3a7d79dc6ab7f46fac",
+  "generatedAt": "2026-06-19T07:08:32.969Z",
+  "codeExample": "const tenantId: string = 'tenant-9f4b2a6c';\nconst urlId: string = 'articles/product-launch-2025';\n\nconst offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);\n\nconst afterName: string = 'samantha.r';\nconst afterUserId: string = 'user_7d3a21f9';\nconst offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);",
+  "model": "gpt-5-mini"
+}

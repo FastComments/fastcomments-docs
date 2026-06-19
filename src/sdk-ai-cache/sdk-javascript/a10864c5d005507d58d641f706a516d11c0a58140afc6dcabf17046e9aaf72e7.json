@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "a10864c5d005507d58d641f706a516d11c0a58140afc6dcabf17046e9aaf72e7",
+  "generatedAt": "2026-06-19T07:08:26.650Z",
+  "codeExample": "const tenantId: string = 'acme-media';\nconst locale: string = 'en-US';\nconst rating: string = 'pg-13';\nconst page: number = 2;\nconst trending: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);",
+  "model": "gpt-5-mini"
+}

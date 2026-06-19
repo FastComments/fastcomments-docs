@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "411fc68d47fd0888ed9f5508de262be8b017027e51853212c41e83a2dbc8f7fb",
+  "generatedAt": "2026-06-19T07:08:28.598Z",
+  "codeExample": "const tenantId: string = \"tenant_7f2c3b91\";\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: \"New mobile app update\",\n  body: \"Version 3.2 adds offline support, faster sync, and improved accessibility.\",\n  media: [\n    {\n      type: \"image\",\n      caption: \"Offline mode preview\",\n      asset: {\n        url: \"https://cdn.company.com/images/app-offline-3-2.png\",\n        mimeType: \"image/png\",\n        width: 1080,\n        height: 2340\n      }\n    }\n  ],\n  links: [{ url: \"https://blog.company.com/release-notes-3-2\", title: \"Read full release notes\" }],\n  tags: [\"release\", \"mobile\", \"performance\"],\n  notifySubscribers: true,\n  scheduledAt: \"2026-06-20T10:00:00Z\"\n};\nconst broadcastId: string = \"broadcast_9a8b7c\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature\";\nconst response: CreateFeedPostResponse = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

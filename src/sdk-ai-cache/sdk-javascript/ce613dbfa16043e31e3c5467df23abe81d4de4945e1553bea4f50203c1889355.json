@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "ce613dbfa16043e31e3c5467df23abe81d4de4945e1553bea4f50203c1889355",
+  "generatedAt": "2026-06-19T07:08:37.051Z",
+  "codeExample": "const tenantId: string = 'tenant_5f2c9b1a';\nconst emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);\n// Optional parameters (if supported) could be passed as a second arg, e.g. getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);",
+  "model": "gpt-5-mini"
+}
