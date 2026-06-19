@@ -7,11 +7,15 @@
       "repo": "https://github.com/FastComments/fastcomments-cpp",
       "branch": "master",
       "language": "cpp",
-      "docGenerators": ["readme", "cpp-ai"],
+      "docGenerators": [
+        "readme",
+        "cpp-ai"
+      ],
       "cppAiConfig": {
         "apiFiles": [
           "client/include/FastCommentsClient/api/DefaultApi.h",
-          "client/include/FastCommentsClient/api/PublicApi.h"
+          "client/include/FastCommentsClient/api/PublicApi.h",
+          "client/include/FastCommentsClient/api/ModerationApi.h"
         ],
         "modelsPath": "client/include/FastCommentsClient/model/",
         "cachePath": ".ai-cache/",
@@ -26,12 +30,19 @@
       "repo": "https://github.com/FastComments/fastcomments-go",
       "branch": "master",
       "language": "go",
-      "docGenerators": ["readme", "openapi"],
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md",
-        "apiClasses": ["DefaultAPI", "PublicAPI"]
+        "apiClasses": [
+          "DefaultAPI",
+          "PublicAPI",
+          "ModerationAPI"
+        ]
       },
       "description": "Manage comments, users, SSO, and moderation from your Go applications."
     },
@@ -42,11 +53,15 @@
       "repo": "https://github.com/FastComments/fastcomments-sdk-js",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme", "typescript-ai"],
+      "docGenerators": [
+        "readme",
+        "typescript-ai"
+      ],
       "typescriptAiConfig": {
         "apiFiles": [
           "src/generated/src/apis/DefaultApi.ts",
-          "src/generated/src/apis/PublicApi.ts"
+          "src/generated/src/apis/PublicApi.ts",
+          "src/generated/src/apis/ModerationApi.ts"
         ],
         "modelsPath": "src/generated/src/models/",
         "cachePath": ".ai-cache/",
@@ -61,11 +76,19 @@
       "repo": "https://github.com/FastComments/fastcomments-java",
       "branch": "main",
       "language": "java",
-      "docGenerators": ["readme", "openapi"],
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
-        "docFilePattern": "{ApiClass}.md"
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": [
+          "DefaultApi",
+          "PublicApi",
+          "ModerationApi"
+        ]
       },
       "description": "Manage comments, users, SSO, and moderation from your Java applications."
     },
@@ -76,11 +99,15 @@
       "repo": "https://github.com/FastComments/fastcomments-nim",
       "branch": "master",
       "language": "nim",
-      "docGenerators": ["readme", "nim-ai"],
+      "docGenerators": [
+        "readme",
+        "nim-ai"
+      ],
       "nimAiConfig": {
         "apiFiles": [
           "client/fastcomments/apis/api_default.nim",
-          "client/fastcomments/apis/api_public.nim"
+          "client/fastcomments/apis/api_public.nim",
+          "client/fastcomments/apis/api_moderation.nim"
         ],
         "modelsPath": "client/fastcomments/models/",
         "cachePath": ".ai-cache/",
@@ -95,11 +122,19 @@
       "repo": "https://github.com/FastComments/fastcomments-php",
       "branch": "main",
       "language": "php",
-      "docGenerators": ["readme", "openapi"],
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "docs/Api/",
-        "docFilePattern": "{ApiClass}.md"
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": [
+          "DefaultApi",
+          "PublicApi",
+          "ModerationApi"
+        ]
       },
       "description": "Manage comments, users, SSO, and moderation from your PHP applications."
     },
@@ -110,7 +145,9 @@
       "repo": "https://github.com/FastComments/fastcomments-php-sso",
       "branch": "main",
       "language": "php",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Integrate FastComments Single Sign-On in your PHP application."
     },
     {
@@ -120,11 +157,19 @@
       "repo": "https://github.com/FastComments/fastcomments-python",
       "branch": "main",
       "language": "python",
-      "docGenerators": ["readme", "openapi"],
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
-        "docFilePattern": "{ApiClass}.md"
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": [
+          "DefaultApi",
+          "PublicApi",
+          "ModerationApi"
+        ]
       },
       "description": "Manage comments, users, SSO, and moderation from your Python applications."
     },
@@ -135,12 +180,19 @@
       "repo": "https://github.com/FastComments/fastcomments-ruby",
       "branch": "master",
       "language": "ruby",
-      "docGenerators": ["readme", "openapi"],
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md",
-        "apiClasses": ["DefaultApi", "PublicApi"]
+        "apiClasses": [
+          "DefaultApi",
+          "PublicApi",
+          "ModerationApi"
+        ]
       },
       "description": "Manage comments, users, SSO, and moderation from your Ruby applications."
     },
@@ -151,11 +203,15 @@
       "repo": "https://github.com/FastComments/fastcomments-rust",
       "branch": "main",
       "language": "rust",
-      "docGenerators": ["readme", "rust-ai"],
+      "docGenerators": [
+        "readme",
+        "rust-ai"
+      ],
       "rustAiConfig": {
         "apiFiles": [
           "client/src/apis/default_api.rs",
-          "client/src/apis/public_api.rs"
+          "client/src/apis/public_api.rs",
+          "client/src/apis/moderation_api.rs"
         ],
         "modelsPath": "client/src/models/",
         "cachePath": ".ai-cache/",
@@ -170,14 +226,44 @@
       "repo": "https://github.com/FastComments/fastcomments-swift",
       "branch": "main",
       "language": "swift",
-      "docGenerators": ["readme", "openapi"],
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md",
-        "apiClasses": ["DefaultAPI", "PublicAPI"]
+        "apiClasses": [
+          "DefaultAPI",
+          "PublicAPI",
+          "ModerationAPI"
+        ]
       },
       "description": "Manage comments, users, SSO, and moderation from your Swift applications."
+    },
+    {
+      "id": "sdk-dart",
+      "name": "Dart SDK",
+      "pageHeader": "FastComments Dart SDK",
+      "repo": "https://github.com/FastComments/fastcomments-dart",
+      "branch": "main",
+      "language": "dart",
+      "docGenerators": [
+        "readme",
+        "openapi"
+      ],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "client/doc/",
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": [
+          "DefaultApi",
+          "PublicApi",
+          "ModerationApi"
+        ]
+      },
+      "description": "Manage comments, users, SSO, and moderation from your Dart and Flutter applications."
     },
     {
       "id": "lib-android",
@@ -186,7 +272,9 @@
       "repo": "https://github.com/FastComments/fastcomments-android",
       "branch": "main",
       "language": "kotlin",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Android app."
     },
     {
@@ -196,7 +284,9 @@
       "repo": "https://github.com/FastComments/fastcomments-ios",
       "branch": "main",
       "language": "swift",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your iOS app."
     },
     {
@@ -206,7 +296,9 @@
       "repo": "https://github.com/FastComments/fastcomments-react-native",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your React Native app."
     },
     {
@@ -216,7 +308,9 @@
       "repo": "https://github.com/FastComments/fastcomments-react-native-sdk",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Access the FastComments API directly from your React Native application."
     },
     {
@@ -226,7 +320,9 @@
       "repo": "https://github.com/FastComments/fastcomments-angular",
       "branch": "main",
       "language": "typescript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Angular app."
     },
     {
@@ -236,7 +332,9 @@
       "repo": "https://github.com/FastComments/fastcomments-react",
       "branch": "master",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your React app."
     },
     {
@@ -246,7 +344,9 @@
       "repo": "https://github.com/FastComments/fastcomments-vue",
       "branch": "master",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Vue 2 app."
     },
     {
@@ -256,7 +356,9 @@
       "repo": "https://github.com/FastComments/fastcomments-vue-next",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Vue app."
     },
     {
@@ -266,7 +368,9 @@
       "repo": "https://github.com/FastComments/fastcomments-svelte",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Svelte app."
     },
     {
@@ -276,7 +380,9 @@
       "repo": "https://github.com/FastComments/fastcomments-solidjs",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your SolidJS app."
     },
     {
@@ -286,7 +392,9 @@
       "repo": "https://github.com/FastComments/fastcomments-astro",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Astro site."
     },
     {
@@ -296,7 +404,9 @@
       "repo": "https://github.com/FastComments/fastcomments-gatsbyjs-example",
       "branch": "master",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "A working example showing how to add FastComments to a GatsbyJS site."
     },
     {
@@ -306,7 +416,9 @@
       "repo": "https://github.com/FastComments/fastcomments-nextjs",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Next.js app."
     },
     {
@@ -316,7 +428,9 @@
       "repo": "https://github.com/FastComments/fastcomments-11ty",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Eleventy (11ty) site."
     },
     {
@@ -326,7 +440,9 @@
       "repo": "https://github.com/FastComments/fastcomments-jekyll",
       "branch": "main",
       "language": "ruby",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Jekyll site."
     },
     {
@@ -336,7 +452,9 @@
       "repo": "https://github.com/FastComments/fastcomments-hugo",
       "branch": "main",
       "language": "go",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "Embed live commenting, chat, and review widgets in your Hugo site."
     },
     {
@@ -346,7 +464,9 @@
       "repo": "https://github.com/FastComments/fastcomments-laravel",
       "branch": "main",
       "language": "php",
-      "docGenerators": ["readme"],
+      "docGenerators": [
+        "readme"
+      ],
       "description": "A Laravel package that wraps the FastComments PHP SDK and SSO library, providing Blade components, SSO integration, and full API access."
     }
   ],
