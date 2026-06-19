@@ -1,7 +1,6 @@
----
 ## Parameters
 
-| Name | Type | Required | Description |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -12,22 +11,20 @@
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'updateComment Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3c1b2a';
-const commentId: string = 'cmt_8d9f2a4b';
+const tenantId: string = 'tenant-prod-01';
+const id: string = 'cmt-000127';
 const updatableCommentParams: UpdatableCommentParams = {
-  body: 'Updating this comment to clarify the feature behavior and include a timestamp.',
-  metadata: { category: 'support', editedReason: 'clarify instructions' },
-  visible: true
+  body: 'Thanks — I updated the steps to include the missing config flag.',
+  isHidden: false
 };
-const contextUserId: string = 'user_42';
+const contextUserId: string = 'moderator_77';
 const doSpamCheck: boolean = true;
-const result: FlagCommentPublic200Response = await updateComment(tenantId, commentId, updatableCommentParams, contextUserId, doSpamCheck);
+const isLive: boolean = true;
+const result: APIEmptyResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
 [inline-code-end]
-
----

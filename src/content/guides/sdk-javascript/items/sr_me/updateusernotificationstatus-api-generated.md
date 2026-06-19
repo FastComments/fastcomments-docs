@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| notificationId | string | Da |  |
-| newStatus | UpdateUserNotificationStatusNewStatusEnum | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Да |  |
+| notificationId | string | Да |  |
+| newStatus | UpdateUserNotificationStatusNewStatusEnum | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatus200Response.ts)
+Враћа: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatusResponse.ts)
 
-## Primjer
+## Примјер
 
-[inline-code-attrs-start title = 'Primjer updateUserNotificationStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2a8b9c';
-const notificationId: string = 'notif_987654321';
+const tenantId: string = 'tenant-8d3f2b7c';
+const notificationId: string = 'notification-587a2b9f';
 const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Read;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload.signature';
-const result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
+const sso: string = 'sso-token-1a2b3c4d5e6f';
+const result: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
 [inline-code-end]
 
 ---

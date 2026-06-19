@@ -1,21 +1,22 @@
-## Parametri
+---
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| skip | number | Ne |  |
+| tenantId | string | Да |  |
+| skip | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackages200Response.ts)
+Враћа: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getTenantPackages Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantPackages Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8421';
-const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, 25);
-const packagesWithoutSkip: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const tenantId: string = "acme-corp-9f3b";
+const packagesPage1: GetTenantPackagesResponse = await getTenantPackages(tenantId);
+const packagesPage2: GetTenantPackagesResponse = await getTenantPackages(tenantId, 10);
 [inline-code-end]
 
 ---

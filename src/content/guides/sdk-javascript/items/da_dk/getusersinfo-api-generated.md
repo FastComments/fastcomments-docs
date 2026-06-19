@@ -1,25 +1,26 @@
-Bulk brugerinformation for en tenant. Givet userIds, returner visningsoplysninger fra User / SSOUser.
-Bruges af kommentar-widgeten til at berige brugere, der lige er dukket op via en presence-begivenhed.
+Bulk brugerinfo for en tenant. Givet userIds returneres visningsinformation fra User / SSOUser.
+Bruges af kommentar-widget til at berige brugere, der lige er dukket op via en presence-begivenhed.
 Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
 
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | ids | string | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Returnerer: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getUsersInfo Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // optional; if undefined default to comma
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo kræver kun tenantId og ids; valgfrie parametre er ikke relevante her.
 [inline-code-end]
+
+---

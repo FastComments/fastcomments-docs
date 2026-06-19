@@ -1,13 +1,22 @@
 ---
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| domain | string | Да |  |
+| tenantId | string | Da |  |
+| domain | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteDomainConfig200Response.ts)
+Vraća: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteDomainConfigResponse.ts)
+
+## Primjer
+
+[inline-code-attrs-start title = 'deleteDomainConfig Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "org_5b2f9c3a";
+const domain: string = "comments.acme-corp.com";
+const result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+[inline-code-end]
 
 ---

@@ -9,15 +9,15 @@
 
 ## Response
 
-Returns: [`LockComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockComment200Response.ts)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'unLockComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-8f3b2c4a";
-const commentId: string = "cmt_92a7f3e6";
-const broadcastId: string = "brd_1b4c9d20";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const result: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId, sso);
+const tenantId: string = 'tenant_9f3d2b';
+const commentId: string = 'cmt_5e8a1d';
+const broadcastId: string = 'bcast_4f2b7a';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJ1c2VyX2QxMjMifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+const result: APIEmptyResponse = await unLockComment(tenantId, commentId, broadcastId, sso);
 [inline-code-end]

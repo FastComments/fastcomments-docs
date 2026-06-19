@@ -1,10 +1,10 @@
-Изброява страници за наемател. Използва се от настолния клиент FChat за попълване на списъка със стаи.
-Изисква `enableFChat` да е true в получения персонализиран конфиг за всяка страница.
+Списък на страниците за наемател. Използва се от десктоп клиента FChat за попълване на списъка с чат стаи.
+Изисква `enableFChat` да бъде true в разрешената персонализирана конфигурация за всяка страница.
 Страниците, които изискват SSO, се филтрират спрямо груповия достъп на потребителя, който прави заявката.
 
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | cursor | string | Не |  |
@@ -15,26 +15,18 @@
 
 ## Отговор
 
-Връща: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Връща: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPagesPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

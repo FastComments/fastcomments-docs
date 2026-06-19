@@ -1,38 +1,44 @@
-## パラメーター
+## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| commentId | string | いいえ |  |
-| externalId | string | いいえ |  |
-| eventType | string | いいえ |  |
-| type | string | いいえ |  |
-| domain | string | いいえ |  |
-| attemptCountGT | number | いいえ |  |
+| tenantId | string | Yes |  |
+| commentId | string | No |  |
+| externalId | string | No |  |
+| eventType | string | No |  |
+| type | string | No |  |
+| domain | string | No |  |
+| attemptCountGT | number | No |  |
 
 ## レスポンス
 
-戻り値: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCount200Response.ts)
+戻り値: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3b';
-const commentId: string = 'cmt_1a2b3c';
-const eventType: string = 'comment.created';
-const domain: string = 'news-site.com';
-const attemptCountGT: number = 2;
+(async () => {
+  const tenantId: string = 'd5c7e8b4-3a1f-4b2e-9f6c-12ab34cd56ef';
+  const commentId: string = 'cmt_000842';
+  const externalId: string = 'post-77f4';
+  const eventType: string = 'comment.updated';
+  const typeParam: string = 'delivery';
+  const domain: string = 'myblog.example.net';
+  const attemptCountGT: number = 2;
 
-const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
-  tenantId,
-  commentId,
-  undefined, // externalId omitted
-  eventType,
-  undefined, // type omitted
-  domain,
-  attemptCountGT
-);
+  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
+    tenantId,
+    commentId,
+    externalId,
+    eventType,
+    typeParam,
+    domain,
+    attemptCountGT
+  );
+
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

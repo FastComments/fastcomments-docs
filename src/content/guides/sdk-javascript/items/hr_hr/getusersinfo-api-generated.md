@@ -1,6 +1,6 @@
-Masovne informacije o korisnicima za tenant. Za zadane userIds vraća prikazne informacije iz User / SSOUser.
-Koristi widget komentara za obogaćivanje korisnika koji su se upravo pojavili putem događaja prisutnosti.
-Bez konteksta stranice: privatnost se primjenjuje jednako (privatni profili su maskirani).
+Skupne informacije o korisnicima za tenant. Za dane userIds vraća prikazne informacije iz User / SSOUser.
+Koristi widget komentara kako bi obogatio korisnike koji su se upravo pojavili putem događaja prisutnosti.
+Bez konteksta stranice: privatnost se provodi jednako (privatni profili su zamaskirani).
 
 ## Parametri
 
@@ -11,17 +11,14 @@ Bez konteksta stranice: privatnost se primjenjuje jednako (privatni profili su m
 
 ## Odgovor
 
-Vraća: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // neobavezno; ako je undefined, zadana vrijednost je zarez
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo zahtijeva samo tenantId i ids; opcionalni parametri ovdje nisu primjenjivi.
 [inline-code-end]
-
----

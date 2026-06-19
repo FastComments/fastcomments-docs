@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | postIds | Array<string> | 否 |  |
@@ -8,17 +8,17 @@
 
 ## 回應
 
-回傳：[`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublic200Response.ts)
+回傳: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UserReactsResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUserReactsPublic 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-4f2b9c';
-const postIds: Array<string> = ['post_7a1f9e', 'post_2b3c88'];
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQ0MDAwMH0.signature';
-
-const response: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
+const tenantId: string = 'tenant_8f3b2a9c';
+const postIds: string[] = ['post_1a2b3c', 'post_4d5e6f'];
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTYifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, sso);
+const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId)
 [inline-code-end]
 
 ---

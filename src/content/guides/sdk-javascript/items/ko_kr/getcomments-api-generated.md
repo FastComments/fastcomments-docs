@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | page | number | 아니오 |  |
@@ -22,12 +22,42 @@
 
 ## 응답
 
-반환: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
+반환: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'getComments 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9a12b3";
-const response: GetComments200Response = await getComments(tenantId, 1, 20, 0, true, 0, 3, 2, "https://mysite.com/posts/678", undefined, undefined, undefined, undefined, "parent_987", undefined, 1716873600000, 1719552000000);
+const tenantId: string = "tenant_789";
+const page: number = 1;
+const limit: number = 25;
+const asTree: boolean = true;
+const maxTreeDepth: number = 3;
+const urlId: string = "articles/2026/fastcomments-intro";
+const userId: string = "user_12345";
+const direction: SortDirections = "desc";
+const fromDate: number = 1672531200000;
+const toDate: number = Date.now();
+
+const result: APIGetCommentsResponse = await getComments(
+  tenantId,
+  page,
+  limit,
+  0,
+  asTree,
+  0,
+  5,
+  maxTreeDepth,
+  urlId,
+  userId,
+  undefined,
+  undefined,
+  "#release",
+  undefined,
+  direction,
+  fromDate,
+  toDate
+);
 [inline-code-end]
+
+---

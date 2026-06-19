@@ -1,30 +1,27 @@
+---
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательное | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createModeratorBody | CreateModeratorBody | Да |  |
 
 ## Ответ
 
-Возвращает: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModerator200Response.ts)
+Возвращает: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b21';
+const tenantId: string = 'tenant_83f4b7a2';
 const createModeratorBody: CreateModeratorBody = {
-  moderator: {
-    name: 'Alex Rivera',
-    email: 'alex.rivera@fastcomments.io',
-    role: 'global_moderator',
-    enabled: true,
-  },
-  // показаны необязательные параметры:
-  notifyUser: true,
-  permissions: ['delete_comment', 'edit_comment', 'ban_user'],
-  customConfig: { dashboardTheme: 'dark' } as unknown as CustomConfigParameters
+  email: 'renee.alvarez@acme-corp.com',
+  fullName: 'Renee Alvarez',
+  roles: ['content_moderator'],
+  notify: true // демонстрация необязательного параметра
 };
-const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
+const result: CreateModeratorResponse = await createModerator(tenantId, createModeratorBody);
 [inline-code-end]
+
+---

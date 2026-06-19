@@ -1,11 +1,11 @@
-Потребители, които са коментирали страницата, но в момента НЕ са онлайн. Подредени по displayName.
+Предишни коментатори на страницата, които НЕ са в момента онлайн. Подредени по displayName.
 Използвайте това след изчерпване на /users/online, за да визуализирате секция "Членове".
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Курсорна пагинация по commenterName: сървърът обхожда частичния {tenantId, urlId, commenterName}
+индекс от afterName напред чрез $gt, без разход за $skip.
 
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
@@ -14,18 +14,20 @@ index from afterName forward via $gt, no $skip cost.
 
 ## Отговор
 
-Връща: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+Връща: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

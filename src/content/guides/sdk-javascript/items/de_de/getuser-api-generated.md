@@ -1,23 +1,25 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUser200Response.ts)
+Gibt zurück: [`GetUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUser Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments_corp';
-const id: string = 'user_9f8b7c6d-5e4a-3b2c-1f0e-123456789abc';
-const response: GetUser200Response = await getUser(tenantId, id);
-const userEmail: string | undefined = response.user?.email;
-const displayName: string | undefined = response.user?.displayName
+const tenantId: string = "tenant_8f2c1b4a";
+const id: string = "user_5a3b2c1d";
+const result: GetUserResponse = await getUser(tenantId, id);
+const status: APIStatus | undefined = result.status;
+const user: User | undefined = result.user;
+const digestFrequency: DigestEmailFrequency | undefined = user?.digestEmailFrequency;
+const importedAgentFrequency: ImportedAgentApprovalNotificationFrequency | undefined = user?.importedAgentApprovalNotificationFrequency;
 [inline-code-end]
 
 ---

@@ -11,15 +11,14 @@ No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Response
 
-Returns: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getUsersInfo Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // optional; if undefined default to comma
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo only requires tenantId and ids; optional parameters are not applicable here.
 [inline-code-end]

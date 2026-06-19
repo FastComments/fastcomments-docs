@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | afterId | string | Ne |  |
@@ -12,28 +12,18 @@
 
 ## Odgovor
 
-Vrne: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotifications200Response.ts)
+Vrne: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer resetUserNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b1f2";
-const afterId: string = "notification_0001";
-const afterCreatedAt: number = Date.now() - 60 * 60 * 1000; // eno uro nazaj
+const tenantId: string = 'acme-tenant-9f2b';
+const afterId: string = 'notif_7c1a2b3';
+const afterCreatedAt: number = Date.now() - 3 * 24 * 60 * 60 * 1000;
 const unreadOnly: boolean = true;
-const dmOnly: boolean = false;
-const noDm: boolean = false;
-const sso: string = "sso_session_7f2d";
-const result: ResetUserNotifications200Response = await resetUserNotifications(
-  tenantId,
-  afterId,
-  afterCreatedAt,
-  unreadOnly,
-  dmOnly,
-  noDm,
-  sso
-);
+const sso: string = 'sso:microsoft:84012';
+const response: ResetUserNotificationsResponse = await resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, undefined, undefined, sso);
 [inline-code-end]
 
 ---

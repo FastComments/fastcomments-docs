@@ -1,22 +1,24 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | skip | number | 아니오 |  |
 
 ## 응답
 
-반환: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigs200Response.ts)
+반환: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getQuestionConfigs 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4c9f2b";
-const responseWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const skip: number = 50;
-const responseWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);
+(async (): Promise<void> => {
+  const tenantId: string = 'acme-corp-78';
+  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);
+  console.log(responseWithoutSkip, responseWithSkip);
+})();
 [inline-code-end]
 
 ---

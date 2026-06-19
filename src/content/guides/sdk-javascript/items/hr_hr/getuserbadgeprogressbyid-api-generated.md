@@ -7,18 +7,18 @@
 
 ## Odgovor
 
-Vraća: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressById200Response.ts)
+Vraća: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getUserBadgeProgressById Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUserBadgeProgressById'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-241';
-const badgeId: string = 'user-78b3d-badge-3';
-const response: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, badgeId);
-const progress: UserBadgeProgress | undefined = (response as unknown as { progress?: UserBadgeProgress }).progress;
-const percentComplete: number | undefined = progress?.percentage;
-console.log('Badge progress percent complete:', percentComplete);
+const tenantId: string = "acme-tenant-72b1";
+const badgeId: string = "badge-4d9f12";
+const result: APIGetUserBadgeProgressResponse = await getUserBadgeProgressById(tenantId, badgeId);
+const status: APIStatus | undefined = result?.status;
+const progressList: UserBadgeProgress[] | undefined = result?.progress;
+const firstProgress: UserBadgeProgress | undefined = progressList?.[0];
 [inline-code-end]
 
 ---

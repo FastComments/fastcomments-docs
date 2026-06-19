@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -8,17 +8,17 @@
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'deleteModerator Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f3b2c9a';
-const id: string = 'mod_9c2d1f7b';
-const sendEmail: string = 'true';
-const response: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
-console.log(response);
+(async () => {
+  const tenantId: string = 'tenant_8f3b2a7c';
+  const moderatorId: string = 'mod_4c12f9b2';
+  const responseWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
+  const responseWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, 'true');
+  console.log(responseWithoutEmail, responseWithEmail);
+})();
 [inline-code-end]
-
----

@@ -1,10 +1,9 @@
----
-Trenutno online posjetioci stranice: osobe čija je websocket sesija pretplaćena na stranicu upravo sada.
-Vraća anonCount + totalCount (pretplatnici sobe, uključujući anonimne posjetioce koje ne izlistavamo).
+Trenutno online gledaoci stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
+Vraća anonCount + totalCount (pretplatnici cijele sobe, uključujući anonimne gledaoce koje ne navodimo).
 
-## Parameters
+## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
@@ -13,17 +12,17 @@ Vraća anonCount + totalCount (pretplatnici sobe, uključujući anonimne posjeti
 
 ## Odgovor
 
-Vraća: [`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'getOnlineUsers Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

@@ -1,27 +1,21 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
-| userId | string | 아니요 |  |
+| userId | string | 아니오 |  |
 
 ## 응답
 
-반환: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicket200Response.ts)
+반환: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getTicket 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const ticketId: string = 'TCKT-20250615-42';
-const userId: string = 'user_84b2';
-
-const ticketWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
-const ticketWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
-
-console.log(ticketWithUser.id, ticketWithoutUser.id);
+const ticketResponse: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0042", "user_2481");
+const ticketResponseNoUser: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0043");
 [inline-code-end]
 
 ---

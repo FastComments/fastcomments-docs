@@ -1,10 +1,11 @@
-SDK zagotavlja tri glavne razrede API:
+The SDK zagotavlja naslednje API razrede:
 
-- **`DefaultApi`** - Zavarovani končni točki, ki zahtevata vaš API ključ za avtentikacijo. Uporabite jih za operacije na strežniški strani.
-- **`PublicApi`** - Javne končne točke, do katerih je mogoče dostopati brez API ključa. Klice lahko pošljete neposredno iz brskalnikov/mobilnih naprav/itd.
-- **`HiddenApi`** - Notranje/skrbniške končne točke za napredne primere uporabe.
+- **`DefaultApi`** - Zaščitene končne točke, ki zahtevajo vaš API ključ za overjanje. Uporabite jih za operacije na strežniku.
+- **`PublicApi`** - Javne končne točke, do katerih je mogoče dostopati brez API ključa. Te lahko kličete neposredno iz brskalnikov/mobilnih naprav/itd.
+- **`ModerationApi`** - Končne točke nadzorne plošče moderatorja (moderacija komentarjev, prepovedi, značke, faktor zaupanja, iskanje). Avtenticirano z moderatorjevo sejo; posredujte poizvedni parameter `sso` za moderatorje, avtenticirane preko SSO.
+- **`HiddenApi`** - Notranje/admin končne točke za napredne primere uporabe.
 
-### Primer: Uporaba javnega API-ja (varno za brskalnik)
+### Primer: Uporaba Public API (varno v brskalniku)
 
 ```typescript
 import { PublicApi } from 'fastcomments-sdk/browser';
@@ -18,19 +19,37 @@ const response = await publicApi.getCommentsPublic({
 });
 ```
 
-### Primer: Uporaba privzetega API-ja (samo na strežniku)
+### Primer: Uporaba Default API (samo na strežniku)
 
 ```typescript
 import { DefaultApi, Configuration } from 'fastcomments-sdk/server';
 
 const config = new Configuration({
-  apiKey: 'your-api-key' // To naj ostane skrivnost!
+  apiKey: 'your-api-key' // Hranite to skrivno!
 });
 const defaultApi = new DefaultApi(config);
 
-// Pridobi komentarje s popolnim skrbniškim dostopom
+// Pridobi komentarje z polnim administratorskim dostopom
 const response = await defaultApi.getComments({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
+});
+```
+
+### Primer: Uporaba Moderation API
+
+```typescript
+import { createFastCommentsSDK } from 'fastcomments-sdk/server';
+
+const sdk = createFastCommentsSDK({ /* basePath, itd. */ });
+
+// Klici, avtenticirani z moderatorsko sejo (sejni piškotek) ali posredujte `sso` za moderatorja, avtenticiranega preko SSO.
+const comments = await sdk.moderationApi.getApiComments({
+  tenantId: 'your-tenant-id'
+});
+
+await sdk.moderationApi.postSetCommentSpamStatus({
+  commentId: 'comment-id',
+  spam: true
 });
 ```

@@ -1,22 +1,24 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Так |  |
+| id | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplate200Response.ts)
+Повертає: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b2c';
-const templateId: string = 'welcome-email-2024';
-const includeDrafts: boolean | undefined = undefined;
-const emailTemplate: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);
+const tenantId: string = "acme-enterprises-1";
+const templateId: string = "welcome-onboard-v2";
+const result: GetEmailTemplateResponse = await getEmailTemplate(tenantId, templateId);
+const status: APIStatus | undefined = result.status;
+const template: CustomEmailTemplate | undefined = result.template;
+const subject: string | undefined = template?.subject
 [inline-code-end]
 
 ---

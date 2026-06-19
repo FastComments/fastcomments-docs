@@ -8,20 +8,19 @@
 
 ## Response
 
-Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfig200Response.ts)
+Returns: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutDomainConfigResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_88a2b7';
-const domainToUpdate: string = 'login.enterprise-acme.com';
-const updateDomainConfigParams: UpdateDomainConfigParams = {
-  enabled: true,
-  ttlSeconds: 3600,
-  redirectToHttps: true,
-  aliases: ['login.acme-staging.com'], // optional parameter demonstrated
-  metadata: { owner: 'platform-team', environment: 'production' }
+const tenantId: string = "7f12c9a4-3b6e-4d2f-9a1c-5f8b2e0a91c4";
+const domainToUpdate: string = "comments.newsroom-prod.com";
+const updateParams: UpdateDomainConfigParams = {
+  forceHttps: true,
+  enableCORS: true,               // optional flag (demonstrates optional params)
+  corsAllowedOrigins: ["https://newsroom-prod.com"]
 };
-const updatedConfig: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
+const response: PutDomainConfigResponse = await putDomainConfig(tenantId, domainToUpdate, updateParams);
+console.log(response);
 [inline-code-end]

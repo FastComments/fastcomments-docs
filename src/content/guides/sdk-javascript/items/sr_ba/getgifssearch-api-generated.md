@@ -1,27 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| search | string | Да |  |
-| locale | string | Не |  |
-| rating | string | Не |  |
-| page | number | Не |  |
+| tenantId | string | Da |  |
+| search | string | Da |  |
+| locale | string | Ne |  |
+| rating | string | Ne |  |
+| page | number | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetGifsSearch200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearch200Response.ts)
+Vraća: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearchResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getGifsSearch Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_9876";
-const search: string = "cat playing piano";
-const locale: string = "en-US";
-const rating: string = "pg";
+const tenantId: string = 'acme-tenant-42';
+const search: string = 'golden hour sunset';
+const locale: string = 'en-US';
+const rating: string = 'pg';
 const page: number = 1;
-const result: GetGifsSearch200Response = await getGifsSearch(tenantId, search, locale, rating, page);
+const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
 [inline-code-end]
 
 ---

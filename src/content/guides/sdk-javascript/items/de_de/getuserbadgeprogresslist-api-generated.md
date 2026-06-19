@@ -9,17 +9,20 @@
 
 ## Antwort
 
-Gibt zurück: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressList200Response.ts)
+Gibt zurück: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressList Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f3a2b9c';
-const userId: string = 'user_7721d';
-const limit: number = 20;
-const skip: number = 0;
-const result: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
+(async () => {
+  const tenantId: string = "acme-corp-tenant-01";
+  const userId: string | undefined = "user-9e12b4";
+  const limit: number | undefined = 20;
+  const skip: number | undefined = 0;
+  const result: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

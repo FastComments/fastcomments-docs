@@ -1,28 +1,27 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | replaceTenantPackageBody | ReplaceTenantPackageBody | Ja |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'replaceTenantPackage Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fastcomments-tenant-114";
-const id: string = "pkg-enterprise-2026-06";
+const tenantId: string = 'tenant_9f3b1c';
+const id: string = 'pkg_pro_2026';
 const replaceTenantPackageBody: ReplaceTenantPackageBody = {
-  name: "EnterpriseModeration",
-  version: "2.4.7",
-  enabled: true,
-  apiStatus: { state: "active", lastUpdated: "2026-06-10T12:00:00Z" },
-  customConfigParameters: { maxCommentLength: 1200, allowImages: true }, // optionele instellingen inbegrepen
-  voteStyle: { style: "updown" }
+  planCode: 'pro_annual',
+  seats: 12,
+  expiresAt: '2027-01-01T00:00:00Z',
+  autoRenew: true, // optionele vlag ter demonstratie van een optionele parameter
+  notes: 'Upgrade for team collaboration'
 };
-const result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
+const result: APIEmptyResponse = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
 [inline-code-end]

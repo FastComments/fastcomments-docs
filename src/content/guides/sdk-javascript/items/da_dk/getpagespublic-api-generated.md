@@ -1,40 +1,32 @@
-Lister sider for en tenant. Bruges af FChat desktop-klienten til at udfylde dens rumliste.
-Kræver, at `enableFChat` er true i den løste brugerdefinerede konfiguration for hver side.
-Sider, der kræver SSO, filtreres i forhold til den forespørgende brugers gruppeadgang.
+Lister sider for en tenant. Bruges af FChat desktop-klienten til at udfylde sin rumliste.
+Kræver `enableFChat` at være true på den resolvede custom config for hver side.
+Sider, der kræver SSO, filtreres i forhold til den anmodende brugers gruppeadgang.
 
 ## Parametre
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | number | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | boolean | No |  |
+| tenantId | string | Ja |  |
+| cursor | string | Nej |  |
+| limit | number | Nej |  |
+| q | string | Nej |  |
+| sortBy | PagesSortBy | Nej |  |
+| hasComments | boolean | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Returnerer: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getPagesPublic Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

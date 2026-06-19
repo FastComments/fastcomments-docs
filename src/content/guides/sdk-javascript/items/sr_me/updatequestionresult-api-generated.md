@@ -1,28 +1,30 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Да |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример за updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_84b2";
-const id: string = "question_9f3a";
+const tenantId: string = "tenant_acme-corp_01";
+const id: string = "question_9f2d1b";
+const metaItem: MetaItem = { key: "platform", value: "web" };
+const status: APIStatus = { code: 0, message: "scored" };
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  outcome: "accepted",
-  confidence: 0.88,
-  moderatorId: "moderator_17",
-  notes: "Validated by automated review" // опционално поље укључено
+  score: 92,
+  passed: true,
+  status,
+  meta: [metaItem] // neobavezno polje prikazano
 };
-const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
 
 ---

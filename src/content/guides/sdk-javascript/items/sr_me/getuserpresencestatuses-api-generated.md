@@ -1,22 +1,25 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Type | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlIdWS | string | Da |  |
-| userIds | string | Da |  |
+| tenantId | string | Да |  |
+| urlIdWS | string | Да |  |
+| userIds | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatuses200Response.ts)
+Враћа: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42';
-const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
-const userIds: string = 'user_9012,user_3478';
-const includePresenceMetadata: boolean | undefined = true; // primjer opcionalnog parametra
-const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'acct_7c9b21';
+const urlIdWS: string = 'wss://ws.fastcomments.com/presence/room-231';
+const userIds: string = 'user_102,user_203';
+const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const firstStatus: APIStatus | undefined = (presence as unknown as { statuses?: APIStatus[] }).statuses?.[0];
 [inline-code-end]
+
+---

@@ -2,26 +2,24 @@
 
 | 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| editKey | string | No |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
+| editKey | string | 아니요 |  |
 
 ## 응답
 
-반환: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVote200Response.ts)
+반환: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'deleteVote 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_8421';
-  const id: string = 'vote_3f9b7c2a';
-  const editKey: string = 'edit_7Xk9LpQ';
-  const responseWithoutEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id);
-  const responseWithEdit: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
-  console.log(responseWithoutEdit, responseWithEdit);
-})();
+const tenantId: string = 'tenant_9f7c2b1a';
+const id: string = 'vote_4b6e9a23';
+const editKey: string = 'editkey_02a8f3';
+
+const deleteResultWithoutKey: VoteDeleteResponse = await deleteVote(tenantId, id);
+const deleteResultWithKey: VoteDeleteResponse = await deleteVote(tenantId, id, editKey);
 [inline-code-end]
 
 ---

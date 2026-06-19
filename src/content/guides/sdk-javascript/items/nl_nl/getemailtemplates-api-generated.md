@@ -1,26 +1,22 @@
----
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | skip | number | Nee |  |
 
-## Respons
+## Antwoord
 
-Geeft terug: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplates200Response.ts)
+Retourneert: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getEmailTemplates Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme-marketing-tenant-001";
-  const templatesDefault: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
-  const templatesPaged: GetEmailTemplates200Response = await getEmailTemplates(tenantId, 25);
-  console.log(templatesDefault, templatesPaged);
-}
-run();
+const tenantId: string = 'tenant_8f3b2a9c';
+const templatesPage1: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
+const templatesPage2: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, 25);
+console.log(templatesPage1, templatesPage2);
 [inline-code-end]
 
 ---

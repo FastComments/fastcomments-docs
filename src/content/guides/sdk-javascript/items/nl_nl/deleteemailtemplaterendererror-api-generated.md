@@ -8,17 +8,16 @@
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-72f3b4';
-const templateId: string = 'email_template-9c3a1';
-let providedErrorId: string | undefined = undefined; // optionele waarde, kan elders ingesteld worden
-const errorId: string = providedErrorId ?? 'render_err-5d2f7';
-const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
+const tenantId: string = 'fastcomments-7f3a2b';
+const templateId: string = 'tmpl-9c3e1a2b';
+const errorId: string = 'err-2026-06-19-001';
+const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 [inline-code-end]
 
 ---

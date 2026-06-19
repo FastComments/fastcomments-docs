@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | commentId | string | כן |  |
@@ -9,17 +10,19 @@
 
 ## תגובה
 
-מחזיר: [`LockComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockComment200Response.ts)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-lockComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42f6c1';
-const commentId: string = 'cmt-9a8b7c';
-const broadcastId: string = 'brd_2026_06_15';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTY1MDAwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+const tenantId: string = 'acme-media-214';
+const commentId: string = 'cmt_4f3b9a2d';
+const broadcastId: string = 'live-987654321';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzgiLCJuYW1lIjoiSmFuZSBEb2UifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
-const lockedWithSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId, ssoToken);
-const lockedWithoutSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId);
+const lockedWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, sso);
+const lockedWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);
 [inline-code-end]
+
+---

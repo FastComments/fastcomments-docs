@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | はい |  |
@@ -8,17 +8,19 @@
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteModerator の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f3b2c9a';
-const id: string = 'mod_9c2d1f7b';
-const sendEmail: string = 'true';
-const response: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
-console.log(response);
+(async () => {
+  const tenantId: string = 'tenant_8f3b2a7c';
+  const moderatorId: string = 'mod_4c12f9b2';
+  const responseWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
+  const responseWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, 'true');
+  console.log(responseWithoutEmail, responseWithEmail);
+})();
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -8,20 +8,23 @@
 
 ## Отговор
 
-Връща: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример на updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-81';
-const id: string = 'mod_7f3a2b';
-const updateModeratorBody: UpdateModeratorBody = {
-  email: 'j.reyes@acme-corp.com',
-  displayName: 'Jordan Reyes',
-  roles: ['moderator', 'content_reviewer'],
-  active: true,
-  notes: 'Promoted to senior moderator; monitor flagged content weekly'
-};
-const result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);
+(async () => {
+  const tenantId: string = 'acme-corp-tenant-92';
+  const id: string = '9f3b2c1a-4d6e-11ec-81d3-0242ac130003';
+  const updateModeratorBody: UpdateModeratorBody = {
+    email: 'moderator.lead@acmecorp.com',
+    displayName: 'Alex Rivera',
+    roles: ['moderator', 'team_lead'],
+    active: true,
+    notify: true // незадължителен флаг за уведомяване на модератора за промените
+  };
+  const result: APIEmptyResponse = await updateModerator(tenantId, id, updateModeratorBody);
+  console.log(result);
+})();
 [inline-code-end]

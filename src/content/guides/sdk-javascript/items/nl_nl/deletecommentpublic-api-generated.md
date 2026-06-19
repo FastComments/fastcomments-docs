@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
@@ -10,17 +10,16 @@
 
 ## Antwoord
 
-Retourneert: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentPublic200Response.ts)
+Geeft terug: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicAPIDeleteCommentResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'deleteCommentPublic Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van deleteCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const commentId: string = 'c0mment-9f8b7a6';
-const broadcastId: string = 'site_homepage_2026-06-15';
-const editKey: string = 'ek_3b7a1f59-4d2c-11eb-8dcd-0242ac130003';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';
-
-const result: DeleteCommentPublic200Response = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
+const tenantId: string = "tenant_7a3b2c";
+const commentId: string = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
+const broadcastId: string = "site:homepage";
+const editKey: string | undefined = "edk_9f8b7c6";
+const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dXNlcjoxMjM.zXlKaGJHY2lPaUpJVXpJMU5pSXNJbXRwWkNJNkltRnpaWEp0YjI1bFpTSTZJbU5zYjJOcGRHbHZiaUk2SW1Wa1pYTmpaWE5vWldGelpTMWZkR2x2TG05eVpXTm9iM0pwYjI0";
+const result: PublicAPIDeleteCommentResponse = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
 [inline-code-end]

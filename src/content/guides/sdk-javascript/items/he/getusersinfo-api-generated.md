@@ -1,27 +1,27 @@
-מידע קבוצתי על משתמשים עבור שוכר. בהינתן userIds, מחזיר מידע תצוגה מ-User / SSOUser.
-משמש את ווידג'ט התגובות להעשיר משתמשים שהופיעו זה עתה באמצעות אירוע נוכחות.
-אין הקשר של דף: הפרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
+---
+מידע קבוצתי של משתמשים עבור שוכר. בהתבסס על userIds, מחזיר מידע להצגה מ־User / SSOUser.
+נמצא בשימוש על ידי ווידג'ט התגובות כדי להעשיר משתמשים שהופיעו זה עתה באמצעות אירוע נוכחות.
+אין הקשר של דף: פרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
 
 ## פרמטרים
 
-| שם | סוג | דרוש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| ids | string | כן |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## תגובה
 
-מחזיר: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+מחזיר: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // אופציונלי; אם undefined אז כברירת מחדל פסיק
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo דורשת רק את tenantId ו-ids; פרמטרים אופציונליים אינם רלוונטיים כאן.
 [inline-code-end]
 
 ---

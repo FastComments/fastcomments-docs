@@ -1,29 +1,30 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | updateUserBadgeParams | UpdateUserBadgeParams | Ja |  |
 
-## Svar
+## Respons
 
-Returnerer: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadge200Response.ts)
+Returnerer: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'updateUserBadge Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9a8b7c";
-const id: string = "badge_a1b2c3";
+const tenantId: string = "acme-web-tenant-7";
+const id: string = "badge_48f2a9";
 const updateUserBadgeParams: UpdateUserBadgeParams = {
-  title: "Community Helper",
-  description: "Awarded for providing 50 helpful answers",
-  iconUrl: "https://cdn.fastcomments.com/badges/community-helper.png",
-  isActive: true,
-  expiryDate: undefined
+  label: "Community Champion",
+  description: "Awarded for exceptional moderation and sustained helpful responses",
+  active: true,
+  expiresAt: "2026-12-31T23:59:59Z", // valgfrit udløb demonstreret
+  notifyUsers: true,
+  metadata: { awardedBy: "moderator_jane" }
 };
-const result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);
+const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateUserBadgeParams);
 [inline-code-end]
 
 ---

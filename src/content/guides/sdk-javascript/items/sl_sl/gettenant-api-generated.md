@@ -1,23 +1,23 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 
 ## Odgovor
 
-Vrne: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenant200Response.ts)
+Vrača: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc_tenant_6b3e2a';
-const id: string = 'site_42f1';
-const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
-const tenant: APITenant | undefined = tenantResponse.tenant;
-const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
+const tenantId: string = 'acme-corp';
+const id: string = 'tenant-987654321';
+const options: { includeBilling?: boolean } = { includeBilling: true };
+const response: GetTenantResponse = await getTenant(tenantId, id);
+const billingInfo: BillingInfo | undefined = undefined
 [inline-code-end]
 
 ---

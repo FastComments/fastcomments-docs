@@ -1,29 +1,25 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
 | id | string | 예 |  |
-| title | string | 아니요 |  |
+| title | string | 아니오 |  |
 
 ## 응답
 
-반환: [`CreateV2PageReact200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV2PageReact200Response.ts)
+반환: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'createV2PageReact 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fastcomments-tenant-72";
-const urlId: string = "articles/2026/06/15/product-update";
-const id: string = "page-8f3b2a";
-const title: string = "Product Update: June 15, 2026";
+const tenantId: string = 'tenant_91f4b3b';
+const urlId: string = 'https://news.site.com/articles/2026/06/fastcomments-integration';
+const id: string = 'react_5f2c1a';
+const title: string = 'FastComments Integration — June 2026';
 
-(async function run(): Promise<void> {
-  const response: CreateV2PageReact200Response = await createV2PageReact(tenantId, urlId, id, title);
-  console.log(response);
-})();
+const reactionWithTitle: CreateV1PageReact = await createV2PageReact(tenantId, urlId, id, title);
+const reactionWithoutTitle: CreateV1PageReact = await createV2PageReact(tenantId, urlId, id);
 [inline-code-end]
-
----

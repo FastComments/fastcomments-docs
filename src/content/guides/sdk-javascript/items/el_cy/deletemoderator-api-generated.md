@@ -1,24 +1,27 @@
+---
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
 | sendEmail | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f3b2c9a';
-const id: string = 'mod_9c2d1f7b';
-const sendEmail: string = 'true';
-const response: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
-console.log(response);
+(async () => {
+  const tenantId: string = 'tenant_8f3b2a7c';
+  const moderatorId: string = 'mod_4c12f9b2';
+  const responseWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
+  const responseWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, 'true');
+  console.log(responseWithoutEmail, responseWithEmail);
+})();
 [inline-code-end]
 
 ---

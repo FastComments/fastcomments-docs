@@ -1,27 +1,29 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| createTenantUserBody | CreateTenantUserBody | Evet |  |
+| tenantId | string | Yes |  |
+| createTenantUserBody | CreateTenantUserBody | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+Döndürür: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'createTenantUser Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f4a2b";
+const tenantId: string = 'tenant_7f4b2a';
+const digestFreq: DigestEmailFrequency = { interval: 'daily' };
+const agentApprovalFreq: ImportedAgentApprovalNotificationFrequency = { mode: 'immediate' };
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@example.com",
-  firstName: "Jane",
-  lastName: "Doe",
-  role: "commenter",
-  approved: true,
-  displayName: "Jane D." // isteğe bağlı: kullanıcı dostu bir ad sağlama
+  email: 'sara.martin@acme.co',
+  name: 'Sara Martin',
+  role: 'moderator',
+  avatarUrl: 'https://cdn.acme.co/avatars/sara.jpg',
+  notifyByEmail: true,                     // isteğe bağlı parametre gösterimi
+  digestEmailFrequency: digestFreq,
+  importedAgentApprovalNotificationFrequency: agentApprovalFreq
 };
-const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
-console.log(result);
+const result: CreateTenantUserResponse = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]

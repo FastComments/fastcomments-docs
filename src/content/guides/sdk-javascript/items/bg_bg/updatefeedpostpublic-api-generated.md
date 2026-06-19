@@ -10,22 +10,29 @@
 
 ## Отговор
 
-Връща: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublic200Response.ts)
+Връща: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за updateFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const postId: string = 'post_20260615_001';
+const tenantId: string = "tenant_9b2f4a";
+const postId: string = "post_4f8c21";
 const updateFeedPostParams: UpdateFeedPostParams = {
-  title: 'Weekly Update: Product Launch',
-  content: 'We shipped the 2.0 release today — highlights and links below.',
-  media: [{ url: 'https://cdn.acme.com/releases/launch.jpg', type: 'image' }],
-  tags: ['release', 'product'],
-  isPublic: true
+  title: "Weekly product update",
+  content: "We've shipped improvements to search relevance and mobile layout.",
+  media: [
+    {
+      type: "image",
+      assets: [{ url: "https://cdn.company.com/images/update-cover.jpg", width: 1200, height: 627 }]
+    }
+  ],
+  links: [{ url: "https://company.com/blog/release-notes", title: "Release notes" }],
+  published: true
 };
-const broadcastId: string = 'broadcast_live_42';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
+const broadcastId: string = "broadcast_2026_06_19";
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature";
+const response: CreateFeedPostResponse = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
 [inline-code-end]
+
+---

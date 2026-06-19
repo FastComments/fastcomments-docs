@@ -1,29 +1,25 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| id | string | Yes |  |
-| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
+| tenantId | string | Da |  |
+| userId | string | Da |  |
+| id | string | Da |  |
+| changeTicketStateBody | ChangeTicketStateBody | Da |  |
 
 ## Odgovor
 
-Vraća: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketState200Response.ts)
+Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a7d3f4b';
-const userId: string = 'user_5d1a9b2c';
-const id: string = 'ticket_1024';
-const changeTicketStateBody: ChangeTicketStateBody = {
-  state: 'closed',
-  notifyParticipants: true, // prikaz opcionog parametra
-  comment: 'Resolved by support — follow-up not required.'
-};
-const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
+const tenantId: string = 'tenant_acme_01';
+const userId: string = 'moderator_421';
+const id: string = 'ticket_8421';
+const changeTicketStateBody: ChangeTicketStateBody = { state: 'closed', reason: 'Resolved after user follow-up', notifyUsers: true } as ChangeTicketStateBody;
+const result: ChangeTicketStateResponse = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]
 
 ---

@@ -1,3 +1,4 @@
+---
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -6,22 +7,16 @@
 | id | string | 是 |  |
 | userId | string | 否 |  |
 
-## 响应
+## Response
 
-返回：[`GetTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicket200Response.ts)
+返回：[`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getTicket 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const ticketId: string = 'TCKT-20250615-42';
-const userId: string = 'user_84b2';
-
-const ticketWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
-const ticketWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
-
-console.log(ticketWithUser.id, ticketWithoutUser.id);
+const ticketResponse: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0042", "user_2481");
+const ticketResponseNoUser: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0043");
 [inline-code-end]
 
 ---

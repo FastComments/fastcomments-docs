@@ -1,26 +1,22 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | namespace | string | כן |  |
 | component | string | כן |  |
 | locale | string | לא |  |
 | useFullTranslationIds | boolean | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetTranslations200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslations200Response.ts)
+מחזיר: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const namespaceName: string = 'site-ui';
-const componentName: string = 'comment-widget';
-const locale: string = 'fr-FR';
-const useFullTranslationIds: boolean = true;
-const translationsWithLocale: GetTranslations200Response = await getTranslations(namespaceName, componentName, locale, useFullTranslationIds);
-const translationsDefault: GetTranslations200Response = await getTranslations(namespaceName, componentName);
+const translationsFull: GetTranslationsResponse = await getTranslations("site-comments", "comment-form", "fr-FR", true);
+const translationsDefault: GetTranslationsResponse = await getTranslations("admin-dashboard", "notification-center");
 [inline-code-end]
 
 ---

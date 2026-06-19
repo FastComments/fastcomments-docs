@@ -1,6 +1,7 @@
-Προηγούμενοι σχολιαστές στη σελίδα που ΔΕΝ είναι αυτήν τη στιγμή συνδεδεμένοι. Ταξινομούνται κατά displayName.
-Χρησιμοποιήστε αυτό αφού εξαντλήσετε το /users/online για να εμφανίσετε μια ενότητα «Μέλη».
-Σελιδοποίηση cursor στο commenterName: ο διακομιστής διατρέχει τον μερικό δείκτη {tenantId, urlId, commenterName} από το afterName προς τα εμπρός χρησιμοποιώντας $gt, χωρίς κόστος $skip.
+Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι αυτή τη στιγμή online. Ταξινομημένο κατά displayName.
+Χρησιμοποιήστε το αυτό αφού εξαντλήσετε /users/online για να εμφανίσετε μια ενότητα "Μέλη".
+Σελιδοποίηση με cursor στο commenterName: ο server διασχίζει το μερικό {tenantId, urlId, commenterName}
+index από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
 
 ## Παράμετροι
 
@@ -11,18 +12,22 @@
 | afterName | string | Όχι |  |
 | afterUserId | string | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+Επιστρέφει: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
+
+---

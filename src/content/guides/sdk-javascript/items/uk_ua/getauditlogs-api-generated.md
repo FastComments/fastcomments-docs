@@ -1,29 +1,29 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | Так |  |
+| limit | number | Ні |  |
+| skip | number | Ні |  |
+| order | SORTDIR | Ні |  |
+| after | number | Ні |  |
+| before | number | Ні |  |
 
-## Response
+## Відповідь
 
-Повертає: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogs200Response.ts)
+Повертає: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f8d7c3a';
+const tenantId: string = 'tenant_87f9a4';
 const limit: number = 100;
 const skip: number = 0;
-const order: SORTDIR = 'DESC' as SORTDIR;
-const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // тиждень тому
-const before: number = Date.now();
-const result: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after, before);
+const order: SORTDIR = SORTDIR.DESC;
+const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 днів тому
+const auditLogsResponse: GetAuditLogsResponse = await getAuditLogs(tenantId, limit, skip, order, after);
+console.log((auditLogsResponse as unknown) ? 'Audit logs fetched' : 'No logs');
 [inline-code-end]
 
 ---

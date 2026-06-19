@@ -1,10 +1,11 @@
-Lister les pages pour un tenant. Utilisé par le client de bureau FChat pour remplir sa liste de salons.
-Nécessite que `enableFChat` soit true sur la configuration personnalisée résolue pour chaque page.
-Les pages qui requièrent SSO sont filtrées en fonction de l'accès par groupe de l'utilisateur demandeur.
+---
+Liste les pages pour un tenant. Utilisé par le client de bureau FChat pour remplir sa liste de salons.
+Nécessite que `enableFChat` soit vrai dans la configuration personnalisée résolue pour chaque page.
+Les pages qui exigent SSO sont filtrées en fonction de l'accès aux groupes de l'utilisateur demandeur.
 
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | cursor | string | Non |  |
@@ -15,26 +16,18 @@ Les pages qui requièrent SSO sont filtrées en fonction de l'accès par groupe 
 
 ## Réponse
 
-Renvoie: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Renvoie: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

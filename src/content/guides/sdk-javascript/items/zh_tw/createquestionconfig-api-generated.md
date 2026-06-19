@@ -1,36 +1,35 @@
----
 ## 參數
 
-| 名稱 | 類型 | 是否必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | 是 |  |
 
 ## 回應
 
-回傳: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfig200Response.ts)
+回傳：[`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createQuestionConfig 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f3b1c2a";
-
-const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Product feedback",
-  key: "product_quality",
-  description: "Short survey question shown after posting a comment",
-  required: true,
-  renderingType: "singleChoice",
-  customOptions: [
-    { label: "Excellent", value: "5" },
-    { label: "Good", value: "4" },
-    { label: "Fair", value: "3" }
-  ] as QuestionConfigCustomOptionsInner[],
-  notifyModerators: false // 示範可選參數
+const tenantId: string = "org-7b3d1e9f";
+const customOption: QuestionConfigCustomOptionsInner = {
+  key: "priority",
+  label: "Priority",
+  values: ["low", "medium", "high"],
+  defaultValue: "medium"
 };
-
-const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
+const createQuestionConfigBody: CreateQuestionConfigBody = {
+  name: "Customer Support Questions",
+  description: "Configuration for support-related question flows",
+  enabled: true,
+  moderation: { required: true, level: "manual" },
+  questionLimitPerUser: 5,
+  customOptions: [customOption],
+  allowAnonymous: false
+};
+const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
 
 ---

@@ -1,29 +1,31 @@
----
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+| Name | Type | Requis | Description |
+|------|------|--------|-------------|
 | tenantId | string | Non |  |
 | bulkCreateHashTagsBody | BulkCreateHashTagsBody | Non |  |
 
 ## Réponse
 
-Renvoie : [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulk200Response.ts)
+Retourne : [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkCreateHashTagsResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple d\'utilisation de addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp_987";
-const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-  tags: [
-    { name: "product-update", description: "Announcements about new product releases", visible: true },
-    { name: "customer-support", description: "Customer support related discussions", visible: false }
-  ],
-  createdBy: "moderator_jane"
-};
-const resultWithTenant: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-const resultWithoutTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);
-[inline-code-end]
+const tenantId: string = 'tenant_acme_001';
+const customConfig: CustomConfigParameters = { displayColor: '#3178C6', priority: 1 };
+const tags: BulkCreateHashTagsBodyTagsInner[] = [
+  {
+    name: 'typescript',
+    slug: 'typescript',
+    description: 'Questions and examples for TypeScript usage',
+    isActive: true,
+    customConfig
+  }
+];
+const body: BulkCreateHashTagsBody = { tags };
 
----
+const responseWithTenant: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId, body);
+const responseWithoutTenant: BulkCreateHashTagsResponse = await addHashTagsBulk(undefined, body);
+[inline-code-end]

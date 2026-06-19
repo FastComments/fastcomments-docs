@@ -1,9 +1,9 @@
-그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 문서를 집계합니다.
-다양한 연산(예: sum, countDistinct, avg 등)을 지원합니다.
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | aggregationRequest | AggregationRequest | 예 |  |
@@ -12,23 +12,26 @@
 
 ## 응답
 
-반환: [`Aggregate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/Aggregate200Response.ts)
+반환: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'aggregate 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_78a9';
-const parentTenantId: string = 'parent_tenant_01';
-const includeStats: boolean = true;
+const tenantId: string = "tenant_72b3";
+const parentTenantId: string = "parent_acme_corp";
 const aggregationRequest: AggregationRequest = {
-  operation: { type: 'COUNT' },
-  groupBy: ['pageUrl'],
-  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },
-  sort: [{ field: 'count', direction: 'DESC' }],
+  groupBy: ["postId"],
+  predicates: [
+    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+  ],
+  operations: [
+    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+  ],
+  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
   limit: 25
 };
-const result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
+const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
 [inline-code-end]
 
 ---

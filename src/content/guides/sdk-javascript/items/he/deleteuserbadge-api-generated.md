@@ -1,23 +1,22 @@
----
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadge200Response.ts)
+מחזיר: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת deleteUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-deleteUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8b3f2c7a";
-const badgeIdOptional: string | undefined = Math.random() > 0.5 ? "badge_4f9a21" : undefined;
-const id: string = badgeIdOptional ?? "badge_backup_01";
-const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);
+const tenantId: string = 'acme-corp-42';
+const badgeId: string = 'badge_9f8b2c1d';
+const includeAudit: boolean | undefined = undefined; // דגל אופציונלי (לא נדרש עבור deleteUserBadge)
+const result: APIEmptySuccessResponse = await deleteUserBadge(tenantId, badgeId);
 [inline-code-end]
 
 ---

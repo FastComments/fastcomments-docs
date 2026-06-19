@@ -1,20 +1,29 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Type | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | sso | string | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotifications200Response.ts)
+Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα resetUserNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8a3f2b6c";
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyX2QxMjM0IiwiaWF0IjoxNjI1MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const resetResponseWithSso: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);
-const resetResponseWithoutSso: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);
+async function example(): Promise<void> {
+  const tenantId: string = 'tenant_84f3b2';
+  const resetResultNoSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
+
+  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+  const resetResultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+
+  console.log(resetResultNoSso, resetResultWithSso);
+}
+
+example();
 [inline-code-end]
+
+---

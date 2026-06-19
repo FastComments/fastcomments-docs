@@ -1,9 +1,9 @@
----
-Das SDK stellt drei Haupt-API-Klassen bereit:
+Das SDK stellt diese API-Klassen bereit:
 
-- **`DefaultApi`** - Gesicherte Endpunkte, die deinen API-Schlüssel zur Authentifizierung erfordern. Verwende diese für serverseitige Operationen.
-- **`PublicApi`** - Öffentliche Endpunkte, die ohne API-Schlüssel zugänglich sind. Diese können direkt aus Browsern/Mobilgeräten/etc. aufgerufen werden.
-- **`HiddenApi`** - Interne/Admin-Endpunkte für fortgeschrittene Anwendungsfälle.
+- **`DefaultApi`** - Gesicherte Endpunkte, die Ihren API-Schlüssel zur Authentifizierung benötigen. Verwenden Sie diese für serverseitige Vorgänge.
+- **`PublicApi`** - Öffentliche Endpunkte, die ohne API-Schlüssel zugänglich sind. Diese können direkt von Browsern/Mobilgeräten/etc. aufgerufen werden.
+- **`ModerationApi`** - Moderator-Dashboard-Endpunkte (Kommentar-Moderation, Sperren, Abzeichen, Vertrauensfaktor, Suche). Authentifiziert durch die Sitzung des Moderators; übergeben Sie den `sso`-Abfrageparameter für SSO-authentifizierte Moderatoren.
+- **`HiddenApi`** - Interne/Admin-Endpunkte für erweiterte Anwendungsfälle.
 
 ### Beispiel: Verwendung der Public API (browser-sicher)
 
@@ -25,14 +25,31 @@ const response = await publicApi.getCommentsPublic({
 import { DefaultApi, Configuration } from 'fastcomments-sdk/server';
 
 const config = new Configuration({
-  apiKey: 'your-api-key' // Dies geheim halten!
+  apiKey: 'your-api-key' // Geheim halten!
 });
 const defaultApi = new DefaultApi(config);
 
-// Kommentare mit vollem Admin-Zugriff abrufen
+// Kommentare mit vollem Administratorzugriff abrufen
 const response = await defaultApi.getComments({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
----
+
+### Beispiel: Verwendung der Moderation API
+
+```typescript
+import { createFastCommentsSDK } from 'fastcomments-sdk/server';
+
+const sdk = createFastCommentsSDK({ /* basePath usw. */ });
+
+// Durch Moderator authentifizierte Aufrufe (Session-Cookie oder `sso` für einen SSO-Moderator übergeben).
+const comments = await sdk.moderationApi.getApiComments({
+  tenantId: 'your-tenant-id'
+});
+
+await sdk.moderationApi.postSetCommentSpamStatus({
+  commentId: 'comment-id',
+  spam: true
+});
+```

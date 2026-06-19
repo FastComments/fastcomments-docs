@@ -1,10 +1,9 @@
----
-Zurzeit online befindliche Zuschauer einer Seite: Personen, deren websocket session gerade auf die Seite abonniert ist.
-Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anonymer Zuschauer, die wir nicht aufzählen).
+Derzeit online befindliche Betrachter einer Seite: Personen, deren websocket-Sitzung gerade auf die Seite abonniert ist.
+Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anon-Betrachter, die wir nicht aufzählen).
 
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
@@ -13,17 +12,17 @@ Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anony
 
 ## Antwort
 
-Gibt zurück: [`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+Gibt zurück: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getOnlineUsers Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel: getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

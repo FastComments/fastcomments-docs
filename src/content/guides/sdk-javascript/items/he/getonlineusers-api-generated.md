@@ -1,9 +1,9 @@
-צופים מקוונים כרגע בעמוד: אנשים שהחיבור שלהם ב-websocket מנוי לעמוד ברגע זה.
-מחזיר את anonCount + totalCount (מנויי החדר כולו, כולל צופים אנונימיים שאותם איננו מפרטים).
+צופים מקוונים כרגע בדף: אנשים שסשן websocket שלהם מנוי על הדף ברגע זה.
+מחזיר את anonCount + totalCount (מנויים בחדר כולו, כולל צופים אנונימיים שאותם איננו מונים).
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlId | string | כן |  |
@@ -12,17 +12,17 @@
 
 ## תגובה
 
-מחזיר: [`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+מחזיר: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

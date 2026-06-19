@@ -1,27 +1,30 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| usernameStartsWith | string | No |  |
-| mentionGroupIds | Array<string> | No |  |
-| sso | string | No |  |
-| searchSection | SearchUsersSearchSectionEnum | No |  |
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| usernameStartsWith | string | Ne |  |
+| mentionGroupIds | Array<string> | Ne |  |
+| sso | string | Ne |  |
+| searchSection | SearchUsersSearchSectionEnum | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsers200Response.ts)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResult.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'searchUsers Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer searchUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7890';
-const urlId: string = 'news/2026-06-15-world-cup-final';
-const usernameStartsWith: string = 'mar';
-const mentionGroupIds: string[] = ['staff', 'trusted-commenters'];
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Commenters;
-const response: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);
+(async () => {
+  const tenantId: string = 'tenant_9f7b3a';
+  const urlId: string = 'news/2026/fastcomments-release';
+  const usernameStartsWith: string = 'ann';
+  const mentionGroupIds: string[] = ['editors', 'contributors'];
+  const sso: string = 'google-oauth2';
+  const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Mentions;
+  const result: SearchUsersResult = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);
+  console.log(result);
+})();
 [inline-code-end]

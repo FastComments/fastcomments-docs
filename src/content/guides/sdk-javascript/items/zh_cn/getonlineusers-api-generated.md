@@ -1,10 +1,10 @@
 ---
-当前页面的在线查看者：当前其 websocket 会话已订阅该页面的人。
-返回 anonCount + totalCount（房间范围的订阅者，包括我们不列举的匿名查看者）。
+页面当前在线的观众：其 websocket 会话当前已订阅该页面的人。
+返回 anonCount + totalCount（房间范围的订阅者，包括我们不列举的匿名观众）。
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
@@ -13,17 +13,17 @@
 
 ## 响应
 
-返回：[`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+返回: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getOnlineUsers 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

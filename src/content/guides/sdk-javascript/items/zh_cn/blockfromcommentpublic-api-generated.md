@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -9,22 +9,20 @@
 
 ## 响应
 
-返回：[`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublic200Response.ts)
+返回：[`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'blockFromCommentPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6b3f9a2d';
-const commentId: string = 'cmt_8f4b12a9';
+const tenantId: string = "tenant_52b9f3a1";
+const commentId: string = "cmt_4f9d2a7b";
 const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: 'Repeated promotional links',
-  durationMinutes: 60 * 24 * 30, // 30 天
-  escalateToModeration: true
+  reason: "spam",
+  moderatorId: "mod_783",
+  durationMinutes: 1440,
+  notifyUser: true
 };
-const sso: string = 'sso_token_3fH7kLw';
-
-const result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
+const result: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]
-
----

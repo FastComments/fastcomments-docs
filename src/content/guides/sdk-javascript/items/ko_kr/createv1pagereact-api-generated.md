@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
@@ -8,20 +9,17 @@
 
 ## 응답
 
-반환: [`CreateV1PageReact200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact200Response.ts)
+반환: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'createV1PageReact 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'b12f3c4d-5678-90ab-cdef-1234567890ab';
-  const urlId: string = 'https://www.news-site.com/world/2026/election-results';
-  const title: string = 'Election results: key takeaways and analysis';
-  const responseWithTitle: CreateV1PageReact200Response = await createV1PageReact(tenantId, urlId, title);
-  const responseWithoutTitle: CreateV1PageReact200Response = await createV1PageReact(tenantId, urlId);
-  console.log(responseWithTitle, responseWithoutTitle);
-})();
+const tenantId: string = 'acme-enterprises-42';
+const urlId: string = 'blog/how-we-reduce-latency';
+const title: string | undefined = 'Reducing Frontend Latency with FastComments';
+const createResponse: CreateV1PageReact = await createV1PageReact(tenantId, urlId, title);
+const createResponseNoTitle: CreateV1PageReact = await createV1PageReact(tenantId, urlId);
 [inline-code-end]
 
 ---

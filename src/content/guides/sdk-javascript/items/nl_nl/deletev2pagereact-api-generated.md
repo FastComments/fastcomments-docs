@@ -2,25 +2,26 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| id | string | Ja |  |
 
 ## Respons
 
-Geeft terug: [`DeleteV2PageReact200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV2PageReact200Response.ts)
+Retourneert: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteV2PageReact Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_79021";
-const urlId: string = "blog/my-first-post";
-const id: string = "reaction_9f8b7c";
-let includeHistory: boolean | undefined = undefined; // optionele vlag, wordt bij sommige aanroepen gebruikt
+interface APIStatus { code: number; message?: string }
+interface CreateV1PageReact { id: string; pageUrl: string; userId?: string; status?: APIStatus; deleted?: boolean }
 
-const result: DeleteV2PageReact200Response = await deleteV2PageReact(tenantId, urlId, id);
-console.log(result);
+const tenantId: string = 'tenant_prod_8621'
+const urlId: string = 'page_home_001'
+const id: string = 'react_5f9b1c3a'
+
+const result: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, id)
+const statusCode: number | undefined = result.status?.code
+console.log('Deleted reaction id:', result.id, 'statusCode:', statusCode)
 [inline-code-end]
-
----

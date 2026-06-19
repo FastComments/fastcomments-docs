@@ -1,21 +1,20 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+Returnerer: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getEmailTemplateDefinitions Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_001';
-  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // valgfrit parameter demonstreret
-  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
-  console.log(templates);
-})();
+const tenantId: string = 'tenant_5f2c9b1a';
+const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
+// Valgfrie parametre (hvis understøttet) kan videregives som et andet argument, f.eks. getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
 [inline-code-end]
+
+---

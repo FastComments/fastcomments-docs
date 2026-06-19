@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -8,22 +8,21 @@
 
 ## 응답
 
-반환: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadge200Response.ts)
+반환: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'updateUserBadge 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9a8b7c";
-const id: string = "badge_a1b2c3";
+const tenantId: string = "acme-web-tenant-7";
+const id: string = "badge_48f2a9";
 const updateUserBadgeParams: UpdateUserBadgeParams = {
-  title: "Community Helper",
-  description: "Awarded for providing 50 helpful answers",
-  iconUrl: "https://cdn.fastcomments.com/badges/community-helper.png",
-  isActive: true,
-  expiryDate: undefined
+  label: "Community Champion",
+  description: "Awarded for exceptional moderation and sustained helpful responses",
+  active: true,
+  expiresAt: "2026-12-31T23:59:59Z", // 선택적 만료 예시
+  notifyUsers: true,
+  metadata: { awardedBy: "moderator_jane" }
 };
-const result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);
+const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateUserBadgeParams);
 [inline-code-end]
-
----

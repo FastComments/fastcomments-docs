@@ -1,12 +1,28 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | addDomainConfigParams | AddDomainConfigParams | Da |  |
 
 ## Odgovor
 
-Vrača: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddDomainConfig200Response.ts)
+Vrne: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddDomainConfigResponse.ts)
 
----
+## Primer
+
+[inline-code-attrs-start title = 'Primer addDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+(async () => {
+  const tenantId: string = "acme-corp-72";
+  const addDomainConfigParams: AddDomainConfigParams = {
+    domain: "comments.acme-corp.com",
+    primary: true,
+    enforceHttps: true,                // prikazan primer neobveznega parametra
+    allowedOrigins: ["https://www.acme-corp.com", "https://app.acme-corp.com"],
+    cnameTarget: "fc-cname.fastcomments.net"
+  };
+  const result: AddDomainConfigResponse = await addDomainConfig(tenantId, addDomainConfigParams);
+  console.log(result);
+})();
+[inline-code-end]

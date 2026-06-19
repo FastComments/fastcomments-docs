@@ -1,9 +1,9 @@
-Bir sayfanın şu anda çevrimiçi izleyicileri: websocket oturumu şu anda sayfaya abone olan kişiler.
-Returns anonCount + totalCount (oda genelindeki aboneler; saymadığımız anonim izleyiciler dahil).
+Bir sayfanın şu anda çevrimiçi olan izleyicileri: websocket oturumu şu anda sayfaya abone olan kişiler.
+Döndürür anonCount + totalCount (oda genelindeki aboneler, saymadığımız anon görüntüleyiciler dahil).
 
 ## Parametreler
 
-| Ad | Tip | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | urlId | string | Evet |  |
@@ -12,17 +12,17 @@ Returns anonCount + totalCount (oda genelindeki aboneler; saymadığımız anoni
 
 ## Yanıt
 
-Döndürür: [`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+Döndürür: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getOnlineUsers Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

@@ -1,21 +1,21 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| skip | number | No |  |
+| tenantId | string | 예 |  |
+| skip | number | 아니오 |  |
 
 ## 응답
 
-반환: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackages200Response.ts)
+반환: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getTenantPackages 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8421';
-const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, 25);
-const packagesWithoutSkip: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const tenantId: string = "acme-corp-9f3b";
+const packagesPage1: GetTenantPackagesResponse = await getTenantPackages(tenantId);
+const packagesPage2: GetTenantPackagesResponse = await getTenantPackages(tenantId, 10);
 [inline-code-end]
 
 ---

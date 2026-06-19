@@ -1,30 +1,26 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | 是 |  |
+| userId | string | 否 |  |
+| anonUserId | string | 否 |  |
 
-## 回應
+## 回傳
 
-回傳: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockCommentPublic200Response.ts)
+回傳：[`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'unBlockUserFromComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b9c2a';
-const id: string = 'comment_4f8e1d';
-const unBlockFromCommentParams: UnBlockFromCommentParams = {
-  reason: 'User submitted appeal and provided additional context',
-  effectiveAt: new Date().toISOString()
-};
-const userId: string = 'user_92a3f6';
-const result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);
+const tenantId: string = 'tenant_8b4a2f9c';
+const id: string = 'cmt_5f3b2a9e';
+const unBlockFromCommentParams: UnBlockFromCommentParams = { reason: 'Appeal accepted', effectiveAt: '2026-06-19T12:00:00Z' };
+const userId: string = 'user_42f7';
+const result: UnblockSuccess = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);
 [inline-code-end]
 
 ---

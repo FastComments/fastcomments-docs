@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Name | Type | Obligatoire | Description |
+|------|------|------------|-------------|
 | tenantId | string | Oui |  |
 | commentId | string | Non |  |
 | externalId | string | Non |  |
@@ -13,20 +13,20 @@
 
 ## Réponse
 
-Renvoie : [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
+Renvoie : [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getPendingWebhookEvents'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getPendingWebhookEvents'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2a';
-const commentId: string = 'cmt_8a7d1';
+const tenantId: string = 'tenant_a1b2c3';
+const commentId: string = 'cmt_9f8e7d';
 const eventType: string = 'comment.created';
-const domain: string = 'reviews.myshop.com';
-const attemptCountGT: number = 1;
-const skip: number = 0;
+const domain: string = 'comments.acme-corp.com';
+const attemptCountGT: number = 2;
+const skip: number = 5;
 
-const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
+const result: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
   tenantId,
   commentId,
   undefined,
@@ -37,5 +37,3 @@ const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents
   skip
 );
 [inline-code-end]
-
----

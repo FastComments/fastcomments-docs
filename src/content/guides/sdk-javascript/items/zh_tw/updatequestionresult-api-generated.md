@@ -1,28 +1,30 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateQuestionResult 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_84b2";
-const id: string = "question_9f3a";
+const tenantId: string = "tenant_acme-corp_01";
+const id: string = "question_9f2d1b";
+const metaItem: MetaItem = { key: "platform", value: "web" };
+const status: APIStatus = { code: 0, message: "scored" };
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  outcome: "accepted",
-  confidence: 0.88,
-  moderatorId: "moderator_17",
-  notes: "Validated by automated review" // 包含可選欄位
+  score: 92,
+  passed: true,
+  status,
+  meta: [metaItem] // optional field demonstrated
 };
-const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | userId | string | Da |  |
@@ -8,20 +8,21 @@
 
 ## Odgovor
 
-Vraća: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicket200Response.ts)
+Vraća: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer createTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_corp';
-const userId: string = 'moderator_jane';
+const tenantId: string = "acme-enterprises";
+const userId: string = "user_12039";
 const createTicketBody: CreateTicketBody = {
-  subject: 'Mass spam reports on article 789',
-  description: 'Multiple identical spam comments posted under article 789. Needs moderation and bulk removal.',
-  priority: 'high',
-  contactEmail: 'jane@acme-corp.com',
-  metadata: { articleId: '789', reportedCount: 12 } // primer opcionih metapodataka
+  subject: "Login failures for multiple users",
+  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
+  priority: "urgent",
+  tags: ["authentication", "outage"]
 };
-const ticket: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
+const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
 [inline-code-end]
+
+---

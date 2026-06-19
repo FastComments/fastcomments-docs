@@ -6,18 +6,15 @@
 
 ## レスポンス
 
-戻り値: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+戻り値: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_001';
-  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // オプションパラメータの例
-  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
-  console.log(templates);
-})();
+const tenantId: string = 'tenant_5f2c9b1a';
+const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
+// オプションのパラメータ（サポートされている場合）は2番目の引数として渡すことができます。例: getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
 [inline-code-end]
 
 ---

@@ -1,23 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| largeInternalURLSanitized | string | Da |  |
+| tenantId | string | Да |  |
+| largeInternalURLSanitized | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetGifLarge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLarge200Response.ts)
+Враћа: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getGifLarge Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifLarge Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b7c";
-const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/07d3f6_large.gif";
-const preferWebP: boolean | undefined = true; // opciona preferencija
-const urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(".gif", ".webp") : largeInternalURLSanitized;
-const response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);
+const tenantId: string = 'acme-corp-42';
+const largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';
+const correlationId?: string = 'req-20260619-01';
+const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

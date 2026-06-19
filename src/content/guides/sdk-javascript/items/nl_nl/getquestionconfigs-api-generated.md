@@ -1,3 +1,4 @@
+---
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -7,16 +8,18 @@
 
 ## Antwoord
 
-Retourneert: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigs200Response.ts)
+Retourneert: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getQuestionConfigs Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4c9f2b";
-const responseWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const skip: number = 50;
-const responseWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);
+(async (): Promise<void> => {
+  const tenantId: string = 'acme-corp-78';
+  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);
+  console.log(responseWithoutSkip, responseWithSkip);
+})();
 [inline-code-end]
 
 ---

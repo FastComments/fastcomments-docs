@@ -1,27 +1,24 @@
+---
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
-|------|------|------|-------------|
+|------|------|----------|-------------|
 | tag | string | 是 |  |
 | tenantId | string | 否 |  |
-| deleteHashTagRequest | DeleteHashTagRequest | 否 |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | 否 |  |
 
 ## 响应
 
-返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteHashTag 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "breaking-news";
-const tenantId: string = "tenant_72a1";
-const deleteHashTagRequest: DeleteHashTagRequest = {
-  reason: "consolidate-duplicates",
-  requestedBy: "moderator@dailypress.com",
-  forceDelete: true
-};
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
+const tag: string = "release-notes";
+const tenantId: string = "tenant_7b2f9c";
+const deleteHashTagRequestBody: DeleteHashTagRequestBody = { removedBy: "ops@acme-corp.com", force: true };
+const result: APIEmptyResponse = await deleteHashTag(tag, tenantId, deleteHashTagRequestBody);
 [inline-code-end]
 
 ---

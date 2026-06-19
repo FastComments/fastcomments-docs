@@ -1,24 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Type | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| meta | string | Ne |  |
-| skip | number | Ne |  |
+| tenantId | string | Да |  |
+| meta | string | Не |  |
+| skip | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenants200Response.ts)
+Враћа: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantsResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getTenants Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenants Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fcom-tenant-8b4f2a1c";
-const meta: string = "include=domains,billing&status=active";
+const tenantId: string = 'acme-corp-72b';
+const meta: string = 'include=domains,billing';
 const skip: number = 20;
-const response: GetTenants200Response = await getTenants(tenantId, meta, skip);
-console.log(response);
+const result: GetTenantsResponse = await getTenants(tenantId, meta, skip);
 [inline-code-end]
-
----

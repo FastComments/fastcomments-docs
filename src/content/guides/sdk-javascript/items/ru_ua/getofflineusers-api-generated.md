@@ -1,8 +1,8 @@
-Бывшие комментаторы на странице, которые В НАСТОЯЩЕЕ ВРЕМЯ НЕ В сети. Отсортировано по displayName.
-Используйте это после исчерпания /users/online для отображения раздела «Участники».
-Пагинация курсором по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName} от afterName вперёд с помощью $gt, без стоимости $skip.
+Прошлые комментаторы на странице, которые НЕ находятся в сети. Отсортировано по displayName.
+Используйте это после исчерпания /users/online, чтобы отобразить раздел "Участники".
+Постраничная пагинация курсором по commenterName: сервер проходит по частичному {tenantId, urlId, commenterName} индексу от afterName вперёд через $gt, без стоимости $skip.
 
-## Parameters
+## Параметры
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
@@ -11,20 +11,22 @@
 | afterName | string | No |  |
 | afterUserId | string | No |  |
 
-## Response
+## Ответ
 
-Returns: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

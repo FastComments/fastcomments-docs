@@ -1,31 +1,32 @@
-在該頁面先前的留言者，但目前不在線上。依 displayName 排序。
-在用盡 /users/online 後，使用此來呈現一個 "成員" 區段。
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+在該頁面上過去曾發表評論但目前不在線上的使用者。依 displayName 排序。
+在用盡 /users/online 後使用此項以呈現「成員」區段。
+在 commenterName 上的 Cursor 分頁：伺服器會沿著部分索引 {tenantId, urlId, commenterName} 從 afterName 往前以 $gt 查詢，無需 $skip 成本。
 
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | 是 |  |
+| urlId | string | 是 |  |
+| afterName | string | 否 |  |
+| afterUserId | string | 否 |  |
 
 ## 回應
 
-回傳: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+回傳: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getOfflineUsers 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

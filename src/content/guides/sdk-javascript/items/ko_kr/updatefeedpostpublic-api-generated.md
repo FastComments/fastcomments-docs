@@ -1,34 +1,38 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | postId | string | 예 |  |
 | updateFeedPostParams | UpdateFeedPostParams | 예 |  |
-| broadcastId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| broadcastId | string | 아니요 |  |
+| sso | string | 아니요 |  |
 
 ## 응답
 
-반환: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublic200Response.ts)
+반환: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'updateFeedPostPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const postId: string = 'post_20260615_001';
+const tenantId: string = "tenant_9b2f4a";
+const postId: string = "post_4f8c21";
 const updateFeedPostParams: UpdateFeedPostParams = {
-  title: 'Weekly Update: Product Launch',
-  content: 'We shipped the 2.0 release today — highlights and links below.',
-  media: [{ url: 'https://cdn.acme.com/releases/launch.jpg', type: 'image' }],
-  tags: ['release', 'product'],
-  isPublic: true
+  title: "Weekly product update",
+  content: "We've shipped improvements to search relevance and mobile layout.",
+  media: [
+    {
+      type: "image",
+      assets: [{ url: "https://cdn.company.com/images/update-cover.jpg", width: 1200, height: 627 }]
+    }
+  ],
+  links: [{ url: "https://company.com/blog/release-notes", title: "Release notes" }],
+  published: true
 };
-const broadcastId: string = 'broadcast_live_42';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
+const broadcastId: string = "broadcast_2026_06_19";
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature";
+const response: CreateFeedPostResponse = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
 [inline-code-end]
 
 ---

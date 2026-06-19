@@ -2,45 +2,38 @@ req
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| limit | number | Ne |  |
-| tags | Array<string> | Ne |  |
-| sso | string | Ne |  |
-| isCrawler | boolean | Ne |  |
-| includeUserInfo | boolean | Ne |  |
+| tenantId | string | Да |  |
+| afterId | string | Не |  |
+| limit | number | Не |  |
+| tags | Array<string> | Не |  |
+| sso | string | Не |  |
+| isCrawler | boolean | Не |  |
+| includeUserInfo | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsPublic200Response.ts)
+Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getFeedPostsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'tenant_acme_01';
-  const afterId: string = 'post_20250610_842';
-  const limit: number = 25;
-  const tags: string[] = ['news', 'technology'];
-  const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1Ni';
+  const tenantId: string = "fc_tenant_12345";
+  const afterId: string = "feedPost_98765";
+  const limit: number = 20;
+  const tags: Array<string> = ["announcement", "product"];
+  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
   const isCrawler: boolean = false;
   const includeUserInfo: boolean = true;
 
-  const response: GetFeedPostsPublic200Response = await getFeedPostsPublic(
-    tenantId,
-    afterId,
-    limit,
-    tags,
-    sso,
-    isCrawler,
-    includeUserInfo
-  );
-
+  const response: PublicFeedPostsResponse = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);
   console.log(response);
 })();
 [inline-code-end]
+
+---

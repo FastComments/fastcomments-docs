@@ -1,11 +1,11 @@
-Elenca le pagine per un tenant. Utilizzato dal client desktop FChat per popolare la lista delle sue stanze.
-Richiede che `enableFChat` sia true nella configurazione personalizzata risolta per ogni pagina.
-Le pagine che richiedono SSO vengono filtrate in base ai gruppi di accesso dell'utente che effettua la richiesta.
+Elenca le pagine per un tenant. Utilizzato dal client desktop FChat per popolare la sua lista di stanze.
+Richiede `enableFChat` to be true on the resolved custom config for each page.
+Le pagine che richiedono SSO vengono filtrate in base all'accesso di gruppo dell'utente richiedente.
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | cursor | string | No |  |
 | limit | number | No |  |
@@ -15,26 +15,18 @@ Le pagine che richiedono SSO vengono filtrate in base ai gruppi di accesso dell'
 
 ## Risposta
 
-Restituisce: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Restituisce: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

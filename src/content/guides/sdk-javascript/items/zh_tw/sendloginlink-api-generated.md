@@ -1,24 +1,27 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|-------------|
+| 名稱 | 類型 | 必要 | 說明 |
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 | redirectURL | string | 否 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'sendLoginLink 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_0a1b2c3d";
-const id: string = "user_984321";
-const redirectURL: string = "https://app.acme-corp.com/welcome";
-const responseWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
-const responseWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);
+(async function run(): Promise<void> {
+  const tenantId: string = 'fc_tenant_9f3b2c';
+  const id: string = 'user_42b7f';
+  const redirectURL: string = 'https://dashboard.acme-corp.com/welcome';
+  const responseWithoutRedirect: APIEmptyResponse = await sendLoginLink(tenantId, id);
+  const responseWithRedirect: APIEmptyResponse = await sendLoginLink(tenantId, id, redirectURL);
+  console.log(responseWithoutRedirect, responseWithRedirect);
+})();
 [inline-code-end]
 
 ---

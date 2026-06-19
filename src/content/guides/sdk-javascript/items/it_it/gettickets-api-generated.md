@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | userId | string | No |  |
 | state | number | No |  |
@@ -10,19 +10,18 @@
 
 ## Risposta
 
-Restituisce: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTickets200Response.ts)
+Restituisce: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getTickets'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const userId: string = 'user_87b3';
-const state: number = 2;
+const tenantId: string = "acme-enterprises";
+const userId: string | undefined = "u_56321";
+const state: number | undefined = 1;
 const skip: number = 0;
 const limit: number = 50;
-
-const tickets: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);
+const response: GetTicketsResponse = await getTickets(tenantId, userId, state, skip, limit);
 [inline-code-end]
 
 ---

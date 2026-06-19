@@ -1,27 +1,27 @@
-Skupinske informacije o uporabnikih za tenant. Ob podanih userIds vrne prikazne informacije iz User / SSOUser.
-Uporablja ga pripomoček za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili prek dogodka prisotnosti.
-Brez konteksta strani: zasebnost se dosledno uveljavlja (zasebni profili so zamaskirani).
+---
+Masovni podatki o uporabnikih za najemnika. Glede na userIds vrne prikazne informacije iz User / SSOUser.
+Uporablja widget za komentarje, da obogati uporabnike, ki so se pravkar pojavili prek dogodka prisotnosti.
+Brez konteksta strani: zasebnost je enotno zagotavljana (zasebni profili so zamaskirani).
 
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| ids | string | Da |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## Odgovor
 
-Vrača: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Vrne: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUsersInfo Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // optional; if undefined default to comma
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo zahteva le tenantId in ids; izbirni parametri tukaj niso uporabni.
 [inline-code-end]
 
 ---

@@ -1,11 +1,10 @@
-Frühere Kommentatoren auf der Seite, die DERZEIT NICHT online sind. Nach displayName sortiert.
-Verwenden Sie dies nachdem Sie /users/online ausgeschöpft haben, um einen "Members"-Abschnitt darzustellen.
-Cursor-Pagination auf commenterName: der Server durchläuft den partiellen {tenantId, urlId, commenterName}
-Index ab afterName vorwärts mittels $gt, keine $skip-Kosten.
+Frühere Kommentierende auf der Seite, die derzeit NICHT online sind. Nach displayName sortiert.
+Verwenden Sie dies, nachdem Sie /users/online ausgeschöpft haben, um einen "Mitglieder"-Abschnitt darzustellen.
+Cursor-Paginierung auf commenterName: Der Server durchläuft den partiellen {tenantId, urlId, commenterName}-Index von afterName aus vorwärts über $gt, keine $skip-Kosten.
 
 ## Parameter
 
-| Name | Type | Required | Description |
+| Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
@@ -14,16 +13,20 @@ Index ab afterName vorwärts mittels $gt, keine $skip-Kosten.
 
 ## Antwort
 
-Gibt zurück: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+Gibt zurück: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getOfflineUsers Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
+
+---

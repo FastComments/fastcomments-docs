@@ -1,26 +1,24 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| fromName | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| fromName | string | Yes |  |
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_acme_42";
-  const id: string = "cmt_8f3b21";
-  const fromName: string = "Ava Thompson";
-  const inviteResult: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
-  console.log(inviteResult);
-})();
+const tenantId: string = 'bright-media-12';
+const id: string = 'user-8f4d2';
+const fromName: string = 'Sofia Park';
+const optionalNote: string | undefined = undefined;
+const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
 [inline-code-end]
 
 ---

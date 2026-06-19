@@ -1,30 +1,32 @@
-מגיבים בעבר בעמוד שאינם מקוונים כרגע. ממוינים לפי displayName.
-השתמש בזה לאחר שמיצית את /users/online כדי להציג מדור "חברים".
-Cursor pagination על commenterName: השרת מסרק את האינדקס החלקי {tenantId, urlId, commenterName} מהערך afterName והלאה באמצעות $gt — ללא עלות של $skip.
+מגיבים קודמים בדף שאינם מקוונים כרגע. מסודרים לפי displayName.
+השתמש בזה לאחר מיצוי /users/online כדי להציג מדור "חברים".
+Cursor pagination על commenterName: השרת עובר על האינדקס החלקי {tenantId, urlId, commenterName} החל מ-afterName קדימה באמצעות $gt, ללא עלות של $skip.
 
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | כן |  |
+| urlId | string | כן |  |
+| afterName | string | לא |  |
+| afterUserId | string | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+מחזיר: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

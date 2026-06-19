@@ -1,22 +1,22 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 
 ## 응답
 
-반환: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadge200Response.ts)
+반환: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'deleteUserBadge 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8b3f2c7a";
-const badgeIdOptional: string | undefined = Math.random() > 0.5 ? "badge_4f9a21" : undefined;
-const id: string = badgeIdOptional ?? "badge_backup_01";
-const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);
+const tenantId: string = 'acme-corp-42';
+const badgeId: string = 'badge_9f8b2c1d';
+const includeAudit: boolean | undefined = undefined; // 선택적 플래그 (deleteUserBadge에 필요하지 않음)
+const result: APIEmptySuccessResponse = await deleteUserBadge(tenantId, badgeId);
 [inline-code-end]
 
 ---

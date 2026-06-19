@@ -1,27 +1,27 @@
-Масовне информације о корисницима за tenant. За дате userIds, враћа информације за приказ из User / SSOUser.
-Користи се у видџету за коментаре да обогати кориснике који су се управо појавили путем presence event-а.
-Нема контекста странице: приватност се примењује једнако (приватни профили су маскирани).
+---
+Grupne informacije o korisnicima za tenant. Za navedene userIds, vraća prikazne informacije iz User / SSOUser.
+Koristi se u widgetu za komentare da obogati korisnike koji su se upravo pojavili putem događaja prisutnosti.
+Nema konteksta stranice: privatnost se provodi jednako (privatni profili su zamaskirani).
 
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Da |  |
+| ids | string | Da |  |
 
-## Респонс
+## Odgovor
 
-Враћа: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getUsersInfo Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // опционално; ако је undefined, подразумевано је зарез
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo only requires tenantId and ids; optional parameters are not applicable here.
 [inline-code-end]
 
 ---

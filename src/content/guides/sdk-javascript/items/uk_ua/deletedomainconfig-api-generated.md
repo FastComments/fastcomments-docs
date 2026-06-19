@@ -1,12 +1,19 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | domain | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteDomainConfig200Response.ts)
+Повертає: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteDomainConfigResponse.ts)
 
----
+## Приклад
+
+[inline-code-attrs-start title = 'Приклад deleteDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "org_5b2f9c3a";
+const domain: string = "comments.acme-corp.com";
+const result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+[inline-code-end]

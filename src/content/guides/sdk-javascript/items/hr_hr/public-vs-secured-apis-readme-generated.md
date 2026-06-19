@@ -1,8 +1,9 @@
-SDK pruža tri glavne klase API-ja:
+SDK pruža ove API klase:
 
-- **`DefaultApi`** - Zaštićene krajnje točke koje zahtijevaju vaš API ključ za autentifikaciju. Koristite ih za operacije na strani poslužitelja.
-- **`PublicApi`** - Javne krajnje točke kojima se može pristupiti bez API ključa. One se mogu pozivati izravno iz preglednika/mobilnih uređaja/itd.
-- **`HiddenApi`** - Interni/admin krajnje točke za napredne slučajeve upotrebe.
+- **`DefaultApi`** - Zaštićeni endpointi koji zahtijevaju vaš API ključ za autentikaciju. Koristite ih za operacije na strani poslužitelja.
+- **`PublicApi`** - Javni endpointi kojima se može pristupiti bez API ključa. Mogu se pozivati izravno iz preglednika/mobilnih uređaja/itd.
+- **`ModerationApi`** - Endpointi nadzorne ploče moderatora (moderacija komentara, zabrane, značke, faktor povjerenja, pretraživanje). Autentificiraju se putem moderatorove sesije; proslijedite parametar upita `sso` za moderatore autentificirane putem SSO.
+- **`HiddenApi`** - Interni/admin endpointi za napredne slučajeve upotrebe.
 
 ### Primjer: Korištenje Public API-ja (sigurno za preglednik)
 
@@ -32,5 +33,23 @@ const defaultApi = new DefaultApi(config);
 const response = await defaultApi.getComments({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
+});
+```
+
+### Primjer: Korištenje Moderation API-ja
+
+```typescript
+import { createFastCommentsSDK } from 'fastcomments-sdk/server';
+
+const sdk = createFastCommentsSDK({ /* basePath itd. */ });
+
+// Pozivi autentificirani moderatorom (sesijski kolačić, ili proslijedite `sso` za SSO moderatora).
+const comments = await sdk.moderationApi.getApiComments({
+  tenantId: 'your-tenant-id'
+});
+
+await sdk.moderationApi.postSetCommentSpamStatus({
+  commentId: 'comment-id',
+  spam: true
 });
 ```

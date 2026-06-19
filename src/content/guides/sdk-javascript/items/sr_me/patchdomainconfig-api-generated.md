@@ -1,14 +1,27 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| domainToUpdate | string | Da |  |
-| patchDomainConfigParams | PatchDomainConfigParams | Da |  |
+| tenantId | string | Да |  |
+| domainToUpdate | string | Да |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfig200Response.ts)
+Враћа: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchDomainConfigResponse.ts)
+
+## Пример
+
+[inline-code-attrs-start title = 'patchDomainConfig Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_8d9f3c4b";
+const domainToUpdate: string = "comments.newsroom.example.com";
+const patchDomainConfigParams: PatchDomainConfigParams = {
+  enabled: true,
+  enforceHttps: true, // опциони параметар укључен
+  allowedOrigins: ["https://newsroom.example.com"] // опциони параметар укључен
+};
+const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
+[inline-code-end]
 
 ---

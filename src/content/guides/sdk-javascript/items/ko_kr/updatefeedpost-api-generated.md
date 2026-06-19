@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -8,30 +9,38 @@
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'updateFeedPost 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_72f3b4c9";
-const id: string = "post_ba4f6e18-2d3c-4b7a-91f2-8c0e3a6b5d4f";
-
+const tenantId: string = 'acme-tenant-779';
+const id: string = 'post_5f1b9c3a';
+const asset: FeedPostMediaItemAsset = {
+  url: 'https://cdn.acme.com/images/cover.jpg',
+  type: 'image/jpeg',
+  width: 1200,
+  height: 800
+};
+const mediaItem: FeedPostMediaItem = {
+  id: 'media_12f',
+  caption: 'Event highlight',
+  assets: [asset]
+};
+const link: FeedPostLink = {
+  url: 'https://acme.com/events/2026',
+  title: 'Event details'
+};
 const feedPost: FeedPost = {
-  title: "June feature rollout",
-  body: "Announcing performance improvements and moderation updates available to all sites.",
-  authorName: "Platform Team",
-  mediaItems: [
-    {
-      type: "image",
-      caption: "Release banner",
-      asset: { url: "https://cdn.fastcomments.com/assets/june-banner.jpg", mimeType: "image/jpeg", width: 1200, height: 600 }
-    }
-  ],
-  links: [{ title: "Release notes", url: "https://docs.fastcomments.com/releases/june-2026" }]
-} as FeedPost;
-
-const result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);
+  title: 'June Product Launch',
+  content: '<p>Join us for the new product demo.</p>',
+  published: true,
+  media: [mediaItem],
+  links: [link],
+  authorId: 'user_93d'
+};
+const result: APIEmptyResponse = await updateFeedPost(tenantId, id, feedPost);
 [inline-code-end]
 
 ---

@@ -1,30 +1,31 @@
----
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantUserBody | CreateTenantUserBody | 예 |  |
 
 ## 응답
 
-반환: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+반환: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'createTenantUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f4a2b";
+const tenantId: string = 'tenant_7f4b2a';
+const digestFreq: DigestEmailFrequency = { interval: 'daily' };
+const agentApprovalFreq: ImportedAgentApprovalNotificationFrequency = { mode: 'immediate' };
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@example.com",
-  firstName: "Jane",
-  lastName: "Doe",
-  role: "commenter",
-  approved: true,
-  displayName: "Jane D." // 선택 사항: 친근한 이름 제공
+  email: 'sara.martin@acme.co',
+  name: 'Sara Martin',
+  role: 'moderator',
+  avatarUrl: 'https://cdn.acme.co/avatars/sara.jpg',
+  notifyByEmail: true,                     // 선택적 매개변수 예시
+  digestEmailFrequency: digestFreq,
+  importedAgentApprovalNotificationFrequency: agentApprovalFreq
 };
-const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
-console.log(result);
+const result: CreateTenantUserResponse = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]
 
 ---

@@ -1,28 +1,26 @@
----
-Сводная информация о пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения данных пользователей, которые только что появились через событие присутствия.
-Нет контекста страницы: конфиденциальность применяется единообразно (приватные профили маскируются).
+Информация о нескольких пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
+Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
+Нет контекста страницы: приватность применяется единообразно (закрытые профили маскируются).
 
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | ids | string | Да |  |
 
-## Response
+## Ответ
 
-Возвращает: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Возвращает: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // необязательный; если undefined, по умолчанию запятая
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo требует только tenantId и ids; необязательные параметры тут не применимы.
 [inline-code-end]
 
 ---

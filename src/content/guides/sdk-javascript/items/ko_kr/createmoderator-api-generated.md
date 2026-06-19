@@ -1,33 +1,26 @@
----
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createModeratorBody | CreateModeratorBody | 예 |  |
 
 ## 응답
 
-반환: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModerator200Response.ts)
+반환: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'createModerator 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b21';
+const tenantId: string = 'tenant_83f4b7a2';
 const createModeratorBody: CreateModeratorBody = {
-  moderator: {
-    name: 'Alex Rivera',
-    email: 'alex.rivera@fastcomments.io',
-    role: 'global_moderator',
-    enabled: true,
-  },
-  // 선택적 매개변수 예시:
-  notifyUser: true,
-  permissions: ['delete_comment', 'edit_comment', 'ban_user'],
-  customConfig: { dashboardTheme: 'dark' } as unknown as CustomConfigParameters
+  email: 'renee.alvarez@acme-corp.com',
+  fullName: 'Renee Alvarez',
+  roles: ['content_moderator'],
+  notify: true // 선택적 매개변수 예시
 };
-const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
+const result: CreateModeratorResponse = await createModerator(tenantId, createModeratorBody);
 [inline-code-end]
 
 ---

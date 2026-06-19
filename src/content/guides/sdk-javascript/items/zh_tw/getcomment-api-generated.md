@@ -1,24 +1,27 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 
 ## 回應
 
-回傳: [`GetComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComment200Response.ts)
+回傳: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6f1a2b';
-const commentId: string = 'cmt_4d9e8f';
-const includeReplies: boolean | undefined = true; // 可選參數範例（未傳遞給 getComment）
-const result: GetComment200Response = await getComment(tenantId, commentId);
-console.log('Fetched comment for tenant:', tenantId, 'comment id:', commentId);
-console.log('API response received:', result);
+const tenantId: string = 'acme-tenant-7f3b';
+const commentId: string = 'cmt_8a7f2d4b';
+const response: APIGetCommentResponse = await getComment(tenantId, commentId);
+const status: APIStatus | undefined = response.status;
+const comment: APIComment | undefined = response.comment;
+const badges: CommentUserBadgeInfo[] | undefined = comment?.user?.badges;
+const hashtags: CommentUserHashTagInfo[] | undefined = comment?.meta?.hashtags;
+const mentions: CommentUserMentionInfo[] | undefined = comment?.user?.mentions;
+const meta: APICommentBaseMeta | undefined = comment?.meta;
 [inline-code-end]
 
 ---

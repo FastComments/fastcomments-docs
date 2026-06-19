@@ -1,22 +1,24 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplate200Response.ts)
+Zwraca: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b2c';
-const templateId: string = 'welcome-email-2024';
-const includeDrafts: boolean | undefined = undefined;
-const emailTemplate: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);
+const tenantId: string = "acme-enterprises-1";
+const templateId: string = "welcome-onboard-v2";
+const result: GetEmailTemplateResponse = await getEmailTemplate(tenantId, templateId);
+const status: APIStatus | undefined = result.status;
+const template: CustomEmailTemplate | undefined = result.template;
+const subject: string | undefined = template?.subject
 [inline-code-end]
 
 ---

@@ -1,28 +1,21 @@
----
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| userId | string | Nee |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicket200Response.ts)
+Retourneert: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getTicket Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const ticketId: string = 'TCKT-20250615-42';
-const userId: string = 'user_84b2';
-
-const ticketWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);
-const ticketWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);
-
-console.log(ticketWithUser.id, ticketWithoutUser.id);
+const ticketResponse: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0042", "user_2481");
+const ticketResponseNoUser: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0043");
 [inline-code-end]
 
 ---

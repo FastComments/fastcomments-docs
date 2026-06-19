@@ -1,28 +1,24 @@
 ---
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tag | string | 예 |  |
-| tenantId | string | 아니요 |  |
-| deleteHashTagRequest | DeleteHashTagRequest | 아니요 |  |
+| tenantId | string | 아니오 |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | 아니오 |  |
 
-## Response
+## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'deleteHashTag 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "breaking-news";
-const tenantId: string = "tenant_72a1";
-const deleteHashTagRequest: DeleteHashTagRequest = {
-  reason: "consolidate-duplicates",
-  requestedBy: "moderator@dailypress.com",
-  forceDelete: true
-};
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
+const tag: string = "release-notes";
+const tenantId: string = "tenant_7b2f9c";
+const deleteHashTagRequestBody: DeleteHashTagRequestBody = { removedBy: "ops@acme-corp.com", force: true };
+const result: APIEmptyResponse = await deleteHashTag(tag, tenantId, deleteHashTagRequestBody);
 [inline-code-end]
 
 ---

@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -8,15 +7,15 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackages200Response.ts)
+Zwraca: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getTenantPackages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getTenantPackages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8421';
-const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, 25);
-const packagesWithoutSkip: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const tenantId: string = "acme-corp-9f3b";
+const packagesPage1: GetTenantPackagesResponse = await getTenantPackages(tenantId);
+const packagesPage2: GetTenantPackagesResponse = await getTenantPackages(tenantId, 10);
 [inline-code-end]
 
 ---

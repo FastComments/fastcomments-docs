@@ -1,43 +1,37 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createCommentParams | Array<CreateCommentParams> | 예 |  |
-| isLive | boolean | 아니요 |  |
-| doSpamCheck | boolean | 아니요 |  |
-| sendEmails | boolean | 아니요 |  |
-| populateNotifications | boolean | 아니요 |  |
+| isLive | boolean | 아니오 |  |
+| doSpamCheck | boolean | 아니오 |  |
+| sendEmails | boolean | 아니오 |  |
+| populateNotifications | boolean | 아니오 |  |
 
 ## 응답
 
-반환: `Array<SaveComment200Response`
+반환: `Array<SaveCommentsBulkResponse`
 
 ## 예제
 
 [inline-code-attrs-start title = 'saveCommentsBulk 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_42a1b7";
-const mentions: CommentUserMentionInfo[] = [{ userId: "user_2b9", displayName: "Alex Chen" }];
-const hashtags: CommentUserHashTagInfo[] = [{ tag: "performance" }];
-const createCommentParams: CreateCommentParams[] = [
+const tenantId: string = 'acme_corp_tenant_12';
+const createCommentParams: Array<CreateCommentParams> = [
   {
-    content: "Thanks for the detailed article — the alternative approach worked for me.",
-    authorId: "user_8f3c2",
-    authorName: "Maya Patel",
-    authorEmail: "maya.patel@example.com",
-    url: "/articles/optimizing-ts-performance",
-    createdAt: new Date().toISOString(),
-    mentions,
-    hashtags
+    content: 'Really helpful breakdown of the migration steps.',
+    threadId: 'thread_2026_08',
+    authorName: 'Maya Singh',
+    authorEmail: 'maya.singh@startup.io',
+    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],
+    hashtags: [{ tag: 'migration' }],
+    createdAt: '2026-06-19T12:00:00Z'
   }
 ];
 const isLive: boolean = true;
-const doSpamCheck: boolean = false;
-const sendEmails: boolean = true;
+const doSpamCheck: boolean = true;
+const sendEmails: boolean = false;
 const populateNotifications: boolean = true;
-const result: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
 [inline-code-end]
-
----

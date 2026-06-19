@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -8,24 +7,31 @@
 
 ## レスポンス
 
-返却: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplate200Response.ts)
+戻り値: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'createEmailTemplate の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4f2b1c9e";
-const createEmailTemplateBody: CreateEmailTemplateBody = {
-  name: "New Comment Notification",
-  subject: "Someone replied to your discussion",
-  fromName: "Community Team",
-  fromAddress: "no-reply@community.example.com",
-  htmlBody: "<p>\{{comment.author}} replied: \{{comment.text}}</p>",
-  plaintextBody: "\{{comment.author}} replied: \{{comment.text}}",
-  previewText: "A new reply on a discussion you follow",
-  isDefault: false // 任意パラメータの使用例を示すオプションのフラグ
+const tenantId: string = "tenant_prod_7f9b2a";
+
+const customTemplate: CustomEmailTemplate = {
+  id: "custtmpl_01",
+  name: "MinimalTransactional",
+  html: "<div style=\"font-family:Arial,Helvetica,sans-serif\">\{{body}}</div>"
 };
-const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
+
+const createEmailTemplateBody: CreateEmailTemplateBody = {
+  name: "User Welcome - Web",
+  subject: "Welcome to Acme — Get Started",
+  html: "<p>Hi \{{firstName}}, welcome to Acme!</p>",
+  previewText: "Start exploring your new Acme account",
+  enabled: true,
+  replyTo: "support@acme.com",
+  customTemplate // optional parameter demonstrated
+};
+
+const result: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, createEmailTemplateBody);
 [inline-code-end]
 
 ---

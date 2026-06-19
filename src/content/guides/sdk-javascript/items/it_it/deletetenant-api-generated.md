@@ -1,24 +1,24 @@
+---
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
 | sure | string | No |  |
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di deleteTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_742b9c';
-const flagId: string = 'flag_1a2b3c';
-const resultWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, flagId);
-const sureConfirmation: string = 'confirmed';
-const resultWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, flagId, sureConfirmation);
+const tenantId: string = 'tenant_5f2b9c8a';
+const id: string = 'site_9d4f2a1b';
+const confirmation: string = 'CONFIRM_DELETE';
+const result: APIEmptyResponse = await deleteTenant(tenantId, id, confirmation);
 [inline-code-end]
 
 ---

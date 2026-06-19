@@ -1,6 +1,7 @@
-Список страниц для арендатора. Используется настольным клиентом FChat для заполнения списка комнат.
-Требует, чтобы `enableFChat` был true в итоговой пользовательской конфигурации для каждой страницы.
-Страницы, требующие SSO, фильтруются по доступу групп запрашивающего пользователя.
+---
+Перечисляет страницы для тенанта. Используется настольным клиентом FChat для заполнения его списка комнат.
+Требуется, чтобы в вычисленной пользовательской конфигурации каждой страницы `enableFChat` было true.
+Страницы, требующие SSO, фильтруются с учётом доступа групп запрашивающего пользователя.
 
 ## Параметры
 
@@ -15,26 +16,18 @@
 
 ## Ответ
 
-Возвращает: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Возвращает: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

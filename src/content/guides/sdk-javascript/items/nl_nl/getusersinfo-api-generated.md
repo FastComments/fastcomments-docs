@@ -1,27 +1,26 @@
-Bulk gebruikersinformatie voor een tenant. Gegeven userIds, retourneer weergave-informatie van User / SSOUser.
-Wordt gebruikt door de commentaarwidget om gebruikers te verrijken die zojuist verschenen via een presence-evenement.
+Bulkgebruikersinformatie voor een tenant. Gegeven userIds, retourneer weergave-informatie van User / SSOUser.
+Wordt gebruikt door de commentaar-widget om gebruikers te verrijken die net zijn verschenen via een aanwezigheidsevenement.
 Geen paginacontext: privacy wordt uniform gehandhaafd (privéprofielen worden gemaskeerd).
 
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | ids | string | Ja |  |
 
 ## Respons
 
-Retourneert: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Retourneert: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // optioneel; als undefined standaard komma gebruiken
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo vereist alleen tenantId en ids; optionele parameters zijn hier niet van toepassing.
 [inline-code-end]
 
 ---

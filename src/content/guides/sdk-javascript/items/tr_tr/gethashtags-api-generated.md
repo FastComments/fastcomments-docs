@@ -1,22 +1,22 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tip | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | page | number | Hayır |  |
 
 ## Yanıt
 
-Dönüş: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTags200Response.ts)
+Döndürür: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getHashTags Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f4b2c3a';
-const tagsFirstPage: GetHashTags200Response = await getHashTags(tenantId);
-const tagsSecondPage: GetHashTags200Response = await getHashTags(tenantId, 2);
-console.log(tagsFirstPage, tagsSecondPage);
+const tenantId: string = "acme-corp-123";
+const pageNumber: number = 2;
+const responseWithPage: GetHashTagsResponse = await getHashTags(tenantId, pageNumber);
+const responseFirstPage: GetHashTagsResponse = await getHashTags(tenantId);
 [inline-code-end]
 
 ---

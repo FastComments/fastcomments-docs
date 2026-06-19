@@ -2,30 +2,27 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | はい |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | Yes |  |
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateEmailTemplate の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-123';
-const id: string = 'template-789';
-const locale: string | undefined = 'en-US';
+const tenantId: string = "tenant_acme_82b1f";
+const id: string = "emailTemplate_9f3b2c";
 const updateEmailTemplateBody: UpdateEmailTemplateBody = {
-  subject: 'Welcome to Acme — Get started',
-  bodyHtml: '<p>Hi \{{firstName}}, welcome to Acme. Start by visiting your dashboard.</p>',
-  fromName: 'Acme Support',
-  fromEmail: 'support@acme.com',
-  enabled: true,
-  ...(locale ? { locale } : {})
+  name: "Comment Notification",
+  subject: "New comment on your article",
+  html: "<p>Hello,</p><p>You have a new comment on your article. <a href=\"https://example.com\">View</a></p>",
+  enabled: true
 };
-const result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
+const result: APIEmptyResponse = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
 [inline-code-end]
 
 ---

@@ -1,27 +1,34 @@
+---
 ## パラメータ
 
-| 名称 | 型 | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| createQuestionResultBody | CreateQuestionResultBody | はい |  |
+| tenantId | string | Yes |  |
+| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
 
 ## レスポンス
 
-戻り値: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
+戻り値: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'createQuestionResult の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-512';
-const meta: MetaItem[] = [{ key: 'source', value: 'article' }];
-const body: CreateQuestionResultBody = {
-  questionId: 'q-94',
-  userId: 'user_332',
-  answers: [{ optionId: 'opt_a', score: 1 }],
-  meta, // 任意のメタデータ
-} as CreateQuestionResultBody;
-const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);
+(async () => {
+  const tenantId: string = "tenant_5821b2";
+  const createQuestionResultBody: CreateQuestionResultBody = {
+    questionId: "q_9f3a7",
+    userId: "user_77",
+    score: 4.5,
+    feedback: "Answer was concise and addressed the core issue",
+    // オプションのパラメータの例
+    sessionId: "sess_a12f",
+    meta: [{ key: "device", value: "iPhone 13 Pro" }],
+    status: { code: 201, message: "Created" }
+  };
+  const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

@@ -1,22 +1,23 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'deleteTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const packageId: string = 'pkg-2026-06-15-001';
-const dryRun: boolean | undefined = undefined; // 선택적 플래그 예시 (함수에서 필수 아님)
-const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
+const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+const packageId: string = 'pkg_prod_delete_2026-06-19';
+const onComplete: ((status?: APIStatus) => void) | undefined = undefined;
+const response: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
+onComplete?.();
 [inline-code-end]
 
 ---

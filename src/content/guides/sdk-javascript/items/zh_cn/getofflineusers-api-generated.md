@@ -1,6 +1,7 @@
-页面上之前评论但当前不在线的用户。按 displayName 排序。
-在耗尽 /users/online 后使用此方法以渲染“成员”部分。
-对 commenterName 进行游标分页：服务器沿部分 {tenantId, urlId, commenterName} 索引，从 afterName 向前通过 $gt 遍历，无需 $skip 成本。
+页面上曾评论但当前不在线的用户。按 displayName 排序。
+在用尽 /users/online 之后使用此项来呈现 "成员" 部分。
+基于 commenterName 的游标分页：服务器遍历部分 {tenantId, urlId, commenterName}
+从 afterName 之后通过 $gt 向前索引，无 $skip 成本。
 
 ## 参数
 
@@ -13,16 +14,20 @@
 
 ## 响应
 
-返回: [`GetOfflineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsers200Response.ts)
+返回: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getOfflineUsers 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_001';
-const urlId: string = 'article-2026-06-15-how-ai-impacts';
-const afterName: string = 'michael.smith';
-const afterUserId: string = 'user_72b9';
+const tenantId: string = 'tenant-9f4b2a6c';
+const urlId: string = 'articles/product-launch-2025';
 
-const response: GetOfflineUsers200Response = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+
+const afterName: string = 'samantha.r';
+const afterUserId: string = 'user_7d3a21f9';
+const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
+
+---

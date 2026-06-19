@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
@@ -8,19 +9,22 @@
 
 ## 응답
 
-반환: [`DeleteV2PageReact200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV2PageReact200Response.ts)
+반환: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'deleteV2PageReact 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_79021";
-const urlId: string = "blog/my-first-post";
-const id: string = "reaction_9f8b7c";
-let includeHistory: boolean | undefined = undefined; // 선택적 플래그, 일부 호출에서 사용됨
+interface APIStatus { code: number; message?: string }
+interface CreateV1PageReact { id: string; pageUrl: string; userId?: string; status?: APIStatus; deleted?: boolean }
 
-const result: DeleteV2PageReact200Response = await deleteV2PageReact(tenantId, urlId, id);
-console.log(result);
+const tenantId: string = 'tenant_prod_8621'
+const urlId: string = 'page_home_001'
+const id: string = 'react_5f9b1c3a'
+
+const result: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, id)
+const statusCode: number | undefined = result.status?.code
+console.log('Deleted reaction id:', result.id, 'statusCode:', statusCode)
 [inline-code-end]
 
 ---

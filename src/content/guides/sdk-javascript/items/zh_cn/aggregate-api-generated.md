@@ -1,8 +1,9 @@
-通过对文档进行分组（如果提供了 groupBy）并应用多个操作来聚合文档。支持不同的操作（例如 sum、countDistinct、avg 等）。
+---
+通过对文档进行分组（如果提供了 groupBy）并应用多种运算来聚合文档。支持不同的运算（例如 sum、countDistinct、avg 等）。
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | aggregationRequest | AggregationRequest | 是 |  |
@@ -11,23 +12,26 @@
 
 ## 响应
 
-返回: [`Aggregate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/Aggregate200Response.ts)
+返回：[`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'aggregate 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_78a9';
-const parentTenantId: string = 'parent_tenant_01';
-const includeStats: boolean = true;
+const tenantId: string = "tenant_72b3";
+const parentTenantId: string = "parent_acme_corp";
 const aggregationRequest: AggregationRequest = {
-  operation: { type: 'COUNT' },
-  groupBy: ['pageUrl'],
-  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },
-  sort: [{ field: 'count', direction: 'DESC' }],
+  groupBy: ["postId"],
+  predicates: [
+    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+  ],
+  operations: [
+    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+  ],
+  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
   limit: 25
 };
-const result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
+const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
 [inline-code-end]
 
 ---

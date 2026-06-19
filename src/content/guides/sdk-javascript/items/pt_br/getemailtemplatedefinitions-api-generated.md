@@ -1,23 +1,21 @@
+---
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|------------|-------------|
 | tenantId | string | Sim |  |
 
 ## Resposta
 
-Retorna: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+Retorna: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_001';
-  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // parâmetro opcional demonstrado
-  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
-  console.log(templates);
-})();
+const tenantId: string = 'tenant_5f2c9b1a';
+const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
+// Parâmetros opcionais (se suportados) podem ser passados como segundo argumento, por exemplo getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
 [inline-code-end]
 
 ---

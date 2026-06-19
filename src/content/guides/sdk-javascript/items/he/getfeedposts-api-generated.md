@@ -4,27 +4,26 @@ afterId
 
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| afterId | string | No |  |
-| limit | number | No |  |
-| tags | Array<string> | No |  |
+| tenantId | string | כן |  |
+| afterId | string | לא |  |
+| limit | number | לא |  |
+| tags | Array<string> | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPosts200Response.ts)
+מחזיר: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getFeedPosts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_74321";
-const afterId: string = "post_20250610_9b2f3";
-const limit: number = 25;
-const tags: Array<string> = ["product-updates", "announcements"];
-
-const response: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit, tags);
+const tenantId: string = 'acme-tenant-01';
+const afterId: string | undefined = 'post_20250601_89';
+const limit: number = 20;
+const tags: string[] = ['product-update', 'engineering'];
+const result: GetFeedPostsResponse = await getFeedPosts(tenantId, afterId, limit, tags);
 [inline-code-end]
 
 ---

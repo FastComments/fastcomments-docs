@@ -1,7 +1,8 @@
+---
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Name | Type | Obligatoire | Description |
+|------|------|------------|-------------|
 | tenantId | string | Oui |  |
 | postId | string | Oui |  |
 | reactBodyParams | ReactBodyParams | Oui |  |
@@ -11,27 +12,24 @@
 
 ## Réponse
 
-Retourne: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublic200Response.ts)
+Renvoie : [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-001';
-const postId: string = 'feedpost_78901';
-const reactBodyParams: ReactBodyParams = { reaction: 'like', emoji: '👍' };
+const tenantId: string = 'tenant_8f3b2c9a';
+const postId: string = 'post_97a4d2c1';
+const reactBodyParams: ReactBodyParams = {
+  reaction: 'heart',
+  userId: 'user_42',
+  timestamp: new Date().toISOString(),
+  context: { device: 'mobile', appVersion: '5.3.1' }
+};
 const isUndo: boolean = false;
-const broadcastId: string = 'broadcast_2026_06_15_01';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signature';
-
-const response: ReactFeedPostPublic200Response = await reactFeedPostPublic(
-  tenantId,
-  postId,
-  reactBodyParams,
-  isUndo,
-  broadcastId,
-  sso
-);
+const broadcastId: string = 'broadcast_5f1b8';
+const sso: string = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJ1c2VyXzQyIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+const result: ReactFeedPostResponse = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso);
 [inline-code-end]
 
 ---

@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -10,16 +9,16 @@
 
 ## Одговор
 
-Враћа: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagComment200Response.ts)
+Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'flagComment Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4f21c9a";
-const commentId: string = "cmt_7a12b3e9";
-const userId: string = "user_82bd123";
-const result: FlagComment200Response = await flagComment(tenantId, commentId, userId);
+const tenantId: string = 'tenant_acme-corp_01';
+const commentId: string = 'cmt_5f8d7a2b3c4e';
+const anonUserId: string = 'anon_9c3a1f0e';
+const response: FlagCommentResponse = await flagComment(tenantId, commentId, undefined, anonUserId);
 [inline-code-end]
 
 ---

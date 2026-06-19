@@ -7,18 +7,16 @@
 | locale | string | Nej |  |
 | useFullTranslationIds | boolean | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`GetTranslations200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslations200Response.ts)
+Returnerer: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getTranslations Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const namespaceName: string = 'site-ui';
-const componentName: string = 'comment-widget';
-const locale: string = 'fr-FR';
-const useFullTranslationIds: boolean = true;
-const translationsWithLocale: GetTranslations200Response = await getTranslations(namespaceName, componentName, locale, useFullTranslationIds);
-const translationsDefault: GetTranslations200Response = await getTranslations(namespaceName, componentName);
+const translationsFull: GetTranslationsResponse = await getTranslations("site-comments", "comment-form", "fr-FR", true);
+const translationsDefault: GetTranslationsResponse = await getTranslations("admin-dashboard", "notification-center");
 [inline-code-end]
+
+---

@@ -4,7 +4,7 @@ urlId
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | urlId | string | Так |  |
@@ -37,33 +37,43 @@ urlId
 
 ## Відповідь
 
-Повертає: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublic200Response.ts)
+Повертає: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-news';
-const urlId: string = '/articles/2026/fastcomments-update';
-const page: number = 1;
-const skip: number = 0;
-const limit: number = 25;
-const countChildren: boolean = true;
-const includeConfig: boolean = true;
-const result: GetCommentsPublic200Response = await getCommentsPublic(
-  tenantId,
-  urlId,
-  page,
-  undefined,
-  undefined,
-  skip,
-  undefined,
-  limit,
-  undefined,
-  countChildren,
-  undefined,
-  includeConfig
-);
+(async () => {
+  const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+    'news-tenant-42',
+    'article-2026-06-19-abc123',
+    1,
+    undefined,
+    'sso_eyJhbGciOiJIUzI1Ni',
+    0,
+    0,
+    25,
+    5,
+    true,
+    undefined,
+    true,
+    false,
+    true,
+    'en-US',
+    'reactions,moderation',
+    false,
+    true,
+    true,
+    3,
+    false,
+    undefined,
+    'climate change',
+    ['environment', 'policy'],
+    'user-789',
+    undefined,
+    undefined,
+    undefined
+  );
+  console.log(response);
+})();
 [inline-code-end]
-
----

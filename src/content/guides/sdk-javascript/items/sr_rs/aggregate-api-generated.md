@@ -1,4 +1,4 @@
-Агрегира документе груписањем (ако је groupBy наведен) и примењује више операција. Подржане су различите операције (нпр. sum, countDistinct, avg итд.).
+Агегира документа по груписању (ако је обезбеђено groupBy) и примени више операција. Подржане су различите операције (нпр. sum, countDistinct, avg итд.).
 
 ## Параметри
 
@@ -11,23 +11,26 @@
 
 ## Одговор
 
-Враћа: [`Aggregate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/Aggregate200Response.ts)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'aggregate пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_78a9';
-const parentTenantId: string = 'parent_tenant_01';
-const includeStats: boolean = true;
+const tenantId: string = "tenant_72b3";
+const parentTenantId: string = "parent_acme_corp";
 const aggregationRequest: AggregationRequest = {
-  operation: { type: 'COUNT' },
-  groupBy: ['pageUrl'],
-  predicate: { field: 'status', operator: 'EQUALS', value: 'approved' },
-  sort: [{ field: 'count', direction: 'DESC' }],
+  groupBy: ["postId"],
+  predicates: [
+    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+  ],
+  operations: [
+    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+  ],
+  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
   limit: 25
 };
-const result: Aggregate200Response = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
+const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
 [inline-code-end]
 
 ---

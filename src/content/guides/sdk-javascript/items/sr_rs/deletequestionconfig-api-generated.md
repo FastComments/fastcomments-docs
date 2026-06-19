@@ -1,21 +1,23 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-47a9';
-const id: string = 'qcfg_20260615_001';
-const result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);
+const tenantId: string = 'tenant_4f2b3c';
+const id: string = 'qcfg_9a8b7c';
+const metadataNote: string | undefined = undefined; // опционални метаподаци (нису обавезни за функцију)
+const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);
+metadataNote;
 [inline-code-end]
 
 ---

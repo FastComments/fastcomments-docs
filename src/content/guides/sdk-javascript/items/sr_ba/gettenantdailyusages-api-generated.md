@@ -1,24 +1,32 @@
----
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| yearNumber | number | Не |  |
-| monthNumber | number | Не |  |
-| dayNumber | number | Не |  |
-| skip | number | Не |  |
+| tenantId | string | Yes |  |
+| yearNumber | number | No |  |
+| monthNumber | number | No |  |
+| dayNumber | number | No |  |
+| skip | number | No |  |
 
 ## Одговор
 
-Враћа: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsages200Response.ts)
+Враћа: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7a3c2e';
-const dailyUsages: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, 2026, 6, undefined, 0);
+async function run(): Promise<void> {
+  const tenantId: string = "b4f3a9c2-8d1e-4f3b-9c6e-2a7f4d5c1e0b";
+  const yearNumber: number = 2026;
+  const monthNumber: number = 6;
+  const dayNumber: number = 19;
+  const skip: number = 0;
+  const fullResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
+  const basicResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId);
+  console.log(fullResponse, basicResponse);
+}
+run();
 [inline-code-end]
 
 ---

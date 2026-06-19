@@ -1,42 +1,39 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createCommentParams | Array<CreateCommentParams> | Da |  |
-| isLive | boolean | Ne |  |
-| doSpamCheck | boolean | Ne |  |
-| sendEmails | boolean | Ne |  |
-| populateNotifications | boolean | Ne |  |
+| tenantId | string | Да |  |
+| createCommentParams | Array<CreateCommentParams> | Да |  |
+| isLive | boolean | Не |  |
+| doSpamCheck | boolean | Не |  |
+| sendEmails | boolean | Не |  |
+| populateNotifications | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `Array<SaveComment200Response`
+Враћа: `Array<SaveCommentsBulkResponse`
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer saveCommentsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveCommentsBulk Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_42a1b7";
-const mentions: CommentUserMentionInfo[] = [{ userId: "user_2b9", displayName: "Alex Chen" }];
-const hashtags: CommentUserHashTagInfo[] = [{ tag: "performance" }];
-const createCommentParams: CreateCommentParams[] = [
+const tenantId: string = 'acme_corp_tenant_12';
+const createCommentParams: Array<CreateCommentParams> = [
   {
-    content: "Thanks for the detailed article — the alternative approach worked for me.",
-    authorId: "user_8f3c2",
-    authorName: "Maya Patel",
-    authorEmail: "maya.patel@example.com",
-    url: "/articles/optimizing-ts-performance",
-    createdAt: new Date().toISOString(),
-    mentions,
-    hashtags
+    content: 'Really helpful breakdown of the migration steps.',
+    threadId: 'thread_2026_08',
+    authorName: 'Maya Singh',
+    authorEmail: 'maya.singh@startup.io',
+    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],
+    hashtags: [{ tag: 'migration' }],
+    createdAt: '2026-06-19T12:00:00Z'
   }
 ];
 const isLive: boolean = true;
-const doSpamCheck: boolean = false;
-const sendEmails: boolean = true;
+const doSpamCheck: boolean = true;
+const sendEmails: boolean = false;
 const populateNotifications: boolean = true;
-const result: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
 [inline-code-end]
 
 ---

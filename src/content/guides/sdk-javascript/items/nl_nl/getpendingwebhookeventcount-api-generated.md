@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Nee |  |
@@ -10,29 +10,35 @@
 | domain | string | Nee |  |
 | attemptCountGT | number | Nee |  |
 
-## Respons
+## Response
 
-Geeft terug: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCount200Response.ts)
+Retourneert: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3b';
-const commentId: string = 'cmt_1a2b3c';
-const eventType: string = 'comment.created';
-const domain: string = 'news-site.com';
-const attemptCountGT: number = 2;
+(async () => {
+  const tenantId: string = 'd5c7e8b4-3a1f-4b2e-9f6c-12ab34cd56ef';
+  const commentId: string = 'cmt_000842';
+  const externalId: string = 'post-77f4';
+  const eventType: string = 'comment.updated';
+  const typeParam: string = 'delivery';
+  const domain: string = 'myblog.example.net';
+  const attemptCountGT: number = 2;
 
-const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
-  tenantId,
-  commentId,
-  undefined, // externalId omitted
-  eventType,
-  undefined, // type omitted
-  domain,
-  attemptCountGT
-);
+  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
+    tenantId,
+    commentId,
+    externalId,
+    eventType,
+    typeParam,
+    domain,
+    attemptCountGT
+  );
+
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | notificationId | string | Sim |  |
 | newStatus | UpdateUserNotificationStatusNewStatusEnum | Sim |  |
@@ -9,17 +9,17 @@
 
 ## Resposta
 
-Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatus200Response.ts)
+Retorna: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatusResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de updateUserNotificationStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2a8b9c';
-const notificationId: string = 'notif_987654321';
+const tenantId: string = 'tenant-8d3f2b7c';
+const notificationId: string = 'notification-587a2b9f';
 const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Read;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload.signature';
-const result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
+const sso: string = 'sso-token-1a2b3c4d5e6f';
+const result: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
 [inline-code-end]
 
 ---

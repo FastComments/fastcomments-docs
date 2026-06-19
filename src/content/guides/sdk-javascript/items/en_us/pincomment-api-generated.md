@@ -9,17 +9,17 @@
 
 ## Response
 
-Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PinComment200Response.ts)
+Returns: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'pinComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-72";
-const commentId: string = "cmt_8f3a2b4c9d";
-const broadcastId: string = "live_2026-06-15_21z";
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload.signature";
+const tenantId: string = 'tenant_82b1f9';
+const commentId: string = 'cmt_9f8e7d6a';
+const broadcastId: string = 'live_brdcst_2026_06_19';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';
 
-const responseNoSSO: PinComment200Response = await pinComment(tenantId, commentId, broadcastId);
-const responseWithSSO: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, ssoToken);
+const responseWithoutSSO: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId);
+const responseWithSSO: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId, sso);
 [inline-code-end]

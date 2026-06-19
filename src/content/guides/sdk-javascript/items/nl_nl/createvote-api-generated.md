@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
@@ -8,21 +8,19 @@
 | userId | string | Nee |  |
 | anonUserId | string | Nee |  |
 
-## Antwoord
+## Response
 
-Geeft terug: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteComment200Response.ts)
+Geeft terug: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'createVote Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-001';
-const commentId: string = 'cmt_8f3b2a9d';
-const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Up;
-const userId: string = 'user_5021';
-const anonUserId: string = 'anon_7a9c';
-
-const voteResponse: VoteComment200Response = await createVote(tenantId, commentId, direction, userId, anonUserId);
+const tenantId: string = 'tenant_82a1c4b7';
+const commentId: string = 'cmt_5f4d3a2b1c';
+const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;
+const anonUserId: string = 'anon_9f8e7d6c';
+const voteResponse: VoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);
 [inline-code-end]
 
 ---

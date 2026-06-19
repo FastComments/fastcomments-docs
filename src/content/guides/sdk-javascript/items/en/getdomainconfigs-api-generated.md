@@ -6,16 +6,20 @@
 
 ## Response
 
-Returns: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigs200Response.ts)
+Returns: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigsResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getDomainConfigs Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async function run(): Promise<void> {
-  const tenantId: string = 'd4f8c9e0-3b1a-4f2a-8c9d-1e2f3a4b5c6d';
-  const options: { includeInactive?: boolean } = { includeInactive: true };
-  const result: GetDomainConfigs200Response = await getDomainConfigs(tenantId, options);
-  console.log(result);
-})();
+const tenantId: string = "tenant_9b7e4f3c";
+const domainConfigs: GetDomainConfigsResponse = await getDomainConfigs(tenantId);
+
+async function fetchDomainConfigs(tenant: string, useCache?: boolean): Promise<GetDomainConfigsResponse> {
+  if (useCache) return domainConfigs;
+  const fresh: GetDomainConfigsResponse = await getDomainConfigs(tenant);
+  return fresh;
+}
+
+const freshConfigs: GetDomainConfigsResponse = await fetchDomainConfigs(tenantId, false);
 [inline-code-end]

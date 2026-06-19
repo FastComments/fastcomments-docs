@@ -1,23 +1,21 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
 
 ## レスポンス
 
-返却: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenant200Response.ts)
+戻り値: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getTenant の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc_tenant_6b3e2a';
-const id: string = 'site_42f1';
-const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
-const tenant: APITenant | undefined = tenantResponse.tenant;
-const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
+const tenantId: string = 'acme-corp';
+const id: string = 'tenant-987654321';
+const options: { includeBilling?: boolean } = { includeBilling: true };
+const response: GetTenantResponse = await getTenant(tenantId, id);
+const billingInfo: BillingInfo | undefined = undefined
 [inline-code-end]
-
----

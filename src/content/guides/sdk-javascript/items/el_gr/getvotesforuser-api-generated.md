@@ -7,19 +7,19 @@
 | userId | string | Όχι |  |
 | anonUserId | string | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesForUser200Response.ts)
+Επιστρέφει: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesForUserResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getVotesForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b8f7c6d';
-const urlId: string = 'articles/product-update-2026';
-const userId: string = 'user_c12345';
-const anonUserId: string = 'anon_7f4e2a';
-const votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);
-[inline-code-end]
+const tenantId: string = "northwind-io";
+const urlId: string = "blog/2025/06/typescript-updates";
+const userId: string = "u_72f9b1c4";
+const anonUserId: string = "anon_e4d2a9";
 
----
+const votesForRegistered: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, userId);
+const votesForAnonymous: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, undefined, anonUserId);
+[inline-code-end]

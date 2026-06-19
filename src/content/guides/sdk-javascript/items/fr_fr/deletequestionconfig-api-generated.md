@@ -1,21 +1,23 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
 
 ## Réponse
 
-Retourne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-47a9';
-const id: string = 'qcfg_20260615_001';
-const result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);
+const tenantId: string = 'tenant_4f2b3c';
+const id: string = 'qcfg_9a8b7c';
+const metadataNote: string | undefined = undefined; // métadonnées optionnelles (non requises par la fonction)
+const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);
+metadataNote;
 [inline-code-end]
 
 ---

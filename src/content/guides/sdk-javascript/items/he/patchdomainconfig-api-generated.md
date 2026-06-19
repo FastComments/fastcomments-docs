@@ -1,14 +1,27 @@
----
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| domainToUpdate | string | כן |  |
-| patchDomainConfigParams | PatchDomainConfigParams | כן |  |
+| tenantId | string | Yes |  |
+| domainToUpdate | string | Yes |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
 
 ## תגובה
 
-מחזיר: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfig200Response.ts)
+מחזיר: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchDomainConfigResponse.ts)
+
+## דוגמה
+
+[inline-code-attrs-start title = 'דוגמת patchDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_8d9f3c4b";
+const domainToUpdate: string = "comments.newsroom.example.com";
+const patchDomainConfigParams: PatchDomainConfigParams = {
+  enabled: true,
+  enforceHttps: true, // פרמטר אופציונלי כלול
+  allowedOrigins: ["https://newsroom.example.com"] // פרמטר אופציונלי כלול
+};
+const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
+[inline-code-end]
 
 ---

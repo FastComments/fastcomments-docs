@@ -1,23 +1,22 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | largeInternalURLSanitized | string | Да |  |
 
 ## Ответ
 
-Возвращает: [`GetGifLarge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLarge200Response.ts)
+Возвращает: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b7c";
-const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/07d3f6_large.gif";
-const preferWebP: boolean | undefined = true; // необязательное предпочтение
-const urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(".gif", ".webp") : largeInternalURLSanitized;
-const response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);
+const tenantId: string = 'acme-corp-42';
+const largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';
+const correlationId?: string = 'req-20260619-01';
+const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

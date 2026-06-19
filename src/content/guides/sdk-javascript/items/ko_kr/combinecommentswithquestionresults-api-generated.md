@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | questionId | string | 아니오 |  |
@@ -14,24 +14,23 @@
 
 ## 응답
 
-반환: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineCommentsWithQuestionResults200Response.ts)
+반환: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineQuestionResultsWithCommentsResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_12345';
-const questionId: string = 'q_98765';
-const questionIds: string[] = ['q_98765', 'q_12345'];
-const urlId: string = 'url_abc123';
+const tenantId: string = 'tenant_7c9f4b3a';
+const questionIds: string[] = ['q-4f8b2a1c', 'q-9d3e7b0f'];
+const urlId: string = 'url_93b2c1a7';
 const startDate: Date = new Date('2026-01-01T00:00:00Z');
 const forceRecalculate: boolean = true;
-const minValue: number = 0;
-const maxValue: number = 5;
-const limit: number = 50;
-const result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults(
+const minValue: number = 0.2;
+const maxValue: number = 0.95;
+const limit: number = 100;
+
+const combinedResult: CombineQuestionResultsWithCommentsResponse = await combineCommentsWithQuestionResults({
   tenantId,
-  questionId,
   questionIds,
   urlId,
   startDate,
@@ -39,7 +38,7 @@ const result: CombineCommentsWithQuestionResults200Response = await combineComme
   minValue,
   maxValue,
   limit
-);
+});
 [inline-code-end]
 
 ---

@@ -1,33 +1,35 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Oui |  |
 
 ## Réponse
 
-Renvoie: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfig200Response.ts)
+Renvoie : [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f3b1c2a";
-
-const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Product feedback",
-  key: "product_quality",
-  description: "Short survey question shown after posting a comment",
-  required: true,
-  renderingType: "singleChoice",
-  customOptions: [
-    { label: "Excellent", value: "5" },
-    { label: "Good", value: "4" },
-    { label: "Fair", value: "3" }
-  ] as QuestionConfigCustomOptionsInner[],
-  notifyModerators: false // paramètre optionnel démontré
+const tenantId: string = "org-7b3d1e9f";
+const customOption: QuestionConfigCustomOptionsInner = {
+  key: "priority",
+  label: "Priority",
+  values: ["low", "medium", "high"],
+  defaultValue: "medium"
 };
-
-const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
+const createQuestionConfigBody: CreateQuestionConfigBody = {
+  name: "Customer Support Questions",
+  description: "Configuration for support-related question flows",
+  enabled: true,
+  moderation: { required: true, level: "manual" },
+  questionLimitPerUser: 5,
+  customOptions: [customOption],
+  allowAnonymous: false
+};
+const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
+
+---

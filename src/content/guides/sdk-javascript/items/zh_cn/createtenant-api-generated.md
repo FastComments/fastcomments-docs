@@ -7,20 +7,21 @@
 
 ## 响应
 
-返回: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenant200Response.ts)
+返回：[`CreateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createTenant 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-news-01';
+const tenantId: string = 'acme-corp-001';
 const createTenantBody: CreateTenantBody = {
-  name: 'Acme News',
-  domainConfiguration: { primaryDomain: 'news.acme.com', redirectHttps: true } as APIDomainConfiguration,
-  importedSites: [{ siteId: 'site-92', url: 'https://news.acme.com' }] as ImportedSiteType[],
-  billingInfo: { planId: 'business_monthly', contactEmail: 'billing@acme.com' } as BillingInfo
+  name: 'Acme Corporation',
+  adminEmail: 'platform-admin@acme.com',
+  apiDomainConfiguration: { domain: 'comments.acme.com', tlsEnabled: true },
+  importedSites: [{ siteId: 'main-site', url: 'https://www.acme.com', platform: 'nextjs' }],
+  billingInfo: { plan: 'enterprise', billingEmail: 'billing@acme.com', vatId: 'GB123456789' }
 };
-const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
+const result: CreateTenantResponse = await createTenant(tenantId, createTenantBody);
 [inline-code-end]
 
 ---

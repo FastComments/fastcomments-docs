@@ -1,24 +1,27 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComment200Response.ts)
+Vraća: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getComment пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6f1a2b';
-const commentId: string = 'cmt_4d9e8f';
-const includeReplies: boolean | undefined = true; // пример опционалног параметра (није прослеђено у getComment)
-const result: GetComment200Response = await getComment(tenantId, commentId);
-console.log('Fetched comment for tenant:', tenantId, 'comment id:', commentId);
-console.log('API response received:', result);
+const tenantId: string = 'acme-tenant-7f3b';
+const commentId: string = 'cmt_8a7f2d4b';
+const response: APIGetCommentResponse = await getComment(tenantId, commentId);
+const status: APIStatus | undefined = response.status;
+const comment: APIComment | undefined = response.comment;
+const badges: CommentUserBadgeInfo[] | undefined = comment?.user?.badges;
+const hashtags: CommentUserHashTagInfo[] | undefined = comment?.meta?.hashtags;
+const mentions: CommentUserMentionInfo[] | undefined = comment?.user?.mentions;
+const meta: APICommentBaseMeta | undefined = comment?.meta;
 [inline-code-end]
 
 ---

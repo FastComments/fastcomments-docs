@@ -1,30 +1,31 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | createTenantPackageBody | CreateTenantPackageBody | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
+מחזיר: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7890";
-const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Growth Plan",
-  maxSeats: 2500,
-  features: {
-    moderation: true,
-    analytics: true,
-    sso: { enabled: true, provider: "saml" }
-  },
-  billing: { interval: "monthly", priceCents: 19900 },
-  // פרמטר אופציונלי מוצג: notes אינו נדרש אך סופק
-  notes: "Onboarding bundle with priority support"
-};
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+async function run(): Promise<void> {
+  const tenantId: string = 'tenant_acme_01';
+  const createTenantPackageBody: CreateTenantPackageBody = {
+    packageName: 'Pro Annual',
+    seats: 100,
+    billingCycle: 'annual',
+    autoRenew: true,
+    metadata: { region: 'us-west-2' } // שדה מטא-דאטה אופציונלי
+  };
+  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
+  console.log(result);
+}
+run();
 [inline-code-end]
+
+---

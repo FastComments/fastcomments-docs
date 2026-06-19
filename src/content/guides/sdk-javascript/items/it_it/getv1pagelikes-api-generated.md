@@ -1,21 +1,21 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | urlId | string | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetV1PageLikes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV1PageLikes200Response.ts)
+Restituisce: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV1PageLikes.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getV1PageLikes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getV1PageLikes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-742';
-const urlId: string = 'sports/2026/06/15/world-cup-preview';
-const pageLikes: GetV1PageLikes200Response = await getV1PageLikes(tenantId, urlId);
+const tenantId: string = "fastcomments-tenant-8a9b3";
+const urlId: string = "articles/how-to-optimize-comments-2026-06-19";
+const likes: GetV1PageLikes = await getV1PageLikes(tenantId, urlId);
 [inline-code-end]
 
 ---

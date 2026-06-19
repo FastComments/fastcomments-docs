@@ -1,10 +1,10 @@
-Kiracı için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
-Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+Bir kiracı için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenmiş özel yapılandırmada `enableFChat`'in true olması gerekir.
 SSO gerektiren sayfalar, istekte bulunan kullanıcının grup erişimine göre filtrelenir.
 
 ## Parametreler
 
-| Adı | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | cursor | string | Hayır |  |
@@ -15,26 +15,18 @@ SSO gerektiren sayfalar, istekte bulunan kullanıcının grup erişimine göre f
 
 ## Yanıt
 
-Döndürür: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Döndürür: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getPagesPublic Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

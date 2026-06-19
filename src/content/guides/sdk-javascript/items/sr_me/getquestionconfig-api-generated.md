@@ -1,21 +1,25 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfig200Response.ts)
+Враћа: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-47";
-const questionId: string = "q-4f2b9a";
-const includeDrafts: boolean | undefined = undefined; // rezervisano za neobavezni parametar
-const result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);
-console.log(result);
+const tenantId: string = 'tenant_9f8b7c2a';
+const configId: string = 'questioncfg_4d3e2a1b';
+
+const response: GetQuestionConfigResponse = await getQuestionConfig(tenantId, configId);
+
+const questionConfig: QuestionConfig | undefined = response.questionConfig;
+const customOptions: QuestionConfigCustomOptionsInner[] | undefined = questionConfig?.customOptions;
 [inline-code-end]
+
+---

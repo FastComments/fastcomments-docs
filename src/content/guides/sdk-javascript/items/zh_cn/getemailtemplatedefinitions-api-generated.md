@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -7,18 +6,15 @@
 
 ## 响应
 
-返回: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+返回：[`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_001';
-  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // 演示可选参数
-  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
-  console.log(templates);
-})();
+const tenantId: string = 'tenant_5f2c9b1a';
+const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
+// 可选参数（如果受支持）可以作为第二个参数传递，例如 getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
 [inline-code-end]
 
 ---

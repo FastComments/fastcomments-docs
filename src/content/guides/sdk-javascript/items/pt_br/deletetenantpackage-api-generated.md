@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -8,16 +7,17 @@
 
 ## Resposta
 
-Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const packageId: string = 'pkg-2026-06-15-001';
-const dryRun: boolean | undefined = undefined; // exemplo de flag opcional (não exigido pela função)
-const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
+const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+const packageId: string = 'pkg_prod_delete_2026-06-19';
+const onComplete: ((status?: APIStatus) => void) | undefined = undefined;
+const response: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
+onComplete?.();
 [inline-code-end]
 
 ---

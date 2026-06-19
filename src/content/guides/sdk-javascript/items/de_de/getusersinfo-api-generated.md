@@ -1,25 +1,26 @@
-Massen-Benutzerinformationen für einen tenant. Gibt für die angegebenen userIds Anzeigeinformationen aus User / SSOUser zurück.
-Wird vom Kommentar-Widget verwendet, um Benutzer zu ergänzen, die gerade via a presence event erschienen sind.
-Kein Seitenkontext: Die Privatsphäre wird einheitlich durchgesetzt (private Profile werden maskiert).
+Sammel-Benutzerinformationen für einen Mandanten. Gegeben die userIds, werden Anzeigeinformationen aus User / SSOUser zurückgegeben.
+Wird vom Kommentar-Widget verwendet, um Benutzer zu ergänzen, die gerade durch ein Presence-Ereignis erschienen sind.
+Kein Seitenkontext: Datenschutz wird einheitlich durchgesetzt (private Profile werden maskiert).
 
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Ja |  |
+| ids | string | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Gibt zurück: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getUsersInfo Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // optional; wenn undefined, wird standardmäßig ein Komma verwendet
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo benötigt nur tenantId und ids; optionale Parameter sind hier nicht anwendbar.
 [inline-code-end]
+
+---

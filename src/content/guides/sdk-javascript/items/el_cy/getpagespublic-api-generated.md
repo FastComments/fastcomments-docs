@@ -1,40 +1,33 @@
-Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από τον επιτραπέζιο πελάτη FChat για να συμπληρώσει τη λίστα δωματίων του.
-Απαιτείται το `enableFChat` να είναι true στην επιλυμένη προσαρμοσμένη ρύθμιση για κάθε σελίδα.
+---
+Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από τον FChat desktop client για να συμπληρώσει τη λίστα δωματίων του.
+Απαιτεί το `enableFChat` να είναι true στην επιλυμένη custom config για κάθε σελίδα.
 Οι σελίδες που απαιτούν SSO φιλτράρονται με βάση την πρόσβαση ομάδας του χρήστη που κάνει το αίτημα.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | number | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | boolean | No |  |
+| tenantId | string | Ναι |  |
+| cursor | string | Όχι |  |
+| limit | number | Όχι |  |
+| q | string | Όχι |  |
+| sortBy | PagesSortBy | Όχι |  |
+| hasComments | boolean | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetPagesPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublic200Response.ts)
+Επιστρέφει: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c';
-const cursor: string = 'eyJwYWdlIjoiMTIwIn0';
+const tenantId: string = "tenant_7f9b2c";
+const cursor: string = "cursor_0001a2b3";
 const limit: number = 25;
-const q: string = 'homepage hero';
+const q: string = "product page";
 const hasComments: boolean = true;
-
-const response: GetPagesPublic200Response = await getPagesPublic(
-  tenantId,
-  cursor,
-  limit,
-  q,
-  undefined,
-  hasComments
-);
+const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
 [inline-code-end]
 
 ---

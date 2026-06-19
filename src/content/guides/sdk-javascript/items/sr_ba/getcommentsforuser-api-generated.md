@@ -1,40 +1,33 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| userId | string | Ne |  |
-| direction | SortDirections | Ne |  |
-| repliesToUserId | string | Ne |  |
-| page | number | Ne |  |
-| includei10n | boolean | Ne |  |
-| locale | string | Ne |  |
-| isCrawler | boolean | Ne |  |
+| userId | string | Не |  |
+| direction | SortDirections | Не |  |
+| repliesToUserId | string | Не |  |
+| page | number | Не |  |
+| includei10n | boolean | Не |  |
+| locale | string | Не |  |
+| isCrawler | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsForUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUser200Response.ts)
+Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getCommentsForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsForUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = "550e8400-e29b-41d4-a716-446655440000";
-const page: number = 2;
-const includei10n: boolean = true;
-const locale: string = "en-US";
-const isCrawler: boolean = false;
-
-const comments: GetCommentsForUser200Response = await getCommentsForUser(
-  userId,
-  undefined, // direction izostavljen
-  undefined, // repliesToUserId izostavljen
-  page,
-  includei10n,
-  locale,
-  isCrawler
-);
-
-console.log(comments);
+(async () => {
+  const userId: string = 'user_7421';
+  const direction: SortDirections = SortDirections.Newest;
+  const page: number = 2;
+  const includei10n: boolean = true;
+  const locale: string = 'en-GB';
+  const isCrawler: boolean = false;
+  const response: GetCommentsForUserResponse = await getCommentsForUser(userId, direction, undefined, page, includei10n, locale, isCrawler);
+  console.log(response);
+})();
 [inline-code-end]
 
 ---

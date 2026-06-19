@@ -1,26 +1,30 @@
+---
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Так |  |
+| urlId | string | Так |  |
+| id | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`DeleteV2PageReact200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV2PageReact200Response.ts)
+Повертає: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад deleteV2PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_79021";
-const urlId: string = "blog/my-first-post";
-const id: string = "reaction_9f8b7c";
-let includeHistory: boolean | undefined = undefined; // необов'язковий прапорець, використовується в деяких викликах
+interface APIStatus { code: number; message?: string }
+interface CreateV1PageReact { id: string; pageUrl: string; userId?: string; status?: APIStatus; deleted?: boolean }
 
-const result: DeleteV2PageReact200Response = await deleteV2PageReact(tenantId, urlId, id);
-console.log(result);
+const tenantId: string = 'tenant_prod_8621'
+const urlId: string = 'page_home_001'
+const id: string = 'react_5f9b1c3a'
+
+const result: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, id)
+const statusCode: number | undefined = result.status?.code
+console.log('Deleted reaction id:', result.id, 'statusCode:', statusCode)
 [inline-code-end]
 
 ---

@@ -1,29 +1,31 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | createTenantUserBody | CreateTenantUserBody | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+מחזיר: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f4a2b";
+const tenantId: string = 'tenant_7f4b2a';
+const digestFreq: DigestEmailFrequency = { interval: 'daily' };
+const agentApprovalFreq: ImportedAgentApprovalNotificationFrequency = { mode: 'immediate' };
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "jane.doe@example.com",
-  firstName: "Jane",
-  lastName: "Doe",
-  role: "commenter",
-  approved: true,
-  displayName: "Jane D." // אופציונלי: מתן שם ידידותי
+  email: 'sara.martin@acme.co',
+  name: 'Sara Martin',
+  role: 'moderator',
+  avatarUrl: 'https://cdn.acme.co/avatars/sara.jpg',
+  notifyByEmail: true,                     // פרמטר אופציונלי להדגמה
+  digestEmailFrequency: digestFreq,
+  importedAgentApprovalNotificationFrequency: agentApprovalFreq
 };
-const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
-console.log(result);
+const result: CreateTenantUserResponse = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]
 
 ---

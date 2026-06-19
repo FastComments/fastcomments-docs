@@ -1,6 +1,5 @@
----
-Trenutno prisotni gledalci strani: osebe, katerih WebSocket seja je trenutno naročena na stran.
-Vrne anonCount + totalCount (naročniki v sobi, vključno z anonimnimi gledalci, ki jih ne navajamo).
+Trenutno prisotni gledalci strani: osebe, katerih websocket seja je trenutno naročena na stran.
+Vrača anonCount + totalCount (naročniki na ravni sobe, vključno z anonimnimi gledalci, ki jih ne navajamo).
 
 ## Parametri
 
@@ -13,17 +12,15 @@ Vrne anonCount + totalCount (naročniki v sobi, vključno z anonimnimi gledalci,
 
 ## Odgovor
 
-Vrne: [`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+Vrača: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
-
----

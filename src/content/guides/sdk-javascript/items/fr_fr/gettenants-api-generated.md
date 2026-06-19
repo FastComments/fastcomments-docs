@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | meta | string | Non |  |
@@ -8,17 +8,16 @@
 
 ## Réponse
 
-Retourne: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenants200Response.ts)
+Renvoie: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantsResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenants'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenants Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fcom-tenant-8b4f2a1c";
-const meta: string = "include=domains,billing&status=active";
+const tenantId: string = 'acme-corp-72b';
+const meta: string = 'include=domains,billing';
 const skip: number = 20;
-const response: GetTenants200Response = await getTenants(tenantId, meta, skip);
-console.log(response);
+const result: GetTenantsResponse = await getTenants(tenantId, meta, skip);
 [inline-code-end]
 
 ---

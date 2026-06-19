@@ -1,23 +1,18 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
+| tenantId | string | Yes |  |
 
 ## Odgovor
 
-Vraća: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
+Vraća: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_001';
-  const options: { includeDrafts?: boolean } = { includeDrafts: true }; // demonstracija neobaveznog parametra
-  const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, options);
-  console.log(templates);
-})();
+const tenantId: string = 'tenant_5f2c9b1a';
+const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
+// Neobavezni parametri (ako su podržani) mogu se proslijediti kao drugi argument, npr. getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
 [inline-code-end]
-
----

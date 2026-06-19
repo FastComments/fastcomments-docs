@@ -1,44 +1,33 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createFeedPostParams | CreateFeedPostParams | Da |  |
-| broadcastId | string | Ne |  |
-| isLive | boolean | Ne |  |
-| doSpamCheck | boolean | Ne |  |
-| skipDupCheck | boolean | Ne |  |
+| tenantId | string | Да |  |
+| createFeedPostParams | CreateFeedPostParams | Да |  |
+| broadcastId | string | Не |  |
+| isLive | boolean | Не |  |
+| doSpamCheck | boolean | Не |  |
+| skipDupCheck | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPost200Response.ts)
+Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostsResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer createFeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPost Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2b1c';
-const createFeedPostParams: CreateFeedPostParams = {
-  content: 'Launching our summer collection today — check it out!',
-  authorId: 'user_879',
-  media: [
-    {
-      type: 'image',
-      assets: [
-        { url: 'https://cdn.myshop.com/uploads/summer-look.jpg', width: 1200, height: 800 } as FeedPostMediaItemAsset
-      ]
-    } as FeedPostMediaItem
-  ],
-  links: [
-    { url: 'https://myshop.com/new-arrival', title: 'Summer Collection' } as FeedPostLink
-  ],
-  allowComments: true
-};
-const broadcastId: string = 'broadcast-2026-06-15-001';
+const tenantId: string = "tenant_82b4a1";
+const asset: FeedPostMediaItemAsset = { url: "https://cdn.company.com/uploads/launch.jpg", mimeType: "image/jpeg", width: 1200, height: 800 };
+const mediaItem: FeedPostMediaItem = { type: "image", caption: "Launch screenshot", assets: [asset] };
+const link: FeedPostLink = { url: "https://company.com/blog/launch-offline-sync", title: "Offline sync release notes" };
+const createFeedPostParams: CreateFeedPostParams = { message: "Offline sync is now available — try it on mobile for faster access.", media: [mediaItem], links: [link], visibility: "public" };
+const broadcastId: string = "brdcst_20260619_01";
 const isLive: boolean = false;
 const doSpamCheck: boolean = true;
 const skipDupCheck: boolean = false;
-const response: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
+const result: CreateFeedPostsResponse = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
 [inline-code-end]
 
 ---

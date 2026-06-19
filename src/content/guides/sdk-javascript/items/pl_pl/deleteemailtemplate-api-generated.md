@@ -1,22 +1,22 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9c4f1b2a";
-const id: string = "emailtmpl_4d2b9a5e";
-const requestorNote: string | undefined = undefined; // opcjonalne metadane (nie są wymagane przez funkcję)
-const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);
+const tenantId: string = 'tenant_acme_42';
+const templateId: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';
+const optionalStatus: APIStatus | undefined = undefined;
+const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
 [inline-code-end]
 
 ---

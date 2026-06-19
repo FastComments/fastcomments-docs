@@ -1,22 +1,22 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | urlId | string | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetV2PageReacts200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts200Response.ts)
+Döndürür: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getV2PageReacts Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_82f4b3a9";
-const urlId: string = "https://news.site.com/articles/2026/06/15/product-launch";
-const response: GetV2PageReacts200Response = await getV2PageReacts(tenantId, urlId);
-console.log(response);
+const tenantId: string = 'fastcomments-tenant-82';
+const urlId: string = 'https://www.acmecorp.com/blog/product-launch-2026';
+const reacts: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
+console.log(reacts);
 [inline-code-end]
 
 ---

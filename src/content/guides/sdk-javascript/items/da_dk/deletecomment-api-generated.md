@@ -1,31 +1,25 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | contextUserId | string | Nej |  |
 | isLive | boolean | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteComment200Response.ts)
+Returnerer: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResult.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'Eksempel på deleteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84a9f2';
-const id: string = 'comment_5f3b21';
-const contextUserId: string | undefined = 'user_1122';
-const isLive: boolean | undefined = true;
-
-async function run(): Promise<void> {
-  const result: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);
-  console.log(result);
-}
-
-run();
+const tenantId: string = 'acme-tenant-834';
+const id: string = 'cmt_9f3b2d7a';
+const contextUserId: string = 'user_4b2f6c88-1a2b-4c3d-9e5f-123456789abc';
+const isLive: boolean = true;
+const result: DeleteCommentResult = await deleteComment(tenantId, id, contextUserId, isLive);
 [inline-code-end]
 
 ---

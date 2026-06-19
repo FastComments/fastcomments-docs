@@ -1,27 +1,26 @@
-Skupne informacije o korisnicima za tenant. Na osnovu userIds vraća informacije za prikaz iz User / SSOUser.
-Koristi widget za komentare da obogati korisnike koji su se upravo pojavili putem presence događaja.
-Bez konteksta stranice: privatnost se primenjuje jednako (privatni profili su zamaskirani).
+Masovni podaci o korisnicima za tenant. Za zadate userIds, vraća prikazne informacije iz User / SSOUser.
+Koristi comment widget da obogati korisnike koji su se upravo pojavili putem događaja prisutnosti.
+Nema konteksta stranice: privatnost se primenjuje jednako (privatni profili su maskirani).
 
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | ids | string | Da |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // opciono; ako je undefined, podrazumevano je zarez
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo zahteva samo tenantId i ids; neobavezni parametri se ovde ne primenjuju.
 [inline-code-end]
 
 ---

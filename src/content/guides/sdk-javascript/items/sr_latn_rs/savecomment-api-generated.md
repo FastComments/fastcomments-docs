@@ -1,36 +1,33 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createCommentParams | CreateCommentParams | Yes |  |
-| isLive | boolean | No |  |
-| doSpamCheck | boolean | No |  |
-| sendEmails | boolean | No |  |
-| populateNotifications | boolean | No |  |
+| tenantId | string | Da |  |
+| createCommentParams | CreateCommentParams | Da |  |
+| isLive | boolean | Ne |  |
+| doSpamCheck | boolean | Ne |  |
+| sendEmails | boolean | Ne |  |
+| populateNotifications | boolean | Ne |  |
 
 ## Odgovor
 
-Vraća: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SaveComment200Response.ts)
+Vraća: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APISaveCommentResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer saveComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za saveComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fastcomments-tenant-42";
+const tenantId: string = "tenant_98765";
 const createCommentParams: CreateCommentParams = {
-  threadId: "article-2026-06-0142",
-  content: "Great write-up — I followed the migration steps and everything worked as described.",
-  userId: "u_9c72b",
-  userName: "Ava R.",
-  userAvatarUrl: "https://cdn.example.com/avatars/u_9c72b.png",
-  metadata: { platform: "web", locale: "en-US" }
+  content: "This fixed my build pipeline — switching the environment variable resolved the missing dependency.",
+  threadId: "blog-post-2026-06-19-ci-troubleshooting",
+  userSession: { userId: "user_7542", displayName: "Aisha Khan", email: "aisha.k@example.com" }
 };
 const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const sendEmails: boolean = false;
 const populateNotifications: boolean = true;
-const result: SaveComment200Response = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+const response: APISaveCommentResponse = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
 [inline-code-end]
 
 ---

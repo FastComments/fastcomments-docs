@@ -1,31 +1,26 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| blockFromCommentParams | BlockFromCommentParams | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|------|-------------|
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
+| blockFromCommentParams | BlockFromCommentParams | 是 |  |
+| userId | string | 否 |  |
+| anonUserId | string | 否 |  |
 
 ## 响应
 
-返回： [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublic200Response.ts)
+返回: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'blockUserFromComment 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b4c";
-const id: string = "comment_9a8b7c6d";
-const blockFromCommentParams: BlockFromCommentParams = {
-  reason: "Repeated spam links",
-  durationHours: 168,
-  notifyModerators: true
-};
-const userId: string | undefined = "user_42";
-const anonUserId: string | undefined = undefined;
-const result: BlockFromCommentPublic200Response = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId, anonUserId);
+const tenantId: string = 'acme-corp';
+const id: string = '5f9a3b2c-1d3e-4b6f-8a9c-12d345ef6789';
+const blockFromCommentParams: BlockFromCommentParams = { reason: 'Repeated spam', durationDays: 30, notifyModerator: true };
+const userId: string = 'user-1024';
+const result: BlockSuccess = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId);
 [inline-code-end]
 
 ---

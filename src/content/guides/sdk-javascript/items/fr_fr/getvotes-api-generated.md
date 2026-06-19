@@ -1,20 +1,21 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | urlId | string | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
+Renvoie: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f8e91c2';
-const urlId: string = 'https://www.sportsdaily.com/news/2026/06/15/championship-game-recap';
-const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-console.log(votes);
+const tenantId: string = 'tenant_acme_8421';
+const urlId: string | undefined = 'posts/2026/06/typescript-api-examples';
+const votes: GetVotesResponse = await getVotes(tenantId, urlId!);
 [inline-code-end]
+
+---

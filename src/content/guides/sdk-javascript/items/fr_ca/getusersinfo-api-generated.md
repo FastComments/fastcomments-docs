@@ -1,25 +1,26 @@
-Informations groupées sur les utilisateurs pour un locataire. Étant donné des userIds, renvoie les informations d'affichage depuis User / SSOUser.
+Informations d'utilisateurs en masse pour un locataire. Étant donné des userIds, retourne les informations d'affichage de User / SSOUser.
 Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
-Pas de contexte de page : la confidentialité est appliquée uniformément (les profils privés sont masqués).
+Pas de contexte de page : la confidentialité est appliquée de façon uniforme (les profils privés sont masqués).
 
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| ids | string | Oui |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## Réponse
 
-Retourne : [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Retourne : [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // optionnel ; si indéfini, utilise la virgule par défaut
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo nécessite uniquement tenantId et ids ; les paramètres optionnels ne s'appliquent pas ici.
 [inline-code-end]
+
+---

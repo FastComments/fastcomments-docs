@@ -1,33 +1,32 @@
----
 req
 tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userIdWS | string | Da |  |
-| startTime | number | Da |  |
-| endTime | number | Ne |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| userIdWS | string | Да |  |
+| startTime | number | Да |  |
+| endTime | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLog200Response.ts)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getEventLog Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEventLog Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3a2b';
-const urlId: string = 'news/2026/06/fastcomments-release';
-const userIdWS: string = 'ws_user_48291';
-const startTime: number = Date.now() - 86_400_000;
+const tenantId: string = "f2b3d9e8-1c4b-4a7e-9f6d-2b8c3e1a4f5d";
+const urlId: string = "news/article/2026/06/18/fastcomments";
+const userIdWS: string = "ws-user-78b3ef";
+const startTime: number = Date.now() - 24 * 60 * 60 * 1000;
 const endTime: number = Date.now();
-const result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
-[inline-code-end]
 
----
+const responseWithoutEnd: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime);
+const responseWithEnd: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+[inline-code-end]

@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | search | string | Sì |  |
 | locale | string | No |  |
@@ -10,18 +10,18 @@
 
 ## Risposta
 
-Restituisce: [`GetGifsSearch200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearch200Response.ts)
+Restituisce: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearchResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getGifsSearch'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_9876";
-const search: string = "cat playing piano";
-const locale: string = "en-US";
-const rating: string = "pg";
+const tenantId: string = 'acme-tenant-42';
+const search: string = 'golden hour sunset';
+const locale: string = 'en-US';
+const rating: string = 'pg';
 const page: number = 1;
-const result: GetGifsSearch200Response = await getGifsSearch(tenantId, search, locale, rating, page);
+const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
 [inline-code-end]
 
 ---

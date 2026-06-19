@@ -7,17 +7,16 @@
 
 ## 回應
 
-回傳: [`GetGifLarge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLarge200Response.ts)
+回傳: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getGifLarge 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b7c";
-const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/07d3f6_large.gif";
-const preferWebP: boolean | undefined = true; // 可選的偏好
-const urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(".gif", ".webp") : largeInternalURLSanitized;
-const response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);
+const tenantId: string = 'acme-corp-42';
+const largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';
+const correlationId?: string = 'req-20260619-01';
+const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

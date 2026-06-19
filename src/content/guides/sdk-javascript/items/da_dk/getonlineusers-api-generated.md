@@ -1,5 +1,5 @@
-Brugere, der i øjeblikket er online på en side: personer, hvis websocket-session lige nu abonnerer på siden.
-Returnerer anonCount + totalCount (abonnenter for hele rummet, inklusive anonyme seere, som vi ikke opregner).
+Seere, der aktuelt er online på en side: personer, hvis websocket-session er tilmeldt siden lige nu.
+Returnerer anonCount + totalCount (rum-omfattende abonnenter, inklusive anonyme seere, som vi ikke opregner).
 
 ## Parametre
 
@@ -12,17 +12,17 @@ Returnerer anonCount + totalCount (abonnenter for hele rummet, inklusive anonyme
 
 ## Svar
 
-Returnerer: [`GetOnlineUsers200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsers200Response.ts)
+Returnerer: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getOnlineUsers Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_14f9c3';
-const urlId: string = 'article_20250615';
-const afterName: string = 'marie.curie';
-const afterUserId: string = 'u_92b7';
-const result: GetOnlineUsers200Response = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+const tenantId: string = 'tenant_8f3c2b7';
+const urlId: string = 'article-2026-06-19-site-update';
+const afterName: string = 'michael.hansen';
+const afterUserId: string = 'user_00421';
+const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
 [inline-code-end]
 
 ---

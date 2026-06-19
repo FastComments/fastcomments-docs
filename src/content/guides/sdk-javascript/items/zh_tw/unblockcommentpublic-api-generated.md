@@ -1,7 +1,6 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -10,21 +9,15 @@
 
 ## 回應
 
-回傳：[`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockCommentPublic200Response.ts)
+回傳: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'unBlockCommentPublic 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-42-production";
-const commentId: string = "comment_7f3b2a9d";
-const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: "flag reviewed and determined not to violate policy",
-  restoredBy: "moderator_jane",
-  restoredAt: new Date().toISOString()
-};
-const sso: string = "sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
-const result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+const tenantId: string = 'acme-tenant-72';
+const commentId: string = 'cmt_5f9b3a2d';
+const publicBlockFromCommentParams: PublicBlockFromCommentParams = {};
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.sig';
+const result: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]
-
----

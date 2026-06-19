@@ -1,30 +1,31 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createTenantPackageBody | CreateTenantPackageBody | Да |  |
 
 ## Одговор
 
-Враћа: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
+Враћа: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7890";
-const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Growth Plan",
-  maxSeats: 2500,
-  features: {
-    moderation: true,
-    analytics: true,
-    sso: { enabled: true, provider: "saml" }
-  },
-  billing: { interval: "monthly", priceCents: 19900 },
-  // демонстриран опционални параметар: notes није обавезан, али је наведен
-  notes: "Onboarding bundle with priority support"
-};
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+async function run(): Promise<void> {
+  const tenantId: string = 'tenant_acme_01';
+  const createTenantPackageBody: CreateTenantPackageBody = {
+    packageName: 'Pro Annual',
+    seats: 100,
+    billingCycle: 'annual',
+    autoRenew: true,
+    metadata: { region: 'us-west-2' } // опционално поље метаподатака
+  };
+  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
+  console.log(result);
+}
+run();
 [inline-code-end]
+
+---

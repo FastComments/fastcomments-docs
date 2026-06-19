@@ -1,6 +1,7 @@
+---
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlIdWS | string | 예 |  |
@@ -8,17 +9,17 @@
 
 ## 응답
 
-반환: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatuses200Response.ts)
+반환: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42';
-const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
-const userIds: string = 'user_9012,user_3478';
-const includePresenceMetadata: boolean | undefined = true; // 선택적 매개변수 예시
-const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'acct_7c9b21';
+const urlIdWS: string = 'wss://ws.fastcomments.com/presence/room-231';
+const userIds: string = 'user_102,user_203';
+const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const firstStatus: APIStatus | undefined = (presence as unknown as { statuses?: APIStatus[] }).statuses?.[0];
 [inline-code-end]
 
 ---

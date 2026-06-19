@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
@@ -9,18 +9,18 @@
 
 ## Ответ
 
-Возвращает: [`PinComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PinComment200Response.ts)
+Возвращает: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример unPinComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f3b2c1a";
-const commentId: string = "comment_4d2e8a7f";
-const broadcastId: string = "broadcast_live_2026_06_15_18";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.invalid-signature";
-const response: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);
-console.log(response);
+const tenantId: string = 'tenant_acme_org_001';
+const commentId: string = 'cmt_4f2b1a8e';
+const broadcastId: string = 'bcast_live_2026-06-19';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiamRvZSJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+
+const response: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId, sso);
 [inline-code-end]
 
 ---

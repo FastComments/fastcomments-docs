@@ -1,27 +1,27 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| updateHashTagBody | UpdateHashTagBody | No |  |
+| tag | string | 예 |  |
+| tenantId | string | 아니요 |  |
+| updateHashTagBody | UpdateHashTagBody | 아니요 |  |
 
 ## 응답
 
-반환: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchHashTag200Response.ts)
+반환: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateHashTagResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'patchHashTag 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "feature-request";
-const tenantId: string = "tenant_8f7a3b2c";
+const tag: string = "release-notes";
+const tenantId: string = "tenant_8421";
 const updateHashTagBody: UpdateHashTagBody = {
-  displayName: "Feature Request",
-  description: "Use this tag for requests to add new features to the product",
-  enabled: true
+  name: "Release Notes",
+  description: "Thread for discussing feature releases and changelogs",
+  isActive: true
 };
-const result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
+const result: UpdateHashTagResponse = await patchHashTag(tag, tenantId, updateHashTagBody);
 [inline-code-end]
 
 ---

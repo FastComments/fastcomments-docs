@@ -16,17 +16,18 @@ userIdWS
 
 ## Response
 
-Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLog200Response.ts)
+Returns: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getGlobalEventLog Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_639b7f12";
-const urlId: string = "https://www.news-site.com/articles/2026/06/15/important-update-987";
-const userIdWS: string = "user_ws_42b7";
-const startTime: number = new Date("2026-06-14T00:00:00Z").getTime();
+const tenantId: string = 'tenant_4f7b2a9c';
+const urlId: string = 'article-87c1a2b';
+const userIdWS: string = 'ws-1a2b3c4d';
+const startTime: number = Date.now() - 60 * 60 * 1000; // 1 hour ago
 const endTime: number = Date.now();
 
-const eventLog: GetEventLog200Response = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+const responseWithEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+const responseWithoutEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);
 [inline-code-end]

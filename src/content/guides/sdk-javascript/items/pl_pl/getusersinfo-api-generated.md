@@ -1,25 +1,26 @@
-Zbiorcze informacje o użytkownikach dla najemcy. Dla podanych userIds zwraca informacje wyświetlane z User / SSOUser.
-Używane przez widget komentarzy do wzbogacenia użytkowników, którzy właśnie pojawili się za pomocą zdarzenia obecności.
-Brak kontekstu strony: prywatność jest egzekwowana jednolicie (profile prywatne są zamaskowane).
+Masowe informacje o użytkownikach dla najemcy. Na podstawie userIds zwraca informacje wyświetlane z User / SSOUser.
+Używane przez widget komentarzy do wzbogacania użytkowników, którzy właśnie pojawili się w wyniku zdarzenia obecności.
+Brak kontekstu strony: prywatność jest egzekwowana jednolicie (profile prywatne są maskowane).
 
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | ids | string | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetUsersInfo200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfo200Response.ts)
+Zwraca: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-007';
-const userIdsList: string[] = ['user_12a', 'user_34b', 'user_56c'];
-const separator: string | undefined = undefined; // opcjonalne; jeśli undefined, domyślnie przecinek
-const ids: string = userIdsList.join(separator ?? ',');
-const usersInfo: GetUsersInfo200Response = await getUsersInfo(tenantId, ids);
+const tenantId: string = 'tenant_acme_78f9';
+const ids: string = 'user_10234,user_10235,user_10236';
+const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+// getUsersInfo wymaga tylko tenantId i ids; parametry opcjonalne nie mają tu zastosowania.
 [inline-code-end]
+
+---

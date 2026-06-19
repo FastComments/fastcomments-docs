@@ -1,23 +1,22 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | largeInternalURLSanitized | string | 예 |  |
 
 ## 응답
 
-반환: [`GetGifLarge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLarge200Response.ts)
+반환: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getGifLarge 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b7c";
-const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/07d3f6_large.gif";
-const preferWebP: boolean | undefined = true; // 선택적 선호
-const urlToUse: string = preferWebP ? largeInternalURLSanitized.replace(".gif", ".webp") : largeInternalURLSanitized;
-const response: GetGifLarge200Response = await getGifLarge(tenantId, urlToUse);
+const tenantId: string = 'acme-corp-42';
+const largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';
+const correlationId?: string = 'req-20260619-01';
+const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
 [inline-code-end]
 
 ---

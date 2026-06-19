@@ -1,30 +1,30 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | commentId | string | 예 |  |
 | publicBlockFromCommentParams | PublicBlockFromCommentParams | 예 |  |
-| sso | string | 아니요 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublic200Response.ts)
+반환: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'blockFromCommentPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6b3f9a2d';
-const commentId: string = 'cmt_8f4b12a9';
+const tenantId: string = "tenant_52b9f3a1";
+const commentId: string = "cmt_4f9d2a7b";
 const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: 'Repeated promotional links',
-  durationMinutes: 60 * 24 * 30, // 30일
-  escalateToModeration: true
+  reason: "spam",
+  moderatorId: "mod_783",
+  durationMinutes: 1440,
+  notifyUser: true
 };
-const sso: string = 'sso_token_3fH7kLw';
-
-const result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
+const result: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]
 
 ---

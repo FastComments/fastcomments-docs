@@ -1,32 +1,31 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | createTenantPackageBody | CreateTenantPackageBody | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
+Renvoie : [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7890";
-const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Growth Plan",
-  maxSeats: 2500,
-  features: {
-    moderation: true,
-    analytics: true,
-    sso: { enabled: true, provider: "saml" }
-  },
-  billing: { interval: "monthly", priceCents: 19900 },
-  // paramètre optionnel démontré : notes n'est pas requis mais est fourni
-  notes: "Onboarding bundle with priority support"
-};
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+async function run(): Promise<void> {
+  const tenantId: string = 'tenant_acme_01';
+  const createTenantPackageBody: CreateTenantPackageBody = {
+    packageName: 'Pro Annual',
+    seats: 100,
+    billingCycle: 'annual',
+    autoRenew: true,
+    metadata: { region: 'us-west-2' } // champ metadata optionnel
+  };
+  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
+  console.log(result);
+}
+run();
 [inline-code-end]
 
 ---

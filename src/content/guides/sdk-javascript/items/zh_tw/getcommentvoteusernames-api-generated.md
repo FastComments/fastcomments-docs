@@ -1,8 +1,7 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
 | dir | number | 是 |  |
@@ -10,19 +9,19 @@
 
 ## 回應
 
-回傳：[`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNames200Response.ts)
+回傳：[`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesSuccessResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_67890";
-const commentId: string = "comment_abc123";
+const tenantId: string = 'acme-tenant-7f9c';
+const commentId: string = 'bcd12345-6789-4ef0-9abc-0d1e2f3a4b5c';
 const dir: number = 1;
-const ssoToken: string = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
+const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';
 
-const responseWithoutSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);
-const responseWithSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);
+const resultWithoutSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir);
+const resultWithSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);
 [inline-code-end]
 
 ---

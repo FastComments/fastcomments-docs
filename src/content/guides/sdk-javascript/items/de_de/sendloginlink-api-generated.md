@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -9,17 +8,20 @@
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'sendLoginLink Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_0a1b2c3d";
-const id: string = "user_984321";
-const redirectURL: string = "https://app.acme-corp.com/welcome";
-const responseWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
-const responseWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);
+(async function run(): Promise<void> {
+  const tenantId: string = 'fc_tenant_9f3b2c';
+  const id: string = 'user_42b7f';
+  const redirectURL: string = 'https://dashboard.acme-corp.com/welcome';
+  const responseWithoutRedirect: APIEmptyResponse = await sendLoginLink(tenantId, id);
+  const responseWithRedirect: APIEmptyResponse = await sendLoginLink(tenantId, id, redirectURL);
+  console.log(responseWithoutRedirect, responseWithRedirect);
+})();
 [inline-code-end]
 
 ---

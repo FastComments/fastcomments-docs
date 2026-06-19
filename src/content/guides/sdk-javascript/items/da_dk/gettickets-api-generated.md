@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | userId | string | Nej |  |
@@ -8,19 +8,20 @@
 | skip | number | Nej |  |
 | limit | number | Nej |  |
 
-## Response
+## Svar
 
-Returnerer: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTickets200Response.ts)
+Returnerer: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getTickets Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTickets-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const userId: string = 'user_87b3';
-const state: number = 2;
+const tenantId: string = "acme-enterprises";
+const userId: string | undefined = "u_56321";
+const state: number | undefined = 1;
 const skip: number = 0;
 const limit: number = 50;
-
-const tickets: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);
+const response: GetTicketsResponse = await getTickets(tenantId, userId, state, skip, limit);
 [inline-code-end]
+
+---

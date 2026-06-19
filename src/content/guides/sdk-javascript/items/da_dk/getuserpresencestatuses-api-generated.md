@@ -8,17 +8,17 @@
 
 ## Svar
 
-Returnerer: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatuses200Response.ts)
+Returnerer: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getUserPresenceStatuses Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42';
-const urlIdWS: string = 'wss://comments.fastsite.com/ws/tenant_42';
-const userIds: string = 'user_9012,user_3478';
-const includePresenceMetadata: boolean | undefined = true; // eksempel på en valgfri parameter
-const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const tenantId: string = 'acct_7c9b21';
+const urlIdWS: string = 'wss://ws.fastcomments.com/presence/room-231';
+const userIds: string = 'user_102,user_203';
+const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+const firstStatus: APIStatus | undefined = (presence as unknown as { statuses?: APIStatus[] }).statuses?.[0];
 [inline-code-end]
 
 ---

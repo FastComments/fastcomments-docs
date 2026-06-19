@@ -1,27 +1,33 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | createQuestionResultBody | CreateQuestionResultBody | Ναι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
+Επιστρέφει: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-512';
-const meta: MetaItem[] = [{ key: 'source', value: 'article' }];
-const body: CreateQuestionResultBody = {
-  questionId: 'q-94',
-  userId: 'user_332',
-  answers: [{ optionId: 'opt_a', score: 1 }],
-  meta, // προαιρετικά παρεχόμενα μεταδεδομένα
-} as CreateQuestionResultBody;
-const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, body);
+(async () => {
+  const tenantId: string = "tenant_5821b2";
+  const createQuestionResultBody: CreateQuestionResultBody = {
+    questionId: "q_9f3a7",
+    userId: "user_77",
+    score: 4.5,
+    feedback: "Answer was concise and addressed the core issue",
+    // επιδεικνύονται προαιρετικές παράμετροι
+    sessionId: "sess_a12f",
+    meta: [{ key: "device", value: "iPhone 13 Pro" }],
+    status: { code: 201, message: "Created" }
+  };
+  const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

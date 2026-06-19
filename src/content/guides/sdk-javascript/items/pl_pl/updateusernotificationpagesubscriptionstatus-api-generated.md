@@ -1,8 +1,8 @@
-Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują stronę, powiadomienia są tworzone dla nowych komentarzy głównych, a także
+Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują stronę, tworzone są powiadomienia dla nowych komentarzy głównych, i także
 
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | urlId | string | Tak |  |
@@ -13,19 +13,25 @@ Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują str
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatus200Response.ts)
+Zwraca: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationPageSubscriptionStatusResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b2';
-const urlId: string = 'article_987';
-const url: string = 'https://www.news-site.com/articles/2026/pasta-guide';
-const pageTitle: string = 'The Definitive Guide to Cooking Pasta';
-const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-const sso: string = 'sso-token-62b9f1';
-const result: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
+const tenantId: string = "8a3f2b1c-4d6e-4f9b-9c2d-0a1b2c3d4e5f";
+const urlId: string = "article-2026-reliable-api";
+const url: string = "https://blog.companyexample.com/articles/reliable-api-patterns";
+const pageTitle: string = "Reliable API Patterns for Integrations";
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload";
+const result: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  tenantId,
+  urlId,
+  url,
+  pageTitle,
+  UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed,
+  sso
+);
 [inline-code-end]
 
 ---

@@ -1,23 +1,23 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 
 ## 응답
 
-반환: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenant200Response.ts)
+반환: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc_tenant_6b3e2a';
-const id: string = 'site_42f1';
-const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
-const tenant: APITenant | undefined = tenantResponse.tenant;
-const primaryDomain: APIDomainConfiguration | undefined = tenant?.domainConfiguration?.[0];
+const tenantId: string = 'acme-corp';
+const id: string = 'tenant-987654321';
+const options: { includeBilling?: boolean } = { includeBilling: true };
+const response: GetTenantResponse = await getTenant(tenantId, id);
+const billingInfo: BillingInfo | undefined = undefined
 [inline-code-end]
 
 ---

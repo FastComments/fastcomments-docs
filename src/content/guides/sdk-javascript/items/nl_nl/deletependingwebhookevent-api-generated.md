@@ -1,20 +1,25 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deletePendingWebhookEvent Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_5f8d7a34";
-const id: string = "webhook_evt_987654321";
-const requestNote: string | undefined = undefined;
-const response: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);
+async function removePendingWebhookEvent(tenantId?: string): Promise<APIEmptyResponse | undefined> {
+  if (!tenantId) return;
+  const tenant: string = tenantId;
+  const eventId: string = 'evt_7f2c1a9b';
+  const response: APIEmptyResponse = await deletePendingWebhookEvent(tenant, eventId);
+  return response;
+}
 [inline-code-end]
+
+---
