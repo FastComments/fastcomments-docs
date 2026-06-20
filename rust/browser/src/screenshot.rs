@@ -120,6 +120,15 @@ pub async fn launch_logged_in(
         })
         .window_size(width, height);
     builder = builder.headless_mode(HeadlessMode::True);
+    // Unique profile dir per launch: chromiumoxide's default user-data-dir is a
+    // shared fixed path, so concurrent Chrome instances (and stale locks from a
+    // crashed prior run) collide on the ProcessSingleton lock and abort.
+    use std::sync::atomic::{AtomicU64, Ordering};
+    static LAUNCH_SEQ: AtomicU64 = AtomicU64::new(0);
+    let seq = LAUNCH_SEQ.fetch_add(1, Ordering::Relaxed);
+    let profile_dir =
+        std::env::temp_dir().join(format!("fcdocs-chrome-{}-{}", std::process::id(), seq));
+    builder = builder.user_data_dir(profile_dir);
     let cfg = builder.build().map_err(|e| anyhow::anyhow!(e))?;
 
     let (browser, mut handler) = Browser::launch(cfg).await.context("Browser::launch")?;
