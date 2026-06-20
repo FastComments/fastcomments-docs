@@ -20,7 +20,24 @@ pub fn chrome_binary() -> Option<PathBuf> {
             return Some(pb);
         }
     }
-    // Common puppeteer cache locations on Linux.
+    // puppeteer >= v19 downloads Chrome to
+    // $HOME/.cache/puppeteer/chrome/linux-<version>/chrome-linux64/chrome.
+    // Pick the newest version directory present.
+    if let Some(home) = std::env::var_os("HOME") {
+        let base = PathBuf::from(home).join(".cache/puppeteer/chrome");
+        if let Ok(entries) = std::fs::read_dir(&base) {
+            let mut dirs: Vec<PathBuf> =
+                entries.filter_map(|e| e.ok()).map(|e| e.path()).collect();
+            dirs.sort();
+            for d in dirs.into_iter().rev() {
+                let chrome = d.join("chrome-linux64").join("chrome");
+                if chrome.exists() {
+                    return Some(chrome);
+                }
+            }
+        }
+    }
+    // Older puppeteer layouts + system installs.
     let candidates = [
         "node_modules/puppeteer/.local-chromium/linux-848005/chrome-linux/chrome",
         "node_modules/puppeteer/.cache/chrome/linux-stable/chrome",
