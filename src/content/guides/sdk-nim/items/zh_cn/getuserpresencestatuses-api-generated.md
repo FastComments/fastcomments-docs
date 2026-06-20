@@ -2,28 +2,24 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlIdWS | string | No |  |
-| userIds | string | No |  |
+| tenantId | string | 是 |  |
+| urlIdWS | string | 否 |  |
+| userIds | string | 否 |  |
 
 ## 响应
 
-返回: [`Option[GetUserPresenceStatuses_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_presence_statuses200response.nim)
+返回: [`Option[GetUserPresenceStatusesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_presence_statuses_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserPresenceStatuses(
-  tenantId = "my-tenant-123",
-  urlIdWS = "news/2025/technology/ai-ethics",
-  userIds = "user-789,user-456"
-)
+let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user-123,user-456")
 if response.isSome:
-  let presence = response.get()
-  echo "Presence received: ", presence
+  let presenceStatuses = response.get()
+  echo presenceStatuses
 else:
-  echo "No presence information returned, HTTP status: ", httpResponse.status.code
+  echo "No presence data"
 [inline-code-end]
 
 ---

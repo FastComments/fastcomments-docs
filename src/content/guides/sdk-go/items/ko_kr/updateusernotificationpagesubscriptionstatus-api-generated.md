@@ -1,19 +1,19 @@
-페이지에 대한 알림을 활성화하거나 비활성화합니다. 사용자가 페이지를 구독하면 새 루트 댓글에 대해 알림이 생성되고, 또한
+페이지에 대한 알림을 활성화하거나 비활성화합니다. 사용자가 페이지를 구독하면 새 루트 댓글에 대해 알림이 생성되며, 또한
 
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 쿼리 | 예 |  |
-| urlId | string | 쿼리 | 예 |  |
-| url | string | 쿼리 | 예 |  |
-| pageTitle | string | 쿼리 | 예 |  |
-| subscribedOrUnsubscribed | string | 경로 | 예 |  |
-| sso | string | 쿼리 | 아니오 |  |
+| tenantId | string | query | 예 |  |
+| urlId | string | query | 예 |  |
+| url | string | query | 예 |  |
+| pageTitle | string | query | 예 |  |
+| subscribedOrUnsubscribed | string | path | 예 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+반환: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_page_subscription_status_response.go)
 
 ## 예제
 
@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationPageSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// `UpdateUserNotificationPageSubscriptionStatus`의 응답: UpdateUserNotificationPageSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationPageSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

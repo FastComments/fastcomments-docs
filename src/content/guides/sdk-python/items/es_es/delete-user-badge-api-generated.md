@@ -1,33 +1,33 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_badge200_response.py)
+Devuelve: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_success_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de delete_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_badge200_response import UpdateUserBadge200Response
+from client.models.api_empty_success_response import APIEmptySuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definir el host es opcional y por defecto es https://fastcomments.com
+# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# El cliente debe configurar los parámetros de autenticación y autorización
+# de acuerdo con la política de seguridad del servidor de la API.
+# Los ejemplos para cada método de autenticación se proporcionan a continuación, utilice el ejemplo que
+# satisfaga su caso de uso de autenticación.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -35,9 +35,9 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Ingrese a un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_user_badge: %s\n" % e)
 [inline-code-end]
+
+---

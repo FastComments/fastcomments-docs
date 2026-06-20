@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names200_response.rb)
+回傳：[`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names_success_response.rb)
 
 ## 範例
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-dir = 56 # Integer | 
+tenant_id = 'tenant_id_example' # 字串 | 
+comment_id = 'comment_id_example' # 字串 | 
+dir = 56 # 整數 | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 字串 | 
 }
 
 begin
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_vote_user_names: #{e}"
 end
 [inline-code-end]
+
+---

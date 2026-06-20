@@ -1,16 +1,16 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| isLive | boolean | sorgu | Hayır |  |
-| doSpamCheck | boolean | sorgu | Hayır |  |
-| sendEmails | boolean | sorgu | Hayır |  |
-| populateNotifications | boolean | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| isLive | boolean | query | Hayır |  |
+| doSpamCheck | boolean | query | Hayır |  |
+| sendEmails | boolean | query | Hayır |  |
+| populateNotifications | boolean | query | Hayır |  |
 
 ## Yanıt
 
-Dönüş değeri: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveComment200Response.java)
+Döndürür: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APISaveCommentResponse.java)
 
 ## Örnek
 
@@ -32,7 +32,7 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir önek ayarlayın, örn. "Token" (varsayılan null)
+    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean sendEmails = true; // Boolean | 
     Boolean populateNotifications = true; // Boolean | 
     try {
-      SaveComment200Response result = apiInstance.saveComment(tenantId, createCommentParams)
+      APISaveCommentResponse result = apiInstance.saveComment(tenantId, createCommentParams)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
             .sendEmails(sendEmails)

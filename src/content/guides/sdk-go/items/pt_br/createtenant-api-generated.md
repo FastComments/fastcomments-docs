@@ -6,7 +6,7 @@
 
 ## Resposta
 
-Retorna: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_200_response.go)
+Retorna: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_response.go)
 
 ## Exemplo
 
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `CreateTenant`: CreateTenant200Response
+	// resposta de `CreateTenant`: CreateTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenant`: %v\n", resp)
 }
 [inline-code-end]
+
+---

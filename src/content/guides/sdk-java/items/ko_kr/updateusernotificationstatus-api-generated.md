@@ -1,15 +1,15 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| notificationId | string | path | 예 |  |
-| newStatus | string | path | 예 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+반환: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatusResponse.java)
 
 ## 예제
 
@@ -33,7 +33,7 @@ public class Example {
     String newStatus = "read"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
+      UpdateUserNotificationStatusResponse result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

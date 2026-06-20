@@ -1,14 +1,14 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | id | string | path | 예 |  |
-| skip | number | query | 아니요 |  |
+| skip | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateRenderErrors200Response.java)
+반환: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateRenderErrorsResponse.java)
 
 ## 예제
 
@@ -30,7 +30,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값: null)
+    // API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값은 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetEmailTemplateRenderErrors200Response result = apiInstance.getEmailTemplateRenderErrors(tenantId, id)
+      GetEmailTemplateRenderErrorsResponse result = apiInstance.getEmailTemplateRenderErrors(tenantId, id)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

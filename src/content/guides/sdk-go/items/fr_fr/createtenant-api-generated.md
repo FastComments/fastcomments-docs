@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Renvoie: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_200_response.go)
+Renvoie : [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_response.go)
 
 ## Exemple
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTenant`: CreateTenant200Response
+	// réponse de `CreateTenant` : CreateTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenant`: %v\n", resp)
 }
 [inline-code-end]
-
----

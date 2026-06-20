@@ -1,13 +1,14 @@
+---
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_config_200_response.go)
+מחזיר: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_config_response.go)
 
 ## דוגמה
 
@@ -33,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ־`GetQuestionConfig`: GetQuestionConfig200Response
+	// response from `GetQuestionConfig`: GetQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]

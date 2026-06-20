@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateUserBadge200Response.php)
+Returns: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APICreateUserBadgeResponse.php)
 
 ## Example
 

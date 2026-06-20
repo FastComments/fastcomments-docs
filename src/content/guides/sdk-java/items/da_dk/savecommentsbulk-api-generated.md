@@ -10,11 +10,16 @@
 
 ## Svar
 
-Returnerer: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveComment200Response.java)
+Returnerer: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsBulkResponse.java)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'saveCommentsBulk-eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveCommentsBulk Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// Importer klasser:
+// Konfigurer API-nøgleautorisation: api_key
+// Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    [inline-code-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -43,7 +48,7 @@ public class Example {
     Boolean sendEmails = true; // Boolean | 
     Boolean populateNotifications = true; // Boolean | 
     try {
-      List<SaveComment200Response> result = apiInstance.saveCommentsBulk(tenantId, createCommentParams)
+      List<SaveCommentsBulkResponse> result = apiInstance.saveCommentsBulk(tenantId, createCommentParams)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
             .sendEmails(sendEmails)

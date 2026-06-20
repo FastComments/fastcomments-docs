@@ -1,28 +1,25 @@
+---
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenant_id | String | Ja |  |
 | id | String | Ja |  |
 
 ## Antwoord
 
-Geeft terug: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_200_response.rs)
+Retourneert: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_email_template Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let tenant_id: String = "acme-corp-tenant".to_string();
-    let template_id: String = "welcome-new-subscriber".to_string();
     let params: GetEmailTemplateParams = GetEmailTemplateParams {
-        tenant_id,
-        id: template_id,
-        locale: Some("en-US".to_string()),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "marketing/welcome_v2".to_string(),
     };
-    let template: GetEmailTemplate200Response = get_email_template(&configuration, params).await?;
-    let _ = template;
+    let template: GetEmailTemplateResponse = get_email_template(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

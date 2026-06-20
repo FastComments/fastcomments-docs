@@ -1,12 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+Επιστρέφει: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## Παράδειγμα
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+  # Διαμόρφωση εξουσιοδότησης API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την επόμενη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_moderator: #{e}"
 end
 [inline-code-end]
-
----

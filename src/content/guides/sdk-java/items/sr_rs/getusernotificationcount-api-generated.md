@@ -1,18 +1,17 @@
----
 ## Параметри
 
-| Name | Type | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | sso | string | query | Не |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotificationCount200Response.java)
+Враћа: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotificationCountResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getUserNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserNotificationCount пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увоз класа:
 import com.fastcomments.invoker.ApiClient;
@@ -30,7 +29,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotificationCount200Response result = apiInstance.getUserNotificationCount(tenantId)
+      GetUserNotificationCountResponse result = apiInstance.getUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -44,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

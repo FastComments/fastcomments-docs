@@ -12,7 +12,7 @@
 
 ## Response
 
-Returns: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCount200Response.php)
+Returns: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
 
 ## Example
 

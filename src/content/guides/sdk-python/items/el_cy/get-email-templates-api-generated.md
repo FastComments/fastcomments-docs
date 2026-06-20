@@ -1,46 +1,46 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | skip | number | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_templates200_response.py)
+Επιστρέφει: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_templates_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_email_templates'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_templates200_response import GetEmailTemplates200Response
+from client.models.get_email_templates_response import GetEmailTemplatesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και από προεπιλογή είναι https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
+# Δείτε το configuration.py για τη λίστα όλων των υποστηριζόμενων παραμέτρων ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# Ο client πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
 # σύμφωνα με την πολιτική ασφάλειας του διακομιστή API.
-# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί την περίπτωσή χρήσης αυθεντικοποίησής σας.
+# Παραδείγματα για κάθε μέθοδο πιστοποίησης παρέχονται παρακάτω, χρησιμοποιήστε
+# το παράδειγμα που ικανοποιεί την περίπτωσή σας.
 
-# Ρυθμίστε την εξουσιοδότηση με API key: api_key
+# Ρύθμιση εξουσιοδότησης με API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αφαιρέστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ορίσετε prefix (π.χ. Bearer) για το API key, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε πλαίσιο (context) με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα instance του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 3.4 # float |  (προαιρετικό)
+    skip = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_email_templates(tenant_id, skip=skip)

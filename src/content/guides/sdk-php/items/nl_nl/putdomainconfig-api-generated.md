@@ -7,7 +7,7 @@
 
 ## Antwoord
 
-Retourneert: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfig200Response.php)
+Retourneert: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PutDomainConfigResponse.php)
 
 ## Voorbeeld
 
@@ -18,13 +18,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configureer API-sleutelautorisatie: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Haal het commentaar hieronder weg om het voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );

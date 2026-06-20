@@ -1,17 +1,17 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| urlId | string | query | Нет |  |
-| fromCommentId | string | query | Нет |  |
-| viewed | boolean | query | Нет |  |
-| type | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCount200Response.java)
+Возвращает: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCountResponse.java)
 
 ## Пример
 
@@ -33,7 +33,7 @@ public class Example {
     // Настройка авторизации API-ключом: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Boolean viewed = true; // Boolean | 
     String type = "type_example"; // String | 
     try {
-      GetNotificationCount200Response result = apiInstance.getNotificationCount(tenantId)
+      GetNotificationCountResponse result = apiInstance.getNotificationCount(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)
@@ -62,3 +62,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

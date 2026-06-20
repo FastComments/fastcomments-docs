@@ -7,7 +7,7 @@
 
 ## Antwoord
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Voorbeeld
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutel autorisatie: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteEmailTemplate(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteEmailTemplate(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

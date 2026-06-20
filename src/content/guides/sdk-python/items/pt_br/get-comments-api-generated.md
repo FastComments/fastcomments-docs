@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | page | integer | query | Não |  |
@@ -17,17 +17,19 @@
 | hashTag | string | query | Não |  |
 | parentId | string | query | Não |  |
 | direction | string | query | Não |  |
+| fromDate | integer | query | Não |  |
+| toDate | integer | query | Não |  |
 
-## Response
+## Resposta
 
-Retorna: [`GetComments200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments200_response.py)
+Retorna: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments200_response import GetComments200Response
+from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
@@ -46,7 +48,7 @@ configuration = client.Configuration(
 # Configurar autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Descomente abaixo para configurar prefixo (por ex. Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API
@@ -68,9 +70,11 @@ with client.ApiClient(configuration) as api_client:
     hash_tag = 'hash_tag_example' # str |  (opcional)
     parent_id = 'parent_id_example' # str |  (opcional)
     direction = client.SortDirections() # SortDirections |  (opcional)
+    from_date = 56 # int |  (opcional)
+    to_date = 56 # int |  (opcional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction)
+        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

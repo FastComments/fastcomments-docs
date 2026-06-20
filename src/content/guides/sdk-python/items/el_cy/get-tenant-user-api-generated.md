@@ -7,35 +7,35 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_user200_response.py)
+Επιστρέφει: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_user_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_user200_response import GetTenantUser200Response
+from client.models.get_tenant_user_response import GetTenantUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
+# Ορισμός του host είναι προαιρετικός και το προεπιλεγμένο είναι https://fastcomments.com
+# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# Ο client πρέπει να ρυθμίσει τις παραμέτρους ελέγχου ταυτότητας και εξουσιοδότησης
 # σύμφωνα με την πολιτική ασφαλείας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε
-# το παράδειγμα που ικανοποιεί το σενάριο χρήσης σας.
+# Παρέχονται παραδείγματα για κάθε μέθοδο ελέγχου ταυτότητας παρακάτω — χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωσή χρήσης σας.
 
-# Ρυθμίστε την εξουσιοδότηση με API key: api_key
+# Διαμορφώστε εξουσιοδότηση με API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αφαιρέστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Ξε-σχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισέλθετε σε context με ένα instance του API client
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.DefaultApi(api_client)
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tenant_user: %s\n" % e)
 [inline-code-end]
+
+---

@@ -7,13 +7,13 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BulkAggregateQuestionResults200Response.swift)
+Επιστρέφει: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BulkAggregateQuestionResultsResponse.swift)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα bulkAggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, κάντε αναφορά μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,5 +31,3 @@ DefaultAPI.bulkAggregateQuestionResults(tenantId: tenantId, bulkAggregateQuestio
     }
 }
 [inline-code-end]
-
----

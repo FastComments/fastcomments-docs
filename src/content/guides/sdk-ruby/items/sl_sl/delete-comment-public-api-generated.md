@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -10,11 +10,11 @@
 
 ## Odgovor
 
-Vrne: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_public200_response.rb)
+Vrača: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'delete_comment_public Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer delete_comment_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_public: #{e}"
 end
 [inline-code-end]
-
----

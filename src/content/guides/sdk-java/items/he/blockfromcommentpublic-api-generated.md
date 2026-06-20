@@ -8,13 +8,13 @@
 
 ## תגובה
 
-מחזיר: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BlockFromCommentPublic200Response.java)
+מחזיר: [`BlockSuccess`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BlockSuccess.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-blockFromCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,7 +32,7 @@ public class Example {
     PublicBlockFromCommentParams publicBlockFromCommentParams = new PublicBlockFromCommentParams(); // PublicBlockFromCommentParams | 
     String sso = "sso_example"; // String | 
     try {
-      BlockFromCommentPublic200Response result = apiInstance.blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
+      BlockSuccess result = apiInstance.blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
             .sso(sso)
             .execute();
       System.out.println(result);

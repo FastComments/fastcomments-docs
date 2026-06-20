@@ -1,18 +1,19 @@
+---
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateEmailTemplate200Response.swift)
+Возвращает: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateEmailTemplateResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример createEmailTemplate'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода находятся в бета-версии. Если возникнут проблемы, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё находятся в бета-версии. В случае проблем, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,3 +30,5 @@ DefaultAPI.createEmailTemplate(tenantId: tenantId, createEmailTemplateBody: crea
     }
 }
 [inline-code-end]
+
+---

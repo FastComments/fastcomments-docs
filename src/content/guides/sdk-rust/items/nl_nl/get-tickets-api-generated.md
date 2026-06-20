@@ -2,15 +2,15 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| state | f64 | No |  |
-| skip | f64 | No |  |
-| limit | f64 | No |  |
+| tenant_id | String | Ja |  |
+| user_id | String | Nee |  |
+| state | f64 | Nee |  |
+| skip | f64 | Nee |  |
+| limit | f64 | Nee |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tickets_200_response.rs)
+Retourneert: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tickets_response.rs)
 
 ## Voorbeeld
 
@@ -18,13 +18,13 @@ Geeft terug: [`GetTickets200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 async fn example_get_tickets() -> Result<(), Error> {
     let params: GetTicketsParams = GetTicketsParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        user_id: Some("user-9876".to_owned()),
+        tenant_id: String::from("acme-corp-tenant"),
+        user_id: Some(String::from("journalist-42")),
         state: Some(1.0),
         skip: Some(0.0),
-        limit: Some(25.0),
+        limit: Some(50.0),
     };
-    let tickets: GetTickets200Response = get_tickets(configuration, params).await?;
+    let tickets: GetTicketsResponse = get_tickets(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

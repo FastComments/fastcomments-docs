@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postId | string | path | Да |  |
@@ -10,7 +10,7 @@
 
 ## Ответ
 
-Возвращает: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostPublic200Response.php)
+Возвращает: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
 
 ## Пример
 
@@ -22,8 +22,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать собственный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -40,3 +40,5 @@ try {
     echo 'Exception when calling PublicApi->reactFeedPostPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -13,7 +13,7 @@ afterId
 
 ## תגובה
 
-מחזיר: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+מחזיר: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## דוגמה
 
@@ -21,11 +21,11 @@ afterId
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת אימות
+# הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

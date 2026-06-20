@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | postIds | array | query | Non |  |
@@ -8,13 +8,13 @@
 
 ## Réponse
 
-Renvoie: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserReactsPublic200Response.java)
+Renvoie : [`UserReactsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UserReactsResponse.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getUserReactsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importation des classes:
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserReactsPublic200Response result = apiInstance.getUserReactsPublic(tenantId)
+      UserReactsResponse result = apiInstance.getUserReactsPublic(tenantId)
             .postIds(postIds)
             .sso(sso)
             .execute();

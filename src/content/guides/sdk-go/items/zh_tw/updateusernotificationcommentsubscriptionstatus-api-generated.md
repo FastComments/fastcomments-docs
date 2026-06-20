@@ -2,17 +2,17 @@
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | 是 |  |
-| notificationId | string | 路徑 | 是 |  |
-| optedInOrOut | string | 路徑 | 是 |  |
-| commentId | string | 查詢 | 是 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | 是 |  |
+| notificationId | string | path | 是 |  |
+| optedInOrOut | string | path | 是 |  |
+| commentId | string | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳：[`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+回傳：[`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_comment_subscription_status_response.go)
 
 ## 範例
 
@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 	notificationId := "notificationId_example" // string | 
 	optedInOrOut := "optedInOrOut_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (可選)
+	sso := "sso_example" // string |  (選用)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 回應自 `UpdateUserNotificationCommentSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// 從 `UpdateUserNotificationCommentSubscriptionStatus` 的回應: UpdateUserNotificationCommentSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config200_response.rb)
+Dönen değer: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config_response.rb)
 
 ## Örnek
 
@@ -14,10 +14,11 @@ Döndürür: [`CreateQuestionConfig200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirme kurulumu
+# Yetkilendirmeyi yapılandır
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
-  # API anahtarı için önek ayarlamak üzere aşağıdaki satırın başındaki yorum işaretini kaldırın, örn. 'Bearer' (varsayılan nil)
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -33,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_question_config: #{e}"
 end
 [inline-code-end]
-
----

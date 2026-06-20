@@ -1,13 +1,13 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 型別 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | skip | number | query | 否 |  |
 
-## 回傳
+## 回應
 
-Returns: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_templates_200_response.go)
+回傳: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_templates_response.go)
 
 ## 範例
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetEmailTemplates` 的回應: GetEmailTemplates200Response
+	// `GetEmailTemplates` 的回應：GetEmailTemplatesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplates`: %v\n", resp)
 }
 [inline-code-end]

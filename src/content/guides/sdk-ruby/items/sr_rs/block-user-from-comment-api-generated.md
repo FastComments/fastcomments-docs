@@ -9,7 +9,7 @@
 
 ## Одговор
 
-Враћа: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Враћа: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## Пример
 
@@ -19,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију API кључа: api_key
+  # Конфигуришите ауторизацију помоћу API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Одукоментаришите следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

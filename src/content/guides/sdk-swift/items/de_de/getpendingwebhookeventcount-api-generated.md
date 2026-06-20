@@ -2,23 +2,23 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | query | Nein |  |
+| externalId | string | query | Nein |  |
+| eventType | string | query | Nein |  |
+| type | string | query | Nein |  |
+| domain | string | query | Nein |  |
+| attemptCountGT | number | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCount200Response.swift)
+Gibt zurück: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch in der Beta-Phase. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie diese bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

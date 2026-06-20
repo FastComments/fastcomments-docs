@@ -7,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package200_response.rb)
+Връща: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package_response.rb)
 
 ## Пример
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на авторизация
+# Настройка на упълномощаването
 FastCommentsClient.configure do |config|
-  # Конфигуриране на удостоверяване с API ключ: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Премахнете коментара от следния ред, за да зададете префикс за API ключа, например 'Bearer' (по подразбиране nil)
+  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_package: #{e}"
 end
 [inline-code-end]
+
+---

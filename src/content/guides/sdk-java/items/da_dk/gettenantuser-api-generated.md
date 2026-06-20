@@ -1,17 +1,17 @@
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Response
+## Svar
 
-Returnerer: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUser200Response.java)
+Returnerer: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUserResponse.java)
 
-## Example
+## Eksempel
 
-[inline-code-attrs-start title = 'getTenantUser Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -29,14 +29,14 @@ public class Example {
     // Konfigurer API-nøgleautorisation: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Fjern kommentaren på følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantUser200Response result = apiInstance.getTenantUser(tenantId, id)
+      GetTenantUserResponse result = apiInstance.getTenantUser(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

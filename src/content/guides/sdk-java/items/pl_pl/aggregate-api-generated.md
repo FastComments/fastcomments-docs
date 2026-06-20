@@ -1,24 +1,23 @@
----
-Agreguje dokumenty przez grupowanie ich (jeśli podano groupBy) i stosowanie wielu operacji.
-Obsługiwane są różne operacje (np. sum, countDistinct, avg, itd.).
+Agreguje dokumenty przez grupowanie ich (jeśli podano groupBy) i zastosowanie kilku operacji.
+Obsługiwane są różne operacje (np. sum, countDistinct, avg itd.).
 
 ## Parametry
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+| tenantId | string | query | Tak |  |
+| parentTenantId | string | query | Nie |  |
+| includeStats | boolean | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+Zwraca: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład aggregate'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład agregacji'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importowanie klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguracja autoryzacji klucza API: api_key
+    // Skonfiguruj autoryzację klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Odkomentuj poniższą linię, aby ustawić przedrostek dla klucza API, np. "Token" (domyślnie null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +42,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();
@@ -58,5 +57,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

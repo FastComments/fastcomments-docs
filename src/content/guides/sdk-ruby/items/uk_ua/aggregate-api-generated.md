@@ -1,17 +1,17 @@
-Агрегує документи, групуючи їх (якщо задано groupBy) та застосовуючи кілька операцій.
-Підтримуються різні операції (наприклад, sum, countDistinct, avg тощо).
+---
+Агрегує документи шляхом їх групування (якщо вказано groupBy) та застосування кількох операцій. Підтримуються різні операції (наприклад, sum, countDistinct, avg тощо).
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| parentTenantId | string | query | Ні |  |
-| includeStats | boolean | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Відповідь
 
-Повертає: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Повертає: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Приклад
 
@@ -21,9 +21,9 @@ require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштуйте авторизацію ключем API: api_key
+  # Налаштуйте авторизацію за API-ключем: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, наприклад 'Bearer' (за замовчуванням nil)
+  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +43,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
+
+---

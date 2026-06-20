@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | yearNumber | number | query | Όχι |  |
@@ -8,9 +8,9 @@
 | dayNumber | number | query | Όχι |  |
 | skip | number | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsages200Response.php)
+Επιστρέφει: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
 
 ## Παράδειγμα
 
@@ -22,7 +22,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+// Αποσχολιάστε παρακάτω για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειαστεί
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags200_response.rb)
+返却値: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags_response.rb)
 
 ## 例
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーの接頭辞を設定するには次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
+  # APIキーにプレフィックスを設定するには、次の行のコメントを解除してください。例: 'Bearer'（既定は nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_hash_tags: #{e}"
 end
 [inline-code-end]
-
----

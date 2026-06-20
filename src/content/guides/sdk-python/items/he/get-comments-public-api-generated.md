@@ -4,7 +4,7 @@ urlId
 
 ## פרמטרים
 
-| שם | Type | Location | נדרש | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
@@ -37,28 +37,28 @@ urlId
 
 ## תגובה
 
-מחזיר: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_public200_response.py)
+מחזיר: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'get_comments_public דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_comments_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments_public200_response import GetCommentsPublic200Response
+from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית והברירת מחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת host היא אופציונלית והבררת המחדל היא https://fastcomments.com
+# עיין ב-configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# פתח context עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # יצירת מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 

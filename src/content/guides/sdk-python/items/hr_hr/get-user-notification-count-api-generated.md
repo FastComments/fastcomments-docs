@@ -7,27 +7,27 @@
 
 ## Odgovor
 
-Vraća: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_notification_count200_response.py)
+Vraća: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_notification_count_response.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer get_user_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_notification_count200_response import GetUserNotificationCount200Response
+from client.models.get_user_notification_count_response import GetUserNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je neobavezno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
+# Definiranje hosta je opcionalno i podrazumijeva se https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst s primjerkom API klijenta
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte primjerak API klase
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (neobavezno)

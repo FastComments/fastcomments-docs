@@ -7,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_configs_200_response.go)
+Връща: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_configs_response.go)
 
 ## Пример
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionConfigs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetQuestionConfigs`: GetQuestionConfigs200Response
+	// отговор от `GetQuestionConfigs`: GetQuestionConfigsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfigs`: %v\n", resp)
 }
 [inline-code-end]

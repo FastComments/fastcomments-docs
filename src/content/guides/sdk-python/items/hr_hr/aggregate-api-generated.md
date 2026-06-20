@@ -1,38 +1,38 @@
-Agregira dokumente grupiranjem istih (ako je groupBy naveden) i primjenom više operacija.
-Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
+Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija.
+Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+| tenantId | string | query | Da |  |
+| parentTenantId | string | query | Ne |  |
+| includeStats | boolean | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer agregacije'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Postavljanje hosta je neobavezno i zadano je na https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaki način autentikacije dani su ispod, upotrijebite primjer koji
-# odgovara vašem slučaju upotrebe autentikacije.
+# u skladu s politikom sigurnosti API servera.
+# Primjeri za svaku metodu autentikacije su prikazani u nastavku, upotrijebite onaj
+# koji zadovoljava vaš slučaj upotrebe autentikacije.
 
 # Konfigurirajte autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]

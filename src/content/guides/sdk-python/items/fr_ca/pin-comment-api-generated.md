@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,27 +9,27 @@
 
 ## Réponse
 
-Retourne : [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+Renvoie : [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de pin_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
-# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et a pour valeur par défaut https://fastcomments.com
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrez dans un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

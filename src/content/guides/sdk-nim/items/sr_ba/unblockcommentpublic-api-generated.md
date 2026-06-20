@@ -1,31 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+Vraća: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'unBlockCommentPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer unBlockCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unBlockCommentPublic(
-  tenantId = "news-site-456",
-  commentId = "comment-abc123",
-  publicBlockFromCommentParams = PublicBlockFromCommentParams{},
-  sso = ""
-)
+let (response, httpResponse) = client.unBlockCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", publicBlockFromCommentParams = PublicBlockFromCommentParams(), sso = "")
 if response.isSome:
-  let unblocked = response.get()
-  discard unblocked
+  let unblockResult = response.get()
+  discard unblockResult
 else:
   discard httpResponse
 [inline-code-end]
-
----

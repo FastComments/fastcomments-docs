@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | commentId | string | path | Ναι |  |
@@ -9,7 +9,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`PinComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PinComment200Response.php)
+Επιστρέφει: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeCommentPinStatusResponse.php)
 
 ## Παράδειγμα
 
@@ -25,10 +25,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // συμβολοσειρά
-$comment_id = 'comment_id_example'; // συμβολοσειρά
-$broadcast_id = 'broadcast_id_example'; // συμβολοσειρά
-$sso = 'sso_example'; // συμβολοσειρά
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->pinComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->pinComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,26 +1,28 @@
+---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenant_id | String | はい |  |
 | id | String | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_200_response.rs)
+戻り値: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_tenant の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_tenant() -> Result<GetTenant200Response, Error> {
+async fn example_get_tenant() -> Result<(), Error> {
     let params: GetTenantParams = GetTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/site-42".to_string(),
-        expand: Some(vec!["domains".to_string(), "billing".to_string()]),
+        id: "news/article".to_string(),
     };
-    let tenant: GetTenant200Response = get_tenant(&configuration, params).await?;
-    Ok(tenant)
+    let include_subdomains: Option<bool> = Some(true);
+    let tenant: GetTenantResponse = get_tenant(&configuration, params).await?;
+    println!("{:#?}", tenant);
+    Ok(())
 }
 [inline-code-end]
 

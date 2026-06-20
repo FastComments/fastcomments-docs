@@ -1,13 +1,13 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | sso | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotifications200Response.swift)
+Враћа: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotificationsResponse.swift)
 
 ## Пример
 
@@ -17,7 +17,7 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let sso = "sso_example" // String |  (опционо)
+let sso = "sso_example" // String |  (опционално)
 
 PublicAPI.resetUserNotificationCount(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ PublicAPI.resetUserNotificationCount(tenantId: tenantId, sso: sso) { (response, 
     }
 }
 [inline-code-end]
-
----

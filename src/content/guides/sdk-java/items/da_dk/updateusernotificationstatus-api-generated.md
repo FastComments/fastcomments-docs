@@ -1,19 +1,19 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | notificationId | string | path | Ja |  |
 | newStatus | string | path | Ja |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Returnerer: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatusResponse.java)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på updateUserNotificationStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +33,7 @@ public class Example {
     String newStatus = "read"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
+      UpdateUserNotificationStatusResponse result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
             .sso(sso)
             .execute();
       System.out.println(result);

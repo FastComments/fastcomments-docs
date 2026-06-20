@@ -4,7 +4,7 @@ afterId
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | afterId | string | query | Non |  |
@@ -16,7 +16,7 @@ afterId
 
 ## Réponse
 
-Renvoie: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_public_200_response.go)
+Renvoie: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_feed_posts_response.go)
 
 ## Exemple
 
@@ -28,17 +28,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  (optionnel)
-	limit := int32(56) // int32 |  (optionnel)
-	tags := []string{"Inner_example"} // []string |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
-	isCrawler := true // bool |  (optionnel)
-	includeUserInfo := true // bool |  (optionnel)
+	afterId := "afterId_example" // string |  (facultatif)
+	limit := int32(56) // int32 |  (facultatif)
+	tags := []string{"Inner_example"} // []string |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
+	isCrawler := true // bool |  (facultatif)
+	includeUserInfo := true // bool |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFeedPostsPublic`: GetFeedPostsPublic200Response
+	// réponse de `GetFeedPostsPublic`: PublicFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsPublic`: %v\n", resp)
 }
 [inline-code-end]

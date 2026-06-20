@@ -1,19 +1,19 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Location | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| postId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| postId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteFeedPostPublic200Response.java)
+Враћа: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteFeedPostPublicResponse.java)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'Пример deleteFeedPostPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteFeedPostPublic Примјер'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      DeleteFeedPostPublic200Response result = apiInstance.deleteFeedPostPublic(tenantId, postId)
+      DeleteFeedPostPublicResponse result = apiInstance.deleteFeedPostPublic(tenantId, postId)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();

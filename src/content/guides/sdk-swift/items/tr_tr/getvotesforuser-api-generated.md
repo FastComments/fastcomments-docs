@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | urlId | string | query | Evet |  |
@@ -9,7 +9,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUser200Response.swift)
+Döndürür: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
 
 ## Örnek
 
@@ -34,5 +34,3 @@ DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, ano
     }
 }
 [inline-code-end]
-
----

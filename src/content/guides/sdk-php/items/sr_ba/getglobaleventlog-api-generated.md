@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| userIdWS | string | query | Да |  |
-| startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| userIdWS | string | query | Da |  |
+| startTime | integer | query | Da |  |
+| endTime | integer | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getGlobalEventLog Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGlobalEventLog Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,8 +27,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите свој клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевани.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

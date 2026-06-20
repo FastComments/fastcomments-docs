@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+回傳： [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 範例
 
@@ -17,13 +17,16 @@
 [inline-code-start]
 let (response, httpResponse) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-98765",
-  isFlagged = false,
+  commentId = "cmt-456789",
+  isFlagged = true,
   sso = ""
 )
+
 if response.isSome:
-  let flagResult = response.get()
-  discard flagResult
+  let apiResp = response.get()
+  discard apiResp
+else:
+  discard httpResponse
 [inline-code-end]
 
 ---

@@ -1,3 +1,4 @@
+---
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -9,7 +10,7 @@
 
 ## Resposta
 
-Retorna: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment200_response.rb)
+Retorna: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_response.rb)
 
 ## Exemplo
 
@@ -17,11 +18,11 @@ Retorna: [`FlagComment200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorização
+# Configurar autorização
 FastCommentsClient.configure do |config|
-  # Configure a autorização da chave da API: api_key
+  # Configurar autorização por chave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente a linha a seguir para definir um prefixo para a chave da API, e.g. 'Bearer' (padrão é nil)
+  # Descomente a linha a seguir para definir um prefixo para a chave da API, por exemplo 'Bearer' (padrão: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

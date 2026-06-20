@@ -1,6 +1,6 @@
-### Korištenje autentifikovanih API-ja (DefaultApi)
+### Коришћење аутентификованих API-ја (DefaultApi)
 
-**Važno:** Morate postaviti vaš API ključ na ApiClient prije nego što napravite autentifikovane zahtjeve. Ako to ne uradite, zahtjevi će završiti sa 401 greškom.
+**Важно:** Морате подесити ваш API кључ на ApiClient пре слања аутентификованих захтјева. Ако то не урадите, захтјеви ће резултирати 401 грешком.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,18 +10,18 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Kreiraj i konfiguriraj API klijent
+        // Креирајте и конфигуришите ApiClient
         ApiClient apiClient = new ApiClient();
 
-        // OBAVEZNO: Postavite vaš API ključ (preuzmite ga sa FastComments kontrolne ploče)
+        // ОБАВЕЗНО: Подесите ваш API кључ (преузмите га са FastComments контролне табле)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Kreiraj instancu API-ja sa konfiguriranim klijentom
+        // Креирајте инстанцу API-ја са конфигурисаним клијентом
         DefaultApi api = new DefaultApi(apiClient);
 
-        // Sada možete praviti autentifikovane API pozive
+        // Сада можете извршавати аутентификоване API позиве
         try {
-            // Primjer: Dodavanje SSO korisnika
+            // Пример: Додавање SSO корисника
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
             userData.setId("user-123");
             userData.setEmail("user@example.com");
@@ -33,17 +33,17 @@ public class Example {
 
         } catch (ApiException e) {
             System.err.println("Error: " + e.getResponseBody());
-            // Uobičajene greške:
-            // - 401: API key nedostaje ili je nevažeći
-            // - 400: Validacija zahtjeva nije uspjela
+            // Уобичајене грешке:
+            // - 401: API кључ недостаје или је невалидан
+            // - 400: Валидација захтјева није успјела
         }
     }
 }
 ```
 
-### Korištenje javnih API-ja (PublicApi)
+### Коришћење јавних API-ја (PublicApi)
 
-Javni endpointi ne zahtijevaju autentifikaciju:
+Јавне крајње тачке не захтјевају аутентификацију:
 
 ```java
 import com.fastcomments.api.PublicApi;
@@ -60,8 +60,30 @@ try {
 }
 ```
 
-### Uobičajeni problemi
+### Коришћење модерацијских API-ја (ModerationApi)
 
-1. **401 "missing-api-key" greška**: Provjerite da li pozivate `apiClient.setApiKey("YOUR_KEY")` prije kreiranja instance DefaultApi.
-2. **Pogrešna API klasa**: Koristite `DefaultApi` za autentifikovane zahtjeve na serverskoj strani, a `PublicApi` za zahtjeve na klijentskoj strani/javne zahtjeve.
-3. **Null API key**: SDK će tiho preskočiti autentifikaciju ako je API key null, što će dovesti do 401 grešaka.
+The `ModerationApi` drives the moderator dashboard. Each method accepts an `sso` parameter identifying the SSO-authenticated moderator on whose behalf the request is made:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Листа коментара који чекају модерацију
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
+### Уобичајени проблеми
+
+1. **401 "missing-api-key" error**: Увјерите се да позивате `apiClient.setApiKey("YOUR_KEY")` прије креирања инстанце DefaultApi.
+2. **Wrong API class**: Користите `DefaultApi` за аутентификоване захтјеве на страни сервера, `PublicApi` за захтјеве на страни клијента/јавне захтјеве.
+3. **Null API key**: SDK ће тихо прескочити аутентификацију ако је API кључ null, што резултира 401 грешкама.

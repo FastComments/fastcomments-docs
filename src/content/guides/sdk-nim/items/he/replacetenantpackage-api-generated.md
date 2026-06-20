@@ -1,36 +1,34 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | No |  |
+| tenantId | string | כן |  |
+| id | string | לא |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | לא |  |
 
-## תשובה
+## תגובה
 
-מחזיר: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+מחזיר: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let replaceBody = ReplaceTenantPackageBody(
-  packageName = "Community Pro",
-  seats = 500,
-  enableModeration = true,
-  features = @["moderation", "analytics", "single-sign-on"]
-)
-
 let (response, httpResponse) = client.replaceTenantPackage(
   tenantId = "my-tenant-123",
-  id = "community-pro",
-  replaceTenantPackageBody = replaceBody
+  id = "pkg-987",
+  replaceTenantPackageBody = ReplaceTenantPackageBody(
+    name = "Premium Plan",
+    priceCents = 999,
+    seats = 50,
+    enabled = true,
+    features = @["moderation", "analytics", "priority-support"]
+  )
 )
 
 if response.isSome:
-  let flagResp = response.get()
-  echo "Package replaced for tenant: ", "my-tenant-123"
-  discard flagResp
+  let apiEmpty = response.get()
+  discard apiEmpty
 [inline-code-end]
 
 ---

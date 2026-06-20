@@ -2,15 +2,15 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | διαδρομή | Ναι |  |
-| urlId | string | ερώτημα | Ναι |  |
-| broadcastId | string | ερώτημα | Ναι |  |
-| sessionId | string | ερώτημα | Όχι |  |
-| sso | string | ερώτημα | Όχι |  |
+| tenantId | string | path | Ναι |  |
+| urlId | string | query | Ναι |  |
+| broadcastId | string | query | Ναι |  |
+| sessionId | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_comment_public_200_response.go)
+Επιστρέφει: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_response_with_presence.go)
 
 ## Παράδειγμα
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CreateCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απάντηση από `CreateCommentPublic`: CreateCommentPublic200Response
+	// απόκριση από `CreateCommentPublic`: SaveCommentsResponseWithPresence
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CreateCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,13 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotificationCount200Response.php)
+Возвращает: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotificationCountResponse.php)
 
 ## Пример
 
@@ -19,12 +19,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // строка
+$sso = 'sso_example'; // строка
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);
@@ -33,5 +33,3 @@ try {
     echo 'Exception when calling PublicApi->getUserNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

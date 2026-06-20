@@ -1,13 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Пример
 
@@ -34,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.ReplaceTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `ReplaceTenantPackage`: FlagCommentPublic200Response
+	// ответ от `ReplaceTenantPackage`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.ReplaceTenantPackage`: %v\n", resp)
 }
 [inline-code-end]
-
----

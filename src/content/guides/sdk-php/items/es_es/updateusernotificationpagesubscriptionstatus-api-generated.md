@@ -1,19 +1,21 @@
-Habilitar o deshabilitar notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones para nuevos comentarios raíz, y también
+---
+Habilita o deshabilita las notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones
+para nuevos comentarios raíz, y también
 
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| urlId | string | query | Sí |  |
-| url | string | query | Sí |  |
-| pageTitle | string | query | Sí |  |
-| subscribedOrUnsubscribed | string | path | Sí |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## Ejemplo
 
@@ -43,3 +45,5 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

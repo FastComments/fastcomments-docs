@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserReactsPublic200Response.php)
+Returns: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UserReactsResponse.php)
 
 ## Example
 

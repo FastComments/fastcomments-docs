@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results200_response.rb)
+Vraća: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results_response.rb)
 
 ## Primjer
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte autorizaciju API ključa: api_key
+  # Konfigurirajte autorizaciju putem API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. 'Bearer' (zadano nil)
+  # Otkomentirajte sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (zadano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->bulk_aggregate_question_results: #{e}"
 end
 [inline-code-end]
-
----

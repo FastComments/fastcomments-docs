@@ -1,12 +1,12 @@
-## Parameters
+## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Nein |  |
 
-## Response
+## Antwort
 
-Gibt zurück: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_hash_tag_200_response.go)
+Gibt zurück: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
 
 ## Beispiel
 
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `AddHashTag`: AddHashTag200Response
+	// Antwort von `AddHashTag`: CreateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]

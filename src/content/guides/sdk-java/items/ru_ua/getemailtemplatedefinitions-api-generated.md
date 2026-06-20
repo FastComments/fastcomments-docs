@@ -1,3 +1,4 @@
+---
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательно | Описание |
@@ -6,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitions200Response.java)
+Возвращает: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitionsResponse.java)
 
 ## Пример
 
@@ -25,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации по ключу API: api_key
+    // Настройка авторизации API-ключом: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
@@ -34,7 +35,7 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetEmailTemplateDefinitions200Response result = apiInstance.getEmailTemplateDefinitions(tenantId)
+      GetEmailTemplateDefinitionsResponse result = apiInstance.getEmailTemplateDefinitions(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

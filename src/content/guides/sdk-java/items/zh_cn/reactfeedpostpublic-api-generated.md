@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | postId | string | path | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ReactFeedPostPublic200Response.java)
+返回: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ReactFeedPostResponse.java)
 
 ## 示例
 
@@ -36,7 +36,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ReactFeedPostPublic200Response result = apiInstance.reactFeedPostPublic(tenantId, postId, reactBodyParams)
+      ReactFeedPostResponse result = apiInstance.reactFeedPostPublic(tenantId, postId, reactBodyParams)
             .isUndo(isUndo)
             .broadcastId(broadcastId)
             .sso(sso)

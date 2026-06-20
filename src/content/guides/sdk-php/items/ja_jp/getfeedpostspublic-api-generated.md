@@ -6,17 +6,17 @@ afterId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
-| sso | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeUserInfo | boolean | query | No |  |
+| tenantId | string | path | はい |  |
+| afterId | string | query | いいえ |  |
+| limit | integer | query | いいえ |  |
+| tags | array | query | いいえ |  |
+| sso | string | query | いいえ |  |
+| isCrawler | boolean | query | いいえ |  |
+| includeUserInfo | boolean | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+戻り値: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## 例
 
@@ -28,8 +28,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

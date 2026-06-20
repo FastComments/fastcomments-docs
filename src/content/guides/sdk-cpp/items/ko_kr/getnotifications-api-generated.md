@@ -1,40 +1,37 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| urlId | string | No |  |
-| fromCommentId | string | No |  |
-| viewed | bool | No |  |
-| type | string | No |  |
-| skip | double | No |  |
+| tenantId | string | 예 |  |
+| userId | string | 아니요 |  |
+| urlId | string | 아니요 |  |
+| fromCommentId | string | 아니요 |  |
+| viewed | bool | 아니요 |  |
+| type | string | 아니요 |  |
+| skip | double | 아니요 |  |
 
 ## 응답
 
-반환: [`GetNotifications_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotifications_200_response.h)
+반환: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getNotifications 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("https://example.com/posts/42"));
-boost::optional<utility::string_t> fromCommentId = boost::optional<utility::string_t>(U("cmt-98765"));
-boost::optional<bool> viewed = boost::optional<bool>(true);
-boost::optional<utility::string_t> type = boost::optional<utility::string_t>(U("reply"));
-boost::optional<double> skip = boost::optional<double>(0.0);
+boost::optional<utility::string_t> userId(U("user@example.com"));
+boost::optional<utility::string_t> urlId(U("/articles/2026/new-feature"));
+boost::optional<utility::string_t> fromCommentId(U("cmt-98765"));
+boost::optional<bool> viewed(true);
+boost::optional<utility::string_t> type(U("reply"));
+boost::optional<double> skip(0.0);
 
 api->getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)
-.then([](pplx::task<std::shared_ptr<GetNotifications_200_response>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto processed = std::make_shared<GetNotifications_200_response>(*resp);
-        }
-    } catch (const std::exception&) {
-    }
+.then([](std::shared_ptr<GetNotificationsResponse> resp){
+    auto holder = std::make_shared<GetNotificationsResponse>();
+    holder = resp;
+    if (holder) std::cout << "Received notifications\n";
+    return holder;
 });
 [inline-code-end]
 

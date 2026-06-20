@@ -1,13 +1,13 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count200_response.rb)
+回傳: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count_response.rb)
 
 ## 範例
 

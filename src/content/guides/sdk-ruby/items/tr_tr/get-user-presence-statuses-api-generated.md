@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | urlIdWS | string | query | Evet |  |
@@ -8,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+Döndürür: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
 ## Örnek
 
@@ -30,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_presence_statuses: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
-## Odgovor
+## Vraća
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Primjer
 
@@ -29,7 +29,7 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte sljedeći redak da biste postavili prefiks za API ključ, npr. "Token" (zadano: null)
+    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateEmailTemplateBody updateEmailTemplateBody = new UpdateEmailTemplateBody(); // UpdateEmailTemplateBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateEmailTemplate(tenantId, id, updateEmailTemplateBody)
+      APIEmptyResponse result = apiInstance.updateEmailTemplate(tenantId, id, updateEmailTemplateBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

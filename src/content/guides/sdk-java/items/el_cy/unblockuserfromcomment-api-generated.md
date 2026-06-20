@@ -2,14 +2,14 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| userId | string | query | Όχι |  |
-| anonUserId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnBlockCommentPublic200Response.java)
+Επιστρέφει: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnblockSuccess.java)
 
 ## Παράδειγμα
 
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+    // Ρύθμιση εξουσιοδότησης με API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (defaults to null)
+    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -41,7 +41,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      UnBlockCommentPublic200Response result = apiInstance.unBlockUserFromComment(tenantId, id, unBlockFromCommentParams)
+      UnblockSuccess result = apiInstance.unBlockUserFromComment(tenantId, id, unBlockFromCommentParams)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

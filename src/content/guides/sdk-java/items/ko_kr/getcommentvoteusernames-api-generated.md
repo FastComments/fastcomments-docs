@@ -1,16 +1,15 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | Type | Location | Required | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
 | dir | integer | query | 예 |  |
-| sso | string | query | 아니요 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentVoteUserNames200Response.java)
+반환: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentVoteUserNamesSuccessResponse.java)
 
 ## 예제
 
@@ -34,7 +33,7 @@ public class Example {
     Integer dir = 56; // Integer | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentVoteUserNames200Response result = apiInstance.getCommentVoteUserNames(tenantId, commentId, dir)
+      GetCommentVoteUserNamesSuccessResponse result = apiInstance.getCommentVoteUserNames(tenantId, commentId, dir)
             .sso(sso)
             .execute();
       System.out.println(result);

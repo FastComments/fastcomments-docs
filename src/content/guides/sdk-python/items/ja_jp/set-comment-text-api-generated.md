@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名称 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | commentId | string | path | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-返却値: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+返却: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## 例
 
@@ -18,18 +18,18 @@
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの設定はオプションで、デフォルトは https://fastcomments.com です
+# ホストを定義することは任意で、省略した場合は https://fastcomments.com がデフォルトになります
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使ってコンテキストに入ります
+# APIクライアントのインスタンスを使ってコンテキストを開始します
 with client.ApiClient(configuration) as api_client:
     # APIクラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
@@ -37,8 +37,8 @@ with client.ApiClient(configuration) as api_client:
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_text_update_request = client.CommentTextUpdateRequest() # CommentTextUpdateRequest | 
-    edit_key = 'edit_key_example' # str |  (任意)
-    sso = 'sso_example' # str |  (任意)
+    edit_key = 'edit_key_example' # str |  (オプション)
+    sso = 'sso_example' # str |  (オプション)
 
     try:
         api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, edit_key=edit_key, sso=sso)

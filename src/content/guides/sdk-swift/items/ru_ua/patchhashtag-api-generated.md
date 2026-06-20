@@ -1,13 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tag | string | path | Да |  |
 | tenantId | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PatchHashTag200Response.swift)
+Возвращает: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateHashTagResponse.swift)
 
 ## Пример
 

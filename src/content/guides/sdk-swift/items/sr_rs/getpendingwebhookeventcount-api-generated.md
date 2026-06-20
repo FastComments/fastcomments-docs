@@ -12,13 +12,13 @@
 
 ## Одговор
 
-Враћа: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCount200Response.swift)
+Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getPendingWebhookEventCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било какав проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су и даље бета. За било какав проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -40,3 +40,5 @@ DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId,
     }
 }
 [inline-code-end]
+
+---

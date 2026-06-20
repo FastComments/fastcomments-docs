@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | postId | string | path | はい |  |
@@ -8,9 +9,9 @@
 | broadcastId | string | query | いいえ |  |
 | sso | string | query | いいえ |  |
 
-## 戻り値
+## レスポンス
 
-Returns: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_react_feed_post_public_200_response.go)
+戻り値: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_react_feed_post_response.go)
 
 ## 例
 
@@ -22,16 +23,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	postId := "postId_example" // string | 
 	reactBodyParams := *openapiclient.NewReactBodyParams() // ReactBodyParams | 
-	isUndo := true // bool |  (任意)
-	broadcastId := "broadcastId_example" // string |  (任意)
-	sso := "sso_example" // string |  (任意)
+	isUndo := true // bool |  （オプション）
+	broadcastId := "broadcastId_example" // string |  （オプション）
+	sso := "sso_example" // string |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.ReactFeedPostPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `ReactFeedPostPublic` からのレスポンス: ReactFeedPostPublic200Response
+	// `ReactFeedPostPublic` のレスポンス: ReactFeedPostResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ReactFeedPostPublic`: %v\n", resp)
 }
 [inline-code-end]

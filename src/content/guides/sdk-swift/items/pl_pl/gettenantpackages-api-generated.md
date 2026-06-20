@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -7,13 +8,13 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantPackages200Response.swift)
+Zwraca: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantPackagesResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getTenantPackages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,3 +31,5 @@ DefaultAPI.getTenantPackages(tenantId: tenantId, skip: skip) { (response, error)
     }
 }
 [inline-code-end]
+
+---

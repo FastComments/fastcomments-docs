@@ -1,13 +1,13 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | userId | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Restituisce: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Esempio
 
@@ -15,11 +15,11 @@ Restituisce: [`GetUserBadgeProgressById200Response`](https://github.com/FastComm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configura l'autorizzazione
+# Configura l'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione della chiave API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommentare la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (valore predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

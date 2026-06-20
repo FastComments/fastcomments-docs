@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| id | string | path | 是 |  |
-| editKey | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| editKey | string | query | No |  |
 
 ## 回應
 
-回傳: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_vote_200_response.go)
+回傳: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
 
 ## 範例
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `DeleteVote` 的回應: DeleteCommentVote200Response
+	// `DeleteVote` 的回應：VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteVote`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,13 +1,13 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | skip | number | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackages200Response.php)
+Повертає: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackagesResponse.php)
 
 ## Приклад
 
@@ -17,20 +17,20 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації за ключем API: api_key
+// Налаштування авторизації API ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
+// Розкоментуйте нижче, щоб встановити префікс (наприклад Bearer) для API ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Якщо ви хочете використовувати власний http-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // рядок
-$skip = 3.4; // число з плаваючою точкою
+$tenant_id = 'tenant_id_example'; // string
+$skip = 3.4; // float
 
 try {
     $result = $apiInstance->getTenantPackages($tenant_id, $skip);

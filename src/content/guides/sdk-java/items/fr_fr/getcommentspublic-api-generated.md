@@ -4,7 +4,7 @@ urlId
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
@@ -37,7 +37,7 @@ urlId
 
 ## Réponse
 
-Renvoie : [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsPublic200Response.java)
+Renvoie : [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## Exemple
 
@@ -85,7 +85,7 @@ public class Example {
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
     try {
-      GetCommentsPublic200Response result = apiInstance.getCommentsPublic(tenantId, urlId)
+      GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
             .direction(direction)
             .sso(sso)

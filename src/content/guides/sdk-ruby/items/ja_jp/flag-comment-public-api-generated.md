@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -10,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 例
 
@@ -20,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 文字列 | 
-comment_id = 'comment_id_example' # 文字列 | 
-is_flagged = true # 真偽値 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+is_flagged = true # Boolean | 
 opts = {
-  sso: 'sso_example' # 文字列 | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->flag_comment_public: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentIds | string | query | Sí | Una lista separada por comas de IDs de comentarios. |
@@ -8,11 +9,11 @@
 
 ## Respuesta
 
-Devuelve: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Devuelve: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de checkedCommentsForBlocked'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Ejemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -31,7 +32,7 @@ public class Example {
     String commentIds = "commentIds_example"; // String | Una lista separada por comas de IDs de comentarios.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

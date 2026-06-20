@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | כן |  |
+| skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfigs200Response.php)
+מחזיר: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfigsResponse.php)
 
 ## דוגמה
 
@@ -17,9 +17,9 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדרת אישור עבור מפתח ה-API: api_key
+// הגדרת הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getQuestionConfigs: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

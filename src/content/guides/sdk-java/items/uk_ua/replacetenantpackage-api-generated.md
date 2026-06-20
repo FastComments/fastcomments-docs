@@ -1,19 +1,19 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Відповідь
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад replaceTenantPackage'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Імпортувати класи:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштуйте авторизацію за допомогою ключа API: api_key
+    // Налаштувати авторизацію API-ключем: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, напр., "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     ReplaceTenantPackageBody replaceTenantPackageBody = new ReplaceTenantPackageBody(); // ReplaceTenantPackageBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
+      APIEmptyResponse result = apiInstance.replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

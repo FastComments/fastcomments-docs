@@ -1,16 +1,16 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| yearNumber | number | query | Όχι |  |
-| monthNumber | number | query | Όχι |  |
-| dayNumber | number | query | Όχι |  |
-| skip | number | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsages200Response.java)
+Επιστρέφει: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsagesResponse.java)
 
 ## Παράδειγμα
 
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Ρύθμιση εξουσιοδότησης με κλειδί API: api_key
+    // Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +42,7 @@ public class Example {
     Double dayNumber = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantDailyUsages200Response result = apiInstance.getTenantDailyUsages(tenantId)
+      GetTenantDailyUsagesResponse result = apiInstance.getTenantDailyUsages(tenantId)
             .yearNumber(yearNumber)
             .monthNumber(monthNumber)
             .dayNumber(dayNumber)
@@ -59,3 +59,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

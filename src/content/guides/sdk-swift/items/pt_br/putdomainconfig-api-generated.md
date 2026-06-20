@@ -1,19 +1,19 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-----------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | domainToUpdate | string | path | Sim |  |
 
 ## Resposta
 
-Retorna: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+Retorna: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PutDomainConfigResponse.swift)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de putDomainConfig'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,5 +31,3 @@ DefaultAPI.putDomainConfig(tenantId: tenantId, domainToUpdate: domainToUpdate, u
     }
 }
 [inline-code-end]
-
----

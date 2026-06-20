@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | page | integer | query | Nee |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | Nee |  |
 | parentId | string | query | Nee |  |
 | direction | string | query | Nee |  |
+| fromDate | integer | query | Nee |  |
+| toDate | integer | query | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Geeft terug: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Voorbeeld
 
@@ -32,7 +34,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal de commentaarteken van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

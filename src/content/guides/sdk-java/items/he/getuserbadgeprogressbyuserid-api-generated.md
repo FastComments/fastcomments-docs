@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | Location | חובה | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | userId | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadgeProgressById200Response.java)
+מחזיר: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeProgressResponse.java)
 
 ## דוגמה
 
@@ -29,14 +29,14 @@ public class Example {
     // הגדר הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת המחדל null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה "Token" (ברירת מחדל: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      GetUserBadgeProgressById200Response result = apiInstance.getUserBadgeProgressByUserId(tenantId, userId)
+      APIGetUserBadgeProgressResponse result = apiInstance.getUserBadgeProgressByUserId(tenantId, userId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

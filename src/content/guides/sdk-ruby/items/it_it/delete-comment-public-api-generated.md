@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | commentId | string | path | Sì |  |
@@ -10,11 +10,11 @@
 
 ## Risposta
 
-Restituisce: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_public200_response.rb)
+Restituisce: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di delete_comment_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio delete_comment_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

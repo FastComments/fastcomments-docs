@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | page | integer | query | Ne |  |
@@ -17,14 +17,16 @@
 | hashTag | string | query | Ne |  |
 | parentId | string | query | Ne |  |
 | direction | string | query | Ne |  |
+| fromDate | integer | query | Ne |  |
+| toDate | integer | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getComments Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -44,8 +46,10 @@ let contextUserId = "contextUserId_example" // String |  (neobavezno)
 let hashTag = "hashTag_example" // String |  (neobavezno)
 let parentId = "parentId_example" // String |  (neobavezno)
 let direction = SortDirections() // SortDirections |  (neobavezno)
+let fromDate = 987 // Int64 |  (neobavezno)
+let toDate = 987 // Int64 |  (neobavezno)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return

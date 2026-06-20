@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_200_response.go)
+Returns: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_result.go)
 
 ## Example
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteComment`: DeleteComment200Response
+	// response from `DeleteComment`: DeleteCommentResult
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteComment`: %v\n", resp)
 }
 [inline-code-end]

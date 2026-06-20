@@ -6,13 +6,13 @@
 
 ## Odgovor
 
-Vrne: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenant200Response.swift)
+Vrne: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'createTenant Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji vzorci kode so še v beta različici. Če naletite na težavo, prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta. Za morebitne težave prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

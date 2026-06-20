@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
@@ -8,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket200_response.rb)
+Döndürür: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket_response.rb)
 
 ## Örnek
 
@@ -16,11 +16,11 @@ Döndürür: [`GetTicket200Response`](https://github.com/FastComments/fastcommen
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirme yapılandırması
+# yetkilendirme ayarı
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek belirleyin, ör. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir önek belirleyin, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_ticket: #{e}"
 end
 [inline-code-end]
+
+---

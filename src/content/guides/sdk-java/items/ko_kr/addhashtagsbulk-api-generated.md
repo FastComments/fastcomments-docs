@@ -1,12 +1,12 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 아니요 |  |
+| tenantId | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddHashTagsBulk200Response.java)
+반환: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
 
 ## 예제
 
@@ -28,14 +28,14 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 대한 접두사(예: "Token")를 설정하려면 다음 줄의 주석을 제거하세요 (기본값은 null)
+    // API 키 접두사 설정을 위해 다음 줄의 주석 처리를 해제하세요. 예: "Token" (기본값은 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      AddHashTagsBulk200Response result = apiInstance.addHashTagsBulk()
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
             .tenantId(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();

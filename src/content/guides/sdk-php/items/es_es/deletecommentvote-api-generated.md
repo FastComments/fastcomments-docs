@@ -1,18 +1,19 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| voteId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
+| tenantId | string | path | Sí |  |
+| commentId | string | path | Sí |  |
+| voteId | string | path | Sí |  |
+| urlId | string | query | Sí |  |
+| broadcastId | string | query | Sí |  |
 | editKey | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentVote200Response.php)
+Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
 ## Ejemplo
 
@@ -43,3 +44,5 @@ try {
     echo 'Exception when calling PublicApi->deleteCommentVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

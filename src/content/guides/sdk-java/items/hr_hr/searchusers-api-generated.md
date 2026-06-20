@@ -1,17 +1,17 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| usernameStartsWith | string | query | Ne |  |
-| mentionGroupIds | array | query | Ne |  |
-| sso | string | query | Ne |  |
-| searchSection | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Odgovor
 
-Vraća: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsersResult.java)
 
 ## Primjer
 
@@ -37,7 +37,7 @@ public class Example {
     String sso = "sso_example"; // String | 
     String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+      SearchUsersResult result = apiInstance.searchUsers(tenantId, urlId)
             .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

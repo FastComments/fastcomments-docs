@@ -2,13 +2,13 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | Abfrage | Ja |  |
-| id | string | Pfad | Ja |  |
-| userId | string | Abfrage | Nein |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
+| userId | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_200_response.go)
+Gibt zurück: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_response.go)
 
 ## Beispiel
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `GetTicket`: GetTicket200Response
+	// Antwort von `GetTicket`: GetTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTicket`: %v\n", resp)
 }
 [inline-code-end]

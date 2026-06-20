@@ -1,8 +1,9 @@
 ## 參數
 
-| Name | Type | 必填 | 描述 |
-|------|------|------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
+| urlId | string | 是 |  |
 | pageSize | int | 否 |  |
 | afterId | string | 否 |  |
 | includeContext | bool | 否 |  |
@@ -11,11 +12,12 @@
 | dmOnly | bool | 否 |  |
 | noDm | bool | 否 |  |
 | includeTranslations | bool | 否 |  |
+| includeTenantNotifications | bool | 否 |  |
 | sso | string | 否 |  |
 
 ## 回應
 
-回傳：[`Option[GetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notifications200response.nim)
+回傳: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_my_notifications_response.nim)
 
 ## 範例
 
@@ -23,21 +25,20 @@
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
-  pageSize = 50,
-  afterId = "notif_9a1b2c3d",
-  includeContext = true,
-  afterCreatedAt = int64(1699999999000),
+  urlId = "news/article-title",
+  pageSize = 0,
+  afterId = "",
+  includeContext = false,
+  afterCreatedAt = 0,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   includeTranslations = false,
+  includeTenantNotifications = false,
   sso = ""
 )
+
 if response.isSome:
   let notifications = response.get()
-  discard notifications
-else:
-  discard httpResponse
+  echo notifications
 [inline-code-end]
-
----

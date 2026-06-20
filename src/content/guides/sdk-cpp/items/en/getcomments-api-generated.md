@@ -17,37 +17,47 @@
 | hashTag | string | No |  |
 | parentId | string | No |  |
 | direction | SortDirections | No |  |
+| fromDate | int64_t | No |  |
+| toDate | int64_t | No |  |
 
 ## Response
 
-Returns: [`GetComments_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetComments_200_response.h)
+Returns: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetCommentsResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'getComments Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t urlId = utility::conversions::to_string_t("https://example.com/articles/42");
-utility::string_t userId = utility::conversions::to_string_t("user@example.com");
-utility::string_t parentId = utility::conversions::to_string_t("comment-abc-123");
+utility::string_t tenantId(U("my-tenant-123"));
+boost::optional<int32_t> page = 1;
+boost::optional<int32_t> limit = 50;
+boost::optional<bool> asTree = true;
+boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
+boost::optional<int64_t> fromDate = 1622505600LL;
+boost::optional<int64_t> toDate = 1625097600LL;
+
 api->getComments(tenantId,
-                 boost::optional<int32_t>(1),
-                 boost::optional<int32_t>(50),
-                 boost::optional<int32_t>(0),
-                 boost::optional<bool>(true),
+                 page,
+                 limit,
+                 boost::optional<int32_t>(),
+                 asTree,
                  boost::optional<int32_t>(),
                  boost::optional<int32_t>(),
                  boost::optional<int32_t>(),
-                 boost::optional<utility::string_t>(urlId),
-                 boost::optional<utility::string_t>(userId),
+                 boost::optional<utility::string_t>(),
+                 userId,
                  boost::optional<utility::string_t>(),
                  boost::optional<utility::string_t>(),
                  boost::optional<utility::string_t>(),
-                 boost::optional<utility::string_t>(parentId),
-                 boost::optional<SortDirections>())
-.then([](std::shared_ptr<GetComments_200_response> resp){
-    if (resp) {
-        auto copy = std::make_shared<GetComments_200_response>(*resp);
-    }
+                 boost::optional<utility::string_t>(),
+                 boost::optional<SortDirections>(),
+                 fromDate,
+                 toDate)
+.then([](pplx::task<std::shared_ptr<APIGetCommentsResponse>> t){
+    try {
+        auto resp = t.get();
+        auto holder = std::make_shared<std::shared_ptr<APIGetCommentsResponse>>(resp);
+        (void)holder;
+    } catch (...) {}
 });
 [inline-code-end]

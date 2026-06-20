@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Location | Required | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | commentId | string | path | Так |  |
@@ -9,25 +10,25 @@
 
 ## Відповідь
 
-Повертає: [`LockComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/lock_comment200_response.py)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад un_lock_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.lock_comment200_response import LockComment200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням https://fastcomments.com
-# Див. configuration.py для повного списку підтримуваних параметрів конфігурації.
+# Визначення хоста необов'язкове та за замовчуванням https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст з екземпляром клієнта API
+# Використайте контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)
@@ -43,3 +44,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->un_lock_comment: %s\n" % e)
 [inline-code-end]
+
+---

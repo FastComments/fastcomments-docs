@@ -9,19 +9,19 @@
 
 ## Odgovor
 
-Vrne: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentText200Response.swift)
+Vrne: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPIGetCommentTextResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za kakršnokoli težavo prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za vsako težavo poročajte prek http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let editKey = "editKey_example" // String |  (izbirno)
-let sso = "sso_example" // String |  (izbirno)
+let editKey = "editKey_example" // String |  (neobvezno)
+let sso = "sso_example" // String |  (neobvezno)
 
 PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, editKey: editKey, sso: sso) { (response, error) in
     guard error == nil else {

@@ -10,9 +10,9 @@
 | startDate | string | query | 否 |  |
 | forceRecalculate | boolean | query | 否 |  |
 
-## Response
+## 响应
 
-返回: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResults200Response.swift)
+返回: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
 ## 示例
 

@@ -1,3 +1,4 @@
+---
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -7,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template200_response.rb)
+Devuelve: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template_response.rb)
 
 ## Ejemplo
 
@@ -15,11 +16,11 @@ Devuelve: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización por API key: api_key
+  # Configurar la autorización de la clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la API key, p. ej. 'Bearer' (por defecto es nil)
+  # Descomenta la siguiente línea para establecer un prefijo para la clave API, por ejemplo 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->render_email_template: #{e}"
 end
 [inline-code-end]
+
+---

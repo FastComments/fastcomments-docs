@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
@@ -12,17 +12,17 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badges200_response.rb)
+Επιστρέφει: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badges_response.rb)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'get_user_badges Παράδειγμα'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα get_user_badges'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης μέσω API key: api_key
+  # Διαμορφώστε την εξουσιοδότηση με API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -47,3 +47,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badges: #{e}"
 end
 [inline-code-end]
+
+---

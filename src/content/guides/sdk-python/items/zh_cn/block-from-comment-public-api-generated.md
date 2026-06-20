@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
@@ -8,14 +8,14 @@
 
 ## 响应
 
-返回: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_from_comment_public200_response.py)
+返回: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_success.py)
 
 ## 示例
 
-[inline-code-attrs-start title = 'block_from_comment_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'block_from_comment_public 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.block_from_comment_public200_response import BlockFromCommentPublic200Response
+from client.models.block_success import BlockSuccess
 from client.models.public_block_from_comment_params import PublicBlockFromCommentParams
 from client.rest import ApiException
 from pprint import pprint
@@ -29,7 +29,7 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

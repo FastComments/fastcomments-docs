@@ -7,11 +7,11 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_users_200_response.go)
+Devuelve: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_users_response.go)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de GetTenantUsers'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo GetTenantUsers'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `GetTenantUsers`: GetTenantUsers200Response
+	// respuesta de `GetTenantUsers`: GetTenantUsersResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantUsers`: %v\n", resp)
 }
 [inline-code-end]

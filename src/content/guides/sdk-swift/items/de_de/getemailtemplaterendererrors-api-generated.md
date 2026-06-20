@@ -2,13 +2,13 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| skip | number | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| skip | number | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateRenderErrors200Response.swift)
+Gibt zurück: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateRenderErrorsResponse.swift)
 
 ## Beispiel
 
@@ -32,5 +32,3 @@ DefaultAPI.getEmailTemplateRenderErrors(tenantId: tenantId, id: id, skip: skip) 
     }
 }
 [inline-code-end]
-
----

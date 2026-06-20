@@ -6,7 +6,7 @@
 
 ## Réponse
 
-Renvoie : [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateUserBadge200Response.php)
+Renvoie: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APICreateUserBadgeResponse.php)
 
 ## Exemple
 
@@ -16,9 +16,9 @@ Renvoie : [`CreateUserBadge200Response`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'autorisation par clé API: api_key
+// Configurer l'authentification par clé d'API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci-dessous pour configurer un préfixe (par ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -38,3 +38,5 @@ try {
     echo 'Exception when calling DefaultApi->createUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

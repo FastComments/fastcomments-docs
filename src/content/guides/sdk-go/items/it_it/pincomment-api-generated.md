@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -9,7 +10,7 @@
 
 ## Risposta
 
-Restituisce: [`PinComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pin_comment_200_response.go)
+Restituisce: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_comment_pin_status_response.go)
 
 ## Esempio
 
@@ -21,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +38,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.PinComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `PinComment`: PinComment200Response
+	// risposta da `PinComment`: ChangeCommentPinStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.PinComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

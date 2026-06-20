@@ -1,13 +1,13 @@
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | id | string | path | 예 |  |
 
 ## 응답
 
-반환: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badge_200_response.go)
+반환: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badge_response.go)
 
 ## 예제
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserBadge`의 응답: GetUserBadge200Response
+	// `GetUserBadge`의 응답: APIGetUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadge`: %v\n", resp)
 }
 [inline-code-end]

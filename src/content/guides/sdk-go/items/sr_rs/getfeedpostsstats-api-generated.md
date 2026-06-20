@@ -1,18 +1,18 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | путања | Да |  |
-| postIds | array | упит | Да |  |
-| sso | string | упит | Не |  |
+| tenantId | string | path | Да |  |
+| postIds | array | query | Да |  |
+| sso | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_stats_200_response.go)
+Враћа: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_feed_posts_stats_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за GetFeedPostsStats'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetFeedPostsStats Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -20,13 +20,13 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	postIds := []string{"Inner_example"} // []string | 
-	sso := "sso_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsStats``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFeedPostsStats`: GetFeedPostsStats200Response
+	// одговор из `GetFeedPostsStats`: FeedPostsStatsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsStats`: %v\n", resp)
 }
 [inline-code-end]
+
+---

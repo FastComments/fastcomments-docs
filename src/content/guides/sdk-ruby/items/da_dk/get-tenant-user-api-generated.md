@@ -1,13 +1,13 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Svar
 
-Returnerer: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user200_response.rb)
+Returnerer: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user_response.rb)
 
 ## Eksempel
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Konfigurer API-nøgleautorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (defaults to nil)
+  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_user: #{e}"
 end
 [inline-code-end]
-
----

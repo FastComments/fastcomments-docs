@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Retourne: [`GetComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComment200Response.swift)
+Retourne : [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentResponse.swift)
 
 ## Exemple
 

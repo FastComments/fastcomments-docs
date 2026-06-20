@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_block_from_comment_public_200_response.go)
+Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_block_success.go)
 
 ## Primer
 
@@ -20,7 +20,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.BlockFromCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `BlockFromCommentPublic`: BlockFromCommentPublic200Response
+	// odgovor iz `BlockFromCommentPublic`: BlockSuccess
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.BlockFromCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

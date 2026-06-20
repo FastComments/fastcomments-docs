@@ -1,13 +1,13 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-----------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | userId | string | path | Sim |  |
 
 ## Resposta
 
-Retorna: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadgeProgressById200Response.java)
+Retorna: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeProgressResponse.java)
 
 ## Exemplo
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização por chave de API: api_key
+    // Configurar autorização da chave da API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha a seguir para definir um prefixo para a chave de API, ex. "Token" (padrão: null)
+    // Descomente a linha abaixo para definir um prefixo para a chave da API, por exemplo "Token" (padrão é null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      GetUserBadgeProgressById200Response result = apiInstance.getUserBadgeProgressByUserId(tenantId, userId)
+      APIGetUserBadgeProgressResponse result = apiInstance.getUserBadgeProgressByUserId(tenantId, userId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

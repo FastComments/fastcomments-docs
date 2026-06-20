@@ -1,14 +1,15 @@
+---
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| errorId | string | path | כן |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| errorId | string | path | Yes |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## דוגמה
 
@@ -35,7 +36,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteEmailTemplateRenderError``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteEmailTemplateRenderError`: FlagCommentPublic200Response
+	// תגובה מ-`DeleteEmailTemplateRenderError`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteEmailTemplateRenderError`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,3 +1,4 @@
+---
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -7,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Eksempel
 
@@ -15,9 +16,9 @@ Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsætning af autorisation
+# opsæt autorisation
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøglegodkendelse: api_key
+  # Konfigurer API-nøgleautorisering: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

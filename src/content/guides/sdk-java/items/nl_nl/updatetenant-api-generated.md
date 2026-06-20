@@ -2,18 +2,18 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'updateTenant Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutel autorisatie: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de volgende regel uit commentaar om een prefix voor de API-sleutel in te stellen, bijv. "Token" (standaard is null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateTenantBody updateTenantBody = new UpdateTenantBody(); // UpdateTenantBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateTenant(tenantId, id, updateTenantBody)
+      APIEmptyResponse result = apiInstance.updateTenant(tenantId, id, updateTenantBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

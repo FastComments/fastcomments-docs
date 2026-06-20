@@ -1,43 +1,43 @@
 ## Parametri
 
-| Name | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderator200_response.py)
+Vraća: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderator_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_moderator Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderator200_response import GetModerator200Response
+from client.models.get_moderator_response import GetModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s pravilima sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentikacije su navedeni dolje, upotrijebite primjer koji
-# odgovara vašem slučaju upotrebe autentikacije.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Konfigurirajte autorizaciju putem API ključa: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentirajte dolje kako biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst s instancom API klijenta
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

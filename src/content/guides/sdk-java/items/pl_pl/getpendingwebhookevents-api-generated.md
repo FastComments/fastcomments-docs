@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | commentId | string | query | Nie |  |
@@ -13,7 +13,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEvents200Response.java)
+Zwraca: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventsResponse.java)
 
 ## Przykład
 
@@ -32,10 +32,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguracja autoryzacji klucza API: api_key
+    // Skonfiguruj uwierzytelnianie klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj następną linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
+    // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -48,7 +48,7 @@ public class Example {
     Double attemptCountGT = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetPendingWebhookEvents200Response result = apiInstance.getPendingWebhookEvents(tenantId)
+      GetPendingWebhookEventsResponse result = apiInstance.getPendingWebhookEvents(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)

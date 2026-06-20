@@ -9,18 +9,18 @@
 
 ## Svar
 
-Returnerer: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Returnerer: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'un_flag_comment Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og som standard bruges https://fastcomments.com
+# Angivelse af host er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,8 +28,8 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver godkendelsesmetode er vist nedenfor; brug det eksempel,
-# der opfylder dit autentificeringsbehov.
+# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel som
+# opfylder dit auth-brugsscenario.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]

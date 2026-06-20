@@ -2,12 +2,12 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge200_response.rb)
+Επιστρέφει: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_response.rb)
 
 ## Παράδειγμα
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

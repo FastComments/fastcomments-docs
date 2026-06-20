@@ -7,7 +7,7 @@
 
 ## Одговор
 
-Враћа: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user200_response.rb)
+Враћа: [`GetUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_response.rb)
 
 ## Примјер
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање овлашћења
+# Подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите овлашћење API кључа: api_key
+  # Конфигуришите API кључ за ауторизацију: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Ако уклоните коментар са следеће линије, можете поставити префикс за API кључ, нпр. 'Bearer' (подразумјевано nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user: #{e}"
 end
 [inline-code-end]
-
----

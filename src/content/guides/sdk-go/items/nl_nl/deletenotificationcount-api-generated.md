@@ -1,13 +1,14 @@
+---
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Voorbeeld
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// reactie van `DeleteNotificationCount`: FlagCommentPublic200Response
+	// response from `DeleteNotificationCount`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
+
+---

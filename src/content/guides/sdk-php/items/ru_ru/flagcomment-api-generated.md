@@ -1,5 +1,4 @@
----
-## Параметры
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -8,11 +7,11 @@
 | userId | string | query | Нет |  |
 | anonUserId | string | query | Нет |  |
 
-## Ответ
+## Response
 
-Возвращает: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagComment200Response.php)
+Возвращает: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentResponse.php)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример flagComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,22 +19,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации с помощью API-ключа: api_key
+// Настройка авторизации API-ключом: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если хотите использовать собственный HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
+$user_id = 'user_id_example'; // строка
+$anon_user_id = 'anon_user_id_example'; // строка
 
 try {
     $result = $apiInstance->flagComment($tenant_id, $id, $user_id, $anon_user_id);
@@ -44,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->flagComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

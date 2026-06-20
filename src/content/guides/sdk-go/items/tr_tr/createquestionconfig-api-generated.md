@@ -1,13 +1,12 @@
----
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_200_response.go)
+Döndürür: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_response.go)
 
 ## Örnek
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateQuestionConfig`'den yanıt: CreateQuestionConfig200Response
+	// `CreateQuestionConfig`'ten gelen yanıt: CreateQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

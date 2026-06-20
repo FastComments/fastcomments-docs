@@ -1,43 +1,44 @@
-## パラメーター
+---
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | はい |  |
+| domain | string | path | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+返却値: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_domain_config の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.get_domain_config_response import GetDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストを定義することは任意です。デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメーターの一覧は configuration.py を参照してください。
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
+# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメーターを設定する必要があります。
-# 各認証方式の例を以下に示します。自分の認証ユースケースに該当する例を使用してください。
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# クライアントは認証と認可のパラメータを構成する必要があります
+# API サーバーのセキュリティポリシーに従って。
+# 各認証方法の例は以下に示されています。使用する例は
+# ご自身の認証ユースケースに合うものを使用してください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには以下の行のコメントを外してください
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# APIクライアントのインスタンスを使ってコンテキストに入ります
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     domain = 'domain_example' # str | 
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_domain_config: %s\n" % e)
 [inline-code-end]
+
+---

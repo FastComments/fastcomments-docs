@@ -7,14 +7,14 @@
 
 ## Odgovor
 
-Vraća: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users200_response.py)
+Vraća: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_sso_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_sso_users200_response import GetSSOUsers200Response
+from client.models.get_sso_users_response import GetSSOUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,14 +25,14 @@ configuration = client.Configuration(
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# u skladu sa bezbednosnom politikom API servera.
+# Primeri za svaku metodu autentifikacije su navedeni ispod; koristite primer koji
 # odgovara vašem slučaju upotrebe autentifikacije.
 
-# Konfigurišite autorizaciju API ključem: api_key
+# Konfigurišite autorizaciju putem API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta

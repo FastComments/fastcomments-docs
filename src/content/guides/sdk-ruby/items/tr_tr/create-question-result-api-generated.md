@@ -6,7 +6,7 @@
 
 ## Yanıt
 
-Döndürür: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_result200_response.rb)
+Dönen Değer: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_result_response.rb)
 
 ## Örnek
 
@@ -14,11 +14,11 @@ Döndürür: [`CreateQuestionResult200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirme kurulumu
+# yetkilendirme yapılandırması
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandırın: api_key
+  # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek ayarlamak amacıyla aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_question_result: #{e}"
 end
 [inline-code-end]
-
----

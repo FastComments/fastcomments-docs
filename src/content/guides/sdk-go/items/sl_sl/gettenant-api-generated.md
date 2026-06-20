@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrača: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_200_response.go)
+Vrača: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_response.go)
 
 ## Primer
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTenant`: GetTenant200Response
+	// odgovor iz `GetTenant`: GetTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenant`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -10,31 +10,31 @@
 | type | string | query | Nej |  |
 | skip | number | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+Returnerer: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_notifications Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, standard er https://fastcomments.com
+# Det er valgfrit at angive host, og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere godkendelses- og autorisationsparametrene
+# Klienten skal konfigurere autentifikations- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler på hver godkendelsesmetode er angivet nedenfor, brug det eksempel som
-# opfylder dit godkendelsesbehov.
+# Eksempler på hver godkendelsesmetode er vist nedenfor, brug det eksempel, der
+# passer til dit godkendelsesbehov.
 
-# Konfigurer API-nøglegodkendelse: api_key
+# Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
@@ -59,5 +59,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_notifications: %s\n" % e)
 [inline-code-end]
-
----

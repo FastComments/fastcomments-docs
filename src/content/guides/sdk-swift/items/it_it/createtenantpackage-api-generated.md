@@ -1,13 +1,12 @@
----
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 
 ## Risposta
 
-Restituisce: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantPackage200Response.swift)
+Restituisce: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantPackageResponse.swift)
 
 ## Esempio
 
@@ -30,5 +29,3 @@ DefaultAPI.createTenantPackage(tenantId: tenantId, createTenantPackageBody: crea
     }
 }
 [inline-code-end]
-
----

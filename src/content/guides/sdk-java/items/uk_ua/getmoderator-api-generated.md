@@ -7,13 +7,13 @@
 
 ## Відповідь
 
-Повертає: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModerator200Response.java)
+Повертає: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModeratorResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getModerator'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Імпортування класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації за допомогою API ключа: api_key
+    // Налаштування авторизації за API ключем: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetModerator200Response result = apiInstance.getModerator(tenantId, id)
+      GetModeratorResponse result = apiInstance.getModerator(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,20 +1,20 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| urlIdWS | string | query | Tak |  |
-| userIds | string | query | Tak |  |
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserPresenceStatuses200Response.java)
+Zwraca: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserPresenceStatusesResponse.java)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getUserPresenceStatuses'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,7 +31,7 @@ public class Example {
     String urlIdWS = "urlIdWS_example"; // String | 
     String userIds = "userIds_example"; // String | 
     try {
-      GetUserPresenceStatuses200Response result = apiInstance.getUserPresenceStatuses(tenantId, urlIdWS, userIds)
+      GetUserPresenceStatusesResponse result = apiInstance.getUserPresenceStatuses(tenantId, urlIdWS, userIds)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,3 +44,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

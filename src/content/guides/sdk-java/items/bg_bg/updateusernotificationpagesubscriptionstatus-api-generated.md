@@ -1,19 +1,19 @@
-Разрешаване или забраняване на известия за страница. Когато потребителите са абонирани за страница, се създават известия за нови коренови коментари, и също
+Включване или изключване на известия за страница. Когато потребителите са абонирани за страница, се създават известия за нови коренови коментари, както и
 
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Да |  |
-| url | string | query | Да |  |
-| pageTitle | string | query | Да |  |
-| subscribedOrUnsubscribed | string | path | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
-Връща: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Връща: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Пример
 
@@ -39,7 +39,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

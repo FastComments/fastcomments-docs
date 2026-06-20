@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_package_200_response.go)
+Restituisce: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_package_response.go)
 
 ## Esempio
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetTenantPackage`: GetTenantPackage200Response
+	// risposta da `GetTenantPackage`: GetTenantPackageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantPackage`: %v\n", resp)
 }
 [inline-code-end]

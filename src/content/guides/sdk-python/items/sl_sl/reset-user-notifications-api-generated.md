@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | afterId | string | query | Ne |  |
@@ -12,25 +12,25 @@
 
 ## Odgovor
 
-Vrne: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+Vrača: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco odjemalca API
+# Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
     # Ustvarite instanco razreda API
     api_instance = client.PublicApi(api_client)

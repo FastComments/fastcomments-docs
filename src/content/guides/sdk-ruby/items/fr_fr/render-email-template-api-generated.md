@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | locale | string | query | Non |  |
 
 ## Réponse
 
-Retourne: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template200_response.rb)
+Renvoie : [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template_response.rb)
 
 ## Exemple
 
@@ -15,9 +15,9 @@ Retourne: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'autorisation
+# configuration de l'authentification
 FastCommentsClient.configure do |config|
-  # Configurer l'authentification par clé API: api_key
+  # Configurez l'authentification par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

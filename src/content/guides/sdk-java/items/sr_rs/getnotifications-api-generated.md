@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Не |  |
@@ -12,13 +12,13 @@
 
 ## Одговор
 
-Враћа: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotifications200Response.java)
+Враћа: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationsResponse.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getNotifications'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Увезите класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите овлашћење API кључа: api_key
+    // Конфигуришите ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоменаришите следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String type = "type_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetNotifications200Response result = apiInstance.getNotifications(tenantId)
+      GetNotificationsResponse result = apiInstance.getNotifications(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)
@@ -65,3 +65,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

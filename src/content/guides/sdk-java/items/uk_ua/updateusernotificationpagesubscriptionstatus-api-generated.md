@@ -1,10 +1,9 @@
 ---
-Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, створюються
-сповіщення для нових кореневих коментарів, а також
+Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються для нових кореневих коментарів, а також
 
 ## Параметри
 
-| Назва | Тип | Location | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | urlId | string | query | Так |  |
@@ -15,13 +14,13 @@
 
 ## Відповідь
 
-Повертає: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Повертає: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -41,7 +40,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

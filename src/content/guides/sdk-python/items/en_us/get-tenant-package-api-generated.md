@@ -7,14 +7,14 @@
 
 ## Response
 
-Returns: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_package200_response.py)
+Returns: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_package_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_tenant_package Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_package200_response import GetTenantPackage200Response
+from client.models.get_tenant_package_response import GetTenantPackageResponse
 from client.rest import ApiException
 from pprint import pprint
 

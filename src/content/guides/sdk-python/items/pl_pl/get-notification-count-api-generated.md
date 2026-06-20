@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
@@ -11,14 +11,14 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count200_response.py)
+Zwraca: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notification_count200_response import GetNotificationCount200Response
+from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,13 +30,13 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania — użyj tego, który
-# odpowiada Twojemu przypadkowi użycia.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
+# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Konfiguracja autoryzacji kluczem API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API

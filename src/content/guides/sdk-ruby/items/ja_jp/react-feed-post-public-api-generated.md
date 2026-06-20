@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | postId | string | path | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_public200_response.rb)
+戻り値: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_response.rb)
 
 ## 例
 

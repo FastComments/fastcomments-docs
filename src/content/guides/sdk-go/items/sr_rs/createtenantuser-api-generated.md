@@ -1,16 +1,16 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
+| Ime | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Одговор
 
-Враћа: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_200_response.go)
+Vraća: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример CreateTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer CreateTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -32,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `CreateTenantUser`: CreateTenantUser200Response
+	// одговор од `CreateTenantUser`: CreateTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

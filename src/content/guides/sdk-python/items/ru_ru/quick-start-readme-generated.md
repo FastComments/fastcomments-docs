@@ -1,19 +1,19 @@
 ### Использование аутентифицированных API (DefaultApi)
 
-**Важно:** Вы должны установить ваш API-ключ в Configuration перед выполнением аутентифицированных запросов. Если вы этого не сделаете, запросы завершатся с ошибкой 401.
+**Важно:** Вы должны установить ваш API-ключ в Configuration перед выполнением аутентифицированных запросов. Если вы этого не сделаете, запросы завершатся ошибкой 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Создайте и настройте клиент API
+# Создаём и настраиваем API-клиент
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# ОБЯЗАТЕЛЬНО: Установите ваш API-ключ (получите его в панели FastComments)
+# ТРЕБУЕТСЯ: Установите ваш API-ключ (получите его на панели FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Создайте экземпляр API с настроенным клиентом
+# Создаём экземпляр API с настроенным клиентом
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
@@ -34,7 +34,7 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Распространённые ошибки:
+    # Частые ошибки:
     # - 401: API-ключ отсутствует или недействителен
     # - 400: Ошибка валидации запроса
 ```
@@ -62,6 +62,27 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Использование панели модерации (ModerationApi)
+
+`ModerationApi` обеспечивает работу панели модерации. Методы вызываются от имени модератора путём передачи токена `sso`:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Подсчёт комментариев, ожидающих модерации
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Использование SSO (Single Sign-On)
 
 SDK включает утилиты для генерации защищённых SSO-токенов:
@@ -69,7 +90,7 @@ SDK включает утилиты для генерации защищённы
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Создайте данные пользователя
+# Создаём данные пользователя
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,13 +98,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Создайте экземпляр SSO, используя ваш секрет API
+# Создаём экземпляр SSO с вашим секретом API
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Сгенерируйте SSO-токен
+# Генерируем SSO-токен
 sso_token = sso.create_token()
 
 # Используйте этот токен на фронтенде или передавайте в вызовы API
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Распространённые проблемы
+### Частые проблемы
 
 1. **401 "missing-api-key" error**: Убедитесь, что вы установили `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` перед созданием экземпляра DefaultApi.
-2. **Wrong API class**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов.
+2. **Wrong API class**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов и `ModerationApi` для запросов панели модерации.
 3. **Import errors**: Убедитесь, что вы импортируете из правильного модуля:
    - Клиент API: `from client import ...`
    - Утилиты SSO: `from sso import ...`

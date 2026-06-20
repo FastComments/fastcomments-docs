@@ -1,25 +1,25 @@
 ### Korištenje autentificiranih API-ja (DefaultApi)
 
-**Važno:** Morate postaviti svoj API ključ u Configuration prije slanja autentificiranih zahtjeva. Ako to ne učinite, zahtjevi će vratiti grešku 401.
+**Važno:** Morate postaviti svoj API ključ u Configuration prije nego što napravite autentificirane zahtjeve. Ako to ne učinite, zahtjevi će vratiti grešku 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Kreiraj i konfiguriraj API klijenta
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# OBAVEZNO: Postavite svoj API ključ (dohvatite ga s vaše FastComments nadzorne ploče)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Kreiraj instancu API-ja s konfiguriranim klijentom
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Sada možete pozivati autentificirane API metode
+# Now you can make authenticated API calls
 try:
-    # Primjer: Dodaj SSO korisnika
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Uobičajene greške:
-    # - 401: API ključ nedostaje ili je neispravan
-    # - 400: Validacija zahtjeva nije uspjela
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Korištenje javnih API-ja (PublicApi)
 
-Javni endpointi ne zahtijevaju autentifikaciju:
+Javne krajnje točke ne zahtijevaju autentifikaciju:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Korištenje nadzorne ploče za moderiranje (ModerationApi)
+
+`ModerationApi` pokreće nadzornu ploču moderatora. Metode se pozivaju u ime moderatora prosljeđivanjem `sso` tokena:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Korištenje SSO (Single Sign-On)
 
-SDK uključuje alate za generiranje sigurnih SSO tokena:
+SDK uključuje pomoćne alate za generiranje sigurnih SSO tokena:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Kreiraj podatke o korisniku
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Kreiraj SSO instancu s vašim API tajnim ključem
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generiraj SSO token
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# Koristite ovaj token u frontend-u ili ga proslijedite API pozivima
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -106,8 +127,8 @@ sso_token = sso.create_token()
 
 ### Uobičajeni problemi
 
-1. **401 "missing-api-key" greška**: Provjerite da ste postavili `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` prije stvaranja instance DefaultApi.
-2. **Pogrešna klasa API-ja**: Koristite `DefaultApi` za serverske autentificirane zahtjeve, `PublicApi` za klijentske/javne zahtjeve.
-3. **Greške pri importu**: Provjerite da importirate iz ispravnog modula:
+1. **401 "missing-api-key" pogreška**: Osigurajte da postavite `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` prije nego što kreirate instancu DefaultApi.
+2. **Pogrešna API klasa**: Koristite `DefaultApi` za autentificirane zahtjeve na strani poslužitelja, `PublicApi` za klijentske/javne zahtjeve i `ModerationApi` za zahtjeve nadzorne ploče moderatora.
+3. **Pogreške pri importu**: Provjerite da uvozite iz ispravnog modula:
    - API client: `from client import ...`
    - SSO utilities: `from sso import ...`

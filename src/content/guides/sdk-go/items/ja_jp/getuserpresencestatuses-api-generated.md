@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | urlIdWS | string | query | はい |  |
@@ -8,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_presence_statuses_200_response.go)
+戻り値: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_presence_statuses_response.go)
 
 ## 例
 
@@ -20,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +36,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserPresenceStatuses``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserPresenceStatuses` のレスポンス: GetUserPresenceStatuses200Response
+	// `GetUserPresenceStatuses` のレスポンス: GetUserPresenceStatusesResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserPresenceStatuses`: %v\n", resp)
 }
 [inline-code-end]
+
+---

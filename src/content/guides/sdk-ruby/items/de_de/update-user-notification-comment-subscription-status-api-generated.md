@@ -2,17 +2,17 @@ Benachrichtigungen für einen bestimmten Kommentar aktivieren oder deaktivieren.
 
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| notificationId | string | path | Ja |  |
-| optedInOrOut | string | path | Ja |  |
-| commentId | string | query | Ja |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Gibt zurück: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## Beispiel
 
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

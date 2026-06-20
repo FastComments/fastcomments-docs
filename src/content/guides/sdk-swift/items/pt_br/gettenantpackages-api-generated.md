@@ -1,13 +1,13 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Sim |  |
+| skip | number | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantPackages200Response.swift)
+Retorna: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantPackagesResponse.swift)
 
 ## Exemplo
 

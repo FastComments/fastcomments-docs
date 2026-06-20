@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie: [`PinComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PinComment200Response.java)
+Renvoie : [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeCommentPinStatusResponse.java)
 
 ## Exemple
 
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      PinComment200Response result = apiInstance.unPinComment(tenantId, commentId, broadcastId)
+      ChangeCommentPinStatusResponse result = apiInstance.unPinComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

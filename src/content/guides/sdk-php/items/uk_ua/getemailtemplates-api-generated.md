@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplates200Response.php)
+Повертає: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplatesResponse.php)
 
 ## Приклад
 
@@ -17,14 +17,18 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації API ключем: api_key
+// Configure API key authorization: api_key
+// Налаштуйте авторизацію API ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Якщо хочете використовувати власний HTTP-клієнт, передайте клієнта, який реалізує `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
@@ -39,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->getEmailTemplates: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

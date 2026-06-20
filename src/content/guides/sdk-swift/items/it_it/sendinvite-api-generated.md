@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -8,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Esempio
 

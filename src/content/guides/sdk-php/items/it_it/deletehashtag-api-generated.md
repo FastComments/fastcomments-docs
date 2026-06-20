@@ -1,13 +1,13 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tag | string | path | Sì |  |
 | tenantId | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Esempio
 
@@ -17,24 +17,24 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione della chiave API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Rimuovi il commento qui sotto per impostare un prefisso (es. Bearer) per la chiave API, se necessario
+// Configure API key authorization: api_key
+// Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per la API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // Se vuoi usare un client HTTP personalizzato, passa il client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come impostazione predefinita.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $tag = 'tag_example'; // string
 $tenant_id = 'tenant_id_example'; // string
-$delete_hash_tag_request = new \FastComments\Client\Model\DeleteHashTagRequest(); // \FastComments\Client\Model\DeleteHashTagRequest
+$delete_hash_tag_request_body = new \FastComments\Client\Model\DeleteHashTagRequestBody(); // \FastComments\Client\Model\DeleteHashTagRequestBody
 
 try {
-    $result = $apiInstance->deleteHashTag($tag, $tenant_id, $delete_hash_tag_request);
+    $result = $apiInstance->deleteHashTag($tag, $tenant_id, $delete_hash_tag_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteHashTag: ', $e->getMessage(), PHP_EOL;

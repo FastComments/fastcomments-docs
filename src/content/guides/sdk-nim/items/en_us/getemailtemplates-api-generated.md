@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`Option[GetEmailTemplates_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates200response.nim)
+Returns: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## Example
 
@@ -18,5 +18,5 @@ if response.isSome:
   let templates = response.get()
   echo templates
 else:
-  echo "No templates returned"
+  echo "No email templates available"
 [inline-code-end]

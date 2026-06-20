@@ -1,13 +1,13 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | skip | number | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_users_200_response.go)
+Враћа: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_users_response.go)
 
 ## Пример
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetTenantUsers`: GetTenantUsers200Response
+	// одговор од `GetTenantUsers`: GetTenantUsersResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantUsers`: %v\n", resp)
 }
 [inline-code-end]

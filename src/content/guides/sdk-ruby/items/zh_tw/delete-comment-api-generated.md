@@ -1,15 +1,15 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| id | string | path | 是 |  |
-| contextUserId | string | query | 否 |  |
-| isLive | boolean | query | 否 |  |
+| tenantId | string | 查詢 | Yes |  |
+| id | string | 路徑 | Yes |  |
+| contextUserId | string | 查詢 | No |  |
+| isLive | boolean | 查詢 | No |  |
 
 ## 回應
 
-回傳: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment200_response.rb)
+回傳: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_result.rb)
 
 ## 範例
 
@@ -19,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 # 設定授權
 FastCommentsClient.configure do |config|
-  # 設定 API 金鑰授權: api_key
+  # 設定 API key 授權: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解下列行以為 API 金鑰設定前綴，例如 'Bearer'（預設為 nil）
+  # 取消註解以下一行以為 API key 設定前綴，例如 'Bearer'（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

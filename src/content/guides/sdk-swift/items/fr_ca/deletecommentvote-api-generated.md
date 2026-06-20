@@ -12,11 +12,11 @@
 
 ## Réponse
 
-Retourne: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+Retourne: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -26,8 +26,8 @@ let commentId = "commentId_example" // String |
 let voteId = "voteId_example" // String | 
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
-let editKey = "editKey_example" // String |  (optionnel)
-let sso = "sso_example" // String |  (optionnel)
+let editKey = "editKey_example" // String |  (facultatif)
+let sso = "sso_example" // String |  (facultatif)
 
 PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
     guard error == nil else {
@@ -40,5 +40,3 @@ PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: vo
     }
 }
 [inline-code-end]
-
----

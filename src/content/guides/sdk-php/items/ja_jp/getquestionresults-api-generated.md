@@ -2,39 +2,38 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| urlId | string | クエリ | いいえ |  |
-| userId | string | クエリ | いいえ |  |
-| startDate | string | クエリ | いいえ |  |
-| questionId | string | クエリ | いいえ |  |
-| questionIds | string | クエリ | いいえ |  |
-| skip | number | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| urlId | string | query | いいえ |  |
+| userId | string | query | いいえ |  |
+| startDate | string | query | いいえ |  |
+| questionId | string | query | いいえ |  |
+| questionIds | string | query | いいえ |  |
+| skip | number | query | いいえ |  |
 
-## レスポンス
+## Response
 
-返却値: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResults200Response.php)
+戻り値: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultsResponse.php)
 
 ## 例
 
-[inline-code-attrs-start title = 'getQuestionResults の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResults Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: api_key
-// APIキー認証を設定: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// APIキー認証を設定します: api_key
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// 必要な場合は以下のコメントを外して API キーのプレフィックス（例: Bearer）を設定してください
+// 必要に応じて API キーにプレフィックス（例: Bearer）を設定するには、下の行のコメントを解除してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );

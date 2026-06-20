@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | commentId | string | path | Sí |  |
@@ -11,7 +12,7 @@
 
 ## Respuesta
 
-Devuelve: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Devuelve: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Ejemplo
 
@@ -19,18 +20,18 @@ Devuelve: [`VoteComment200Response`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración soportados.
+# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Abra un contexto con una instancia del cliente API
+# Abra un contexto con una instancia del cliente de la API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.PublicApi(api_client)
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->vote_comment: %s\n" % e)
 [inline-code-end]
+
+---

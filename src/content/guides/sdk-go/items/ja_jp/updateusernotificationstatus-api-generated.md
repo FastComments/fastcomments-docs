@@ -1,16 +1,15 @@
----
 ## パラメータ
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| notificationId | string | path | はい |  |
-| newStatus | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+戻り値: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_response.go)
 
 ## 例
 
@@ -22,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	notificationId := "notificationId_example" // string | 
 	newStatus := "newStatus_example" // string | 
-	sso := "sso_example" // string |  (オプション)
+	sso := "sso_example" // string |  （任意）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -38,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UpdateUserNotificationStatus` のレスポンス: UpdateUserNotificationStatus200Response
+	// `UpdateUserNotificationStatus` のレスポンス: UpdateUserNotificationStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

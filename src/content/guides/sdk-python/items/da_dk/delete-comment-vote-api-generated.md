@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
@@ -12,18 +12,18 @@
 
 ## Respons
 
-Returnerer: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Returnerer: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'delete_comment_vote Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# At angive host er valgfrit og standard er https://fastcomments.com
+# Angivelse af host er valgfri og er som standard https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_vote: %s\n" % e)
 [inline-code-end]
-
----

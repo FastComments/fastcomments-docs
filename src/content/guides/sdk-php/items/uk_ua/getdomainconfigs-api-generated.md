@@ -6,7 +6,7 @@
 
 ## Відповідь
 
-Повертає: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigs200Response.php)
+Повертає: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigsResponse.php)
 
 ## Приклад
 
@@ -16,15 +16,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштуйте авторизацію за API-ключем: api_key
+// Налаштування авторизації за API-ключем: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використовуватися `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

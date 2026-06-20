@@ -16,25 +16,25 @@ Zatim dodajte potrebne ovisnosti:
 
 ```xml
 <dependencies>
-    <!-- Klijent API-ja -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Core knjižnica (uključuje SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- PubSub knjižnica (za događaje uživo) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // Klijent API-ja
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Core knjižnica (uključuje SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // PubSub knjižnica (za događaje uživo)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Sadržaj knjižnice
+### Library Contents
 
-Ova knjižnica sadrži tri modula. Generirani API klijent, osnovna Java knjižnica koja sadrži ručno napisane pomoćne funkcije za olakšavanje rada s API-jem, i modul `pubsub` koji je knjižnica za pretplatu na feed promjena.
+Ova biblioteka sadrži tri modula. Generirani API klijent, core Java biblioteka koja sadrži ručno napisane pomoćne funkcije za lakši rad s API-jem, i modul `pubsub` koji je biblioteka za pretplatu na feedove promjena.
 
 - [Dokumentacija API klijenta](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacija Core knjižnice, uključujući SSO primjere](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentacija PubSub knjižnice](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumentacija Core biblioteke, uključujući primjere SSO-a](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentacija PubSub biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Javni vs Zaštićeni API-ji
+### Public vs Secured APIs
 
-Za API klijent postoje dvije klase, `DefaultApi` i `PublicApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži API pozive koji se mogu izvršiti izravno iz preglednika/mobilnog uređaja/itd. bez autentifikacije.
+Za API klijenta postoje tri klase, `DefaultApi`, `PublicApi`, i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozivati izravno iz preglednika/mobilnog uređaja/itd. bez autentifikacije.
+
+`ModerationApi` pokreće nadzornu ploču moderatora. Sadrži metode za moderiranje komentara (listanje, brojanje, pretraživanje, zapisi i izvoz), akcije moderiranja (ukloni/vrati, označi, postavi status za pregled/spam/odobrenje, glasovi i ponovno otvori/zatvori temu), zabrane (zabrana komentiranja, poništi zabranu, sažeci prije zabrane, status i postavke zabrane, i broj zabranjenih korisnika), te značke i povjerenje (dodijeli/ukloni značku, ručne značke, dohvati/postavi faktor povjerenja i interni korisnički profil). Svaka metoda `ModerationApi` prihvaća `sso` parametar tako da se poziv može izvršiti u ime moderatora autentificiranog putem SSO-a.

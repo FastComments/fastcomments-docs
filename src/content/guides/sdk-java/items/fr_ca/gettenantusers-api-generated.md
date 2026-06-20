@@ -7,13 +7,13 @@
 
 ## Réponse
 
-Renvoie : [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsers200Response.java)
+Renvoie : [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsersResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenantUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenantUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes:
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'authentification par clé API: api_key
+    // Configurer l'authentification par clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantUsers200Response result = apiInstance.getTenantUsers(tenantId)
+      GetTenantUsersResponse result = apiInstance.getTenantUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

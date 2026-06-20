@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vrača: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_render_errors_200_response.go)
+Vrne: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_render_errors_response.go)
 
 ## Primer
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplateRenderErrors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetEmailTemplateRenderErrors`: GetEmailTemplateRenderErrors200Response
+	// odgovor iz `GetEmailTemplateRenderErrors`: GetEmailTemplateRenderErrorsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplateRenderErrors`: %v\n", resp)
 }
 [inline-code-end]

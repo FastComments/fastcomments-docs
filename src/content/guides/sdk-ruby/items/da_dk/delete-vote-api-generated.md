@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -8,19 +8,19 @@
 
 ## Svar
 
-Returnerer: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Returnerer: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på delete_vote'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_vote-eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Opsæt godkendelse
+# opsætning af autorisation
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøglegodkendelse: api_key
+  # Konfigurer API-nøgleautorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentartegnet fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,8 +36,6 @@ begin
   result = api_instance.delete_vote(tenant_id, id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Fejl ved kald af DefaultApi->delete_vote: #{e}"
+  puts "Error when calling DefaultApi->delete_vote: #{e}"
 end
 [inline-code-end]
-
----

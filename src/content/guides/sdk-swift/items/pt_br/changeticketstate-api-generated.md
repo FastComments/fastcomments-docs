@@ -1,20 +1,20 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Sim |  |
+| userId | string | query | Sim |  |
+| id | string | path | Sim |  |
 
 ## Resposta
 
-Retorna: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ChangeTicketState200Response.swift)
+Retorna: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ChangeTicketStateResponse.swift)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de changeTicketState'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo changeTicketState'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código a seguir ainda estão em versão beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor, reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,3 +33,5 @@ DefaultAPI.changeTicketState(tenantId: tenantId, userId: userId, id: id, changeT
     }
 }
 [inline-code-end]
+
+---

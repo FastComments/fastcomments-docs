@@ -2,18 +2,18 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| id | string | path | Sì |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Risposta
 
-Restituisce: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadgeProgressById200Response.java)
+Restituisce: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeProgressResponse.java)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getUserBadgeProgressById'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getUserBadgeProgressById'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione tramite API key: api_key
+    // Configura l'autenticazione con API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (di default null)
+    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetUserBadgeProgressById200Response result = apiInstance.getUserBadgeProgressById(tenantId, id)
+      APIGetUserBadgeProgressResponse result = apiInstance.getUserBadgeProgressById(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

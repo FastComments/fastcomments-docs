@@ -13,42 +13,42 @@ afterId
 
 ## Відповідь
 
-Повертає: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts200_response.py)
+Повертає: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'get_feed_posts Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts200_response import GetFeedPosts200Response
+from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове, за замовчуванням https://fastcomments.com
+# Визначення хоста необов'язкове і за замовчуванням дорівнює https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт має налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки API-сервера.
-# Нижче наведено приклади для кожного методу автентифікації. Використайте той приклад, який
-# відповідає вашому випадку використання автентифікації.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# відповідно до політики безпеки сервера API.
+# Приклади для кожного методу автентифікації наведено нижче, використайте приклад,
+# який відповідає вашому випадку використання автентифікації.
 
-# Налаштуйте авторизацію за допомогою API-ключа: api_key
+# Налаштуйте авторизацію за допомогою ключа API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Використайте контекст з екземпляром API-клієнта
+# Ввійдіть у контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (необов'язково)
-    limit = 56 # int |  (необов'язково)
-    tags = ['tags_example'] # List[str] |  (необов'язково)
+    after_id = 'after_id_example' # str |  (необов'язковий)
+    limit = 56 # int |  (необов'язковий)
+    tags = ['tags_example'] # List[str] |  (необов'язковий)
 
     try:
         api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)

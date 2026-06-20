@@ -2,12 +2,12 @@
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | Так |  |
+| domain | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_domain_config_200_response.go)
+Повертає: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_domain_config_response.go)
 
 ## Приклад
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `DeleteDomainConfig`: DeleteDomainConfig200Response
+	// відповідь від `DeleteDomainConfig`: DeleteDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

@@ -7,19 +7,19 @@
 
 ## Resposta
 
-Retorna: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes200_response.rb)
+Retorna: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_response.rb)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_votes'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_votes Exemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorização
+# Configurar autorização
 FastCommentsClient.configure do |config|
-  # Configure a autorização da chave de API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente a linha a seguir para definir um prefixo para a chave de API, por ex. 'Bearer' (padrão: nil)
+  # Descomente a linha a seguir para definir um prefixo para a chave API, por exemplo 'Bearer' (padrão: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

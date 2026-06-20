@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
@@ -10,7 +10,7 @@
 
 ## 응답
 
-반환: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_comment_public200_response.rb)
+반환: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_response_with_presence.rb)
 
 ## 예제
 
@@ -20,13 +20,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 문자열 | 
-url_id = 'url_id_example' # 문자열 | 
-broadcast_id = 'broadcast_id_example' # 문자열 | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 comment_data = FastCommentsClient::CommentData.new({commenter_name: 'commenter_name_example', comment: 'comment_example', url: 'url_example', url_id: 'url_id_example'}) # CommentData | 
 opts = {
-  session_id: 'session_id_example', # 문자열 | 
-  sso: 'sso_example' # 문자열 | 
+  session_id: 'session_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_comment_public: #{e}"
 end
 [inline-code-end]
-
----

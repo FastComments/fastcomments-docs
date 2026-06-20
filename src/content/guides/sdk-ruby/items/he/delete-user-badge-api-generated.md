@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_badge200_response.rb)
+מחזיר: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_success_response.rb)
 
 ## דוגמה
 
@@ -15,11 +16,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת אימות
+# הגדר הרשאה
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,3 +36,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_user_badge: #{e}"
 end
 [inline-code-end]
+
+---

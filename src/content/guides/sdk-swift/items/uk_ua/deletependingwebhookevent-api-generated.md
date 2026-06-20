@@ -1,19 +1,19 @@
 ## Параметри
 
-| Ім'я | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Так |  |
+| id | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад deletePendingWebhookEvent'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду ще в бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте про них через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще в бета-версії. Якщо знайдете помилку, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.deletePendingWebhookEvent(tenantId: tenantId, id: id) { (response, er
     }
 }
 [inline-code-end]
-
----

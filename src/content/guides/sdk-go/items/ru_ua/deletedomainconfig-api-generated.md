@@ -1,13 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Название | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | domain | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_domain_config_200_response.go)
+Возвращает: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_domain_config_response.go)
 
 ## Пример
 
@@ -19,12 +19,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // строка | 
-	domain := "domain_example" // строка | 
+	tenantId := "tenantId_example" // string | 
+	domain := "domain_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `DeleteDomainConfig`: DeleteDomainConfig200Response
+	// response from `DeleteDomainConfig`: DeleteDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteDomainConfig`: %v\n", resp)
 }
 [inline-code-end]
+
+---

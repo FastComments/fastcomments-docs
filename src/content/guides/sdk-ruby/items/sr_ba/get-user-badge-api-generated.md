@@ -7,7 +7,7 @@
 
 ## Одговор
 
-Враћа: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge200_response.rb)
+Враћа: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_response.rb)
 
 ## Пример
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите API кључ за овлашћење: api_key
+  # Конфигуриши ауторизацију помоћу API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментаришите следећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badge: #{e}"
 end
 [inline-code-end]
-
----

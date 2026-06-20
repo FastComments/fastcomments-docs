@@ -2,44 +2,43 @@
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| usernameStartsWith | string | query | 否 |  |
-| mentionGroupIds | array | query | 否 |  |
-| sso | string | query | 否 |  |
-| searchSection | string | query | 否 |  |
+| tenantId | string | 路径 | 是 |  |
+| urlId | string | 查询 | 是 |  |
+| usernameStartsWith | string | 查询 | 否 |  |
+| mentionGroupIds | array | 查询 | 否 |  |
+| sso | string | 查询 | 否 |  |
+| searchSection | string | 查询 | 否 |  |
 
 ## 响应
 
-返回: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users200_response.py)
+返回: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'search_users 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.search_users200_response import SearchUsers200Response
+from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
 # 定义主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数的列表，请参阅 configuration.py。
-
+# 请参阅 configuration.py 获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 实例进入上下文
+# 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str |  （可选）
-    mention_group_ids = ['mention_group_ids_example'] # List[str] |  （可选）
-    sso = 'sso_example' # str |  （可选）
-    search_section = 'search_section_example' # str |  （可选）
+    username_starts_with = 'username_starts_with_example' # str | （可选）
+    mention_group_ids = ['mention_group_ids_example'] # List[str] | （可选）
+    sso = 'sso_example' # str | （可选）
+    search_section = 'search_section_example' # str | （可选）
 
     try:
         api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)

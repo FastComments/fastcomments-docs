@@ -1,14 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
-| commentIds | string | query | Так | Список id коментарів, розділених комами. |
+| commentIds | string | query | Так | Список ідентифікаторів коментарів, розділених комами. |
 | sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckedCommentsForBlocked200Response.php)
+Повертає: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
 ## Приклад
 
@@ -20,12 +20,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використовувати свій власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Список id коментарів, розділених комами.
+$comment_ids = 'comment_ids_example'; // string | Список ідентифікаторів коментарів, розділених комами.
 $sso = 'sso_example'; // string
 
 try {

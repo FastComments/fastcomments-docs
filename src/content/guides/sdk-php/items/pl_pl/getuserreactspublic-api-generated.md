@@ -1,14 +1,14 @@
 ## Parametry
 
-| Name | Type | Lokalizacja | Wymagane | Opis |
+| Name | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | ścieżka | Tak |  |
-| postIds | array | zapytanie | Nie |  |
-| sso | string | zapytanie | Nie |  |
+| tenantId | string | path | Tak |  |
+| postIds | array | query | Nie |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserReactsPublic200Response.php)
+Zwraca: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UserReactsResponse.php)
 
 ## Przykład
 
@@ -21,7 +21,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne; domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // To jest opcjonalne, `GuzzleHttp\Client` będzie używany jako domyślny.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

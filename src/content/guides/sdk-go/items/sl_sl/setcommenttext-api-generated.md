@@ -1,7 +1,7 @@
 ---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -11,7 +11,7 @@
 
 ## Odgovor
 
-Vrne: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_200_response.go)
+Vrača: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_api_set_comment_text_response.go)
 
 ## Primer
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SetCommentText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `SetCommentText`: SetCommentText200Response
+	// odgovor iz `SetCommentText`: PublicAPISetCommentTextResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SetCommentText`: %v\n", resp)
 }
 [inline-code-end]

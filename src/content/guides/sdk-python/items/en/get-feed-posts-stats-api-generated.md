@@ -8,14 +8,14 @@
 
 ## Response
 
-Returns: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_stats200_response.py)
+Returns: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/feed_posts_stats_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_feed_posts_stats Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_stats200_response import GetFeedPostsStats200Response
+from client.models.feed_posts_stats_response import FeedPostsStatsResponse
 from client.rest import ApiException
 from pprint import pprint
 

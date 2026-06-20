@@ -7,13 +7,13 @@
 
 ## Respuesta
 
-Devuelve: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfig200Response.swift)
+Devuelve: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfigResponse.swift)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de deleteDomainConfig'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor reporte vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código todavía están en beta. Si hay algún problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, e
     }
 }
 [inline-code-end]
-
----

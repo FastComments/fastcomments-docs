@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateQuestionConfig200Response.php)
+Returns: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateQuestionConfigResponse.php)
 
 ## Example
 

@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
@@ -9,18 +9,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment200_response.py)
+Zwraca: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_result.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład delete_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment200_response import DeleteComment200Response
+from client.models.delete_comment_result import DeleteCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Zdefiniowanie hosta jest opcjonalne i domyślnie ma wartość https://fastcomments.com
+# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,13 +28,13 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Przykłady dla każdej metody uwierzytelniania znajdują się poniżej, użyj tego, który
-# pasuje do Twojego przypadku użycia uwierzytelniania.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
+# odpowiada Twojemu przypadkowi użycia.
 
-# Konfiguruj uwierzytelnianie kluczem API: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzeba
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API

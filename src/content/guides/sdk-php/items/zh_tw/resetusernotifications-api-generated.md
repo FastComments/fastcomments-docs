@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | afterId | string | query | 否 |  |
@@ -12,7 +12,7 @@
 
 ## 回應
 
-回傳：[`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotifications200Response.php)
+回傳: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## 範例
 
@@ -24,7 +24,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用客製的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 若要使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );

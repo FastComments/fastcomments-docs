@@ -1,21 +1,21 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Ja |  |
-| tenantId | string | query | Nein |  |
+| tag | string | path | Yes |  |
+| tenantId | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'delete_hash_tag Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_hash_tag_request import DeleteHashTagRequest
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
+from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,26 +26,26 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers.
-# Beispiele für jede Authentifizierungsmethode sind unten angegeben; verwenden Sie das Beispiel, das
-# Ihren Anwendungsfall zur Authentifizierung erfüllt.
+# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls benötigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tag = 'tag_example' # str | 
     tenant_id = 'tenant_id_example' # str |  (optional)
-    delete_hash_tag_request = client.DeleteHashTagRequest() # DeleteHashTagRequest |  (optional)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request=delete_hash_tag_request)
+        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

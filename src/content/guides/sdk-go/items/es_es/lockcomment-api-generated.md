@@ -1,15 +1,15 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| commentId | string | path | Sí |  |
-| broadcastId | string | query | Sí |  |
-| sso | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| commentId | string | ruta | Sí |  |
+| broadcastId | string | consulta | Sí |  |
+| sso | string | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`LockComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_lock_comment_200_response.go)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Ejemplo
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.LockComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `LockComment`: LockComment200Response
+	// respuesta de `LockComment`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.LockComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

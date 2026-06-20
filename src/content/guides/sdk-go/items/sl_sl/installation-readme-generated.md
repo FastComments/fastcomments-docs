@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Uporaba API odjemalca
 
-#### Public API (brez overjanja)
+#### Javni API (brez overjanja)
 
-PublicAPI omogoča neavtoriziran dostop do javnih končnih točk:
+PublicAPI omogoča neavtenticiran dostop do javnih končnih točk:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (zahteva API ključ)
+#### Privzeti API (zahteva API ključ)
 
-DefaultAPI zahteva overjanje z vašim API ključem:
+DefaultAPI zahteva avtentikacijo z vašim API ključem:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Ustvarite overjen kontekst z API ključem
+    // Ustvarite avtenticiran kontekst z API ključem
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,11 +62,47 @@ func main() {
         },
     )
 
-    // Pridobite komentarje z uporabo overjenega DefaultAPI
+    // Pridobite komentarje z uporabo avtenticiranega DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
         Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```
+
+#### Moderation API (nadzorna plošča moderatorja)
+
+ModerationAPI poganja nadzorno ploščo moderatorja. Ponuja metode za seznam,
+štetje, iskanje in izvoz komentarjev, moderacijske ukrepe (odstrani/obnovi,
+označi, nastavi status pregleda/špama/odobritve, glasovanja, ponovno odpri/zaključi niti), prepovedi (prepoved komentiranja,
+razveljavitev, povzetki pred prepovedjo, status in nastavitve prepovedi, število prepovedanih uporabnikov),
+ter značke in zaupanje (podeljevanje/odstranjevanje značk, ročne značke, pridobitev/nastavitev faktorja zaupanja, notranji profil uporabnika). Vse Moderation metode sprejemajo parameter `sso` za
+moderatorje, avtenticirane prek SSO:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // Pridobite komentarje za moderacijo z uporabo ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
 
     if err != nil {
         panic(err)

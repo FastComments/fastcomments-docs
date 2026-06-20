@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Пример
 
@@ -26,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию по API-ключу: api_key
+    // Настроить авторизацию API-ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateModeratorBody updateModeratorBody = new UpdateModeratorBody(); // UpdateModeratorBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateModerator(tenantId, id, updateModeratorBody)
+      APIEmptyResponse result = apiInstance.updateModerator(tenantId, id, updateModeratorBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

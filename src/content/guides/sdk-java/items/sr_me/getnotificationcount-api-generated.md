@@ -1,21 +1,21 @@
 ## Параметри
 
-| Име | Тип | Локација | Потребно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| urlId | string | query | Не |  |
+| fromCommentId | string | query | Не |  |
+| viewed | boolean | query | Не |  |
+| type | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCount200Response.java)
+Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCountResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotificationCount Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +33,7 @@ public class Example {
     // Конфигуришите ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментирајте следећу линију да бисте подесили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Boolean viewed = true; // Boolean | 
     String type = "type_example"; // String | 
     try {
-      GetNotificationCount200Response result = apiInstance.getNotificationCount(tenantId)
+      GetNotificationCountResponse result = apiInstance.getNotificationCount(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)

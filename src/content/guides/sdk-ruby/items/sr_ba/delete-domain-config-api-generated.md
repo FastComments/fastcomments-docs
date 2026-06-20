@@ -2,24 +2,24 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| domain | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_domain_config200_response.rb)
+Vraća: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_domain_config_response.rb)
 
-## Primer
+## Primjer
 
-[inline-code-attrs-start title = 'delete_domain_config Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer delete_domain_config'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# Postavljanje autorizacije
 FastCommentsClient.configure do |config|
   # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeći red da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
+  # Otkomentarišite sljedeći red da postavite prefiks za API ključ, npr. 'Bearer' (zadano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_domain_config: #{e}"
 end
 [inline-code-end]
-
----

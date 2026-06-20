@@ -1,50 +1,50 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
 | limit | number | query | Όχι |  |
 | skip | number | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_list200_response.py)
+Επιστρέφει: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_user_badge_progress_list'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_list Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_list200_response import GetUserBadgeProgressList200Response
+from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλέγεται σε https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
+# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του διακομιστή API.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε
-# το παράδειγμα που ικανοποιεί το σενάριό σας.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε το παράδειγμα που
+# καλύπτει την περίπτωση χρήσης σας.
 
-# Ρυθμίστε την εξουσιοδότηση με API key: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, εάν χρειάζεται
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα στιγμιότυπο (instance) του API client
+# Εισέλθετε σε context με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργία στιγμιότυπου της κλάσης API
+    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (προαιρετικό)
-    limit = 3.4 # float |  (προαιρετικό)
-    skip = 3.4 # float |  (προαιρετικό)
+    user_id = 'user_id_example' # str |  (optional)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)

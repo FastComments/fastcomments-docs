@@ -5,9 +5,9 @@
 | tenantId | string | query | Da |  |
 | skip | integer | query | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUsers200Response.php)
+Vrne: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUsersResponse.php)
 
 ## Primer
 
@@ -24,8 +24,8 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP klienta, posredujte klienta, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti lasten HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je izbirno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getSSOUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,26 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| redirectURL | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| redirectURL | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'send_login_link Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer send_login_link'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију API кључа: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Otkomentarišite sljedeći red da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->send_login_link: #{e}"
 end
 [inline-code-end]
-
----

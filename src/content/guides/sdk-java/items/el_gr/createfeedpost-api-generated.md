@@ -1,16 +1,16 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| broadcastId | string | query | Όχι |  |
-| isLive | boolean | query | Όχι |  |
-| doSpamCheck | boolean | query | Όχι |  |
-| skipDupCheck | boolean | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPost200Response.java)
+Επιστρέφει: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostsResponse.java)
 
 ## Παράδειγμα
 
@@ -32,7 +32,7 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean doSpamCheck = true; // Boolean | 
     Boolean skipDupCheck = true; // Boolean | 
     try {
-      CreateFeedPost200Response result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
+      CreateFeedPostsResponse result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)

@@ -1,39 +1,40 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 必須 |  |
 
-## レスポンス
+## 戻り値
 
-返却値: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template200_response.py)
+Returns: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'create_email_template の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_email_template200_response import CreateEmailTemplate200Response
 from client.models.create_email_template_body import CreateEmailTemplateBody
+from client.models.create_email_template_response import CreateEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、省略した場合は https://fastcomments.com がデフォルトになります
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバのセキュリティポリシーに従って認証・認可のパラメータを設定する必要があります。
-# 各認証方法の例を以下に示します。自分のユースケースに合う例を使用してください。
+# クライアントは、API サーバーのセキュリティポリシーに従って認証および認可パラメータを構成する必要があります。
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて以下のコメントを外し、API キーのプレフィックス（例: Bearer）を設定してください
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)

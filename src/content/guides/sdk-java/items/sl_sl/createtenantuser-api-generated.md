@@ -6,7 +6,7 @@
 
 ## Odgovor
 
-Vrača: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantUser200Response.java)
+Vrača: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantUserResponse.java)
 
 ## Primer
 
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Nastavite avtorizacijo API ključa: api_key
+    // Konfiguriraj avtentikacijo z API ključem: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto je null)
+    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateTenantUserBody createTenantUserBody = new CreateTenantUserBody(); // CreateTenantUserBody | 
     try {
-      CreateTenantUser200Response result = apiInstance.createTenantUser(tenantId, createTenantUserBody)
+      CreateTenantUserResponse result = apiInstance.createTenantUser(tenantId, createTenantUserBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

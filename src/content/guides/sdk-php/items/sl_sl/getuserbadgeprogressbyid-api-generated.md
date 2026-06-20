@@ -1,13 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrne: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadgeProgressById200Response.php)
+Vrne: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
 
 ## Primer
 
@@ -19,13 +19,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Konfigurirajte avtentikacijo z API ključem: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Če je potrebno, odkomentirajte spodnje za nastavitev predpone (npr. Bearer) za API ključ
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP klienta, podajte klienta, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je opcijsko, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je opcijsko; kot privzeti bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

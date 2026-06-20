@@ -1,15 +1,15 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 쿼리 | 예 |  |
-| notificationId | string | 경로 | 예 |  |
-| newStatus | string | 경로 | 예 |  |
-| sso | string | 쿼리 | 아니오 |  |
+| tenantId | string | query | 예 |  |
+| notificationId | string | path | 예 |  |
+| newStatus | string | path | 예 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+반환: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
 
 ## 예제
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-notification_id = 'notification_id_example' # String | 
-new_status = 'read' # String | 
+tenant_id = 'tenant_id_example' # 문자열 | 
+notification_id = 'notification_id_example' # 문자열 | 
+new_status = 'read' # 문자열 | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 문자열 | 
 }
 
 begin
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_status: #{e}"
 end
 [inline-code-end]
-
----

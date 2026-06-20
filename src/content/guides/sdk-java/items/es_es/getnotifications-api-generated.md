@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -13,7 +12,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotifications200Response.java)
+Devuelve: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationsResponse.java)
 
 ## Ejemplo
 
@@ -32,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorización de clave API: api_key
+    // Configurar la autorización por clave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto es null)
+    // Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (predeterminado null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -47,7 +46,7 @@ public class Example {
     String type = "type_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetNotifications200Response result = apiInstance.getNotifications(tenantId)
+      GetNotificationsResponse result = apiInstance.getNotifications(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)
@@ -66,5 +65,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

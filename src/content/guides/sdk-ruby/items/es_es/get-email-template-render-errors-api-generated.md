@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors200_response.rb)
+Devuelve: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors_response.rb)
 
 ## Ejemplo
 
@@ -18,7 +18,7 @@ require 'time'
 require 'fastcomments-client'
 # configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización por clave API: api_key
+  # Configurar la autorización por clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

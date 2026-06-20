@@ -2,35 +2,35 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tag | string | pot | Da |  |
-| tenantId | string | poizvedba | Ne |  |
+| tag | string | path | Da |  |
+| tenantId | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/patch_hash_tag200_response.py)
+Vrne: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za patch_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer patch_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.patch_hash_tag200_response import PatchHashTag200Response
 from client.models.update_hash_tag_body import UpdateHashTagBody
+from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Nastavitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre za overjanje in pooblastila
-# v skladu s politiko varnosti strežnika API.
-# Spodaj so prikazani primeri za vsako metodo overjanja, uporabite primer, ki
-# ustreza vašemu primeru uporabe.
+# Odjemalec mora konfigurirati parametre za avtentikacijo in avtorizacijo
+# v skladu s varnostno politiko API strežnika.
+# Spodaj so navedeni primeri za vsak način overjanja, uporabite primer, ki
+# ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtorizacijo z API ključem: api_key
+# Konfigurirajte avtentikacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
@@ -51,3 +51,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->patch_hash_tag: %s\n" % e)
 [inline-code-end]
+
+---

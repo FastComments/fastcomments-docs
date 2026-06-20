@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package200_response.rb)
+Враћа: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package_response.rb)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer create_tenant_package'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример create_tenant_package'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Konfiguriši autorizaciju API ključa: api_key
+  # Конфигуришите овлашћење API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sljedeći red da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano: nil)
+  # Одакоментарите следећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_tenant_package: #{e}"
 end
 [inline-code-end]
-
----

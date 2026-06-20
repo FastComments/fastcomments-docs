@@ -1,15 +1,15 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| editKey | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentText200Response.java)
+Gibt zurück: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIGetCommentTextResponse.java)
 
 ## Beispiel
 
@@ -33,7 +33,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentText200Response result = apiInstance.getCommentText(tenantId, commentId)
+      PublicAPIGetCommentTextResponse result = apiInstance.getCommentText(tenantId, commentId)
             .editKey(editKey)
             .sso(sso)
             .execute();

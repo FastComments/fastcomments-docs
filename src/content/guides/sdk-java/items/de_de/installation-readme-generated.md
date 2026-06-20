@@ -1,6 +1,6 @@
 ### Maven
 
-Fügen Sie das Repsy-Repository der POM Ihres Projekts hinzu:
+Fügen Sie das Repsy-Repository zur POM Ihres Projekts hinzu:
 
 ```xml
 <repositories>
@@ -20,21 +20,21 @@ Fügen Sie dann die benötigten Abhängigkeiten hinzu:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Core-Bibliothek (enthält SSO) -->
+    <!-- Kernbibliothek (enthält SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- PubSub-Bibliothek (für Live-Ereignisse) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -53,24 +53,26 @@ repositories {
 
 dependencies {
     // API-Client
-    implementation "com.fastcomments:client:1.3.2"
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Core-Bibliothek (enthält SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Kernbibliothek (enthält SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
     // PubSub-Bibliothek (für Live-Ereignisse)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Library Contents
+### Bibliotheksinhalte
 
-Diese Bibliothek enthält drei Module. Den generierten API-Client, die Core-Java-Bibliothek, die handgeschriebene Hilfsfunktionen enthält, um die Arbeit mit der API zu erleichtern, und das `pubsub`-Modul, das eine Bibliothek zum Abonnieren von Änderungs-Feeds ist.
+Diese Bibliothek enthält drei Module. Den generierten API-Client, die Core-Java-Bibliothek, die manuell geschriebene Hilfsfunktionen enthält, um die Arbeit mit der API zu erleichtern, und das `pubsub`-Modul, das eine Bibliothek zum Abonnieren von Änderungsfeeds ist.
 
-- [Dokumentation der API-Client-Bibliothek](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentation der Core-Bibliothek, einschließlich SSO-Beispielen](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentation der PubSub-Bibliothek](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API-Client-Bibliothek (Dokumentation)](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core-Bibliotheksdokumentation, einschließlich SSO-Beispiele](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub-Bibliotheksdokumentation](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Öffentliche vs. Gesicherte APIs
 
-Für den API-Client gibt es zwei Klassen, `DefaultApi` und `PublicApi`. Die `DefaultApi` enthält Methoden, die Ihren API-Schlüssel benötigen, und `PublicApi` enthält API-Aufrufe, die direkt von einem Browser/Mobilgerät/etc. ohne Authentifizierung durchgeführt werden können.
+Für den API-Client gibt es drei Klassen, `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API-Schlüssel erfordern, und `PublicApi` enthält Methoden, die direkt aus einem Browser/Mobilgerät/etc. ohne Authentifizierung aufgerufen werden können.
+
+Die `ModerationApi` treibt das Moderatoren-Dashboard an. Sie enthält Methoden zur Kommentar-Moderation (auflisten, zählen, suchen, Protokolle und Export), Moderationsaktionen (entfernen/wiederherstellen, markieren, Überprüfungs-/Spam-/Genehmigungsstatus setzen, Stimmen und Thread wieder öffnen/schließen), Sperren (vom Kommentieren ausschließen, Sperre rückgängig machen, Zusammenfassungen vor Sperren, Sperrstatus und -einstellungen sowie Anzahl gesperrter Benutzer) und Abzeichen & Vertrauen (Abzeichen vergeben/entfernen, manuelle Abzeichen, Vertrauensfaktor abrufen/setzen und internes Benutzerprofil). Jede `ModerationApi`-Methode akzeptiert einen `sso`-Parameter, sodass der Aufruf im Namen eines per SSO authentifizierten Moderators ausgeführt werden kann.

@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackage200Response.php)
+Vrne: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackageResponse.php)
 
 ## Primer
 
@@ -17,14 +17,14 @@ Vrača: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Nastavi avtentikacijo z API ključem: api_key
+// Konfiguriraj overjanje API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Če je potrebno, odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lasten HTTP odjemalec, posredujte odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // Če želite uporabiti lasten HTTP klient, posredujte klient, ki implementira `GuzzleHttp\ClientInterface`.
     // To ni obvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config

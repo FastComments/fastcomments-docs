@@ -9,13 +9,13 @@
 
 ## レスポンス
 
-戻り値: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentText200Response.java)
+戻り値: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIGetCommentTextResponse.java)
 
 ## 例
 
-[inline-code-attrs-start title = 'getCommentText の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentText Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,7 +33,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentText200Response result = apiInstance.getCommentText(tenantId, commentId)
+      PublicAPIGetCommentTextResponse result = apiInstance.getCommentText(tenantId, commentId)
             .editKey(editKey)
             .sso(sso)
             .execute();

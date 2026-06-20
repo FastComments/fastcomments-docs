@@ -1,3 +1,4 @@
+---
 ## 매개변수
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -6,7 +7,7 @@
 
 ## 응답
 
-반환: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_hash_tags_bulk_200_response.go)
+반환: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
 
 ## 예제
 
@@ -32,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTagsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `AddHashTagsBulk`의 응답: AddHashTagsBulk200Response
+	// `AddHashTagsBulk`의 응답: BulkCreateHashTagsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTagsBulk`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | limit | number | query | Ne |  |
@@ -11,11 +11,11 @@
 
 ## Odgovor
 
-Vraća: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_200_response.go)
+Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_response.go)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'GetAuditLogs Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer GetAuditLogs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -41,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAuditLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetAuditLogs`: GetAuditLogs200Response
+	// response from `GetAuditLogs`: GetAuditLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAuditLogs`: %v\n", resp)
 }
 [inline-code-end]
-
----

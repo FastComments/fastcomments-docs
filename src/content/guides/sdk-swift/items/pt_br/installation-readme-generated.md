@@ -1,17 +1,16 @@
----
 ### Gerenciador de Pacotes Swift
 
 Adicione o seguinte ao seu arquivo `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
 ]
 ```
 
 Ou no Xcode:
 1. Arquivo > Adicionar Pacotes...
-2. Insira a URL do repositório: `https://github.com/fastcomments/fastcomments-swift.git`
+2. Digite a URL do repositório: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Selecione a versão que deseja usar
 
 ### Requisitos

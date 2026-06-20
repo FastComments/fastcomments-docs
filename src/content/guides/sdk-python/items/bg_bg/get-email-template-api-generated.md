@@ -7,35 +7,35 @@
 
 ## Отговор
 
-Връща: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template200_response.py)
+Връща: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за get_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template200_response import GetEmailTemplate200Response
+from client.models.get_email_template_response import GetEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Задаването на хост е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри на конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
+# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примери за всеки метод на удостоверяване са предоставени по-долу, използвайте примера, който
-# отговаря на вашия случай на удостоверяване.
+# Примерите за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
+# отговаря на вашия случай на използване.
 
-# Конфигурирайте удостоверяването с API ключ: api_key
+# Конфигурирайте удостоверяване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+# Премахнете коментара по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходим
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с инстанция на API клиента
+# Влезте в контекст с инстанция на API клиент
 with client.ApiClient(configuration) as api_client:
     # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)

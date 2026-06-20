@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -9,11 +10,11 @@
 
 ## תגובה
 
-מחזיר: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteFeedPostPublic200Response.php)
+מחזיר: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteFeedPostPublicResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת deleteFeedPostPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-deleteFeedPostPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +22,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש ב-client http מותאם אישית, העבר את ה-client שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$post_id = 'post_id_example'; // מחרוזת
-$broadcast_id = 'broadcast_id_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+$tenant_id = 'tenant_id_example'; // string
+$post_id = 'post_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->deleteFeedPostPublic($tenant_id, $post_id, $broadcast_id, $sso);

@@ -1,19 +1,19 @@
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | 경로 | 예 |  |
-| tenantId | string | 쿼리 | 아니오 |  |
+| tag | string | path | 예 |  |
+| tenantId | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 예제
 
 [inline-code-attrs-start title = 'deleteHashTag 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 가져오기:
+// 클래스 임포트:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,17 +29,17 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값은 null)
+    // API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
-    DeleteHashTagRequest deleteHashTagRequest = new DeleteHashTagRequest(); // DeleteHashTagRequest | 
+    DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteHashTag(tag)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
             .tenantId(tenantId)
-            .deleteHashTagRequest(deleteHashTagRequest)
+            .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

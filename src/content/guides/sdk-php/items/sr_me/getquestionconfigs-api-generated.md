@@ -1,13 +1,13 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | skip | number | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfigs200Response.php)
+Враћа: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfigsResponse.php)
 
 ## Пример
 
@@ -17,15 +17,19 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Configure API key authorization: api_key
+// Конфигуришите API кључ за ауторизацију: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Одукоментарите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Уклоните коментар испод да поставите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Ако желите да користите прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
     new GuzzleHttp\Client(),
     $config
 );

@@ -3,12 +3,12 @@
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | A comma-separated list of comment IDs. |
+| commentIds | string | query | Yes | A comma separated list of comment ids. |
 | sso | string | query | No |  |
 
 ## Response
 
-Returns: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Example
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | A comma-separated list of comment IDs.
+comment_ids = 'comment_ids_example' # String | A comma separated list of comment ids.
 opts = {
   sso: 'sso_example' # String | 
 }

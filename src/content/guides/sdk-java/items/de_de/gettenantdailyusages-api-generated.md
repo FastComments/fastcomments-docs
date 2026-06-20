@@ -1,6 +1,7 @@
+---
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | yearNumber | number | query | Nein |  |
@@ -10,7 +11,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsages200Response.java)
+Gibt zurück: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsagesResponse.java)
 
 ## Beispiel
 
@@ -32,7 +33,7 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +43,7 @@ public class Example {
     Double dayNumber = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantDailyUsages200Response result = apiInstance.getTenantDailyUsages(tenantId)
+      GetTenantDailyUsagesResponse result = apiInstance.getTenantDailyUsages(tenantId)
             .yearNumber(yearNumber)
             .monthNumber(monthNumber)
             .dayNumber(dayNumber)
@@ -59,3 +60,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

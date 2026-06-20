@@ -1,7 +1,6 @@
----
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | urlId | string | query | Tak |  |
@@ -11,7 +10,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+Zwraca: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## Przykład
 
@@ -19,18 +18,18 @@ Zwraca: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# Ustalenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Użyj kontekstu z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->create_comment_public: %s\n" % e)
 [inline-code-end]
-
----

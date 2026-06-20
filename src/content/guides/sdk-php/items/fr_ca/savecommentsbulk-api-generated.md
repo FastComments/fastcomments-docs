@@ -10,7 +10,7 @@
 
 ## Réponse
 
-Renvoie : [`SaveComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveComment200Response.php)
+Retourne: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsBulkResponse.php)
 
 ## Exemple
 
@@ -22,7 +22,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci‑dessous pour configurer un préfixe (p.ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci-dessous pour configurer un préfixe (p. ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

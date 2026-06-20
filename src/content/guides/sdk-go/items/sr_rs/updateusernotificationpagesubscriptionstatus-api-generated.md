@@ -1,9 +1,9 @@
 Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају
-за нове коренске коментаре, и такође
+за нове root коментаре, и такође
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -14,7 +14,7 @@
 
 ## Одговор
 
-Враћа: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Враћа: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_page_subscription_status_response.go)
 
 ## Пример
 
@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	url := "url_example" // string | 
 	pageTitle := "pageTitle_example" // string | 
 	subscribedOrUnsubscribed := "subscribedOrUnsubscribed_example" // string | 
-	sso := "sso_example" // string |  (опционо)
+	sso := "sso_example" // string |  (необавезно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationPageSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// одговор из `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationPageSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationPageSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

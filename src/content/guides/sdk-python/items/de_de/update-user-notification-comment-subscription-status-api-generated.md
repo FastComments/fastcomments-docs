@@ -1,8 +1,8 @@
-Benachrichtigungen für einen bestimmten Kommentar aktivieren oder deaktivieren.
+Aktivieren oder deaktivieren Sie Benachrichtigungen für einen bestimmten Kommentar.
 
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | notificationId | string | path | Ja |  |
@@ -12,14 +12,14 @@ Benachrichtigungen für einen bestimmten Kommentar aktivieren oder deaktivieren.
 
 ## Antwort
 
-Gibt zurück: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Gibt zurück: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_comment_subscription_status_response.py)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für update_user_notification_comment_subscription_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_comment_subscription_status_response import UpdateUserNotificationCommentSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,9 +30,9 @@ configuration = client.Configuration(
 )
 
 
-# Öffnen eines Kontexts mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients öffnen
 with client.ApiClient(configuration) as api_client:
-    # Erstellen einer Instanz der API-Klasse
+    # Erstelle eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     notification_id = 'notification_id_example' # str | 

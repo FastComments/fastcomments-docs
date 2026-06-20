@@ -1,15 +1,15 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
-| editKey | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| editKey | string | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentText200Response.java)
+반환: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIGetCommentTextResponse.java)
 
 ## 예제
 
@@ -28,12 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String commentId = "commentId_example"; // String | 
-    String editKey = "editKey_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // 문자열 | 
+    String commentId = "commentId_example"; // 문자열 | 
+    String editKey = "editKey_example"; // 문자열 | 
+    String sso = "sso_example"; // 문자열 | 
     try {
-      GetCommentText200Response result = apiInstance.getCommentText(tenantId, commentId)
+      PublicAPIGetCommentTextResponse result = apiInstance.getCommentText(tenantId, commentId)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -48,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

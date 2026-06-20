@@ -12,7 +12,7 @@ Ativar ou desativar notificações para um comentário específico.
 
 ## Resposta
 
-Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Retorna: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationCommentSubscriptionStatusResponse.java)
 
 ## Exemplo
 
@@ -37,7 +37,7 @@ public class Example {
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
+      UpdateUserNotificationCommentSubscriptionStatusResponse result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -9,37 +9,37 @@
 
 ## Odgovor
 
-Vrne: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Vrača: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer flag_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je izbirno in privzeto je https://fastcomments.com
+# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre overjanja in pooblastil
-# v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo avtentikacije so prikazani spodaj; uporabite primer, ki
+# Odjemalec mora konfigurirati parametre za preverjanje pristnosti in pooblastila
+# v skladu s politiko varnosti strežnika API.
+# Spodaj so prikazani primeri za vsak način avtentikacije, uporabite primer, ki
 # ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte pooblastilo z API ključem: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Če je potrebno, odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

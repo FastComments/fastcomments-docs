@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Ja |  |
@@ -8,9 +8,9 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Geeft terug: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Voorbeeld
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutel autorisatie: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaarmarkering van de volgende regel om een prefix voor de API-sleutel in te stellen, bv. 'Bearer' (standaard nil)
+  # Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijvoorbeeld 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,5 +43,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_vote: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,13 +1,14 @@
-## Παράμετροι
+---
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| page | number | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetHashTags200Response.java)
+Επιστρέφει: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetHashTagsResponse.java)
 
 ## Παράδειγμα
 
@@ -26,17 +27,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης API key: api_key
+    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. "Token" (προεπιλογή null)
+    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. "Token" (η προεπιλογή είναι null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     try {
-      GetHashTags200Response result = apiInstance.getHashTags(tenantId)
+      GetHashTagsResponse result = apiInstance.getHashTags(tenantId)
             .page(page)
             .execute();
       System.out.println(result);

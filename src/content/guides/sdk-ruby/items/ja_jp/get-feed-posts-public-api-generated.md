@@ -6,17 +6,17 @@ afterId
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| afterId | string | query | いいえ |  |
-| limit | integer | query | いいえ |  |
-| tags | array | query | いいえ |  |
-| sso | string | query | いいえ |  |
-| isCrawler | boolean | query | いいえ |  |
-| includeUserInfo | boolean | query | いいえ |  |
+| tenantId | 文字列 | パス | はい |  |
+| afterId | 文字列 | クエリ | いいえ |  |
+| limit | 整数 | クエリ | いいえ |  |
+| tags | 配列 | クエリ | いいえ |  |
+| sso | 文字列 | クエリ | いいえ |  |
+| isCrawler | 真偽値 | クエリ | いいえ |  |
+| includeUserInfo | 真偽値 | クエリ | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_public200_response.rb)
+戻り値: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_feed_posts_response.rb)
 
 ## 例
 
@@ -26,14 +26,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 文字列 | 
 opts = {
-  after_id: 'after_id_example', # String | 
-  limit: 56, # Integer | 
-  tags: ['inner_example'], # Array<String> | 
-  sso: 'sso_example', # String | 
-  is_crawler: true, # Boolean | 
-  include_user_info: true # Boolean | 
+  after_id: 'after_id_example', # 文字列 | 
+  limit: 56, # 整数 | 
+  tags: ['inner_example'], # 配列<文字列> | 
+  sso: 'sso_example', # 文字列 | 
+  is_crawler: true, # 真偽値 | 
+  include_user_info: true # 真偽値 | 
 }
 
 begin
@@ -44,3 +44,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_public: #{e}"
 end
 [inline-code-end]
+
+---

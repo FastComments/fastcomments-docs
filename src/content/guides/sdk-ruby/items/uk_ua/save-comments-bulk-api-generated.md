@@ -10,7 +10,7 @@
 
 ## Відповідь
 
-Повертає: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/array&lt;_save_comment200_response&gt;.rb)
+Повертає: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
 
 ## Приклад
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Налаштування авторизації API-ключем: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Розкоментуйте наступний рядок, щоб задати префікс для API ключа, наприклад 'Bearer' (за замовчуванням nil)
+  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр., 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->save_comments_bulk: #{e}"
 end
 [inline-code-end]
-
----

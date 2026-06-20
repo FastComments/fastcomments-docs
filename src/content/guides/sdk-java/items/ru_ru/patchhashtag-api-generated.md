@@ -1,13 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tag | string | path | Да |  |
 | tenantId | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PatchHashTag200Response.java)
+Возвращает: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
 ## Пример
 
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию API ключа: api_key
+    // Настроить авторизацию API-ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы установить префикс для API ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      PatchHashTag200Response result = apiInstance.patchHashTag(tag)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
             .tenantId(tenantId)
             .updateHashTagBody(updateHashTagBody)
             .execute();
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,4 @@
-## パラメータ
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserBadge200Response.swift)
+戻り値: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptySuccessResponse.swift)
 
 ## 例
 

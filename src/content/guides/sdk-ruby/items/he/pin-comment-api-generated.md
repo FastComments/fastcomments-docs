@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | commentId | string | path | כן |  |
@@ -9,7 +9,7 @@
 
 ## תגובה
 
-מחזיר: [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+מחזיר: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## דוגמה
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # מחרוזת | 
+comment_id = 'comment_id_example' # מחרוזת | 
+broadcast_id = 'broadcast_id_example' # מחרוזת | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # מחרוזת | 
 }
 
 begin
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->pin_comment: #{e}"
 end
 [inline-code-end]
-
----

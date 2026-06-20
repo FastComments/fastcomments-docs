@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
@@ -9,11 +9,11 @@
 
 ## Réponse
 
-Renvoie : [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badge_progress_list_200_response.go)
+Renvoie : [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badge_progress_list_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple GetUserBadgeProgressList'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de GetUserBadgeProgressList'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -21,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (optionnel)
-	limit := float64(1.2) // float64 |  (optionnel)
-	skip := float64(1.2) // float64 |  (optionnel)
+	userId := "userId_example" // string |  (facultatif)
+	limit := float64(1.2) // float64 |  (facultatif)
+	skip := float64(1.2) // float64 |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadgeProgressList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetUserBadgeProgressList`: GetUserBadgeProgressList200Response
+	// réponse de `GetUserBadgeProgressList`: APIGetUserBadgeProgressListResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadgeProgressList`: %v\n", resp)
 }
 [inline-code-end]
-
----

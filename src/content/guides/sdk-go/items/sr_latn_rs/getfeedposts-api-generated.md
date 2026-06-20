@@ -1,4 +1,4 @@
-req
+zahtev
 tenantId
 afterId
 
@@ -13,7 +13,7 @@ afterId
 
 ## Odgovor
 
-Vraća: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_200_response.go)
+Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_response.go)
 
 ## Primer
 
@@ -25,14 +25,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  (neobavezno)
-	limit := int32(56) // int32 |  (neobavezno)
-	tags := []string{"Inner_example"} // []string |  (neobavezno)
+	afterId := "afterId_example" // string |  (opciono)
+	limit := int32(56) // int32 |  (opciono)
+	tags := []string{"Inner_example"} // []string |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetFeedPosts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetFeedPosts`: GetFeedPosts200Response
+	// odgovor od `GetFeedPosts`: GetFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetFeedPosts`: %v\n", resp)
 }
 [inline-code-end]

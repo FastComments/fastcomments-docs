@@ -6,16 +6,16 @@ userIdWS
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|-----------|--------------|-------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | urlId | string | query | Sì |  |
 | userIdWS | string | query | Sì |  |
 | startTime | integer | query | Sì |  |
-| endTime | integer | query | Sì |  |
+| endTime | integer | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_event_log_200_response.go)
+Restituisce: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_event_log_response.go)
 
 ## Esempio
 
@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	urlId := "urlId_example" // string | 
 	userIdWS := "userIdWS_example" // string | 
 	startTime := int64(789) // int64 | 
-	endTime := int64(789) // int64 | 
+	endTime := int64(789) // int64 |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetEventLog``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetEventLog`: GetEventLog200Response
+	// risposta da `GetEventLog`: GetEventLogResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetEventLog`: %v\n", resp)
 }
 [inline-code-end]

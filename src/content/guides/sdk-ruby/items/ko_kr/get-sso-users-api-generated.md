@@ -7,7 +7,7 @@
 
 ## 응답
 
-반환: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_users200_response.rb)
+반환: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_users_response.rb)
 
 ## 예제
 
@@ -19,14 +19,14 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사(예: 'Bearer')를 설정하려면 다음 줄의 주석을 제거하세요 (기본값은 nil)
+  # API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: 'Bearer' (기본값은 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # 문자열 | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  skip: 56 # 정수 | 
+  skip: 56 # Integer | 
 }
 
 begin

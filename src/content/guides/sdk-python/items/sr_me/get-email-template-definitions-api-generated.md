@@ -1,42 +1,42 @@
-## Parametri
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions200_response.py)
+Враћа: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions_response.py)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer get_email_template_definitions'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_email_template_definitions'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_definitions200_response import GetEmailTemplateDefinitions200Response
+from client.models.get_email_template_definitions_response import GetEmailTemplateDefinitionsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционално и подразумјева се https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbjednosti API servera.
-# Primjeri za svaki metod autentifikacije su dati ispod, koristite primjer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Клијент мора конфигурисати параметре аутентификације и ауторизације
+# у складу са безбједносном политиком API сервера.
+# Примјери за сваки метод аутентификације дати су испод; користите онај који
+# одговара вашем случају коришћења аутентификације.
 
-# Konfigurišite autorizaciju API ključa: api_key
+# Конфигуришите ауторизацију помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Откоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
 
@@ -47,3 +47,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_email_template_definitions: %s\n" % e)
 [inline-code-end]
+
+---

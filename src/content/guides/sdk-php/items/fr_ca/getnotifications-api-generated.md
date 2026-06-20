@@ -2,17 +2,17 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Oui |  |
+| userId | string | query | Non |  |
+| urlId | string | query | Non |  |
+| fromCommentId | string | query | Non |  |
+| viewed | boolean | query | Non |  |
+| type | string | query | Non |  |
+| skip | number | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotifications200Response.php)
+Retourne : [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationsResponse.php)
 
 ## Exemple
 
@@ -22,7 +22,7 @@ Renvoie : [`GetNotifications200Response`](https://github.com/FastComments/fastco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'autorisation par clé API : api_key
+// Configurer l'autorisation de la clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Décommentez ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');

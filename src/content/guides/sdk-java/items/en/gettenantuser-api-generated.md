@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUser200Response.java)
+Returns: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUserResponse.java)
 
 ## Example
 
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantUser200Response result = apiInstance.getTenantUser(tenantId, id)
+      GetTenantUserResponse result = apiInstance.getTenantUser(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

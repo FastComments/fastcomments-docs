@@ -1,4 +1,4 @@
-### Uso dell'API pubblica
+### Utilizzo dell'API pubblica
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::Configuration;
@@ -6,7 +6,7 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Crea la configurazione API
+    // Crea la configurazione dell'API
     let config = Configuration::new();
 
     // Recupera i commenti per una pagina
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Uso dell'API autenticata
+### Utilizzo dell'API autenticata
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Uso di SSO per l'autenticazione
+### Utilizzo dell'API di moderazione
+
+I metodi di moderazione supportano la dashboard dei moderatori. Usano una `Configuration` con chiave API proprio come l'API autenticata, e ciascun metodo accetta un token `sso` opzionale in modo che la chiamata possa essere effettuata per conto di un moderatore autenticato tramite SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Crea la configurazione con la chiave API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Conta i commenti in attesa nella coda di moderazione
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // passa un token SSO per agire come moderatore autenticato tramite SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Utilizzo di SSO per l'autenticazione
 
 ```rust
 use fastcomments_sdk::sso::{

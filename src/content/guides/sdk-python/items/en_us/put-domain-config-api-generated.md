@@ -7,14 +7,14 @@
 
 ## Response
 
-Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Returns: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/put_domain_config_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'put_domain_config Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.put_domain_config_response import PutDomainConfigResponse
 from client.models.update_domain_config_params import UpdateDomainConfigParams
 from client.rest import ApiException
 from pprint import pprint

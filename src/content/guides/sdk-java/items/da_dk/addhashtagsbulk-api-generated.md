@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -7,11 +6,11 @@
 
 ## Svar
 
-Returnerer: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddHashTagsBulk200Response.java)
+Returnerer: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på addHashTagsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -29,14 +28,14 @@ public class Example {
     // Konfigurer API-nøgleautorisation: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      AddHashTagsBulk200Response result = apiInstance.addHashTagsBulk()
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
             .tenantId(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
@@ -51,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

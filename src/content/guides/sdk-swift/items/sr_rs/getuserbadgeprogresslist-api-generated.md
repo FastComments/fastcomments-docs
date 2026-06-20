@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Назив | Тип | Локација | Обавезно | Опис |
@@ -9,13 +10,13 @@
 
 ## Одговор
 
-Враћа: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadgeProgressList200Response.swift)
+Враћа: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgeProgressListResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getUserBadgeProgressList'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressList Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још увек у бета фази. За било какав проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још у бета-фази. За било који проблем пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,3 +35,5 @@ DefaultAPI.getUserBadgeProgressList(tenantId: tenantId, userId: userId, limit: l
     }
 }
 [inline-code-end]
+
+---

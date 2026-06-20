@@ -1,26 +1,26 @@
 ## Параметри
 
-| Име | Type | Location | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Списак идентификатора коментара одвојених зарезом. |
+| commentIds | string | query | Да | Листа идентификатора коментара, одвојених зарезом. |
 | sso | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумева https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Постављање host-а је опционално и подразумевано је https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -31,7 +31,7 @@ with client.ApiClient(configuration) as api_client:
     # Креирајте инстанцу API класе
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | Списак идентификатора коментара одвојених зарезом.
+    comment_ids = 'comment_ids_example' # str | Листа идентификатора коментара одвојених зарезом.
     sso = 'sso_example' # str |  (опционо)
 
     try:

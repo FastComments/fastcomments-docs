@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| 名称 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
@@ -9,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnBlockCommentPublic200Response.swift)
+戻り値: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnblockSuccess.swift)
 
 ## 例
 
@@ -21,8 +22,8 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
 let unBlockFromCommentParams = UnBlockFromCommentParams(commentIdsToCheck: ["commentIdsToCheck_example"]) // UnBlockFromCommentParams | 
-let userId = "userId_example" // String |  (任意)
-let anonUserId = "anonUserId_example" // String |  (任意)
+let userId = "userId_example" // String |  （オプション）
+let anonUserId = "anonUserId_example" // String |  （オプション）
 
 DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
     guard error == nil else {
@@ -35,3 +36,5 @@ DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromComment
     }
 }
 [inline-code-end]
+
+---

@@ -7,19 +7,19 @@
 
 ## Отговор
 
-Връща: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_result200_response.rb)
+Връща: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_result_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_question_result Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример на get_question_result'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на удостоверяване
+# Настройка на авторизацията
 FastCommentsClient.configure do |config|
-  # Конфигуриране на удостоверяване чрез API ключ: api_key
+  # Конфигуриране на авторизация чрез API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # Разкоментирайте следния ред, за да зададете префикс за API ключа, например 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -3,13 +3,13 @@
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| notificationId | string | 아니요 |  |
-| newStatus | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| notificationId | string | 아니오 |  |
+| newStatus | string | 아니오 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+반환: [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status_response.nim)
 
 ## 예제
 
@@ -19,11 +19,13 @@ let (response, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-abc-789"
+  sso = "sso-token-abc123"
 )
 if response.isSome:
-  let updateResp = response.get()
-  discard updateResp
+  let updated = response.get()
+  echo "Notification status updated successfully"
+else:
+  echo "No update response received"
 [inline-code-end]
 
 ---

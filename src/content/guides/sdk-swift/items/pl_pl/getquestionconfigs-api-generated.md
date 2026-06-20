@@ -1,19 +1,19 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | skip | number | query | Nie |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionConfigs200Response.swift)
+Zwraca: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionConfigsResponse.swift)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getQuestionConfigs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getQuestionConfigs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W razie problemu prosimy zgłaszać na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,3 +30,5 @@ DefaultAPI.getQuestionConfigs(tenantId: tenantId, skip: skip) { (response, error
     }
 }
 [inline-code-end]
+
+---

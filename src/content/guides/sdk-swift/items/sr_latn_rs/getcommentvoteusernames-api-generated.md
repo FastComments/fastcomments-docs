@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentVoteUserNames200Response.swift)
+Vraća: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentVoteUserNamesSuccessResponse.swift)
 
 ## Primer
 
@@ -34,3 +34,5 @@ PublicAPI.getCommentVoteUserNames(tenantId: tenantId, commentId: commentId, dir:
     }
 }
 [inline-code-end]
+
+---

@@ -2,18 +2,18 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| domain | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| domain | string | path | Yes |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfig200Response.swift)
+Retourneert: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfigResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteDomainConfig Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld ze via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Bij problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, e
     }
 }
 [inline-code-end]
-
----

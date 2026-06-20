@@ -7,11 +7,11 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigs200Response.java)
+Επιστρέφει: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigsResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getQuestionConfigs Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getQuestionConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -29,14 +29,14 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλεγμένο: null)
+    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetQuestionConfigs200Response result = apiInstance.getQuestionConfigs(tenantId)
+      GetQuestionConfigsResponse result = apiInstance.getQuestionConfigs(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

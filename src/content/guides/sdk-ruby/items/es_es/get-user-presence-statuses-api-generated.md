@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | urlIdWS | string | query | Sí |  |
@@ -8,7 +9,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+Devuelve: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
 ## Ejemplo
 
@@ -18,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Cadena | 
-url_id_ws = 'url_id_ws_example' # Cadena | 
-user_ids = 'user_ids_example' # Cadena | 
+tenant_id = 'tenant_id_example' # String | 
+url_id_ws = 'url_id_ws_example' # String | 
+user_ids = 'user_ids_example' # String | 
 
 begin
   
@@ -30,3 +31,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_presence_statuses: #{e}"
 end
 [inline-code-end]
+
+---

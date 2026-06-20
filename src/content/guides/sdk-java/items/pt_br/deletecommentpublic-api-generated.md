@@ -1,20 +1,20 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| commentId | string | path | Sim |  |
-| broadcastId | string | query | Sim |  |
-| editKey | string | query | Não |  |
-| sso | string | query | Não |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
-Retorna: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentPublic200Response.java)
+Retorna: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIDeleteCommentResponse.java)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo deleteCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de deleteCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -35,7 +35,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      DeleteCommentPublic200Response result = apiInstance.deleteCommentPublic(tenantId, commentId, broadcastId)
+      PublicAPIDeleteCommentResponse result = apiInstance.deleteCommentPublic(tenantId, commentId, broadcastId)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_200_response.go)
+Връща: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_response.go)
 
 ## Пример
 
@@ -21,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
-	userId := "userId_example" // string |  (незадължително)
-	anonUserId := "anonUserId_example" // string |  (незадължително)
+	userId := "userId_example" // string |  (по избор)
+	anonUserId := "anonUserId_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.FlagComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `FlagComment`: FlagComment200Response
+	// отговор от `FlagComment`: FlagCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.FlagComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

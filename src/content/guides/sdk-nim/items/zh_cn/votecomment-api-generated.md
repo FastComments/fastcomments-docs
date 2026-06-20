@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -12,27 +12,27 @@
 
 ## 响应
 
-返回: [`Option[VoteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_comment200response.nim)
+返回：[`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'voteComment 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let voteBody = VoteBodyParams()
 let (response, httpResponse) = client.voteComment(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  urlId = "news/2025/fastcomments-integration",
+  commentId = "cmt-987654321",
+  urlId = "news/article-2026-inflation",
   broadcastId = "",
-  voteBodyParams = voteBody,
+  voteBodyParams = VoteBodyParams(),
   sessionId = "",
   sso = ""
 )
+
 if response.isSome:
   let voteResp = response.get()
-  echo "Vote recorded for comment cmt-456789"
+  discard voteResp
 else:
-  echo "Failed to record vote"
+  discard httpResponse
 [inline-code-end]
 
 ---

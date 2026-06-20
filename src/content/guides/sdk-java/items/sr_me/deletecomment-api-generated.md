@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -9,13 +9,13 @@
 
 ## Одговор
 
-Враћа: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteComment200Response.java)
+Враћа: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentResult.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'deleteComment Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увоз класа:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите ауторизацију API кључа: api_key
+    // Подеси ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментараишите следећу линију да подесите префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откомуентарај следећу линију да подесиш префикс за API кључ, нпр. "Token" (подразумевано је null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String contextUserId = "contextUserId_example"; // String | 
     Boolean isLive = true; // Boolean | 
     try {
-      DeleteComment200Response result = apiInstance.deleteComment(tenantId, id)
+      DeleteCommentResult result = apiInstance.deleteComment(tenantId, id)
             .contextUserId(contextUserId)
             .isLive(isLive)
             .execute();

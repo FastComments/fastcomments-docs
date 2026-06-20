@@ -7,11 +7,11 @@
 
 ## レスポンス
 
-戻り値: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_badge_200_response.go)
+戻り値: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_success_response.go)
 
 ## 例
 
-[inline-code-attrs-start title = 'UpdateUserBadge の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'UpdateUserBadgeの例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -19,13 +19,13 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	id := "id_example" // string | 
-	updateUserBadgeParams := *openapiclient.NewUpdateUserBadgeParams() // UpdateUserBadgeParams | 
+	tenantId := "tenantId_example" // string | テナントID
+	id := "id_example" // string | 識別子
+	updateUserBadgeParams := *openapiclient.NewUpdateUserBadgeParams() // UpdateUserBadgeParams | UpdateUserBadgeに渡すパラメータ
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateUserBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UpdateUserBadge` のレスポンス: UpdateUserBadge200Response
+	// `UpdateUserBadge`からのレスポンス: APIEmptySuccessResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateUserBadge`: %v\n", resp)
 }
 [inline-code-end]
-
----

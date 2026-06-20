@@ -10,13 +10,13 @@
 
 ## תגובה
 
-מחזיר: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPost200Response.java)
+מחזיר: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostsResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createFeedPost'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createFeedPost'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבא מחלקות:
+// ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,7 +32,7 @@ public class Example {
     // הגדר הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת המחדל null)
+    // ביטול הערת השורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת מחדל null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean doSpamCheck = true; // Boolean | 
     Boolean skipDupCheck = true; // Boolean | 
     try {
-      CreateFeedPost200Response result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
+      CreateFeedPostsResponse result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
@@ -60,5 +60,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

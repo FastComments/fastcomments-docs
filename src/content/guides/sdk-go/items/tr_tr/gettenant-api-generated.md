@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_200_response.go)
+Döndürür: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_response.go)
 
 ## Örnek
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenant`'den yanıt: GetTenant200Response
+	// `GetTenant`'den yanıt: GetTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenant`: %v\n", resp)
 }
 [inline-code-end]
-
----

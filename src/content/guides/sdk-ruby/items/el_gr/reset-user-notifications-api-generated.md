@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | afterId | string | query | Όχι |  |
@@ -12,11 +12,11 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα reset_user_notifications'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notifications Παράδειγμα'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -40,3 +40,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notifications: #{e}"
 end
 [inline-code-end]
+
+---

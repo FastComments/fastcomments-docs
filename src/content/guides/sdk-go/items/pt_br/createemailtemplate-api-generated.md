@@ -4,9 +4,9 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 
-## Response
+## Resposta
 
-Retorna: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_200_response.go)
+Retorna: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_response.go)
 
 ## Exemplo
 
@@ -32,7 +32,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `CreateEmailTemplate`: CreateEmailTemplate200Response
+	// resposta de `CreateEmailTemplate`: CreateEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
+
+---

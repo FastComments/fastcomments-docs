@@ -9,11 +9,11 @@
 
 ## Svar
 
-Returnerer: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+Returnerer: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'update_feed_post_public Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på update_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

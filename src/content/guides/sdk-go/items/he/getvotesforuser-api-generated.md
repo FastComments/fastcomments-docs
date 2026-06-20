@@ -1,16 +1,15 @@
----
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| urlId | string | query | כן |  |
-| userId | string | query | לא |  |
-| anonUserId | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_200_response.go)
+מחזיר: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_response.go)
 
 ## דוגמה
 
@@ -38,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`GetVotesForUser`: GetVotesForUser200Response
+	// תגובה מ-`GetVotesForUser`: GetVotesForUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotesForUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

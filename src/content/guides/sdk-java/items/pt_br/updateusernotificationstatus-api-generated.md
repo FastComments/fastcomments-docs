@@ -1,15 +1,15 @@
 ## Parâmetros
 
-| Nome | Tipo | Location | Obrigatório | Descrição |
-|------|------|----------|------------|-----------|
-| tenantId | string | query | Sim |  |
-| notificationId | string | path | Sim |  |
-| newStatus | string | path | Sim |  |
-| sso | string | query | Não |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
-Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Retorna: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatusResponse.java)
 
 ## Exemplo
 
@@ -33,7 +33,7 @@ public class Example {
     String newStatus = "read"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
+      UpdateUserNotificationStatusResponse result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
             .sso(sso)
             .execute();
       System.out.println(result);

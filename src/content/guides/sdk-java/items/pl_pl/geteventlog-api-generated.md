@@ -5,23 +5,23 @@ userIdWS
 
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | urlId | string | query | Tak |  |
 | userIdWS | string | query | Tak |  |
 | startTime | integer | query | Tak |  |
-| endTime | integer | query | Tak |  |
+| endTime | integer | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Zwraca: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getEventLog'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importuj klasy:
+// Import klas:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

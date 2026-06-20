@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -10,11 +11,11 @@
 
 ## レスポンス
 
-戻り値: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsages200Response.swift)
+戻り値: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'getTenantDailyUsages の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantDailyUsages 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
 import FastCommentsSwift
@@ -36,3 +37,5 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, mont
     }
 }
 [inline-code-end]
+
+---

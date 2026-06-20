@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderator_200_response.go)
+Retourneert: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderator_response.go)
 
 ## Voorbeeld
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `GetModerator`: GetModerator200Response
+	// response from `GetModerator`: GetModeratorResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetModerator`: %v\n", resp)
 }
 [inline-code-end]

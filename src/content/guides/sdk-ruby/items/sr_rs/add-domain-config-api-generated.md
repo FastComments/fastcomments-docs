@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -6,19 +7,19 @@
 
 ## Одговор
 
-Враћа: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config200_response.rb)
+Враћа: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'add_domain_config Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример add_domain_config'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подесите ауторизацију
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију API кључа: api_key
+  # Конфигуришите API кључ за ауторизацију: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Одкоментаришите следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

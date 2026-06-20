@@ -1,13 +1,13 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
 ## Svar
 
-Returnerer: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_user_200_response.go)
+Returnerer: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_user_response.go)
 
 ## Eksempel
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetTenantUser`: GetTenantUser200Response
+	// svar fra `GetTenantUser`: GetTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantUser`: %v\n", resp)
 }
 [inline-code-end]

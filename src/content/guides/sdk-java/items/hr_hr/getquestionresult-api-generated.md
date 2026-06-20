@@ -1,13 +1,13 @@
 ## Parametri
 
-| Naziv | Tip | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResult200Response.java)
+Vraća: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResultResponse.java)
 
 ## Primjer
 
@@ -29,14 +29,14 @@ public class Example {
     // Konfigurirajte autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano je null)
+    // Otkomentirajte sljedeći redak da biste postavili prefiks za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetQuestionResult200Response result = apiInstance.getQuestionResult(tenantId, id)
+      GetQuestionResultResponse result = apiInstance.getQuestionResult(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

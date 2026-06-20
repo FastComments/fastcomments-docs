@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | afterId | string | query | Ne |  |
@@ -13,7 +12,7 @@
 
 ## Odgovor
 
-Vraća: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_200_response.go)
+Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_response.go)
 
 ## Primer
 
@@ -25,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  (opciono)
-	afterCreatedAt := int64(789) // int64 |  (opciono)
-	unreadOnly := true // bool |  (opciono)
-	dmOnly := true // bool |  (opciono)
-	noDm := true // bool |  (opciono)
-	sso := "sso_example" // string |  (opciono)
+	afterId := "afterId_example" // string |  (neobavezno)
+	afterCreatedAt := int64(789) // int64 |  (neobavezno)
+	unreadOnly := true // bool |  (neobavezno)
+	dmOnly := true // bool |  (neobavezno)
+	noDm := true // bool |  (neobavezno)
+	sso := "sso_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.ResetUserNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ResetUserNotifications`: ResetUserNotifications200Response
+	// odgovor od `ResetUserNotifications`: ResetUserNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ResetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]
-
----

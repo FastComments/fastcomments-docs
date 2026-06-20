@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Location | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | page | number | query | Nee |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags200_response.rb)
+Retourneert: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags_response.rb)
 
 ## Voorbeeld
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal de commentaarstreep van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_hash_tags: #{e}"
 end
 [inline-code-end]
+
+---

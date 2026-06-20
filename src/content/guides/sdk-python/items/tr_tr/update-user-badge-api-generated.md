@@ -7,19 +7,19 @@
 
 ## Yanıt
 
-Döndürür: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_badge200_response.py)
+Döndürür: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_success_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'update_user_badge Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_badge200_response import UpdateUserBadge200Response
+from client.models.api_empty_success_response import APIEmptySuccessResponse
 from client.models.update_user_badge_params import UpdateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -27,18 +27,18 @@ configuration = client.Configuration(
 
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
 # API sunucusunun güvenlik politikasına uygun olarak yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; aşağıdaki örneklerden
-# kullanım durumunuza uyanı kullanın.
+# Her bir kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, 
+# kimlik doğrulama kullanım durumunuza uygun olan örneği kullanın.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıyı yorum dışı bırakın
+# Gerekirse API anahtarı için öneki (örn. Bearer) ayarlamak üzere aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam girin
+# API istemcisi örneğiyle bir bağlam açın
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

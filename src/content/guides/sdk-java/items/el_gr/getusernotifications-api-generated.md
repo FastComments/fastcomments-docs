@@ -3,6 +3,7 @@
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
+| urlId | string | query | Όχι | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. |
 | pageSize | integer | query | Όχι |  |
 | afterId | string | query | Όχι |  |
 | includeContext | boolean | query | Όχι |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Όχι |  |
 | noDm | boolean | query | Όχι |  |
 | includeTranslations | boolean | query | Όχι |  |
+| includeTenantNotifications | boolean | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+Επιστρέφει: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## Παράδειγμα
 
@@ -35,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -43,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -54,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);

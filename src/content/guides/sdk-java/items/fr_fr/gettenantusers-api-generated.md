@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsers200Response.java)
+Renvoie : [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsersResponse.java)
 
 ## Exemple
 
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantUsers200Response result = apiInstance.getTenantUsers(tenantId)
+      GetTenantUsersResponse result = apiInstance.getTenantUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

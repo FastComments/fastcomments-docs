@@ -1,17 +1,18 @@
+---
 Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.
-Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
+Se admiten diferentes operaciones (p. ej. sum, countDistinct, avg, etc.).
 
-## Parameters
+## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Type | Location | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sí |  |
 | parentTenantId | string | query | No |  |
 | includeStats | boolean | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+Devuelve: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## Ejemplo
 
@@ -30,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorización de clave API: api_key
+    // Configurar la autorización de la clave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto null)
+    // Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +43,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();
@@ -57,3 +58,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

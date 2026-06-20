@@ -1,20 +1,20 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Sì |  |
+| userId | string | query | Sì |  |
+| id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeTicketState200Response.java)
+Restituisce: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeTicketStateResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di changeTicketState'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa le classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,7 +30,7 @@ public class Example {
     // Configura l'autorizzazione tramite API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
+    // Rimuovere il commento dalla riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     String id = "id_example"; // String | 
     ChangeTicketStateBody changeTicketStateBody = new ChangeTicketStateBody(); // ChangeTicketStateBody | 
     try {
-      ChangeTicketState200Response result = apiInstance.changeTicketState(tenantId, userId, id, changeTicketStateBody)
+      ChangeTicketStateResponse result = apiInstance.changeTicketState(tenantId, userId, id, changeTicketStateBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

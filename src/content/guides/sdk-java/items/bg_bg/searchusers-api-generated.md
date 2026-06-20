@@ -11,7 +11,7 @@
 
 ## Отговор
 
-Връща: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+Връща: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsersResult.java)
 
 ## Пример
 
@@ -37,7 +37,7 @@ public class Example {
     String sso = "sso_example"; // String | 
     String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+      SearchUsersResult result = apiInstance.searchUsers(tenantId, urlId)
             .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)

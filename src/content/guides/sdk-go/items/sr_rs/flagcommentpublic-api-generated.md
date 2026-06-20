@@ -1,6 +1,6 @@
-## Parameters
+## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
@@ -9,11 +9,11 @@
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'FlagCommentPublic пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример FlagCommentPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +37,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.FlagCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `FlagCommentPublic`: FlagCommentPublic200Response
+	// одговор од `FlagCommentPublic`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.FlagCommentPublic`: %v\n", resp)
 }
 [inline-code-end]
+
+---

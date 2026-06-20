@@ -1,13 +1,13 @@
 ## パラメータ
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | domain | string | path | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+戻り値: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigResponse.java)
 
 ## 例
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証を設定: api_key
+    // APIキー認証を構成: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーにプレフィックスを設定するには、次の行のコメントを外してください。例: "Token"（デフォルトは null）
+    // APIキーのプレフィックスを設定するには、以下の行のコメントを外してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String domain = "domain_example"; // String | 
     try {
-      GetDomainConfig200Response result = apiInstance.getDomainConfig(tenantId, domain)
+      GetDomainConfigResponse result = apiInstance.getDomainConfig(tenantId, domain)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -7,11 +7,11 @@
 
 ## Svar
 
-Returnerer: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_config_200_response.go)
+Returnerer: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_config_response.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på GetQuestionConfig'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetQuestionConfig Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetQuestionConfig`: GetQuestionConfig200Response
+	// svar fra `GetQuestionConfig`: GetQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]

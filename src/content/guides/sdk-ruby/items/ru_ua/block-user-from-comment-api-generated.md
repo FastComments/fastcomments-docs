@@ -9,7 +9,7 @@
 
 ## Ответ
 
-Возвращает: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Возвращает: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## Пример
 
@@ -17,11 +17,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка авторизации
+# Настройка авторизации
 FastCommentsClient.configure do |config|
-  # Настроить авторизацию API-ключом: api_key
+  # Настройка авторизации API-ключом: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например 'Bearer' (по умолчанию nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

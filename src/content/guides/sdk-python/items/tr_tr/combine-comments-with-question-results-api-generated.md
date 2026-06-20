@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Type | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | questionId | string | query | Hayır |  |
@@ -14,36 +14,36 @@
 
 ## Yanıt
 
-Döndürür: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_comments_with_question_results200_response.py)
+Döndürür: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'combine_comments_with_question_results Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.combine_comments_with_question_results200_response import CombineCommentsWithQuestionResults200Response
+from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host'u tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır, kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
+# API sunucusunun güvenlik politikasıyla uyumlu olacak şekilde yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kimlik doğrulama kullanım durumunuza uygun olan örneği kullanın.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki yorumu kaldırın
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneği ile bir bağlam (context) girin
+# API istemcisi ile bir bağlam (context) açın
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (isteğe bağlı)

@@ -6,17 +6,17 @@
 
 ## Відповідь
 
-Повертає: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config200_response.rb)
+Повертає: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'create_question_config Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад create_question_config'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштуйте авторизацію API-ключа: api_key
+  # Налаштування авторизації за API ключем: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

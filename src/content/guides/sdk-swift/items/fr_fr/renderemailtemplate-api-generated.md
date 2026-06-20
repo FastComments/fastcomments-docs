@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | locale | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RenderEmailTemplate200Response.swift)
+Renvoie : [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RenderEmailTemplateResponse.swift)
 
 ## Exemple
 
@@ -31,5 +31,3 @@ DefaultAPI.renderEmailTemplate(tenantId: tenantId, renderEmailTemplateBody: rend
     }
 }
 [inline-code-end]
-
----

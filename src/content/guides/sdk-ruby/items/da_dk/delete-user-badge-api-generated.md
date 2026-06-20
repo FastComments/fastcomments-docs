@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
 
 ## Svar
 
-Returnerer: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_badge200_response.rb)
+Returnerer: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_success_response.rb)
 
 ## Eksempel
 
@@ -15,11 +15,11 @@ Returnerer: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt godkendelse
+# opsæt autorisation
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgleautorisation: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (som standard nil)
+  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_user_badge: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
@@ -8,11 +8,11 @@
 
 ## Risposta
 
-Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_vote_200_response.go)
+Restituisce: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio DeleteVote'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di DeleteVote'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,9 +24,9 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // stringa | 
-	id := "id_example" // stringa | 
-	editKey := "editKey_example" // stringa |  (opzionale)
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
+	editKey := "editKey_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteVote`: DeleteCommentVote200Response
+	// response from `DeleteVote`: VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

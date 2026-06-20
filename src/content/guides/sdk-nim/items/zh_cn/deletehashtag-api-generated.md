@@ -1,23 +1,28 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tag | string | 否 |  |
 | tenantId | string | 是 |  |
-| deleteHashTagRequest | DeleteHashTagRequest | 否 |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | 否 |  |
 
 ## 响应
 
-返回：[`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+返回: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteHashTag 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteHashTag(tag = "breaking-news", tenantId = "my-tenant-123", deleteHashTagRequest = DeleteHashTagRequest())
-if response.isSome:
-  let result = response.get()
-  discard result
-[inline-code-end]
+let (response, httpResponse) = client.deleteHashTag(
+  tag = "",
+  tenantId = "my-tenant-123",
+  deleteHashTagRequestBody = DeleteHashTagRequestBody()
+)
 
----
+if response.isSome:
+  let emptyResp = response.get()
+  echo "Deleted hashtag for tenant my-tenant-123; response:", $emptyResp, " status:", $httpResponse.status
+else:
+  echo "No response body; status:", $httpResponse.status
+[inline-code-end]

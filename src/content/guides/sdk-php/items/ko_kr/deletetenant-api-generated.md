@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | id | string | path | 예 |  |
@@ -8,7 +8,7 @@
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 예제
 
@@ -26,13 +26,13 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이는 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 이는 선택 사항이며 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$sure = 'sure_example'; // string
+$tenant_id = 'tenant_id_example'; // 문자열
+$id = 'id_example'; // 문자열
+$sure = 'sure_example'; // 문자열
 
 try {
     $result = $apiInstance->deleteTenant($tenant_id, $id, $sure);

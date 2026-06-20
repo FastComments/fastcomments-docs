@@ -76,3 +76,40 @@ func main() {
     fmt.Printf("Comments: %+v\n", response)
 }
 ```
+
+#### Moderation API (Moderator Dashboard)
+
+The ModerationAPI powers the moderator dashboard. It provides methods for listing,
+counting, searching, and exporting comments, moderation actions (remove/restore,
+flag, set review/spam/approval status, votes, reopen/close threads), bans (ban from
+comment, undo, pre-ban summaries, ban status and preferences, banned-user counts),
+and badges & trust (award/remove badges, manual badges, get/set trust factor, user
+internal profile). All Moderation methods accept an `sso` parameter for
+SSO-authenticated moderators:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // List comments for moderation using ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```

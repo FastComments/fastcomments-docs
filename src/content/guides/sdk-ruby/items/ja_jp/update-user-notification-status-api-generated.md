@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | notificationId | string | path | はい |  |
@@ -9,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+戻り値: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
 
 ## 例
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_status: #{e}"
 end
 [inline-code-end]
+
+---

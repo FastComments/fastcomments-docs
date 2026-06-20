@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -8,13 +9,13 @@
 
 ## Odgovor
 
-Vraća: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserPresenceStatuses200Response.swift)
+Vraća: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserPresenceStatusesResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUserPresenceStatuses Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserPresenceStatuses'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek u beta fazi. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još beta. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

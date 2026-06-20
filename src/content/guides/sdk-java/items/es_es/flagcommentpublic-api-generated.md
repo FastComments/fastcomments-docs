@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
@@ -9,11 +9,11 @@
 
 ## Respuesta
 
-Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de flagCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo flagCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +33,7 @@ public class Example {
     Boolean isFlagged = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.flagCommentPublic(tenantId, commentId, isFlagged)
+      APIEmptyResponse result = apiInstance.flagCommentPublic(tenantId, commentId, isFlagged)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,3 +47,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

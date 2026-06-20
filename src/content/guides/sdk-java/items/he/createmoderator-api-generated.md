@@ -1,18 +1,19 @@
+---
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModerator200Response.java)
+מחזיר: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModeratorResponse.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-createModerator'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבא מחלקות:
+// ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // הגדרת הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת מחדל: null)
@@ -35,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     CreateModeratorBody createModeratorBody = new CreateModeratorBody(); // CreateModeratorBody | 
     try {
-      CreateModerator200Response result = apiInstance.createModerator(tenantId, createModeratorBody)
+      CreateModeratorResponse result = apiInstance.createModerator(tenantId, createModeratorBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

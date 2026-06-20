@@ -1,3 +1,6 @@
+Συγκεντρώνει έγγραφα ομαδοποιώντας τα (αν παρέχεται groupBy) και εφαρμόζοντας πολλαπλές λειτουργίες.
+Υποστηρίζονται διάφορες λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.).
+
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -9,7 +12,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Επιστρέφει: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Παράδειγμα
 
@@ -17,13 +20,14 @@
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
+
 if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]
 
 ---

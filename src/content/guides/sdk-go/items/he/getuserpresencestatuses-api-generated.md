@@ -1,18 +1,18 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| urlIdWS | string | query | כן |  |
-| userIds | string | query | כן |  |
+| tenantId | string | שאילתה | כן |  |
+| urlIdWS | string | שאילתה | כן |  |
+| userIds | string | שאילתה | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_presence_statuses_200_response.go)
+מחזיר: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_presence_statuses_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetUserPresenceStatuses'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל־GetUserPresenceStatuses'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -20,7 +20,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserPresenceStatuses``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`GetUserPresenceStatuses`: GetUserPresenceStatuses200Response
+	// תגובה מ־`GetUserPresenceStatuses`: GetUserPresenceStatusesResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserPresenceStatuses`: %v\n", resp)
 }
 [inline-code-end]
-
----

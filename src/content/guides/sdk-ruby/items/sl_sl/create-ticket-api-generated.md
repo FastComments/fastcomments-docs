@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Da |  |
 
 ## Odgovor
 
-Vrača: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_ticket200_response.rb)
+Vrne: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_ticket_response.rb)
 
 ## Primer
 
@@ -17,7 +17,7 @@ require 'time'
 require 'fastcomments-client'
 # nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte avtorizacijo z API ključem: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

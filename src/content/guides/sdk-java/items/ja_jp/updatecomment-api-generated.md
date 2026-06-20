@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | Name | Type | Location | Required | Description |
@@ -10,11 +11,11 @@
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 例
 
-[inline-code-attrs-start title = 'updateComment の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateCommentの例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
@@ -29,7 +30,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証を構成: api_key
+    // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // APIキーにプレフィックスを設定するには、以下の行のコメントを解除してください。例: "Token"（デフォルトは null）
@@ -38,12 +39,12 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
-    PickAPICommentUpdatableCommentFields body = new PickAPICommentUpdatableCommentFields(); // PickAPICommentUpdatableCommentFields | 
+    UpdatableCommentParams updatableCommentParams = new UpdatableCommentParams(); // UpdatableCommentParams | 
     String contextUserId = "contextUserId_example"; // String | 
     Boolean doSpamCheck = true; // Boolean | 
     Boolean isLive = true; // Boolean | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateComment(tenantId, id, body)
+      APIEmptyResponse result = apiInstance.updateComment(tenantId, id, updatableCommentParams)
             .contextUserId(contextUserId)
             .doSpamCheck(doSpamCheck)
             .isLive(isLive)

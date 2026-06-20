@@ -1,14 +1,14 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
-| commentIds | string | query | 是 | 以逗号分隔的评论 ID 列表。 |
+| commentIds | string | query | 是 | 由逗号分隔的评论 ID 列表。 |
 | sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+返回: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## 示例
 
@@ -28,10 +28,10 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
-    String commentIds = "commentIds_example"; // String | 以逗号分隔的评论 ID 列表。
+    String commentIds = "commentIds_example"; // String | 由逗号分隔的评论 ID 列表。
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

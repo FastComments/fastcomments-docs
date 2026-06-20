@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicket200Response.swift)
+Vraća: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketResponse.swift)
 
 ## Primjer
 
@@ -32,5 +32,3 @@ DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, er
     }
 }
 [inline-code-end]
-
----

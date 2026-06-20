@@ -1,8 +1,9 @@
-Aktiver eller deaktiver notifikationer for en side. Når brugere er tilmeldt en side, oprettes notifikationer for nye root-kommentarer, og også
+Aktiver eller deaktiver underretninger for en side. Når brugere er tilmeldt en side, oprettes underretninger
+for nye rodkommentarer, og også
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
@@ -11,9 +12,9 @@ Aktiver eller deaktiver notifikationer for en side. Når brugere er tilmeldt en 
 | subscribedOrUnsubscribed | string | path | Ja |  |
 | sso | string | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Returnerer: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_page_subscription_status_response.go)
 
 ## Eksempel
 
@@ -25,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationPageSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// svar fra `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationPageSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationPageSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

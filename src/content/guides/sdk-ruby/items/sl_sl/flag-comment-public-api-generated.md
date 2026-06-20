@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
@@ -9,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Primer
 
@@ -19,11 +20,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Niz | 
-comment_id = 'comment_id_example' # Niz | 
-is_flagged = true # Logična vrednost | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+is_flagged = true # Boolean | 
 opts = {
-  sso: 'sso_example' # Niz | 
+  sso: 'sso_example' # String | 
 }
 
 begin

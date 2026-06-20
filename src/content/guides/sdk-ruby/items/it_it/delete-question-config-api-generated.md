@@ -7,19 +7,19 @@
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di delete_question_config'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio delete_question_config'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# configurazione autorizzazione
 FastCommentsClient.configure do |config|
   # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Decommenta la seguente riga per impostare un prefisso per la API key, es. 'Bearer' (di default è nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

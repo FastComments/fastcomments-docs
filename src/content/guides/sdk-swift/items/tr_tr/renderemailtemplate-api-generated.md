@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| locale | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| locale | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RenderEmailTemplate200Response.swift)
+Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RenderEmailTemplateResponse.swift)
 
 ## Örnek
 
@@ -31,5 +31,3 @@ DefaultAPI.renderEmailTemplate(tenantId: tenantId, renderEmailTemplateBody: rend
     }
 }
 [inline-code-end]
-
----

@@ -1,17 +1,17 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotificationCount200Response.java)
+Renvoie : [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotificationCountResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getUserNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getUserNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -29,7 +29,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotificationCount200Response result = apiInstance.getUserNotificationCount(tenantId)
+      GetUserNotificationCountResponse result = apiInstance.getUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

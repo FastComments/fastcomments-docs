@@ -1,12 +1,13 @@
+---
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_moderator_200_response.go)
+Devuelve: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_moderator_response.go)
 
 ## Ejemplo
 
@@ -32,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `CreateModerator`: CreateModerator200Response
+	// respuesta de `CreateModerator`: CreateModeratorResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateModerator`: %v\n", resp)
 }
 [inline-code-end]
+
+---

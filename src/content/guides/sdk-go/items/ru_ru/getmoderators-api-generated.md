@@ -1,13 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderators_200_response.go)
+Возвращает: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderators_response.go)
 
 ## Пример
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetModerators``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetModerators`: GetModerators200Response
+	// ответ от `GetModerators`: GetModeratorsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetModerators`: %v\n", resp)
 }
 [inline-code-end]
-
----

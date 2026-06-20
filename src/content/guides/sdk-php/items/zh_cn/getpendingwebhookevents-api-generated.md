@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 否 |  |
@@ -13,7 +13,7 @@
 
 ## 响应
 
-返回: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEvents200Response.php)
+返回: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventsResponse.php)
 
 ## 示例
 
@@ -25,13 +25,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // 配置 API 密钥授权：api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，可取消下面注释以设置前缀（例如 Bearer）用于 API 密钥
+// 如果需要，请取消下面的注释来为 API 密钥设置前缀（例如 Bearer）
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );

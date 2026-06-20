@@ -1,19 +1,19 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCount200Response.java)
+Враћа: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCountResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getCachedNotificationCount Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCachedNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увезите класе:
+// Увоз класа:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите ауторизацију API кључа: api_key
+    // Конфигуришите API кључ за ауторизацију: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментишите следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Да уклоните коментар са следеће линије да бисте подесили префикс за API кључ, нпр. "Token" (подразумијевано је null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetCachedNotificationCount200Response result = apiInstance.getCachedNotificationCount(tenantId, id)
+      GetCachedNotificationCountResponse result = apiInstance.getCachedNotificationCount(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
@@ -8,7 +9,7 @@
 
 ## Відповідь
 
-Повертає: [`GetTicket_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTicket_200_response.h)
+Повертає: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTicketResponse.h)
 
 ## Приклад
 
@@ -18,17 +19,13 @@ utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ticketId = U("ticket-456");
 boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
 api->getTicket(tenantId, ticketId, userId)
-.then([](pplx::task<std::shared_ptr<GetTicket_200_response>> t) {
+.then([](pplx::task<std::shared_ptr<GetTicketResponse>> task){
     try {
-        auto resp = t.get();
-        auto wrapped = std::make_shared<std::shared_ptr<GetTicket_200_response>>(resp);
-        if (*wrapped) {
-            std::cout << "Ticket retrieved\n";
-        } else {
-            std::cout << "No ticket\n";
+        auto resp = task.get();
+        if (resp) {
+            auto localCopy = std::make_shared<GetTicketResponse>(*resp);
         }
-    } catch (const std::exception &e) {
-        std::cerr << "Error: " << e.what() << '\n';
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]

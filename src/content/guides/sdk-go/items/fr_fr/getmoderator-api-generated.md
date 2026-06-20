@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderator_200_response.go)
+Renvoie: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderator_response.go)
 
 ## Exemple
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // chaîne | 
-	id := "id_example" // chaîne | 
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetModerator` : GetModerator200Response
+	// réponse de `GetModerator`: GetModeratorResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetModerator`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | postIds | array | query | Ja |  |
@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsStats200Response.php)
+Gibt zurück: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
 
 ## Beispiel
 
@@ -35,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getFeedPostsStats: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

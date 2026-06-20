@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_200_response.go)
+Returns: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_api_set_comment_text_response.go)
 
 ## Example
 
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SetCommentText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SetCommentText`: SetCommentText200Response
+	// response from `SetCommentText`: PublicAPISetCommentTextResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SetCommentText`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,19 +1,19 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | query | Не |  |
+| externalId | string | query | Не |  |
+| eventType | string | query | Не |  |
+| type | string | query | Не |  |
+| domain | string | query | Не |  |
+| attemptCountGT | number | query | Не |  |
+| skip | number | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+Враћа: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## Пример
 
@@ -21,11 +21,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Подешавање ауторизације
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Конфигуришите ауторизацију API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментаришите следећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Ако је потребно, откоментирајте следећу линију да подесите префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | domain | string | path | Ja |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+Geeft terug: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config_response.rb)
 
 ## Voorbeeld
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # API-sleutelautorisatie configureren: api_key
+  # Stel API-sleutelautorisatie in: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaarteken van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
+  # Haal de commentaarstreep van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

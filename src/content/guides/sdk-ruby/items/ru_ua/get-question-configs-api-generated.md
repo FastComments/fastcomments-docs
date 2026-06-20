@@ -1,25 +1,25 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs200_response.rb)
+Возвращает: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_question_configs'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_configs Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # настройка авторизации
 FastCommentsClient.configure do |config|
-  # Настройте авторизацию по API-ключу: api_key
+  # Настройка авторизации с помощью API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, e.g. 'Bearer' (defaults to nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

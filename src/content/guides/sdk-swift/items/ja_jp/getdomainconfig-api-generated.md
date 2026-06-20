@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+戻り値: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfigResponse.swift)
 
 ## 例
 

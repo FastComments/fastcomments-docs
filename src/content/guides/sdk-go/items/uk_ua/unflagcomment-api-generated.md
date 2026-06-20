@@ -1,15 +1,15 @@
 ## Параметри
 
-| Name | Type | Location | Обов'язково | Опис |
-|------|------|----------|------------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
-| userId | string | query | Ні |  |
-| anonUserId | string | query | Ні |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_200_response.go)
+Повертає: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_response.go)
 
 ## Приклад
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UnFlagComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `UnFlagComment`: FlagComment200Response
+	// відповідь від `UnFlagComment`: FlagCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UnFlagComment`: %v\n", resp)
 }
 [inline-code-end]

@@ -5,23 +5,23 @@ userIdWS
 
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
 | userIdWS | string | query | 是 |  |
 | startTime | integer | query | 是 |  |
-| endTime | integer | query | 是 |  |
+| endTime | integer | query | 否 |  |
 
 ## 响应
 
-返回：[`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+返回：[`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getEventLog 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

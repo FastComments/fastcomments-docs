@@ -1,17 +1,17 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Oui |  |
+| id | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count200_response.rb)
+Renvoie : [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple get_cached_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_cached_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_cached_notification_count: #{e}"
 end
 [inline-code-end]
+
+---

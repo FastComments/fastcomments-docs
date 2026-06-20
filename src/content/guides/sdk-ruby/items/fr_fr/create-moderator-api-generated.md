@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | requête | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+Renvoie : [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## Exemple
 
@@ -16,7 +16,7 @@ require 'time'
 require 'fastcomments-client'
 # configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configurer l'autorisation par clé API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_moderator: #{e}"
 end
 [inline-code-end]
-
----

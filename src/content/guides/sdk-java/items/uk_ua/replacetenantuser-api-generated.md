@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Приклад
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштувати авторизацію API ключем: api_key
+    // Налаштування авторизації за допомогою API-ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб задати префікс для API ключа, напр. "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     ReplaceTenantUserBody replaceTenantUserBody = new ReplaceTenantUserBody(); // ReplaceTenantUserBody | 
     String updateComments = "updateComments_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.replaceTenantUser(tenantId, id, replaceTenantUserBody)
+      APIEmptyResponse result = apiInstance.replaceTenantUser(tenantId, id, replaceTenantUserBody)
             .updateComments(updateComments)
             .execute();
       System.out.println(result);
@@ -53,3 +53,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

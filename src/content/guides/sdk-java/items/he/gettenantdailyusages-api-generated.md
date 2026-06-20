@@ -2,21 +2,21 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| yearNumber | number | query | No |  |
-| monthNumber | number | query | No |  |
-| dayNumber | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | כן |  |
+| yearNumber | number | query | לא |  |
+| monthNumber | number | query | לא |  |
+| dayNumber | number | query | לא |  |
+| skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsages200Response.java)
+מחזיר: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsagesResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getTenantDailyUsages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getTenantDailyUsages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// יבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // הגדרת אישור מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי לקבוע קידומת למפתח ה-API, למשל "Token" (ברירת מחדל null)
+    // בטל את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת מחדל null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +42,7 @@ public class Example {
     Double dayNumber = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantDailyUsages200Response result = apiInstance.getTenantDailyUsages(tenantId)
+      GetTenantDailyUsagesResponse result = apiInstance.getTenantDailyUsages(tenantId)
             .yearNumber(yearNumber)
             .monthNumber(monthNumber)
             .dayNumber(dayNumber)

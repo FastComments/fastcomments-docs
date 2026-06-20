@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -9,25 +9,25 @@
 
 ## Одговор
 
-Враћа: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteComment200Response.php)
+Враћа: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигурисање овлашћења API кључа: api_key
+// Конфигуришите овлашћење API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Откомунтујте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени http клиент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
     new GuzzleHttp\Client(),
     $config
 );

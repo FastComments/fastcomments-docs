@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Nein |  |
@@ -9,9 +9,9 @@
 | viewed | boolean | query | Nein |  |
 | type | string | query | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_200_response.go)
+Gibt zurück: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_response.go)
 
 ## Beispiel
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `GetNotificationCount`: GetNotificationCount200Response
+	// Antwort von `GetNotificationCount`: GetNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotificationCount`: %v\n", resp)
 }
 [inline-code-end]

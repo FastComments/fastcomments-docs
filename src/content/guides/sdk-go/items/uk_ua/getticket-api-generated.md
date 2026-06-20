@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_200_response.go)
+Повертає: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_response.go)
 
 ## Приклад
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь з `GetTicket`: GetTicket200Response
+	// відповідь від `GetTicket`: GetTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTicket`: %v\n", resp)
 }
 [inline-code-end]

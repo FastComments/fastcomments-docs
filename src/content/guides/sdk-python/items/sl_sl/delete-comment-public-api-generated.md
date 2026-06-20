@@ -1,28 +1,28 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | pot | Da |  |
-| commentId | string | pot | Da |  |
-| broadcastId | string | poizvedba | Da |  |
-| editKey | string | poizvedba | Ne |  |
-| sso | string | poizvedba | Ne |  |
+| tenantId | string | path | Da |  |
+| commentId | string | path | Da |  |
+| broadcastId | string | query | Da |  |
+| editKey | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_public200_response.py)
+Vrne: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer delete_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_public200_response import DeleteCommentPublic200Response
+from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

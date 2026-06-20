@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | commentId | string | path | כן |  |
@@ -12,27 +12,27 @@
 
 ## תגובה
 
-מחזיר: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+מחזיר: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-delete_comment_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ובברירת מחדל היא https://fastcomments.com
-# ראה את configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראו את configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# כניסה להקשר עם מופע של ה-API client
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # יצירת מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_vote: %s\n" % e)
 [inline-code-end]
+
+---

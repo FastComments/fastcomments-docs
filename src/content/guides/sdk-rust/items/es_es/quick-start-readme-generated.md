@@ -1,4 +1,4 @@
-### Uso de la API pública
+### Usando la API pública
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::Configuration;
@@ -6,7 +6,7 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Crear la configuración de la API
+    // Crear configuración de la API
     let config = Configuration::new();
 
     // Obtener comentarios de una página
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Uso de la API autenticada
+### Usando la API autenticada
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -53,7 +53,7 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Crear configuración con la clave de la API
+    // Crear configuración con la clave API
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Uso de SSO para autenticación
+### Usando la API de moderación
+
+Los métodos de moderación respaldan el panel del moderador. Usan una `Configuration` con clave API igual que la API autenticada, y cada método acepta un token `sso` opcional para que la llamada pueda realizarse en nombre de un moderador autenticado por SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Crear configuración con la clave API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Contar comentarios en la cola de moderación
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // pase un token SSO para actuar como moderador autenticado por SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Usando SSO para la autenticación
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -110,7 +148,7 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Crear datos de usuario SSO seguros (¡solo del lado del servidor!)
+    // Crear datos SSO seguros (¡solo del lado del servidor!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // ID de usuario
         "user@example.com".to_string(),   // Correo electrónico
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Pasa este token a tu frontend para la autenticación
+    // Pase este token a su frontend para la autenticación
 }
 ```

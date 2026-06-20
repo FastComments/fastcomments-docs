@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlId | string | query | Da |  |
@@ -9,11 +9,11 @@
 
 ## Odgovor
 
-Vraća: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_200_response.go)
+Vraća: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za GetVotesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer GetVotesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -37,7 +37,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetVotesForUser`: GetVotesForUser200Response
+	// odgovor od `GetVotesForUser`: GetVotesForUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotesForUser`: %v\n", resp)
 }
 [inline-code-end]
+
+---

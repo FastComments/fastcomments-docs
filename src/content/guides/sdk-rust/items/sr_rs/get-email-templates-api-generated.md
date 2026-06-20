@@ -1,25 +1,25 @@
 ## Параметри
 
-| Име | Тип | Потребно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | skip | f64 | Не |  |
 
 ## Одговор
 
-Враћа: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_templates_200_response.rs)
+Враћа: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_templates_response.rs)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_email_templates Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_email_templates пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_email_templates() -> Result<GetEmailTemplates200Response, Error> {
+async fn fetch_templates() -> Result<GetEmailTemplatesResponse, Error> {
     let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let templates: GetEmailTemplates200Response = get_email_templates(&configuration, params).await?;
-    Ok(templates)
+    let response: GetEmailTemplatesResponse = get_email_templates(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

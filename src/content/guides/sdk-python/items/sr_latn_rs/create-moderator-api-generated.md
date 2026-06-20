@@ -6,33 +6,33 @@
 
 ## Odgovor
 
-Vraća: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator200_response.py)
+Vraća: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer create_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_moderator200_response import CreateModerator200Response
 from client.models.create_moderator_body import CreateModeratorBody
+from client.models.create_moderator_response import CreateModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da podesi parametre autentifikacije i autorizacije
-# u skladu sa bezbednosnom politikom API servera.
+# Klijent mora podesiti parametre autentifikacije i autorizacije
+# u skladu sa politikom bezbednosti API servera.
 # Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
 # odgovara vašem slučaju upotrebe autentifikacije.
 
-# Konfigurišite autorizaciju API ključa: api_key
+# Konfigurišite autorizaciju pomoću API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite dole da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta

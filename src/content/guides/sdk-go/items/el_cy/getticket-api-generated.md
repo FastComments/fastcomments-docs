@@ -1,14 +1,14 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 | userId | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_200_response.go)
+Επιστρέφει: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_response.go)
 
 ## Παράδειγμα
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απάντηση από `GetTicket`: GetTicket200Response
+	// απόκριση από `GetTicket`: GetTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTicket`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | Type | Location | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | postId | string | path | כן |  |
@@ -10,11 +10,11 @@
 
 ## תגובה
 
-מחזיר: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_react_feed_post_public_200_response.go)
+מחזיר: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_react_feed_post_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של ReactFeedPostPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-ReactFeedPostPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,9 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.ReactFeedPostPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ReactFeedPostPublic`: ReactFeedPostPublic200Response
+	// תגובה מ-`ReactFeedPostPublic`: ReactFeedPostResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ReactFeedPostPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

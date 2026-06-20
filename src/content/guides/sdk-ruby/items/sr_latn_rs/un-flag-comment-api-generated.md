@@ -2,25 +2,26 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| userId | string | query | Ne |  |
+| anonUserId | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment200_response.rb)
+Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za un_flag_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_flag_comment Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključa: api_key
-  # Otkomentarišite sledeći red da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
+  # Konfigurišite autorizaciju API ključem: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Otkomentarišite sledeću liniju da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -40,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_flag_comment: #{e}"
 end
 [inline-code-end]
-
----

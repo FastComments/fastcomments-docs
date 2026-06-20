@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -11,7 +11,7 @@
 
 ## Odgovor
 
-Vraća: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCount200Response.java)
+Vraća: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCountResponse.java)
 
 ## Primer
 
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurišite autorizaciju API ključa: api_key
+    // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sledeću liniju da biste postavili prefiks za API ključ, npr. "Token" (podrazumevano je null)
+    // Otkomentarišite sledeći red da biste postavili prefiks za API ključ, npr. "Token" (podrazumevano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Boolean viewed = true; // Boolean | 
     String type = "type_example"; // String | 
     try {
-      GetNotificationCount200Response result = apiInstance.getNotificationCount(tenantId)
+      GetNotificationCountResponse result = apiInstance.getNotificationCount(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)

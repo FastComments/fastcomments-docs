@@ -1,18 +1,17 @@
----
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadgeProgressById200Response.java)
+Возвращает: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeProgressResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getUserBadgeProgressById'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressById Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импорт классов:
 import com.fastcomments.invoker.ApiClient;
@@ -27,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию с помощью API ключа: api_key
+    // Настроить авторизацию по API-ключу: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы задать префикс для API ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetUserBadgeProgressById200Response result = apiInstance.getUserBadgeProgressById(tenantId, id)
+      APIGetUserBadgeProgressResponse result = apiInstance.getUserBadgeProgressById(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

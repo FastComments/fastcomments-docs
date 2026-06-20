@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Nej |  |
@@ -13,7 +13,7 @@
 
 ## Svar
 
-Returnerer: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+Returnerer: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## Eksempel
 
@@ -23,9 +23,9 @@ require 'time'
 require 'fastcomments-client'
 # opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøglegodkendelse: api_key
+  # Konfigurer godkendelse med API-nøgle: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

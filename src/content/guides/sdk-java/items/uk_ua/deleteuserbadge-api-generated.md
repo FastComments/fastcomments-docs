@@ -1,17 +1,17 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserBadge200Response.java)
+Повертає: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptySuccessResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'deleteUserBadge Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteUserBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації API-ключем: api_key
+    // Налаштування авторизації за допомогою API-ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб задати префікс для API-ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      UpdateUserBadge200Response result = apiInstance.deleteUserBadge(tenantId, id)
+      APIEmptySuccessResponse result = apiInstance.deleteUserBadge(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

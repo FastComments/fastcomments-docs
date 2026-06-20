@@ -1,17 +1,17 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetTenant200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenant200Response.php)
+Renvoie : [`GetTenantResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,7 +19,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configurer l'authentification par clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer un préfixe (par ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci-dessous pour configurer le préfixe (ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,8 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // chaîne
-$id = 'id_example'; // chaîne
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getTenant($tenant_id, $id);

@@ -1,25 +1,25 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetQuestionResult_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_result200response.nim)
+Vraća: [`Option[GetQuestionResultResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_result_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getQuestionResult Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionResult(tenantId = "my-tenant-123", id = "question-456")
 if response.isSome:
   let result = response.get()
-  echo "Received question result:"
+  echo "Question result received:"
   echo result
 else:
-  echo "No question result returned"
+  echo "No question result returned, HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

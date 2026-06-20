@@ -2,12 +2,12 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModerators200Response.java)
+Возвращает: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModeratorsResponse.java)
 
 ## Пример
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию по API ключу: api_key
+    // Настройте авторизацию API-ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы установить префикс для API ключа, например "Token" (по умолчанию null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetModerators200Response result = apiInstance.getModerators(tenantId)
+      GetModeratorsResponse result = apiInstance.getModerators(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

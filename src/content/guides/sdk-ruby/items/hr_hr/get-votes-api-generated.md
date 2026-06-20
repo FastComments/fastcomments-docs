@@ -1,25 +1,25 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlId | string | query | Da |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes200_response.rb)
+Vraća: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_votes'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_votes Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# Postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurirajte autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentirajte sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (zadano nil)
+  # Uklonite komentar sljedeće linije da postavite prefiks za API ključ, npr. 'Bearer' (zadano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

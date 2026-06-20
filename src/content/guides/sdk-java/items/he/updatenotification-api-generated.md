@@ -8,13 +8,13 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של updateNotification'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-updateNotification'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // הגדרת הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
@@ -39,7 +39,7 @@ public class Example {
     UpdateNotificationBody updateNotificationBody = new UpdateNotificationBody(); // UpdateNotificationBody | 
     String userId = "userId_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateNotification(tenantId, id, updateNotificationBody)
+      APIEmptyResponse result = apiInstance.updateNotification(tenantId, id, updateNotificationBody)
             .userId(userId)
             .execute();
       System.out.println(result);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

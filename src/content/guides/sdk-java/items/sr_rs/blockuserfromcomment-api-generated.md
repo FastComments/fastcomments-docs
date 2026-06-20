@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Location | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -9,13 +9,13 @@
 
 ## Одговор
 
-Враћа: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BlockFromCommentPublic200Response.java)
+Враћа: [`BlockSuccess`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BlockSuccess.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'blockUserFromComment Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример blockUserFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увоз класа:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите овлашћење API кључа: api_key
+    // Конфигуриши ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано: null)
+    // Откоментариши следећу линију да подесиш префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -41,7 +41,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      BlockFromCommentPublic200Response result = apiInstance.blockUserFromComment(tenantId, id, blockFromCommentParams)
+      BlockSuccess result = apiInstance.blockUserFromComment(tenantId, id, blockFromCommentParams)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();
@@ -56,5 +56,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

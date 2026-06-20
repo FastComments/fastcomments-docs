@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳: [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+回傳: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## 範例
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字串 | 
+comment_id = 'comment_id_example' # 字串 | 
+broadcast_id = 'broadcast_id_example' # 字串 | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 字串 | 
 }
 
 begin
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_pin_comment: #{e}"
 end
 [inline-code-end]
+
+---

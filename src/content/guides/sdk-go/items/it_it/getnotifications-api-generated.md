@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | userId | string | query | No |  |
@@ -12,7 +13,7 @@
 
 ## Risposta
 
-Restituisce: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_200_response.go)
+Restituisce: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_response.go)
 
 ## Esempio
 
@@ -43,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetNotifications`: GetNotifications200Response
+	// risposta da `GetNotifications`: GetNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotifications`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -8,18 +9,18 @@
 
 ## תגובה
 
-מחזיר: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+מחזיר: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'get_feed_posts_stats דוגמה'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_feed_posts_stats'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # מחרוזת | 
-post_ids = ['inner_example'] # מערך<מחרוזת> | 
+post_ids = ['inner_example'] # מערך<String> | 
 opts = {
   sso: 'sso_example' # מחרוזת | 
 }
@@ -32,3 +33,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_stats: #{e}"
 end
 [inline-code-end]
+
+---

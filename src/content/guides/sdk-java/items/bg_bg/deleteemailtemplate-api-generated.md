@@ -1,13 +1,14 @@
+---
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 
 ## Отговор
 
-Връща: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Пример
 
@@ -26,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриране на удостоверяване с API ключ: api_key
+    // Конфигуриране на авторизация с API ключ: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране null)
@@ -36,7 +37,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteEmailTemplate(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteEmailTemplate(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

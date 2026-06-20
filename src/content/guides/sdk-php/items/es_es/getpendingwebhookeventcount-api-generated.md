@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentId | string | query | No |  |
@@ -12,7 +12,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCount200Response.php)
+Devuelve: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
 
 ## Ejemplo
 
@@ -22,9 +22,8 @@ Devuelve: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar autorización de clave API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomentar abajo para configurar prefijo (p. ej., Bearer) para la clave API, si es necesario
+// Configure API key authorization: api_key
+// Descomente lo siguiente para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

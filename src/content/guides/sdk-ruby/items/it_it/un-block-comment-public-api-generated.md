@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
@@ -9,7 +8,7 @@
 
 ## Risposta
 
-Restituisce: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Restituisce: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Esempio
 
@@ -34,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_block_comment_public: #{e}"
 end
 [inline-code-end]
-
----

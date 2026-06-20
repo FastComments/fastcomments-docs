@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Παράδειγμα
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης με API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολίασε την παρακάτω γραμμή για να ορίσεις πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλεγμένο nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_question_config: #{e}"
 end
 [inline-code-end]
-
----

@@ -5,35 +5,35 @@ Belirli bir yorum için bildirimleri etkinleştirin veya devre dışı bırakın
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| notificationId | string | path | Evet |  |
-| optedInOrOut | string | path | Evet |  |
-| commentId | string | query | Evet |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Döndürür: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_comment_subscription_status_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_comment_subscription_status_response import UpdateUserNotificationCommentSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Desteklenen tüm yapılandırma parametreleri listesini görmek için configuration.py dosyasına bakın.
+# Sunucu adresinin tanımlanması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam içine girin
+# API istemcisinin bir örneğiyle bir bağlam açın
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     notification_id = 'notification_id_example' # str | 

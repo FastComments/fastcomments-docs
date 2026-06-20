@@ -13,7 +13,7 @@
 
 ## Response
 
-Returns: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+Returns: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## Example
 
@@ -49,5 +49,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_events: #{e}"
 end
 [inline-code-end]
-
----

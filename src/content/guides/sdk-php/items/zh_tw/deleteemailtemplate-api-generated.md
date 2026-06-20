@@ -1,13 +1,13 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 範例
 
@@ -24,13 +24,13 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 如果要使用自訂的 HTTP 用戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+$tenant_id = 'tenant_id_example'; // 字串
+$id = 'id_example'; // 字串
 
 try {
     $result = $apiInstance->deleteEmailTemplate($tenant_id, $id);
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

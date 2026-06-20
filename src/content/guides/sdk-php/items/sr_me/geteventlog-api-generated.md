@@ -5,21 +5,21 @@ userIdWS
 
 ## Параметри
 
-| Име | Тип | Локација | Потребно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
 | userIdWS | string | query | Да |  |
 | startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| endTime | integer | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getEventLog Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,8 +27,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, подразумевани `GuzzleHttp\Client` ће бити коришћен.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

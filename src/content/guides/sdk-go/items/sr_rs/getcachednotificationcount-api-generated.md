@@ -1,13 +1,13 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_cached_notification_count_200_response.go)
+Враћа: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_cached_notification_count_response.go)
 
 ## Пример
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetCachedNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetCachedNotificationCount`: GetCachedNotificationCount200Response
+	// response from `GetCachedNotificationCount`: GetCachedNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetCachedNotificationCount`: %v\n", resp)
 }
 [inline-code-end]

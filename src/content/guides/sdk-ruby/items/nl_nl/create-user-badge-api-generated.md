@@ -4,9 +4,9 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_user_badge200_response.rb)
+Retourneert: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
 
 ## Voorbeeld
 
@@ -14,11 +14,11 @@ Retourneert: [`CreateUserBadge200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# stel autorisatie in
+# autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API key autorisatie: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaarteken van de volgende regel weg om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal de commentaar weg van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

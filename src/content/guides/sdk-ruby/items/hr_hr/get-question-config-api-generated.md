@@ -7,19 +7,19 @@
 
 ## Odgovor
 
-Vraća: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config200_response.rb)
+Vraća: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_question_config'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_config Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurirajte autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentirajte sljedeći redak kako biste postavili prefiks za API ključ, npr. 'Bearer' (zadano je nil)
+  # Otkomentirajte sljedeću liniju da biste postavili prefiks za API ključ, npr. 'Bearer' (zadano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

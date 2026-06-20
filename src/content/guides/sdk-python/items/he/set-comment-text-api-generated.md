@@ -10,7 +10,7 @@
 
 ## תגובה
 
-מחזיר: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+מחזיר: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## דוגמה
 
@@ -18,18 +18,18 @@
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# קביעת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אינה חובה והברירת מחדל היא https://fastcomments.com
+# ראה את configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# פתח קונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)

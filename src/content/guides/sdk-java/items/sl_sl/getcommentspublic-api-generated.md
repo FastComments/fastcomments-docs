@@ -1,4 +1,4 @@
-req
+zahtevano
 tenantId
 urlId
 
@@ -6,38 +6,38 @@ urlId
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | pot | Da |  |
-| urlId | string | poizvedba | Da |  |
-| page | integer | poizvedba | Ne |  |
-| direction | string | poizvedba | Ne |  |
-| sso | string | poizvedba | Ne |  |
-| skip | integer | poizvedba | Ne |  |
-| skipChildren | integer | poizvedba | Ne |  |
-| limit | integer | poizvedba | Ne |  |
-| limitChildren | integer | poizvedba | Ne |  |
-| countChildren | boolean | poizvedba | Ne |  |
-| fetchPageForCommentId | string | poizvedba | Ne |  |
-| includeConfig | boolean | poizvedba | Ne |  |
-| countAll | boolean | poizvedba | Ne |  |
-| includei10n | boolean | poizvedba | Ne |  |
-| locale | string | poizvedba | Ne |  |
-| modules | string | poizvedba | Ne |  |
-| isCrawler | boolean | poizvedba | Ne |  |
-| includeNotificationCount | boolean | poizvedba | Ne |  |
-| asTree | boolean | poizvedba | Ne |  |
-| maxTreeDepth | integer | poizvedba | Ne |  |
-| useFullTranslationIds | boolean | poizvedba | Ne |  |
-| parentId | string | poizvedba | Ne |  |
-| searchText | string | poizvedba | Ne |  |
-| hashTags | array | poizvedba | Ne |  |
-| userId | string | poizvedba | Ne |  |
-| customConfigStr | string | poizvedba | Ne |  |
-| afterCommentId | string | poizvedba | Ne |  |
-| beforeCommentId | string | poizvedba | Ne |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| page | integer | query | Ne |  |
+| direction | string | query | Ne |  |
+| sso | string | query | Ne |  |
+| skip | integer | query | Ne |  |
+| skipChildren | integer | query | Ne |  |
+| limit | integer | query | Ne |  |
+| limitChildren | integer | query | Ne |  |
+| countChildren | boolean | query | Ne |  |
+| fetchPageForCommentId | string | query | Ne |  |
+| includeConfig | boolean | query | Ne |  |
+| countAll | boolean | query | Ne |  |
+| includei10n | boolean | query | Ne |  |
+| locale | string | query | Ne |  |
+| modules | string | query | Ne |  |
+| isCrawler | boolean | query | Ne |  |
+| includeNotificationCount | boolean | query | Ne |  |
+| asTree | boolean | query | Ne |  |
+| maxTreeDepth | integer | query | Ne |  |
+| useFullTranslationIds | boolean | query | Ne |  |
+| parentId | string | query | Ne |  |
+| searchText | string | query | Ne |  |
+| hashTags | array | query | Ne |  |
+| userId | string | query | Ne |  |
+| customConfigStr | string | query | Ne |  |
+| afterCommentId | string | query | Ne |  |
+| beforeCommentId | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsPublic200Response.java)
+Vrne: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## Primer
 
@@ -85,7 +85,7 @@ public class Example {
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
     try {
-      GetCommentsPublic200Response result = apiInstance.getCommentsPublic(tenantId, urlId)
+      GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
             .direction(direction)
             .sso(sso)

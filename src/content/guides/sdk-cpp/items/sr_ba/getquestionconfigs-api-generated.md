@@ -1,27 +1,29 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| skip | double | Ne |  |
+| tenantId | string | Да |  |
+| skip | double | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionConfigs_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigs_200_response.h)
+Враћа: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigsResponse.h)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getQuestionConfigs Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfigs Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> skip = 10;
-api->getQuestionConfigs(tenantId, skip).then([](pplx::task<std::shared_ptr<GetQuestionConfigs_200_response>> task) {
+boost::optional<double> skip = 10.0;
+api->getQuestionConfigs(tenantId, skip)
+.then([](pplx::task<std::shared_ptr<GetQuestionConfigsResponse>> task){
     try {
         auto resp = task.get();
-        if (resp) {
-            auto localCopy = std::make_shared<GetQuestionConfigs_200_response>(*resp);
-        }
-    } catch (const std::exception&) {
+        auto finalResp = resp ? resp : std::make_shared<GetQuestionConfigsResponse>();
+        (void)finalResp;
+    } catch (...) {
     }
 });
 [inline-code-end]
+
+---

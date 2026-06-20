@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tag | string | path | Evet |  |
 | tenantId | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_hash_tag200_response.rb)
+Döndürür: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
 
 ## Örnek
 
@@ -15,11 +15,11 @@ Döndürür: [`PatchHashTag200Response`](https://github.com/FastComments/fastcom
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi ayarla
+# yetkilendirmeyi yapılandır
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, ör. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir önek ayarlayın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

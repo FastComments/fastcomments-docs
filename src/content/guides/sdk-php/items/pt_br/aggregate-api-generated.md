@@ -1,17 +1,18 @@
+---
 Agrega documentos agrupando-os (se groupBy for fornecido) e aplicando múltiplas operações.
-Diferentes operações (por exemplo sum, countDistinct, avg, etc.) são suportadas.
+Diferentes operações (por exemplo: sum, countDistinct, avg, etc.) são suportadas.
 
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|------------|------------|-----------|
 | tenantId | string | query | Sim |  |
 | parentTenantId | string | query | Não |  |
 | includeStats | boolean | query | Não |  |
 
 ## Resposta
 
-Retorna: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Retorna: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Exemplo
 
@@ -23,13 +24,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configurar autorização da chave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar prefixo (ex.: Bearer) para a chave de API, se necessário
+// Descomente abaixo para configurar o prefixo (por exemplo, Bearer) para a chave de API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // Se quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Isto é opcional, `GuzzleHttp\Client` será usado por padrão.
     new GuzzleHttp\Client(),
     $config
 );
@@ -45,3 +46,5 @@ try {
     echo 'Exception when calling DefaultApi->aggregate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

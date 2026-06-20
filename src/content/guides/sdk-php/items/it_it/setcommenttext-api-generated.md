@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | commentId | string | path | Sì |  |
@@ -10,7 +10,7 @@
 
 ## Risposta
 
-Restituisce: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentText200Response.php)
+Restituisce: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPISetCommentTextResponse.php)
 
 ## Esempio
 
@@ -22,8 +22,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come impostazione predefinita.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -40,5 +40,3 @@ try {
     echo 'Exception when calling PublicApi->setCommentText: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

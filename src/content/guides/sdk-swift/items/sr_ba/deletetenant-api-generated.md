@@ -1,25 +1,25 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| sure | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| sure | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteTenant Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer deleteTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Slijedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let sure = "sure_example" // String |  (опционо)
+let sure = "sure_example" // String |  (neobavezno)
 
 DefaultAPI.deleteTenant(tenantId: tenantId, id: id, sure: sure) { (response, error) in
     guard error == nil else {
@@ -32,5 +32,3 @@ DefaultAPI.deleteTenant(tenantId: tenantId, id: id, sure: sure) { (response, err
     }
 }
 [inline-code-end]
-
----

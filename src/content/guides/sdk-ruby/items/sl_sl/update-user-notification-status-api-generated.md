@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vrne: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Vrne: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
 
 ## Primer
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Niz | 
-notification_id = 'notification_id_example' # Niz | 
-new_status = 'read' # Niz | 
+tenant_id = 'tenant_id_example' # String | 
+notification_id = 'notification_id_example' # String | 
+new_status = 'read' # String | 
 opts = {
-  sso: 'sso_example' # Niz | 
+  sso: 'sso_example' # String | 
 }
 
 begin

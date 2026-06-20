@@ -10,25 +10,23 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`Option[GetTenantDailyUsages_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages200response.nim)
+Επιστρέφει: [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getTenantDailyUsages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantDailyUsages Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantDailyUsages(
   tenantId = "my-tenant-123",
-  yearNumber = 2025.0,
+  yearNumber = 2026.0,
   monthNumber = 6.0,
-  dayNumber = 15.0,
+  dayNumber = 19.0,
   skip = 0.0
 )
 
 if response.isSome:
-  let usages = response.get()
-  echo usages
-else:
-  echo "No daily usages returned"
+  let usage = response.get()
+  discard usage
 [inline-code-end]
 
 ---

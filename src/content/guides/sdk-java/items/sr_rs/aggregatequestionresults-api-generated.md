@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | questionId | string | query | Не |  |
@@ -12,13 +12,13 @@
 
 ## Одговор
 
-Враћа: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateQuestionResults200Response.java)
+Враћа: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateQuestionResultsResponse.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример aggregateQuestionResults'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увоз класа:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите овлашћење API кључа: api_key
+    // Конфигуришите ауторизацију помоћу API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментарите следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      AggregateQuestionResults200Response result = apiInstance.aggregateQuestionResults(tenantId)
+      AggregateQuestionResultsResponse result = apiInstance.aggregateQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)

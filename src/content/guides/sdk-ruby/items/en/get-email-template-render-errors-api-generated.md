@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors200_response.rb)
+Returns: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors_response.rb)
 
 ## Example
 

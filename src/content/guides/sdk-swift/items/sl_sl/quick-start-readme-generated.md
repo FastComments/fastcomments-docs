@@ -47,6 +47,29 @@ do {
 }
 ```
 
+### Uporaba moderacijskega API-ja
+
+```swift
+import FastCommentsSwift
+
+// Metode moderacije so pooblaščene z `sso` žetonom za nastopajočega moderatorja
+// (ustvarite ga z FastCommentsSSO, glejte razdelek SSO zgoraj).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Uporaba SSO za avtentikacijo
 
 #### Varen SSO (priporočeno za produkcijo)
@@ -56,15 +79,15 @@ import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Ustvari varne SSO podatke o uporabniku (samo na strežniški strani!)
+// Ustvari varne SSO podatke uporabnika (samo na strežniški strani!)
 let userData = SecureSSOUserData(
     id: "user-123",              // ID uporabnika
     email: "user@example.com",   // E-pošta
-    username: "johndoe",         // Uporniško ime
-    avatar: "https://example.com/avatar.jpg" // URL avatarja
+    username: "johndoe",         // Uporabniško ime
+    avatar: "https://example.com/avatar.jpg" // URL avatara
 )
 
-// Generiraj SSO žeton
+// Ustvari SSO žeton
 do {
     let sso = try FastCommentsSSO.createSecure(apiKey: apiKey, secureSSOUserData: userData)
     let token = try sso.createToken()
@@ -76,19 +99,19 @@ do {
 }
 ```
 
-#### Enostaven SSO (za razvoj/testiranje)
+#### Preprost SSO (za razvoj/testiranje)
 
 ```swift
 import FastCommentsSwift
 
-// Ustvari enostavne SSO podatke o uporabniku (API ključ ni potreben)
+// Ustvari preproste SSO podatke uporabnika (ni potreben API ključ)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
     avatar: "https://example.com/avatar.jpg"
 )
 
-// Generiraj enostaven SSO žeton
+// Ustvari preprost SSO žeton
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()

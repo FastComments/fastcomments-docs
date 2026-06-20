@@ -1,6 +1,7 @@
+---
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -11,7 +12,7 @@
 
 ## 响应
 
-返回: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+返回: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## 示例
 
@@ -19,12 +20,12 @@
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # 定义主机是可选的，默认为 https://fastcomments.com
-# 请参阅 configuration.py 以获取所有支持的配置参数的列表。
+# 有关所有受支持的配置参数的列表，请参见 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -39,8 +40,8 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     vote_body_params = client.VoteBodyParams() # VoteBodyParams | 
-    session_id = 'session_id_example' # str |  （可选）
-    sso = 'sso_example' # str |  （可选）
+    session_id = 'session_id_example' # str |  (可选)
+    sso = 'sso_example' # str |  (可选)
 
     try:
         api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->vote_comment: %s\n" % e)
 [inline-code-end]
+
+---

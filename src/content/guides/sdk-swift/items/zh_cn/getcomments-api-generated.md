@@ -1,32 +1,34 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| page | integer | query | 否 |  |
-| limit | integer | query | 否 |  |
-| skip | integer | query | 否 |  |
-| asTree | boolean | query | 否 |  |
-| skipChildren | integer | query | 否 |  |
-| limitChildren | integer | query | 否 |  |
-| maxTreeDepth | integer | query | 否 |  |
-| urlId | string | query | 否 |  |
-| userId | string | query | 否 |  |
-| anonUserId | string | query | 否 |  |
-| contextUserId | string | query | 否 |  |
-| hashTag | string | query | 否 |  |
-| parentId | string | query | 否 |  |
-| direction | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## 响应
 
-返回: [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+返回: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getComments 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍为测试版。如有问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -44,8 +46,10 @@ let contextUserId = "contextUserId_example" // String |  (可选)
 let hashTag = "hashTag_example" // String |  (可选)
 let parentId = "parentId_example" // String |  (可选)
 let direction = SortDirections() // SortDirections |  (可选)
+let fromDate = 987 // Int64 |  (可选)
+let toDate = 987 // Int64 |  (可选)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return

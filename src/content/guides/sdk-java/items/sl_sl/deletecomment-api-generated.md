@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vrne: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteComment200Response.java)
+Vrne: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentResult.java)
 
 ## Primer
 
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj overjanje z API ključem: api_key
+    // Konfigurirajte avtentikacijo API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte naslednjo vrstico za nastavitev predpone za API ključ, npr. "Token" (privzeto null)
+    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String contextUserId = "contextUserId_example"; // String | 
     Boolean isLive = true; // Boolean | 
     try {
-      DeleteComment200Response result = apiInstance.deleteComment(tenantId, id)
+      DeleteCommentResult result = apiInstance.deleteComment(tenantId, id)
             .contextUserId(contextUserId)
             .isLive(isLive)
             .execute();
@@ -55,5 +55,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

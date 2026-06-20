@@ -1,8 +1,8 @@
-Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, креирају се обавештења за нове коментаре првог нивоа, и такође
+Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се праве за нове основне коментаре, и такође
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -13,11 +13,11 @@
 
 ## Одговор
 
-Враћа: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Враћа: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за updateUserNotificationPageSubscriptionStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationPageSubscriptionStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -39,7 +39,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

@@ -1,20 +1,20 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| updateComments | string | query | לא |  |
+| tenantId | string | שאילתה | כן |  |
+| id | string | נתיב | כן |  |
+| updateComments | string | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת updateTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,7 +30,7 @@ public class Example {
     // הגדר הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת המחדל היא null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת מחדל: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     UpdateTenantUserBody updateTenantUserBody = new UpdateTenantUserBody(); // UpdateTenantUserBody | 
     String updateComments = "updateComments_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateTenantUser(tenantId, id, updateTenantUserBody)
+      APIEmptyResponse result = apiInstance.updateTenantUser(tenantId, id, updateTenantUserBody)
             .updateComments(updateComments)
             .execute();
       System.out.println(result);
@@ -53,3 +53,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

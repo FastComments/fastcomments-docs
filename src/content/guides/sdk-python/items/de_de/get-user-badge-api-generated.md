@@ -7,35 +7,35 @@
 
 ## Antwort
 
-Gibt zurück: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Gibt zurück: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_user_badge Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Festlegung des Hosts ist optional und standardmäßig https://fastcomments.com
+# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter konfigurieren
-# gemäß der Sicherheitsrichtlinie des API-Servers.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Auth-Methode sind unten angegeben, verwenden Sie das Beispiel, das
+# Ihren Auth-Anwendungsfall erfüllt.
 
-# API-Schlüssel-Autorisierung konfigurieren: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+# Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge: %s\n" % e)
 [inline-code-end]
-
----

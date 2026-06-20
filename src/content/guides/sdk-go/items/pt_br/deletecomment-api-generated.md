@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
@@ -9,11 +9,11 @@
 
 ## Resposta
 
-Retorna: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_200_response.go)
+Retorna: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_result.go)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de DeleteComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo DeleteComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `DeleteComment`: DeleteComment200Response
+	// resposta de `DeleteComment`: DeleteCommentResult
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,19 +1,19 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| userId | string | query | Нет |  |
+| anonUserId | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagComment200Response.java)
+Возвращает: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример flagComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagComment Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импорт классов:
 import com.fastcomments.invoker.ApiClient;
@@ -28,7 +28,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации по API-ключу: api_key
+    // Настроить авторизацию API-ключом: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      FlagComment200Response result = apiInstance.flagComment(tenantId, id)
+      FlagCommentResponse result = apiInstance.flagComment(tenantId, id)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

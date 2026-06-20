@@ -1,16 +1,16 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| id | string | path | Sì |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 | contextUserId | string | query | No |  |
 | doSpamCheck | boolean | query | No |  |
 | isLive | boolean | query | No |  |
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Esempio
 
@@ -37,3 +37,5 @@ DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: upd
     }
 }
 [inline-code-end]
+
+---

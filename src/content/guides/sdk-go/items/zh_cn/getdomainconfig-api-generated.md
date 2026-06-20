@@ -1,13 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| 名称 | Type | Location | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | domain | string | path | 是 |  |
 
 ## 响应
 
-返回: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+返回: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_response.go)
 
 ## 示例
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetDomainConfig` 的响应: GetDomainConfig200Response
+	// 来自 `GetDomainConfig` 的响应: GetDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetDomainConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

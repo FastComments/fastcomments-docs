@@ -10,7 +10,7 @@
 
 ## Respons
 
-Retourneert: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+Retourneert: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
 ## Voorbeeld
 
@@ -18,11 +18,11 @@ Retourneert: [`CreateFeedPost200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# autorisatie instellen
+# Autorisatie instellen
 FastCommentsClient.configure do |config|
-  # API-sleutelautorisatie configureren: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaarteken voor de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal de commentaartekens weg van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

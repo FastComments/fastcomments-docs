@@ -1,25 +1,25 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_badge_200_response.rs)
+Vraća: [`ApiGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badge_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'get_user_badge Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_user_badge() -> Result<GetUserBadge200Response, Error> {
-    let params = GetUserBadgeParams {
+async fn fetch_user_badge() -> Result<ApiGetUserBadgeResponse, Error> {
+    let params: GetUserBadgeParams = GetUserBadgeParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "verified-journalist-badge-001".to_string(),
-        locale: Some("en-US".to_string()),
+        id: "badge-moderator".to_string(),
+        include_inactive: Some(false),
     };
-    let badge: GetUserBadge200Response = get_user_badge(&configuration, params).await?;
+    let badge: ApiGetUserBadgeResponse = get_user_badge(&configuration, params).await?;
     Ok(badge)
 }
 [inline-code-end]

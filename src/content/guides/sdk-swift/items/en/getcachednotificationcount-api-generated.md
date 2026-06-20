@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCount200Response.swift)
+Returns: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCountResponse.swift)
 
 ## Example
 

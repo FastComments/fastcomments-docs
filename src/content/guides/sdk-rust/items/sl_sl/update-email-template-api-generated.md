@@ -1,33 +1,36 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| update_email_template_body | models::UpdateEmailTemplateBody | Yes |  |
+| tenant_id | String | Da |  |
+| id | String | Da |  |
+| update_email_template_body | models::UpdateEmailTemplateBody | Da |  |
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vrača: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer update_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_update_email_template() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_update() -> Result<(), Error> {
     let params: UpdateEmailTemplateParams = UpdateEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "welcome-email-template".to_string(),
+        id: "weekly-newsletter".to_string(),
         update_email_template_body: models::UpdateEmailTemplateBody {
-            subject: "Welcome to Acme News".to_string(),
-            html_body: "<h1>Welcome, \{{user_name}}</h1><p>Thanks for joining Acme.</p>".to_string(),
-            plain_body: Some("Welcome, \{{user_name}}!\nThanks for joining Acme.".to_string()),
+            name: Some("Weekly Newsletter".to_string()),
+            subject: Some("Your Weekly Acme Updates".to_string()),
+            html: Some("<h1>Acme News</h1><p>Latest product and engineering updates.</p>".to_string()),
+            plain_text: Some("Acme News - Latest product and engineering updates.".to_string()),
             enabled: Some(true),
-            from_name: Some("Acme Support <support@acme.com>".to_string()),
+            sender_name: Some("Acme Team".to_string()),
+            sender_email: Some("newsletter@acme.com".to_string()),
+            locale: Some("en-US".to_string()),
         },
     };
-    let response: FlagCommentPublic200Response = update_email_template(&configuration, params).await?;
-    Ok(response)
+    update_email_template(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

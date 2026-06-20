@@ -1,12 +1,12 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 
 ## レスポンス
 
-返却値: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenant200Response.swift)
+戻り値: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantResponse.swift)
 
 ## 例
 
@@ -29,3 +29,5 @@ DefaultAPI.createTenant(tenantId: tenantId, createTenantBody: createTenantBody) 
     }
 }
 [inline-code-end]
+
+---

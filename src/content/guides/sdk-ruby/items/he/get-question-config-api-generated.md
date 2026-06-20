@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config200_response.rb)
+מחזיר: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config_response.rb)
 
 ## דוגמה
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל היא nil)
+  # הסר את ההערה מהשורה הבאה כדי לקבוע קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל היא nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

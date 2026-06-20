@@ -14,19 +14,19 @@
 
 ## Відповідь
 
-Повертає: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Повертає: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад combine_comments_with_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштування авторизації за API-ключем: api_key
+  # Налаштуйте авторизацію за допомогою API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
+  # Розкоментуйте наведений рядок, щоб встановити префікс для API-ключа, напр., 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -51,3 +51,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->combine_comments_with_question_results: #{e}"
 end
 [inline-code-end]
+
+---

@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Example
 
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateTenantBody updateTenantBody = new UpdateTenantBody(); // UpdateTenantBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateTenant(tenantId, id, updateTenantBody)
+      APIEmptyResponse result = apiInstance.updateTenant(tenantId, id, updateTenantBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

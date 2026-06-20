@@ -1,13 +1,13 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
 
 ## Resposta
 
-Retorna: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badge_200_response.go)
+Retorna: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badge_response.go)
 
 ## Exemplo
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `GetUserBadge`: GetUserBadge200Response
+	// resposta de `GetUserBadge`: APIGetUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadge`: %v\n", resp)
 }
 [inline-code-end]

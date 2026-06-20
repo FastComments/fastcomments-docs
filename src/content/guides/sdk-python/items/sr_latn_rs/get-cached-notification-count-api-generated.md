@@ -1,20 +1,20 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count200_response.py)
+Vraća: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'get_cached_notification_count Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_cached_notification_count200_response import GetCachedNotificationCount200Response
+from client.models.get_cached_notification_count_response import GetCachedNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,14 +25,14 @@ configuration = client.Configuration(
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# u skladu sa bezbednosnom politikom API servera.
+# Primeri za svaki metod autentifikacije su dati u nastavku, upotrebite primer koji
+# odgovara vašem slučaju upotrebe.
 
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite dole da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta

@@ -1,10 +1,10 @@
-zahteva
+req
 tenantId
 afterId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | afterId | string | query | Ne |  |
@@ -16,7 +16,7 @@ afterId
 
 ## Odziv
 
-Vrne: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_public200_response.rb)
+Vrača: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_feed_posts_response.rb)
 
 ## Primer
 
@@ -44,3 +44,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_public: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,4 +1,3 @@
----
 Włącz lub wyłącz powiadomienia dla konkretnego komentarza.
 
 ## Parametry
@@ -13,7 +12,7 @@ Włącz lub wyłącz powiadomienia dla konkretnego komentarza.
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Zwraca: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationCommentSubscriptionStatusResponse.java)
 
 ## Przykład
 
@@ -38,7 +37,7 @@ public class Example {
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
+      UpdateUserNotificationCommentSubscriptionStatusResponse result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

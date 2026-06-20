@@ -1,26 +1,28 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | integer | query | No |  |
-| limit | integer | query | No |  |
-| skip | integer | query | No |  |
-| asTree | boolean | query | No |  |
-| skipChildren | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
-| contextUserId | string | query | No |  |
-| hashTag | string | query | No |  |
-| parentId | string | query | No |  |
-| direction | string | query | No |  |
+| tenantId | string | query | Da |  |
+| page | integer | query | Ne |  |
+| limit | integer | query | Ne |  |
+| skip | integer | query | Ne |  |
+| asTree | boolean | query | Ne |  |
+| skipChildren | integer | query | Ne |  |
+| limitChildren | integer | query | Ne |  |
+| maxTreeDepth | integer | query | Ne |  |
+| urlId | string | query | Ne |  |
+| userId | string | query | Ne |  |
+| anonUserId | string | query | Ne |  |
+| contextUserId | string | query | Ne |  |
+| hashTag | string | query | Ne |  |
+| parentId | string | query | Ne |  |
+| direction | string | query | Ne |  |
+| fromDate | integer | query | Ne |  |
+| toDate | integer | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Primer
 
@@ -28,11 +30,11 @@ Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# podesite autorizaciju
+# podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključa: api_key
+  # konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeću liniju da biste podesili prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
+  # Otkomentarišite sledeću liniju da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

@@ -1,16 +1,15 @@
----
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | путь | Да |  |
-| commentId | string | путь | Да |  |
-| broadcastId | string | строка запроса | Да |  |
-| sso | string | строка запроса | Нет |  |
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Да |  |
+| sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Пример
 
@@ -20,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
-comment_id = 'comment_id_example' # Строка | 
-broadcast_id = 'broadcast_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Строка | 
+  sso: 'sso_example' # String | 
 }
 
 begin

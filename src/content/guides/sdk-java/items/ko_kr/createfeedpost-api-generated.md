@@ -3,20 +3,20 @@
 | 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| broadcastId | string | query | 아니오 |  |
-| isLive | boolean | query | 아니오 |  |
-| doSpamCheck | boolean | query | 아니오 |  |
-| skipDupCheck | boolean | query | 아니오 |  |
+| broadcastId | string | query | 아니요 |  |
+| isLive | boolean | query | 아니요 |  |
+| doSpamCheck | boolean | query | 아니요 |  |
+| skipDupCheck | boolean | query | 아니요 |  |
 
 ## 응답
 
-반환: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPost200Response.java)
+반환: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostsResponse.java)
 
 ## 예제
 
 [inline-code-attrs-start title = 'createFeedPost 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 임포트:
+// 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,7 +32,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값: null)
+    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값은 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean doSpamCheck = true; // Boolean | 
     Boolean skipDupCheck = true; // Boolean | 
     try {
-      CreateFeedPost200Response result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
+      CreateFeedPostsResponse result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
@@ -60,3 +60,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

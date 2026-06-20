@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | נתיב | כן |  |
-| postIds | array | שאילתה | כן |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | path | כן |  |
+| postIds | array | query | כן |  |
+| sso | string | query | לא |  |
 
-## תשובה
+## תגובה
 
-מחזיר: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_stats_200_response.go)
+מחזיר: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_feed_posts_stats_response.go)
 
 ## דוגמה
 
@@ -20,7 +20,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsStats``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תשובה מ-`GetFeedPostsStats`: GetFeedPostsStats200Response
+	// תגובה מ-`GetFeedPostsStats`: FeedPostsStatsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsStats`: %v\n", resp)
 }
 [inline-code-end]

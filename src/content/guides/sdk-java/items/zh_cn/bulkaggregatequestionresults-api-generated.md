@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | forceRecalculate | boolean | query | 否 |  |
 
 ## 响应
 
-返回: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResults200Response.java)
+返回: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResultsResponse.java)
 
 ## 示例
 
@@ -29,7 +29,7 @@ public class Example {
     // 配置 API 密钥授权: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释下面一行以设置 API 密钥的前缀，例如 "Token"（默认为 null）
+    // 取消注释以下行以设置 API 密钥的前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest = new BulkAggregateQuestionResultsRequest(); // BulkAggregateQuestionResultsRequest | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      BulkAggregateQuestionResults200Response result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
+      BulkAggregateQuestionResultsResponse result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
             .forceRecalculate(forceRecalculate)
             .execute();
       System.out.println(result);
@@ -51,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

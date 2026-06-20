@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -7,7 +8,7 @@
 
 ## Одговор
 
-Враћа: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_200_response.go)
+Враћа: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_response.go)
 
 ## Пример
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetTenant`: GetTenant200Response
+	// одговор од `GetTenant`: GetTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenant`: %v\n", resp)
 }
 [inline-code-end]
+
+---

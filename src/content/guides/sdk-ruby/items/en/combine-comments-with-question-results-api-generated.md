@@ -14,7 +14,7 @@
 
 ## Response
 
-Returns: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Returns: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## Example
 

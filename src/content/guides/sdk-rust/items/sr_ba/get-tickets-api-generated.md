@@ -1,30 +1,30 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| user_id | String | Не |  |
-| state | f64 | Не |  |
-| skip | f64 | Не |  |
-| limit | f64 | Не |  |
+| tenant_id | String | Da |  |
+| user_id | String | Ne |  |
+| state | f64 | Ne |  |
+| skip | f64 | Ne |  |
+| limit | f64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tickets_200_response.rs)
+Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tickets_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_tickets Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tickets Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example_get_tickets() -> Result<(), Error> {
     let params: GetTicketsParams = GetTicketsParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        user_id: Some("user-9876".to_owned()),
+        tenant_id: String::from("acme-corp-tenant"),
+        user_id: Some(String::from("journalist-42")),
         state: Some(1.0),
         skip: Some(0.0),
-        limit: Some(25.0),
+        limit: Some(50.0),
     };
-    let tickets: GetTickets200Response = get_tickets(configuration, params).await?;
+    let tickets: GetTicketsResponse = get_tickets(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -1,5 +1,4 @@
-Agreguje dokumenty, grupując je (jeśli podano groupBy) i stosując wiele operacji.
-Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
+Agreguje dokumenty, grupując je (jeśli podano groupBy) i stosując wiele operacji. Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
 
 ## Parametry
 
@@ -11,13 +10,13 @@ Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
 
 ## Odpowiedź
 
-Zwraca: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Zwraca: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład aggregate'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład agregacji'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu prosimy zgłaszać pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykładowe fragmenty kodu są nadal w wersji beta. W przypadku problemu proszę zgłosić na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -36,3 +35,5 @@ DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest,
     }
 }
 [inline-code-end]
+
+---

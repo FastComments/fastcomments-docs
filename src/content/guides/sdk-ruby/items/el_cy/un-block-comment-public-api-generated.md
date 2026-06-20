@@ -1,6 +1,7 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
@@ -8,7 +9,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Επιστρέφει: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Παράδειγμα
 

@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_public_200_response.go)
+回傳: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_api_delete_comment_response.go)
 
 ## 範例
 
@@ -22,15 +22,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string | 
-	broadcastId := "broadcastId_example" // string | 
-	editKey := "editKey_example" // string |  (選用)
-	sso := "sso_example" // string |  (選用)
+	tenantId := "tenantId_example" // 字串 | 
+	commentId := "commentId_example" // 字串 | 
+	broadcastId := "broadcastId_example" // 字串 | 
+	editKey := "editKey_example" // 字串 |  （可選）
+	sso := "sso_example" // 字串 |  （可選）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `DeleteCommentPublic` 的回應: DeleteCommentPublic200Response
+	// 從 `DeleteCommentPublic` 的回應: PublicAPIDeleteCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

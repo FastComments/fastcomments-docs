@@ -6,25 +6,25 @@
 
 ## Одговор
 
-Враћа: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenant200Response.php)
+Враћа: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantResponse.php)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'Пример createTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenant Примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Конфигуришите API кључ за ауторизацију: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментујте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционo, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
     new GuzzleHttp\Client(),
     $config
 );

@@ -7,11 +7,11 @@
 
 ## Réponse
 
-Renvoie: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour updateFeedPost'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de updateFeedPost'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     FeedPost feedPost = new FeedPost(); // FeedPost | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateFeedPost(tenantId, id, feedPost)
+      APIEmptyResponse result = apiInstance.updateFeedPost(tenantId, id, feedPost)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

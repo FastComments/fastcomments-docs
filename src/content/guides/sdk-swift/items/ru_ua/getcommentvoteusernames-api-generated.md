@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -9,13 +9,13 @@
 
 ## Ответ
 
-Возвращает: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentVoteUserNames200Response.swift)
+Возвращает: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentVoteUserNamesSuccessResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getCommentVoteUserNames Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentVoteUserNames'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все ещё в бета-версии. В случае проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё находятся в бета-версии. При любых проблемах, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,3 +34,5 @@ PublicAPI.getCommentVoteUserNames(tenantId: tenantId, commentId: commentId, dir:
     }
 }
 [inline-code-end]
+
+---

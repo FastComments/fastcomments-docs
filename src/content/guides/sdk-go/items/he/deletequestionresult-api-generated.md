@@ -7,11 +7,11 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל־DeleteQuestionResult'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-DeleteQuestionResult'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // מחרוזת | 
-	id := "id_example" // מחרוזת | 
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ`DeleteQuestionResult`: FlagCommentPublic200Response
+	// תגובה מ-`DeleteQuestionResult`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie : [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUsers200Response.swift)
+Renvoie: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUsersResponse.swift)
 
 ## Exemple
 

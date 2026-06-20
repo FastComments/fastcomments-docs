@@ -4,9 +4,9 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_moderator_200_response.go)
+Vrne: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_moderator_response.go)
 
 ## Primer
 
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `CreateModerator`: CreateModerator200Response
+	// odziv iz `CreateModerator`: CreateModeratorResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateModerator`: %v\n", resp)
 }
 [inline-code-end]

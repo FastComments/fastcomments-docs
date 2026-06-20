@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddDomainConfig200Response.php)
+Returns: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddDomainConfigResponse.php)
 
 ## Example
 

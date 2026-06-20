@@ -1,35 +1,35 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| voteId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
-Возвращает: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Возвращает: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'delete_comment_vote Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример delete_comment_vote'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
-comment_id = 'comment_id_example' # Строка | 
-vote_id = 'vote_id_example' # Строка | 
-url_id = 'url_id_example' # Строка | 
-broadcast_id = 'broadcast_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+vote_id = 'vote_id_example' # String | 
+url_id = 'url_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example', # Строка | 
-  sso: 'sso_example' # Строка | 
+  edit_key: 'edit_key_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

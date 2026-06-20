@@ -1,20 +1,19 @@
----
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Response
+## Antwort
 
-Gibt zurück: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_user_badge200_response.py)
+Gibt zurück: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_create_user_badge_response.py)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'create_user_badge Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für create_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_user_badge200_response import CreateUserBadge200Response
+from client.models.api_create_user_badge_response import APICreateUserBadgeResponse
 from client.models.create_user_badge_params import CreateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
@@ -27,18 +26,18 @@ configuration = client.Configuration(
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
 # gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten angegeben; verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsfall erfüllt.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entkommentieren Sie unten, um ein Präfix (z. B. Bearer) für den API-Key einzurichten, falls benötigt
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_user_badge_params = client.CreateUserBadgeParams() # CreateUserBadgeParams | 

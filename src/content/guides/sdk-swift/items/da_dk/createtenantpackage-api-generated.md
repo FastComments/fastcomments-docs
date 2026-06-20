@@ -2,17 +2,17 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
+| tenantId | string | query | Yes |  |
 
 ## Svar
 
-Returnerer: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantPackage200Response.swift)
+Returnerer: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantPackageResponse.swift)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på createTenantPackage'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De følgende kodeeksempler er stadig i beta. Hvis der opstår problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. For problemer, venligst rapporter via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,5 +29,3 @@ DefaultAPI.createTenantPackage(tenantId: tenantId, createTenantPackageBody: crea
     }
 }
 [inline-code-end]
-
----

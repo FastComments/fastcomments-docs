@@ -1,14 +1,14 @@
 ## Parametri
 
-| Nome | Tipo | Location | Obbligatorio | Descrizione |
-|------|------|----------|--------------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | userId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_200_response.go)
+Restituisce: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_response.go)
 
 ## Esempio
 
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.ChangeTicketState``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `ChangeTicketState`: ChangeTicketState200Response
+	// risposta da `ChangeTicketState`: ChangeTicketStateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.ChangeTicketState`: %v\n", resp)
 }
 [inline-code-end]

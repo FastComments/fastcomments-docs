@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-返却: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+戻り値: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## 例
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	yearNumber := float64(1.2) // float64 |  (任意)
-	monthNumber := float64(1.2) // float64 |  (任意)
-	dayNumber := float64(1.2) // float64 |  (任意)
-	skip := float64(1.2) // float64 |  (任意)
+	yearNumber := float64(1.2) // float64 |  （任意）
+	monthNumber := float64(1.2) // float64 |  （任意）
+	dayNumber := float64(1.2) // float64 |  （任意）
+	skip := float64(1.2) // float64 |  （任意）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,9 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenantDailyUsages` からのレスポンス: GetTenantDailyUsages200Response
+	// `GetTenantDailyUsages` からのレスポンス: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 | userId | string | query | Ne |  |
 | anonUserId | string | query | Ne |  |
 
-## Odgovor
+## Response
 
-Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagComment200Response.php)
+Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentResponse.php)
 
 ## Primjer
 
@@ -18,16 +18,15 @@ Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` will be used as default.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, kao zadani će se koristiti `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

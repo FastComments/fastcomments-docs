@@ -1,31 +1,31 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_notification_count200_response.py)
+Retorna: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_notification_count_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_user_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_notification_count200_response import GetUserNotificationCount200Response
+from client.models.get_user_notification_count_response import GetUserNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir o host é opcional e o padrão é https://fastcomments.com
-# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente de API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)

@@ -2,15 +2,15 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | chemin | Oui |  |
-| commentId | string | chemin | Oui |  |
-| broadcastId | string | requête | Oui |  |
-| editKey | string | requête | Non |  |
-| sso | string | requête | Non |  |
+| tenantId | string | path | Oui |  |
+| commentId | string | path | Oui |  |
+| broadcastId | string | query | Oui |  |
+| editKey | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_public200_response.rb)
+Renvoie: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
 
 ## Exemple
 
@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_public: #{e}"
 end
 [inline-code-end]
-
----

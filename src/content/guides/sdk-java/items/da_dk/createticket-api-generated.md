@@ -1,13 +1,13 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Ja |  |
 
 ## Svar
 
-Returnerer: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicket200Response.java)
+Returnerer: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicketResponse.java)
 
 ## Eksempel
 
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgleautorisation: api_key
+    // Konfigurer API-nøglegodkendelse: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren på følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     CreateTicketBody createTicketBody = new CreateTicketBody(); // CreateTicketBody | 
     try {
-      CreateTicket200Response result = apiInstance.createTicket(tenantId, userId, createTicketBody)
+      CreateTicketResponse result = apiInstance.createTicket(tenantId, userId, createTicketBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

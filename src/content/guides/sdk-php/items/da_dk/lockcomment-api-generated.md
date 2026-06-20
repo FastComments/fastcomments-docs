@@ -1,19 +1,19 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | sti | Ja |  |
-| commentId | string | sti | Ja |  |
-| broadcastId | string | forespørgsel | Ja |  |
-| sso | string | forespørgsel | Nej |  |
+| tenantId | string | path | Ja |  |
+| commentId | string | path | Ja |  |
+| broadcastId | string | query | Ja |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'lockComment-eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på lockComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,8 +21,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du angive din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

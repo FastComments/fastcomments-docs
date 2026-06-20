@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Location | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Retourne: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_text200_response.rb)
+Renvoie: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_get_comment_text_response.rb)
 
 ## Exemple
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Chaîne | 
-comment_id = 'comment_id_example' # Chaîne | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example', # Chaîne | 
-  sso: 'sso_example' # Chaîne | 
+  edit_key: 'edit_key_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

@@ -1,19 +1,19 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| domain | string | path | Да |  |
+| tenantId | string | query | Da |  |
+| domain | string | path | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Vraća: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigResponse.java)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getDomainConfig'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getDomainConfig Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриши овлашћење помоћу API кључа: api_key
+    // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откомунтирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Otkomentariši sljedeću liniju da postaviš prefiks za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String domain = "domain_example"; // String | 
     try {
-      GetDomainConfig200Response result = apiInstance.getDomainConfig(tenantId, domain)
+      GetDomainConfigResponse result = apiInstance.getDomainConfig(tenantId, domain)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

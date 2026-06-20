@@ -4,7 +4,7 @@ afterId
 
 ## Paramètres
 
-| Nom | Type | Location | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | afterId | string | query | Non |  |
@@ -16,13 +16,13 @@ afterId
 
 ## Réponse
 
-Retourne : [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Renvoie : [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code ci-dessous sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -44,5 +44,3 @@ PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit,
     }
 }
 [inline-code-end]
-
----

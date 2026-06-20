@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | commentId | string | path | כן |  |
@@ -9,27 +9,27 @@
 
 ## תגובה
 
-מחזיר: [`LockComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/lock_comment200_response.py)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-un_lock_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.lock_comment200_response import LockComment200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# קביעת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל- https://fastcomments.com
+# ראה את configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# פתח בלוק הקשר (context) עם מופע של ApiClient
 with client.ApiClient(configuration) as api_client:
-    # יצירת מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

@@ -1,16 +1,15 @@
----
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
 
-## Resposta
+## Response
 
-Retorna: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUser200Response.java)
+Retorna: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUserResponse.java)
 
-## Exemplo
+## Example
 
 [inline-code-attrs-start title = 'Exemplo de getTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização por chave de API: api_key
+    // Configurar autorização da chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha a seguir para definir um prefixo para a chave de API, ex.: "Token" (padrão: null)
+    // Descomente a linha a seguir para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantUser200Response result = apiInstance.getTenantUser(tenantId, id)
+      GetTenantUserResponse result = apiInstance.getTenantUser(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vrne: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Primer
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Niz | 
-comment_id = 'comment_id_example' # Niz | 
-broadcast_id = 'broadcast_id_example' # Niz | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Niz | 
+  sso: 'sso_example' # String | 
 }
 
 begin

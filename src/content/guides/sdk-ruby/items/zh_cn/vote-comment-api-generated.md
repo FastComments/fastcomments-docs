@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| commentId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| broadcastId | string | query | 是 |  |
-| sessionId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 路径 | 是 |  |
+| commentId | string | 路径 | 是 |  |
+| urlId | string | 查询 | 是 |  |
+| broadcastId | string | 查询 | 是 |  |
+| sessionId | string | 查询 | 否 |  |
+| sso | string | 查询 | 否 |  |
 
 ## 响应
 
-返回: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+返回: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## 示例
 
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->vote_comment: #{e}"
 end
 [inline-code-end]
+
+---

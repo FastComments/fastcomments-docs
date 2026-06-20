@@ -2,18 +2,18 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| commentId | string | query | いいえ |  |
-| externalId | string | query | いいえ |  |
-| eventType | string | query | いいえ |  |
-| type | string | query | いいえ |  |
-| domain | string | query | いいえ |  |
-| attemptCountGT | number | query | いいえ |  |
-| skip | number | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
 ## レスポンス
 
-戻り値: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEvents200Response.swift)
+返却: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventsResponse.swift)
 
 ## 例
 
@@ -23,13 +23,13 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let commentId = "commentId_example" // String |  (省略可能)
-let externalId = "externalId_example" // String |  (省略可能)
-let eventType = "eventType_example" // String |  (省略可能)
-let type = "type_example" // String |  (省略可能)
-let domain = "domain_example" // String |  (省略可能)
-let attemptCountGT = 987 // Double |  (省略可能)
-let skip = 987 // Double |  (省略可能)
+let commentId = "commentId_example" // String |  （オプション）
+let externalId = "externalId_example" // String |  （オプション）
+let eventType = "eventType_example" // String |  （オプション）
+let type = "type_example" // String |  （オプション）
+let domain = "domain_example" // String |  （オプション）
+let attemptCountGT = 987 // Double |  （オプション）
+let skip = 987 // Double |  （オプション）
 
 DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
     guard error == nil else {

@@ -2,18 +2,18 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
+| tenantId | string | שאילתה | כן |  |
+| id | string | נתיב | כן |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackage200Response.java)
+מחזיר: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackageResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של getTenantPackage'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getTenantPackage'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבא מחלקות:
+// ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר את אישור מפתח ה-API: api_key
+    // הגדר הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת מחדל null)
@@ -36,10 +36,11 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantPackage200Response result = apiInstance.getTenantPackage(tenantId, id)
+      GetTenantPackageResponse result = apiInstance.getTenantPackage(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // שגיאה בעת קריאה ל-DefaultApi#getTenantPackage
       System.err.println("Exception when calling DefaultApi#getTenantPackage");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

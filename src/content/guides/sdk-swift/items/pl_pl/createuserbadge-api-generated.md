@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -6,13 +7,13 @@
 
 ## Odpowiedź
 
-Zwraca: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateUserBadge200Response.swift)
+Zwraca: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APICreateUserBadgeResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład createUserBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w fazie beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu prosimy zgłosić go przez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,3 +30,5 @@ DefaultAPI.createUserBadge(tenantId: tenantId, createUserBadgeParams: createUser
     }
 }
 [inline-code-end]
+
+---

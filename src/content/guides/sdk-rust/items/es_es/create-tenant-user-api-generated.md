@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_user_200_response.rs)
+Devuelve: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_user_response.rs)
 
 ## Ejemplo
 
@@ -16,14 +16,15 @@ Devuelve: [`CreateTenantUser200Response`](https://github.com/FastComments/fastco
 let params: CreateTenantUserParams = CreateTenantUserParams {
     tenant_id: "acme-corp-tenant".to_string(),
     create_tenant_user_body: models::CreateTenantUserBody {
-        username: "jane.doe".to_string(),
         email: "jane.doe@acme.com".to_string(),
         display_name: Some("Jane Doe".to_string()),
-        roles: Some(vec!["reader".to_string(), "commenter".to_string()]),
+        role: Some("moderator".to_string()),
         locale: Some("en-US".to_string()),
-        is_verified: Some(true),
+        digest_email_frequency: Some(DigestEmailFrequency::Daily),
+        imported_agent_approval_notification_frequency: Some(ImportedAgentApprovalNotificationFrequency::Immediate),
     },
 };
-
-let response: CreateTenantUser200Response = create_tenant_user(&configuration, params).await?;
+let created: CreateTenantUserResponse = create_tenant_user(&configuration, params).await?;
 [inline-code-end]
+
+---

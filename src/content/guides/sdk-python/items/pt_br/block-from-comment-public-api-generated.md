@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | commentId | string | path | Sim |  |
@@ -8,20 +8,20 @@
 
 ## Resposta
 
-Retorna: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_from_comment_public200_response.py)
+Retorna: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_success.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de block_from_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.block_from_comment_public200_response import BlockFromCommentPublic200Response
+from client.models.block_success import BlockSuccess
 from client.models.public_block_from_comment_params import PublicBlockFromCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão é https://fastcomments.com
-# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Definir o host é opcional e o padrão é https://fastcomments.com
+# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,12 +29,12 @@ configuration = client.Configuration(
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Crie uma instância da classe da API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     public_block_from_comment_params = client.PublicBlockFromCommentParams() # PublicBlockFromCommentParams | 
-    sso = 'sso_example' # str |  (opcional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.block_from_comment_public(tenant_id, comment_id, public_block_from_comment_params, sso=sso)

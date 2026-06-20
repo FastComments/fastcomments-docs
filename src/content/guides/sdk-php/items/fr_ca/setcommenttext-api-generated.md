@@ -1,16 +1,16 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Oui |  |
+| commentId | string | path | Oui |  |
+| broadcastId | string | query | Oui |  |
+| editKey | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentText200Response.php)
+Renvoie: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPISetCommentTextResponse.php)
 
 ## Exemple
 
@@ -22,16 +22,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // chaîne
-$comment_id = 'comment_id_example'; // chaîne
-$broadcast_id = 'broadcast_id_example'; // chaîne
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
 $comment_text_update_request = new \FastComments\Client\Model\CommentTextUpdateRequest(); // \FastComments\Client\Model\CommentTextUpdateRequest
-$edit_key = 'edit_key_example'; // chaîne
-$sso = 'sso_example'; // chaîne
+$edit_key = 'edit_key_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->setCommentText($tenant_id, $comment_id, $broadcast_id, $comment_text_update_request, $edit_key, $sso);
@@ -40,3 +40,5 @@ try {
     echo 'Exception when calling PublicApi->setCommentText: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | commentId | string | path | はい |  |
@@ -12,13 +12,13 @@
 
 ## レスポンス
 
-戻り値: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+戻り値: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteCommentVote の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,15 +31,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 文字列 | 
-    String commentId = "commentId_example"; // 文字列 | 
-    String voteId = "voteId_example"; // 文字列 | 
-    String urlId = "urlId_example"; // 文字列 | 
-    String broadcastId = "broadcastId_example"; // 文字列 | 
-    String editKey = "editKey_example"; // 文字列 | 
-    String sso = "sso_example"; // 文字列 | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String voteId = "voteId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
+    String editKey = "editKey_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
+      VoteDeleteResponse result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
             .editKey(editKey)
             .sso(sso)
             .execute();

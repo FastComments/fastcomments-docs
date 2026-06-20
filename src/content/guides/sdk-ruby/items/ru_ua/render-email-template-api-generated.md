@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| locale | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| locale | string | query | No |  |
 
 ## Ответ
 
-Возвращает: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template200_response.rb)
+Возвращает: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template_response.rb)
 
 ## Пример
 
@@ -17,7 +17,7 @@ require 'time'
 require 'fastcomments-client'
 # Настройка авторизации
 FastCommentsClient.configure do |config|
-  # Настройте авторизацию с помощью API-ключа: api_key
+  # Настройка авторизации через API-ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

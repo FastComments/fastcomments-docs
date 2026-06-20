@@ -6,7 +6,7 @@
 
 ## Отговор
 
-Връща: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+Връща: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## Пример
 
@@ -14,11 +14,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на удостоверяване
+# настройка на авторизацията
 FastCommentsClient.configure do |config|
-  # Конфигуриране на удостоверяване чрез API ключ: api_key
+  # Конфигуриране на авторизацията с API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Премахнете коментара от следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_moderator: #{e}"
 end
 [inline-code-end]
-
----

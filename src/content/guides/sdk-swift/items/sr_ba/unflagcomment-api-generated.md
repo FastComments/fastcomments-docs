@@ -1,27 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| userId | string | query | Не |  |
+| anonUserId | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagComment200Response.swift)
+Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'unFlagComment Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример unFlagComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примјери кода су још увијек у бети. За било који проблем пријавите на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let userId = "userId_example" // String |  (neobavezno)
-let anonUserId = "anonUserId_example" // String |  (neobavezno)
+let userId = "userId_example" // String |  (опционо)
+let anonUserId = "anonUserId_example" // String |  (опционо)
 
 DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: anonUserId) { (response, error) in
     guard error == nil else {

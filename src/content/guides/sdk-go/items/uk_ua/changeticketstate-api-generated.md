@@ -1,14 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Так |  |
+| userId | string | query | Так |  |
+| id | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_200_response.go)
+Повертає: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_response.go)
 
 ## Приклад
 
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.ChangeTicketState``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `ChangeTicketState`: ChangeTicketState200Response
+	// response from `ChangeTicketState`: ChangeTicketStateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.ChangeTicketState`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
@@ -9,7 +9,7 @@
 
 ## Resposta
 
-Retorna: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagComment200Response.java)
+Retorna: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentResponse.java)
 
 ## Exemplo
 
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização por chave de API: api_key
+    // Configurar autorização da chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha abaixo para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
+    // Descomente a linha a seguir para definir um prefixo para a chave de API, por exemplo "Token" (padrão null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      FlagComment200Response result = apiInstance.flagComment(tenantId, id)
+      FlagCommentResponse result = apiInstance.flagComment(tenantId, id)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

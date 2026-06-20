@@ -1,21 +1,21 @@
 Συγκεντρώνει έγγραφα ομαδοποιώντας τα (εάν παρέχεται το groupBy) και εφαρμόζοντας πολλαπλές λειτουργίες.
-Υποστηρίζονται διαφορετικές λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.).
+Υποστηρίζονται διάφορες λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.).
 
 ## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | parentTenantId | string | query | Όχι |  |
 | includeStats | boolean | query | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+Επιστρέφει: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'aggregate Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα aggregate'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +33,7 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Αφαιρέστε το σχόλιο στην ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +42,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();

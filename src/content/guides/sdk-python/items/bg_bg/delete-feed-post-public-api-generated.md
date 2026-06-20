@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Location | Задължително | Описание |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postId | string | path | Да |  |
@@ -9,32 +9,32 @@
 
 ## Отговор
 
-Връща: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public200_response.py)
+Връща: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'delete_feed_post_public Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за delete_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_feed_post_public200_response import DeleteFeedPostPublic200Response
+from client.models.delete_feed_post_public_response import DeleteFeedPostPublicResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хост е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
+# Задаването на host е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Влезте в контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Създайте инстанция на класа API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
-    broadcast_id = 'broadcast_id_example' # str |  (по избор)
-    sso = 'sso_example' # str |  (по избор)
+    broadcast_id = 'broadcast_id_example' # str |  (незадължително)
+    sso = 'sso_example' # str |  (незадължително)
 
     try:
         api_response = api_instance.delete_feed_post_public(tenant_id, post_id, broadcast_id=broadcast_id, sso=sso)

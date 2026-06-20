@@ -1,18 +1,19 @@
+---
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| commentId | string | 路径 | 是 |  |
-| voteId | string | 路径 | 是 |  |
-| urlId | string | 查询 | 是 |  |
-| broadcastId | string | 查询 | 是 |  |
-| editKey | string | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | path | 是 |  |
+| commentId | string | path | 是 |  |
+| voteId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| broadcastId | string | query | 是 |  |
+| editKey | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## 示例
 
@@ -31,15 +32,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String commentId = "commentId_example"; // String | 
-    String voteId = "voteId_example"; // String | 
-    String urlId = "urlId_example"; // String | 
-    String broadcastId = "broadcastId_example"; // String | 
-    String editKey = "editKey_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // 字符串 | 
+    String commentId = "commentId_example"; // 字符串 | 
+    String voteId = "voteId_example"; // 字符串 | 
+    String urlId = "urlId_example"; // 字符串 | 
+    String broadcastId = "broadcastId_example"; // 字符串 | 
+    String editKey = "editKey_example"; // 字符串 | 
+    String sso = "sso_example"; // 字符串 | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
+      VoteDeleteResponse result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
             .editKey(editKey)
             .sso(sso)
             .execute();

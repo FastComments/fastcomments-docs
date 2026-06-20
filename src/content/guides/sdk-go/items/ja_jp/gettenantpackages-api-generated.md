@@ -1,13 +1,14 @@
+---
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_packages_200_response.go)
+戻り値: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_packages_response.go)
 
 ## 例
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantPackages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenantPackages` のレスポンス: GetTenantPackages200Response
+	// `GetTenantPackages` のレスポンス: GetTenantPackagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantPackages`: %v\n", resp)
 }
 [inline-code-end]
+
+---

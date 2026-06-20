@@ -1,12 +1,12 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs200_response.rb)
+Restituisce: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs_response.rb)
 
 ## Esempio
 
@@ -14,16 +14,16 @@ Restituisce: [`GetDomainConfigs200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# impostazione autorizzazione
+# imposta l'autenticazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione tramite API key: api_key
+  # Configura l'autenticazione con API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommentare la seguente riga per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per l'API key, es. 'Bearer' (valore predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Stringa | 
+tenant_id = 'tenant_id_example' # String | 
 
 begin
   
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_domain_configs: #{e}"
 end
 [inline-code-end]
-
----

@@ -8,14 +8,14 @@
 
 ## Antwort
 
-Gibt zurück: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Gibt zurück: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'delete_vote Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,18 +25,18 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter konfigurieren
-# gemäß der Sicherheitspolitik des API-Servers.
-# Beispiele für jede Auth-Methode sind unten angegeben, verwenden Sie das Beispiel, das
-# Ihren Auth-Anwendungsfall erfüllt.
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten angegeben, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie unten das Kommentarzeichen, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+# Kommentieren Sie unten aus, um ein Präfix (e.g. Bearer) für den API-Key einzurichten, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_vote: %s\n" % e)
 [inline-code-end]
-
----

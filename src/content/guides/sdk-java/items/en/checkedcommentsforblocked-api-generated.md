@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Example
 
@@ -31,7 +31,7 @@ public class Example {
     String commentIds = "commentIds_example"; // String | A comma separated list of comment ids.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);

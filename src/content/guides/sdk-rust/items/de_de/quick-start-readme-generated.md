@@ -60,7 +60,7 @@ async fn main() {
         key: "your-api-key".to_string(),
     });
 
-    // Kommentare mit der authentifizierten API abrufen
+    // Kommentare mit dem authentifizierten API abrufen
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### SSO zur Authentifizierung verwenden
+### Verwendung der Moderations-API
+
+Die Moderationsmethoden unterstützen das Moderatoren-Dashboard. Sie verwenden eine API-key `Configuration` genauso wie die authentifizierte API, und jede Methode akzeptiert ein optionales `sso`-Token, damit der Aufruf im Namen eines SSO-authentifizierten Moderators durchgeführt werden kann.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Konfiguration mit API-Schlüssel erstellen
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Anzahl der Kommentare zählen, die in der Moderationswarteschlange warten
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // übergeben Sie ein SSO-Token, um im Namen eines SSO-authentifizierten Moderators zu handeln
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Verwendung von SSO zur Authentifizierung
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -118,7 +156,7 @@ fn main() {
         "https://example.com/avatar.jpg".to_string(), // Avatar-URL
     );
 
-    // SSO-Token generieren
+    // SSO-Token erstellen
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 

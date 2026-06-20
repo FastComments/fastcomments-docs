@@ -1,14 +1,14 @@
 ## Параметри
 
-| Име | Type | Location | Задължително | Описание |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| meta | string | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Yes |  |
+| meta | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Отговор
 
-Връща: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenants200Response.java)
+Връща: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantsResponse.java)
 
 ## Пример
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриране на удостоверяване чрез API ключ: api_key
+    // Конфигуриране на авторизация чрез API ключ: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране null)
+    // Разкоментирайте следния ред, за да зададете префикс за API ключа, например "Token" (по подразбиране е null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String meta = "meta_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenants200Response result = apiInstance.getTenants(tenantId)
+      GetTenantsResponse result = apiInstance.getTenants(tenantId)
             .meta(meta)
             .skip(skip)
             .execute();

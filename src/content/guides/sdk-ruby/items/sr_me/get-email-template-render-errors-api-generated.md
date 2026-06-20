@@ -8,7 +8,7 @@
 
 ## Одговор
 
-Враћа: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors200_response.rb)
+Враћа: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors_response.rb)
 
 ## Пример
 
@@ -18,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију помоћу API кључа: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментирајте следећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_email_template_render_errors: #{e}"
 end
 [inline-code-end]
-
----

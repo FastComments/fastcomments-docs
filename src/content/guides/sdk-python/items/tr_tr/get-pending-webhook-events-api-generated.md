@@ -13,37 +13,37 @@
 
 ## Yanıt
 
-Dönüş: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+Döndürür: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_pending_webhook_events Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun olarak yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza
-# uygun olan örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
+# API sunucusunun güvenlik politikasına uygun olarak.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza uygun olan
+# örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandırın: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak üzere aşağıdaki yorumu kaldırın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdakinin yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneği ile bir bağlam girin
+# API istemcisi örneği ile bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str |  (isteğe bağlı)

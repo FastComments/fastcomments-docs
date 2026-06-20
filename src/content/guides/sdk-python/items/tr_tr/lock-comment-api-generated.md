@@ -9,19 +9,19 @@
 
 ## Yanıt
 
-Döndürür: [`LockComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/lock_comment200_response.py)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'lock_comment Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.lock_comment200_response import LockComment200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametreleri için configuration.py dosyasına bakın.
+# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->lock_comment: %s\n" % e)
 [inline-code-end]
-
----

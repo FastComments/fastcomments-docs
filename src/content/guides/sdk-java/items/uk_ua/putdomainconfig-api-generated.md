@@ -1,19 +1,20 @@
+---
 ## Параметри
 
-| Назва | Type | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | domainToUpdate | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Повертає: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PutDomainConfigResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад putDomainConfig'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації за допомогою API-ключа: api_key
+    // Налаштування авторизації ключем API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр. "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +38,7 @@ public class Example {
     String domainToUpdate = "domainToUpdate_example"; // String | 
     UpdateDomainConfigParams updateDomainConfigParams = new UpdateDomainConfigParams(); // UpdateDomainConfigParams | 
     try {
-      GetDomainConfig200Response result = apiInstance.putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams)
+      PutDomainConfigResponse result = apiInstance.putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

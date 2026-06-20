@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitions200Response.java)
+מחזיר: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitionsResponse.java)
 
 ## דוגמה
 
@@ -25,16 +25,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // הגדר אישור מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת מחדל: null)
+    // בטל הערת השורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה "Token" (ברירת מחדל: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetEmailTemplateDefinitions200Response result = apiInstance.getEmailTemplateDefinitions(tenantId)
+      GetEmailTemplateDefinitionsResponse result = apiInstance.getEmailTemplateDefinitions(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

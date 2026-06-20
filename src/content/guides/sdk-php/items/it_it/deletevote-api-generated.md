@@ -8,7 +8,7 @@
 
 ## Risposta
 
-Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentVote200Response.php)
+Restituisce: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
 ## Esempio
 
@@ -18,14 +18,15 @@ Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autenticazione tramite chiave API: api_key
-// Decommenta la riga sottostante per impostare il prefisso (es. Bearer) per la chiave API, se necessario
+// Configure API key authorization: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale: verrà usato `GuzzleHttp\Client` come predefinito.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
@@ -40,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

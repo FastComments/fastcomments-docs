@@ -1,0 +1,41 @@
+## 매개변수
+
+| 이름 | 타입 | 위치 | 필수 | 설명 |
+|------|------|----------|----------|-------------|
+| commentId | string | path | 예 |  |
+| includeEmail | boolean | query | 아니요 |  |
+| includeIP | boolean | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
+
+## 응답
+
+반환: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICommentResponse.php)
+
+## 예제
+
+[inline-code-attrs-start title = 'getModerationComment 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\ModerationApi(
+    // 사용자 지정 HTTP 클라이언트를 사용하려면, `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 이는 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    new GuzzleHttp\Client()
+);
+$comment_id = 'comment_id_example'; // 문자열
+$include_email = True; // 부울
+$include_ip = True; // 부울
+$sso = 'sso_example'; // 문자열
+
+try {
+    $result = $apiInstance->getModerationComment($comment_id, $include_email, $include_ip, $sso);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ModerationApi->getModerationComment: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]
+
+---

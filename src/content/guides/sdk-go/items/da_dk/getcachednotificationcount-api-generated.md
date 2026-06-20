@@ -1,3 +1,4 @@
+---
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -7,11 +8,11 @@
 
 ## Svar
 
-Returnerer: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_cached_notification_count_200_response.go)
+Returnerer: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_cached_notification_count_response.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på GetCachedNotificationCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetCachedNotificationCount Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetCachedNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCachedNotificationCount`: GetCachedNotificationCount200Response
+	// svar fra `GetCachedNotificationCount`: GetCachedNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetCachedNotificationCount`: %v\n", resp)
 }
 [inline-code-end]

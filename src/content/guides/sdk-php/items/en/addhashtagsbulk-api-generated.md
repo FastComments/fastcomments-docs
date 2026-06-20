@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddHashTagsBulk200Response.php)
+Returns: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkCreateHashTagsResponse.php)
 
 ## Example
 

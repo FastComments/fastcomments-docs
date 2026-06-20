@@ -7,36 +7,33 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-update_tenant_package'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_tenant_package_body import UpdateTenantPackageBody
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# עיין ב-configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל־https://fastcomments.com
+# עיין בקובץ configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות והרשאות
+# על הלקוח להגדיר את פרמטרי האימות והרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן, השתמש בדוגמה ש
-# מתאימה למקרה השימוש שלך.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# למטה יש דוגמאות לכל שיטת אימות; השתמש בדוגמה שמ
+# עונה על מקרה השימוש שלך.
+# הגדר אימות באמצעות מפתח API: api_key
+# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם צריך
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס לקונטקסט עם מופע של לקוח ה-API
+# פתח הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)

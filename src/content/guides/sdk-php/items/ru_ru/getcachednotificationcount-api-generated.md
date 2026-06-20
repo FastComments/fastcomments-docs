@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Ответ
 
-Возвращает: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCount200Response.php)
+Возвращает: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCountResponse.php)
 
 ## Пример
 
@@ -19,13 +19,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Настройка авторизации по API-ключу: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Раскомментируйте строку ниже, чтобы задать префикс (например, Bearer) для API-ключа, если это необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте свой клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, `GuzzleHttp\Client` will be used as default.
+    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getCachedNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

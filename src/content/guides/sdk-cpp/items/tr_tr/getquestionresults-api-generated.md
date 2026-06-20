@@ -12,28 +12,28 @@
 
 ## Yanıt
 
-Döndürür: [`GetQuestionResults_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResults_200_response.h)
+Döndürür: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResultsResponse.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getQuestionResults Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("/articles/2025/new-feature"));
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("alice@example.com"));
-boost::optional<utility::string_t> startDate = boost::optional<utility::string_t>(U("2025-01-01T00:00:00Z"));
-boost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U("q-789"));
-boost::optional<utility::string_t> questionIds = boost::optional<utility::string_t>(U("q-789,q-790"));
-boost::optional<double> skip = boost::optional<double>(10.0);
-
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<utility::string_t> urlId(U("page-456"));
+boost::optional<utility::string_t> userId(U("user@example.com"));
+boost::optional<utility::string_t> startDate(U("2023-01-01T00:00:00Z"));
+boost::optional<utility::string_t> questionId(U("q-789"));
+boost::optional<utility::string_t> questionIds(U("q-789,q-790"));
+boost::optional<double> skip(10.0);
 api->getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip)
-.then([](pplx::task<std::shared_ptr<GetQuestionResults_200_response>> t){
+.then([](pplx::task<std::shared_ptr<GetQuestionResultsResponse>> t) {
     try {
-        std::shared_ptr<GetQuestionResults_200_response> resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<GetQuestionResults_200_response>(*resp);
-        }
-    } catch (const std::exception&) {}
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<GetQuestionResultsResponse>();
+        return resp;
+    } catch (...) {
+        return std::make_shared<GetQuestionResultsResponse>();
+    }
 });
 [inline-code-end]
 

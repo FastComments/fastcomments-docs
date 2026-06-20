@@ -4,7 +4,7 @@ afterId
 
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 是否必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | afterId | string | query | 否 |  |
@@ -16,7 +16,7 @@ afterId
 
 ## 响应
 
-返回：[`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_public_200_response.go)
+返回: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_feed_posts_response.go)
 
 ## 示例
 
@@ -28,17 +28,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  （可选）
-	limit := int32(56) // int32 |  （可选）
-	tags := []string{"Inner_example"} // []string |  （可选）
-	sso := "sso_example" // string |  （可选）
-	isCrawler := true // bool |  （可选）
-	includeUserInfo := true // bool |  （可选）
+	afterId := "afterId_example" // string |  (可选)
+	limit := int32(56) // int32 |  (可选)
+	tags := []string{"Inner_example"} // []string |  (可选)
+	sso := "sso_example" // string |  (可选)
+	isCrawler := true // bool |  (可选)
+	includeUserInfo := true // bool |  (可选)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetFeedPostsPublic` 的响应: GetFeedPostsPublic200Response
+	// 来自 `GetFeedPostsPublic` 的响应: PublicFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsPublic`: %v\n", resp)
 }
 [inline-code-end]

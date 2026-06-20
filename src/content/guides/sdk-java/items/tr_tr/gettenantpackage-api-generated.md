@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Location | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackage200Response.java)
+Döndürür: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackageResponse.java)
 
 ## Örnek
 
@@ -29,14 +29,14 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
+    // Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir ön ek ayarlayın, örn. "Token" (varsayılan olarak null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantPackage200Response result = apiInstance.getTenantPackage(tenantId, id)
+      GetTenantPackageResponse result = apiInstance.getTenantPackage(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

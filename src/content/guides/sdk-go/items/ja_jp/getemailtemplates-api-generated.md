@@ -1,17 +1,18 @@
+---
 ## パラメータ
 
-| 名称 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | skip | number | query | いいえ |  |
 
 ## レスポンス
 
-返却値: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_templates_200_response.go)
+戻り値: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_templates_response.go)
 
 ## 例
 
-[inline-code-attrs-start title = 'GetEmailTemplates の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetEmailTemplatesの例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetEmailTemplates` のレスポンス: GetEmailTemplates200Response
+	// `GetEmailTemplates` のレスポンス: GetEmailTemplatesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplates`: %v\n", resp)
 }
 [inline-code-end]

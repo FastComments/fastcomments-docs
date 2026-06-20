@@ -1,12 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config200_response.rb)
+Επιστρέφει: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config_response.rb)
 
 ## Παράδειγμα
 
@@ -14,11 +14,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Ρύθμιση εξουσιοδότησης
+# ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+  # Διαμόρφωση εξουσιοδότησης με API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. 'Bearer' (η προεπιλογή είναι nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_domain_config: #{e}"
 end
 [inline-code-end]
+
+---

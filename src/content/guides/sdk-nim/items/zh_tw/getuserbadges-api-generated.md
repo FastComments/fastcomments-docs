@@ -1,3 +1,4 @@
+---
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -11,7 +12,7 @@
 
 ## 回應
 
-回傳: [`Option[GetUserBadges_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_badges200response.nim)
+回傳: [`Option[APIGetUserBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badges_response.nim)
 
 ## 範例
 
@@ -19,16 +20,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.getUserBadges(
   tenantId = "my-tenant-123",
-  userId = "user-789",
+  userId = "user-9876",
   badgeId = "top-commenter",
   displayedOnComments = true,
-  limit = 50.0,
+  limit = 20.0,
   skip = 0.0
 )
 
 if response.isSome:
   let badges = response.get()
-  echo "Retrieved badges: ", $badges
+  echo "Badges response:", badges
+else:
+  echo "No badges found (HTTP status: ", httpResponse.status, ")"
 [inline-code-end]
 
 ---

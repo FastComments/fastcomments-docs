@@ -6,7 +6,7 @@
 
 ## Odgovor
 
-Vraća: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tag200_response.rb)
+Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_hash_tag_response.rb)
 
 ## Primjer
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte autorizaciju API ključa: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. 'Bearer' (zadano je nil)
+  # Otkomentirajte sljedeći redak kako biste postavili prefiks za API ključ, npr. 'Bearer' (zadano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

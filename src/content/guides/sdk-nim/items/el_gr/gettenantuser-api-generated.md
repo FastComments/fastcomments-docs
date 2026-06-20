@@ -5,20 +5,20 @@
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`Option[GetTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_user200response.nim)
+Επιστρέφει: [`Option[GetTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_user_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUser Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-456")
+let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-789")
 if response.isSome:
   let tenantUser = response.get()
-  discard tenantUser
+  echo "User fetched:", tenantUser
 else:
-  discard httpResponse
+  echo "No user found, HTTP status:", httpResponse.status
 [inline-code-end]
 
 ---

@@ -7,7 +7,7 @@
 
 ## Одговор
 
-Враћа: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicket200Response.php)
+Враћа: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
 
 ## Пример
 
@@ -17,15 +17,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигурисање ауторизације API кључа: api_key
+// Конфигуришите овлашћење API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоменаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клиент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевани.
+    // Ако желите да користите прилагођеног HTTP клијента, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, подразумевано ће се користити `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

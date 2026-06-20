@@ -12,31 +12,41 @@
 
 ## Resposta
 
-Retorna: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results200_response.py)
+Retorna: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de aggregate_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.aggregate_question_results200_response import AggregateQuestionResults200Response
+from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e o padrão é https://fastcomments.com
+# Defining the host is optional and defaults to https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
-# O cliente deve configurar os parâmetros de autenticação e autorização
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+# The client must configure the authentication and authorization parameters
 # de acordo com a política de segurança do servidor da API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# atenda ao seu caso de uso de autenticação.
-# Configure a autorização por chave de API: api_key
-# Descomente abaixo para configurar um prefixo (ex.: Bearer) para a chave de API, se necessário
+# satisfaça seu caso de uso de autenticação.
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Descomente abaixo para configurar prefixo (por exemplo, Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Create an instance of the API class
+    # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (opcional)

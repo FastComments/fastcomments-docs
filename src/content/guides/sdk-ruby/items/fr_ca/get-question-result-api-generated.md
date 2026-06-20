@@ -1,13 +1,13 @@
-## Parameters
+## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_result200_response.rb)
+Retourne: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_result_response.rb)
 
 ## Exemple
 
@@ -15,7 +15,7 @@ Renvoie: [`GetQuestionResult200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'autorisation
+# configuration de l'authentification
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'

@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | yearNumber | number | query | Hayır |  |
@@ -10,7 +10,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsages200Response.java)
+Döndürür: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantDailyUsagesResponse.java)
 
 ## Örnek
 
@@ -29,7 +29,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // API anahtarı yetkilendirmesini yapılandırın: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
@@ -42,7 +42,7 @@ public class Example {
     Double dayNumber = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantDailyUsages200Response result = apiInstance.getTenantDailyUsages(tenantId)
+      GetTenantDailyUsagesResponse result = apiInstance.getTenantDailyUsages(tenantId)
             .yearNumber(yearNumber)
             .monthNumber(monthNumber)
             .dayNumber(dayNumber)

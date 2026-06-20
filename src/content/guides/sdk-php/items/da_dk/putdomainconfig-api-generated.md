@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | domainToUpdate | string | path | Ja |  |
 
-## Respons
+## Response
 
-Returnerer: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfig200Response.php)
+Returnerer: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PutDomainConfigResponse.php)
 
 ## Eksempel
 
@@ -17,15 +17,15 @@ Returnerer: [`GetDomainConfig200Response`](https://github.com/FastComments/fastc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøglegodkendelse: api_key
+// Konfigurer API-nøgle-autorisering: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en egen HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret http-klient, giv din klient som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
@@ -40,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->putDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

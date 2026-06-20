@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -10,32 +11,32 @@
 
 ## Odgovor
 
-Vrne: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets200_response.py)
+Vrne: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'get_tickets Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tickets200_response import GetTickets200Response
+from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
+# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre preverjanja pristnosti in avtorizacije
-# v skladu s politiko varnosti strežnika API.
-# Spodaj so navedeni primeri za vsako metodo avtentikacije, uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora konfigurirati parametre za avtentikacijo in avtorizacijo
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so navedeni primeri za vsako metodo overjanja, uporabite primer, ki
+# ustreza vašemu primeru uporabe overjanja.
 
-# Nastavite avtorizacijo s ključem API: api_key
+# Nastavite avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, če želite nastaviti predpono (npr. Bearer) za ključ API, če je potrebno
+# Odkomentirajte spodaj, če želite nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
@@ -55,3 +56,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tickets: %s\n" % e)
 [inline-code-end]
+
+---

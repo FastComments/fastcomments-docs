@@ -1,14 +1,13 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| id | string | ścieżka | Tak |  |
+| tenantId | string | query | Tak |  |
+| id | string | path | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderator_200_response.go)
+Zwraca: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderator_response.go)
 
 ## Przykład
 
@@ -34,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odpowiedź z `GetModerator`: GetModerator200Response
+	// odpowiedź z `GetModerator`: GetModeratorResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetModerator`: %v\n", resp)
 }
 [inline-code-end]

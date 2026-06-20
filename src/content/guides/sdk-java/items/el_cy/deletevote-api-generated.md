@@ -8,7 +8,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## Παράδειγμα
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Ρύθμιση εξουσιοδότησης με κλειδί API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. "Token" (προεπιλογή null)
+    // Αποσχολίασε την παρακάτω γραμμή για να ορίσεις πρόθεμα για το κλειδί API, π.χ. "Token" (εξ ορισμού null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String editKey = "editKey_example"; // String | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteVote(tenantId, id)
+      VoteDeleteResponse result = apiInstance.deleteVote(tenantId, id)
             .editKey(editKey)
             .execute();
       System.out.println(result);

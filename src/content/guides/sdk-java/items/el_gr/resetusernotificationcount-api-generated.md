@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | sso | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## Παράδειγμα
 
@@ -29,7 +29,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotificationCount(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

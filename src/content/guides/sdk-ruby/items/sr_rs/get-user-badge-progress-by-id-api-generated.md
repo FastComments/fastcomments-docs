@@ -1,13 +1,14 @@
+---
 ## Параметри
 
-| Назив | Тип | Локација | Потребно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Враћа: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Пример
 
@@ -17,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите авторизацију помоћу API кључа: api_key
+  # Конфигуришите ауторизацију API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

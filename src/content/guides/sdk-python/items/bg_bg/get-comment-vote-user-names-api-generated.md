@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -9,25 +9,25 @@
 
 ## Отговор
 
-Връща: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names200_response.py)
+Връща: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names_success_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за get_comment_vote_user_names'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_vote_user_names200_response import GetCommentVoteUserNames200Response
+from client.models.get_comment_vote_user_names_success_response import GetCommentVoteUserNamesSuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
+# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Влезте в контекст с инстанция на API client
 with client.ApiClient(configuration) as api_client:
     # Създайте инстанция на API класа
     api_instance = client.PublicApi(api_client)

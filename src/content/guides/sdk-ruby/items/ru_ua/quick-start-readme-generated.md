@@ -1,9 +1,9 @@
 ### Использование аутентифицированных API (DefaultApi)
 
-**Важно:** Вы должны установить ваш API-ключ в ApiClient перед выполнением аутентифицированных запросов. Если не сделать этого, запросы вернут ошибку 401.
+**Важно:** Вы должны установить ваш API-ключ в ApiClient перед выполнением аутентифицированных запросов. Если вы этого не сделаете, запросы завершатся с ошибкой 401.
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 # Создайте и настройте API-клиент
 config = FastCommentsClient::Configuration.new
@@ -37,10 +37,10 @@ end
 
 ### Использование публичных API (PublicApi)
 
-Публичные эндпоинты не требуют аутентификации:
+Публичные конечные точки не требуют аутентификации:
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -55,8 +55,28 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Частые проблемы
+### Использование API модерации (ModerationApi)
+
+Методы модерации обеспечивают работу панели модератора. Передайте токен `sso`, чтобы запрос выполнялся от имени модератора, аутентифицированного через SSO:
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # Пример: Список комментариев в очереди модерации
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
+### Распространённые проблемы
 
 1. **401 "missing-api-key" error**: Убедитесь, что вы установили `config.api_key['x-api-key'] = 'YOUR_KEY'` перед созданием экземпляра DefaultApi.
-2. **Wrong API class**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов.
+2. **Wrong API class**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов и `ModerationApi` для запросов панели модератора.
 3. **Null API key**: SDK тихо пропустит аутентификацию, если API-ключ равен null, что приведёт к ошибкам 401.

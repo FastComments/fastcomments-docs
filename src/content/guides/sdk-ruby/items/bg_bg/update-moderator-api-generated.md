@@ -2,12 +2,12 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Пример
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройване на авторизация
+# настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # конфигуриране на авторизация чрез API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Премахнете коментарa от следния ред за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

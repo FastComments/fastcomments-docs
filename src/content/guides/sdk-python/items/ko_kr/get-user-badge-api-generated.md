@@ -2,32 +2,32 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 쿼리 | 예 |  |
-| id | string | 경로 | 예 |  |
+| tenantId | string | query | 예 |  |
+| id | string | path | 예 |  |
 
 ## 응답
 
-반환: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Returns: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_user_badge 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 클라이언트는 인증 및 권한 부여 매개변수를
-# API 서버 보안 정책에 따라 구성해야 합니다.
-# 각 인증 방법에 대한 예제가 아래에 제공됩니다. 아래 예제 중
-# 귀하의 인증 사용 사례에 맞는 것을 사용하세요.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]

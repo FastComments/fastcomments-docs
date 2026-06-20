@@ -1,0 +1,37 @@
+## Параметры
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| batchJobId | string | query | Нет |  |
+| sso | string | query | Нет |  |
+
+## Ответ
+
+Возвращает: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\ModerationApi(
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это необязательно, в качестве значения по умолчанию будет использован `GuzzleHttp\Client`.
+    new GuzzleHttp\Client()
+);
+$batch_job_id = 'batch_job_id_example'; // строка
+$sso = 'sso_example'; // строка
+
+try {
+    $result = $apiInstance->getApiExportStatus($batch_job_id, $sso);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ModerationApi->getApiExportStatus: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]
+
+---

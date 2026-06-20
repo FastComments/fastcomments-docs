@@ -9,25 +9,25 @@
 
 ## Yanıt
 
-Returns: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names200_response.py)
+Döndürür: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names_success_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_comment_vote_user_names Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_vote_user_names200_response import GetCommentVoteUserNames200Response
+from client.models.get_comment_vote_user_names_success_response import GetCommentVoteUserNamesSuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir bağlam açın
+# API istemcisi örneği ile bir bağlam açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)

@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Типичные проблемы",
+      "name": "Распространённые проблемы",
       "file": "common-issues-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -33,895 +33,1249 @@
       "type": "readme"
     },
     {
-      "name": "Агрегировать",
+      "name": "Агрегация",
       "file": "aggregate-api-generated.md",
       "subCat": "Агрегация",
       "type": "api"
     },
     {
-      "name": "Получить журналы аудита",
+      "name": "получить_API_комментарии",
+      "file": "get-api-comments-api-generated.md",
+      "subCat": "API",
+      "type": "api"
+    },
+    {
+      "name": "получить_API_статус_экспорта",
+      "file": "get-api-export-status-api-generated.md",
+      "subCat": "API",
+      "type": "api"
+    },
+    {
+      "name": "получить_API_IDs",
+      "file": "get-api-ids-api-generated.md",
+      "subCat": "API",
+      "type": "api"
+    },
+    {
+      "name": "создать_API_экспорт",
+      "file": "post-api-export-api-generated.md",
+      "subCat": "API",
+      "type": "api"
+    },
+    {
+      "name": "получить_журналы_аудита",
       "file": "get-audit-logs-api-generated.md",
       "subCat": "Журналы аудита",
       "type": "api"
     },
     {
-      "name": "Заблокировать по комментарию",
+      "name": "заблокировать_из_комментария_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Блокировка по комментарию",
+      "subCat": "Блокировка из комментария",
       "type": "api"
     },
     {
-      "name": "Разблокировать комментарий",
+      "name": "разблокировать_комментарий_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Блокировка по комментарию",
+      "subCat": "Блокировка из комментария",
       "type": "api"
     },
     {
-      "name": "Проверить заблокированные комментарии",
+      "name": "проверить_комментарии_на_блокировку",
       "file": "checked-comments-for-blocked-api-generated.md",
       "subCat": "Проверка заблокированных комментариев",
       "type": "api"
     },
     {
-      "name": "Заблокировать пользователя в комментарии",
+      "name": "заблокировать_пользователя_по_комментарию",
       "file": "block-user-from-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Создать публичный комментарий",
+      "name": "создать_комментарий_public",
       "file": "create-comment-public-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Удалить комментарий",
+      "name": "удалить_комментарий",
       "file": "delete-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Удалить публичный комментарий",
+      "name": "удалить_комментарий_public",
       "file": "delete-comment-public-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Удалить голос за комментарий",
+      "name": "удалить_голос_за_комментарий",
       "file": "delete-comment-vote-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Пожаловаться на комментарий",
+      "name": "пометить_комментарий",
       "file": "flag-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Получить комментарий",
+      "name": "получить_комментарий",
       "file": "get-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Получить текст комментария",
+      "name": "получить_текст_комментария",
       "file": "get-comment-text-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Получить имена пользователей, голосовавших за комментарий",
+      "name": "получить_имена_пользователей_голосовавших_за_комментарий",
       "file": "get-comment-vote-user-names-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Получить комментарии",
+      "name": "получить_комментарии",
       "file": "get-comments-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Получить публичные комментарии",
+      "name": "получить_комментарии_public",
       "file": "get-comments-public-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Заблокировать комментарий",
+      "name": "заблокировать_комментарий",
       "file": "lock-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Прикрепить комментарий",
+      "name": "прикрепить_комментарий",
       "file": "pin-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Сохранить комментарий",
+      "name": "сохранить_комментарий",
       "file": "save-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Массовое сохранение комментариев",
+      "name": "сохранить_комментарии_пакетом",
       "file": "save-comments-bulk-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Установить текст комментария",
+      "name": "установить_текст_комментария",
       "file": "set-comment-text-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Разблокировать пользователя в комментарии",
+      "name": "разблокировать_пользователя_по_комментарию",
       "file": "un-block-user-from-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Снять жалобу с комментария",
+      "name": "снять_пометку_с_комментария",
       "file": "un-flag-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Разблокировать комментарий",
+      "name": "разблокировать_комментарий",
       "file": "un-lock-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Открепить комментарий",
+      "name": "открепить_комментарий",
       "file": "un-pin-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Обновить комментарий",
+      "name": "обновить_комментарий",
       "file": "update-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Проголосовать за комментарий",
+      "name": "проголосовать_за_комментарий",
       "file": "vote-comment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
     },
     {
-      "name": "Добавить конфигурацию домена",
+      "name": "получить_комментарии_пользователя",
+      "file": "get-comments-for-user-api-generated.md",
+      "subCat": "Комментарии пользователя",
+      "type": "api"
+    },
+    {
+      "name": "добавить_конфигурацию_домена",
       "file": "add-domain-config-api-generated.md",
-      "subCat": "Конфигурации домена",
+      "subCat": "Конфигурации доменов",
       "type": "api"
     },
     {
-      "name": "Удалить конфигурацию домена",
+      "name": "удалить_конфигурацию_домена",
       "file": "delete-domain-config-api-generated.md",
-      "subCat": "Конфигурации домена",
+      "subCat": "Конфигурации доменов",
       "type": "api"
     },
     {
-      "name": "Получить конфигурацию домена",
+      "name": "получить_конфигурацию_домена",
       "file": "get-domain-config-api-generated.md",
-      "subCat": "Конфигурации домена",
+      "subCat": "Конфигурации доменов",
       "type": "api"
     },
     {
-      "name": "Получить конфигурации доменов",
+      "name": "получить_конфигурации_доменов",
       "file": "get-domain-configs-api-generated.md",
-      "subCat": "Конфигурации домена",
+      "subCat": "Конфигурации доменов",
       "type": "api"
     },
     {
-      "name": "Частично обновить конфигурацию домена",
+      "name": "частично_обновить_конфигурацию_домена",
       "file": "patch-domain-config-api-generated.md",
-      "subCat": "Конфигурации домена",
+      "subCat": "Конфигурации доменов",
       "type": "api"
     },
     {
-      "name": "Заменить конфигурацию домена",
+      "name": "заменить_конфигурацию_домена",
       "file": "put-domain-config-api-generated.md",
-      "subCat": "Конфигурации домена",
+      "subCat": "Конфигурации доменов",
       "type": "api"
     },
     {
-      "name": "Создать шаблон письма",
+      "name": "создать_шаблон_письма",
       "file": "create-email-template-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Удалить шаблон письма",
+      "name": "удалить_шаблон_письма",
       "file": "delete-email-template-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Удалить ошибку рендеринга шаблона письма",
+      "name": "удалить_ошибку_рендеринга_шаблона_письма",
       "file": "delete-email-template-render-error-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Получить шаблон письма",
+      "name": "получить_шаблон_письма",
       "file": "get-email-template-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Получить определения шаблонов писем",
+      "name": "получить_определения_шаблонов_письма",
       "file": "get-email-template-definitions-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Получить ошибки рендеринга шаблонов писем",
+      "name": "получить_ошибки_рендеринга_шаблонов_письма",
       "file": "get-email-template-render-errors-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Получить шаблоны писем",
+      "name": "получить_шаблоны_письма",
       "file": "get-email-templates-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Отрендерить шаблон письма",
+      "name": "отрендерить_шаблон_письма",
       "file": "render-email-template-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Обновить шаблон письма",
+      "name": "обновить_шаблон_письма",
       "file": "update-email-template-api-generated.md",
       "subCat": "Шаблоны писем",
       "type": "api"
     },
     {
-      "name": "Получить журнал событий",
+      "name": "получить_журнал_событий",
       "file": "get-event-log-api-generated.md",
       "subCat": "Журнал событий",
       "type": "api"
     },
     {
-      "name": "Получить глобальный журнал событий",
+      "name": "получить_глобальный_журнал_событий",
       "file": "get-global-event-log-api-generated.md",
       "subCat": "Журнал событий",
       "type": "api"
     },
     {
-      "name": "Создать публикацию ленты",
+      "name": "создать_пост_ленты",
       "file": "create-feed-post-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Создать публичную публикацию ленты",
+      "name": "создать_пост_ленты_public",
       "file": "create-feed-post-public-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Удалить публичную публикацию ленты",
+      "name": "удалить_пост_ленты_public",
       "file": "delete-feed-post-public-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Получить публикации ленты",
+      "name": "получить_посты_ленты",
       "file": "get-feed-posts-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Получить публичные публикации ленты",
+      "name": "получить_посты_ленты_public",
       "file": "get-feed-posts-public-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Получить статистику публикаций ленты",
+      "name": "получить_статистику_постов_ленты",
       "file": "get-feed-posts-stats-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Получить публичные реакции пользователя",
+      "name": "получить_реакции_пользователя_public",
       "file": "get-user-reacts-public-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Поставить реакцию на публичную публикацию ленты",
+      "name": "поставить_реакцию_поста_public",
       "file": "react-feed-post-public-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Обновить публикацию ленты",
+      "name": "обновить_пост_ленты",
       "file": "update-feed-post-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Обновить публичную публикацию ленты",
+      "name": "обновить_пост_ленты_public",
       "file": "update-feed-post-public-api-generated.md",
-      "subCat": "Публикации ленты",
+      "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Пожаловаться на комментарий (публично)",
+      "name": "пометить_комментарий_public",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Жалоба на комментарий",
+      "subCat": "Пометка комментария",
       "type": "api"
     },
     {
-      "name": "Добавить хештег",
+      "name": "получить_gif_в_большом_размере",
+      "file": "get-gif-large-api-generated.md",
+      "subCat": "GIFы",
+      "type": "api"
+    },
+    {
+      "name": "поиск_gif",
+      "file": "get-gifs-search-api-generated.md",
+      "subCat": "GIFы",
+      "type": "api"
+    },
+    {
+      "name": "трендовые_gif",
+      "file": "get-gifs-trending-api-generated.md",
+      "subCat": "GIFы",
+      "type": "api"
+    },
+    {
+      "name": "добавить_хэштег",
       "file": "add-hash-tag-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
-      "name": "Массово добавить хештеги",
+      "name": "добавить_хэштеги_пакетом",
       "file": "add-hash-tags-bulk-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
-      "name": "Удалить хештег",
+      "name": "удалить_хэштег",
       "file": "delete-hash-tag-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
-      "name": "Получить хештеги",
+      "name": "получить_хэштеги",
       "file": "get-hash-tags-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
-      "name": "Частично обновить хештег",
+      "name": "частично_обновить_хэштег",
       "file": "patch-hash-tag-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
-      "name": "Создать модератора",
+      "name": "удалить_голос_модерации",
+      "file": "delete-moderation-vote-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_забаненных_пользователей_по_комментарию",
+      "file": "get-ban-users-from-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_статус_бана_комментария",
+      "file": "get-comment-ban-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_дочерние_комментарии",
+      "file": "get-comment-children-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_количество",
+      "file": "get-count-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_счётчики",
+      "file": "get-counts-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_логи",
+      "file": "get-logs-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_ручные_значки",
+      "file": "get-manual-badges-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_ручные_значки_для_пользователя",
+      "file": "get-manual-badges-for-user-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_комментарий_для_модерации",
+      "file": "get-moderation-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_текст_комментария_для_модерации",
+      "file": "get-moderation-comment-text-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_предварительное_резюме_по_бану",
+      "file": "get-pre-ban-summary-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_обзор_поиск_комментариев",
+      "file": "get-search-comments-summary-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_страницы_по_поиску",
+      "file": "get-search-pages-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_сайты_по_поиску",
+      "file": "get-search-sites-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_подсказки_по_поиску",
+      "file": "get-search-suggest-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "поиск_пользователей",
+      "file": "get-search-users-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_коэффициент_доверия",
+      "file": "get-trust-factor-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_предпочтение_бана_пользователя",
+      "file": "get-user-ban-preference-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_внутренний_профиль_пользователя",
+      "file": "get-user-internal-profile-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "скорректировать_голоса_за_комментарии",
+      "file": "post-adjust-comment-votes-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "забанить_пользователя_по_комментарию",
+      "file": "post-ban-user-from-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "отменить_бан_пользователя",
+      "file": "post-ban-user-undo-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "массовое_предварительное_резюме_по_бану",
+      "file": "post-bulk-pre-ban-summary-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "получить_комментарии_по_IDs",
+      "file": "post-comments-by-ids-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "поставить_флаг_комментарию",
+      "file": "post-flag-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "удалить_комментарий_модерацией",
+      "file": "post-remove-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "восстановить_удалённый_комментарий",
+      "file": "post-restore-deleted-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "установить_статус_одобрения_комментария",
+      "file": "post-set-comment-approval-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "установить_статус_проверки_комментария",
+      "file": "post-set-comment-review-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "установить_статус_спама_комментария",
+      "file": "post-set-comment-spam-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "установить_текст_комментария_модерации",
+      "file": "post-set-comment-text-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "снять_флаг_с_комментария",
+      "file": "post-un-flag-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "проголосовать_модерацией",
+      "file": "post-vote-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "выдать_значок",
+      "file": "put-award-badge-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "закрыть_тему",
+      "file": "put-close-thread-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "удалить_значок",
+      "file": "put-remove-badge-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "переоткрыть_тему",
+      "file": "put-reopen-thread-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "установить_коэффициент_доверия",
+      "file": "set-trust-factor-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "создать_модератора",
       "file": "create-moderator-api-generated.md",
       "subCat": "Модераторы",
       "type": "api"
     },
     {
-      "name": "Удалить модератора",
+      "name": "удалить_модератора",
       "file": "delete-moderator-api-generated.md",
       "subCat": "Модераторы",
       "type": "api"
     },
     {
-      "name": "Получить модератора",
+      "name": "получить_модератора",
       "file": "get-moderator-api-generated.md",
       "subCat": "Модераторы",
       "type": "api"
     },
     {
-      "name": "Получить модераторов",
+      "name": "получить_модераторов",
       "file": "get-moderators-api-generated.md",
       "subCat": "Модераторы",
       "type": "api"
     },
     {
-      "name": "Отправить приглашение",
+      "name": "отправить_приглашение",
       "file": "send-invite-api-generated.md",
       "subCat": "Модераторы",
       "type": "api"
     },
     {
-      "name": "Обновить модератора",
+      "name": "обновить_модератора",
       "file": "update-moderator-api-generated.md",
       "subCat": "Модераторы",
       "type": "api"
     },
     {
-      "name": "Удалить счетчик уведомлений",
+      "name": "удалить_счётчик_уведомлений",
       "file": "delete-notification-count-api-generated.md",
-      "subCat": "Счетчик уведомлений",
+      "subCat": "Количество уведомлений",
       "type": "api"
     },
     {
-      "name": "Получить кэшированный счетчик уведомлений",
+      "name": "получить_кэшированный_счётчик_уведомлений",
       "file": "get-cached-notification-count-api-generated.md",
-      "subCat": "Счетчик уведомлений",
+      "subCat": "Количество уведомлений",
       "type": "api"
     },
     {
-      "name": "Получить количество уведомлений",
+      "name": "получить_счётчик_уведомлений",
       "file": "get-notification-count-api-generated.md",
       "subCat": "Уведомления",
       "type": "api"
     },
     {
-      "name": "Получить уведомления",
+      "name": "получить_уведомления",
       "file": "get-notifications-api-generated.md",
       "subCat": "Уведомления",
       "type": "api"
     },
     {
-      "name": "Обновить уведомление",
+      "name": "обновить_уведомление",
       "file": "update-notification-api-generated.md",
       "subCat": "Уведомления",
       "type": "api"
     },
     {
-      "name": "Добавить страницу",
+      "name": "создать_v1_реакцию_страницы",
+      "file": "create-v1-page-react-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "создать_v2_реакцию_страницы",
+      "file": "create-v2-page-react-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "удалить_v1_реакцию_страницы",
+      "file": "delete-v1-page-react-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "удалить_v2_реакцию_страницы",
+      "file": "delete-v2-page-react-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "получить_v1_лайки_страницы",
+      "file": "get-v1-page-likes-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "получить_v2_пользователей_реакций_страницы",
+      "file": "get-v2-page-react-users-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "получить_v2_реакции_страницы",
+      "file": "get-v2-page-reacts-api-generated.md",
+      "subCat": "Реакции на странице",
+      "type": "api"
+    },
+    {
+      "name": "добавить_страницу",
       "file": "add-page-api-generated.md",
       "subCat": "Страницы",
       "type": "api"
     },
     {
-      "name": "Удалить страницу",
+      "name": "удалить_страницу",
       "file": "delete-page-api-generated.md",
       "subCat": "Страницы",
       "type": "api"
     },
     {
-      "name": "Получить страницу по URL ID",
+      "name": "получить_оффлайн_пользователей",
+      "file": "get-offline-users-api-generated.md",
+      "subCat": "Страницы",
+      "type": "api"
+    },
+    {
+      "name": "получить_онлайн_пользователей",
+      "file": "get-online-users-api-generated.md",
+      "subCat": "Страницы",
+      "type": "api"
+    },
+    {
+      "name": "получить_страницу_по_urlid",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "Страницы",
       "type": "api"
     },
     {
-      "name": "Получить страницы",
+      "name": "получить_страницы",
       "file": "get-pages-api-generated.md",
       "subCat": "Страницы",
       "type": "api"
     },
     {
-      "name": "Частично обновить страницу",
+      "name": "получить_страницы_public",
+      "file": "get-pages-public-api-generated.md",
+      "subCat": "Страницы",
+      "type": "api"
+    },
+    {
+      "name": "получить_информацию_о_пользователях",
+      "file": "get-users-info-api-generated.md",
+      "subCat": "Страницы",
+      "type": "api"
+    },
+    {
+      "name": "частично_обновить_страницу",
       "file": "patch-page-api-generated.md",
       "subCat": "Страницы",
       "type": "api"
     },
     {
-      "name": "Удалить ожидающее событие вебхука",
+      "name": "удалить_ожидающее_событие_webhook",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "Ожидающие события вебхуков",
+      "subCat": "Ожидающие события вебхука",
       "type": "api"
     },
     {
-      "name": "Получить количество ожидающих событий вебхуков",
+      "name": "получить_количество_ожидающих_событий_webhook",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "Ожидающие события вебхуков",
+      "subCat": "Ожидающие события вебхука",
       "type": "api"
     },
     {
-      "name": "Получить ожидающие события вебхуков",
+      "name": "получить_ожидающие_события_webhook",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "Ожидающие события вебхуков",
+      "subCat": "Ожидающие события вебхука",
       "type": "api"
     },
     {
-      "name": "Создать конфигурацию вопроса",
+      "name": "создать_конфигурацию_вопроса",
       "file": "create-question-config-api-generated.md",
-      "subCat": "Конфигурации вопросов",
+      "subCat": "Настройки вопросов",
       "type": "api"
     },
     {
-      "name": "Удалить конфигурацию вопроса",
+      "name": "удалить_конфигурацию_вопроса",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "Конфигурации вопросов",
+      "subCat": "Настройки вопросов",
       "type": "api"
     },
     {
-      "name": "Получить конфигурацию вопроса",
+      "name": "получить_конфигурацию_вопроса",
       "file": "get-question-config-api-generated.md",
-      "subCat": "Конфигурации вопросов",
+      "subCat": "Настройки вопросов",
       "type": "api"
     },
     {
-      "name": "Получить конфигурации вопросов",
+      "name": "получить_конфигурации_вопросов",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "Конфигурации вопросов",
+      "subCat": "Настройки вопросов",
       "type": "api"
     },
     {
-      "name": "Обновить конфигурацию вопроса",
+      "name": "обновить_конфигурацию_вопроса",
       "file": "update-question-config-api-generated.md",
-      "subCat": "Конфигурации вопросов",
+      "subCat": "Настройки вопросов",
       "type": "api"
     },
     {
-      "name": "Создать результат вопроса",
+      "name": "создать_результат_вопроса",
       "file": "create-question-result-api-generated.md",
       "subCat": "Результаты вопросов",
       "type": "api"
     },
     {
-      "name": "Удалить результат вопроса",
+      "name": "удалить_результат_вопроса",
       "file": "delete-question-result-api-generated.md",
       "subCat": "Результаты вопросов",
       "type": "api"
     },
     {
-      "name": "Получить результат вопроса",
+      "name": "получить_результат_вопроса",
       "file": "get-question-result-api-generated.md",
       "subCat": "Результаты вопросов",
       "type": "api"
     },
     {
-      "name": "Получить результаты вопросов",
+      "name": "получить_результаты_вопросов",
       "file": "get-question-results-api-generated.md",
       "subCat": "Результаты вопросов",
       "type": "api"
     },
     {
-      "name": "Обновить результат вопроса",
+      "name": "обновить_результат_вопроса",
       "file": "update-question-result-api-generated.md",
       "subCat": "Результаты вопросов",
       "type": "api"
     },
     {
-      "name": "Агрегировать результаты вопросов",
+      "name": "агрегировать_результаты_вопросов",
       "file": "aggregate-question-results-api-generated.md",
       "subCat": "Агрегация результатов вопросов",
       "type": "api"
     },
     {
-      "name": "Массовая агрегация результатов вопросов",
+      "name": "массовая_агрегация_результатов_вопросов",
       "file": "bulk-aggregate-question-results-api-generated.md",
       "subCat": "Агрегация результатов вопросов",
       "type": "api"
     },
     {
-      "name": "Объединить комментарии с результатами вопросов",
+      "name": "объединить_комментарии_с_результатами_вопросов",
       "file": "combine-comments-with-question-results-api-generated.md",
       "subCat": "Агрегация результатов вопросов",
       "type": "api"
     },
     {
-      "name": "Добавить SSO-пользователя",
+      "name": "добавить_SSO_пользователя",
       "file": "add-sso-user-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Удалить SSO-пользователя",
+      "name": "удалить_SSO_пользователя",
       "file": "delete-sso-user-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Получить SSO-пользователя по email",
+      "name": "получить_SSO_пользователя_по_email",
       "file": "get-sso-user-by-email-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Получить SSO-пользователя по ID",
+      "name": "получить_SSO_пользователя_по_id",
       "file": "get-sso-user-by-id-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Получить SSO-пользователей",
+      "name": "получить_SSO_пользователей",
       "file": "get-sso-users-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Частично обновить SSO-пользователя",
+      "name": "частично_обновить_SSO_пользователя",
       "file": "patch-sso-user-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Заменить SSO-пользователя",
+      "name": "заменить_SSO_пользователя",
       "file": "put-sso-user-api-generated.md",
-      "subCat": "SSO-пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
-      "name": "Создать подписку",
+      "name": "создать_подписку",
       "file": "create-subscription-api-generated.md",
       "subCat": "Подписки",
       "type": "api"
     },
     {
-      "name": "Удалить подписку",
+      "name": "удалить_подписку",
       "file": "delete-subscription-api-generated.md",
       "subCat": "Подписки",
       "type": "api"
     },
     {
-      "name": "Получить подписки",
+      "name": "получить_подписки",
       "file": "get-subscriptions-api-generated.md",
       "subCat": "Подписки",
       "type": "api"
     },
     {
-      "name": "Обновить подписку",
+      "name": "обновить_подписку",
       "file": "update-subscription-api-generated.md",
       "subCat": "Подписки",
       "type": "api"
     },
     {
-      "name": "Получить ежедневное использование тенанта",
+      "name": "получить_ежедневное_использование_арендатора",
       "file": "get-tenant-daily-usages-api-generated.md",
-      "subCat": "Ежедневное использование тенанта",
+      "subCat": "Ежедневное использование арендатора",
       "type": "api"
     },
     {
-      "name": "Создать пакет тенанта",
+      "name": "создать_пакет_арендатора",
       "file": "create-tenant-package-api-generated.md",
-      "subCat": "Пакеты тенанта",
+      "subCat": "Пакеты арендатора",
       "type": "api"
     },
     {
-      "name": "Удалить пакет тенанта",
+      "name": "удалить_пакет_арендатора",
       "file": "delete-tenant-package-api-generated.md",
-      "subCat": "Пакеты тенанта",
+      "subCat": "Пакеты арендатора",
       "type": "api"
     },
     {
-      "name": "Получить пакет тенанта",
+      "name": "получить_пакет_арендатора",
       "file": "get-tenant-package-api-generated.md",
-      "subCat": "Пакеты тенанта",
+      "subCat": "Пакеты арендатора",
       "type": "api"
     },
     {
-      "name": "Получить пакеты тенанта",
+      "name": "получить_пакеты_арендатора",
       "file": "get-tenant-packages-api-generated.md",
-      "subCat": "Пакеты тенанта",
+      "subCat": "Пакеты арендатора",
       "type": "api"
     },
     {
-      "name": "Заменить пакет тенанта",
+      "name": "заменить_пакет_арендатора",
       "file": "replace-tenant-package-api-generated.md",
-      "subCat": "Пакеты тенанта",
+      "subCat": "Пакеты арендатора",
       "type": "api"
     },
     {
-      "name": "Обновить пакет тенанта",
+      "name": "обновить_пакет_арендатора",
       "file": "update-tenant-package-api-generated.md",
-      "subCat": "Пакеты тенанта",
+      "subCat": "Пакеты арендатора",
       "type": "api"
     },
     {
-      "name": "Создать пользователя тенанта",
+      "name": "создать_пользователя_арендатора",
       "file": "create-tenant-user-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Удалить пользователя тенанта",
+      "name": "удалить_пользователя_арендатора",
       "file": "delete-tenant-user-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Получить пользователя тенанта",
+      "name": "получить_пользователя_арендатора",
       "file": "get-tenant-user-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Получить пользователей тенанта",
+      "name": "получить_пользователей_арендатора",
       "file": "get-tenant-users-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Заменить пользователя тенанта",
+      "name": "заменить_пользователя_арендатора",
       "file": "replace-tenant-user-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Отправить ссылку для входа",
+      "name": "отправить_ссылку_для_входа",
       "file": "send-login-link-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Обновить пользователя тенанта",
+      "name": "обновить_пользователя_арендатора",
       "file": "update-tenant-user-api-generated.md",
-      "subCat": "Пользователи тенанта",
+      "subCat": "Пользователи арендатора",
       "type": "api"
     },
     {
-      "name": "Создать тенанта",
+      "name": "создать_арендатора",
       "file": "create-tenant-api-generated.md",
-      "subCat": "Тенанты",
+      "subCat": "Арендаторы",
       "type": "api"
     },
     {
-      "name": "Удалить тенанта",
+      "name": "удалить_арендатора",
       "file": "delete-tenant-api-generated.md",
-      "subCat": "Тенанты",
+      "subCat": "Арендаторы",
       "type": "api"
     },
     {
-      "name": "Получить тенанта",
+      "name": "получить_арендатора",
       "file": "get-tenant-api-generated.md",
-      "subCat": "Тенанты",
+      "subCat": "Арендаторы",
       "type": "api"
     },
     {
-      "name": "Получить тенанты",
+      "name": "получить_арендаторов",
       "file": "get-tenants-api-generated.md",
-      "subCat": "Тенанты",
+      "subCat": "Арендаторы",
       "type": "api"
     },
     {
-      "name": "Обновить тенанта",
+      "name": "обновить_арендатора",
       "file": "update-tenant-api-generated.md",
-      "subCat": "Тенанты",
+      "subCat": "Арендаторы",
       "type": "api"
     },
     {
-      "name": "Изменить состояние тикета",
+      "name": "изменить_состояние_тикета",
       "file": "change-ticket-state-api-generated.md",
       "subCat": "Тикеты",
       "type": "api"
     },
     {
-      "name": "Создать тикет",
+      "name": "создать_тикет",
       "file": "create-ticket-api-generated.md",
       "subCat": "Тикеты",
       "type": "api"
     },
     {
-      "name": "Получить тикет",
+      "name": "получить_тикет",
       "file": "get-ticket-api-generated.md",
       "subCat": "Тикеты",
       "type": "api"
     },
     {
-      "name": "Получить тикеты",
+      "name": "получить_тикеты",
       "file": "get-tickets-api-generated.md",
       "subCat": "Тикеты",
       "type": "api"
     },
     {
-      "name": "Загрузить изображение",
+      "name": "получить_переводы",
+      "file": "get-translations-api-generated.md",
+      "subCat": "Переводы",
+      "type": "api"
+    },
+    {
+      "name": "загрузить_изображение",
       "file": "upload-image-api-generated.md",
       "subCat": "Загрузка изображения",
       "type": "api"
     },
     {
-      "name": "Получить прогресс значка пользователя по ID",
+      "name": "получить_прогресс_значка_пользователя_по_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Прогресс значка пользователя",
+      "subCat": "Прогресс значков пользователя",
       "type": "api"
     },
     {
-      "name": "Получить прогресс значка пользователя по ID пользователя",
+      "name": "получить_прогресс_значка_пользователя_по_user_id",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Прогресс значка пользователя",
+      "subCat": "Прогресс значков пользователя",
       "type": "api"
     },
     {
-      "name": "Получить список прогресса значков пользователя",
+      "name": "получить_список_прогресса_значков_пользователя",
       "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Прогресс значка пользователя",
+      "subCat": "Прогресс значков пользователя",
       "type": "api"
     },
     {
-      "name": "Создать значок пользователя",
+      "name": "создать_значок_пользователя",
       "file": "create-user-badge-api-generated.md",
       "subCat": "Значки пользователя",
       "type": "api"
     },
     {
-      "name": "Удалить значок пользователя",
+      "name": "удалить_значок_пользователя",
       "file": "delete-user-badge-api-generated.md",
       "subCat": "Значки пользователя",
       "type": "api"
     },
     {
-      "name": "Получить значок пользователя",
+      "name": "получить_значок_пользователя",
       "file": "get-user-badge-api-generated.md",
       "subCat": "Значки пользователя",
       "type": "api"
     },
     {
-      "name": "Получить значки пользователя",
+      "name": "получить_значки_пользователя",
       "file": "get-user-badges-api-generated.md",
       "subCat": "Значки пользователя",
       "type": "api"
     },
     {
-      "name": "Обновить значок пользователя",
+      "name": "обновить_значок_пользователя",
       "file": "update-user-badge-api-generated.md",
       "subCat": "Значки пользователя",
       "type": "api"
     },
     {
-      "name": "Получить количество уведомлений пользователя",
+      "name": "получить_счётчик_уведомлений_пользователя",
       "file": "get-user-notification-count-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Получить уведомления пользователя",
+      "name": "получить_уведомления_пользователя",
       "file": "get-user-notifications-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Сбросить счетчик уведомлений пользователя",
+      "name": "сбросить_счётчик_уведомлений_пользователя",
       "file": "reset-user-notification-count-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Сбросить уведомления пользователя",
+      "name": "сбросить_уведомления_пользователя",
       "file": "reset-user-notifications-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Обновить статус подписки пользователя на комментарии",
+      "name": "обновить_статус_подписки_пользователя_на_комментарии",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Обновить статус подписки пользователя на страницу",
+      "name": "обновить_статус_подписки_пользователя_на_страницу",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Обновить статус уведомления пользователя",
+      "name": "обновить_статус_уведомления_пользователя",
       "file": "update-user-notification-status-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
     },
     {
-      "name": "Получить статусы присутствия пользователей",
+      "name": "получить_статусы_присутствия_пользователя",
       "file": "get-user-presence-statuses-api-generated.md",
       "subCat": "Статусы присутствия пользователя",
       "type": "api"
     },
     {
-      "name": "Поиск пользователей",
+      "name": "поиск_пользователей",
       "file": "search-users-api-generated.md",
       "subCat": "Поиск пользователей",
       "type": "api"
     },
     {
-      "name": "Получить пользователя",
+      "name": "получить_пользователя",
       "file": "get-user-api-generated.md",
       "subCat": "Пользователи",
       "type": "api"
     },
     {
-      "name": "Создать голос",
+      "name": "создать_голосование",
       "file": "create-vote-api-generated.md",
       "subCat": "Голоса",
       "type": "api"
     },
     {
-      "name": "Удалить голос",
+      "name": "удалить_голосование",
       "file": "delete-vote-api-generated.md",
       "subCat": "Голоса",
       "type": "api"
     },
     {
-      "name": "Получить голоса",
+      "name": "получить_голоса",
       "file": "get-votes-api-generated.md",
       "subCat": "Голоса",
       "type": "api"
     },
     {
-      "name": "Получить голоса пользователя",
+      "name": "получить_голоса_для_пользователя",
       "file": "get-votes-for-user-api-generated.md",
       "subCat": "Голоса",
       "type": "api"

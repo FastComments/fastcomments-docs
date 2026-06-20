@@ -1,18 +1,18 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | postIds | array | query | Tak |  |
 | sso | string | query | Nie |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+Zwraca: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_feed_posts_stats'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_feed_posts_stats Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_stats: #{e}"
 end
 [inline-code-end]
-
----

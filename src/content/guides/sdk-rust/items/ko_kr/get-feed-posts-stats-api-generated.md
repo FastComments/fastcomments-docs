@@ -1,29 +1,30 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| post_ids | Vec<String> | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | 예 |  |
+| post_ids | Vec<String> | 예 |  |
+| sso | String | 아니요 |  |
 
 ## 응답
 
-반환: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_stats_200_response.rs)
+반환: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/feed_posts_stats_response.rs)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_feed_posts_stats 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_feed_stats() -> Result<(), Error> {
+async fn example_main(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: vec![
-            "news/article/2026/03/25/product-launch".to_string(),
-            "blog/product-updates/q1-2026".to_string(),
+            "news/2026-product-launch".to_string(),
+            "blog/engineering-architecture".to_string()
         ],
-        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.examplepayload.signature".to_string()),
+        sso: Some("sso.jwt.token.eyJhbGci...".to_string()),
     };
-    let stats: GetFeedPostsStats200Response = get_feed_posts_stats(&configuration, params).await?;
+    let stats: FeedPostsStatsResponse = get_feed_posts_stats(configuration, params).await?;
+    let _api_status: ApiStatus = /* 필요에 따라 stats를 사용 */ stats.into();
     Ok(())
 }
 [inline-code-end]

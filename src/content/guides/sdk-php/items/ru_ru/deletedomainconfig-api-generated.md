@@ -1,13 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | domain | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteDomainConfig200Response.php)
+Возвращает: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteDomainConfigResponse.php)
 
 ## Пример
 
@@ -17,20 +17,20 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации API-ключом: api_key
+// Настройка авторизации API ключом: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API ключа, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$domain = 'domain_example'; // string
+$tenant_id = 'tenant_id_example'; // строка
+$domain = 'domain_example'; // строка
 
 try {
     $result = $apiInstance->deleteDomainConfig($tenant_id, $domain);

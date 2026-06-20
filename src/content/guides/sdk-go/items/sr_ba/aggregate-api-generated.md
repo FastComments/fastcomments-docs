@@ -1,21 +1,22 @@
-Agregira dokumente grupišući ih (ako je groupBy naveden) i primjenjujući više operacija.
-Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
+---
+Агрегира документе групишући их (ако је groupBy наведен) и примјењујући више операција.
+Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| parentTenantId | string | query | Ne |  |
-| includeStats | boolean | query | Ne |  |
+| tenantId | string | query | Да |  |
+| parentTenantId | string | query | Не |  |
+| includeStats | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer agregacije'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример агрегирања'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,14 +24,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	aggregationRequest := *openapiclient.NewAggregationRequest("ResourceName_example", []openapiclient.AggregationOperation{*openapiclient.NewAggregationOperation("Field_example", openapiclient.AggregationOpType("sum"))}) // AggregationRequest | 
-	parentTenantId := "parentTenantId_example" // string |  (neobavezno)
-	includeStats := true // bool |  (neobavezno)
+	parentTenantId := "parentTenantId_example" // string |  (опционално)
+	includeStats := true // bool |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +40,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `Aggregate`: AggregationResponse
+	// одговор из `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
+
+---

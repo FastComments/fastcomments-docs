@@ -2,12 +2,12 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| locale | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| locale | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RenderEmailTemplate200Response.java)
+Geeft terug: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RenderEmailTemplateResponse.java)
 
 ## Voorbeeld
 
@@ -29,7 +29,7 @@ public class Example {
     // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de volgende regel uit commentaar om een prefix voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     RenderEmailTemplateBody renderEmailTemplateBody = new RenderEmailTemplateBody(); // RenderEmailTemplateBody | 
     String locale = "locale_example"; // String | 
     try {
-      RenderEmailTemplate200Response result = apiInstance.renderEmailTemplate(tenantId, renderEmailTemplateBody)
+      RenderEmailTemplateResponse result = apiInstance.renderEmailTemplate(tenantId, renderEmailTemplateBody)
             .locale(locale)
             .execute();
       System.out.println(result);

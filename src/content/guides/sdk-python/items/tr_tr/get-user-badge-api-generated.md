@@ -1,20 +1,20 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Döndürür: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_user_badge Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge: %s\n" % e)
 [inline-code-end]
+
+---

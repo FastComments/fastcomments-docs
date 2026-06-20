@@ -8,14 +8,14 @@
 
 ## Response
 
-Returns: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 

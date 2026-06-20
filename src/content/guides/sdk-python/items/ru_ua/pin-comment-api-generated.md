@@ -9,18 +9,18 @@
 
 ## Ответ
 
-Возвращает: [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+Возвращает: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример pin_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
+# Определение хоста необязательно, по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"

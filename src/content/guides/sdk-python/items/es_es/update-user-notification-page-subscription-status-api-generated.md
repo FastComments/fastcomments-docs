@@ -2,30 +2,30 @@ Habilita o deshabilita las notificaciones para una página. Cuando los usuarios 
 
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| urlId | string | query | Sí |  |
-| url | string | query | Sí |  |
-| pageTitle | string | query | Sí |  |
-| subscribedOrUnsubscribed | string | path | Sí |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de update_user_notification_page_subscription_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para obtener la lista de todos los parámetros de configuración compatibles.
+# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

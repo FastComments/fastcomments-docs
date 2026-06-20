@@ -1,22 +1,23 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | commentId | string | path | Ναι |  |
 | dir | integer | query | Ναι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names200_response.py)
+Επιστρέφει: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names_success_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_comment_vote_user_names'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_vote_user_names200_response import GetCommentVoteUserNames200Response
+from client.models.get_comment_vote_user_names_success_response import GetCommentVoteUserNamesSuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,7 +28,7 @@ configuration = client.Configuration(
 )
 
 
-# Εισάγετε ένα context με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.PublicApi(api_client)
@@ -43,3 +44,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_comment_vote_user_names: %s\n" % e)
 [inline-code-end]
+
+---

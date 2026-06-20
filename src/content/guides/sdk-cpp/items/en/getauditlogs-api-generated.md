@@ -11,7 +11,7 @@
 
 ## Response
 
-Returns: [`GetAuditLogs_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetAuditLogs_200_response.h)
+Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
 
 ## Example
 
@@ -21,17 +21,16 @@ utility::string_t tenantId = U("my-tenant-123");
 boost::optional<double> limit = 100.0;
 boost::optional<double> skip = 0.0;
 boost::optional<SORT_DIR> order = SORT_DIR::DESC;
-boost::optional<double> after = 1622505600.0;
-boost::optional<double> before = 1625097600.0;
-
+boost::optional<double> after;
+boost::optional<double> before;
 api->getAuditLogs(tenantId, limit, skip, order, after, before)
-.then([](pplx::task<std::shared_ptr<GetAuditLogs_200_response>> t){
+.then([](pplx::task<std::shared_ptr<GetAuditLogsResponse>> t) {
     try {
         auto resp = t.get();
-        auto copy = std::make_shared<GetAuditLogs_200_response>(*resp);
-        std::cout << "Retrieved audit logs response at " << std::time(nullptr) << std::endl;
+        if (!resp) resp = std::make_shared<GetAuditLogsResponse>();
+        std::cout << "Fetched audit logs for tenant\n";
     } catch (const std::exception &e) {
-        std::cerr << "Error fetching audit logs: " << e.what() << std::endl;
+        std::cerr << "getAuditLogs failed: " << e.what() << '\n';
     }
 });
 [inline-code-end]

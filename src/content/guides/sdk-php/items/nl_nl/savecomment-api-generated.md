@@ -8,9 +8,9 @@
 | sendEmails | boolean | query | Nee |  |
 | populateNotifications | boolean | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveComment200Response.php)
+Retourneert: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APISaveCommentResponse.php)
 
 ## Voorbeeld
 
@@ -22,13 +22,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configureer API-sleutelautorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal onderstaande commentaar weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+// Haal onderstaande regel uit commentaar om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client mee die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` zal als standaard worden gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
@@ -46,5 +46,3 @@ try {
     echo 'Exception when calling DefaultApi->saveComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

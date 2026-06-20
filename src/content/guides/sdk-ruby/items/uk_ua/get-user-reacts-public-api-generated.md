@@ -1,6 +1,6 @@
 ## Параметри
 
-| Ім'я | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | postIds | array | query | Ні |  |
@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+Повертає: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## Приклад
 

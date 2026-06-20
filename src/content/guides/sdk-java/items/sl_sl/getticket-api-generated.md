@@ -1,4 +1,4 @@
-## Parametri
+## Parameterji
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
@@ -6,9 +6,9 @@
 | id | string | path | Da |  |
 | userId | string | query | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicket200Response.java)
+Vrača: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketResponse.java)
 
 ## Primer
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurirajte pooblastilo API ključa: api_key
+    // Nastavi overjanje z API ključem: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
+    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      GetTicket200Response result = apiInstance.getTicket(tenantId, id)
+      GetTicketResponse result = apiInstance.getTicket(tenantId, id)
             .userId(userId)
             .execute();
       System.out.println(result);

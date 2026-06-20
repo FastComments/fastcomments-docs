@@ -1,24 +1,24 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Так |  |
+| userId | string | query | Так |  |
+| id | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state200_response.rb)
+Повертає: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'change_ticket_state Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад change_ticket_state'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Налаштуйте авторизацію за API-ключем: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

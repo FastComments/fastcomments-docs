@@ -1,14 +1,14 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | consulta | Sí |  |
-| id | string | ruta | Sí |  |
-| skip | number | consulta | No |  |
+| tenantId | string | query | Sí |  |
+| id | string | path | Sí |  |
+| skip | number | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_render_errors_200_response.go)
+Devuelve: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_render_errors_response.go)
 
 ## Ejemplo
 
@@ -35,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplateRenderErrors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `GetEmailTemplateRenderErrors`: GetEmailTemplateRenderErrors200Response
+	// respuesta de `GetEmailTemplateRenderErrors`: GetEmailTemplateRenderErrorsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplateRenderErrors`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -3,7 +3,7 @@
 **Important :** Vous devez définir votre clé API sur l'ApiClient avant d'effectuer des requêtes authentifiées. Si vous ne le faites pas, les requêtes échoueront avec une erreur 401.
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 # Créez et configurez le client API
 config = FastCommentsClient::Configuration.new
@@ -12,7 +12,7 @@ api_client = FastCommentsClient::ApiClient.new(config)
 # OBLIGATOIRE : Définissez votre clé API (obtenez-la depuis votre tableau de bord FastComments)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Créez l'instance de l'API avec le client configuré
+# Créez l'instance API avec le client configuré
 api = FastCommentsClient::DefaultApi.new(api_client)
 
 # Vous pouvez maintenant effectuer des appels API authentifiés
@@ -30,17 +30,17 @@ begin
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
   # Erreurs courantes :
-  # - 401 : la clé API est manquante ou invalide
-  # - 400 : la validation de la requête a échoué
+  # - 401 : La clé API est manquante ou invalide
+  # - 400 : Échec de la validation de la requête
 end
 ```
 
 ### Utilisation des API publiques (PublicApi)
 
-Les points de terminaison publics ne requièrent pas d'authentification :
+Les endpoints publics n'exigent pas d'authentification :
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -55,8 +55,29 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
+### Utilisation des API de modération (ModerationApi)
+
+Les méthodes de modération alimentent le tableau de bord des modérateurs. Fournissez un token `sso` afin que la requête soit effectuée au nom d'un modérateur authentifié via SSO :
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # Exemple : Lister les commentaires dans la file de modération
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
 ### Problèmes courants
 
-1. **Erreur 401 «missing-api-key»** : Assurez-vous de définir `config.api_key['x-api-key'] = 'YOUR_KEY'` avant de créer l'instance DefaultApi.
-2. **Mauvaise classe API** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/public.
+1. **Erreur 401 "missing-api-key"** : Assurez-vous de définir `config.api_key['x-api-key'] = 'YOUR_KEY'` avant de créer l'instance DefaultApi.
+2. **Mauvaise classe API** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/public, et `ModerationApi` pour les requêtes du tableau de bord des modérateurs.
 3. **Clé API nulle** : Le SDK ignorera silencieusement l'authentification si la clé API est nulle, ce qui entraînera des erreurs 401.
+---

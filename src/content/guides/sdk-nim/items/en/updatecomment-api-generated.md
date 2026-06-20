@@ -11,7 +11,7 @@
 
 ## Response
 
-Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Example
 
@@ -19,18 +19,18 @@ Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "cmt-456",
+  id = "cmt-987654",
   updatableCommentParams = UpdatableCommentParams(
-    content: "Updated the comment to clarify the timeline",
-    tags: @["clarification", "timeline"],
-    isHidden: false
+    text = "Updated comment: corrected facts and clarified wording.",
+    isApproved = true,
+    tags = @["news", "update"]
   ),
-  contextUserId = "user-789",
+  contextUserId = "user-456",
   doSpamCheck = true,
   isLive = true
 )
 
 if response.isSome:
-  let updatedComment = response.get()
-  echo "Updated comment received, id: ", updatedComment.id
+  let apiResp = response.get()
+  discard apiResp
 [inline-code-end]

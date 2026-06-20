@@ -1,19 +1,19 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vrne: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_user_badge200_response.py)
+Vrne: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_create_user_badge_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer create_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_user_badge200_response import CreateUserBadge200Response
+from client.models.api_create_user_badge_response import APICreateUserBadgeResponse
 from client.models.create_user_badge_params import CreateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
@@ -24,15 +24,15 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre overjanja in pooblastil
-# v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo overjanja so navedeni spodaj; uporabite primer, ki
+# Odjemalec mora konfigurirati parametre za overjanje in pooblastilo
+# v skladu s varnostno politiko API strežnika.
+# Primeri za vsako metodo overjanja so podani spodaj; uporabite primer, ki
 # ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Konfigurirajte overjanje z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca

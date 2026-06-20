@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | Type | Location | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | questionId | string | query | לא |  |
@@ -14,7 +14,7 @@
 
 ## תגובה
 
-מחזיר: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+מחזיר: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## דוגמה
 
@@ -22,11 +22,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאה
+# הגדרת הרשאות
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר אישור באמצעות מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -51,3 +51,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->combine_comments_with_question_results: #{e}"
 end
 [inline-code-end]
+
+---

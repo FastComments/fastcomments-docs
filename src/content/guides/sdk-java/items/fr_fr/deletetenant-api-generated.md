@@ -1,20 +1,20 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| sure | string | query | No |  |
+| tenantId | string | query | Oui |  |
+| id | string | path | Oui |  |
+| sure | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retourne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour deleteTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de deleteTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation par clé API : api_key
+    // Configurer l'authentification par clé API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. "Token" (par défaut null)
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String sure = "sure_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteTenant(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteTenant(tenantId, id)
             .sure(sure)
             .execute();
       System.out.println(result);
@@ -52,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

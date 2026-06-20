@@ -8,13 +8,13 @@
 
 ## Одговор
 
-Враћа: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenants200Response.swift)
+Враћа: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantsResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'getTenants Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бети. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још у бета фази. За било какав проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,3 +32,5 @@ DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, e
     }
 }
 [inline-code-end]
+
+---

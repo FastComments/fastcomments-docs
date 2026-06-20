@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -8,38 +8,38 @@
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'update_notification Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für update_notification'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_notification_body import UpdateNotificationBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Das Definieren des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Nachfolgend sind Beispiele für jede Authentifizierungsmethode aufgeführt. Verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsanforderungen entspricht.
+# in Übereinstimmung mit der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Für jede Auth-Methode werden unten Beispiele bereitgestellt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsanwendungsfall erfüllt.
 
-# API-Key-Authentifizierung konfigurieren: api_key
+# API-Schlüssel-Autorisierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Kommentarzeichen unten entfernen, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
+# Kommentarzeichen unten entfernen, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

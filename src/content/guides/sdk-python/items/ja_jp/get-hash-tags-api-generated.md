@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -5,16 +6,16 @@
 | tenantId | string | query | はい |  |
 | page | number | query | いいえ |  |
 
-## Response
+## レスポンス
 
-戻り値: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags200_response.py)
+戻り値: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_hash_tags の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_hash_tags200_response import GetHashTags200Response
+from client.models.get_hash_tags_response import GetHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -24,23 +25,21 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを
-# API サーバのセキュリティポリシーに従って設定する必要があります。
-# 各認証方式の例を以下に示します。
-# ご自身の認証ユースケースに合う例を使用してください。
+# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
+# 各認証方式の例が以下に示されています。自分のユースケースに合う例を使用してください。
 
-# Configure API key authorization: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて、以下の行のコメントを外して API キーのプレフィックス（例: Bearer）を設定してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するために、以下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスとともにコンテキストに入ります
+# API クライアントのインスタンスでコンテキストを開きます
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 3.4 # float |  (optional)
+    page = 3.4 # float |  (任意)
 
     try:
         api_response = api_instance.get_hash_tags(tenant_id, page=page)
@@ -49,3 +48,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_hash_tags: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | comment_id | String | Да |  |
@@ -9,23 +9,22 @@
 
 ## Одговор
 
-Враћа: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/un_block_comment_public_200_response.rs)
+Враћа: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/unblock_success.rs)
 
 ## Пример
 
 [inline-code-attrs-start title = 'un_block_comment_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<UnBlockCommentPublic200Response, Error> {
-    let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article/2026-03-25/comment-98765".to_string(),
-        public_block_from_comment_params: models::PublicBlockFromCommentParams {
-            unblocked_by: "moderator@acme.com".to_string(),
-            reason: "Reviewed and determined not to be spam".to_string(),
-        },
-        sso: Some("sso-session-token-abc123".to_string()),
-    };
-    let response: UnBlockCommentPublic200Response = un_block_comment_public(&configuration, params).await?;
-    Ok(response)
-}
+let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    comment_id: "news/article/2026/06/19/cmt-987654".to_string(),
+    public_block_from_comment_params: models::PublicBlockFromCommentParams {
+        reason: "harassment".to_string(),
+        duration_minutes: Some(1440),
+        notify_author: Some(true),
+    },
+    sso: Some("sso-token-7f3b9a".to_string()),
+};
+
+let unblock_success: UnblockSuccess = un_block_comment_public(&configuration, params).await?;
 [inline-code-end]

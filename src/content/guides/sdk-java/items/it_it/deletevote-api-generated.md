@@ -2,13 +2,13 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| id | string | path | Sì |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 | editKey | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+Restituisce: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## Esempio
 
@@ -27,18 +27,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione con API key: api_key
+    // Configura l'autenticazione tramite API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la API key, es.: "Token" (valore predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String id = "id_example"; // String | 
-    String editKey = "editKey_example"; // String | 
+    String tenantId = "tenantId_example"; // Stringa | 
+    String id = "id_example"; // Stringa | 
+    String editKey = "editKey_example"; // Stringa | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteVote(tenantId, id)
+      VoteDeleteResponse result = apiInstance.deleteVote(tenantId, id)
             .editKey(editKey)
             .execute();
       System.out.println(result);

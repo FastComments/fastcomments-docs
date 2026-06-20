@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package200_response.rb)
+Returns: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package_response.rb)
 
 ## Example
 

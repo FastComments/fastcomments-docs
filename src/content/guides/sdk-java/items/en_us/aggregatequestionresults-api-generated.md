@@ -12,7 +12,7 @@
 
 ## Response
 
-Returns: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateQuestionResults200Response.java)
+Returns: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateQuestionResultsResponse.java)
 
 ## Example
 
@@ -46,7 +46,7 @@ public class Example {
     OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      AggregateQuestionResults200Response result = apiInstance.aggregateQuestionResults(tenantId)
+      AggregateQuestionResultsResponse result = apiInstance.aggregateQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)

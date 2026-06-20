@@ -1,27 +1,27 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| anonUserId | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_for_user200_response.rb)
+Vraća: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_for_user_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_votes_for_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_votes_for_user Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeći red da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
+  # Otkomentarišite sledeći red da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

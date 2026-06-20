@@ -1,13 +1,13 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
 
 ## Resposta
 
-Retorna: [`GetUser200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUser200Response.php)
+Retorna: [`GetUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserResponse.php)
 
 ## Exemplo
 
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

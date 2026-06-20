@@ -1,18 +1,18 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| timeBucket | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | query | Ναι |  |
+| questionId | string | query | Όχι |  |
+| questionIds | array | query | Όχι |  |
+| urlId | string | query | Όχι |  |
+| timeBucket | string | query | Όχι |  |
+| startDate | string | query | Όχι |  |
+| forceRecalculate | boolean | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateQuestionResults200Response.java)
+Επιστρέφει: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateQuestionResultsResponse.java)
 
 ## Παράδειγμα
 
@@ -34,7 +34,7 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (προεπιλογή: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      AggregateQuestionResults200Response result = apiInstance.aggregateQuestionResults(tenantId)
+      AggregateQuestionResultsResponse result = apiInstance.aggregateQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)
@@ -56,10 +56,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#aggregateQuestionResults");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Εξαίρεση κατά την κλήση DefaultApi#aggregateQuestionResults");
+      System.err.println("Κωδικός κατάστασης: " + e.getCode());
+      System.err.println("Αιτία: " + e.getResponseBody());
+      System.err.println("Επικεφαλίδες απόκρισης: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

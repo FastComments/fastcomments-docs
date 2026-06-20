@@ -7,11 +7,11 @@
 
 ## Resposta
 
-Retorna: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderators_200_response.go)
+Retorna: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_moderators_response.go)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de GetModerators'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo GetModerators'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetModerators``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `GetModerators`: GetModerators200Response
+	// resposta de `GetModerators`: GetModeratorsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetModerators`: %v\n", resp)
 }
 [inline-code-end]

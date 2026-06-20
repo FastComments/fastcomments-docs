@@ -5,19 +5,19 @@ Forskellige operationer (f.eks. sum, countDistinct, avg osv.) understøttes.
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+| tenantId | string | query | Ja |  |
+| parentTenantId | string | query | Nej |  |
+| includeStats | boolean | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Returnerer: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'aggregate Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

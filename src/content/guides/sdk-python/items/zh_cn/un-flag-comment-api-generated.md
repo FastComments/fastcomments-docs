@@ -2,38 +2,36 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
+| userId | string | query | 否 |  |
+| anonUserId | string | query | 否 |  |
 
 ## 响应
 
-返回: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+返回: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'un_flag_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 查看 configuration.py 以获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 客户端必须配置身份验证和授权参数
-# 以符合 API 服务器的安全策略。
-# 每种身份验证方法的示例在下面提供，请使用满足您用例的示例。
-
+# 客户端必须根据 API 服务器的安全策略配置身份验证和授权参数。
+# 下面提供了每种身份验证方法的示例，请使用满足您认证用例的示例。
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如果需要，请取消注释下面内容以设置 API 密钥的前缀（例如 Bearer）
+# 如有必要，取消注释下面一行以为 API 密钥设置前缀（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # 使用 API 客户端实例进入上下文

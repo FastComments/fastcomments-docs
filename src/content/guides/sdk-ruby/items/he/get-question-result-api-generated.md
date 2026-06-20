@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
+| tenantId | string | שאילתה | כן |  |
+| id | string | נתיב | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_result200_response.rb)
+מחזיר: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_result_response.rb)
 
 ## דוגמה
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאות
+# הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # הגדר הרשאת מפתח API: api_key
+  # הגדר הרשאת מפתח ה-API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # הסר את ההערה מהשורה הבאה כדי לקבוע קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_result: #{e}"
 end
 [inline-code-end]
-
----

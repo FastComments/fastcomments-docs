@@ -1,14 +1,14 @@
 ---
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | 是 |  |
-| id | string | 路徑 | 是 |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## 回應
 
-回傳: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_200_response.go)
+回傳: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_response.go)
 
 ## 範例
 
@@ -24,8 +24,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	id := "id_example" // string | 
+	tenantId := "tenantId_example" // 字串 | 
+	id := "id_example" // 字串 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetTenant` 的回應: GetTenant200Response
+	// `GetTenant` 的回應: GetTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenant`: %v\n", resp)
 }
 [inline-code-end]

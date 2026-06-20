@@ -1,12 +1,12 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_200_response.go)
+Devuelve: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_response.go)
 
 ## Ejemplo
 
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `CreateEmailTemplate`: CreateEmailTemplate200Response
+	// respuesta de `CreateEmailTemplate`: CreateEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]

@@ -7,19 +7,19 @@
 
 ## 响应
 
-返回: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+返回: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'reset_user_notification_count 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义 host 是可选的，默认值为 https://fastcomments.com
-# 查看 configuration.py 以获取所有支持的配置参数列表。
+# 定义主机是可选的，默认为 https://fastcomments.com
+# 有关所有支持的配置参数列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -27,7 +27,7 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (可选)
@@ -39,3 +39,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->reset_user_notification_count: %s\n" % e)
 [inline-code-end]
+
+---

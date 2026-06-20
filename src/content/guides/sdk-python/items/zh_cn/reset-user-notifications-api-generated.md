@@ -1,30 +1,31 @@
+---
 ## 参数
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| afterId | string | 查询 | 否 |  |
-| afterCreatedAt | integer | 查询 | 否 |  |
-| unreadOnly | boolean | 查询 | 否 |  |
-| dmOnly | boolean | 查询 | 否 |  |
-| noDm | boolean | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| afterId | string | query | 否 |  |
+| afterCreatedAt | integer | query | 否 |  |
+| unreadOnly | boolean | query | 否 |  |
+| dmOnly | boolean | query | 否 |  |
+| noDm | boolean | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+返回: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'reset_user_notifications 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# 定义主机是可选的，默认为 https://fastcomments.com
+# 有关所有支持的配置参数列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,7 +33,7 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的实例
+    # 创建 API 类的一个实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (可选)
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->reset_user_notifications: %s\n" % e)
 [inline-code-end]
+
+---

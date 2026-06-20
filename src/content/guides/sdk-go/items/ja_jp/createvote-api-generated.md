@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名称 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | commentId | string | query | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_comment_200_response.go)
+戻り値: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
 ## 例
 
@@ -39,9 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateVote` のレスポンス: VoteComment200Response
+	// `CreateVote` からのレスポンス: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,36 +1,36 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sessionId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | כן |  |
+| commentId | string | path | כן |  |
+| urlId | string | query | כן |  |
+| broadcastId | string | query | כן |  |
+| sessionId | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+מחזיר: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-vote_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של vote_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# קביעת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
-# ראו את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה את configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# פתחו הקשר (context) עם מופע של לקוח ה-API
+# היכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)

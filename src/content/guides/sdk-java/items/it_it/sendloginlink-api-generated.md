@@ -1,20 +1,20 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| id | string | path | Sì |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 | redirectURL | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di sendLoginLink'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importazione delle classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,7 +30,7 @@ public class Example {
     // Configura l'autenticazione tramite API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommentare la riga seguente per impostare un prefisso per la chiave API, es. "Token" (predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (di default è null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String redirectURL = "redirectURL_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.sendLoginLink(tenantId, id)
+      APIEmptyResponse result = apiInstance.sendLoginLink(tenantId, id)
             .redirectURL(redirectURL)
             .execute();
       System.out.println(result);
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

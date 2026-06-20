@@ -1,26 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| user_id | String | Ne |  |
+| tenant_id | String | Да |  |
+| user_id | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_subscriptions_api_response.rs)
+Враћа: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_subscriptions_api_response.rs)
 
-## Primjer
+## Примјер
 
-[inline-code-attrs-start title = 'Primjer get_subscriptions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Примјер get_subscriptions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_subscriptions() -> Result<GetSubscriptionsApiResponse, Error> {
     let params: GetSubscriptionsParams = GetSubscriptionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-42@example.com".to_string()),
+        user_id: Some("user-9876".to_string()),
     };
     let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;
-    let _ = subscriptions;
-    Ok(())
+    Ok(subscriptions)
 }
 [inline-code-end]
 

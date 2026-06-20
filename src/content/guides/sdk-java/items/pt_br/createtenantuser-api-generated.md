@@ -1,16 +1,16 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 
 ## Resposta
 
-Retorna: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantUser200Response.java)
+Retorna: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantUserResponse.java)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo createTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização da chave da API: api_key
+    // Configurar autorização da chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha abaixo para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
+    // Descomente a linha seguinte para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateTenantUserBody createTenantUserBody = new CreateTenantUserBody(); // CreateTenantUserBody | 
     try {
-      CreateTenantUser200Response result = apiInstance.createTenantUser(tenantId, createTenantUserBody)
+      CreateTenantUserResponse result = apiInstance.createTenantUser(tenantId, createTenantUserBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

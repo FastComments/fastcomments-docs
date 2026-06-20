@@ -12,7 +12,7 @@
 
 ## Response
 
-Returns: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadges200Response.java)
+Returns: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgesResponse.java)
 
 ## Example
 
@@ -46,7 +46,7 @@ public class Example {
     Double limit = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetUserBadges200Response result = apiInstance.getUserBadges(tenantId)
+      APIGetUserBadgesResponse result = apiInstance.getUserBadges(tenantId)
             .userId(userId)
             .badgeId(badgeId)
             .type(type)

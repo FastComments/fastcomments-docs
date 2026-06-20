@@ -1,18 +1,18 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| commentId | string | path | Sí |  |
-| voteId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
-| broadcastId | string | query | Sí |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| commentId | string | ruta | Sí |  |
+| voteId | string | ruta | Sí |  |
+| urlId | string | consulta | Sí |  |
+| broadcastId | string | consulta | Sí |  |
+| editKey | string | consulta | No |  |
+| sso | string | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_vote_200_response.go)
+Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
 
 ## Ejemplo
 
@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteCommentVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `DeleteCommentVote`: DeleteCommentVote200Response
+	// respuesta de `DeleteCommentVote`: VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteCommentVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

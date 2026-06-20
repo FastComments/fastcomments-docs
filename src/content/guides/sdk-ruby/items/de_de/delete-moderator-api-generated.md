@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Beispiel
 
@@ -20,7 +20,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API-Schlüssel-Autorisierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entfernen Sie die Kommentarzeichen der folgenden Zeile, um ein Präfix für den API‑Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
+  # Entfernen Sie die Kommentierung der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

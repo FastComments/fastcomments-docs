@@ -1,13 +1,13 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Type | Location | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | page | number | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_200_response.go)
+Devuelve: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_response.go)
 
 ## Ejemplo
 
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetHashTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `GetHashTags`: GetHashTags200Response
+	// respuesta de `GetHashTags`: GetHashTagsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetHashTags`: %v\n", resp)
 }
 [inline-code-end]
+
+---

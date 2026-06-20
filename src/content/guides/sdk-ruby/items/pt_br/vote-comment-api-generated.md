@@ -1,6 +1,6 @@
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | commentId | string | path | Sim |  |
@@ -9,13 +9,13 @@
 | sessionId | string | query | Não |  |
 | sso | string | query | Não |  |
 
-## Resposta
+## Response
 
-Retorna: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Retorna: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de vote_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'vote_comment Exemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->vote_comment: #{e}"
 end
 [inline-code-end]
-
----

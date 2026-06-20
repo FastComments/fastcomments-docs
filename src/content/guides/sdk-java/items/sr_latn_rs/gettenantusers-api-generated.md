@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Da |  |
+| skip | number | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsers200Response.java)
+Vraća: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsersResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getTenantUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUsers Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantUsers200Response result = apiInstance.getTenantUsers(tenantId)
+      GetTenantUsersResponse result = apiInstance.getTenantUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

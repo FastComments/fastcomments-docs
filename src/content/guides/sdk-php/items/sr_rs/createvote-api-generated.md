@@ -1,16 +1,16 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| direction | string | query | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | query | Да |  |
+| direction | string | query | Да |  |
+| userId | string | query | Не |  |
+| anonUserId | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteComment200Response.php)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
 ## Пример
 
@@ -20,15 +20,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите овлашћење API кључа: api_key
+// Конфигуришите ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Окоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, као подразумевано ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -45,3 +45,5 @@ try {
     echo 'Exception when calling DefaultApi->createVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

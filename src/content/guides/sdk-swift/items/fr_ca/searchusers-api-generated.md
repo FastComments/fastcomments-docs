@@ -1,3 +1,4 @@
+---
 ## Paramètres
 
 | Nom | Type | Emplacement | Requis | Description |
@@ -11,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+Renvoie : [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## Exemple
 
@@ -38,3 +39,5 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
+
+---

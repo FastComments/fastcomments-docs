@@ -7,17 +7,17 @@
 
 ## Відповідь
 
-Повертає: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Повертає: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'get_moderators Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_moderators'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Налаштування авторизації
+# налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштуйте авторизацію за допомогою API-ключа: api_key
+  # Налаштуйте авторизацію API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Розкоментуйте наступний рядок, щоб задати префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_moderators: #{e}"
 end
 [inline-code-end]
-
----

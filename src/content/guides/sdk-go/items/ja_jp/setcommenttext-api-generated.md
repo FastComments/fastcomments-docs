@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | commentId | string | path | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-返却値: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_200_response.go)
+戻り値: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_api_set_comment_text_response.go)
 
 ## 例
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -30,8 +30,8 @@ func main() {
 	commentId := "commentId_example" // string | 
 	broadcastId := "broadcastId_example" // string | 
 	commentTextUpdateRequest := *openapiclient.NewCommentTextUpdateRequest("Comment_example") // CommentTextUpdateRequest | 
-	editKey := "editKey_example" // string |  (optional)
-	sso := "sso_example" // string |  (optional)
+	editKey := "editKey_example" // string |  (オプション)
+	sso := "sso_example" // string |  (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +40,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SetCommentText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `SetCommentText` からのレスポンス: SetCommentText200Response
+	// `SetCommentText` のレスポンス: PublicAPISetCommentTextResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SetCommentText`: %v\n", resp)
 }
 [inline-code-end]
+
+---

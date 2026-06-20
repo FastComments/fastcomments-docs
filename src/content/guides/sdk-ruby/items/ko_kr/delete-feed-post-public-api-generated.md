@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | postId | string | path | 예 |  |
@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public200_response.rb)
+반환: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public_response.rb)
 
 ## 예제
 

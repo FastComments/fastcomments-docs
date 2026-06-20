@@ -12,7 +12,7 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Returns: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Example
 
@@ -20,17 +20,12 @@ Returns: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcom
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(
-    groupBy = @["urlPath"],
-    filters = @[],
-    size = 50
-  ),
-  parentTenantId = "parent-tenant-456",
-  includeStats = true
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
+  parentTenantId = "",
+  includeStats = false
 )
 
 if response.isSome:
-  let aggregation = response.get()
-  echo "HTTP status: ", $httpResponse.status
-  echo "Aggregation result: ", $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]

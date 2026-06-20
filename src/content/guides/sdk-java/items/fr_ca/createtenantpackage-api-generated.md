@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantPackage200Response.java)
+Renvoie : [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantPackageResponse.java)
 
 ## Exemple
 
@@ -28,14 +28,14 @@ public class Example {
     // Configurer l'autorisation par clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateTenantPackageBody createTenantPackageBody = new CreateTenantPackageBody(); // CreateTenantPackageBody | 
     try {
-      CreateTenantPackage200Response result = apiInstance.createTenantPackage(tenantId, createTenantPackageBody)
+      CreateTenantPackageResponse result = apiInstance.createTenantPackage(tenantId, createTenantPackageBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

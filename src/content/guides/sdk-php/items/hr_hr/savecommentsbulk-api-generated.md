@@ -1,16 +1,16 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| isLive | boolean | query | Ne |  |
-| doSpamCheck | boolean | query | Ne |  |
-| sendEmails | boolean | query | Ne |  |
-| populateNotifications | boolean | query | Ne |  |
+| tenantId | string | upit | Da |  |
+| isLive | boolean | upit | Ne |  |
+| doSpamCheck | boolean | upit | Ne |  |
+| sendEmails | boolean | upit | Ne |  |
+| populateNotifications | boolean | upit | Ne |  |
 
 ## Odgovor
 
-Vraća: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveComment200Response.php)
+Vraća: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsBulkResponse.php)
 
 ## Primjer
 

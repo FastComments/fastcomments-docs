@@ -1,18 +1,18 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateDefinitions200Response.swift)
+מחזיר: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateDefinitionsResponse.swift)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getEmailTemplateDefinitions'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לגבי כל בעיה, נא לדווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדוגמאות הבאות של הקוד עדיין בשלב בטא. במקרה של בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -28,3 +28,5 @@ DefaultAPI.getEmailTemplateDefinitions(tenantId: tenantId) { (response, error) i
     }
 }
 [inline-code-end]
+
+---

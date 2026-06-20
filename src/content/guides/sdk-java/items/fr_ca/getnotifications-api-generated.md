@@ -1,24 +1,24 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Oui |  |
+| userId | string | query | Non |  |
+| urlId | string | query | Non |  |
+| fromCommentId | string | query | Non |  |
+| viewed | boolean | query | Non |  |
+| type | string | query | Non |  |
+| skip | number | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotifications200Response.java)
+Renvoie : [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationsResponse.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getNotifications'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importation des classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation de clé API : api_key
+    // Configurer l'autorisation par clé API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, ex. "Token" (par défaut null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par exemple "Token" (par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String type = "type_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetNotifications200Response result = apiInstance.getNotifications(tenantId)
+      GetNotificationsResponse result = apiInstance.getNotifications(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)
@@ -65,5 +65,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentIds | string | query | Sí | Una lista separada por comas de identificadores de comentarios. |
@@ -8,13 +9,13 @@
 
 ## Respuesta
 
-Devuelve: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckedCommentsForBlocked200Response.swift)
+Devuelve: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckBlockedCommentsResponse.swift)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de checkedCommentsForBlocked'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, repórtelo a través de http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,3 +33,5 @@ PublicAPI.checkedCommentsForBlocked(tenantId: tenantId, commentIds: commentIds, 
     }
 }
 [inline-code-end]
+
+---

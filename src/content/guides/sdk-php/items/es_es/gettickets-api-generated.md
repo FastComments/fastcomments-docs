@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | userId | string | query | No |  |
@@ -10,7 +11,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTickets200Response.php)
+Devuelve: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketsResponse.php)
 
 ## Ejemplo
 
@@ -20,9 +21,9 @@ Devuelve: [`GetTickets200Response`](https://github.com/FastComments/fastcomments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar autorización de la clave API: api_key
+// Configurar la autorización de la clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomentar lo siguiente para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+// Descomente a continuación para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -45,3 +46,5 @@ try {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

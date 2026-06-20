@@ -1,20 +1,21 @@
+---
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
+| tenantId | string | upit | Da |  |
 
 ## Odgovor
 
-Vraća: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant200_response.py)
+Vraća: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer create_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_tenant Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant200_response import CreateTenant200Response
 from client.models.create_tenant_body import CreateTenantBody
+from client.models.create_tenant_response import CreateTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -24,20 +25,15 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurirati parametre autentifikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentifikacije dani su u nastavku, upotrijebite primjer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
-
+# Klijent mora konfigurirati parametre autentikacije i autorizacije
+# u skladu s politikom sigurnosti API servera.
+# Primjeri za svaku metodu autentikacije navedeni su dolje, koristite primjer koji
+# zadovoljava vaš slučaj upotrebe autentikacije.
 # Konfigurirajte autorizaciju pomoću API ključa: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Poništite komentiranje dolje da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
+# Otkomentirajte dolje kako biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Stvorite instancu API klase
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_tenant_body = client.CreateTenantBody() # CreateTenantBody | 

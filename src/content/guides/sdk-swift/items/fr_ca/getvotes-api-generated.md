@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Retourne: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotes200Response.swift)
+Renvoie: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesResponse.swift)
 
 ## Exemple
 

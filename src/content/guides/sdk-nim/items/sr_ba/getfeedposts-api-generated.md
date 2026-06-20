@@ -1,26 +1,34 @@
-## Параметри
+---
+req
+tenantId
+afterId
 
-| Назив | Тип | Обавезно | Опис |
+## Parametri
+
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| afterId | string | Не |  |
-| limit | int | Не |  |
-| tags | seq[string] | Не |  |
+| tenantId | string | Da |  |
+| afterId | string | Ne |  |
+| limit | int | Ne |  |
+| tags | seq[string] | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetFeedPosts_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts200response.nim)
+Vraća: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_response.nim)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'getFeedPosts Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(tenantId = "my-tenant-123", afterId = "post_abc123", limit = 20, tags = @["news", "sports"])
+let (response, httpResponse) = client.getFeedPosts(
+  tenantId = "my-tenant-123",
+  afterId = "",
+  limit = 0,
+  tags = @[]
+)
 if response.isSome:
   let feed = response.get()
-  echo "Feed posts retrieved for tenant my-tenant-123"
-else:
-  echo "No feed posts returned, HTTP status: ", $httpResponse.status
+  echo "Feed retrieved for tenant my-tenant-123"
 [inline-code-end]
 
 ---

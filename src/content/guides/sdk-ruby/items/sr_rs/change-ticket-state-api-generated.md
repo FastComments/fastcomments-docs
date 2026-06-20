@@ -8,19 +8,19 @@
 
 ## Одговор
 
-Враћа: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state200_response.rb)
+Враћа: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример change_ticket_state'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'change_ticket_state Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# подешавање аутентификације
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију API кључа: api_key
+  # Конфигуришите API кључ за аутентификацију: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоменарујте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (по подразумевању nil)
+  # Откоментирајте следећу линију да бисте подесили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->change_ticket_state: #{e}"
 end
 [inline-code-end]
-
----

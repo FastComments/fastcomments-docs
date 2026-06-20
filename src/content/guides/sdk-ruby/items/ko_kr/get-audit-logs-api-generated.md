@@ -1,17 +1,17 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| limit | number | query | 아니요 |  |
-| skip | number | query | 아니요 |  |
-| order | string | query | 아니요 |  |
-| after | number | query | 아니요 |  |
-| before | number | query | 아니요 |  |
+| limit | number | query | 아니오 |  |
+| skip | number | query | 아니오 |  |
+| order | string | query | 아니오 |  |
+| after | number | query | 아니오 |  |
+| before | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs200_response.rb)
+반환: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs_response.rb)
 
 ## 예제
 
@@ -23,7 +23,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: 'Bearer' (기본값: nil)
+  # API 키에 접두사(예: 'Bearer')를 설정하려면 다음 줄의 주석 처리를 제거하세요 (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -45,5 +45,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_audit_logs: #{e}"
 end
 [inline-code-end]
-
----

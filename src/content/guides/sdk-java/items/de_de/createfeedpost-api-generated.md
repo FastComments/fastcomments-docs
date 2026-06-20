@@ -2,15 +2,15 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| broadcastId | string | query | No |  |
-| isLive | boolean | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| skipDupCheck | boolean | query | No |  |
+| tenantId | string | query | Ja |  |
+| broadcastId | string | query | Nein |  |
+| isLive | boolean | query | Nein |  |
+| doSpamCheck | boolean | query | Nein |  |
+| skipDupCheck | boolean | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPost200Response.java)
+Gibt zurück: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostsResponse.java)
 
 ## Beispiel
 
@@ -32,7 +32,7 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie die Kommentarzeichen in der folgenden Zeile, um ein Präfix für den API-Schlüssel zu setzen, z. B. "Token" (Standard: null)
+    // Entfernen Sie die Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard ist null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean doSpamCheck = true; // Boolean | 
     Boolean skipDupCheck = true; // Boolean | 
     try {
-      CreateFeedPost200Response result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
+      CreateFeedPostsResponse result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)

@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Response
+## Svar
 
-Returnerer: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModerator200Response.php)
+Returnerer: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorResponse.php)
 
 ## Eksempel
 
@@ -17,15 +17,15 @@ Returnerer: [`GetModerator200Response`](https://github.com/FastComments/fastcomm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgleautorisation: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentar på linjen nedenfor for at sætte præfiks (fx Bearer) for API-nøglen, hvis nødvendigt
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en brugerdefineret http-klient, giv din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en tilpasset HTTP-klient, skal du sende din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );

@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -10,13 +9,13 @@
 
 ## תגובה
 
-מחזיר: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnBlockCommentPublic200Response.swift)
+מחזיר: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnblockSuccess.swift)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-unBlockUserFromComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// קטעי הקוד הבאים עדיין בבטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בבטא. בכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

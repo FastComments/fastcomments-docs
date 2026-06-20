@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-戻り値: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+戻り値: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## 例
 
@@ -30,7 +30,7 @@ public class Example {
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // APIキーのプレフィックスを設定するには次の行のコメントを外してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String editKey = "editKey_example"; // String | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteVote(tenantId, id)
+      VoteDeleteResponse result = apiInstance.deleteVote(tenantId, id)
             .editKey(editKey)
             .execute();
       System.out.println(result);
@@ -52,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

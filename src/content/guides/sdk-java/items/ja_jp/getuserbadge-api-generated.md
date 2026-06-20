@@ -7,13 +7,13 @@
 
 ## レスポンス
 
-返却値: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadge200Response.java)
+戻り値: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserBadge の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // APIキー認証の設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // APIキーのプレフィックスを設定するには、以下の行のコメントを外してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetUserBadge200Response result = apiInstance.getUserBadge(tenantId, id)
+      APIGetUserBadgeResponse result = apiInstance.getUserBadge(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

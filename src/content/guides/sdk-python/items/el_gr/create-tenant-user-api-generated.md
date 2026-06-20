@@ -1,33 +1,33 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user200_response.py)
+Επιστρέφει: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα create_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_tenant_user Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_user200_response import CreateTenantUser200Response
 from client.models.create_tenant_user_body import CreateTenantUserBody
+from client.models.create_tenant_user_response import CreateTenantUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ορισμός του host είναι προαιρετικός και έχει ως προεπιλογή το https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
 # σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
-# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί την περίπτωση χρήσης αυθεντικοποίησής σας.
+# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο auth, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης σας.
 
 # Διαμορφώστε την εξουσιοδότηση με API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -35,9 +35,9 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισέλθετε σε ένα context με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_tenant_user_body = client.CreateTenantUserBody() # CreateTenantUserBody | 

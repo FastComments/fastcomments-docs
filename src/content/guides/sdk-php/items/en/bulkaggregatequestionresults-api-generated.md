@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkAggregateQuestionResults200Response.php)
+Returns: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkAggregateQuestionResultsResponse.php)
 
 ## Example
 

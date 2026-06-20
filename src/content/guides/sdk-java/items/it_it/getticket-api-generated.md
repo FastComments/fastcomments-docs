@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
@@ -8,13 +8,13 @@
 
 ## Risposta
 
-Restituisce: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicket200Response.java)
+Restituisce: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketResponse.java)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getTicket'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getTicket'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autorizzazione con chiave API: api_key
+    // Configura l'autenticazione con API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la seguente riga per impostare un prefisso per la chiave API, es. "Token" (predefinito null)
+    // Decommenta la seguente riga per impostare un prefisso per la API key, es. "Token" (di default è null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      GetTicket200Response result = apiInstance.getTicket(tenantId, id)
+      GetTicketResponse result = apiInstance.getTicket(tenantId, id)
             .userId(userId)
             .execute();
       System.out.println(result);
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

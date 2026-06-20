@@ -4,40 +4,40 @@ urlId
 
 ## Параметри
 
-| Име | Type | Location | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| page | integer | query | Не |  |
+| direction | string | query | Не |  |
+| sso | string | query | Не |  |
+| skip | integer | query | Не |  |
+| skipChildren | integer | query | Не |  |
+| limit | integer | query | Не |  |
+| limitChildren | integer | query | Не |  |
+| countChildren | boolean | query | Не |  |
+| fetchPageForCommentId | string | query | Не |  |
+| includeConfig | boolean | query | Не |  |
+| countAll | boolean | query | Не |  |
+| includei10n | boolean | query | Не |  |
+| locale | string | query | Не |  |
+| modules | string | query | Не |  |
+| isCrawler | boolean | query | Не |  |
+| includeNotificationCount | boolean | query | Не |  |
+| asTree | boolean | query | Не |  |
+| maxTreeDepth | integer | query | Не |  |
+| useFullTranslationIds | boolean | query | Не |  |
+| parentId | string | query | Не |  |
+| searchText | string | query | Не |  |
+| hashTags | array | query | Не |  |
+| userId | string | query | Не |  |
+| customConfigStr | string | query | Не |  |
+| afterCommentId | string | query | Не |  |
+| beforeCommentId | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Враћа: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## Пример
 
@@ -49,7 +49,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор из `GetCommentsPublic`: GetCommentsPublic200Response
+	// одговор од `GetCommentsPublic`: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

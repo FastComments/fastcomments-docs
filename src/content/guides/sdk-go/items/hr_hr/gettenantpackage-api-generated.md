@@ -1,13 +1,14 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_package_200_response.go)
+Vraća: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_package_response.go)
 
 ## Primjer
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetTenantPackage`: GetTenantPackage200Response
+	// odgovor iz `GetTenantPackage`: GetTenantPackageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantPackage`: %v\n", resp)
 }
 [inline-code-end]
+
+---

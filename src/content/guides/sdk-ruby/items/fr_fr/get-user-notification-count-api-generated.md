@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | requête | Oui |  |
-| sso | string | requête | Non |  |
+| tenantId | string | query | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne : [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count200_response.rb)
+Renvoie: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count_response.rb)
 
 ## Exemple
 
@@ -27,6 +27,8 @@ begin
   result = api_instance.get_user_notification_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling PublicApi->get_user_notification_count: #{e}"
+  puts "Erreur lors de l'appel de PublicApi->get_user_notification_count : #{e}"
 end
 [inline-code-end]
+
+---

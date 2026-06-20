@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -9,7 +10,7 @@
 
 ## תגובה
 
-מחזיר: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_text200_response.rb)
+מחזיר: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_get_comment_text_response.rb)
 
 ## דוגמה
 
@@ -34,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_text: #{e}"
 end
 [inline-code-end]
+
+---

@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfigs200Response.swift)
+Returns: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfigsResponse.swift)
 
 ## Example
 
@@ -28,5 +28,3 @@ DefaultAPI.getDomainConfigs(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

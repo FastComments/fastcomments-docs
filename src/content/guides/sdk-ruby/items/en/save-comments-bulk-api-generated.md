@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+Returns: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
 
 ## Example
 

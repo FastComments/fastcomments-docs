@@ -1,7 +1,7 @@
 ---
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | postIds | array | query | Hayır |  |
@@ -9,7 +9,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+Döndürür: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## Örnek
 

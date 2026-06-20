@@ -1,17 +1,19 @@
+啟用或停用頁面通知。當使用者訂閱頁面時，會為新的頂層留言建立通知，並且也
+
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 型別 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| urlId | string | 是 |  |
-| url | string | 否 |  |
-| pageTitle | string | 否 |  |
-| subscribedOrUnsubscribed | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | No |  |
+| pageTitle | string | No |  |
+| subscribedOrUnsubscribed | string | No |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+回傳：[`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## 範例
 
@@ -19,16 +21,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2025-11-22",
-  url = "https://example.com/news/article-2025-11-22",
-  pageTitle = "Breaking News: Market Update",
-  subscribedOrUnsubscribed = "subscribed",
-  sso = "sso-token-abc123"
+  urlId = "news/economy/market-rally-2026-06-19",
+  url = "",
+  pageTitle = "",
+  subscribedOrUnsubscribed = "",
+  sso = ""
 )
 
 if response.isSome:
-  let result = response.get()
-  discard result
+  let updateResp = response.get()
+  echo "Subscription update received: ", updateResp
+else:
+  echo "No subscription update returned."
 [inline-code-end]
 
 ---

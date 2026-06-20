@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -11,7 +11,7 @@
 
 ## 回應
 
-返回: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+回傳: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## 範例
 
@@ -21,14 +21,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字串 | 
-comment_id = 'comment_id_example' # 字串 | 
-url_id = 'url_id_example' # 字串 | 
-broadcast_id = 'broadcast_id_example' # 字串 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+url_id = 'url_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 vote_body_params = FastCommentsClient::VoteBodyParams.new({commenter_email: 'commenter_email_example', commenter_name: 'commenter_name_example', vote_dir: 'up', url: 'url_example'}) # VoteBodyParams | 
 opts = {
-  session_id: 'session_id_example', # 字串 | 
-  sso: 'sso_example' # 字串 | 
+  session_id: 'session_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | urlIdWS | string | query | Sim |  |
@@ -8,7 +8,7 @@
 
 ## Resposta
 
-Retorna: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserPresenceStatuses200Response.java)
+Retorna: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserPresenceStatusesResponse.java)
 
 ## Exemplo
 
@@ -31,7 +31,7 @@ public class Example {
     String urlIdWS = "urlIdWS_example"; // String | 
     String userIds = "userIds_example"; // String | 
     try {
-      GetUserPresenceStatuses200Response result = apiInstance.getUserPresenceStatuses(tenantId, urlIdWS, userIds)
+      GetUserPresenceStatusesResponse result = apiInstance.getUserPresenceStatuses(tenantId, urlIdWS, userIds)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,5 +44,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

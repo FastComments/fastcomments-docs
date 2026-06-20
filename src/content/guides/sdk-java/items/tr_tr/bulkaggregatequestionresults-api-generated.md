@@ -1,19 +1,19 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | query | Evet |  |
+| forceRecalculate | boolean | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResults200Response.java)
+Döndürür: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResultsResponse.java)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Sınıfları içe aktar:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // API anahtarı için önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest = new BulkAggregateQuestionResultsRequest(); // BulkAggregateQuestionResultsRequest | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      BulkAggregateQuestionResults200Response result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
+      BulkAggregateQuestionResultsResponse result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
             .forceRecalculate(forceRecalculate)
             .execute();
       System.out.println(result);

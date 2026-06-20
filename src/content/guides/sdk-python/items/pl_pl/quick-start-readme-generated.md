@@ -1,25 +1,25 @@
 ### Korzystanie z uwierzytelnionych API (DefaultApi)
 
-**Ważne:** Musisz ustawić swój klucz API w Configuration przed wykonywaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
+**Ważne:** Musisz ustawić swój klucz API w Configuration przed wykonaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Utwórz i skonfiguruj klienta API
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# WYMAGANE: Ustaw swój klucz API (pobierz go z panelu FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Utwórz instancję API z skonfigurowanym klientem
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Teraz możesz wykonywać uwierzytelnione wywołania API
+# Now you can make authenticated API calls
 try:
-    # Przykład: Dodaj użytkownika SSO
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,9 +34,9 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Typowe błędy:
-    # - 401: Brakujący lub nieprawidłowy klucz API
-    # - 400: Walidacja żądania nie powiodła się
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Korzystanie z publicznych API (PublicApi)
@@ -62,6 +62,27 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Korzystanie z panelu moderacji (ModerationApi)
+
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Korzystanie z SSO (Single Sign-On)
 
 SDK zawiera narzędzia do generowania bezpiecznych tokenów SSO:
@@ -69,7 +90,7 @@ SDK zawiera narzędzia do generowania bezpiecznych tokenów SSO:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Utwórz dane użytkownika
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,20 +98,20 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Utwórz instancję SSO z Twoim sekretem API
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Wygeneruj token SSO
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# Użyj tego tokenu w frontendzie lub przekaż do wywołań API
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
-Dla prostego SSO (mniej bezpieczne, do testów):
+For simple SSO (less secure, for testing):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Częste problemy
+### Typowe problemy
 
 1. **401 "missing-api-key" error**: Upewnij się, że ustawisz `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` przed utworzeniem instancji DefaultApi.
-2. **Zła klasa API**: Użyj `DefaultApi` dla uwierzytelnionych żądań po stronie serwera, `PublicApi` dla żądań po stronie klienta/publicznych.
-3. **Błędy importu**: Upewnij się, że importujesz z poprawnego modułu:
+2. **Wrong API class**: Użyj `DefaultApi` dla uwierzytelnionych żądań po stronie serwera, `PublicApi` dla żądań klienckich/publicznych oraz `ModerationApi` dla żądań panelu moderatora.
+3. **Import errors**: Upewnij się, że importujesz z właściwego modułu:
    - API client: `from client import ...`
    - SSO utilities: `from sso import ...`

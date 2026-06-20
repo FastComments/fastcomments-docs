@@ -1,12 +1,12 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddDomainConfig200Response.java)
+Vrne: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddDomainConfigResponse.java)
 
 ## Primer
 
@@ -25,7 +25,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguracija overitve z API ključem: api_key
+    // Konfigurirajte overjanje z API ključem: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
@@ -35,7 +35,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     AddDomainConfigParams addDomainConfigParams = new AddDomainConfigParams(); // AddDomainConfigParams | 
     try {
-      AddDomainConfig200Response result = apiInstance.addDomainConfig(tenantId, addDomainConfigParams)
+      AddDomainConfigResponse result = apiInstance.addDomainConfig(tenantId, addDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

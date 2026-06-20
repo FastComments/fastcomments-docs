@@ -1,13 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`GetUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_200_response.go)
+Возвращает: [`GetUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_response.go)
 
 ## Пример
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetUser`: GetUser200Response
+	// ответ от `GetUser`: GetUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUser`: %v\n", resp)
 }
 [inline-code-end]

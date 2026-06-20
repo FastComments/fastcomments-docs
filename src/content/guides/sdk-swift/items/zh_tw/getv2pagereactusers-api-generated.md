@@ -1,0 +1,36 @@
+## 參數
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| id | string | query | 是 |  |
+
+## 回傳
+
+回傳：[`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetV2PageReactUsersResponse.swift)
+
+## 範例
+
+[inline-code-attrs-start title = 'getV2PageReactUsers 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// 下列程式碼範例仍為測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+import FastCommentsSwift
+
+let tenantId = "tenantId_example" // String | 
+let urlId = "urlId_example" // String | 
+let id = "id_example" // String | 
+
+PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+[inline-code-end]
+
+---

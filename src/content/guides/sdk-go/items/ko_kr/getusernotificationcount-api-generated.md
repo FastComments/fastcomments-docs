@@ -1,13 +1,13 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| sso | string | query | 아니오 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_notification_count_200_response.go)
+반환: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_notification_count_response.go)
 
 ## 예제
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserNotificationCount`의 응답: GetUserNotificationCount200Response
+	// response from `GetUserNotificationCount`: GetUserNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
+
+---

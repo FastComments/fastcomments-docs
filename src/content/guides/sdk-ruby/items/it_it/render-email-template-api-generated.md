@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template200_response.rb)
+Restituisce: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template_response.rb)
 
 ## Esempio
 
@@ -15,19 +15,19 @@ Restituisce: [`RenderEmailTemplate200Response`](https://github.com/FastComments/
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione autorizzazione
+# configura l'autorizzazione
 FastCommentsClient.configure do |config|
   # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommentare la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Stringa | 
 render_email_template_body = FastCommentsClient::RenderEmailTemplateBody.new({email_template_id: 'email_template_id_example', ejs: 'ejs_example'}) # RenderEmailTemplateBody | 
 opts = {
-  locale: 'locale_example' # String | 
+  locale: 'locale_example' # Stringa | 
 }
 
 begin
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->render_email_template: #{e}"
 end
 [inline-code-end]
+
+---

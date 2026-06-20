@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModerator200Response.java)
+Возвращает: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModeratorResponse.java)
 
 ## Пример
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации с помощью API-ключа: api_key
+    // Настройка авторизации ключом API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы задать префикс для ключа API, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetModerator200Response result = apiInstance.getModerator(tenantId, id)
+      GetModeratorResponse result = apiInstance.getModerator(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

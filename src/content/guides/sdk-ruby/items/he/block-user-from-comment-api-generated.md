@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
@@ -9,7 +9,7 @@
 
 ## תגובה
 
-מחזיר: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+מחזיר: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## דוגמה
 
@@ -19,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # הגדרת הרשאת מפתח API: api_key
+  # הגדר הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

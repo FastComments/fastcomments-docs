@@ -12,23 +12,25 @@
 
 ## Response
 
-Returns: [`Option[VoteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_comment200response.nim)
+Returns: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'voteComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let voteBody = VoteBodyParams(vote = 1)
 let (response, httpResponse) = client.voteComment(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  urlId = "news/article-2026-election",
+  commentId = "cmt-987654321",
+  urlId = "news/article-2026-inflation",
   broadcastId = "",
-  voteBodyParams = voteBody,
+  voteBodyParams = VoteBodyParams(),
   sessionId = "",
   sso = ""
 )
+
 if response.isSome:
-  let result = response.get()
-  echo "Vote response:", $result
+  let voteResp = response.get()
+  discard voteResp
+else:
+  discard httpResponse
 [inline-code-end]

@@ -11,7 +11,7 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Example
 
@@ -22,13 +22,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: api_key
-// Uncomment below to set up a prefix (e.g. Bearer) for the API key, if needed
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want to use a custom HTTP client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional; `GuzzleHttp\Client` will be used by default.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );

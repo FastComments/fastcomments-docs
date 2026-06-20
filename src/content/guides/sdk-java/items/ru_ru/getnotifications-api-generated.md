@@ -1,18 +1,18 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Нет |  |
+| urlId | string | query | Нет |  |
+| fromCommentId | string | query | Нет |  |
+| viewed | boolean | query | Нет |  |
+| type | string | query | Нет |  |
+| skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotifications200Response.java)
+Возвращает: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationsResponse.java)
 
 ## Пример
 
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию по API-ключу: api_key
+    // Настройка авторизации API-ключом: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String type = "type_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetNotifications200Response result = apiInstance.getNotifications(tenantId)
+      GetNotificationsResponse result = apiInstance.getNotifications(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)
@@ -65,3 +65,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -2,18 +2,17 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| locale | string | query | No |  |
+| tenantId | string | query | はい |  |
+| locale | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RenderEmailTemplate200Response.java)
+戻り値: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RenderEmailTemplateResponse.java)
 
 ## 例
 
-[inline-code-attrs-start title = 'renderEmailTemplate の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
 // クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
@@ -27,20 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
-    // APIキーに接頭辞を設定するには、次の行のコメントを外してください。例: "Token"（デフォルトは null）
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     RenderEmailTemplateBody renderEmailTemplateBody = new RenderEmailTemplateBody(); // RenderEmailTemplateBody | 
     String locale = "locale_example"; // String | 
     try {
-      RenderEmailTemplate200Response result = apiInstance.renderEmailTemplate(tenantId, renderEmailTemplateBody)
+      RenderEmailTemplateResponse result = apiInstance.renderEmailTemplate(tenantId, renderEmailTemplateBody)
             .locale(locale)
             .execute();
       System.out.println(result);
@@ -54,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

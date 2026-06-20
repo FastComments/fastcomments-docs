@@ -8,13 +8,13 @@
 
 ## Odgovor
 
-Vraća: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenants200Response.java)
+Vraća: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantsResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getTenants Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenants'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -38,7 +38,7 @@ public class Example {
     String meta = "meta_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenants200Response result = apiInstance.getTenants(tenantId)
+      GetTenantsResponse result = apiInstance.getTenants(tenantId)
             .meta(meta)
             .skip(skip)
             .execute();
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

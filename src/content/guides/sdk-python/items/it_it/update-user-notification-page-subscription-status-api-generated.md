@@ -1,7 +1,7 @@
 Abilita o disabilita le notifiche per una pagina. Quando gli utenti sono iscritti a una pagina, vengono create notifiche
-per i nuovi commenti root, e anche
+per nuovi commenti root, e anche
 
-## Parameters
+## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
@@ -14,25 +14,25 @@ per i nuovi commenti root, e anche
 
 ## Risposta
 
-Restituisce: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Restituisce: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'update_user_notification_page_subscription_status Esempio'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# La definizione dell'host è opzionale e, per impostazione predefinita, è https://fastcomments.com
 # Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Apri un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.PublicApi(api_client)

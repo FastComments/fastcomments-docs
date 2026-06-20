@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sessionId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Tak |  |
+| commentId | string | path | Tak |  |
+| urlId | string | query | Tak |  |
+| broadcastId | string | query | Tak |  |
+| sessionId | string | query | Nie |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Zwraca: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Przykład
 
@@ -19,7 +19,7 @@ Zwraca: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,7 +30,7 @@ configuration = client.Configuration(
 )
 
 
-# Wejdź w kontekst z instancją klienta API
+# Otwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
@@ -39,8 +39,8 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     vote_body_params = client.VoteBodyParams() # VoteBodyParams | 
-    session_id = 'session_id_example' # str |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    session_id = 'session_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->vote_comment: %s\n" % e)
 [inline-code-end]
+
+---

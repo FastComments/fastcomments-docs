@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,21 +9,21 @@
 
 ## Réponse
 
-Renvoie : [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+Retourne: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de un_pin_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple un_pin_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Chaîne | 
-comment_id = 'comment_id_example' # Chaîne | 
-broadcast_id = 'broadcast_id_example' # Chaîne | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Chaîne | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_pin_comment: #{e}"
 end
 [inline-code-end]
-
----

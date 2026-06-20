@@ -13,7 +13,7 @@
 
 ## Odgovor
 
-Vraća: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEvents200Response.java)
+Vraća: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventsResponse.java)
 
 ## Primer
 
@@ -35,7 +35,7 @@ public class Example {
     // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sledeći red da postavite prefiks za API ključ, npr. "Token" (podrazumevano je null)
+    // Ukloni komentare sa sledeće linije da postaviš prefiks za API ključ, npr. "Token" (podrazumevano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -48,7 +48,7 @@ public class Example {
     Double attemptCountGT = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetPendingWebhookEvents200Response result = apiInstance.getPendingWebhookEvents(tenantId)
+      GetPendingWebhookEventsResponse result = apiInstance.getPendingWebhookEvents(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)
@@ -68,5 +68,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

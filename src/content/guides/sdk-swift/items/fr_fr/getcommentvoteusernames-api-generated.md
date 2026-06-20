@@ -1,19 +1,19 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| dir | integer | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Oui |  |
+| commentId | string | path | Oui |  |
+| dir | integer | query | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentVoteUserNames200Response.swift)
+Retourne: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentVoteUserNamesSuccessResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'getCommentVoteUserNames Exemple'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getCommentVoteUserNames'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -34,3 +34,5 @@ PublicAPI.getCommentVoteUserNames(tenantId: tenantId, commentId: commentId, dir:
     }
 }
 [inline-code-end]
+
+---

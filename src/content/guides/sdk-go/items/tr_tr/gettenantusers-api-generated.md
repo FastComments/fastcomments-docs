@@ -2,12 +2,12 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| skip | number | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| skip | number | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_users_200_response.go)
+Döndürür: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_users_response.go)
 
 ## Örnek
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenantUsers`'den yanıt: GetTenantUsers200Response
+	// `GetTenantUsers` tarafından döndürülen yanıt: GetTenantUsersResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantUsers`: %v\n", resp)
 }
 [inline-code-end]

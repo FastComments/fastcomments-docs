@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
@@ -9,7 +9,7 @@
 
 ## Resposta
 
-Retorna: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagComment200Response.swift)
+Retorna: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
 ## Exemplo
 
@@ -34,5 +34,3 @@ DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId:
     }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`PinComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PinComment200Response.java)
+반환: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeCommentPinStatusResponse.java)
 
 ## 예제
 
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      PinComment200Response result = apiInstance.unPinComment(tenantId, commentId, broadcastId)
+      ChangeCommentPinStatusResponse result = apiInstance.unPinComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,3 +47,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

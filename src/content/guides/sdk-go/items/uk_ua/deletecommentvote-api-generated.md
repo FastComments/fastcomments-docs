@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Location | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язкове | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | commentId | string | path | Так |  |
@@ -12,7 +12,7 @@
 
 ## Відповідь
 
-Повертає: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_vote_200_response.go)
+Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
 
 ## Приклад
 
@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteCommentVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `DeleteCommentVote`: DeleteCommentVote200Response
+	// відповідь від `DeleteCommentVote`: VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteCommentVote`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ### Uso de APIs autenticadas (DefaultApi)
 
-**Importante:** Debes configurar tu clave API en el ApiClient antes de realizar solicitudes autenticadas. Si no lo haces, las solicitudes fallarán con un error 401.
+**Importante:** Debes establecer tu clave API en el ApiClient antes de realizar solicitudes autenticadas. Si no lo haces, las solicitudes fallarán con un error 401.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,18 +10,18 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Crear y configurar el cliente de la API
+        // Crear y configurar el cliente de API
         ApiClient apiClient = new ApiClient();
 
-        // REQUERIDO: Establece tu clave API (obténla desde tu panel de FastComments)
+        // OBLIGATORIO: Establece tu clave API (consíguela desde el panel de FastComments)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Crear la instancia de la API con el cliente configurado
+        // Crea la instancia de la API con el cliente configurado
         DefaultApi api = new DefaultApi(apiClient);
 
         // Ahora puedes hacer llamadas a la API autenticadas
         try {
-            // Ejemplo: Añadir un usuario SSO
+            // Ejemplo: Agregar un usuario SSO
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
             userData.setId("user-123");
             userData.setEmail("user@example.com");
@@ -60,8 +60,30 @@ try {
 }
 ```
 
+### Uso de las APIs de moderación (ModerationApi)
+
+La `ModerationApi` alimenta el panel de moderación. Cada método acepta un parámetro `sso` que identifica al moderador autenticado por SSO en cuyo nombre se realiza la solicitud:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Listar comentarios en espera de moderación
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
 ### Problemas comunes
 
-1. **401 "missing-api-key" error**: Asegúrate de llamar a `apiClient.setApiKey("YOUR_KEY")` antes de crear la instancia DefaultApi.
-2. **Wrong API class**: Usa `DefaultApi` para solicitudes autenticadas del lado del servidor, `PublicApi` para solicitudes del lado del cliente/públicas.
-3. **Null API key**: El SDK omitirá la autenticación silenciosamente si la clave API es null, lo que llevará a errores 401.
+1. **401 "missing-api-key" error**: Asegúrate de llamar a `apiClient.setApiKey("YOUR_KEY")` antes de crear la instancia de DefaultApi.
+2. **Clase API equivocada**: Usa `DefaultApi` para solicitudes autenticadas en el servidor, `PublicApi` para solicitudes del lado del cliente/públicas.
+3. **Clave API nula**: El SDK omitirá silenciosamente la autenticación si la clave API es nula, lo que provocará errores 401.

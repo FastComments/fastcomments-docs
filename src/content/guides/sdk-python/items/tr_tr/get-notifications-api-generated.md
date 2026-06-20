@@ -1,25 +1,25 @@
 ## Parametreler
 
-| İsim | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| userId | string | query | Hayır |  |
-| urlId | string | query | Hayır |  |
-| fromCommentId | string | query | Hayır |  |
-| viewed | boolean | query | Hayır |  |
-| type | string | query | Hayır |  |
-| skip | number | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+Döndürür: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_notifications Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -29,18 +29,20 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, API sunucusunun güvenlik politikasına uygun olarak kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
+# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
+# Aşağıda her bir kimlik doğrulama yöntemi için örnekler verilmiştir, kullanım durumunuza
+# uygun olan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı ile yetkilendirmeyi yapılandırın: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki satırı yorum dışı bırakın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki yorumu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneğiyle bir bağlam açın
+# API istemcisi örneği ile bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (isteğe bağlı)

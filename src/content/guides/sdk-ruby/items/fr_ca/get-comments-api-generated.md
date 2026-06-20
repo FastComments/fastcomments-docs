@@ -1,26 +1,28 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| page | integer | query | Non |  |
-| limit | integer | query | Non |  |
-| skip | integer | query | Non |  |
-| asTree | boolean | query | Non |  |
-| skipChildren | integer | query | Non |  |
-| limitChildren | integer | query | Non |  |
-| maxTreeDepth | integer | query | Non |  |
-| urlId | string | query | Non |  |
-| userId | string | query | Non |  |
-| anonUserId | string | query | Non |  |
-| contextUserId | string | query | Non |  |
-| hashTag | string | query | Non |  |
-| parentId | string | query | Non |  |
-| direction | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Réponse
 
-Renvoie: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Renvoie : [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Exemple
 
@@ -30,9 +32,9 @@ require 'time'
 require 'fastcomments-client'
 # configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (par défaut : nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

@@ -2,11 +2,11 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tag200_response.rb)
+Renvoie : [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_hash_tag_response.rb)
 
 ## Exemple
 
@@ -14,11 +14,11 @@ Renvoie : [`AddHashTag200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configuration de l'autorisation
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (defaults to nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -33,6 +33,8 @@ begin
   result = api_instance.add_hash_tag(opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Erreur lors de l'appel de DefaultApi->add_hash_tag: #{e}"
+  puts "Error when calling DefaultApi->add_hash_tag: #{e}"
 end
 [inline-code-end]
+
+---

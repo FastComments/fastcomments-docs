@@ -1,24 +1,24 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| badgeId | string | query | No |  |
-| type | number | query | No |  |
-| displayedOnComments | boolean | query | No |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | クエリ | はい |  |
+| userId | string | クエリ | いいえ |  |
+| badgeId | string | クエリ | いいえ |  |
+| type | number | クエリ | いいえ |  |
+| displayedOnComments | boolean | クエリ | いいえ |  |
+| limit | number | クエリ | いいえ |  |
+| skip | number | クエリ | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadges200Response.java)
+戻り値: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgesResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserBadges の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// インポートするクラス:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証の設定: api_key
+    // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーにプレフィックスを設定するには、以下の行のコメントを外してください。例: "Token" (デフォルトは null)
+    // APIキーのプレフィックスを設定するには、以下の行のコメントを外してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     Double limit = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetUserBadges200Response result = apiInstance.getUserBadges(tenantId)
+      APIGetUserBadgesResponse result = apiInstance.getUserBadges(tenantId)
             .userId(userId)
             .badgeId(badgeId)
             .type(type)

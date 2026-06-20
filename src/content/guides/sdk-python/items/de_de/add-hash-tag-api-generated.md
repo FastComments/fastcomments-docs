@@ -6,38 +6,38 @@
 
 ## Antwort
 
-Gibt zurück: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tag200_response.py)
+Gibt zurück: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_hash_tag_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'add_hash_tag Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tag200_response import AddHashTag200Response
 from client.models.create_hash_tag_body import CreateHashTagBody
+from client.models.create_hash_tag_response import CreateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Definition des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
+# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsfall erfüllt.
+# gemäß der Sicherheitspolicy des API-Servers konfigurieren.
+# Für jede Authentifizierungsmethode sind unten Beispiele aufgeführt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
 
-# API-Schlüssel-Authentifizierung konfigurieren: api_key
+# API-Key-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie unten das Kommentarzeichen, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
+# Wenn nötig, die folgende Zeile auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Einen Kontext mit einer Instanz des API-Clients verwenden
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str |  (optional)
     create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (optional)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->add_hash_tag: %s\n" % e)
 [inline-code-end]
-
----

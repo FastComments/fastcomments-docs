@@ -1,4 +1,4 @@
-## Parameters
+## Παράμετροι
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -10,13 +10,13 @@
 | startDate | string | query | Όχι |  |
 | forceRecalculate | boolean | query | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_200_response.go)
+Επιστρέφει: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_response.go)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'AggregateQuestionResults Παράδειγμα'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα AggregateQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -44,9 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `AggregateQuestionResults`: AggregateQuestionResults200Response
+	// response from `AggregateQuestionResults`: AggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,6 +1,7 @@
+---
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | postId | string | path | Tak |  |
@@ -10,7 +11,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_public200_response.py)
+Zwraca: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_response.py)
 
 ## Przykład
 
@@ -18,18 +19,18 @@ Zwraca: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 import client
 from client.models.react_body_params import ReactBodyParams
-from client.models.react_feed_post_public200_response import ReactFeedPostPublic200Response
+from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ustalenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
@@ -47,3 +48,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->react_feed_post_public: %s\n" % e)
 [inline-code-end]
+
+---

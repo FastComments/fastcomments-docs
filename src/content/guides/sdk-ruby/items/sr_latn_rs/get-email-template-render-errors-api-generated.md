@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors200_response.rb)
+Vraća: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors_response.rb)
 
 ## Primer
 
@@ -16,11 +16,11 @@ Vraća: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# podešavanje autorizacije
+# Podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključa: api_key
+  # Konfigurišite autorizaciju putem API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeću liniju da biste postavili prefiks za API ključa, npr. 'Bearer' (podrazumevano nil)
+  # Otkomentarišite sledeći red da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_email_template_render_errors: #{e}"
 end
 [inline-code-end]
-
----

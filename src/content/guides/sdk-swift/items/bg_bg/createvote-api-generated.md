@@ -10,11 +10,11 @@
 
 ## Отговор
 
-Връща: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteComment200Response.swift)
+Връща: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за createVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Следните примери за код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -36,5 +36,3 @@ DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direc
     }
 }
 [inline-code-end]
-
----

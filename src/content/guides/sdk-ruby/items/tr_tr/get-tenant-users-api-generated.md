@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | skip | number | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_users200_response.rb)
+Döndürür: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_users_response.rb)
 
 ## Örnek
 
@@ -15,11 +15,11 @@ Döndürür: [`GetTenantUsers200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Yetkilendirmeyi yapılandır
+# yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandır: api_key
+  # API anahtar yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarı için önek belirlemek üzere aşağıdaki satırın yorumunu kaldırın, ör. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_users: #{e}"
 end
 [inline-code-end]
-
----

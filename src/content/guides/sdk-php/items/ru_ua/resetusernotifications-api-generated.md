@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | afterId | string | query | Нет |  |
@@ -12,11 +12,11 @@
 
 ## Ответ
 
-Возвращает: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotifications200Response.php)
+Возвращает: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## Пример
 
-[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример resetUserNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -30,10 +30,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
 );
 $tenant_id = 'tenant_id_example'; // строка
 $after_id = 'after_id_example'; // строка
-$after_created_at = 56; // целое число
-$unread_only = True; // булев
-$dm_only = True; // булев
-$no_dm = True; // булев
+$after_created_at = 56; // целое
+$unread_only = True; // логическое
+$dm_only = True; // логическое
+$no_dm = True; // логическое
 $sso = 'sso_example'; // строка
 
 try {

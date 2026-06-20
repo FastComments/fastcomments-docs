@@ -1,57 +1,57 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Не |  |
-| questionIds | array | query | Не |  |
-| urlId | string | query | Не |  |
-| timeBucket | string | query | Не |  |
-| startDate | string | query | Не |  |
-| forceRecalculate | boolean | query | Не |  |
+| tenantId | string | query | Da |  |
+| questionId | string | query | Ne |  |
+| questionIds | array | query | Ne |  |
+| urlId | string | query | Ne |  |
+| timeBucket | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| forceRecalculate | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results200_response.py)
+Vraća: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример aggregate_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate_question_results Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.aggregate_question_results200_response import AggregateQuestionResults200Response
+from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Примери за сваки метод аутентификације дати су у наставку, користите пример који
-# одговара вашем случају коришћења аутентификације.
+# Klijent mora konfigurisati parametre autentikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primeri za svaki metod autentikacije su dati ispod, koristite primer koji
+# zadovoljava vaš slučaj upotrebe autentikacije.
 
-# Конфигуришите ауторизацију API кључа: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментаријте доле да поставите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    question_id = 'question_id_example' # str |  (необавезно)
-    question_ids = ['question_ids_example'] # List[str] |  (необавезно)
-    url_id = 'url_id_example' # str |  (необавезно)
-    time_bucket = client.AggregateTimeBucket() # AggregateTimeBucket |  (необавезно)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (необавезно)
-    force_recalculate = True # bool |  (необавезно)
+    question_id = 'question_id_example' # str |  (opcionalno)
+    question_ids = ['question_ids_example'] # List[str] |  (opcionalno)
+    url_id = 'url_id_example' # str |  (opcionalno)
+    time_bucket = client.AggregateTimeBucket() # AggregateTimeBucket |  (opcionalno)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (opcionalno)
+    force_recalculate = True # bool |  (opcionalno)
 
     try:
         api_response = api_instance.aggregate_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate)
@@ -60,5 +60,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate_question_results: %s\n" % e)
 [inline-code-end]
-
----

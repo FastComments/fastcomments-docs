@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
@@ -11,7 +11,7 @@
 
 ## Réponse
 
-Renvoie : [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCount200Response.java)
+Renvoie: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCountResponse.java)
 
 ## Exemple
 
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation par clé API : api_key
+    // Configurer l'authentification par clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Boolean viewed = true; // Boolean | 
     String type = "type_example"; // String | 
     try {
-      GetNotificationCount200Response result = apiInstance.getNotificationCount(tenantId)
+      GetNotificationCountResponse result = apiInstance.getNotificationCount(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)

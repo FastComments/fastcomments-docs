@@ -2,14 +2,14 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| commentId | string | path | Tak |  |
-| broadcastId | string | query | Tak |  |
-| sso | string | query | Nie |  |
+| tenantId | string | ścieżka | Tak |  |
+| commentId | string | ścieżka | Tak |  |
+| broadcastId | string | zapytanie | Tak |  |
+| sso | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+Zwraca: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## Przykład
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_pin_comment: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplate200Response.php)
+Devuelve: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplateResponse.php)
 
 ## Ejemplo
 
@@ -19,7 +19,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configurar la autorización de la clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomenta abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+// Descomente la siguiente línea para configurar un prefijo (p. ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

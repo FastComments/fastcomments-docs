@@ -7,18 +7,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags200_response.py)
+Zwraca: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_hash_tags'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_hash_tags200_response import GetHashTags200Response
+from client.models.get_hash_tags_response import GetHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiowanie hosta jest opcjonalne i domyślnie ustawia się na https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,8 +26,8 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj tego
+# który spełnia Twoje wymagania dotyczące uwierzytelniania.
 
 # Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_hash_tags: %s\n" % e)
 [inline-code-end]
-
----

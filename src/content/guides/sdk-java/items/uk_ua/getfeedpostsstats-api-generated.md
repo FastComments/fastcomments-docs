@@ -1,18 +1,18 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | postIds | array | query | Так |  |
 | sso | string | query | Ні |  |
 
-## Відповідь
+## Response
 
-Повертає: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsStats200Response.java)
+Повертає: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FeedPostsStatsResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getFeedPostsStats'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад використання getFeedPostsStats'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпортувати класи:
 import com.fastcomments.invoker.ApiClient;
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetFeedPostsStats200Response result = apiInstance.getFeedPostsStats(tenantId, postIds)
+      FeedPostsStatsResponse result = apiInstance.getFeedPostsStats(tenantId, postIds)
             .sso(sso)
             .execute();
       System.out.println(result);

@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -8,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicket200Response.java)
+Vraća: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketResponse.java)
 
 ## Primjer
 
@@ -30,7 +31,7 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano null)
+    // Poništite komentiranje sljedećeg retka kako biste postavili prefiks za API ključ, npr. "Token" (zadano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +39,7 @@ public class Example {
     String id = "id_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      GetTicket200Response result = apiInstance.getTicket(tenantId, id)
+      GetTicketResponse result = apiInstance.getTicket(tenantId, id)
             .userId(userId)
             .execute();
       System.out.println(result);
@@ -52,3 +53,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

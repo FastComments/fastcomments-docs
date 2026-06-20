@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Type | Location | Required | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | questionId | string | query | No |  |
@@ -14,24 +14,24 @@
 
 ## Отговор
 
-Връща: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineCommentsWithQuestionResults200Response.swift)
+Връща: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineQuestionResultsWithCommentsResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери за код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примери на код все още са в бета. За проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (незадължително)
-let questionIds = ["inner_example"] // [String] |  (незадължително)
-let urlId = "urlId_example" // String |  (незадължително)
-let startDate = Date() // Date |  (незадължително)
-let forceRecalculate = true // Bool |  (незадължително)
-let minValue = 987 // Double |  (незадължително)
-let maxValue = 987 // Double |  (незадължително)
-let limit = 987 // Double |  (незадължително)
+let questionId = "questionId_example" // String |  (по избор)
+let questionIds = ["inner_example"] // [String] |  (по избор)
+let urlId = "urlId_example" // String |  (по избор)
+let startDate = Date() // Date |  (по избор)
+let forceRecalculate = true // Bool |  (по избор)
+let minValue = 987 // Double |  (по избор)
+let maxValue = 987 // Double |  (по избор)
+let limit = 987 // Double |  (по избор)
 
 DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
     guard error == nil else {

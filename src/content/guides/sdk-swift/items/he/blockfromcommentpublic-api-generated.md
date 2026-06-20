@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | דרוש | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | commentId | string | path | כן |  |
@@ -8,13 +8,13 @@
 
 ## תגובה
 
-מחזיר: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockFromCommentPublic200Response.swift)
+מחזיר: [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-blockFromCommentPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד הבאות עדיין בבטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דגימות הקוד שלהלן עדיין בבטא. לכל בעיה, דווחו באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

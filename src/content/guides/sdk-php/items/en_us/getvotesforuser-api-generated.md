@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotesForUser200Response.php)
+Returns: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotesForUserResponse.php)
 
 ## Example
 

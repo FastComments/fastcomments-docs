@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Voorbeeld
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutelautorisatie: api_key
+  # Configureer API-sleutel-autorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaar voor de volgende regel weg om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
+  # Haal het commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijvoorbeeld 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_feed_post: #{e}"
 end
 [inline-code-end]
-
----

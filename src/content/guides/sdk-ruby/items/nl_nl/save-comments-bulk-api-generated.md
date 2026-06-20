@@ -1,16 +1,16 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| isLive | boolean | query | Nee |  |
-| doSpamCheck | boolean | query | Nee |  |
-| sendEmails | boolean | query | Nee |  |
-| populateNotifications | boolean | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
-## Respons
+## Response
 
-Retourneert: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/array&lt;_save_comment200_response&gt;.rb)
+Geeft terug: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
 
 ## Voorbeeld
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # API-sleutelautorisatie configureren: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaar weg van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal het commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,3 +44,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->save_comments_bulk: #{e}"
 end
 [inline-code-end]
+
+---

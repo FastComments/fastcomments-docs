@@ -11,44 +11,44 @@
 
 ## תגובה
 
-מחזיר: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count200_response.py)
+מחזיר: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notification_count200_response import GetNotificationCount200Response
+from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל https://fastcomments.com
-# ראה את configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host היא אופציונלית והברירת מחדל היא https://fastcomments.com
+# עיין בקובץ configuration.py לרשימה של כל הפרמטרים הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח צריך להגדיר את פרמטרי האימות וההרשאה
+# על הלקוח להגדיר את פרמטרי האימות והרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה שמתאימה
-# למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מוצגות להלן, השתמש בדוגמה
+# המתאימה למקרה השימוש שלך.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# הכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    url_id = 'url_id_example' # str |  (optional)
-    from_comment_id = 'from_comment_id_example' # str |  (optional)
-    viewed = True # bool |  (optional)
-    type = 'type_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (אופציונלי)
+    url_id = 'url_id_example' # str |  (אופציונלי)
+    from_comment_id = 'from_comment_id_example' # str |  (אופציונלי)
+    viewed = True # bool |  (אופציונלי)
+    type = 'type_example' # str |  (אופציונלי)
 
     try:
         api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)

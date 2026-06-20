@@ -5,9 +5,9 @@
 | tenantId | string | query | Evet |  |
 | domainToUpdate | string | path | Evet |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+Dönen değer: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_put_domain_config_response.go)
 
 ## Örnek
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `PutDomainConfig`'den yanıt: GetDomainConfig200Response
+	// `PutDomainConfig`'ten gelen yanıt: PutDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

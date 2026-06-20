@@ -9,25 +9,25 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+Επιστρέφει: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα un_pin_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_pin_comment Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένο είναι το https://fastcomments.com
+# Ορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
 # Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα πλαίσιο με ένα στιγμιότυπο του πελάτη API
+# Εισέλθετε σε ένα πλαίσιο με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.PublicApi(api_client)
@@ -43,3 +43,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->un_pin_comment: %s\n" % e)
 [inline-code-end]
+
+---

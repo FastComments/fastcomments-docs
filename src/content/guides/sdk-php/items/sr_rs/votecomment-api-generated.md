@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Type | Location | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -11,7 +11,7 @@
 
 ## Одговор
 
-Враћа: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteComment200Response.php)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
 ## Пример
 
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите свој клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално; као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

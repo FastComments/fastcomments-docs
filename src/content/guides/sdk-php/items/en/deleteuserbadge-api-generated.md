@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserBadge200Response.php)
+Returns: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptySuccessResponse.php)
 
 ## Example
 

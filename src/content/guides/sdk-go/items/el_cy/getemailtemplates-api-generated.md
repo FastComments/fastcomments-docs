@@ -5,9 +5,9 @@
 | tenantId | string | query | Ναι |  |
 | skip | number | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_templates_200_response.go)
+Επιστρέφει: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_templates_response.go)
 
 ## Παράδειγμα
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `GetEmailTemplates`: GetEmailTemplates200Response
+	// απόκριση από `GetEmailTemplates`: GetEmailTemplatesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplates`: %v\n", resp)
 }
 [inline-code-end]

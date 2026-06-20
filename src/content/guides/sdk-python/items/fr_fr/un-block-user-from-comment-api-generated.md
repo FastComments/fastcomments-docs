@@ -2,26 +2,26 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| id | string | path | Oui |  |
-| userId | string | query | Non |  |
-| anonUserId | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Réponse
 
-Renvoie: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/un_block_comment_public200_response.py)
+Renvoie: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple pour un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.un_block_comment_public200_response import UnBlockCommentPublic200Response
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
+from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
+# La définition du host est optionnelle et la valeur par défaut est https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,18 +29,18 @@ configuration = client.Configuration(
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
 # conformément à la politique de sécurité du serveur API.
-# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez celui
-# qui correspond à votre cas d'utilisation d'authentification.
+# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez l'exemple qui
+# correspond à votre cas d'utilisation d'authentification.
 
-# Configurer l'autorisation par clé API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour configurer un préfixe (e.g. Bearer) pour la clé API, si nécessaire
+# Décommentez ci‑dessous pour configurer un préfixe (e.g. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrer dans un contexte avec une instance du client API
+# Entrez dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Créez une instance de la classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

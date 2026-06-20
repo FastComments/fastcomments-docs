@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -9,11 +9,11 @@
 
 ## Odgovor
 
-Vraća: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentVoteUserNames200Response.java)
+Vraća: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentVoteUserNamesSuccessResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getCommentVoteUserNames Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentVoteUserNames'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -33,19 +33,17 @@ public class Example {
     Integer dir = 56; // Integer | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentVoteUserNames200Response result = apiInstance.getCommentVoteUserNames(tenantId, commentId, dir)
+      GetCommentVoteUserNamesSuccessResponse result = apiInstance.getCommentVoteUserNames(tenantId, commentId, dir)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Izuzetak pri pozivu PublicApi#getCommentVoteUserNames");
-      System.err.println("Statusni kod: " + e.getCode());
-      System.err.println("Razlog: " + e.getResponseBody());
-      System.err.println("Zaglavlja odgovora: " + e.getResponseHeaders());
+      System.err.println("Exception when calling PublicApi#getCommentVoteUserNames");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

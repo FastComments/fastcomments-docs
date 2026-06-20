@@ -1,22 +1,22 @@
 Activer ou désactiver les notifications pour un commentaire spécifique.
 
-## Parameters
+## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| notificationId | string | path | Yes |  |
-| optedInOrOut | string | path | Yes |  |
-| commentId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Oui |  |
+| notificationId | string | path | Oui |  |
+| optedInOrOut | string | path | Oui |  |
+| commentId | string | query | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Retourne : [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationCommentSubscriptionStatusResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple updateUserNotificationCommentSubscriptionStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Exemple'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -37,7 +37,7 @@ public class Example {
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
+      UpdateUserNotificationCommentSubscriptionStatusResponse result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

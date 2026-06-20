@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| errorId | string | path | Yes |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
+| errorId | string | path | 是 |  |
 
 ## 响应
 
-返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 示例
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释以下行以为 API 密钥设置前缀，例如 "Token"（默认为 null）
+    // 取消注释下面一行以为 API 密钥设置前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String errorId = "errorId_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteEmailTemplateRenderError(tenantId, id, errorId)
+      APIEmptyResponse result = apiInstance.deleteEmailTemplateRenderError(tenantId, id, errorId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

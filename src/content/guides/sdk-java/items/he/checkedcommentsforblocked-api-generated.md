@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| commentIds | string | query | כן | רשימה מופרדת בפסיקים של מזהי תגובות. |
-| sso | string | query | לא |  |
+| tenantId | string | שאילתה | כן |  |
+| commentIds | string | שאילתה | כן | רשימת מזהי תגובות מופרדת בפסיקים. |
+| sso | string | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+מחזיר: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## דוגמה
 
@@ -28,10 +28,10 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
-    String commentIds = "commentIds_example"; // String | רשימה מופרדת בפסיקים של מזהי תגובות.
+    String commentIds = "commentIds_example"; // String | רשימת מזהי תגובות מופרדת בפסיקים.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

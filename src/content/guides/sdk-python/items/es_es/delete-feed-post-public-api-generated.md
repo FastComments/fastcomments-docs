@@ -1,7 +1,7 @@
 ---
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Location | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | postId | string | path | Sí |  |
@@ -10,19 +10,19 @@
 
 ## Respuesta
 
-Devuelve: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public200_response.py)
+Devuelve: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de delete_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_feed_post_public200_response import DeleteFeedPostPublic200Response
+from client.models.delete_feed_post_public_response import DeleteFeedPostPublicResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración admitidos.
+# Consulte configuration.py para ver la lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | isLive | boolean | query | Не |  |
@@ -10,7 +10,7 @@
 
 ## Отговор
 
-Връща: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveComment200Response.php)
+Връща: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsBulkResponse.php)
 
 ## Пример
 
@@ -46,5 +46,3 @@ try {
     echo 'Exception when calling DefaultApi->saveCommentsBulk: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

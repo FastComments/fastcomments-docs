@@ -9,18 +9,18 @@
 
 ## Одговор
 
-Враћа: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names200_response.py)
+Враћа: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names_success_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'get_comment_vote_user_names Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_vote_user_names200_response import GetCommentVoteUserNames200Response
+from client.models.get_comment_vote_user_names_success_response import GetCommentVoteUserNamesSuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционално и подразумевано је https://fastcomments.com
+# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
 # Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -34,7 +34,7 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     dir = 56 # int | 
-    sso = 'sso_example' # str |  (опционо)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.get_comment_vote_user_names(tenant_id, comment_id, dir, sso=sso)
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_comment_vote_user_names: %s\n" % e)
 [inline-code-end]
-
----

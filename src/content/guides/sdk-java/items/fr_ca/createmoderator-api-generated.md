@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Name | Type | Location | Requis | Description |
-|------|------|----------|--------|-------------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
-## Response
+## Réponse
 
-Retourne : [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModerator200Response.java)
+Renvoie : [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModeratorResponse.java)
 
 ## Exemple
 
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'authentification par clé API: api_key
+    // Configurer l'authentification par clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateModeratorBody createModeratorBody = new CreateModeratorBody(); // CreateModeratorBody | 
     try {
-      CreateModerator200Response result = apiInstance.createModerator(tenantId, createModeratorBody)
+      CreateModeratorResponse result = apiInstance.createModerator(tenantId, createModeratorBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

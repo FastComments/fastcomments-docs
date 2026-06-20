@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | yearNumber | number | query | Nee |  |
@@ -10,7 +10,7 @@
 
 ## Respons
 
-Retourneert: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_daily_usages200_response.rb)
+Geeft terug: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_daily_usages_response.rb)
 
 ## Voorbeeld
 
@@ -18,11 +18,11 @@ Retourneert: [`GetTenantDailyUsages200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# autorisatie instellen
+# Autorisatie instellen
 FastCommentsClient.configure do |config|
   # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaartekens weg van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal het commentaarteken van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

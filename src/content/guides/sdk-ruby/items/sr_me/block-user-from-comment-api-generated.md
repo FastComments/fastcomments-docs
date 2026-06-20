@@ -1,27 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | упит | Да |  |
-| id | string | путања | Да |  |
-| userId | string | упит | Не |  |
-| anonUserId | string | упит | Не |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| userId | string | query | Ne |  |
+| anonUserId | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример block_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za block_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# podesite autorizaciju
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију API кључа: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

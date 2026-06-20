@@ -1,12 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_user_badge200_response.rb)
+Επιστρέφει: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
 
 ## Παράδειγμα
 
@@ -18,7 +18,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αφαιρέστε το σχόλιο από την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (από προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_user_badge: #{e}"
 end
 [inline-code-end]
-
----

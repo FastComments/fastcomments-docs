@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## Одговор
 
-Враћа: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchHashTag200Response.php)
+Враћа: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateHashTagResponse.php)
 
 ## Пример
 
@@ -17,15 +18,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриши овлашћење API кључа: api_key
+// Конфигуришите API кључ за овлашћење: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
+// Откоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите клијента који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

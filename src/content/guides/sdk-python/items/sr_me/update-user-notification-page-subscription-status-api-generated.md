@@ -1,8 +1,8 @@
-Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове root коментаре, и такође
+Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове главне коментаре, и такође
 
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -13,19 +13,19 @@
 
 ## Одговор
 
-Враћа: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Враћа: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за update_user_notification_page_subscription_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Дефинисање хоста је опционално и подразумевано је https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,7 +33,7 @@ configuration = client.Configuration(
 
 # Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Направите инстанцу API класе
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 

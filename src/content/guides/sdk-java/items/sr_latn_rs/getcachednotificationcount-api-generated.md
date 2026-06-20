@@ -7,13 +7,13 @@
 
 ## Odgovor
 
-Vraća: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCount200Response.java)
+Vraća: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCountResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getCachedNotificationCount Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCachedNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetCachedNotificationCount200Response result = apiInstance.getCachedNotificationCount(tenantId, id)
+      GetCachedNotificationCountResponse result = apiInstance.getCachedNotificationCount(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

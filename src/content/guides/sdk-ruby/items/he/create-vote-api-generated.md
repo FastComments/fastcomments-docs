@@ -10,7 +10,7 @@
 
 ## תגובה
 
-מחזיר: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+מחזיר: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## דוגמה
 
@@ -18,11 +18,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדר אימות
+# הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,57 +1,59 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| page | integer | query | Нет |  |
-| limit | integer | query | Нет |  |
-| skip | integer | query | Нет |  |
-| asTree | boolean | query | Нет |  |
-| skipChildren | integer | query | Нет |  |
-| limitChildren | integer | query | Нет |  |
-| maxTreeDepth | integer | query | Нет |  |
-| urlId | string | query | Нет |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
-| contextUserId | string | query | Нет |  |
-| hashTag | string | query | Нет |  |
-| parentId | string | query | Нет |  |
-| direction | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetComments200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments200_response.py)
+Возвращает: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments200_response import GetComments200Response
+from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Указание host необязательно и по умолчанию равно https://fastcomments.com
+# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
-# соответствует вашему сценарию использования аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример,
+# который соответствует вашему варианту использования аутентификации.
 
-# Настройка авторизации по API-ключу: api_key
+# Настроить авторизацию по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если необходимо
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если нужно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Откройте контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создать экземпляр API-класса
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     page = 56 # int |  (необязательно)
@@ -68,9 +70,11 @@ with client.ApiClient(configuration) as api_client:
     hash_tag = 'hash_tag_example' # str |  (необязательно)
     parent_id = 'parent_id_example' # str |  (необязательно)
     direction = client.SortDirections() # SortDirections |  (необязательно)
+    from_date = 56 # int |  (необязательно)
+    to_date = 56 # int |  (необязательно)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction)
+        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

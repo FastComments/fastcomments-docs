@@ -14,11 +14,11 @@
 
 ## Odgovor
 
-Vraća: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineCommentsWithQuestionResults200Response.java)
+Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineQuestionResultsWithCommentsResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer combineCommentsWithQuestionResults'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -36,7 +36,7 @@ public class Example {
     // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. "Token" (podrazumevano je null)
+    // Otkomentarišite sledeću liniju da biste postavili prefiks za API ključ, npr. "Token" (podrazumevano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -50,7 +50,7 @@ public class Example {
     Double maxValue = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      CombineCommentsWithQuestionResults200Response result = apiInstance.combineCommentsWithQuestionResults(tenantId)
+      CombineQuestionResultsWithCommentsResponse result = apiInstance.combineCommentsWithQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)

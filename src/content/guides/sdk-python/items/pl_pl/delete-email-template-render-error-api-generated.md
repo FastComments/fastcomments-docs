@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
@@ -8,18 +8,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład delete_email_template_render_error'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,7 +28,7 @@ configuration = client.Configuration(
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
 # Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu który
-# spełnia wymagania twojego przypadku użycia uwierzytelniania.
+# odpowiada twojemu przypadkowi użycia uwierzytelniania.
 
 # Skonfiguruj uwierzytelnianie kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_email_template_render_error: %s\n" % e)
 [inline-code-end]
-
----

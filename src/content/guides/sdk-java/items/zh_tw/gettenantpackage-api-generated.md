@@ -2,18 +2,18 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackage200Response.java)
+回傳: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackageResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getTenantPackage 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別:
+// 匯入類別：
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,14 +29,14 @@ public class Example {
     // 設定 API 金鑰授權：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解下列程式碼以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
+    // 若要為 API 金鑰設定前綴，請取消註解下列行，例如 "Token"（預設為 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantPackage200Response result = apiInstance.getTenantPackage(tenantId, id)
+      GetTenantPackageResponse result = apiInstance.getTenantPackage(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

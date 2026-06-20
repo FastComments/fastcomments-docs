@@ -37,7 +37,7 @@ urlId
 
 ## Risposta
 
-Restituisce: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Restituisce: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Esempio
 
@@ -50,7 +50,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come predefinito.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato di default.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

@@ -6,11 +6,11 @@
 
 ## Odgovor
 
-Vrne: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddHashTag200Response.java)
+Vrača: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer addHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurirajte avtentikacijo z API ključem: api_key
+    // Konfigurirajte API ključ za avtentikacijo: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
+    // Odkomentirajte naslednjo vrstico za nastavitev predpone za API ključ, npr. "Token" (privzeto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateHashTagBody createHashTagBody = new CreateHashTagBody(); // CreateHashTagBody | 
     try {
-      AddHashTag200Response result = apiInstance.addHashTag()
+      CreateHashTagResponse result = apiInstance.addHashTag()
             .tenantId(tenantId)
             .createHashTagBody(createHashTagBody)
             .execute();

@@ -1,21 +1,21 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| urlIdWS | string | query | Oui |  |
-| userIds | string | query | Oui |  |
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
 
 ## Réponse
 
-Retourne : [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses200_response.py)
+Renvoie : [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_user_presence_statuses'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de get_user_presence_statuses'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_presence_statuses200_response import GetUserPresenceStatuses200Response
+from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,9 +26,9 @@ configuration = client.Configuration(
 )
 
 
-# Entrez dans un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id_ws = 'url_id_ws_example' # str | 

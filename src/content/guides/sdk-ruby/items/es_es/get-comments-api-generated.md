@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | page | integer | query | No |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | No |  |
 | parentId | string | query | No |  |
 | direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Devuelve: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Ejemplo
 
@@ -28,9 +30,9 @@ Devuelve: [`GetComments200Response`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# Configurar autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización por clave API: api_key
+  # Configurar autorización con clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

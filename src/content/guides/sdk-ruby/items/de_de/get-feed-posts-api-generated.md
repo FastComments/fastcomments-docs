@@ -6,14 +6,14 @@ afterId
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
+| tenantId | string | query | Ja |  |
+| afterId | string | query | Nein |  |
+| limit | integer | query | Nein |  |
+| tags | array | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+Gibt zurück: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## Beispiel
 
@@ -25,7 +25,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API-Schlüssel-Autorisierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Entfernen Sie das Kommentarzeichen in der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

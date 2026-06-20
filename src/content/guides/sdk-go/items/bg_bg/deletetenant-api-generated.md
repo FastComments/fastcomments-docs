@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Име | Тип | Location | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -9,7 +8,7 @@
 
 ## Отговор
 
-Връща: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Пример
 
@@ -27,7 +26,7 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
-	sure := "sure_example" // string |  (незадължително)
+	sure := "sure_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -36,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteTenant`: FlagCommentPublic200Response
+	// отговор от `DeleteTenant`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteTenant`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -10,11 +10,11 @@
 
 ## Odgovor
 
-Vraća: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_text200_response.rb)
+Vraća: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_set_comment_text_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'set_comment_text Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer set_comment_text'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->set_comment_text: #{e}"
 end
 [inline-code-end]
+
+---

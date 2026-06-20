@@ -5,20 +5,20 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Respons
+## Response
 
-Retourneert: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_by_id200_response.py)
+Geeft terug: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_response.py)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'get_user_badge_progress_by_id Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van get_user_badge_progress_by_id'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_by_id200_response import GetUserBadgeProgressById200Response
+from client.models.api_get_user_badge_progress_response import APIGetUserBadgeProgressResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
+# Het definiëren van de host is optioneel en staat standaard op https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,10 +26,13 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode worden hieronder gegeven; gebruik het voorbeeld dat
-# dat past bij uw authenticatiegebruikssituatie.
+# Voor elk authenticatiemethode worden hieronder voorbeelden gegeven; gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegeval.
+
 # Configureer API-sleutelautorisatie: api_key
-# Haal de commentaarteken weg hieronder om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Haal de commentaar weg hieronder om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Ga een context in met een instantie van de API-client

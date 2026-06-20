@@ -1,13 +1,13 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | urlId | string | query | Yes |  |
 
 ## 回應
 
-回傳: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotes200Response.php)
+回傳: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotesResponse.php)
 
 ## 範例
 
@@ -24,8 +24,8 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 如果要使用自訂的 HTTP 客戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
-    // 這是可選的；預設會使用 `GuzzleHttp\Client`。
+    // 若要使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->getVotes: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

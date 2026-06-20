@@ -1,23 +1,23 @@
-Omogućite ili onemogućite obavještenja za stranicu. Kada su korisnici pretplaćeni na stranicu, obavještenja se kreiraju za nove komentare prvog nivoa, i takođe
+Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове главне коментаре, и такође
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| urlId | string | query | Da |  |
-| url | string | query | Da |  |
-| pageTitle | string | query | Da |  |
-| subscribedOrUnsubscribed | string | path | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| urlId | string | query | Да |  |
+| url | string | query | Да |  |
+| pageTitle | string | query | Да |  |
+| subscribedOrUnsubscribed | string | path | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Враћа: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_page_subscription_status_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer UpdateUserNotificationPageSubscriptionStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример UpdateUserNotificationPageSubscriptionStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 	url := "url_example" // string | 
 	pageTitle := "pageTitle_example" // string | 
 	subscribedOrUnsubscribed := "subscribedOrUnsubscribed_example" // string | 
-	sso := "sso_example" // string |  (neobavezno)
+	sso := "sso_example" // string |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationPageSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// response from `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationPageSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationPageSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

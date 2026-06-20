@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | meta | string | query | Όχι |  |
@@ -8,37 +8,37 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenants200_response.py)
+Επιστρέφει: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenants_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_tenants'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenants200_response import GetTenants200Response
+from client.models.get_tenants_response import GetTenantsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο καθορισμός του host είναι προαιρετικός και προεπιλεγμένα είναι το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ορισμός του host είναι προαιρετικός και προεπιλέγεται σε https://fastcomments.com
+# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
+# Ο client πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
 # σύμφωνα με την πολιτική ασφαλείας του API server.
-# Παραδείγματα για κάθε μέθοδο πιστοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί το σενάριο χρήσης πιστοποίησής σας.
+# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης αυθεντικοποίησής σας.
 
-# Configure API key authorization: api_key
+# Ρύθμιση εξουσιοδότησης με API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Αποσχολίαστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Ανοίξτε ένα context με μια παρουσία του API client
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Δημιουργία ενός instance της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     meta = 'meta_example' # str |  (optional)

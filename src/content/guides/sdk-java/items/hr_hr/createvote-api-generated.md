@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Da |  |
@@ -10,7 +11,7 @@
 
 ## Odgovor
 
-Vraća: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteComment200Response.java)
+Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteResponse.java)
 
 ## Primjer
 
@@ -42,7 +43,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      VoteComment200Response result = apiInstance.createVote(tenantId, commentId, direction)
+      VoteResponse result = apiInstance.createVote(tenantId, commentId, direction)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();
@@ -57,3 +58,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

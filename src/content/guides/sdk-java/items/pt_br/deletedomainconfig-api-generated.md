@@ -1,13 +1,13 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | domain | string | path | Sim |  |
 
 ## Resposta
 
-Retorna: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteDomainConfig200Response.java)
+Retorna: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteDomainConfigResponse.java)
 
 ## Exemplo
 
@@ -29,14 +29,14 @@ public class Example {
     // Configurar autorização por chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha a seguir para definir um prefixo para a chave de API, p.ex. "Token" (padrão null)
+    // Descomente a linha a seguir para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String domain = "domain_example"; // String | 
     try {
-      DeleteDomainConfig200Response result = apiInstance.deleteDomainConfig(tenantId, domain)
+      DeleteDomainConfigResponse result = apiInstance.deleteDomainConfig(tenantId, domain)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

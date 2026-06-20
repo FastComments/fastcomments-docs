@@ -1,21 +1,21 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Location | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
 | broadcastId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
-Geeft terug: [`LockComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/LockComment200Response.java)
+Returneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'lockComment Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      LockComment200Response result = apiInstance.lockComment(tenantId, commentId, broadcastId)
+      APIEmptyResponse result = apiInstance.lockComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

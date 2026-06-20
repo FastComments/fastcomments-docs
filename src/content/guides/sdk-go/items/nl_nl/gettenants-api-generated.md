@@ -8,7 +8,7 @@
 
 ## Respons
 
-Geeft terug: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_200_response.go)
+Retourneert: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_response.go)
 
 ## Voorbeeld
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenants``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `GetTenants`: GetTenants200Response
+	// antwoord van `GetTenants`: GetTenantsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenants`: %v\n", resp)
 }
 [inline-code-end]

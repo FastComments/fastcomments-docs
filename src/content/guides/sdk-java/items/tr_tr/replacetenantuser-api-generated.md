@@ -1,14 +1,14 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| updateComments | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| id | string | path | Evet |  |
+| updateComments | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Örnek
 
@@ -30,7 +30,7 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
+    // Aşağıdaki satırı API anahtarı için bir önek ayarlamak üzere yorumdan çıkarın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     ReplaceTenantUserBody replaceTenantUserBody = new ReplaceTenantUserBody(); // ReplaceTenantUserBody | 
     String updateComments = "updateComments_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.replaceTenantUser(tenantId, id, replaceTenantUserBody)
+      APIEmptyResponse result = apiInstance.replaceTenantUser(tenantId, id, replaceTenantUserBody)
             .updateComments(updateComments)
             .execute();
       System.out.println(result);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

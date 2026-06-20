@@ -1,17 +1,17 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | number | query | No |  |
+| tenantId | string | query | Да |  |
+| page | number | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetHashTags200Response.java)
+Враћа: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetHashTagsResponse.java)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'getHashTags Примјер'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getHashTags Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Подеси овлашћење API кључа: api_key
+    // Конфигуришите овлашћење API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Одкоментариши следећи ред да поставиш префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментујте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (по подразумеваној вредности null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     try {
-      GetHashTags200Response result = apiInstance.getHashTags(tenantId)
+      GetHashTagsResponse result = apiInstance.getHashTags(tenantId)
             .page(page)
             .execute();
       System.out.println(result);

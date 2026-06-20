@@ -1,3 +1,4 @@
+---
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -6,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenant200Response.java)
+Retorna: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantResponse.java)
 
 ## Exemplo
 
@@ -25,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização da chave da API: api_key
+    // Configurar a autorização da chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha abaixo para definir um prefixo para a chave da API, por exemplo "Token" (padrão é null)
+    // Descomente a linha a seguir para definir um prefixo para a chave da API, ex. "Token" (padrão é null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateTenantBody createTenantBody = new CreateTenantBody(); // CreateTenantBody | 
     try {
-      CreateTenant200Response result = apiInstance.createTenant(tenantId, createTenantBody)
+      CreateTenantResponse result = apiInstance.createTenant(tenantId, createTenantBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

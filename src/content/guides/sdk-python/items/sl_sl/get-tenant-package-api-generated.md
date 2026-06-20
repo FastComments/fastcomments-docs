@@ -7,32 +7,32 @@
 
 ## Odgovor
 
-Vrne: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_package200_response.py)
+Vrača: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_package_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_tenant_package'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_package200_response import GetTenantPackage200Response
+from client.models.get_tenant_package_response import GetTenantPackageResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov si oglejte configuration.py.
+# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
-# v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo overjanja so navedeni spodaj; uporabite primer, ki
-# ustreza vašemu primeru uporabe.
+# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
+# v skladu s politikami varnosti API strežnika.
+# Spodaj so navedeni primeri za vsako metodo avtentikacije, uporabite
+# primer, ki ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Konfigurirajte pooblastilo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je to potrebno
+# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca

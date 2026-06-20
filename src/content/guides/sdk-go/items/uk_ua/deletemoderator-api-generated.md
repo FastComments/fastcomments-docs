@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Location | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Приклад
 
@@ -26,7 +26,7 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
-	sendEmail := "sendEmail_example" // string |  (необов'язково)
+	sendEmail := "sendEmail_example" // string |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `DeleteModerator`: FlagCommentPublic200Response
+	// відповідь від `DeleteModerator`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteModerator`: %v\n", resp)
 }
 [inline-code-end]

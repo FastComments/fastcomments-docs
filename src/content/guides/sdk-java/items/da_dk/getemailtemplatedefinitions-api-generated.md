@@ -1,12 +1,12 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Svar
 
-Returnerer: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitions200Response.java)
+Returnerer: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitionsResponse.java)
 
 ## Eksempel
 
@@ -25,16 +25,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgleautorisation: api_key
+    // Konfigurer autorisation med API-nøgle: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Fjern kommenteringen af følgende linje for at sætte et præfiks til API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetEmailTemplateDefinitions200Response result = apiInstance.getEmailTemplateDefinitions(tenantId)
+      GetEmailTemplateDefinitionsResponse result = apiInstance.getEmailTemplateDefinitions(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

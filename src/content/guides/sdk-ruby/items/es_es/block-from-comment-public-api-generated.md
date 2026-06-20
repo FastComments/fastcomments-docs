@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Devuelve: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## Ejemplo
 
@@ -33,3 +33,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->block_from_comment_public: #{e}"
 end
 [inline-code-end]
+
+---

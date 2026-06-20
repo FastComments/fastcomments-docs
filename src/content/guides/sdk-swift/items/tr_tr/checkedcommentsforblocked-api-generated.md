@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -9,11 +8,11 @@
 
 ## Yanıt
 
-Döndürür: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckedCommentsForBlocked200Response.swift)
+Döndürür: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckBlockedCommentsResponse.swift)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Örnek'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
 import FastCommentsSwift

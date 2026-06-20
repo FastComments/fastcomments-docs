@@ -10,11 +10,11 @@
 
 ## תגובה
 
-מחזיר: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+מחזיר: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetTenantDailyUsages'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל־GetTenantDailyUsages'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`GetTenantDailyUsages`: GetTenantDailyUsages200Response
+	// תגובה מ־`GetTenantDailyUsages`: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]

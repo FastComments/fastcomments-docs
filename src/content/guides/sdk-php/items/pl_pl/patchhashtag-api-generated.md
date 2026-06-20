@@ -2,16 +2,16 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tag | string | path | Tak |  |
-| tenantId | string | query | Nie |  |
+| tag | string | ścieżka | Tak |  |
+| tenantId | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchHashTag200Response.php)
+Zwraca: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateHashTagResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład patchHashTag'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,8 +24,8 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klient, który implementuje `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, domyślnie użyty zostanie `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -40,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->patchHashTag: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

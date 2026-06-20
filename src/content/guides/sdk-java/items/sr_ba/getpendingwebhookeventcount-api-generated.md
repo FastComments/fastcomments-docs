@@ -2,21 +2,21 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Не |  |
-| externalId | string | query | Не |  |
-| eventType | string | query | Не |  |
-| type | string | query | Не |  |
-| domain | string | query | Не |  |
-| attemptCountGT | number | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Одговор
 
-Враћа: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCount200Response.java)
+Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCountResponse.java)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'getPendingWebhookEventCount Примјер'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Постави ауторизацију API кључем: api_key
+    // Подеси ауторизацију помоћу API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирај следећу линију да подесиш префикс за API кључ, нпр. "Token" (подразумјевано је null)
+    // Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String domain = "domain_example"; // String | 
     Double attemptCountGT = 3.4D; // Double | 
     try {
-      GetPendingWebhookEventCount200Response result = apiInstance.getPendingWebhookEventCount(tenantId)
+      GetPendingWebhookEventCountResponse result = apiInstance.getPendingWebhookEventCount(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)
@@ -65,5 +65,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

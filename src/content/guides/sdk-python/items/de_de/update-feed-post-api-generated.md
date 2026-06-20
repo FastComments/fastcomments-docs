@@ -1,39 +1,39 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'update_feed_post Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.feed_post import FeedPost
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Das Festlegen des Hosts ist optional und standardmäßig auf https://fastcomments.com eingestellt
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode werden unten gezeigt, verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# in Übereinstimmung mit der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Auth-Methode sind unten angegeben, verwenden Sie das Beispiel, das
+# Ihren Auth-Anwendungsfall erfüllt.
 
-# Configure API key authorization: api_key
+# API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie das Kommentarzeichen unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen
+# Entfernen Sie unten das Kommentarzeichen, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Öffnen Sie einen Kontext mit einer Instanz des API-Clients

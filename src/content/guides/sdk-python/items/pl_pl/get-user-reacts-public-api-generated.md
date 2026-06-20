@@ -8,14 +8,14 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+Zwraca: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,7 +26,7 @@ configuration = client.Configuration(
 )
 
 
-# Wejdź w kontekst z instancją klienta API
+# Użyj kontekstu z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
@@ -41,5 +41,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_user_reacts_public: %s\n" % e)
 [inline-code-end]
-
----

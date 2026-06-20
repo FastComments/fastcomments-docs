@@ -1,19 +1,19 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | упит | Да |  |
+| id | string | путања | Да |  |
 
 ## Одговор
 
-Враћа: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCount200Response.swift)
+Враћа: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCountResponse.swift)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'getCachedNotificationCount Примјер'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCachedNotificationCount Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још увијек у бета фази. За сваки проблем, пријавите преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још увек у бета верзији. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

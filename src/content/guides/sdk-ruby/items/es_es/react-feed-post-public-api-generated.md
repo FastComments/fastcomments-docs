@@ -2,15 +2,15 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| postId | string | path | Sí |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
 | isUndo | boolean | query | No |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_public200_response.rb)
+Devuelve: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_response.rb)
 
 ## Ejemplo
 
@@ -20,13 +20,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-post_id = 'post_id_example' # String | 
+tenant_id = 'tenant_id_example' # Cadena | 
+post_id = 'post_id_example' # Cadena | 
 react_body_params = FastCommentsClient::ReactBodyParams.new # ReactBodyParams | 
 opts = {
-  is_undo: true, # Boolean | 
-  broadcast_id: 'broadcast_id_example', # String | 
-  sso: 'sso_example' # String | 
+  is_undo: true, # Booleano | 
+  broadcast_id: 'broadcast_id_example', # Cadena | 
+  sso: 'sso_example' # Cadena | 
 }
 
 begin

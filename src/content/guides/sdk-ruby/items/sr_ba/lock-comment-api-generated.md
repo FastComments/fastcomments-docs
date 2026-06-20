@@ -1,19 +1,19 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | putanja | Da |  |
-| commentId | string | putanja | Da |  |
-| broadcastId | string | upit | Da |  |
-| sso | string | upit | Ne |  |
+| tenantId | string | path | Da |  |
+| commentId | string | path | Da |  |
+| broadcastId | string | query | Da |  |
+| sso | string | query | Ne |  |
 
-## Odgovor
+## Response
 
-Vraća: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer lock_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lock_comment Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

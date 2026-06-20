@@ -17,14 +17,16 @@
 | hashTag | string | query | Не |  |
 | parentId | string | query | Не |  |
 | direction | string | query | Не |  |
+| fromDate | integer | query | Не |  |
+| toDate | integer | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetComments200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_200_response.go)
+Враћа: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_comments_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример GetComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за GetComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -32,34 +34,36 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	page := int32(56) // int32 |  (необавезно)
-	limit := int32(56) // int32 |  (необавезно)
-	skip := int32(56) // int32 |  (необавезно)
-	asTree := true // bool |  (необавезно)
-	skipChildren := int32(56) // int32 |  (необавезно)
-	limitChildren := int32(56) // int32 |  (необавезно)
-	maxTreeDepth := int32(56) // int32 |  (необавезно)
-	urlId := "urlId_example" // string |  (необавезно)
-	userId := "userId_example" // string |  (необавезно)
-	anonUserId := "anonUserId_example" // string |  (neобavezno)
-	contextUserId := "contextUserId_example" // string |  (необавезно)
-	hashTag := "hashTag_example" // string |  (необавезно)
-	parentId := "parentId_example" // string |  (необавезно)
-	direction := openapiclient.SortDirections("OF") // SortDirections |  (необавезно)
+	page := int32(56) // int32 |  (опционо)
+	limit := int32(56) // int32 |  (опционо)
+	skip := int32(56) // int32 |  (опционо)
+	asTree := true // bool |  (опционо)
+	skipChildren := int32(56) // int32 |  (опционо)
+	limitChildren := int32(56) // int32 |  (опционо)
+	maxTreeDepth := int32(56) // int32 |  (опционо)
+	urlId := "urlId_example" // string |  (опционо)
+	userId := "userId_example" // string |  (опционо)
+	anonUserId := "anonUserId_example" // string |  (опционо)
+	contextUserId := "contextUserId_example" // string |  (опционо)
+	hashTag := "hashTag_example" // string |  (опционо)
+	parentId := "parentId_example" // string |  (опционо)
+	direction := openapiclient.SortDirections("OF") // SortDirections |  (опционо)
+	fromDate := int64(789) // int64 |  (опционо)
+	toDate := int64(789) // int64 |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.GetComments(context.Background()).TenantId(tenantId).Page(page).Limit(limit).Skip(skip).AsTree(asTree).SkipChildren(skipChildren).LimitChildren(limitChildren).MaxTreeDepth(maxTreeDepth).UrlId(urlId).UserId(userId).AnonUserId(anonUserId).ContextUserId(contextUserId).HashTag(hashTag).ParentId(parentId).Direction(direction).Execute()
+	resp, r, err := apiClient.DefaultAPI.GetComments(context.Background()).TenantId(tenantId).Page(page).Limit(limit).Skip(skip).AsTree(asTree).SkipChildren(skipChildren).LimitChildren(limitChildren).MaxTreeDepth(maxTreeDepth).UrlId(urlId).UserId(userId).AnonUserId(anonUserId).ContextUserId(contextUserId).HashTag(hashTag).ParentId(parentId).Direction(direction).FromDate(fromDate).ToDate(toDate).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetComments`: GetComments200Response
+	// одговор од `GetComments`: APIGetCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetComments`: %v\n", resp)
 }
 [inline-code-end]

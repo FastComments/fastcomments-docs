@@ -1,30 +1,31 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | domain | string | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetDomainConfig_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetDomainConfig_200_response.h)
+戻り値: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetDomainConfigResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'getDomainConfig の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domain = U("example.com");
-boost::optional<utility::string_t> env = boost::optional<utility::string_t>(U("production"));
-api->getDomainConfig(tenantId, domain).then([=](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetDomainConfig_200_response>();
-        std::cout << "Domain config received for " << utility::conversions::to_utf8string(domain) << '\n';
-    } catch (const std::exception &ex) {
-        std::cerr << "Failed to get domain config: " << ex.what() << '\n';
-    }
-});
+boost::optional<utility::string_t> domainOpt = U("app.example.com");
+if (domainOpt) {
+    api->getDomainConfig(tenantId, *domainOpt)
+    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);
+            (void)cfgCopy;
+        } catch (const std::exception&) {
+        }
+    });
+}
 [inline-code-end]
 
 ---

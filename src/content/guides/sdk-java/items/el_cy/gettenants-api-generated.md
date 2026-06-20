@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | meta | string | query | Όχι |  |
@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenants200Response.java)
+Επιστρέφει: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantsResponse.java)
 
 ## Παράδειγμα
 
@@ -30,7 +30,7 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (από προεπιλογή null)
+    // Αφαιρέστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. "Token" (προεπιλογή: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String meta = "meta_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenants200Response result = apiInstance.getTenants(tenantId)
+      GetTenantsResponse result = apiInstance.getTenants(tenantId)
             .meta(meta)
             .skip(skip)
             .execute();

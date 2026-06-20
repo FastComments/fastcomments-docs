@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | afterId | string | query | Nee |  |
@@ -12,7 +12,7 @@
 
 ## Respons
 
-Retourneert: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## Voorbeeld
 
@@ -39,7 +39,7 @@ public class Example {
     Boolean noDm = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotifications(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotifications(tenantId)
             .afterId(afterId)
             .afterCreatedAt(afterCreatedAt)
             .unreadOnly(unreadOnly)

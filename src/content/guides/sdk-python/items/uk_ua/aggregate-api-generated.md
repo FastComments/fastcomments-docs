@@ -1,9 +1,10 @@
+---
 Агрегує документи, групуючи їх (якщо надано groupBy) та застосовуючи кілька операцій.
-Підтримуються різні операції (наприклад, sum, countDistinct, avg тощо).
+Підтримуються різні операції (наприклад sum, countDistinct, avg тощо).
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | parentTenantId | string | query | Ні |  |
@@ -11,37 +12,39 @@
 
 ## Відповідь
 
-Повертає: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Повертає: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста є необов'язковим, за замовчуванням використовується https://fastcomments.com
+# Defining the host is optional and defaults to https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
-# Нижче наведено приклади для кожного методу автентифікації, використайте той
-# який відповідає вашому випадку використання автентифікації.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Нижче наведено приклади для кожного методу аутентифікації, використайте приклад, який
+# відповідає вашому випадку використання.
 
-# Налаштуйте авторизацію API-ключем: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо це необхідно
-# configuration.api_key_prefix['api_key'] = 'Bearer'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 
-# Використайте контекст з екземпляром клієнта API
+# Enter a context with an instance of the API client
+# Використайте контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
@@ -56,3 +59,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate: %s\n" % e)
 [inline-code-end]
+
+---

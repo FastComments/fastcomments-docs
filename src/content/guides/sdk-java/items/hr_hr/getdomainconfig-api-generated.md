@@ -1,19 +1,19 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | domain | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Vraća: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getDomainConfig Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getDomainConfig'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,14 +29,14 @@ public class Example {
     // Konfigurirajte autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da biste postavili prefiks za API ključ, npr. "Token" (zadano: null)
+    // Uklonite komentar s narednog retka kako biste postavili prefiks za API ključ, npr. "Token" (zadano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String domain = "domain_example"; // String | 
     try {
-      GetDomainConfig200Response result = apiInstance.getDomainConfig(tenantId, domain)
+      GetDomainConfigResponse result = apiInstance.getDomainConfig(tenantId, domain)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

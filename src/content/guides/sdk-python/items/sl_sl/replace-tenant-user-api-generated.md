@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -8,29 +8,38 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Vrača: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'replace_tenant_user Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer replace_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.replace_tenant_user_body import ReplaceTenantUserBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-# Configure API key authorization: api_key
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# Enter a context with an instance of the API client
+# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+# Odjemalec mora konfigurirati parametre preverjanja pristnosti in pooblastil
+# v skladu s politiko varnosti strežnika API.
+# Spodaj so podani primeri za vsako metodo overjanja; uporabite primer,
+# ki ustreza vašemu primeru uporabe.
+
+# Konfigurirajte avtorizacijo z API ključem: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

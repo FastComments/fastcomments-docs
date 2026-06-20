@@ -1,44 +1,43 @@
----
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
 
-## Відповідь
+## Response
 
-Повертає: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Повертає: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад get_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням https://fastcomments.com
+# Визначення host необов'язкове та за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
-# Для кожного методу автентифікації наведено приклади нижче, використайте той, що
-# відповідає вашому випадку використання автентифікації.
+# відповідно до політики безпеки API-сервера.
+# Нижче наведено приклади для кожного методу автентифікації, використайте приклад, який
+# відповідає вашому сценарію автентифікації.
 
-# Configure API key authorization: api_key
+# Налаштуйте авторизацію за допомогою API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Розкоментуйте нижче, щоб встановити префікс (наприклад Bearer) для API-ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Використайте контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Створіть екземпляр API-класу
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -50,4 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge: %s\n" % e)
 [inline-code-end]
----

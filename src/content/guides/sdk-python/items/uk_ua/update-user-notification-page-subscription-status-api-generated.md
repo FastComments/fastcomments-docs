@@ -1,10 +1,9 @@
----
-Увімкнення або вимкнення сповіщень для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються
-для нових кореневих коментарів, а також
+Увімкнення або вимкнення повідомлень для сторінки. Коли користувачі підписані на сторінку, створюються повідомлення
+про нові кореневі коментарі, а також
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Name | Type | Location | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | urlId | string | query | Так |  |
@@ -15,25 +14,25 @@
 
 ## Відповідь
 
-Повертає: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Повертає: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад update_user_notification_page_subscription_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Вказання хоста необов'язкове й за замовчуванням — https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов'язковим і за замовчуванням = https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Скористайтесь контекстом з екземпляром API-клієнта
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)
@@ -51,5 +50,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_user_notification_page_subscription_status: %s\n" % e)
 [inline-code-end]
-
----

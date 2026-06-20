@@ -5,13 +5,13 @@
 | tenantId | string | query | Oui |  |
 | page | number | query | Non |  |
 
-## Réponse
+## Response
 
-Renvoie : [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetHashTags200Response.swift)
+Renvoie: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetHashTagsResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getHashTags'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getHashTags'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift

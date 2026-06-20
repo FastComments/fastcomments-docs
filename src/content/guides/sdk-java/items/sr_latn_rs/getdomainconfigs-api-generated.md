@@ -6,11 +6,11 @@
 
 ## Odgovor
 
-Vraća: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigs200Response.java)
+Vraća: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigsResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getDomainConfigs Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getDomainConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -28,13 +28,13 @@ public class Example {
     // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentariši sledeći red da postaviš prefiks za API ključ, npr. "Token" (podrazumevano je null)
+    // Otkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. "Token" (podrazumevano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetDomainConfigs200Response result = apiInstance.getDomainConfigs(tenantId)
+      GetDomainConfigsResponse result = apiInstance.getDomainConfigs(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

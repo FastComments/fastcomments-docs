@@ -3,6 +3,7 @@
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
+| urlId | string | query | Nee | Wordt gebruikt om te bepalen of de huidige pagina is geabonneerd. |
 | pageSize | integer | query | Nee |  |
 | afterId | string | query | Nee |  |
 | includeContext | boolean | query | Nee |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Nee |  |
 | noDm | boolean | query | Nee |  |
 | includeTranslations | boolean | query | Nee |  |
+| includeTenantNotifications | boolean | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Geeft terug: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Voorbeeld
 
@@ -27,6 +29,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
+  url_id: 'url_id_example', # String | Wordt gebruikt om te bepalen of de huidige pagina is geabonneerd.
   page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
   include_context: true, # Boolean | 
@@ -35,6 +38,7 @@ opts = {
   dm_only: true, # Boolean | 
   no_dm: true, # Boolean | 
   include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 
@@ -46,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

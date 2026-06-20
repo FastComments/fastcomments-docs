@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | commentId | string | path | Ναι |  |
@@ -10,9 +10,9 @@
 | editKey | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Παράδειγμα
 
@@ -22,14 +22,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-vote_id = 'vote_id_example' # String | 
-url_id = 'url_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # Συμβολοσειρά | 
+comment_id = 'comment_id_example' # Συμβολοσειρά | 
+vote_id = 'vote_id_example' # Συμβολοσειρά | 
+url_id = 'url_id_example' # Συμβολοσειρά | 
+broadcast_id = 'broadcast_id_example' # Συμβολοσειρά | 
 opts = {
-  edit_key: 'edit_key_example', # String | 
-  sso: 'sso_example' # String | 
+  edit_key: 'edit_key_example', # Συμβολοσειρά | 
+  sso: 'sso_example' # Συμβολοσειρά | 
 }
 
 begin

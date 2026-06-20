@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Type | Posizione | Obbligatorio | Descrizione |
+| Name | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | urlId | string | query | Sì |  |
@@ -9,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUser200Response.swift)
+Restituisce: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
 
 ## Esempio
 

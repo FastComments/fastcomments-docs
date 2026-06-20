@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | isLive | boolean | query | Ні |  |
@@ -10,13 +10,13 @@
 
 ## Відповідь
 
-Повертає: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveComment200Response.java)
+Повертає: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APISaveCommentResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад saveComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Налаштування авторизації API-ключем: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean sendEmails = true; // Boolean | 
     Boolean populateNotifications = true; // Boolean | 
     try {
-      SaveComment200Response result = apiInstance.saveComment(tenantId, createCommentParams)
+      APISaveCommentResponse result = apiInstance.saveComment(tenantId, createCommentParams)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
             .sendEmails(sendEmails)

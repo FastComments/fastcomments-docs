@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateQuestionResult200Response.swift)
+Renvoie : [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateQuestionResultResponse.swift)
 
 ## Exemple
 
@@ -29,5 +29,3 @@ DefaultAPI.createQuestionResult(tenantId: tenantId, createQuestionResultBody: cr
     }
 }
 [inline-code-end]
-
----

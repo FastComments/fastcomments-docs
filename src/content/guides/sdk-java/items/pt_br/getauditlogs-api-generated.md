@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | limit | number | query | Não |  |
@@ -11,7 +11,7 @@
 
 ## Resposta
 
-Retorna: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogs200Response.java)
+Retorna: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
 ## Exemplo
 
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização da chave de API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha a seguir para definir um prefixo para a chave de API, por exemplo "Token" (padrão: null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Double after = 3.4D; // Double | 
     Double before = 3.4D; // Double | 
     try {
-      GetAuditLogs200Response result = apiInstance.getAuditLogs(tenantId)
+      GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
             .skip(skip)
             .order(order)

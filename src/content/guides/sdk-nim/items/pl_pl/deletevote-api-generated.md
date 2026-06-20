@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Nie |  |
@@ -8,16 +8,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`Option[DeleteCommentVote_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_vote200response.nim)
+Zwraca: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład deleteVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "", editKey = "")
+let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "vote-7f3b2a", editKey = "")
 if response.isSome:
-  let deleted = response.get()
-  discard deleted
+  let voteDelete = response.get()
+  echo "Vote deleted successfully"
+else:
+  echo "Failed to delete vote"
 [inline-code-end]
 
 ---

@@ -2,31 +2,31 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| postId | string | path | Yes |  |
-| isUndo | boolean | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Так |  |
+| postId | string | path | Так |  |
+| isUndo | boolean | query | Ні |  |
+| broadcastId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_public200_response.rb)
+Повертає: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'react_feed_post_public Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад react_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Рядок | 
-post_id = 'post_id_example' # Рядок | 
+tenant_id = 'tenant_id_example' # String | 
+post_id = 'post_id_example' # String | 
 react_body_params = FastCommentsClient::ReactBodyParams.new # ReactBodyParams | 
 opts = {
-  is_undo: true, # Булевий | 
-  broadcast_id: 'broadcast_id_example', # Рядок | 
-  sso: 'sso_example' # Рядок | 
+  is_undo: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

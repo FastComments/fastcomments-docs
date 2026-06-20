@@ -1,6 +1,7 @@
+---
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
@@ -11,7 +12,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_200_response.go)
+Επιστρέφει: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_response.go)
 
 ## Παράδειγμα
 
@@ -41,7 +42,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απάντηση από `GetNotificationCount`: GetNotificationCount200Response
+	// απάντηση από `GetNotificationCount`: GetNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,16 +1,17 @@
+---
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_200_response.go)
+מחזיר: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת CreateTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-CreateTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -32,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`CreateTenantUser`: CreateTenantUser200Response
+	// תגובה מ־`CreateTenantUser`: CreateTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantUser`: %v\n", resp)
 }
 [inline-code-end]
+
+---

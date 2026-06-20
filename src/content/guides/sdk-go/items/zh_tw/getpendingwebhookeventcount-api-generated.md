@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 否 |  |
@@ -12,7 +12,7 @@
 
 ## 回應
 
-回傳: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+回傳: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
 ## 範例
 
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetPendingWebhookEventCount` 的回應：GetPendingWebhookEventCount200Response
+	// 來自 `GetPendingWebhookEventCount` 的回應: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

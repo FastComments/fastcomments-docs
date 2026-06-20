@@ -10,7 +10,7 @@
 
 ## Одговор
 
-Враћа: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Враћа: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## Пример
 
@@ -18,25 +18,25 @@
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Defining the host is optional and defaults to https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и овлашћивања
+# Клијент мора да конфигурише параметре аутентификације и овлашћења
 # у складу са политиком безбедности API сервера.
 # Испод су примери за сваки метод аутентификације, користите пример који
-# одговара вашем сценарију употребе аутентификације.
+# одговара вашем случају употребе аутентификације.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откомументирајте у наставку да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -45,10 +45,10 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (опционо)
-    do_spam_check = True # bool |  (опционо)
-    send_emails = True # bool |  (опционо)
-    populate_notifications = True # bool |  (опционо)
+    is_live = True # bool |  (опционално)
+    do_spam_check = True # bool |  (опционално)
+    send_emails = True # bool |  (опционално)
+    populate_notifications = True # bool |  (опционално)
 
     try:
         api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)

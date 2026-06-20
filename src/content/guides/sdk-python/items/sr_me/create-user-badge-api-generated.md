@@ -1,43 +1,43 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_user_badge200_response.py)
+Враћа: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_create_user_badge_response.py)
 
-## Primjer
+## Примјер
 
-[inline-code-attrs-start title = 'Primjer create_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример create_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_user_badge200_response import CreateUserBadge200Response
+from client.models.api_create_user_badge_response import APICreateUserBadgeResponse
 from client.models.create_user_badge_params import CreateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumijeva se https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање host-а је опционално и подразумјева се https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurisati parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbjednosti API servera.
-# Primjeri za svaku metodu autentifikacije su dati ispod, upotrijebite primjer koji
-# odgovara vašem slučaju upotrebe.
+# Клијент мора конфигурисати параметре аутентификације и ауторизације
+# у складу са политиком безбједности API сервера.
+# Примјери за сваки метод аутентификације дати су испод, користите примјер који
+# одговара вашем случају употребе аутентификације.
 
-# Configure API key authorization: api_key
+# Конфигуришите авторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Откоментирајте доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_user_badge_params = client.CreateUserBadgeParams() # CreateUserBadgeParams | 

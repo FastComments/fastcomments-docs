@@ -2,19 +2,19 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| sure | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| sure | string | query | No |  |
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer deleteTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,7 +30,7 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano: null)
+    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String sure = "sure_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteTenant(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteTenant(tenantId, id)
             .sure(sure)
             .execute();
       System.out.println(result);
@@ -52,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

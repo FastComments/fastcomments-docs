@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -7,13 +8,13 @@
 
 ## Одговор
 
-Враћа: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RenderEmailTemplate200Response.java)
+Враћа: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RenderEmailTemplateResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'renderEmailTemplate Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример renderEmailTemplate'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увезите класе:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,7 +30,7 @@ public class Example {
     // Конфигуришите ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте подесили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +38,7 @@ public class Example {
     RenderEmailTemplateBody renderEmailTemplateBody = new RenderEmailTemplateBody(); // RenderEmailTemplateBody | 
     String locale = "locale_example"; // String | 
     try {
-      RenderEmailTemplate200Response result = apiInstance.renderEmailTemplate(tenantId, renderEmailTemplateBody)
+      RenderEmailTemplateResponse result = apiInstance.renderEmailTemplate(tenantId, renderEmailTemplateBody)
             .locale(locale)
             .execute();
       System.out.println(result);
@@ -51,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | commentId | string | path | Sì |  |
@@ -10,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names200_response.rb)
+Restituisce: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names_success_response.rb)
 
 ## Esempio
 
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_vote_user_names: #{e}"
 end
 [inline-code-end]
-
----

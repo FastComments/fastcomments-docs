@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Returns: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Example
 

@@ -1,6 +1,7 @@
+---
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | commentId | string | query | Evet |  |
@@ -10,7 +11,7 @@
 
 ## Yanıt
 
-Döndürür: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Döndürür: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Örnek
 
@@ -18,9 +19,9 @@ Döndürür: [`VoteComment200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi ayarla
+# yetkilendirmeyi yapılandır
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -43,3 +44,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_vote: #{e}"
 end
 [inline-code-end]
+
+---

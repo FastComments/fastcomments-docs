@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteComment200Response.java)
+Vrne: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteResponse.java)
 
 ## Primer
 
@@ -29,7 +29,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj avtentikacijo z API ključem: api_key
+    // Konfiguriraj pooblastilo API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
@@ -42,7 +42,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      VoteComment200Response result = apiInstance.createVote(tenantId, commentId, direction)
+      VoteResponse result = apiInstance.createVote(tenantId, commentId, direction)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

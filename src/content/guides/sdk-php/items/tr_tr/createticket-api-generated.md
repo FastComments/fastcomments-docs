@@ -1,34 +1,31 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | userId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicket200Response.php)
+Döndürür: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'createTicket Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// API anahtarı yetkilendirmesini yapılandır: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki yorum işaretini kaldırın
+// API anahtar yetkilendirmesini yapılandırın: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki satırın başındaki yorumu kaldırın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi iletin.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcusu kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi iletin.
+    // Bu isteğe bağlıdır; varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
@@ -43,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->createTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

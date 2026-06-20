@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModerators200Response.php)
+Returns: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorsResponse.php)
 
 ## Example
 

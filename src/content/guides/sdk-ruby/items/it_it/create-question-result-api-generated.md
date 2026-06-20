@@ -1,12 +1,12 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 
 ## Risposta
 
-Restituisce: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_result200_response.rb)
+Restituisce: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_result_response.rb)
 
 ## Esempio
 
@@ -16,14 +16,14 @@ require 'time'
 require 'fastcomments-client'
 # configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione tramite API key: api_key
+  # Configurare l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovere il commento dalla riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Decommentare la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (valore predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Stringa | 
 create_question_result_body = FastCommentsClient::CreateQuestionResultBody.new({url_id: 'url_id_example', value: 3.56, question_id: 'question_id_example'}) # CreateQuestionResultBody | 
 
 begin

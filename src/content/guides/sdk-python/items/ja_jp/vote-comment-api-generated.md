@@ -11,7 +11,7 @@
 
 ## レスポンス
 
-戻り値: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+戻り値: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## 例
 
@@ -19,20 +19,20 @@
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
+# サポートされている全ての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使用してコンテキストを開きます
+# API クライアントのインスタンスと共にコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # APIクラスのインスタンスを作成します
+    # API クラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

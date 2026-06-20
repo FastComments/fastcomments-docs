@@ -1,14 +1,14 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| id | string | 아니요 |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | 아니요 |  |
+| id | string | 아니오 |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | 아니오 |  |
 
 ## 응답
 
-반환: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 예제
 
@@ -16,17 +16,20 @@
 [inline-code-start]
 let (response, httpResponse) = client.updateQuestionResult(
   tenantId = "my-tenant-123",
-  id = "question-456",
+  id = "question-result-456",
   updateQuestionResultBody = UpdateQuestionResultBody(
-    result = "approved",
-    reviewerId = "moderator-42",
-    notes = "Valid question, no action required",
-    isSpam = false
+    questionId: "q-789",
+    userId: "user-42",
+    score: 92,
+    passed: true,
+    tags: @["quiz", "math"]
   )
 )
 if response.isSome:
-  let flagResponse = response.get()
-  discard flagResponse
+  let apiResp = response.get()
+  echo "Question result updated successfully"
+else:
+  echo "No response body; HTTP status: ", httpResponse.status.code
 [inline-code-end]
 
 ---

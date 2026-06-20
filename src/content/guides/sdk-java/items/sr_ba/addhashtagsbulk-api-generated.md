@@ -2,11 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Не |  |
+| tenantId | string | query | No |  |
 
 ## Одговор
 
-Враћа: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddHashTagsBulk200Response.java)
+Враћа: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
 
 ## Пример
 
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриши API овлашћење помоћу кључа: api_key
+    // Конфигуриши овлашћење помоћу API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментирајте следећи ред да поставите префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      AddHashTagsBulk200Response result = apiInstance.addHashTagsBulk()
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
             .tenantId(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,17 +1,17 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_user_200_response.go)
+Restituisce: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_user_response.go)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di GetTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio GetTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetTenantUser`: GetTenantUser200Response
+	// risposta da `GetTenantUser`: GetTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -7,14 +7,14 @@
 
 ## Antwort
 
-Gibt zurück: [`GetComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment200_response.py)
+Gibt zurück: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comment_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment200_response import GetComment200Response
+from client.models.api_get_comment_response import APIGetCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,19 +25,19 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt. Verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# gemäß der Sicherheitspolicy des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt; verwenden Sie das Beispiel, 
+# das Ihren Authentifizierungsanforderungen entspricht.
 
 # API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Kommentieren Sie unten aus, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+# Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls nötig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Eine Instanz der API-Klasse erstellen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

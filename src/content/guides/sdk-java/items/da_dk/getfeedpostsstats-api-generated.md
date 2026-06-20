@@ -1,18 +1,18 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | postIds | array | query | Ja |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsStats200Response.java)
+Returnerer: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FeedPostsStatsResponse.java)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getFeedPostsStats Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getFeedPostsStats'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetFeedPostsStats200Response result = apiInstance.getFeedPostsStats(tenantId, postIds)
+      FeedPostsStatsResponse result = apiInstance.getFeedPostsStats(tenantId, postIds)
             .sso(sso)
             .execute();
       System.out.println(result);

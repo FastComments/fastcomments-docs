@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment200_response.rb)
+Returns: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_response.rb)
 
 ## Example
 
@@ -17,7 +17,7 @@ Returns: [`FlagComment200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# set up authorization
+# setup authorization
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'

@@ -2,35 +2,35 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| sendEmail | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| sendEmail | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-delete_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
-# ראו את configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראו את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאות
-# בהתאם למדיניות אבטחת השרת של ה-API.
+# על הלקוח להגדיר את פרמטרי האימות וההרשאה
+# בהתאם למדיניות האבטחה של שרת ה-API.
 # דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה ש
-# שמתאימה למקרה השימוש שלכם.
+# מתאימה למקרה השימוש שלכם.
 
-# Configure API key authorization: api_key
+# הגדרת אישור באמצעות מפתח ה-API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
@@ -42,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    send_email = 'send_email_example' # str |  (optional)
+    send_email = 'send_email_example' # str |  (אופציונלי)
 
     try:
         api_response = api_instance.delete_moderator(tenant_id, id, send_email=send_email)
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_moderator: %s\n" % e)
 [inline-code-end]
-
----

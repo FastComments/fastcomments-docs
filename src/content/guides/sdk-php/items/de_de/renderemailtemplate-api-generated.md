@@ -1,13 +1,13 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| locale | string | query | Nein |  |
+| tenantId | string | Abfrage | Ja |  |
+| locale | string | Abfrage | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplate200Response.php)
+Gibt zurück: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplateResponse.php)
 
 ## Beispiel
 
@@ -17,14 +17,14 @@ Gibt zurück: [`RenderEmailTemplate200Response`](https://github.com/FastComments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüsselautorisierung konfigurieren: api_key
+// API-Schlüsselautorisation konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls benötigt
+// Entfernen Sie das Kommentarzeichen unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Wenn Sie einen eigenen HTTP-Client verwenden möchten, geben Sie Ihren Client an, der `GuzzleHttp\ClientInterface` implementiert.
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config

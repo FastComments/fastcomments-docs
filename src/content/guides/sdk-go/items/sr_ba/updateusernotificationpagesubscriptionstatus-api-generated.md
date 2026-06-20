@@ -1,8 +1,8 @@
-Omogućavanje ili onemogućavanje obavijesti za stranicu. Kada su korisnici pretplaćeni na stranicu, obavijesti se kreiraju za nove korijenske komentare, i također
+Omogućite ili onemogućite obavijesti za stranicu. Kada su korisnici pretplaćeni na stranicu, kreiraju se obavijesti za nove root komentare, i također
 
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlId | string | query | Da |  |
@@ -13,7 +13,7 @@ Omogućavanje ili onemogućavanje obavijesti za stranicu. Kada su korisnici pret
 
 ## Odgovor
 
-Vraća: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_page_subscription_status_response.go)
 
 ## Primjer
 
@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationPageSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// response from `UpdateUserNotificationPageSubscriptionStatus`: UpdateUserNotificationPageSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationPageSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

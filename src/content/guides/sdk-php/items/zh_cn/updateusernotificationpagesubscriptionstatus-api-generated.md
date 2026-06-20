@@ -1,4 +1,4 @@
-启用或禁用页面的通知。当用户订阅某个页面时，会为新的根评论创建通知，并且还会
+启用或禁用页面的通知。当用户订阅某个页面时，会为新的根评论创建通知，并且还
 
 ## 参数
 
@@ -13,7 +13,7 @@
 
 ## 响应
 
-返回: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+返回: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## 示例
 
@@ -29,12 +29,12 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$url = 'url_example'; // string
-$page_title = 'page_title_example'; // string
-$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // 字符串
+$url_id = 'url_id_example'; // 字符串
+$url = 'url_example'; // 字符串
+$page_title = 'page_title_example'; // 字符串
+$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // 字符串
+$sso = 'sso_example'; // 字符串
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

@@ -1,31 +1,29 @@
+---
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | Type | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+回傳：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteEmailTemplate 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t templateId = U("welcome-email-template-456");
-boost::optional<utility::string_t> requestNote = boost::optional<utility::string_t>(U("remove-obsolete"));
-auto fallback = std::make_shared<FlagCommentPublic_200_response>();
-api->deleteEmailTemplate(tenantId, templateId)
-.then([requestNote, fallback](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) -> pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> {
+utility::string_t templateId = U("welcome-email-001");
+boost::optional<utility::string_t> auditReason = boost::none;
+api->deleteEmailTemplate(tenantId, templateId).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
     try {
-        auto resp = t.get();
-        if (resp) return pplx::task_from_result(resp);
-        if (requestNote) return pplx::task_from_result(fallback);
-        return pplx::task_from_result<std::shared_ptr<FlagCommentPublic_200_response>>(nullptr);
-    } catch (...) {
-        return pplx::task_from_result<std::shared_ptr<FlagCommentPublic_200_response>>(nullptr);
+        auto resp = task.get();
+        if(!resp) {
+            auto fallback = std::make_shared<APIEmptyResponse>();
+        }
+    } catch(const std::exception&) {
     }
 });
 [inline-code-end]

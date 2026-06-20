@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Название | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Да |  |
@@ -8,7 +8,7 @@
 
 ## Ответ
 
-Возвращает: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_200_response.go)
+Возвращает: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_response.go)
 
 ## Пример
 
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.ChangeTicketState``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `ChangeTicketState`: ChangeTicketState200Response
+	// ответ от `ChangeTicketState`: ChangeTicketStateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.ChangeTicketState`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Nein |  |
@@ -13,11 +13,11 @@
 
 ## Antwort
 
-Gibt zurück: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEvents200Response.java)
+Gibt zurück: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventsResponse.java)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getPendingWebhookEvents'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Klassen importieren:
 import com.fastcomments.invoker.ApiClient;
@@ -35,7 +35,7 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
+    // Entfernen Sie die Kommentierung der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z.B. "Token" (Standard ist null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -48,7 +48,7 @@ public class Example {
     Double attemptCountGT = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetPendingWebhookEvents200Response result = apiInstance.getPendingWebhookEvents(tenantId)
+      GetPendingWebhookEventsResponse result = apiInstance.getPendingWebhookEvents(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)
@@ -68,5 +68,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

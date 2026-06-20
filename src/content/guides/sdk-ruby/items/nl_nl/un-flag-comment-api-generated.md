@@ -1,15 +1,15 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment200_response.rb)
+Retourneert: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_response.rb)
 
 ## Voorbeeld
 
@@ -21,7 +21,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
+  # Haal de commentaartekens van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -41,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_flag_comment: #{e}"
 end
 [inline-code-end]
-
----

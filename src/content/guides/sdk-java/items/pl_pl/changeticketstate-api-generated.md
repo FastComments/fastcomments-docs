@@ -1,20 +1,21 @@
+---
 ## Parametry
 
-| Nazwa | Typ | Location | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| userId | string | query | Tak |  |
-| id | string | path | Tak |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Odpowiedź
 
-Zwraca: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeTicketState200Response.java)
+Zwraca: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeTicketStateResponse.java)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład changeTicketState'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importuj klasy:
+// Import klas:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,7 +31,7 @@ public class Example {
     // Skonfiguruj autoryzację klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
+    // Odkomentuj następną linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +40,7 @@ public class Example {
     String id = "id_example"; // String | 
     ChangeTicketStateBody changeTicketStateBody = new ChangeTicketStateBody(); // ChangeTicketStateBody | 
     try {
-      ChangeTicketState200Response result = apiInstance.changeTicketState(tenantId, userId, id, changeTicketStateBody)
+      ChangeTicketStateResponse result = apiInstance.changeTicketState(tenantId, userId, id, changeTicketStateBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -52,3 +53,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

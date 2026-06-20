@@ -9,11 +9,11 @@
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за DeleteTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример DeleteTenantUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,8 +27,8 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
-	deleteComments := "deleteComments_example" // string |  (опционално)
-	commentDeleteMode := "commentDeleteMode_example" // string |  (опционално)
+	deleteComments := "deleteComments_example" // string |  (опционо)
+	commentDeleteMode := "commentDeleteMode_example" // string |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `DeleteTenantUser`: FlagCommentPublic200Response
+	// одговор од `DeleteTenantUser`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteTenantUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

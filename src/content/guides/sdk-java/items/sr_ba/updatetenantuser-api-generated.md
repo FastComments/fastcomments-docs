@@ -1,21 +1,20 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| updateComments | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| updateComments | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer updateTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriši autorizaciju API ključa: api_key
+    // Конфигуриши овлашћење помоћу API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. "Token" (podrazumijevano null)
+    // Уклони коментар са следећег реда да поставиш префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +39,7 @@ public class Example {
     UpdateTenantUserBody updateTenantUserBody = new UpdateTenantUserBody(); // UpdateTenantUserBody | 
     String updateComments = "updateComments_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateTenantUser(tenantId, id, updateTenantUserBody)
+      APIEmptyResponse result = apiInstance.updateTenantUser(tenantId, id, updateTenantUserBody)
             .updateComments(updateComments)
             .execute();
       System.out.println(result);
@@ -54,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

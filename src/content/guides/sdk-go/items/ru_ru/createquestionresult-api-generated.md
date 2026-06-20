@@ -1,12 +1,12 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_200_response.go)
+Возвращает: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_response.go)
 
 ## Пример
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
+	tenantId := "tenantId_example" // строка | 
 	createQuestionResultBody := *openapiclient.NewCreateQuestionResultBody("UrlId_example", float64(123), "QuestionId_example") // CreateQuestionResultBody | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -32,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `CreateQuestionResult`: CreateQuestionResult200Response
+	// ответ от `CreateQuestionResult`: CreateQuestionResultResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
-
----

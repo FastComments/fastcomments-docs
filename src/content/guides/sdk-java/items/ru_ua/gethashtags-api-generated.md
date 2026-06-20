@@ -1,13 +1,14 @@
+---
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательное | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | page | number | query | Нет |  |
 
-## Ответ
+## Response
 
-Возвращает: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetHashTags200Response.java)
+Возвращает: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetHashTagsResponse.java)
 
 ## Пример
 
@@ -26,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию API-ключом: api_key
+    // Настройка авторизации по API-ключу: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
@@ -36,7 +37,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     try {
-      GetHashTags200Response result = apiInstance.getHashTags(tenantId)
+      GetHashTagsResponse result = apiInstance.getHashTags(tenantId)
             .page(page)
             .execute();
       System.out.println(result);
@@ -50,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

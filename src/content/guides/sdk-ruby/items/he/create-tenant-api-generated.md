@@ -4,21 +4,21 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant200_response.rb)
+מחזיר: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_response.rb)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-create_tenant'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת create_tenant'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאה
+# הגדרת אימות
 FastCommentsClient.configure do |config|
-  # הגדרת אישור באמצעות מפתח ה-API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את הסימן '#' מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # הסר הערת שורה זו כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת המחדל היא nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_tenant: #{e}"
 end
 [inline-code-end]
+
+---

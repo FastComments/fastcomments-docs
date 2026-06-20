@@ -1,16 +1,18 @@
-Aggregerer dokumenter ved at gruppere dem (hvis groupBy angives) og anvende flere operationer. Forskellige operationer (f.eks. sum, countDistinct, avg osv.) understøttes.
+---
+Samler dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende flere operationer.
+Forskellige operationer (f.eks. sum, countDistinct, avg osv.) understøttes.
 
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | parentTenantId | string | query | Nej |  |
 | includeStats | boolean | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+Returnerer: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## Eksempel
 
@@ -32,7 +34,7 @@ public class Example {
     // Konfigurer API-nøglegodkendelse: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentar fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard: null)
+    // Fjern kommentaren på følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -41,7 +43,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();
@@ -56,3 +58,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

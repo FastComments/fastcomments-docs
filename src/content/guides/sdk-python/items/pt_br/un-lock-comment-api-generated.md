@@ -9,14 +9,14 @@
 
 ## Resposta
 
-Retorna: [`LockComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/lock_comment200_response.py)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de un_lock_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.lock_comment200_response import LockComment200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -29,12 +29,12 @@ configuration = client.Configuration(
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe de API
+    # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    sso = 'sso_example' # str |  (opcional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.un_lock_comment(tenant_id, comment_id, broadcast_id, sso=sso)

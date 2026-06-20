@@ -1,16 +1,16 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| isLive | boolean | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| sendEmails | boolean | query | No |  |
-| populateNotifications | boolean | query | No |  |
+| tenantId | string | query | Ja |  |
+| isLive | boolean | query | Nej |  |
+| doSpamCheck | boolean | query | Nej |  |
+| sendEmails | boolean | query | Nej |  |
+| populateNotifications | boolean | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Returnerer: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## Eksempel
 
@@ -18,25 +18,25 @@ Returnerer: [`SaveComment200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og standard er https://fastcomments.com
+# Angivelse af host er valgfri og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
+# Klienten skal konfigurere godkendelses- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel der
+# Eksempler for hver godkendelsesmetode er vist nedenfor — brug det eksempel, der
 # passer til dit auth-brugstilfælde.
 
-# Konfigurer API nøgle-autorisering: api_key
+# Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentar nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at indstille præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -52,8 +52,9 @@ with client.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
-        print("The response of DefaultApi->save_comments_bulk:\n")
+        # Svaret fra DefaultApi->save_comments_bulk:\n
         pprint(api_response)
     except Exception as e:
+        # Undtagelse ved kald til DefaultApi->save_comments_bulk: %s\n
         print("Exception when calling DefaultApi->save_comments_bulk: %s\n" % e)
 [inline-code-end]

@@ -1,13 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Primer
 
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj overjanje z API ključem: api_key
+    // Konfiguriraj pooblastilo API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte naslednjo vrstico za nastavitev predpone za API ključ, npr. "Token" (privzeto null)
+    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateTenantPackageBody updateTenantPackageBody = new UpdateTenantPackageBody(); // UpdateTenantPackageBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateTenantPackage(tenantId, id, updateTenantPackageBody)
+      APIEmptyResponse result = apiInstance.updateTenantPackage(tenantId, id, updateTenantPackageBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

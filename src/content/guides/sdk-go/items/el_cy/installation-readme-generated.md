@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Χρήση του API Client
+### Χρήση του πελάτη API
 
-#### Public API (Χωρίς Αυθεντικοποίηση)
+#### Δημόσιο API (Χωρίς Πιστοποίηση)
 
-Το PublicAPI επιτρέπει μη αυθεντικοποιημένη πρόσβαση σε δημόσια σημεία τερματισμού:
+Το PublicAPI επιτρέπει μη αυθεντικοποιημένη πρόσβαση σε δημόσια endpoints:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Απαιτεί Κλειδί API)
+#### Προεπιλεγμένο API (Απαιτεί Κλειδί API)
 
-Το DefaultAPI απαιτεί αυθεντικοποίηση χρησιμοποιώντας το κλειδί API σας:
+Το DefaultAPI απαιτεί αυθεντικοποίηση με το κλειδί API σας:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Δημιουργία αυθεντικοποιημένου context με το κλειδί API
+    // Δημιουργία αυθεντικοποιημένου context με κλειδί API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -67,6 +67,37 @@ func main() {
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
         Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```
+
+#### Moderation API (Πίνακας Ελέγχου Συντονιστή)
+
+Το ModerationAPI τροφοδοτεί τον πίνακα ελέγχου των συντονιστών. Παρέχει μεθόδους για την καταγραφή, μέτρηση, αναζήτηση και εξαγωγή σχολίων, ενέργειες εποπτείας (αφαίρεση/επαναφορά, σήμανση, ορισμός κατάστασης για αναθεώρηση/spam/έγκριση, ψήφοι, επανάνοιγμα/κλείσιμο νημάτων), αποκλεισμούς (αποκλεισμός από σχολιασμό, αναίρεση, περιλήψεις πριν από αποκλεισμό, κατάσταση αποκλεισμού και προτιμήσεις, αριθμοί αποκλεισμένων χρηστών), και διακριτικά & εμπιστοσύνη (απονομή/αφαίρεση διακριτικών, χειροκίνητα διακριτικά, λήψη/ορισμός παράγοντα εμπιστοσύνης, εσωτερικό προφίλ χρήστη). Όλες οι μέθοδοι Moderation δέχονται παράμετρο `sso` για συντονιστές με SSO αυθεντικοποίηση:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // Λίστα σχολίων για εποπτεία με χρήση του ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
 
     if err != nil {
         panic(err)

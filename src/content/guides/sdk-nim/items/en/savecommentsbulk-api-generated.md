@@ -7,13 +7,13 @@
 | isLive | bool | No |  |
 | doSpamCheck | bool | No |  |
 | sendEmails | bool | No |  |
-| populateNotifications | bool): (Option[seq[SaveComment_200_response]] | No |  |
+| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | No |  |
 | id | string | No |  |
 | fromName | string | No |  |
 
 ## Response
 
-Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Example
 
@@ -29,7 +29,10 @@ let (response, httpResponse) = client.saveCommentsBulk(
   id = "",
   fromName = ""
 )
+
 if response.isSome:
-  let flagResp = response.get()
-  echo "Flag response received: ", $flagResp
+  let apiResp = response.get()
+  echo "Bulk save succeeded, tenant:", " my-tenant-123"
+else:
+  echo "Bulk save returned no API response"
 [inline-code-end]

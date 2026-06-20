@@ -2,26 +2,26 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| userId | string | query | Nee |  |
-| anonUserId | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Respons
 
-Retourneert: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Retourneert: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'block_user_from_comment Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van block_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# autorisatie instellen
+# Autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutelautorisatie: api_key
+  # Configureer API key-autorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
+  # Haal de commentaarstreep van de volgende regel weg om een voorvoegsel voor de API key in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

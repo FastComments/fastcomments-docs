@@ -1,25 +1,25 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | skip | number | query | No |  |
 
-## Risposta
+## Response
 
-Restituisce: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Restituisce: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_moderators'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_moderators'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# impostazione dell'autorizzazione
+# configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autenticazione tramite API key: api_key
+  # Configura l'autorizzazione con chiave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovi il commento dalla riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_moderators: #{e}"
 end
 [inline-code-end]
-
----

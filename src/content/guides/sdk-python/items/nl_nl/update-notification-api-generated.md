@@ -8,19 +8,19 @@
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'update_notification Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_notification_body import UpdateNotificationBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en staat standaard op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,13 +28,13 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode zijn hieronder opgenomen, gebruik het voorbeeld dat
-# past bij uw authenticatiegebruikssituatie.
+# Voor elke authenticatiemethode zijn hieronder voorbeelden opgenomen; gebruik het
+# voorbeeld dat past bij uw authenticatiesituatie.
 
 # Configureer API-sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal hieronder het commentaarteken weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Haal hieronder de commentaar weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Ga een context in met een instantie van de API-client
@@ -44,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     update_notification_body = client.UpdateNotificationBody() # UpdateNotificationBody | 
-    user_id = 'user_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optioneel)
 
     try:
         api_response = api_instance.update_notification(tenant_id, id, update_notification_body, user_id=user_id)

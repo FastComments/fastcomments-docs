@@ -1,17 +1,17 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | No |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
-| searchSection | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| usernameStartsWith | string | query | Не |  |
+| mentionGroupIds | array | query | Не |  |
+| sso | string | query | Не |  |
+| searchSection | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
+Връща: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## Пример
 
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще бъде използван `GuzzleHttp\Client`.
+    // Ако искате да използвате потребителски HTTP клиент, подайте вашия клиент който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е незадължително, като по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

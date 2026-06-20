@@ -1,8 +1,10 @@
-Aktivér eller deaktiver notifikationer for en side. Når brugere er tilmeldt en side, oprettes der notifikationer for nye rodkommentarer, og også
+---
+Aktivér eller deaktiver notifikationer for en side. Når brugere er abonneret på en side, oprettes der notifikationer
+for nye rodkommentarer, og også
 
-## Parameters
+## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
@@ -13,7 +15,7 @@ Aktivér eller deaktiver notifikationer for en side. Når brugere er tilmeldt en
 
 ## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Returnerer: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Eksempel
 

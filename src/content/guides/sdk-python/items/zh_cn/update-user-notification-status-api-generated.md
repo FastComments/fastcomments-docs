@@ -1,27 +1,27 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| notificationId | string | 路径 | 是 |  |
-| newStatus | string | 路径 | 是 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| notificationId | string | path | 是 |  |
+| newStatus | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回：[`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+返回: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'update_user_notification_status 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_status_response import UpdateUserNotificationStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有受支持的配置参数，请参阅 configuration.py。
+# 定义 host 是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数的列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

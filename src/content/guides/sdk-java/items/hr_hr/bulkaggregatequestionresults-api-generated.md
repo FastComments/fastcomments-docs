@@ -1,19 +1,19 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| forceRecalculate | boolean | query | Ne |  |
+| tenantId | string | upit | Da |  |
+| forceRecalculate | boolean | upit | Ne |  |
 
 ## Odgovor
 
-Vraća: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResults200Response.java)
+Vraća: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResultsResponse.java)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer bulkAggregateQuestionResults'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj autorizaciju API ključa: api_key
+    // Konfigurirajte ovlaštenje API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano: null)
+    // Poništite komentiranje sljedećeg retka da postavite prefiks za API ključ, npr. "Token" (zadano: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest = new BulkAggregateQuestionResultsRequest(); // BulkAggregateQuestionResultsRequest | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      BulkAggregateQuestionResults200Response result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
+      BulkAggregateQuestionResultsResponse result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
             .forceRecalculate(forceRecalculate)
             .execute();
       System.out.println(result);

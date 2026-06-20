@@ -1,4 +1,5 @@
-特定のコメントに対する通知を有効または無効にします。
+---
+特定のコメントに対する通知を有効化または無効化します。
 
 ## パラメータ
 
@@ -12,7 +13,7 @@
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+戻り値: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_comment_subscription_status_response.go)
 
 ## 例
 
@@ -24,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,7 +33,7 @@ func main() {
 	notificationId := "notificationId_example" // string | 
 	optedInOrOut := "optedInOrOut_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (オプション)
+	sso := "sso_example" // string |  （任意）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +42,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UpdateUserNotificationCommentSubscriptionStatus` からのレスポンス: UpdateUserNotificationStatus200Response
+	// `UpdateUserNotificationCommentSubscriptionStatus` のレスポンス: UpdateUserNotificationCommentSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]
+
+---

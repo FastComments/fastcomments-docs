@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Obbligatorio | Descrizione |
+| Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | userId | string | No |  |
@@ -9,26 +9,17 @@
 
 ## Risposta
 
-Restituisce: [`Option[ChangeTicketState_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_change_ticket_state200response.nim)
+Restituisce: [`Option[ChangeTicketStateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_change_ticket_state_response.nim)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di changeTicketState'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio changeTicketState'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.changeTicketState(
-  tenantId = "my-tenant-123",
-  userId = "user-456",
-  id = "ticket-789",
-  changeTicketStateBody = ChangeTicketStateBody(
-    state = "closed",
-    message = "Issue resolved by support",
-    notify = true,
-    tags = @["support", "resolved"]
-  )
-)
+let body = ChangeTicketStateBody()
+let (response, httpResponse) = client.changeTicketState(tenantId = "my-tenant-123", userId = "user-456", id = "ticket-789", changeTicketStateBody = body)
 if response.isSome:
-  let result = response.get()
-  echo "Changed ticket:", result.state, " (id: ", result.id, ")"
+  let ticketResp = response.get()
+  echo "Ticket state changed:", ticketResp
 [inline-code-end]
 
 ---

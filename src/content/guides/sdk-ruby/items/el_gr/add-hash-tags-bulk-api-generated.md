@@ -1,12 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tags_bulk200_response.rb)
+Επιστρέφει: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
 
 ## Παράδειγμα
 
@@ -14,11 +14,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Ρύθμιση εξουσιοδότησης
+# ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Ρυθμίστε την εξουσιοδότηση με API key: api_key
+  # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. 'Bearer' (από προεπιλογή nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (εξ ορισμού nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,3 +36,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"
 end
 [inline-code-end]
+
+---

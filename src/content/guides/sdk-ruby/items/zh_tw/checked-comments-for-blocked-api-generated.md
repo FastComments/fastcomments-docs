@@ -1,14 +1,15 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| commentIds | string | query | 是 | 以逗號分隔的留言 ID 列表。 |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | 以逗號分隔的評論 ID 列表。 |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+回傳: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## 範例
 
@@ -19,7 +20,7 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | 以逗號分隔的留言 ID 列表。
+comment_ids = 'comment_ids_example' # String | 以逗號分隔的評論 ID 列表。
 opts = {
   sso: 'sso_example' # String | 
 }

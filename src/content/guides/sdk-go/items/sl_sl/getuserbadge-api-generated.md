@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vrne: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badge_200_response.go)
+Vrne: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badge_response.go)
 
 ## Primer
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetUserBadge`: GetUserBadge200Response
+	// response from `GetUserBadge`: APIGetUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadge`: %v\n", resp)
 }
 [inline-code-end]
-
----

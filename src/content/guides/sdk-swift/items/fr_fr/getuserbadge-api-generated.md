@@ -1,17 +1,17 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadge200Response.swift)
+Renvoie : [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgeResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getUserBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUserBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -30,5 +30,3 @@ DefaultAPI.getUserBadge(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

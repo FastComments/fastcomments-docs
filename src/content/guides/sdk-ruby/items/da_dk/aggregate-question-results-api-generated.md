@@ -2,29 +2,29 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| questionId | string | query | Nej |  |
-| questionIds | array | query | Nej |  |
-| urlId | string | query | Nej |  |
-| timeBucket | string | query | Nej |  |
-| startDate | string | query | Nej |  |
-| forceRecalculate | boolean | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| timeBucket | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
 
 ## Svar
 
-Returnerer: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+Returnerer: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'aggregate_question_results Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate_question_results Example'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt godkendelse
+# opsætning af autorisation
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgle-godkendelse: api_key
+  # Konfigurer API-nøgleautorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentartegnet på følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

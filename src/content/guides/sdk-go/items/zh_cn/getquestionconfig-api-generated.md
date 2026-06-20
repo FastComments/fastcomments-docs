@@ -1,13 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| id | string | 路径 | 是 |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## 响应
 
-返回：[`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_config_200_response.go)
+返回: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_config_response.go)
 
 ## 示例
 
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetQuestionConfig`: GetQuestionConfig200Response
+	// 来自 `GetQuestionConfig` 的响应: GetQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
+
+---

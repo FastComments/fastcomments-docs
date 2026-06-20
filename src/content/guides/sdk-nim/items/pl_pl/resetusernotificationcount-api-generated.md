@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -7,18 +8,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`Option[ResetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications200response.nim)
+Zwraca: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład resetUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotificationCount Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "sso-jwt-9a8b7c6d")
+let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-sso-token-456")
 if response.isSome:
-  let resetResult = response.get()
-  echo resetResult
+  let result = response.get()
+  echo "ResetUserNotificationsResponse:", result
 else:
-  echo "Reset failed, status: ", httpResponse.status
+  echo "Reset failed, HTTP response:", httpResponse
 [inline-code-end]
 
 ---

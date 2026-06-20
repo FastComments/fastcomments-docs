@@ -1,19 +1,19 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | skip | number | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplates200Response.java)
+Restituisce: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplatesResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getEmailTemplates'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autorizzazione tramite API key: api_key
+    // Configura l'autenticazione tramite API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Rimuovi il commento dalla riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (di default null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetEmailTemplates200Response result = apiInstance.getEmailTemplates(tenantId)
+      GetEmailTemplatesResponse result = apiInstance.getEmailTemplates(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

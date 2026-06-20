@@ -1,21 +1,21 @@
-## Параметры
+## Параметри
 
-| Имя | Type | Location | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| limit | number | query | Нет |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Так |  |
+| userId | string | query | Ні |  |
+| limit | number | query | Ні |  |
+| skip | number | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadgeProgressList200Response.java)
+Повертає: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeProgressListResponse.java)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getUserBadgeProgressList'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getUserBadgeProgressList'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации API-ключа: api_key
+    // Налаштування авторизації ключем API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     Double limit = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetUserBadgeProgressList200Response result = apiInstance.getUserBadgeProgressList(tenantId)
+      APIGetUserBadgeProgressListResponse result = apiInstance.getUserBadgeProgressList(tenantId)
             .userId(userId)
             .limit(limit)
             .skip(skip)

@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## דוגמה
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // קבע הרשאת מפתח API: api_key
+    // קביעת אישור מפתח ה-API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה "Token" (ברירת מחדל null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר תחילית למפתח ה-API, למשל "Token" (ברירת מחדל null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // מחרוזת | 
     String redirectURL = "redirectURL_example"; // מחרוזת | 
     try {
-      FlagCommentPublic200Response result = apiInstance.sendLoginLink(tenantId, id)
+      APIEmptyResponse result = apiInstance.sendLoginLink(tenantId, id)
             .redirectURL(redirectURL)
             .execute();
       System.out.println(result);

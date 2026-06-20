@@ -1,18 +1,18 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Location | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | Popis ID-ova komentara razdvojenih zarezom. |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| commentIds | string | query | Da | Lista ID-eva komentara odvojenih zarezom. |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer checkedCommentsForBlocked'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -28,10 +28,10 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
-    String commentIds = "commentIds_example"; // String | Popis ID-ova komentara razdvojenih zarezom.
+    String commentIds = "commentIds_example"; // String | Lista ID-eva komentara odvojenih zarezom.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);

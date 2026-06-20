@@ -1,27 +1,30 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|------|-------------|
 | tenant_id | String | 예 |  |
 | comment_id | String | 예 |  |
 | broadcast_id | String | 예 |  |
-| sso | String | 아니요 |  |
+| sso | String | 아니오 |  |
 
 ## 응답
 
-반환: [`PinComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/pin_comment_200_response.rs)
+반환: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_comment_pin_status_response.rs)
 
 ## 예제
 
 [inline-code-attrs-start title = 'pin_comment 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PinCommentParams = PinCommentParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    comment_id: "cmt-987654321".to_string(),
-    broadcast_id: "news/article/2026-03-25".to_string(),
-    sso: Some("user-12345-ssotoken".to_string()),
-};
-let response: PinComment200Response = pin_comment(&configuration, params).await?;
+async fn run_pin() -> Result<ChangeCommentPinStatusResponse, Error> {
+    let params: PinCommentParams = PinCommentParams {
+        tenant_id: "acme-news".to_string(),
+        comment_id: "cmt-9f8b7d6".to_string(),
+        broadcast_id: "news/article/2026/06/19/article-12345".to_string(),
+        sso: Some("user-ssotoken-abc123".to_string()),
+    };
+    let response: ChangeCommentPinStatusResponse = pin_comment(configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]
 
 ---

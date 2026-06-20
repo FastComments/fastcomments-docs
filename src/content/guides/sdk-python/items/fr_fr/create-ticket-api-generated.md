@@ -2,25 +2,25 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
+| tenantId | string | query | Oui |  |
+| userId | string | query | Oui |  |
 
 ## Réponse
 
-Renvoie: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket200_response.py)
+Renvoie : [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de create_ticket'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple create_ticket'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_ticket200_response import CreateTicket200Response
 from client.models.create_ticket_body import CreateTicketBody
+from client.models.create_ticket_response import CreateTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et vaut par défaut à https://fastcomments.com
-# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et par défaut à https://fastcomments.com
+# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,7 +33,7 @@ configuration = client.Configuration(
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour configurer un préfixe (par ex. Bearer) pour la clé API, si nécessaire
+# Décommentez ci-dessous pour définir un préfixe (par ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API

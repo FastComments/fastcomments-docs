@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
@@ -8,18 +8,18 @@
 
 ## Réponse
 
-Retourne : [`GetTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket200_response.py)
+Retourne : [`GetTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_ticket'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_ticket200_response import GetTicket200Response
+from client.models.get_ticket_response import GetTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -27,8 +27,8 @@ configuration = client.Configuration(
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
 # conformément à la politique de sécurité du serveur API.
-# Des exemples pour chaque méthode d'auth sont fournis ci‑dessous, utilisez celui
-# qui correspond à votre cas d'utilisation d'auth.
+# Des exemples pour chaque méthode d'authentification sont fournis ci‑dessous, utilisez celui
+# qui correspond à votre cas d'utilisation d'authentification.
 
 # Configurer l'autorisation par clé API : api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -51,3 +51,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_ticket: %s\n" % e)
 [inline-code-end]
+
+---

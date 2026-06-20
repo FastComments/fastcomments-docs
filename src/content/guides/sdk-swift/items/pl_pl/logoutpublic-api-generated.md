@@ -1,0 +1,23 @@
+## Odpowiedź
+
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+
+## Przykład
+
+[inline-code-attrs-start title = 'Przykład logoutPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// Poniższe przykłady kodu są nadal w fazie beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+import FastCommentsSwift
+
+
+PublicAPI.logoutPublic() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+[inline-code-end]

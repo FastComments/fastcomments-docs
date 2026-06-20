@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Esempio
 
@@ -19,13 +19,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configura l'autorizzazione tramite API key: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommentare qui sotto per impostare il prefisso (es. Bearer) per la API key, se necessario
+// Decommenta qui sotto per impostare un prefisso (es. Bearer) per la API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato di default.
     new GuzzleHttp\Client(),
     $config
 );
@@ -40,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->updateEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

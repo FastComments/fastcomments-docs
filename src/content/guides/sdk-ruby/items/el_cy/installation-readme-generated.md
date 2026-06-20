@@ -16,12 +16,14 @@ bundle install
 gem install fastcomments
 ```
 
-### Περιεχόμενα Βιβλιοθήκης
+### Περιεχόμενα βιβλιοθήκης
 
-Αυτή η βιβλιοθήκη περιέχει τον παραγόμενο API client και τα βοηθητικά εργαλεία SSO που κάνουν την εργασία με το API πιο εύκολη.
+Αυτή η βιβλιοθήκη περιέχει τον αυτόματα δημιουργημένο API client και τα βοηθητικά εργαλεία SSO για να διευκολύνουν την εργασία με το API.
 
-- [Τεκμηρίωση βιβλιοθήκης API Client](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Τεκμηρίωση βιβλιοθήκης πελάτη API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Δημόσια έναντι Ασφαλών APIs
+### Δημόσια και Προστατευμένα API
 
-Για τον API client, υπάρχουν δύο κλάσεις, `DefaultApi` και `PublicApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, και η `PublicApi` περιέχει κλήσεις API που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.ά. χωρίς πιστοποίηση.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Το `DefaultApi` περιλαμβάνει μεθόδους που απαιτούν το API key σας, και το `PublicApi` περιλαμβάνει κλήσεις API που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς έλεγχο ταυτότητας. Το `ModerationApi` περιλαμβάνει τις μεθόδους που τροφοδοτούν τον πίνακα ελέγχου των συντονιστών.
+
+Το `ModerationApi` καλύπτει τη διαχείριση σχολίων (list, count, search, logs, export), ενέργειες μεσολάβησης (remove/restore, flag, set review/spam/approval status, votes, reopen/close thread), απαγορεύσεις (ban from a comment, undo, pre-ban summaries, ban status/preferences, banned-user counts), και διακριτικά & εμπιστοσύνη (award/remove badge, manual badges, get/set trust factor, user internal profile). Κάθε μέθοδος του `ModerationApi` δέχεται μια παράμετρο `sso` ώστε το αίτημα να μπορεί να γίνει εκ μέρους ενός συντονιστή που έχει πιστοποιηθεί μέσω SSO.

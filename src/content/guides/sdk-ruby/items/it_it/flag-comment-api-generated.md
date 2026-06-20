@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
@@ -9,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment200_response.rb)
+Restituisce: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_response.rb)
 
 ## Esempio
 
@@ -17,11 +17,11 @@ Restituisce: [`FlagComment200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configura l'autenticazione
+# configurare l'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione con API key: api_key
+  # Configurare l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Decommentare la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -41,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->flag_comment: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,17 +1,17 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Emplacement | Requis | Description |
+|------|------|-------------|--------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 
 ## Réponse
 
-Retourne: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCount200Response.java)
+Renvoie : [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCountResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getCachedNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getCachedNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -29,14 +29,14 @@ public class Example {
     // Configurer l'authentification par clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (valeur par défaut : null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetCachedNotificationCount200Response result = apiInstance.getCachedNotificationCount(tenantId, id)
+      GetCachedNotificationCountResponse result = apiInstance.getCachedNotificationCount(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

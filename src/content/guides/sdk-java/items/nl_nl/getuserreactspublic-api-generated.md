@@ -1,14 +1,14 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| postIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Ja |  |
+| postIds | array | query | Nee |  |
+| sso | string | query | Nee |  |
 
-## Respons
+## Response
 
-Geeft terug: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserReactsPublic200Response.java)
+Retourneert: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UserReactsResponse.java)
 
 ## Voorbeeld
 
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserReactsPublic200Response result = apiInstance.getUserReactsPublic(tenantId)
+      UserReactsResponse result = apiInstance.getUserReactsPublic(tenantId)
             .postIds(postIds)
             .sso(sso)
             .execute();
@@ -46,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,19 +1,19 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Antwort
+## Rückgabe
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'updateQuestionResult Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importieren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-Schlüssel-Authentifizierung konfigurieren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard ist null)
+    // Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateQuestionResultBody updateQuestionResultBody = new UpdateQuestionResultBody(); // UpdateQuestionResultBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateQuestionResult(tenantId, id, updateQuestionResultBody)
+      APIEmptyResponse result = apiInstance.updateQuestionResult(tenantId, id, updateQuestionResultBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

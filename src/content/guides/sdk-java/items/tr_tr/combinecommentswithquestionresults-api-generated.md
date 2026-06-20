@@ -1,20 +1,20 @@
 ## Parametreler
 
-| Ad | Type | Konum | Gerekli | Açıklama |
+| Ad | Type | Location | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
-| minValue | number | query | No |  |
-| maxValue | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Evet |  |
+| questionId | string | query | Hayır |  |
+| questionIds | array | query | Hayır |  |
+| urlId | string | query | Hayır |  |
+| startDate | string | query | Hayır |  |
+| forceRecalculate | boolean | query | Hayır |  |
+| minValue | number | query | Hayır |  |
+| maxValue | number | query | Hayır |  |
+| limit | number | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineCommentsWithQuestionResults200Response.java)
+Döndürür: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineQuestionResultsWithCommentsResponse.java)
 
 ## Örnek
 
@@ -50,7 +50,7 @@ public class Example {
     Double maxValue = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      CombineCommentsWithQuestionResults200Response result = apiInstance.combineCommentsWithQuestionResults(tenantId)
+      CombineQuestionResultsWithCommentsResponse result = apiInstance.combineCommentsWithQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)
@@ -71,5 +71,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

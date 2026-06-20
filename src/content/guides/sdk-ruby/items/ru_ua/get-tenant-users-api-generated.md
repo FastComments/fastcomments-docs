@@ -1,13 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_users200_response.rb)
+Возвращает: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_users_response.rb)
 
 ## Пример
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройка авторизации
+# настройка авторизации
 FastCommentsClient.configure do |config|
-  # Настройка авторизации ключом API: api_key
+  # Настройка авторизации по ключу API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы задать префикс для API ключа, например 'Bearer' (по умолчанию nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для ключа API, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_users: #{e}"
 end
 [inline-code-end]
-
----

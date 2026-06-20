@@ -1,6 +1,7 @@
+---
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | page | integer | query | Não |  |
@@ -17,10 +18,12 @@
 | hashTag | string | query | Não |  |
 | parentId | string | query | Não |  |
 | direction | string | query | Não |  |
+| fromDate | integer | query | Não |  |
+| toDate | integer | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+Retorna: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## Exemplo
 
@@ -44,8 +47,10 @@ let contextUserId = "contextUserId_example" // String |  (opcional)
 let hashTag = "hashTag_example" // String |  (opcional)
 let parentId = "parentId_example" // String |  (opcional)
 let direction = SortDirections() // SortDirections |  (opcional)
+let fromDate = 987 // Int64 |  (opcional)
+let toDate = 987 // Int64 |  (opcional)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return

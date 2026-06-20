@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotifications200Response.php)
+מחזיר: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## דוגמה
 
@@ -19,12 +19,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי; ישתמש ב-`GuzzleHttp\Client` כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$sso = 'sso_example'; // מחרוזת
 
 try {
     $result = $apiInstance->resetUserNotificationCount($tenant_id, $sso);

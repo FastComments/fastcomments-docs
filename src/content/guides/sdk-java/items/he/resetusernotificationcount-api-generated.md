@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+מחזיר: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## דוגמה
 
@@ -26,10 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // מחרוזת | 
+    String sso = "sso_example"; // מחרוזת | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotificationCount(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +43,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | domain | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+Döndürür: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config_response.rb)
 
 ## Örnek
 
@@ -15,11 +15,11 @@ Döndürür: [`GetDomainConfig200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi yapılandır
+# yetkilendirme ayarları
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. 'Bearer' (varsayılan olarak nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, örn. 'Bearer' (varsayılan: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

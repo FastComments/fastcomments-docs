@@ -1,4 +1,4 @@
-Aggregeert documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
+Agregeert documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
 Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteund.
 
 ## Parameters
@@ -11,19 +11,19 @@ Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteu
 
 ## Response
 
-Retourneert: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Retourneert: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'aggregate Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard ingesteld op https://fastcomments.com
+# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,13 +31,13 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
-# voldoet aan uw auth use case.
+# Voor elk auth-mechanisme worden hieronder voorbeelden gegeven; gebruik het
+# voorbeeld dat past bij uw auth-geval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API key-autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal hieronder het commentaarteken weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Verwijder de commentaar hieronder om een prefix (bijv. Bearer) voor de API key in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Ga een context in met een instantie van de API-client
@@ -46,8 +46,8 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
-    include_stats = True # bool |  (optional)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (optioneel)
+    include_stats = True # bool |  (optioneel)
 
     try:
         api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)

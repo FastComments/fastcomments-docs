@@ -7,14 +7,14 @@
 
 ## 回應
 
-返回: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_by_id200_response.py)
+回傳：[`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_user_badge_progress_by_user_id 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_by_id200_response import GetUserBadgeProgressById200Response
+from client.models.api_get_user_badge_progress_response import APIGetUserBadgeProgressResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -24,15 +24,18 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 用戶端必須設定驗證與授權參數
-# 以符合 API 伺服器的安全性政策。
-# 下方提供每種驗證方法的範例，請使用符合
-# 您驗證使用情境的範例。
-# 設定 API 金鑰授權：api_key
-# 如有需要，取消註解下列程式以設定 API 金鑰的前綴（例如 Bearer）
+# 客戶端必須設定驗證與授權參數
+# 以符合 API 伺服器的安全政策。
+# 下方提供每種驗證方法的範例，
+# 使用滿足您驗證使用情境的範例。
+
+# 設定 API Key 授權：api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# 如有需要，取消下方註解以設定 API Key 的前綴（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 以 ApiClient 實例進入上下文
+# 使用 API Client 實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.DefaultApi(api_client)

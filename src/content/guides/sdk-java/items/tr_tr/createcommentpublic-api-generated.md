@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Location | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
@@ -10,7 +10,7 @@
 
 ## Yanıt
 
-Döndürür: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateCommentPublic200Response.java)
+Döndürür: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
 ## Örnek
 
@@ -36,7 +36,7 @@ public class Example {
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateCommentPublic200Response result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
+      SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
             .execute();

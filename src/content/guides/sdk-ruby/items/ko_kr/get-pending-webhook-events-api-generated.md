@@ -2,18 +2,18 @@
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 쿼리 | 예 |  |
-| commentId | string | 쿼리 | 아니오 |  |
-| externalId | string | 쿼리 | 아니오 |  |
-| eventType | string | 쿼리 | 아니오 |  |
-| type | string | 쿼리 | 아니오 |  |
-| domain | string | 쿼리 | 아니오 |  |
-| attemptCountGT | number | 쿼리 | 아니오 |  |
-| skip | number | 쿼리 | 아니오 |  |
+| tenantId | string | query | 예 |  |
+| commentId | string | query | 아니오 |  |
+| externalId | string | query | 아니오 |  |
+| eventType | string | query | 아니오 |  |
+| type | string | query | 아니오 |  |
+| domain | string | query | 아니오 |  |
+| attemptCountGT | number | query | 아니오 |  |
+| skip | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+반환: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## 예제
 
@@ -23,9 +23,9 @@ require 'time'
 require 'fastcomments-client'
 # 인증 설정
 FastCommentsClient.configure do |config|
-  # API 키 인증 구성: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요, 예: 'Bearer' (기본값은 nil)
+  # API 키에 대한 접두사(예: 'Bearer')를 설정하려면 다음 줄의 주석 처리를 해제하세요 (기본값은 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -49,5 +49,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_events: #{e}"
 end
 [inline-code-end]
-
----

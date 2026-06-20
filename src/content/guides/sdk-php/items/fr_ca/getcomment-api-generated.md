@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Retourne: [`GetComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetComment200Response.php)
+Retourne : [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetCommentResponse.php)
 
 ## Exemple
 
@@ -17,9 +17,9 @@ Retourne: [`GetComment200Response`](https://github.com/FastComments/fastcomments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'autorisation par clé API : api_key
+// Configurer l'autorisation de la clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

@@ -1,31 +1,31 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| urlId | string | query | Ne |  |
-| fromCommentId | string | query | Ne |  |
-| viewed | boolean | query | Ne |  |
-| type | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| urlId | string | query | Не |  |
+| fromCommentId | string | query | Не |  |
+| viewed | boolean | query | Не |  |
+| type | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCount200Response.swift)
+Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
-## Primjer
+## Примјер
 
-[inline-code-attrs-start title = 'getNotificationCount Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Примјер getNotificationCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo kakav problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примјери кода су још у бета фази. За било који проблем, молимо пријавите преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (neobavezno)
-let urlId = "urlId_example" // String |  (neobavezno)
-let fromCommentId = "fromCommentId_example" // String |  (neobavezno)
-let viewed = true // Bool |  (neobavezno)
-let type = "type_example" // String |  (neobavezno)
+let userId = "userId_example" // String |  (опционо)
+let urlId = "urlId_example" // String |  (опционо)
+let fromCommentId = "fromCommentId_example" // String |  (опционо)
+let viewed = true // Bool |  (опционо)
+let type = "type_example" // String |  (опционо)
 
 DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
     guard error == nil else {
@@ -38,5 +38,3 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId
     }
 }
 [inline-code-end]
-
----

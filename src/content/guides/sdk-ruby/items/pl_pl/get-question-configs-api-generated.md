@@ -1,23 +1,23 @@
 ## Parametry
 
-| Name | Typ | Lokalizacja | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| skip | number | zapytanie | Nie |  |
+| tenantId | string | query | Tak |  |
+| skip | number | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs200_response.rb)
+Zwraca: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs_response.rb)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'get_question_configs Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład get_question_configs'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Konfiguracja autoryzacji klucza API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

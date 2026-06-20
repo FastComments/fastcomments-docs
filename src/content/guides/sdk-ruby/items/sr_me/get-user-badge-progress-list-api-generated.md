@@ -9,19 +9,19 @@
 
 ## Одговор
 
-Враћа: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_list200_response.rb)
+Враћа: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_list_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_user_badge_progress_list'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_list Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите API кључ за ауторизацију: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте подесили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментаришите следећу линију да поставите префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -41,3 +41,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badge_progress_list: #{e}"
 end
 [inline-code-end]
+
+---

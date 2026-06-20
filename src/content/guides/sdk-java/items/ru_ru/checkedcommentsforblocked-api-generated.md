@@ -1,18 +1,19 @@
+---
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Список идентификаторов комментариев, разделённых запятыми. |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Список идентификаторов комментариев, разделённых запятыми. |
+| sso | string | query | No |  |
 
 ## Ответ
 
-Возвращает: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Возвращает: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример checkedCommentsForBlocked'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импорт классов:
 import com.fastcomments.invoker.ApiClient;
@@ -31,7 +32,7 @@ public class Example {
     String commentIds = "commentIds_example"; // String | Список идентификаторов комментариев, разделённых запятыми.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

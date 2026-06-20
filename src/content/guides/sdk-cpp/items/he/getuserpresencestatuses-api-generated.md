@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | טיפוס | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlIdWS | string | כן |  |
@@ -8,22 +8,26 @@
 
 ## תגובה
 
-מחזיר: [`GetUserPresenceStatuses_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserPresenceStatuses_200_response.h)
+מחזיר: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserPresenceStatusesResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserPresenceStatuses'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserPresenceStatuses'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlIdWS = U("wss://realtime.fastcomments.com/socket/tenant-abc");
-boost::optional<utility::string_t> optUserIds = U("alice@example.com,bob@example.com");
-utility::string_t userIds = optUserIds.value_or(U("alice@example.com"));
-auto task = api->getUserPresenceStatuses(tenantId, urlIdWS, userIds)
-    .then([](std::shared_ptr<GetUserPresenceStatuses_200_response> resp) {
-        if (!resp) return;
-        auto copy = std::make_shared<GetUserPresenceStatuses_200_response>(*resp);
+utility::string_t urlIdWS = U("chat-room-77");
+boost::optional<utility::string_t> optUserIds(U("alice@example.com,bob@example.com"));
+api->getUserPresenceStatuses(tenantId, urlIdWS, optUserIds.value_or(U("")))
+    .then([](pplx::task<std::shared_ptr<GetUserPresenceStatusesResponse>> t) {
+        try {
+            auto resp = t.get();
+            if (!resp) resp = std::make_shared<GetUserPresenceStatusesResponse>();
+            (void)resp;
+        } catch (const std::exception&) {
+            auto errResp = std::make_shared<GetUserPresenceStatusesResponse>();
+            (void)errResp;
+        }
     });
-task.wait();
 [inline-code-end]
 
 ---

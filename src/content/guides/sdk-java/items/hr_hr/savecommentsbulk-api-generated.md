@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | isLive | boolean | query | Ne |  |
@@ -10,13 +10,13 @@
 
 ## Odgovor
 
-Vraća: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveComment200Response.java)
+Vraća: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsBulkResponse.java)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer saveCommentsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj autorizaciju API ključa: api_key
+    // Konfiguracija autorizacije API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano je null)
+    // Otkomentirajte sljedeći redak za postavljanje prefiksa za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,7 @@ public class Example {
     Boolean sendEmails = true; // Boolean | 
     Boolean populateNotifications = true; // Boolean | 
     try {
-      List<SaveComment200Response> result = apiInstance.saveCommentsBulk(tenantId, createCommentParams)
+      List<SaveCommentsBulkResponse> result = apiInstance.saveCommentsBulk(tenantId, createCommentParams)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
             .sendEmails(sendEmails)

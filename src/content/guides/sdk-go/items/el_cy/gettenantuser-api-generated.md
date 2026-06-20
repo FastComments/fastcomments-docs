@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_user_200_response.go)
+Επιστρέφει: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_user_response.go)
 
 ## Παράδειγμα
 
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απάντηση από `GetTenantUser`: GetTenantUser200Response
+	// απάντηση από `GetTenantUser`: GetTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantUser`: %v\n", resp)
 }
 [inline-code-end]
+
+---

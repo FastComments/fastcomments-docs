@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -7,7 +8,7 @@
 
 ## レスポンス
 
-返却値: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotificationCount200Response.swift)
+返却値: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotificationCountResponse.swift)
 
 ## 例
 
@@ -30,3 +31,5 @@ PublicAPI.getUserNotificationCount(tenantId: tenantId, sso: sso) { (response, er
     }
 }
 [inline-code-end]
+
+---

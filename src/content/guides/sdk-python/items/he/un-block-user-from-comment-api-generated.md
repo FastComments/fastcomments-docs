@@ -9,38 +9,37 @@
 
 ## תגובה
 
-מחזיר: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/un_block_comment_public200_response.py)
+מחזיר: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.un_block_comment_public200_response import UnBlockCommentPublic200Response
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
+from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית והבררת המחדל היא https://fastcomments.com
-# ראו את configuration.py כדי לקבל רשימה של כל הפרמטרים הנתמכים.
+# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
+# עיין בקובץ configuration.py כדי לראות רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# על הלקוח להגדיר את פרמטרי האימות וההרשאה
-# בהתאם למדיניות אבטחת שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה; השתמשו בדוגמה שמתאימה
-# לצרכי האימות שלכם.
+# על הלקוח להגדיר את פרמטרי האימות והרשאות
+# בהתאם למדיניות האבטחה של שרת ה-API.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה שמתאימה למקרה השימוש שלך.
 
-# Configure API key authorization: api_key
+# הגדר את הסמכת מפתח ה-API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם יש צורך
+# הסר את ההערה מהשורה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנסו לקונטקסט עם מופע של לקוח ה-API
+# פתח הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צרו מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | page | integer | query | Nein |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | Nein |  |
 | parentId | string | query | Nein |  |
 | direction | string | query | Nein |  |
+| fromDate | integer | query | Nein |  |
+| toDate | integer | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetComments200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetComments200Response.php)
+Gibt zurück: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetCommentsResponse.php)
 
 ## Beispiel
 
@@ -30,15 +32,14 @@ Gibt zurück: [`GetComments200Response`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Kommentieren Sie die folgende Zeile aus, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// API-Schlüssel-Autorisierung konfigurieren: api_key
+// Kommentieren Sie die folgende Zeile aus, um ein Präfix (z.B. Bearer) für den API-Schlüssel zu setzen, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
@@ -57,9 +58,11 @@ $context_user_id = 'context_user_id_example'; // string
 $hash_tag = 'hash_tag_example'; // string
 $parent_id = 'parent_id_example'; // string
 $direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
+$from_date = 56; // int
+$to_date = 56; // int
 
 try {
-    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction);
+    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction, $from_date, $to_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getComments: ', $e->getMessage(), PHP_EOL;

@@ -1,16 +1,17 @@
+---
 ## 参数
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | 是 |  |
+| userId | string | query | 否 |  |
+| state | number | query | 否 |  |
+| skip | number | query | 否 |  |
+| limit | number | query | 否 |  |
 
 ## 响应
 
-返回: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tickets_200_response.go)
+返回: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tickets_response.go)
 
 ## 示例
 
@@ -27,10 +28,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  （可选）
-	state := float64(1.2) // float64 |  （可选）
-	skip := float64(1.2) // float64 |  （可选）
-	limit := float64(1.2) // float64 |  （可选）
+	userId := "userId_example" // string |  (可选)
+	state := float64(1.2) // float64 |  (可选)
+	skip := float64(1.2) // float64 |  (可选)
+	limit := float64(1.2) // float64 |  (可选)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +40,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTickets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetTickets` 的响应: GetTickets200Response
+	// 来自 `GetTickets` 的响应: GetTicketsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTickets`: %v\n", resp)
 }
 [inline-code-end]
+
+---

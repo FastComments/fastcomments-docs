@@ -1,21 +1,21 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | Type | Location | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | path | 是 |  |
+| commentId | string | path | 是 |  |
+| broadcastId | string | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`PinComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PinComment200Response.java)
+回傳: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeCommentPinStatusResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'pinComment 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      PinComment200Response result = apiInstance.pinComment(tenantId, commentId, broadcastId)
+      ChangeCommentPinStatusResponse result = apiInstance.pinComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

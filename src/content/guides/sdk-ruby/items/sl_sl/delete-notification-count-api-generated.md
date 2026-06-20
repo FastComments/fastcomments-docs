@@ -7,19 +7,19 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer delete_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_notification_count Example'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Nastavitev avtorizacije
+# nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfiguriraj avtorizacijo z API ključem: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
+  # Odkomentirajte spodnjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

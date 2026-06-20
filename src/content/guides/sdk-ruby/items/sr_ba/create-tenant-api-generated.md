@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant200_response.rb)
+Vraća: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_response.rb)
 
 ## Primjer
 
@@ -15,11 +15,11 @@ Vraća: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Podešavanje autorizacije
+# podešavanje autorizacije
 FastCommentsClient.configure do |config|
   # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (prema zadanim postavkama nil)
+  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (zadano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

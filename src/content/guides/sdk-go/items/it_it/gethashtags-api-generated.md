@@ -7,11 +7,11 @@
 
 ## Risposta
 
-Restituisce: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_200_response.go)
+Restituisce: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_response.go)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio GetHashTags'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di GetHashTags'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetHashTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetHashTags`: GetHashTags200Response
+	// risposta da `GetHashTags`: GetHashTagsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetHashTags`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -6,7 +6,7 @@
 
 ## Yanıt
 
-Döndürür: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config200_response.rb)
+Döndürür: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config_response.rb)
 
 ## Örnek
 
@@ -18,7 +18,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın başındaki yorum işaretini kaldırın, ör. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

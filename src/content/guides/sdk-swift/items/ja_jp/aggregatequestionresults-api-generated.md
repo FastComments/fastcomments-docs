@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | questionId | string | query | いいえ |  |
@@ -12,9 +12,9 @@
 
 ## レスポンス
 
-戻り値: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResults200Response.swift)
+戻り値: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'aggregateQuestionResults の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,12 +22,12 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (任意)
-let questionIds = ["inner_example"] // [String] |  (任意)
-let urlId = "urlId_example" // String |  (任意)
-let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (任意)
-let startDate = Date() // Date |  (任意)
-let forceRecalculate = true // Bool |  (任意)
+let questionId = "questionId_example" // String |  （オプション）
+let questionIds = ["inner_example"] // [String] |  （オプション）
+let urlId = "urlId_example" // String |  （オプション）
+let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  （オプション）
+let startDate = Date() // Date |  （オプション）
+let forceRecalculate = true // Bool |  （オプション）
 
 DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
     guard error == nil else {

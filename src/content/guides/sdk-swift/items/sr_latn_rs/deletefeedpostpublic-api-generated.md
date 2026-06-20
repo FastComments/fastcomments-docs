@@ -9,19 +9,19 @@
 
 ## Odgovor
 
-Vraća: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteFeedPostPublic200Response.swift)
+Vraća: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteFeedPostPublicResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteFeedPostPublic Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postId = "postId_example" // String | 
-let broadcastId = "broadcastId_example" // String |  (opciono)
-let sso = "sso_example" // String |  (opciono)
+let broadcastId = "broadcastId_example" // String |  (neobavezno)
+let sso = "sso_example" // String |  (neobavezno)
 
 PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, broadcastId: broadcastId, sso: sso) { (response, error) in
     guard error == nil else {
@@ -34,3 +34,5 @@ PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, broadcastId: 
     }
 }
 [inline-code-end]
+
+---

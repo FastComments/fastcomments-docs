@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | userId | string | query | Sí |  |
@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state200_response.rb)
+Devuelve: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state_response.rb)
 
 ## Ejemplo
 
@@ -16,11 +16,11 @@ Devuelve: [`ChangeTicketState200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# configurar la autorización
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto es nil)
+  # Descomente la siguiente línea para establecer un prefijo para la API key, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->change_ticket_state: #{e}"
 end
 [inline-code-end]
-
----

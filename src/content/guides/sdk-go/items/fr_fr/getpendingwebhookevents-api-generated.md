@@ -1,6 +1,7 @@
+---
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | query | Non |  |
@@ -13,7 +14,7 @@
 
 ## Réponse
 
-Renvoie : [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_200_response.go)
+Renvoie: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_response.go)
 
 ## Exemple
 
@@ -45,7 +46,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEvents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetPendingWebhookEvents` : GetPendingWebhookEvents200Response
+	// réponse de `GetPendingWebhookEvents`: GetPendingWebhookEventsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEvents`: %v\n", resp)
 }
 [inline-code-end]
+
+---

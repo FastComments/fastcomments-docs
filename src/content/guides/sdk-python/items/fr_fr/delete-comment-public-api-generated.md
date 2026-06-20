@@ -1,7 +1,6 @@
----
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -11,14 +10,14 @@
 
 ## Réponse
 
-Renvoie: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_public200_response.py)
+Renvoie : [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de delete_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_public200_response import DeleteCommentPublic200Response
+from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -36,8 +35,8 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    edit_key = 'edit_key_example' # str |  (optionnel)
+    sso = 'sso_example' # str |  (optionnel)
 
     try:
         api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, edit_key=edit_key, sso=sso)
@@ -46,5 +45,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_public: %s\n" % e)
 [inline-code-end]
-
----

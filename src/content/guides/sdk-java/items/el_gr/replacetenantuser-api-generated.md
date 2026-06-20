@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
@@ -8,11 +8,11 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'replaceTenantUser Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα replaceTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Καταργήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     ReplaceTenantUserBody replaceTenantUserBody = new ReplaceTenantUserBody(); // ReplaceTenantUserBody | 
     String updateComments = "updateComments_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.replaceTenantUser(tenantId, id, replaceTenantUserBody)
+      APIEmptyResponse result = apiInstance.replaceTenantUser(tenantId, id, replaceTenantUserBody)
             .updateComments(updateComments)
             .execute();
       System.out.println(result);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

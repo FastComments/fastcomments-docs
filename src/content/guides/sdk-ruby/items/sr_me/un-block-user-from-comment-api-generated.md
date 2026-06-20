@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -10,7 +9,7 @@
 
 ## Одговор
 
-Враћа: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Враћа: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Пример
 
@@ -18,11 +17,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# Подешавање ауторизације
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментаришите следећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано је nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

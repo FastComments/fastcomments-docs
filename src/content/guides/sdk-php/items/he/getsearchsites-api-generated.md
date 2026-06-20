@@ -1,0 +1,38 @@
+---
+## פרמטרים
+
+| שם | סוג | מיקום | חובה | תיאור |
+|------|------|----------|----------|-------------|
+| value | string | query | לא |  |
+| sso | string | query | לא |  |
+
+## תגובה
+
+מחזיר: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationSiteSearchResponse.php)
+
+## דוגמה
+
+[inline-code-attrs-start title = 'דוגמה ל-getSearchSites'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\ModerationApi(
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
+    new GuzzleHttp\Client()
+);
+$value = 'value_example'; // string
+$sso = 'sso_example'; // string
+
+try {
+    $result = $apiInstance->getSearchSites($value, $sso);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ModerationApi->getSearchSites: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]
+
+---

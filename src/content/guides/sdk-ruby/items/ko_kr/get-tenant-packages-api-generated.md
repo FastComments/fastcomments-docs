@@ -7,7 +7,7 @@
 
 ## 응답
 
-반환: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_packages200_response.rb)
+반환: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_packages_response.rb)
 
 ## 예제
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요, 예: 'Bearer' (기본값은 nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: 'Bearer' (기본값은 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

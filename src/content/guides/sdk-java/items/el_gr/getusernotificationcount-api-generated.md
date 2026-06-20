@@ -1,17 +1,17 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotificationCount200Response.java)
+Επιστρέφει: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotificationCountResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getUserNotificationCount Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getUserNotificationCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -29,7 +29,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotificationCount200Response result = apiInstance.getUserNotificationCount(tenantId)
+      GetUserNotificationCountResponse result = apiInstance.getUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

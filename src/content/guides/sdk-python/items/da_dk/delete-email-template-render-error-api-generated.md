@@ -1,7 +1,6 @@
----
 ## Parametre
 
-| Navn | Type | Placering | Obligatorisk | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -9,18 +8,18 @@
 
 ## Svar
 
-Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på delete_email_template_render_error'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_email_template_render_error Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# At definere værten er valgfrit og standarden er https://fastcomments.com
+# Det er valgfrit at angive host, og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,8 +27,8 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver godkendelsesmetode er vist nedenfor, brug det eksempel der
-# opfylder dit godkendelsesbehov.
+# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel
+# der passer til dit autentificeringsscenarie.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -52,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_email_template_render_error: %s\n" % e)
 [inline-code-end]
-
----

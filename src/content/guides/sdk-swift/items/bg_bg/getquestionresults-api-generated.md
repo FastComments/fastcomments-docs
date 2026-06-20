@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Не |  |
@@ -12,7 +13,7 @@
 
 ## Отговор
 
-Връща: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionResults200Response.swift)
+Връща: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionResultsResponse.swift)
 
 ## Пример
 
@@ -22,12 +23,12 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String |  (незадължително)
-let userId = "userId_example" // String |  (незадължително)
-let startDate = "startDate_example" // String |  (незадължително)
-let questionId = "questionId_example" // String |  (незадължително)
-let questionIds = "questionIds_example" // String |  (незадължително)
-let skip = 987 // Double |  (незадължително)
+let urlId = "urlId_example" // String |  (по избор)
+let userId = "userId_example" // String |  (по избор)
+let startDate = "startDate_example" // String |  (по избор)
+let questionId = "questionId_example" // String |  (по избор)
+let questionIds = "questionIds_example" // String |  (по избор)
+let skip = 987 // Double |  (по избор)
 
 DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
     guard error == nil else {
@@ -40,3 +41,5 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, 
     }
 }
 [inline-code-end]
+
+---

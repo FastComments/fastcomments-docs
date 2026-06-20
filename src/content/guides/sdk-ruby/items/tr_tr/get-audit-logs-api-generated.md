@@ -1,17 +1,17 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| limit | number | query | Hayır |  |
-| skip | number | query | Hayır |  |
-| order | string | query | Hayır |  |
-| after | number | query | Hayır |  |
-| before | number | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs200_response.rb)
+Döndürür: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs_response.rb)
 
 ## Örnek
 
@@ -21,9 +21,9 @@ require 'time'
 require 'fastcomments-client'
 # yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek belirlemek üzere aşağıdaki satırın başındaki yorum işaretini kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -45,5 +45,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_audit_logs: #{e}"
 end
 [inline-code-end]
-
----

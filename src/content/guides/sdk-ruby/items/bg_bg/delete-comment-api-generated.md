@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment200_response.rb)
+Връща: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_result.rb)
 
 ## Пример
 
@@ -17,9 +17,9 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройване на авторизация
+# настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Конфигуриране на авторизация чрез API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

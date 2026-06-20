@@ -1,14 +1,14 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| commentIds | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| commentIds | string | 아니요 |  |
+| sso | string | 아니요 |  |
 
 ## 응답
 
-반환: [`Option[CheckedCommentsForBlocked_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_checked_comments_for_blocked200response.nim)
+반환: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
 ## 예제
 
@@ -20,11 +20,10 @@ let (response, httpResponse) = client.checkedCommentsForBlocked(
   sso = ""
 )
 if response.isSome:
-  let checked = response.get()
-  echo "Checked comments received for tenant my-tenant-123"
-  echo checked
+  let blockedResp = response.get()
+  echo "Received blocked comments response: ", blockedResp
 else:
-  echo "No checked comments (HTTP status: ", $httpResponse.statusCode, ")"
+  echo "No response body; HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

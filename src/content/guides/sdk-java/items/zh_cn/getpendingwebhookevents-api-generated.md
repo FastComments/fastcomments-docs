@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 否 |  |
@@ -13,13 +13,13 @@
 
 ## 响应
 
-返回: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEvents200Response.java)
+返回: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventsResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// 导入类：
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,10 +32,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // 取消注释下面的行以为 API 密钥设置前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -48,7 +48,7 @@ public class Example {
     Double attemptCountGT = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetPendingWebhookEvents200Response result = apiInstance.getPendingWebhookEvents(tenantId)
+      GetPendingWebhookEventsResponse result = apiInstance.getPendingWebhookEvents(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)

@@ -1,3 +1,4 @@
+---
 ## Параметры
 
 | Name | Type | Location | Required | Description |
@@ -7,19 +8,19 @@
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример update_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_tenant_body import UpdateTenantBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host является необязательным и по умолчанию равно https://fastcomments.com
+# Определение host необязательно, по умолчанию используется https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -27,18 +28,18 @@ configuration = client.Configuration(
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте
-# пример, который соответствует вашему сценарию аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте тот пример,
+# который подходит для вашего случая аутентификации.
 
-# Настройка авторизации с помощью API-ключа: api_key
+# Конфигурация авторизации по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войти в контекст с экземпляром клиента API
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создать экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -51,3 +52,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->update_tenant: %s\n" % e)
 [inline-code-end]
+
+---

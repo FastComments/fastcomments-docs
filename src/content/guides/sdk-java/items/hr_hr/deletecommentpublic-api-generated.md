@@ -2,21 +2,21 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| broadcastId | string | query | Da |  |
-| editKey | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | putanja | Da |  |
+| commentId | string | putanja | Da |  |
+| broadcastId | string | upit | Da |  |
+| editKey | string | upit | Ne |  |
+| sso | string | upit | Ne |  |
 
 ## Odgovor
 
-Vraća: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentPublic200Response.java)
+Vraća: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIDeleteCommentResponse.java)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer deleteCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,7 +35,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      DeleteCommentPublic200Response result = apiInstance.deleteCommentPublic(tenantId, commentId, broadcastId)
+      PublicAPIDeleteCommentResponse result = apiInstance.deleteCommentPublic(tenantId, commentId, broadcastId)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

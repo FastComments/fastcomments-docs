@@ -1,4 +1,4 @@
-## Параметри
+## Parameters
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
@@ -12,17 +12,17 @@
 
 ## Отговор
 
-Връща: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Връща: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_notifications Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_notifications'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на авторизация
+# Настройка на авторизацията
 FastCommentsClient.configure do |config|
-  # Конфигуриране на API ключ за авторизация: api_key
+  # Конфигуриране на авторизация с API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

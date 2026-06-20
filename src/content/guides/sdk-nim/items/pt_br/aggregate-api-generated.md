@@ -1,7 +1,9 @@
+Agrega documentos agrupando-os (se groupBy for fornecido) e aplicando múltiplas operações. Diferentes operações (por exemplo, sum, countDistinct, avg, etc.) são suportadas.
+
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | aggregationRequest | AggregationRequest | Não |  |
 | parentTenantId | string | Não |  |
@@ -9,7 +11,7 @@
 
 ## Resposta
 
-Retorna: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Retorna: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Exemplo
 
@@ -17,13 +19,14 @@ Retorna: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcom
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
+
 if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]
 
 ---

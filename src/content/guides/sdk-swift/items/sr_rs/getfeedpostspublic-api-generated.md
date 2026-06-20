@@ -4,25 +4,25 @@ afterId
 
 ## Параметри
 
-| Име | Тип | Локација | Потребно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
-| sso | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeUserInfo | boolean | query | No |  |
+| tenantId | string | path | Да |  |
+| afterId | string | query | Не |  |
+| limit | integer | query | Не |  |
+| tags | array | query | Не |  |
+| sso | string | query | Не |  |
+| isCrawler | boolean | query | Не |  |
+| includeUserInfo | boolean | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За сваки проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још увек у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

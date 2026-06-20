@@ -9,32 +9,32 @@
 
 ## Одговор
 
-Враћа: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'flag_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flag_comment Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Подешавање host-а је опционо и подразумева се https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клијент мора да конфигурише параметре аутентификације и ауторизације
 # у складу са безбедносном политиком API сервера.
-# Примери за сваку методу аутентикације су дати доле, користите пример који
-# одговара вашем случају употребе аутентификације.
+# Примјери за сваки метод аутентификације су дати испод, користите примјер који
+# задовољава ваш случај коришћења аутентификације.
 
-# Configure API key authorization: api_key
+# Конфигуришите овлашћење API кључем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Уклоните коментар испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -53,3 +53,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->flag_comment: %s\n" % e)
 [inline-code-end]
+
+---

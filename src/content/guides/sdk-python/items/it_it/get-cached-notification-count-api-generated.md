@@ -2,37 +2,37 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| id | string | path | Sì |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Risposta
 
-Restituisce: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count200_response.py)
+Restituisce: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_cached_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_cached_notification_count200_response import GetCachedNotificationCount200Response
+from client.models.get_cached_notification_count_response import GetCachedNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è facoltativa e usa https://fastcomments.com per impostazione predefinita
-# Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# La definizione dell'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la politica di sicurezza del server API.
-# Di seguito sono forniti esempi per ciascun metodo di autenticazione; usa quello che
-# soddisfa il tuo caso d'uso.
+# in conformità con la policy di sicurezza del server API.
+# Di seguito sono forniti esempi per ogni metodo di autenticazione, usa l'esempio che
+# soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autorizzazione con API key: api_key
+# Configura l'autorizzazione tramite API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per l'API key, se necessario
+# Rimuovi il commento qui sotto per impostare un prefisso (es. Bearer) per l'API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entra in un contesto con un'istanza del client API

@@ -6,13 +6,13 @@
 
 ## Odgovor
 
-Vraća: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenant200Response.java)
+Vraća: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'createTenant Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,14 +28,14 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano je null)
+    // Odkomentirajte sljedeći redak kako biste postavili prefiks za API ključ, npr. "Token" (zadano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateTenantBody createTenantBody = new CreateTenantBody(); // CreateTenantBody | 
     try {
-      CreateTenant200Response result = apiInstance.createTenant(tenantId, createTenantBody)
+      CreateTenantResponse result = apiInstance.createTenant(tenantId, createTenantBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

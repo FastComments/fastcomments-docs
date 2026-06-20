@@ -9,7 +9,7 @@
 
 ## Resposta
 
-Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Exemplo
 
@@ -31,7 +31,7 @@ public class Example {
     // Configurar autorização por chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha abaixo para definir um prefixo para a chave de API, por ex. "Token" (o padrão é null)
+    // Descomente a linha a seguir para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String deleteComments = "deleteComments_example"; // String | 
     String commentDeleteMode = "commentDeleteMode_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteTenantUser(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteTenantUser(tenantId, id)
             .deleteComments(deleteComments)
             .commentDeleteMode(commentDeleteMode)
             .execute();
@@ -55,5 +55,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

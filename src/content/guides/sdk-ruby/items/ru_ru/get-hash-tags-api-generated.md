@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | number | query | No |  |
+| tenantId | string | query | Да |  |
+| page | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags200_response.rb)
+Возвращает: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags_response.rb)
 
 ## Пример
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # настройка авторизации
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Настройка авторизации API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, e.g. 'Bearer' (defaults to nil)
+  # Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_hash_tags: #{e}"
 end
 [inline-code-end]
+
+---

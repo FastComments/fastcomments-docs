@@ -1,13 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| domainToUpdate | string | path | 是 |  |
+| tenantId | string | query | Yes |  |
+| domainToUpdate | string | path | Yes |  |
 
 ## 响应
 
-返回：[`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+返回: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_domain_config_response.rb)
 
 ## 示例
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # 设置授权
 FastCommentsClient.configure do |config|
-  # 配置 API 密钥授权：api_key
+  # 配置 API 密钥授权: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer'（默认为 nil）
+  # 取消注释以下行以设置 API 密钥的前缀，例如 'Bearer'（默认为 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

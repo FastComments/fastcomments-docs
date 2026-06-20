@@ -2,17 +2,17 @@
 
 | Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenant200Response.swift)
+Возвращает: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'createTenant Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бета-версии. Если возникнут проблемы, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё в бета-версии. Если возникнут проблемы, пожалуйста, сообщите об этом по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,5 +29,3 @@ DefaultAPI.createTenant(tenantId: tenantId, createTenantBody: createTenantBody) 
     }
 }
 [inline-code-end]
-
----

@@ -2,12 +2,12 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| id | string | path | Sì |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Risposta
 
-Restituisce: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config200_response.rb)
+Restituisce: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config_response.rb)
 
 ## Esempio
 
@@ -15,11 +15,11 @@ Restituisce: [`GetQuestionConfig200Response`](https://github.com/FastComments/fa
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# imposta l'autorizzazione
+# configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autenticazione con API key: api_key
+  # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito: nil)
+  # Decommentare la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_config: #{e}"
 end
 [inline-code-end]
+
+---

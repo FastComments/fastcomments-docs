@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Name | Type | Location | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Retourne: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_definitions200_response.rb)
+Renvoie : [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_definitions_response.rb)
 
 ## Exemple
 
@@ -18,7 +18,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (valeur par défaut : nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

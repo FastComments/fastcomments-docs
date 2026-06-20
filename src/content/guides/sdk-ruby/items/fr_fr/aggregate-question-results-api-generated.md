@@ -1,18 +1,18 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| timeBucket | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | query | Oui |  |
+| questionId | string | query | Non |  |
+| questionIds | array | query | Non |  |
+| urlId | string | query | Non |  |
+| timeBucket | string | query | Non |  |
+| startDate | string | query | Non |  |
+| forceRecalculate | boolean | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+Renvoie : [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## Exemple
 
@@ -24,7 +24,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, e.g. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate_question_results: #{e}"
 end
 [inline-code-end]
-
----

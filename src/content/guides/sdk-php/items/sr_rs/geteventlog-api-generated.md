@@ -5,17 +5,17 @@ userIdWS
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
 | userIdWS | string | query | Да |  |
 | startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| endTime | integer | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Пример
 
@@ -27,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите клијента који имплементира `GuzzleHttp\ClientInterface`.
     // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );

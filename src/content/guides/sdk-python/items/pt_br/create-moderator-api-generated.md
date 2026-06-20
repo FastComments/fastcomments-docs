@@ -6,15 +6,15 @@
 
 ## Resposta
 
-Retorna: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator200_response.py)
+Retorna: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de create_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_moderator200_response import CreateModerator200Response
 from client.models.create_moderator_body import CreateModeratorBody
+from client.models.create_moderator_response import CreateModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,17 +27,17 @@ configuration = client.Configuration(
 # O cliente deve configurar os parâmetros de autenticação e autorização
 # de acordo com a política de segurança do servidor da API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# atende ao seu caso de uso de autenticação.
+# satisfaça seu caso de uso de autenticação.
 
-# Configurar autorização por chave de API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_moderator_body = client.CreateModeratorBody() # CreateModeratorBody | 

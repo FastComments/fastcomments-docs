@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -10,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## Primer
 
@@ -18,11 +17,11 @@ Vraća: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fa
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# podešavanje autorizacije
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfiguriši autorizaciju API ključa: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
+  # Otkomentarišite sledeći red da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->block_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -7,21 +8,20 @@
 
 ## Отговор
 
-Връща: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderator_200_response.rs)
+Връща: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderator_response.rs)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример на get_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params = GetModeratorParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "moderator-4521".to_string(),
-        include_permissions: Some(true),
+async fn fetch_moderator() -> Result<GetModeratorResponse, Error> {
+    let params: GetModeratorParams = GetModeratorParams {
+        tenant_id: "acme-newsroom".to_string(),
+        id: "mod-jane-smith-001".to_string(),
     };
-    let moderator: GetModerator200Response = get_moderator(&configuration, params).await?;
-    println!("{:#?}", moderator);
-    Ok(())
+    let include_permissions: Option<bool> = Some(true);
+    let moderator: GetModeratorResponse = get_moderator(&configuration, params).await?;
+    Ok(moderator)
 }
 [inline-code-end]
 

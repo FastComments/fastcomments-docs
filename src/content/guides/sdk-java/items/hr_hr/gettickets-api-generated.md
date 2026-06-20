@@ -2,21 +2,21 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| state | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| limit | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Odgovor
 
-Vraća: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTickets200Response.java)
+Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketsResponse.java)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer getTickets'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurirajte autorizaciju API ključa: api_key
+    // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Poništite komentiranje sljedeće linije da postavite prefiks za API ključ, npr. "Token" (zadano je null)
+    // Poništite komentiranje sljedeće linije da biste postavili prefiks za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +42,7 @@ public class Example {
     Double skip = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      GetTickets200Response result = apiInstance.getTickets(tenantId)
+      GetTicketsResponse result = apiInstance.getTickets(tenantId)
             .userId(userId)
             .state(state)
             .skip(skip)
@@ -59,5 +59,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

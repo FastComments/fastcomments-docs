@@ -1,25 +1,25 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Επιστρέφει: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_user_badge_progress_by_id'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_by_id Παράδειγμα'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Ρύθμιση εξουσιοδότησης
+# ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αφαιρέστε το σχόλιο από την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (η προεπιλογή είναι nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

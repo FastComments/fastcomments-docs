@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentIds | string | query | Da | Seznam ID-jev komentarjev, ločen z vejicami. |
@@ -8,13 +8,13 @@
 
 ## Odgovor
 
-Vrača: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckedCommentsForBlocked200Response.swift)
+Vrača: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckBlockedCommentsResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer checkedCommentsForBlocked'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za morebitne težave prosimo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za morebitne težave poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,5 +32,3 @@ PublicAPI.checkedCommentsForBlocked(tenantId: tenantId, commentIds: commentIds, 
     }
 }
 [inline-code-end]
-
----

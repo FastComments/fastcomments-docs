@@ -8,31 +8,30 @@
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+返却値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'delete_pending_webhook_event の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証と認可のパラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 以下に各認証方式の例を示します。自分のユースケースに合う例を使用してください。
+# クライアントは API サーバーのセキュリティポリシーに従って、認証および認可のパラメータを設定する必要があります。
+# 以下に各認証方式の例を示します。ご自身のユースケースに合う例を使用してください。
 
-# Configure API key authorization: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて下のコメントを外して API キーのプレフィックス（例: Bearer）を設定してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下のコメントアウトを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # API クライアントのインスタンスを使ってコンテキストに入ります

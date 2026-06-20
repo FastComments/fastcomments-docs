@@ -5,21 +5,21 @@ userIdWS
 
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| userIdWS | string | query | Yes |  |
-| startTime | integer | query | Yes |  |
-| endTime | integer | query | Yes |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| userIdWS | string | query | Да |  |
+| startTime | integer | query | Да |  |
+| endTime | integer | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getGlobalEventLog'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGlobalEventLog Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getGlobalEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -53,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

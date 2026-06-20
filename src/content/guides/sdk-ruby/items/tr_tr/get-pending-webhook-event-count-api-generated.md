@@ -12,7 +12,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+Döndürür: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
 ## Örnek
 
@@ -20,11 +20,11 @@ Döndürür: [`GetPendingWebhookEventCount200Response`](https://github.com/FastC
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi ayarla
+# yetkilendirme kurulumu
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın başındaki yorum işaretini kaldırın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarına bir önek ayarlamak için aşağıdaki satırın başındaki yorumu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,25 +1,25 @@
 ## Parameters
 
-| Name | Type | Locatie | Verplicht | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
-| commentIds | string | query | Ja | Een door komma's gescheiden lijst met comment-id's. |
+| commentIds | string | query | Ja | Een door komma's gescheiden lijst met comment-IDs. |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Retourneert: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'checked_comments_for_blocked Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van checked_comments_for_blocked'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | Een door komma's gescheiden lijst met comment-id's.
+comment_ids = 'comment_ids_example' # String | Een door komma's gescheiden lijst met comment-IDs.
 opts = {
   sso: 'sso_example' # String | 
 }

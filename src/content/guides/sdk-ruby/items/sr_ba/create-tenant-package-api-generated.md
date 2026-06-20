@@ -1,12 +1,12 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vraća: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package200_response.rb)
+Vraća: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package_response.rb)
 
 ## Primjer
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključa: api_key
+  # Konfiguriši API ključ za autorizaciju: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano je nil)
+  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (po defaultu nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -3,6 +3,7 @@
 | Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
+| urlId | string | query | Não | Usado para determinar se a página atual está inscrita. |
 | pageSize | integer | query | Não |  |
 | afterId | string | query | Não |  |
 | includeContext | boolean | query | Não |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Não |  |
 | noDm | boolean | query | Não |  |
 | includeTranslations | boolean | query | Não |  |
+| includeTenantNotifications | boolean | query | Não |  |
 | sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+Retorna: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## Exemplo
 
@@ -35,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | Usado para determinar se a página atual está inscrita.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -43,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -54,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -67,5 +73,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

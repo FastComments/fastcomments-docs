@@ -9,18 +9,25 @@
 
 ## レスポンス
 
-返却値: [`Option[LockComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_lock_comment200response.nim)
+戻り値: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'unLockComment の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unLockComment(tenantId = "my-tenant-123", commentId = "cmt-7f9a3b2d", broadcastId = "", sso = "")
+let tenantId = "my-tenant-123"
+let commentId = "cmt-987654321"
+let (response, httpResponse) = client.unLockComment(
+  tenantId = tenantId,
+  commentId = commentId,
+  broadcastId = "",
+  sso = ""
+)
 if response.isSome:
-  let lockResult = response.get()
-  echo "Unlock response: ", $lockResult
+  let apiResp = response.get()
+  echo "Unlocked comment ", commentId, " for tenant ", tenantId
 else:
-  echo "Unlock failed, HTTP response: ", $httpResponse
+  echo "Unlock failed, HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

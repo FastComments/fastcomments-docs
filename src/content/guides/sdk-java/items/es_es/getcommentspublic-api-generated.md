@@ -4,40 +4,40 @@ urlId
 
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| urlId | string | consulta | Sí |  |
+| page | integer | consulta | No |  |
+| direction | string | consulta | No |  |
+| sso | string | consulta | No |  |
+| skip | integer | consulta | No |  |
+| skipChildren | integer | consulta | No |  |
+| limit | integer | consulta | No |  |
+| limitChildren | integer | consulta | No |  |
+| countChildren | boolean | consulta | No |  |
+| fetchPageForCommentId | string | consulta | No |  |
+| includeConfig | boolean | consulta | No |  |
+| countAll | boolean | consulta | No |  |
+| includei10n | boolean | consulta | No |  |
+| locale | string | consulta | No |  |
+| modules | string | consulta | No |  |
+| isCrawler | boolean | consulta | No |  |
+| includeNotificationCount | boolean | consulta | No |  |
+| asTree | boolean | consulta | No |  |
+| maxTreeDepth | integer | consulta | No |  |
+| useFullTranslationIds | boolean | consulta | No |  |
+| parentId | string | consulta | No |  |
+| searchText | string | consulta | No |  |
+| hashTags | array | consulta | No |  |
+| userId | string | consulta | No |  |
+| customConfigStr | string | consulta | No |  |
+| afterCommentId | string | consulta | No |  |
+| beforeCommentId | string | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsPublic200Response.java)
+Devuelve: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## Ejemplo
 
@@ -85,7 +85,7 @@ public class Example {
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
     try {
-      GetCommentsPublic200Response result = apiInstance.getCommentsPublic(tenantId, urlId)
+      GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
             .direction(direction)
             .sso(sso)

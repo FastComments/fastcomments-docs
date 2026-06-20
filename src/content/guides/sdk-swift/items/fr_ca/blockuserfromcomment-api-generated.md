@@ -1,15 +1,15 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| id | string | path | Oui |  |
-| userId | string | query | Non |  |
-| anonUserId | string | query | Non |  |
+| tenantId | string | requête | Oui |  |
+| id | string | chemin | Oui |  |
+| userId | string | requête | Non |  |
+| anonUserId | string | requête | Non |  |
 
 ## Réponse
 
-Renvoie : [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockFromCommentPublic200Response.swift)
+Retourne : [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
 
 ## Exemple
 
@@ -21,8 +21,8 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
 let blockFromCommentParams = BlockFromCommentParams(commentIdsToCheck: ["commentIdsToCheck_example"]) // BlockFromCommentParams | 
-let userId = "userId_example" // String |  (facultatif)
-let anonUserId = "anonUserId_example" // String |  (facultatif)
+let userId = "userId_example" // String |  (optionnel)
+let anonUserId = "anonUserId_example" // String |  (optionnel)
 
 DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
     guard error == nil else {
@@ -35,5 +35,3 @@ DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentPara
     }
 }
 [inline-code-end]
-
----

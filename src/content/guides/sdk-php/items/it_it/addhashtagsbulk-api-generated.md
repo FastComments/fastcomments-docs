@@ -1,12 +1,12 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | No |  |
 
-## Risposta
+## Response
 
-Restituisce: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddHashTagsBulk200Response.php)
+Restituisce: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkCreateHashTagsResponse.php)
 
 ## Esempio
 
@@ -16,15 +16,15 @@ Restituisce: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fast
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione della chiave API: api_key
+// Configura l'autorizzazione tramite API key: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per la chiave API, se necessario
+// Decommenta sotto per impostare il prefisso (e.g. Bearer) per API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );

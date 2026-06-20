@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
@@ -12,7 +12,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badges200_response.rb)
+Zwraca: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badges_response.rb)
 
 ## Przykład
 
@@ -22,7 +22,7 @@ require 'time'
 require 'fastcomments-client'
 # konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Skonfiguruj autoryzację klucza API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

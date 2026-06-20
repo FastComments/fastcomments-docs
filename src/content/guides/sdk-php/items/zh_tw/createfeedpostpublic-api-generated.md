@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必要 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | broadcastId | string | query | 否 |  |
@@ -8,7 +8,7 @@
 
 ## 回應
 
-回傳: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostPublic200Response.php)
+回傳: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
 
 ## 範例
 
@@ -24,10 +24,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字串
+$tenant_id = 'tenant_id_example'; // string
 $create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // \FastComments\Client\Model\CreateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // 字串
-$sso = 'sso_example'; // 字串
+$broadcast_id = 'broadcast_id_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->createFeedPostPublic($tenant_id, $create_feed_post_params, $broadcast_id, $sso);
@@ -36,5 +36,3 @@ try {
     echo 'Exception when calling PublicApi->createFeedPostPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

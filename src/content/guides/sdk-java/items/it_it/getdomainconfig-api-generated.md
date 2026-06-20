@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Restituisce: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigResponse.java)
 
 ## Esempio
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autorizzazione tramite API key: api_key
+    // Configura l'autorizzazione per la chiave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (valore predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la chiave API, es. "Token" (valore predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String domain = "domain_example"; // String | 
     try {
-      GetDomainConfig200Response result = apiInstance.getDomainConfig(tenantId, domain)
+      GetDomainConfigResponse result = apiInstance.getDomainConfig(tenantId, domain)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

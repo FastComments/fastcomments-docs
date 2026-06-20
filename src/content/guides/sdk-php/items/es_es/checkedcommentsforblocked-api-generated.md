@@ -1,14 +1,14 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
-| commentIds | string | query | Sí | Una lista de IDs de comentarios separada por comas. |
+| commentIds | string | query | Sí | Una lista separada por comas de IDs de comentarios. |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckedCommentsForBlocked200Response.php)
+Devuelve: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
 ## Ejemplo
 
@@ -25,7 +25,7 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Una lista de IDs de comentarios separada por comas.
+$comment_ids = 'comment_ids_example'; // string | Una lista separada por comas de IDs de comentarios.
 $sso = 'sso_example'; // string
 
 try {
@@ -35,3 +35,5 @@ try {
     echo 'Exception when calling PublicApi->checkedCommentsForBlocked: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -10,17 +10,17 @@
 
 ## Одговор
 
-Враћа: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+Враћа: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'save_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример save_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите API кључ за ауторизацију: api_key
+  # Конфигуришите ауторизацију помоћу API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Откоментаришите следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

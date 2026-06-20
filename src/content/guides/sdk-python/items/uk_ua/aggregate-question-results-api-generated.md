@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Type | Location | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | questionId | string | query | Ні |  |
@@ -12,19 +12,19 @@
 
 ## Відповідь
 
-Повертає: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results200_response.py)
+Повертає: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'aggregate_question_results Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.aggregate_question_results200_response import AggregateQuestionResults200Response
+from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням дорівнює https://fastcomments.com
+# Визначення хоста необов'язкове і за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -32,16 +32,16 @@ configuration = client.Configuration(
 
 # Клієнт повинен налаштувати параметри аутентифікації та авторизації
 # відповідно до політики безпеки сервера API.
-# Приклади для кожного методу автентифікації наведені нижче, використайте приклад, який
-# відповідає вашому сценарію автентифікації.
+# Наведені нижче приклади для кожного методу автентифікації, використайте приклад, який
+# задовольняє ваш випадок використання автентифікації.
 
-# Налаштуйте авторизацію за API ключем: api_key
+# Налаштуйте авторизацію за допомогою API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Відкрийте контекст з екземпляром клієнта API
+# Увійдіть у контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
@@ -60,3 +60,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate_question_results: %s\n" % e)
 [inline-code-end]
+
+---

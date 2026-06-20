@@ -1,18 +1,18 @@
 ## Параметры
 
-| Имя | Тип | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
-Возвращает: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+Возвращает: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример create_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post_public Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -33,3 +33,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,19 +1,19 @@
-ページの通知を有効または無効にします。ユーザーがページに購読している場合、新しいルートコメントに対して通知が作成され、また
+ページの通知を有効または無効にします。ユーザーがページを購読している場合、新しいルートコメントに対して通知が作成され、また
 
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| urlId | string | query | はい |  |
+| url | string | query | はい |  |
+| pageTitle | string | query | はい |  |
+| subscribedOrUnsubscribed | string | path | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+戻り値: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## 例
 

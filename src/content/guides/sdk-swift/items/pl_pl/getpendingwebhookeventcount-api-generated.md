@@ -1,24 +1,24 @@
 ## Parametry
 
-| Name | Type | Location | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| commentId | string | query | Nie |  |
-| externalId | string | query | Nie |  |
-| eventType | string | query | Nie |  |
-| type | string | query | Nie |  |
-| domain | string | query | Nie |  |
-| attemptCountGT | number | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCount200Response.swift)
+Zwraca: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getPendingWebhookEventCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu, zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -40,5 +40,3 @@ DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId,
     }
 }
 [inline-code-end]
-
----

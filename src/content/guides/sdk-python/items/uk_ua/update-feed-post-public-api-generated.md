@@ -9,26 +9,26 @@
 
 ## Відповідь
 
-Повертає: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_public200_response.py)
+Повертає: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад update_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post_public200_response import CreateFeedPostPublic200Response
+from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.models.update_feed_post_params import UpdateFeedPostParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням — https://fastcomments.com
+# Визначення параметра host необов'язкове — за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Увійдіть у контекст із екземпляром API-клієнта
+# Увійдіть у контекст з екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)
@@ -45,3 +45,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_feed_post_public: %s\n" % e)
 [inline-code-end]
+
+---

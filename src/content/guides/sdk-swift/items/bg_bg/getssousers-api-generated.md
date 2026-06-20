@@ -1,23 +1,23 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | skip | integer | query | Не |  |
 
 ## Отговор
 
-Връща: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetSSOUsers200Response.swift)
+Връща: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetSSOUsersResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getSSOUsers Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getSSOUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни фрагменти от код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примери за код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Int |  (по избор)
+let skip = 987 // Int |  (незадължително)
 
 DefaultAPI.getSSOUsers(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.getSSOUsers(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -10,11 +10,11 @@
 
 ## Odgovor
 
-Vraća: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tickets_200_response.go)
+Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tickets_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'GetTickets Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer GetTickets'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (neobavezno)
-	state := float64(1.2) // float64 |  (neobavezno)
-	skip := float64(1.2) // float64 |  (neobavezno)
-	limit := float64(1.2) // float64 |  (neobavezno)
+	userId := "userId_example" // string |  (opciono)
+	state := float64(1.2) // float64 |  (opciono)
+	skip := float64(1.2) // float64 |  (opciono)
+	limit := float64(1.2) // float64 |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTickets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetTickets`: GetTickets200Response
+	// odgovor od `GetTickets`: GetTicketsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTickets`: %v\n", resp)
 }
 [inline-code-end]

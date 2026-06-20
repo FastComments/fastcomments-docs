@@ -1,4 +1,4 @@
-## Parameters
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -7,9 +7,9 @@
 | userId | string | query | Ні |  |
 | anonUserId | string | query | Ні |  |
 
-## Response
+## Відповідь
 
-Повертає: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_200_response.go)
+Повертає: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_response.go)
 
 ## Приклад
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `GetVotesForUser`: GetVotesForUser200Response
+	// response from `GetVotesForUser`: GetVotesForUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotesForUser`: %v\n", resp)
 }
 [inline-code-end]

@@ -7,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_package_200_response.go)
+Връща: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_package_response.go)
 
 ## Пример
 
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetTenantPackage`: GetTenantPackage200Response
+	// отговор от `GetTenantPackage`: GetTenantPackageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantPackage`: %v\n", resp)
 }
 [inline-code-end]
+
+---

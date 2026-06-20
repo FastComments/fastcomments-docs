@@ -1,4 +1,4 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -6,11 +6,11 @@
 | id | string | path | Так |  |
 | skip | number | query | Ні |  |
 
-## Відповідь
+## Response
 
-Повертає: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateRenderErrors200Response.java)
+Повертає: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateRenderErrorsResponse.java)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getEmailTemplateRenderErrors'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації API ключем: api_key
+    // Налаштуйте авторизацію API ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Розкоментуйте наступний рядок, щоб встановити префікс для API ключа, наприклад "Token" (за замовчуванням null)
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetEmailTemplateRenderErrors200Response result = apiInstance.getEmailTemplateRenderErrors(tenantId, id)
+      GetEmailTemplateRenderErrorsResponse result = apiInstance.getEmailTemplateRenderErrors(tenantId, id)
             .skip(skip)
             .execute();
       System.out.println(result);

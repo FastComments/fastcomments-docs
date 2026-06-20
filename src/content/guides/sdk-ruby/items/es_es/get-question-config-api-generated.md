@@ -1,3 +1,4 @@
+---
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config200_response.rb)
+Devuelve: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config_response.rb)
 
 ## Ejemplo
 
@@ -17,7 +18,7 @@ require 'time'
 require 'fastcomments-client'
 # configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización con clave API: api_key
+  # Configurar la autorización por clave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomente la siguiente línea para establecer un prefijo para la clave API, por ejemplo 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -35,3 +36,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_config: #{e}"
 end
 [inline-code-end]
+
+---

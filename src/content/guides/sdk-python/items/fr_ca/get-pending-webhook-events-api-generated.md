@@ -2,30 +2,30 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| commentId | string | query | Non |  |
-| externalId | string | query | Non |  |
-| eventType | string | query | Non |  |
-| type | string | query | Non |  |
-| domain | string | query | Non |  |
-| attemptCountGT | number | query | Non |  |
-| skip | number | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Réponse
 
-Retourne: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+Renvoie : [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut à https://fastcomments.com
-# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -38,7 +38,7 @@ configuration = client.Configuration(
 # Configurer l'autorisation par clé API : api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour définir un préfixe (par ex. Bearer) pour la clé API, si nécessaire
+# Décommentez ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API

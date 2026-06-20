@@ -1,24 +1,24 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Svar
 
-Returnerer: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplate200Response.php)
+Returnerer: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplateResponse.php)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'createEmailTemplate Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createEmailTemplate-eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgle-autorisering: api_key
+// Konfigurer API-nøgleautorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Fjern kommentar på nedenstående for at angive præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

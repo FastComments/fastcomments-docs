@@ -1,13 +1,13 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotificationCount200Response.swift)
+Restituisce: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotificationCountResponse.swift)
 
 ## Esempio
 
@@ -30,3 +30,5 @@ PublicAPI.getUserNotificationCount(tenantId: tenantId, sso: sso) { (response, er
     }
 }
 [inline-code-end]
+
+---

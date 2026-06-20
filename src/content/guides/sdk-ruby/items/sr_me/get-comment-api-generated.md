@@ -1,13 +1,13 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`GetComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment200_response.rb)
+Враћа: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comment_response.rb)
 
 ## Пример
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# подеси ауторизацију
 FastCommentsClient.configure do |config|
-  # Конфигурисање API кључа за ауторизацију: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментариши следећи ред да подесиш префикс за API кључ, нпр. 'Bearer' (подразумева се nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

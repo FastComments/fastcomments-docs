@@ -11,21 +11,21 @@
 
 ## Response
 
-Returns: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCount200Response.swift)
+Returns: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
 ## Example
 
 [inline-code-attrs-start title = 'getNotificationCount Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// The following code samples are still in beta. If you find any issues, please report them at http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String | (optional)
-let urlId = "urlId_example" // String | (optional)
-let fromCommentId = "fromCommentId_example" // String | (optional)
-let viewed = true // Bool | (optional)
-let type = "type_example" // String | (optional)
+let userId = "userId_example" // String |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let fromCommentId = "fromCommentId_example" // String |  (optional)
+let viewed = true // Bool |  (optional)
+let type = "type_example" // String |  (optional)
 
 DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
     guard error == nil else {

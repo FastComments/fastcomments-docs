@@ -4,7 +4,7 @@ afterId
 
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | afterId | string | query | Нет |  |
@@ -13,7 +13,7 @@ afterId
 
 ## Ответ
 
-Возвращает: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+Возвращает: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## Пример
 
@@ -25,7 +25,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Настроить авторизацию с помощью API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например 'Bearer' (по умолчанию nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

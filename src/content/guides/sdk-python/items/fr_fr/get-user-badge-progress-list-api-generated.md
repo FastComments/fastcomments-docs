@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
@@ -9,19 +9,19 @@
 
 ## Réponse
 
-Renvoie: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_list200_response.py)
+Retourne: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_user_badge_progress_list'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_list200_response import GetUserBadgeProgressList200Response
+from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -31,15 +31,15 @@ configuration = client.Configuration(
 # Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez celui
 # qui correspond à votre cas d'utilisation d'authentification.
 
-# Configurer l'autorisation par clé API : api_key
+# Configurer l'authentification par clé API : api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour configurer un préfixe (par exemple Bearer) pour la clé API, si nécessaire
+# Décommentez ci-dessous pour définir un préfixe (par ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Créez une instance de la classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (optionnel)
@@ -53,3 +53,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge_progress_list: %s\n" % e)
 [inline-code-end]
+
+---

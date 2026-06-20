@@ -1,13 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | sso | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetUserNotificationCount_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotificationCount_200_response.h)
+Vraća: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
 
 ## Primjer
 
@@ -15,16 +15,13 @@ Vraća: [`GetUserNotificationCount_200_response`](https://github.com/FastComment
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-std::shared_ptr<GetUserNotificationCount_200_response> result;
+auto fallback = std::make_shared<GetUserNotificationCountResponse>();
 api->getUserNotificationCount(tenantId, sso)
-.then([&result](pplx::task<std::shared_ptr<GetUserNotificationCount_200_response>> t) {
-    try {
-        result = t.get();
-        if (!result) result = std::make_shared<GetUserNotificationCount_200_response>();
-    } catch (...) {
-        result = std::make_shared<GetUserNotificationCount_200_response>();
-    }
-}).wait();
+.then([fallback](std::shared_ptr<GetUserNotificationCountResponse> resp) {
+    auto result = resp ? resp : fallback;
+    std::cout << "Received user notification count response (ptr=" << (result.get() != nullptr) << ")\n";
+})
+.wait();
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlIdWS | string | query | Da |  |
@@ -8,11 +8,11 @@
 
 ## Odgovor
 
-Vraća: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+Vraća: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_user_presence_statuses'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_presence_statuses Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -30,3 +30,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_presence_statuses: #{e}"
 end
 [inline-code-end]
+
+---

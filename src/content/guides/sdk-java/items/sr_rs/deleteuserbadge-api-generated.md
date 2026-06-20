@@ -2,18 +2,18 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserBadge200Response.java)
+Враћа: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptySuccessResponse.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'deleteUserBadge Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увоз класа:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,14 +29,14 @@ public class Example {
     // Конфигуришите ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментаришите следећу линију да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      UpdateUserBadge200Response result = apiInstance.deleteUserBadge(tenantId, id)
+      APIEmptySuccessResponse result = apiInstance.deleteUserBadge(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

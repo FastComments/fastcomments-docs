@@ -9,37 +9,36 @@
 
 ## Yanıt
 
-Dönen değer: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Döndürür: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'flag_comment Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Hostu tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
+# Sunucu tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusu güvenlik politikasına uygun olarak.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, aşağıdaki örneklerden
-# kimlik doğrulama kullanım durumunuza uygun olanı kullanın.
+# İstemci kimlik doğrulama ve yetkilendirme parametrelerini
+# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza uygun olan örneği kullanın.
 
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak üzere aşağıdaki satırın yorumunu kaldırın
+# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki yorumu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # API istemcisi örneği ile bir bağlam açın
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

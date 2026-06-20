@@ -1,52 +1,48 @@
-מאגד מסמכים על ידי קיבוצם (אם מסופק groupBy) ויישום מספר פעולות.
-פעולות שונות (למשל sum, countDistinct, avg וכו') נתמכות.
+מאחד מסמכים על ידי קיבוץ שלהם (אם groupBy מסופק) והפעלת מספר פעולות.
+נתמכות פעולות שונות (למשל sum, countDistinct, avg וכו').
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| parentTenantId | string | query | לא |  |
-| includeStats | boolean | query | לא |  |
+| tenantId | string | שאילתה | כן |  |
+| parentTenantId | string | שאילתה | לא |  |
+| includeStats | boolean | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+מחזיר: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# ראה את configuration.py לרשימת כל הפרמטרים הנתמכים של התצורה.
+# הגדרת ה-host היא אופציונלית ובברירת המחדל היא https://fastcomments.com
+# ראה את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
+# על הלקוח להגדיר את פרמטרי האימות וההרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה ש
-# מספקת את דרישת האימות שלכם.
+# הדוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה המתאימה
+# למקרה השימוש שלך.
 
 # Configure API key authorization: api_key
-# קבעו אימות באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
-# הכנסו להקשר עם מופע של לקוח ה-API
+# הכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    # צרו מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 

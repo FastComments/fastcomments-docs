@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | commentId | string | query | いいえ |  |
@@ -12,7 +12,7 @@
 
 ## レスポンス
 
-戻り値: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+戻り値: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
 ## 例
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  （任意）
-	externalId := "externalId_example" // string |  （任意）
-	eventType := "eventType_example" // string |  （任意）
-	type_ := "type__example" // string |  （任意）
-	domain := "domain_example" // string |  （任意）
-	attemptCountGT := float64(1.2) // float64 |  （任意）
+	commentId := "commentId_example" // string |  （オプション）
+	externalId := "externalId_example" // string |  （オプション）
+	eventType := "eventType_example" // string |  （オプション）
+	type_ := "type__example" // string |  （オプション）
+	domain := "domain_example" // string |  （オプション）
+	attemptCountGT := float64(1.2) // float64 |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetPendingWebhookEventCount` のレスポンス: GetPendingWebhookEventCount200Response
+	// `GetPendingWebhookEventCount` のレスポンス: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]

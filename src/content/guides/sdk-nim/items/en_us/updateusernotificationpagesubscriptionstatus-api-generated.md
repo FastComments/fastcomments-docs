@@ -1,3 +1,6 @@
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -11,7 +14,7 @@
 
 ## Response
 
-Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Returns: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Example
 
@@ -19,14 +22,16 @@ Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.co
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2025-11-22",
-  url = "https://example.com/news/article-2025-11-22",
-  pageTitle = "Breaking News: Market Update",
-  subscribedOrUnsubscribed = "subscribed",
-  sso = "sso-token-abc123"
+  urlId = "news/economy/market-rally-2026-06-19",
+  url = "",
+  pageTitle = "",
+  subscribedOrUnsubscribed = "",
+  sso = ""
 )
 
 if response.isSome:
-  let result = response.get()
-  discard result
+  let updateResp = response.get()
+  echo "Subscription update received: ", updateResp
+else:
+  echo "No subscription update returned."
 [inline-code-end]

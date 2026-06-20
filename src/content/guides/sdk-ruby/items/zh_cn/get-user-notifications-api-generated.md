@@ -1,8 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
+| urlId | string | query | 否 | 用于确定当前页面是否已订阅。 |
 | pageSize | integer | query | 否 |  |
 | afterId | string | query | 否 |  |
 | includeContext | boolean | query | 否 |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | 否 |  |
 | noDm | boolean | query | 否 |  |
 | includeTranslations | boolean | query | 否 |  |
+| includeTenantNotifications | boolean | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+返回：[`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## 示例
 
@@ -25,17 +27,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # 整数 | 
-  after_id: 'after_id_example', # 字符串 | 
-  include_context: true, # 布尔值 | 
-  after_created_at: 789, # 整数 | 
-  unread_only: true, # 布尔值 | 
-  dm_only: true, # 布尔值 | 
-  no_dm: true, # 布尔值 | 
-  include_translations: true, # 布尔值 | 
-  sso: 'sso_example' # 字符串 | 
+  url_id: 'url_id_example', # String | 用于确定当前页面是否已订阅。
+  page_size: 56, # Integer | 
+  after_id: 'after_id_example', # String | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -46,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | commentId | string | path | はい |  |
@@ -11,11 +11,11 @@
 
 ## レスポンス
 
-戻り値: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_comment_200_response.go)
+戻り値: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
 ## 例
 
-[inline-code-attrs-start title = 'VoteComment の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'VoteCommentの例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,8 +32,8 @@ func main() {
 	urlId := "urlId_example" // string | 
 	broadcastId := "broadcastId_example" // string | 
 	voteBodyParams := *openapiclient.NewVoteBodyParams("CommenterEmail_example", "CommenterName_example", "VoteDir_example", "Url_example") // VoteBodyParams | 
-	sessionId := "sessionId_example" // string |  (オプション)
-	sso := "sso_example" // string |  (オプション)
+	sessionId := "sessionId_example" // string |  （任意）
+	sso := "sso_example" // string |  （任意）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -42,7 +42,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.VoteComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `VoteComment` からのレスポンス: VoteComment200Response
+	// `VoteComment`からのレスポンス: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.VoteComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

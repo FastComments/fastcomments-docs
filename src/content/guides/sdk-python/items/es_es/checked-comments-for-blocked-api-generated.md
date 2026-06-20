@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentIds | string | query | Sí | Una lista separada por comas de identificadores de comentarios. |
@@ -8,25 +8,25 @@
 
 ## Respuesta
 
-Devuelve: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Devuelve: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para ver la lista de todos los parámetros de configuración compatibles.
+# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Abra un contexto con una instancia del cliente de la API
+# Entre en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.PublicApi(api_client)

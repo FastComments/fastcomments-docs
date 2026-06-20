@@ -1,14 +1,14 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Tak |  |
+| broadcastId | string | query | Nie |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostPublic200Response.java)
+Zwraca: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostResponse.java)
 
 ## Przykład
 
@@ -32,7 +32,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateFeedPostPublic200Response result = apiInstance.createFeedPostPublic(tenantId, createFeedPostParams)
+      CreateFeedPostResponse result = apiInstance.createFeedPostPublic(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();

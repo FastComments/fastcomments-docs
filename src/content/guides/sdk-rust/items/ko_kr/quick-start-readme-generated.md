@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### 인증을 위한 SSO 사용
+### 모더레이션 API 사용
+
+모더레이션 메서드는 모더레이터 대시보드를 지원합니다. 이들은 인증된 API와 마찬가지로 API 키 `Configuration`을 사용하며, 각 메서드는 선택적인 `sso` 토큰을 허용하므로 SSO로 인증된 모더레이터를 대신하여 호출을 수행할 수 있습니다.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // API 키로 구성 생성
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // 모더레이션 대기열에 있는 댓글 수 계산
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // SSO로 인증된 모더레이터로 동작하려면 SSO 토큰을 전달하세요
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### SSO를 사용한 인증
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -110,11 +148,11 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // 보안 SSO 사용자 데이터 생성 (서버 측에서만!)
+    // 보안 SSO 사용자 데이터 생성(서버 측에서만!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // 사용자 ID
         "user@example.com".to_string(),   // 이메일
-        "John Doe".to_string(),            // 사용자명
+        "John Doe".to_string(),            // 사용자 이름
         "https://example.com/avatar.jpg".to_string(), // 아바타 URL
     );
 
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // 이 토큰을 프런트엔드로 전달하여 인증에 사용
+    // 이 토큰을 프런트엔드로 전달하여 인증에 사용하세요
 }
 ```

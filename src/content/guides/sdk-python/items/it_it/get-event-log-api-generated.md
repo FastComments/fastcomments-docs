@@ -11,23 +11,23 @@ userIdWS
 | urlId | string | query | Sì |  |
 | userIdWS | string | query | Sì |  |
 | startTime | integer | query | Sì |  |
-| endTime | integer | query | Sì |  |
+| endTime | integer | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_event_log200_response.py)
+Restituisce: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_event_log_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_event_log'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_event_log200_response import GetEventLog200Response
+from client.models.get_event_log_response import GetEventLogResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
-# Consulta configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -41,10 +41,10 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     user_id_ws = 'user_id_ws_example' # str | 
     start_time = 56 # int | 
-    end_time = 56 # int | 
+    end_time = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+        api_response = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time=end_time)
         print("The response of PublicApi->get_event_log:\n")
         pprint(api_response)
     except Exception as e:

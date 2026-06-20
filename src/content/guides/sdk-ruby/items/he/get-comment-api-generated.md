@@ -1,25 +1,25 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | דרוש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment200_response.rb)
+מחזיר: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comment_response.rb)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של get_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת אימות
+# הגדרת הרשאות
 FastCommentsClient.configure do |config|
-  # קבע תצורת אימות באמצעות מפתח API: api_key
+  # הגדר אישור מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
+  # הסרו את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל היא nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

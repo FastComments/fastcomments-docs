@@ -1,16 +1,18 @@
+启用或禁用针对特定评论的通知。
+
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
-|------|------|------|-------------|
-| tenantId | string | 是 |  |
-| notificationId | string | 否 |  |
-| optedInOrOut | string | 否 |  |
-| commentId | string | 是 |  |
-| sso | string | 否 |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| notificationId | string | No |  |
+| optedInOrOut | string | No |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## 响应
 
-返回：[`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+返回：[`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## 示例
 
@@ -18,16 +20,15 @@
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "notif-456",
-  optedInOrOut = "opted_in",
+  notificationId = "",
+  optedInOrOut = "",
   commentId = "cmt-789",
-  sso = "sso-token-abc"
+  sso = ""
 )
+
 if response.isSome:
-  let updatedStatus = response.get()
-  discard updatedStatus
-else:
-  discard httpResponse
+  let updateResp = response.get()
+  echo "Subscription update response: ", updateResp
 [inline-code-end]
 
 ---

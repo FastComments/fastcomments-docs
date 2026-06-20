@@ -2,33 +2,33 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| yearNumber | number | query | No |  |
-| monthNumber | number | query | No |  |
-| dayNumber | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | כן |  |
+| yearNumber | number | query | לא |  |
+| monthNumber | number | query | לא |  |
+| dayNumber | number | query | לא |  |
+| skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsages200Response.php)
+מחזיר: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר אישור מפתח API: api_key
+// הגדר הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם יש צורך
+// הסר את ההערה מטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש ב-client http מותאם, העבר את ה-client שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
@@ -42,6 +42,6 @@ try {
     $result = $apiInstance->getTenantDailyUsages($tenant_id, $year_number, $month_number, $day_number, $skip);
     print_r($result);
 } catch (Exception $e) {
-    echo 'חריגה בעת קריאה ל-DefaultApi->getTenantDailyUsages: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getTenantDailyUsages: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

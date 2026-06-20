@@ -11,7 +11,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Επιστρέφει: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Παράδειγμα
 
@@ -19,18 +19,18 @@
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Η ρύθμιση του host είναι προαιρετική και η προεπιλεγμένη τιμή είναι https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ορισμός του host είναι προαιρετικός και εξ ορισμού είναι το https://fastcomments.com
+# Δείτε το αρχείο configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.PublicApi(api_client)

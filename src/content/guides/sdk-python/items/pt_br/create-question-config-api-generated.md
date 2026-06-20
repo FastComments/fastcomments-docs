@@ -1,20 +1,20 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 
 ## Resposta
 
-Retorna: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config200_response.py)
+Retorna: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config_response.py)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo create_question_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de create_question_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_config200_response import CreateQuestionConfig200Response
 from client.models.create_question_config_body import CreateQuestionConfigBody
+from client.models.create_question_config_response import CreateQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,15 +27,17 @@ configuration = client.Configuration(
 # O cliente deve configurar os parâmetros de autenticação e autorização
 # de acordo com a política de segurança do servidor da API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# satisfaça o seu caso de uso de autenticação.
+# satisfaça seu caso de uso de autenticação.
 
-# Configurar a autorização por chave de API: api_key
-# Descomente abaixo para configurar o prefixo (e.g. Bearer) para a chave de API, se necessário
+# Configurar autorização por chave de API: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Descomente abaixo para configurar prefixo (e.g. Bearer) para API key, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_question_config_body = client.CreateQuestionConfigBody() # CreateQuestionConfigBody | 

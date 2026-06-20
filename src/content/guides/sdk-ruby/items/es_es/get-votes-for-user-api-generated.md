@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | urlId | string | query | Sí |  |
@@ -9,19 +9,19 @@
 
 ## Respuesta
 
-Devuelve: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_for_user200_response.rb)
+Devuelve: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_for_user_response.rb)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'get_votes_for_user Ejemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de get_votes_for_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización por clave API: api_key
+  # Configurar la autorización por clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -41,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_votes_for_user: #{e}"
 end
 [inline-code-end]
-
----

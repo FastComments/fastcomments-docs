@@ -1,13 +1,14 @@
+---
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_badge200_response.rb)
+Döndürür: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_success_response.rb)
 
 ## Örnek
 
@@ -17,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak amacıyla aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarına önek belirleyin, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_user_badge: #{e}"
 end
 [inline-code-end]
+
+---

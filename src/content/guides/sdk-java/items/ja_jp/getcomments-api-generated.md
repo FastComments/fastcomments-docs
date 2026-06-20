@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | page | integer | query | いいえ |  |
@@ -17,16 +17,18 @@
 | hashTag | string | query | いいえ |  |
 | parentId | string | query | いいえ |  |
 | direction | string | query | いいえ |  |
+| fromDate | integer | query | いいえ |  |
+| toDate | integer | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+返却値: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getComments の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -39,10 +41,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証: api_key を設定
+    // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 必要に応じて以下の行のコメントを外してAPIキーのプレフィックス（例: "Token"、デフォルトはnull）を設定してください
+    // APIキーにプレフィックスを設定するには、次の行のコメントアウトを解除してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -89,3 +95,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

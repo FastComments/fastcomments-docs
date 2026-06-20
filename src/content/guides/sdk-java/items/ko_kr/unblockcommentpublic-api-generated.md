@@ -1,14 +1,14 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | commentId | string | path | 예 |  |
-| sso | string | query | 아니요 |  |
+| sso | string | query | 아니오 |  |
 
-## 반환
+## 응답
 
-반환: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnBlockCommentPublic200Response.java)
+반환: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnblockSuccess.java)
 
 ## 예제
 
@@ -32,7 +32,7 @@ public class Example {
     PublicBlockFromCommentParams publicBlockFromCommentParams = new PublicBlockFromCommentParams(); // PublicBlockFromCommentParams | 
     String sso = "sso_example"; // String | 
     try {
-      UnBlockCommentPublic200Response result = apiInstance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
+      UnblockSuccess result = apiInstance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
             .sso(sso)
             .execute();
       System.out.println(result);

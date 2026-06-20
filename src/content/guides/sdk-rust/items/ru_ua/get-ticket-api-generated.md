@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | id | String | Да |  |
@@ -8,19 +8,19 @@
 
 ## Ответ
 
-Возвращает: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_ticket_200_response.rs)
+Возвращает: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_ticket_response.rs)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_ticket() -> Result<GetTicket200Response, Error> {
+async fn fetch_ticket() -> Result<GetTicketResponse, Error> {
     let params: GetTicketParams = GetTicketParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "support/ticket-2026-03-25-12345".to_string(),
-        user_id: Some("user-67890".to_string()),
+        id: "TICKET-2026-045".to_string(),
+        user_id: Some("user-12345".to_string()),
     };
-    let ticket: GetTicket200Response = get_ticket(&configuration, params).await?;
+    let ticket: GetTicketResponse = get_ticket(&configuration, params).await?;
     Ok(ticket)
 }
 [inline-code-end]

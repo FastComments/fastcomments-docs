@@ -7,15 +7,13 @@
 | isLive | bool | 否 |  |
 | doSpamCheck | bool | 否 |  |
 | sendEmails | bool | 否 |  |
-| populateNotifications | bool): (Option[seq[SaveComment_200_response]] | 否 |  |
+| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | 否 |  |
 | id | string | 否 |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | 否 |  |
-| userId | string | 否 |  |
-| anonUserId | string | 否 |  |
+| fromName | string | 否 |  |
 
 ## 响应
 
-返回: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+返回：[`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 示例
 
@@ -24,20 +22,19 @@
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = true,
-  doSpamCheck = true,
+  isLive = false,
+  doSpamCheck = false,
   sendEmails = false,
-  populateNotifications = true,
-  id = "batch-20251122",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = "anon-789"
+  populateNotifications = false,
+  id = "",
+  fromName = ""
 )
+
 if response.isSome:
-  let unblocked = response.get()
-  echo "Unblocked response received: ", unblocked
+  let apiResp = response.get()
+  echo "Bulk save succeeded, tenant:", " my-tenant-123"
 else:
-  echo "No unblocked response, httpResponse: ", $httpResponse
+  echo "Bulk save returned no API response"
 [inline-code-end]
 
 ---

@@ -7,11 +7,11 @@
 
 ## Одговор
 
-Враћа: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResult200Response.java)
+Враћа: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResultResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getQuestionResult'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриши ауторизацију помоћу API кључа: api_key
+    // Конфигуриши овлашћење API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Откоментариши следећи ред да подесиш префикс за API кључ, нпр. "Token" (подразумевано је null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetQuestionResult200Response result = apiInstance.getQuestionResult(tenantId, id)
+      GetQuestionResultResponse result = apiInstance.getQuestionResult(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

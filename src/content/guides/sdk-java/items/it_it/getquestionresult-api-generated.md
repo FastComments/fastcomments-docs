@@ -1,19 +1,19 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResult200Response.java)
+Restituisce: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResultResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getQuestionResult'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Import delle classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione tramite API key: api_key
+    // Configurare l'autorizzazione della API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
+    // Decommentare la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetQuestionResult200Response result = apiInstance.getQuestionResult(tenantId, id)
+      GetQuestionResultResponse result = apiInstance.getQuestionResult(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

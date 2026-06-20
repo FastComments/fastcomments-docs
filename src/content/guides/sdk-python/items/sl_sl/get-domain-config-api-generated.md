@@ -1,43 +1,43 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| domain | string | path | Da |  |
 
 ## Odgovor
 
-Vrne: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Vrača: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_domain_config Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.get_domain_config_response import GetDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je izbirno in privzeto nastavljeno na https://fastcomments.com
+# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
 # Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
-# v skladu s politiko varnosti API strežnika.
-# Spodaj so prikazani primeri za vsako metodo avtentikacije; uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora nastaviti parametre preverjanja pristnosti in pooblastil
+# v skladu s varnostno politiko API strežnika.
+# Primeri za vsako metodo overjanja so podani spodaj, uporabite primer, ki
+# ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Nastavite pooblastilo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnje za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstopite v kontekst z instanco API klienta
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     domain = 'domain_example' # str | 
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_domain_config: %s\n" % e)
 [inline-code-end]
-
----

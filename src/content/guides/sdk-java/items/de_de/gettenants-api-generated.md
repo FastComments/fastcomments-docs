@@ -1,14 +1,14 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| meta | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| meta | string | query | Nein |  |
+| skip | number | query | Nein |  |
 
 ## Response
 
-Gibt zurück: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenants200Response.java)
+Gibt zurück: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantsResponse.java)
 
 ## Beispiel
 
@@ -30,7 +30,7 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Kommentarzeichen vor der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String meta = "meta_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenants200Response result = apiInstance.getTenants(tenantId)
+      GetTenantsResponse result = apiInstance.getTenants(tenantId)
             .meta(meta)
             .skip(skip)
             .execute();

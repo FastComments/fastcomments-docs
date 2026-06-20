@@ -4,14 +4,14 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
-| usernameStartsWith | string | query | 아니오 |  |
-| mentionGroupIds | array | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
-| searchSection | string | query | 아니오 |  |
+| usernameStartsWith | string | query | 아니요 |  |
+| mentionGroupIds | array | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
+| searchSection | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## 예제
 
@@ -21,13 +21,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
+tenant_id = 'tenant_id_example' # 문자열 | 
+url_id = 'url_id_example' # 문자열 | 
 opts = {
-  username_starts_with: 'username_starts_with_example', # String | 
+  username_starts_with: 'username_starts_with_example', # 문자열 | 
   mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example', # String | 
-  search_section: 'fast' # String | 
+  sso: 'sso_example', # 문자열 | 
+  search_section: 'fast' # 문자열 | 
 }
 
 begin
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
+
+---

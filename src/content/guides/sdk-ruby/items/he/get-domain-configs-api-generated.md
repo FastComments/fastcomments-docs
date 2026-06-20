@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs200_response.rb)
+מחזיר: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs_response.rb)
 
 ## דוגמה
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # הגדר אימות באמצעות מפתח API: api_key
+  # הגדר אימות מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_domain_configs: #{e}"
 end
 [inline-code-end]
-
----

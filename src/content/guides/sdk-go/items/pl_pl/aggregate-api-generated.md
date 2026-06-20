@@ -1,16 +1,18 @@
-Agreguje dokumenty poprzez grupowanie (jeśli podano groupBy) i stosowanie wielu operacji. Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
+---
+Agreguje dokumenty, grupując je (jeśli podano groupBy) i stosując wiele operacji.
+Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
 
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| parentTenantId | string | query | Nie |  |
-| includeStats | boolean | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Zwraca: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Przykład
 
@@ -22,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -38,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odpowiedź z `Aggregate`: AggregationResponse
+	// odpowiedź z `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

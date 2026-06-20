@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | afterId | string | query | Нет |  |
@@ -12,7 +12,7 @@
 
 ## Ответ
 
-Возвращает: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+Возвращает: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## Пример
 
@@ -39,7 +39,7 @@ public class Example {
     Boolean noDm = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotifications(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotifications(tenantId)
             .afterId(afterId)
             .afterCreatedAt(afterCreatedAt)
             .unreadOnly(unreadOnly)

@@ -1,25 +1,25 @@
-### Използване на удостоверени API (DefaultApi)
+### Използване на автентифицирани API (DefaultApi)
 
-**Важно:** Трябва да зададете вашия API ключ в Configuration преди да правите удостоверени заявки. Ако не го направите, заявките ще върнат грешка 401.
+**Важно:** Трябва да зададете вашия API ключ в Configuration преди да правите автентифицирани заявки. Ако не го направите, заявките ще се провалят с грешка 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Създайте и конфигурирайте API клиента
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# ЗАДЪЛЖИТЕЛНО: Задайте вашия API ключ (вземете го от таблото на FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Създайте екземпляра на API с конфигурирания клиент
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Сега можете да правите удостоверени извиквания на API
+# Now you can make authenticated API calls
 try:
-    # Пример: Добавяне на SSO потребител
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Чести грешки:
-    # - 401: API ключът липсва или е невалиден
-    # - 400: Валидирането на заявката не успя
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Използване на публични API (PublicApi)
 
-Публичните крайни точки не изискват удостоверяване:
+Публичните крайни точки не изискват автентикация:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Използване на SSO (Еднократно влизане)
+### Използване на таблото за модерация (ModerationApi)
 
-SDK-то включва помощни средства за генериране на сигурни SSO токени:
+`ModerationApi` захранва таблото за модерация. Методите се извикват от име на модератор чрез предаване на `sso` токен:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### Използване на SSO (Single Sign-On)
+
+SDK включва помощни средства за генериране на сигурни SSO токени:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Създаване на данни за потребителя
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Създайте SSO екземпляр с вашия API секрет
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Генериране на SSO токен
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# Използвайте този токен във вашия фронтенд или го предайте на API извиквания
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Чести проблеми
+### Често срещани проблеми
 
 1. **401 "missing-api-key" грешка**: Уверете се, че сте задали `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` преди да създадете екземпляра на DefaultApi.
-2. **Грешен клас API**: Използвайте `DefaultApi` за удостоверени заявки от страна на сървъра, `PublicApi` за клиентски/публични заявки.
+2. **Неправилен API клас**: Използвайте `DefaultApi` за сървърни автентифицирани заявки, `PublicApi` за клиентски/публични заявки, и `ModerationApi` за заявки на таблото за модерация.
 3. **Грешки при импорт**: Уверете се, че импортирате от правилния модул:
    - API клиент: `from client import ...`
    - SSO помощни средства: `from sso import ...`

@@ -1,23 +1,23 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | skip | number | query | Non |  |
 
 ## Réponse
 
-Retourne : [`GetModerators200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModerators200Response.swift)
+Retourne: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModeratorsResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getModerators'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getModerators'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Double |  (facultatif)
+let skip = 987 // Double |  (optionnel)
 
 DefaultAPI.getModerators(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.getModerators(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

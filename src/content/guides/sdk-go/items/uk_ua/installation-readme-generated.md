@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Використання клієнта API
 
-#### Public API (без автентифікації)
+#### Публічний API (без автентифікації)
 
-The PublicAPI allows unauthenticated access to public endpoints:
+PublicAPI дозволяє неавтентифікований доступ до публічних кінцевих точок:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (вимагає API-ключа)
+#### Default API (потребує API-ключ)
 
-DefaultAPI requires authentication using your API key:
+DefaultAPI вимагає автентифікації за допомогою вашого API-ключа:
 
 ```go
 package main
@@ -62,11 +62,45 @@ func main() {
         },
     )
 
-    // Отримати коментарі за допомогою автентифікованого DefaultAPI
+    // Отримати коментарі, використовуючи автентифікований DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
         Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```
+
+#### Moderation API (Панель модератора)
+
+ModerationAPI забезпечує роботу панелі модератора. Він надає методи для переліку,
+підрахунку, пошуку та експорту коментарів, дій модерації (видалення/відновлення,
+позначення, встановлення статусу для перегляду/спаму/підтвердження, голоси, повторне відкриття/закриття тем), банів (заборона коментування, скасування, підсумки перед баном, статус та налаштування бану, кількість забанених користувачів),
+та значків і довіри (нагородження/видалення значків, ручні значки, отримання/встановлення коефіцієнта довіри, внутрішній профіль користувача). Усі методи Moderation приймають параметр `sso` для модераторів, автентифікованих через SSO:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // Перелічити коментарі для модерації за допомогою ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
 
     if err != nil {
         panic(err)

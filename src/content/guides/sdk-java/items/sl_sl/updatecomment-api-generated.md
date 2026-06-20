@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vrača: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Primer
 
@@ -29,21 +29,21 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj avtentikacijo z API ključem: api_key
+    // Konfigurirajte overjanje z API ključem: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odstrani zakomentiranje naslednje vrstice za nastavitev predpone za API ključ, npr. "Token" (privzeto null)
+    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
-    PickAPICommentUpdatableCommentFields body = new PickAPICommentUpdatableCommentFields(); // PickAPICommentUpdatableCommentFields | 
+    UpdatableCommentParams updatableCommentParams = new UpdatableCommentParams(); // UpdatableCommentParams | 
     String contextUserId = "contextUserId_example"; // String | 
     Boolean doSpamCheck = true; // Boolean | 
     Boolean isLive = true; // Boolean | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateComment(tenantId, id, body)
+      APIEmptyResponse result = apiInstance.updateComment(tenantId, id, updatableCommentParams)
             .contextUserId(contextUserId)
             .doSpamCheck(doSpamCheck)
             .isLive(isLive)

@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
@@ -9,9 +9,9 @@
 | sessionId | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteComment200Response.java)
+Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteResponse.java)
 
 ## Eksempel
 
@@ -38,7 +38,7 @@ public class Example {
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteComment200Response result = apiInstance.voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams)
+      VoteResponse result = apiInstance.voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams)
             .sessionId(sessionId)
             .sso(sso)
             .execute();
@@ -53,3 +53,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

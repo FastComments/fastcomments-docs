@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Type | Location | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -8,27 +8,27 @@
 
 ## Отговор
 
-Връща: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors200_response.rb)
+Връща: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_email_template_render_errors'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_email_template_render_errors'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на авторизация
+# настройка на авторизацията
 FastCommentsClient.configure do |config|
   # Конфигуриране на авторизация с API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Низ | 
-id = 'id_example' # Низ | 
+tenant_id = 'tenant_id_example' # String | 
+id = 'id_example' # String | 
 opts = {
-  skip: 1.2 # Число с плаваща запетая | 
+  skip: 1.2 # Float | 
 }
 
 begin

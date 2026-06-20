@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -10,11 +10,11 @@
 
 ## Ответ
 
-Возвращает: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_text200_response.rb)
+Возвращает: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_set_comment_text_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования set_comment_text'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример set_comment_text'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->set_comment_text: #{e}"
 end
 [inline-code-end]
+
+---

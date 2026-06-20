@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | commentId | string | query | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-返却: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteComment200Response.swift)
+戻り値: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## 例
 
@@ -22,8 +22,8 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let direction = "direction_example" // String | 
-let userId = "userId_example" // String |  (任意)
-let anonUserId = "anonUserId_example" // String |  (任意)
+let userId = "userId_example" // String |  (オプション)
+let anonUserId = "anonUserId_example" // String |  (オプション)
 
 DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, userId: userId, anonUserId: anonUserId) { (response, error) in
     guard error == nil else {

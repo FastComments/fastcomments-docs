@@ -1,18 +1,18 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Dönen değer: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AddDomainConfig200Response.swift)
+Döndürür: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AddDomainConfigResponse.swift)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'addDomainConfig Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta durumundadır. Herhangi bir sorun için lütfen bildirin: http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,5 +29,3 @@ DefaultAPI.addDomainConfig(tenantId: tenantId, addDomainConfigParams: addDomainC
     }
 }
 [inline-code-end]
-
----

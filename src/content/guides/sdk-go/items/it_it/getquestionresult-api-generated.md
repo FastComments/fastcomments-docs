@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -7,7 +8,7 @@
 
 ## Risposta
 
-Restituisce: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_result_200_response.go)
+Restituisce: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_result_response.go)
 
 ## Esempio
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetQuestionResult`: GetQuestionResult200Response
+	// risposta da `GetQuestionResult`: GetQuestionResultResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
+
+---

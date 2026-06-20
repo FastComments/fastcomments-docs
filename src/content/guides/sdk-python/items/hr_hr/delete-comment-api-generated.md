@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Location | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -9,37 +9,37 @@
 
 ## Odgovor
 
-Vraća: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment200_response.py)
+Vraća: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_result.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer delete_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment200_response import DeleteComment200Response
+from client.models.delete_comment_result import DeleteCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
+# Definiranje hosta je neobavezno; zadana vrijednost je https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
 # u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentikacije navedeni su u nastavku, koristite primjer koji
-# odgovara vašem slučaju upotrebe autentikacije.
+# Primjeri za svaki način autentikacije navedeni su dolje; upotrijebite primjer koji
+# zadovoljava vaš slučaj korištenja autentikacije.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

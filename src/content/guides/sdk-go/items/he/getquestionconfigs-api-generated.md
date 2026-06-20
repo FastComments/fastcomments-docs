@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -7,11 +8,11 @@
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_configs_200_response.go)
+מחזיר: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_configs_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetQuestionConfigs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת GetQuestionConfigs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionConfigs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`GetQuestionConfigs`: GetQuestionConfigs200Response
+	// תגובה מ־`GetQuestionConfigs`: GetQuestionConfigsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfigs`: %v\n", resp)
 }
 [inline-code-end]
+
+---

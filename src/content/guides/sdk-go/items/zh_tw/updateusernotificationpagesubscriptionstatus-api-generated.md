@@ -1,8 +1,8 @@
-啟用或停用對頁面的通知。當使用者訂閱某個頁面時，系統會為新的根評論建立通知，並且還會
+啟用或停用頁面的通知。當使用者訂閱某頁面時，會為新的根留言建立通知，並且還會
 
 ## 參數
 
-| 名稱 | 類型 | 位置 | 是否必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | urlId | string | query | 是 |  |
@@ -13,7 +13,7 @@
 
 ## 回應
 
-回傳: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+回傳：[`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_page_subscription_status_response.go)
 
 ## 範例
 
@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 	url := "url_example" // string | 
 	pageTitle := "pageTitle_example" // string | 
 	subscribedOrUnsubscribed := "subscribedOrUnsubscribed_example" // string | 
-	sso := "sso_example" // string |  (選用)
+	sso := "sso_example" // string |  (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationPageSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `UpdateUserNotificationPageSubscriptionStatus` 回傳的回應：UpdateUserNotificationStatus200Response
+	// 從 `UpdateUserNotificationPageSubscriptionStatus` 的回應： UpdateUserNotificationPageSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationPageSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

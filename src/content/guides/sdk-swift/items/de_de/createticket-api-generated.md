@@ -2,18 +2,18 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
+| tenantId | string | query | Ja |  |
+| userId | string | query | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTicket200Response.swift)
+Gibt zurück: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTicketResponse.swift)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'createTicket Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für createTicket'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele befinden sich noch in der Beta-Phase. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele befinden sich noch in der Beta-Phase. Bei Problemen melden Sie diese bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,3 +31,5 @@ DefaultAPI.createTicket(tenantId: tenantId, userId: userId, createTicketBody: cr
     }
 }
 [inline-code-end]
+
+---

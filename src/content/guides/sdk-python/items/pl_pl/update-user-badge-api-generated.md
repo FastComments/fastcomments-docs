@@ -2,19 +2,19 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| id | string | path | Tak |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_badge200_response.py)
+Zwraca: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_success_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'update_user_badge Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład update_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_badge200_response import UpdateUserBadge200Response
+from client.models.api_empty_success_response import APIEmptySuccessResponse
 from client.models.update_user_badge_params import UpdateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
@@ -27,16 +27,16 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania — użyj tego
+# który spełnia Twój przypadek użycia uwierzytelniania.
 
-# Configure API key authorization: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzeba
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Użyj kontekstu z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)

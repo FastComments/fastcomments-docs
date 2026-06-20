@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Non |  |
@@ -12,28 +12,25 @@
 
 ## Réponse
 
-Renvoie: [`GetNotifications_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotifications_200_response.h)
+Renvoie : [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("https://example.com/posts/42"));
-boost::optional<utility::string_t> fromCommentId = boost::optional<utility::string_t>(U("cmt-98765"));
-boost::optional<bool> viewed = boost::optional<bool>(true);
-boost::optional<utility::string_t> type = boost::optional<utility::string_t>(U("reply"));
-boost::optional<double> skip = boost::optional<double>(0.0);
+boost::optional<utility::string_t> userId(U("user@example.com"));
+boost::optional<utility::string_t> urlId(U("/articles/2026/new-feature"));
+boost::optional<utility::string_t> fromCommentId(U("cmt-98765"));
+boost::optional<bool> viewed(true);
+boost::optional<utility::string_t> type(U("reply"));
+boost::optional<double> skip(0.0);
 
 api->getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)
-.then([](pplx::task<std::shared_ptr<GetNotifications_200_response>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto processed = std::make_shared<GetNotifications_200_response>(*resp);
-        }
-    } catch (const std::exception&) {
-    }
+.then([](std::shared_ptr<GetNotificationsResponse> resp){
+    auto holder = std::make_shared<GetNotificationsResponse>();
+    holder = resp;
+    if (holder) std::cout << "Received notifications\n";
+    return holder;
 });
 [inline-code-end]

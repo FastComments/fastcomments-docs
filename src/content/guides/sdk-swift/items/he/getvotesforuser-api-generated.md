@@ -1,21 +1,22 @@
-## פרמטרים
+---
+## Parameters
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | urlId | string | query | כן |  |
 | userId | string | query | לא |  |
 | anonUserId | string | query | לא |  |
 
-## תגובה
+## Response
 
-מחזיר: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUser200Response.swift)
+מחזיר: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
 
-## דוגמה
+## Example
 
 [inline-code-attrs-start title = 'דוגמה ל-getVotesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הדוגמאות הבאות לקוד עדיין בבטא. במקרה של בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בגרסת בטא. אם ישנה בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

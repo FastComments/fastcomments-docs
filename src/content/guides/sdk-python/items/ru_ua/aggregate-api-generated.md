@@ -1,9 +1,9 @@
-Агрегирует документы, группируя их (если предоставлен groupBy) и применяя несколько операций.
+Агрегирует документы, группируя их (если указан groupBy) и применяя несколько операций.
 Поддерживаются различные операции (например, sum, countDistinct, avg и т.д.).
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | parentTenantId | string | query | Нет |  |
@@ -11,43 +11,36 @@
 
 ## Ответ
 
-Возвращает: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Возвращает: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Указание host необязательно и по умолчанию равно https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте тот пример, который
-# подходит для вашего варианта использования.
-
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
+# соответствует вашему варианту использования аутентификации.
 # Настройте авторизацию по API-ключу: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
+# Раскомментируйте ниже, чтобы настроить префикс (например, Bearer) для API-ключа, если это необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром API-клиента
+# Откройте контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (необязательно)
-    include_stats = True # bool |  (необязательно)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
+    include_stats = True # bool |  (optional)
 
     try:
         api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)

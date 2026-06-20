@@ -2,23 +2,23 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
+| tenantId | string | query | Oui |  |
+| commentId | string | query | Non |  |
+| externalId | string | query | Non |  |
+| eventType | string | query | Non |  |
+| type | string | query | Non |  |
+| domain | string | query | Non |  |
+| attemptCountGT | number | query | Non |  |
 
 ## Réponse
 
-Retourne : [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCount200Response.java)
+Renvoie : [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCountResponse.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getPendingWebhookEventCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes:
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation par clé API: api_key
+    // Configurer l'authentification par clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par exemple "Token" (par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String domain = "domain_example"; // String | 
     Double attemptCountGT = 3.4D; // Double | 
     try {
-      GetPendingWebhookEventCount200Response result = apiInstance.getPendingWebhookEventCount(tenantId)
+      GetPendingWebhookEventCountResponse result = apiInstance.getPendingWebhookEventCount(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)

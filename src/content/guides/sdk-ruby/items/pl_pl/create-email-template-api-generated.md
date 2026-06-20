@@ -1,12 +1,12 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
+| tenantId | string | query | Yes |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_email_template200_response.rb)
+Zwraca: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_email_template_response.rb)
 
 ## Przykład
 
@@ -16,7 +16,7 @@ require 'time'
 require 'fastcomments-client'
 # konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfiguracja autoryzacji klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_email_template: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vraća: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_200_response.go)
+Vraća: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_response.go)
 
 ## Primjer
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTenant`: CreateTenant200Response
+	// odgovor od `CreateTenant`: CreateTenantResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenant`: %v\n", resp)
 }
 [inline-code-end]
-
----

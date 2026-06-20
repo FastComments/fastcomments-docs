@@ -1,26 +1,28 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | integer | query | No |  |
-| limit | integer | query | No |  |
-| skip | integer | query | No |  |
-| asTree | boolean | query | No |  |
-| skipChildren | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
-| contextUserId | string | query | No |  |
-| hashTag | string | query | No |  |
-| parentId | string | query | No |  |
-| direction | string | query | No |  |
+| tenantId | string | query | Sim |  |
+| page | integer | query | Não |  |
+| limit | integer | query | Não |  |
+| skip | integer | query | Não |  |
+| asTree | boolean | query | Não |  |
+| skipChildren | integer | query | Não |  |
+| limitChildren | integer | query | Não |  |
+| maxTreeDepth | integer | query | Não |  |
+| urlId | string | query | Não |  |
+| userId | string | query | Não |  |
+| anonUserId | string | query | Não |  |
+| contextUserId | string | query | Não |  |
+| hashTag | string | query | Não |  |
+| parentId | string | query | Não |  |
+| direction | string | query | Não |  |
+| fromDate | integer | query | Não |  |
+| toDate | integer | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+Retorna: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## Exemplo
 
@@ -39,10 +41,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização da chave de API: api_key
+    // Configurar autorização da chave da API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Descomente a linha a seguir para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`GetComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComment200Response.swift)
+Retorna: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentResponse.swift)
 
 ## Exemplo
 
@@ -30,5 +30,3 @@ DefaultAPI.getComment(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

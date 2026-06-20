@@ -5,17 +5,17 @@ userIdWS
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | userIdWS | string | query | Da |  |
 | startTime | integer | query | Da |  |
-| endTime | integer | query | Da |  |
+| endTime | integer | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Vrne: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Primer
 
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -53,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

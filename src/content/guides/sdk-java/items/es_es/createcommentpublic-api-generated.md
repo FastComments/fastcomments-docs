@@ -1,16 +1,17 @@
+---
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
+| tenantId | string | path | Sí |  |
+| urlId | string | query | Sí |  |
+| broadcastId | string | query | Sí |  |
 | sessionId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateCommentPublic200Response.java)
+Devuelve: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
 ## Ejemplo
 
@@ -36,7 +37,7 @@ public class Example {
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateCommentPublic200Response result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
+      SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
             .execute();

@@ -1,6 +1,6 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Nee |  |
@@ -12,7 +12,7 @@
 
 ## Respons
 
-Geeft terug: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCount200Response.java)
+Retourneert: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCountResponse.java)
 
 ## Voorbeeld
 
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutelautorisatie: api_key
+    // Configureer autorisatie met API-sleutel: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaartekens weg voor de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard is null)
+    // Haal de commentaarstreep van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String domain = "domain_example"; // String | 
     Double attemptCountGT = 3.4D; // Double | 
     try {
-      GetPendingWebhookEventCount200Response result = apiInstance.getPendingWebhookEventCount(tenantId)
+      GetPendingWebhookEventCountResponse result = apiInstance.getPendingWebhookEventCount(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)

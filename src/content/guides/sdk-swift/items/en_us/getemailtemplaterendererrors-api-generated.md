@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateRenderErrors200Response.swift)
+Returns: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateRenderErrorsResponse.swift)
 
 ## Example
 

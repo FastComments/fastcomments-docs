@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | skip | integer | query | 否 |  |
 
 ## 响应
 
-返回: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetSSOUsers200Response.java)
+返回: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetSSOUsersResponse.java)
 
 ## 示例
 
@@ -29,14 +29,14 @@ public class Example {
     // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // 取消注释以下行以设置 API 密钥的前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Integer skip = 56; // Integer | 
     try {
-      GetSSOUsers200Response result = apiInstance.getSSOUsers(tenantId)
+      GetSSOUsersResponse result = apiInstance.getSSOUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

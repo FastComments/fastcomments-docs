@@ -1,19 +1,19 @@
 ## Parametry
 
-| Name | Type | Lokalizacja | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | skip | number | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModerators200Response.java)
+Zwraca: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModeratorsResponse.java)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getModerators'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importowanie klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguracja autoryzacji klucza API: api_key
+    // Skonfiguruj autoryzację klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj następującą linię, aby ustawić prefiks klucza API, np. "Token" (domyślnie null)
+    // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetModerators200Response result = apiInstance.getModerators(tenantId)
+      GetModeratorsResponse result = apiInstance.getModerators(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

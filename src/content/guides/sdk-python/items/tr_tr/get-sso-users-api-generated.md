@@ -1,46 +1,46 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | skip | integer | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users200_response.py)
+Döndürür: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_sso_users Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_sso_users200_response import GetSSOUsers200Response
+from client.models.get_sso_users_response import GetSSOUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusunun güvenlik politikasına uygun olarak.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza
-# uygun olanı kullanın.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneğiyle bir bağlam açın
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 56 # int |  (isteğe bağlı)
+    skip = 56 # int |  (optional)
 
     try:
         api_response = api_instance.get_sso_users(tenant_id, skip=skip)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_sso_users: %s\n" % e)
 [inline-code-end]
-
----

@@ -5,13 +5,13 @@
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_200_response.go)
+Returnerer: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_response.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'GetVotes Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetVotes-eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetVotes`: GetVotes200Response
+	// svar fra `GetVotes`: GetVotesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotes`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,17 +1,17 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_200_response.go)
+Возвращает: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'GetEmailTemplate Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример GetEmailTemplate'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetEmailTemplate`: GetEmailTemplate200Response
+	// ответ от `GetEmailTemplate`: GetEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
+
+---

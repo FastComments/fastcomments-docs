@@ -1,15 +1,16 @@
+---
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| id | string | 路径 | 是 |  |
-| contextUserId | string | 查询 | 否 |  |
-| isLive | boolean | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
+| contextUserId | string | query | 否 |  |
+| isLive | boolean | query | 否 |  |
 
 ## 响应
 
-返回: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_200_response.go)
+返回：[`DeleteCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_result.go)
 
 ## 示例
 
@@ -21,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +38,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `DeleteComment` 的响应: DeleteComment200Response
+	// 来自 `DeleteComment` 的响应: DeleteCommentResult
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

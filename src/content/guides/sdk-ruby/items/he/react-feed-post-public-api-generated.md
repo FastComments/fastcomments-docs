@@ -10,7 +10,7 @@
 
 ## תגובה
 
-מחזיר: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_public200_response.rb)
+מחזיר: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_response.rb)
 
 ## דוגמה
 
@@ -20,13 +20,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # מחרוזת | 
-post_id = 'post_id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
+post_id = 'post_id_example' # String | 
 react_body_params = FastCommentsClient::ReactBodyParams.new # ReactBodyParams | 
 opts = {
-  is_undo: true, # בוליאני | 
-  broadcast_id: 'broadcast_id_example', # מחרוזת | 
-  sso: 'sso_example' # מחרוזת | 
+  is_undo: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

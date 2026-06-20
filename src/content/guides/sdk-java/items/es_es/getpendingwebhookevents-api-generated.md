@@ -1,19 +1,19 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | consulta | Sí |  |
-| commentId | string | consulta | No |  |
-| externalId | string | consulta | No |  |
-| eventType | string | consulta | No |  |
-| type | string | consulta | No |  |
-| domain | string | consulta | No |  |
-| attemptCountGT | number | consulta | No |  |
-| skip | number | consulta | No |  |
+| tenantId | string | query | Sí |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEvents200Response.java)
+Devuelve: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventsResponse.java)
 
 ## Ejemplo
 
@@ -32,10 +32,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar la autorización con la clave API: api_key
+    // Configurar la autorización de clave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto es null)
+    // Descomenta la siguiente línea para establecer un prefijo para la API key, p. ej. "Token" (por defecto es null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -48,7 +48,7 @@ public class Example {
     Double attemptCountGT = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetPendingWebhookEvents200Response result = apiInstance.getPendingWebhookEvents(tenantId)
+      GetPendingWebhookEventsResponse result = apiInstance.getPendingWebhookEvents(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)
@@ -68,3 +68,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

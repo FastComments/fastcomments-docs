@@ -1,19 +1,20 @@
+---
 ## Parámetros
 
-| Name | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | skip | number | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModerators200Response.java)
+Devuelve: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModeratorsResponse.java)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de getModerators'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Importar clases:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Configurar la autorización por clave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
@@ -36,7 +37,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetModerators200Response result = apiInstance.getModerators(tenantId)
+      GetModeratorsResponse result = apiInstance.getModerators(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

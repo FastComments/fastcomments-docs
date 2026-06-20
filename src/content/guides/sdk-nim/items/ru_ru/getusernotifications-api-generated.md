@@ -1,8 +1,9 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
+| urlId | string | Да |  |
 | pageSize | int | Нет |  |
 | afterId | string | Нет |  |
 | includeContext | bool | Нет |  |
@@ -11,11 +12,12 @@
 | dmOnly | bool | Нет |  |
 | noDm | bool | Нет |  |
 | includeTranslations | bool | Нет |  |
+| includeTenantNotifications | bool | Нет |  |
 | sso | string | Нет |  |
 
 ## Ответ
 
-Возвращает: [`Option[GetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notifications200response.nim)
+Возвращает: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_my_notifications_response.nim)
 
 ## Пример
 
@@ -23,21 +25,22 @@
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
-  pageSize = 50,
-  afterId = "notif_9a1b2c3d",
-  includeContext = true,
-  afterCreatedAt = int64(1699999999000),
+  urlId = "news/article-title",
+  pageSize = 0,
+  afterId = "",
+  includeContext = false,
+  afterCreatedAt = 0,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   includeTranslations = false,
+  includeTenantNotifications = false,
   sso = ""
 )
+
 if response.isSome:
   let notifications = response.get()
-  discard notifications
-else:
-  discard httpResponse
+  echo notifications
 [inline-code-end]
 
 ---

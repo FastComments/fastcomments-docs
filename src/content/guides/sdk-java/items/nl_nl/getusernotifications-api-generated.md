@@ -3,6 +3,7 @@
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
+| urlId | string | query | Nee | Gebruikt om te bepalen of de huidige pagina geabonneerd is. |
 | pageSize | integer | query | Nee |  |
 | afterId | string | query | Nee |  |
 | includeContext | boolean | query | Nee |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Nee |  |
 | noDm | boolean | query | Nee |  |
 | includeTranslations | boolean | query | Nee |  |
+| includeTenantNotifications | boolean | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+Geeft terug: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## Voorbeeld
 
@@ -35,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | Gebruikt om te bepalen of de huidige pagina geabonneerd is.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -43,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -54,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);

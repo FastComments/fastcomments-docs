@@ -1,3 +1,4 @@
+---
 ## Parâmetros
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## Resposta
 
-Retorna: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_cached_notification_count_200_response.go)
+Retorna: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_cached_notification_count_response.go)
 
 ## Exemplo
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetCachedNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `GetCachedNotificationCount`: GetCachedNotificationCount200Response
+	// resposta de `GetCachedNotificationCount`: GetCachedNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetCachedNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
+
+---

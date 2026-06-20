@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 否 |  |
@@ -13,7 +13,7 @@
 
 ## 响应
 
-返回: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+返回: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## 示例
 
@@ -23,9 +23,9 @@ require 'time'
 require 'fastcomments-client'
 # 设置授权
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # 配置 API 密钥授权: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer'（默认值为 nil）
+  # 取消注释下面一行以设置 API 密钥的前缀，例如 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -49,3 +49,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_events: #{e}"
 end
 [inline-code-end]
+
+---

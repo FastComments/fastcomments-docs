@@ -7,15 +7,15 @@
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'update_feed_post Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer update_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.feed_post import FeedPost
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,15 +25,15 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# Klijent mora da konfiguriše parametre autentikacije i autorizacije
 # u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
-# odgovara vašem slučaju upotrebe autentifikacije.
+# Ispod su dati primeri za svaki metod autentikacije; koristite primer koji
+# odgovara vašem slučaju upotrebe.
 
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju putem API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomenarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta

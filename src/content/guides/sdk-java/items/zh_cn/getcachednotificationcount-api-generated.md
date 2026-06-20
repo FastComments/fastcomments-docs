@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
 
 ## 响应
 
-返回：[`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCount200Response.java)
+返回：[`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCachedNotificationCountResponse.java)
 
 ## 示例
 
@@ -29,14 +29,14 @@ public class Example {
     // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释以下行以设置 API 密钥前缀，例如 "Token"（默认值为 null）
+    // 取消注释以下行以为 API 密钥设置前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetCachedNotificationCount200Response result = apiInstance.getCachedNotificationCount(tenantId, id)
+      GetCachedNotificationCountResponse result = apiInstance.getCachedNotificationCount(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

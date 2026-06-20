@@ -9,27 +9,27 @@
 
 ## Antwort
 
-Gibt zurück: [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+Gibt zurück: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'un_pin_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Das Festlegen des Hosts ist optional und standardmäßig https://fastcomments.com
+# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Öffne einen Kontext mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstelle eine Instanz der API-Klasse
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

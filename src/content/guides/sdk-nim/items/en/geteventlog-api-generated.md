@@ -16,7 +16,7 @@ userIdWS
 
 ## Response
 
-Returns: [`Option[GetEventLog_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log200response.nim)
+Returns: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
 ## Example
 
@@ -24,15 +24,12 @@ Returns: [`Option[GetEventLog_200_response]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.getEventLog(
   tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  userIdWS = "",
-  startTime = 0'i64,
-  endTime = 0'i64
+  urlId = "news/article-2026-solar-panels",
+  userIdWS = "user-456",
+  startTime = 1688000000'i64,
+  endTime = 1688086400'i64
 )
 if response.isSome:
   let eventLog = response.get()
-  echo "Event log retrieved for news/article-title"
   discard eventLog
-else:
-  echo "Failed to retrieve event log, status: ", httpResponse.status
 [inline-code-end]

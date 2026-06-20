@@ -1,36 +1,37 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Потребно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createCommentParams | CreateCommentParams | Ne |  |
-| isLive | bool | Ne |  |
-| doSpamCheck | bool | Ne |  |
-| sendEmails | bool | Ne |  |
-| populateNotifications | bool | Ne |  |
+| tenantId | string | Да |  |
+| createCommentParams | CreateCommentParams | Не |  |
+| isLive | bool | Не |  |
+| doSpamCheck | bool | Не |  |
+| sendEmails | bool | Не |  |
+| populateNotifications | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[SaveComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_save_comment200response.nim)
+Враћа: [`Option[APISaveCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_save_comment_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer saveComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let createCommentParams = CreateCommentParams(
+  urlId = "news/2026/major-policy-change",
+  content = "This is a thoughtful comment on the policy change and its potential impacts.",
+  authorName = "Morgan Lee",
+  authorEmail = "morgan.lee@example.org",
+  tags = @["policy","analysis"],
+  extraData = @[])
+
 let (response, httpResponse) = client.saveComment(
   tenantId = "my-tenant-123",
-  createCommentParams = CreateCommentParams(
-    content = "This article was really helpful, thanks!",
-    urlId = "news/2025-11/ai-regulations",
-    authorName = "Jane Doe",
-    authorEmail = "jane.doe@example.com",
-    tags = @["policy", "analysis"]
-  ),
+  createCommentParams = createCommentParams,
   isLive = true,
   doSpamCheck = true,
-  sendEmails = true,
-  populateNotifications = false
-)
+  sendEmails = false,
+  populateNotifications = true)
 
 if response.isSome:
   let saved = response.get()

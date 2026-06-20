@@ -1,13 +1,13 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | forceRecalculate | boolean | query | 否 |  |
 
 ## 回應
 
-回傳: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_aggregate_question_results_200_response.go)
+回傳: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_aggregate_question_results_response.go)
 
 ## 範例
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.BulkAggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `BulkAggregateQuestionResults` 的回應: BulkAggregateQuestionResults200Response
+	// 從 `BulkAggregateQuestionResults` 的回應: BulkAggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.BulkAggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,37 +1,37 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
+| tenantId | string | requête | Oui |  |
 
 ## Réponse
 
-Retourne: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions200_response.py)
+Renvoie : [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_email_template_definitions'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_definitions200_response import GetEmailTemplateDefinitions200Response
+from client.models.get_email_template_definitions_response import GetEmailTemplateDefinitionsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
-# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
 # conformément à la politique de sécurité du serveur API.
-# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous ; utilisez l'exemple qui
-# convient à votre cas d'utilisation d'authentification.
+# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez celui
+# qui correspond à votre cas d'utilisation.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour définir un préfixe (par ex. Bearer) pour la clé API, si nécessaire
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API

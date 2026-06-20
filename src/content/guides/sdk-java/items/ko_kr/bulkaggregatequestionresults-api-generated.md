@@ -3,11 +3,11 @@
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| forceRecalculate | boolean | query | 아니요 |  |
+| forceRecalculate | boolean | query | 아니오 |  |
 
 ## 응답
 
-반환: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResults200Response.java)
+반환: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkAggregateQuestionResultsResponse.java)
 
 ## 예제
 
@@ -29,7 +29,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값은 null)
+    // API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest = new BulkAggregateQuestionResultsRequest(); // BulkAggregateQuestionResultsRequest | 
     Boolean forceRecalculate = true; // Boolean | 
     try {
-      BulkAggregateQuestionResults200Response result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
+      BulkAggregateQuestionResultsResponse result = apiInstance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest)
             .forceRecalculate(forceRecalculate)
             .execute();
       System.out.println(result);

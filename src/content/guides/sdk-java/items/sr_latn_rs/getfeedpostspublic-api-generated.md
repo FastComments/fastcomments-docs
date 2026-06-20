@@ -1,10 +1,10 @@
-zahtev
+req
 tenantId
 afterId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | afterId | string | query | Ne |  |
@@ -16,11 +16,11 @@ afterId
 
 ## Odgovor
 
-Vraća: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsPublic200Response.java)
+Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicFeedPostsResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getFeedPostsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -43,7 +43,7 @@ public class Example {
     Boolean isCrawler = true; // Boolean | 
     Boolean includeUserInfo = true; // Boolean | 
     try {
-      GetFeedPostsPublic200Response result = apiInstance.getFeedPostsPublic(tenantId)
+      PublicFeedPostsResponse result = apiInstance.getFeedPostsPublic(tenantId)
             .afterId(afterId)
             .limit(limit)
             .tags(tags)
@@ -62,3 +62,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

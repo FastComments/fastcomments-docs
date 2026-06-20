@@ -1,26 +1,28 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | integer | query | No |  |
-| limit | integer | query | No |  |
-| skip | integer | query | No |  |
-| asTree | boolean | query | No |  |
-| skipChildren | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
-| contextUserId | string | query | No |  |
-| hashTag | string | query | No |  |
-| parentId | string | query | No |  |
-| direction | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| page | integer | query | Nej |  |
+| limit | integer | query | Nej |  |
+| skip | integer | query | Nej |  |
+| asTree | boolean | query | Nej |  |
+| skipChildren | integer | query | Nej |  |
+| limitChildren | integer | query | Nej |  |
+| maxTreeDepth | integer | query | Nej |  |
+| urlId | string | query | Nej |  |
+| userId | string | query | Nej |  |
+| anonUserId | string | query | Nej |  |
+| contextUserId | string | query | Nej |  |
+| hashTag | string | query | Nej |  |
+| parentId | string | query | Nej |  |
+| direction | string | query | Nej |  |
+| fromDate | integer | query | Nej |  |
+| toDate | integer | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Returnerer: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Eksempel
 
@@ -28,11 +30,11 @@ Returnerer: [`GetComments200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsætning af godkendelse
+# opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøglegodkendelse: api_key
+  # Konfigurer API-nøgleautorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentartegnet for følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

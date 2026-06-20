@@ -7,16 +7,16 @@
 
 ## Response
 
-Returns: [`Option[GetComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment200response.nim)
+Returns: [`Option[APIGetCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comment_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'getComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-987654")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
 if response.isSome:
   let comment = response.get()
-  echo "Comment received:", comment
+  discard comment
 else:
-  echo "No comment found, HTTP status:", httpResponse.status.code
+  echo "Comment not found"
 [inline-code-end]

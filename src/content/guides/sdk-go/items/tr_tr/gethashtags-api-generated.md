@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| page | number | query | Hayır |  |
+| tenantId | string | sorgu | Evet |  |
+| page | number | sorgu | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_200_response.go)
+Döndürür: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_response.go)
 
 ## Örnek
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetHashTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetHashTags`'den dönen yanıt: GetHashTags200Response
+	// `GetHashTags` çağrısından dönen yanıt: GetHashTagsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetHashTags`: %v\n", resp)
 }
 [inline-code-end]

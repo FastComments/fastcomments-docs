@@ -11,7 +11,7 @@
 
 ## Response
 
-Returns: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogs200Response.java)
+Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
 ## Example
 
@@ -44,7 +44,7 @@ public class Example {
     Double after = 3.4D; // Double | 
     Double before = 3.4D; // Double | 
     try {
-      GetAuditLogs200Response result = apiInstance.getAuditLogs(tenantId)
+      GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
             .skip(skip)
             .order(order)

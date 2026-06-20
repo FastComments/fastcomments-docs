@@ -1,7 +1,6 @@
----
-## Parameter
+## Parameteren
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
@@ -9,7 +8,7 @@
 
 ## Antwort
 
-Gibt zurück: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockFromCommentPublic200Response.php)
+Gibt zurück: [`BlockSuccess`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockSuccess.php)
 
 ## Beispiel
 
@@ -37,5 +36,3 @@ try {
     echo 'Exception when calling PublicApi->blockFromCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

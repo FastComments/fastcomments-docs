@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Placering | Krævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
@@ -11,11 +11,11 @@
 
 ## Svar
 
-Returnerer: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteComment200Response.php)
+Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'voteComment Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på voteComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, kan du give din klient, der implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

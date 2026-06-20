@@ -1,13 +1,14 @@
+---
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | Abfrage | Ja |  |
+| id | string | Pfad | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_200_response.go)
+Gibt zurück: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_response.go)
 
 ## Beispiel
 
@@ -33,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `GetEmailTemplate`: GetEmailTemplate200Response
+	// Antwort von `GetEmailTemplate`: GetEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]

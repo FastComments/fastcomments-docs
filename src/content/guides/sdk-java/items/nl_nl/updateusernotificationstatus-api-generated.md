@@ -1,15 +1,15 @@
 ## Parameters
 
-| Name | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| notificationId | string | path | Yes |  |
-| newStatus | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| notificationId | string | path | Ja |  |
+| newStatus | string | path | Ja |  |
+| sso | string | query | Nee |  |
 
 ## Respons
 
-Retourneert: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Retourneert: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatusResponse.java)
 
 ## Voorbeeld
 
@@ -33,7 +33,7 @@ public class Example {
     String newStatus = "read"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
+      UpdateUserNotificationStatusResponse result = apiInstance.updateUserNotificationStatus(tenantId, notificationId, newStatus)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

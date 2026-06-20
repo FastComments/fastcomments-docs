@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RenderEmailTemplate200Response.swift)
+戻り値: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RenderEmailTemplateResponse.swift)
 
 ## 例
 
@@ -31,5 +31,3 @@ DefaultAPI.renderEmailTemplate(tenantId: tenantId, renderEmailTemplateBody: rend
     }
 }
 [inline-code-end]
-
----

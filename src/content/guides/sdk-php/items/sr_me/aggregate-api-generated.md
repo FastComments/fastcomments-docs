@@ -1,8 +1,9 @@
-Агрегира документе групишући их (ако је groupBy наведeн) и примењући више операција. Подржане су различите операције (нпр. sum, countDistinct, avg итд.).
+Агрегира документе груписањем (ако је groupBy наведено) и примјеном више операција.
+Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | parentTenantId | string | query | Не |  |
@@ -10,25 +11,25 @@
 
 ## Одговор
 
-Враћа: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'aggregate Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Конфигуришите овлашћење API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, по подразумеваној вредности ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

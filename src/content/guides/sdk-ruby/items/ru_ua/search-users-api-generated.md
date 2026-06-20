@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Type | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
@@ -11,7 +11,7 @@
 
 ## Ответ
 
-Возвращает: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+Возвращает: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## Пример
 
@@ -21,13 +21,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
-url_id = 'url_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
 opts = {
-  username_starts_with: 'username_starts_with_example', # Строка | 
-  mention_group_ids: ['inner_example'], # Массив<String> | 
-  sso: 'sso_example', # Строка | 
-  search_section: 'fast' # Строка | 
+  username_starts_with: 'username_starts_with_example', # String | 
+  mention_group_ids: ['inner_example'], # Array<String> | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,18 +1,18 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| afterId | string | query | Ні |  |
-| afterCreatedAt | integer | query | Ні |  |
-| unreadOnly | boolean | query | Ні |  |
-| dmOnly | boolean | query | Ні |  |
-| noDm | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Повертає: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Приклад
 
@@ -40,3 +40,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notifications: #{e}"
 end
 [inline-code-end]
+
+---

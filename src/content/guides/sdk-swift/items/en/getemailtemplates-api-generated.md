@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplates200Response.swift)
+Returns: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplatesResponse.swift)
 
 ## Example
 

@@ -2,12 +2,12 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
+| tag | string | path | Yes |  |
+| tenantId | string | query | No |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Παράδειγμα
 
@@ -29,17 +29,17 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης με API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την επόμενη γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. "Token" (προεπιλογή null)
+    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
-    DeleteHashTagRequest deleteHashTagRequest = new DeleteHashTagRequest(); // DeleteHashTagRequest | 
+    DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteHashTag(tag)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
             .tenantId(tenantId)
-            .deleteHashTagRequest(deleteHashTagRequest)
+            .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

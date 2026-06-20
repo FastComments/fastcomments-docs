@@ -1,8 +1,9 @@
-Агрегирует документы, группируя их (если указан groupBy) и применяя несколько операций. Поддерживаются различные операции (например sum, countDistinct, avg и т.д.).
+Агрегирует документы путем группировки (если задан groupBy) и применения нескольких операций.
+Поддерживаются различные операции (например, sum, countDistinct, avg и т.д.).
 
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | parentTenantId | string | query | Нет |  |
@@ -10,7 +11,7 @@
 
 ## Ответ
 
-Возвращает: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Возвращает: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Пример
 
@@ -42,5 +43,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
-
----

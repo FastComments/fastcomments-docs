@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsers200Response.php)
+Возвращает: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
 
 ## Пример
 
@@ -19,18 +19,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Настройка авторизации по API-ключу: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+// Раскомментируйте строку ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, `GuzzleHttp\Client` будет использован как значение по умолчанию.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // строка
-$skip = 3.4; // число с плавающей точкой
+$tenant_id = 'tenant_id_example'; // string
+$skip = 3.4; // float
 
 try {
     $result = $apiInstance->getTenantUsers($tenant_id, $skip);

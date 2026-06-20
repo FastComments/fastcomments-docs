@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名称 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | userId | string | いいえ |  |
@@ -11,26 +12,16 @@
 
 ## レスポンス
 
-戻り値: [`Option[GetNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notifications200response.nim)
+戻り値: [`Option[GetNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notifications_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'getNotifications の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotifications(
-  tenantId = "fastcomments-tenant-42",
-  userId = "",
-  urlId = "news/latest-tech-innovations",
-  fromCommentId = "",
-  viewed = false,
-  skip = 0.0
-)
-
+let (response, httpResponse) = client.getNotifications(tenantId = "my-tenant-123", userId = "user-456", urlId = "news/article-title", fromCommentId = "cmt-789", viewed = false, skip = 0.0)
 if response.isSome:
   let notifications = response.get()
-  echo "Received notifications: ", notifications
-else:
-  echo "No notifications, response: ", httpResponse
+  echo notifications
 [inline-code-end]
 
 ---

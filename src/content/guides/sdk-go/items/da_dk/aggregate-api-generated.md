@@ -1,19 +1,19 @@
 Aggregerer dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende flere operationer.
 Forskellige operationer (f.eks. sum, countDistinct, avg osv.) understøttes.
 
-## Parameters
+## Parametre
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| parentTenantId | string | query | Nej |  |
-| includeStats | boolean | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
-## Response
+## Svar
 
-Returnerer: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Returnerer: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'Eksempel på aggregering'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `Aggregate`: AggregationResponse
+	// svar fra `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

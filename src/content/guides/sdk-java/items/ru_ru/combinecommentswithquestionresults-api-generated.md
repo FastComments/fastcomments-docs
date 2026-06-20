@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | questionId | string | query | Нет |  |
@@ -14,7 +14,7 @@
 
 ## Ответ
 
-Возвращает: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineCommentsWithQuestionResults200Response.java)
+Возвращает: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineQuestionResultsWithCommentsResponse.java)
 
 ## Пример
 
@@ -33,7 +33,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации ключом API: api_key
+    // Настройте авторизацию API-ключом: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
@@ -50,7 +50,7 @@ public class Example {
     Double maxValue = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      CombineCommentsWithQuestionResults200Response result = apiInstance.combineCommentsWithQuestionResults(tenantId)
+      CombineQuestionResultsWithCommentsResponse result = apiInstance.combineCommentsWithQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)
@@ -71,5 +71,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

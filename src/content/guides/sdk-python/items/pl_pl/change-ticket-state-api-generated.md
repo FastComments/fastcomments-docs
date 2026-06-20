@@ -2,21 +2,21 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| userId | string | zapytanie | Tak |  |
-| id | string | ścieżka | Tak |  |
+| tenantId | string | query | Tak |  |
+| userId | string | query | Tak |  |
+| id | string | path | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_ticket_state200_response.py)
+Zwraca: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_ticket_state_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład change_ticket_state'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'change_ticket_state Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.change_ticket_state200_response import ChangeTicketState200Response
 from client.models.change_ticket_state_body import ChangeTicketStateBody
+from client.models.change_ticket_state_response import ChangeTicketStateResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,13 +28,13 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej zamieszczono przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj tego przykładu, który
 # odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Konfiguracja autoryzacji za pomocą klucza API: api_key
+# Skonfiguruj autoryzację za pomocą klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniższą linię, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Otwórz kontekst z instancją klienta API

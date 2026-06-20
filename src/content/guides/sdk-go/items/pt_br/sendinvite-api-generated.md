@@ -1,3 +1,4 @@
+---
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -8,7 +9,7 @@
 
 ## Resposta
 
-Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Exemplo
 
@@ -35,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SendInvite``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `SendInvite`: FlagCommentPublic200Response
+	// resposta de `SendInvite`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SendInvite`: %v\n", resp)
 }
 [inline-code-end]

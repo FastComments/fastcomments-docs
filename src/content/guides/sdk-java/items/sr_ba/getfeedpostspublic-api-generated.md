@@ -16,13 +16,13 @@ afterId
 
 ## Одговор
 
-Враћа: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsPublic200Response.java)
+Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicFeedPostsResponse.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'getFeedPostsPublic Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортуј класе:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -43,7 +43,7 @@ public class Example {
     Boolean isCrawler = true; // Boolean | 
     Boolean includeUserInfo = true; // Boolean | 
     try {
-      GetFeedPostsPublic200Response result = apiInstance.getFeedPostsPublic(tenantId)
+      PublicFeedPostsResponse result = apiInstance.getFeedPostsPublic(tenantId)
             .afterId(afterId)
             .limit(limit)
             .tags(tags)
@@ -62,5 +62,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

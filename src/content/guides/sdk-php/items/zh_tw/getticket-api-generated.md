@@ -8,7 +8,7 @@
 
 ## 回應
 
-回傳：[`GetTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicket200Response.php)
+回傳：[`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
 
 ## 範例
 
@@ -30,9 +30,9 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // 字串
-$id = 'id_example'; // 字串
-$user_id = 'user_id_example'; // 字串
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
+$user_id = 'user_id_example'; // string
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);

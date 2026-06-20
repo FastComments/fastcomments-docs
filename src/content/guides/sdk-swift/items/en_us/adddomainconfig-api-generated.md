@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AddDomainConfig200Response.swift)
+Returns: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AddDomainConfigResponse.swift)
 
 ## Example
 

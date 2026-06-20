@@ -1,33 +1,33 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Не |  |
-| afterCreatedAt | integer | query | Не |  |
-| unreadOnly | boolean | query | Не |  |
-| dmOnly | boolean | query | Не |  |
-| noDm | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| afterId | string | query | Ne |  |
+| afterCreatedAt | integer | query | Ne |  |
+| unreadOnly | boolean | query | Ne |  |
+| dmOnly | boolean | query | Ne |  |
+| noDm | boolean | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotifications200Response.swift)
+Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotificationsResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још увек у бета фази. За било који проблем пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (опционо)
-let afterCreatedAt = 987 // Int64 |  (опционо)
-let unreadOnly = true // Bool |  (опционо)
-let dmOnly = true // Bool |  (опционо)
-let noDm = true // Bool |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let afterId = "afterId_example" // String |  (neobavezno)
+let afterCreatedAt = 987 // Int64 |  (neobavezno)
+let unreadOnly = true // Bool |  (neobavezno)
+let dmOnly = true // Bool |  (neobavezno)
+let noDm = true // Bool |  (neobavezno)
+let sso = "sso_example" // String |  (neobavezno)
 
 PublicAPI.resetUserNotifications(tenantId: tenantId, afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso) { (response, error) in
     guard error == nil else {
@@ -40,3 +40,5 @@ PublicAPI.resetUserNotifications(tenantId: tenantId, afterId: afterId, afterCrea
     }
 }
 [inline-code-end]
+
+---

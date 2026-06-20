@@ -1,35 +1,34 @@
 ## Parametreler
 
-| İsim | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| domainToUpdate | string | Hayır |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | Hayır |  |
+| tenantId | string | Yes |  |
+| domainToUpdate | string | No |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | No |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_config200response.nim)
+Döndürür: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'putDomainConfig Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateParams = UpdateDomainConfigParams(
-  allowAnonymous = false,
-  moderationEnabled = true,
-  allowedOrigins = @["https://news.example.com"],
-  maxCommentLength = 2000
-)
-
 let (response, httpResponse) = client.putDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "news/example-article",
-  updateDomainConfigParams = updateParams
+  domainToUpdate = "blog.example.com",
+  updateDomainConfigParams = UpdateDomainConfigParams(
+    allowAnonymous = false,
+    moderationEnabled = true,
+    maxCommentLength = 800,
+    allowedOrigins = @["https://blog.example.com", "https://cdn.blog.example.com"],
+    enableThreadedComments = true
+  )
 )
 
 if response.isSome:
-  let domainCfg = response.get()
-  discard domainCfg
+  let cfg = response.get()
+  echo cfg
+else:
+  echo "Failed to update domain config, HTTP status: ", httpResponse.status
 [inline-code-end]
-
----

@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCount200Response.php)
+Returns: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCountResponse.php)
 
 ## Example
 

@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Retourne : [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockFromCommentPublic200Response.swift)
+Retourne: [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
 
 ## Exemple
 
@@ -20,7 +20,7 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let publicBlockFromCommentParams = PublicBlockFromCommentParams(commentIds: ["commentIds_example"]) // PublicBlockFromCommentParams | 
-let sso = "sso_example" // String |  (optionnel)
+let sso = "sso_example" // String |  (facultatif)
 
 PublicAPI.blockFromCommentPublic(tenantId: tenantId, commentId: commentId, publicBlockFromCommentParams: publicBlockFromCommentParams, sso: sso) { (response, error) in
     guard error == nil else {

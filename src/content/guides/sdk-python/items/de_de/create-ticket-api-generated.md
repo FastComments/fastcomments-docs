@@ -1,21 +1,21 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Ja |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket200_response.py)
+Gibt zurück: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'create_ticket Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_ticket200_response import CreateTicket200Response
 from client.models.create_ticket_body import CreateTicketBody
+from client.models.create_ticket_response import CreateTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,17 +26,17 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten angegeben; verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsfall erfüllt.
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt. Verwenden Sie das Beispiel,
+# das Ihren Authentifizierungsanforderungen entspricht.
 
-# API-Schlüsselauthorisierung konfigurieren: api_key
+# API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Zum Einrichten eines Präfixes (z. B. Bearer) für den API-Schlüssel bei Bedarf den folgenden Code einkommentieren
+# Kommentieren Sie die folgende Zeile aus, um ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients öffnen
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)

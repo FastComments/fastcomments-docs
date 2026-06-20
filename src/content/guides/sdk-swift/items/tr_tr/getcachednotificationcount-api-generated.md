@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -7,13 +8,13 @@
 
 ## Yanıt
 
-Döndürür: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCount200Response.swift)
+Döndürür: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCountResponse.swift)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getCachedNotificationCount Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta durumundadır. Herhangi bir sorun varsa lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

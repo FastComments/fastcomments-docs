@@ -1,14 +1,14 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
+| tenantId | string | query | はい |  |
 
-## レスポンス
+## Response
 
-返却: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_200_response.go)
+戻り値: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_response.go)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'CreateQuestionResult の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,7 +32,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateQuestionResult`からのレスポンス: CreateQuestionResult200Response
+	// `CreateQuestionResult` のレスポンス: CreateQuestionResultResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
+
+---

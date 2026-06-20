@@ -3,25 +3,25 @@ za nove root komentare, i takođe
 
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| url | string | query | Da |  |
+| pageTitle | string | query | Da |  |
+| subscribedOrUnsubscribed | string | path | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer update_user_notification_page_subscription_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -41,7 +41,7 @@ with client.ApiClient(configuration) as api_client:
     url = 'url_example' # str | 
     page_title = 'page_title_example' # str | 
     subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example' # str | 
-    sso = 'sso_example' # str |  (neobavezno)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.update_user_notification_page_subscription_status(tenant_id, url_id, url, page_title, subscribed_or_unsubscribed, sso=sso)

@@ -1,32 +1,32 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Retourne: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_user_badge200_response.py)
+Renvoie : [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_create_user_badge_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de create_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_user_badge200_response import CreateUserBadge200Response
+from client.models.api_create_user_badge_response import APICreateUserBadgeResponse
 from client.models.create_user_badge_params import CreateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est facultative et par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
+# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
-# conformément à la stratégie de sécurité du serveur API.
-# Des exemples pour chaque méthode d'authentification sont fournis ci‑dessous, utilisez celui
+# conformément à la politique de sécurité du serveur API.
+# Des exemples pour chaque méthode d'authentification sont fournis ci‑dessous, utilisez l'exemple
 # qui correspond à votre cas d'utilisation d'authentification.
 
 # Configurer l'autorisation par clé API : api_key

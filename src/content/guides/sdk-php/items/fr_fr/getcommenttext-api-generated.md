@@ -1,15 +1,15 @@
-## Paramètres
+## Parameters
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| commentId | string | path | Oui |  |
-| editKey | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | chemin | Oui |  |
+| commentId | string | chemin | Oui |  |
+| editKey | string | requête | Non |  |
+| sso | string | requête | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentText200Response.php)
+Renvoie : [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIGetCommentTextResponse.php)
 
 ## Exemple
 
@@ -37,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentText: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

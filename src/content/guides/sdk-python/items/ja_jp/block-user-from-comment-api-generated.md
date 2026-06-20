@@ -1,41 +1,41 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 | userId | string | query | いいえ |  |
 | anonUserId | string | query | いいえ |  |
 
-## レスポンス
+## Response
 
-戻り値: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_from_comment_public200_response.py)
+戻り値: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_success.py)
 
-## 例
+## Example
 
-[inline-code-attrs-start title = 'block_user_from_comment の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'block_user_from_comment 例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.block_from_comment_params import BlockFromCommentParams
-from client.models.block_from_comment_public200_response import BlockFromCommentPublic200Response
+from client.models.block_success import BlockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストを定義することは任意で、デフォルトは https://fastcomments.com です
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従って設定してください。
-# 以下に各認証方法の例を示します。 
-# ご自身の認証ユースケースに合うものを使用してください。
+# クライアントは認証および認可パラメータを設定する必要があります
+# API サーバーのセキュリティポリシーに従ってください。
+# 各認証方法の例は以下に示しています。 
+# ご利用の認証ケースに合う例を使用してください。
 
-# API キー認証を設定します: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて以下のコメントアウトを外して API キーのプレフィックス（例: Bearer）を設定してください
+# 必要に応じて、API キー用のプレフィックス（例: Bearer）を設定するには以下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # API クライアントのインスタンスを使ってコンテキストに入ります

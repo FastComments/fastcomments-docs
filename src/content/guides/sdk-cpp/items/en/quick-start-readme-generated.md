@@ -52,8 +52,44 @@ int main() {
 }
 ```
 
+### Using Moderation APIs (ModerationApi)
+
+The `ModerationApi` powers the moderator dashboard. Every method accepts an `sso` parameter so the call runs on behalf of an SSO-authenticated moderator (see the SSO section below
+for how to create a token):
+
+```cpp
+#include <iostream>
+#include "FastCommentsClient/api/ModerationApi.h"
+#include "FastCommentsClient/ApiClient.h"
+#include "FastCommentsClient/ApiConfiguration.h"
+
+int main() {
+    auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
+
+    // REQUIRED: Set the base URL
+    config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
+
+    auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
+    org::openapitools::client::api::ModerationApi moderationApi(apiClient);
+
+    // Pass the moderator's SSO token to authenticate the call
+    auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
+
+    auto response = moderationApi.getCount(
+        boost::none,  // textSearch
+        boost::none,  // byIPFromComment
+        boost::none,  // filter
+        boost::none,  // searchFilters
+        boost::none,  // demo
+        ssoToken      // sso
+    ).get();
+
+    return 0;
+}
+```
+
 ### Common Issues
 
 1. **"URI must contain a hostname" error**: Make sure you call `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` before creating the ApiClient. The cpp-restsdk generator doesn't automatically read the server URL from the OpenAPI spec.
 2. **401 "missing-api-key" error**: Make sure you call `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` before creating the DefaultAPI instance.
-3. **Wrong API class**: Use `DefaultAPI` for server-side authenticated requests, `PublicAPI` for client-side/public requests.
+3. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests, and `ModerationApi` for moderator dashboard requests (authenticated with a moderator SSO token).

@@ -1,20 +1,20 @@
 ## Параметри
 
-| Име | Type | Location | Потребно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Враћа: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentText200Response.java)
+Враћа: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPISetCommentTextResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'setCommentText Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример setCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -36,7 +36,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentText200Response result = apiInstance.setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest)
+      PublicAPISetCommentTextResponse result = apiInstance.setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -51,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

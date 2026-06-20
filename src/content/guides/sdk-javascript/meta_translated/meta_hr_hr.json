@@ -1,1053 +1,1311 @@
 {
-  "name": "JavaScript/TypeScript SDK",
-  "pageHeader": "FastComments JavaScript/TypeScript SDK",
+  "name": "SDK za JavaScript/TypeScript",
+  "pageHeader": "FastComments SDK za JavaScript/TypeScript",
   "itemsOrdered": [
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak",
+      "subCat": "Početak rada",
       "type": "readme"
     },
     {
-      "name": "API dokumentacija",
+      "name": "API Documentation",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "API referenca",
+      "subCat": "Referenca API-ja",
       "type": "readme"
     },
     {
-      "name": "Kompatibilnost preglednika i poslužitelja",
+      "name": "Browser vs Server Compatibility",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Korištenje",
+      "name": "Usage",
       "file": "usage-readme-generated.md",
       "subCat": "Korištenje",
       "type": "readme"
     },
     {
-      "name": "Javni i zaštićeni API-ji",
+      "name": "Public vs Secured APIs",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "API referenca",
+      "subCat": "Referenca API-ja",
       "type": "readme"
     },
     {
-      "name": "Integracija SSO (jedinstveno prijavljivanje)",
+      "name": "SSO (Single Sign-On) Integration",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Uobičajeni slučajevi upotrebe",
+      "name": "Common Use Cases",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Događaji uživo (ažuriranja u stvarnom vremenu)",
+      "name": "Live Events (Real-time Updates)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "ID-ovi emitiranja",
+      "name": "Broadcast IDs",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Rukovanje pogreškama",
+      "name": "Error Handling",
       "file": "error-handling-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "agregacija",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregacija",
       "type": "api"
     },
     {
-      "name": "dohvatiRevizijskeZapise",
+      "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Revizijski zapisi",
+      "subCat": "Dnevnici revizije",
       "type": "api"
     },
     {
-      "name": "blokirajIzKomentaraJavno",
+      "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokiraj iz komentara",
+      "subCat": "Blokiranje iz komentara",
       "type": "api"
     },
     {
-      "name": "poništiBlokaduKomentaraJavno",
+      "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokiraj iz komentara",
+      "subCat": "Blokiranje iz komentara",
       "type": "api"
     },
     {
-      "name": "provjeraKomentaraZaBlokirane",
+      "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "Provjera blokiranih komentara",
       "type": "api"
     },
     {
-      "name": "blokirajKorisnikaIzKomentara",
+      "name": "blockUserFromComment",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "kreirajKomentarJavno",
+      "name": "createCommentPublic",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "izbrišiKomentar",
+      "name": "deleteComment",
       "file": "deletecomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "izbrišiKomentarJavno",
+      "name": "deleteCommentPublic",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "izbrišiGlasZaKomentar",
+      "name": "deleteCommentVote",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "prijaviKomentar",
+      "name": "flagComment",
       "file": "flagcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "dohvatiKomentar",
+      "name": "getComment",
       "file": "getcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "dohvatiKomentare",
+      "name": "getComments",
       "file": "getcomments-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "dohvatiKomentareJavno",
+      "name": "getCommentsPublic",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "dohvatiTekstKomentara",
+      "name": "getCommentText",
       "file": "getcommenttext-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "dohvatiImenaKorisnikaGlasovaZaKomentar",
+      "name": "getCommentVoteUserNames",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "zaključajKomentar",
+      "name": "lockComment",
       "file": "lockcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "zakačiKomentar",
+      "name": "pinComment",
       "file": "pincomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "spremiKomentar",
+      "name": "saveComment",
       "file": "savecomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "masovnoSpremanjeKomentara",
+      "name": "saveCommentsBulk",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "postaviTekstKomentara",
+      "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "poništiBlokaduKorisnikaZaKomentar",
+      "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "poništiPrijavuKomentara",
+      "name": "unFlagComment",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "otključajKomentar",
+      "name": "unLockComment",
       "file": "unlockcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "ukloniZakačeniKomentar",
+      "name": "unPinComment",
       "file": "unpincomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "ažurirajKomentar",
+      "name": "updateComment",
       "file": "updatecomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "glasajZaKomentar",
+      "name": "voteComment",
       "file": "votecomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "dohvatiKomentareZaKorisnika",
+      "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
       "subCat": "Komentari za korisnika",
       "type": "api"
     },
     {
-      "name": "dodajKonfiguracijuDomena",
+      "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "izbrišiKonfiguracijuDomena",
+      "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "dohvatiKonfiguracijuDomena",
+      "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "dohvatiKonfiguracijeDomena",
+      "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "djelomičnoIzmijeniKonfiguracijuDomena",
+      "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "zamijeniKonfiguracijuDomena",
+      "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "kreirajPredložakEmaila",
+      "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "izbrišiPredložakEmaila",
+      "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "izbrišiPogreškuRenderiranjaPredloškaEmaila",
+      "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "dohvatiPredložakEmaila",
+      "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "dohvatiDefinicijePredložakaEmaila",
+      "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "dohvatiPogreškeRenderiranjaPredložakaEmaila",
+      "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "dohvatiPredloškeEmaila",
+      "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "renderirajPredložakEmaila",
+      "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "ažurirajPredložakEmaila",
+      "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "Predlošci e-pošte",
       "type": "api"
     },
     {
-      "name": "dohvatiDnevnikDogađaja",
+      "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Dnevnik događaja",
+      "subCat": "Zapisnik događaja",
       "type": "api"
     },
     {
-      "name": "dohvatiGlobalniDnevnikDogađaja",
+      "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Dnevnik događaja",
+      "subCat": "Zapisnik događaja",
       "type": "api"
     },
     {
-      "name": "kreirajObjavuFeeda",
+      "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "kreirajObjavuFeedaJavno",
+      "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "izbrišiObjavuFeedaJavno",
+      "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "dohvatiObjaveFeeda",
+      "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "dohvatiObjaveFeedaJavno",
+      "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "dohvatiStatistikuObjavaFeeda",
+      "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "dohvatiKorisničkeReakcijeJavno",
+      "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "reagirajNaObjavuFeedaJavno",
+      "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "ažurirajObjavuFeeda",
+      "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "ažurirajObjavuFeedaJavno",
+      "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Objave feeda",
       "type": "api"
     },
     {
-      "name": "prijaviKomentarJavno",
+      "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Prijavi komentar",
+      "subCat": "Prijava komentara",
       "type": "api"
     },
     {
-      "name": "dohvatiVelikiGif",
+      "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
       "subCat": "GIF-ovi",
       "type": "api"
     },
     {
-      "name": "pretražiGifove",
+      "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
       "subCat": "GIF-ovi",
       "type": "api"
     },
     {
-      "name": "dohvatiNajpopularnijeGifove",
+      "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
       "subCat": "GIF-ovi",
       "type": "api"
     },
     {
-      "name": "dodajHashtag",
+      "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hashtagovi",
       "type": "api"
     },
     {
-      "name": "dodajHashtageMasovno",
+      "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hashtagovi",
       "type": "api"
     },
     {
-      "name": "izbrišiHashtag",
+      "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hashtagovi",
       "type": "api"
     },
     {
-      "name": "dohvatiHashtage",
+      "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hashtagovi",
       "type": "api"
     },
     {
-      "name": "djelomičnoIzmijeniHashtag",
+      "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hashtagovi",
       "type": "api"
     },
     {
-      "name": "kreirajModeratora",
+      "name": "deleteModerationVote",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getApiComments",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getApiExportStatus",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getApiIds",
+      "file": "getapiids-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getBanUsersFromComment",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getCommentBanStatus",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getCommentChildren",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getCount",
+      "file": "getcount-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getCounts",
+      "file": "getcounts-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getLogs",
+      "file": "getlogs-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getManualBadges",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getManualBadgesForUser",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getModerationComment",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getModerationCommentText",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getPreBanSummary",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getSearchCommentsSummary",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getSearchPages",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getSearchSites",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getSearchSuggest",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getSearchUsers",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getTrustFactor",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getUserBanPreference",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "getUserInternalProfile",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postAdjustCommentVotes",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postApiExport",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postBanUserFromComment",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postBanUserUndo",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postBulkPreBanSummary",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postCommentsByIds",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postFlagComment",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postRemoveComment",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postRestoreDeletedComment",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postSetCommentApprovalStatus",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postSetCommentReviewStatus",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postSetCommentSpamStatus",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postSetCommentText",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postUnFlagComment",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "postVote",
+      "file": "postvote-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "putAwardBadge",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "putCloseThread",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "putRemoveBadge",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "putReopenThread",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "setTrustFactor",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "Moderacija",
+      "type": "api"
+    },
+    {
+      "name": "createModerator",
       "file": "createmoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "izbrišiModeratora",
+      "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "dohvatiModeratora",
+      "name": "getModerator",
       "file": "getmoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "dohvatiModeratore",
+      "name": "getModerators",
       "file": "getmoderators-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "pošaljiPozivnicu",
+      "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "ažurirajModeratora",
+      "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "izbrišiBrojObavijesti",
+      "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Brojač obavijesti",
+      "subCat": "Broj obavijesti",
       "type": "api"
     },
     {
-      "name": "dohvatiPredmemoriraniBrojObavijesti",
+      "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Brojač obavijesti",
+      "subCat": "Broj obavijesti",
       "type": "api"
     },
     {
-      "name": "dohvatiBrojObavijesti",
+      "name": "getNotificationCount",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Obavijesti",
       "type": "api"
     },
     {
-      "name": "dohvatiObavijesti",
+      "name": "getNotifications",
       "file": "getnotifications-api-generated.md",
       "subCat": "Obavijesti",
       "type": "api"
     },
     {
-      "name": "ažurirajObavijest",
+      "name": "updateNotification",
       "file": "updatenotification-api-generated.md",
       "subCat": "Obavijesti",
       "type": "api"
     },
     {
-      "name": "kreirajV1ReakcijuStranice",
+      "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "kreirajV2ReakcijuStranice",
+      "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "izbrišiV1ReakcijuStranice",
+      "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "izbrišiV2ReakcijuStranice",
+      "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "dohvatiV1LajkoveStranice",
+      "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "dohvatiV2ReakcijeStranice",
+      "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "dohvatiKorisnikeV2ReakcijaStranice",
+      "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranici",
       "type": "api"
     },
     {
-      "name": "dodajStranicu",
+      "name": "addPage",
       "file": "addpage-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "izbrišiStranicu",
+      "name": "deletePage",
       "file": "deletepage-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "dohvatiOfflineKorisnike",
+      "name": "getOfflineUsers",
       "file": "getofflineusers-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "dohvatiOnlineKorisnike",
+      "name": "getOnlineUsers",
       "file": "getonlineusers-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "dohvatiStranicuPoURLId",
+      "name": "getPageByURLId",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "dohvatiStranice",
+      "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "dohvatiStraniceJavno",
+      "name": "getPagesPublic",
       "file": "getpagespublic-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "dohvatiInformacijeOKorisnicima",
+      "name": "getUsersInfo",
       "file": "getusersinfo-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "djelomičnoIzmijeniStranicu",
+      "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "izbrišiNeobrađeniWebhookDogađaj",
+      "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
       "subCat": "Neobrađeni webhook događaji",
       "type": "api"
     },
     {
-      "name": "dohvatiBrojNeobrađenihWebhookDogađaja",
+      "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
       "subCat": "Neobrađeni webhook događaji",
       "type": "api"
     },
     {
-      "name": "dohvatiNeobrađeneWebhookDogađaje",
+      "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "Neobrađeni webhook događaji",
       "type": "api"
     },
     {
-      "name": "kreirajKonfiguracijuPitanja",
+      "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
-      "name": "izbrišiKonfiguracijuPitanja",
+      "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
-      "name": "dohvatiKonfiguracijuPitanja",
+      "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
-      "name": "dohvatiKonfiguracijePitanja",
+      "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
-      "name": "ažurirajKonfiguracijuPitanja",
+      "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
-      "name": "kreirajRezultatPitanja",
+      "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
     },
     {
-      "name": "izbrišiRezultatPitanja",
+      "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
     },
     {
-      "name": "dohvatiRezultatPitanja",
+      "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
     },
     {
-      "name": "dohvatiRezultatePitanja",
+      "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
     },
     {
-      "name": "ažurirajRezultatPitanja",
+      "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
     },
     {
-      "name": "agregacijaRezultataPitanja",
+      "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
       "subCat": "Agregacija rezultata pitanja",
       "type": "api"
     },
     {
-      "name": "masovnaAgregacijaRezultataPitanja",
+      "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
       "subCat": "Agregacija rezultata pitanja",
       "type": "api"
     },
     {
-      "name": "kombinirajKomentareSRazultatiPitanja",
+      "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
       "subCat": "Agregacija rezultata pitanja",
       "type": "api"
     },
     {
-      "name": "dodajSSOKorisnika",
+      "name": "addSSOUser",
       "file": "addssouser-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "izbrišiSSOKorisnika",
+      "name": "deleteSSOUser",
       "file": "deletessouser-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "dohvatiSSOKorisnikaPoEmailu",
+      "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "dohvatiSSOKorisnikaPoId",
+      "name": "getSSOUserById",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "dohvatiSSOKorisnike",
+      "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "djelomičnoIzmijeniSSOKorisnika",
+      "name": "patchSSOUser",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "zamijeniSSOKorisnika",
+      "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "kreirajPretplatu",
+      "name": "createSubscription",
       "file": "createsubscription-api-generated.md",
       "subCat": "Pretplate",
       "type": "api"
     },
     {
-      "name": "izbrišiPretplatu",
+      "name": "deleteSubscription",
       "file": "deletesubscription-api-generated.md",
       "subCat": "Pretplate",
       "type": "api"
     },
     {
-      "name": "dohvatiPretplate",
+      "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "Pretplate",
       "type": "api"
     },
     {
-      "name": "ažurirajPretplatu",
+      "name": "updateSubscription",
       "file": "updatesubscription-api-generated.md",
       "subCat": "Pretplate",
       "type": "api"
     },
     {
-      "name": "dohvatiDnevnuUpotrebuNajmoprimca",
+      "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dnevna upotreba najmoprimca",
+      "subCat": "Dnevna potrošnja zakupnika",
       "type": "api"
     },
     {
-      "name": "kreirajPaketNajmoprimca",
+      "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi zakupnika",
       "type": "api"
     },
     {
-      "name": "izbrišiPaketNajmoprimca",
+      "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi zakupnika",
       "type": "api"
     },
     {
-      "name": "dohvatiPaketNajmoprimca",
+      "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi zakupnika",
       "type": "api"
     },
     {
-      "name": "dohvatiPaketeNajmoprimca",
+      "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi zakupnika",
       "type": "api"
     },
     {
-      "name": "zamijeniPaketNajmoprimca",
+      "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi zakupnika",
       "type": "api"
     },
     {
-      "name": "ažurirajPaketNajmoprimca",
+      "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi zakupnika",
       "type": "api"
     },
     {
-      "name": "kreirajKorisnikaNajmoprimca",
+      "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "izbrišiKorisnikaNajmoprimca",
+      "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "dohvatiKorisnikaNajmoprimca",
+      "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "dohvatiKorisnikeNajmoprimca",
+      "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "zamijeniKorisnikaNajmoprimca",
+      "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "pošaljiPoveznicuZaPrijavu",
+      "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "ažurirajKorisnikaNajmoprimca",
+      "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici zakupnika",
       "type": "api"
     },
     {
-      "name": "kreirajNajmoprimca",
+      "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Zakupnici",
       "type": "api"
     },
     {
-      "name": "izbrišiNajmoprimca",
+      "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Zakupnici",
       "type": "api"
     },
     {
-      "name": "dohvatiNajmoprimca",
+      "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Zakupnici",
       "type": "api"
     },
     {
-      "name": "dohvatiNajmoprimce",
+      "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Zakupnici",
       "type": "api"
     },
     {
-      "name": "ažurirajNajmoprimca",
+      "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Zakupnici",
       "type": "api"
     },
     {
-      "name": "promijeniStanjeZahtjeva",
+      "name": "changeTicketState",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "Zahtjevi",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
-      "name": "kreirajZahtjev",
+      "name": "createTicket",
       "file": "createticket-api-generated.md",
-      "subCat": "Zahtjevi",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
-      "name": "dohvatiZahtjev",
+      "name": "getTicket",
       "file": "getticket-api-generated.md",
-      "subCat": "Zahtjevi",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
-      "name": "dohvatiZahtjeve",
+      "name": "getTickets",
       "file": "gettickets-api-generated.md",
-      "subCat": "Zahtjevi",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
-      "name": "dohvatiPrijevode",
+      "name": "getTranslations",
       "file": "gettranslations-api-generated.md",
       "subCat": "Prijevodi",
       "type": "api"
     },
     {
-      "name": "učitajSliku",
+      "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Učitaj sliku",
       "type": "api"
     },
     {
-      "name": "dohvatiNapredakZnačkePoId",
+      "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak znački korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiNapredakZnačkePoIdKorisnika",
+      "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak znački korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiPopisNapretkaZnačkiKorisnika",
+      "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak znački korisnika",
       "type": "api"
     },
     {
-      "name": "kreirajZnačkuKorisnika",
+      "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
       "subCat": "Značke korisnika",
       "type": "api"
     },
     {
-      "name": "izbrišiZnačkuKorisnika",
+      "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
       "subCat": "Značke korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiZnačkuKorisnika",
+      "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
       "subCat": "Značke korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiZnačkeKorisnika",
+      "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
       "subCat": "Značke korisnika",
       "type": "api"
     },
     {
-      "name": "ažurirajZnačkuKorisnika",
+      "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
       "subCat": "Značke korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiBrojObavijestiKorisnika",
+      "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiObavijestiKorisnika",
+      "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "poništiBrojObavijestiKorisnika",
+      "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "poništiObavijestiKorisnika",
+      "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "ažurirajStatusPretplateNaKomentareKorisnika",
+      "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "ažurirajStatusPretplateNaStranicuKorisnika",
+      "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "ažurirajStatusObavijestiKorisnika",
+      "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiStatusePrisutnostiKorisnika",
+      "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
       "subCat": "Status prisutnosti korisnika",
       "type": "api"
     },
     {
-      "name": "pretražiKorisnike",
+      "name": "searchUsers",
       "file": "searchusers-api-generated.md",
       "subCat": "Pretraživanje korisnika",
       "type": "api"
     },
     {
-      "name": "dohvatiKorisnika",
+      "name": "getUser",
       "file": "getuser-api-generated.md",
       "subCat": "Korisnici",
       "type": "api"
     },
     {
-      "name": "kreirajGlas",
+      "name": "createVote",
       "file": "createvote-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"
     },
     {
-      "name": "izbrišiGlas",
+      "name": "deleteVote",
       "file": "deletevote-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"
     },
     {
-      "name": "dohvatiGlasove",
+      "name": "getVotes",
       "file": "getvotes-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"
     },
     {
-      "name": "dohvatiGlasoveZaKorisnika",
+      "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"

@@ -1,4 +1,4 @@
-필수
+요청
 tenantId
 urlId
 
@@ -8,36 +8,36 @@ urlId
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
-| page | integer | query | 아니요 |  |
-| direction | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
-| skip | integer | query | 아니요 |  |
-| skipChildren | integer | query | 아니요 |  |
-| limit | integer | query | 아니요 |  |
-| limitChildren | integer | query | 아니요 |  |
-| countChildren | boolean | query | 아니요 |  |
-| fetchPageForCommentId | string | query | 아니요 |  |
-| includeConfig | boolean | query | 아니요 |  |
-| countAll | boolean | query | 아니요 |  |
-| includei10n | boolean | query | 아니요 |  |
-| locale | string | query | 아니요 |  |
-| modules | string | query | 아니요 |  |
-| isCrawler | boolean | query | 아니요 |  |
-| includeNotificationCount | boolean | query | 아니요 |  |
-| asTree | boolean | query | 아니요 |  |
-| maxTreeDepth | integer | query | 아니요 |  |
-| useFullTranslationIds | boolean | query | 아니요 |  |
-| parentId | string | query | 아니요 |  |
-| searchText | string | query | 아니요 |  |
-| hashTags | array | query | 아니요 |  |
-| userId | string | query | 아니요 |  |
-| customConfigStr | string | query | 아니요 |  |
-| afterCommentId | string | query | 아니요 |  |
-| beforeCommentId | string | query | 아니요 |  |
+| page | integer | query | 아니오 |  |
+| direction | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
+| skip | integer | query | 아니오 |  |
+| skipChildren | integer | query | 아니오 |  |
+| limit | integer | query | 아니오 |  |
+| limitChildren | integer | query | 아니오 |  |
+| countChildren | boolean | query | 아니오 |  |
+| fetchPageForCommentId | string | query | 아니오 |  |
+| includeConfig | boolean | query | 아니오 |  |
+| countAll | boolean | query | 아니오 |  |
+| includei10n | boolean | query | 아니오 |  |
+| locale | string | query | 아니오 |  |
+| modules | string | query | 아니오 |  |
+| isCrawler | boolean | query | 아니오 |  |
+| includeNotificationCount | boolean | query | 아니오 |  |
+| asTree | boolean | query | 아니오 |  |
+| maxTreeDepth | integer | query | 아니오 |  |
+| useFullTranslationIds | boolean | query | 아니오 |  |
+| parentId | string | query | 아니오 |  |
+| searchText | string | query | 아니오 |  |
+| hashTags | array | query | 아니오 |  |
+| userId | string | query | 아니오 |  |
+| customConfigStr | string | query | 아니오 |  |
+| afterCommentId | string | query | 아니오 |  |
+| beforeCommentId | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+반환: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## 예제
 

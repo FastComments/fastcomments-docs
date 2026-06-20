@@ -1,14 +1,14 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | postIds | array | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+Retourneert: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## Voorbeeld
 
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_stats: #{e}"
 end
 [inline-code-end]
-
----

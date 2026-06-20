@@ -8,11 +8,11 @@
 
 ## Відповідь
 
-Повертає: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Повертає: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад checked_comments_for_blocked'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checked_comments_for_blocked Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
-
----

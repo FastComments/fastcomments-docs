@@ -1,34 +1,35 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| blockFromCommentParams | BlockFromCommentParams | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| blockFromCommentParams | BlockFromCommentParams | Da |  |
+| userId | string | Ne |  |
+| anonUserId | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`BlockFromCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockFromCommentPublic_200_response.h)
+Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockSuccess.h)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'blockUserFromComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-auto blockParams = std::make_shared<BlockFromCommentParams>();
+utility::string_t commentId = U("cmt-987654321");
+BlockFromCommentParams params;
 boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = boost::optional<utility::string_t>(U("anon-98765"));
-api->blockUserFromComment(tenantId, commentId, *blockParams, userId, anonUserId)
-.then([](std::shared_ptr<BlockFromCommentPublic_200_response> resp){
-    if (resp) {
-        std::cout << "User blocked successfully\n";
-    } else {
-        std::cout << "Block request returned empty response\n";
-    }
-}).wait();
+boost::optional<utility::string_t> anonUserId;
+api->blockUserFromComment(tenantId, commentId, params, userId, anonUserId)
+.then([](pplx::task<std::shared_ptr<BlockSuccess>> task){
+    try {
+        auto result = task.get();
+        auto ack = std::make_shared<BlockSuccess>();
+        bool blocked = (result != nullptr);
+        (void)ack; (void)blocked;
+    } catch(...) {}
+});
 [inline-code-end]
 
 ---

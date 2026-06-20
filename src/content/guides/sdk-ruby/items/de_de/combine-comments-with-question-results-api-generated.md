@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Type | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | questionId | string | query | Nein |  |
@@ -14,7 +14,7 @@
 
 ## Antwort
 
-Gibt zurück: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Gibt zurück: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## Beispiel
 
@@ -26,7 +26,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API-Schlüssel-Authentifizierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
+  # Entfernen Sie das Kommentarzeichen vor der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -51,5 +51,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->combine_comments_with_question_results: #{e}"
 end
 [inline-code-end]
-
----

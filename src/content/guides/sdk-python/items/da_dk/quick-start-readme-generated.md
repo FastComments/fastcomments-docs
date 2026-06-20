@@ -1,25 +1,25 @@
 ### Brug af autentificerede API'er (DefaultApi)
 
-**Vigtigt:** Du skal sætte din API-nøgle på Configuration, før du foretager autentificerede anmodninger. Hvis du ikke gør det, vil anmodninger fejle med en 401-fejl.
+**Vigtigt:** Du skal angive din API-nøgle i Configuration, før du foretager autentificerede anmodninger. Hvis du ikke gør det, vil anmodninger fejle med en 401-fejl.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Opret og konfigurer API-klienten
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# PÅKRÆVET: Angiv din API-nøgle (hent den fra dit FastComments-dashboard)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Opret API-instansen med den konfigurerede klient
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Nu kan du lave autentificerede API-opkald
+# Now you can make authenticated API calls
 try:
-    # Eksempel: Tilføj en SSO-bruger
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Almindelige fejl:
-    # - 401: API-nøgle mangler eller er ugyldig
-    # - 400: Anmodningsvalidering mislykkedes
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Brug af offentlige API'er (PublicApi)
 
-Offentlige endpoints kræver ikke autentificering:
+Offentlige endepunkter kræver ikke autentificering:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,6 +62,27 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Brug af moderationsdashboardet (ModerationApi)
+
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Brug af SSO (Single Sign-On)
 
 SDK'en inkluderer værktøjer til at generere sikre SSO-tokens:
@@ -69,7 +90,7 @@ SDK'en inkluderer værktøjer til at generere sikre SSO-tokens:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Opret brugerdata
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,20 +98,20 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Opret SSO-instans med din API-secret
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generer SSO-tokenet
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# Brug dette token i din frontend eller send det med API-opkald
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
-For simpel SSO (mindre sikker, til test):
+For simple SSO (less secure, for testing):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -106,8 +127,8 @@ sso_token = sso.create_token()
 
 ### Almindelige problemer
 
-1. **401 "missing-api-key" error**: Sørg for, at du indstiller `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` før du opretter DefaultApi-instanten.
-2. **Wrong API class**: Brug `DefaultApi` til server-side autentificerede forespørgsler, `PublicApi` til klient-side/offentlige forespørgsler.
-3. **Importfejl**: Sørg for, at du importerer fra det korrekte modul:
-   - API-klient: `from client import ...`
-   - SSO-værktøjer: `from sso import ...`
+1. **401 "missing-api-key" fejl**: Sørg for at du sætter `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` før du opretter DefaultApi-instansen.
+2. **Forkert API-klasse**: Brug `DefaultApi` for server-side autentificerede anmodninger, `PublicApi` for client-side/offentlige anmodninger, og `ModerationApi` for moderator-dashboard-anmodninger.
+3. **Importfejl**: Sørg for, at du importerer fra det rigtige modul:
+   - API client: `from client import ...`
+   - SSO utilities: `from sso import ...`

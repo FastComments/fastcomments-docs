@@ -1,4 +1,4 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
@@ -9,7 +9,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment200_response.rb)
+Επιστρέφει: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_result.rb)
 
 ## Παράδειγμα
 
@@ -17,11 +17,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Ρύθμιση εξουσιοδότησης
+# ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης με API key: api_key
+  # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -41,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_comment: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,26 +1,28 @@
----
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vrne: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Primer
 
-[inline-code-attrs-start title = 'delete_question_result Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer delete_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_question_result() -> Result<(), Error> {
-    let params: DeleteQuestionResultParams = DeleteQuestionResultParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "qres-news/article-2026-03-25-9a8b7c".to_string(),
+async fn run_delete() -> Result<(), Error> {
+    let tenant_id: String = "acme-corp-tenant".to_string();
+    let id: String = "news/article-12345/question-67890".to_string();
+
+    let params = DeleteQuestionResultParams {
+        tenant_id,
+        id,
     };
-    let response: FlagCommentPublic200Response = delete_question_result(&configuration, params).await?;
-    let _response = response;
+
+    let response: ApiEmptyResponse = delete_question_result(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Location | Required | Description |
@@ -7,43 +6,43 @@
 | id | string | path | Da |  |
 | editKey | string | query | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Vrača: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer delete_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti avtentikacijske in avtorizacijske parametre
-# v skladu z varnostno politiko API strežnika.
-# Primeri za vsako metodo avtentikacije so podani spodaj; uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora konfigurirati parametre za overjanje in avtorizacijo
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so prikazani primeri za vsako metodo overjanja, uporabite primer, ki
+# ustreza vašemu primeru uporabe.
 
-# Konfigurirajte avtorizacijo z API ključem: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (neobvezno)
+    edit_key = 'edit_key_example' # str |  (optional)
 
     try:
         api_response = api_instance.delete_vote(tenant_id, id, edit_key=edit_key)
@@ -52,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_vote: %s\n" % e)
 [inline-code-end]
-
----

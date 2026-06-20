@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | urlId | string | query | Ні |  |
@@ -12,7 +12,7 @@
 
 ## Відповідь
 
-Повертає: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResults200Response.java)
+Повертає: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResultsResponse.java)
 
 ## Приклад
 
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації API-ключа: api_key
+    // Налаштування авторизації ключем API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб задати префікс для ключа API, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String questionIds = "questionIds_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetQuestionResults200Response result = apiInstance.getQuestionResults(tenantId)
+      GetQuestionResultsResponse result = apiInstance.getQuestionResults(tenantId)
             .urlId(urlId)
             .userId(userId)
             .startDate(startDate)

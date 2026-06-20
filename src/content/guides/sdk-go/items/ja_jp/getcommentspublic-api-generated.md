@@ -4,7 +4,7 @@ urlId
 
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | urlId | string | query | はい |  |
@@ -37,7 +37,7 @@ urlId
 
 ## レスポンス
 
-返却: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+返却値: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## 例
 
@@ -49,38 +49,38 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	page := int32(56) // int32 |  (任意)
-	direction := openapiclient.SortDirections("OF") // SortDirections |  (任意)
-	sso := "sso_example" // string |  (任意)
-	skip := int32(56) // int32 |  (任意)
-	skipChildren := int32(56) // int32 |  (任意)
-	limit := int32(56) // int32 |  (任意)
-	limitChildren := int32(56) // int32 |  (任意)
-	countChildren := true // bool |  (任意)
-	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (任意)
-	includeConfig := true // bool |  (任意)
-	countAll := true // bool |  (任意)
-	includei10n := true // bool |  (任意)
-	locale := "locale_example" // string |  (任意)
-	modules := "modules_example" // string |  (任意)
-	isCrawler := true // bool |  (任意)
-	includeNotificationCount := true // bool |  (任意)
-	asTree := true // bool |  (任意)
-	maxTreeDepth := int32(56) // int32 |  (任意)
-	useFullTranslationIds := true // bool |  (任意)
-	parentId := "parentId_example" // string |  (任意)
-	searchText := "searchText_example" // string |  (任意)
-	hashTags := []string{"Inner_example"} // []string |  (任意)
-	userId := "userId_example" // string |  (任意)
-	customConfigStr := "customConfigStr_example" // string |  (任意)
-	afterCommentId := "afterCommentId_example" // string |  (任意)
-	beforeCommentId := "beforeCommentId_example" // string |  (任意)
+	page := int32(56) // int32 |  (オプション)
+	direction := openapiclient.SortDirections("OF") // SortDirections |  (オプション)
+	sso := "sso_example" // string |  (オプション)
+	skip := int32(56) // int32 |  (オプション)
+	skipChildren := int32(56) // int32 |  (オプション)
+	limit := int32(56) // int32 |  (オプション)
+	limitChildren := int32(56) // int32 |  (オプション)
+	countChildren := true // bool |  (オプション)
+	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (オプション)
+	includeConfig := true // bool |  (オプション)
+	countAll := true // bool |  (オプション)
+	includei10n := true // bool |  (オプション)
+	locale := "locale_example" // string |  (オプション)
+	modules := "modules_example" // string |  (オプション)
+	isCrawler := true // bool |  (オプション)
+	includeNotificationCount := true // bool |  (オプション)
+	asTree := true // bool |  (オプション)
+	maxTreeDepth := int32(56) // int32 |  (オプション)
+	useFullTranslationIds := true // bool |  (オプション)
+	parentId := "parentId_example" // string |  (オプション)
+	searchText := "searchText_example" // string |  (オプション)
+	hashTags := []string{"Inner_example"} // []string |  (オプション)
+	userId := "userId_example" // string |  (オプション)
+	customConfigStr := "customConfigStr_example" // string |  (オプション)
+	afterCommentId := "afterCommentId_example" // string |  (オプション)
+	beforeCommentId := "beforeCommentId_example" // string |  (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetCommentsPublic` のレスポンス: GetCommentsPublic200Response
+	// `GetCommentsPublic`のレスポンス: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

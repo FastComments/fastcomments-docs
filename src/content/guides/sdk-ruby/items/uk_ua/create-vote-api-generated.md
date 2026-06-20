@@ -1,6 +1,7 @@
-## Parameters
+---
+## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | commentId | string | query | Так |  |
@@ -10,7 +11,7 @@
 
 ## Відповідь
 
-Повертає: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Повертає: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Приклад
 
@@ -20,9 +21,9 @@ require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштуйте авторизацію за допомогою API-ключа: api_key
+  # Налаштування авторизації API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Розкоментуйте наступний рядок, щоб задати префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
+  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +44,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_vote: #{e}"
 end
 [inline-code-end]
+
+---

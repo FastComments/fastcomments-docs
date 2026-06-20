@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Przykład
 
@@ -17,15 +17,14 @@ Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Skonfiguruj uwierzytelnianie kluczem API: api_key
 // Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, jako domyślny użyty zostanie `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +38,3 @@ try {
     echo 'Exception when calling DefaultApi->deletePendingWebhookEvent: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

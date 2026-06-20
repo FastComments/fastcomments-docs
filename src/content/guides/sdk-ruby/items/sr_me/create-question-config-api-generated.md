@@ -1,12 +1,12 @@
 ## Параметри
 
-| Назив | Тип | Локација | Потребно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Одговор
 
-Враћа: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config200_response.rb)
+Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config_response.rb)
 
 ## Пример
 
@@ -14,11 +14,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање овлашћења
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећу линију да бисте подесили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_question_config: #{e}"
 end
 [inline-code-end]
-
----

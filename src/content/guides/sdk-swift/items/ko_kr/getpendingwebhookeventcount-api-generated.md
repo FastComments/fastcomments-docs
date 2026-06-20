@@ -2,23 +2,23 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| commentId | string | query | 아니오 |  |
-| externalId | string | query | 아니오 |  |
-| eventType | string | query | 아니오 |  |
-| type | string | query | 아니오 |  |
-| domain | string | query | 아니오 |  |
-| attemptCountGT | number | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## 응답
 
-Returns: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCount200Response.swift)
+반환: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 신고해 주세요
+// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -5,15 +5,15 @@
 | tenantId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'resetUserNotificationCount Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importeren:
+// Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,7 +29,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotificationCount(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

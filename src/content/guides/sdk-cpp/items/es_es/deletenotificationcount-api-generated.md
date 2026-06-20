@@ -7,24 +7,24 @@
 
 ## Respuesta
 
-Devuelve: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de deleteNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notifId = U("notification-456");
-boost::optional<utility::string_t> actingUser = boost::optional<utility::string_t>(U("moderator@example.com"));
-api->deleteNotificationCount(tenantId, notifId)
-.then([actingUser](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {
+utility::string_t countId = U("nc-00123");
+boost::optional<utility::string_t> requestedBy = U("admin@company.com");
+
+api->deleteNotificationCount(tenantId, countId)
+.then([requestedBy](pplx::task<std::shared_ptr<APIEmptyResponse>> task) -> std::shared_ptr<APIEmptyResponse> {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<FlagCommentPublic_200_response>();
-        if (actingUser) std::cout << "Actor: " << actingUser->c_str() << "\n";
-        std::cout << "Notification count cleared\n";
-    } catch (const std::exception &e) {
-        std::cout << "Failed: " << e.what() << "\n";
+        auto resp = task.get();
+        (void)requestedBy;
+        return resp ? resp : std::make_shared<APIEmptyResponse>();
+    } catch (const std::exception&) {
+        return std::make_shared<APIEmptyResponse>();
     }
 });
 [inline-code-end]

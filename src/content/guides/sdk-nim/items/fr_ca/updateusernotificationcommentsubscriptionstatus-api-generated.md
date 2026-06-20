@@ -1,6 +1,9 @@
+---
+Activer ou désactiver les notifications pour un commentaire spécifique.
+
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | notificationId | string | Non |  |
@@ -10,7 +13,7 @@
 
 ## Réponse
 
-Renvoie: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Renvoie: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## Exemple
 
@@ -18,14 +21,15 @@ Renvoie: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.co
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "notif-456",
-  optedInOrOut = "opted_in",
+  notificationId = "",
+  optedInOrOut = "",
   commentId = "cmt-789",
-  sso = "sso-token-abc"
+  sso = ""
 )
+
 if response.isSome:
-  let updatedStatus = response.get()
-  discard updatedStatus
-else:
-  discard httpResponse
+  let updateResp = response.get()
+  echo "Subscription update response: ", updateResp
 [inline-code-end]
+
+---

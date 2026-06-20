@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | postId | string | path | כן |  |
@@ -9,11 +9,11 @@
 
 ## תגובה
 
-מחזיר: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public200_response.rb)
+מחזיר: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public_response.rb)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-delete_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמא ל-delete_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

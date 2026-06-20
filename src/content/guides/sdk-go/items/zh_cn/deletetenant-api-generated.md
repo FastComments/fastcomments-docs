@@ -1,14 +1,14 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| id | string | 路径 | 是 |  |
-| sure | string | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
+| sure | string | query | 否 |  |
 
-## 响应
+## 返回
 
-返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## 示例
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteTenant``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `DeleteTenant` 的响应: FlagCommentPublic200Response
+	// 来自 `DeleteTenant` 的响应: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteTenant`: %v\n", resp)
 }
 [inline-code-end]

@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_ticket_200_response.go)
+Retorna: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_ticket_response.go)
 
 ## Exemplo
 
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `CreateTicket`: CreateTicket200Response
+	// resposta de `CreateTicket`: CreateTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTicket`: %v\n", resp)
 }
 [inline-code-end]

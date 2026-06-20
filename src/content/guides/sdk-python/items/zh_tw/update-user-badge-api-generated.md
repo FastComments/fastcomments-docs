@@ -1,20 +1,20 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| id | string | path | 是 |  |
+| tenantId | string | 查詢 | 是 |  |
+| id | string | 路徑 | 是 |  |
 
 ## 回應
 
-回傳: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_badge200_response.py)
+回傳: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_success_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'update_user_badge 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_badge200_response import UpdateUserBadge200Response
+from client.models.api_empty_success_response import APIEmptySuccessResponse
 from client.models.update_user_badge_params import UpdateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
@@ -26,9 +26,9 @@ configuration = client.Configuration(
 )
 
 # 用戶端必須設定驗證與授權參數
-# 以符合 API 伺服器的安全政策。
-# 下方提供了每種驗證方法的範例，請使用
-# 符合您驗證使用情境的範例。
+# 以符合 API 伺服器的安全性政策。
+# 下方提供每種授權方法的範例，請使用
+# 符合您授權使用情境的範例。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -36,9 +36,9 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 使用 API 客戶端實例進入上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 建立 API 類別的實例
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->update_user_badge: %s\n" % e)
 [inline-code-end]
-
----

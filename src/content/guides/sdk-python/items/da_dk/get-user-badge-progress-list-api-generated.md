@@ -9,29 +9,29 @@
 
 ## Respons
 
-Returnerer: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_list200_response.py)
+Returnerer: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_user_badge_progress_list Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_list200_response import GetUserBadgeProgressList200Response
+from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er frivilligt at angive host, standard er https://fastcomments.com
+# Det er valgfrit at definere host, og standarden er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# Klienten skal konfigurere autentificerings- og autorisationsparametre
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler på hver autentificeringsmetode er vist nedenfor. Brug det eksempel
-# der passer til dit autentificeringsbehov.
+# Eksempler for hver auth-metode er angivet nedenfor; brug det eksempel,
+# der passer til din auth-brugssag.
 
-# Konfigurer API-nøgle-autorisering: api_key
+# Konfigurer API-nøgleautorisering: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt

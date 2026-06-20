@@ -6,7 +6,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_200_response.go)
+Devuelve: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_response.go)
 
 ## Ejemplo
 
@@ -32,7 +32,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `CreateQuestionResult`: CreateQuestionResult200Response
+	// respuesta de `CreateQuestionResult`: CreateQuestionResultResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
+
+---

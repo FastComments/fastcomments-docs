@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -8,7 +7,7 @@
 
 ## Odgovor
 
-Vrača: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results200_response.rb)
+Vrne: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results_response.rb)
 
 ## Primer
 
@@ -18,7 +17,7 @@ require 'time'
 require 'fastcomments-client'
 # nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte avtorizacijo API ključa: api_key
+  # Konfigurirajte avtorizacijo z API ključem: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

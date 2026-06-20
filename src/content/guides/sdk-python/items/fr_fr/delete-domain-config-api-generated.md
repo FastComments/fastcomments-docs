@@ -1,20 +1,20 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | domain | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie : [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_domain_config200_response.py)
+Renvoie : [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_domain_config_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de delete_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_domain_config200_response import DeleteDomainConfig200Response
+from client.models.delete_domain_config_response import DeleteDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -29,7 +29,7 @@ configuration = client.Configuration(
 # Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez l'exemple qui
 # correspond à votre cas d'utilisation d'authentification.
 
-# Configurez l'autorisation par clé API : api_key
+# Configurer l'authentification par clé API : api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Décommentez ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_domain_config: %s\n" % e)
 [inline-code-end]
-
----

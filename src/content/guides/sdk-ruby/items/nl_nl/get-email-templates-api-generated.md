@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | skip | number | query | Nee |  |
 
-## Respons
+## Response
 
-Geeft terug: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_templates200_response.rb)
+Retourneert: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_templates_response.rb)
 
 ## Voorbeeld
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutelautorisatie: api_key
+  # Configureer API-sleutel autorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Verwijder het commentaarteken van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal het commentaar weg bij de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

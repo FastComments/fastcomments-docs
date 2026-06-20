@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Ne |  |
@@ -12,7 +12,7 @@
 
 ## Odgovor
 
-Vraća: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCount200Response.java)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCountResponse.java)
 
 ## Primjer
 
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurirajte autorizaciju API ključa: api_key
+    // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uklonite komentar sa sljedećeg retka da biste postavili prefiks za API ključ, npr. "Token" (zadano: null)
+    // Otkomentirajte sljedeću liniju za postavljanje prefiksa za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String domain = "domain_example"; // String | 
     Double attemptCountGT = 3.4D; // Double | 
     try {
-      GetPendingWebhookEventCount200Response result = apiInstance.getPendingWebhookEventCount(tenantId)
+      GetPendingWebhookEventCountResponse result = apiInstance.getPendingWebhookEventCount(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)
@@ -65,5 +65,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

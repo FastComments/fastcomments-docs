@@ -1,12 +1,12 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Location | Обязательно | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigs200Response.php)
+Возвращает: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigsResponse.php)
 
 ## Пример
 
@@ -16,19 +16,19 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию по API ключу: api_key
+// Настроить авторизацию по ключу API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например Bearer) для API ключа, если необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если нужно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский http-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // строка
+$tenant_id = 'tenant_id_example'; // string
 
 try {
     $result = $apiInstance->getDomainConfigs($tenant_id);

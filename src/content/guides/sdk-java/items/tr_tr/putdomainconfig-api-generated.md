@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Döndürür: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PutDomainConfigResponse.java)
 
 ## Örnek
 
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // API anahtar yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
+    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String domainToUpdate = "domainToUpdate_example"; // String | 
     UpdateDomainConfigParams updateDomainConfigParams = new UpdateDomainConfigParams(); // UpdateDomainConfigParams | 
     try {
-      GetDomainConfig200Response result = apiInstance.putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams)
+      PutDomainConfigResponse result = apiInstance.putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

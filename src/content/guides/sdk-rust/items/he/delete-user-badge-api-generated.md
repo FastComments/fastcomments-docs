@@ -7,20 +7,18 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_badge_200_response.rs)
+מחזיר: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'delete_user_badge דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_badge() -> Result<UpdateUserBadge200Response, Error> {
-    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "badge-7890".to_string(),
-    };
-    let response: UpdateUserBadge200Response = delete_user_badge(&configuration, params).await?;
-    Ok(response)
-}
+let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
+    tenant_id: "acme-newsroom-tenant".to_string(),
+    id: "badge-moderator-001".to_string(),
+};
+let include_related: Option<bool> = Some(false);
+let result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;
 [inline-code-end]
 
 ---

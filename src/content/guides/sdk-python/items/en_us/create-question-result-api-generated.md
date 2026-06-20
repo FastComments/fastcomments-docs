@@ -6,15 +6,15 @@
 
 ## Response
 
-Returns: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result200_response.py)
+Returns: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'create_question_result Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_result200_response import CreateQuestionResult200Response
 from client.models.create_question_result_body import CreateQuestionResultBody
+from client.models.create_question_result_response import CreateQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -24,18 +24,18 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure authentication and authorization parameters
+# The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below; use the example that
+# Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to set up a prefix (e.g. Bearer) for the API key, if needed
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context using an instance of the API client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_question_result: %s\n" % e)
 [inline-code-end]
-
----

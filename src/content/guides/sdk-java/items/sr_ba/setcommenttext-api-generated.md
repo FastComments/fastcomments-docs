@@ -1,22 +1,22 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentText200Response.java)
+Vraća: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPISetCommentTextResponse.java)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'setCommentText Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setCommentText Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,7 +36,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentText200Response result = apiInstance.setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest)
+      PublicAPISetCommentTextResponse result = apiInstance.setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -51,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

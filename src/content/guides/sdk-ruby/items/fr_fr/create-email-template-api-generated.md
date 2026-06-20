@@ -2,11 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
+| tenantId | string | query | Yes |  |
 
-## Response
+## Réponse
 
-Renvoie: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_email_template200_response.rb)
+Retourne : [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_email_template_response.rb)
 
 ## Exemple
 
@@ -14,16 +14,16 @@ Renvoie: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'autorisation
+# configuration de l'authentification
 FastCommentsClient.configure do |config|
-  # Configurer l'autorisation par clé API: api_key
+  # Configurer l'authentification par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
 create_email_template_body = FastCommentsClient::CreateEmailTemplateBody.new({email_template_id: 'email_template_id_example', display_name: 'display_name_example', ejs: 'ejs_example'}) # CreateEmailTemplateBody | 
 
 begin

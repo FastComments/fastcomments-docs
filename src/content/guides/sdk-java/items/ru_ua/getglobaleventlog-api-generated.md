@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -6,17 +5,17 @@ userIdWS
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| userIdWS | string | query | Да |  |
-| startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| userIdWS | string | query | Yes |  |
+| startTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Возвращает: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Пример
 
@@ -41,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getGlobalEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | postId | string | path | 예 |  |
@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostPublic200Response.java)
+반환: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostResponse.java)
 
 ## 예제
 
@@ -34,7 +34,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateFeedPostPublic200Response result = apiInstance.updateFeedPostPublic(tenantId, postId, updateFeedPostParams)
+      CreateFeedPostResponse result = apiInstance.updateFeedPostPublic(tenantId, postId, updateFeedPostParams)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();

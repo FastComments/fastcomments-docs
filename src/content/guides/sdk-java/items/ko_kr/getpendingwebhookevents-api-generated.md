@@ -1,25 +1,25 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| commentId | string | query | 아니요 |  |
-| externalId | string | query | 아니요 |  |
-| eventType | string | query | 아니요 |  |
-| type | string | query | 아니요 |  |
-| domain | string | query | 아니요 |  |
-| attemptCountGT | number | query | 아니요 |  |
-| skip | number | query | 아니요 |  |
+| commentId | string | query | 아니오 |  |
+| externalId | string | query | 아니오 |  |
+| eventType | string | query | 아니오 |  |
+| type | string | query | 아니오 |  |
+| domain | string | query | 아니오 |  |
+| attemptCountGT | number | query | 아니오 |  |
+| skip | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEvents200Response.java)
+반환: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventsResponse.java)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 임포트:
+// 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,7 +35,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 대한 접두어를 설정하려면 다음 줄의 주석 처리를 해제하세요. 예: "Token" (기본값은 null)
+    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값은 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -48,7 +48,7 @@ public class Example {
     Double attemptCountGT = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetPendingWebhookEvents200Response result = apiInstance.getPendingWebhookEvents(tenantId)
+      GetPendingWebhookEventsResponse result = apiInstance.getPendingWebhookEvents(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)

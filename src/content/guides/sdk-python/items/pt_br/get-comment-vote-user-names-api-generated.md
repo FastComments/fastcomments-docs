@@ -1,27 +1,27 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| commentId | string | path | Sim |  |
-| dir | integer | query | Sim |  |
-| sso | string | query | Não |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| dir | integer | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
-Retorna: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names200_response.py)
+Retorna: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names_success_response.py)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_comment_vote_user_names'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_vote_user_names Exemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_vote_user_names200_response import GetCommentVoteUserNames200Response
+from client.models.get_comment_vote_user_names_success_response import GetCommentVoteUserNamesSuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão é https://fastcomments.com
-# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Definir o host é opcional e o padrão é https://fastcomments.com
+# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

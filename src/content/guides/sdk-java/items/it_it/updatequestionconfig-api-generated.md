@@ -1,19 +1,19 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| Nome | Type | Location | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
+| id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di updateQuestionConfig'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa le classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione tramite API key: api_key
+    // Configura l'autorizzazione della chiave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la chiave API, es. "Token" (predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateQuestionConfigBody updateQuestionConfigBody = new UpdateQuestionConfigBody(); // UpdateQuestionConfigBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateQuestionConfig(tenantId, id, updateQuestionConfigBody)
+      APIEmptyResponse result = apiInstance.updateQuestionConfig(tenantId, id, updateQuestionConfigBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

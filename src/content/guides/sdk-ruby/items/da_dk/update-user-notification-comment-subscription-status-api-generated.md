@@ -1,4 +1,4 @@
-Aktivér eller deaktiver notifikationer for en specifik kommentar.
+Aktiver eller deaktiver notifikationer for en bestemt kommentar.
 
 ## Parametre
 
@@ -12,7 +12,7 @@ Aktivér eller deaktiver notifikationer for en specifik kommentar.
 
 ## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Returnerer: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## Eksempel
 
@@ -22,12 +22,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Streng | 
-notification_id = 'notification_id_example' # Streng | 
-opted_in_or_out = 'in' # Streng | 
-comment_id = 'comment_id_example' # Streng | 
+tenant_id = 'tenant_id_example' # String | 
+notification_id = 'notification_id_example' # String | 
+opted_in_or_out = 'in' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Streng | 
+  sso: 'sso_example' # String | 
 }
 
 begin

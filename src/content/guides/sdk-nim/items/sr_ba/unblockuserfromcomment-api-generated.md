@@ -1,32 +1,32 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Ne |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Не |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+Враћа: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'unBlockUserFromComment Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример unBlockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
-  tenantId = "news-site-001",
-  id = "cmt-8fj3k9",
+  tenantId = "my-tenant-123",
+  id = "comment-9f3b2a",
   unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-98765",
-  anonUserId = ""
+  userId = "user-1024",
+  anonUserId = "anon-77b"
 )
 
 if response.isSome:
-  let unblocked = response.get()
-  discard unblocked
+  let unblockResult = response.get()
+  echo unblockResult
+else:
+  echo "Unblock failed"
 [inline-code-end]
-
----

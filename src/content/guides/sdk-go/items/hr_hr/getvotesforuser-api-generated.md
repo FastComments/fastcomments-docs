@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_200_response.go)
+Vraća: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_response.go)
 
 ## Primjer
 
@@ -27,8 +27,8 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	userId := "userId_example" // string |  (nije obavezno)
-	anonUserId := "anonUserId_example" // string |  (nije obavezno)
+	userId := "userId_example" // string |  (neobavezno)
+	anonUserId := "anonUserId_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetVotesForUser`: GetVotesForUser200Response
+	// odgovor iz `GetVotesForUser`: GetVotesForUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotesForUser`: %v\n", resp)
 }
 [inline-code-end]

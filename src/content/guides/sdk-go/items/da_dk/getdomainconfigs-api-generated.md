@@ -1,16 +1,16 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
+| tenantId | string | query | Yes |  |
 
 ## Svar
 
-Returnerer: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_configs_200_response.go)
+Returnerer: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_configs_response.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på GetDomainConfigs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetDomainConfigs-eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -31,9 +31,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetDomainConfigs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetDomainConfigs`: GetDomainConfigs200Response
+	// svar fra `GetDomainConfigs`: GetDomainConfigsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetDomainConfigs`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -12,7 +12,7 @@
 
 ## Odgovor
 
-Vraća: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_200_response.go)
+Vraća: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_response.go)
 
 ## Primer
 
@@ -25,17 +25,17 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	questionId := "questionId_example" // string |  (neobavezno)
-	questionIds := []string{"Inner_example"} // []string |  (neobavezno)
-	urlId := "urlId_example" // string |  (neobavezno)
-	timeBucket := openapiclient.AggregateTimeBucket("day") // AggregateTimeBucket |  (neobavezno)
-	startDate := time.Now() // time.Time |  (neobavezno)
-	forceRecalculate := true // bool |  (neobavezno)
+	questionId := "questionId_example" // string |  (opciono)
+	questionIds := []string{"Inner_example"} // []string |  (opciono)
+	urlId := "urlId_example" // string |  (opciono)
+	timeBucket := openapiclient.AggregateTimeBucket("day") // AggregateTimeBucket |  (opciono)
+	startDate := time.Now() // time.Time |  (opciono)
+	forceRecalculate := true // bool |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,9 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `AggregateQuestionResults`: AggregateQuestionResults200Response
+	// response from `AggregateQuestionResults`: AggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

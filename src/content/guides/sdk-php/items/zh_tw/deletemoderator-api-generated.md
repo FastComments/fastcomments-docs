@@ -8,7 +8,7 @@
 
 ## 回應
 
-回傳：[`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 範例
 
@@ -20,13 +20,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // 設定 API 金鑰授權：api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 若需要，取消註解下方以設定 API 金鑰前綴（例如 Bearer）
+// 如有需要，取消註解下方以為 API 金鑰設定前綴（例如 Bearer）
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 若要使用自訂的 http 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
-    // 這是可選的，`GuzzleHttp\Client` 將會被用作預設。
+    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選項，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );

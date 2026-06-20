@@ -1,25 +1,25 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | skip | f64 | 否 |  |
 
 ## 响应
 
-返回：[`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_users_200_response.rs)
+返回：[`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_users_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_tenant_users 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant_users() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params: GetTenantUsersParams = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let users: GetTenantUsers200Response = get_tenant_users(&configuration, params).await?;
-    let _users = users;
+    let response: GetTenantUsersResponse = get_tenant_users(&configuration, params).await?;
+    let _users: GetTenantUsersResponse = response;
     Ok(())
 }
 [inline-code-end]

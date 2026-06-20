@@ -1,34 +1,34 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| broadcastId | string | query | Не |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| skipDupCheck | boolean | query | Не |  |
+| tenantId | string | query | Da |  |
+| broadcastId | string | query | Ne |  |
+| isLive | boolean | query | Ne |  |
+| doSpamCheck | boolean | query | Ne |  |
+| skipDupCheck | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPost200Response.php)
+Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'createFeedPost Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createFeedPost'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite da koristite prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, kao podrazumijevani će biti korišćen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

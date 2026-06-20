@@ -7,24 +7,22 @@
 
 ## Response
 
-Returns: [`CreateUserBadge_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateUserBadge_200_response.h)
+Returns: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'createUserBadge Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
+utility::string_t tenantId = U("my-tenant-123");
 CreateUserBadgeParams params;
-params.userId = utility::string_t("user@example.com");
-params.badgeId = utility::string_t("gold-contributor");
-boost::optional<utility::string_t> expiresAt = utility::string_t("2026-12-31T23:59:59Z");
-params.expiresAt = expiresAt;
-auto placeholder = std::make_shared<CreateUserBadge_200_response>();
-api->createUserBadge(tenantId, params).then([](pplx::task<std::shared_ptr<CreateUserBadge_200_response>> t){
-    try {
+params.userEmail = utility::string_t(U("jane.doe@example.com"));
+params.badgeSlug = utility::string_t(U("community-moderator"));
+params.issuedBy = utility::string_t(U("admin@my-tenant.com"));
+params.expiresAt = boost::optional<utility::string_t>(utility::string_t(U("2026-12-31T23:59:59Z")));
+auto task = api->createUserBadge(tenantId, params)
+    .then([](pplx::task<std::shared_ptr<APICreateUserBadgeResponse>> t){
         auto resp = t.get();
-        (void)resp;
-    } catch (const std::exception&) {
-    }
-});
+        if (resp) return resp;
+        return std::make_shared<APICreateUserBadgeResponse>();
+    });
 [inline-code-end]

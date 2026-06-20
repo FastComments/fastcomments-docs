@@ -1,22 +1,22 @@
 ## Parametri
 
-| Name | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| voteId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| broadcastId | string | query | Da |  |
-| editKey | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | putanja | Da |  |
+| commentId | string | putanja | Da |  |
+| voteId | string | putanja | Da |  |
+| urlId | string | upit | Da |  |
+| broadcastId | string | upit | Da |  |
+| editKey | string | upit | Ne |  |
+| sso | string | upit | Ne |  |
 
 ## Odgovor
 
-Vraća: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'delete_comment_vote Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer delete_comment_vote'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

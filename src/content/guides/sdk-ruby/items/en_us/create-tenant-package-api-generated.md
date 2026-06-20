@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package200_response.rb)
+Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package_response.rb)
 
 ## Example
 
@@ -14,7 +14,7 @@ Returns: [`CreateTenantPackage200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# set up authorization
+# setup authorization
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_tenant_package: #{e}"
 end
 [inline-code-end]
-
----

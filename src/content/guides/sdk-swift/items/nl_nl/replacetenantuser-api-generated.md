@@ -2,13 +2,13 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| updateComments | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
+| updateComments | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Voorbeeld
 
@@ -33,3 +33,5 @@ DefaultAPI.replaceTenantUser(tenantId: tenantId, id: id, replaceTenantUserBody: 
     }
 }
 [inline-code-end]
+
+---

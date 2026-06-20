@@ -1,15 +1,15 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
+| userId | string | query | Nee |  |
+| anonUserId | string | query | Nee |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Geeft terug: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Voorbeeld
 
@@ -17,11 +17,11 @@ Retourneert: [`UnBlockCommentPublic200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# stel autorisatie in
+# autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaarteken van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
+  # Haal het commentaar bij de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -42,3 +42,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_block_user_from_comment: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,15 +1,15 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Да |  |
+| sso | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`LockComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/LockComment200Response.java)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Пример
 
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      LockComment200Response result = apiInstance.unLockComment(tenantId, commentId, broadcastId)
+      APIEmptyResponse result = apiInstance.unLockComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,3 +47,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

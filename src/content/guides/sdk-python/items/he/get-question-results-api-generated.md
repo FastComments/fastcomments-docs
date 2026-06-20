@@ -12,31 +12,32 @@
 
 ## תגובה
 
-מחזיר: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results200_response.py)
+מחזיר: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_results200_response import GetQuestionResults200Response
+from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# עיין בקובץ configuration.py לרשימת כל הפרמטרים הנתמכים.
+# ראה את configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
+# על הלקוח להגדיר את פרמטרי האימות וההרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מופיעות למטה; השתמש בדוגמה המתאימה למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה
+# שמתאימה למקרה השימוש שלך.
 
-# הגדר הרשאת מפתח API: api_key
+# הגדר אישור באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם דרוש
+# הסר את ההערה שלהלן כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # הכנס להקשר עם מופע של לקוח ה-API

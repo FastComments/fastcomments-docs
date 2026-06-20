@@ -1,14 +1,14 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| commentId | string | パス | はい |  |
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_un_block_comment_public_200_response.go)
+戻り値: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_unblock_success.go)
 
 ## 例
 
@@ -20,7 +20,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UnBlockCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UnBlockCommentPublic` のレスポンス: UnBlockCommentPublic200Response
+	// `UnBlockCommentPublic` からのレスポンス: UnblockSuccess
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UnBlockCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

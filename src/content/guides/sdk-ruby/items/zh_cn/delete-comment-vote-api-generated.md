@@ -1,19 +1,19 @@
 ---
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| commentId | string | 路径 | 是 |  |
-| voteId | string | 路径 | 是 |  |
-| urlId | string | 查询 | 是 |  |
-| broadcastId | string | 查询 | 是 |  |
-| editKey | string | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | path | 是 |  |
+| commentId | string | path | 是 |  |
+| voteId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| broadcastId | string | query | 是 |  |
+| editKey | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+返回: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## 示例
 

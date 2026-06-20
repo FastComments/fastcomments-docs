@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Örnek
 
@@ -29,7 +29,7 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Aşağıdaki satırı API anahtarına bir önek ayarlamak için yorumdan çıkarın, örn. "Token" (varsayılan: null)
+    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     FeedPost feedPost = new FeedPost(); // FeedPost | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateFeedPost(tenantId, id, feedPost)
+      APIEmptyResponse result = apiInstance.updateFeedPost(tenantId, id, feedPost)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

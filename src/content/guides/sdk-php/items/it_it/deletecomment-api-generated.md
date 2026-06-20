@@ -9,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteComment200Response.php)
+Restituisce: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
 
 ## Esempio
 
@@ -19,15 +19,14 @@ Restituisce: [`DeleteComment200Response`](https://github.com/FastComments/fastco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione della chiave API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta qui sotto per impostare un prefisso (es. Bearer) per la chiave API, se necessario
+// Configura l'autenticazione tramite API key: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come predefinito.
+    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come impostazione predefinita.
     new GuzzleHttp\Client(),
     $config
 );

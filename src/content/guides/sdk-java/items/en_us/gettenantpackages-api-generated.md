@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackages200Response.java)
+Returns: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackagesResponse.java)
 
 ## Example
 
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantPackages200Response result = apiInstance.getTenantPackages(tenantId)
+      GetTenantPackagesResponse result = apiInstance.getTenantPackages(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

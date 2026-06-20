@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | questionId | string | query | Не |  |
@@ -14,37 +15,47 @@
 
 ## Одговор
 
-Враћа: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_comments_with_question_results200_response.py)
+Враћа: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.combine_comments_with_question_results200_response import CombineCommentsWithQuestionResults200Response
+from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционо и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Defining the host is optional and defaults to https://fastcomments.com
+# Постављање host-а је опционо и подразумева се https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и ауторизације
+# The client must configure the authentication and authorization parameters
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
+# in accordance with the API server security policy.
 # у складу са безбедносном политиком API сервера.
-# Примери за сваки метод аутентификације су наведени у наставку, користите пример који
-# одговара вашем случају употребе аутентификације.
+# Examples for each auth method are provided below, use the example that
+# Примери за сваки метод аутентификације су дати испод, користите пример који
+# satisfies your auth use case.
+# одговара вашем случају коришћења аутентификације.
 
-# Конфигуришите овлашћење помоћу API кључа: api_key
+# Configure API key authorization: api_key
+# Конфигуришите ауторизацију помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Откоментујте испод ако је потребно подесити префикс (нпр. Bearer) за API кључ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
 # Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Create an instance of the API class
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (опционо)

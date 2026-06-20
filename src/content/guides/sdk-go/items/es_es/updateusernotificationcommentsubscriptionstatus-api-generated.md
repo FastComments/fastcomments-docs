@@ -1,19 +1,18 @@
----
 Habilitar o deshabilitar las notificaciones para un comentario específico.
 
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| notificationId | string | path | Yes |  |
-| optedInOrOut | string | path | Yes |  |
-| commentId | string | query | Yes |  |
+| tenantId | string | query | Sí |  |
+| notificationId | string | path | Sí |  |
+| optedInOrOut | string | path | Sí |  |
+| commentId | string | query | Sí |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Devuelve: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_comment_subscription_status_response.go)
 
 ## Ejemplo
 
@@ -25,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -42,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `UpdateUserNotificationCommentSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// response from `UpdateUserNotificationCommentSubscriptionStatus`: UpdateUserNotificationCommentSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

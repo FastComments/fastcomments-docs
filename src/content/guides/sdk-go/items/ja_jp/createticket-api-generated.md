@@ -1,13 +1,13 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| userId | string | query | はい |  |
+| tenantId | string | クエリ | はい |  |
+| userId | string | クエリ | はい |  |
 
 ## レスポンス
 
-戻り値: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_ticket_200_response.go)
+戻り値: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_ticket_response.go)
 
 ## 例
 
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTicket`: CreateTicket200Response
+	// `CreateTicket` のレスポンス: CreateTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTicket`: %v\n", resp)
 }
 [inline-code-end]

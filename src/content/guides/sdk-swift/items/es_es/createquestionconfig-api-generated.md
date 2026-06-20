@@ -1,18 +1,18 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateQuestionConfig200Response.swift)
+Devuelve: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateQuestionConfigResponse.swift)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de createQuestionConfig'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, reporte vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor infórmelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,3 +29,5 @@ DefaultAPI.createQuestionConfig(tenantId: tenantId, createQuestionConfigBody: cr
     }
 }
 [inline-code-end]
+
+---

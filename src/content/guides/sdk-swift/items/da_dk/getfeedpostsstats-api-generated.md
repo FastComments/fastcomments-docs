@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | postIds | array | query | Ja |  |
@@ -8,13 +8,13 @@
 
 ## Svar
 
-Returnerer: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsStats200Response.swift)
+Returnerer: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FeedPostsStatsResponse.swift)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getFeedPostsStats Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der opstår problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. For problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,5 +32,3 @@ PublicAPI.getFeedPostsStats(tenantId: tenantId, postIds: postIds, sso: sso) { (r
     }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Location | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | postId | string | path | Так |  |
@@ -9,11 +9,11 @@
 
 ## Відповідь
 
-Повертає: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public200_response.rb)
+Повертає: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'delete_feed_post_public Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад delete_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

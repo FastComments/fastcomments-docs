@@ -1,8 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
+| urlId | string | query | Ne | Koristi se za određivanje je li trenutna stranica pretplaćena. |
 | pageSize | integer | query | Ne |  |
 | afterId | string | query | Ne |  |
 | includeContext | boolean | query | Ne |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Ne |  |
 | noDm | boolean | query | Ne |  |
 | includeTranslations | boolean | query | Ne |  |
+| includeTenantNotifications | boolean | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_notifications_200_response.go)
+Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_my_notifications_response.go)
 
 ## Primjer
 
@@ -27,11 +29,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
+	urlId := "urlId_example" // string | Koristi se za određivanje je li trenutna stranica pretplaćena. (neobavezno)
 	pageSize := int32(56) // int32 |  (neobavezno)
 	afterId := "afterId_example" // string |  (neobavezno)
 	includeContext := true // bool |  (neobavezno)
@@ -40,16 +43,17 @@ func main() {
 	dmOnly := true // bool |  (neobavezno)
 	noDm := true // bool |  (neobavezno)
 	includeTranslations := true // bool |  (neobavezno)
+	includeTenantNotifications := true // bool |  (neobavezno)
 	sso := "sso_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.GetUserNotifications(context.Background()).TenantId(tenantId).PageSize(pageSize).AfterId(afterId).IncludeContext(includeContext).AfterCreatedAt(afterCreatedAt).UnreadOnly(unreadOnly).DmOnly(dmOnly).NoDm(noDm).IncludeTranslations(includeTranslations).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.GetUserNotifications(context.Background()).TenantId(tenantId).UrlId(urlId).PageSize(pageSize).AfterId(afterId).IncludeContext(includeContext).AfterCreatedAt(afterCreatedAt).UnreadOnly(unreadOnly).DmOnly(dmOnly).NoDm(noDm).IncludeTranslations(includeTranslations).IncludeTenantNotifications(includeTenantNotifications).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUserNotifications`: GetUserNotifications200Response
+	// odgovor iz `GetUserNotifications`: GetMyNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]

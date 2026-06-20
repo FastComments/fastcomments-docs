@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postIds | array | query | Да |  |
@@ -8,13 +8,13 @@
 
 ## Одговор
 
-Враћа: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsStats200Response.java)
+Враћа: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FeedPostsStatsResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getFeedPostsStats Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsStats пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Увоз класа:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetFeedPostsStats200Response result = apiInstance.getFeedPostsStats(tenantId, postIds)
+      FeedPostsStatsResponse result = apiInstance.getFeedPostsStats(tenantId, postIds)
             .sso(sso)
             .execute();
       System.out.println(result);

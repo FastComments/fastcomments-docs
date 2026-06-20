@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -8,32 +8,32 @@
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'delete_tenant Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример delete_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционално и подразумева се https://fastcomments.com
+# Подешавање host-а је опционо и подразумевано је https://fastcomments.com
 # Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да подеси параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Испод су примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају коришћења аутентификације.
+# Клијент мора да конфигурише параметре аутентификације и овлашћења
+# у складу са политиком безбедности API сервера.
+# Испод су дати примери за сваки начин аутентификације, користите пример који
+# одговара вашем случају употребе аутентификације.
 
-# Configure API key authorization: api_key
+# Подесите ауторизацију API кључем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Откоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -42,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    sure = 'sure_example' # str |  (опционално)
+    sure = 'sure_example' # str |  (опционо)
 
     try:
         api_response = api_instance.delete_tenant(tenant_id, id, sure=sure)

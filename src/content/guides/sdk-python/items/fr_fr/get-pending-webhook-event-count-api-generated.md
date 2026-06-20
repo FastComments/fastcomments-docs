@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | query | Non |  |
@@ -12,19 +12,19 @@
 
 ## Réponse
 
-Renvoie: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count200_response.py)
+Renvoie : [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_event_count200_response import GetPendingWebhookEventCount200Response
+from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut à https://fastcomments.com
-# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Définir l'hôte est optionnel et par défaut à https://fastcomments.com
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -37,7 +37,7 @@ configuration = client.Configuration(
 # Configurer l'authentification par clé API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez la ligne ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
+# Décommentez ci-dessous pour configurer un préfixe (par ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API
@@ -45,12 +45,12 @@ with client.ApiClient(configuration) as api_client:
     # Créez une instance de la classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (optional)
-    external_id = 'external_id_example' # str |  (optional)
-    event_type = 'event_type_example' # str |  (optional)
-    type = 'type_example' # str |  (optional)
-    domain = 'domain_example' # str |  (optional)
-    attempt_count_gt = 3.4 # float |  (optional)
+    comment_id = 'comment_id_example' # str |  (optionnel)
+    external_id = 'external_id_example' # str |  (optionnel)
+    event_type = 'event_type_example' # str |  (optionnel)
+    type = 'type_example' # str |  (optionnel)
+    domain = 'domain_example' # str |  (optionnel)
+    attempt_count_gt = 3.4 # float |  (optionnel)
 
     try:
         api_response = api_instance.get_pending_webhook_event_count(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt)

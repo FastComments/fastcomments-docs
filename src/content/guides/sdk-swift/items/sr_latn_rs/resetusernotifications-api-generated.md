@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -12,22 +13,22 @@
 
 ## Odgovor
 
-Vraća: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotifications200Response.swift)
+Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotificationsResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'resetUserNotifications Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer resetUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (neobavezno)
-let afterCreatedAt = 987 // Int64 |  (neobavezno)
-let unreadOnly = true // Bool |  (neobavezno)
-let dmOnly = true // Bool |  (neobavezno)
-let noDm = true // Bool |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let afterId = "afterId_example" // String |  (opciono)
+let afterCreatedAt = 987 // Int64 |  (opciono)
+let unreadOnly = true // Bool |  (opciono)
+let dmOnly = true // Bool |  (opciono)
+let noDm = true // Bool |  (opciono)
+let sso = "sso_example" // String |  (opciono)
 
 PublicAPI.resetUserNotifications(tenantId: tenantId, afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso) { (response, error) in
     guard error == nil else {

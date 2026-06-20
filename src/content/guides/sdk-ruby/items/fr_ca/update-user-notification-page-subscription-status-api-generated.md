@@ -1,4 +1,4 @@
-Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racines, et aussi
+Activer ou désactiver les notifications pour une page. Lorsque des utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racines, et aussi
 
 ## Paramètres
 
@@ -13,7 +13,7 @@ Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs
 
 ## Réponse
 
-Retourne: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Renvoie : [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Exemple
 
@@ -23,13 +23,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Chaîne | 
-url_id = 'url_id_example' # Chaîne | 
-url = 'url_example' # Chaîne | 
-page_title = 'page_title_example' # Chaîne | 
-subscribed_or_unsubscribed = 'subscribe' # Chaîne | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
+url = 'url_example' # String | 
+page_title = 'page_title_example' # String | 
+subscribed_or_unsubscribed = 'subscribe' # String | 
 opts = {
-  sso: 'sso_example' # Chaîne | 
+  sso: 'sso_example' # String | 
 }
 
 begin

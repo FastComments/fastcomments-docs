@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -10,7 +11,7 @@
 
 ## תגובה
 
-מחזיר: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+מחזיר: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## דוגמה
 
@@ -18,29 +19,24 @@
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראו configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# הגדרת ה-host היא אופציונלית והבררת המחדל היא https://fastcomments.com
+# ראה configuration.py לרשימת כל הפרמטרים הנתמכים.
+# הלקוח חייב להגדיר את פרמטרי האימות והרשאה
+# בהתאם למדיניות אבטחת השרת של ה-API.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה ש
+# עונה על מקרה השימוש שלך באימות.
 
-# הלקוח חייב לקבוע את פרמטרי האימות וההרשאה
-# בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן, השתמשו בדוגמה שמתאימה למקרה השימוש שלכם.
-
-# קבעו הרשאת מפתח API: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
+# Configure API key authorization: api_key
+# הסר הערה להלן כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנסו להקשר עם מופע של לקוח ה-API
+# הכנס הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צרו מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
@@ -56,3 +52,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->save_comments_bulk: %s\n" % e)
 [inline-code-end]
+
+---

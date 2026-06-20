@@ -1,25 +1,25 @@
 ### Χρήση Αυθεντικοποιημένων API (DefaultApi)
 
-**Σημαντικό:** Πρέπει να ορίσετε το API key σας στο Configuration πριν κάνετε αιτήματα που απαιτούν αυθεντικοποίηση. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
+**Important:** Πρέπει να ορίσετε το API key σας στην Configuration πριν κάνετε αυθεντικοποιημένα αιτήματα. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Δημιουργία και διαμόρφωση του API client
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# ΑΠΑΡΑΙΤΗΤΟ: Ορίστε το API key σας (πάρτε το από τον πίνακα ελέγχου του FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Δημιουργία της παρουσίας API με τον διαμορφωμένο client
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Τώρα μπορείτε να κάνετε αιτήματα API με αυθεντικοποίηση
+# Now you can make authenticated API calls
 try:
-    # Παράδειγμα: Προσθήκη χρήστη SSO
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,9 +34,9 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Συνήθη σφάλματα:
-    # - 401: Λείπει ή είναι άκυρο το API key
-    # - 400: Αποτυχία επικύρωσης αιτήματος
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Χρήση Δημόσιων API (PublicApi)
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Χρήση του πίνακα ελέγχου διαχείρισης (ModerationApi)
+
+Το `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου των συντονιστών. Οι μέθοδοι καλούνται εξ ονόματος ενός συντονιστή περνώντας ένα `sso` token:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Χρήση SSO (Single Sign-On)
 
-Το SDK περιλαμβάνει βοηθητικά εργαλεία για τη δημιουργία ασφαλών SSO tokens:
+Το SDK περιλαμβάνει βοηθητικά εργαλεία για τη δημιουργία ασφαλών SSO token:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Δημιουργία δεδομένων χρήστη
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Δημιουργία στιγμιότυπου SSO με το API secret σας
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Δημιουργία του SSO token
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# Χρησιμοποιήστε αυτό το token στο frontend σας ή περάστε το σε κλήσεις API
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Συνηθισμένα Προβλήματα
+### Συνήθη Προβλήματα
 
-1. **401 "missing-api-key" σφάλμα**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` πριν δημιουργήσετε το παράδειγμα DefaultApi.
-2. **Λάθος κλάση API**: Χρησιμοποιήστε `DefaultApi` για αιτήματα με αυθεντικοποίηση από τον διακομιστή (server-side), `PublicApi` για αιτήματα από τον πελάτη/δημόσια (client-side/public).
-3. **Σφάλματα εισαγωγής**: Βεβαιωθείτε ότι κάνετε import από το σωστό module:
-   - Πελάτης API: `from client import ...`
-   - Εργαλεία SSO: `from sso import ...`
+1. **401 "missing-api-key" error**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` πριν δημιουργήσετε το instance του DefaultApi.
+2. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για server-side αυθεντικοποιημένα αιτήματα, `PublicApi` για client-side/δημόσια αιτήματα, και `ModerationApi` για αιτήματα του πίνακα ελέγχου συντονιστών.
+3. **Import errors**: Βεβαιωθείτε ότι κάνετε εισαγωγή από το σωστό module:
+   - API client: `from client import ...`
+   - SSO utilities: `from sso import ...`

@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Ja |  |
@@ -8,34 +8,30 @@
 | userId | string | query | Nej |  |
 | anonUserId | string | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'create_vote Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af vært er valgfri og standardværdien er https://fastcomments.com
+# Angivelse af host er valgfri og er som standard https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
-# passer til dit brugstilfælde.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel som
+# opfylder dit godkendelsesbehov.
 
-# Konfigurer API-nøgleautorisation: api_key
+# Konfigurer API-nøgleautorisering: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentar nedenfor for at sætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentar fra nedenstående for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -55,3 +51,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_vote: %s\n" % e)
 [inline-code-end]
+
+---

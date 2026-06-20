@@ -7,15 +7,15 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Response
+## Antwoord
 
-Geeft terug: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagComment200Response.java)
+Geeft terug: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'flagComment Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importeren:
+// Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,7 +31,7 @@ public class Example {
     // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Haal de commentaartekens van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      FlagComment200Response result = apiInstance.flagComment(tenantId, id)
+      FlagCommentResponse result = apiInstance.flagComment(tenantId, id)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

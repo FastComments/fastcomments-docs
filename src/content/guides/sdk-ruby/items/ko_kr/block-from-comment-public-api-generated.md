@@ -1,14 +1,14 @@
 ## 매개변수
 
-| Name | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | commentId | string | path | 예 |  |
-| sso | string | query | 아니오 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+반환: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## 예제
 
@@ -18,11 +18,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # 문자열 | 
+comment_id = 'comment_id_example' # 문자열 | 
 public_block_from_comment_params = FastCommentsClient::PublicBlockFromCommentParams.new({comment_ids: ['comment_ids_example']}) # PublicBlockFromCommentParams | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 문자열 | 
 }
 
 begin
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->block_from_comment_public: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| userId | string | query | Ні |  |
-| limit | number | query | Ні |  |
-| skip | number | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Відповідь
 
-Повертає: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadgeProgressList200Response.java)
+Повертає: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeProgressListResponse.java)
 
 ## Приклад
 
@@ -28,7 +28,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштуйте авторизацію за допомогою API-ключа: api_key
+    // Налаштування авторизації за API-ключем: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
@@ -40,7 +40,7 @@ public class Example {
     Double limit = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetUserBadgeProgressList200Response result = apiInstance.getUserBadgeProgressList(tenantId)
+      APIGetUserBadgeProgressListResponse result = apiInstance.getUserBadgeProgressList(tenantId)
             .userId(userId)
             .limit(limit)
             .skip(skip)
@@ -56,3 +56,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | commentId | string | path | כן |  |
@@ -9,21 +9,21 @@
 
 ## תגובה
 
-מחזיר: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת lock_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-lock_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # מחרוזת | 
+comment_id = 'comment_id_example' # מחרוזת | 
+broadcast_id = 'broadcast_id_example' # מחרוזת | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # מחרוזת | 
 }
 
 begin

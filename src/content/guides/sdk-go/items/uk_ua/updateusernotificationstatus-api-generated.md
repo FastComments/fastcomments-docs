@@ -2,14 +2,14 @@
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| notificationId | string | path | Yes |  |
-| newStatus | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| notificationId | string | path | Так |  |
+| newStatus | string | path | Так |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Повертає: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_response.go)
 
 ## Приклад
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `UpdateUserNotificationStatus`: UpdateUserNotificationStatus200Response
+	// відповідь від `UpdateUserNotificationStatus`: UpdateUserNotificationStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

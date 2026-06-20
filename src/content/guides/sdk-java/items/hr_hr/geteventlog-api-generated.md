@@ -5,23 +5,23 @@ userIdWS
 
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | putanja | Da |  |
-| urlId | string | upit | Da |  |
-| userIdWS | string | upit | Da |  |
-| startTime | integer | upit | Da |  |
-| endTime | integer | upit | Da |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| userIdWS | string | query | Da |  |
+| startTime | integer | query | Da |  |
+| endTime | integer | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getEventLog Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getEventLog'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvozi klase:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

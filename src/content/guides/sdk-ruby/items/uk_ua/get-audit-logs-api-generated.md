@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | limit | number | query | Ні |  |
@@ -11,7 +11,7 @@
 
 ## Відповідь
 
-Повертає: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs200_response.rb)
+Повертає: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs_response.rb)
 
 ## Приклад
 
@@ -19,11 +19,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# налаштування авторизації
+# Налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштування авторизації API-ключа: api_key
+  # Налаштуйте авторизацію через API-ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр. 'Bearer' (за замовчуванням nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -45,5 +45,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_audit_logs: #{e}"
 end
 [inline-code-end]
-
----

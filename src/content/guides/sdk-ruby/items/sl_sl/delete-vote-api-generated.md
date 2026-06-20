@@ -1,14 +1,14 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| editKey | string | query | No |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| editKey | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Vrne: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Primer
 
@@ -16,9 +16,9 @@ Vrne: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Nastavitev avtorizacije
+# nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte avtorizacijo API ključa: api_key
+  # Konfigurirajte avtorizacijo z API ključem: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_vote: #{e}"
 end
 [inline-code-end]
+
+---

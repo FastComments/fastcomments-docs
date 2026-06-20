@@ -1,19 +1,19 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | skip | number | query | 否 |  |
 
 ## 响应
 
-返回: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplates200Response.java)
+返回: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplatesResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getEmailTemplates 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,14 +29,13 @@ public class Example {
     // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释下面一行以为 API 密钥设置前缀，例如 "Token"（默认值为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    Double skip = 3.4D; // Double | 
+    String tenantId = "tenantId_example"; // 字符串 | 
+    Double skip = 3.4D; // 双精度 | 
     try {
-      GetEmailTemplates200Response result = apiInstance.getEmailTemplates(tenantId)
+      GetEmailTemplatesResponse result = apiInstance.getEmailTemplates(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

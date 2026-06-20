@@ -8,13 +8,13 @@
 
 ## 响应
 
-返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateNotification 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 配置 API 密钥授权: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释以下行以为 API 密钥设置前缀，例如 "Token" (默认为 null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     UpdateNotificationBody updateNotificationBody = new UpdateNotificationBody(); // UpdateNotificationBody | 
     String userId = "userId_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateNotification(tenantId, id, updateNotificationBody)
+      APIEmptyResponse result = apiInstance.updateNotification(tenantId, id, updateNotificationBody)
             .userId(userId)
             .execute();
       System.out.println(result);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

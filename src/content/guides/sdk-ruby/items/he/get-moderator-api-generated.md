@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderator200_response.rb)
+מחזיר: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderator_response.rb)
 
 ## דוגמה
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאות
+# הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר אימות מפתח ה-API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי לקבוע קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירות מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

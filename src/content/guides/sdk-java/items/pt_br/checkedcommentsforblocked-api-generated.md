@@ -1,14 +1,15 @@
+---
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
-| commentIds | string | query | Sim | Uma lista separada por vírgulas de IDs de comentários. |
+| commentIds | string | query | Sim | Uma lista separada por vírgulas de ids de comentários. |
 | sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Retorna: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Exemplo
 
@@ -28,10 +29,10 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
-    String commentIds = "commentIds_example"; // String | Uma lista separada por vírgulas de IDs de comentários.
+    String commentIds = "commentIds_example"; // String | Uma lista separada por vírgulas de ids de comentários.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

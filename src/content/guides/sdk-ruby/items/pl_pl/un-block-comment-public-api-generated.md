@@ -2,17 +2,17 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| commentId | string | path | Tak |  |
-| sso | string | query | Nie |  |
+| tenantId | string | zapytanie | Tak |  |
+| commentId | string | ścieżka | Tak |  |
+| sso | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Zwraca: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład un_block_comment_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_block_comment_public Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

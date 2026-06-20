@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModerator200Response.swift)
+Returns: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModeratorResponse.swift)
 
 ## Example
 

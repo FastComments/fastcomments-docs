@@ -4,9 +4,9 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 
-## 응답
+## 반환
 
-반환: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package200_response.rb)
+반환: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_package_response.rb)
 
 ## 예제
 
@@ -18,7 +18,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # API 키에 대한 접두어를 설정하려면 다음 줄의 주석을 제거하십시오. 예: 'Bearer' (기본값은 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | Location | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | broadcastId | string | query | 아니요 |  |
@@ -10,7 +10,7 @@
 
 ## 응답
 
-반환: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+반환: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
 ## 예제
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # 인증 설정
 FastCommentsClient.configure do |config|
-  # API 키 인증 구성: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 대한 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요(예: 'Bearer'). (기본값은 nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_feed_post: #{e}"
 end
 [inline-code-end]
-
----

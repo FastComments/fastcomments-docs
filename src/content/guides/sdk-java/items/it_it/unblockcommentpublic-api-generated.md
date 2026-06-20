@@ -8,13 +8,13 @@
 
 ## Risposta
 
-Restituisce: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnBlockCommentPublic200Response.java)
+Restituisce: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnblockSuccess.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di unBlockCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importazione delle classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,7 +32,7 @@ public class Example {
     PublicBlockFromCommentParams publicBlockFromCommentParams = new PublicBlockFromCommentParams(); // PublicBlockFromCommentParams | 
     String sso = "sso_example"; // String | 
     try {
-      UnBlockCommentPublic200Response result = apiInstance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
+      UnblockSuccess result = apiInstance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -46,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

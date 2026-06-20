@@ -7,16 +7,16 @@
 
 ## Response
 
-Returns: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_config200response.nim)
+Returns: [`Option[GetDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_config_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'getDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news/top-story-2026")
 if response.isSome:
-  let config = response.get()
-  echo "Domain config received"
+  let cfg = response.get()
+  discard cfg
 else:
-  echo "No domain config available"
+  discard httpResponse
 [inline-code-end]

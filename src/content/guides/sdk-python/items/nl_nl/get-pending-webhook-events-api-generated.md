@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Nee |  |
@@ -13,14 +13,14 @@
 
 ## Antwoord
 
-Retourneert: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+Retourneert: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_pending_webhook_events Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -33,15 +33,15 @@ configuration = client.Configuration(
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
 # Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
-# voldoet aan uw auth-gebruikssituatie.
+# voldoet aan uw authenticatiegeval.
 
 # Configureer API-sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal hieronder de commentaar weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Haal hieronder het commentaarteken weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ga een context in met een instantie van de API-client
+# Open een context met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.DefaultApi(api_client)

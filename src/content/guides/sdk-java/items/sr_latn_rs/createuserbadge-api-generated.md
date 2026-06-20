@@ -6,11 +6,11 @@
 
 ## Odgovor
 
-Vraća: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateUserBadge200Response.java)
+Vraća: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APICreateUserBadgeResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'createUserBadge Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createUserBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -28,14 +28,14 @@ public class Example {
     // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. "Token" (podrazumevano je null)
+    // Otkomentarišite sledeći red da biste postavili prefiks za API ključ, npr. "Token" (podrazumevano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateUserBadgeParams createUserBadgeParams = new CreateUserBadgeParams(); // CreateUserBadgeParams | 
     try {
-      CreateUserBadge200Response result = apiInstance.createUserBadge(tenantId, createUserBadgeParams)
+      APICreateUserBadgeResponse result = apiInstance.createUserBadge(tenantId, createUserBadgeParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

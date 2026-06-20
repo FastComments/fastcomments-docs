@@ -1,25 +1,25 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrne: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count200_response.rb)
+Vrne: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_cached_notification_count Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_cached_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfiguriraj avtorizacijo API ključa: api_key
+  # Konfigurirajte avtorizacijo API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte spodnjo vrstico za nastavitev predpone za API ključ, npr. 'Bearer' (privzeto nil)
+  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

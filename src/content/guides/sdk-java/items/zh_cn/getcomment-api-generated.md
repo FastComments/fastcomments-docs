@@ -1,20 +1,19 @@
----
-## Parameters
+## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
 
-## Response
+## 响应
 
-返回: [`GetComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComment200Response.java)
+返回：[`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentResponse.java)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'getComment 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,14 +29,14 @@ public class Example {
     // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释下面一行以设置 API 密钥的前缀，例如 "Token"（默认为 null）
+    // 取消注释以下行以设置 API 密钥前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetComment200Response result = apiInstance.getComment(tenantId, id)
+      APIGetCommentResponse result = apiInstance.getComment(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

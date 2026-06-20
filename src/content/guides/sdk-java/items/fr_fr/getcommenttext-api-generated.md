@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Location | Requis | Description |
+|------|------|----------|--------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
 | editKey | string | query | Non |  |
@@ -9,11 +9,11 @@
 
 ## Réponse
 
-Renvoie : [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentText200Response.java)
+Renvoie : [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIGetCommentTextResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour getCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -28,12 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String commentId = "commentId_example"; // String | 
-    String editKey = "editKey_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // Chaîne | 
+    String commentId = "commentId_example"; // Chaîne | 
+    String editKey = "editKey_example"; // Chaîne | 
+    String sso = "sso_example"; // Chaîne | 
     try {
-      GetCommentText200Response result = apiInstance.getCommentText(tenantId, commentId)
+      PublicAPIGetCommentTextResponse result = apiInstance.getCommentText(tenantId, commentId)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -48,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

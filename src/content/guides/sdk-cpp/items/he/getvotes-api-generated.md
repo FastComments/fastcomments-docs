@@ -1,29 +1,32 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlId | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetVotes_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotes_200_response.h)
+מחזיר: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotesResponse.h)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getVotes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantId = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> urlId = utility::string_t(U("/posts/2025/new-features"));
-auto task = api->getVotes(tenantId.value(), urlId.value()).then([](std::shared_ptr<GetVotes_200_response> resp){
-    if (resp) {
-        auto copy = std::make_shared<GetVotes_200_response>(*resp);
-        std::cout << "Fetched votes successfully\n";
-    } else {
-        std::cout << "No votes response\n";
+boost::optional<int> limit = 50;
+auto fallback = std::make_shared<GetVotesResponse>();
+api->getVotes(utility::conversions::to_string_t("my-tenant-123"), utility::conversions::to_string_t("article-9876"))
+.then([fallback, limit](pplx::task<std::shared_ptr<GetVotesResponse>> t) {
+    try {
+        auto resp = t.get();
+        if (!resp) resp = fallback;
+        if (limit) {
+            auto processed = std::make_shared<GetVotesResponse>(*resp);
+        }
+    } catch (const std::exception& e) {
+        auto errorResp = std::make_shared<GetVotesResponse>();
     }
 });
-task.wait();
 [inline-code-end]
 
 ---

@@ -1,27 +1,28 @@
+---
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Sim |  |
+| userId | string | query | Não |  |
+| state | number | query | Não |  |
+| skip | number | query | Não |  |
+| limit | number | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets200_response.py)
+Retorna: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_tickets'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tickets200_response import GetTickets200Response
+from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e padrão para https://fastcomments.com
+# Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,18 +30,18 @@ configuration = client.Configuration(
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
 # de acordo com a política de segurança do servidor da API.
-# Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# satisfaça seu caso de uso de autenticação.
+# Exemplos para cada método de autenticação são fornecidos abaixo; use o exemplo que
+# que satisfaz seu caso de uso de autenticação.
 
 # Configurar autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar prefixo (e.g. Bearer) para a chave da API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Crie uma instância da classe da API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (opcional)
@@ -55,3 +56,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tickets: %s\n" % e)
 [inline-code-end]
+
+---

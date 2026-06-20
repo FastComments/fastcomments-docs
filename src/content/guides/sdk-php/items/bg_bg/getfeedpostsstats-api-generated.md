@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postIds | array | query | Да |  |
 | sso | string | query | Не |  |
 
-## Response
+## Отговор
 
-Връща: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsStats200Response.php)
+Връща: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате потребителски HTTP клиент, подайте клиента си, който реализира `GuzzleHttp\ClientInterface`.
+    // Ако искате да използвате собствен HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
     // Това е по избор, по подразбиране ще бъде използван `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );

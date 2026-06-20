@@ -8,14 +8,14 @@
 
 ## Response
 
-Returns: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors200_response.py)
+Returns: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_email_template_render_errors Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_render_errors200_response import GetEmailTemplateRenderErrors200Response
+from client.models.get_email_template_render_errors_response import GetEmailTemplateRenderErrorsResponse
 from client.rest import ApiException
 from pprint import pprint
 

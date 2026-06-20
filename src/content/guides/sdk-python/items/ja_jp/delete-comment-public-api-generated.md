@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | commentId | string | path | はい |  |
@@ -10,19 +10,19 @@
 
 ## レスポンス
 
-戻り値: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_public200_response.py)
+戻り値: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'delete_comment_public の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_public200_response import DeleteCommentPublic200Response
+from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストを定義することは任意で、デフォルトは https://fastcomments.com です
-# サポートされる設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
+# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -35,8 +35,8 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (任意)
-    sso = 'sso_example' # str |  (任意)
+    edit_key = 'edit_key_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, edit_key=edit_key, sso=sso)
@@ -45,5 +45,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_public: %s\n" % e)
 [inline-code-end]
-
----

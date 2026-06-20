@@ -2,18 +2,18 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | chemin | Oui |  |
-| commentId | string | chemin | Oui |  |
-| broadcastId | string | requête | Oui |  |
-| sso | string | requête | Non |  |
+| tenantId | string | path | Oui |  |
+| commentId | string | path | Oui |  |
+| broadcastId | string | query | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`PinComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PinComment200Response.php)
+Retourne : [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeCommentPinStatusResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour unPinComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'unPinComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

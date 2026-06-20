@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
@@ -9,7 +8,7 @@
 
 ## 回應
 
-回傳：[`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+回傳: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
 ## 範例
 
@@ -19,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字串 | 
-url_id_ws = 'url_id_ws_example' # 字串 | 
-user_ids = 'user_ids_example' # 字串 | 
+tenant_id = 'tenant_id_example' # String | 
+url_id_ws = 'url_id_ws_example' # String | 
+user_ids = 'user_ids_example' # String | 
 
 begin
   

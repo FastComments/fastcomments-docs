@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| skip | number | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsers200Response.java)
+Retourneert: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUsersResponse.java)
 
 ## Voorbeeld
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutelautorisatie: api_key
+    // Configureer API-sleutel autorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaarstreep van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Haal de commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantUsers200Response result = apiInstance.getTenantUsers(tenantId)
+      GetTenantUsersResponse result = apiInstance.getTenantUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

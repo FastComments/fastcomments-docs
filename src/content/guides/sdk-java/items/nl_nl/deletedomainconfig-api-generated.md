@@ -2,18 +2,18 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| domain | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| domain | string | path | Yes |  |
 
-## Response
+## Respons
 
-Retourneert: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteDomainConfig200Response.java)
+Retourneert: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteDomainConfigResponse.java)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteDomainConfig Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importeren:
+// Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-sleutel autorisatie configureren: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaarstreep weg van de volgende regel om een prefix voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String domain = "domain_example"; // String | 
     try {
-      DeleteDomainConfig200Response result = apiInstance.deleteDomainConfig(tenantId, domain)
+      DeleteDomainConfigResponse result = apiInstance.deleteDomainConfig(tenantId, domain)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

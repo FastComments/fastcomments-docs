@@ -1,19 +1,20 @@
+---
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | skip | integer | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetSSOUsers200Response.java)
+Повертає: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetSSOUsersResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getSSOUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Імпортувати класи:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,7 +37,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Integer skip = 56; // Integer | 
     try {
-      GetSSOUsers200Response result = apiInstance.getSSOUsers(tenantId)
+      GetSSOUsersResponse result = apiInstance.getSSOUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

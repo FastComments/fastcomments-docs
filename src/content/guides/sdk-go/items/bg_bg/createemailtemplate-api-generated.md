@@ -1,15 +1,14 @@
----
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
-## Response
+## Отговор
 
-Връща: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_200_response.go)
+Връща: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_response.go)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за CreateEmailTemplate'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `CreateEmailTemplate`: CreateEmailTemplate200Response
+	// отговор от `CreateEmailTemplate`: CreateEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
-
----

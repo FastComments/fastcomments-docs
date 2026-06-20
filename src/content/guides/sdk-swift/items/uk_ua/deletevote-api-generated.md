@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Назва | Тип | Location | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
@@ -8,13 +9,13 @@
 
 ## Відповідь
 
-Повертає: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще є бета-версіями. У разі проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені приклади коду все ще є бета-версією. Якщо виникнуть проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,3 +33,5 @@ DefaultAPI.deleteVote(tenantId: tenantId, id: id, editKey: editKey) { (response,
     }
 }
 [inline-code-end]
+
+---

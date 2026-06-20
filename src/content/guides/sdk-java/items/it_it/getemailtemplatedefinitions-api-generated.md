@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -6,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitions200Response.java)
+Restituisce: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateDefinitionsResponse.java)
 
 ## Esempio
 
@@ -28,13 +29,13 @@ public class Example {
     // Configura l'autenticazione con API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Rimuovere il commento dalla riga seguente per impostare un prefisso per la API key, es. "Token" (di default è null)
+    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetEmailTemplateDefinitions200Response result = apiInstance.getEmailTemplateDefinitions(tenantId)
+      GetEmailTemplateDefinitionsResponse result = apiInstance.getEmailTemplateDefinitions(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -47,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

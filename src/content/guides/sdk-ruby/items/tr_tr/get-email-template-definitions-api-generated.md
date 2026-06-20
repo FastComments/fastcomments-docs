@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Ad | Type | Location | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_definitions200_response.rb)
+Döndürür: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_definitions_response.rb)
 
 ## Örnek
 
@@ -14,11 +14,11 @@ Döndürür: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastC
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirme kurulumu
+# yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan: nil)
+  # API anahtarı için bir önek ayarlamak amacıyla aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_email_template_definitions: #{e}"
 end
 [inline-code-end]
-
----

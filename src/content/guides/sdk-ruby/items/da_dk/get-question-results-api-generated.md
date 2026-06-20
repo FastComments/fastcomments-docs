@@ -12,7 +12,7 @@
 
 ## Svar
 
-Returnerer: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+Returnerer: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
 ## Eksempel
 
@@ -20,11 +20,11 @@ Returnerer: [`GetQuestionResults200Response`](https://github.com/FastComments/fa
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt autorisation
+# opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgleautorisation: api_key
+  # Konfigurer API-nøglegodkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren på følgende linje for at sætte en præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

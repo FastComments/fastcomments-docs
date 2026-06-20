@@ -1,4 +1,4 @@
-### Korišćenje javnog API-ja
+### Коришћење јавног API-ја
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::Configuration;
@@ -6,10 +6,10 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Kreiraj konfiguraciju API-ja
+    // Креирајте API конфигурацију
     let config = Configuration::new();
 
-    // Preuzmi komentare za stranicu
+    // Преузмите коментаре за страницу
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Korišćenje autentifikovanog API-ja
+### Коришћење аутентификованог API-ја
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -53,14 +53,14 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Kreiraj konfiguraciju sa API ključem
+    // Креирајте конфигурацију са API кључем
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
         key: "your-api-key".to_string(),
     });
 
-    // Preuzmi komentare koristeći autentifikovani API
+    // Преузмите коментаре користећи аутентификовани API
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Korišćenje SSO za autentifikaciju
+### Коришћење модерацијског API-ја
+
+Методе за модерацију покрећу контролну таблу модератора. Оне користе API-key `Configuration` као и аутентификовани API, а свака метода прихвата опциони `sso` токен, тако да позив може бити извршен у име модератора који је аутентификован преко SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Креирајте конфигурацију са API кључем
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Count comments waiting in the moderation queue
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // проследите SSO токен да бисте деловали у име модератора аутентификованог преко SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Коришћење SSO за аутентификацију
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -110,19 +148,19 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Kreiraj sigurne SSO podatke o korisniku (samo na strani servera!)
+    // Креирање сигурних SSO корисничких података (само на серверу!)
     let user_data = SecureSSOUserData::new(
-        "user-123".to_string(),           // ID korisnika
-        "user@example.com".to_string(),   // E-pošta
-        "John Doe".to_string(),            // Korisničko ime
-        "https://example.com/avatar.jpg".to_string(), // URL avatara
+        "user-123".to_string(),           // ID корисника
+        "user@example.com".to_string(),   // Е-пошта
+        "John Doe".to_string(),            // Корисничко име
+        "https://example.com/avatar.jpg".to_string(), // URL аватара
     );
 
-    // Generiši SSO token
+    // Генеришите SSO токен
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Prosledi ovaj token frontendu za autentifikaciju
+    // Проследите овај токен вашем фронтенду за аутентификацију
 }
 ```

@@ -1,26 +1,28 @@
+---
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_result_200_response.rs)
+Vraća: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_result_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_question_result() -> Result<GetQuestionResult200Response, Error> {
+async fn example_call() -> Result<(), Error> {
     let params: GetQuestionResultParams = GetQuestionResultParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "question-12345".to_string(),
+        id: "news/article-2026-07-poll-question-1".to_string(),
+        include_details: Some(true),
+        locale: Some("en-US".to_string()),
     };
-    let _include_metadata: Option<bool> = Some(true);
-    let response: GetQuestionResult200Response = get_question_result(configuration, params).await?;
-    Ok(response)
+    let result: GetQuestionResultResponse = get_question_result(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

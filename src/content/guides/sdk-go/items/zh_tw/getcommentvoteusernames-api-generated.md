@@ -1,3 +1,4 @@
+---
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
@@ -9,7 +10,7 @@
 
 ## 回應
 
-回傳：[`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_vote_user_names_200_response.go)
+回傳: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_vote_user_names_success_response.go)
 
 ## 範例
 
@@ -21,14 +22,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	dir := int32(56) // int32 | 
-	sso := "sso_example" // string |  (選用)
+	sso := "sso_example" // string |  (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,7 +38,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentVoteUserNames``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCommentVoteUserNames`: GetCommentVoteUserNames200Response
+	// 從 `GetCommentVoteUserNames` 的回應: GetCommentVoteUserNamesSuccessResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentVoteUserNames`: %v\n", resp)
 }
 [inline-code-end]
+
+---

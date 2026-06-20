@@ -2,14 +2,14 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| commentId | string | path | Ναι |  |
-| dir | integer | query | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| dir | integer | query | Yes |  |
+| sso | string | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names200_response.rb)
+Επιστρέφει: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names_success_response.rb)
 
 ## Παράδειγμα
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-dir = 56 # Integer | 
+tenant_id = 'tenant_id_example' # Συμβολοσειρά | 
+comment_id = 'comment_id_example' # Συμβολοσειρά | 
+dir = 56 # Ακέραιος | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Συμβολοσειρά | 
 }
 
 begin

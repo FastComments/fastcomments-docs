@@ -1,14 +1,15 @@
+---
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | chemin | Oui |  |
-| postIds | array | requête | Oui |  |
-| sso | string | requête | Non |  |
+| tenantId | string | path | Oui |  |
+| postIds | array | query | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne : [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_stats_200_response.go)
+Renvoie : [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_feed_posts_stats_response.go)
 
 ## Exemple
 
@@ -20,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +36,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsStats``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetFeedPostsStats`: GetFeedPostsStats200Response
+	// réponse de `GetFeedPostsStats`: FeedPostsStatsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsStats`: %v\n", resp)
 }
 [inline-code-end]
+
+---

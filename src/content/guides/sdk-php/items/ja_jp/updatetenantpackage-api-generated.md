@@ -1,13 +1,13 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 例
 
@@ -17,15 +17,18 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証を構成: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じてAPIキーのプレフィックス（例: Bearer）を設定するには、以下のコメントアウトを解除してください
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 必要に応じて以下のコメントを外してAPIキーのプレフィックス（例: Bearer）を設定してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは`GuzzleHttp\Client`が使用されます。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // これは省略可能で、デフォルトでは`GuzzleHttp\Client`が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
@@ -40,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->updateTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

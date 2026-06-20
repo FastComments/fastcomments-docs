@@ -5,13 +5,13 @@
 | tenantId | string | query | Ja |  |
 | domainToUpdate | string | path | Ja |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Retourneert: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PatchDomainConfigResponse.java)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'patchDomainConfig Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard: null)
+    // Haal de commentaarstreepjes weg voor de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String domainToUpdate = "domainToUpdate_example"; // String | 
     PatchDomainConfigParams patchDomainConfigParams = new PatchDomainConfigParams(); // PatchDomainConfigParams | 
     try {
-      GetDomainConfig200Response result = apiInstance.patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
+      PatchDomainConfigResponse result = apiInstance.patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
-## パラメータ
+## パラメーター
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| 名称 | Type | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | domainToUpdate | string | path | はい |  |
 
 ## レスポンス
 
-返却: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+戻り値: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PatchDomainConfigResponse.java)
 
 ## 例
 
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証を設定: api_key
+    // APIキー認証を構成: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 以下の行のコメントを外してAPIキーのプレフィックスを設定します（例: "Token"、デフォルトは null）
+    // APIキーの接頭辞を設定するには、以下の行のコメントアウトを外してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String domainToUpdate = "domainToUpdate_example"; // String | 
     PatchDomainConfigParams patchDomainConfigParams = new PatchDomainConfigParams(); // PatchDomainConfigParams | 
     try {
-      GetDomainConfig200Response result = apiInstance.patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
+      PatchDomainConfigResponse result = apiInstance.patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

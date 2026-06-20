@@ -8,7 +8,7 @@
 
 ## Ответ
 
-Возвращает: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_public200_response.py)
+Возвращает: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_response.py)
 
 ## Пример
 
@@ -16,25 +16,25 @@
 [inline-code-start]
 import client
 from client.models.create_feed_post_params import CreateFeedPostParams
-from client.models.create_feed_post_public200_response import CreateFeedPostPublic200Response
+from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию https://fastcomments.com
+# Указание параметра host необязательно, по умолчанию используется https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром клиента API
+# Войти в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, sso=sso)

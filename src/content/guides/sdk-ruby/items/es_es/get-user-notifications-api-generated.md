@@ -1,8 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Type | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
+| urlId | string | query | No | Se utiliza para determinar si la página actual está suscrita. |
 | pageSize | integer | query | No |  |
 | afterId | string | query | No |  |
 | includeContext | boolean | query | No |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | No |  |
 | noDm | boolean | query | No |  |
 | includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Devuelve: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Ejemplo
 
@@ -27,6 +29,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
+  url_id: 'url_id_example', # String | Se utiliza para determinar si la página actual está suscrita.
   page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
   include_context: true, # Boolean | 
@@ -35,6 +38,7 @@ opts = {
   dm_only: true, # Boolean | 
   no_dm: true, # Boolean | 
   include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 

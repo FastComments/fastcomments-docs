@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserBadge200Response.java)
+Retorna: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptySuccessResponse.java)
 
 ## Exemplo
 
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização por chave de API: api_key
+    // Configurar autorização da chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Descomente a linha abaixo para definir um prefixo para a chave da API, por ex. "Token" (padrão: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateUserBadgeParams updateUserBadgeParams = new UpdateUserBadgeParams(); // UpdateUserBadgeParams | 
     try {
-      UpdateUserBadge200Response result = apiInstance.updateUserBadge(tenantId, id, updateUserBadgeParams)
+      APIEmptySuccessResponse result = apiInstance.updateUserBadge(tenantId, id, updateUserBadgeParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -6,7 +6,7 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+Gibt zurück: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## Beispiel
 
@@ -18,7 +18,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API-Schlüssel-Autorisierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
+  # Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

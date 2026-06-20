@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Επιστρέφει: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Παράδειγμα
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# ρύθμιση εξουσιοδότησης
+# Ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (από προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -2,18 +2,18 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
 
 ## Respons
 
-Retourneert: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadge200Response.java)
+Retourneert: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgeResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getUserBadge Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API key-autorisatie: api_key
+    // API-sleutelautorisatie configureren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaarstreep van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bv. "Token" (standaard is null)
+    // Haal de commentaartekens van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetUserBadge200Response result = apiInstance.getUserBadge(tenantId, id)
+      APIGetUserBadgeResponse result = apiInstance.getUserBadge(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

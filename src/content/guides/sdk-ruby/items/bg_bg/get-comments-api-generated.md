@@ -17,22 +17,24 @@
 | hashTag | string | query | Не |  |
 | parentId | string | query | Не |  |
 | direction | string | query | Не |  |
+| fromDate | integer | query | Не |  |
+| toDate | integer | query | Не |  |
 
 ## Отговор
 
-Връща: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Връща: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_comments Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_comments'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройване на авторизация
+# Настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Конфигуриране на авторизация с API ключ: api_key
+  # Конфигуриране на API ключ за авторизация: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # Премахнете коментара от следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin
@@ -63,5 +67,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_comments: #{e}"
 end
 [inline-code-end]
-
----

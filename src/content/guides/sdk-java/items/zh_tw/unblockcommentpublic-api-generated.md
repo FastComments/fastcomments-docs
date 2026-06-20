@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| commentId | string | path | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 查詢 | 是 |  |
+| commentId | string | 路徑 | 是 |  |
+| sso | string | 查詢 | 否 |  |
 
 ## 回應
 
-回傳: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnBlockCommentPublic200Response.java)
+回傳: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UnblockSuccess.java)
 
 ## 範例
 
@@ -32,7 +32,7 @@ public class Example {
     PublicBlockFromCommentParams publicBlockFromCommentParams = new PublicBlockFromCommentParams(); // PublicBlockFromCommentParams | 
     String sso = "sso_example"; // String | 
     try {
-      UnBlockCommentPublic200Response result = apiInstance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
+      UnblockSuccess result = apiInstance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams)
             .sso(sso)
             .execute();
       System.out.println(result);

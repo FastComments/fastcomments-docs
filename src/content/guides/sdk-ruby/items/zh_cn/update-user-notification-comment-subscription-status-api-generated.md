@@ -1,8 +1,8 @@
-为特定评论启用或禁用通知。
+启用或禁用对特定评论的通知。
 
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | notificationId | string | path | 是 |  |
@@ -12,7 +12,7 @@
 
 ## 响应
 
-返回：[`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+返回: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## 示例
 
@@ -22,12 +22,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字符串 | 
-notification_id = 'notification_id_example' # 字符串 | 
-opted_in_or_out = 'in' # 字符串 | 
-comment_id = 'comment_id_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
+notification_id = 'notification_id_example' # String | 
+opted_in_or_out = 'in' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # 字符串 | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

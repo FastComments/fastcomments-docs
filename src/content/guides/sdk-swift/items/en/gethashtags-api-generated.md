@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetHashTags200Response.swift)
+Returns: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetHashTagsResponse.swift)
 
 ## Example
 

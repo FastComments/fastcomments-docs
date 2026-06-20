@@ -1,24 +1,25 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 
 ## 回應
 
-回傳：[`Option[GetVotes_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes200response.nim)
+回傳: [`Option[GetVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getVotes 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/2026/major-update")
+let (response, httpResponse) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/breaking-article-456")
 if response.isSome:
-  let votes = response.get()
-  discard votes
+  let votesResp = response.get()
+  echo "Received votes response:", $votesResp
 else:
-  discard httpResponse
+  echo "No votes returned, HTTP response:", $httpResponse
 [inline-code-end]
 
 ---

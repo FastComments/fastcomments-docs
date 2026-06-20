@@ -4,40 +4,40 @@ urlId
 
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| page | integer | query | Nee |  |
-| direction | string | query | Nee |  |
-| sso | string | query | Nee |  |
-| skip | integer | query | Nee |  |
-| skipChildren | integer | query | Nee |  |
-| limit | integer | query | Nee |  |
-| limitChildren | integer | query | Nee |  |
-| countChildren | boolean | query | Nee |  |
-| fetchPageForCommentId | string | query | Nee |  |
-| includeConfig | boolean | query | Nee |  |
-| countAll | boolean | query | Nee |  |
-| includei10n | boolean | query | Nee |  |
-| locale | string | query | Nee |  |
-| modules | string | query | Nee |  |
-| isCrawler | boolean | query | Nee |  |
-| includeNotificationCount | boolean | query | Nee |  |
-| asTree | boolean | query | Nee |  |
-| maxTreeDepth | integer | query | Nee |  |
-| useFullTranslationIds | boolean | query | Nee |  |
-| parentId | string | query | Nee |  |
-| searchText | string | query | Nee |  |
-| hashTags | array | query | Nee |  |
-| userId | string | query | Nee |  |
-| customConfigStr | string | query | Nee |  |
-| afterCommentId | string | query | Nee |  |
-| beforeCommentId | string | query | Nee |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
-## Antwoord
+## Response
 
-Geeft terug: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsPublic200Response.java)
+Retourneert: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## Voorbeeld
 
@@ -85,7 +85,7 @@ public class Example {
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
     try {
-      GetCommentsPublic200Response result = apiInstance.getCommentsPublic(tenantId, urlId)
+      GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
             .direction(direction)
             .sso(sso)

@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | commentId | string | query | Sim |  |
@@ -10,14 +10,14 @@
 
 ## Resposta
 
-Retorna: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Retorna: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -35,7 +35,7 @@ configuration = client.Configuration(
 # Configurar autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (p.ex. Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API
@@ -45,8 +45,8 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     direction = 'direction_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (opcional)
+    anon_user_id = 'anon_user_id_example' # str |  (opcional)
 
     try:
         api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)

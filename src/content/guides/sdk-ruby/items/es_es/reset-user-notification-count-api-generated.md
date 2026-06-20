@@ -1,14 +1,13 @@
----
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Devuelve: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Ejemplo
 
@@ -31,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notification_count: #{e}"
 end
 [inline-code-end]
-
----

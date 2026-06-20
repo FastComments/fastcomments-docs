@@ -1,4 +1,4 @@
-## Parameters
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -7,7 +7,7 @@
 
 ## Одговор
 
-Враћа: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplates200Response.java)
+Враћа: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplatesResponse.java)
 
 ## Пример
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриши овлашћење API кључем: api_key
+    // Подесите ауторизацију помоћу API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментиши следећи ред да подесиш префикс за API кључ, нпр. "Token" (подразумевано је null)
+    // Откоментирајте следећу линију да бисте подесили префикс за API кључ, нпр. "Token" (по подразумеваној вредности null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetEmailTemplates200Response result = apiInstance.getEmailTemplates(tenantId)
+      GetEmailTemplatesResponse result = apiInstance.getEmailTemplates(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

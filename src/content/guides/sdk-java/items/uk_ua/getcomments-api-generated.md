@@ -17,10 +17,12 @@
 | hashTag | string | query | Ні |  |
 | parentId | string | query | Ні |  |
 | direction | string | query | Ні |  |
+| fromDate | integer | query | Ні |  |
+| toDate | integer | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+Повертає: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## Приклад
 
@@ -39,10 +41,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштувати авторизацію ключем API: api_key
+    // Налаштування авторизації ключем API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр., "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

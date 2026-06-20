@@ -1,43 +1,43 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Sí |  |
+| id | string | path | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result200_response.py)
+Devuelve: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de get_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_result200_response import GetQuestionResult200Response
+from client.models.get_question_result_response import GetQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir el host es opcional y por defecto es https://fastcomments.com
-# Vea configuration.py para una lista de todos los parámetros de configuración compatibles.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# El cliente debe configurar los parámetros de autenticación y autorización
-# de acuerdo con la política de seguridad del servidor API.
-# Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
-# satisfaga su caso de uso de autenticación.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Configurar la autorización con API key: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la API key, si es necesario
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingrese en un contexto con una instancia del cliente API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

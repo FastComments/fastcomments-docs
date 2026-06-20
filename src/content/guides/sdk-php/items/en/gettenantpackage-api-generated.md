@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackage200Response.php)
+Returns: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackageResponse.php)
 
 ## Example
 

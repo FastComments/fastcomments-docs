@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
@@ -11,25 +11,25 @@
 
 ## תגובה
 
-מחזיר: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users200_response.py)
+מחזיר: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'search_users דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.search_users200_response import SearchUsers200Response
+from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל- https://fastcomments.com
-# ראה את configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראה את configuration.py לרשימת כל הפרמטרים הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה לקונטקסט עם מופע של לקוח ה-API
+# כניסה להקשר (context) עם מופע של ApiClient
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)

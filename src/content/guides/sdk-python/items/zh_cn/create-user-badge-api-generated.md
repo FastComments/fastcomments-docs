@@ -1,3 +1,4 @@
+---
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -6,38 +7,36 @@
 
 ## 响应
 
-返回: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_user_badge200_response.py)
+返回: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_create_user_badge_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'create_user_badge 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_user_badge200_response import CreateUserBadge200Response
+from client.models.api_create_user_badge_response import APICreateUserBadgeResponse
 from client.models.create_user_badge_params import CreateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认值为 https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
-# 查看 configuration.py 以获取所有支持的配置参数列表。
+# 定义主机（host）是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数的列表，请参见 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # 客户端必须根据 API 服务器的安全策略配置身份验证和授权参数。
-# Examples for each auth method are provided below, use the example that
-# 下方提供了每种认证方法的示例，使用适合您认证用例的示例。
+# 下面为每种认证方法提供了示例，请使用满足您认证用例的示例。
+
 # Configure API key authorization: api_key
-# 配置 API 密钥授权：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如有需要，取消注释下面以为 API 密钥设置前缀（例如 Bearer）
+# 如有需要，取消下面的注释以为 API 密钥设置前缀（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 使用 API 客户端实例进入上下文
+# 使用 ApiClient 实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_user_badge_params = client.CreateUserBadgeParams() # CreateUserBadgeParams | 
@@ -49,3 +48,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_user_badge: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Da |  |
@@ -8,15 +8,15 @@
 
 ## Odgovor
 
-Vraća: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_ticket_state200_response.py)
+Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_ticket_state_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'change_ticket_state Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer change_ticket_state'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.change_ticket_state200_response import ChangeTicketState200Response
 from client.models.change_ticket_state_body import ChangeTicketStateBody
+from client.models.change_ticket_state_response import ChangeTicketStateResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,15 +26,15 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
+# Klijent mora konfigurisati parametre autentifikacije i autorizacije
+# u skladu sa bezbednosnom politikom API servera.
 # Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# odgovara vašem slučaju upotrebe autentifikacije.
 
-# Konfigurišite autorizaciju preko API ključa: api_key
+# Konfigurišite autorizaciju putem API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta
@@ -53,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->change_ticket_state: %s\n" % e)
 [inline-code-end]
-
----

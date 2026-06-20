@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | postId | string | path | Oui |  |
@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public200_response.rb)
+Renvoie: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public_response.rb)
 
 ## Exemple
 

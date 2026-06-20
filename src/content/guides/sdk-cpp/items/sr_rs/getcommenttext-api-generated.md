@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
@@ -9,25 +10,25 @@
 
 ## Одговор
 
-Враћа: [`GetCommentText_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentText_200_response.h)
+Враћа: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicAPIGetCommentTextResponse.h)
 
 ## Пример
 
 [inline-code-attrs-start title = 'getCommentText Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId(U("my-tenant-123"));
-utility::string_t commentId(U("cmt-456"));
-boost::optional<utility::string_t> editKey(utility::string_t(U("edit-key-789")));
-boost::optional<utility::string_t> sso(utility::string_t(U("user@example.com")));
-auto task = api->getCommentText(tenantId, commentId, editKey, sso)
-    .then([](std::shared_ptr<GetCommentText_200_response> resp){
-        if (resp) {
-            std::cout << "Comment text retrieved\n";
-        } else {
-            std::cout << "Comment not found\n";
-        }
-    });
-task.wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-7f4b2a");
+boost::optional<utility::string_t> editKey(utility::conversions::to_string_t("edit-xyz-789"));
+boost::optional<utility::string_t> sso(utility::conversions::to_string_t("user@example.com"));
+api->getCommentText(tenantId, commentId, editKey, sso)
+.then([](pplx::task<std::shared_ptr<PublicAPIGetCommentTextResponse>> t){
+    try {
+        auto resp = t.get();
+        auto result = resp ? resp : std::make_shared<PublicAPIGetCommentTextResponse>();
+    } catch (...) {
+        auto empty = std::make_shared<PublicAPIGetCommentTextResponse>();
+    }
+});
 [inline-code-end]
 
 ---

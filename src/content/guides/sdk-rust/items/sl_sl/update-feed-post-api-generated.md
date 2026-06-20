@@ -1,46 +1,41 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| feed_post | models::FeedPost | Da |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| feed_post | models::FeedPost | Yes |  |
 
 ## Odgovor
 
-Vrača: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vrača: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer update_feed_post'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_post_example() -> Result<(), Error> {
-    let params: UpdateFeedPostParams = UpdateFeedPostParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/rocket-launch-2026".to_string(),
+async fn run() -> Result<(), Error> {
+    let _response: ApiEmptyResponse = update_feed_post(&configuration, UpdateFeedPostParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("news/quarterly-product-update"),
         feed_post: models::FeedPost {
-            title: Some("Rocket Launch Successful".to_string()),
-            body: Some("Acme Rockets launched the Atlas X at 10:00 UTC with no anomalies.".to_string()),
-            author: Some("Acme Newsroom".to_string()),
-            media: Some(vec![
-                models::FeedPostMediaItem {
-                    url: Some("https://cdn.acme.com/images/launch.jpg".to_string()),
-                    caption: Some("Moments before liftoff".to_string()),
-                    asset: None
-                }
-            ]),
-            links: Some(vec![
-                models::FeedPostLink {
-                    title: Some("Detailed Coverage".to_string()),
-                    url: Some("https://news.acme.com/coverage/atlas-x-launch".to_string())
-                }
-            ]),
-            published: Some(true)
-        }
-    };
-    let response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;
+            title: Some(String::from("Quarterly Product Update")),
+            content: Some(String::from("We shipped new features and improvements across the platform.")),
+            tags: Some(vec![String::from("product"), String::from("release")]),
+            media: Some(vec![models::FeedPostMediaItem {
+                asset: Some(models::FeedPostMediaItemAsset {
+                    url: String::from("https://cdn.acme.com/images/update.jpg"),
+                    mime_type: Some(String::from("image/jpeg")),
+                }),
+                caption: Some(String::from("New dashboard view")),
+                order: Some(0),
+            }]),
+            links: Some(vec![models::FeedPostLink {
+                url: String::from("https://acme.com/blog/product-update"),
+                title: Some(String::from("Read the full post")),
+            }]),
+        },
+    }).await?;
     Ok(())
 }
 [inline-code-end]
-
----

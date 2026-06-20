@@ -1,15 +1,15 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 | contextUserId | string | query | לא |  |
 | isLive | boolean | query | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteComment200Response.php)
+מחזיר: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
 
 ## דוגמה
 
@@ -19,15 +19,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר את אישור מפתח ה-API: api_key
+// הגדר הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה משורה זו כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// בטל את ההערה בשורה שלמטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש ב-client HTTP מותאם, העבר את ה-client שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש ב-client HTTP מותאם אישית, מסור את ה-client שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
@@ -43,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

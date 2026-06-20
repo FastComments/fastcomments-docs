@@ -2,20 +2,20 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| contextUserId | string | query | Nein |  |
-| isLive | boolean | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteComment200Response.java)
+Gibt zurück: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentResult.java)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'deleteComment Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importiere Klassen:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-Schlüssel-Authentifizierung konfigurieren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Kommentarzeichen vor der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String contextUserId = "contextUserId_example"; // String | 
     Boolean isLive = true; // Boolean | 
     try {
-      DeleteComment200Response result = apiInstance.deleteComment(tenantId, id)
+      DeleteCommentResult result = apiInstance.deleteComment(tenantId, id)
             .contextUserId(contextUserId)
             .isLive(isLive)
             .execute();
@@ -55,3 +55,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

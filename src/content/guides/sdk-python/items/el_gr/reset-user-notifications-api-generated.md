@@ -10,27 +10,27 @@
 | noDm | boolean | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notifications Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και ως προεπιλογή χρησιμοποιείται το https://fastcomments.com
+# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
 # Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ανοίξτε ένα context με ένα στιγμιότυπο του πελάτη API
+# Χρησιμοποιήστε ένα context με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
     # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.PublicApi(api_client)
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->reset_user_notifications: %s\n" % e)
 [inline-code-end]
+
+---

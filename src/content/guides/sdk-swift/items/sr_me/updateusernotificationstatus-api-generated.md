@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | notificationId | string | path | Da |  |
@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+Vraća: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatusResponse.swift)
 
 ## Primjer
 
@@ -34,5 +34,3 @@ PublicAPI.updateUserNotificationStatus(tenantId: tenantId, notificationId: notif
     }
 }
 [inline-code-end]
-
----

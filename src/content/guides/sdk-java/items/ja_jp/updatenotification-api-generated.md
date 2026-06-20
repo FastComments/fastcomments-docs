@@ -1,4 +1,4 @@
-## Parameters
+## パラメータ
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -6,15 +6,15 @@
 | id | string | path | はい |  |
 | userId | string | query | いいえ |  |
 
-## Response
+## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'updateNotification の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // APIキーのプレフィックスを設定するには次の行のコメントアウトを解除してください。例: "Token"（デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     UpdateNotificationBody updateNotificationBody = new UpdateNotificationBody(); // UpdateNotificationBody | 
     String userId = "userId_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateNotification(tenantId, id, updateNotificationBody)
+      APIEmptyResponse result = apiInstance.updateNotification(tenantId, id, updateNotificationBody)
             .userId(userId)
             .execute();
       System.out.println(result);

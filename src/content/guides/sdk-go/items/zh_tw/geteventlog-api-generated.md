@@ -5,17 +5,17 @@ userIdWS
 
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
 | userIdWS | string | query | 是 |  |
 | startTime | integer | query | 是 |  |
-| endTime | integer | query | 是 |  |
+| endTime | integer | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_event_log_200_response.go)
+回傳: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_event_log_response.go)
 
 ## 範例
 
@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	urlId := "urlId_example" // string | 
 	userIdWS := "userIdWS_example" // string | 
 	startTime := int64(789) // int64 | 
-	endTime := int64(789) // int64 | 
+	endTime := int64(789) // int64 |  (選用)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetEventLog``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetEventLog` 的回應: GetEventLog200Response
+	// response from `GetEventLog`: GetEventLogResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetEventLog`: %v\n", resp)
 }
 [inline-code-end]

@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagComment200Response.java)
+Връща: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentResponse.java)
 
 ## Пример
 
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      FlagComment200Response result = apiInstance.unFlagComment(tenantId, id)
+      FlagCommentResponse result = apiInstance.unFlagComment(tenantId, id)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

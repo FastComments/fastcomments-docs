@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | postIds | array | query | Ne |  |
@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vrne: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+Vrne: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## Primer
 
@@ -18,10 +18,10 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Niz | 
 opts = {
-  post_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example' # String | 
+  post_ids: ['inner_example'], # Polje<String> | 
+  sso: 'sso_example' # Niz | 
 }
 
 begin

@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+Vrne: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## Primer
 
@@ -18,11 +18,11 @@ Vrne: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je izbirna in privzeto nastavljena na https://fastcomments.com
+# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -37,8 +37,8 @@ with client.ApiClient(configuration) as api_client:
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_text_update_request = client.CommentTextUpdateRequest() # CommentTextUpdateRequest | 
-    edit_key = 'edit_key_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    edit_key = 'edit_key_example' # str |  (izbirno)
+    sso = 'sso_example' # str |  (izbirno)
 
     try:
         api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, edit_key=edit_key, sso=sso)

@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | urlId | string | query | Όχι |  |
@@ -12,7 +12,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResults200Response.java)
+Επιστρέφει: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResultsResponse.java)
 
 ## Παράδειγμα
 
@@ -34,7 +34,7 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Κατάργηση σχολιασμού της παρακάτω γραμμής για να ορίσετε πρόθεμα για το API key, π.χ. "Token" (από προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String questionIds = "questionIds_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetQuestionResults200Response result = apiInstance.getQuestionResults(tenantId)
+      GetQuestionResultsResponse result = apiInstance.getQuestionResults(tenantId)
             .urlId(urlId)
             .userId(userId)
             .startDate(startDate)

@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie : [`GetVotes200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotes200Response.php)
+Retourne : [`GetVotesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotesResponse.php)
 
 ## Exemple
 
@@ -17,7 +17,7 @@ Renvoie : [`GetVotes200Response`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'autorisation par clé API: api_key
+// Configurer l'authentification par clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');

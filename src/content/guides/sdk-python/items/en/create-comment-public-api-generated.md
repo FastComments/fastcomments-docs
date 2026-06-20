@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+Returns: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## Example
 
@@ -18,7 +18,7 @@ Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 

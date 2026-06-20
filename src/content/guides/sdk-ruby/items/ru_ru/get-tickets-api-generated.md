@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Нет |  |
@@ -10,7 +10,7 @@
 
 ## Ответ
 
-Возвращает: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets200_response.rb)
+Возвращает: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets_response.rb)
 
 ## Пример
 
@@ -18,11 +18,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка авторизации
+# Настройка авторизации
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Настройка авторизации ключом API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Уберите комментарий со следующей строки, чтобы установить префикс для API-ключа, например 'Bearer' (по умолчанию nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для ключа API, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,5 +43,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tickets: #{e}"
 end
 [inline-code-end]
-
----

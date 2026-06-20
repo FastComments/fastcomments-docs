@@ -1,19 +1,20 @@
+---
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| commentId | string | path | כן |  |
-| editKey | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | נתיב | כן |  |
+| commentId | string | נתיב | כן |  |
+| editKey | string | שאילתה | לא |  |
+| sso | string | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentText200Response.java)
+מחזיר: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIGetCommentTextResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getCommentText דוגמה'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +34,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentText200Response result = apiInstance.getCommentText(tenantId, commentId)
+      PublicAPIGetCommentTextResponse result = apiInstance.getCommentText(tenantId, commentId)
             .editKey(editKey)
             .sso(sso)
             .execute();

@@ -11,9 +11,9 @@
 | attemptCountGT | number | query | Όχι |  |
 | skip | number | query | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_200_response.go)
+Επιστρέφει: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_response.go)
 
 ## Παράδειγμα
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEvents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPendingWebhookEvents`: GetPendingWebhookEvents200Response
+	// απόκριση από `GetPendingWebhookEvents`: GetPendingWebhookEventsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEvents`: %v\n", resp)
 }
 [inline-code-end]

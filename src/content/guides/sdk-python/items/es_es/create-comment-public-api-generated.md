@@ -1,7 +1,6 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
@@ -11,7 +10,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+Devuelve: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## Ejemplo
 
@@ -19,7 +18,7 @@ Devuelve: [`CreateCommentPublic200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
@@ -32,7 +31,7 @@ configuration = client.Configuration(
 
 # Abra un contexto con una instancia del cliente de la API
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Crear una instancia de la clase API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->create_comment_public: %s\n" % e)
 [inline-code-end]
-
----

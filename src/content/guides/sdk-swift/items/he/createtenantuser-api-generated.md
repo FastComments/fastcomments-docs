@@ -1,18 +1,18 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantUser200Response.swift)
+מחזיר: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantUserResponse.swift)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-createTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד הבאות עדיין בבטא. לכל בעיה, דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדגימות הבאות עדיין בבטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,3 +29,5 @@ DefaultAPI.createTenantUser(tenantId: tenantId, createTenantUserBody: createTena
     }
 }
 [inline-code-end]
+
+---

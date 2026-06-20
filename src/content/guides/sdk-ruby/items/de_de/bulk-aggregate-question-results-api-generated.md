@@ -1,13 +1,13 @@
-## Parameters
+## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | forceRecalculate | boolean | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results200_response.rb)
+Rückgabe: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results_response.rb)
 
 ## Beispiel
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # Autorisierung einrichten
 FastCommentsClient.configure do |config|
-  # API-Schlüssel-Autorisierung konfigurieren: api_key
+  # API-Schlüssel-Authentifizierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Voreinstellung: nil)
+  # Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

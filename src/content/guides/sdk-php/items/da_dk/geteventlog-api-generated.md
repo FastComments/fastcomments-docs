@@ -5,17 +5,17 @@ userIdWS
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | userIdWS | string | query | Ja |  |
 | startTime | integer | query | Ja |  |
-| endTime | integer | query | Ja |  |
+| endTime | integer | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Returnerer: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Eksempel
 
@@ -27,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du ønsker at bruge en brugerdefineret HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );

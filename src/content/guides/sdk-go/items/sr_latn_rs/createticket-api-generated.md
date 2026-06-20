@@ -7,11 +7,11 @@
 
 ## Odgovor
 
-Vraća: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_ticket_200_response.go)
+Vraća: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_ticket_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer CreateTicket'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer CreateTicket zahteva'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `CreateTicket`: CreateTicket200Response
+	// odgovor od `CreateTicket`: CreateTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTicket`: %v\n", resp)
 }
 [inline-code-end]

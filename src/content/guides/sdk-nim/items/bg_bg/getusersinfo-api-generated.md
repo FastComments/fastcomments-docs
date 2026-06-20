@@ -1,0 +1,28 @@
+Масова информация за потребители за един наемател. За дадени userIds връща информация за показване от User / SSOUser.
+Използва се от коментарния уиджет за обогатяване на потребители, които току-що са се появили чрез събитие за присъствие.
+Няма контекст на страницата: поверителността се прилага по единен начин (частните профили са маскирани).
+
+## Параметри
+
+| Име | Тип | Задължително | Описание |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| ids | string | No |  |
+
+## Отговор
+
+Връща: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример за getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
+if response.isSome:
+  let usersInfo = response.get()
+  echo "Retrieved users info:", usersInfo
+else:
+  echo "No users info returned. HTTP status:", httpResponse.status
+[inline-code-end]
+
+---

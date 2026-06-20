@@ -10,19 +10,19 @@
 
 ## Respons
 
-Retourneert: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+Retourneert: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'save_comment Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld save_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Autorisatie instellen
+# autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API key autorisatie: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaar weg voor de volgende regel om een prefix voor de API key in te stellen, bijv. 'Bearer' (standaard nil)
+  # Haal het commentaarteken van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

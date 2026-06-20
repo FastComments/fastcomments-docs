@@ -1,19 +1,19 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tag | string | path | Так |  |
 | tenantId | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'deleteHashTag Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,20 +26,20 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштуйте авторизацію ключем API: api_key
+    // Налаштування авторизації API-ключем: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр., "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
-    DeleteHashTagRequest deleteHashTagRequest = new DeleteHashTagRequest(); // DeleteHashTagRequest | 
+    DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteHashTag(tag)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
             .tenantId(tenantId)
-            .deleteHashTagRequest(deleteHashTagRequest)
+            .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

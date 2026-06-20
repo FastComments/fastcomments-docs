@@ -10,29 +10,29 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_daily_usages200_response.py)
+Zwraca: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_daily_usages_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_tenant_daily_usages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant_daily_usages Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_daily_usages200_response import GetTenantDailyUsages200Response
+from client.models.get_tenant_daily_usages_response import GetTenantDailyUsagesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie to https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z zasadami bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania,
-# użyj przykładu, który odpowiada Twojemu przypadkowi użycia.
+# zgodnie z polityką bezpieczeństwa serwera API.
+# Przykłady dla każdej metody uwierzytelniania zostały podane poniżej, użyj tego,
+# który odpowiada Twojemu przypadkowi użycia.
 
-# Configure API key authorization: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzeba

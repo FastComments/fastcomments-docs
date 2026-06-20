@@ -1,22 +1,22 @@
-문서를 그룹화(groupBy가 제공되는 경우)하고 여러 연산을 적용하여 집계합니다. sum, countDistinct, avg 등 다양한 연산을 지원합니다.
+문서를 그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 집계합니다. 예: sum, countDistinct, avg 등 다양한 연산이 지원됩니다.
 
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| parentTenantId | string | query | 아니오 |  |
-| includeStats | boolean | query | 아니오 |  |
+| parentTenantId | string | query | 아니요 |  |
+| includeStats | boolean | query | 아니요 |  |
 
 ## 응답
 
-반환: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+반환: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## 예제
 
 [inline-code-attrs-start title = 'aggregate 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플들은 아직 베타입니다. 문제가 있을 경우 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요
+// 다음 코드 샘플은 아직 베타입니다. 문제가 있을 경우 http://github.com/OpenAPITools/openapi-generator/issues/new 로 보고해 주세요
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

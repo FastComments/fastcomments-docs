@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | isLive | boolean | query | No |  |
@@ -10,13 +10,13 @@
 
 ## Risposta
 
-Restituisce: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveComment200Response.java)
+Restituisce: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsBulkResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di saveCommentsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,21 +29,21 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione con chiave API: api_key
+    // Configura l'autenticazione tramite API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la chiave API, es. "Token" (predefinito null)
+    // Decommenta la seguente riga per impostare un prefisso per la API key, es. "Token" (predefinito: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // Stringa | 
+    String tenantId = "tenantId_example"; // String | 
     List<CreateCommentParams> createCommentParams = Arrays.asList(); // List<CreateCommentParams> | 
-    Boolean isLive = true; // Booleano | 
-    Boolean doSpamCheck = true; // Booleano | 
-    Boolean sendEmails = true; // Booleano | 
-    Boolean populateNotifications = true; // Booleano | 
+    Boolean isLive = true; // Boolean | 
+    Boolean doSpamCheck = true; // Boolean | 
+    Boolean sendEmails = true; // Boolean | 
+    Boolean populateNotifications = true; // Boolean | 
     try {
-      List<SaveComment200Response> result = apiInstance.saveCommentsBulk(tenantId, createCommentParams)
+      List<SaveCommentsBulkResponse> result = apiInstance.saveCommentsBulk(tenantId, createCommentParams)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
             .sendEmails(sendEmails)
@@ -60,5 +60,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

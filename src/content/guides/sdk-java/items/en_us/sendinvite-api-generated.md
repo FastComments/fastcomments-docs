@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Example
 
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String fromName = "fromName_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.sendInvite(tenantId, id, fromName)
+      APIEmptyResponse result = apiInstance.sendInvite(tenantId, id, fromName)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

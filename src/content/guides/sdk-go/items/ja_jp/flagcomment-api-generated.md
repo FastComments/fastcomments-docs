@@ -1,15 +1,15 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| id | string | path | はい |  |
-| userId | string | query | いいえ |  |
-| anonUserId | string | query | いいえ |  |
+| tenantId | string | クエリ | はい |  |
+| id | string | パス | はい |  |
+| userId | string | クエリ | いいえ |  |
+| anonUserId | string | クエリ | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_200_response.go)
+戻り値: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_response.go)
 
 ## 例
 
@@ -21,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
-	userId := "userId_example" // string |  (オプション)
-	anonUserId := "anonUserId_example" // string |  (オプション)
+	userId := "userId_example" // string |  (任意)
+	anonUserId := "anonUserId_example" // string |  (任意)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.FlagComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `FlagComment` のレスポンス: FlagComment200Response
+	// `FlagComment` の応答: FlagCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.FlagComment`: %v\n", resp)
 }
 [inline-code-end]

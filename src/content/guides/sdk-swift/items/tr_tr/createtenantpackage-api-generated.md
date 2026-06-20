@@ -1,18 +1,19 @@
+---
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
+| tenantId | string | sorgu | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantPackage200Response.swift)
+Döndürür: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantPackageResponse.swift)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'createTenantPackage Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta durumdadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen şu adresten bildirin: http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,3 +30,5 @@ DefaultAPI.createTenantPackage(tenantId: tenantId, createTenantPackageBody: crea
     }
 }
 [inline-code-end]
+
+---

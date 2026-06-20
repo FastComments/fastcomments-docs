@@ -11,7 +11,7 @@
 
 ## Odgovor
 
-Vraća: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Primjer
 
@@ -19,18 +19,18 @@ Vraća: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i podrazumijeva https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
+# Definiranje hosta je neobavezno i zadano je na https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otvorite kontekst s instancom API klijenta
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)

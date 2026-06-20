@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -7,7 +6,7 @@
 
 ## Risposta
 
-Restituisce: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_200_response.go)
+Restituisce: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_response.go)
 
 ## Esempio
 
@@ -33,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `CreateTenantUser`: CreateTenantUser200Response
+	// risposta da `CreateTenantUser`: CreateTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantUser`: %v\n", resp)
 }
 [inline-code-end]

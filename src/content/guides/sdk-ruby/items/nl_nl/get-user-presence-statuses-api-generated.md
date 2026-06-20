@@ -1,16 +1,16 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlIdWS | string | query | Ja |  |
 | userIds | string | query | Ja |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+Retourneert: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'get_user_presence_statuses Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

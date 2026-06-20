@@ -6,9 +6,9 @@
 | meta | string | query | Не |  |
 | skip | number | query | Не |  |
 
-## Response
+## Отговор
 
-Връща: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenants200Response.php)
+Връща: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantsResponse.php)
 
 ## Пример
 
@@ -18,14 +18,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на удостоверяване чрез API ключ: api_key
-// Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+// Конфигуриране на удостоверяване с API ключ: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Разкоментирайте по-долу, за да зададете префикс (e.g. Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Това е незадължително, `GuzzleHttp\Client` ще бъде използван по подразбиране.
+    // Ако искате да използвате собствен HTTP клиент, предайте своя клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );

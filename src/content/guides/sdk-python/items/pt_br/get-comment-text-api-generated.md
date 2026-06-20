@@ -1,27 +1,27 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | commentId | string | path | Sim |  |
 | editKey | string | query | Não |  |
 | sso | string | query | Não |  |
 
-## Resposta
+## Response
 
-Retorna: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_text200_response.py)
+Retorna: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_get_comment_text_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_text200_response import GetCommentText200Response
+from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir o host é opcional e o padrão é https://fastcomments.com
-# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Consulte configuration.py para a lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -43,3 +43,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_comment_text: %s\n" % e)
 [inline-code-end]
+
+---

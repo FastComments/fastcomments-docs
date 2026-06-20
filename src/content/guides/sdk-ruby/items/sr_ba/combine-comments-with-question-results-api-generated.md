@@ -1,32 +1,32 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Не |  |
-| questionIds | array | query | Не |  |
-| urlId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| forceRecalculate | boolean | query | Не |  |
-| minValue | number | query | Не |  |
-| maxValue | number | query | Не |  |
-| limit | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| questionId | string | query | Ne |  |
+| questionIds | array | query | Ne |  |
+| urlId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| forceRecalculate | boolean | query | Ne |  |
+| minValue | number | query | Ne |  |
+| maxValue | number | query | Ne |  |
+| limit | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer combine_comments_with_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигуришите овлашћење API кључа: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Ако желите поставити префикс за API кључ (нпр. 'Bearer'), откоментаришите следећу линију (подразумевано: nil)
+  # Uklonite komentar sa sljedeće linije da postavite prefiks za API ključ, npr. 'Bearer' (zadano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

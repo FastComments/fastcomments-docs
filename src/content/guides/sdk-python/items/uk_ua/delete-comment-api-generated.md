@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
@@ -9,42 +9,42 @@
 
 ## Відповідь
 
-Повертає: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment200_response.py)
+Повертає: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_result.py)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'delete_comment Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад delete_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment200_response import DeleteComment200Response
+from client.models.delete_comment_result import DeleteCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хосту необов'язкове і за замовчуванням має значення https://fastcomments.com
+# Визначення хоста необов'язкове; за замовчуванням використовується https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт має налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
-# Нижче наведено приклади для кожного методу автентифікації — використайте той,
-# який відповідає вашому випадку використання.
+# Клієнт має налаштувати параметри аутентифікації та авторизації
+# відповідно до політики безпеки API-сервера.
+# Нижче наведено приклади для кожного методу аутентифікації; використайте той приклад, який
+# відповідає вашому сценарію аутентифікації.
 
-# Налаштування авторизації через API-ключ: api_key
+# Налаштування авторизації за API-ключем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче для встановлення префікса (наприклад, Bearer) для API-ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Увійдіть у контекст з екземпляром клієнта API
+# Використайте контекст з екземпляром ApiClient
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    context_user_id = 'context_user_id_example' # str |  (optional)
-    is_live = True # bool |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (необов'язково)
+    is_live = True # bool |  (необов'язково)
 
     try:
         api_response = api_instance.delete_comment(tenant_id, id, context_user_id=context_user_id, is_live=is_live)

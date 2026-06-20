@@ -7,13 +7,13 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUser200Response.swift)
+Zwraca: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUserResponse.swift)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal wersją beta. W razie problemu prosimy zgłosić pod http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je pod http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.getTenantUser(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

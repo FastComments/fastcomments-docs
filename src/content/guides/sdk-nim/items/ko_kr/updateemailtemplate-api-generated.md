@@ -2,35 +2,31 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 아니오 |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | 아니오 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | No |  |
 
 ## 응답
 
-반환: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'updateEmailTemplate 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateBody = UpdateEmailTemplateBody(
-  name = "Welcome Email",
-  subject = "Welcome to Example News",
-  html = "<p>Hi {name}, welcome to Example News.</p>",
-  isActive = true,
-  tags = @["onboarding", "welcome"]
+  subject = "Welcome to Newsly",
+  html = "<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>",
+  fromAddress = "no-reply@newsly.example",
+  fromName = "Newsly Team",
+  enabled = true
 )
-
-let (response, httpResponse) = client.updateEmailTemplate(
-  tenantId = "my-tenant-123",
-  id = "welcome-template-2026",
-  updateEmailTemplateBody = updateBody
-)
-
+let (response, httpResponse) = client.updateEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email", updateEmailTemplateBody = updateBody)
 if response.isSome:
-  let template = response.get()
-  discard template
+  let result = response.get()
+  discard result
+else:
+  discard httpResponse.statusCode
 [inline-code-end]
 
 ---

@@ -1,30 +1,30 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| badgeId | string | query | No |  |
-| type | number | query | No |  |
-| displayedOnComments | boolean | query | No |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Нет |  |
+| badgeId | string | query | Нет |  |
+| type | number | query | Нет |  |
+| displayedOnComments | boolean | query | Нет |  |
+| limit | number | query | Нет |  |
+| skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badges200_response.rb)
+Возвращает: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badges_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_user_badges'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badges Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # настройка авторизации
 FastCommentsClient.configure do |config|
-  # Настройка авторизации по API-ключу: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например 'Bearer' (по умолчанию nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,3 +47,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badges: #{e}"
 end
 [inline-code-end]
+
+---

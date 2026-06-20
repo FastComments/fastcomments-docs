@@ -7,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicket200Response.java)
+Връща: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicketResponse.java)
 
 ## Пример
 
@@ -29,7 +29,7 @@ public class Example {
     // Конфигуриране на удостоверяване с API ключ: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирайте следващия ред, за да зададете префикс за API ключа, например "Token" (по подразбиране null)
+    // Разкоментирайте следния ред, за да зададете префикс за API ключа, например "Token" (по подразбиране null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     CreateTicketBody createTicketBody = new CreateTicketBody(); // CreateTicketBody | 
     try {
-      CreateTicket200Response result = apiInstance.createTicket(tenantId, userId, createTicketBody)
+      CreateTicketResponse result = apiInstance.createTicket(tenantId, userId, createTicketBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

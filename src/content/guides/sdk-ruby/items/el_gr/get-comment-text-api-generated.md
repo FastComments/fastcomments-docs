@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | commentId | string | path | Ναι |  |
@@ -9,7 +9,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_text200_response.rb)
+Επιστρέφει: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_get_comment_text_response.rb)
 
 ## Παράδειγμα
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Συμβολοσειρά | 
-comment_id = 'comment_id_example' # Συμβολοσειρά | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example', # Συμβολοσειρά | 
-  sso: 'sso_example' # Συμβολοσειρά | 
+  edit_key: 'edit_key_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

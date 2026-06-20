@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user200_response.rb)
+מחזיר: [`GetUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_response.rb)
 
 ## דוגמה
 
@@ -15,17 +15,17 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאה
+# הגדרת אימות
 FastCommentsClient.configure do |config|
-  # הגדר הרשאת מפתח ה-API: api_key
+  # הגדר אימות מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # בטל את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # מחרוזת | 
-id = 'id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
+id = 'id_example' # String | 
 
 begin
   

@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
 | urlId | string | query | Da |  |
@@ -11,11 +11,11 @@
 
 ## Odgovor
 
-Vraća: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'vote_comment Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer vote_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->vote_comment: #{e}"
 end
 [inline-code-end]
+
+---

@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_user_badge200_response.rb)
+Returns: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
 
 ## Example
 
@@ -14,7 +14,7 @@ Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Set up authorization
+# setup authorization
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'

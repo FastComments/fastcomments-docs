@@ -10,11 +10,11 @@
 
 ## Одговор
 
-Враћа: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+Враћа: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за GetTenantDailyUsages'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetTenantDailyUsages Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	yearNumber := float64(1.2) // float64 |  (опционо)
-	monthNumber := float64(1.2) // float64 |  (опционо)
-	dayNumber := float64(1.2) // float64 |  (опционо)
-	skip := float64(1.2) // float64 |  (опционо)
+	yearNumber := float64(1.2) // float64 |  (необавезно)
+	monthNumber := float64(1.2) // float64 |  (необавезно)
+	dayNumber := float64(1.2) // float64 |  (необавезно)
+	skip := float64(1.2) // float64 |  (необавезно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetTenantDailyUsages`: GetTenantDailyUsages200Response
+	// одговор од `GetTenantDailyUsages`: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,22 +1,21 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| commentId | string | path | 예 |  |
-| broadcastId | string | query | 예 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | 경로 | 예 |  |
+| commentId | string | 경로 | 예 |  |
+| broadcastId | string | 쿼리 | 예 |  |
+| sso | string | 쿼리 | 아니요 |  |
 
 ## 응답
 
-반환: [`PinComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PinComment200Response.java)
+반환: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeCommentPinStatusResponse.java)
 
 ## 예제
 
 [inline-code-attrs-start title = 'pinComment 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 가져오기:
+// 클래스 임포트:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      PinComment200Response result = apiInstance.pinComment(tenantId, commentId, broadcastId)
+      ChangeCommentPinStatusResponse result = apiInstance.pinComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -48,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

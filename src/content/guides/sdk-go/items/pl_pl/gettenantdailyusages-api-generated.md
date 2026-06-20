@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | yearNumber | number | query | Nie |  |
@@ -10,7 +10,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+Zwraca: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## Przykład
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	yearNumber := float64(1.2) // float64 |  (opcjonalny)
-	monthNumber := float64(1.2) // float64 |  (opcjonalny)
-	dayNumber := float64(1.2) // float64 |  (opcjonalny)
-	skip := float64(1.2) // float64 |  (opcjonalny)
+	yearNumber := float64(1.2) // float64 |  (opcjonalne)
+	monthNumber := float64(1.2) // float64 |  (opcjonalne)
+	dayNumber := float64(1.2) // float64 |  (opcjonalne)
+	skip := float64(1.2) // float64 |  (opcjonalne)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odpowiedź z `GetTenantDailyUsages`: GetTenantDailyUsages200Response
+	// odpowiedź z `GetTenantDailyUsages`: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]

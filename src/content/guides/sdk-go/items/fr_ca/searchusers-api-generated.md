@@ -1,17 +1,17 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui |  |
-| usernameStartsWith | string | query | Non |  |
-| mentionGroupIds | array | query | Non |  |
-| sso | string | query | Non |  |
-| searchSection | string | query | Non |  |
+| tenantId | string | chemin | Oui |  |
+| urlId | string | requête | Oui |  |
+| usernameStartsWith | string | requête | Non |  |
+| mentionGroupIds | array | requête | Non |  |
+| sso | string | requête | Non |  |
+| searchSection | string | requête | Non |  |
 
 ## Réponse
 
-Renvoie : [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+Renvoie : [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## Exemple
 
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string |  (optionnel)
-	mentionGroupIds := []string{"Inner_example"} // []string |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
-	searchSection := "searchSection_example" // string |  (optionnel)
+	usernameStartsWith := "usernameStartsWith_example" // string |  (facultatif)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
+	searchSection := "searchSection_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `SearchUsers`: SearchUsers200Response
+	// réponse de `SearchUsers` : SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]

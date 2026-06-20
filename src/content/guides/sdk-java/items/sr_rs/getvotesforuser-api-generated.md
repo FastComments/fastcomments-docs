@@ -9,11 +9,11 @@
 
 ## Одговор
 
-Враћа: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUser200Response.java)
+Враћа: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUserResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getVotesForUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotesForUser Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -31,7 +31,7 @@ public class Example {
     // Конфигуришите овлашћење API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментаришите следећу линију да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      GetVotesForUser200Response result = apiInstance.getVotesForUser(tenantId, urlId)
+      GetVotesForUserResponse result = apiInstance.getVotesForUser(tenantId, urlId)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

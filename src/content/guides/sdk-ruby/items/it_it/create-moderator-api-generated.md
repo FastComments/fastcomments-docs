@@ -6,7 +6,7 @@
 
 ## Risposta
 
-Restituisce: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+Restituisce: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## Esempio
 
@@ -14,11 +14,11 @@ Restituisce: [`CreateModerator200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# impostazione dell'autorizzazione
+# configurazione dell'autenticazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione tramite chiave API: api_key
+  # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommentare la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_moderator: #{e}"
 end
 [inline-code-end]
-
----

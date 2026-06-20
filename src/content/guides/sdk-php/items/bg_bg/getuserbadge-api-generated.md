@@ -1,13 +1,13 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadge200Response.php)
+Връща: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeResponse.php)
 
 ## Пример
 
@@ -24,8 +24,8 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате потребителски HTTP клиент, подайте вашия клиент който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е опционално, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

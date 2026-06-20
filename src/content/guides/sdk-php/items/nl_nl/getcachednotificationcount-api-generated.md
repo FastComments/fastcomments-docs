@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCount200Response.php)
+Retourneert: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCountResponse.php)
 
 ## Voorbeeld
 
@@ -17,15 +17,15 @@ Retourneert: [`GetCachedNotificationCount200Response`](https://github.com/FastCo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutel autori­satie: api_key
+// Configureer autorisatie voor API-sleutel: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Haal onderstaande regel uit commentaar om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client mee die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getCachedNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

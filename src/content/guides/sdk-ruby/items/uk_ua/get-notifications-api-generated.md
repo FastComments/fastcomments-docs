@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | userId | string | query | Ні |  |
@@ -12,7 +12,7 @@
 
 ## Відповідь
 
-Повертає: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Повертає: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Приклад
 
@@ -47,3 +47,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_notifications: #{e}"
 end
 [inline-code-end]
+
+---

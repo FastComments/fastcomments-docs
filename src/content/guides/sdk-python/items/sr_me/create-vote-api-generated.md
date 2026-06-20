@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | query | Да |  |
@@ -10,35 +10,35 @@
 
 ## Одговор
 
-Враћа: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'create_vote Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_vote Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Дефинисање хоста је опционално и подразумевано је на https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и ауторизације
+# Клијент мора да подеси параметре аутентификације и ауторизације
 # у складу са безбедносном политиком API сервера.
-# Испод су примери за сваки метод аутентификације, користите примјер који
+# Примери за сваки метод аутентификације дати су испод, користите пример који
 # одговара вашем случају употребе аутентификације.
 
-# Конфигуришите ауторизацију API кључем: api_key
+# Конфигуришите ауторизацију помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоменатишите доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Унесите контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
     # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)

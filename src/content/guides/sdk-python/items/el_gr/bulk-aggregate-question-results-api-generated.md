@@ -1,21 +1,21 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | forceRecalculate | boolean | query | Όχι |  |
 
-## Response
+## Απόκριση
 
-Επιστρέφει: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_aggregate_question_results200_response.py)
+Επιστρέφει: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_aggregate_question_results_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα bulk_aggregate_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.bulk_aggregate_question_results200_response import BulkAggregateQuestionResults200Response
 from client.models.bulk_aggregate_question_results_request import BulkAggregateQuestionResultsRequest
+from client.models.bulk_aggregate_question_results_response import BulkAggregateQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,8 +27,8 @@ configuration = client.Configuration(
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Παραδείγματα για κάθε μέθοδο auth παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί την περίπτωση χρήσης αυθεντικοποίησής σας.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]

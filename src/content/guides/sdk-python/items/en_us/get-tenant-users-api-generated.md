@@ -7,14 +7,14 @@
 
 ## Response
 
-Returns: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_users200_response.py)
+Returns: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_users_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_tenant_users Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_users200_response import GetTenantUsers200Response
+from client.models.get_tenant_users_response import GetTenantUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 

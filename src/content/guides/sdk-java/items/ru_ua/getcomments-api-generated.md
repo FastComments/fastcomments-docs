@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | page | integer | query | Нет |  |
@@ -17,16 +17,18 @@
 | hashTag | string | query | Нет |  |
 | parentId | string | query | Нет |  |
 | direction | string | query | Нет |  |
+| fromDate | integer | query | Нет |  |
+| toDate | integer | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+Возвращает: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getComments'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Импорт классов:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -39,10 +41,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Настройка авторизации API-ключом: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

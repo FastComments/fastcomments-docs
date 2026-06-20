@@ -1,22 +1,22 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Не |  |
-| questionIds | array | query | Не |  |
-| urlId | string | query | Не |  |
-| timeBucket | string | query | Не |  |
-| startDate | string | query | Не |  |
-| forceRecalculate | boolean | query | Не |  |
+| tenantId | string | query | Da |  |
+| questionId | string | query | Ne |  |
+| questionIds | array | query | Ne |  |
+| urlId | string | query | Ne |  |
+| timeBucket | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| forceRecalculate | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_200_response.go)
+Vraća: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_response.go)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'AggregateQuestionResults Примјер'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer AggregateQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,17 +25,17 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	questionId := "questionId_example" // string |  (необавезно)
-	questionIds := []string{"Inner_example"} // []string |  (необавезно)
-	urlId := "urlId_example" // string |  (необавезно)
-	timeBucket := openapiclient.AggregateTimeBucket("day") // AggregateTimeBucket |  (необавезно)
-	startDate := time.Now() // time.Time |  (необавезно)
-	forceRecalculate := true // bool |  (необавезно)
+	questionId := "questionId_example" // string |  (neobavezno)
+	questionIds := []string{"Inner_example"} // []string |  (neobavezno)
+	urlId := "urlId_example" // string |  (neobavezno)
+	timeBucket := openapiclient.AggregateTimeBucket("day") // AggregateTimeBucket |  (neobavezno)
+	startDate := time.Now() // time.Time |  (neobavezno)
+	forceRecalculate := true // bool |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `AggregateQuestionResults`: AggregateQuestionResults200Response
+	// odgovor iz `AggregateQuestionResults`: AggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

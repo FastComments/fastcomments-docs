@@ -2,11 +2,11 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
+| tenantId | string | query | Yes |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_200_response.go)
+Retourneert: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_response.go)
 
 ## Voorbeeld
 
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `CreateQuestionConfig`: CreateQuestionConfig200Response
+	// response from `CreateQuestionConfig`: CreateQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]

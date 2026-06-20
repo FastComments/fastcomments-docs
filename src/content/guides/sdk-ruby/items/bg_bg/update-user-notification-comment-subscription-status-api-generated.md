@@ -1,8 +1,8 @@
-Активиране или деактивиране на известия за конкретен коментар.
+Активиране или деактивиране на уведомления за конкретен коментар.
 
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | notificationId | string | path | Да |  |
@@ -12,11 +12,11 @@
 
 ## Отговор
 
-Връща: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Връща: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за update_user_notification_comment_subscription_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
+
+---

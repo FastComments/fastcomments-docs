@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`GetComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment200_response.rb)
+Returnerer: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comment_response.rb)
 
 ## Eksempel
 
@@ -15,11 +15,11 @@ Returnerer: [`GetComment200Response`](https://github.com/FastComments/fastcommen
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsætning af autorisation
+# opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgleautorisation: api_key
+  # Konfigurer API-nøglegodkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_comment: #{e}"
 end
 [inline-code-end]
-
----

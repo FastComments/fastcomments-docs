@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | userId | string | query | Yes |  |
@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeTicketState200Response.java)
+返回: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ChangeTicketStateResponse.java)
 
 ## 示例
 
@@ -30,7 +30,7 @@ public class Example {
     // 配置 API 密钥授权: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释下面一行以为 API 密钥设置前缀，例如 "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +39,7 @@ public class Example {
     String id = "id_example"; // String | 
     ChangeTicketStateBody changeTicketStateBody = new ChangeTicketStateBody(); // ChangeTicketStateBody | 
     try {
-      ChangeTicketState200Response result = apiInstance.changeTicketState(tenantId, userId, id, changeTicketStateBody)
+      ChangeTicketStateResponse result = apiInstance.changeTicketState(tenantId, userId, id, changeTicketStateBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

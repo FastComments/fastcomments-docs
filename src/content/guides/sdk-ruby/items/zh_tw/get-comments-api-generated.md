@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | page | integer | query | 否 |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | 否 |  |
 | parentId | string | query | 否 |  |
 | direction | string | query | 否 |  |
+| fromDate | integer | query | 否 |  |
+| toDate | integer | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+回傳：[`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## 範例
 
@@ -32,7 +34,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # 設定 API 金鑰授權: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解下列行以為 API 金鑰設定前綴，例如 'Bearer'（預設為 nil）
+  # 取消註解以下這行以設定 API 金鑰的前綴，例如 'Bearer'（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

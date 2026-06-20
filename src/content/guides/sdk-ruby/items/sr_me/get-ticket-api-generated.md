@@ -1,26 +1,27 @@
+---
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Iме | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
-## Одговор
+## Враћа
 
-Враћа: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket200_response.rb)
+Враћа: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_ticket Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_ticket'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# Подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите API кључ ауторизације: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментаришите следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,3 +40,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_ticket: #{e}"
 end
 [inline-code-end]
+
+---

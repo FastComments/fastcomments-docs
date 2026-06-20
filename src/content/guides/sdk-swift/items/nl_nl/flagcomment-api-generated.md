@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -8,15 +7,15 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagComment200Response.swift)
+Retourneert: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'flagComment Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, rapporteer ze via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

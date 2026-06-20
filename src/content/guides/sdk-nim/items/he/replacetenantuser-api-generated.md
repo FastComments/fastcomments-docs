@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
@@ -9,19 +9,31 @@
 
 ## תגובה
 
-מחזיר: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+מחזיר: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת replaceTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-replaceTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let replaceBody = ReplaceTenantUserBody(name: "Jane Doe", email: "jane.doe@example.com", roles: @["moderator", "contributor"], banned: false)
-let (response, httpResponse) = client.replaceTenantUser(tenantId = "my-tenant-123", id = "user-789", replaceTenantUserBody = replaceBody, updateComments = "true")
+let body = ReplaceTenantUserBody(
+  displayName = "Jane Doe",
+  email = "jane.doe@example.com",
+  externalId = "jdoe-789",
+  admin = false,
+  enabled = true,
+  tags = @["editor", "subscriber"]
+)
+
+let (response, httpResponse) = client.replaceTenantUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  replaceTenantUserBody = body,
+  updateComments = "true"
+)
+
 if response.isSome:
-  let updated = response.get()
-  echo updated
-else:
-  echo "No response returned"
+  let apiEmpty = response.get()
+  echo "ReplaceTenantUser succeeded, http status:", httpResponse.status
 [inline-code-end]
 
 ---

@@ -1,8 +1,8 @@
 ### שימוש ב-APIs מאומתים (DefaultAPI)
 
-**חשוב:**
-1. עליך להגדיר את כתובת הבסיס (הגנרטור cpp-restsdk לא קורא אותה מה-OpenAPI spec)
-2. עליך להגדיר את מפתח ה-API שלך על ApiClient לפני ביצוע בקשות מאומתות. אם לא תעשה כן, הבקשות ייכשלו עם שגיאת 401.
+**Important:**
+1. עליך להגדיר את כתובת הבסיס (הגנרטור cpp-restsdk לא קורא אותה מתוך מפרט ה-OpenAPI)
+2. עליך להגדיר את מפתח ה-API ב-ApiClient לפני ביצוע קריאות מאומתות. אם לא תעשה זאת, הקריאות ייכשלו עם שגיאת 401.
 
 ```cpp
 #include <iostream>
@@ -23,7 +23,7 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::DefaultApi api(apiClient);
 
-    // עכשיו בצע קריאות API מאומתות
+    // Now make authenticated API calls
     return 0;
 }
 ```
@@ -52,8 +52,45 @@ int main() {
 }
 ```
 
+### שימוש ב-APIs למודרציה (ModerationApi)
+
+The `ModerationApi` powers the moderator dashboard. Every method accepts an `sso` parameter so the call runs on behalf of an SSO-authenticated moderator (see the SSO section below
+for how to create a token):
+
+```cpp
+#include <iostream>
+#include "FastCommentsClient/api/ModerationApi.h"
+#include "FastCommentsClient/ApiClient.h"
+#include "FastCommentsClient/ApiConfiguration.h"
+
+int main() {
+    auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
+
+    // דרוש: הגדר את כתובת הבסיס
+    config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
+
+    auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
+    org::openapitools::client::api::ModerationApi moderationApi(apiClient);
+
+    // העבר את טוקן ה-SSO של המודרטור כדי לאמת את הקריאה
+    auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
+
+    auto response = moderationApi.getCount(
+        boost::none,  // textSearch
+        boost::none,  // byIPFromComment
+        boost::none,  // filter
+        boost::none,  // searchFilters
+        boost::none,  // demo
+        ssoToken      // sso
+    ).get();
+
+    return 0;
+}
+```
+
 ### בעיות נפוצות
 
-1. **שגיאת "URI חייב להכיל שם מארח"**: וודא שאתה קורא ל-`config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` לפני יצירת ה-ApiClient. הגנרטור cpp-restsdk אינו קורא אוטומטית את כתובת השרת מהמפרט של OpenAPI.
-2. **שגיאת 401 "missing-api-key"**: וודא שאתה קורא ל-`config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` לפני יצירת מופע ה-DefaultAPI.
-3. **מחלקת API שגויה**: השתמש ב-`DefaultAPI` עבור בקשות מאומתות בצד השרת, וב-`PublicAPI` עבור בקשות בצד הלקוח/ציבוריות.
+1. **"URI must contain a hostname" error**: ודא שקראת ל-`config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` לפני יצירת ה-ApiClient. הגנרטור cpp-restsdk לא קורא באופן אוטומטי את כתובת השרת מתוך מפרט ה-OpenAPI.
+2. **401 "missing-api-key" error**: ודא שקראת ל-`config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` לפני יצירת מופע DefaultAPI.
+3. **Wrong API class**: השתמש ב-`DefaultApi` עבור קריאות מאומתות בצד השרת, ב-`PublicApi` עבור קריאות צד-לקוח/ציבוריות, וב-`ModerationApi` עבור קריאות ללוח הבקרה של המודרטור (מאומתות עם טוקן SSO של מודרטור).
+---

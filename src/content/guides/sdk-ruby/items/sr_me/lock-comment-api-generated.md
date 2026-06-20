@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -9,21 +9,21 @@
 
 ## Одговор
 
-Враћа: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'lock_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример lock_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # Низ | 
+comment_id = 'comment_id_example' # Низ | 
+broadcast_id = 'broadcast_id_example' # Низ | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Низ | 
 }
 
 begin
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->lock_comment: #{e}"
 end
 [inline-code-end]
-
----

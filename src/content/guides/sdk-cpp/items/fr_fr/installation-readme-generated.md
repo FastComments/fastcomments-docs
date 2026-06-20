@@ -4,7 +4,7 @@
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Construire à partir des sources
+### Compilation depuis les sources
 
 ```bash
 mkdir build
@@ -21,10 +21,14 @@ sudo make install
 
 ### Contenu de la bibliothèque
 
-Cette bibliothèque contient le client API généré et les utilitaires SSO pour faciliter le travail avec l'API.
+Cette bibliothèque contient le client API généré et les utilitaires SSO pour faciliter l'utilisation de l'API.
 
-- [Documentation de la bibliothèque du client API](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [Documentation de la bibliothèque cliente de l'API](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### APIs publiques vs sécurisées
+### API publiques vs API sécurisées
 
-Pour le client API, il existe deux classes, `DefaultAPI` et `PublicAPI`. La `DefaultAPI` contient des méthodes qui requièrent votre clé API, et `PublicAPI` contient des appels d'API qui peuvent être effectués directement depuis un navigateur, un appareil mobile, etc. sans authentification.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains
+methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains methods that power the moderator dashboard - listing,
+counting, searching, exporting and pulling logs for comments, moderation actions (supprimer/restaurer, signaler, définir le statut à revoir/spam/approuvé, ajuster les votes, réouvrir/fermer les fils),
+bans (bannissements à partir d'un commentaire, annuler des bannissements, résumés pré-bannissement, statut et préférences de bannissement, dénombrements d'utilisateurs bannis), and badges & trust (attribuer/retirer des badges, badges manuels, obtenir/définir le facteur de confiance,
+profil interne de l'utilisateur). Every `ModerationApi` method accepts an `sso` parameter so the call is performed on behalf of an SSO-authenticated moderator.

@@ -1,22 +1,22 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язкове | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| userId | string | query | Ні |  |
-| badgeId | string | query | Ні |  |
-| type | number | query | Ні |  |
-| displayedOnComments | boolean | query | Ні |  |
-| limit | number | query | Ні |  |
-| skip | number | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Відповідь
 
-Повертає: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserBadges200Response.java)
+Повертає: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetUserBadgesResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getUserBadges Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getUserBadges'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації ключем API: api_key
+    // Налаштування авторизації API ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API ключа, напр. "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     Double limit = 3.4D; // Double | 
     Double skip = 3.4D; // Double | 
     try {
-      GetUserBadges200Response result = apiInstance.getUserBadges(tenantId)
+      APIGetUserBadgesResponse result = apiInstance.getUserBadges(tenantId)
             .userId(userId)
             .badgeId(badgeId)
             .type(type)

@@ -1,6 +1,6 @@
-## Parametri
+## Parameterji
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Location | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -12,32 +12,32 @@
 
 ## Odgovor
 
-Vrne: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+Vrača: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
+# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# Odjemalec mora konfigurirati parametre za overjanje in pooblastila
 # v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo avtentikacije so podani spodaj; uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Spodaj so navedeni primeri za vsak način overjanja, uporabite tistega,
+# ki ustreza vašemu primeru uporabe.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Konfigurirajte avtorizacijo s API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnje, če želite nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
@@ -45,12 +45,12 @@ with client.ApiClient(configuration) as api_client:
     # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (izbirno)
-    url_id = 'url_id_example' # str |  (izbirno)
-    from_comment_id = 'from_comment_id_example' # str |  (izbirno)
-    viewed = True # bool |  (izbirno)
-    type = 'type_example' # str |  (izbirno)
-    skip = 3.4 # float |  (izbirno)
+    user_id = 'user_id_example' # str |  (neobvezno)
+    url_id = 'url_id_example' # str |  (neobvezno)
+    from_comment_id = 'from_comment_id_example' # str |  (neobvezno)
+    viewed = True # bool |  (neobvezno)
+    type = 'type_example' # str |  (neobvezno)
+    skip = 3.4 # float |  (neobvezno)
 
     try:
         api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)

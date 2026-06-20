@@ -2,31 +2,31 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| questionId | string | query | Ne |  |
-| questionIds | array | query | Ne |  |
-| urlId | string | query | Ne |  |
-| startDate | string | query | Ne |  |
-| forceRecalculate | boolean | query | Ne |  |
-| minValue | number | query | Ne |  |
-| maxValue | number | query | Ne |  |
-| limit | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
+| minValue | number | query | No |  |
+| maxValue | number | query | No |  |
+| limit | number | query | No |  |
 
-## Response
+## Odgovor
 
-Vrne: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Vrača: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer combine_comments_with_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za combine_comments_with_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfiguriranje avtorizacije z API ključem: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
+  # Če odstranite komentar spodnje vrstice, lahko nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -51,5 +51,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->combine_comments_with_question_results: #{e}"
 end
 [inline-code-end]
-
----

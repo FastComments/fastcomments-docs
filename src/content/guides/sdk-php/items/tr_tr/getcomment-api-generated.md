@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetComment200Response.php)
+Döndürür: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetCommentResponse.php)
 
 ## Örnek
 
@@ -17,14 +17,14 @@ Döndürür: [`GetComment200Response`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API anahtar yetkilendirmesini yapılandır: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse API anahtarına önek (ör. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
+// Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak üzere aşağıdaki satırı yorumdan çıkarın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi iletin.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,21 +1,21 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Omschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUser200Response.java)
+Retourneert: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUserResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getVotesForUser Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importeren:
+// Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,7 +31,7 @@ public class Example {
     // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de opmerking van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijvoorbeeld "Token" (standaard null)
+    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard is null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      GetVotesForUser200Response result = apiInstance.getVotesForUser(tenantId, urlId)
+      GetVotesForUserResponse result = apiInstance.getVotesForUser(tenantId, urlId)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

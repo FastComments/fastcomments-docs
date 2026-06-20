@@ -12,7 +12,7 @@
 
 ## Odgovor
 
-Vrne: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Vrne: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Primer
 
@@ -26,9 +26,9 @@ tenant_id = 'tenant_id_example' # Niz |
 opts = {
   after_id: 'after_id_example', # Niz | 
   after_created_at: 789, # Celo število | 
-  unread_only: true, # Boolova vrednost | 
-  dm_only: true, # Boolova vrednost | 
-  no_dm: true, # Boolova vrednost | 
+  unread_only: true, # Logična vrednost | 
+  dm_only: true, # Logična vrednost | 
+  no_dm: true, # Logična vrednost | 
   sso: 'sso_example' # Niz | 
 }
 

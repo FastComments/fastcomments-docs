@@ -6,7 +6,7 @@
 
 ## Antwoord
 
-Retourneert: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateEmailTemplate200Response.java)
+Retourneert: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateEmailTemplateResponse.java)
 
 ## Voorbeeld
 
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutel autorisatie: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaarstreep van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijvoorbeeld "Token" (standaard null)
+    // Haal de commentaarstreep van de volgende regel weg om een prefix voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateEmailTemplateBody createEmailTemplateBody = new CreateEmailTemplateBody(); // CreateEmailTemplateBody | 
     try {
-      CreateEmailTemplate200Response result = apiInstance.createEmailTemplate(tenantId, createEmailTemplateBody)
+      CreateEmailTemplateResponse result = apiInstance.createEmailTemplate(tenantId, createEmailTemplateBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

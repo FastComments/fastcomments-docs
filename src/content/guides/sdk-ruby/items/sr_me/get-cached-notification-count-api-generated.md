@@ -1,25 +1,26 @@
+---
 ## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count200_response.rb)
+Враћа: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_cached_notification_count Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_cached_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Подесити ауторизацију API кључа: api_key
+  # Поставите ауторизацију помоћу API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откомуентирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (по подразумеваној вредности nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,3 +36,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_cached_notification_count: #{e}"
 end
 [inline-code-end]
+
+---

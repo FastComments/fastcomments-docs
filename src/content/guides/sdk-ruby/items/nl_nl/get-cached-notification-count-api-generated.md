@@ -1,26 +1,26 @@
 ---
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
 ## Respons
 
-Retourneert: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count200_response.rb)
+Retourneert: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_cached_notification_count_response.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van get_cached_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_cached_notification_count Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Autorisatie instellen
+# autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutel autorisatie: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaarteken van de volgende regel weg om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
+  # Haal de commentaartekens voor de volgende regel weg om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -2,21 +2,21 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| postId | string | path | Sì |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
 | isUndo | boolean | query | No |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ReactFeedPostPublic200Response.java)
+Restituisce: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ReactFeedPostResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di reactFeedPostPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Import delle classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,7 +36,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ReactFeedPostPublic200Response result = apiInstance.reactFeedPostPublic(tenantId, postId, reactBodyParams)
+      ReactFeedPostResponse result = apiInstance.reactFeedPostPublic(tenantId, postId, reactBodyParams)
             .isUndo(isUndo)
             .broadcastId(broadcastId)
             .sso(sso)
@@ -52,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

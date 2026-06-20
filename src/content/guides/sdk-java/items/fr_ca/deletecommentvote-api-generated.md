@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Retourne : [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+Renvoie : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## Exemple
 
@@ -31,15 +31,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // Chaîne | 
-    String commentId = "commentId_example"; // Chaîne | 
-    String voteId = "voteId_example"; // Chaîne | 
-    String urlId = "urlId_example"; // Chaîne | 
-    String broadcastId = "broadcastId_example"; // Chaîne | 
-    String editKey = "editKey_example"; // Chaîne | 
-    String sso = "sso_example"; // Chaîne | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String voteId = "voteId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
+    String editKey = "editKey_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
+      VoteDeleteResponse result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -54,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

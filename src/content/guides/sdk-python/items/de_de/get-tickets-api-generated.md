@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Nein |  |
@@ -10,14 +10,14 @@
 
 ## Antwort
 
-Gibt zurück: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets200_response.py)
+Gibt zurück: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_tickets Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tickets200_response import GetTickets200Response
+from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,17 +28,17 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# entsprechend der Sicherheitspolitik des API-Servers konfigurieren.
 # Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das Beispiel, das
 # Ihren Authentifizierungsfall erfüllt.
 
-# API-Schlüssel-Authentifizierung konfigurieren: api_key
+# Konfigurieren Sie die API-Key-Authentifizierung: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+# Entfernen Sie das Kommentarzeichen unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Key zu setzen
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Betreten Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
@@ -55,5 +55,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tickets: %s\n" % e)
 [inline-code-end]
-
----

@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳: [`GetUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_200_response.go)
+回傳: [`GetUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_response.go)
 
 ## 範例
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 來自 `GetUser` 的回應：GetUser200Response
+	// 從 `GetUser` 的回應：GetUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUser`: %v\n", resp)
 }
 [inline-code-end]

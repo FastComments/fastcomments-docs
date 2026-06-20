@@ -2,7 +2,7 @@ Aggregerer dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende f
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | parentTenantId | string | query | Nej |  |
@@ -10,7 +10,7 @@ Aggregerer dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende f
 
 ## Svar
 
-Returnerer: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Returnerer: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Eksempel
 
@@ -18,11 +18,11 @@ Returnerer: [`AggregationResponse`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt autorisation
+# Opsæt godkendelse
 FastCommentsClient.configure do |config|
   # Konfigurer API-nøgleautorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard: nil)
+  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

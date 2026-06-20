@@ -1,13 +1,12 @@
----
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
+| tenantId | string | параметр запиту | Так |  |
 
 ## Відповідь
 
-Повертає: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_200_response.go)
+Повертає: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_response.go)
 
 ## Приклад
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `CreateQuestionConfig`: CreateQuestionConfig200Response
+	// відповідь від `CreateQuestionConfig`: CreateQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

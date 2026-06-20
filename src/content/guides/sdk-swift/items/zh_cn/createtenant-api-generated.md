@@ -6,13 +6,13 @@
 
 ## 响应
 
-返回: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenant200Response.swift)
+返回: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTenantResponse.swift)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createTenant 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍为测试版。如遇任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 提交报告
+// 以下代码示例仍处于测试版。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,5 +29,3 @@ DefaultAPI.createTenant(tenantId: tenantId, createTenantBody: createTenantBody) 
     }
 }
 [inline-code-end]
-
----

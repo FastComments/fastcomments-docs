@@ -2,15 +2,15 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| state | number | query | Nie |  |
-| skip | number | query | Nie |  |
-| limit | number | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTickets200Response.java)
+Zwraca: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketsResponse.java)
 
 ## Przykład
 
@@ -29,7 +29,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację kluczem API: api_key
+    // Skonfiguruj autoryzację klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
@@ -42,7 +42,7 @@ public class Example {
     Double skip = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      GetTickets200Response result = apiInstance.getTickets(tenantId)
+      GetTicketsResponse result = apiInstance.getTickets(tenantId)
             .userId(userId)
             .state(state)
             .skip(skip)

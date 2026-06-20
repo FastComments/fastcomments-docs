@@ -1,3 +1,4 @@
+
 req
 tenantId
 afterId
@@ -13,7 +14,7 @@ afterId
 
 ## Response
 
-Returns: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+Returns: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## Example
 
@@ -21,11 +22,11 @@ Returns: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Set up authorization
+# setup authorization
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g., 'Bearer' (defaults to nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

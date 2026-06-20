@@ -6,13 +6,13 @@
 
 ## 回應
 
-回傳: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionResult200Response.java)
+回傳: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionResultResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createQuestionResult 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 設定 API 金鑰授權: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 若要為 API 金鑰設定前綴（例如 "Token"），請取消註解下列行（預設為 null）
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateQuestionResultBody createQuestionResultBody = new CreateQuestionResultBody(); // CreateQuestionResultBody | 
     try {
-      CreateQuestionResult200Response result = apiInstance.createQuestionResult(tenantId, createQuestionResultBody)
+      CreateQuestionResultResponse result = apiInstance.createQuestionResult(tenantId, createQuestionResultBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,7 +1,7 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Location | Обязательно | Описание |
+|------|------|----------|------------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
 | voteId | string | path | Да |  |
@@ -12,13 +12,13 @@
 
 ## Ответ
 
-Возвращает: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+Возвращает: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще в бета-версии. По любым проблемам, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода все ещё в бета-версии. По любым проблемам сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

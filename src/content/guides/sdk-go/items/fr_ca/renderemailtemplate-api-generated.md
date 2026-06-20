@@ -1,13 +1,14 @@
+---
 ## Paramètres
 
-| Nom | Type | Location | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | locale | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_render_email_template_200_response.go)
+Renvoie : [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_render_email_template_response.go)
 
 ## Exemple
 
@@ -34,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.RenderEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `RenderEmailTemplate` : RenderEmailTemplate200Response
+	// réponse de `RenderEmailTemplate`: RenderEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.RenderEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
+
+---

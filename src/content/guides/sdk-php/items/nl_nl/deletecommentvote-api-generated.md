@@ -10,9 +10,9 @@
 | editKey | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentVote200Response.php)
+Retourneert: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
 ## Voorbeeld
 
@@ -24,8 +24,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef dan je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel; `GuzzleHttp\Client` wordt als standaard gebruikt.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Type | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | isLive | boolean | query | Ne |  |
@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrača: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/array&lt;_save_comment200_response&gt;.rb)
+Vrne: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
 
 ## Primer
 
@@ -18,9 +18,9 @@ Vrača: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# nastavitev avtorizacije
+# nastavi avtorizacijo
 FastCommentsClient.configure do |config|
-  # Konfiguriraj API key avtorizacijo: api_key
+  # Konfiguriraj avtorizacijo z API ključem: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

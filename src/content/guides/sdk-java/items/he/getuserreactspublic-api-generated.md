@@ -8,13 +8,13 @@
 
 ## תגובה
 
-מחזיר: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserReactsPublic200Response.java)
+מחזיר: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UserReactsResponse.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getUserReactsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserReactsPublic200Response result = apiInstance.getUserReactsPublic(tenantId)
+      UserReactsResponse result = apiInstance.getUserReactsPublic(tenantId)
             .postIds(postIds)
             .sso(sso)
             .execute();

@@ -1,26 +1,28 @@
 ## Параметри
 
-| Name | Type | Розташування | Обов'язкове | Опис |
-|------|------|--------------|-------------|------|
-| tenantId | string | параметр запиту | Так |  |
-| page | integer | параметр запиту | Ні |  |
-| limit | integer | параметр запиту | Ні |  |
-| skip | integer | параметр запиту | Ні |  |
-| asTree | boolean | параметр запиту | Ні |  |
-| skipChildren | integer | параметр запиту | Ні |  |
-| limitChildren | integer | параметр запиту | Ні |  |
-| maxTreeDepth | integer | параметр запиту | Ні |  |
-| urlId | string | параметр запиту | Ні |  |
-| userId | string | параметр запиту | Ні |  |
-| anonUserId | string | параметр запиту | Ні |  |
-| contextUserId | string | параметр запиту | Ні |  |
-| hashTag | string | параметр запиту | Ні |  |
-| parentId | string | параметр запиту | Ні |  |
-| direction | string | параметр запиту | Ні |  |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
+| page | integer | query | Ні |  |
+| limit | integer | query | Ні |  |
+| skip | integer | query | Ні |  |
+| asTree | boolean | query | Ні |  |
+| skipChildren | integer | query | Ні |  |
+| limitChildren | integer | query | Ні |  |
+| maxTreeDepth | integer | query | Ні |  |
+| urlId | string | query | Ні |  |
+| userId | string | query | Ні |  |
+| anonUserId | string | query | Ні |  |
+| contextUserId | string | query | Ні |  |
+| hashTag | string | query | Ні |  |
+| parentId | string | query | Ні |  |
+| direction | string | query | Ні |  |
+| fromDate | integer | query | Ні |  |
+| toDate | integer | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Повертає: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Приклад
 
@@ -30,7 +32,7 @@ require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштувати авторизацію за API-ключем: api_key
+  # Налаштування авторизації API-ключем: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin

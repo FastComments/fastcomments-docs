@@ -1,16 +1,16 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| yearNumber | number | query | 아니요 |  |
-| monthNumber | number | query | 아니요 |  |
-| dayNumber | number | query | 아니요 |  |
-| skip | number | query | 아니요 |  |
+| yearNumber | number | query | 아니오 |  |
+| monthNumber | number | query | 아니오 |  |
+| dayNumber | number | query | 아니오 |  |
+| skip | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+반환: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## 예제
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenantDailyUsages`의 응답: GetTenantDailyUsages200Response
+	// `GetTenantDailyUsages`의 응답: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]

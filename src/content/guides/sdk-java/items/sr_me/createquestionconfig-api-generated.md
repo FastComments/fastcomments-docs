@@ -1,12 +1,12 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Одговор
 
-Враћа: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionConfig200Response.java)
+Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionConfigResponse.java)
 
 ## Пример
 
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриши ауторизацију API кључа: api_key
+    // Конфигуришите ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateQuestionConfigBody createQuestionConfigBody = new CreateQuestionConfigBody(); // CreateQuestionConfigBody | 
     try {
-      CreateQuestionConfig200Response result = apiInstance.createQuestionConfig(tenantId, createQuestionConfigBody)
+      CreateQuestionConfigResponse result = apiInstance.createQuestionConfig(tenantId, createQuestionConfigBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

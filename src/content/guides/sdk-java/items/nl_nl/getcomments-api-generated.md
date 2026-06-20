@@ -1,26 +1,28 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | integer | query | No |  |
-| limit | integer | query | No |  |
-| skip | integer | query | No |  |
-| asTree | boolean | query | No |  |
-| skipChildren | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
-| contextUserId | string | query | No |  |
-| hashTag | string | query | No |  |
-| parentId | string | query | No |  |
-| direction | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| page | integer | query | Nee |  |
+| limit | integer | query | Nee |  |
+| skip | integer | query | Nee |  |
+| asTree | boolean | query | Nee |  |
+| skipChildren | integer | query | Nee |  |
+| limitChildren | integer | query | Nee |  |
+| maxTreeDepth | integer | query | Nee |  |
+| urlId | string | query | Nee |  |
+| userId | string | query | Nee |  |
+| anonUserId | string | query | Nee |  |
+| contextUserId | string | query | Nee |  |
+| hashTag | string | query | Nee |  |
+| parentId | string | query | Nee |  |
+| direction | string | query | Nee |  |
+| fromDate | integer | query | Nee |  |
+| toDate | integer | query | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+Geeft terug: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## Voorbeeld
 
@@ -39,10 +41,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API key autorisatie: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal het commentaarteken van de volgende regel weg om een voorvoegsel voor de API key in te stellen, bijv. "Token" (standaard is null)
+    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard is null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

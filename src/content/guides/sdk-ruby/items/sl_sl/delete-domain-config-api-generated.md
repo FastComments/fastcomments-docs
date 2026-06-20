@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vrača: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_domain_config200_response.rb)
+Vrne: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_domain_config_response.rb)
 
 ## Primer
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfiguriraj avtorizacijo API ključa: api_key
+  # Konfigurirajte avtorizacijo API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
+  # Odkomentirajte naslednjo vrstico, če želite nastaviti predpono za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

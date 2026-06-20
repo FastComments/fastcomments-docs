@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Ne |  |
@@ -12,11 +13,11 @@
 
 ## Odgovor
 
-Vraća: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za GetPendingWebhookEventCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer GetPendingWebhookEventCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,12 +30,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  (neobavezno)
-	externalId := "externalId_example" // string |  (neobavezno)
-	eventType := "eventType_example" // string |  (neobavezno)
-	type_ := "type__example" // string |  (neobavezno)
-	domain := "domain_example" // string |  (neobavezno)
-	attemptCountGT := float64(1.2) // float64 |  (neobavezno)
+	commentId := "commentId_example" // string |  (opcionalno)
+	externalId := "externalId_example" // string |  (opcionalno)
+	eventType := "eventType_example" // string |  (opcionalno)
+	type_ := "type__example" // string |  (opcionalno)
+	domain := "domain_example" // string |  (opcionalno)
+	attemptCountGT := float64(1.2) // float64 |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetPendingWebhookEventCount`: GetPendingWebhookEventCount200Response
+	// odgovor od `GetPendingWebhookEventCount`: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]
+
+---

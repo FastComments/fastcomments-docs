@@ -1,42 +1,44 @@
+---
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | path | Yes |  |
+| tenantId | string | query | Evet |  |
+| userId | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_by_id200_response.py)
+Döndürür: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_user_badge_progress_by_user_id Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_by_id200_response import GetUserBadgeProgressById200Response
+from client.models.api_get_user_badge_progress_response import APIGetUserBadgeProgressResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host'u tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir; kullanım durumunuza uyan örneği kullanın.
+# API sunucusunun güvenlik politikasıyla uyumlu olarak yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir,
+# kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandırın: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdakinin yorumunu kaldırın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki satırı yorum dışı bırakın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam girin
+# API istemcisinin bir örneği ile bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str | 

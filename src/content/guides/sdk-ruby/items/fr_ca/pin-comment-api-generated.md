@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie : [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+Retourne : [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## Exemple
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
+comment_id = 'comment_id_example' # Chaîne | 
+broadcast_id = 'broadcast_id_example' # Chaîne | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Chaîne | 
 }
 
 begin

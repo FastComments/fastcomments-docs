@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+返回: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
 ## 示例
 
@@ -18,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字符串 | 
-url_id_ws = 'url_id_ws_example' # 字符串 | 
-user_ids = 'user_ids_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
+url_id_ws = 'url_id_ws_example' # String | 
+user_ids = 'user_ids_example' # String | 
 
 begin
   
@@ -30,3 +30,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_presence_statuses: #{e}"
 end
 [inline-code-end]
+
+---

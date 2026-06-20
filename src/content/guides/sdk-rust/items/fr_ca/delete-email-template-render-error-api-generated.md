@@ -1,26 +1,25 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| id | String | Oui |  |
-| error_id | String | Oui |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| error_id | String | Yes |  |
 
 ## Réponse
 
-Renvoie: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Retourne : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de delete_email_template_render_error'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let error_id_opt: Option<String> = Some("render-failure-9f3b".to_string());
 let params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "welcome-email".to_string(),
-    error_id: error_id_opt.unwrap(),
+    tenant_id: String::from("acme-corp-tenant"),
+    id: String::from("marketing/newsletter/welcome"),
+    error_id: String::from("render_err_2026-06-15-7a3f"),
+    request_id: Some(String::from("req-83b2f9a1")),
 };
-let response: FlagCommentPublic200Response = delete_email_template_render_error(&configuration, params).await?;
-[inline-code-end]
 
----
+let response: ApiEmptyResponse = delete_email_template_render_error(&configuration, params).await?;
+[inline-code-end]

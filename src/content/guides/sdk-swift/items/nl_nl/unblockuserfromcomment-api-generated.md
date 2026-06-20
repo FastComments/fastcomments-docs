@@ -1,3 +1,4 @@
+---
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -7,15 +8,15 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Geeft terug: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnBlockCommentPublic200Response.swift)
+Retourneert: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnblockSuccess.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'unBlockUserFromComment Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -35,3 +36,5 @@ DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromComment
     }
 }
 [inline-code-end]
+
+---

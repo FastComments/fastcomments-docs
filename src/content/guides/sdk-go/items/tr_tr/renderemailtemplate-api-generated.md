@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | locale | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_render_email_template_200_response.go)
+Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_render_email_template_response.go)
 
 ## Örnek
 
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.RenderEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `RenderEmailTemplate`'den gelen yanıt: RenderEmailTemplate200Response
+	// `RenderEmailTemplate`'den dönen yanıt: RenderEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.RenderEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]

@@ -17,10 +17,12 @@
 | hashTag | string | No |  |
 | parentId | string | No |  |
 | direction | SortDirections | No |  |
+| fromDate | int64 | No |  |
+| toDate | int64 | No |  |
 
 ## Response
 
-Returns: [`Option[GetComments_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments200response.nim)
+Returns: [`Option[APIGetCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comments_response.nim)
 
 ## Example
 
@@ -35,16 +37,17 @@ let (response, httpResponse) = client.getComments(
   skipChildren = 0,
   limitChildren = 5,
   maxTreeDepth = 3,
-  urlId = "news/2026/01/important-announcement",
+  urlId = "news/2026-global-economy",
   userId = "user-789",
-  anonUserId = "anon-456",
-  contextUserId = "ctx-321",
-  hashTag = "release",
+  anonUserId = "",
+  contextUserId = "",
+  hashTag = "economy",
   parentId = "",
-  direction = SortDirections.Newest
+  direction = SortDirections.Desc,
+  fromDate = 1710000000000'i64,
+  toDate = 1710100000000'i64
 )
-
 if response.isSome:
-  let comments = response.get()
-  echo "Fetched comments for url:", " news/2026/01/important-announcement"
+  let commentsResp = response.get()
+  discard commentsResp
 [inline-code-end]

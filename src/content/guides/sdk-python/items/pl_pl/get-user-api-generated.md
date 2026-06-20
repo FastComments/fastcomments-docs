@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -8,14 +7,14 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user200_response.py)
+Zwraca: [`GetUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user200_response import GetUser200Response
+from client.models.get_user_response import GetUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,10 +26,10 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Przykłady dla każdej metody uwierzytelniania znajdują się poniżej, użyj przykładu który
+# spełnia Twój przypadek użycia uwierzytelniania.
 
-# Konfiguruj autoryzację kluczem API: api_key
+# Konfiguracja autoryzacji kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzeba
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user: %s\n" % e)
 [inline-code-end]
-
----

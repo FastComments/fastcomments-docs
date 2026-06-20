@@ -7,21 +7,21 @@
 | contextUserId | string | query | Ne |  |
 | isLive | boolean | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment200_response.rb)
+Vrne: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_result.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'delete_comment Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer delete_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# nastavite avtorizacijo
+# nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte API key avtorizacijo: api_key
+  # Konfigurirajte avtorizacijo API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
+  # Odkomentirajte naslednjo vrstico, da nastavite prefiks za API ključ, npr. 'Bearer' (privzeto je nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

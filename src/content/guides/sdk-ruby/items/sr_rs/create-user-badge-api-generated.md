@@ -6,19 +6,19 @@
 
 ## Одговор
 
-Враћа: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_user_badge200_response.rb)
+Враћа: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'create_user_badge Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример create_user_badge'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подесите ауторизацију
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Конфигуришите ауторизацију API кључа: api_key
+  # Конфигуришите API кључ за ауторизацију: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментаришите следећи ред да бисте подесили префикс за API кључ, нпр. 'Bearer' (по подразумеваној вредности nil)
+  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_user_badge: #{e}"
 end
 [inline-code-end]
+
+---

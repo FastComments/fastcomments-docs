@@ -2,29 +2,31 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| page | integer | query | Nie |  |
-| limit | integer | query | Nie |  |
-| skip | integer | query | Nie |  |
-| asTree | boolean | query | Nie |  |
-| skipChildren | integer | query | Nie |  |
-| limitChildren | integer | query | Nie |  |
-| maxTreeDepth | integer | query | Nie |  |
-| urlId | string | query | Nie |  |
-| userId | string | query | Nie |  |
-| anonUserId | string | query | Nie |  |
-| contextUserId | string | query | Nie |  |
-| hashTag | string | query | Nie |  |
-| parentId | string | query | Nie |  |
-| direction | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+Zwraca: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getComments'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getComments'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

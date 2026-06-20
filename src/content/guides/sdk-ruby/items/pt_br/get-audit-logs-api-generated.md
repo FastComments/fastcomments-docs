@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
-| order | string | query | No |  |
-| after | number | query | No |  |
-| before | number | query | No |  |
+| tenantId | string | query | Sim |  |
+| limit | number | query | Não |  |
+| skip | number | query | Não |  |
+| order | string | query | Não |  |
+| after | number | query | Não |  |
+| before | number | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs200_response.rb)
+Retorna: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs_response.rb)
 
 ## Exemplo
 

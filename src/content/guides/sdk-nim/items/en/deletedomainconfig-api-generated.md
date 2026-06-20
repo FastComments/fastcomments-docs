@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`Option[DeleteDomainConfig_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_domain_config200response.nim)
+Returns: [`Option[DeleteDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_domain_config_response.nim)
 
 ## Example
 
@@ -15,8 +15,8 @@ Returns: [`Option[DeleteDomainConfig_200_response]`](https://github.com/FastComm
 [inline-code-start]
 let (response, httpResponse) = client.deleteDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
 if response.isSome:
-  let deletedConfig = response.get()
-  echo deletedConfig
+  let deleted = response.get()
+  echo "DeleteDomainConfig succeeded for tenant ", "my-tenant-123"
 else:
-  echo "No domain config returned"
+  echo "DeleteDomainConfig failed. HTTP status: ", $httpResponse.status
 [inline-code-end]

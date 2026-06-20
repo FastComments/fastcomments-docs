@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -8,19 +7,19 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_user200_response.py)
+Devuelve: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_user_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de get_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_user200_response import GetTenantUser200Response
+from client.models.get_tenant_user_response import GetTenantUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración soportados.
+# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -30,13 +29,13 @@ configuration = client.Configuration(
 # Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar autorización mediante clave de API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente a continuación para configurar el prefijo (p. ej. Bearer) para la clave de API, si es necesario
+# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre en un contexto con una instancia del cliente API
+# Ingrese a un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tenant_user: %s\n" % e)
 [inline-code-end]
-
----

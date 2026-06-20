@@ -1,3 +1,4 @@
+---
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -11,7 +12,7 @@
 
 ## 响应
 
-返回：[`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+返回: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## 示例
 

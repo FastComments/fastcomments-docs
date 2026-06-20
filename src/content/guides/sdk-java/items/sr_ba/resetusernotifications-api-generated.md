@@ -1,24 +1,24 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Не |  |
-| afterCreatedAt | integer | query | Не |  |
-| unreadOnly | boolean | query | Не |  |
-| dmOnly | boolean | query | Не |  |
-| noDm | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| afterId | string | query | Ne |  |
+| afterCreatedAt | integer | query | Ne |  |
+| unreadOnly | boolean | query | Ne |  |
+| dmOnly | boolean | query | Ne |  |
+| noDm | boolean | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -39,7 +39,7 @@ public class Example {
     Boolean noDm = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotifications(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotifications(tenantId)
             .afterId(afterId)
             .afterCreatedAt(afterCreatedAt)
             .unreadOnly(unreadOnly)
@@ -58,3 +58,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

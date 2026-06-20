@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUser200Response.java)
+Returns: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUserResponse.java)
 
 ## Example
 
@@ -40,7 +40,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String anonUserId = "anonUserId_example"; // String | 
     try {
-      GetVotesForUser200Response result = apiInstance.getVotesForUser(tenantId, urlId)
+      GetVotesForUserResponse result = apiInstance.getVotesForUser(tenantId, urlId)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

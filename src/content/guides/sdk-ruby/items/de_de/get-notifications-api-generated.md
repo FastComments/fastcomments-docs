@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Nein |  |
@@ -12,19 +12,19 @@
 
 ## Antwort
 
-Gibt zurück: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Gibt zurück: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für get_notifications'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notifications Beispiel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # Autorisierung einrichten
 FastCommentsClient.configure do |config|
-  # API-Schlüssel-Autorisierung konfigurieren: api_key
+  # API-Schlüssel-Authentifizierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Die folgende Zeile einkommentieren, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
+  # Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

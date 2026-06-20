@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrača: [`GetUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_200_response.go)
+Vrne: [`GetUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_response.go)
 
 ## Primer
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // niz | 
-	id := "id_example" // niz | 
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetUser`: GetUser200Response
+	// odgovor iz `GetUser`: GetUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUser`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Name | Type | Location | Required | Description |
@@ -7,13 +8,13 @@
 
 ## Risposta
 
-Restituisce: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicket200Response.java)
+Restituisce: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicketResponse.java)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di createTicket'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione tramite api_key
+    // Configura l'autenticazione tramite API key: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +38,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     CreateTicketBody createTicketBody = new CreateTicketBody(); // CreateTicketBody | 
     try {
-      CreateTicket200Response result = apiInstance.createTicket(tenantId, userId, createTicketBody)
+      CreateTicketResponse result = apiInstance.createTicket(tenantId, userId, createTicketBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

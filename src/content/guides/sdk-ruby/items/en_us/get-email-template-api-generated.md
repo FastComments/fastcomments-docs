@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template200_response.rb)
+Returns: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_response.rb)
 
 ## Example
 
@@ -15,7 +15,7 @@ Returns: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcom
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Set up authorization
+# setup authorization
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_email_template: #{e}"
 end
 [inline-code-end]
-
----

@@ -2,25 +2,25 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
-| minValue | number | query | No |  |
-| maxValue | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | כן |  |
+| questionId | string | query | לא |  |
+| questionIds | array | query | לא |  |
+| urlId | string | query | לא |  |
+| startDate | string | query | לא |  |
+| forceRecalculate | boolean | query | לא |  |
+| minValue | number | query | לא |  |
+| maxValue | number | query | לא |  |
+| limit | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineCommentsWithQuestionResults200Response.java)
+מחזיר: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CombineQuestionResultsWithCommentsResponse.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-combineCommentsWithQuestionResults'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // הגדר אישור למפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת מחדל: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -50,7 +50,7 @@ public class Example {
     Double maxValue = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      CombineCommentsWithQuestionResults200Response result = apiInstance.combineCommentsWithQuestionResults(tenantId)
+      CombineQuestionResultsWithCommentsResponse result = apiInstance.combineCommentsWithQuestionResults(tenantId)
             .questionId(questionId)
             .questionIds(questionIds)
             .urlId(urlId)
@@ -71,3 +71,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

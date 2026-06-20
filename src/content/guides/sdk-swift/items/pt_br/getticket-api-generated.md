@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
@@ -8,7 +8,7 @@
 
 ## Resposta
 
-Retorna: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicket200Response.swift)
+Retorna: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketResponse.swift)
 
 ## Exemplo
 
@@ -32,3 +32,5 @@ DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, er
     }
 }
 [inline-code-end]
+
+---

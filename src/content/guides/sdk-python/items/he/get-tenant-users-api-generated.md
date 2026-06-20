@@ -1,43 +1,42 @@
+---
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_users200_response.py)
+מחזיר: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_users_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_tenant_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_users200_response import GetTenantUsers200Response
+from client.models.get_tenant_users_response import GetTenantUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אינה חובה וברירת המחדל היא https://fastcomments.com
-# יש לעיין ב-configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראה את configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# על הלקוח להגדיר את פרמטרי האימות וההרשאה
+# הלקוח חייב להגדיר את פרמטרי האימות והרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן; השתמשו בדוגמה ש
-# מתאימה למקרה השימוש שלכם.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה ש
+# מתאימה למקרה השימוש שלך.
 
-# הגדרו הרשאת מפתח API: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# הסירו את ההערה להלן כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+# הגדר אישור באמצעות מפתח API: api_key
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנסו להקשר עם מופע של ApiClient
+# היכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צרו מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     skip = 3.4 # float |  (אופציונלי)
@@ -49,3 +48,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tenant_users: %s\n" % e)
 [inline-code-end]
+
+---

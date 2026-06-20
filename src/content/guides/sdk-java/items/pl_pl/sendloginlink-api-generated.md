@@ -1,20 +1,20 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| redirectURL | string | query | No |  |
+| tenantId | string | query | Tak |  |
+| id | string | path | Tak |  |
+| redirectURL | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia sendLoginLink'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład sendLoginLink'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importowanie klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguracja autoryzacji kluczem API: api_key
+    // Skonfiguruj uwierzytelnianie kluczem API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String redirectURL = "redirectURL_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.sendLoginLink(tenantId, id)
+      APIEmptyResponse result = apiInstance.sendLoginLink(tenantId, id)
             .redirectURL(redirectURL)
             .execute();
       System.out.println(result);
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| urlId | string | query | 是 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
 
 ## 响应
 
-返回: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotes200Response.swift)
+返回: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesResponse.swift)
 
 ## 示例
 
@@ -30,5 +30,3 @@ DefaultAPI.getVotes(tenantId: tenantId, urlId: urlId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

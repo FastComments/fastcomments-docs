@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -11,7 +11,7 @@
 
 ## Отговор
 
-Връща: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Връща: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Пример
 
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->vote_comment: #{e}"
 end
 [inline-code-end]
-
----

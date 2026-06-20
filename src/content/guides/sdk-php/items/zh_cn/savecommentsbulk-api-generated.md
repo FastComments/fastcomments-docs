@@ -1,16 +1,16 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| isLive | boolean | 查询 | 否 |  |
-| doSpamCheck | boolean | 查询 | 否 |  |
-| sendEmails | boolean | 查询 | 否 |  |
-| populateNotifications | boolean | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| isLive | boolean | query | 否 |  |
+| doSpamCheck | boolean | query | 否 |  |
+| sendEmails | boolean | query | 否 |  |
+| populateNotifications | boolean | query | 否 |  |
 
 ## 响应
 
-返回: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveComment200Response.php)
+返回: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsBulkResponse.php)
 
 ## 示例
 
@@ -20,14 +20,13 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// 配置 API 密钥授权：api_key
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 如果你想使用自定义 http 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config

@@ -1,3 +1,4 @@
+---
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -8,14 +9,14 @@
 
 ## Antwort
 
-Gibt zurück: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+Gibt zurück: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_reacts_public Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,7 +27,7 @@ configuration = client.Configuration(
 )
 
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)

@@ -1,24 +1,25 @@
+---
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Svar
+## Respons
 
-Returnerer: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_package200_response.py)
+Returnerer: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_package_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'create_tenant_package Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_package200_response import CreateTenantPackage200Response
 from client.models.create_tenant_package_body import CreateTenantPackageBody
+from client.models.create_tenant_package_response import CreateTenantPackageResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at definere host og som standard bruges https://fastcomments.com
+# Angivelse af host er valgfri og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,10 +27,10 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel der
-# opfylder dit autentificeringsscenarie.
+# Eksempler for hver auth-metode er angivet nedenfor, brug det eksempel som
+# passer til dit auth-brugstilfælde.
 
-# Konfigurer API-nøglegodkendelse: api_key
+# Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_tenant_package: %s\n" % e)
 [inline-code-end]
+
+---

@@ -6,7 +6,7 @@
 
 ## Відповідь
 
-Повертає: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tags_bulk200_response.rb)
+Повертає: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
 
 ## Приклад
 
@@ -14,9 +14,9 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Налаштування авторизації
+# налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштуйте авторизацію за допомогою API-ключа: api_key
+  # Налаштуйте авторизацію API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -36,3 +36,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"
 end
 [inline-code-end]
+
+---

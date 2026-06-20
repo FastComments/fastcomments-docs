@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | percorso | Sì |  |
-| commentId | string | percorso | Sì |  |
+| tenantId | string | path | Sì |  |
+| commentId | string | path | Sì |  |
 | broadcastId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Esempio
 
@@ -22,7 +22,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale; `GuzzleHttp\Client` verrà usato come predefinito.
+    // Questo è opzionale; verrà utilizzato `GuzzleHttp\Client` come predefinito.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

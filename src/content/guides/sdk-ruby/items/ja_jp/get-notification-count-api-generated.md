@@ -1,17 +1,17 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
+| tenantId | string | query | はい |  |
+| userId | string | query | いいえ |  |
+| urlId | string | query | いいえ |  |
+| fromCommentId | string | query | いいえ |  |
+| viewed | boolean | query | いいえ |  |
+| type | string | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notification_count200_response.rb)
+返却: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notification_count_response.rb)
 
 ## 例
 
@@ -19,11 +19,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証の設定
+# 認証を設定
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックスを設定するには以下の行のコメントを外します。例: 'Bearer' (defaults to nil)
+  # 以下の行のコメントを外すとAPIキーのプレフィックスを設定できます。例: 'Bearer' (デフォルトは nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -45,5 +45,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_notification_count: #{e}"
 end
 [inline-code-end]
-
----

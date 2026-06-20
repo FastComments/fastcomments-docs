@@ -1,10 +1,10 @@
-必須
+req
 tenantId
 afterId
 
-## Parameters
+## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | afterId | string | query | いいえ |  |
@@ -16,7 +16,7 @@ afterId
 
 ## レスポンス
 
-戻り値: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_public_200_response.go)
+戻り値: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_feed_posts_response.go)
 
 ## 例
 
@@ -28,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetFeedPostsPublic` のレスポンス: GetFeedPostsPublic200Response
+	// `GetFeedPostsPublic` のレスポンス: PublicFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsPublic`: %v\n", resp)
 }
 [inline-code-end]

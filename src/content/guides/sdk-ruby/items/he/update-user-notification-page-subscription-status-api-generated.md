@@ -1,4 +1,4 @@
-הפעל או השבת התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרות התראות עבור תגובות שורש חדשות, וכן
+הפעל או השבת התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרות התראות עבור תגובות שורש חדשות, וגם
 
 ## פרמטרים
 
@@ -13,23 +13,23 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+מחזיר: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status דוגמה'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-update_user_notification_page_subscription_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
-url = 'url_example' # String | 
-page_title = 'page_title_example' # String | 
-subscribed_or_unsubscribed = 'subscribe' # String | 
+tenant_id = 'tenant_id_example' # מחרוזת | 
+url_id = 'url_id_example' # מחרוזת | 
+url = 'url_example' # מחרוזת | 
+page_title = 'page_title_example' # מחרוזת | 
+subscribed_or_unsubscribed = 'subscribe' # מחרוזת | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # מחרוזת | 
 }
 
 begin
@@ -40,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_page_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

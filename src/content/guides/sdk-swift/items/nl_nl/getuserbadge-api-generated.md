@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadge200Response.swift)
+Retourneert: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgeResponse.swift)
 
 ## Voorbeeld
 

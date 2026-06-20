@@ -1,6 +1,6 @@
 ### Χρήση Αυθεντικοποιημένων API (DefaultApi)
 
-**Σημαντικό:** Πρέπει να ορίσετε το API key σας στο ApiClient πριν κάνετε αιτήσεις που απαιτούν αυθεντικοποίηση. Εάν δεν το κάνετε, οι αιτήσεις θα αποτύχουν με σφάλμα 401.
+**Σημαντικό:** Πρέπει να ορίσετε το API key σας στον ApiClient πριν κάνετε αιτήματα που απαιτούν αυθεντικοποίηση. Εάν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,16 +10,16 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Δημιουργία και ρύθμιση του API client
+        // Δημιουργήστε και διαμορφώστε τον API client
         ApiClient apiClient = new ApiClient();
 
-        // ΑΠΑΡΑΙΤΗΤΟ: Ορίστε το API key σας (το πάρετε από τον πίνακα ελέγχου FastComments)
+        // ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το API key σας (λάβετε το από το dashboard του FastComments)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Δημιουργήστε το API instance με τον ρυθμισμένο client
+        // Δημιουργήστε το API instance με τον διαμορφωμένο client
         DefaultApi api = new DefaultApi(apiClient);
 
-        // Τώρα μπορείτε να κάνετε ελεγμένες κλήσεις API
+        // Τώρα μπορείτε να κάνετε αιτήματα API με αυθεντικοποίηση
         try {
             // Παράδειγμα: Προσθήκη χρήστη SSO
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
@@ -34,8 +34,8 @@ public class Example {
         } catch (ApiException e) {
             System.err.println("Error: " + e.getResponseBody());
             // Συνηθισμένα σφάλματα:
-            // - 401: API key is missing or invalid
-            // - 400: Request validation failed
+            // - 401: Το API key λείπει ή είναι άκυρο
+            // - 400: Η επικύρωση του αιτήματος απέτυχε
         }
     }
 }
@@ -60,8 +60,30 @@ try {
 }
 ```
 
-### Συνηθισμένα Προβλήματα
+### Χρήση API Εποπτείας (ModerationApi)
 
-1. **401 "missing-api-key" σφάλμα**: Βεβαιωθείτε ότι καλείτε `apiClient.setApiKey("YOUR_KEY")` πριν δημιουργήσετε το DefaultApi instance.
-2. **Λανθασμένη κλάση API**: Χρησιμοποιήστε `DefaultApi` για server-side αιτήσεις με αυθεντικοποίηση, `PublicApi` για client-side/δημόσιες αιτήσεις.
-3. **Μηδενικό API key**: Το SDK θα παραλείψει σιωπηλά την αυθεντικοποίηση εάν το API key είναι null, οδηγώντας σε σφάλματα 401.
+Το `ModerationApi` χειρίζεται τον πίνακα ελέγχου του συντονιστή. Κάθε μέθοδος δέχεται μια παράμετρο `sso` που προσδιορίζει τον συντονιστή αυθεντικοποιημένο μέσω SSO για λογαριασμό του οποίου γίνεται το αίτημα:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Λίστα σχολίων που περιμένουν έλεγχο/εποπτεία
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
+### Συνήθη Προβλήματα
+
+1. **401 "missing-api-key" error**: Βεβαιωθείτε ότι καλείτε `apiClient.setApiKey("YOUR_KEY")` πριν δημιουργήσετε το instance του DefaultApi.
+2. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για αιτήματα διακομιστή με αυθεντικοποίηση, `PublicApi` για client-side/δημόσια αιτήματα.
+3. **Μηδενικό API key (null)**: Το SDK θα παραλείψει σιωπηλά την αυθεντικοποίηση αν το API key είναι null, οδηγώντας σε σφάλματα 401.

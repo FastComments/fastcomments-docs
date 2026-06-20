@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -9,19 +9,19 @@
 
 ## Odgovor
 
-Vrne: [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+Vrne: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer pin_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'pin_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Oglejte si datoteko configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Za seznam vseh podprtih konfiguracijskih parametrov si oglejte configuration.py.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

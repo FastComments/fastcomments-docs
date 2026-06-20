@@ -13,7 +13,7 @@ afterId
 
 ## Odpowiedź
 
-Zwraca: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+Zwraca: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## Przykład
 
@@ -21,9 +21,9 @@ Zwraca: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# konfiguracja autoryzacji
+# Konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Skonfiguruj autoryzację klucza API: api_key
+  # Konfiguracja autoryzacji klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

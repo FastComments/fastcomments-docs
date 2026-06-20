@@ -1,4 +1,4 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
@@ -7,11 +7,11 @@
 
 ## Antwort
 
-Gibt zurück: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotes200Response.java)
+Gibt zurück: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesResponse.java)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotes Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Klassen importieren:
 import com.fastcomments.invoker.ApiClient;
@@ -29,14 +29,14 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Heben Sie die Kommentierung der folgenden Zeile auf, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
+    // Um die folgende Zeile zu entkommentieren, um ein Präfix für den API-Schlüssel zu setzen, z. B. "Token" (Standard ist null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     try {
-      GetVotes200Response result = apiInstance.getVotes(tenantId, urlId)
+      GetVotesResponse result = apiInstance.getVotes(tenantId, urlId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

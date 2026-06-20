@@ -1,4 +1,4 @@
-必需
+req
 tenantId
 urlId
 
@@ -6,38 +6,38 @@ urlId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| page | integer | query | 否 |  |
+| direction | string | query | 否 |  |
+| sso | string | query | 否 |  |
+| skip | integer | query | 否 |  |
+| skipChildren | integer | query | 否 |  |
+| limit | integer | query | 否 |  |
+| limitChildren | integer | query | 否 |  |
+| countChildren | boolean | query | 否 |  |
+| fetchPageForCommentId | string | query | 否 |  |
+| includeConfig | boolean | query | 否 |  |
+| countAll | boolean | query | 否 |  |
+| includei10n | boolean | query | 否 |  |
+| locale | string | query | 否 |  |
+| modules | string | query | 否 |  |
+| isCrawler | boolean | query | 否 |  |
+| includeNotificationCount | boolean | query | 否 |  |
+| asTree | boolean | query | 否 |  |
+| maxTreeDepth | integer | query | 否 |  |
+| useFullTranslationIds | boolean | query | 否 |  |
+| parentId | string | query | 否 |  |
+| searchText | string | query | 否 |  |
+| hashTags | array | query | 否 |  |
+| userId | string | query | 否 |  |
+| customConfigStr | string | query | 否 |  |
+| afterCommentId | string | query | 否 |  |
+| beforeCommentId | string | query | 否 |  |
 
 ## 响应
 
-返回: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsPublic200Response.java)
+返回: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## 示例
 
@@ -85,7 +85,7 @@ public class Example {
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
     try {
-      GetCommentsPublic200Response result = apiInstance.getCommentsPublic(tenantId, urlId)
+      GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
             .direction(direction)
             .sso(sso)

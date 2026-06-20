@@ -6,33 +6,33 @@
 
 ## Одговор
 
-Враћа: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tags_bulk200_response.py)
+Враћа: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_create_hash_tags_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'add_hash_tags_bulk пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tags_bulk Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tags_bulk200_response import AddHashTagsBulk200Response
 from client.models.bulk_create_hash_tags_body import BulkCreateHashTagsBody
+from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Дефинисање хоста је опцијоно и подразумевано је https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Испод су дат примери за сваки метод аутентификације, користите пример који
-# најбоље одговара вашем случају употребе аутентификације.
+# Клијент мора да подеси параметре аутентификације и овлашћења
+# у складу са политиком безбедности API сервера.
+# Испод су наведени примери за сваки метод аутентификације, користите пример који
+# одговара вашем случају употребе аутентификације.
 
-# Конфигуришите API key овлашћење: api_key
+# Конфигуришите овлашћење помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Уклоните коментар испод да подесите префикс (нпр. Bearer) за API key, ако је потребно
+# Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента

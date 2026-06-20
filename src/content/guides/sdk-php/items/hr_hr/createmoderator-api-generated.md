@@ -1,12 +1,12 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vraća: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateModerator200Response.php)
+Vraća: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateModeratorResponse.php)
 
 ## Primjer
 
@@ -23,8 +23,8 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, kao zadani će se koristiti `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -38,5 +38,3 @@ try {
     echo 'Exception when calling DefaultApi->createModerator: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

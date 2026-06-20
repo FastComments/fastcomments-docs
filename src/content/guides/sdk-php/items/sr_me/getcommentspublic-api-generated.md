@@ -2,7 +2,7 @@ req
 tenantId
 urlId
 
-## Parameters
+## Параметри
 
 | Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
@@ -37,7 +37,7 @@ urlId
 
 ## Одговор
 
-Враћа: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Враћа: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Пример
 
@@ -50,7 +50,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

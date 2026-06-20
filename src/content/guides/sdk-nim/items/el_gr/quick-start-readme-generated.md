@@ -1,6 +1,6 @@
-### Χρήση Αυθεντικοποιημένων API (DefaultAPI)
+### Χρήση Αυθεντικοποιημένων APIs (DefaultAPI)
 
-**Σημαντικό:** Τα endpoints που απαιτούν αυθεντικοποίηση χρειάζονται το API key σας να οριστεί ως κεφαλίδα `x-api-key`.
+**Σημαντικό:** Τα αυθεντικοποιημένα endpoints απαιτούν να ορίσετε το API key σας ως την κεφαλίδα `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Εκτέλεση αυθεντικοποιημένων κλήσεων API
+# Κάντε αυθεντικοποιημένες κλήσεις API
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -37,7 +37,7 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Χρήση Δημόσιων API (PublicAPI)
+### Χρήση Δημόσιων APIs (PublicAPI)
 
 Τα δημόσια endpoints δεν απαιτούν αυθεντικοποίηση:
 
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Εκτέλεση δημόσιων κλήσεων API
+# Κάντε δημόσιες κλήσεις API
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Συνηθισμένα προβλήματα
+### Χρήση APIs Εποπτείας (ModerationAPI)
 
-1. **401 authentication error**: Βεβαιωθείτε ότι έχετε ορίσει την κεφαλίδα `x-api-key` στο HttpClient σας πριν κάνετε αιτήματα DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Χρησιμοποιήστε `api_default` για αιτήματα με αυθεντικοποίηση από πλευράς διακομιστή, `api_public` για αιτήματα από πλευράς πελάτη/δημόσια.
+Τα endpoints εποπτείας τροφοδοτούν τον πίνακα ελέγχου του συντονιστή και αυθεντικοποιούνται με ένα SSO token για τον ενεργούντα συντονιστή:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Λίστα σχολίων στον πίνακα εποπτείας
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
+### Συνήθη Προβλήματα
+
+1. **Σφάλμα 401 αυθεντικοποίησης**: Βεβαιωθείτε ότι έχετε ορίσει την κεφαλίδα `x-api-key` στο HttpClient σας πριν κάνετε αιτήσεις DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Λανθασμένη κλάση API**: Χρησιμοποιήστε `api_default` για αυθεντικοποιημένες αιτήσεις στην πλευρά του server, `api_public` για client-side/δημόσιες αιτήσεις, και `api_moderation` για αιτήσεις στον πίνακα ελέγχου του διαχειριστή.

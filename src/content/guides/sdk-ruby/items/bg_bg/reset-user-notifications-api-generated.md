@@ -2,17 +2,17 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| afterCreatedAt | integer | query | No |  |
-| unreadOnly | boolean | query | No |  |
-| dmOnly | boolean | query | No |  |
-| noDm | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| afterId | string | query | Не |  |
+| afterCreatedAt | integer | query | Не |  |
+| unreadOnly | boolean | query | Не |  |
+| dmOnly | boolean | query | Не |  |
+| noDm | boolean | query | Не |  |
+| sso | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Връща: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Пример
 

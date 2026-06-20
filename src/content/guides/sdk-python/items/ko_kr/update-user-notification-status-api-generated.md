@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | notificationId | string | path | 예 |  |
@@ -9,14 +9,14 @@
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+반환: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'update_user_notification_status 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_status_response import UpdateUserNotificationStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,7 +27,7 @@ configuration = client.Configuration(
 )
 
 
-# API 클라이언트 인스턴스와 함께 컨텍스트에 들어갑니다
+# API 클라이언트 인스턴스로 컨텍스트에 들어갑니다
 with client.ApiClient(configuration) as api_client:
     # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)

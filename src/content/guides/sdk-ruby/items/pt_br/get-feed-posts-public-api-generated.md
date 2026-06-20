@@ -1,10 +1,11 @@
+---
 req
 tenantId
 afterId
 
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | afterId | string | query | Não |  |
@@ -16,7 +17,7 @@ afterId
 
 ## Resposta
 
-Retorna: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_public200_response.rb)
+Retorna: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_feed_posts_response.rb)
 
 ## Exemplo
 

@@ -1,14 +1,13 @@
----
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | 位置 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tag | string | パス | はい |  |
-| tenantId | string | クエリ | いいえ |  |
+| tag | string | path | はい |  |
+| tenantId | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_patch_hash_tag_200_response.go)
+戻り値: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
 
 ## 例
 
@@ -25,8 +24,8 @@ import (
 
 func main() {
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (任意)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (任意)
+	tenantId := "tenantId_example" // string |  （オプション）
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `PatchHashTag` のレスポンス: PatchHashTag200Response
+	// `PatchHashTag` からのレスポンス: UpdateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]

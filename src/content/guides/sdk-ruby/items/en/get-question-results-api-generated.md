@@ -12,7 +12,7 @@
 
 ## Response
 
-Returns: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+Returns: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
 ## Example
 

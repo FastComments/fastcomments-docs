@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | query | Не |  |
@@ -13,18 +13,18 @@
 
 ## Одговор
 
-Враћа: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+Враћа: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_events Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумевано је https://fastcomments.com
+# Подешавање host-а је опционално и подразумевано је https://fastcomments.com
 # Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -32,13 +32,13 @@ configuration = client.Configuration(
 
 # Клијент мора да конфигурише параметре аутентификације и ауторизације
 # у складу са безбедносном политиком API сервера.
-# Примери за сваку методу аутентификације су наведени испод, користите пример који
-# одговара вашем случају коришћења аутентификације.
+# Испод су наведени примери за сваки метод аутентификације, користите пример који
+# одговара вашем случају употребе аутентификације.
 
-# Конфигуришите ауторизацију помоћу API кључа: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Ако је потребно, отпкоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -46,13 +46,13 @@ with client.ApiClient(configuration) as api_client:
     # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (опционално)
-    external_id = 'external_id_example' # str |  (опционално)
-    event_type = 'event_type_example' # str |  (опционално)
-    type = 'type_example' # str |  (опционално)
-    domain = 'domain_example' # str |  (опционално)
-    attempt_count_gt = 3.4 # float |  (опционално)
-    skip = 3.4 # float |  (опционално)
+    comment_id = 'comment_id_example' # str |  (optional)
+    external_id = 'external_id_example' # str |  (optional)
+    event_type = 'event_type_example' # str |  (optional)
+    type = 'type_example' # str |  (optional)
+    domain = 'domain_example' # str |  (optional)
+    attempt_count_gt = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
@@ -61,3 +61,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_pending_webhook_events: %s\n" % e)
 [inline-code-end]
+
+---

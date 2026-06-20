@@ -1,5 +1,4 @@
----
-Agregira dokumente z združevanjem (če je podan groupBy) in izvajanjem več operacij.
+Agregira dokumente z združevanjem (če je podano groupBy) in z izvajanjem več operacij.
 Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
 
 ## Parametri
@@ -12,19 +11,19 @@ Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
 
 ## Odgovor
 
-Vrne: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Vrača: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer agregacije'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Če naletite na težave, jih prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za morebitne težave jih prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let aggregationRequest = AggregationRequest(query: [QueryPredicate(key: "key_example", value: QueryPredicate_value(), _operator: "_operator_example")], resourceName: "resourceName_example", groupBy: ["groupBy_example"], operations: [AggregationOperation(field: "field_example", op: AggregationOpType(), alias: "alias_example", expandArray: false)], sort: AggregationRequest_sort(dir: "dir_example", field: "field_example")) // AggregationRequest | 
-let parentTenantId = "parentTenantId_example" // String |  (izbirno)
-let includeStats = true // Bool |  (izbirno)
+let parentTenantId = "parentTenantId_example" // String |  (neobvezno)
+let includeStats = true // Bool |  (neobvezno)
 
 DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, parentTenantId: parentTenantId, includeStats: includeStats) { (response, error) in
     guard error == nil else {

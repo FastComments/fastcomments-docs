@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | query | Oui |  |
@@ -10,7 +10,7 @@
 
 ## Réponse
 
-Renvoie: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Renvoie: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Exemple
 
@@ -18,21 +18,21 @@ Renvoie: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configuration de l'autorisation
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API : api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par exemple 'Bearer' (par défaut : nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-direction = 'up' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
+comment_id = 'comment_id_example' # Chaîne | 
+direction = 'up' # Chaîne | 
 opts = {
-  user_id: 'user_id_example', # String | 
-  anon_user_id: 'anon_user_id_example' # String | 
+  user_id: 'user_id_example', # Chaîne | 
+  anon_user_id: 'anon_user_id_example' # Chaîne | 
 }
 
 begin

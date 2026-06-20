@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -12,7 +12,7 @@
 
 ## Odgovor
 
-Vrne: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badges_200_response.go)
+Vrača: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badges_response.go)
 
 ## Primer
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (izbirno)
-	badgeId := "badgeId_example" // string |  (izbirno)
-	type_ := float64(1.2) // float64 |  (izbirno)
-	displayedOnComments := true // bool |  (izbirno)
-	limit := float64(1.2) // float64 |  (izbirno)
-	skip := float64(1.2) // float64 |  (izbirno)
+	userId := "userId_example" // string |  (neobvezno)
+	badgeId := "badgeId_example" // string |  (neobvezno)
+	type_ := float64(1.2) // float64 |  (neobvezno)
+	displayedOnComments := true // bool |  (neobvezno)
+	limit := float64(1.2) // float64 |  (neobvezno)
+	skip := float64(1.2) // float64 |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetUserBadges`: GetUserBadges200Response
+	// odgovor iz `GetUserBadges`: APIGetUserBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadges`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | urlId | string | query | はい |  |
@@ -11,7 +12,7 @@
 
 ## レスポンス
 
-戻り値: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+戻り値: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## 例
 
@@ -38,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
+
+---

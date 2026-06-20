@@ -7,18 +7,18 @@
 
 ## Antwort
 
-Gibt zurück: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags200_response.py)
+Gibt zurück: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_hash_tags Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_hash_tags200_response import GetHashTags200Response
+from client.models.get_hash_tags_response import GetHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
+# Das Festlegen des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,16 +26,16 @@ configuration = client.Configuration(
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
 # gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Für jede Authentifizierungsmethode sind nachfolgend Beispiele angegeben; verwenden Sie das
-# Beispiel, das zu Ihrem Authentifizierungsfall passt.
+# Beispiele für jede Authentifizierungsmethode werden unten bereitgestellt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
 
-# API-Schlüssel-Authentifizierung konfigurieren: api_key
+# API-Key-Autorisierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie unten das Kommentarzeichen, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Key einzurichten, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_hash_tags: %s\n" % e)
 [inline-code-end]
-
----

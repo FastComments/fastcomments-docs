@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Respons
+## Response
 
-Retourneert: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModerator200Response.swift)
+Geeft terug: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModeratorResponse.swift)
 
 ## Voorbeeld
 
@@ -30,5 +30,3 @@ DefaultAPI.getModerator(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,14 +1,14 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|----------|-----------|-------------|
 | tenantId | string | path | Sí |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostPublic200Response.php)
+Devuelve: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
 
 ## Ejemplo
 
@@ -21,7 +21,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, `GuzzleHttp\Client` se utilizará por defecto.
+    // Esto es opcional; `GuzzleHttp\Client` se empleará como predeterminado.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

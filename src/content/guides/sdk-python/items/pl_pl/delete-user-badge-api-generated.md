@@ -7,14 +7,14 @@
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_badge200_response.py)
+Zwraca: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_success_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład delete_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_badge200_response import UpdateUserBadge200Response
+from client.models.api_empty_success_response import APIEmptySuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,9 +25,9 @@ configuration = client.Configuration(
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z polityką zabezpieczeń serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania — użyj
-# przykładu, który odpowiada Twojemu przypadkowi użycia.
+# zgodnie z polityką bezpieczeństwa serwera API.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj przykładu,
+# który pasuje do Twojego scenariusza uwierzytelniania.
 
 # Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_user_badge: %s\n" % e)
 [inline-code-end]
-
----

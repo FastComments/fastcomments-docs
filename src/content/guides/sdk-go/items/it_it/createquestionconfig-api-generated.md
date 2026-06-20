@@ -6,7 +6,7 @@
 
 ## Risposta
 
-Restituisce: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_200_response.go)
+Restituisce: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_response.go)
 
 ## Esempio
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // stringa | 
+	tenantId := "tenantId_example" // string | 
 	createQuestionConfigBody := *openapiclient.NewCreateQuestionConfigBody("Name_example", "Question_example", "Type_example", float64(123)) // CreateQuestionConfigBody | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -32,7 +32,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `CreateQuestionConfig`: CreateQuestionConfig200Response
+	// response from `CreateQuestionConfig`: CreateQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
+
+---

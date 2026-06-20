@@ -4,7 +4,7 @@ afterId
 
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Type | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | afterId | string | query | Όχι |  |
@@ -16,25 +16,25 @@ afterId
 
 ## Απόκριση
 
-Επιστρέφει: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
+# Η ρύθμιση του host είναι προαιρετική και προεπιλεγμένη τιμή είναι το https://fastcomments.com
 # Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.PublicApi(api_client)

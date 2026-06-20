@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | כן |  |
+| id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_200_response.go)
+מחזיר: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_comment_response.go)
 
 ## דוגמה
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -33,7 +33,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`GetComment`: GetComment200Response
+	// תגובה מ-`GetComment`: APIGetCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

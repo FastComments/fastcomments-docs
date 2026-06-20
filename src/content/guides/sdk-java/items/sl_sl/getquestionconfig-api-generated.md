@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfig200Response.java)
+Vrne: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigResponse.java)
 
 ## Primer
 
@@ -26,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj avtentikacijo API ključa: api_key
+    // Konfigurirajte avtentikacijo API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
@@ -36,16 +36,13 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetQuestionConfig200Response result = apiInstance.getQuestionConfig(tenantId, id)
+      GetQuestionConfigResponse result = apiInstance.getQuestionConfig(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#getQuestionConfig");
-      // Koda stanja: 
       System.err.println("Status code: " + e.getCode());
-      // Razlog: 
       System.err.println("Reason: " + e.getResponseBody());
-      // Glave odziva: 
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }

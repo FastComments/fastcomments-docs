@@ -1,23 +1,24 @@
-### Χρήση Πιστοποιημένων APIs (DefaultApi)
+---
+### Χρήση Επαληθευμένων API (DefaultApi)
 
-**Σημαντικό:** Πρέπει να ορίσετε το API key σας στο ApiClient πριν κάνετε πιστοποιημένες κλήσεις. Εάν δεν το κάνετε, οι αιτήσεις θα αποτύχουν με σφάλμα 401.
+**Σημαντικό:** Πρέπει να ορίσετε το κλειδί API στο ApiClient πριν κάνετε επαληθευμένα αιτήματα. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
-# Δημιουργία και ρύθμιση του πελάτη API
+# Δημιουργήστε και ρυθμίστε τον API client
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# ΑΠΑΡΑΙΤΗΤΟ: Ορίστε το API key σας (λάβετε το από τον πίνακα ελέγχου FastComments)
+# ΑΠΑΡΑΙΤΗΤΟ: Ορίστε το κλειδί API σας (το λάβετε από τον πίνακα ελέγχου FastComments)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Δημιουργία του instance του API με τον διαμορφωμένο client
+# Δημιουργήστε το instance του API με τον ρυθμισμένο client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Τώρα μπορείτε να κάνετε πιστοποιημένες κλήσεις API
+# Τώρα μπορείτε να κάνετε επαληθευμένες κλήσεις API
 begin
-  # Παράδειγμα: Προσθήκη SSO χρήστη
+  # Παράδειγμα: Προσθήκη χρήστη SSO
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -29,18 +30,18 @@ begin
 
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
-  # Συνήθη σφάλματα:
-  # - 401: Το API key λείπει ή είναι άκυρο
-  # - 400: Η επικύρωση του αιτήματος απέτυχε
+  # Συνηθισμένα σφάλματα:
+  # - 401: Το κλειδί API λείπει ή είναι άκυρο
+  # - 400: Η επικύρωση αιτήματος απέτυχε
 end
 ```
 
-### Χρήση Δημόσιων APIs (PublicApi)
+### Χρήση Δημόσιων API (PublicApi)
 
 Τα δημόσια endpoints δεν απαιτούν αυθεντικοποίηση:
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -55,8 +56,29 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Συνήθη προβλήματα
+### Χρήση API Ελέγχου (ModerationApi)
 
-1. **401 "missing-api-key" error**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key['x-api-key'] = 'YOUR_KEY'` πριν δημιουργήσετε το instance `DefaultApi`.
-2. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για server-side πιστοποιημένα αιτήματα, `PublicApi` για client-side/δημόσια αιτήματα.
-3. **Null API key**: Το SDK θα παραλείψει αθόρυβα την αυθεντικοποίηση εάν το API key είναι null, οδηγώντας σε σφάλματα 401.
+Οι μέθοδοι moderation τροφοδοτούν τον πίνακα ελέγχου των συντονιστών. Δώστε ένα `sso` token ώστε το αίτημα να γίνει εκ μέρους ενός συντονιστή που έχει πιστοποιηθεί μέσω SSO:
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # Παράδειγμα: Λίστα σχολίων στην ουρά επιτήρησης
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
+### Συνηθισμένα Προβλήματα
+
+1. **401 "missing-api-key" error**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key['x-api-key'] = 'YOUR_KEY'` πριν δημιουργήσετε το instance DefaultApi.
+2. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για server-side επαληθευμένα αιτήματα, `PublicApi` για client-side/δημόσια αιτήματα, και `ModerationApi` για αιτήματα του πίνακα ελέγχου συντονιστή.
+3. **Null API key**: Το SDK θα παραλείψει σιωπηρά την αυθεντικοποίηση εάν το κλειδί API είναι null, οδηγώντας σε σφάλματα 401.
+---

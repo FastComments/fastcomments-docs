@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必需 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
@@ -11,7 +11,7 @@
 
 ## 回應
 
-回傳: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+回傳: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## 範例
 
@@ -21,13 +21,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字串 | 
+url_id = 'url_id_example' # 字串 | 
 opts = {
-  username_starts_with: 'username_starts_with_example', # String | 
-  mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example', # String | 
-  search_section: 'fast' # String | 
+  username_starts_with: 'username_starts_with_example', # 字串 | 
+  mention_group_ids: ['inner_example'], # 陣列<String> | 
+  sso: 'sso_example', # 字串 | 
+  search_section: 'fast' # 字串 | 
 }
 
 begin
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
+
+---

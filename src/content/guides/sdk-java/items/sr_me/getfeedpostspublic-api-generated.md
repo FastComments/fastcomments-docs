@@ -4,7 +4,7 @@ afterId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | afterId | string | query | Ne |  |
@@ -16,7 +16,7 @@ afterId
 
 ## Odgovor
 
-Vraća: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsPublic200Response.java)
+Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicFeedPostsResponse.java)
 
 ## Primjer
 
@@ -43,7 +43,7 @@ public class Example {
     Boolean isCrawler = true; // Boolean | 
     Boolean includeUserInfo = true; // Boolean | 
     try {
-      GetFeedPostsPublic200Response result = apiInstance.getFeedPostsPublic(tenantId)
+      PublicFeedPostsResponse result = apiInstance.getFeedPostsPublic(tenantId)
             .afterId(afterId)
             .limit(limit)
             .tags(tags)

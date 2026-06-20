@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -8,13 +7,13 @@
 
 ## Odgovor
 
-Vrača: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenant200Response.swift)
+Vrne: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getTenant Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za morebitne težave poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta. Za kakršnekoli težave poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

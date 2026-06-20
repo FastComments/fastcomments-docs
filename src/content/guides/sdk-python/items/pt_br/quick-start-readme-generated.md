@@ -1,25 +1,25 @@
 ### Usando APIs Autenticadas (DefaultApi)
 
-**Importante:** Você deve definir sua chave de API na Configuration antes de fazer requisições autenticadas. Se não definir, as requisições falharão com um erro 401.
+**Importante:** Você deve definir sua chave de API em Configuration antes de fazer requisições autenticadas. Se não o fizer, as requisições falharão com um erro 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Crie e configure o cliente da API
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# OBRIGATÓRIO: Defina sua chave de API (obtenha isso no seu painel do FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Crie a instância da API com o cliente configurado
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Agora você pode fazer chamadas de API autenticadas
+# Now you can make authenticated API calls
 try:
-    # Exemplo: Adicionar um usuário SSO
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Erros comuns:
-    # - 401: chave da API ausente ou inválida
-    # - 400: Falha na validação da requisição
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Usando APIs Públicas (PublicApi)
 
-Endpoints públicos não requerem autenticação:
+Endpoints públicos não exigem autenticação:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,6 +62,27 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Usando o Painel de Moderação (ModerationApi)
+
+O `ModerationApi` alimenta o painel do moderador. Os métodos são chamados em nome de um moderador passando um token `sso`:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Usando SSO (Single Sign-On)
 
 O SDK inclui utilitários para gerar tokens SSO seguros:
@@ -69,7 +90,7 @@ O SDK inclui utilitários para gerar tokens SSO seguros:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Crie os dados do usuário
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Crie a instância SSO com seu segredo da API
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Gere o token SSO
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# Use este token no seu frontend ou passe para chamadas de API
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -107,7 +128,7 @@ sso_token = sso.create_token()
 ### Problemas Comuns
 
 1. **401 "missing-api-key" error**: Certifique-se de definir `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` antes de criar a instância DefaultApi.
-2. **Classe de API incorreta**: Use `DefaultApi` para requisições autenticadas no lado do servidor, `PublicApi` para requisições do lado do cliente/públicas.
-3. **Erros de importação**: Certifique-se de importar do módulo correto:
+2. **Classe de API incorreta**: Use `DefaultApi` para requisições autenticadas no lado do servidor, `PublicApi` para requisições no lado do cliente/públicas, e `ModerationApi` para requisições do painel do moderador.
+3. **Erros de importação**: Certifique-se de estar importando do módulo correto:
    - Cliente da API: `from client import ...`
    - Utilitários SSO: `from sso import ...`

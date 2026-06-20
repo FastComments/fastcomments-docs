@@ -1,14 +1,15 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| id | string | path | 是 |  |
-| skip | number | query | 否 |  |
+| tenantId | string | 查詢 | 是 |  |
+| id | string | 路徑 | 是 |  |
+| skip | number | 查詢 | 否 |  |
 
 ## 回應
 
-回傳: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateRenderErrors200Response.java)
+回傳: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateRenderErrorsResponse.java)
 
 ## 範例
 
@@ -30,7 +31,7 @@ public class Example {
     // 設定 API 金鑰授權：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解以下行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
+    // 取消註解下列行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +39,7 @@ public class Example {
     String id = "id_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetEmailTemplateRenderErrors200Response result = apiInstance.getEmailTemplateRenderErrors(tenantId, id)
+      GetEmailTemplateRenderErrorsResponse result = apiInstance.getEmailTemplateRenderErrors(tenantId, id)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -52,3 +53,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

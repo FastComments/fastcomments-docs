@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -9,15 +8,15 @@
 | doSpamCheck | boolean | query | Nee |  |
 | isLive | boolean | query | Nee |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'updateComment Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,21 +29,21 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutelautorisatie: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard is null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
-    PickAPICommentUpdatableCommentFields body = new PickAPICommentUpdatableCommentFields(); // PickAPICommentUpdatableCommentFields | 
+    UpdatableCommentParams updatableCommentParams = new UpdatableCommentParams(); // UpdatableCommentParams | 
     String contextUserId = "contextUserId_example"; // String | 
     Boolean doSpamCheck = true; // Boolean | 
     Boolean isLive = true; // Boolean | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateComment(tenantId, id, body)
+      APIEmptyResponse result = apiInstance.updateComment(tenantId, id, updatableCommentParams)
             .contextUserId(contextUserId)
             .doSpamCheck(doSpamCheck)
             .isLive(isLive)
@@ -60,5 +59,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

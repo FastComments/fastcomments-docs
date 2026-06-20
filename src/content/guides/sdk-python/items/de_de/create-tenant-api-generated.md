@@ -6,19 +6,19 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant200_response.py)
+Gibt zurück: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'create_tenant Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant200_response import CreateTenant200Response
 from client.models.create_tenant_body import CreateTenantBody
+from client.models.create_tenant_response import CreateTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Festlegung des Hosts ist optional und Standardwert ist https://fastcomments.com
+# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,18 +26,18 @@ configuration = client.Configuration(
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
 # gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie
-# das Beispiel, das Ihren Authentifizierungsfall erfüllt.
+# Beispiele für jede Auth-Methode sind unten angegeben. Verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsanforderungen entspricht.
 
-# Configure API key authorization: api_key
+# API-Schlüssel-Autorisierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Auskommentieren Sie unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_tenant_body = client.CreateTenantBody() # CreateTenantBody | 

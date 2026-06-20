@@ -2,11 +2,11 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
+| tenantId | string | query | Yes |  |
 
 ## レスポンス
 
-戻り値: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant200_response.rb)
+返却: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_response.rb)
 
 ## 例
 
@@ -14,11 +14,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証の設定
+# 認証を設定
 FastCommentsClient.configure do |config|
   # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーのプレフィックスを設定する場合は次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
+  # APIキーのプレフィックスを設定するには、次の行のコメントを外します。例: 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_tenant: #{e}"
 end
 [inline-code-end]
-
----

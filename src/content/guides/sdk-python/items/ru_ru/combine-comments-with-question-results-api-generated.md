@@ -1,6 +1,7 @@
+---
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | questionId | string | query | Нет |  |
@@ -14,37 +15,37 @@
 
 ## Ответ
 
-Возвращает: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_comments_with_question_results200_response.py)
+Возвращает: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.combine_comments_with_question_results200_response import CombineCommentsWithQuestionResults200Response
+from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста не обязательно, по умолчанию используется https://fastcomments.com
+# Указание хоста необязательно; по умолчанию используется https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности API-сервера.
-# Ниже приведены примеры для каждого метода авторизации — используйте
-# тот, который подходит для вашего сценария использования.
+# в соответствии с политикой безопасности сервера API.
+# Ниже приведены примеры для каждого метода аутентификации; используйте тот,
+# который соответствует вашему сценарию аутентификации.
 
-# Настройка авторизации по API-ключу: api_key
+# Настройте авторизацию по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если это необходимо
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если требуется
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войти в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
-    # Создать экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (необязательно)
@@ -63,3 +64,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->combine_comments_with_question_results: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,26 +1,26 @@
-zahtjev
+zahtev
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| afterId | string | query | Ne |  |
-| limit | integer | query | Ne |  |
-| tags | array | query | Ne |  |
-| sso | string | query | Ne |  |
-| isCrawler | boolean | query | Ne |  |
-| includeUserInfo | boolean | query | Ne |  |
+| tenantId | string | path | Да |  |
+| afterId | string | query | Не |  |
+| limit | integer | query | Не |  |
+| tags | array | query | Не |  |
+| sso | string | query | Не |  |
+| isCrawler | boolean | query | Не |  |
+| includeUserInfo | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_feed_posts_public_200_response.go)
+Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_feed_posts_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer GetFeedPostsPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetFeedPostsPublic пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -28,17 +28,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  (neobavezno)
-	limit := int32(56) // int32 |  (neobavezno)
-	tags := []string{"Inner_example"} // []string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
-	isCrawler := true // bool |  (neobavezno)
-	includeUserInfo := true // bool |  (neobavezno)
+	afterId := "afterId_example" // string |  (опционо)
+	limit := int32(56) // int32 |  (опционо)
+	tags := []string{"Inner_example"} // []string |  (опционо)
+	sso := "sso_example" // string |  (опционо)
+	isCrawler := true // bool |  (опционо)
+	includeUserInfo := true // bool |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetFeedPostsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFeedPostsPublic`: GetFeedPostsPublic200Response
+	// одговор од `GetFeedPostsPublic`: PublicFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsPublic`: %v\n", resp)
 }
 [inline-code-end]

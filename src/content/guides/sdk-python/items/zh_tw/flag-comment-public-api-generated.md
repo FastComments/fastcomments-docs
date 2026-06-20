@@ -1,40 +1,40 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| isFlagged | boolean | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| isFlagged | boolean | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'flag_comment_public 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 設定主機為選用，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的配置參數清單。
+# 定義 host 是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 以 API 客戶端實例進入上下文
+# 使用 API client 實例進入一個上下文環境
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     is_flagged = True # bool | 
-    sso = 'sso_example' # str |  (選用)
+    sso = 'sso_example' # str |  (選填)
 
     try:
         api_response = api_instance.flag_comment_public(tenant_id, comment_id, is_flagged, sso=sso)

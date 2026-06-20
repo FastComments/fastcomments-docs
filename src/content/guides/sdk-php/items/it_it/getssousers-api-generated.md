@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUsers200Response.php)
+Restituisce: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUsersResponse.php)
 
 ## Esempio
 
@@ -17,15 +17,15 @@ Restituisce: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione API key: api_key
+// Configura l'autorizzazione con API key: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga qui sotto per impostare un prefisso (es. Bearer) per la API key, se necessario
+// Decommenta la riga sottostante per impostare il prefisso (es. Bearer) per la API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come default.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->getSSOUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

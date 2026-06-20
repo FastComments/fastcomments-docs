@@ -10,13 +10,13 @@
 
 ## Response
 
-Returns: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsages200Response.swift)
+Returns: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
 
 ## Example
 
 [inline-code-attrs-start title = 'getTenantDailyUsages Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// The following code samples are still beta. If you encounter an issue, please report it at http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -36,5 +36,3 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, mont
     }
 }
 [inline-code-end]
-
----

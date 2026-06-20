@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetCommentText200Response.swift)
+Returns: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
 
 ## Example
 

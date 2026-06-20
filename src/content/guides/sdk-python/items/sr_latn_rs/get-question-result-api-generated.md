@@ -7,14 +7,14 @@
 
 ## Odgovor
 
-Vraća: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result200_response.py)
+Vraća: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_question_result Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_result200_response import GetQuestionResult200Response
+from client.models.get_question_result_response import GetQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,18 +26,18 @@ configuration = client.Configuration(
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
 # u skladu sa bezbednosnom politikom API servera.
-# Primeri za svaki metod autentifikacije dati su ispod; koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Primeri za svaki metod autentifikacije dati su ispod, koristite primer koji
+# odgovara vašem slučaju upotrebe autentifikacije.
 
 # Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Napravite instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

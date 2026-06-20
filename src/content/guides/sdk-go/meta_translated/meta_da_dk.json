@@ -15,31 +15,37 @@
       "type": "readme"
     },
     {
-      "name": "Aggregering",
+      "name": "Aggreger",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregering",
       "type": "api"
     },
     {
-      "name": "Hent revisionslog",
+      "name": "Hent revisionslogge",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Revisionslog",
+      "subCat": "Revisionslogge",
       "type": "api"
     },
     {
-      "name": "Bloker fra kommentar (offentlig)",
+      "name": "Log ud (offentlig)",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "Autentificering",
+      "type": "api"
+    },
+    {
+      "name": "Bloker fra kommentar",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Bloker fra kommentar",
       "type": "api"
     },
     {
-      "name": "Ophæv blokering af kommentar (offentlig)",
+      "name": "Fjern blokering af kommentar (offentlig)",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "Bloker fra kommentar",
       "type": "api"
     },
     {
-      "name": "Tjek kommentarer for blokerede",
+      "name": "Kontrollerede kommentarer for blokerede",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "Tjek blokerede kommentarer",
       "type": "api"
@@ -69,13 +75,13 @@
       "type": "api"
     },
     {
-      "name": "Slet stemme på kommentar",
+      "name": "Slet kommentarstemme",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
     },
     {
-      "name": "Rapporter kommentar",
+      "name": "Anmeld kommentar",
       "file": "flagcomment-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
@@ -135,19 +141,19 @@
       "type": "api"
     },
     {
-      "name": "Angiv kommentartekst",
+      "name": "Sæt kommentartekst",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
     },
     {
-      "name": "Ophæv blokering af bruger fra kommentar",
+      "name": "Fjern blokering af bruger fra kommentar",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
     },
     {
-      "name": "Fjern rapportering af kommentar",
+      "name": "Fjern anmeldelse af kommentar",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
@@ -177,6 +183,12 @@
       "type": "api"
     },
     {
+      "name": "Hent kommentarer for bruger",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Kommentarer for bruger",
+      "type": "api"
+    },
+    {
       "name": "Tilføj domænekonfiguration",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Domænekonfigurationer",
@@ -201,7 +213,7 @@
       "type": "api"
     },
     {
-      "name": "Opdater domænekonfiguration",
+      "name": "Patch domænekonfiguration",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Domænekonfigurationer",
       "type": "api"
@@ -225,7 +237,7 @@
       "type": "api"
     },
     {
-      "name": "Slet gengivelsesfejl for e-mail-skabelon",
+      "name": "Slet e-mail-skabelon render-fejl",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "E-mail-skabeloner",
       "type": "api"
@@ -237,13 +249,13 @@
       "type": "api"
     },
     {
-      "name": "Hent e-mail-skabelondefinitioner",
+      "name": "Hent definitioner af e-mail-skabeloner",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
-      "name": "Hent gengivelsesfejl for e-mail-skabeloner",
+      "name": "Hent e-mail-skabelon render-fejl",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "E-mail-skabeloner",
       "type": "api"
@@ -255,7 +267,7 @@
       "type": "api"
     },
     {
-      "name": "Gengiv e-mail-skabelon",
+      "name": "Render e-mail-skabelon",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "E-mail-skabeloner",
       "type": "api"
@@ -279,69 +291,87 @@
       "type": "api"
     },
     {
-      "name": "Opret feed-indlæg",
+      "name": "Opret feed-opslag",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Opret offentligt feed-indlæg",
+      "name": "Opret feed-opslag (offentlig)",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Slet offentligt feed-indlæg",
+      "name": "Slet feed-opslag (offentlig)",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Hent feed-indlæg",
+      "name": "Hent feed-opslag",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Hent offentlige feed-indlæg",
+      "name": "Hent feed-opslag (offentlig)",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Hent feed-indlægsstatistik",
+      "name": "Hent statistik for feed-opslag",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
       "name": "Hent brugerreaktioner (offentlig)",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Reager på offentligt feed-indlæg",
+      "name": "Reagér på feed-opslag (offentlig)",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Opdater feed-indlæg",
+      "name": "Opdater feed-opslag",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Opdater offentligt feed-indlæg",
+      "name": "Opdater feed-opslag (offentlig)",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feed-opslag",
       "type": "api"
     },
     {
-      "name": "Rapporter kommentar (offentlig)",
+      "name": "Anmeld kommentar (offentlig)",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Rapporter kommentar",
+      "subCat": "Anmeld kommentar",
+      "type": "api"
+    },
+    {
+      "name": "Hent stor GIF",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIF'er",
+      "type": "api"
+    },
+    {
+      "name": "Søg GIF'er",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIF'er",
+      "type": "api"
+    },
+    {
+      "name": "Hent trendende GIF'er",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIF'er",
       "type": "api"
     },
     {
@@ -369,9 +399,267 @@
       "type": "api"
     },
     {
-      "name": "Opdater hashtag",
+      "name": "Patch hashtag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "Slet moderationsstemme",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent API-kommentarer",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent API-eksportstatus",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent API-ids",
+      "file": "getapiids-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent bandlyste brugere fra kommentar",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent kommentar-bandlysningsstatus",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent kommentarers børn",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent antal",
+      "file": "getcount-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent antal (flere)",
+      "file": "getcounts-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent logs",
+      "file": "getlogs-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent manuelle badges",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent manuelle badges for bruger",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent moderationskommentar",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent moderationskommentartekst",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent forudban-sammendrag",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent søgekommentarers sammendrag",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent søgesider",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent søgesites",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent søgeforslag",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent søgebrugere",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent tillidsfaktor",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent brugerens bandlysningspræference",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent brugerens interne profil",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Juster kommentarstemmer",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Start API-eksport",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Bandlys bruger fra kommentar",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Fortryd bandlysning af bruger",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Bulk forudban-sammendrag",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Hent kommentarer efter id'er",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Anmeld kommentar (moderering)",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Fjern kommentar",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Gendan slettet kommentar",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Sæt kommentarens godkendelsesstatus",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Sæt kommentarens anmeldelsesstatus",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Sæt kommentar som spam",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Sæt kommentartekst (moderering)",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Fjern anmeldelse af kommentar (moderering)",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Afgiv stemme",
+      "file": "postvote-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Tildel badge",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Luk tråd",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Fjern badge",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Genåbn tråd",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "Moderering",
+      "type": "api"
+    },
+    {
+      "name": "Sæt tillidsfaktor",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "Moderering",
       "type": "api"
     },
     {
@@ -423,7 +711,7 @@
       "type": "api"
     },
     {
-      "name": "Hent antal notifikationer",
+      "name": "Hent notifikationstælling",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Notifikationer",
       "type": "api"
@@ -441,6 +729,48 @@
       "type": "api"
     },
     {
+      "name": "Opret side-reaktion v1",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
+      "name": "Opret side-reaktion v2",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
+      "name": "Slet side-reaktion v1",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
+      "name": "Slet side-reaktion v2",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
+      "name": "Hent side-likes v1",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
+      "name": "Hent side-reaktioner v2",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
+      "name": "Hent brugere, der reagerede på side v2",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Side-reaktioner",
+      "type": "api"
+    },
+    {
       "name": "Tilføj side",
       "file": "addpage-api-generated.md",
       "subCat": "Sider",
@@ -453,7 +783,19 @@
       "type": "api"
     },
     {
-      "name": "Hent side via URL-id",
+      "name": "Hent offline brugere",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
+      "name": "Hent online brugere",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
+      "name": "Hent side efter URL-id",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Sider",
       "type": "api"
@@ -465,7 +807,19 @@
       "type": "api"
     },
     {
-      "name": "Opdater side",
+      "name": "Hent sider (offentlig)",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
+      "name": "Hent brugeroplysninger",
+      "file": "getusersinfo-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
+      "name": "Patch side",
       "file": "patchpage-api-generated.md",
       "subCat": "Sider",
       "type": "api"
@@ -519,51 +873,51 @@
       "type": "api"
     },
     {
-      "name": "Opret resultat for spørgsmål",
+      "name": "Opret spørgsmaalsresultat",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Spørgsmålsresultater",
+      "subCat": "Spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Slet resultat for spørgsmål",
+      "name": "Slet spørgsmaalsresultat",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Spørgsmålsresultater",
+      "subCat": "Spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Hent resultat for spørgsmål",
+      "name": "Hent spørgsmaalsresultat",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Spørgsmålsresultater",
+      "subCat": "Spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Hent resultater for spørgsmål",
+      "name": "Hent spørgsmaalsresultater",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Spørgsmålsresultater",
+      "subCat": "Spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Opdater resultat for spørgsmål",
+      "name": "Opdater spørgsmaalsresultat",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Spørgsmålsresultater",
+      "subCat": "Spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Aggreger resultater for spørgsmål",
+      "name": "Aggreger spørgsmaalsresultater",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af resultater for spørgsmål",
+      "subCat": "Aggregering af spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Aggreger resultater for spørgsmål i bulk",
+      "name": "Bulk-aggreger spørgsmaalsresultater",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af resultater for spørgsmål",
+      "subCat": "Aggregering af spørgsmaalsresultater",
       "type": "api"
     },
     {
-      "name": "Kombiner kommentarer med resultater for spørgsmål",
+      "name": "Kombinér kommentarer med spørgsmaalsresultater",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregering af resultater for spørgsmål",
+      "subCat": "Aggregering af spørgsmaalsresultater",
       "type": "api"
     },
     {
@@ -597,7 +951,7 @@
       "type": "api"
     },
     {
-      "name": "Opdater SSO-bruger",
+      "name": "Patch SSO-bruger",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO-brugere",
       "type": "api"
@@ -635,7 +989,7 @@
     {
       "name": "Hent lejers daglige forbrug",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Lejer dagligt forbrug",
+      "subCat": "Lejers daglige forbrug",
       "type": "api"
     },
     {
@@ -747,27 +1101,33 @@
       "type": "api"
     },
     {
-      "name": "Skift sagsstatus",
+      "name": "Skift ticket-tilstand",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "Sager",
+      "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "Opret sag",
+      "name": "Opret ticket",
       "file": "createticket-api-generated.md",
-      "subCat": "Sager",
+      "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "Hent sag",
+      "name": "Hent ticket",
       "file": "getticket-api-generated.md",
-      "subCat": "Sager",
+      "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "Hent sager",
+      "name": "Hent tickets",
       "file": "gettickets-api-generated.md",
-      "subCat": "Sager",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Hent oversættelser",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Oversættelser",
       "type": "api"
     },
     {
@@ -777,21 +1137,21 @@
       "type": "api"
     },
     {
-      "name": "Hent brugerens badge-fremdrift efter id",
+      "name": "Hent brugerbadge-fremgang efter id",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Bruger badge-fremdrift",
+      "subCat": "Brugerbadge-fremgang",
       "type": "api"
     },
     {
-      "name": "Hent brugerens badge-fremdrift efter bruger-id",
+      "name": "Hent brugerbadge-fremgang efter bruger-id",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Bruger badge-fremdrift",
+      "subCat": "Brugerbadge-fremgang",
       "type": "api"
     },
     {
-      "name": "Hent liste over bruger-badge-fremdrift",
+      "name": "Hent liste over brugerbadge-fremgang",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Bruger badge-fremdrift",
+      "subCat": "Brugerbadge-fremgang",
       "type": "api"
     },
     {
@@ -849,13 +1209,13 @@
       "type": "api"
     },
     {
-      "name": "Opdater brugerens abonnementsstatus for kommentar-notifikationer",
+      "name": "Opdater brugerens kommentar-abonnementsstatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Brugernotifikationer",
       "type": "api"
     },
     {
-      "name": "Opdater brugerens abonnementsstatus for side-notifikationer",
+      "name": "Opdater brugerens side-abonnementsstatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Brugernotifikationer",
       "type": "api"
@@ -867,9 +1227,9 @@
       "type": "api"
     },
     {
-      "name": "Hent bruger tilstedeværelsesstatusser",
+      "name": "Hent bruger-tilstedeværelsesstatuser",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Bruger tilstedeværelsesstatus",
+      "subCat": "Brugertilstedeværelsesstatus",
       "type": "api"
     },
     {

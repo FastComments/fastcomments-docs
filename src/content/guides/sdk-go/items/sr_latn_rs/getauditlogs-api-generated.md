@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | limit | number | query | Ne |  |
@@ -11,7 +11,7 @@
 
 ## Odgovor
 
-Vraća: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_200_response.go)
+Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_response.go)
 
 ## Primer
 
@@ -23,16 +23,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	limit := float64(1.2) // float64 |  (neobavezno)
-	skip := float64(1.2) // float64 |  (neobavezno)
-	order := openapiclient.SORT_DIR("ASC") // SORTDIR |  (neobavezno)
-	after := float64(1.2) // float64 |  (neobavezno)
-	before := float64(1.2) // float64 |  (neobavezno)
+	limit := float64(1.2) // float64 |  (opciono)
+	skip := float64(1.2) // float64 |  (opciono)
+	order := openapiclient.SORT_DIR("ASC") // SORTDIR |  (opciono)
+	after := float64(1.2) // float64 |  (opciono)
+	before := float64(1.2) // float64 |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAuditLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetAuditLogs`: GetAuditLogs200Response
+	// odgovor od `GetAuditLogs`: GetAuditLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAuditLogs`: %v\n", resp)
 }
 [inline-code-end]

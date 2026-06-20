@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | commentIds | string | query | Evet | Virgülle ayrılmış yorum kimlikleri listesi. |
@@ -8,31 +8,31 @@
 
 ## Yanıt
 
-Döndürür: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Döndürür: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılanı https://fastcomments.com'dur
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host'u tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com'dur
+# Tüm desteklenen yapılandırma parametrelerinin bir listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam başlatın
+# API istemcisinin bir örneği ile bir bağlama girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | A comma separated list of comment ids.
-    sso = 'sso_example' # str |  (optional)
+    comment_ids = 'comment_ids_example' # str | Virgülle ayrılmış yorum kimlikleri listesi.
+    sso = 'sso_example' # str |  (isteğe bağlı)
 
     try:
         api_response = api_instance.checked_comments_for_blocked(tenant_id, comment_ids, sso=sso)

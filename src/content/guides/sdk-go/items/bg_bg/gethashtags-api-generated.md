@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -8,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_200_response.go)
+Връща: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_hash_tags_response.go)
 
 ## Пример
 
@@ -25,7 +24,7 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	page := float64(1.2) // float64 |  (незадължително)
+	page := float64(1.2) // float64 |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetHashTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetHashTags`: GetHashTags200Response
+	// отговор от `GetHashTags`: GetHashTagsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetHashTags`: %v\n", resp)
 }
 [inline-code-end]

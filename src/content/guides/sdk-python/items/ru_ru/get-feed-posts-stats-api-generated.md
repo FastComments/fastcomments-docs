@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postIds | array | query | Да |  |
@@ -8,14 +8,14 @@
 
 ## Ответ
 
-Возвращает: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_stats200_response.py)
+Возвращает: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/feed_posts_stats_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_feed_posts_stats'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_stats200_response import GetFeedPostsStats200Response
+from client.models.feed_posts_stats_response import FeedPostsStatsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,7 +26,7 @@ configuration = client.Configuration(
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Откройте контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.PublicApi(api_client)

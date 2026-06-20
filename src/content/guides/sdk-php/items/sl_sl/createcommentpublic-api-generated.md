@@ -8,9 +8,9 @@
 | sessionId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Response
+## Odgovor
 
-Vrne: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateCommentPublic200Response.php)
+Vrne: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsResponseWithPresence.php)
 
 ## Primer
 
@@ -22,8 +22,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti svojega HTTP klienta, posredujte klienta, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -40,5 +40,3 @@ try {
     echo 'Exception when calling PublicApi->createCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

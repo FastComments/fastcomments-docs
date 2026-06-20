@@ -7,14 +7,14 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant200_response.py)
+Devuelve: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de get_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant200_response import GetTenant200Response
+from client.models.get_tenant_response import GetTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,17 +25,17 @@ configuration = client.Configuration(
 )
 
 # El cliente debe configurar los parámetros de autenticación y autorización
-# de acuerdo con la política de seguridad del servidor de la API.
+# de acuerdo con la política de seguridad del servidor API.
 # Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar la autorización por clave API: api_key
+# Configure la autorización de clave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
+# Descomente abajo para configurar el prefijo (por ejemplo, Bearer) para la clave de API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingrese a un contexto con una instancia del cliente de la API
+# Entre en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)

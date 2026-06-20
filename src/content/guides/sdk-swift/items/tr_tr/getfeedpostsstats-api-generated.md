@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | postIds | array | query | Evet |  |
@@ -8,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsStats200Response.swift)
+Döndürür: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FeedPostsStatsResponse.swift)
 
 ## Örnek
 
@@ -32,5 +32,3 @@ PublicAPI.getFeedPostsStats(tenantId: tenantId, postIds: postIds, sso: sso) { (r
     }
 }
 [inline-code-end]
-
----

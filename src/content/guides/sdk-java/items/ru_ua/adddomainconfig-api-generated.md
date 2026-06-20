@@ -1,13 +1,12 @@
----
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddDomainConfig200Response.java)
+Возвращает: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddDomainConfigResponse.java)
 
 ## Пример
 
@@ -26,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию API-ключом: api_key
+    // Настройка авторизации по API ключу: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы задать префикс для API ключа, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     AddDomainConfigParams addDomainConfigParams = new AddDomainConfigParams(); // AddDomainConfigParams | 
     try {
-      AddDomainConfig200Response result = apiInstance.addDomainConfig(tenantId, addDomainConfigParams)
+      AddDomainConfigResponse result = apiInstance.addDomainConfig(tenantId, addDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

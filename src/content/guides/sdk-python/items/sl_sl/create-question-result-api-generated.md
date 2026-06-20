@@ -1,36 +1,35 @@
----
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vrne: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result200_response.py)
+Vrne: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer create_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_result200_response import CreateQuestionResult200Response
 from client.models.create_question_result_body import CreateQuestionResultBody
+from client.models.create_question_result_response import CreateQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je neobvezno in je privzeto https://fastcomments.com
+# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre preverjanja pristnosti in pooblastil
-# v skladu s politikami varnosti strežnika API.
-# Spodaj so podani primeri za vsako metodo overjanja, uporabite primer, ki
-# ustreza vašemu primeru uporabe overjanja.
+# Odjemalec mora nastaviti parametre preverjanja pristnosti in avtorizacije
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so podani primeri za vsako metodo avtentikacije, uporabite primer, ki
+# ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte overjanje z API ključem: api_key
+# Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno

@@ -1,14 +1,14 @@
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| id | string | path | 是 |  |
-| userId | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## 範例
 
@@ -27,7 +27,7 @@ func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
 	updateNotificationBody := *openapiclient.NewUpdateNotificationBody() // UpdateNotificationBody | 
-	userId := "userId_example" // string |  (選用)
+	userId := "userId_example" // string |  (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -36,9 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 來自 `UpdateNotification` 的回應: FlagCommentPublic200Response
+	// 來自 `UpdateNotification` 的回應: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateNotification`: %v\n", resp)
 }
 [inline-code-end]
-
----

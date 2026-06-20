@@ -1,7 +1,6 @@
----
 ### Коришћење аутентификованих API-ја (DefaultAPI)
 
-**Важно:** Аутентификовани ендпоинти захтевају да ваш API кључ буде подешен као заглавље `x-api-key`.
+**Важно:** Аутентификовани ендпоинти захтевају да ваш API кључ буде постављен у заглављу `x-api-key`.
 
 ```nim
 import httpclient
@@ -88,8 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Коришћење API-ја за модерацију (ModerationAPI)
+
+Ендпоинти за модерацију покрећу контролну таблу модератора и аутентикују се помоћу SSO токена за активног модератора:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Листа коментара на контролној табли модерације
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Чести проблеми
 
-1. **401 грешка аутентификације**: Уверите се да сте подесили заглавље `x-api-key` на вашем HttpClient пре прављења DefaultAPI захтева: `client.headers["x-api-key"] = "your-api-key"`
-2. **Погрешна API класа**: Користите `api_default` за серверске аутентификоване захтеве, `api_public` за клијентске/јавне захтеве.
----
+1. **401 грешка аутентификације**: Уверите се да сте поставили заглавље `x-api-key` на вашем HttpClient-у пре слања DefaultAPI захтева: `client.headers["x-api-key"] = "your-api-key"`
+2. **Погрешна класа API-ја**: Користите `api_default` за серверске аутентификоване захтеве, `api_public` за клијентске/јавне захтеве, и `api_moderation` за захтеве контролне табле модерације.

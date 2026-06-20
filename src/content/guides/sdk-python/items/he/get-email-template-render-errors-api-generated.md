@@ -1,42 +1,43 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| skip | number | query | לא |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| skip | number | query | No |  |
 
 ## תגובה
 
-מחזיר: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors200_response.py)
+מחזיר: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_email_template_render_errors'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_render_errors200_response import GetEmailTemplateRenderErrors200Response
+from client.models.get_email_template_render_errors_response import GetEmailTemplateRenderErrorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # הגדרת ה-host אופציונלית והברירת מחדל היא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי הקונפיגורציה הנתמכים.
+# עיין ב-configuration.py כדי לראות את כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
+# על הלקוח להגדיר את פרמטרי האימות וההרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
 # דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה
-# שמתאימה למקרה השימוש שלך.
+# שמתאימה למקרה השימוש שלך באימות.
 
-# קבע את אישור מפתח ה-API: api_key
+# הגדר אישור באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה (uncomment) שלמטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+# הסר הערת שורה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם צריך
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# פתח הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
@@ -51,3 +52,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_email_template_render_errors: %s\n" % e)
 [inline-code-end]
+
+---

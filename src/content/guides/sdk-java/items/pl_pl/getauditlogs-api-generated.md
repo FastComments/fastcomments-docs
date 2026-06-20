@@ -2,22 +2,22 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| limit | number | query | Nie |  |
-| skip | number | query | Nie |  |
-| order | string | query | Nie |  |
-| after | number | query | Nie |  |
-| before | number | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogs200Response.java)
+Zwraca: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getAuditLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Zaimportuj klasy:
+// Importowanie klas:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację kluczem API: api_key
+    // Konfiguracja uwierzytelniania kluczem API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
+    // Odkomentuj następną linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Double after = 3.4D; // Double | 
     Double before = 3.4D; // Double | 
     try {
-      GetAuditLogs200Response result = apiInstance.getAuditLogs(tenantId)
+      GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
             .skip(skip)
             .order(order)
@@ -62,5 +62,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

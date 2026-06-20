@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_200_response.go)
+返回: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_posts_response.go)
 
 ## 示例
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +40,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateFeedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 从 `CreateFeedPost` 的响应: CreateFeedPost200Response
+	// 来自 `CreateFeedPost` 的响应: CreateFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]
+
+---

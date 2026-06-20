@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddDomainConfig200Response.java)
+מחזיר: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AddDomainConfigResponse.java)
 
 ## דוגמה
 
@@ -28,14 +28,14 @@ public class Example {
     // הגדרת הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת מחדל null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל "Token" (ברירת מחדל: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     AddDomainConfigParams addDomainConfigParams = new AddDomainConfigParams(); // AddDomainConfigParams | 
     try {
-      AddDomainConfig200Response result = apiInstance.addDomainConfig(tenantId, addDomainConfigParams)
+      AddDomainConfigResponse result = apiInstance.addDomainConfig(tenantId, addDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

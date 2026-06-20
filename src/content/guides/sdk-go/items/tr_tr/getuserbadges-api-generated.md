@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -12,7 +13,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badges_200_response.go)
+Döndürür: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badges_response.go)
 
 ## Örnek
 
@@ -24,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserBadges`'den gelen yanıt: GetUserBadges200Response
+	// `GetUserBadges`'ten dönen yanıt: APIGetUserBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadges`: %v\n", resp)
 }
 [inline-code-end]
+
+---

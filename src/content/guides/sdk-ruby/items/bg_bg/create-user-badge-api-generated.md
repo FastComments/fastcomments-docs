@@ -6,19 +6,19 @@
 
 ## Отговор
 
-Връща: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_user_badge200_response.rb)
+Връща: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за create_user_badge'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_user_badge Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на удостоверяване
+# настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Конфигуриране на удостоверяване с API ключ: api_key
+  # Конфигуриране на авторизация чрез API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # Премахнете коментара от следния ред, за да зададете префикс за API ключа, например 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

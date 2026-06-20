@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-返却: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+戻り値: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## 例
 
@@ -17,9 +17,9 @@
 // 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // 文字列 | 
-let id = "id_example" // 文字列 | 
-let editKey = "editKey_example" // 文字列 |  (オプション)
+let tenantId = "tenantId_example" // String | 
+let id = "id_example" // String | 
+let editKey = "editKey_example" // String |  (オプション)
 
 DefaultAPI.deleteVote(tenantId: tenantId, id: id, editKey: editKey) { (response, error) in
     guard error == nil else {
@@ -32,3 +32,5 @@ DefaultAPI.deleteVote(tenantId: tenantId, id: id, editKey: editKey) { (response,
     }
 }
 [inline-code-end]
+
+---

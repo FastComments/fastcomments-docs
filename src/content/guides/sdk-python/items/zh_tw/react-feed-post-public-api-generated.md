@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | postId | string | path | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_public200_response.py)
+回傳: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_response.py)
 
 ## 範例
 
@@ -18,18 +18,18 @@
 [inline-code-start]
 import client
 from client.models.react_body_params import ReactBodyParams
-from client.models.react_feed_post_public200_response import ReactFeedPostPublic200Response
+from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 為可選，預設為 https://fastcomments.com
-# 請參見 configuration.py 以取得所有支援的設定參數列表。
+# 設定主機為可選，預設為 https://fastcomments.com
+# 詳見 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 實例進入上下文
+# 使用 ApiClient 的實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)

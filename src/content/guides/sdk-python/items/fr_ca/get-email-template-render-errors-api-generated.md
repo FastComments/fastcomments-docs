@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
@@ -8,32 +8,32 @@
 
 ## Réponse
 
-Renvoie: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors200_response.py)
+Renvoie : [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_email_template_render_errors'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_render_errors200_response import GetEmailTemplateRenderErrors200Response
+from client.models.get_email_template_render_errors_response import GetEmailTemplateRenderErrorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# La définition de l'hôte est facultative et a pour valeur par défaut https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
-# conformément à la politique de sécurité du serveur API.
+# conformément à la politique de sécurité du serveur de l'API.
 # Des exemples pour chaque méthode d'authentification sont fournis ci‑dessous, utilisez l'exemple qui
 # correspond à votre cas d'utilisation d'authentification.
 
-# Configurer l'autorisation par clé API: api_key
+# Configurez l'autorisation par clé API : api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci‑dessous pour définir un préfixe (p.ex. Bearer) pour la clé API, si nécessaire
+# Décommentez ci‑dessous pour configurer un préfixe (p. ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API
@@ -51,3 +51,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_email_template_render_errors: %s\n" % e)
 [inline-code-end]
+
+---

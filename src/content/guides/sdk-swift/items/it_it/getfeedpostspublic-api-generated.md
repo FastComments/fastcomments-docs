@@ -4,7 +4,7 @@ afterId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | afterId | string | query | No |  |
@@ -16,22 +16,22 @@ afterId
 
 ## Risposta
 
-Restituisce: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Restituisce: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per eventuali problemi, segnalare tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (facoltativo)
-let limit = 987 // Int |  (facoltativo)
-let tags = ["inner_example"] // [String] |  (facoltativo)
-let sso = "sso_example" // String |  (facoltativo)
-let isCrawler = true // Bool |  (facoltativo)
-let includeUserInfo = true // Bool |  (facoltativo)
+let afterId = "afterId_example" // String |  (opzionale)
+let limit = 987 // Int |  (opzionale)
+let tags = ["inner_example"] // [String] |  (opzionale)
+let sso = "sso_example" // String |  (opzionale)
+let isCrawler = true // Bool |  (opzionale)
+let includeUserInfo = true // Bool |  (opzionale)
 
 PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

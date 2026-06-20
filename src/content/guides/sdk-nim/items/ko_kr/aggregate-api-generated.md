@@ -1,15 +1,19 @@
+---
+문서를 그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 집계합니다.
+다양한 연산(예: sum, countDistinct, avg 등)을 지원합니다.
+
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| aggregationRequest | AggregationRequest | 아니요 |  |
-| parentTenantId | string | 아니요 |  |
-| includeStats | bool | 아니요 |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | No |  |
+| parentTenantId | string | No |  |
+| includeStats | bool | No |  |
 
 ## 응답
 
-반환: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+반환: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## 예제
 
@@ -17,13 +21,14 @@
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
+
 if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]
 
 ---

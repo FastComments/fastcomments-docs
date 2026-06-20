@@ -11,11 +11,11 @@ userIdWS
 | urlId | string | query | Да |  |
 | userIdWS | string | query | Да |  |
 | startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| endTime | integer | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_event_log_200_response.go)
+Возвращает: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_event_log_response.go)
 
 ## Пример
 
@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	urlId := "urlId_example" // string | 
 	userIdWS := "userIdWS_example" // string | 
 	startTime := int64(789) // int64 | 
-	endTime := int64(789) // int64 | 
+	endTime := int64(789) // int64 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetGlobalEventLog``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetGlobalEventLog`: GetEventLog200Response
+	// response from `GetGlobalEventLog`: GetEventLogResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetGlobalEventLog`: %v\n", resp)
 }
 [inline-code-end]
+
+---

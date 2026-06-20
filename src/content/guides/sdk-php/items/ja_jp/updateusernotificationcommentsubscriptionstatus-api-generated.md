@@ -4,15 +4,15 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| notificationId | string | パス | はい |  |
-| optedInOrOut | string | パス | はい |  |
-| commentId | string | クエリ | はい |  |
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| notificationId | string | path | はい |  |
+| optedInOrOut | string | path | はい |  |
+| commentId | string | query | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+戻り値: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## 例
 
@@ -24,7 +24,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
     // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );

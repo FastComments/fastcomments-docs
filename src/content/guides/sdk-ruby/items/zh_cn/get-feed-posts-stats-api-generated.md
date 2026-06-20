@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| postIds | array | 查询 | 是 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | path | Yes |  |
+| postIds | array | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回：[`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+返回: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## 示例
 
@@ -18,10 +18,10 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字符串 | 
 post_ids = ['inner_example'] # Array<String> | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 字符串 | 
 }
 
 begin

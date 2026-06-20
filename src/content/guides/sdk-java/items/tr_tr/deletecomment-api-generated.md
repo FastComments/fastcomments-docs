@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
@@ -9,7 +9,7 @@
 
 ## Yanıt
 
-Döndürür: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteComment200Response.java)
+Döndürür: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentResult.java)
 
 ## Örnek
 
@@ -31,7 +31,7 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir ön ek ayarlayın, örn. "Token" (varsayılan null)
+    // Aşağıdaki satırın başındaki yorum satırı işaretini kaldırarak API anahtarı için bir önek ayarlayın, örn. "Token" (varsayılan olarak null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -40,7 +40,7 @@ public class Example {
     String contextUserId = "contextUserId_example"; // String | 
     Boolean isLive = true; // Boolean | 
     try {
-      DeleteComment200Response result = apiInstance.deleteComment(tenantId, id)
+      DeleteCommentResult result = apiInstance.deleteComment(tenantId, id)
             .contextUserId(contextUserId)
             .isLive(isLive)
             .execute();

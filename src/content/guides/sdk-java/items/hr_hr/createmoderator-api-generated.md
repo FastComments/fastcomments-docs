@@ -6,13 +6,13 @@
 
 ## Odgovor
 
-Vraća: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModerator200Response.java)
+Vraća: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModeratorResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'createModerator Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createModerator'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,14 +28,14 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da biste postavili prefiks za API ključ, npr. "Token" (zadano null)
+    // Otkomentirajte sljedeći redak da biste postavili prefiks za API ključ, npr. "Token" (zadano: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateModeratorBody createModeratorBody = new CreateModeratorBody(); // CreateModeratorBody | 
     try {
-      CreateModerator200Response result = apiInstance.createModerator(tenantId, createModeratorBody)
+      CreateModeratorResponse result = apiInstance.createModerator(tenantId, createModeratorBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

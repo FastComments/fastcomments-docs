@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +6,7 @@
 
 ## 응답
 
-반환: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenant200Response.java)
+반환: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTenantResponse.java)
 
 ## 예제
 
@@ -29,14 +28,14 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 다음 줄의 주석을 제거하여 API 키에 접두사 설정, 예: "Token" (기본값은 null)
+    // API 키에 접두사(예: "Token")를 설정하려면 다음 줄의 주석을 해제하세요 (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateTenantBody createTenantBody = new CreateTenantBody(); // CreateTenantBody | 
     try {
-      CreateTenant200Response result = apiInstance.createTenant(tenantId, createTenantBody)
+      CreateTenantResponse result = apiInstance.createTenant(tenantId, createTenantBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -12,43 +12,45 @@
 
 ## レスポンス
 
-戻り値: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+戻り値: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_notifications の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って、認証および認可パラメータを設定する必要があります。
-# 各認証方法の例を以下に示します。ご自身の認証ユースケースに合う例を使用してください。
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下の行のコメントを解除してください
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (オプション)
-    url_id = 'url_id_example' # str |  (オプション)
-    from_comment_id = 'from_comment_id_example' # str |  (オプション)
-    viewed = True # bool |  (オプション)
-    type = 'type_example' # str |  (オプション)
-    skip = 3.4 # float |  (オプション)
+    user_id = 'user_id_example' # str |  (任意)
+    url_id = 'url_id_example' # str |  (任意)
+    from_comment_id = 'from_comment_id_example' # str |  (任意)
+    viewed = True # bool |  (任意)
+    type = 'type_example' # str |  (任意)
+    skip = 3.4 # float |  (任意)
 
     try:
         api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)

@@ -1,24 +1,24 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| startDate | string | query | No |  |
-| questionId | string | query | No |  |
-| questionIds | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Nee |  |
+| userId | string | query | Nee |  |
+| startDate | string | query | Nee |  |
+| questionId | string | query | Nee |  |
+| questionIds | string | query | Nee |  |
+| skip | number | query | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResults200Response.java)
+Retourneert: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionResultsResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getQuestionResults Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutel autorisatie: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal het commentaarteken van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String questionIds = "questionIds_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetQuestionResults200Response result = apiInstance.getQuestionResults(tenantId)
+      GetQuestionResultsResponse result = apiInstance.getQuestionResults(tenantId)
             .urlId(urlId)
             .userId(userId)
             .startDate(startDate)

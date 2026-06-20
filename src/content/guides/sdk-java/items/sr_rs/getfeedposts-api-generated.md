@@ -4,7 +4,7 @@ afterId
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | afterId | string | query | Не |  |
@@ -13,13 +13,13 @@ afterId
 
 ## Одговор
 
-Враћа: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPosts200Response.java)
+Враћа: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsResponse.java)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getFeedPosts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Увоз класа:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,10 +32,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите ауторизацију API кључа: api_key
+    // Конфигуришите ауторизацију помоћу API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментаришите следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоменатишите следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Integer limit = 56; // Integer | 
     List<String> tags = Arrays.asList(); // List<String> | 
     try {
-      GetFeedPosts200Response result = apiInstance.getFeedPosts(tenantId)
+      GetFeedPostsResponse result = apiInstance.getFeedPosts(tenantId)
             .afterId(afterId)
             .limit(limit)
             .tags(tags)

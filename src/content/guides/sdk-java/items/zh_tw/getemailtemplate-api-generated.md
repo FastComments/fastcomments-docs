@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplate200Response.java)
+回傳: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEmailTemplateResponse.java)
 
 ## 範例
 
@@ -29,14 +29,14 @@ public class Example {
     // 設定 API 金鑰授權: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解以下列以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
+    // 取消註解下列行以為 API 金鑰設定前置詞，例如 "Token"（預設為 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetEmailTemplate200Response result = apiInstance.getEmailTemplate(tenantId, id)
+      GetEmailTemplateResponse result = apiInstance.getEmailTemplate(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -8,13 +8,13 @@
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример replaceTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Приведённые примеры кода всё ещё находятся в бета‑версии. В случае проблем, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода все ещё находятся в бета-версии. О проблемах сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,3 +33,5 @@ DefaultAPI.replaceTenantUser(tenantId: tenantId, id: id, replaceTenantUserBody: 
     }
 }
 [inline-code-end]
+
+---

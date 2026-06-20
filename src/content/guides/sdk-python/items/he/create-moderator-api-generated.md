@@ -1,43 +1,44 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
+| tenantId | string | שאילתה | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator200_response.py)
+מחזיר: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-create_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_moderator200_response import CreateModerator200Response
 from client.models.create_moderator_body import CreateModeratorBody
+from client.models.create_moderator_response import CreateModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# עיין בקובץ configuration.py לרשימת כל פרמטרי ההגדרות הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
+# בהתאם למדיניות האבטחה של שרת ה-API.
+# דוגמאות לכל שיטת אימות מסופקות למטה; השתמש בדוגמה ש
+# מתאימה למקרה השימוש שלך.
 
-# Configure API key authorization: api_key
+# הגדר אישור באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# הכנס לקונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_moderator_body = client.CreateModeratorBody() # CreateModeratorBody | 
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_moderator: %s\n" % e)
 [inline-code-end]
+
+---

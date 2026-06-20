@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlIdWS | string | query | Да |  |
@@ -8,19 +8,19 @@
 
 ## Одговор
 
-Враћа: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses200_response.py)
+Враћа: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'get_user_presence_statuses Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_presence_statuses200_response import GetUserPresenceStatuses200Response
+from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Подешавање хоста је опционo и подразумевано је https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

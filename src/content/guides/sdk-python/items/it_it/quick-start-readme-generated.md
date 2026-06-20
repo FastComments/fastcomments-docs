@@ -1,26 +1,25 @@
----
 ### Utilizzo delle API Autenticate (DefaultApi)
 
-**Importante:** Devi impostare la tua API key nella Configuration prima di effettuare richieste autenticate. Se non lo fai, le richieste falliranno con un errore 401.
+**Importante:** Devi impostare la tua API key su Configuration prima di effettuare richieste autenticate. Se non lo fai, le richieste falliranno con un errore 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# Crea e configura il client API
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# OBBLIGATORIO: Imposta la tua API key (prendila dalla dashboard di FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Crea l'istanza API con il client configurato
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Ora puoi effettuare chiamate API autenticate
 try:
-    # Example: Add an SSO user
+    # Esempio: Aggiungi un utente SSO
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -35,9 +34,9 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Errori comuni:
+    # - 401: API key mancante o non valida
+    # - 400: Validazione della richiesta fallita
 ```
 
 ### Utilizzo delle API Pubbliche (PublicApi)
@@ -63,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Utilizzo della Dashboard di Moderazione (ModerationApi)
+
+La `ModerationApi` alimenta la dashboard dei moderatori. I metodi vengono chiamati per conto di un moderatore passando un token `sso`:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Conta i commenti in attesa di moderazione
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Utilizzo di SSO (Single Sign-On)
 
-L'SDK include utility per generare token SSO sicuri:
+Lo SDK include utility per generare token SSO sicuri:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# Crea i dati utente
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -78,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
+# Crea l'istanza SSO con il tuo API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generate the SSO token
+# Genera il token SSO
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Usa questo token nel tuo frontend o passalo alle chiamate API
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -107,9 +127,8 @@ sso_token = sso.create_token()
 
 ### Problemi comuni
 
-1. **401 "missing-api-key" error**: Assicurati di impostare `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` prima di creare l'istanza DefaultApi.
-2. **Wrong API class**: Usa `DefaultApi` per richieste autenticate lato server, `PublicApi` per richieste lato client/pubbliche.
-3. **Import errors**: Assicurati di importare dal modulo corretto:
+1. **Errore 401 "missing-api-key"**: Assicurati di impostare `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` prima di creare l'istanza DefaultApi.
+2. **Classe API errata**: Usa `DefaultApi` per le richieste autenticate lato server, `PublicApi` per le richieste lato client/pubbliche, e `ModerationApi` per le richieste della dashboard del moderatore.
+3. **Errori di importazione**: Assicurati di importare dal modulo corretto:
    - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
----
+   - Utility SSO: `from sso import ...`

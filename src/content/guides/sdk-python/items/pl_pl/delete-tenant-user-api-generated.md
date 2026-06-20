@@ -1,22 +1,22 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| deleteComments | string | query | No |  |
-| commentDeleteMode | string | query | No |  |
+| tenantId | string | query | Tak |  |
+| id | string | path | Tak |  |
+| deleteComments | string | query | Nie |  |
+| commentDeleteMode | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład delete_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,23 +28,23 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj tego,
-# które odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Poniżej podano przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
+# odpowiada Twojemu scenariuszowi uwierzytelniania.
 
 # Skonfiguruj autoryzację klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (e.g. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Otwórz kontekst z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (opcjonalne)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (opcjonalne)
+    delete_comments = 'delete_comments_example' # str |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
         api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)

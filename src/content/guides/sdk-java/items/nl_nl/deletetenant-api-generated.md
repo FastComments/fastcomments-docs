@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
@@ -7,9 +6,9 @@
 | id | string | path | Ja |  |
 | sure | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Voorbeeld
 
@@ -28,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutel autorisatie: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Haal de commentaar weg van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard is null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -39,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String sure = "sure_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteTenant(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteTenant(tenantId, id)
             .sure(sure)
             .execute();
       System.out.println(result);
@@ -53,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

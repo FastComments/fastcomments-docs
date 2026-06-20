@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfig200Response.java)
+Gibt zurück: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PatchDomainConfigResponse.java)
 
 ## Beispiel
 
@@ -29,7 +29,7 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (standardmäßig null)
+    // Entfernen Sie das Kommentarzeichen vor der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String domainToUpdate = "domainToUpdate_example"; // String | 
     PatchDomainConfigParams patchDomainConfigParams = new PatchDomainConfigParams(); // PatchDomainConfigParams | 
     try {
-      GetDomainConfig200Response result = apiInstance.patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
+      PatchDomainConfigResponse result = apiInstance.patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

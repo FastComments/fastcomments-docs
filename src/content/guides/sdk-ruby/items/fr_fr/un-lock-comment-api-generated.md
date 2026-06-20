@@ -2,14 +2,14 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| commentId | string | path | Oui |  |
-| broadcastId | string | query | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | chemin | Oui |  |
+| commentId | string | chemin | Oui |  |
+| broadcastId | string | requête | Oui |  |
+| sso | string | requête | Non |  |
 
 ## Réponse
 
-Retourne: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Exemple
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
+comment_id = 'comment_id_example' # Chaîne | 
+broadcast_id = 'broadcast_id_example' # Chaîne | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Chaîne | 
 }
 
 begin

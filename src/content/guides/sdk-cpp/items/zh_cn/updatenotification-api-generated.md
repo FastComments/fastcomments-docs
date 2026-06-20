@@ -1,6 +1,7 @@
+---
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -9,30 +10,24 @@
 
 ## 响应
 
-返回: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateNotification 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notif-456");
-UpdateNotificationBody updateNotificationBody;
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("moderator@example.com"));
-api->updateNotification(tenantId, notificationId, updateNotificationBody, userId)
-.then([=](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto respCopy = std::make_shared<FlagCommentPublic_200_response>(*resp);
-            std::cout << "Notification updated successfully\n";
-        } else {
-            std::cout << "No response received\n";
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t notificationId = utility::conversions::to_string_t("notif-456");
+auto updateBodyPtr = std::make_shared<UpdateNotificationBody>();
+boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
+api->updateNotification(tenantId, notificationId, *updateBodyPtr, userId)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
+        try {
+            auto resp = task.get();
+            (void)resp;
+        } catch (...) {
         }
-    } catch (const std::exception &e) {
-        std::cerr << "Update failed: " << e.what() << "\n";
-    }
-});
+    });
 [inline-code-end]
 
 ---

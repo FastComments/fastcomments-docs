@@ -1,12 +1,25 @@
----
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 
 ## 응답
 
-반환: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_configs_200_response.rs)
+반환: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_configs_response.rs)
+
+## 예제
+
+[inline-code-attrs-start title = 'get_domain_configs 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run_get_domain_configs_example() -> Result<GetDomainConfigsResponse, Error> {
+    let params: GetDomainConfigsParams = GetDomainConfigsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain_filter: Some("news.example.com".to_string()),
+    };
+    let response: GetDomainConfigsResponse = get_domain_configs(&configuration, params).await?;
+    Ok(response)
+}
+[inline-code-end]
 
 ---

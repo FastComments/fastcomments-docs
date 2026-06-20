@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -8,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_200_response.go)
+Gibt zurück: [`GetUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_response.go)
 
 ## Beispiel
 
@@ -34,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `GetUser`: GetUser200Response
+	// Antwort von `GetUser`: GetUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| domain | string | path | Да |  |
 
 ## Одговор
 
-Враћа: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+Враћа: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfigResponse.swift)
 
 ## Пример
 
@@ -30,5 +30,3 @@ DefaultAPI.getDomainConfig(tenantId: tenantId, domain: domain) { (response, erro
     }
 }
 [inline-code-end]
-
----

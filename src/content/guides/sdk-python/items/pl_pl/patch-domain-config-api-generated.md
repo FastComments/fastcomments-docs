@@ -1,26 +1,26 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| domainToUpdate | string | path | Tak |  |
+| tenantId | string | query | Yes |  |
+| domainToUpdate | string | path | Yes |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Zwraca: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/patch_domain_config_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład patch_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
 from client.models.patch_domain_config_params import PatchDomainConfigParams
+from client.models.patch_domain_config_response import PatchDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -30,7 +30,7 @@ configuration = client.Configuration(
 # Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
 # odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Konfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne

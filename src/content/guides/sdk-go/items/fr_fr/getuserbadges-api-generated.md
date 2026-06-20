@@ -12,11 +12,11 @@
 
 ## Réponse
 
-Retourne: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badges_200_response.go)
+Renvoie : [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badges_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetUserBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetUserBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (facultatif)
-	badgeId := "badgeId_example" // string |  (facultatif)
-	type_ := float64(1.2) // float64 |  (facultatif)
-	displayedOnComments := true // bool |  (facultatif)
-	limit := float64(1.2) // float64 |  (facultatif)
-	skip := float64(1.2) // float64 |  (facultatif)
+	userId := "userId_example" // string |  (optionnel)
+	badgeId := "badgeId_example" // string |  (optionnel)
+	type_ := float64(1.2) // float64 |  (optionnel)
+	displayedOnComments := true // bool |  (optionnel)
+	limit := float64(1.2) // float64 |  (optionnel)
+	skip := float64(1.2) // float64 |  (optionnel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUserBadges`: GetUserBadges200Response
+	// réponse de `GetUserBadges`: APIGetUserBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadges`: %v\n", resp)
 }
 [inline-code-end]
-
----

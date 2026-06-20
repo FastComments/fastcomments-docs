@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Type | Location | Obvezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | postIds | array | query | Ne |  |
@@ -8,11 +8,11 @@
 
 ## Odgovor
 
-Vraća: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserReactsPublic200Response.java)
+Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UserReactsResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getUserReactsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserReactsPublic Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -31,7 +31,7 @@ public class Example {
     List<String> postIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserReactsPublic200Response result = apiInstance.getUserReactsPublic(tenantId)
+      UserReactsResponse result = apiInstance.getUserReactsPublic(tenantId)
             .postIds(postIds)
             .sso(sso)
             .execute();
@@ -46,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

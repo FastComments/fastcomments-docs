@@ -2,23 +2,23 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | はい |  |
+| userId | string | query | いいえ |  |
+| urlId | string | query | いいえ |  |
+| fromCommentId | string | query | いいえ |  |
+| viewed | boolean | query | いいえ |  |
+| type | string | query | いいえ |  |
+| skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotifications200Response.java)
+戻り値: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationsResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getNotifications の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// クラスをインポート：
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,7 +34,7 @@ public class Example {
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーのプレフィックスを設定するには次の行のコメントを外します（例: "Token"、デフォルトは null）
+    // APIキーのプレフィックス（例: "Token"、デフォルトは null）を設定するには、次の行のコメントを外してください
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String type = "type_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetNotifications200Response result = apiInstance.getNotifications(tenantId)
+      GetNotificationsResponse result = apiInstance.getNotifications(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)
@@ -56,6 +56,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // DefaultApi#getNotifications を呼び出したときの例外
       System.err.println("Exception when calling DefaultApi#getNotifications");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

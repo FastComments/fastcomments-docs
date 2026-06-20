@@ -5,9 +5,9 @@
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicket200Response.php)
+Επιστρέφει: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
 
 ## Παράδειγμα
 
@@ -19,7 +19,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολίαση παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -40,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->createTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

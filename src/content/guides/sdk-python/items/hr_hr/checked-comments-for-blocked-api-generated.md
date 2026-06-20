@@ -1,25 +1,26 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Popis ID-eva komentara odvojenih zarezom. |
+| commentIds | string | query | Da | Zarezom odvojen popis ID-eva komentara. |
 | sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
+# Definiranje hosta je neobavezno i zadano je na https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,7 +32,7 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | Popis ID-eva komentara odvojenih zarezom.
+    comment_ids = 'comment_ids_example' # str | Zarezom odvojen popis ID-eva komentara.
     sso = 'sso_example' # str |  (neobavezno)
 
     try:
@@ -41,3 +42,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->checked_comments_for_blocked: %s\n" % e)
 [inline-code-end]
+
+---

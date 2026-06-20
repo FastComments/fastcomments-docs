@@ -5,17 +5,17 @@ userIdWS
 
 ## Parámetros
 
-| Name | Type | Location | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
-| userIdWS | string | query | Sí |  |
-| startTime | integer | query | Sí |  |
-| endTime | integer | query | Sí |  |
+| tenantId | string | ruta | Sí |  |
+| urlId | string | consulta | Sí |  |
+| userIdWS | string | consulta | Sí |  |
+| startTime | integer | consulta | Sí |  |
+| endTime | integer | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Devuelve: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Ejemplo
 
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -53,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

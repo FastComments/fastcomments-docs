@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Ναι |  |
+| commentId | string | path | Ναι |  |
+| editKey | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentText200Response.java)
+Επιστρέφει: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicAPIGetCommentTextResponse.java)
 
 ## Παράδειγμα
 
@@ -33,7 +33,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentText200Response result = apiInstance.getCommentText(tenantId, commentId)
+      PublicAPIGetCommentTextResponse result = apiInstance.getCommentText(tenantId, commentId)
             .editKey(editKey)
             .sso(sso)
             .execute();
@@ -48,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

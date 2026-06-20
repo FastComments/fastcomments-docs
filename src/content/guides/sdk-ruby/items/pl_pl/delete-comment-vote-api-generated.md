@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | commentId | string | path | Tak |  |
@@ -12,7 +12,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Zwraca: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Przykład
 
@@ -40,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_vote: #{e}"
 end
 [inline-code-end]
-
----

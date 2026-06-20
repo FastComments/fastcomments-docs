@@ -7,14 +7,14 @@
 
 ## Odgovor
 
-Vraća: [`GetComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment200_response.py)
+Vraća: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comment_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_comment Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment200_response import GetComment200Response
+from client.models.api_get_comment_response import APIGetCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,19 +25,19 @@ configuration = client.Configuration(
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API servera.
-# Primjeri za svaku metodu autentikacije su dati dolje, koristite primjer koji
-# zadovoljava vaš slučaj upotrebe autentikacije.
+# u skladu s politikom sigurnosti API poslužitelja.
+# Primjeri za svaku metodu autentikacije navedeni su dolje, upotrijebite primjer koji
+# odgovara vašem slučaju upotrebe autentikacije.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Otkomentirajte dolje kako biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

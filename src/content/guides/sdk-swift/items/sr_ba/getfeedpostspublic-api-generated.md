@@ -2,36 +2,36 @@ req
 tenantId
 afterId
 
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| afterId | string | query | Не |  |
-| limit | integer | query | Не |  |
-| tags | array | query | Не |  |
-| sso | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
-| includeUserInfo | boolean | query | Не |  |
+| tenantId | string | path | Da |  |
+| afterId | string | query | Ne |  |
+| limit | integer | query | Ne |  |
+| tags | array | query | Ne |  |
+| sso | string | query | Ne |  |
+| isCrawler | boolean | query | Ne |  |
+| includeUserInfo | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било какав проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (опционо)
-let limit = 987 // Int |  (опционо)
-let tags = ["inner_example"] // [String] |  (опционо)
-let sso = "sso_example" // String |  (опционо)
-let isCrawler = true // Bool |  (опционо)
-let includeUserInfo = true // Bool |  (опционо)
+let afterId = "afterId_example" // String |  (neobavezno)
+let limit = 987 // Int |  (neobavezno)
+let tags = ["inner_example"] // [String] |  (neobavezno)
+let sso = "sso_example" // String |  (neobavezno)
+let isCrawler = true // Bool |  (neobavezno)
+let includeUserInfo = true // Bool |  (neobavezno)
 
 PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

@@ -1,18 +1,18 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigs200Response.java)
+Döndürür: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigsResponse.java)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getDomainConfigs Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,16 +25,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, ör. "Token" (varsayılan null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetDomainConfigs200Response result = apiInstance.getDomainConfigs(tenantId)
+      GetDomainConfigsResponse result = apiInstance.getDomainConfigs(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

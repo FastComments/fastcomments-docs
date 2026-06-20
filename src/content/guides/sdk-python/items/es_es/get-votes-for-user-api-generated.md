@@ -9,14 +9,14 @@
 
 ## Respuesta
 
-Devuelve: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user200_response.py)
+Devuelve: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de get_votes_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes_for_user200_response import GetVotesForUser200Response
+from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,23 +28,23 @@ configuration = client.Configuration(
 
 # El cliente debe configurar los parámetros de autenticación y autorización
 # de acuerdo con la política de seguridad del servidor de la API.
-# Los ejemplos para cada método de autenticación se proporcionan a continuación, use el ejemplo que
+# A continuación se proporcionan ejemplos para cada método de autenticación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar autorización por clave API: api_key
+# Configurar la autorización por clave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
+# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave de API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingrese un contexto con una instancia del cliente de la API
+# Ingresar en un contexto con una instancia del cliente de la API
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (opcional)
+    anon_user_id = 'anon_user_id_example' # str |  (opcional)
 
     try:
         api_response = api_instance.get_votes_for_user(tenant_id, url_id, user_id=user_id, anon_user_id=anon_user_id)

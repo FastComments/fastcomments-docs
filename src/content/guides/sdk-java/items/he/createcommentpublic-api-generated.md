@@ -1,16 +1,16 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | נתיב | כן |  |
-| urlId | string | שאילתה | כן |  |
-| broadcastId | string | שאילתה | כן |  |
-| sessionId | string | שאילתה | לא |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | path | כן |  |
+| urlId | string | query | כן |  |
+| broadcastId | string | query | כן |  |
+| sessionId | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateCommentPublic200Response.java)
+מחזיר: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
 ## דוגמה
 
@@ -36,7 +36,7 @@ public class Example {
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateCommentPublic200Response result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
+      SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
             .execute();

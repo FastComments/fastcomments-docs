@@ -1,25 +1,25 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| voteId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| Nome | Tipo | Location | Obrigatório | Descrição |
+|------|------|----------|------------|-------------|
+| tenantId | string | path | Sim |  |
+| commentId | string | path | Sim |  |
+| voteId | string | path | Sim |  |
+| urlId | string | query | Sim |  |
+| broadcastId | string | query | Sim |  |
+| editKey | string | query | Não |  |
+| sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Retorna: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de delete_comment_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 

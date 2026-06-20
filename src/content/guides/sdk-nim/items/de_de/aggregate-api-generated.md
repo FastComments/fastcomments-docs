@@ -1,3 +1,5 @@
+Fasst Dokumente zusammen, indem sie gruppiert werden (falls groupBy angegeben ist) und mehrere Operationen angewendet werden. Verschiedene Operationen (z. B. sum, countDistinct, avg usw.) werden unterstützt.
+
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -9,21 +11,22 @@
 
 ## Antwort
 
-Gibt zurück: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Gibt zurück: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
+
 if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]
 
 ---

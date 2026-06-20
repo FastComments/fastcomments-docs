@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язкове | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | postIds | array | query | Ні |  |
@@ -8,25 +9,25 @@
 
 ## Відповідь
 
-Повертає: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+Повертає: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'get_user_reacts_public Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням https://fastcomments.com
+# Визначення хоста є необов'язковим і за замовчуванням дорівнює https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Використовуйте контекст з екземпляром клієнта API
+# Увійдіть у контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)
@@ -41,3 +42,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_user_reacts_public: %s\n" % e)
 [inline-code-end]
+
+---

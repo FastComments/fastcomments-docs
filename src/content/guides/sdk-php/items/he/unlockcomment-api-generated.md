@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | נתיב | כן |  |
-| commentId | string | נתיב | כן |  |
-| broadcastId | string | שאילתה | כן |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | path | כן |  |
+| commentId | string | path | כן |  |
+| broadcastId | string | query | כן |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## דוגמה
 
@@ -21,8 +21,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי — `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

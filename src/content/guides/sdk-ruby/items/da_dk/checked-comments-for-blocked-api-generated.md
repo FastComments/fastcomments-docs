@@ -1,25 +1,25 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
-| commentIds | string | query | Ja | A comma separated list of comment ids. |
+| commentIds | string | query | Ja | En kommasepareret liste over kommentar-id'er. |
 | sso | string | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Returnerer: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på checked_comments_for_blocked'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checked_comments_for_blocked Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | En kommasepareret liste med kommentar-id'er.
+comment_ids = 'comment_ids_example' # String | En kommasepareret liste over kommentar-id'er.
 opts = {
   sso: 'sso_example' # String | 
 }
@@ -32,3 +32,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Location | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | broadcastId | string | query | Non |  |
@@ -10,20 +10,20 @@
 
 ## Réponse
 
-Retourne: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post200_response.py)
+Retourne : [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post200_response import CreateFeedPost200Response
 from client.models.create_feed_post_params import CreateFeedPostParams
+from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est facultative et par défaut https://fastcomments.com
+# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,15 +33,15 @@ configuration = client.Configuration(
 # Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez l'exemple qui
 # correspond à votre cas d'utilisation d'authentification.
 
-# Configurer l'autorisation par clé API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour configurer le préfixe (e.g. Bearer) pour la clé API, si nécessaire
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrer dans un contexte avec une instance du client API
+# Entrez dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Créez une instance de la classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 

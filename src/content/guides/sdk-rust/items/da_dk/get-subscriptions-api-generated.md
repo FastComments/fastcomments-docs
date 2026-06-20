@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Ja |  |
 | user_id | String | Nej |  |
@@ -13,14 +13,13 @@ Returnerer: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'get_subscriptions Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_subscriptions() -> Result<GetSubscriptionsApiResponse, Error> {
     let params: GetSubscriptionsParams = GetSubscriptionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-42@example.com".to_string()),
+        user_id: Some("user-9876".to_string()),
     };
     let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;
-    let _ = subscriptions;
-    Ok(())
+    Ok(subscriptions)
 }
 [inline-code-end]
 

@@ -1,19 +1,18 @@
----
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlIdWS | string | query | Da |  |
 | userIds | string | query | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses200_response.rb)
+Vrne: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_presence_statuses_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_user_presence_statuses Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_user_presence_statuses'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -28,7 +27,7 @@ begin
   result = api_instance.get_user_presence_statuses(tenant_id, url_id_ws, user_ids)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling PublicApi->get_user_presence_statuses: #{e}"
+  puts "Napaka pri klicu PublicApi->get_user_presence_statuses: #{e}"
 end
 [inline-code-end]
 

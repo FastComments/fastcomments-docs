@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -9,14 +9,14 @@
 
 ## Odgovor
 
-Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'flag_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,13 +28,13 @@ configuration = client.Configuration(
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
 # u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentifikacije dati su ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# odgovara vašem slučaju upotrebe autentifikacije.
 
 # Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta

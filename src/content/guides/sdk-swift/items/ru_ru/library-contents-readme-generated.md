@@ -1,12 +1,14 @@
+---
 The FastComments Swift SDK состоит из нескольких модулей:
 
-- **Client Module** - Автогенерируемый клиент API для FastComments REST APIs
+- **Client Module** - Клиент API для FastComments REST APIs
   - Полные определения типов для всех моделей API
-  - Как аутентифицированные (`DefaultAPI`), так и публичные (`PublicAPI`) эндпоинты
+  - Аутентифицированные (`DefaultAPI`), публичные (`PublicAPI`), и модерационные (`ModerationAPI`) методы
   - Полная поддержка async/await
-  - См. [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) для подробной документации по API
+  - See [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) for detailed API documentation
 
-- **SSO Module** - Утилиты Single Sign-On на стороне сервера
+- **SSO Module** - Утилиты серверной реализации Single Sign-On
   - Безопасная генерация токенов для аутентификации пользователей
   - Поддержка как простого, так и защищённого режимов SSO
   - Подпись токенов на основе HMAC-SHA256 с использованием CryptoKit
+---

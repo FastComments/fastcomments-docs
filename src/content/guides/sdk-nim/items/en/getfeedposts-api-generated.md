@@ -14,7 +14,7 @@ afterId
 
 ## Response
 
-Returns: [`Option[GetFeedPosts_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts200response.nim)
+Returns: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_response.nim)
 
 ## Example
 
@@ -26,8 +26,7 @@ let (response, httpResponse) = client.getFeedPosts(
   limit = 0,
   tags = @[]
 )
-
 if response.isSome:
   let feed = response.get()
-  discard feed
+  echo "Feed retrieved for tenant my-tenant-123"
 [inline-code-end]

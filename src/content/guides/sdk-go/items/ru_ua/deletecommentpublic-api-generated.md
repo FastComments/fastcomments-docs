@@ -1,16 +1,16 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | путь | Да |  |
+| commentId | string | путь | Да |  |
+| broadcastId | string | строка запроса | Да |  |
+| editKey | string | строка запроса | Нет |  |
+| sso | string | строка запроса | Нет |  |
 
 ## Ответ
 
-Возвращает: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_public_200_response.go)
+Возвращает: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_api_delete_comment_response.go)
 
 ## Пример
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `DeleteCommentPublic`: DeleteCommentPublic200Response
+	// ответ от `DeleteCommentPublic`: PublicAPIDeleteCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

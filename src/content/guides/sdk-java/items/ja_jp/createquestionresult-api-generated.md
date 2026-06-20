@@ -1,12 +1,12 @@
 ## パラメータ
 
-| 名前 | 型 | ロケーション | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 
-## レスポンス
+## 戻り値
 
-戻り値: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionResult200Response.java)
+Returns: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionResultResponse.java)
 
 ## 例
 
@@ -35,7 +35,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     CreateQuestionResultBody createQuestionResultBody = new CreateQuestionResultBody(); // CreateQuestionResultBody | 
     try {
-      CreateQuestionResult200Response result = apiInstance.createQuestionResult(tenantId, createQuestionResultBody)
+      CreateQuestionResultResponse result = apiInstance.createQuestionResult(tenantId, createQuestionResultBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

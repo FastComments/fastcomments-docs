@@ -1,3 +1,6 @@
+Voert aggregatie uit op documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
+Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteund.
+
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -9,7 +12,7 @@
 
 ## Respons
 
-Retourneert: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Geeft terug: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Voorbeeld
 
@@ -17,13 +20,12 @@ Retourneert: [`Option[AggregationResponse]`](https://github.com/FastComments/fas
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
-if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
-[inline-code-end]
 
----
+if response.isSome:
+  let agg = response.get()
+  discard agg
+[inline-code-end]

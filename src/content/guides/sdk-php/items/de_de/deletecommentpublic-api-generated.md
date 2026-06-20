@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -11,7 +10,7 @@
 
 ## Antwort
 
-Gibt zurück: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentPublic200Response.php)
+Gibt zurück: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
 
 ## Beispiel
 
@@ -40,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->deleteCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

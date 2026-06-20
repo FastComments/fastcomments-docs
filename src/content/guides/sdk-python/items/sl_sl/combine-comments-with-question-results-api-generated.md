@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Name | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | questionId | string | query | Ne |  |
@@ -14,32 +15,32 @@
 
 ## Odgovor
 
-Vrne: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_comments_with_question_results200_response.py)
+Vrne: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.combine_comments_with_question_results200_response import CombineCommentsWithQuestionResults200Response
+from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre preverjanja pristnosti in avtorizacije
-# v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo avtentikacije so podani spodaj, uporabite primer,
-# ki ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora nastaviti parametre overjanja in avtorizacije
+# v skladu z varnostno politiko API strežnika.
+# Spodaj so navedeni primeri za vsako metodo overjanja; uporabite primer,
+# ki ustreza vašemu primeru uporabe.
 
-# Nastavite avtorizacijo z API ključem: api_key
+# Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, če želite nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
+# Po potrebi odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca

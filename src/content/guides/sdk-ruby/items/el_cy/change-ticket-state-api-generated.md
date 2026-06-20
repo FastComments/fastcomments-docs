@@ -1,14 +1,15 @@
-## Parameters
+---
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 
-## Response
+## Απόκριση
 
-Επιστρέφει: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state200_response.rb)
+Επιστρέφει: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_ticket_state_response.rb)
 
 ## Παράδειγμα
 
@@ -20,7 +21,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης με API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -6,13 +6,13 @@
 
 ## Отговор
 
-Връща: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateDefinitions200Response.swift)
+Връща: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplateDefinitionsResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за getEmailTemplateDefinitions'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни кодове все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примерни фрагменти от код все още са бета. За проблеми, моля докладвайте на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -28,5 +28,3 @@ DefaultAPI.getEmailTemplateDefinitions(tenantId: tenantId) { (response, error) i
     }
 }
 [inline-code-end]
-
----

@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_200_response.go)
+Returns: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_comment_response.go)
 
 ## Example
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetComment`: GetComment200Response
+	// response from `GetComment`: APIGetCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetComment`: %v\n", resp)
 }
 [inline-code-end]

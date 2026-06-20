@@ -1,13 +1,13 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Пример
 
@@ -29,7 +29,7 @@ public class Example {
     // Конфигуриране на удостоверяване с API ключ: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Премахнете коментара от следния ред, за да зададете префикс за API ключа, например "Token" (по подразбиране null)
+    // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateTenantPackageBody updateTenantPackageBody = new UpdateTenantPackageBody(); // UpdateTenantPackageBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateTenantPackage(tenantId, id, updateTenantPackageBody)
+      APIEmptyResponse result = apiInstance.updateTenantPackage(tenantId, id, updateTenantPackageBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,7 @@
+---
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | commentId | string | path | Evet |  |
@@ -10,7 +11,7 @@
 
 ## Yanıt
 
-Döndürür: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_public200_response.rb)
+Döndürür: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
 
 ## Örnek
 
@@ -36,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_public: #{e}"
 end
 [inline-code-end]
+
+---

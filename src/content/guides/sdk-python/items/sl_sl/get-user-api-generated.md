@@ -7,37 +7,37 @@
 
 ## Odgovor
 
-Vrne: [`GetUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user200_response.py)
+Vrne: [`GetUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user200_response import GetUser200Response
+from client.models.get_user_response import GetUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je izbirna in privzeto nastavljena na https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov glejte configuration.py.
+# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre za overjanje in pooblastila
-# v skladu s politiko varnosti strežnika API.
-# Spodaj so navedeni primeri za vsako metodo avtentikacije, uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora nastaviti parametre overjanja in avtorizacije
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so navedeni primeri za vsako metodo overjanja; uporabite primer, ki
+# ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtorizacijo z API ključem: api_key
+# Nastavite avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Če je potrebno, odstranite komentar spodaj, da nastavite predpono (npr. Bearer) za API ključ
+# Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user: %s\n" % e)
 [inline-code-end]
-
----

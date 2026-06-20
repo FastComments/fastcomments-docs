@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | skip | number | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_packages200_response.rb)
+Döndürür: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_packages_response.rb)
 
 ## Örnek
 
@@ -15,7 +15,7 @@ Döndürür: [`GetTenantPackages200Response`](https://github.com/FastComments/fa
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi ayarla
+# Yetkilendirme yapılandırması
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_packages: #{e}"
 end
 [inline-code-end]
-
----

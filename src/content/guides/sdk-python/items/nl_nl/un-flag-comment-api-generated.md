@@ -1,26 +1,26 @@
 ## Parameters
 
-| Name | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
+| userId | string | query | Nee |  |
+| anonUserId | string | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Geeft terug: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'un_flag_comment Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
+# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,23 +28,23 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode worden hieronder gegeven; gebruik het voorbeeld dat
-# past bij uw authenticatiegebruiksscenario.
+# Voor elk authenticatiemethode zijn er voorbeelden hieronder; gebruik het voorbeeld dat
+# overeenkomt met jouw authenticatiegebruikssituatie.
 
 # Configureer API-sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal hieronder de commentaarregel weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Haal het commentaar hieronder weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Open een context met een instantie van de API-client
+# Ga een context in met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (optioneel)
-    anon_user_id = 'anon_user_id_example' # str |  (optioneel)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
         api_response = api_instance.un_flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
@@ -53,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->un_flag_comment: %s\n" % e)
 [inline-code-end]
-
----

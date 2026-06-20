@@ -1,7 +1,7 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
 | voteId | string | 是 |  |
@@ -12,27 +12,28 @@
 
 ## 回應
 
-回傳: [`DeleteCommentVote_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteCommentVote_200_response.h)
+回傳: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteCommentVote 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-789");
-utility::string_t voteId = U("vote-456");
-utility::string_t urlId = U("/articles/2026/fastcomments-guide");
-utility::string_t broadcastId = U("broadcast-001");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("editkey-abc"));
+utility::string_t commentId = U("cmt-987654321");
+utility::string_t voteId = U("vote-abc123");
+utility::string_t urlId = U("https://example.com/articles/42");
+utility::string_t broadcastId = U("bcast-001");
+boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-789"));
 boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto placeholder = std::make_shared<DeleteCommentVote_200_response>();
 api->deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)
-.then([=](pplx::task<std::shared_ptr<DeleteCommentVote_200_response>> t){
+.then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
     try {
-        auto resp = t.get();
-        if (resp) std::cout << "Vote deleted\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
+        auto respPtr = t.get();
+        std::shared_ptr<VoteDeleteResponse> result = respPtr ? std::make_shared<VoteDeleteResponse>(*respPtr) : std::make_shared<VoteDeleteResponse>();
+        (void)result;
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]
+
+---

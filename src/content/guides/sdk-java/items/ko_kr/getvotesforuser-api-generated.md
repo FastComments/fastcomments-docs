@@ -1,6 +1,6 @@
-## 매개변수
+## 매개 변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | urlId | string | query | 예 |  |
@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUser200Response.java)
+반환: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesForUserResponse.java)
 
 ## 예제
 
@@ -31,16 +31,16 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값은 null)
+    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // 문자열 | 
-    String urlId = "urlId_example"; // 문자열 | 
-    String userId = "userId_example"; // 문자열 | 
-    String anonUserId = "anonUserId_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String userId = "userId_example"; // String | 
+    String anonUserId = "anonUserId_example"; // String | 
     try {
-      GetVotesForUser200Response result = apiInstance.getVotesForUser(tenantId, urlId)
+      GetVotesForUserResponse result = apiInstance.getVotesForUser(tenantId, urlId)
             .userId(userId)
             .anonUserId(anonUserId)
             .execute();

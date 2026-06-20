@@ -60,7 +60,7 @@ async fn main() {
         key: "your-api-key".to_string(),
     });
 
-    // Получить комментарии с использованием аутентифицированного API
+    // Получить комментарии, используя аутентифицированный API
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Использование API модерации
+
+Методы модерации обслуживают панель модератора. Они используют `Configuration` с API-ключом так же, как и аутентифицированный API, и каждый метод принимает необязательный токен `sso`, чтобы вызов мог быть выполнен от имени модератора, аутентифицированного через SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Создать конфигурацию с API-ключом
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Посчитать комментарии, ожидающие в очереди модерации
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // передайте SSO-токен, чтобы действовать как модератор, аутентифицированный через SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Использование SSO для аутентификации
 
 ```rust
@@ -110,7 +148,7 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Создать защищённые данные пользователя SSO (только на сервере!)
+    // Создать защищённые данные пользователя SSO (только на стороне сервера!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // Идентификатор пользователя
         "user@example.com".to_string(),   // Электронная почта

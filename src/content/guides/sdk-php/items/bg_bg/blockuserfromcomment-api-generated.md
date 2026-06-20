@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockFromCommentPublic200Response.php)
+Връща: [`BlockSuccess`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockSuccess.php)
 
 ## Пример
 
@@ -19,15 +19,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на удостоверяване с API ключ: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Премахнете коментара по-долу, за да зададете префикс (например Bearer) за API ключ, ако е необходимо
+// Откоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, `GuzzleHttp\Client` ще бъде използван по подразбиране.
+    // Ако искате да използвате потребителски HTTP клиент, предайте клиента си, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, по подразбиране ще бъде използван `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -44,5 +44,3 @@ try {
     echo 'Exception when calling DefaultApi->blockUserFromComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

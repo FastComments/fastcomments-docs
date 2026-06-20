@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | commentId | string | query | לא |  |
@@ -12,36 +13,37 @@
 
 ## תגובה
 
-מחזיר: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count200_response.py)
+מחזיר: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_event_count200_response import GetPendingWebhookEventCount200Response
+from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית והברירת מחדל היא https://fastcomments.com
+# ראה configuration.py לרשימת כל פרמטרי הקונפיגורציה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # הלקוח חייב להגדיר את פרמטרי האימות והרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן — השתמש בדוגמה שמספקת את מקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות למטה — השתמש בדוגמה
+# שמתאימה למקרה השימוש שלך.
 
-# הגדר הרשאת מפתח API: api_key
+# הגדר אימות באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה להלן כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# אם צריך, הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס לקונטקסט עם מופע של לקוח ה-API
+# הכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צור מופע של המחלקה של ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str |  (אופציונלי)

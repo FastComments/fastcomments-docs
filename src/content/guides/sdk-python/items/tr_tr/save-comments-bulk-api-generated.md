@@ -1,4 +1,4 @@
-## Parameters
+## Parametreler
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -8,9 +8,9 @@
 | sendEmails | boolean | query | Hayır |  |
 | populateNotifications | boolean | query | Hayır |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Döndürür: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## Örnek
 
@@ -18,35 +18,35 @@ Döndürür: [`SaveComment200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
+# Host'u belirtmek isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, API sunucusunun güvenlik politikasına uygun olarak kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
-
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
+# API sunucusu güvenlik politikasına uygun olarak.
+# Aşağıda her bir kimlik doğrulama yöntemi için örnekler verilmiştir, kullanım durumunuza uygun olanı kullanın.
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki satırı yorumdan çıkarın
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Bir API istemcisi örneği ile bir bağlam açın
+# API istemcisi örneği ile bir bağlam açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (optional)
-    do_spam_check = True # bool |  (optional)
-    send_emails = True # bool |  (optional)
-    populate_notifications = True # bool |  (optional)
+    is_live = True # bool |  (isteğe bağlı)
+    do_spam_check = True # bool |  (isteğe bağlı)
+    send_emails = True # bool |  (isteğe bağlı)
+    populate_notifications = True # bool |  (isteğe bağlı)
 
     try:
         api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)

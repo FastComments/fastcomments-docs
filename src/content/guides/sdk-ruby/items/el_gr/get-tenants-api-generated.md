@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenants200_response.rb)
+Επιστρέφει: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenants_response.rb)
 
 ## Παράδειγμα
 
@@ -18,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+  # Διαμόρφωση εξουσιοδότησης μέσω API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλεγμένο nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (εξ ορισμού nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenants: #{e}"
 end
 [inline-code-end]
+
+---

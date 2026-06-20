@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | userId | string | Ne |  |
@@ -8,23 +8,25 @@
 
 ## Odgovor
 
-Vraća: [`Option[CreateTicket_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_ticket200response.nim)
+Vraća: [`Option[CreateTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_ticket_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer createTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createBody = CreateTicketBody(
-  title = "Unable to post comment",
-  description = "HTTP 500 when submitting comment on article 'world/my-latest-report'",
-  contactEmail = "jane.doe@example.com",
-  tags = @["comments", "backend"],
-  urgent = false
+let body = CreateTicketBody(
+  subject = "Comment moderation issue",
+  message = "Several abusive comments reported on article, please review and moderate.",
+  tags = @["moderation", "abuse", "urgent"],
+  url = "https://news.example.com/world/2026-election",
+  priority = "high"
 )
-let (response, httpResponse) = client.createTicket(tenantId = "my-tenant-123", userId = "user-9876", createTicketBody = createBody)
+
+let (response, httpResponse) = client.createTicket(tenantId = "my-tenant-123", userId = "user-789", createTicketBody = body)
+
 if response.isSome:
   let ticket = response.get()
-  echo "Created ticket ID: ", $ticket
+  echo "Created ticket ID: ", ticket.id
 [inline-code-end]
 
 ---

@@ -1,16 +1,17 @@
+---
 ## Parametre
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
+| tenantId | string | query | Yes |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_definitions_200_response.go)
+Returnerer: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_definitions_response.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'GetEmailTemplateDefinitions Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på GetEmailTemplateDefinitions'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -31,7 +32,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplateDefinitions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Respons fra `GetEmailTemplateDefinitions`: GetEmailTemplateDefinitions200Response
+	// svar fra `GetEmailTemplateDefinitions`: GetEmailTemplateDefinitionsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplateDefinitions`: %v\n", resp)
 }
 [inline-code-end]
+
+---

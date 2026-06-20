@@ -1,4 +1,4 @@
-req
+요청
 tenantId
 afterId
 
@@ -6,17 +6,17 @@ afterId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| afterId | string | query | 아니오 |  |
-| limit | integer | query | 아니오 |  |
-| tags | array | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
-| isCrawler | boolean | query | 아니오 |  |
-| includeUserInfo | boolean | query | 아니오 |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## 응답
 
-반환: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+반환: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## 예제
 
@@ -28,8 +28,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 선택 사항입니다. 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 선택 사항이며 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

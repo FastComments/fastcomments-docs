@@ -1,20 +1,20 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| questionId | string | query | 아니요 |  |
-| questionIds | array | query | 아니요 |  |
-| urlId | string | query | 아니요 |  |
-| startDate | string | query | 아니요 |  |
-| forceRecalculate | boolean | query | 아니요 |  |
-| minValue | number | query | 아니요 |  |
-| maxValue | number | query | 아니요 |  |
-| limit | number | query | 아니요 |  |
+| questionId | string | query | 아니오 |  |
+| questionIds | array | query | 아니오 |  |
+| urlId | string | query | 아니오 |  |
+| startDate | string | query | 아니오 |  |
+| forceRecalculate | boolean | query | 아니오 |  |
+| minValue | number | query | 아니오 |  |
+| maxValue | number | query | 아니오 |  |
+| limit | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_comments_with_question_results_200_response.go)
+반환: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_question_results_with_comments_response.go)
 
 ## 예제
 
@@ -27,7 +27,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -48,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CombineCommentsWithQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CombineCommentsWithQuestionResults`: CombineCommentsWithQuestionResults200Response
+	// `CombineCommentsWithQuestionResults`의 응답: CombineQuestionResultsWithCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CombineCommentsWithQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

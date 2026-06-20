@@ -1,6 +1,7 @@
+---
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | postId | string | path | Ja |  |
@@ -9,11 +10,11 @@
 
 ## Antwort
 
-Gibt zurück: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public200_response.rb)
+Gibt zurück: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public_response.rb)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'delete_feed_post_public Beispiel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für delete_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -34,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

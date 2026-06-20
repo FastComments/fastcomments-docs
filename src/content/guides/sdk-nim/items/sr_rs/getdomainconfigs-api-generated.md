@@ -1,26 +1,24 @@
----
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 
 ## Одговор
 
-Враћа: [`Option[GetDomainConfigs_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_configs200response.nim)
+Враћа: [`Option[GetDomainConfigsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_configs_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getDomainConfigs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getDomainConfigs Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getDomainConfigs(tenantId = "my-tenant-123")
 if response.isSome:
   let domainConfigs = response.get()
-  echo "Domain configs received:"
+  echo "Received domain configs for tenant my-tenant-123"
   echo domainConfigs
 else:
-  echo "Failed to retrieve domain configs."
-  echo httpResponse
+  echo "No domain configs returned"
 [inline-code-end]
 
 ---

@@ -31,7 +31,7 @@ import FastCommentsSwift
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Отримати коментарі з автентифікованого API
+// Отримати коментарі за допомогою автентифікованого API
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,24 +47,47 @@ do {
 }
 ```
 
+### Використання API модерації
+
+```swift
+import FastCommentsSwift
+
+// Методи модерації авторизуються за допомогою токена `sso` для діючого модератора
+// (згенеруйте його з FastCommentsSSO, див. секцію SSO вище).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Використання SSO для автентифікації
 
-#### Безпечний SSO (Рекомендується для виробничого середовища)
+#### Безпечний SSO (Рекомендується для продакшн)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Створити безпечні дані користувача SSO (тільки на сервері!)
+// Створити захищені дані користувача SSO (тільки на сервері!)
 let userData = SecureSSOUserData(
-    id: "user-123",              // ID користувача
+    id: "user-123",              // Ідентифікатор користувача
     email: "user@example.com",   // Електронна пошта
     username: "johndoe",         // Ім'я користувача
-    avatar: "https://example.com/avatar.jpg" // URL аватара
+    avatar: "https://example.com/avatar.jpg" // URL аватарки
 )
 
-// Згенерувати SSO токен
+// Згенерувати SSO-токен
 do {
     let sso = try FastCommentsSSO.createSecure(apiKey: apiKey, secureSSOUserData: userData)
     let token = try sso.createToken()
@@ -76,7 +99,7 @@ do {
 }
 ```
 
-#### Простий SSO (Для розробки/тестування)
+#### Простий SSO (для розробки/тестування)
 
 ```swift
 import FastCommentsSwift
@@ -88,7 +111,7 @@ let userData = SimpleSSOUserData(
     avatar: "https://example.com/avatar.jpg"
 )
 
-// Згенерувати простий SSO токен
+// Згенерувати простий SSO-токен
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()

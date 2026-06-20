@@ -1,32 +1,30 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| meta | string | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| meta | string | query | Не |  |
+| skip | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenants200Response.php)
+Враћа: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantsResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getTenants Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenants примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Podesite autorizaciju API ključa: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite ispod da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// Конфигуришите ауторизацију API кључа: api_key
+// Ако је потребно, откоментаришите линију испод да бисте подесили префикс (нпр. Bearer) за API кључ
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, podrazumevano će biti korišćen `GuzzleHttp\Client`.
+    // Ако желите користити прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
     new GuzzleHttp\Client(),
     $config
 );
@@ -41,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getTenants: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

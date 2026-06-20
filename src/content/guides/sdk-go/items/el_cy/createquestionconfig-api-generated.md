@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +6,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_200_response.go)
+Επιστρέφει: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_config_response.go)
 
 ## Παράδειγμα
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `CreateQuestionConfig`: CreateQuestionConfig200Response
+	// απόκριση από `CreateQuestionConfig`: CreateQuestionConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

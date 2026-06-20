@@ -31,7 +31,7 @@ import FastCommentsSwift
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// 認証済みAPIを使ってコメントを取得
+// 認証済みAPIを使用してコメントを取得
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,16 +47,39 @@ do {
 }
 ```
 
-### SSOを使った認証
+### モデレーションAPIの使用
 
-#### セキュアSSO（本番環境に推奨）
+```swift
+import FastCommentsSwift
+
+// モデレーションメソッドは、実際にモデレーターとして動作する者のための `sso` トークンで認可されます
+// （FastCommentsSSOで生成します。詳細は上記のSSOセクション参照）。
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### 認証にSSOを使用する
+
+#### セキュアSSO（本番に推奨）
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// セキュアSSOユーザーデータを作成（サーバー側のみ！）
+// セキュアSSOユーザーデータを作成する（サーバー側のみ！）
 let userData = SecureSSOUserData(
     id: "user-123",              // ユーザーID
     email: "user@example.com",   // メール
@@ -70,13 +93,13 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // このトークンをフロントエンドに渡して認証に使用する
+    // このトークンを認証のためにフロントエンドに渡す
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### シンプルSSO（開発/テスト用）
+#### シンプルSSO（開発／テスト用）
 
 ```swift
 import FastCommentsSwift

@@ -1,4 +1,4 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -14,7 +14,7 @@
 
 ## Отговор
 
-Връща: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Връща: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## Пример
 
@@ -22,11 +22,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на удостоверяване
+# настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Конфигуриране на удостоверяване чрез API ключ: api_key
+  # Конфигуриране на авторизация с API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране: nil)
+  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

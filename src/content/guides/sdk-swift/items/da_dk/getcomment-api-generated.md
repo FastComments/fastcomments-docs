@@ -1,19 +1,19 @@
 ## Parametre
 
-| Name | Type | Placering | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComment200Response.swift)
+Returnerer: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentResponse.swift)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getComment Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der opstår problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig beta. For problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,3 +30,5 @@ DefaultAPI.getComment(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
+
+---

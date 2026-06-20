@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
@@ -9,23 +9,22 @@
 
 ## Odgovor
 
-Vrne: [`GetVotesForUser_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotesForUser_200_response.h)
+Vrne: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotesForUserResponse.h)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getVotesForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("article-987");
-boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
+utility::string_t urlId = U("/articles/2026/06/new-features");
+boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
 boost::optional<utility::string_t> anonUserId;
 api->getVotesForUser(tenantId, urlId, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<GetVotesForUser_200_response>> task){
+.then([](pplx::task<std::shared_ptr<GetVotesForUserResponse>> t){
     try {
-        auto resp = task.get();
-        if (resp) {
-            auto copy = std::make_shared<GetVotesForUser_200_response>(*resp);
-        }
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<GetVotesForUserResponse>();
+        (void)resp;
     } catch (const std::exception&) {
     }
 });

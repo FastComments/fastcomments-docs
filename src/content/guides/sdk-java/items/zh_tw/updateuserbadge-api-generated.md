@@ -1,14 +1,14 @@
 ---
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必要 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
 
 ## 回應
 
-回傳：[`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserBadge200Response.java)
+回傳: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptySuccessResponse.java)
 
 ## 範例
 
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateUserBadgeParams updateUserBadgeParams = new UpdateUserBadgeParams(); // UpdateUserBadgeParams | 
     try {
-      UpdateUserBadge200Response result = apiInstance.updateUserBadge(tenantId, id, updateUserBadgeParams)
+      APIEmptySuccessResponse result = apiInstance.updateUserBadge(tenantId, id, updateUserBadgeParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

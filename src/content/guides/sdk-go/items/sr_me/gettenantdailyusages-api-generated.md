@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| yearNumber | number | query | Ne |  |
-| monthNumber | number | query | Ne |  |
-| dayNumber | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| yearNumber | number | query | Не |  |
+| monthNumber | number | query | Не |  |
+| dayNumber | number | query | Не |  |
+| skip | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+Враћа: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'GetTenantDailyUsages Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за GetTenantDailyUsages'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	yearNumber := float64(1.2) // float64 |  (neobavezno)
-	monthNumber := float64(1.2) // float64 |  (neobavezno)
-	dayNumber := float64(1.2) // float64 |  (neobavezno)
-	skip := float64(1.2) // float64 |  (neobavezno)
+	yearNumber := float64(1.2) // float64 |  (опционо)
+	monthNumber := float64(1.2) // float64 |  (опционо)
+	dayNumber := float64(1.2) // float64 |  (опционо)
+	skip := float64(1.2) // float64 |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetTenantDailyUsages`: GetTenantDailyUsages200Response
+	// одговор од `GetTenantDailyUsages`: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]
+
+---

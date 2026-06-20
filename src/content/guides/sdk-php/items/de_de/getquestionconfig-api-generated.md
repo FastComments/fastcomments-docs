@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfig200Response.php)
+Gibt zurück: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfigResponse.php)
 
 ## Beispiel
 
@@ -19,13 +19,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API-Schlüssel-Autorisierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie die Auskommentierung unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls nötig
+// Entkommentieren Sie die folgende Zeile, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Wenn Sie einen eigenen HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );

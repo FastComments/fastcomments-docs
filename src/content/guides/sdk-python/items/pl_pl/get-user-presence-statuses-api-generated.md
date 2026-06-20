@@ -2,24 +2,24 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlIdWS | string | query | Yes |  |
-| userIds | string | query | Yes |  |
+| tenantId | string | query | Tak |  |
+| urlIdWS | string | query | Tak |  |
+| userIds | string | query | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses200_response.py)
+Zwraca: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_user_presence_statuses'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_presence_statuses200_response import GetUserPresenceStatuses200Response
+from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Ustalenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"

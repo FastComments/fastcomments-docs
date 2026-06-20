@@ -3,25 +3,25 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| notificationId | string | path | Oui |  |
-| newStatus | string | path | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Retourne: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Retourne: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de update_user_notification_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_status_response import UpdateUserNotificationStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est facultative et par défaut https://fastcomments.com
+# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -35,7 +35,7 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     notification_id = 'notification_id_example' # str | 
     new_status = 'new_status_example' # str | 
-    sso = 'sso_example' # str |  (optional)
+    sso = 'sso_example' # str |  (facultatif)
 
     try:
         api_response = api_instance.update_user_notification_status(tenant_id, notification_id, new_status, sso=sso)

@@ -7,37 +7,37 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Επιστρέφει: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
+# Ορισμός του host είναι προαιρετικός και προεπιλογή το https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Ο client πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παραδείγματα για κάθε μέθοδο auth παρέχονται πιο κάτω, χρησιμοποίησε το παράδειγμα που
-# ικανοποιεί την περίπτωση χρήσης σου για auth.
+# σύμφωνα με την πολιτική ασφαλείας του API server.
+# Παρέχονται παρακάτω παραδείγματα για κάθε μέθοδο πιστοποίησης, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης σας για πιστοποίηση.
 
-# Διαμόρφωση εξουσιοδότησης με API key: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε πιο κάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα instance του API client
+# Μπείτε σε context με ένα στιγμιότυπο του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργείστε ένα instance της κλάσης API
+    # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

@@ -1,17 +1,17 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
+| 名稱 | Type | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | float64 | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| externalId | string | 否 |  |
+| eventType | string | 否 |  |
+| domain | string | 否 |  |
+| attemptCountGT | float64 | 否 |  |
 
 ## 回應
 
-回傳: [`Option[GetPendingWebhookEventCount_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_event_count200response.nim)
+回傳: [`Option[GetPendingWebhookEventCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_event_count_response.nim)
 
 ## 範例
 
@@ -19,17 +19,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.getPendingWebhookEventCount(
   tenantId = "my-tenant-123",
-  commentId = "cmt-4567",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0
+  commentId = "cmt-456abc",
+  externalId = "ext-7890",
+  eventType = "comment_created",
+  domain = "news.example.com",
+  attemptCountGT = 2.0
 )
+
 if response.isSome:
   let pending = response.get()
-  echo "Received pending webhook event count response: ", $pending
+  echo pending
 else:
-  echo "No pending webhook event count returned, HTTP response: ", $httpResponse
+  echo "No pending webhook event count returned; HTTP status: ", httpResponse.status
 [inline-code-end]
 
 ---

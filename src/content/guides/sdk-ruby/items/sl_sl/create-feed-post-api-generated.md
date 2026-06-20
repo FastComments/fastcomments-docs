@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | broadcastId | string | query | Ne |  |
@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+Vrne: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
 ## Primer
 
@@ -22,7 +22,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Konfigurirajte avtorizacijo z API ključem: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
+  # Odkomentirajte naslednjo vrstico za nastavitev predpone za API ključ, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

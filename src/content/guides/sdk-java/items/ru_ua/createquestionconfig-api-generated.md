@@ -1,12 +1,12 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionConfig200Response.java)
+Возвращает: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionConfigResponse.java)
 
 ## Пример
 
@@ -25,17 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации с помощью API-ключа: api_key
+    // Настроить авторизацию по ключу API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
+    // Раскомментируйте следующую строку, чтобы задать префикс для ключа API, например "Token" (по умолчанию null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateQuestionConfigBody createQuestionConfigBody = new CreateQuestionConfigBody(); // CreateQuestionConfigBody | 
     try {
-      CreateQuestionConfig200Response result = apiInstance.createQuestionConfig(tenantId, createQuestionConfigBody)
+      CreateQuestionConfigResponse result = apiInstance.createQuestionConfig(tenantId, createQuestionConfigBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

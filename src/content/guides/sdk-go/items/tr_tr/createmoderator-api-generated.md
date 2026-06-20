@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_moderator_200_response.go)
+Döndürür: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_moderator_response.go)
 
 ## Örnek
 
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateModerator`'den gelen yanıt: CreateModerator200Response
+	// `CreateModerator`'den gelen yanıt: CreateModeratorResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateModerator`: %v\n", resp)
 }
 [inline-code-end]

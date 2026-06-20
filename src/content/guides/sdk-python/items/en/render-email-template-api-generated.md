@@ -7,15 +7,15 @@
 
 ## Response
 
-Returns: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template200_response.py)
+Returns: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'render_email_template Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.render_email_template200_response import RenderEmailTemplate200Response
 from client.models.render_email_template_body import RenderEmailTemplateBody
+from client.models.render_email_template_response import RenderEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 

@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | postIds | vector<string | כן |  |
@@ -8,23 +8,23 @@
 
 ## תגובה
 
-מחזיר: [`GetFeedPostsStats_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetFeedPostsStats_200_response.h)
+מחזיר: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getFeedPostsStats'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל־getFeedPostsStats'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-std::vector<utility::string_t> postIds{ U("post-abc-001"), U("post-xyz-123") };
-boost::optional<utility::string_t> sso(U("user@example.com"));
+std::vector<utility::string_t> postIds = { U("post-1001"), U("post-1002"), U("post-1003") };
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
 api->getFeedPostsStats(tenantId, postIds, sso)
-    .then([](pplx::task<std::shared_ptr<GetFeedPostsStats_200_response>> t)
-    {
+    .then([](pplx::task<std::shared_ptr<FeedPostsStatsResponse>> previous) {
         try {
-            auto resp = t.get();
-            auto respCopy = resp ? std::make_shared<GetFeedPostsStats_200_response>(*resp) : nullptr;
-            (void)respCopy;
-        } catch (const std::exception&) {}
+            auto stats = previous.get();
+            if (!stats) stats = std::make_shared<FeedPostsStatsResponse>();
+            // עבדו עם הסטטיסטיקות כאן (למשל, בדקו שדות, עדכנו את הממשק)
+        } catch (const std::exception&) {
+        }
     });
 [inline-code-end]
 

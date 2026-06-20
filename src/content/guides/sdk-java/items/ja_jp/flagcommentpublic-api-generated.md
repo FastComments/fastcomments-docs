@@ -2,20 +2,20 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| isFlagged | boolean | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| isFlagged | boolean | query | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'flagCommentPublic の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート：
+// クラスのインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,7 +33,7 @@ public class Example {
     Boolean isFlagged = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.flagCommentPublic(tenantId, commentId, isFlagged)
+      APIEmptyResponse result = apiInstance.flagCommentPublic(tenantId, commentId, isFlagged)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -6,36 +6,36 @@
 
 ## Yanıt
 
-Döndürür: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template200_response.py)
+Döndürür: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'create_email_template Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_email_template200_response import CreateEmailTemplate200Response
 from client.models.create_email_template_body import CreateEmailTemplateBody
+from client.models.create_email_template_response import CreateEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucunun tanımlanması isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
+# Sunucu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusunun güvenlik politikasıyla uyumlu olarak.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, ihtiyaç duyduğunuz
-# kimlik doğrulama durumunu karşılayan örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
+# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kimlik doğrulama kullanım
+# durumunuza uygun olanı kullanın.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için ön eki (örn. Bearer) ayarlamak üzere aşağıdakinin yorumunu kaldırın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki yorumu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemci örneği ile bir bağlam açın
+# API istemcisi örneği ile bir bağlam girin
 with client.ApiClient(configuration) as api_client:
     # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_email_template: %s\n" % e)
 [inline-code-end]
-
----

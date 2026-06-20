@@ -1,6 +1,6 @@
-## Parameters
+## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | postId | string | path | Sim |  |
@@ -9,13 +9,13 @@
 
 ## Resposta
 
-Retorna: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostPublic200Response.swift)
+Retorna: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de updateFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os exemplos de código a seguir ainda estão em versão beta. Para qualquer problema, por favor reporte em http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -35,3 +35,5 @@ PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPos
     }
 }
 [inline-code-end]
+
+---

@@ -1,4 +1,6 @@
-## Parametre
+Aggregerer dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende flere operationer. Forskellige operationer (f.eks. sum, countDistinct, avg osv.) understøttes.
+
+## Parameters
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
@@ -7,9 +9,9 @@
 | parentTenantId | string | Nej |  |
 | includeStats | bool | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Returnerer: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Eksempel
 
@@ -17,13 +19,14 @@ Returnerer: [`Option[AggregationResponse]`](https://github.com/FastComments/fast
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
+
 if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]
 
 ---

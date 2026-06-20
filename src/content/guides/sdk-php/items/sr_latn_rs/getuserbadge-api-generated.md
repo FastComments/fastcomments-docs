@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadge200Response.php)
+Vraća: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeResponse.php)
 
 ## Primer
 
@@ -17,15 +17,15 @@ Vraća: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
+// Konfiguriši autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ukoliko je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Ako želite koristiti prilagođeni HTTP klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, kao podrazumevano će se koristiti `GuzzleHttp\Client`.
+    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen po defaultu.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -2,7 +2,7 @@ Belirli bir yorum için bildirimleri etkinleştirin veya devre dışı bırakın
 
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | notificationId | string | path | Evet |  |
@@ -12,11 +12,11 @@ Belirli bir yorum için bildirimleri etkinleştirin veya devre dışı bırakın
 
 ## Yanıt
 
-Döndürür: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Döndürür: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationCommentSubscriptionStatusResponse.java)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Örnek'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Sınıfları içe aktar:
 import com.fastcomments.invoker.ApiClient;
@@ -37,7 +37,7 @@ public class Example {
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
+      UpdateUserNotificationCommentSubscriptionStatusResponse result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -51,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

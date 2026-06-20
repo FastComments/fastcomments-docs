@@ -1,14 +1,14 @@
 ## Параметри
 
-| Име | Тип | Location | Задължително | Описание |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Списък с id-та на коментари, разделени със запетая. |
+| commentIds | string | query | Да | Списък с идентификатори на коментари, разделени със запетаи. |
 | sso | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_checked_comments_for_blocked_200_response.go)
+Връща: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_check_blocked_comments_response.go)
 
 ## Пример
 
@@ -20,12 +20,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentIds := "commentIds_example" // string | Списък с id-та на коментари, разделени със запетая.
+	commentIds := "commentIds_example" // string | Списък с идентификатори на коментари, разделени със запетаи.
 	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
@@ -35,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CheckedCommentsForBlocked``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CheckedCommentsForBlocked`: CheckedCommentsForBlocked200Response
+	// отговор от `CheckedCommentsForBlocked`: CheckBlockedCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CheckedCommentsForBlocked`: %v\n", resp)
 }
 [inline-code-end]
-
----

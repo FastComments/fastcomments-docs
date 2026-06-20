@@ -2,19 +2,19 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| questionId | string | query | 否 |  |
-| questionIds | array | query | 否 |  |
-| urlId | string | query | 否 |  |
-| startDate | string | query | 否 |  |
-| forceRecalculate | boolean | query | 否 |  |
-| minValue | number | query | 否 |  |
-| maxValue | number | query | 否 |  |
-| limit | number | query | 否 |  |
+| tenantId | string | 查询 | Yes |  |
+| questionId | string | 查询 | No |  |
+| questionIds | array | 查询 | No |  |
+| urlId | string | 查询 | No |  |
+| startDate | string | 查询 | No |  |
+| forceRecalculate | boolean | 查询 | No |  |
+| minValue | number | 查询 | No |  |
+| maxValue | number | 查询 | No |  |
+| limit | number | 查询 | No |  |
 
 ## 响应
 
-返回: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_comments_with_question_results_200_response.go)
+返回: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_question_results_with_comments_response.go)
 
 ## 示例
 
@@ -27,7 +27,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -48,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CombineCommentsWithQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CombineCommentsWithQuestionResults`: CombineCommentsWithQuestionResults200Response
+	// 来自 `CombineCommentsWithQuestionResults` 的响应：CombineQuestionResultsWithCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CombineCommentsWithQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

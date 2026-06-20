@@ -7,13 +7,13 @@
 
 ## Одговор
 
-Враћа: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotes200Response.swift)
+Враћа: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'getVotes пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још увек бета. За било који проблем, молимо пријавите путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још увек бета. За било који проблем, пријавите преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

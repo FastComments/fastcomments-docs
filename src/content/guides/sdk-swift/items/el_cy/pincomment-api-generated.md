@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | commentId | string | path | Ναι |  |
@@ -9,7 +9,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`PinComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PinComment200Response.swift)
+Επιστρέφει: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ChangeCommentPinStatusResponse.swift)
 
 ## Παράδειγμα
 
@@ -34,3 +34,5 @@ PublicAPI.pinComment(tenantId: tenantId, commentId: commentId, broadcastId: broa
     }
 }
 [inline-code-end]
+
+---

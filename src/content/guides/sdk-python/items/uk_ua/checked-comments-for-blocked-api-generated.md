@@ -8,31 +8,31 @@
 
 ## Відповідь
 
-Повертає: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Повертає: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням = https://fastcomments.com
+# Визначення host необов'язкове та за замовчуванням дорівнює https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Увійдіть у контекст з екземпляром клієнта API
+# Відкриваємо контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
-    # Створіть екземпляр класу API
+    # Створюємо екземпляр класу API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_ids = 'comment_ids_example' # str | Список ідентифікаторів коментарів, розділених комами.
-    sso = 'sso_example' # str |  (необов'язковий)
+    sso = 'sso_example' # str |  (необов'язково)
 
     try:
         api_response = api_instance.checked_comments_for_blocked(tenant_id, comment_ids, sso=sso)

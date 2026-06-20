@@ -1,22 +1,23 @@
+---
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| userId | string | query | לא |  |
-| state | number | query | לא |  |
-| skip | number | query | לא |  |
-| limit | number | query | לא |  |
+| tenantId | string | שאילתה | כן |  |
+| userId | string | שאילתה | לא |  |
+| state | number | שאילתה | לא |  |
+| skip | number | שאילתה | לא |  |
+| limit | number | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTickets200Response.java)
+מחזיר: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketsResponse.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getTickets'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבא מחלקות:
+// ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // קונפיגורציית אימות מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // בטל את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת מחדל null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה "Token" (ברירת מחדל null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +43,7 @@ public class Example {
     Double skip = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      GetTickets200Response result = apiInstance.getTickets(tenantId)
+      GetTicketsResponse result = apiInstance.getTickets(tenantId)
             .userId(userId)
             .state(state)
             .skip(skip)
@@ -59,3 +60,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,17 +1,16 @@
----
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
+| tenantId | string | query | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_package_200_response.go)
+Vraća: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_package_response.go)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'Примјер CreateTenantPackage'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer CreateTenantPackage'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `CreateTenantPackage`: CreateTenantPackage200Response
+	// response from `CreateTenantPackage`: CreateTenantPackageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantPackage`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | domainToUpdate | string | path | Ja |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+Retourneert: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_patch_domain_config_response.go)
 
 ## Voorbeeld
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `PatchDomainConfig`: GetDomainConfig200Response
+	// respons van `PatchDomainConfig`: PatchDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

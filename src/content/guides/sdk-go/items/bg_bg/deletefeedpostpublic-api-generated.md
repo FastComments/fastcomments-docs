@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| postId | string | path | Да |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
-Връща: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_feed_post_public_200_response.go)
+Връща: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_feed_post_public_response.go)
 
 ## Пример
 
@@ -21,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	postId := "postId_example" // string | 
-	broadcastId := "broadcastId_example" // string |  (по избор)
-	sso := "sso_example" // string |  (по избор)
+	broadcastId := "broadcastId_example" // string |  (незадължително)
+	sso := "sso_example" // string |  (незадължително)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteFeedPostPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `DeleteFeedPostPublic`: DeleteFeedPostPublic200Response
+	// отговор от `DeleteFeedPostPublic`: DeleteFeedPostPublicResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteFeedPostPublic`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | postIds | array | query | 아니요 |  |
@@ -8,31 +8,31 @@
 
 ## 응답
 
-반환: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+반환: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_user_reacts_public 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
+# 지원되는 모든 구성 매개변수 목록은 configuration.py 를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# API 클라이언트 인스턴스와 함께 컨텍스트에 진입합니다
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    post_ids = ['post_ids_example'] # List[str] |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    post_ids = ['post_ids_example'] # List[str] |  (선택 사항)
+    sso = 'sso_example' # str |  (선택 사항)
 
     try:
         api_response = api_instance.get_user_reacts_public(tenant_id, post_ids=post_ids, sso=sso)

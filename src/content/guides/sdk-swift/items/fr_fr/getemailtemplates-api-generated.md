@@ -7,17 +7,17 @@
 
 ## Réponse
 
-Renvoie : [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplates200Response.swift)
+Renvoie : [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplatesResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour getEmailTemplates'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getEmailTemplates'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, merci de le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Double |  (optionnel)
+let skip = 987 // Double |  (facultatif)
 
 DefaultAPI.getEmailTemplates(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.getEmailTemplates(tenantId: tenantId, skip: skip) { (response, error)
     }
 }
 [inline-code-end]
-
----

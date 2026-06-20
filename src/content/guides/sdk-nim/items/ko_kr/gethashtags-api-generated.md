@@ -1,25 +1,24 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| page | float64 | 아니오 |  |
+| page | float64 | 아니요 |  |
 
 ## 응답
 
-반환: [`Option[GetHashTags_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_hash_tags200response.nim)
+반환: [`Option[GetHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_hash_tags_response.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getHashTags 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getHashTags(tenantId = "my-tenant-123", page = 1.0)
+let (response, httpResponse) = client.getHashTags(tenantId = "news-portal-987", page = 2.0)
 if response.isSome:
-  let tags = response.get()
-  for t in tags:
-    echo t
+  let tagsResp = response.get()
+  echo "Received hashtags response"
 else:
-  echo "no hashtags found"
+  echo "No hashtags returned"
 [inline-code-end]
 
 ---

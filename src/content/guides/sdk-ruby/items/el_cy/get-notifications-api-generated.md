@@ -1,18 +1,19 @@
+---
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ναι |  |
+| userId | string | query | Όχι |  |
+| urlId | string | query | Όχι |  |
+| fromCommentId | string | query | Όχι |  |
+| viewed | boolean | query | Όχι |  |
+| type | string | query | Όχι |  |
+| skip | number | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Επιστρέφει: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Παράδειγμα
 
@@ -22,9 +23,9 @@ require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης API key: api_key
+  # Διαμόρφωση εξουσιοδότησης με API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (από προεπιλογή nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,3 +48,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_notifications: #{e}"
 end
 [inline-code-end]
+
+---

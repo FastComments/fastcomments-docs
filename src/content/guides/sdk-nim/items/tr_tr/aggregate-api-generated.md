@@ -1,3 +1,6 @@
+Belgeleri gruplayarak (groupBy sağlanmışsa) ve birden çok işlem uygulayarak toplar.
+Farklı işlemler (örn. sum, countDistinct, avg, vb.) desteklenir.
+
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -9,7 +12,7 @@
 
 ## Yanıt
 
-Döndürür: [`Option[AggregationResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregation_response.nim)
+Döndürür: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Örnek
 
@@ -17,13 +20,14 @@ Döndürür: [`Option[AggregationResponse]`](https://github.com/FastComments/fas
 [inline-code-start]
 let (response, httpResponse) = client.aggregate(
   tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(),
+  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
   parentTenantId = "",
   includeStats = false
 )
+
 if response.isSome:
-  let aggregation = response.get()
-  echo $aggregation
+  let agg = response.get()
+  discard agg
 [inline-code-end]
 
 ---

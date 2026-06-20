@@ -1,13 +1,13 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | id | string | path | 예 |  |
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 예제
 
@@ -19,18 +19,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API 키 인증 구성: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 필요한 경우 API 키의 접두사(예: Bearer)를 설정하려면 아래의 주석을 해제하세요
+// 필요하면 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래 주석을 해제하세요
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 선택 사항입니다. 기본으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현한 클라이언트를 전달하세요.
+    // 이는 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+$tenant_id = 'tenant_id_example'; // 문자열
+$id = 'id_example'; // 문자열
 
 try {
     $result = $apiInstance->deleteQuestionConfig($tenant_id, $id);
@@ -39,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteQuestionConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

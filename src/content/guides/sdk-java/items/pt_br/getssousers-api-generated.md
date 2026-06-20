@@ -7,11 +7,11 @@
 
 ## Resposta
 
-Retorna: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetSSOUsers200Response.java)
+Retorna: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetSSOUsersResponse.java)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getSSOUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getSSOUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -29,14 +29,14 @@ public class Example {
     // Configurar autorização por chave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha abaixo para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
+    // Descomente a linha a seguir para definir um prefixo para a chave da API, por exemplo "Token" (padrão é null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Integer skip = 56; // Integer | 
     try {
-      GetSSOUsers200Response result = apiInstance.getSSOUsers(tenantId)
+      GetSSOUsersResponse result = apiInstance.getSSOUsers(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

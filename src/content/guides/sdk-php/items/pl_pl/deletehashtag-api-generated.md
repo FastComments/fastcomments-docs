@@ -5,9 +5,9 @@
 | tag | string | path | Tak |  |
 | tenantId | string | query | Nie |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Przykład
 
@@ -19,22 +19,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Skonfiguruj autoryzację klucza API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniższe, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $tag = 'tag_example'; // string
 $tenant_id = 'tenant_id_example'; // string
-$delete_hash_tag_request = new \FastComments\Client\Model\DeleteHashTagRequest(); // \FastComments\Client\Model\DeleteHashTagRequest
+$delete_hash_tag_request_body = new \FastComments\Client\Model\DeleteHashTagRequestBody(); // \FastComments\Client\Model\DeleteHashTagRequestBody
 
 try {
-    $result = $apiInstance->deleteHashTag($tag, $tenant_id, $delete_hash_tag_request);
+    $result = $apiInstance->deleteHashTag($tag, $tenant_id, $delete_hash_tag_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteHashTag: ', $e->getMessage(), PHP_EOL;

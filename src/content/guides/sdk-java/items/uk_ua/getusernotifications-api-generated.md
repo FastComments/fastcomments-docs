@@ -2,20 +2,22 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| pageSize | integer | query | Ні |  |
-| afterId | string | query | Ні |  |
-| includeContext | boolean | query | Ні |  |
-| afterCreatedAt | integer | query | Ні |  |
-| unreadOnly | boolean | query | Ні |  |
-| dmOnly | boolean | query | Ні |  |
-| noDm | boolean | query | Ні |  |
-| includeTranslations | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Використовується для визначення, чи підписана поточна сторінка. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+Повертає: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## Приклад
 
@@ -35,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | Використовується для визначення, чи підписана поточна сторінка.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -43,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -54,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -67,5 +73,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

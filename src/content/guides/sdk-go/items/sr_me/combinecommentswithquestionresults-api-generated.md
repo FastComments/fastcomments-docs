@@ -1,24 +1,24 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Не |  |
-| questionIds | array | query | Не |  |
-| urlId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| forceRecalculate | boolean | query | Не |  |
-| minValue | number | query | Не |  |
-| maxValue | number | query | Не |  |
-| limit | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| questionId | string | query | Ne |  |
+| questionIds | array | query | Ne |  |
+| urlId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| forceRecalculate | boolean | query | Ne |  |
+| minValue | number | query | Ne |  |
+| maxValue | number | query | Ne |  |
+| limit | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_comments_with_question_results_200_response.go)
+Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_question_results_with_comments_response.go)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример CombineCommentsWithQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer CombineCommentsWithQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,19 +27,19 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	questionId := "questionId_example" // string |  (опционо)
-	questionIds := []string{"Inner_example"} // []string |  (опционо)
-	urlId := "urlId_example" // string |  (опционо)
-	startDate := time.Now() // time.Time |  (опционо)
-	forceRecalculate := true // bool |  (опционо)
-	minValue := float64(1.2) // float64 |  (опционо)
-	maxValue := float64(1.2) // float64 |  (опционо)
-	limit := float64(1.2) // float64 |  (опционо)
+	questionId := "questionId_example" // string |  (opciono)
+	questionIds := []string{"Inner_example"} // []string |  (opciono)
+	urlId := "urlId_example" // string |  (opciono)
+	startDate := time.Now() // time.Time |  (opciono)
+	forceRecalculate := true // bool |  (opciono)
+	minValue := float64(1.2) // float64 |  (opciono)
+	maxValue := float64(1.2) // float64 |  (opciono)
+	limit := float64(1.2) // float64 |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CombineCommentsWithQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `CombineCommentsWithQuestionResults`: CombineCommentsWithQuestionResults200Response
+	// odgovor iz `CombineCommentsWithQuestionResults`: CombineQuestionResultsWithCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CombineCommentsWithQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

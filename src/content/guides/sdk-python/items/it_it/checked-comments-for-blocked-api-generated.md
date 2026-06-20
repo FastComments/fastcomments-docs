@@ -1,37 +1,37 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
-| commentIds | string | query | Sì | Una lista separata da virgole di ID dei commenti. |
+| commentIds | string | query | Sì | Una lista separata da virgole di id dei commenti. |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Restituisce: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è facoltativa e il valore predefinito è https://fastcomments.com
+# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
 # Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrare in un contesto con un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Creare un'istanza della classe API
+    # Crea un'istanza della classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | Una lista separata da virgole di ID dei commenti.
+    comment_ids = 'comment_ids_example' # str | Una lista separata da virgole di id dei commenti.
     sso = 'sso_example' # str |  (opzionale)
 
     try:

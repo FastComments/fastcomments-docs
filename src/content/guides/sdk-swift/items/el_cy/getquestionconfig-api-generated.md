@@ -7,11 +7,11 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionConfig200Response.swift)
+Επιστρέφει: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionConfigResponse.swift)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getQuestionConfig Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getQuestionConfig'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -30,3 +30,5 @@ DefaultAPI.getQuestionConfig(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
+
+---

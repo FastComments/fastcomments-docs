@@ -1,6 +1,10 @@
+req
+tenantId
+afterId
+
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | afterId | string | Ne |  |
@@ -12,11 +16,11 @@
 
 ## Odgovor
 
-Vraća: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+Vraća: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getFeedPostsPublic(
   tenantId = "my-tenant-123",
@@ -27,10 +31,7 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
-
----

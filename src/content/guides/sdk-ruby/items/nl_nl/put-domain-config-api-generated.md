@@ -1,13 +1,14 @@
+---
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | domainToUpdate | string | path | Ja |  |
 
 ## Antwoord
 
-Retourneert: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+Retourneert: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_domain_config_response.rb)
 
 ## Voorbeeld
 
@@ -17,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutel autorisatie: api_key
+  # Configureer API key-autorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de volgende regel uit commentaar om een prefix voor de API-sleutel in te stellen, bijvoorbeeld 'Bearer' (standaard is nil)
+  # Haal de volgende regel uit commentaar om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->put_domain_config: #{e}"
 end
 [inline-code-end]
+
+---

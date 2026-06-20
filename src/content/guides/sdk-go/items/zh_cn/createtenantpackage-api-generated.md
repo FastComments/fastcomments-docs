@@ -6,7 +6,7 @@
 
 ## 响应
 
-返回: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_package_200_response.go)
+返回：[`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_package_response.go)
 
 ## 示例
 
@@ -32,7 +32,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `CreateTenantPackage` 的响应: CreateTenantPackage200Response
+	// 来自 `CreateTenantPackage` 的响应：CreateTenantPackageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantPackage`: %v\n", resp)
 }
 [inline-code-end]
+
+---

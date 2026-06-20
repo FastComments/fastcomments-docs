@@ -1,3 +1,4 @@
+---
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -10,22 +11,30 @@
 
 ## Antwort
 
-Gibt zurück: [`Option[BlockFromCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_block_from_comment_public200response.nim)
+Gibt zurück: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_block_success.nim)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'blockUserFromComment Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für blockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.blockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "comment-98765",
-  blockFromCommentParams = BlockFromCommentParams(),
+  id = "cmt-7890",
+  blockFromCommentParams = BlockFromCommentParams(
+    reason = "Repeated abusive language",
+    durationMinutes = 1440,
+    notifyUser = true,
+    tags = @["abuse", "automated"]
+  ),
   userId = "user-456",
   anonUserId = ""
 )
+
 if response.isSome:
-  let blocked = response.get()
-  echo "Block confirmed for tenant:", " my-tenant-123"
+  let result = response.get()
+  discard result
+else:
+  discard httpResponse
 [inline-code-end]
 
 ---

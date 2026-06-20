@@ -1,5 +1,4 @@
-Ενεργοποιήστε ή απενεργοποιήστε τις ειδοποιήσεις για μια σελίδα. Όταν οι χρήστες είναι εγγεγραμμένοι σε μια σελίδα, δημιουργούνται ειδοποιήσεις
-για νέα κύρια σχόλια, και επίσης
+Ενεργοποίηση ή απενεργοποίηση ειδοποιήσεων για μια σελίδα. Όταν οι χρήστες είναι εγγεγραμμένοι σε μια σελίδα, δημιουργούνται ειδοποιήσεις για νέα σχόλια ρίζας, και επίσης
 
 ## Παράμετροι
 
@@ -14,7 +13,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Επιστρέφει: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Παράδειγμα
 

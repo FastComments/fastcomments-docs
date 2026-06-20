@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket200_response.rb)
+Devuelve: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket_response.rb)
 
 ## Ejemplo
 
@@ -16,11 +16,11 @@ Devuelve: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización con clave API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave de API, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

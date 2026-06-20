@@ -1,0 +1,33 @@
+## Параметри
+
+| Назва | Тип | Обов'язково | Опис |
+|------|------|----------|-------------|
+| bulkPreBanParams | BulkPreBanParams | Так |  |
+| includeByUserIdAndEmail | boolean | Ні |  |
+| includeByIP | boolean | Ні |  |
+| includeByEmailDomain | boolean | Ні |  |
+| sso | string | Ні |  |
+
+## Відповідь
+
+Повертає: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkPreBanSummary.ts)
+
+## Приклад
+
+[inline-code-attrs-start title = 'Приклад postBulkPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const bulkParams: BulkPreBanParams = {
+  accounts: [
+    { userId: 'u_8729', email: 'bot123@malicious.com', ip: '192.0.2.55' },
+    { userId: 'u_9901', email: 'spam.sender@cheapmeds.co', ip: '198.51.100.12' }
+  ],
+  reason: 'Automated pre-ban candidate import'
+};
+const includeByUserIdAndEmail: boolean = true;
+const includeByIP: boolean = true;
+const includeByEmailDomain: boolean = false;
+const sso: string = 'sso_58fd3b2c-token';
+const result: BulkPreBanSummary = await postBulkPreBanSummary(bulkParams, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso);
+[inline-code-end]
+
+---

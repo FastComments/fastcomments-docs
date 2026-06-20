@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -7,13 +6,13 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateEmailTemplate200Response.swift)
+Gibt zurück: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateEmailTemplateResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'createEmailTemplate Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie diese bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

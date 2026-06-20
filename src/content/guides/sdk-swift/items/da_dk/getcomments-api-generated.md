@@ -17,16 +17,18 @@
 | hashTag | string | query | Nej |  |
 | parentId | string | query | Nej |  |
 | direction | string | query | Nej |  |
+| fromDate | integer | query | Nej |  |
+| toDate | integer | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+Returnerer: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getComments Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der opstår problemer, bedes du rapportere via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -44,8 +46,10 @@ let contextUserId = "contextUserId_example" // String |  (valgfri)
 let hashTag = "hashTag_example" // String |  (valgfri)
 let parentId = "parentId_example" // String |  (valgfri)
 let direction = SortDirections() // SortDirections |  (valgfri)
+let fromDate = 987 // Int64 |  (valgfri)
+let toDate = 987 // Int64 |  (valgfri)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return

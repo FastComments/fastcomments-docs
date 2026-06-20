@@ -4,11 +4,11 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | commentIds | string | query | 예 | 쉼표로 구분된 댓글 ID 목록. |
-| sso | string | query | 아니요 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+반환: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## 예제
 

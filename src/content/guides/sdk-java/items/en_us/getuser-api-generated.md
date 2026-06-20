@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUser200Response.java)
+Returns: [`GetUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserResponse.java)
 
 ## Example
 
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetUser200Response result = apiInstance.getUser(tenantId, id)
+      GetUserResponse result = apiInstance.getUser(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

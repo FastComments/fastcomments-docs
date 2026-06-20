@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user200_response.rb)
+Vraća: [`GetUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_response.rb)
 
 ## Primjer
 
@@ -15,11 +15,11 @@ Vraća: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ruby
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Otkomentarišite sljedeći red da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijeva se nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

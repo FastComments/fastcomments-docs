@@ -1,25 +1,24 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | page | float64 | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[GetHashTags_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_hash_tags200response.nim)
+Gibt zurück: [`Option[GetHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_hash_tags_response.nim)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getHashTags Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel: getHashTags'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getHashTags(tenantId = "my-tenant-123", page = 1.0)
+let (response, httpResponse) = client.getHashTags(tenantId = "news-portal-987", page = 2.0)
 if response.isSome:
-  let tags = response.get()
-  for t in tags:
-    echo t
+  let tagsResp = response.get()
+  echo "Received hashtags response"
 else:
-  echo "no hashtags found"
+  echo "No hashtags returned"
 [inline-code-end]
 
 ---

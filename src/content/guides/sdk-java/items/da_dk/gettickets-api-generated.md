@@ -1,16 +1,16 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | forespørgsel | Ja |  |
+| userId | string | forespørgsel | Nej |  |
+| state | number | forespørgsel | Nej |  |
+| skip | number | forespørgsel | Nej |  |
+| limit | number | forespørgsel | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTickets200Response.java)
+Returnerer: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTicketsResponse.java)
 
 ## Eksempel
 
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøglegodkendelse: api_key
+    // Konfigurer API-nøgleautorisation: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren til følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Fjern kommentaren på følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +42,7 @@ public class Example {
     Double skip = 3.4D; // Double | 
     Double limit = 3.4D; // Double | 
     try {
-      GetTickets200Response result = apiInstance.getTickets(tenantId)
+      GetTicketsResponse result = apiInstance.getTickets(tenantId)
             .userId(userId)
             .state(state)
             .skip(skip)

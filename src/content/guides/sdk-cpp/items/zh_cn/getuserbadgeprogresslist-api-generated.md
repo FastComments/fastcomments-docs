@@ -1,7 +1,6 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | userId | string | 否 |  |
@@ -10,25 +9,25 @@
 
 ## 响应
 
-返回: [`GetUserBadgeProgressList_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserBadgeProgressList_200_response.h)
+返回: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetUserBadgeProgressListResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<double> limit = boost::optional<double>(50);
-boost::optional<double> skip = boost::optional<double>(0);
-
+boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
+boost::optional<double> limit = 50.0;
+boost::optional<double> skip = 0.0;
+auto defaultResp = std::make_shared<APIGetUserBadgeProgressListResponse>();
 api->getUserBadgeProgressList(tenantId, userId, limit, skip)
-.then([](pplx::task<std::shared_ptr<GetUserBadgeProgressList_200_response>> t){
+.then([defaultResp](pplx::task<std::shared_ptr<APIGetUserBadgeProgressListResponse>> t){
     try {
         auto resp = t.get();
-        auto copied = std::make_shared<GetUserBadgeProgressList_200_response>(*resp);
-        std::cout << "Badge progress entries received\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Failed to get badge progress: " << e.what() << '\n';
+        auto finalResp = resp ? resp : defaultResp;
+        (void)finalResp;
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 });
 [inline-code-end]

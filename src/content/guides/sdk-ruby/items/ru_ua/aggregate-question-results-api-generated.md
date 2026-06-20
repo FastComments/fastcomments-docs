@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Name | Type | Location | Required | Description |
@@ -13,7 +12,7 @@
 
 ## Ответ
 
-Возвращает: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+Возвращает: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## Пример
 
@@ -21,9 +20,9 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройка авторизации
+# настройка авторизации
 FastCommentsClient.configure do |config|
-  # Настроить авторизацию по API-ключу: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -48,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate_question_results: #{e}"
 end
 [inline-code-end]
-
----

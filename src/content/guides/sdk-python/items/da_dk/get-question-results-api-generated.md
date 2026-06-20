@@ -10,30 +10,34 @@
 | questionIds | string | query | Nej |  |
 | skip | number | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results200_response.py)
+Returnerer: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_results Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_results200_response import GetQuestionResults200Response
+from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, standard er https://fastcomments.com
+# Angivelse af host er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
-# i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentifikationsmetode er vist nedenfor; brug det eksempel, som
-# opfylder dit autentificeringsbehov.
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
 
-# Konfigurer API-nøgleautorisation: api_key
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# i overensstemmelse med API-serverens sikkerhedspolitik.
+# Eksempler på hver godkendelsesmetode er vist nedenfor, brug det eksempel der
+# opfylder dit godkendelsesbehov.
+
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte prefix (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten

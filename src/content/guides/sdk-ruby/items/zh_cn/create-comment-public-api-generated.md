@@ -1,17 +1,16 @@
----
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| urlId | string | 查询 | 是 |  |
-| broadcastId | string | 查询 | 是 |  |
-| sessionId | string | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| broadcastId | string | query | 是 |  |
+| sessionId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_comment_public200_response.rb)
+返回: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_response_with_presence.rb)
 
 ## 示例
 
@@ -21,13 +20,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字符串 | 
-url_id = 'url_id_example' # 字符串 | 
-broadcast_id = 'broadcast_id_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 comment_data = FastCommentsClient::CommentData.new({commenter_name: 'commenter_name_example', comment: 'comment_example', url: 'url_example', url_id: 'url_id_example'}) # CommentData | 
 opts = {
-  session_id: 'session_id_example', # 字符串 | 
-  sso: 'sso_example' # 字符串 | 
+  session_id: 'session_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

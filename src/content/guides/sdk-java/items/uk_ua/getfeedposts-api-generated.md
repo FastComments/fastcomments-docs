@@ -13,7 +13,7 @@ afterId
 
 ## Відповідь
 
-Повертає: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPosts200Response.java)
+Повертає: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsResponse.java)
 
 ## Приклад
 
@@ -32,10 +32,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштуйте авторизацію API ключа: api_key
+    // Налаштування авторизації API-ключем: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API ключа, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Integer limit = 56; // Integer | 
     List<String> tags = Arrays.asList(); // List<String> | 
     try {
-      GetFeedPosts200Response result = apiInstance.getFeedPosts(tenantId)
+      GetFeedPostsResponse result = apiInstance.getFeedPosts(tenantId)
             .afterId(afterId)
             .limit(limit)
             .tags(tags)

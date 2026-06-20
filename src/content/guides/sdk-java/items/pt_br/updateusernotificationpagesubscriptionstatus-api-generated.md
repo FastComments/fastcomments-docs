@@ -1,9 +1,10 @@
-Ativar ou desativar notificações para uma página. Quando usuários estão inscritos em uma página, notificações são criadas para novos comentários raiz, e também
+Ativar ou desativar notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas
+para novos comentários raiz, e também
 
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-----------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | urlId | string | query | Sim |  |
 | url | string | query | Sim |  |
@@ -13,11 +14,11 @@ Ativar ou desativar notificações para uma página. Quando usuários estão ins
 
 ## Resposta
 
-Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de updateUserNotificationPageSubscriptionStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -39,7 +40,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

@@ -7,13 +7,13 @@
 
 ## Odpowiedź
 
-Zwraca: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PatchHashTag200Response.swift)
+Zwraca: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateHashTagResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład patchHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemów zgłoś je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w fazie beta. W razie problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tag = "tag_example" // String | 

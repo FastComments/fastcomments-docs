@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | commentId | string | path | Так |  |
@@ -9,21 +10,21 @@
 
 ## Відповідь
 
-Повертає: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names200_response.rb)
+Повертає: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names_success_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_comment_vote_user_names'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_vote_user_names Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Рядок | 
-comment_id = 'comment_id_example' # Рядок | 
-dir = 56 # Ціле число | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+dir = 56 # Integer | 
 opts = {
-  sso: 'sso_example' # Рядок | 
+  sso: 'sso_example' # String | 
 }
 
 begin

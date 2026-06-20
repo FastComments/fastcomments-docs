@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -13,7 +12,7 @@
 
 ## Respons
 
-Retourneert: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotifications200Response.swift)
+Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotificationsResponse.swift)
 
 ## Voorbeeld
 

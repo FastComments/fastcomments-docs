@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | Type | Location | Required | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | userId | string | query | לא |  |
@@ -10,9 +10,9 @@
 | limit | number | query | לא |  |
 | skip | number | query | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadges200Response.php)
+מחזיר: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgesResponse.php)
 
 ## דוגמה
 
@@ -22,25 +22,25 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר את אישור מפתח ה-API: api_key
+// הגדר הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// בטל את ההערה שלמטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// הסר את ההערה למטה כדי להגדיר קידומת (לדוגמה Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$badge_id = 'badge_id_example'; // string
-$type = 3.4; // float
-$displayed_on_comments = True; // bool
-$limit = 3.4; // float
-$skip = 3.4; // float
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$user_id = 'user_id_example'; // מחרוזת
+$badge_id = 'badge_id_example'; // מחרוזת
+$type = 3.4; // מספר עשרוני
+$displayed_on_comments = True; // בוליאני
+$limit = 3.4; // מספר עשרוני
+$skip = 3.4; // מספר עשרוני
 
 try {
     $result = $apiInstance->getUserBadges($tenant_id, $user_id, $badge_id, $type, $displayed_on_comments, $limit, $skip);
@@ -49,3 +49,5 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadges: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,13 +1,12 @@
----
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 
 ## Risposta
 
-Restituisce: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_user_badge200_response.rb)
+Restituisce: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
 
 ## Esempio
 
@@ -15,11 +14,11 @@ Restituisce: [`CreateUserBadge200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configura l'autorizzazione
+# configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione della chiave API: api_key
+  # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovi il commento dalla riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (di default è nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_user_badge: #{e}"
 end
 [inline-code-end]
-
----

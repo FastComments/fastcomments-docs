@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Napravite autentifikovane API pozive
+# Izvršite autentifikovane API pozive
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Napravite javne API pozive
+# Izvršite javne API pozive
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Korišćenje API-ja za moderaciju (ModerationAPI)
+
+Moderacijski endpointi pokreću kontrolnu tablu moderatora i autentifikuju se pomoću SSO tokena za moderatora koji deluje:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Prikaži komentare na kontrolnoj tabli moderatora
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Uobičajeni problemi
 
-1. **401 greška pri autentifikaciji**: Uverite se da ste postavili zaglavlje `x-api-key` na svom HttpClient-u pre slanja DefaultAPI zahteva: `client.headers["x-api-key"] = "your-api-key"`
-2. **Pogrešna API klasa**: Koristite `api_default` za serverske autentifikovane zahteve, a `api_public` za klijentske/javne zahteve.
+1. **401 greška autentifikacije**: Uverite se da ste postavili zaglavlje `x-api-key` na vašem HttpClient pre nego što izvršite zahteve DefaultAPI-ja: `client.headers["x-api-key"] = "your-api-key"`
+2. **Pogrešna API klasa**: Koristite `api_default` za autentifikovane zahteve na serverskoj strani, `api_public` za zahteve sa klijentske strane/javne zahteve, i `api_moderation` za zahteve kontrolne table moderatora.

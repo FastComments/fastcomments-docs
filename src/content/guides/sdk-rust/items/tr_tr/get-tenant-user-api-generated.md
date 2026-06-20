@@ -1,27 +1,27 @@
+---
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Evet |  |
 | id | String | Evet |  |
 
 ## Yanıt
 
-Dönen değer: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_user_200_response.rs)
+Döndürür: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_user_response.rs)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_tenant_user Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example_get_tenant_user() -> Result<GetTenantUserResponse, Error> {
     let params: GetTenantUserParams = GetTenantUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-9a4f2e".to_string(),
-        expand: Some(vec!["roles".to_string(), "preferences".to_string()]),
+        id: "user-7b9a2".to_string(),
+        include_profile: Some(true),
     };
-    let user_response: GetTenantUser200Response = get_tenant_user(&configuration, params).await?;
-    println!("{:#?}", user_response);
-    Ok(())
+    let response: GetTenantUserResponse = get_tenant_user(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

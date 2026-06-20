@@ -7,19 +7,18 @@
 
 ## Одговор
 
-Враћа: [`Option[GetHashTags_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_hash_tags200response.nim)
+Враћа: [`Option[GetHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_hash_tags_response.nim)
 
 ## Пример
 
 [inline-code-attrs-start title = 'getHashTags Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getHashTags(tenantId = "my-tenant-123", page = 1.0)
+let (response, httpResponse) = client.getHashTags(tenantId = "news-portal-987", page = 2.0)
 if response.isSome:
-  let tags = response.get()
-  for t in tags:
-    echo t
+  let tagsResp = response.get()
+  echo "Received hashtags response"
 else:
-  echo "no hashtags found"
+  echo "No hashtags returned"
 [inline-code-end]
 
 ---

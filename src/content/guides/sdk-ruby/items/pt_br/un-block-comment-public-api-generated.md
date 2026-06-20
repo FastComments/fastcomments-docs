@@ -8,7 +8,7 @@
 
 ## Resposta
 
-Retorna: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Retorna: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Exemplo
 
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_block_comment_public: #{e}"
 end
 [inline-code-end]
-
----

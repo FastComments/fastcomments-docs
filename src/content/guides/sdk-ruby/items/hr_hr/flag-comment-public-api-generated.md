@@ -1,15 +1,15 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| isFlagged | boolean | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| isFlagged | boolean | query | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Primjer
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->flag_comment_public: #{e}"
 end
 [inline-code-end]
-
----

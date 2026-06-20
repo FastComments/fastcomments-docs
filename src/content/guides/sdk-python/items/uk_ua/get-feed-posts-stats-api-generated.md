@@ -8,18 +8,18 @@
 
 ## Відповідь
 
-Повертає: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_stats200_response.py)
+Повертає: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/feed_posts_stats_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад get_feed_posts_stats'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_stats200_response import GetFeedPostsStats200Response
+from client.models.feed_posts_stats_response import FeedPostsStatsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста є необов'язковим і за замовчуванням встановлено на https://fastcomments.com
+# Визначення хоста необов'язкове, за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"

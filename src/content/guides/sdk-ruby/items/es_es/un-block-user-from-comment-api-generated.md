@@ -1,15 +1,15 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Location | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Sí |  |
+| id | string | path | Sí |  |
 | userId | string | query | No |  |
 | anonUserId | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Devuelve: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Ejemplo
 
@@ -19,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 # configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización con clave API: api_key
+  # Configurar la autorización de la clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto: nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

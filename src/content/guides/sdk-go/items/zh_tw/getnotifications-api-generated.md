@@ -12,7 +12,7 @@
 
 ## 回應
 
-回傳: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_200_response.go)
+回傳: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_response.go)
 
 ## 範例
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (可選)
-	urlId := "urlId_example" // string |  (可選)
-	fromCommentId := "fromCommentId_example" // string |  (可選)
-	viewed := true // bool |  (可選)
-	type_ := "type__example" // string |  (可選)
-	skip := float64(1.2) // float64 |  (可選)
+	userId := "userId_example" // string |  (選用)
+	urlId := "urlId_example" // string |  (選用)
+	fromCommentId := "fromCommentId_example" // string |  (選用)
+	viewed := true // bool |  (選用)
+	type_ := "type__example" // string |  (選用)
+	skip := float64(1.2) // float64 |  (選用)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetNotifications` 的回應: GetNotifications200Response
+	// `GetNotifications` 的回應: GetNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotifications`: %v\n", resp)
 }
 [inline-code-end]
-
----

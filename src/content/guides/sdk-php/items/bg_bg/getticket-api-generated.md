@@ -2,13 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## Отговор
 
-Връща: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicket200Response.php)
+Връща: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
 
 ## Пример
 
@@ -18,15 +18,18 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на оторизация чрез API ключ: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Разкоментирайте по-долу за задаване на префикс (например Bearer) за API ключ, ако е необходимо
+// Configure API key authorization: api_key
+// Конфигуриране на удостоверяване чрез API ключ: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Разкоментирайте долния ред, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате потребителски http клиент, подайте ваш клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, като по подразбиране ще се използва `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Ако искате да използвате собствен HTTP клиент, подайте ваш клиент, който реализира `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

@@ -5,20 +5,20 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result200_response.py)
+Returnerer: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_question_result Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_result200_response import GetQuestionResult200Response
+from client.models.get_question_result_response import GetQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og standard er https://fastcomments.com
+# Angivelse af host er valgfri og er som standard https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,13 +26,13 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er angivet nedenfor, brug det eksempel som
-# opfylder dit auth-brugstilfælde.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel som
+# passer til dit godkendelsesscenarie.
 
-# Konfigurer API-nøgleautorisation: api_key
+# Konfigurer API-nøgleautorisering: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at indstille præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at opsætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_question_result: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## パラメータ
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| id | string | path | はい |  |
+| tenantId | string | クエリ | はい |  |
+| id | string | パス | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_200_response.go)
+戻り値: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_email_template_response.go)
 
 ## 例
 
@@ -33,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetEmailTemplate`: GetEmailTemplate200Response
+	// response from `GetEmailTemplate`: GetEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
-
----

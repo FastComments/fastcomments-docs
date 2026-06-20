@@ -6,7 +6,7 @@
 
 ## Відповідь
 
-Повертає: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplate200Response.php)
+Повертає: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplateResponse.php)
 
 ## Приклад
 
@@ -16,9 +16,9 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації за API-ключем: api_key
+// Налаштуйте автентифікацію ключем API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижче, щоб встановити префікс (наприклад Bearer) для API-ключа, якщо потрібно
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -28,7 +28,7 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+$tenant_id = 'tenant_id_example'; // рядок
 $create_email_template_body = new \FastComments\Client\Model\CreateEmailTemplateBody(); // \FastComments\Client\Model\CreateEmailTemplateBody
 
 try {

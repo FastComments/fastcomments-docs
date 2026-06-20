@@ -1,8 +1,8 @@
-Schakel meldingen in of uit voor een specifieke reactie.
+Schakelt meldingen voor een specifieke reactie in- of uitschakelen.
 
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | notificationId | string | path | Ja |  |
@@ -10,13 +10,13 @@ Schakel meldingen in of uit voor een specifieke reactie.
 | commentId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Antwoord
 
-Geeft terug: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Retourneert: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld update_user_notification_comment_subscription_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
+
+---

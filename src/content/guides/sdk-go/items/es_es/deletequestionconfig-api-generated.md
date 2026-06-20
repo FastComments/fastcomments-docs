@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -8,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Ejemplo
 
@@ -34,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `DeleteQuestionConfig`: FlagCommentPublic200Response
+	// respuesta de `DeleteQuestionConfig`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

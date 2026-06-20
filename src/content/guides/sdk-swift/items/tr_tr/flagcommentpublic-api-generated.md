@@ -9,7 +9,7 @@
 
 ## Yanıt
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Örnek
 
@@ -21,7 +21,7 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let isFlagged = true // Bool | 
-let sso = "sso_example" // String |  (isteğe bağlı)
+let sso = "sso_example" // String |  (optional)
 
 PublicAPI.flagCommentPublic(tenantId: tenantId, commentId: commentId, isFlagged: isFlagged, sso: sso) { (response, error) in
     guard error == nil else {

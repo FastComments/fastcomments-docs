@@ -1,13 +1,12 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
+| tenantId | string | query | Yes |  |
 
 ## レスポンス
 
-戻り値: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateUserBadge200Response.java)
+戻り値: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APICreateUserBadgeResponse.java)
 
 ## 例
 
@@ -29,14 +28,14 @@ public class Example {
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーにプレフィックスを設定するには、次の行のコメントを外してください。例: "Token"（デフォルトは null）
+    // 以下の行のコメントを外すと、APIキーのプレフィックスを設定できます。例: "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateUserBadgeParams createUserBadgeParams = new CreateUserBadgeParams(); // CreateUserBadgeParams | 
     try {
-      CreateUserBadge200Response result = apiInstance.createUserBadge(tenantId, createUserBadgeParams)
+      APICreateUserBadgeResponse result = apiInstance.createUserBadge(tenantId, createUserBadgeParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

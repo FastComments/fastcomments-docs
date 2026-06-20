@@ -2,12 +2,12 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Evet |  |
+| id | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUser200Response.java)
+Döndürür: [`GetUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserResponse.java)
 
 ## Örnek
 
@@ -29,14 +29,14 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
+    // Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetUser200Response result = apiInstance.getUser(tenantId, id)
+      GetUserResponse result = apiInstance.getUser(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | commentId | string | path | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_text200_response.rb)
+戻り値: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_set_comment_text_response.rb)
 
 ## 例
 
@@ -20,13 +20,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # 文字列 | 
+comment_id = 'comment_id_example' # 文字列 | 
+broadcast_id = 'broadcast_id_example' # 文字列 | 
 comment_text_update_request = FastCommentsClient::CommentTextUpdateRequest.new({comment: 'comment_example'}) # CommentTextUpdateRequest | 
 opts = {
-  edit_key: 'edit_key_example', # String | 
-  sso: 'sso_example' # String | 
+  edit_key: 'edit_key_example', # 文字列 | 
+  sso: 'sso_example' # 文字列 | 
 }
 
 begin
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->set_comment_text: #{e}"
 end
 [inline-code-end]
+
+---

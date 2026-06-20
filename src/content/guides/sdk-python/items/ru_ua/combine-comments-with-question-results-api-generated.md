@@ -2,47 +2,46 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Нет |  |
-| questionIds | array | query | Нет |  |
-| urlId | string | query | Нет |  |
-| startDate | string | query | Нет |  |
-| forceRecalculate | boolean | query | Нет |  |
-| minValue | number | query | Нет |  |
-| maxValue | number | query | Нет |  |
-| limit | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
+| minValue | number | query | No |  |
+| maxValue | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Ответ
 
-Возвращает: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_comments_with_question_results200_response.py)
+Возвращает: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.combine_comments_with_question_results200_response import CombineCommentsWithQuestionResults200Response
+from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно, по умолчанию https://fastcomments.com
+# Определение хоста необязательно и по умолчанию устанавливается в https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности API-сервера.
-# Примеры для каждого метода аутентификации приведены ниже, используйте тот,
-# который соответствует вашему сценарию аутентификации.
-
-# Настроить авторизацию по API-ключу: api_key
+# в соответствии с политикой безопасности сервера API.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
+# соответствует вашему сценарию использования.
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если требуется
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром API-клиента
+# Войти в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)

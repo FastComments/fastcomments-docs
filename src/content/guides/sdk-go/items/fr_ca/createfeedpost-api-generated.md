@@ -1,16 +1,17 @@
+---
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| broadcastId | string | query | Non |  |
-| isLive | boolean | query | Non |  |
-| doSpamCheck | boolean | query | Non |  |
-| skipDupCheck | boolean | query | Non |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## Réponse
 
-Retourne : [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_200_response.go)
+Renvoie: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_posts_response.go)
 
 ## Exemple
 
@@ -22,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateFeedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `CreateFeedPost` : CreateFeedPost200Response
+	// réponse de `CreateFeedPost`: CreateFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]

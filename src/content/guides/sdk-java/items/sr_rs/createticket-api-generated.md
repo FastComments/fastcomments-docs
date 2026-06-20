@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Да |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
 
 ## Одговор
 
-Враћа: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicket200Response.java)
+Враћа: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateTicketResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'createTicket Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +26,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите ауторизацију API кључа: api_key
+    // Конфигуриши API кључ за ауторизацију: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоменатишите следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Откоментиши следећи ред да поставиш префикс за API кључ, нпр. "Token" (подразумевано је null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -37,7 +37,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     CreateTicketBody createTicketBody = new CreateTicketBody(); // CreateTicketBody | 
     try {
-      CreateTicket200Response result = apiInstance.createTicket(tenantId, userId, createTicketBody)
+      CreateTicketResponse result = apiInstance.createTicket(tenantId, userId, createTicketBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

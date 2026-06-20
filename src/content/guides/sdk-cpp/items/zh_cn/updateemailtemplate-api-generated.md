@@ -1,6 +1,7 @@
+---
 ## 参数
 
-| Name | Type | Required | Description |
+| Name | Type | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -8,32 +9,25 @@
 
 ## 响应
 
-返回: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateEmailTemplate 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t templateId = U("welcome-email-01");
-UpdateEmailTemplateBody updateBody;
-boost::optional<utility::string_t> optionalFrom = boost::optional<utility::string_t>(U("no-reply@myapp.com"));
-updateBody.from = optionalFrom;
-updateBody.subject = U("Welcome to MyApp");
-updateBody.html = U("<p>Hi {{displayName}}, welcome to MyApp!</p>");
-auto bodyPtr = std::make_shared<UpdateEmailTemplateBody>(updateBody);
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t templateId = utility::conversions::to_string_t("tmpl_welcome_001");
+auto bodyPtr = std::make_shared<UpdateEmailTemplateBody>();
+bodyPtr->subject = boost::optional<utility::string_t>(utility::conversions::to_string_t("Welcome to ExampleApp"));
+bodyPtr->htmlBody = utility::conversions::to_string_t("<p>Hi \{{user.name}}, welcome to ExampleApp!</p>");
+bodyPtr->enabled = boost::optional<bool>(true);
 api->updateEmailTemplate(tenantId, templateId, *bodyPtr)
-.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            std::cout << "Email template updated successfully\n";
-        } else {
-            std::cout << "Unexpected empty response\n";
-        }
-    } catch (const std::exception &e) {
-        std::cerr << "Update failed: " << e.what() << '\n';
-    }
+.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
+  try {
+    auto resp = task.get();
+    (void)resp;
+  } catch (const std::exception &e) {
+  }
 });
 [inline-code-end]
 

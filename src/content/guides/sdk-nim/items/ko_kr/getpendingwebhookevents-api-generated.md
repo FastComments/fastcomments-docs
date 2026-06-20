@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | commentId | string | 예 |  |
@@ -12,7 +12,7 @@
 
 ## 응답
 
-반환: [`Option[GetPendingWebhookEvents_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events200response.nim)
+반환: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
 
 ## 예제
 
@@ -20,7 +20,7 @@
 [inline-code-start]
 let (response, httpResponse) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
+  commentId = "cmt-987654",
   externalId = "",
   eventType = "",
   domain = "",
@@ -30,9 +30,6 @@ let (response, httpResponse) = client.getPendingWebhookEvents(
 if response.isSome:
   let pending = response.get()
   discard pending
-  echo "Received pending webhook events"
-else:
-  echo "No pending webhook events"
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | urlId | string | query | Nie |  |
@@ -12,7 +12,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+Zwraca: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
 ## Przykład
 
@@ -22,9 +22,9 @@ require 'time'
 require 'fastcomments-client'
 # ustawienie autoryzacji
 FastCommentsClient.configure do |config|
-  # Konfiguracja autoryzacji klucza API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
+  # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_results: #{e}"
 end
 [inline-code-end]
-
----

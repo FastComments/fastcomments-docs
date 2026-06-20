@@ -11,18 +11,18 @@
 
 ## Отговор
 
-Връща: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count200_response.py)
+Връща: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notification_count200_response import GetNotificationCount200Response
+from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на хоста е по избор и по подразбиране е https://fastcomments.com
+# Дефинирането на host е по избор и по подразбиране е https://fastcomments.com
 # Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,18 +30,18 @@ configuration = client.Configuration(
 
 # Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
-# отговаря на вашия сценарий на удостоверяване.
+# По-долу са дадени примери за всеки метод на удостоверяване, използвайте примера, който
+# отговаря на вашия случай на използване.
 
-# Конфигурирайте удостоверяване с API ключ: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+# Премахнете коментара отдолу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с инстанция на API клиента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на класа API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (по избор)
@@ -57,3 +57,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_notification_count: %s\n" % e)
 [inline-code-end]
+
+---

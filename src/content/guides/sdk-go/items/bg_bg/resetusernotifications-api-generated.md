@@ -12,7 +12,7 @@
 
 ## Отговор
 
-Връща: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_200_response.go)
+Връща: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_response.go)
 
 ## Пример
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  (незадължително)
-	afterCreatedAt := int64(789) // int64 |  (незадължително)
-	unreadOnly := true // bool |  (незадължително)
-	dmOnly := true // bool |  (незадължително)
-	noDm := true // bool |  (незадължително)
-	sso := "sso_example" // string |  (незадължително)
+	afterId := "afterId_example" // string |  (по избор)
+	afterCreatedAt := int64(789) // int64 |  (по избор)
+	unreadOnly := true // bool |  (по избор)
+	dmOnly := true // bool |  (по избор)
+	noDm := true // bool |  (по избор)
+	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.ResetUserNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `ResetUserNotifications`: ResetUserNotifications200Response
+	// отговор от `ResetUserNotifications`: ResetUserNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ResetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]

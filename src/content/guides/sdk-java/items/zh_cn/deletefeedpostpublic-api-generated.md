@@ -1,15 +1,15 @@
 ## 参数
 
-| 名称 | 类型 | 所在位置 | 必需 | 描述 |
-|------|------|----------|------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| postId | string | 路径 | 是 |  |
-| broadcastId | string | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | 是 |  |
+| postId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回：[`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteFeedPostPublic200Response.java)
+返回: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteFeedPostPublicResponse.java)
 
 ## 示例
 
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      DeleteFeedPostPublic200Response result = apiInstance.deleteFeedPostPublic(tenantId, postId)
+      DeleteFeedPostPublicResponse result = apiInstance.deleteFeedPostPublic(tenantId, postId)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();

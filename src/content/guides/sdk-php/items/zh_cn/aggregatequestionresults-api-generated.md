@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | questionId | string | query | 否 |  |
@@ -10,9 +10,9 @@
 | startDate | string | query | 否 |  |
 | forceRecalculate | boolean | query | 否 |  |
 
-## 返回
+## 响应
 
-返回: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateQuestionResults200Response.php)
+返回: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateQuestionResultsResponse.php)
 
 ## 示例
 
@@ -30,9 +30,7 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // 如果想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );

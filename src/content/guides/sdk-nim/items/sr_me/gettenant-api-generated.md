@@ -1,26 +1,25 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Не |  |
 
 ## Одговор
 
-Враћа: [`Option[GetTenant_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant200response.nim)
+Враћа: [`Option[GetTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_response.nim)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'getTenant Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenant Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "")
+let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "tenant-789")
 if response.isSome:
   let tenant = response.get()
-  echo "Tenant retrieved"
   discard tenant
 else:
-  echo "No tenant found"
-  echo "HTTP status:", httpResponse.status
+  discard httpResponse
 [inline-code-end]
 
 ---

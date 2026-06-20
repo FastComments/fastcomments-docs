@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| commentId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| broadcastId | string | query | 是 |  |
-| sessionId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteComment200Response.java)
+返回: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteResponse.java)
 
 ## 示例
 
@@ -38,7 +38,7 @@ public class Example {
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteComment200Response result = apiInstance.voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams)
+      VoteResponse result = apiInstance.voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams)
             .sessionId(sessionId)
             .sso(sso)
             .execute();
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

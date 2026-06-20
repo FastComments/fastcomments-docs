@@ -1,44 +1,44 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | userId | string | query | 예 |  |
 
-## 응답
+## Response
 
-반환: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket200_response.py)
+반환: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'create_ticket 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_ticket200_response import CreateTicket200Response
 from client.models.create_ticket_body import CreateTicketBody
+from client.models.create_ticket_response import CreateTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 클라이언트는 인증 및 권한 부여 매개변수를
-# API 서버 보안 정책에 따라 구성해야 합니다.
-# 각 인증 방법에 대한 예제가 아래에 제공되어 있으며,
-# 귀하의 인증 사용 사례에 맞는 예제를 사용하세요.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# API 키 인증 구성: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 필요하다면 아래의 주석을 해제하여 API 키 접두사(예: Bearer)를 설정하세요
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API 클라이언트 인스턴스와 함께 컨텍스트에 진입합니다
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API 클래스의 인스턴스를 생성합니다
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str | 
@@ -51,3 +51,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_ticket: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | poizvedba | Da |  |
-| skip | number | poizvedba | Ne |  |
+| tenantId | string | query | Da |  |
+| skip | number | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_configs_200_response.go)
+Vrne: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_configs_response.go)
 
 ## Primer
 
@@ -24,7 +24,7 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	skip := float64(1.2) // float64 |  (izbirno)
+	skip := float64(1.2) // float64 |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionConfigs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetQuestionConfigs`: GetQuestionConfigs200Response
+	// response from `GetQuestionConfigs`: GetQuestionConfigsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfigs`: %v\n", resp)
 }
 [inline-code-end]

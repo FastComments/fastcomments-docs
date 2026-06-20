@@ -1,34 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
-| id | string | Ne |  |
-| changeTicketStateBody | ChangeTicketStateBody | Ne |  |
+| tenantId | string | Да |  |
+| userId | string | Не |  |
+| id | string | Не |  |
+| changeTicketStateBody | ChangeTicketStateBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ChangeTicketState_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_change_ticket_state200response.nim)
+Враћа: [`Option[ChangeTicketStateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_change_ticket_state_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer changeTicketState'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример changeTicketState'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.changeTicketState(
-  tenantId = "my-tenant-123",
-  userId = "user-456",
-  id = "ticket-789",
-  changeTicketStateBody = ChangeTicketStateBody(
-    state = "closed",
-    message = "Issue resolved by support",
-    notify = true,
-    tags = @["support", "resolved"]
-  )
-)
+let body = ChangeTicketStateBody()
+let (response, httpResponse) = client.changeTicketState(tenantId = "my-tenant-123", userId = "user-456", id = "ticket-789", changeTicketStateBody = body)
 if response.isSome:
-  let result = response.get()
-  echo "Changed ticket:", result.state, " (id: ", result.id, ")"
+  let ticketResp = response.get()
+  echo "Ticket state changed:", ticketResp
 [inline-code-end]
 
 ---

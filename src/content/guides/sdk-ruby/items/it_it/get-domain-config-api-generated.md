@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | domain | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+Restituisce: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config_response.rb)
 
 ## Esempio
 
@@ -15,11 +15,11 @@ Restituisce: [`GetDomainConfig200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# configura l'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovi il commento dalla seguente riga per impostare un prefisso per la chiave API, es. 'Bearer' (di default è nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (valore predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_domain_config: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package200_response.rb)
+מחזיר: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package_response.rb)
 
 ## דוגמה
 
@@ -19,7 +20,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # הגדר הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

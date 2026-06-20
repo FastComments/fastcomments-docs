@@ -1,37 +1,38 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| questionId | string | Не |  |
-| questionIds | vector<string | Не |  |
-| urlId | string | Не |  |
-| timeBucket | AggregateTimeBucket | Не |  |
-| startDate | datetime | Не |  |
-| forceRecalculate | bool | Не |  |
+| tenantId | string | Yes |  |
+| questionId | string | No |  |
+| questionIds | vector<string | No |  |
+| urlId | string | No |  |
+| timeBucket | AggregateTimeBucket | No |  |
+| startDate | datetime | No |  |
+| forceRecalculate | bool | No |  |
 
 ## Одговор
 
-Враћа: [`AggregateQuestionResults_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResults_200_response.h)
+Враћа: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
 
 ## Пример
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> questionId(U("q-42"));
-boost::optional<std::vector<utility::string_t>> questionIds(std::vector<utility::string_t>{U("q-42"), U("q-43")});
-boost::optional<utility::string_t> urlId(U("page-789"));
-boost::optional<AggregateTimeBucket> timeBucket;
-boost::optional<utility::datetime> startDate(utility::datetime::from_string(U("2025-01-01T00:00:00Z")));
-boost::optional<bool> forceRecalculate(true);
+boost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U("question-42"));
+boost::optional<std::vector<utility::string_t>> questionIds = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{U("question-42"), U("question-84")});
+boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("https://www.example.com/articles/123"));
+boost::optional<AggregateTimeBucket> timeBucket = boost::optional<AggregateTimeBucket>(AggregateTimeBucket::Daily);
+boost::optional<utility::datetime> startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2024-06-01T00:00:00Z")));
+boost::optional<bool> forceRecalculate = boost::optional<bool>(true);
 
 api->aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)
-.then([](std::shared_ptr<AggregateQuestionResults_200_response> resp){
-    if (resp) {
-        auto resultCopy = std::make_shared<AggregateQuestionResults_200_response>(*resp);
+.then([](pplx::task<std::shared_ptr<AggregateQuestionResultsResponse>> task){
+    try {
+        auto resp = task.get();
+        auto safeResp = resp ? resp : std::make_shared<AggregateQuestionResultsResponse>();
+        (void)safeResp;
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]
-
----

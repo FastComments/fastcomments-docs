@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie : [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+Renvoie: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## Exemple
 
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_reacts_public: #{e}"
 end
 [inline-code-end]
-
----

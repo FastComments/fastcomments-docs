@@ -1,4 +1,4 @@
-## Parâmetros
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -8,9 +8,9 @@
 | editKey | string | query | Não |  |
 | sso | string | query | Não |  |
 
-## Resposta
+## Response
 
-Retorna: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+Retorna: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## Exemplo
 
@@ -18,12 +18,12 @@ Retorna: [`SetCommentText200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e o padrão é https://fastcomments.com
-# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Definir o host é opcional e, por padrão, é https://fastcomments.com
+# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -47,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->set_comment_text: %s\n" % e)
 [inline-code-end]
-
----

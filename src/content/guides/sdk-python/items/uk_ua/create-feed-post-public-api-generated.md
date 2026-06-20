@@ -1,14 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Type | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Так |  |
-| broadcastId | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | шлях | Так |  |
+| broadcastId | string | параметр запиту | Ні |  |
+| sso | string | параметр запиту | Ні |  |
 
 ## Відповідь
 
-Повертає: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_public200_response.py)
+Повертає: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_response.py)
 
 ## Приклад
 
@@ -16,18 +16,18 @@
 [inline-code-start]
 import client
 from client.models.create_feed_post_params import CreateFeedPostParams
-from client.models.create_feed_post_public200_response import CreateFeedPostPublic200Response
+from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням — https://fastcomments.com
+# Визначення хоста є необов'язковим і за замовчуванням дорівнює https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст з екземпляром API-клієнта
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->create_feed_post_public: %s\n" % e)
 [inline-code-end]
-
----

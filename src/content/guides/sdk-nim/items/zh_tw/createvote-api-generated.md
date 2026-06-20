@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳: [`Option[VoteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_comment200response.nim)
+回傳: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## 範例
 
@@ -18,16 +18,16 @@
 [inline-code-start]
 let (response, httpResponse) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
+  commentId = "cmt-987654",
   direction = "up",
   userId = "user-42",
   anonUserId = ""
 )
 if response.isSome:
   let vote = response.get()
-  echo "Vote recorded: ", $vote
+  echo "Vote created:", vote
 else:
-  echo "Vote not created, HTTP response: ", $httpResponse
+  echo "No vote returned"
 [inline-code-end]
 
 ---

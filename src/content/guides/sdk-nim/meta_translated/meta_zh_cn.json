@@ -27,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "备注",
+      "name": "注意事项",
       "file": "notes-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "SSO 用法",
+      "name": "SSO 使用",
       "file": "sso-usage-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "fastcomments 的文档",
+      "name": "fastcomments 文档",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -57,31 +57,37 @@
       "type": "api"
     },
     {
-      "name": "从公开评论屏蔽",
+      "name": "登出（公开）",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "认证",
+      "type": "api"
+    },
+    {
+      "name": "从评论封禁（公开）",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "从评论屏蔽",
+      "subCat": "基于评论的封禁",
       "type": "api"
     },
     {
-      "name": "取消公开评论屏蔽",
+      "name": "取消封禁评论（公开）",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "从评论屏蔽",
+      "subCat": "基于评论的封禁",
       "type": "api"
     },
     {
-      "name": "检查被屏蔽的评论",
+      "name": "检查被封禁的评论",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "检查被屏蔽的评论",
+      "subCat": "检查被封禁的评论",
       "type": "api"
     },
     {
-      "name": "从评论中屏蔽用户",
+      "name": "从评论封禁用户",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "评论",
       "type": "api"
     },
     {
-      "name": "创建公开评论",
+      "name": "创建评论（公开）",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -93,7 +99,7 @@
       "type": "api"
     },
     {
-      "name": "删除公开评论",
+      "name": "删除评论（公开）",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -135,7 +141,7 @@
       "type": "api"
     },
     {
-      "name": "获取评论投票用户名列表",
+      "name": "获取评论投票用户名",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -171,7 +177,7 @@
       "type": "api"
     },
     {
-      "name": "取消从评论屏蔽用户",
+      "name": "取消对用户的评论封禁",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -201,45 +207,51 @@
       "type": "api"
     },
     {
-      "name": "评论投票",
+      "name": "为评论投票",
       "file": "votecomment-api-generated.md",
       "subCat": "评论",
       "type": "api"
     },
     {
-      "name": "添加域配置",
+      "name": "获取用户的评论",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "用户的评论",
+      "type": "api"
+    },
+    {
+      "name": "添加域名配置",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "域配置",
+      "subCat": "域名配置",
       "type": "api"
     },
     {
-      "name": "删除域配置",
+      "name": "删除域名配置",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "域配置",
+      "subCat": "域名配置",
       "type": "api"
     },
     {
-      "name": "获取域配置",
+      "name": "获取域名配置",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "域配置",
+      "subCat": "域名配置",
       "type": "api"
     },
     {
-      "name": "获取域配置列表",
+      "name": "获取域名配置列表",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "域配置",
+      "subCat": "域名配置",
       "type": "api"
     },
     {
-      "name": "部分更新域配置",
+      "name": "部分更新域名配置",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "域配置",
+      "subCat": "域名配置",
       "type": "api"
     },
     {
-      "name": "替换域配置",
+      "name": "替换域名配置",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "域配置",
+      "subCat": "域名配置",
       "type": "api"
     },
     {
@@ -255,7 +267,7 @@
       "type": "api"
     },
     {
-      "name": "删除邮件模板渲染错误记录",
+      "name": "删除邮件模板渲染错误",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "邮件模板",
       "type": "api"
@@ -345,13 +357,13 @@
       "type": "api"
     },
     {
-      "name": "获取用户公开反应",
+      "name": "获取公开用户反应",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
     },
     {
-      "name": "对公开动态帖子表态",
+      "name": "对动态帖子进行公开回应（React）",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
@@ -363,75 +375,351 @@
       "type": "api"
     },
     {
-      "name": "更新公开动态帖子",
+      "name": "公开更新动态帖子",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
     },
     {
-      "name": "举报公开评论",
+      "name": "公开举报评论",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "举报评论",
       "type": "api"
     },
     {
-      "name": "添加标签",
+      "name": "获取大尺寸动图",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "动图",
+      "type": "api"
+    },
+    {
+      "name": "搜索动图",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "动图",
+      "type": "api"
+    },
+    {
+      "name": "获取热门动图",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "动图",
+      "type": "api"
+    },
+    {
+      "name": "添加话题标签",
       "file": "addhashtag-api-generated.md",
-      "subCat": "标签",
+      "subCat": "话题标签",
       "type": "api"
     },
     {
-      "name": "批量添加标签",
+      "name": "批量添加话题标签",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "标签",
+      "subCat": "话题标签",
       "type": "api"
     },
     {
-      "name": "删除标签",
+      "name": "删除话题标签",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "标签",
+      "subCat": "话题标签",
       "type": "api"
     },
     {
-      "name": "获取标签",
+      "name": "获取话题标签",
       "file": "gethashtags-api-generated.md",
-      "subCat": "标签",
+      "subCat": "话题标签",
       "type": "api"
     },
     {
-      "name": "部分更新标签",
+      "name": "部分更新话题标签",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "标签",
+      "subCat": "话题标签",
       "type": "api"
     },
     {
-      "name": "创建版主",
+      "name": "删除审核投票",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取 API 评论（审核）",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取 API 导出状态",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取 API IDs",
+      "file": "getapiids-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取因评论被封禁的用户",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取评论封禁状态",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取评论子项",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取计数",
+      "file": "getcount-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取多个计数",
+      "file": "getcounts-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取日志",
+      "file": "getlogs-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取手动徽章",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取某用户的手动徽章",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取审核评论",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取审核评论文本",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取预封禁摘要",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取搜索评论摘要",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取搜索页面",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取搜索站点",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取搜索建议",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取搜索用户",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取信任因子",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取用户封禁偏好",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "获取用户内部档案",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "调整评论投票",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "提交 API 导出",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "提交对用户的评论封禁",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "撤销用户封禁",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "批量提交预封禁摘要",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "按 ID 获取评论（批量）",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "提交举报评论",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "提交移除评论",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "恢复已删除评论",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "设置评论审批状态",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "设置评论复核状态",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "设置评论为垃圾状态",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "设置评论文本（审核）",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "取消举报评论（审核）",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "提交投票（审核）",
+      "file": "postvote-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "授予徽章",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "关闭主题",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "移除徽章",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "重新打开主题",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "设置信任因子",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "审核",
+      "type": "api"
+    },
+    {
+      "name": "创建审核员",
       "file": "createmoderator-api-generated.md",
-      "subCat": "版主",
+      "subCat": "审核员",
       "type": "api"
     },
     {
-      "name": "删除版主",
+      "name": "删除审核员",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "版主",
+      "subCat": "审核员",
       "type": "api"
     },
     {
-      "name": "获取版主",
+      "name": "获取审核员",
       "file": "getmoderator-api-generated.md",
-      "subCat": "版主",
+      "subCat": "审核员",
       "type": "api"
     },
     {
-      "name": "获取版主列表",
+      "name": "获取审核员列表",
       "file": "getmoderators-api-generated.md",
-      "subCat": "版主",
+      "subCat": "审核员",
       "type": "api"
     },
     {
-      "name": "更新版主",
+      "name": "更新审核员",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "版主",
+      "subCat": "审核员",
       "type": "api"
     },
     {
@@ -453,7 +741,7 @@
       "type": "api"
     },
     {
-      "name": "获取通知列表",
+      "name": "获取通知",
       "file": "getnotifications-api-generated.md",
       "subCat": "通知",
       "type": "api"
@@ -462,6 +750,48 @@
       "name": "更新通知",
       "file": "updatenotification-api-generated.md",
       "subCat": "通知",
+      "type": "api"
+    },
+    {
+      "name": "创建 V1 页面反应",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "页面互动",
+      "type": "api"
+    },
+    {
+      "name": "创建 V2 页面反应",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "页面互动",
+      "type": "api"
+    },
+    {
+      "name": "删除 V1 页面反应",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "页面互动",
+      "type": "api"
+    },
+    {
+      "name": "删除 V2 页面反应",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "页面互动",
+      "type": "api"
+    },
+    {
+      "name": "获取 V1 页面点赞",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "页面互动",
+      "type": "api"
+    },
+    {
+      "name": "获取 V2 页面反应",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "页面互动",
+      "type": "api"
+    },
+    {
+      "name": "获取 V2 页面反应用户",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "页面互动",
       "type": "api"
     },
     {
@@ -477,7 +807,19 @@
       "type": "api"
     },
     {
-      "name": "通过 URL ID 获取页面",
+      "name": "获取离线用户",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "页面",
+      "type": "api"
+    },
+    {
+      "name": "获取在线用户",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "页面",
+      "type": "api"
+    },
+    {
+      "name": "通过 URLId 获取页面",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "页面",
       "type": "api"
@@ -485,6 +827,18 @@
     {
       "name": "获取页面列表",
       "file": "getpages-api-generated.md",
+      "subCat": "页面",
+      "type": "api"
+    },
+    {
+      "name": "获取公开页面列表",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "页面",
+      "type": "api"
+    },
+    {
+      "name": "获取用户信息",
+      "file": "getusersinfo-api-generated.md",
       "subCat": "页面",
       "type": "api"
     },
@@ -497,19 +851,19 @@
     {
       "name": "删除待处理的 Webhook 事件",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "待处理的 Webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
       "name": "获取待处理 Webhook 事件计数",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "待处理的 Webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理 Webhook 事件列表",
+      "name": "获取待处理 Webhook 事件",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "待处理的 Webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
@@ -573,21 +927,21 @@
       "type": "api"
     },
     {
-      "name": "聚合问题结果",
+      "name": "汇总问题结果",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "问题结果聚合",
+      "subCat": "问题结果汇总",
       "type": "api"
     },
     {
-      "name": "批量聚合问题结果",
+      "name": "批量汇总问题结果",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "问题结果聚合",
+      "subCat": "问题结果汇总",
       "type": "api"
     },
     {
       "name": "将评论与问题结果合并",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "问题结果聚合",
+      "subCat": "问题结果汇总",
       "type": "api"
     },
     {
@@ -657,9 +1011,9 @@
       "type": "api"
     },
     {
-      "name": "获取租户每日使用量",
+      "name": "获取租户每日使用情况",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "租户每日使用量",
+      "subCat": "租户每日使用",
       "type": "api"
     },
     {
@@ -795,6 +1149,12 @@
       "type": "api"
     },
     {
+      "name": "获取翻译",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "翻译",
+      "type": "api"
+    },
+    {
       "name": "上传图片",
       "file": "uploadimage-api-generated.md",
       "subCat": "上传图片",
@@ -855,7 +1215,7 @@
       "type": "api"
     },
     {
-      "name": "获取用户通知列表",
+      "name": "获取用户通知",
       "file": "getusernotifications-api-generated.md",
       "subCat": "用户通知",
       "type": "api"
@@ -873,13 +1233,13 @@
       "type": "api"
     },
     {
-      "name": "更新用户评论订阅状态",
+      "name": "更新用户评论订阅状态（通知）",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "用户通知",
       "type": "api"
     },
     {
-      "name": "更新用户页面订阅状态",
+      "name": "更新用户页面订阅状态（通知）",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "用户通知",
       "type": "api"
@@ -921,7 +1281,7 @@
       "type": "api"
     },
     {
-      "name": "获取投票列表",
+      "name": "获取投票",
       "file": "getvotes-api-generated.md",
       "subCat": "投票",
       "type": "api"

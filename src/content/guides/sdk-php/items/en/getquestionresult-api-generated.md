@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResult200Response.php)
+Returns: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultResponse.php)
 
 ## Example
 

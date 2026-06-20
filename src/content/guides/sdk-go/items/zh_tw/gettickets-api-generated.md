@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
@@ -11,7 +10,7 @@
 
 ## 回應
 
-回傳: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tickets_200_response.go)
+回傳: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tickets_response.go)
 
 ## 範例
 
@@ -28,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (可選)
-	state := float64(1.2) // float64 |  (可選)
-	skip := float64(1.2) // float64 |  (可選)
-	limit := float64(1.2) // float64 |  (可選)
+	userId := "userId_example" // string |  (選填)
+	state := float64(1.2) // float64 |  (選填)
+	skip := float64(1.2) // float64 |  (選填)
+	limit := float64(1.2) // float64 |  (選填)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTickets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTickets` 的回應: GetTickets200Response
+	// 來自 `GetTickets` 的回應: GetTicketsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTickets`: %v\n", resp)
 }
 [inline-code-end]

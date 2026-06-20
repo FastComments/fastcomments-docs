@@ -1,7 +1,6 @@
----
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | query | Ja |  |
@@ -9,9 +8,9 @@
 | userId | string | query | Nej |  |
 | anonUserId | string | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Eksempel
 
@@ -19,9 +18,9 @@ Returnerer: [`VoteComment200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsætning af autorisation
+# opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgleautorisation: api_key
+  # Konfigurer API-nøglegodkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -44,5 +43,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_vote: #{e}"
 end
 [inline-code-end]
-
----

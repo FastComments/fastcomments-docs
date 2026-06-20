@@ -9,7 +9,7 @@ async fn main() {
     // צור תצורת API
     let config = Configuration::new();
 
-    // שלוף תגובות עבור דף
+    // אחזר תגובות לעמוד
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -60,7 +60,7 @@ async fn main() {
         key: "your-api-key".to_string(),
     });
 
-    // שלוף תגובות באמצעות ה-API המאומת
+    // אחזר תגובות באמצעות ה-API המאומת
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### שימוש ב-SSO לצורך אימות
+### שימוש ב-API המודרציה
+
+שיטות המודרציה תומכות בלוח הבקרה של המודרטור. הן משתמשות ב-API-key ב-`Configuration` בדיוק כמו ה-API המאומת, וכל שיטה מקבלת אסימון `sso` אופציונלי כדי שהקריאה תתבצע מטעם מודרטור שאומת באמצעות SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // צור תצורה עם מפתח API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // ספר תגובות שמחכות בתור המודרציה
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // מסור אסימון SSO כדי לפעול בשם מודרטור שהאמתו אותו באמצעות SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### שימוש ב-SSO לאימות
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -115,14 +153,14 @@ fn main() {
         "user-123".to_string(),           // מזהה משתמש
         "user@example.com".to_string(),   // אימייל
         "John Doe".to_string(),            // שם משתמש
-        "https://example.com/avatar.jpg".to_string(), // כתובת URL של האווטאר
+        "https://example.com/avatar.jpg".to_string(), // כתובת URL של אווטאר
     );
 
-    // יצירת טוקן SSO
+    // צור אסימון SSO
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // העבר טוקן זה ל-frontend שלך לצורך אימות
+    // מסור את האסימון הזה ל-frontend שלך לצורך אימות
 }
 ```

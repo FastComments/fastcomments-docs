@@ -6,19 +6,19 @@
 
 ## Одговор
 
-Враћа: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator200_response.py)
+Враћа: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример create_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_moderator Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_moderator200_response import CreateModerator200Response
 from client.models.create_moderator_body import CreateModeratorBody
+from client.models.create_moderator_response import CreateModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционално и подразумевано је на https://fastcomments.com
+# Дефинисање host-а је опционо и подразумевано је https://fastcomments.com
 # Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,12 +26,13 @@ configuration = client.Configuration(
 
 # Клијент мора да конфигурише параметре аутентификације и овлашћења
 # у складу са безбедносном политиком API сервера.
-# Испод су примери за сваки метод аутентификације, користите онај који
-# одговара вашем случају употребе.
-# Configure API key authorization: api_key
+# Примери за сваки метод аутентификације дати су испод, користите пример који
+# одговара вашем случају употребе аутентификације.
+
+# Конфигуришите API кључ за ауторизацију: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоменатишите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Ако је потребно, уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента

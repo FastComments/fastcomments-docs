@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
@@ -8,25 +8,25 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetEmailTemplateRenderErrors_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateRenderErrors_200_response.h)
+Επιστρέφει: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateRenderErrorsResponse.h)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getEmailTemplateRenderErrors'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("email-template-789");
-boost::optional<double> skip{10.0};
-auto defaultResp = std::make_shared<GetEmailTemplateRenderErrors_200_response>();
-api->getEmailTemplateRenderErrors(tenantId, id, skip).then([defaultResp](pplx::task<std::shared_ptr<GetEmailTemplateRenderErrors_200_response>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = defaultResp;
-        std::wcout << (resp ? U("Received render errors response\n") : U("No response\n"));
-    } catch(...) {
-        std::wcout << U("Failed to retrieve render errors\n");
-    }
-});
+utility::string_t templateId = U("email-template-789");
+boost::optional<double> skip = boost::optional<double>(10.0);
+api->getEmailTemplateRenderErrors(tenantId, templateId, skip)
+    .then([](pplx::task<std::shared_ptr<GetEmailTemplateRenderErrorsResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto safeResp = resp ? resp : std::make_shared<GetEmailTemplateRenderErrorsResponse>();
+            (void)safeResp;
+        } catch (const std::exception& e) {
+            (void)e;
+        }
+    }).wait();
 [inline-code-end]
 
 ---

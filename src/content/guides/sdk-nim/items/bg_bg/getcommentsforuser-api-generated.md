@@ -1,0 +1,36 @@
+## Параметри
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| userId | string | Не |  |
+| direction | SortDirections | Не |  |
+| repliesToUserId | string | Не |  |
+| page | float64 | Не |  |
+| includei10n | bool | Не |  |
+| locale | string | Не |  |
+| isCrawler | bool | Не |  |
+
+## Отговор
+
+Връща: [`Option[GetCommentsForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_for_user_response.nim)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример за getCommentsForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.getCommentsForUser(
+  userId = "user-8421",
+  direction = SortDirections.Newest,
+  repliesToUserId = "",
+  page = 1.0,
+  includei10n = true,
+  locale = "en-US",
+  isCrawler = false
+)
+
+if response.isSome:
+  let comments = response.get()
+  discard comments
+[inline-code-end]
+
+---

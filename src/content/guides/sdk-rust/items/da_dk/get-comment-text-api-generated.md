@@ -1,30 +1,29 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| comment_id | String | Ja |  |
-| edit_key | String | Nej |  |
-| sso | String | Nej |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| edit_key | String | No |  |
+| sso | String | No |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_text_200_response.rs)
+Returnerer: [`PublicApiGetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/public_api_get_comment_text_response.rs)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_comment_text Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-pub async fn run() -> Result<GetCommentText200Response, Error> {
-    let params: GetCommentTextParams = GetCommentTextParams {
+async fn fetch_comment_text() -> Result<PublicApiGetCommentTextResponse, Error> {
+    let params = GetCommentTextParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article-2026-03-25-98765".to_string(),
-        edit_key: Some("edit_4f3d2b9a".to_string()),
-        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9".to_string()),
+        comment_id: "news/article-2026-06-19#cmt-8421".to_string(),
+        edit_key: Some("editkey-73a1b2c".to_string()),
+        sso: Some("sso.jwt.token.eyJhbGci".to_string()),
     };
-    let comment: GetCommentText200Response = get_comment_text(&configuration, params).await?;
-    Ok(comment)
+    let response: PublicApiGetCommentTextResponse = get_comment_text(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

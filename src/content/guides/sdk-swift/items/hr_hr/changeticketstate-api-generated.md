@@ -8,13 +8,13 @@
 
 ## Odgovor
 
-Vraća: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ChangeTicketState200Response.swift)
+Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ChangeTicketStateResponse.swift)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer changeTicketState'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda još su u beta verziji. Za bilo koji problem, prijavite se putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,3 +33,5 @@ DefaultAPI.changeTicketState(tenantId: tenantId, userId: userId, id: id, changeT
     }
 }
 [inline-code-end]
+
+---

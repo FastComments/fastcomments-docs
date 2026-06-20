@@ -1,16 +1,16 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| postId | string | path | 예 |  |
-| isUndo | boolean | query | 아니오 |  |
-| broadcastId | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | 경로 | 예 |  |
+| postId | string | 경로 | 예 |  |
+| isUndo | boolean | 쿼리 | 아니요 |  |
+| broadcastId | string | 쿼리 | 아니요 |  |
+| sso | string | 쿼리 | 아니요 |  |
 
 ## 응답
 
-반환: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostPublic200Response.php)
+반환: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
 
 ## 예제
 
@@ -22,8 +22,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이것은 선택 사항입니다. 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 선택 사항입니다. 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -40,5 +40,3 @@ try {
     echo 'Exception when calling PublicApi->reactFeedPostPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

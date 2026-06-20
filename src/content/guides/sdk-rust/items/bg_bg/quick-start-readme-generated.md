@@ -1,4 +1,4 @@
-### Използване на публичното API
+### Използване на публичния API
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::Configuration;
@@ -9,7 +9,7 @@ async fn main() {
     // Създаване на конфигурация за API
     let config = Configuration::new();
 
-    // Извличане на коментари за страница
+    // Вземане на коментари за страница
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Използване на удостовереното API
+### Използване на удостоверения API
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -60,7 +60,7 @@ async fn main() {
         key: "your-api-key".to_string(),
     });
 
-    // Извличане на коментари чрез удостоверено API
+    // Извличане на коментари с удостоверения API
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Използване на модерационния API
+
+Методите за модерация захранват таблото на модератора. Те използват API-ключ `Configuration`, точно както удостоверения API, и всеки метод приема незадължителен `sso` токен, така че повикването може да се направи от името на модератор, удостоверен чрез SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Създаване на конфигурация с API ключ
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Броене на коментари, чакащи в опашката за модерация
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // подайте SSO токен за да действате като модератор, удостоверен чрез SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Използване на SSO за удостоверяване
 
 ```rust
@@ -110,7 +148,7 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Създаване на защитени SSO данни за потребителя (само от страна на сървъра!)
+    // Създаване на сигурни SSO данни за потребителя (само на сървърната страна!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // Идентификатор на потребителя
         "user@example.com".to_string(),   // Имейл
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Предайте този токен на фронтенда си за удостоверяване
+    // Предайте този токен на своя фронтенд за удостоверяване
 }
 ```

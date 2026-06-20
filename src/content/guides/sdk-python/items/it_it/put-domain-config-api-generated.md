@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -7,14 +8,14 @@
 
 ## Risposta
 
-Restituisce: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Restituisce: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/put_domain_config_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di put_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.put_domain_config_response import PutDomainConfigResponse
 from client.models.update_domain_config_params import UpdateDomainConfigParams
 from client.rest import ApiException
 from pprint import pprint
@@ -27,13 +28,13 @@ configuration = client.Configuration(
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la policy di sicurezza del server API.
-# Esempi per ogni metodo di autenticazione sono forniti di seguito, usa l'esempio che
+# Di seguito sono mostrati esempi per ogni metodo di autenticazione; usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autorizzazione tramite API key: api_key
+# Configura l'autenticazione tramite API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Rimuovi il commento qui sotto per impostare il prefisso (es. Bearer) per la API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entra in un contesto con un'istanza del client API
@@ -51,3 +52,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->put_domain_config: %s\n" % e)
 [inline-code-end]
+
+---

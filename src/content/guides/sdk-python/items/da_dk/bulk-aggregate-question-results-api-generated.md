@@ -1,42 +1,42 @@
 ## Parametre
 
-| Name | Type | Placering | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | forceRecalculate | boolean | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_aggregate_question_results200_response.py)
+Returnerer: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_aggregate_question_results_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'bulk_aggregate_question_results Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.bulk_aggregate_question_results200_response import BulkAggregateQuestionResults200Response
 from client.models.bulk_aggregate_question_results_request import BulkAggregateQuestionResultsRequest
+from client.models.bulk_aggregate_question_results_response import BulkAggregateQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# At definere hosten er valgfrit og som standard bruges https://fastcomments.com
+# Det er valgfrit at angive host, standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# Klienten skal konfigurere autentifikations- og autorisationsparametre
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentificeringsmetode er vist nedenfor, brug det eksempel som
-# passer til dit autentificeringsscenarie.
+# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel der
+# passer til dit auth-brugstilfælde.
 
-# Configure API key authorization: api_key
+# Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Opret en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.DefaultApi(api_client)

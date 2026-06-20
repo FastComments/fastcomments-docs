@@ -1,18 +1,18 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| afterId | string | sorgu | Hayır |  |
-| afterCreatedAt | integer | sorgu | Hayır |  |
-| unreadOnly | boolean | sorgu | Hayır |  |
-| dmOnly | boolean | sorgu | Hayır |  |
-| noDm | boolean | sorgu | Hayır |  |
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| afterId | string | query | Hayır |  |
+| afterCreatedAt | integer | query | Hayır |  |
+| unreadOnly | boolean | query | Hayır |  |
+| dmOnly | boolean | query | Hayır |  |
+| noDm | boolean | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_200_response.go)
+Döndürür: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_response.go)
 
 ## Örnek
 
@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.ResetUserNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `ResetUserNotifications`'den gelen yanıt: ResetUserNotifications200Response
+	// `ResetUserNotifications`'dan gelen yanıt: ResetUserNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ResetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]

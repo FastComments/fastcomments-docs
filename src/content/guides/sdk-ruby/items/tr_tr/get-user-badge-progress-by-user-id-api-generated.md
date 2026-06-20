@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | userId | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Döndürür: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Örnek
 
@@ -15,11 +15,11 @@ Döndürür: [`GetUserBadgeProgressById200Response`](https://github.com/FastComm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirme kurulumu
+# yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandır: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın başındaki yorum işaretini kaldırarak API anahtarı için bir önek ayarlayın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badge_progress_by_user_id: #{e}"
 end
 [inline-code-end]
-
----

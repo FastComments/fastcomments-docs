@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Пример
 
@@ -21,14 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желаете да използвате персонализиран HTTP клиент, предайте своя клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, по подразбиране ще бъде използван `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // низ
-$comment_id = 'comment_id_example'; // низ
-$broadcast_id = 'broadcast_id_example'; // низ
-$sso = 'sso_example'; // низ
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->lockComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->lockComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

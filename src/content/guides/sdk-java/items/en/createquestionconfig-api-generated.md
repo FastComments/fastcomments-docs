@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionConfig200Response.java)
+Returns: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateQuestionConfigResponse.java)
 
 ## Example
 
@@ -35,7 +35,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     CreateQuestionConfigBody createQuestionConfigBody = new CreateQuestionConfigBody(); // CreateQuestionConfigBody | 
     try {
-      CreateQuestionConfig200Response result = apiInstance.createQuestionConfig(tenantId, createQuestionConfigBody)
+      CreateQuestionConfigResponse result = apiInstance.createQuestionConfig(tenantId, createQuestionConfigBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

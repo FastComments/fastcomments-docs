@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | commentId | string | Tak |  |
@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Zwraca: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Przykład
 
@@ -17,11 +17,16 @@ Zwraca: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastCommen
 [inline-code-start]
 let (response, httpResponse) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-98765",
-  isFlagged = false,
+  commentId = "cmt-456789",
+  isFlagged = true,
   sso = ""
 )
+
 if response.isSome:
-  let flagResult = response.get()
-  discard flagResult
+  let apiResp = response.get()
+  discard apiResp
+else:
+  discard httpResponse
 [inline-code-end]
+
+---

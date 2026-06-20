@@ -6,7 +6,7 @@
 
 ## תגובה
 
-מחזיר: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config200_response.rb)
+מחזיר: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config_response.rb)
 
 ## דוגמה
 
@@ -14,15 +14,16 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאה
+# הגדרת אימות
 FastCommentsClient.configure do |config|
-  # קבע את הרשאת מפתח ה-API: api_key
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת המחדל: nil)
+  # הגדר אימות באמצעות מפתח API: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה־API, לדוגמה 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # מחרוזת | 
 add_domain_config_params = FastCommentsClient::AddDomainConfigParams.new({domain: 'domain_example'}) # AddDomainConfigParams | 
 
 begin
@@ -33,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_domain_config: #{e}"
 end
 [inline-code-end]
-
----

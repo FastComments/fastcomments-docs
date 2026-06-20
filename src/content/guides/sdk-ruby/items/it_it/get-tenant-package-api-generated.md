@@ -1,13 +1,13 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package200_response.rb)
+Restituisce: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package_response.rb)
 
 ## Esempio
 
@@ -15,11 +15,11 @@ Restituisce: [`GetTenantPackage200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# impostazione dell'autorizzazione
+# impostazione dell'autenticazione
 FastCommentsClient.configure do |config|
   # Configura l'autenticazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per la API key, ad es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

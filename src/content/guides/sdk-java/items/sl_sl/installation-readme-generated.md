@@ -1,6 +1,6 @@
 ### Maven
 
-Dodajte Repsy repozitorij v POM vašega projekta:
+Dodajte Repsy repozitorij v POM datoteko vašega projekta:
 
 ```xml
 <repositories>
@@ -12,29 +12,29 @@ Dodajte Repsy repozitorij v POM vašega projekta:
 </repositories>
 ```
 
-Nato dodajte odvisnosti, ki jih potrebujete:
+Nato dodajte potrebne odvisnosti:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- API odjemalec -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Jedrna knjižnica (vključuje SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSub knjižnica (za dogodke v živo) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:1.3.2"
+    // API odjemalec
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Jedrna knjižnica (vključuje SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub knjižnica (za dogodke v živo)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Vsebina knjižnice
+### Library Contents
 
-Ta knjižnica vsebuje tri module. Generiran API odjemalec, osnovna Java knjižnica, ki vsebuje ročno napisane pripomočke za lažje delo z API-jem, in modul `pubsub`, ki je knjižnica za naročanje na tokove sprememb.
+Ta knjižnica vsebuje tri module. Generirani API odjemalec, jedrna Java knjižnica, ki vsebuje ročno napisane pripomočke za lažje delo z API-jem, in modul `pubsub`, ki je knjižnica za naročanje na tokove sprememb.
 
 - [Dokumentacija knjižnice API odjemalca](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacija jedrne knjižnice, vključno s primeri SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentacija knjižnice PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumentacija jedrne knjižnice, vključno z primeri SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentacija PubSub knjižnice](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Javni in zaščiteni API-ji
+### Public vs Secured APIs
 
-Za API odjemalca obstajata dve razredi, `DefaultApi` in `PublicApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API key, medtem ko `PublicApi` vsebuje klice API-ja, ki jih je mogoče narediti neposredno iz brskalnika/mobilne naprave itd. brez avtentikacije.
+Za API odjemalca obstajajo tri razrede, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, medtem ko `PublicApi` vsebuje metode, ki jih je mogoče poklicati neposredno iz brskalnika/mobilne naprave/ipd. brez preverjanja pristnosti.
+
+`ModerationApi` poganja nadzorno ploščo moderatorja. Vsebuje metode za moderiranje komentarjev (seznam, štetje, iskanje, dnevniki in izvoz), moderacijske ukrepe (odstrani/obnovi, označi, nastavi status pregleda/spama/odobritve, glasovi in znova odpri/zaključi nit), prepovedi (prepoved komentiranja, prekliči prepoved, povzetki pred prepovedjo, status prepovedi in nastavitve ter število prepovedanih uporabnikov) ter značke in zaupanje (podeli/odstrani značko, ročne značke, pridobi/nastavi faktor zaupanja in notranji uporabniški profil). Vsaka metoda `ModerationApi` sprejme parameter `sso`, kar omogoča, da se klic izvede v imenu moderatorja, avtenticiranega prek SSO.

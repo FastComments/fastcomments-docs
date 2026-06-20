@@ -1,41 +1,39 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | כן |  |
+| id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+מחזיר: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת get_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת host אינה חובה והברירת מחדל היא https://fastcomments.com
-# ראו את configuration.py עבור רשימת כל פרמטרי הקונפיגורציה הנתמכים.
+# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב לקבוע את פרמטרי האימות וההרשאה
-# בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מוצגות למטה, השתמש בדוגמה ש
-# שעונה על מקרה השימוש של האימות שלך.
+# הלקוח חייב להגדיר את פרמטרי האימות והאישור בהתאם למדיניות האבטחה של שרת ה-API.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה שמתאימה למקרה השימוש שלך.
 
-# קונפיגורציית הרשאת מפתח ה-API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# פתח הקשר באמצעות מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)

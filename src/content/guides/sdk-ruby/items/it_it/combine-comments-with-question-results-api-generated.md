@@ -14,19 +14,19 @@
 
 ## Risposta
 
-Restituisce: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+Restituisce: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di combine_comments_with_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results Esempio'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# configura l'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per l'API key, es. 'Bearer' (predefinito: nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

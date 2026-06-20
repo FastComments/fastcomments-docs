@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | urlIdWS | string | query | はい |  |
@@ -8,14 +9,14 @@
 
 ## レスポンス
 
-戻り値: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses200_response.py)
+戻り値: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_user_presence_statuses の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_presence_statuses200_response import GetUserPresenceStatuses200Response
+from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,9 +27,9 @@ configuration = client.Configuration(
 )
 
 
-# API クライアントのインスタンスを使ってコンテキストを開始します
+# APIクライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # APIクラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id_ws = 'url_id_ws_example' # str | 

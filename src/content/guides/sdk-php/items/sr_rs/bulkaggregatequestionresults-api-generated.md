@@ -1,15 +1,15 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | forceRecalculate | boolean | query | Не |  |
 
-## Одговор
+## Response
 
-Враћа: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkAggregateQuestionResults200Response.php)
+Враћа: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkAggregateQuestionResultsResponse.php)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,15 +17,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Конфигуришите овлашћење API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментаришите доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, по подразумеваној вредности ће бити коришћен `GuzzleHttp\Client`.
+    // Ово је опционo, подразумевано ће се користити `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -40,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->bulkAggregateQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -5,31 +5,31 @@
 | tenantId | string | query | Da |  |
 | skip | number | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators200_response.py)
+Vrne: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_moderators Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_moderators'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderators200_response import GetModerators200Response
+from client.models.get_moderators_response import GetModeratorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre overjanja in avtorizacije
-# v skladu z varnostno politiko API strežnika.
-# Spodaj so navedeni primeri za vsako metodo avtorizacije; uporabite primer, ki
-# ustreza vašemu primeru uporabe avtorizacije.
+# Odjemalec mora konfigurirati parametre overjanja in pooblastil
+# v skladu s varnostno politiko strežnika API.
+# Spodaj so prikazani primeri za vsako metodo overjanja; uporabite primer, ki
+# ustreza vašemu primeru uporabe overjanja.
 
-# Nastavite avtorizacijo z API ključem: api_key
+# Konfigurirajte avtorizacijo prek API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
@@ -37,10 +37,10 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (neobvezno)
 
     try:
         api_response = api_instance.get_moderators(tenant_id, skip=skip)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_moderators: %s\n" % e)
 [inline-code-end]
-
----

@@ -4,16 +4,16 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
-## Odgovor
+## Vraća
 
-Vraća: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions200_response.py)
+Vraća: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_email_template_definitions'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_definitions200_response import GetEmailTemplateDefinitions200Response
+from client.models.get_email_template_definitions_response import GetEmailTemplateDefinitionsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -23,12 +23,12 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da podesi parametre autentifikacije i autorizacije
-# u skladu sa bezbednosnom politikom API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# Klijent mora konfigurisati parametre za autentifikaciju i autorizaciju
+# u skladu sa sigurnosnom politikom API servera.
+# Primeri za svaki metod autentifikacije su dati u nastavku; koristite primer koji
 # odgovara vašem slučaju upotrebe autentifikacije.
 
-# Konfigurišite autorizaciju API ključa: api_key
+# Konfigurišite autorizaciju putem API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno

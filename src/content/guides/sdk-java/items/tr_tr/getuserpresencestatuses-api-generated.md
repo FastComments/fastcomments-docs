@@ -2,13 +2,13 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| urlIdWS | string | sorgu | Evet |  |
-| userIds | string | sorgu | Evet |  |
+| tenantId | string | query | Evet |  |
+| urlIdWS | string | query | Evet |  |
+| userIds | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserPresenceStatuses200Response.java)
+Döndürür: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserPresenceStatusesResponse.java)
 
 ## Örnek
 
@@ -31,7 +31,7 @@ public class Example {
     String urlIdWS = "urlIdWS_example"; // String | 
     String userIds = "userIds_example"; // String | 
     try {
-      GetUserPresenceStatuses200Response result = apiInstance.getUserPresenceStatuses(tenantId, urlIdWS, userIds)
+      GetUserPresenceStatusesResponse result = apiInstance.getUserPresenceStatuses(tenantId, urlIdWS, userIds)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

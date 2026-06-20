@@ -2,22 +2,22 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| usernameStartsWith | string | query | Ne |  |
-| mentionGroupIds | array | query | Ne |  |
-| sso | string | query | Ne |  |
-| searchSection | string | query | Ne |  |
+| tenantId | string | putanja | Da |  |
+| urlId | string | upit | Da |  |
+| usernameStartsWith | string | upit | Ne |  |
+| mentionGroupIds | array | upit | Ne |  |
+| sso | string | upit | Ne |  |
+| searchSection | string | upit | Ne |  |
 
 ## Odgovor
 
-Vraća: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

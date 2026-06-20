@@ -1,29 +1,29 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| broadcastId | string | query | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | път | Да |  |
+| commentId | string | път | Да |  |
+| broadcastId | string | заявка | Да |  |
+| sso | string | заявка | Не |  |
 
 ## Отговор
 
-Връща: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за lock_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lock_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # Стринг | 
+comment_id = 'comment_id_example' # Стринг | 
+broadcast_id = 'broadcast_id_example' # Стринг | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Стринг | 
 }
 
 begin
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->lock_comment: #{e}"
 end
 [inline-code-end]
-
----

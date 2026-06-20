@@ -8,32 +8,32 @@
 
 ## Odgovor
 
-Vraća: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenants200_response.py)
+Vraća: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenants_response.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'get_tenants Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenants200_response import GetTenants200Response
+from client.models.get_tenants_response import GetTenantsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentikacije navedeni su dolje; koristite onaj
-# koji odgovara vašem scenariju autentikacije.
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaku metodu autentikacije su navedeni dolje, koristite primjer koji
+# odgovara vašem slučaju uporabe autentikacije.
 
-# Configure API key authorization: api_key
+# Konfigurirajte autorizaciju pomoću API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uklonite komentar ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta

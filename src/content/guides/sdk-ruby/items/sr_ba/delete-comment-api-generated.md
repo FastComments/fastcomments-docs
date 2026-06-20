@@ -1,27 +1,27 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| contextUserId | string | query | Не |  |
-| isLive | boolean | query | Не |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| contextUserId | string | query | Ne |  |
+| isLive | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment200_response.rb)
+Vraća: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_result.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'delete_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer delete_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигуриши API кључ за ауторизацију: api_key
+  # Podesite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментиши следећи ред да би подесио префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

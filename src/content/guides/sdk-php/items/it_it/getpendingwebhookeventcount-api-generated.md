@@ -12,7 +12,7 @@
 
 ## Risposta
 
-Restituisce: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCount200Response.php)
+Restituisce: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
 
 ## Esempio
 
@@ -22,15 +22,15 @@ Restituisce: [`GetPendingWebhookEventCount200Response`](https://github.com/FastC
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione con API key: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta quanto segue per impostare il prefisso (es. Bearer) per la API key, se necessario
+// Decommenta qui sotto per impostare un prefisso (es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come impostazione predefinita.
+    // Questo è opzionale, verrà usato `GuzzleHttp\Client` di default.
     new GuzzleHttp\Client(),
     $config
 );
@@ -49,3 +49,5 @@ try {
     echo 'Exception when calling DefaultApi->getPendingWebhookEventCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

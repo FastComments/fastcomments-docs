@@ -6,7 +6,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs200_response.rb)
+Zwraca: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs_response.rb)
 
 ## Przykład
 
@@ -16,7 +16,7 @@ require 'time'
 require 'fastcomments-client'
 # konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Skonfiguruj uwierzytelnianie kluczem API: api_key
+  # Skonfiguruj autoryzację klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_domain_configs: #{e}"
 end
 [inline-code-end]
-
----

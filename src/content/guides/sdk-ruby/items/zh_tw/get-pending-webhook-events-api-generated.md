@@ -13,7 +13,7 @@
 
 ## 回應
 
-回傳: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+回傳: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## 範例
 
@@ -25,7 +25,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # 設定 API 金鑰授權：api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解下列行以為 API 金鑰設定前綴，例如 'Bearer'（預設為 nil）
+  # 取消註解下一行以為 API 金鑰設定前綴，例如 'Bearer'（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -49,5 +49,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_events: #{e}"
 end
 [inline-code-end]
-
----

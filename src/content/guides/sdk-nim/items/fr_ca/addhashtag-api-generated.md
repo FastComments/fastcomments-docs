@@ -1,32 +1,28 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+| Name | Type | Obligatoire | Description |
+|------|------|------------|-------------|
 | tenantId | string | Oui |  |
 | createHashTagBody | CreateHashTagBody | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[AddHashTag_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_add_hash_tag200response.nim)
+Renvoie: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_hash_tag_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple addHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'appel addHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createBody = CreateHashTagBody(
-  name = "sports",
-  description = "Articles and discussions about sports",
-  aliases = @["sport", "athletics"],
-  isActive = true
-)
-
-let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123", createHashTagBody = createBody)
-
+let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123",
+  createHashTagBody = CreateHashTagBody(name = "Breaking News",
+    slug = "breaking-news",
+    description = "Major breaking news items",
+    color = "#ff0000",
+    isTrending = true,
+    aliases = @["breaking", "news"]))
 if response.isSome:
-  let added = response.get()
-  echo "HashTag added successfully"
-else:
-  echo "Failed to add HashTag"
+  let created = response.get()
+  echo created
 [inline-code-end]
 
 ---

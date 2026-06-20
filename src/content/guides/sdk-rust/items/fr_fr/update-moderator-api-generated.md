@@ -8,25 +8,29 @@
 
 ## Réponse
 
-Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Renvoie: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de update_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn update_moderator_example() -> Result<(), Error> {
     let params: UpdateModeratorParams = UpdateModeratorParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "moderator-987".to_string(),
+        id: "moderator-1a2b3c".to_string(),
         update_moderator_body: models::UpdateModeratorBody {
-            username: Some("jane.doe".to_string()),
-            email: Some("jane.doe@acme.com".to_string()),
+            display_name: Some("Jane Doe".to_string()),
+            email: Some("jane.doe@acme-corp.com".to_string()),
             role: Some("senior_moderator".to_string()),
             active: Some(true),
-            notes: Some("Promoted after successful trial period".to_string()),
+            permissions: Some(vec![
+                "approve_comments".to_string(),
+                "flag_spam".to_string(),
+                "ban_users".to_string(),
+            ]),
         },
     };
-    let response: FlagCommentPublic200Response = update_moderator(&configuration, params).await?;
+    let _empty: ApiEmptyResponse = update_moderator(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

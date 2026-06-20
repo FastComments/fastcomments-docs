@@ -1,6 +1,6 @@
-## 參數
+## Parameters
 
-| 名稱 | Type | 位置 | 必填 | 說明 |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳：[`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+回傳: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## 範例
 
@@ -18,18 +18,18 @@
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# 設定 host 為選用，預設為 https://fastcomments.com
+# 定義主機為可選，預設為 https://fastcomments.com
 # 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 的實例進入一個上下文
+# 使用 API 用戶端實例開啟一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的一個實例
     api_instance = client.PublicApi(api_client)
@@ -37,8 +37,8 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_data = client.CommentData() # CommentData | 
-    session_id = 'session_id_example' # str |  (選用)
-    sso = 'sso_example' # str |  (選用)
+    session_id = 'session_id_example' # str |  (可選)
+    sso = 'sso_example' # str |  (可選)
 
     try:
         api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)

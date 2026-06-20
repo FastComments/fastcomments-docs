@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | limit | number | query | לא |  |
@@ -9,36 +9,36 @@
 | after | number | query | לא |  |
 | before | number | query | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogs200Response.php)
+מחזיר: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדרת הרשאת מפתח API: api_key
+// הגדר את אישור מפתח ה-API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// בטל את ההערה שלהלן כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונכם להשתמש בלקוח HTTP מותאם אישית, העבירו את הלקוח שלכם שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש ב-client HTTP מותאם אישית, העבר את ה-client שלך שמממש את `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$limit = 3.4; // מספר עשרוני
-$skip = 3.4; // מספר עשרוני
+$tenant_id = 'tenant_id_example'; // string
+$limit = 3.4; // float
+$skip = 3.4; // float
 $order = new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(); // \FastComments\Client\Model\SORTDIR
-$after = 3.4; // מספר עשרוני
-$before = 3.4; // מספר עשרוני
+$after = 3.4; // float
+$before = 3.4; // float
 
 try {
     $result = $apiInstance->getAuditLogs($tenant_id, $limit, $skip, $order, $after, $before);

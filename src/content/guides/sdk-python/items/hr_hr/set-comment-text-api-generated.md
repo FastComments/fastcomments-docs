@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -11,7 +10,7 @@
 
 ## Odgovor
 
-Vraća: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+Vraća: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## Primjer
 
@@ -19,12 +18,12 @@ Vraća: [`SetCommentText200Response`](https://github.com/FastComments/fastcommen
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Postavljanje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,7 +31,7 @@ configuration = client.Configuration(
 
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->set_comment_text: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,4 +1,5 @@
-הפעל או השבת התראות עבור תגובה מסוימת.
+---
+הפעל או השבת התראות עבור תגובה ספציפית.
 
 ## פרמטרים
 
@@ -12,7 +13,7 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+מחזיר: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## דוגמה
 
@@ -41,3 +42,5 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationCommentSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

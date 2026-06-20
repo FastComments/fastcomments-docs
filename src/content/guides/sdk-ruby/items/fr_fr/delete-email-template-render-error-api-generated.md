@@ -1,26 +1,27 @@
+---
 ## Paramètres
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| id | string | path | Oui |  |
-| errorId | string | path | Oui |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| errorId | string | path | Yes |  |
 
 ## Réponse
 
-Renvoie: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de delete_email_template_render_error'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple delete_email_template_render_error'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'authentification
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configurer l'authentification par clé API: api_key
+  # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut : nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

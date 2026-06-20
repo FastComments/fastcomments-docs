@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -11,7 +12,7 @@
 
 ## Одговор
 
-Враћа: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Пример
 

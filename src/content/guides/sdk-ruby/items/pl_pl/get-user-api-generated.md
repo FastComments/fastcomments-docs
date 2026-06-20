@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user200_response.rb)
+Zwraca: [`GetUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_response.rb)
 
 ## Przykład
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Konfiguracja autoryzacji kluczem API: api_key
+  # Konfiguracja autoryzacji klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
+  # Odkomentuj następną linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

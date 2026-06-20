@@ -1,30 +1,30 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| broadcastId | string | query | Ne |  |
-| isLive | boolean | query | Ne |  |
-| doSpamCheck | boolean | query | Ne |  |
-| skipDupCheck | boolean | query | Ne |  |
+| tenantId | string | query | Да |  |
+| broadcastId | string | query | Не |  |
+| isLive | boolean | query | Не |  |
+| doSpamCheck | boolean | query | Не |  |
+| skipDupCheck | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPost200Response.swift)
+Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostsResponse.swift)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'createFeedPost Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPost Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведени примери кода су још у бета фази. За било који проблем пријавите путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let createFeedPostParams = CreateFeedPostParams(title: "title_example", contentHTML: "contentHTML_example", media: [FeedPostMediaItem(title: "title_example", linkUrl: "linkUrl_example", sizes: [FeedPostMediaItemAsset(w: 123, h: 123, src: "src_example")])], links: [FeedPostLink(text: "text_example", title: "title_example", description: "description_example", url: "url_example")], fromUserId: "fromUserId_example", fromUserDisplayName: "fromUserDisplayName_example", tags: ["tags_example"], meta: "TODO") // CreateFeedPostParams | 
-let broadcastId = "broadcastId_example" // String |  (neobavezno)
-let isLive = true // Bool |  (neobavezno)
-let doSpamCheck = true // Bool |  (neobavezno)
-let skipDupCheck = true // Bool |  (neobavezno)
+let broadcastId = "broadcastId_example" // String |  (опционо)
+let isLive = true // Bool |  (опционо)
+let doSpamCheck = true // Bool |  (опционо)
+let skipDupCheck = true // Bool |  (опционо)
 
 DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
     guard error == nil else {

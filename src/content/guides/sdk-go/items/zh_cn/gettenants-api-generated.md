@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_200_response.go)
+返回: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_response.go)
 
 ## 示例
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenants``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetTenants` 的响应: GetTenants200Response
+	// 来自 `GetTenants` 的响应: GetTenantsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenants`: %v\n", resp)
 }
 [inline-code-end]

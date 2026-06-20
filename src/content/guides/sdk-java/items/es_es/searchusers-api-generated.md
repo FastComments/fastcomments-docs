@@ -1,17 +1,17 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | ruta | Sí |  |
-| urlId | string | consulta | Sí |  |
-| usernameStartsWith | string | consulta | No |  |
-| mentionGroupIds | array | consulta | No |  |
-| sso | string | consulta | No |  |
-| searchSection | string | consulta | No |  |
+| tenantId | string | path | Sí |  |
+| urlId | string | query | Sí |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+Devuelve: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsersResult.java)
 
 ## Ejemplo
 
@@ -37,7 +37,7 @@ public class Example {
     String sso = "sso_example"; // String | 
     String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+      SearchUsersResult result = apiInstance.searchUsers(tenantId, urlId)
             .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
@@ -54,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

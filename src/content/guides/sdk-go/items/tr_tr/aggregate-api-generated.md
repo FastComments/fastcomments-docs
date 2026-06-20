@@ -1,8 +1,8 @@
-Belgeleri, (groupBy sağlanmışsa) gruplayarak ve birden çok işlem uygulayarak toplar. Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
+Belgeleri gruplayarak (eğer groupBy sağlanmışsa) ve birden çok işlem uygulayarak toplar. Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
 
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | parentTenantId | string | query | Hayır |  |
@@ -10,11 +10,11 @@ Belgeleri, (groupBy sağlanmışsa) gruplayarak ve birden çok işlem uygulayara
 
 ## Yanıt
 
-Döndürür: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'Toplama Örneği'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Aggregate Örneği'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -38,9 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `Aggregate`'ten dönen yanıt: AggregationResponse
+	// `Aggregate`'den gelen yanıt: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,4 @@
-запрос
+req
 tenantId
 afterId
 
@@ -6,44 +6,44 @@ afterId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
+| tenantId | string | query | Да |  |
+| afterId | string | query | Нет |  |
+| limit | integer | query | Нет |  |
+| tags | array | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts200_response.py)
+Возвращает: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts200_response import GetFeedPosts200Response
+from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
+# Указание host необязательно и по умолчанию равно https://fastcomments.com
 # Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте тот,
+# в соответствии с политикой безопасности API сервера.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример,
 # который соответствует вашему случаю использования аутентификации.
 
-# Configure API key authorization: api_key
+# Настройте авторизацию с помощью API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (e.g. Bearer) для API ключа, если это необходимо
+# Раскомментируйте ниже, чтобы установить префикс (e.g. Bearer) для API-ключа, если требуется
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Входим в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создаем экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (необязательно)

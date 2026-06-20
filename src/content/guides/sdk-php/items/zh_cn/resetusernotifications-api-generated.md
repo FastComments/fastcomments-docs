@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | afterId | string | query | 否 |  |
@@ -12,7 +12,7 @@
 
 ## 响应
 
-返回: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotifications200Response.php)
+返回: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## 示例
 
@@ -24,17 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认将使用 `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$after_id = 'after_id_example'; // 字符串
-$after_created_at = 56; // 整数
-$unread_only = True; // 布尔值
-$dm_only = True; // 布尔值
-$no_dm = True; // 布尔值
-$sso = 'sso_example'; // 字符串
+$tenant_id = 'tenant_id_example'; // string
+$after_id = 'after_id_example'; // string
+$after_created_at = 56; // int
+$unread_only = True; // bool
+$dm_only = True; // bool
+$no_dm = True; // bool
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
@@ -43,5 +43,3 @@ try {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -5,17 +5,17 @@ userIdWS
 
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| userIdWS | string | query | Yes |  |
-| startTime | integer | query | Yes |  |
-| endTime | integer | query | Yes |  |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| userIdWS | string | query | Ja |  |
+| startTime | integer | query | Ja |  |
+| endTime | integer | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Gibt zurück: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Beispiel
 

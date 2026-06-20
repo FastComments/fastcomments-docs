@@ -1,12 +1,13 @@
+---
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModerator200Response.java)
+Retourneert: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateModeratorResponse.java)
 
 ## Voorbeeld
 
@@ -25,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutel autorisatie: api_key
+    // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaar weg van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Haal de commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateModeratorBody createModeratorBody = new CreateModeratorBody(); // CreateModeratorBody | 
     try {
-      CreateModerator200Response result = apiInstance.createModerator(tenantId, createModeratorBody)
+      CreateModeratorResponse result = apiInstance.createModerator(tenantId, createModeratorBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -48,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

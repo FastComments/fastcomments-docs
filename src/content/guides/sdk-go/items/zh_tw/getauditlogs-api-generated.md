@@ -1,17 +1,17 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| limit | number | query | 否 |  |
-| skip | number | query | 否 |  |
-| order | string | query | 否 |  |
-| after | number | query | 否 |  |
-| before | number | query | 否 |  |
+| tenantId | string | 查詢 | 是 |  |
+| limit | number | 查詢 | 否 |  |
+| skip | number | 查詢 | 否 |  |
+| order | string | 查詢 | 否 |  |
+| after | number | 查詢 | 否 |  |
+| before | number | 查詢 | 否 |  |
 
 ## 回應
 
-回傳: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_200_response.go)
+回傳: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_response.go)
 
 ## 範例
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAuditLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 回應來自 `GetAuditLogs`: GetAuditLogs200Response
+	// 從 `GetAuditLogs` 的回應：GetAuditLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAuditLogs`: %v\n", resp)
 }
 [inline-code-end]

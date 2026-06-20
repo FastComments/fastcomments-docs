@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTags200Response.php)
+מחזיר: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTagsResponse.php)
 
 ## דוגמה
 
@@ -17,15 +17,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדרת הרשאת מפתח ה-API: api_key
+// הגדרת אימות מפתח ה-API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם יש צורך
+// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->getHashTags: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

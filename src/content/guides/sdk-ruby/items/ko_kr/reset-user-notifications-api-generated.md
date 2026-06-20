@@ -1,18 +1,18 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| afterId | string | query | 아니요 |  |
-| afterCreatedAt | integer | query | 아니요 |  |
-| unreadOnly | boolean | query | 아니요 |  |
-| dmOnly | boolean | query | 아니요 |  |
-| noDm | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| afterId | string | query | 아니오 |  |
+| afterCreatedAt | integer | query | 아니오 |  |
+| unreadOnly | boolean | query | 아니오 |  |
+| dmOnly | boolean | query | 아니오 |  |
+| noDm | boolean | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+반환: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## 예제
 
@@ -40,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

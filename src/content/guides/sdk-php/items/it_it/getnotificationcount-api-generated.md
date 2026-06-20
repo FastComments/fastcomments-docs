@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | userId | string | query | No |  |
@@ -11,7 +11,7 @@
 
 ## Risposta
 
-Restituisce: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationCount200Response.php)
+Restituisce: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationCountResponse.php)
 
 ## Esempio
 
@@ -21,14 +21,15 @@ Restituisce: [`GetNotificationCount200Response`](https://github.com/FastComments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione della chiave API: api_key
-// Decommenta la riga sottostante per impostare il prefisso (es. Bearer) per la chiave API, se necessario
+// Configure API key authorization: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per la API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se desideri utilizzare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come default.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà utilizzato come client predefinito.
     new GuzzleHttp\Client(),
     $config
 );

@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 型別 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 範例
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # 設定授權
 FastCommentsClient.configure do |config|
-  # 設定 API 金鑰授權：api_key
+  # 設定 API key 授權: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解下列行以設定 API 金鑰的前綴，例如 'Bearer'（預設為 nil）
+  # 若要為 API key 設定前綴（例如 'Bearer'），請取消註解下列行（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_comment: #{e}"
 end
 [inline-code-end]
-
----

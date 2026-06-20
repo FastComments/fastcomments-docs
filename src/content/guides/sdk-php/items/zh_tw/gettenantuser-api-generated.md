@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUser200Response.php)
+回傳：[`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUserResponse.php)
 
 ## 範例
 
@@ -25,12 +25,14 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // 若要使用自訂的 HTTP 客戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
     // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+$tenant_id = 'tenant_id_example'; // 字串
+$id = 'id_example'; // 字串
 
 try {
     $result = $apiInstance->getTenantUser($tenant_id, $id);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

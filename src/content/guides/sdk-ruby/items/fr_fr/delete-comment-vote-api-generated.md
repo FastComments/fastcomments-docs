@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Renvoie : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Exemple
 
@@ -22,14 +22,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-vote_id = 'vote_id_example' # String | 
-url_id = 'url_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
+comment_id = 'comment_id_example' # Chaîne | 
+vote_id = 'vote_id_example' # Chaîne | 
+url_id = 'url_id_example' # Chaîne | 
+broadcast_id = 'broadcast_id_example' # Chaîne | 
 opts = {
-  edit_key: 'edit_key_example', # String | 
-  sso: 'sso_example' # String | 
+  edit_key: 'edit_key_example', # Chaîne | 
+  sso: 'sso_example' # Chaîne | 
 }
 
 begin
@@ -40,3 +40,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_vote: #{e}"
 end
 [inline-code-end]
+
+---

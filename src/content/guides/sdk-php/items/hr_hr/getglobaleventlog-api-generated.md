@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parameters
+## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | userIdWS | string | query | Da |  |
 | startTime | integer | query | Da |  |
-| endTime | integer | query | Da |  |
+| endTime | integer | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getGlobalEventLog Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getGlobalEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

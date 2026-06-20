@@ -1,28 +1,28 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| yearNumber | number | query | No |  |
-| monthNumber | number | query | No |  |
-| dayNumber | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| yearNumber | number | query | Нет |  |
+| monthNumber | number | query | Нет |  |
+| dayNumber | number | query | Нет |  |
+| skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsages200Response.php)
+Возвращает: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример вызова getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию ключа API: api_key
+// Настроить авторизацию по API-ключу: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте строку ниже, чтобы установить префикс (например Bearer) для ключа API, если это необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

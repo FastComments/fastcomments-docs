@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Location | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | isLive | boolean | query | Hayır |  |
@@ -8,9 +8,9 @@
 | sendEmails | boolean | query | Hayır |  |
 | populateNotifications | boolean | query | Hayır |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+Döndürür: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
 
 ## Örnek
 
@@ -18,9 +18,9 @@ Döndürür: [`SaveComment200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi ayarla
+# Yetkilendirmeyi yapılandır
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandır: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -44,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->save_comment: #{e}"
 end
 [inline-code-end]
-
----

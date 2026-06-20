@@ -1,24 +1,24 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Name | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | userId | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_by_id200_response.py)
+Restituisce: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_user_badge_progress_by_user_id'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_by_id200_response import GetUserBadgeProgressById200Response
+from client.models.api_get_user_badge_progress_response import APIGetUserBadgeProgressResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e predefinita a https://fastcomments.com
+# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
 # Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,18 +26,18 @@ configuration = client.Configuration(
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la policy di sicurezza del server API.
-# Esempi per ogni metodo di autenticazione sono forniti sotto, usa l'esempio che
+# Di seguito sono forniti esempi per ogni metodo di auth; usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configurare l'autorizzazione tramite API key: api_key
+# Configura l'autorizzazione tramite API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Rimuovere il commento qui sotto per impostare il prefisso (es. Bearer) per la API key, se necessario
+# Decommenta la riga seguente per impostare un prefisso (es. Bearer) per la API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrare in un contesto con un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Creare un'istanza della classe API
+    # Crea un'istanza della classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str | 

@@ -1,4 +1,4 @@
-## Parameters
+## 매개변수
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -8,7 +8,7 @@
 
 ## 응답
 
-반환: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+반환: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## 예제
 
@@ -30,7 +30,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값: null)
+    // API 키에 접두사를 설정하려면 다음 줄의 주석 처리를 제거하세요. 예: "Token" (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String editKey = "editKey_example"; // String | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteVote(tenantId, id)
+      VoteDeleteResponse result = apiInstance.deleteVote(tenantId, id)
             .editKey(editKey)
             .execute();
       System.out.println(result);
@@ -52,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

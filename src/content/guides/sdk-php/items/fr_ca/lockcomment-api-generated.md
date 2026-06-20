@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Exemple
 
@@ -25,10 +25,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // chaîne
+$comment_id = 'comment_id_example'; // chaîne
+$broadcast_id = 'broadcast_id_example'; // chaîne
+$sso = 'sso_example'; // chaîne
 
 try {
     $result = $apiInstance->lockComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->lockComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

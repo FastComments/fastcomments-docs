@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 说明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -12,7 +12,7 @@
 
 ## 响应
 
-返回: [`Option[GetPendingWebhookEvents_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events200response.nim)
+返回：[`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
 
 ## 示例
 
@@ -20,7 +20,7 @@
 [inline-code-start]
 let (response, httpResponse) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
+  commentId = "cmt-987654",
   externalId = "",
   eventType = "",
   domain = "",
@@ -30,9 +30,6 @@ let (response, httpResponse) = client.getPendingWebhookEvents(
 if response.isSome:
   let pending = response.get()
   discard pending
-  echo "Received pending webhook events"
-else:
-  echo "No pending webhook events"
 [inline-code-end]
 
 ---

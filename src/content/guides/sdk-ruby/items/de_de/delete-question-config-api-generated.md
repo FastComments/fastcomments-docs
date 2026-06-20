@@ -1,14 +1,13 @@
----
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Beispiel
 
@@ -16,11 +15,11 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Autorisierung einrichten
+# Einrichtung der Autorisierung
 FastCommentsClient.configure do |config|
-  # API-Schlüssel-Autorisierung konfigurieren: api_key
+  # Konfiguriere API-Schlüssel-Autorisierung: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
+  # Entfernen Sie das Kommentarzeichen in der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standardwert ist nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

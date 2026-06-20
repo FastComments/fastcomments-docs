@@ -7,13 +7,13 @@
 
 ## Réponse
 
-Renvoie: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigs200Response.java)
+Renvoie : [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigsResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getQuestionConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getQuestionConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetQuestionConfigs200Response result = apiInstance.getQuestionConfigs(tenantId)
+      GetQuestionConfigsResponse result = apiInstance.getQuestionConfigs(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

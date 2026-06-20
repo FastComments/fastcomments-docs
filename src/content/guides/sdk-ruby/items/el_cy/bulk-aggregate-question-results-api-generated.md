@@ -5,9 +5,9 @@
 | tenantId | string | query | Ναι |  |
 | forceRecalculate | boolean | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results200_response.rb)
+Επιστρέφει: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results_response.rb)
 
 ## Παράδειγμα
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# ρύθμιση εξουσιοδότησης
+# Ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Καταργήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. 'Bearer' (η προεπιλογή είναι nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->bulk_aggregate_question_results: #{e}"
 end
 [inline-code-end]
+
+---

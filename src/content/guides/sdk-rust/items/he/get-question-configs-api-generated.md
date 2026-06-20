@@ -1,26 +1,25 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | skip | f64 | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_200_response.rs)
+מחזיר: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_response.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
     let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(10.0),
+        skip: Some(20.0),
     };
-    let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    println!("{:#?}", response);
-    Ok(())
+    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

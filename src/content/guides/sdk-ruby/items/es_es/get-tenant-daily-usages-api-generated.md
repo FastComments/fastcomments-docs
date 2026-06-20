@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | yearNumber | number | query | No |  |
@@ -10,7 +10,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_daily_usages200_response.rb)
+Devuelve: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_daily_usages_response.rb)
 
 ## Ejemplo
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # configurar autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización por clave API: api_key
+  # Configurar autorización de clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto es nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto es nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

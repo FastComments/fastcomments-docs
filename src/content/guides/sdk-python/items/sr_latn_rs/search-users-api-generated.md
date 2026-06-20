@@ -1,30 +1,29 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | No |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
-| searchSection | string | query | No |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| usernameStartsWith | string | query | Ne |  |
+| mentionGroupIds | array | query | Ne |  |
+| sso | string | query | Ne |  |
+| searchSection | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users200_response.py)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.search_users200_response import SearchUsers200Response
+from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Pogledajte configuration.py za spisak svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -36,10 +35,10 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str |  (opciono)
-    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (opciono)
-    sso = 'sso_example' # str |  (opciono)
-    search_section = 'search_section_example' # str |  (opciono)
+    username_starts_with = 'username_starts_with_example' # str |  (neobavezno)
+    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (neobavezno)
+    sso = 'sso_example' # str |  (neobavezno)
+    search_section = 'search_section_example' # str |  (neobavezno)
 
     try:
         api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->search_users: %s\n" % e)
 [inline-code-end]
-
----

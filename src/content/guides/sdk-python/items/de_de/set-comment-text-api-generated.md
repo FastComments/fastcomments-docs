@@ -1,16 +1,16 @@
-## Parameters
+## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| broadcastId | string | query | Ja |  |
-| editKey | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | Pfad | Ja |  |
+| commentId | string | Pfad | Ja |  |
+| broadcastId | string | Abfrage | Ja |  |
+| editKey | string | Abfrage | Nein |  |
+| sso | string | Abfrage | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+Gibt zurück: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## Beispiel
 
@@ -18,7 +18,7 @@ Gibt zurück: [`SetCommentText200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -29,9 +29,9 @@ configuration = client.Configuration(
 )
 
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Öffne einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Erstelle eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

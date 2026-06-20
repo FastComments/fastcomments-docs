@@ -1,15 +1,15 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | notificationId | string | Ne |  |
 | newStatus | string | Ne |  |
 | sso | string | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Vrača: [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status_response.nim)
 
 ## Primer
 
@@ -19,9 +19,13 @@ let (response, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-abc-789"
+  sso = "sso-token-abc123"
 )
 if response.isSome:
-  let updateResp = response.get()
-  discard updateResp
+  let updated = response.get()
+  echo "Notification status updated successfully"
+else:
+  echo "No update response received"
 [inline-code-end]
+
+---

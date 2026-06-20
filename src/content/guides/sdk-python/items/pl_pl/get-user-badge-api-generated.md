@@ -1,20 +1,20 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Zwraca: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia get_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,10 +26,10 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
-# spełnia Twoje wymagania uwierzytelniania.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj
+# przykładu, który odpowiada Twojemu przypadkowi użycia.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Konfiguracja autoryzacji kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne

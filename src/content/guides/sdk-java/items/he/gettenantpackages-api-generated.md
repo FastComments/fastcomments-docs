@@ -1,17 +1,17 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackages200Response.java)
+מחזיר: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantPackagesResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getTenantPackages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getTenantPackages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // קונפיגורציה של אישור מפתח ה-API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // בטל את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה "Token" (ברירת מחדל null)
+    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, למשל "Token" (ברירת מחדל null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenantPackages200Response result = apiInstance.getTenantPackages(tenantId)
+      GetTenantPackagesResponse result = apiInstance.getTenantPackages(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,7 +1,7 @@
 ## 參數
 
-| 名稱 | 類型 | 是否必填 | 說明 |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 | broadcastId | string | 是 |  |
@@ -9,33 +9,26 @@
 | sessionId | string | 否 |  |
 | sso | string | 否 |  |
 
-## 回應
+## 回傳
 
-回傳: [`CreateCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateCommentPublic_200_response.h)
+回傳：[`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createCommentPublic 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("/articles/2026/fastcomments-cpp-integration");
-utility::string_t broadcastId = U("broadcast-001");
-CommentData commentData;
-commentData.content = U("Hello from the C++ SDK — great article!");
-commentData.authorEmail = U("reader@example.com");
-commentData.authorName = U("Jane Reader");
-boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U("sess-9f3a2"));
-boost::optional<utility::string_t> sso = boost::none;
-auto task = api->createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso)
-    .then([](pplx::task<std::shared_ptr<CreateCommentPublic_200_response>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto resultCopy = std::make_shared<CreateCommentPublic_200_response>(*resp);
-            }
-        } catch (const std::exception&) {}
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+utility::string_t urlId = utility::string_t("/articles/2026/new-feature");
+utility::string_t broadcastId = utility::string_t("broadcast-789");
+auto commentDataPtr = std::make_shared<CommentData>();
+commentDataPtr->content = utility::string_t("Great article! Thanks for sharing.");
+commentDataPtr->authorEmail = utility::string_t("reader@example.com");
+boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(utility::string_t("sess-456"));
+boost::optional<utility::string_t> sso;
+api->createCommentPublic(tenantId, urlId, broadcastId, *commentDataPtr, sessionId, sso)
+    .then([](std::shared_ptr<SaveCommentsResponseWithPresence> resp){
+        (void)resp;
     });
-task.wait();
 [inline-code-end]
 
 ---

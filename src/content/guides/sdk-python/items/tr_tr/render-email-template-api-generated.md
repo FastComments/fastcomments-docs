@@ -1,48 +1,47 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | locale | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template200_response.py)
+Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'render_email_template Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.render_email_template200_response import RenderEmailTemplate200Response
 from client.models.render_email_template_body import RenderEmailTemplateBody
+from client.models.render_email_template_response import RenderEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py'ye bakın.
+# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına göre yapılandırmalıdır.
-# Her bir kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır, kullanım
-# durumunuza uyan örneği kullanın.
+# API sunucu güvenlik politikasına uygun şekilde yapılandırmalıdır.
+# Aşağıda her bir kimlik doğrulama yöntemi için örnekler verilmiştir; kullanım senaryonuza uyan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandırma: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
+# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam girin
+# API istemcisi örneği ile bir bağlam açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     render_email_template_body = client.RenderEmailTemplateBody() # RenderEmailTemplateBody | 
-    locale = 'locale_example' # str |  (optional)
+    locale = 'locale_example' # str |  (isteğe bağlı)
 
     try:
         api_response = api_instance.render_email_template(tenant_id, render_email_template_body, locale=locale)

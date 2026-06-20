@@ -1,6 +1,7 @@
+---
 ## Parametre
 
-| Navn | Type | Placering | Krævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | yearNumber | number | query | Nej |  |
@@ -8,9 +9,9 @@
 | dayNumber | number | query | Nej |  |
 | skip | number | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+Returnerer: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## Eksempel
 
@@ -39,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetTenantDailyUsages`: GetTenantDailyUsages200Response
+	// svar fra `GetTenantDailyUsages`: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]

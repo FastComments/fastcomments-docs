@@ -12,11 +12,11 @@ userIdWS
 | urlId | string | query | Yes |  |
 | userIdWS | string | query | Yes |  |
 | startTime | integer | query | Yes |  |
-| endTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
 ## Response
 
-Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Returns: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Example
 

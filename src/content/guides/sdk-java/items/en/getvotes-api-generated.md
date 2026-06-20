@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotes200Response.java)
+Returns: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesResponse.java)
 
 ## Example
 
@@ -36,7 +36,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     try {
-      GetVotes200Response result = apiInstance.getVotes(tenantId, urlId)
+      GetVotesResponse result = apiInstance.getVotes(tenantId, urlId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

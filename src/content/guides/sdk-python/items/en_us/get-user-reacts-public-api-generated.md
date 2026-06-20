@@ -8,27 +8,27 @@
 
 ## Response
 
-Returns: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+Returns: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_user_reacts_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Setting the host is optional and defaults to https://fastcomments.com
+# Defining the host is optional and defaults to https://fastcomments.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Open a context with an ApiClient instance
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Create an API class instance
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_ids = ['post_ids_example'] # List[str] |  (optional)

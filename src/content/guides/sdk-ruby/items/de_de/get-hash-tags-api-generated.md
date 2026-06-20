@@ -1,3 +1,4 @@
+---
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -7,7 +8,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags200_response.rb)
+Gibt zurück: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags_response.rb)
 
 ## Beispiel
 
@@ -17,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # Autorisierung einrichten
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API-Schlüssel-Autorisierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entfernen Sie das Kommentarzeichen für die folgende Zeile, um ein Präfix für den API-Schlüssel zu setzen, z. B. 'Bearer' (Standard ist nil)
+  # Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

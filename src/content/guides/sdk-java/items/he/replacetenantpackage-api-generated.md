@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## דוגמה
 
@@ -26,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדרות אישור באמצעות מפתח ה-API: api_key
+    // הגדרת הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     ReplaceTenantPackageBody replaceTenantPackageBody = new ReplaceTenantPackageBody(); // ReplaceTenantPackageBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
+      APIEmptyResponse result = apiInstance.replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -2,37 +2,37 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| postIds | array | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | パス | はい |  |
+| postIds | array | クエリ | いいえ |  |
+| sso | string | クエリ | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+戻り値: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_user_reacts_public の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# サポートされている全ての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使ったコンテキストを開始します
+# API クライアントのインスタンスを使ってコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # APIクラスのインスタンスを作成します
+    # API クラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    post_ids = ['post_ids_example'] # List[str] |  (オプション)
-    sso = 'sso_example' # str |  (オプション)
+    post_ids = ['post_ids_example'] # List[str] |  (省略可)
+    sso = 'sso_example' # str |  (省略可)
 
     try:
         api_response = api_instance.get_user_reacts_public(tenant_id, post_ids=post_ids, sso=sso)

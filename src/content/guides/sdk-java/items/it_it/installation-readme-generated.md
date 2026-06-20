@@ -12,29 +12,29 @@ Aggiungi il repository Repsy al POM del tuo progetto:
 </repositories>
 ```
 
-Quindi aggiungi le dipendenze di cui hai bisogno:
+Quindi aggiungi le dipendenze necessarie:
 
 ```xml
 <dependencies>
-    <!-- Client API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Libreria Core (include SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Libreria PubSub (per eventi in tempo reale) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // Client API
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Libreria Core (include SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // Libreria PubSub (per eventi in tempo reale)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Library Contents
+### Contenuti della libreria
 
-Questa libreria contiene tre moduli. Il client API generato, la libreria Java core che contiene utility scritte a mano per rendere più semplice il lavoro con l'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di modifica.
+Questa libreria contiene tre moduli. Il client API generato, la libreria Java core che contiene utilità scritte a mano per rendere più semplice il lavoro con l'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di cambiamento.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentazione libreria client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentazione libreria core, inclusi esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentazione libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### API Pubbliche vs Protette
 
-Per il client API, ci sono due classi, `DefaultApi` e `PublicApi`. `DefaultApi` contiene i metodi che richiedono la tua API key, e `PublicApi` contiene chiamate API che possono essere fatte direttamente da un browser/dispositivo mobile/etc senza autenticazione.
+Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi`, e `ModerationApi`. La `DefaultApi` contiene metodi che richiedono la tua API key, e `PublicApi` contiene metodi che possono essere eseguiti direttamente da un browser/dispositivo mobile/etc senza autenticazione.
+
+La `ModerationApi` alimenta la dashboard dei moderatori. Contiene metodi per la moderazione dei commenti (elenco, conteggio, ricerca, log e esportazione), azioni di moderazione (rimuovere/ripristinare, segnala, impostare lo stato di revisione/spam/approvazione, voti e riaprire/chiudere il thread), ban (vietare di commentare, annullare un ban, riepiloghi pre-ban, stato e preferenze del ban, e conteggi utenti bannati), e badge & fiducia (assegnare/rimuovere un badge, badge manuali, ottenere/impostare il fattore di fiducia, e profilo interno utente). Ogni metodo di `ModerationApi` accetta un parametro `sso` in modo che la chiamata possa essere eseguita per conto di un moderatore autenticato tramite SSO.

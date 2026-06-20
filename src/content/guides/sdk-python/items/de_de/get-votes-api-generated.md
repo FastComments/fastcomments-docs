@@ -7,37 +7,37 @@
 
 ## Antwort
 
-Gibt zurück: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes200_response.py)
+Gibt zurück: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_votes Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes200_response import GetVotes200Response
+from client.models.get_votes_response import GetVotesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Die Definition des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Für jede Auth-Methode werden unten Beispiele bereitgestellt. Verwenden Sie das
-# Beispiel, das Ihrem Auth-Use-Case entspricht.
+# in Übereinstimmung mit der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode werden unten bereitgestellt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
 
-# Configure API key authorization: api_key
+# API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entkommentieren Sie unten, um ein Präfix einzurichten (z. B. Bearer) für den API-Key, falls erforderlich
+# Unten auskommentierte Zeile aktivieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Erstellen einer Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_votes: %s\n" % e)
 [inline-code-end]
-
----

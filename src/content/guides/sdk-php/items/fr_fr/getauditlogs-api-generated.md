@@ -2,16 +2,16 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
-| order | string | query | No |  |
-| after | number | query | No |  |
-| before | number | query | No |  |
+| tenantId | string | query | Oui |  |
+| limit | number | query | Non |  |
+| skip | number | query | Non |  |
+| order | string | query | Non |  |
+| after | number | query | Non |  |
+| before | number | query | Non |  |
 
 ## Réponse
 
-Retourne : [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogs200Response.php)
+Renvoie : [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
 ## Exemple
 
@@ -21,15 +21,15 @@ Retourne : [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'autorisation par clé API: api_key
+// Configurer l'autorisation par clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer le préfixe (e.g. Bearer) pour la clé API, si nécessaire
+// Décommentez la ligne ci-dessous pour définir un préfixe (p.ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
-    // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé comme valeur par défaut.
+    // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client(),
     $config
 );
@@ -47,5 +47,3 @@ try {
     echo 'Exception when calling DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

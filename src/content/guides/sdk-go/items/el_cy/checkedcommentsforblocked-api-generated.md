@@ -1,14 +1,14 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
-| commentIds | string | query | Ναι | Μια λίστα αναγνωριστικών σχολίων χωρισμένη με κόμμα. |
+| commentIds | string | query | Ναι | Μια λίστα διαχωρισμένη με κόμματα από comment ids. |
 | sso | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_checked_comments_for_blocked_200_response.go)
+Επιστρέφει: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_check_blocked_comments_response.go)
 
 ## Παράδειγμα
 
@@ -20,12 +20,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentIds := "commentIds_example" // string | Μια λίστα αναγνωριστικών σχολίων χωρισμένη με κόμμα.
+	commentIds := "commentIds_example" // string | Μια λίστα διαχωρισμένη με κόμματα από comment ids.
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
@@ -35,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CheckedCommentsForBlocked``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `CheckedCommentsForBlocked`: CheckedCommentsForBlocked200Response
+	// απάντηση από `CheckedCommentsForBlocked`: CheckBlockedCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CheckedCommentsForBlocked`: %v\n", resp)
 }
 [inline-code-end]
+
+---

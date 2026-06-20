@@ -1,6 +1,6 @@
-### 使用已认证的 APIs (DefaultAPI)
+### 使用已认证的 API (DefaultAPI)
 
-**重要：** 已认证的端点要求将您的 API 密钥设置为 `x-api-key` 请求头。
+**重要：** 已认证的端点需要将您的 API 密钥设置为 `x-api-key` 头。
 
 ```nim
 import httpclient
@@ -37,7 +37,7 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### 使用公共 APIs (PublicAPI)
+### 使用公共 API (PublicAPI)
 
 公共端点不需要认证：
 
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### 使用审核 API (ModerationAPI)
+
+审核端点为版主仪表板提供支持，并使用代表版主的 SSO 令牌进行认证：
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# 在审核仪表板中列出评论
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### 常见问题
 
-1. **401 authentication error**: 在发出 DefaultAPI 请求之前，请确保在您的 HttpClient 上设置了 `x-api-key` 请求头：`client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: 对于服务器端的认证请求，请使用 `api_default`；对于客户端/公共请求，请使用 `api_public`。
+1. **401 authentication error**：在发起 DefaultAPI 请求之前，确保在您的 HttpClient 上设置了 `x-api-key` 头：`client.headers["x-api-key"] = "your-api-key"`
+2. **Wrong API class**：服务器端已认证请求使用 `api_default`，客户端/公共请求使用 `api_public`，版主仪表板请求使用 `api_moderation`。

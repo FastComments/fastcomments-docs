@@ -2,19 +2,19 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
+| tenantId | string | query | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator200_response.py)
+Zwraca: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład create_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_moderator Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_moderator200_response import CreateModerator200Response
 from client.models.create_moderator_body import CreateModeratorBody
+from client.models.create_moderator_response import CreateModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,16 +26,16 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
+# Poniżej podano przykłady dla każdej metody uwierzytelniania — użyj przykładu, który
 # odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Konfiguracja autoryzacji kluczem API: api_key
+# Skonfiguruj autoryzację przy użyciu klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Wejdź w kontekst z instancją klienta API
+# Otwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_moderator: %s\n" % e)
 [inline-code-end]
-
----

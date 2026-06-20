@@ -5,17 +5,17 @@ userIdWS
 
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| userIdWS | string | query | Yes |  |
-| startTime | integer | query | Yes |  |
-| endTime | integer | query | Yes |  |
+| tenantId | string | path | 예 |  |
+| urlId | string | query | 예 |  |
+| userIdWS | string | query | 예 |  |
+| startTime | integer | query | 예 |  |
+| endTime | integer | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log200_response.rb)
+반환: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log_response.rb)
 
 ## 예제
 
@@ -25,15 +25,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
-user_id_ws = 'user_id_ws_example' # String | 
-start_time = 789 # Integer | 
-end_time = 789 # Integer | 
+tenant_id = 'tenant_id_example' # 문자열 | 
+url_id = 'url_id_example' # 문자열 | 
+user_id_ws = 'user_id_ws_example' # 문자열 | 
+start_time = 789 # 정수 | 
+opts = {
+  end_time: 789 # 정수 | 
+}
 
 begin
   
-  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_event_log: #{e}"

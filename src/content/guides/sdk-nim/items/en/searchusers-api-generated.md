@@ -11,7 +11,7 @@
 
 ## Response
 
-Returns: [`Option[SearchUsers_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users200response.nim)
+Returns: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
 
 ## Example
 
@@ -19,13 +19,16 @@ Returns: [`Option[SearchUsers_200_response]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/ai-product-launch",
+  urlId = "news/top-story",
   usernameStartsWith = "",
   mentionGroupIds = @[],
   sso = "",
   searchSection = ""
 )
+
 if response.isSome:
-  let users = response.get()
-  echo "Received users:", users.toString()
+  let searchResult = response.get()
+  echo "SearchUsersResult:", searchResult
+else:
+  echo "No result or error. HTTP response:", httpResponse
 [inline-code-end]

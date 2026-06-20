@@ -1,25 +1,25 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | forceRecalculate | boolean | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results200_response.rb)
+Devuelve: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results_response.rb)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de bulk_aggregate_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulk_aggregate_question_results Ejemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización con clave API: api_key
+  # Configurar la autorización con la clave de la API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente la siguiente línea para establecer un prefijo para la clave API, por ejemplo 'Bearer' (por defecto nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave de la API, por ejemplo 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

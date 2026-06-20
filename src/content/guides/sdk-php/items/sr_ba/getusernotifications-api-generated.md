@@ -3,6 +3,7 @@
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
+| urlId | string | query | Ne | Koristi se za određivanje da li je trenutna stranica pretplaćena. |
 | pageSize | integer | query | Ne |  |
 | afterId | string | query | Ne |  |
 | includeContext | boolean | query | Ne |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Ne |  |
 | noDm | boolean | query | Ne |  |
 | includeTranslations | boolean | query | Ne |  |
+| includeTenantNotifications | boolean | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotifications200Response.php)
+Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetMyNotificationsResponse.php)
 
 ## Primjer
 
@@ -27,11 +29,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao zadani.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string | Koristi se za određivanje da li je trenutna stranica pretplaćena.
 $page_size = 56; // int
 $after_id = 'after_id_example'; // string
 $include_context = True; // bool
@@ -40,10 +43,11 @@ $unread_only = True; // bool
 $dm_only = True; // bool
 $no_dm = True; // bool
 $include_translations = True; // bool
+$include_tenant_notifications = True; // bool
 $sso = 'sso_example'; // string
 
 try {
-    $result = $apiInstance->getUserNotifications($tenant_id, $page_size, $after_id, $include_context, $after_created_at, $unread_only, $dm_only, $no_dm, $include_translations, $sso);
+    $result = $apiInstance->getUserNotifications($tenant_id, $url_id, $page_size, $after_id, $include_context, $after_created_at, $unread_only, $dm_only, $no_dm, $include_translations, $include_tenant_notifications, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getUserNotifications: ', $e->getMessage(), PHP_EOL;

@@ -1,7 +1,6 @@
----
-### Używanie uwierzytelnionych API (DefaultAPI)
+### Korzystanie z uwierzytelnionych API (DefaultAPI)
 
-**Ważne:** Uwierzytelnione endpointy wymagają ustawienia klucza API jako nagłówka `x-api-key`.
+**Ważne:** Uwierzytelnione końcówki wymagają ustawienia Twojego klucza API w nagłówku `x-api-key`.
 
 ```nim
 import httpclient
@@ -38,9 +37,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Używanie publicznych API (PublicAPI)
+### Korzystanie z publicznych API (PublicAPI)
 
-Publiczne endpointy nie wymagają uwierzytelnienia:
+Publiczne końcówki nie wymagają uwierzytelnienia:
 
 ```nim
 import httpclient
@@ -88,8 +87,38 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Typowe problemy
+### Korzystanie z API moderacji (ModerationAPI)
 
-1. **401 authentication error**: Upewnij się, że ustawiłeś nagłówek `x-api-key` na swoim HttpClient przed wykonywaniem żądań DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Użyj `api_default` dla uwierzytelnionych żądań po stronie serwera, `api_public` dla żądań po stronie klienta/publicznych.
+Końcówki moderacyjne zasilają panel moderatora i są uwierzytelniane tokenem SSO dla działającego moderatora:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Wyświetl komentarze w panelu moderacji
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
+### Częste problemy
+
+1. **401 authentication error**: Upewnij się, że ustawiłeś nagłówek `x-api-key` w swoim HttpClient przed wykonywaniem żądań DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Wrong API class**: Używaj `api_default` dla uwierzytelnionych żądań po stronie serwera, `api_public` dla żądań po stronie klienta/publicznych oraz `api_moderation` dla żądań panelu moderatora.
 ---

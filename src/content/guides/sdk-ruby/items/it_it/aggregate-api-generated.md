@@ -1,9 +1,8 @@
-Aggrega i documenti raggruppandoli (se viene fornito groupBy) e applicando più operazioni.
-Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
+Aggrega documenti raggruppandoli (se viene fornito groupBy) e applicando più operazioni. Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | parentTenantId | string | query | No |  |
@@ -11,7 +10,7 @@ Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Risposta
 
-Restituisce: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Esempio
 
@@ -19,11 +18,11 @@ Restituisce: [`AggregationResponse`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# Configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione con la chiave API: api_key
+  # Configura l'autorizzazione con API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovi il commento dalla riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (valore predefinito: nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, ad es. 'Bearer' (predefinito a nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +42,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
+
+---

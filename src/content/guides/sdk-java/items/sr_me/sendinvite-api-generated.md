@@ -1,20 +1,20 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| fromName | string | query | Да |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| fromName | string | query | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'sendInvite Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer slanja pozivnice'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Подеси аутентификацију API кључа: api_key
+    // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирај следећи ред да подесиш префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Otkomentari sljedeću liniju da postaviš prefiks za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String fromName = "fromName_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.sendInvite(tenantId, id, fromName)
+      APIEmptyResponse result = apiInstance.sendInvite(tenantId, id, fromName)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -51,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

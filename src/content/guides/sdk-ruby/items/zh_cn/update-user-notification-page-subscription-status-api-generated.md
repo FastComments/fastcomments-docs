@@ -1,5 +1,5 @@
-启用或禁用页面的通知。当用户订阅某个页面时，会创建通知
-用于新的根评论，并且还会
+---
+启用或禁用页面的通知。当用户订阅页面时，会为新的根评论创建通知，并且还
 
 ## 参数
 
@@ -14,7 +14,7 @@
 
 ## 响应
 
-返回: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+返回：[`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## 示例
 
@@ -41,3 +41,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_page_subscription_status: #{e}"
 end
 [inline-code-end]
+
+---

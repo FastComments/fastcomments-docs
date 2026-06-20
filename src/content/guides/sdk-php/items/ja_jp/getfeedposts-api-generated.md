@@ -1,19 +1,19 @@
-req
+必須
 tenantId
 afterId
 
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| afterId | string | クエリ | いいえ |  |
-| limit | integer | クエリ | いいえ |  |
-| tags | array | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| afterId | string | query | いいえ |  |
+| limit | integer | query | いいえ |  |
+| tags | array | query | いいえ |  |
 
 ## レスポンス
 
-返却値: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPosts200Response.php)
+返却値: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsResponse.php)
 
 ## 例
 
@@ -23,15 +23,17 @@ afterId
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証の設定: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて以下のコメントアウトを外し、APIキーにプレフィックス（例：Bearer）を設定します
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用する場合、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // カスタムのHTTPクライアントを使用したい場合、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );

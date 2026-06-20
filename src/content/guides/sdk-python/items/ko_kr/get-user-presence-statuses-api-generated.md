@@ -8,18 +8,18 @@
 
 ## 응답
 
-반환: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses200_response.py)
+반환: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_user_presence_statuses 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_presence_statuses200_response import GetUserPresenceStatuses200Response
+from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com
+# 호스트를 정의하는 것은 선택 사항이며 기본값은 https://fastcomments.com 입니다
 # 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"

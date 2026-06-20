@@ -1,22 +1,24 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
 
 ## תגובה
 
-מחזיר: [`Option[GetModerator_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderator200response.nim)
+מחזיר: [`Option[GetModeratorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderator_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "mod-98765")
+let (response, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "mod-456")
 if response.isSome:
   let moderator = response.get()
-  discard moderator
+  echo moderator
+else:
+  echo "Moderator not found, HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

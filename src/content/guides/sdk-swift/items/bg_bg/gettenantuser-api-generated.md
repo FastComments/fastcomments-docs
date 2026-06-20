@@ -1,17 +1,17 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Име | Тип | Location | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUser200Response.swift)
+Връща: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUserResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Следните примерни фрагменти от код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -30,5 +30,3 @@ DefaultAPI.getTenantUser(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

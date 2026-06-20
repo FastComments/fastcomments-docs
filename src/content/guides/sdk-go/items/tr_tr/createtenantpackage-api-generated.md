@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_package_200_response.go)
+Döndürür: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_package_response.go)
 
 ## Örnek
 
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantPackage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateTenantPackage`'den gelen yanıt: CreateTenantPackage200Response
+	// `CreateTenantPackage`'dan gelen yanıt: CreateTenantPackageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantPackage`: %v\n", resp)
 }
 [inline-code-end]

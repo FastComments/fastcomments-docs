@@ -1,43 +1,43 @@
-## Parameters
+## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Renvoie: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result200_response.py)
+Renvoie: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de create_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple create_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_result200_response import CreateQuestionResult200Response
 from client.models.create_question_result_body import CreateQuestionResultBody
+from client.models.create_question_result_response import CreateQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
 # conformément à la politique de sécurité du serveur API.
-# Des exemples pour chaque méthode d'authentification sont fournis ci‑dessous, utilisez l'exemple qui
+# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez l'exemple qui
 # correspond à votre cas d'utilisation d'authentification.
 
-# Configurer l'autorisation par clé API : api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci‑dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrez dans un contexte avec une instance du client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_question_result_body = client.CreateQuestionResultBody() # CreateQuestionResultBody | 

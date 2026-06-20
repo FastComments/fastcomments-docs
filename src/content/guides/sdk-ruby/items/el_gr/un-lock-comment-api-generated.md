@@ -9,7 +9,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Παράδειγμα
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_lock_comment: #{e}"
 end
 [inline-code-end]
+
+---

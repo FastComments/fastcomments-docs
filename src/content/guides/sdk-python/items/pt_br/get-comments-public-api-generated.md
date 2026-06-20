@@ -4,8 +4,8 @@ urlId
 
 ## Parâmetros
 
-| Nome | Type | Location | Obrigatório | Descrição |
-|------|------|----------|------------|-----------|
+| Nome | Tipo | Location | Obrigatório | Descrição |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
 | page | integer | query | Não |  |
@@ -37,26 +37,26 @@ urlId
 
 ## Resposta
 
-Retorna: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_public200_response.py)
+Retorna: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_comments_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments_public200_response import GetCommentsPublic200Response
+from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão é https://fastcomments.com
+# Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Abra um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)

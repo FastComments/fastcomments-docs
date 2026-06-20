@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
@@ -10,20 +9,20 @@
 
 ## Odgovor
 
-Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_200_response.rs)
+Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_response.rs)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer un_flag_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_flag_comment Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_unflag_comment() -> Result<FlagComment200Response, Error> {
-    let params = UnFlagCommentParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("news/article/comment-12345"),
-        user_id: Some(String::from("reader-987")),
+async fn unflag_example() -> Result<FlagCommentResponse, Error> {
+    let params: UnFlagCommentParams = UnFlagCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "comment-98765".to_string(),
+        user_id: Some("user-42".to_string()),
         anon_user_id: None,
     };
-    let response: FlagComment200Response = un_flag_comment(&configuration, params).await?;
+    let response: FlagCommentResponse = un_flag_comment(configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

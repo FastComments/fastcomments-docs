@@ -1,6 +1,10 @@
-## 參數
+req
+tenantId
+afterId
 
-| 名稱 | 類型 | 必填 | 說明 |
+## Parameters
+
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | afterId | string | 否 |  |
@@ -10,11 +14,11 @@
 | isCrawler | bool | 否 |  |
 | includeUserInfo | bool | 否 |  |
 
-## 回應
+## Response
 
-回傳: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+回傳：[`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'getFeedPostsPublic 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,10 +31,7 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
-
----

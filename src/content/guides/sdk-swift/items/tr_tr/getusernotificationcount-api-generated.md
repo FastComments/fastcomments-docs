@@ -1,19 +1,19 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | sso | string | query | Hayır |  |
 
-## Döndürür
+## Yanıt
 
-Returns: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotificationCount200Response.swift)
+Döndürür: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotificationCountResponse.swift)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUserNotificationCount Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta durumundadır. Herhangi bir sorun için lütfen şu adresten rapor edin: http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,3 +30,5 @@ PublicAPI.getUserNotificationCount(tenantId: tenantId, sso: sso) { (response, er
     }
 }
 [inline-code-end]
+
+---

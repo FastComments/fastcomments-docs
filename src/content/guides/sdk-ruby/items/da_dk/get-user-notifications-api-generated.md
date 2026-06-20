@@ -1,8 +1,10 @@
+---
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
+| urlId | string | query | Nej | Bruges til at afgøre, om den nuværende side er abonneret. |
 | pageSize | integer | query | Nej |  |
 | afterId | string | query | Nej |  |
 | includeContext | boolean | query | Nej |  |
@@ -11,11 +13,12 @@
 | dmOnly | boolean | query | Nej |  |
 | noDm | boolean | query | Nej |  |
 | includeTranslations | boolean | query | Nej |  |
+| includeTenantNotifications | boolean | query | Nej |  |
 | sso | string | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Returnerer: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Eksempel
 
@@ -27,6 +30,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
+  url_id: 'url_id_example', # String | Bruges til at afgøre, om den nuværende side er abonneret.
   page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
   include_context: true, # Boolean | 
@@ -35,6 +39,7 @@ opts = {
   dm_only: true, # Boolean | 
   no_dm: true, # Boolean | 
   include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 

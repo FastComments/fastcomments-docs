@@ -2,46 +2,46 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| timeBucket | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | query | Да |  |
+| questionId | string | query | Нет |  |
+| questionIds | array | query | Нет |  |
+| urlId | string | query | Нет |  |
+| timeBucket | string | query | Нет |  |
+| startDate | string | query | Нет |  |
+| forceRecalculate | boolean | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results200_response.py)
+Возвращает: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример aggregate_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.aggregate_question_results200_response import AggregateQuestionResults200Response
+from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте
-# пример, который соответствует вашему сценарию использования аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
+# соответствует вашему сценарию аутентификации.
 
 # Настройте авторизацию по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если требуется
+# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если требуется
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром ApiClient
+# Откройте контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
@@ -60,5 +60,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate_question_results: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,16 +1,16 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| isLive | boolean | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| sendEmails | boolean | query | No |  |
-| populateNotifications | boolean | query | No |  |
+| tenantId | string | query | Tak |  |
+| isLive | boolean | query | Nie |  |
+| doSpamCheck | boolean | query | Nie |  |
+| sendEmails | boolean | query | Nie |  |
+| populateNotifications | boolean | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+Zwraca: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
 
 ## Przykład
 
@@ -22,7 +22,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Skonfiguruj autoryzację klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
+  # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->save_comment: #{e}"
 end
 [inline-code-end]
-
----

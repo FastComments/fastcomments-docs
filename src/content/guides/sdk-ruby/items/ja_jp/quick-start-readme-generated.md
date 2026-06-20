@@ -1,23 +1,23 @@
 ### 認証済みAPIの使用 (DefaultApi)
 
-**重要:** 認証が必要なリクエストを行う前に、ApiClientにAPIキーを設定する必要があります。設定しないと、リクエストは401エラーで失敗します。
+**重要:** 認証付きリクエストを行う前に ApiClient に API キーを設定する必要があります。設定しないと、リクエストは 401 エラーで失敗します。
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
-# APIクライアントを作成して設定する
+# API クライアントの作成と設定
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# 必須: APIキーを設定してください（FastCommentsのダッシュボードで取得）
+# 必須: API キーを設定してください (FastComments ダッシュボードから取得)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# 設定済みのクライアントでAPIインスタンスを作成する
+# 設定済みクライアントで API インスタンスを作成
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# これで認証付きのAPI呼び出しが可能です
+# これで認証付きの API 呼び出しが可能になります
 begin
-  # 例: SSOユーザーを追加する
+  # 例: SSO ユーザーを追加
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -30,17 +30,17 @@ begin
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
   # よくあるエラー:
-  # - 401: APIキーが欠如しているか無効です
+  # - 401: API キーが存在しないか無効です
   # - 400: リクエストの検証に失敗しました
 end
 ```
 
-### 公開APIの使用 (PublicApi)
+### パブリックAPIの使用 (PublicApi)
 
-公開エンドポイントは認証を必要としません:
+パブリックエンドポイントは認証を必要としません:
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -55,8 +55,28 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
+### モデレーションAPIの使用 (ModerationApi)
+
+モデレーション用のメソッドはモデレーターダッシュボードを動かします。リクエストを SSO 認証されたモデレータの代理として行うために、`sso` トークンを渡してください:
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # 例: モデレーションキューのコメントを一覧表示
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
 ### よくある問題
 
-1. **401 "missing-api-key" error**: DefaultApiインスタンスを作成する前に `config.api_key['x-api-key'] = 'YOUR_KEY'` を設定していることを確認してください。
-2. **Wrong API class**: サーバー側の認証済みリクエストには `DefaultApi` を使用し、クライアント側/公開リクエストには `PublicApi` を使用してください。
-3. **Null API key**: APIキーがnullの場合、SDKは認証を静かにスキップし、401エラーが発生します。
+1. **401 "missing-api-key" エラー**: DefaultApi インスタンスを作成する前に `config.api_key['x-api-key'] = 'YOUR_KEY'` を設定していることを確認してください。
+2. **Wrong API class**: サーバーサイドの認証付きリクエストには `DefaultApi`、クライアント側/パブリックリクエストには `PublicApi`、モデレーターダッシュボードのリクエストには `ModerationApi` を使用してください。
+3. **Null API key**: API キーが null の場合、SDK は認証を黙ってスキップするため、401 エラーにつながります。

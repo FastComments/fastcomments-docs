@@ -1,18 +1,19 @@
+---
 ## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vrača: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateEmailTemplate200Response.swift)
+Vrne: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateEmailTemplateResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer createEmailTemplate'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za morebitne težave poročajte prek http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta. Za kakršnokoli težavo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,3 +30,5 @@ DefaultAPI.createEmailTemplate(tenantId: tenantId, createEmailTemplateBody: crea
     }
 }
 [inline-code-end]
+
+---

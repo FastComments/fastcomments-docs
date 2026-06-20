@@ -5,27 +5,28 @@
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
-## Response
+## Antwort
 
-Gibt zurück: [`GetQuestionResult_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResult_200_response.h)
+Gibt zurück: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResultResponse.h)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("question-456");
-boost::optional<utility::string_t> requestor = U("user@example.com");
+utility::string_t questionId = U("question-789");
+boost::optional<utility::string_t> requestedBy = boost::optional<utility::string_t>(U("user@example.com"));
 
-auto task = api->getQuestionResult(tenantId, questionId)
-    .then([requestor](pplx::task<std::shared_ptr<GetQuestionResult_200_response>> prev) -> std::shared_ptr<GetQuestionResult_200_response> {
-        try {
-            auto resp = prev.get();
-            if (!resp) return std::make_shared<GetQuestionResult_200_response>();
-            (void)requestor;
-            return resp;
-        } catch (const std::exception &) {
-            return std::make_shared<GetQuestionResult_200_response>();
-        }
-    });
+api->getQuestionResult(tenantId, questionId)
+.then([requestedBy](pplx::task<std::shared_ptr<GetQuestionResultResponse>> task) -> std::shared_ptr<GetQuestionResultResponse> {
+    try {
+        auto resp = task.get();
+        if (!resp) resp = std::make_shared<GetQuestionResultResponse>();
+        return resp;
+    } catch (...) {
+        return std::make_shared<GetQuestionResultResponse>();
+    }
+});
 [inline-code-end]
+
+---

@@ -1,20 +1,21 @@
+---
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant200_response.py)
+Returnerer: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'create_tenant Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant200_response import CreateTenant200Response
 from client.models.create_tenant_body import CreateTenantBody
+from client.models.create_tenant_response import CreateTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -24,15 +25,15 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
+# Klienten skal konfigurere godkendelses- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel som
-# opfylder dit auth-brugstilfælde.
+# Eksempler for hver godkendelsesmetode er vist nedenfor, brug det eksempel der
+# passer til dit godkendelsesbrugsscenarie.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten

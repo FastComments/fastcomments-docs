@@ -1,52 +1,52 @@
-## Parametri
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentId | string | query | Da |  |
-| direction | string | query | Da |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| commentId | string | query | Да |  |
+| direction | string | query | Да |  |
+| userId | string | query | Не |  |
+| anonUserId | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_vote Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Постављање host-а је опционо и подразумевано је на https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora podesiti parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
-# Primeri za svaku metodu autentifikacije su dati ispod; koristite primjer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Клијент мора конфигурисати параметре аутентификације и ауторизације
+# у складу са политиком безбједности API сервера.
+# Испод су примјери за сваки метод аутентификације, користите онај примјер који
+# задовољава ваш случај употребе аутентификације.
 
-# Konfigurišite autorizaciju pomoću API ključa: api_key
+# Конфигуришите овлашћење API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Уклоните коментар испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     direction = 'direction_example' # str | 
-    user_id = 'user_id_example' # str |  (neobavezno)
-    anon_user_id = 'anon_user_id_example' # str |  (neobavezno)
+    user_id = 'user_id_example' # str |  (опционо)
+    anon_user_id = 'anon_user_id_example' # str |  (опционо)
 
     try:
         api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)

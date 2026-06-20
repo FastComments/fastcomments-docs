@@ -10,7 +10,7 @@
 
 ## Отговор
 
-Връща: `[]SaveComment200Response`
+Връща: [`[]SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_bulk_response.go)
 
 ## Пример
 
@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createCommentParams := []openapiclient.CreateCommentParams{*openapiclient.NewCreateCommentParams("CommenterName_example", "Comment_example", "Url_example", "UrlId_example", "Locale_example")} // []CreateCommentParams | 
-	isLive := true // bool |  (незадължително)
-	doSpamCheck := true // bool |  (незадължително)
-	sendEmails := true // bool |  (незадължително)
-	populateNotifications := true // bool |  (незадължително)
+	isLive := true // bool |  (по избор)
+	doSpamCheck := true // bool |  (по избор)
+	sendEmails := true // bool |  (по избор)
+	populateNotifications := true // bool |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SaveCommentsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `SaveCommentsBulk`: []SaveComment200Response
+	// отговор от `SaveCommentsBulk`: []SaveCommentsBulkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SaveCommentsBulk`: %v\n", resp)
 }
 [inline-code-end]

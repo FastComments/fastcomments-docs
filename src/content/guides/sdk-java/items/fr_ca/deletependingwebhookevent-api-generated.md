@@ -1,13 +1,14 @@
+---
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 
-## Response
+## Réponse
 
-Retourne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Exemple
 
@@ -26,7 +27,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation par clé API : api_key
+    // Configurer l'autorisation par clé API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
@@ -36,14 +37,14 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deletePendingWebhookEvent(tenantId, id)
+      APIEmptyResponse result = apiInstance.deletePendingWebhookEvent(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception lors de l'appel de DefaultApi#deletePendingWebhookEvent");
-      System.err.println("Code d'état : " + e.getCode());
-      System.err.println("Raison : " + e.getResponseBody());
-      System.err.println("En-têtes de réponse : " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#deletePendingWebhookEvent");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

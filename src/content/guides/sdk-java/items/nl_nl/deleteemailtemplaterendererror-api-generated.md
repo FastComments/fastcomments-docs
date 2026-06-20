@@ -1,16 +1,17 @@
+---
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 | errorId | string | path | Yes |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,7 +31,7 @@ public class Example {
     // Configureer API-sleutelautorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaarteken weg voor de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Haal de commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +39,7 @@ public class Example {
     String id = "id_example"; // String | 
     String errorId = "errorId_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteEmailTemplateRenderError(tenantId, id, errorId)
+      APIEmptyResponse result = apiInstance.deleteEmailTemplateRenderError(tenantId, id, errorId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -51,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

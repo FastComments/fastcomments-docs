@@ -1,26 +1,27 @@
+---
 ## 参数
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlIdWS | string | query | Yes |  |
-| userIds | string | query | Yes |  |
+| tenantId | string | query | 是 |  |
+| urlIdWS | string | query | 是 |  |
+| userIds | string | query | 是 |  |
 
 ## 响应
 
-返回: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses200_response.py)
+返回：[`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_presence_statuses_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_user_presence_statuses 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_presence_statuses200_response import GetUserPresenceStatuses200Response
+from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关支持的所有配置参数的列表，请参见 configuration.py。
+# 定义 host 是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数列表，请参见 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -41,3 +42,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_user_presence_statuses: %s\n" % e)
 [inline-code-end]
+
+---

@@ -2,12 +2,12 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| skip | number | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModerators200Response.php)
+戻り値: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorsResponse.php)
 
 ## 例
 
@@ -17,15 +17,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証の設定: api_key
+// APIキー認証を設定します: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、APIキーの接頭辞（例: Bearer）を設定するには、以下のコメントを外してください
+// 必要に応じて APIキーの接頭辞（例: Bearer）を設定するには、下の行のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getModerators: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

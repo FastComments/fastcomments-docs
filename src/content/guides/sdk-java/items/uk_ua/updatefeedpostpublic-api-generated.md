@@ -1,6 +1,6 @@
 ## Параметри
 
-| Ім'я | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | postId | string | path | Так |  |
@@ -9,13 +9,13 @@
 
 ## Відповідь
 
-Повертає: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostPublic200Response.java)
+Повертає: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostResponse.java)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад updateFeedPostPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,7 +34,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateFeedPostPublic200Response result = apiInstance.updateFeedPostPublic(tenantId, postId, updateFeedPostParams)
+      CreateFeedPostResponse result = apiInstance.updateFeedPostPublic(tenantId, postId, updateFeedPostParams)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();

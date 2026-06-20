@@ -7,27 +7,27 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators200_response.py)
+Επιστρέφει: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_moderators'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderators200_response import GetModerators200Response
+from client.models.get_moderators_response import GetModeratorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
+# Defining the host is optional and defaults to https://fastcomments.com
+# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους authentication και authorization
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο auth, χρησιμοποιήστε το παράδειγμα που
-# καλύπτει την περίπτωση χρήσης σας.
+# The client must configure the authentication and authorization parameters
+# σύμφωνα με την API server security policy.
+# Παρακάτω παρέχονται παραδείγματα για κάθε auth method, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί το auth use case σας.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]

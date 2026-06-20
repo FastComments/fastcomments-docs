@@ -1,38 +1,39 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrne: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_badge200_response.py)
+Vrača: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_success_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer update_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_badge200_response import UpdateUserBadge200Response
+from client.models.api_empty_success_response import APIEmptySuccessResponse
 from client.models.update_user_badge_params import UpdateUserBadgeParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je izbirno in privzeto je https://fastcomments.com
+# Glej configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre overjanja in pooblastila
-# v skladu z varnostno politiko strežnika API.
-# Spodaj so prikazani primeri za vsako metodo overjanja; uporabite tistega,
-# ki ustreza vašemu primeru uporabe.
-# Configure API key authorization: api_key
+# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# v skladu s politiko varnosti API strežnika.
+# Primeri za vsak način avtentikacije so podani spodaj, uporabite primer, ki
+# ustreza vašemu primeru uporabe avtentikacije.
+
+# Nastavite avtentikacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca

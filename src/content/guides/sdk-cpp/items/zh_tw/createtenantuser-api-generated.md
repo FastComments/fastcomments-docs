@@ -1,31 +1,30 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createTenantUserBody | CreateTenantUserBody | 是 |  |
+| tenantId | string | Yes |  |
+| createTenantUserBody | CreateTenantUserBody | Yes |  |
 
 ## 回應
 
-回傳: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUser_200_response.h)
+回傳: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createTenantUser 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-CreateTenantUserBody createTenantUserBody;
-createTenantUserBody.email = utility::conversions::to_string_t("new.user@company.com");
-createTenantUserBody.displayName = boost::optional<utility::string_t>(utility::conversions::to_string_t("New User"));
-
-api->createTenantUser(tenantId, createTenantUserBody)
-    .then([](pplx::task<std::shared_ptr<CreateTenantUser_200_response>> task){
-        try {
-            auto resp = task.get();
-            auto created = std::make_shared<CreateTenantUser_200_response>(*resp);
-        } catch (const std::exception&) {
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+CreateTenantUserBody body;
+body.email = utility::string_t(U("jane.doe@example.com"));
+body.displayName = utility::string_t(U("Jane Doe"));
+body.role = utility::string_t(U("moderator"));
+body.sendInvite = boost::optional<bool>(true);
+api->createTenantUser(tenantId, body).then([](std::shared_ptr<CreateTenantUserResponse> resp) {
+    if (resp) {
+        auto created = std::make_shared<CreateTenantUserResponse>(*resp);
+        std::cout << "Created tenant user successfully" << std::endl;
+    } else {
+        std::cout << "Create tenant user returned null" << std::endl;
+    }
+});
 [inline-code-end]
-
----

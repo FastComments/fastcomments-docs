@@ -1,17 +1,20 @@
 FastComments Rust SDK je sestavljen iz več modulov:
 
-- **Client Module** - Samodejno ustvarjen odjemalec API za FastComments REST API-je
-  - Celovite definicije tipov za vse modele API-ja
-  - Tako avtenticirane (`DefaultApi`) kot javne (`PublicApi`) končne točke
-  - Popolna podpora async/await z `tokio`
-  - Oglejte si [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) za podrobno dokumentacijo API-ja
+- **Modul odjemalca** - API-odjemalec za FastComments REST API-je
+  - Celotne definicije tipov za vse modele API-ja
+  - Trije API-odjemalci, ki pokrivajo vse metode FastComments:
+    - `default_api` (**DefaultApi**) - Metode, avtenticirane z API ključem, za strežniško uporabo
+    - `public_api` (**PublicApi**) - javni, brez API-ključa metode, ki jih je varno klicati iz brskalnikov in mobilnih aplikacij
+    - `moderation_api` (**ModerationApi**) - metode, ki podpirajo nadzorno ploščo moderatorja, vključno z moderacijo komentarjev (seznam, štetje, iskanje, dnevniki, izvoz), ukrepi moderacije (odstrani/obnovi, označi, nastavi status pregleda/spama/odobritve, glasovi, ponovno odpri/zaključi nit), prepovedmi (prepoved iz komentarja, razveljavitev, povzetki pred prepovedjo, status/preferenc prepovedi, število prepovedanih uporabnikov) ter značkami in zaupanje (podeli/odstrani značke, ročne značke, pridobi/nastavi faktor zaupanja, notranji uporabniški profil). Vsaka moderacijska metoda sprejme parameter `sso`, tako da je klic mogoče izvesti v imenu moderatorja, avtenticiranega preko SSO.
+  - Popolna podpora async/await z tokio
+  - Za podrobno dokumentacijo API-ja glejte [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md)
 
-- **SSO Module** - Strežniška orodja za enotno prijavo (Single Sign-On)
-  - Varno ustvarjanje žetonov za preverjanje pristnosti uporabnika
-  - Podpora tako preprostim kot varnim načinom SSO
-  - Podpisovanje žetonov na osnovi HMAC-SHA256
+- **Modul SSO** - Strežniški pripomočki za Single Sign-On
+  - Varno generiranje žetonov za avtentikacijo uporabnikov
+  - Podpora za preproste in varne SSO načine
+  - Podpisovanje žetonov, ki temelji na HMAC-SHA256
 
-- **Core Types** - Skupne definicije tipov in pripomočki
+- **Osnovni tipi** - Skupne definicije tipov in pripomočki
   - Modeli komentarjev in strukture metapodatkov
   - Konfiguracije uporabnikov in najemnikov
   - Pomožne funkcije za pogoste operacije

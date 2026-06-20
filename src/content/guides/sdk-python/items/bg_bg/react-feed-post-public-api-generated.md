@@ -10,28 +10,28 @@
 
 ## Отговор
 
-Връща: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_public200_response.py)
+Връща: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'react_feed_post_public Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за react_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.react_body_params import ReactBodyParams
-from client.models.react_feed_post_public200_response import ReactFeedPostPublic200Response
+from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Задаването на host е незадължително и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Влезте в контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Създайте инстанция на класа API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 

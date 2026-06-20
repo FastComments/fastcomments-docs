@@ -8,7 +8,7 @@
 
 ## 回應
 
-回傳: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+回傳: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## 範例
 
@@ -18,10 +18,10 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字串 | 
-post_ids = ['inner_example'] # 陣列<String> | 
+tenant_id = 'tenant_id_example' # String | 
+post_ids = ['inner_example'] # Array<String> | 
 opts = {
-  sso: 'sso_example' # 字串 | 
+  sso: 'sso_example' # String | 
 }
 
 begin

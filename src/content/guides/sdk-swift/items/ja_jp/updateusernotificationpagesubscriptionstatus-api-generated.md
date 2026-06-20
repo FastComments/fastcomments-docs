@@ -1,3 +1,4 @@
+---
 ページの通知を有効または無効にします。ユーザーがページを購読している場合、新しいルートコメントに対して通知が作成され、また
 
 ## パラメータ
@@ -13,11 +14,11 @@
 
 ## レスポンス
 
-返却: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+返却値: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationPageSubscriptionStatusResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
 import FastCommentsSwift
@@ -27,7 +28,7 @@ let urlId = "urlId_example" // String |
 let url = "url_example" // String | 
 let pageTitle = "pageTitle_example" // String | 
 let subscribedOrUnsubscribed = "subscribedOrUnsubscribed_example" // String | 
-let sso = "sso_example" // String |  (オプション)
+let sso = "sso_example" // String |  （オプション）
 
 PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId: urlId, url: url, pageTitle: pageTitle, subscribedOrUnsubscribed: subscribedOrUnsubscribed, sso: sso) { (response, error) in
     guard error == nil else {
@@ -40,3 +41,5 @@ PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId
     }
 }
 [inline-code-end]
+
+---

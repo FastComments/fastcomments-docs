@@ -6,19 +6,19 @@
 
 ## Odpowiedź
 
-Zwraca: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant200_response.py)
+Zwraca: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład create_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant200_response import CreateTenant200Response
 from client.models.create_tenant_body import CreateTenantBody
+from client.models.create_tenant_response import CreateTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ustalenie hosta jest opcjonalne i domyślnie to https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,10 +26,10 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia.
+# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj przykładu,
+# który odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Konfiguracja autoryzacji kluczem API: api_key
+# Skonfiguruj uwierzytelnianie kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne

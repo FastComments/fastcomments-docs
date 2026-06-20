@@ -1,4 +1,4 @@
-## Parameters
+## 매개변수
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -9,9 +9,9 @@
 | sso | string | query | 아니요 |  |
 | searchSection | string | query | 아니요 |  |
 
-## Response
+## 응답
 
-반환: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsersResult.java)
 
 ## 예제
 
@@ -37,7 +37,7 @@ public class Example {
     String sso = "sso_example"; // String | 
     String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+      SearchUsersResult result = apiInstance.searchUsers(tenantId, urlId)
             .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)

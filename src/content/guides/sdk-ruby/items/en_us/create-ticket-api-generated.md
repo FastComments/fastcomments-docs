@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_ticket200_response.rb)
+Returns: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_ticket_response.rb)
 
 ## Example
 

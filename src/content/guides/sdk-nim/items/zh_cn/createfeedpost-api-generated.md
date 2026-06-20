@@ -1,44 +1,42 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createFeedPostParams | CreateFeedPostParams | No |  |
-| broadcastId | string | No |  |
-| isLive | bool | No |  |
-| doSpamCheck | bool | No |  |
-| skipDupCheck | bool | No |  |
+| tenantId | string | 是 |  |
+| createFeedPostParams | CreateFeedPostParams | 否 |  |
+| broadcastId | string | 否 |  |
+| isLive | bool | 否 |  |
+| doSpamCheck | bool | 否 |  |
+| skipDupCheck | bool | 否 |  |
 
 ## 响应
 
-返回： [`Option[CreateFeedPost_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post200response.nim)
+返回：[`Option[CreateFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_posts_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createFeedPost 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createParams = CreateFeedPostParams(
-  content = "We're rolling out realtime comments to all users!",
-  title = "Realtime Comments Rollout",
-  url = "news/realtime-comments-rollout-2025",
-  authorId = "prod-team",
-  tags = @["release", "comments"]
+let postParams = CreateFeedPostParams(
+  title = "Major Acquisition by TechCorp",
+  content = "TechCorp has acquired SoftWorks in a deal valued at $1.2B, creating a new market leader.",
+  url = "news/tech/major-acquisition",
+  tags = @["business", "technology"],
+  authorId = "journalist-321"
 )
 
 let (response, httpResponse) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = createParams,
-  broadcastId = "broadcast-2025-11",
-  isLive = true,
-  doSpamCheck = true,
+  createFeedPostParams = postParams,
+  broadcastId = "",
+  isLive = false,
+  doSpamCheck = false,
   skipDupCheck = false
 )
 
 if response.isSome:
   let created = response.get()
-  echo "Feed post created, id: ", $created.id
-else:
-  echo "Failed to create feed post, HTTP status: ", $httpResponse.statusCode
+  discard created
 [inline-code-end]
 
 ---

@@ -1,17 +1,18 @@
-### Swift пакет менаџер
+---
+### Swift Package Manager
 
 Додајте следеће у вашу датотеку `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
 ]
 ```
 
 Или у Xcode:
-1. Датотека > Додај пакете...
-2. Унесите URL репозиторијума: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Изаберите верзију коју желите да користите
+1. File > Add Packages...
+2. Унесите URL репозиторија: `https://github.com/fastcomments/fastcomments-swift.git`
+3. Одаберите верзију коју желите да користите
 
 ### Захтеви
 

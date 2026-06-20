@@ -1,3 +1,8 @@
+---
+req
+tenantId
+afterId
+
 ## 参数
 
 | Name | Type | Required | Description |
@@ -12,7 +17,7 @@
 
 ## 响应
 
-返回: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+返回: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
 ## 示例
 
@@ -27,8 +32,9 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
+
+---

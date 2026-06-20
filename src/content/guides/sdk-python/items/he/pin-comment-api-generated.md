@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | commentId | string | path | כן |  |
@@ -9,27 +9,27 @@
 
 ## תגובה
 
-מחזיר: [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+מחזיר: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'pin_comment דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-pin_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית והברירת מחדל היא https://fastcomments.com
-# ראה configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראו את configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנס לקונטקסט עם מופע של ApiClient
+# הכנסו להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של PublicApi
+    # צרו מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->pin_comment: %s\n" % e)
 [inline-code-end]
-
----

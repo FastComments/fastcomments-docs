@@ -1,14 +1,14 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| redirectURL | string | query | No |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
+| redirectURL | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 例
 
@@ -30,7 +30,7 @@ public class Example {
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーにプレフィックス（例: "Token"）を設定するには次の行のコメントを外してください（デフォルトは null）
+    // APIキーのプレフィックスを設定するには、以下の行のコメントを外してください（例: "Token"、デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String id = "id_example"; // String | 
     String redirectURL = "redirectURL_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.sendLoginLink(tenantId, id)
+      APIEmptyResponse result = apiInstance.sendLoginLink(tenantId, id)
             .redirectURL(redirectURL)
             .execute();
       System.out.println(result);

@@ -1,9 +1,9 @@
-문서를 그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 집계합니다.
-합계(sum), 고유 개수(countDistinct), 평균(avg) 등 다양한 연산이 지원됩니다.
+---
+문서를 그룹화(groupBy가 제공된 경우)하여 여러 연산을 적용해 집계합니다. 서로 다른 연산(예: sum, countDistinct, avg 등)을 지원합니다.
 
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | parentTenantId | string | query | 아니오 |  |
@@ -11,13 +11,13 @@
 
 ## 응답
 
-반환: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+반환: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## 예제
 
 [inline-code-attrs-start title = 'aggregate 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 가져오기:
+// 클래스를 가져옵니다:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값: null)
+    // 다음 줄의 주석을 제거하여 API 키 접두사를 설정하세요(예: "Token", 기본값 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +42,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();

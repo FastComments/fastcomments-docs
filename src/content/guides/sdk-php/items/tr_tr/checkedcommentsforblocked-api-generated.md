@@ -1,14 +1,14 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| commentIds | string | sorgu | Evet | Virgülle ayrılmış yorum kimliklerinin listesi. |
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Virgülle ayrılmış yorum kimlikleri listesi. |
+| sso | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckedCommentsForBlocked200Response.php)
+Döndürür: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
 ## Örnek
 
@@ -20,12 +20,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
+    // Bu isteğe bağlıdır; varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Virgülle ayrılmış yorum kimliklerinin listesi.
+$comment_ids = 'comment_ids_example'; // string | Virgülle ayrılmış yorum kimlikleri listesi.
 $sso = 'sso_example'; // string
 
 try {

@@ -31,7 +31,7 @@ import FastCommentsSwift
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// 인증된 API를 사용하여 댓글 가져오기
+// 인증된 API로 댓글 가져오기
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,16 +47,39 @@ do {
 }
 ```
 
+### 모더레이션 API 사용
+
+```swift
+import FastCommentsSwift
+
+// 모더레이션 메서드는 담당 모더레이터의 `sso` 토큰으로 권한이 부여됩니다
+// (FastCommentsSSO로 생성하세요, 위의 SSO 섹션 참조).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### 인증을 위한 SSO 사용
 
-#### 보안 SSO (프로덕션 권장)
+#### 보안 SSO (프로덕션에 권장)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// 보안 SSO 사용자 데이터 생성 (서버 측에서만!)
+// 보안 SSO 사용자 데이터 생성 (서버 측 전용!)
 let userData = SecureSSOUserData(
     id: "user-123",              // 사용자 ID
     email: "user@example.com",   // 이메일
@@ -70,7 +93,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // 이 토큰을 프론트엔드로 전달하여 인증에 사용
+    // 인증을 위해 이 토큰을 프런트엔드로 전달하세요
 } catch {
     print("Error creating SSO token: \(error)")
 }

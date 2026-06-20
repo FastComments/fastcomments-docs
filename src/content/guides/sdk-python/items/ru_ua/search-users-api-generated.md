@@ -1,6 +1,7 @@
+---
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
@@ -11,34 +12,34 @@
 
 ## Ответ
 
-Возвращает: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users200_response.py)
+Возвращает: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.search_users200_response import SearchUsers200Response
+from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию используется https://fastcomments.com
+# Указание хоста необязательно; по умолчанию используется https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войти в контекст с экземпляром ApiClient
+# Откройте контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создать экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str |  (optional)
-    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (optional)
-    sso = 'sso_example' # str |  (optional)
-    search_section = 'search_section_example' # str |  (optional)
+    username_starts_with = 'username_starts_with_example' # str |  (необязательно)
+    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (необязательно)
+    sso = 'sso_example' # str |  (необязательно)
+    search_section = 'search_section_example' # str |  (необязательно)
 
     try:
         api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)

@@ -1,19 +1,20 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必需 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | domainToUpdate | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+回傳: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PatchDomainConfigResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'patchDomainConfig 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式碼範例仍為測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 下列程式範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,3 +32,5 @@ DefaultAPI.patchDomainConfig(tenantId: tenantId, domainToUpdate: domainToUpdate,
     }
 }
 [inline-code-end]
+
+---

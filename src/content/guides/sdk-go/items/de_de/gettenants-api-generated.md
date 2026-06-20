@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Location | Erforderlich | Beschreibung |
@@ -9,7 +8,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_200_response.go)
+Gibt zurück: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_response.go)
 
 ## Beispiel
 
@@ -36,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenants``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `GetTenants`: GetTenants200Response
+	// Antwort von `GetTenants`: GetTenantsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenants`: %v\n", resp)
 }
 [inline-code-end]
-
----

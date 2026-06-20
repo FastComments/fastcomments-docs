@@ -1,33 +1,33 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | ścieżka | Tak |  |
-| commentId | string | ścieżka | Tak |  |
-| broadcastId | string | zapytanie | Tak |  |
-| sso | string | zapytanie | Nie |  |
+| tenantId | string | path | Tak |  |
+| commentId | string | path | Tak |  |
+| broadcastId | string | query | Tak |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+Zwraca: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład pin_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Wejdź w kontekst z instancją klienta API
+# Otwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->pin_comment: %s\n" % e)
 [inline-code-end]
-
----

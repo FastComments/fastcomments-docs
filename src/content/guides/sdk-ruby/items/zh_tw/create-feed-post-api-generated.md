@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳：[`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+回傳：[`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
 ## 範例
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # 設定授權
 FastCommentsClient.configure do |config|
-  # 設定 API 金鑰授權：api_key
+  # 設定 API 金鑰授權: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # 取消註解下列行以設定 API 金鑰的前綴，例如 'Bearer' (預設為 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

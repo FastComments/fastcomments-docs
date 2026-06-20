@@ -1,25 +1,24 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | skip | integer | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users200_response.py)
+Restituisce: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_sso_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_sso_users200_response import GetSSOUsers200Response
+from client.models.get_sso_users_response import GetSSOUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
+# La definizione dell'host è opzionale e per default è https://fastcomments.com
 # Consulta configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,10 +29,10 @@ configuration = client.Configuration(
 # Gli esempi per ogni metodo di autenticazione sono forniti di seguito; usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configurare l'autorizzazione tramite chiave API: api_key
+# Configura l'autorizzazione tramite API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommenta la riga sottostante per impostare il prefisso (ad es. Bearer) per la chiave API, se necessario
+# Decommenta qui sotto per impostare un prefisso (es. Bearer) per l'API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entra in un contesto con un'istanza del client API
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_sso_users: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,35 +1,31 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 | updateModeratorBody | UpdateModeratorBody | 是 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+回傳：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateModerator 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t moderatorId = U("moderator-456");
-auto bodyPtr = std::make_shared<UpdateModeratorBody>();
-bodyPtr->email = utility::string_t(U("mod.jane@example.com"));
-bodyPtr->displayName = boost::optional<utility::string_t>(utility::string_t(U("Jane Moderator")));
-bodyPtr->enabled = boost::optional<bool>(true);
-api->updateModerator(tenantId, moderatorId, *bodyPtr).then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){
-    try {
-        auto resp = t.get();
+auto updateBody = std::make_shared<UpdateModeratorBody>();
+updateBody->email = utility::string_t(U("moderator@example.com"));
+updateBody->displayName = boost::optional<utility::string_t>(utility::string_t(U("Jane Moderator")));
+updateBody->role = boost::optional<utility::string_t>(utility::string_t(U("senior-moderator")));
+updateBody->active = boost::optional<bool>(true);
+api->updateModerator(utility::string_t(U("my-tenant-123")), utility::string_t(U("moderator-456")), *updateBody)
+    .then([](std::shared_ptr<APIEmptyResponse> resp){
         if (resp) {
-            std::cout << "Moderator updated successfully" << std::endl;
+            auto result = resp;
         }
-    } catch (const std::exception &e) {
-        std::cerr << "Update failed: " << e.what() << std::endl;
-    }
-});
+        return resp;
+    });
 [inline-code-end]
 
 ---

@@ -1,16 +1,16 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | Location | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 경로 | 예 |  |
-| commentId | string | 경로 | 예 |  |
-| broadcastId | string | 쿼리 | 예 |  |
-| editKey | string | 쿼리 | 아니오 |  |
-| sso | string | 쿼리 | 아니오 |  |
+| tenantId | string | path | 예 |  |
+| commentId | string | path | 예 |  |
+| broadcastId | string | query | 예 |  |
+| editKey | string | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_text200_response.rb)
+반환: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_set_comment_text_response.rb)
 
 ## 예제
 
@@ -20,13 +20,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-broadcast_id = 'broadcast_id_example' # String | 
+tenant_id = 'tenant_id_example' # 문자열 | 
+comment_id = 'comment_id_example' # 문자열 | 
+broadcast_id = 'broadcast_id_example' # 문자열 | 
 comment_text_update_request = FastCommentsClient::CommentTextUpdateRequest.new({comment: 'comment_example'}) # CommentTextUpdateRequest | 
 opts = {
-  edit_key: 'edit_key_example', # String | 
-  sso: 'sso_example' # String | 
+  edit_key: 'edit_key_example', # 문자열 | 
+  sso: 'sso_example' # 문자열 | 
 }
 
 begin
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->set_comment_text: #{e}"
 end
 [inline-code-end]
+
+---

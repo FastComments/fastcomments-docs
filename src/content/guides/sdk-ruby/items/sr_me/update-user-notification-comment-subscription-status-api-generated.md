@@ -1,22 +1,22 @@
-Омогућите или онемогућите обавештења за одређени коментар.
+Omogućavanje ili onemogućavanje obavještenja za određeni komentar.
 
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| notificationId | string | path | Да |  |
-| optedInOrOut | string | path | Да |  |
-| commentId | string | query | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| notificationId | string | path | Da |  |
+| optedInOrOut | string | path | Da |  |
+| commentId | string | query | Da |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Примјер'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer update_user_notification_comment_subscription_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

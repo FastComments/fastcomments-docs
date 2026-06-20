@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | questionId | string | query | Nee |  |
@@ -10,21 +10,21 @@
 | startDate | string | query | Nee |  |
 | forceRecalculate | boolean | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+Geeft terug: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'aggregate_question_results Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van aggregate_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# autorisatie instellen
+# Autorisatie instellen
 FastCommentsClient.configure do |config|
-  # API-sleutelautorisatie configureren: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaarteken van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
+  # Decommentarieer de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate_question_results: #{e}"
 end
 [inline-code-end]
-
----

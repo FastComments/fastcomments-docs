@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -12,7 +12,7 @@
 
 ## Odgovor
 
-Vrne: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Vrne: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Primer
 
@@ -20,11 +20,11 @@ Vrne: [`GetNotifications200Response`](https://github.com/FastComments/fastcommen
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# nastavitev avtorizacije
+# Nastavitev avtorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfiguracija avtorizacije API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. 'Bearer' (privzeto nil)
+  # Odkomentirajte naslednjo vrstico za nastavitev predpone API ključa, npr. 'Bearer' (privzeto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,6 +44,6 @@ begin
   result = api_instance.get_notifications(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Napaka pri klicu DefaultApi->get_notifications: #{e}"
+  puts "Error when calling DefaultApi->get_notifications: #{e}"
 end
 [inline-code-end]

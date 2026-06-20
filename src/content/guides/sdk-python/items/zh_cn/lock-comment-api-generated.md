@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -9,18 +9,18 @@
 
 ## 响应
 
-返回: [`LockComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/lock_comment200_response.py)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'lock_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.lock_comment200_response import LockComment200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
+# 定义 host 是可选的，默认值为 https://fastcomments.com
 # 有关所有支持的配置参数列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,12 +29,12 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的实例
+    # 创建 API 类的一个实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    sso = 'sso_example' # str |  (可选)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.lock_comment(tenant_id, comment_id, broadcast_id, sso=sso)

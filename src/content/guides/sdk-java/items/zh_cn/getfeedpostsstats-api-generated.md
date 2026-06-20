@@ -1,14 +1,14 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| postIds | array | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 路径 | 是 |  |
+| postIds | array | 查询 | 是 |  |
+| sso | string | 查询 | 否 |  |
 
 ## 响应
 
-返回: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsStats200Response.java)
+返回: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FeedPostsStatsResponse.java)
 
 ## 示例
 
@@ -27,11 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 类型：String
-    List<String> postIds = Arrays.asList(); // 类型：List<String>
-    String sso = "sso_example"; // 类型：String
+    String tenantId = "tenantId_example"; // String | 
+    List<String> postIds = Arrays.asList(); // List<String> | 
+    String sso = "sso_example"; // String | 
     try {
-      GetFeedPostsStats200Response result = apiInstance.getFeedPostsStats(tenantId, postIds)
+      FeedPostsStatsResponse result = apiInstance.getFeedPostsStats(tenantId, postIds)
             .sso(sso)
             .execute();
       System.out.println(result);

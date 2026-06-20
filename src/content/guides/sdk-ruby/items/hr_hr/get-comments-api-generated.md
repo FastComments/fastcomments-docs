@@ -17,10 +17,12 @@
 | hashTag | string | query | Ne |  |
 | parentId | string | query | Ne |  |
 | direction | string | query | Ne |  |
+| fromDate | integer | query | Ne |  |
+| toDate | integer | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Primjer
 
@@ -30,9 +32,9 @@ require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte autorizaciju pomoću API ključa: api_key
+  # Konfiguriraj autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Okomentirajte sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (zadana vrijednost je nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin
@@ -63,3 +67,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_comments: #{e}"
 end
 [inline-code-end]
+
+---

@@ -4,37 +4,37 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_configs200_response.py)
+Retourneert: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_configs_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_domain_configs Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_configs200_response import GetDomainConfigs200Response
+from client.models.get_domain_configs_response import GetDomainConfigsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaard ingesteld op https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
+# Raadpleeg configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke authenticatiemethode worden hieronder gegeven; gebruik het voorbeeld dat
+# Voorbeelden voor elke authenticatiemethode staan hieronder; gebruik het voorbeeld dat
 # past bij uw authenticatiegeval.
 
-# Configureer API-sleutel autorisatie: api_key
+# Configureer API-sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de commentaartekens weg hieronder om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Haal hieronder het commentaar weg om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ga een context binnen met een instantie van de API-client
+# Ga een context in met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.DefaultApi(api_client)

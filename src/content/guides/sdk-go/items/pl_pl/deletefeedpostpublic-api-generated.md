@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | postId | string | path | Tak |  |
@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_feed_post_public_200_response.go)
+Zwraca: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_feed_post_public_response.go)
 
 ## Przykład
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteFeedPostPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odpowiedź z `DeleteFeedPostPublic`: DeleteFeedPostPublic200Response
+	// odpowiedź z `DeleteFeedPostPublic`: DeleteFeedPostPublicResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteFeedPostPublic`: %v\n", resp)
 }
 [inline-code-end]

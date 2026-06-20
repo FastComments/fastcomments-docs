@@ -8,26 +8,26 @@
 
 ## תגובה
 
-מחזיר: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_from_comment_public200_response.py)
+מחזיר: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_success.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-block_from_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של block_from_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.block_from_comment_public200_response import BlockFromCommentPublic200Response
+from client.models.block_success import BlockSuccess
 from client.models.public_block_from_comment_params import PublicBlockFromCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
-# ראה את configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
+# קביעת ה-host אופציונלית ובברירת המחדל היא https://fastcomments.com
+# עיין ב-configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# הכנס להקשר עם מופע של ה-API client
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
@@ -43,3 +43,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->block_from_comment_public: %s\n" % e)
 [inline-code-end]
+
+---

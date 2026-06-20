@@ -17,36 +17,38 @@
 | hashTag | string | query | Не |  |
 | parentId | string | query | Не |  |
 | direction | string | query | Не |  |
+| fromDate | integer | query | Не |  |
+| toDate | integer | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetComments200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments200_response.py)
+Враћа: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_comments Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comments пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments200_response import GetComments200Response
+from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционо и подразумева се https://fastcomments.com
+# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
 # Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и овлашћења
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
 # у складу са политиком безбедности API сервера.
-# Испод су дати примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе аутентификације.
+# Испод су наведени примери за сваку методу аутентификације, користите пример који
+# одговара вашем случају коришћења аутентификације.
 
-# Конфигуришите авторизацију API кључем: api_key
+# Конфигуришите API кључ за ауторизацију: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте у наставку да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментаришите испод да бисте поставили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -68,9 +70,11 @@ with client.ApiClient(configuration) as api_client:
     hash_tag = 'hash_tag_example' # str |  (опционо)
     parent_id = 'parent_id_example' # str |  (опционо)
     direction = client.SortDirections() # SortDirections |  (опционо)
+    from_date = 56 # int |  (опционо)
+    to_date = 56 # int |  (опционо)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction)
+        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

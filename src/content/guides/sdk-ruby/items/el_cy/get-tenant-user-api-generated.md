@@ -5,21 +5,21 @@
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user200_response.rb)
+Επιστρέφει: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user_response.rb)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'get_tenant_user Παράδειγμα'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα get_tenant_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# ρύθμιση εξουσιοδότησης
+# Ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
   # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
+  # Κατάργησε το σχόλιο από την παρακάτω γραμμή για να ορίσεις πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

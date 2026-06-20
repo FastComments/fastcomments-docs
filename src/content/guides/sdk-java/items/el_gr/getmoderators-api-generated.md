@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | skip | number | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModerators200Response.java)
+Επιστρέφει: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetModeratorsResponse.java)
 
 ## Παράδειγμα
 
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης API key: api_key
+    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αφαιρέστε το σχόλιο από την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. "Token" (προεπιλογή null)
+    // Αποσχολίασε την ακόλουθη γραμμή για να ορίσεις ένα πρόθεμα για το API key, π.χ. "Token" (η προεπιλογή είναι null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetModerators200Response result = apiInstance.getModerators(tenantId)
+      GetModeratorsResponse result = apiInstance.getModerators(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);
@@ -50,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

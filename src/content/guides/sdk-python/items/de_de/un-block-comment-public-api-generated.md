@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Gibt zurück: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/un_block_comment_public200_response.py)
+Gibt zurück: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
 ## Beispiel
 
@@ -16,7 +16,7 @@ Gibt zurück: [`UnBlockCommentPublic200Response`](https://github.com/FastComment
 [inline-code-start]
 import client
 from client.models.public_block_from_comment_params import PublicBlockFromCommentParams
-from client.models.un_block_comment_public200_response import UnBlockCommentPublic200Response
+from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,9 +27,9 @@ configuration = client.Configuration(
 )
 
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Erstellen einer Instanz der API-Klasse
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

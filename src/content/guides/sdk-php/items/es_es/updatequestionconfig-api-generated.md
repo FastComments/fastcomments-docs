@@ -1,15 +1,15 @@
-## Parámetros
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
 
-## Respuesta
+## Response
 
-Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Ejemplo
+## Example
 
 [inline-code-attrs-start title = 'Ejemplo de updateQuestionConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,9 +17,9 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar la autorización de la clave API: api_key
+// Configurar autorización de la clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abajo para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
+// Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

@@ -2,23 +2,25 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| tenant_id | String | Ja |  |
+| id | String | Ja |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`GetComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_200_response.rs)
+Retourneert: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_comment Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example_get_comment() -> Result<(), Error> {
     let params: GetCommentParams = GetCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-12345/comment-6789".to_string(),
+        id: "news/article-2026-06-19/comment-742".to_string(),
+        include_replies: Some(true),
     };
-    let _response: GetComment200Response = get_comment(&configuration, params).await?;
+    let comment: ApiGetCommentResponse = get_comment(&configuration, params).await?;
+    println!("{:#?}", comment);
     Ok(())
 }
 [inline-code-end]

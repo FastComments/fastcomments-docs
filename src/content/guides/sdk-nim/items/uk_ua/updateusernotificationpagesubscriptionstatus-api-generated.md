@@ -1,6 +1,9 @@
+Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються
+для нових кореневих коментарів, а також
+
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | urlId | string | Так |  |
@@ -11,7 +14,7 @@
 
 ## Відповідь
 
-Повертає: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Повертає: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Приклад
 
@@ -19,14 +22,16 @@
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2025-11-22",
-  url = "https://example.com/news/article-2025-11-22",
-  pageTitle = "Breaking News: Market Update",
-  subscribedOrUnsubscribed = "subscribed",
-  sso = "sso-token-abc123"
+  urlId = "news/economy/market-rally-2026-06-19",
+  url = "",
+  pageTitle = "",
+  subscribedOrUnsubscribed = "",
+  sso = ""
 )
 
 if response.isSome:
-  let result = response.get()
-  discard result
+  let updateResp = response.get()
+  echo "Subscription update received: ", updateResp
+else:
+  echo "No subscription update returned."
 [inline-code-end]

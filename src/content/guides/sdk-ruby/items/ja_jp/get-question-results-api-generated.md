@@ -1,18 +1,18 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| startDate | string | query | No |  |
-| questionId | string | query | No |  |
-| questionIds | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | クエリ | はい |  |
+| urlId | string | クエリ | いいえ |  |
+| userId | string | クエリ | いいえ |  |
+| startDate | string | クエリ | いいえ |  |
+| questionId | string | クエリ | いいえ |  |
+| questionIds | string | クエリ | いいえ |  |
+| skip | number | クエリ | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+戻り値: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
 ## 例
 
@@ -20,11 +20,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証の設定
+# 認証のセットアップ
 FastCommentsClient.configure do |config|
-  # APIキーによる認証を設定
+  # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 以下の行のコメントを解除して、APIキーのプレフィックスを設定します（例: 'Bearer'。デフォルトは nil）
+  # APIキーのプレフィックスを設定するには、次の行のコメントアウトを解除してください（例: 'Bearer'、デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

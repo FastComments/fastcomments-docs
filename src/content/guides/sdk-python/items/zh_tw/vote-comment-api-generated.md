@@ -11,7 +11,7 @@
 
 ## 回應
 
-回傳: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+回傳: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## 範例
 
@@ -19,18 +19,18 @@
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以查看所有支援的組態參數。
+# 定義 host 為選用，預設為 https://fastcomments.com
+# 請參閱 configuration.py 取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API client 的實例進入一個上下文
+# 使用 API client 的實例進入一個 context
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)

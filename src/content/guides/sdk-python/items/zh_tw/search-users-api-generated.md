@@ -11,25 +11,25 @@
 
 ## 回應
 
-回傳: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users200_response.py)
+回傳: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'search_users 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.search_users200_response import SearchUsers200Response
+from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義主機是可選的，預設為 https://fastcomments.com
-# 請參見 configuration.py 以獲取所有支援的設定參數列表。
+# 定義 host 是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 以 ApiClient 實例進入上下文
+# 使用 API 用戶端實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
@@ -47,3 +47,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->search_users: %s\n" % e)
 [inline-code-end]
+
+---

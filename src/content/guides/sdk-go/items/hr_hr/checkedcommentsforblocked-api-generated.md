@@ -1,18 +1,18 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Zarezom odvojen popis ID-eva komentara. |
+| commentIds | string | query | Da | Popis ID-jeva komentara odvojenih zarezom. |
 | sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_checked_comments_for_blocked_200_response.go)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_check_blocked_comments_response.go)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'CheckedCommentsForBlocked Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer CheckedCommentsForBlocked'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -20,12 +20,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentIds := "commentIds_example" // string | Zarezom odvojen popis ID-eva komentara.
+	commentIds := "commentIds_example" // string | Popis ID-jeva komentara odvojenih zarezom.
 	sso := "sso_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
@@ -35,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CheckedCommentsForBlocked``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `CheckedCommentsForBlocked`: CheckedCommentsForBlocked200Response
+	// odgovor iz `CheckedCommentsForBlocked`: CheckBlockedCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CheckedCommentsForBlocked`: %v\n", resp)
 }
 [inline-code-end]
+
+---

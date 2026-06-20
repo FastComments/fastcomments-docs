@@ -1,13 +1,13 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | skip | number | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Devuelve: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Ejemplo
 
@@ -15,9 +15,9 @@ Devuelve: [`GetModerators200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar la autorización
+# Configurar autorización
 FastCommentsClient.configure do |config|
-  # Configure la autorización de la clave API: api_key
+  # Configurar autorización por clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto es nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

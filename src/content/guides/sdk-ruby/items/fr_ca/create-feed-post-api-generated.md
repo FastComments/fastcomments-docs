@@ -2,15 +2,15 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| broadcastId | string | query | Non |  |
-| isLive | boolean | query | Non |  |
-| doSpamCheck | boolean | query | Non |  |
-| skipDupCheck | boolean | query | Non |  |
+| tenantId | string | requête | Oui |  |
+| broadcastId | string | requête | Non |  |
+| isLive | boolean | requête | Non |  |
+| doSpamCheck | boolean | requête | Non |  |
+| skipDupCheck | boolean | requête | Non |  |
 
 ## Réponse
 
-Retourne: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+Retourne : [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
 ## Exemple
 
@@ -18,11 +18,11 @@ Retourne: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configuration de l'autorisation
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (valeur par défaut : nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

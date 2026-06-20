@@ -1,25 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| tenant_id | String | Да |  |
+| id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_200_response.rs)
+Враћа: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'get_question_config Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_question_config() -> Result<GetQuestionConfig200Response, Error> {
-    let tenant: Option<String> = Some("acme-corp-tenant".to_string());
-    let params: GetQuestionConfigParams = GetQuestionConfigParams {
-        tenant_id: tenant.unwrap(),
-        id: "news/article/2026/03/25/space-launch".to_string(),
+async fn example_get_question_config() -> Result<GetQuestionConfigResponse, Error> {
+    let configuration: configuration::Configuration = configuration::Configuration::default();
+    let optional_tenant: Option<String> = Some("acme-corp-tenant".to_string());
+    let tenant_id: String = optional_tenant.unwrap_or_else(|| "acme-default".to_string());
+    let params = GetQuestionConfigParams {
+        tenant_id,
+        id: "news/article/2026-06-18".to_string(),
     };
-    let response: GetQuestionConfig200Response = get_question_config(&configuration, params).await?;
+    let response: GetQuestionConfigResponse = get_question_config(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

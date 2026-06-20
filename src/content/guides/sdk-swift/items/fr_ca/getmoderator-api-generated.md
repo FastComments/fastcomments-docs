@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModerator200Response.swift)
+Renvoie : [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModeratorResponse.swift)
 
 ## Exemple
 
@@ -16,8 +16,8 @@ Renvoie: [`GetModerator200Response`](https://github.com/FastComments/fastcomment
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let id = "id_example" // String | 
+let tenantId = "tenantId_example" // Chaîne | 
+let id = "id_example" // Chaîne | 
 
 DefaultAPI.getModerator(tenantId: tenantId, id: id) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.getModerator(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

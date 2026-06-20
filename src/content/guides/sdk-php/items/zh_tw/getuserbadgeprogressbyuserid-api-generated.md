@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳：[`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadgeProgressById200Response.php)
+回傳: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
 
 ## 範例
 
@@ -24,13 +24,13 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 如要使用自訂的 http 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
+$tenant_id = 'tenant_id_example'; // 字串
+$user_id = 'user_id_example'; // 字串
 
 try {
     $result = $apiInstance->getUserBadgeProgressByUserId($tenant_id, $user_id);
@@ -39,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressByUserId: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

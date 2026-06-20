@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | limit | number | query | いいえ |  |
@@ -11,7 +11,7 @@
 
 ## レスポンス
 
-戻り値: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogs200Response.swift)
+返却値: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogsResponse.swift)
 
 ## 例
 
@@ -21,11 +21,11 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let limit = 987 // Double |  （オプション）
-let skip = 987 // Double |  （オプション）
-let order = SORT_DIR() // SORTDIR |  （オプション）
-let after = 987 // Double |  （オプション）
-let before = 987 // Double |  （オプション）
+let limit = 987 // Double |  (任意)
+let skip = 987 // Double |  (任意)
+let order = SORT_DIR() // SORTDIR |  (任意)
+let after = 987 // Double |  (任意)
+let before = 987 // Double |  (任意)
 
 DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
     guard error == nil else {

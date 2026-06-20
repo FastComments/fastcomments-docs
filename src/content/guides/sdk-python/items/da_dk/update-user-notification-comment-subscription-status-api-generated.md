@@ -1,4 +1,4 @@
-Aktivér eller deaktiver underretninger for en bestemt kommentar.
+Aktivér eller deaktiver notifikationer for en specifik kommentar.
 
 ## Parametre
 
@@ -12,25 +12,25 @@ Aktivér eller deaktiver underretninger for en bestemt kommentar.
 
 ## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Returnerer: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_comment_subscription_status_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_comment_subscription_status_response import UpdateUserNotificationCommentSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og standard er https://fastcomments.com
+# Angivelse af host er valgfri og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Åbn en kontekst med en instans af API-klienten
+# Gå ind i en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.PublicApi(api_client)

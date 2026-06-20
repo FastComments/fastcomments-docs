@@ -4,40 +4,40 @@ urlId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| page | integer | query | Ne |  |
-| direction | string | query | Ne |  |
-| sso | string | query | Ne |  |
-| skip | integer | query | Ne |  |
-| skipChildren | integer | query | Ne |  |
-| limit | integer | query | Ne |  |
-| limitChildren | integer | query | Ne |  |
-| countChildren | boolean | query | Ne |  |
-| fetchPageForCommentId | string | query | Ne |  |
-| includeConfig | boolean | query | Ne |  |
-| countAll | boolean | query | Ne |  |
-| includei10n | boolean | query | Ne |  |
-| locale | string | query | Ne |  |
-| modules | string | query | Ne |  |
-| isCrawler | boolean | query | Ne |  |
-| includeNotificationCount | boolean | query | Ne |  |
-| asTree | boolean | query | Ne |  |
-| maxTreeDepth | integer | query | Ne |  |
-| useFullTranslationIds | boolean | query | Ne |  |
-| parentId | string | query | Ne |  |
-| searchText | string | query | Ne |  |
-| hashTags | array | query | Ne |  |
-| userId | string | query | Ne |  |
-| customConfigStr | string | query | Ne |  |
-| afterCommentId | string | query | Ne |  |
-| beforeCommentId | string | query | Ne |  |
+| tenantId | string | putanja | Da |  |
+| urlId | string | upit | Da |  |
+| page | integer | upit | Ne |  |
+| direction | string | upit | Ne |  |
+| sso | string | upit | Ne |  |
+| skip | integer | upit | Ne |  |
+| skipChildren | integer | upit | Ne |  |
+| limit | integer | upit | Ne |  |
+| limitChildren | integer | upit | Ne |  |
+| countChildren | boolean | upit | Ne |  |
+| fetchPageForCommentId | string | upit | Ne |  |
+| includeConfig | boolean | upit | Ne |  |
+| countAll | boolean | upit | Ne |  |
+| includei10n | boolean | upit | Ne |  |
+| locale | string | upit | Ne |  |
+| modules | string | upit | Ne |  |
+| isCrawler | boolean | upit | Ne |  |
+| includeNotificationCount | boolean | upit | Ne |  |
+| asTree | boolean | upit | Ne |  |
+| maxTreeDepth | integer | upit | Ne |  |
+| useFullTranslationIds | boolean | upit | Ne |  |
+| parentId | string | upit | Ne |  |
+| searchText | string | upit | Ne |  |
+| hashTags | array | upit | Ne |  |
+| userId | string | upit | Ne |  |
+| customConfigStr | string | upit | Ne |  |
+| afterCommentId | string | upit | Ne |  |
+| beforeCommentId | string | upit | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Vraća: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Primjer
 
@@ -50,7 +50,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ovo je opcionalno, za zadani će se koristiti `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

@@ -1,6 +1,6 @@
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlId | string | query | Ne |  |
@@ -12,14 +12,14 @@
 
 ## Odgovor
 
-Vraća: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results200_response.py)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_results Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_results200_response import GetQuestionResults200Response
+from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,14 +30,14 @@ configuration = client.Configuration(
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API servera.
-# Primjeri za svaki način autentikacije su navedeni ispod, koristite primjer koji
-# odgovara vašem slučaju korištenja autentikacije.
+# u skladu s pravilima sigurnosti API servera.
+# Primjeri za svaki način autentikacije su prikazani dolje, upotrijebite onaj
+# koji odgovara vašem slučaju korištenja autentikacije.
 
-# Configure API key authorization: api_key
+# Konfigurirajte autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Uklonite komentar ispod za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta

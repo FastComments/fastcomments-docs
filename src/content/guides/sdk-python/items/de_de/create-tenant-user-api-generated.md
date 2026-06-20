@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -7,15 +6,15 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user200_response.py)
+Gibt zurück: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'create_tenant_user Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_user200_response import CreateTenantUser200Response
 from client.models.create_tenant_user_body import CreateTenantUserBody
+from client.models.create_tenant_user_response import CreateTenantUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,14 +25,14 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt. Verwenden Sie das Beispiel, das
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das Beispiel, das
 # Ihren Authentifizierungsfall erfüllt.
 
-# Konfigurieren Sie die API-Schlüssel-Authentifizierung: api_key
+# API-Key-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+# Kommentarzeichen unten entfernen, um ein Präfix (z. B. Bearer) für den API-Key einzurichten, falls nötig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Öffnen Sie einen Kontext mit einer Instanz des API-Clients
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_tenant_user: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,4 +1,4 @@
-## Parameters
+## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
@@ -7,9 +7,9 @@
 | broadcastId | string | query | Não |  |
 | sso | string | query | Não |  |
 
-## Response
+## Resposta
 
-Retorna: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteFeedPostPublic200Response.java)
+Retorna: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteFeedPostPublicResponse.java)
 
 ## Exemplo
 
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      DeleteFeedPostPublic200Response result = apiInstance.deleteFeedPostPublic(tenantId, postId)
+      DeleteFeedPostPublicResponse result = apiInstance.deleteFeedPostPublic(tenantId, postId)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();
@@ -48,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

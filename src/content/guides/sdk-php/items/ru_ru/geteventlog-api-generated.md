@@ -11,11 +11,11 @@ userIdWS
 | urlId | string | query | Да |  |
 | userIdWS | string | query | Да |  |
 | startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| endTime | integer | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+Возвращает: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## Пример
 
@@ -27,15 +27,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать собственный HTTP-клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$url_id = 'url_id_example'; // строка
-$user_id_ws = 'user_id_ws_example'; // строка
-$start_time = 56; // целое
-$end_time = 56; // целое
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$user_id_ws = 'user_id_ws_example'; // string
+$start_time = 56; // int
+$end_time = 56; // int
 
 try {
     $result = $apiInstance->getEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);

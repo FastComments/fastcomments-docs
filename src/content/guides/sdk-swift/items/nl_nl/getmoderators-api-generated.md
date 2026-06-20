@@ -7,13 +7,13 @@
 
 ## Respons
 
-Retourneert: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModerators200Response.swift)
+Retourneert: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetModeratorsResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getModerators Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Als u een probleem tegenkomt, meldt u dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Voor problemen kunt u dit melden via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.getModerators(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

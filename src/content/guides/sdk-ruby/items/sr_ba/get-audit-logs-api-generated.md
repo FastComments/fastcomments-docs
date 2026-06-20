@@ -1,29 +1,29 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
-| order | string | query | Не |  |
-| after | number | query | Не |  |
-| before | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| limit | number | query | Ne |  |
+| skip | number | query | Ne |  |
+| order | string | query | Ne |  |
+| after | number | query | Ne |  |
+| before | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs200_response.rb)
+Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_audit_logs Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_audit_logs'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигуришите API кључ за ауторизацију: api_key
+  # Konfigurirajte autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano je nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

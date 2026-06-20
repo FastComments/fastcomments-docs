@@ -1,24 +1,24 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | urlId | string | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`Option[GetVotes_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes200response.nim)
+Devuelve: [`Option[GetVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_response.nim)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de getVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/2026/major-update")
+let (response, httpResponse) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/breaking-article-456")
 if response.isSome:
-  let votes = response.get()
-  discard votes
+  let votesResp = response.get()
+  echo "Received votes response:", $votesResp
 else:
-  discard httpResponse
+  echo "No votes returned, HTTP response:", $httpResponse
 [inline-code-end]
 
 ---

@@ -1,44 +1,44 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Svar
+## Respons
 
-Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'update_email_template Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på update_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_email_template_body import UpdateEmailTemplateBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Angivelse af host er valgfri, standardværdien er https://fastcomments.com
+# Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# i overensstemmelse med API-serverens sikkerhedspolitik.
+# Eksempler for hver godkendelsesmetode er vist nedenfor; brug det eksempel,
+# der passer til dit brugsscenarie.
 
-# Configure API key authorization: api_key
+# Konfigurer autorisation med API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Fjern kommentaren nedenfor for at sætte prefix (f.eks. Bearer) for API key, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Gå ind i en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Opret en instans af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->update_email_template: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
-### 認証済みAPIの使用 (DefaultAPI)
+### 認証されたAPIの使用 (DefaultAPI)
 
-**重要:** 認証されたエンドポイントは、APIキーを `x-api-key` ヘッダーとして設定する必要があります。
+**重要:** 認証が必要なエンドポイントでは、APIキーを `x-api-key` ヘッダーとして設定する必要があります。
 
 ```nim
 import httpclient
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# 認証済みのAPI呼び出しを行う
+# 認証されたAPI呼び出しを行う
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -39,7 +39,7 @@ if response.isSome:
 
 ### パブリックAPIの使用 (PublicAPI)
 
-パブリックなエンドポイントは認証を必要としません:
+パブリック（公開）エンドポイントは認証を必要としません：
 
 ```nim
 import httpclient
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### モデレーションAPIの使用 (ModerationAPI)
+
+モデレーション用エンドポイントはモデレーターダッシュボードで使用され、操作を行うモデレータのSSOトークンで認証されます：
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# モデレーションダッシュボードのコメント一覧を取得する
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### よくある問題
 
-1. **401 認証エラー**: DefaultAPI へのリクエストを行う前に、HttpClient の `x-api-key` ヘッダーを設定していることを確認してください: `client.headers["x-api-key"] = "your-api-key"`
-2. **API クラスの間違い**: サーバー側の認証済みリクエストには `api_default` を、クライアント側/パブリックなリクエストには `api_public` を使用してください。
+1. **401 認証エラー**: DefaultAPI のリクエストを行う前に HttpClient に `x-api-key` ヘッダーを設定していることを確認してください: `client.headers["x-api-key"] = "your-api-key"`
+2. **API クラスの選択ミス**: サーバー側の認証されたリクエストには `api_default`、クライアント側/パブリックなリクエストには `api_public`、モデレーターダッシュボードのリクエストには `api_moderation` を使用してください。

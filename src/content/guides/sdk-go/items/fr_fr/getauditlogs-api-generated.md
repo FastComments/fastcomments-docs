@@ -1,21 +1,21 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | requête | Oui |  |
-| limit | number | requête | Non |  |
-| skip | number | requête | Non |  |
-| order | string | requête | Non |  |
-| after | number | requête | Non |  |
-| before | number | requête | Non |  |
+| tenantId | string | query | Oui |  |
+| limit | number | query | Non |  |
+| skip | number | query | Non |  |
+| order | string | query | Non |  |
+| after | number | query | Non |  |
+| before | number | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_200_response.go)
+Renvoie : [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetAuditLogs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetAuditLogs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAuditLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetAuditLogs`: GetAuditLogs200Response
+	// réponse de `GetAuditLogs`: GetAuditLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAuditLogs`: %v\n", resp)
 }
 [inline-code-end]

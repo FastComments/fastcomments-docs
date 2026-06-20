@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | questionId | string | query | Non |  |
@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+Renvoie : [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## Exemple
 
@@ -20,11 +20,11 @@ Renvoie : [`AggregateQuestionResults200Response`](https://github.com/FastComment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'autorisation
+# Configuration de l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par exemple 'Bearer' (par défaut : nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,3 +47,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate_question_results: #{e}"
 end
 [inline-code-end]
+
+---

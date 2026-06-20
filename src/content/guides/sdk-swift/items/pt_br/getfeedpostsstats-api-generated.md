@@ -8,7 +8,7 @@
 
 ## Resposta
 
-Retorna: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsStats200Response.swift)
+Retorna: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FeedPostsStatsResponse.swift)
 
 ## Exemplo
 
@@ -32,5 +32,3 @@ PublicAPI.getFeedPostsStats(tenantId: tenantId, postIds: postIds, sso: sso) { (r
     }
 }
 [inline-code-end]
-
----

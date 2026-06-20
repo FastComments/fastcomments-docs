@@ -1,17 +1,17 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| userId | string | query | 아니요 |  |
-| urlId | string | query | 아니요 |  |
-| fromCommentId | string | query | 아니요 |  |
-| viewed | boolean | query | 아니요 |  |
-| type | string | query | 아니요 |  |
+| userId | string | query | 아니오 |  |
+| urlId | string | query | 아니오 |  |
+| fromCommentId | string | query | 아니오 |  |
+| viewed | boolean | query | 아니오 |  |
+| type | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notification_count200_response.rb)
+반환: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notification_count_response.rb)
 
 ## 예제
 
@@ -23,18 +23,18 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: 'Bearer' (기본값: nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요. 예: 'Bearer' (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # 문자열 | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # 문자열 | 
-  url_id: 'url_id_example', # 문자열 | 
-  from_comment_id: 'from_comment_id_example', # 문자열 | 
-  viewed: true, # 부울 | 
-  type: 'type_example' # 문자열 | 
+  user_id: 'user_id_example', # String | 
+  url_id: 'url_id_example', # String | 
+  from_comment_id: 'from_comment_id_example', # String | 
+  viewed: true, # Boolean | 
+  type: 'type_example' # String | 
 }
 
 begin

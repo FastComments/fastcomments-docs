@@ -1,13 +1,14 @@
+---
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | skip | integer | query | 否 |  |
 
 ## 响应
 
-返回: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_sso_users_200_response.go)
+返回： [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_sso_users_response.go)
 
 ## 示例
 
@@ -19,11 +20,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 租户 ID
+	tenantId := "tenantId_example" // string | 
 	skip := int32(56) // int32 |  (可选)
 
 	configuration := openapiclient.NewConfiguration()
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetSSOUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetSSOUsers` 的响应: GetSSOUsers200Response
+	// 来自 `GetSSOUsers` 的响应: GetSSOUsersResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetSSOUsers`: %v\n", resp)
 }
 [inline-code-end]
+
+---

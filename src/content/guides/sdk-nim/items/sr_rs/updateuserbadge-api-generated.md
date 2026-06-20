@@ -1,33 +1,30 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_badge200response.nim)
+Vraća: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример за updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateParams = UpdateUserBadgeParams(
-  name = "Top Contributor",
-  description = "Awarded for consistent high-quality comments",
-  active = true,
-  tags = @["community", "milestone"]
+let (response, httpResponse) = client.updateUserBadge(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  updateUserBadgeParams = UpdateUserBadgeParams()
 )
 
-let (response, httpResponse) = client.updateUserBadge(tenantId = "my-tenant-123", id = "badge-456", updateUserBadgeParams = updateParams)
-
 if response.isSome:
-  let updated = response.get()
+  let success = response.get()
   echo "Badge updated successfully"
 else:
-  echo "Failed to update badge, HTTP status: ", $httpResponse.status
+  echo "Badge update failed"
 [inline-code-end]
 
 ---

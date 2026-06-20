@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -7,7 +8,7 @@
 
 ## Odgovor
 
-Vrne: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_patch_hash_tag_200_response.go)
+Vrne: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
 
 ## Primer
 
@@ -24,8 +25,8 @@ import (
 
 func main() {
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (izbirno)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (izbirno)
+	tenantId := "tenantId_example" // string |  (neobvezno)
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `PatchHashTag`: PatchHashTag200Response
+	// odgovor od `PatchHashTag`: UpdateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
+
+---

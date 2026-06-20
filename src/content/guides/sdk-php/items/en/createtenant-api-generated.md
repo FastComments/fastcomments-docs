@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenant200Response.php)
+Returns: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantResponse.php)
 
 ## Example
 

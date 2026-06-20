@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Voorbeeld
 
@@ -31,3 +31,5 @@ DefaultAPI.updateTenantPackage(tenantId: tenantId, id: id, updateTenantPackageBo
     }
 }
 [inline-code-end]
+
+---

@@ -1,22 +1,26 @@
-## Параметри
+req
+tenantId
+afterId
 
-| Name | Type | Required | Description |
+## Parametri
+
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| afterId | string | Не |  |
-| limit | int | Не |  |
-| tags | seq[string] | Не |  |
-| sso | string | Не |  |
-| isCrawler | bool | Не |  |
-| includeUserInfo | bool | Не |  |
+| tenantId | string | Da |  |
+| afterId | string | Ne |  |
+| limit | int | Ne |  |
+| tags | seq[string] | Ne |  |
+| sso | string | Ne |  |
+| isCrawler | bool | Ne |  |
+| includeUserInfo | bool | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+Vraća: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getFeedPostsPublic(
   tenantId = "my-tenant-123",
@@ -27,10 +31,9 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
 
 ---

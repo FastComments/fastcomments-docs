@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModerator200Response.php)
+Dönen değer: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorResponse.php)
 
 ## Örnek
 
@@ -17,14 +17,18 @@ Döndürür: [`GetModerator200Response`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_key
 // API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse, aşağıdaki satırın yorumunu kaldırarak API anahtarı için öneki (ör. Bearer) ayarlayın
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki yorum satırını kaldırın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi iletiniz.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Özel bir HTTP istemcusu kullanmak isterseniz, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi iletin.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client(),
     $config

@@ -2,34 +2,34 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| contextUserId | string | query | Nej |  |
-| isLive | boolean | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Svar
 
-Returnerer: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment200_response.py)
+Returnerer: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_result.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'delete_comment Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment200_response import DeleteComment200Response
+from client.models.delete_comment_result import DeleteCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og er som standard sat til https://fastcomments.com
+# Angivelse af host er valgfri og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificering og autorisationsparametrene
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentificeringsmetode er vist nedenfor; brug det eksempel, der
-# opfylder dit brugsscenarie for autentificering.
+# Eksempler på hver autentificeringsmetode er vist nedenfor; brug det eksempel som
+# som passer til dit autentificeringsscenarie.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -43,8 +43,8 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    context_user_id = 'context_user_id_example' # str |  (optional)
-    is_live = True # bool |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (valgfri)
+    is_live = True # bool |  (valgfri)
 
     try:
         api_response = api_instance.delete_comment(tenant_id, id, context_user_id=context_user_id, is_live=is_live)

@@ -1,14 +1,14 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | requête | Oui |  |
-| urlIdWS | string | requête | Oui |  |
-| userIds | string | requête | Oui |  |
+| tenantId | string | query | Oui |  |
+| urlIdWS | string | query | Oui |  |
+| userIds | string | query | Oui |  |
 
 ## Réponse
 
-Renvoie: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserPresenceStatuses200Response.swift)
+Renvoie: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserPresenceStatusesResponse.swift)
 
 ## Exemple
 
@@ -32,3 +32,5 @@ PublicAPI.getUserPresenceStatuses(tenantId: tenantId, urlIdWS: urlIdWS, userIds:
     }
 }
 [inline-code-end]
+
+---

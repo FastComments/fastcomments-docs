@@ -1,28 +1,28 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| broadcastId | string | query | Не |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| skipDupCheck | boolean | query | Не |  |
+| tenantId | string | query | Da |  |
+| broadcastId | string | query | Ne |  |
+| isLive | boolean | query | Ne |  |
+| doSpamCheck | boolean | query | Ne |  |
+| skipDupCheck | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'create_feed_post Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Подешавање овлашћења помоћу API кључа: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Otkomentarišite narednu liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumijevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -44,3 +44,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_feed_post: #{e}"
 end
 [inline-code-end]
+
+---

@@ -47,6 +47,29 @@ do {
 }
 ```
 
+### Using the Moderation API
+
+```swift
+import FastCommentsSwift
+
+// Moderation methods are authorized with an `sso` token for the acting moderator
+// (generate it with FastCommentsSSO, see the SSO section above).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Using SSO for Authentication
 
 #### Secure SSO (Recommended for Production)

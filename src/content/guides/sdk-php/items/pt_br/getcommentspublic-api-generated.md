@@ -6,38 +6,38 @@ urlId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Sim |  |
+| urlId | string | query | Sim |  |
+| page | integer | query | Não |  |
+| direction | string | query | Não |  |
+| sso | string | query | Não |  |
+| skip | integer | query | Não |  |
+| skipChildren | integer | query | Não |  |
+| limit | integer | query | Não |  |
+| limitChildren | integer | query | Não |  |
+| countChildren | boolean | query | Não |  |
+| fetchPageForCommentId | string | query | Não |  |
+| includeConfig | boolean | query | Não |  |
+| countAll | boolean | query | Não |  |
+| includei10n | boolean | query | Não |  |
+| locale | string | query | Não |  |
+| modules | string | query | Não |  |
+| isCrawler | boolean | query | Não |  |
+| includeNotificationCount | boolean | query | Não |  |
+| asTree | boolean | query | Não |  |
+| maxTreeDepth | integer | query | Não |  |
+| useFullTranslationIds | boolean | query | Não |  |
+| parentId | string | query | Não |  |
+| searchText | string | query | Não |  |
+| hashTags | array | query | Não |  |
+| userId | string | query | Não |  |
+| customConfigStr | string | query | Não |  |
+| afterCommentId | string | query | Não |  |
+| beforeCommentId | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Retorna: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Exemplo
 

@@ -1,22 +1,23 @@
+---
 ## 參數
 
-| 名稱 | Type | Location | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| commentId | string | path | 是 |  |
-| broadcastId | string | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`PinComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/pin_comment200_response.py)
+回傳： [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_comment_pin_status_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'un_pin_comment 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.pin_comment200_response import PinComment200Response
+from client.models.change_comment_pin_status_response import ChangeCommentPinStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,14 +28,14 @@ configuration = client.Configuration(
 )
 
 
-# 使用 ApiClient 的實例進入一個上下文
+# 使用 API 用戶端實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    sso = 'sso_example' # str |  (可選)
+    sso = 'sso_example' # str |  (選填)
 
     try:
         api_response = api_instance.un_pin_comment(tenant_id, comment_id, broadcast_id, sso=sso)

@@ -9,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicket200Response.php)
+戻り値: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
 
 ## 例
 
@@ -19,21 +19,21 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証の設定: api_key
+// API キー認証を構成します: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、APIキーにプレフィックス（例: Bearer）を設定するには、下の行のコメントを解除してください
+// 必要に応じて、API キーにプレフィックス（例: Bearer）を設定するには以下の行のコメントを外します
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
     // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
+$tenant_id = 'tenant_id_example'; // 文字列
+$id = 'id_example'; // 文字列
+$user_id = 'user_id_example'; // 文字列
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);

@@ -1,16 +1,16 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| direction | string | query | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | query | はい |  |
+| direction | string | query | はい |  |
+| userId | string | query | いいえ |  |
+| anonUserId | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+戻り値: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## 例
 
@@ -22,7 +22,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーのプレフィックスを設定するには次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
+  # APIキーにプレフィックスを設定するには次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,13 +1,13 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | skip | float64 | Ne |  |
 
 ## Odgovor
 
-Vraća: [`Option[GetEmailTemplates_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates200response.nim)
+Vraća: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## Primer
 
@@ -18,7 +18,7 @@ if response.isSome:
   let templates = response.get()
   echo templates
 else:
-  echo "No templates returned"
+  echo "No email templates available"
 [inline-code-end]
 
 ---

@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Использование API-клиента
+### Использование клиента API
 
-#### Публичный API (без аутентификации)
+#### Public API (без аутентификации)
 
-Публичный API позволяет получать доступ к общедоступным конечным точкам без аутентификации:
+PublicAPI предоставляет неаутентифицированный доступ к публичным конечным точкам:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Получить комментарии через PublicAPI
+    // Получить комментарии с помощью PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,7 +36,7 @@ func main() {
 }
 ```
 
-#### Default API (требуется API-ключ)
+#### Default API (требует API-ключ)
 
 DefaultAPI требует аутентификации с использованием вашего API-ключа:
 
@@ -67,6 +67,37 @@ func main() {
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
         Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```
+
+#### Moderation API (Панель модератора)
+
+ModerationAPI обеспечивает работу панели модератора. Он предоставляет методы для перечисления, подсчёта, поиска и экспорта комментариев; действия модерации (удаление/восстановление, пометка, установка статуса на проверку/спам/одобрение, голоса, повторное открытие/закрытие веток); баны (запрет комментирования, отмена бана, предварительные сводки по банам, статус и настройки бана, количество забаненных пользователей); и бейджи и доверие (назначение/удаление бейджей, ручные бейджи, получение/установка коэффициента доверия, внутренний профиль пользователя). Все методы Moderation принимают параметр `sso` для модераторов, прошедших SSO-аутентификацию:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // Получить список комментариев для модерации с помощью ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
 
     if err != nil {
         panic(err)

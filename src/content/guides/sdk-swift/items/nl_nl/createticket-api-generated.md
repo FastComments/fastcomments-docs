@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | userId | string | query | Ja |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTicket200Response.swift)
+Retourneert: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTicketResponse.swift)
 
 ## Voorbeeld
 
@@ -31,3 +31,5 @@ DefaultAPI.createTicket(tenantId: tenantId, userId: userId, createTicketBody: cr
     }
 }
 [inline-code-end]
+
+---

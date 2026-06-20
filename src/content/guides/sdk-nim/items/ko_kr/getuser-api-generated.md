@@ -1,24 +1,24 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| id | string | 아니오 |  |
+| id | string | 아니요 |  |
 
 ## 응답
 
-반환: [`Option[GetUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user200response.nim)
+반환: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getUser 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-9876")
+let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
 if response.isSome:
   let user = response.get()
-  echo "User:", user
+  echo user
 else:
-  echo "No user found. HTTP response:", httpResponse
+  echo "User not found"
 [inline-code-end]
 
 ---

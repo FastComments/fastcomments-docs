@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | questionId | string | query | No |  |
@@ -12,7 +12,7 @@
 
 ## 响应
 
-返回: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+返回: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## 示例
 
@@ -22,9 +22,9 @@ require 'time'
 require 'fastcomments-client'
 # 设置授权
 FastCommentsClient.configure do |config|
-  # 配置 API 密钥授权: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 若要为 API 密钥设置前缀（例如 'Bearer'），请取消注释以下行（默认为 nil）
+  # 取消注释下面的行以为 API 密钥设置前缀，例如 'Bearer'（默认值为 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,15 +1,15 @@
 ## Parametre
 
-| Name | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | sti | Ja |  |
-| commentId | string | sti | Ja |  |
-| broadcastId | string | forespørgsel | Ja |  |
-| sso | string | forespørgsel | Nej |  |
+| tenantId | string | path | Ja |  |
+| commentId | string | path | Ja |  |
+| broadcastId | string | query | Ja |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+Returnerer: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## Eksempel
 

@@ -1,39 +1,39 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | domainToUpdate | string | path | Da |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Vraća: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/patch_domain_config_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'patch_domain_config Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer patch_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
 from client.models.patch_domain_config_params import PatchDomainConfigParams
+from client.models.patch_domain_config_response import PatchDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i prema zadanim postavkama je https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API servera.
-# Primjeri za svaku metodu autentikacije su navedeni dolje, upotrijebite primjer koji
-# odgovara vašem scenariju korištenja autentikacije.
+# u skladu sa sigurnosnom politikom API poslužitelja.
+# Primjeri za svaku metodu autentikacije su prikazani u nastavku, upotrijebite primjer koji
+# odgovara vašem slučaju upotrebe autentikacije.
 
-# Konfigurirajte autorizaciju pomoću API ključa: api_key
+# Konfigurirajte autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uklonite komentar ispod za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
+# Uklonite komentare ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->patch_domain_config: %s\n" % e)
 [inline-code-end]
-
----

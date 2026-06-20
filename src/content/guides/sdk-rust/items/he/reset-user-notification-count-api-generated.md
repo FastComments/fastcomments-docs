@@ -1,24 +1,24 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | sso | String | לא |  |
 
 ## תגובה
 
-מחזיר: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_200_response.rs)
+מחזיר: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-reset_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset_user_notification_count() -> Result<ResetUserNotifications200Response, Error> {
+async fn run_reset() -> Result<ResetUserNotificationsResponse, Error> {
     let params: ResetUserNotificationCountParams = ResetUserNotificationCountParams {
-        tenant_id: "acme-news-tenant".to_string(),
-        sso: Some("user-9876-token".to_string()),
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("https://sso.acme.com/session/abc123".to_string()),
     };
-    let response: ResetUserNotifications200Response = reset_user_notification_count(&configuration, params).await?;
+    let response: ResetUserNotificationsResponse = reset_user_notification_count(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

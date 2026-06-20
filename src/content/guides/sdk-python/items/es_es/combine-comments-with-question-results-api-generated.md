@@ -14,47 +14,47 @@
 
 ## Respuesta
 
-Devuelve: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_comments_with_question_results200_response.py)
+Devuelve: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.combine_comments_with_question_results200_response import CombineCommentsWithQuestionResults200Response
+from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definir el host es opcional y por defecto es https://fastcomments.com
+# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# El cliente debe configurar los parámetros de autenticación y autorización
+# de acuerdo con la política de seguridad del servidor API.
+# Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
+# satisfaga su caso de uso de autenticación.
 
-# Configure API key authorization: api_key
+# Configurar autorización por clave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Descomente abajo para establecer un prefijo (p. ej. Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Ingrese en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    question_id = 'question_id_example' # str |  (optional)
-    question_ids = ['question_ids_example'] # List[str] |  (optional)
-    url_id = 'url_id_example' # str |  (optional)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    force_recalculate = True # bool |  (optional)
-    min_value = 3.4 # float |  (optional)
-    max_value = 3.4 # float |  (optional)
-    limit = 3.4 # float |  (optional)
+    question_id = 'question_id_example' # str |  (opcional)
+    question_ids = ['question_ids_example'] # List[str] |  (opcional)
+    url_id = 'url_id_example' # str |  (opcional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (opcional)
+    force_recalculate = True # bool |  (opcional)
+    min_value = 3.4 # float |  (opcional)
+    max_value = 3.4 # float |  (opcional)
+    limit = 3.4 # float |  (opcional)
 
     try:
         api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
@@ -63,5 +63,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->combine_comments_with_question_results: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Naziv | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -8,26 +8,26 @@
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer updateQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("question-456");
-UpdateQuestionResultBody updateQuestionResultBody;
-auto moderatorEmail = std::make_shared<utility::string_t>(U("moderator@example.com"));
-boost::optional<utility::string_t> resolutionNote = boost::optional<utility::string_t>(U("Marked duplicate of q-123"));
-api->updateQuestionResult(tenantId, id, updateQuestionResultBody)
-    .then([moderatorEmail, resolutionNote](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t)
-    {
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t questionId = utility::conversions::to_string_t("question-456");
+auto body = std::make_shared<UpdateQuestionResultBody>();
+body->answeredBy = utility::conversions::to_string_t("user@example.com");
+body->correct = true;
+body->score = boost::optional<int>(92);
+body->notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Clarified response during review"));
+api->updateQuestionResult(tenantId, questionId, *body)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
         try {
             auto resp = t.get();
-            if (resp) {
-                auto resultPtr = resp;
-            }
-        } catch (...) {}
+            (void)resp;
+        } catch (const std::exception&) {
+        }
     });
 [inline-code-end]
 

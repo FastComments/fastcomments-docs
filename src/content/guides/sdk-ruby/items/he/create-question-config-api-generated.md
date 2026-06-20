@@ -2,11 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
+| tenantId | string | query | Yes |  |
 
 ## תגובה
 
-מחזיר: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config200_response.rb)
+מחזיר: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config_response.rb)
 
 ## דוגמה
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת הרשאות
 FastCommentsClient.configure do |config|
-  # קבע הרשאת מפתח ה-API: api_key
+  # הגדר אימות באמצעות מפתח ה-API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # הסר את הסימון מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

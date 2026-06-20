@@ -4,44 +4,44 @@ urlId
 
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui |  |
-| page | integer | query | Non |  |
-| direction | string | query | Non |  |
-| sso | string | query | Non |  |
-| skip | integer | query | Non |  |
-| skipChildren | integer | query | Non |  |
-| limit | integer | query | Non |  |
-| limitChildren | integer | query | Non |  |
-| countChildren | boolean | query | Non |  |
-| fetchPageForCommentId | string | query | Non |  |
-| includeConfig | boolean | query | Non |  |
-| countAll | boolean | query | Non |  |
-| includei10n | boolean | query | Non |  |
-| locale | string | query | Non |  |
-| modules | string | query | Non |  |
-| isCrawler | boolean | query | Non |  |
-| includeNotificationCount | boolean | query | Non |  |
-| asTree | boolean | query | Non |  |
-| maxTreeDepth | integer | query | Non |  |
-| useFullTranslationIds | boolean | query | Non |  |
-| parentId | string | query | Non |  |
-| searchText | string | query | Non |  |
-| hashTags | array | query | Non |  |
-| userId | string | query | Non |  |
-| customConfigStr | string | query | Non |  |
-| afterCommentId | string | query | Non |  |
-| beforeCommentId | string | query | Non |  |
+| Name | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|------------|-------------|
+| tenantId | string | chemin | Oui |  |
+| urlId | string | requête | Oui |  |
+| page | integer | requête | Non |  |
+| direction | string | requête | Non |  |
+| sso | string | requête | Non |  |
+| skip | integer | requête | Non |  |
+| skipChildren | integer | requête | Non |  |
+| limit | integer | requête | Non |  |
+| limitChildren | integer | requête | Non |  |
+| countChildren | boolean | requête | Non |  |
+| fetchPageForCommentId | string | requête | Non |  |
+| includeConfig | boolean | requête | Non |  |
+| countAll | boolean | requête | Non |  |
+| includei10n | boolean | requête | Non |  |
+| locale | string | requête | Non |  |
+| modules | string | requête | Non |  |
+| isCrawler | boolean | requête | Non |  |
+| includeNotificationCount | boolean | requête | Non |  |
+| asTree | boolean | requête | Non |  |
+| maxTreeDepth | integer | requête | Non |  |
+| useFullTranslationIds | boolean | requête | Non |  |
+| parentId | string | requête | Non |  |
+| searchText | string | requête | Non |  |
+| hashTags | array | requête | Non |  |
+| userId | string | requête | Non |  |
+| customConfigStr | string | requête | Non |  |
+| afterCommentId | string | requête | Non |  |
+| beforeCommentId | string | requête | Non |  |
 
 ## Réponse
 
-Retourne : [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Retourne: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_comments_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_comments_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

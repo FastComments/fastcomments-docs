@@ -1,14 +1,14 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
+| tenantId | string | query | Sì |  |
+| commentId | string | path | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/un_block_comment_public200_response.py)
+Restituisce: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
 ## Esempio
 
@@ -16,20 +16,20 @@ Restituisce: [`UnBlockCommentPublic200Response`](https://github.com/FastComments
 [inline-code-start]
 import client
 from client.models.public_block_from_comment_params import PublicBlockFromCommentParams
-from client.models.un_block_comment_public200_response import UnBlockCommentPublic200Response
+from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedere configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# La definizione dell'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# Consulta configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrare in un contesto con un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Creare un'istanza della classe API
+    # Crea un'istanza della classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

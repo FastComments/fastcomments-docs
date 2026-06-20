@@ -1,6 +1,7 @@
+---
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Location | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
@@ -9,7 +10,7 @@
 
 ## Réponse
 
-Retourne : [`FlagComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment200_response.rb)
+Renvoie : [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_response.rb)
 
 ## Exemple
 
@@ -17,9 +18,9 @@ Retourne : [`FlagComment200Response`](https://github.com/FastComments/fastcommen
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configuration de l'authentification
+# Configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configurer l'authentification par clé API : api_key
+  # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -41,3 +42,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_flag_comment: #{e}"
 end
 [inline-code-end]
+
+---

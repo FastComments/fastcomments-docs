@@ -1,17 +1,17 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| id | string | ścieżka | Tak |  |
+| tenantId | string | query | Tak |  |
+| id | string | path | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetUser200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUser200Response.php)
+Zwraca: [`GetUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -25,7 +25,7 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, `GuzzleHttp\Client` will be used as default.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );

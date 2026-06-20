@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | broadcastId | string | query | Не |  |
@@ -8,13 +8,13 @@
 | doSpamCheck | boolean | query | Не |  |
 | skipDupCheck | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_200_response.go)
+Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_posts_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer CreateFeedPost'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CreateFeedPost Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createFeedPostParams := *openapiclient.NewCreateFeedPostParams() // CreateFeedPostParams | 
-	broadcastId := "broadcastId_example" // string |  (neobavezno)
-	isLive := true // bool |  (neobavezno)
-	doSpamCheck := true // bool |  (neobavezno)
-	skipDupCheck := true // bool |  (neobavezno)
+	broadcastId := "broadcastId_example" // string |  (опционо)
+	isLive := true // bool |  (опционо)
+	doSpamCheck := true // bool |  (опционо)
+	skipDupCheck := true // bool |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateFeedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `CreateFeedPost`: CreateFeedPost200Response
+	// одговор од `CreateFeedPost`: CreateFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]

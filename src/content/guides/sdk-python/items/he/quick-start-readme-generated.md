@@ -1,25 +1,25 @@
-### שימוש ב-APIs מאומתים (DefaultApi)
+### שימוש ב‑APIs מאומתים (DefaultApi)
 
-**חשוב:** עליך להגדיר את מפתח ה-API ב-Configuration לפני ביצוע בקשות מאומתות. אם לא תעשה זאת, הבקשות ייכשלו עם שגיאת 401.
+**חשוב:** עליך להגדיר את מפתח ה‑API ב‑Configuration לפני ביצוע קריאות מאומתות. אם לא תעשה זאת, הקריאות ייכשלו עם שגיאת 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# צור והגדר את לקוח ה-API
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# נדרש: הגדר את מפתח ה-API שלך (קבל אותו מלוח הבקרה של FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# צור את מופע ה-API עם הלקוח המוגדר
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# עכשיו אתה יכול לבצע קריאות API מאומתות
+# Now you can make authenticated API calls
 try:
-    # דוגמה: הוסף משתמש SSO
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,12 +34,12 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # שגיאות נפוצות:
-    # - 401: מפתח ה-API חסר או שגוי
-    # - 400: אימות הבקשה נכשל
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
-### שימוש ב-APIs ציבוריים (PublicApi)
+### שימוש ב‑APIs ציבוריים (PublicApi)
 
 נקודות קצה ציבוריות אינן דורשות אימות:
 
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### שימוש ב-SSO (כניסה יחידה)
+### שימוש בלוח הבקרה של המודרציה (ModerationApi)
 
-ערכת הכלים (SDK) כוללת כלי עזר ליצירת טוקני SSO מאובטחים:
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### שימוש ב‑SSO (Single Sign-On)
+
+ה‑SDK כולל כלי עזר ליצירת אסימוני SSO מאובטחים:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# צור נתוני משתמש
+# Create user data
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,20 +98,20 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# צור מופע SSO עם הסוד של ה-API שלך
+# Create SSO instance with your API secret
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# הפק את טוקן ה-SSO
+# Generate the SSO token
 sso_token = sso.create_token()
 
-# השתמש בטוקן זה בצד הלקוח שלך או העבר אותו לקריאות API
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
-עבור SSO פשוט (פחות מאובטח, למטרות בדיקה):
+For simple SSO (less secure, for testing):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -106,8 +127,8 @@ sso_token = sso.create_token()
 
 ### בעיות נפוצות
 
-1. **401 "missing-api-key" error**: וודא שהגדרת `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` לפני יצירת מופע DefaultApi.
-2. **Wrong API class**: השתמש ב-`DefaultApi` עבור בקשות מאומתות בצד השרת, וב-`PublicApi` עבור בקשות בצד הלקוח/ציבוריות.
-3. **Import errors**: וודא שאתה מייבא מהממודול הנכון:
-   - לקוח ה-API: `from client import ...`
+1. **401 "missing-api-key" error**: ודא שהגדרת `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` לפני יצירת מופע DefaultApi.
+2. **Wrong API class**: השתמש ב‑`DefaultApi` עבור קריאות מאומתות בצד השרת, ב‑`PublicApi` עבור קריאות מצד הלקוח/ציבוריות, וב‑`ModerationApi` עבור קריאות של לוח הבקרה של המודרטור.
+3. **Import errors**: ודא שאתה מייבא מהמודול הנכון:
+   - לקוח ה‑API: `from client import ...`
    - כלי SSO: `from sso import ...`

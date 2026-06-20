@@ -1,29 +1,29 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| badgeId | string | query | No |  |
-| type | number | query | No |  |
-| displayedOnComments | boolean | query | No |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| userId | string | query | Nein |  |
+| badgeId | string | query | Nein |  |
+| type | number | query | Nein |  |
+| displayedOnComments | boolean | query | Nein |  |
+| limit | number | query | Nein |  |
+| skip | number | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+Gibt zurück: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_user_badges Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
+# Die Hostdefinition ist optional und standardmäßig auf https://fastcomments.com gesetzt
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,18 +31,18 @@ configuration = client.Configuration(
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
 # entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Auth-Methode sind unten angegeben. Verwenden Sie das Beispiel, das
-# Ihren Auth-Anwendungsfall erfüllt.
+# Beispiele für jede Auth-Methode sind unten aufgeführt. Verwenden Sie das
+# Beispiel, das Ihren Authentifizierungsanforderungen entspricht.
 
-# API-Schlüssel-Authorisierung konfigurieren: api_key
+# API-Schlüssel-Autorisierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Kommentieren Sie unten aus, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls benötigt
+# Zum Einrichten eines Präfixes (z. B. Bearer) für den API-Schlüssel bei Bedarf die folgende Zeile auskommentieren
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Eine Instanz der API-Klasse erstellen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (optional)

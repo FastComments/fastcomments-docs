@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+返回: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## 示例
 
@@ -18,12 +18,12 @@
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 请参阅 configuration.py 以获取所有支持的配置参数列表。
+# 定义 host 是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数列表，请参见 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

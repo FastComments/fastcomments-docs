@@ -1,15 +1,16 @@
+---
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| id | string | 路径 | 是 |  |
-| userId | string | 查询 | 否 |  |
-| anonUserId | string | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
+| userId | string | query | 否 |  |
+| anonUserId | string | query | 否 |  |
 
 ## 响应
 
-返回: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_block_from_comment_public_200_response.go)
+返回: [`BlockSuccess`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_block_success.go)
 
 ## 示例
 
@@ -21,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -38,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.BlockUserFromComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `BlockUserFromComment` 的响应: BlockFromCommentPublic200Response
+	// 来自 `BlockUserFromComment` 的响应: BlockSuccess
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.BlockUserFromComment`: %v\n", resp)
 }
 [inline-code-end]

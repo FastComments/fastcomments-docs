@@ -7,38 +7,38 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/patch_hash_tag200_response.py)
+Επιστρέφει: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα patch_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.patch_hash_tag200_response import PatchHashTag200Response
 from client.models.update_hash_tag_body import UpdateHashTagBody
+from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
 # Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί την περίπτωση χρήσης σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παραδείγματα για κάθε μέθοδο πιστοποίησης παρέχονται παρακάτω — χρησιμοποιήστε αυτό που
+# καλύπτει την περίπτωσή σας.
 
-# Configure API key authorization: api_key
+# Διαμόρφωση εξουσιοδότησης με API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αφαιρέστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Μπείτε σε context χρησιμοποιώντας ένα instance του API client
+# Είσοδος σε context με ένα instance του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργία ενός instance της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tag = 'tag_example' # str | 
     tenant_id = 'tenant_id_example' # str |  (προαιρετικό)

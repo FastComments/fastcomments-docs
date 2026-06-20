@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | postIds | array | query | いいえ |  |
@@ -8,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_reacts_public_200_response.go)
+戻り値: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_user_reacts_response.go)
 
 ## 例
 
@@ -20,13 +21,13 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	postIds := []string{"Inner_example"} // []string |  (オプション)
-	sso := "sso_example" // string |  (オプション)
+	postIds := []string{"Inner_example"} // []string |  (省略可能)
+	sso := "sso_example" // string |  (省略可能)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserReactsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserReactsPublic`からのレスポンス: GetUserReactsPublic200Response
+	// `GetUserReactsPublic` のレスポンス: UserReactsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserReactsPublic`: %v\n", resp)
 }
 [inline-code-end]

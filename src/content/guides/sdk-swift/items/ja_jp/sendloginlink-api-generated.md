@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## 例
 
@@ -19,7 +19,7 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let redirectURL = "redirectURL_example" // String |  (任意)
+let redirectURL = "redirectURL_example" // String |  (オプション)
 
 DefaultAPI.sendLoginLink(tenantId: tenantId, id: id, redirectURL: redirectURL) { (response, error) in
     guard error == nil else {
@@ -32,3 +32,5 @@ DefaultAPI.sendLoginLink(tenantId: tenantId, id: id, redirectURL: redirectURL) {
     }
 }
 [inline-code-end]
+
+---

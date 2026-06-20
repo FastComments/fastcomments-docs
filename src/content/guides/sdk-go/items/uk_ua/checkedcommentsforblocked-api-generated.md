@@ -1,14 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язкове | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
-| commentIds | string | query | Так | A comma separated list of comment ids. |
+| commentIds | string | query | Так | Список ідентифікаторів коментарів, розділених комами. |
 | sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_checked_comments_for_blocked_200_response.go)
+Повертає: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_check_blocked_comments_response.go)
 
 ## Приклад
 
@@ -20,12 +20,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentIds := "commentIds_example" // string | A comma separated list of comment ids.
+	commentIds := "commentIds_example" // string | Список ідентифікаторів коментарів, розділених комами.
 	sso := "sso_example" // string |  (необов'язково)
 
 	configuration := openapiclient.NewConfiguration()
@@ -35,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CheckedCommentsForBlocked``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `CheckedCommentsForBlocked`: CheckedCommentsForBlocked200Response
+	// відповідь від `CheckedCommentsForBlocked`: CheckBlockedCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CheckedCommentsForBlocked`: %v\n", resp)
 }
 [inline-code-end]
-
----

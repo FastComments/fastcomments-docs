@@ -1,13 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| skip | number | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_packages_200_response.go)
+Возвращает: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_packages_response.go)
 
 ## Пример
 
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantPackages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetTenantPackages`: GetTenantPackages200Response
+	// ответ от `GetTenantPackages`: GetTenantPackagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantPackages`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -8,19 +9,19 @@
 
 ## Risposta
 
-Restituisce: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_stats200_response.py)
+Restituisce: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/feed_posts_stats_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_feed_posts_stats'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_stats200_response import GetFeedPostsStats200Response
+from client.models.feed_posts_stats_response import FeedPostsStatsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e per impostazione predefinita è https://fastcomments.com
-# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# La definizione dell'host è opzionale e di default è https://fastcomments.com
+# Consultare configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,7 +33,7 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_ids = ['post_ids_example'] # List[str] | 
-    sso = 'sso_example' # str |  (opzionale)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.get_feed_posts_stats(tenant_id, post_ids, sso=sso)
@@ -41,3 +42,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_feed_posts_stats: %s\n" % e)
 [inline-code-end]
+
+---

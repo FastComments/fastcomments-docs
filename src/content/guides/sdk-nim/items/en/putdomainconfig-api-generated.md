@@ -8,16 +8,27 @@
 
 ## Response
 
-Returns: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_config200response.nim)
+Returns: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putDomainConfig(tenantId = "my-tenant-123", domainToUpdate = "news.example.com", updateDomainConfigParams = default(UpdateDomainConfigParams))
+let (response, httpResponse) = client.putDomainConfig(
+  tenantId = "my-tenant-123",
+  domainToUpdate = "blog.example.com",
+  updateDomainConfigParams = UpdateDomainConfigParams(
+    allowAnonymous = false,
+    moderationEnabled = true,
+    maxCommentLength = 800,
+    allowedOrigins = @["https://blog.example.com", "https://cdn.blog.example.com"],
+    enableThreadedComments = true
+  )
+)
+
 if response.isSome:
-  let updatedConfig = response.get()
-  echo "Domain config updated for tenant my-tenant-123:", updatedConfig
+  let cfg = response.get()
+  echo cfg
 else:
   echo "Failed to update domain config, HTTP status: ", httpResponse.status
 [inline-code-end]

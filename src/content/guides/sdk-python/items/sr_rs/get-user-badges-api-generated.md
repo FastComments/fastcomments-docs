@@ -1,56 +1,56 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| badgeId | string | query | Не |  |
-| type | number | query | Не |  |
-| displayedOnComments | boolean | query | Не |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| badgeId | string | query | Ne |  |
+| type | number | query | Ne |  |
+| displayedOnComments | boolean | query | Ne |  |
+| limit | number | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+Vraća: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_user_badges Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и авторизације
-# у складу са безбедносном политиком API сервера.
-# Примери за сваки начин аутентификације дати су у наставку, користите пример који
-# одговара вашем случају коришћења аутентификације.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa bezbednosnom politikom API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# odgovara vašem slučaju upotrebe autentifikacije.
 
-# Конфигуришите ауторизацију API кључем: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскоментаришите доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Napravite instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (опционално)
-    badge_id = 'badge_id_example' # str |  (опционално)
-    type = 3.4 # float |  (опционално)
-    displayed_on_comments = True # bool |  (опционално)
-    limit = 3.4 # float |  (опционално)
-    skip = 3.4 # float |  (опционално)
+    user_id = 'user_id_example' # str |  (opciono)
+    badge_id = 'badge_id_example' # str |  (opciono)
+    type = 3.4 # float |  (opciono)
+    displayed_on_comments = True # bool |  (opciono)
+    limit = 3.4 # float |  (opciono)
+    skip = 3.4 # float |  (opciono)
 
     try:
         api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)

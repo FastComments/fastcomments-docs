@@ -6,19 +6,19 @@
 
 ## Risposta
 
-Restituisce: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant200_response.rb)
+Restituisce: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_tenant_response.rb)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'create_tenant Esempio'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di create_tenant'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Impostazione dell'autorizzazione
+# impostazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autenticazione tramite chiave API: api_key
+  # Configura l'autorizzazione con API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovere il commento dalla riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (valore predefinito: nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_tenant: #{e}"
 end
 [inline-code-end]
-
----

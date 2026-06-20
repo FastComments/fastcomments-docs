@@ -8,16 +8,20 @@
 
 ## Response
 
-Returns: [`Option[CheckedCommentsForBlocked_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_checked_comments_for_blocked200response.nim)
+Returns: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'checkedCommentsForBlocked Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(tenantId = "my-tenant-123", commentIds = "", sso = "")
+let (response, httpResponse) = client.checkedCommentsForBlocked(
+  tenantId = "my-tenant-123",
+  commentIds = "",
+  sso = ""
+)
 if response.isSome:
-  let checked = response.get()
-  echo "Checked comments for blocked:", checked
+  let blockedResp = response.get()
+  echo "Received blocked comments response: ", blockedResp
 else:
-  echo "No response received, HTTP status:", httpResponse.status
+  echo "No response body; HTTP status: ", $httpResponse.status
 [inline-code-end]

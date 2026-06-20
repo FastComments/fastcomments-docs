@@ -1,11 +1,11 @@
-erforderlich
+req
 tenantId
 urlId
 
 ## Parameter
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Typ | Location | Erforderlich | Beschreibung |
+|------|------|----------|-------------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | page | integer | query | Nein |  |
@@ -37,11 +37,11 @@ urlId
 
 ## Antwort
 
-Gibt zurück: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Gibt zurück: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'GetCommentsPublic Beispiel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für GetCommentsPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -49,7 +49,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `GetCommentsPublic`: GetCommentsPublic200Response
+	// Antwort von `GetCommentsPublic`: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

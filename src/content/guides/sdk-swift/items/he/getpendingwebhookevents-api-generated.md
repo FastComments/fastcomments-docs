@@ -1,25 +1,25 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | שאילתה | כן |  |
-| commentId | string | שאילתה | לא |  |
-| externalId | string | שאילתה | לא |  |
-| eventType | string | שאילתה | לא |  |
-| type | string | שאילתה | לא |  |
-| domain | string | שאילתה | לא |  |
-| attemptCountGT | number | שאילתה | לא |  |
-| skip | number | שאילתה | לא |  |
+| tenantId | string | query | כן |  |
+| commentId | string | query | לא |  |
+| externalId | string | query | לא |  |
+| eventType | string | query | לא |  |
+| type | string | query | לא |  |
+| domain | string | query | לא |  |
+| attemptCountGT | number | query | לא |  |
+| skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEvents200Response.swift)
+מחזיר: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventsResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. אם יש בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

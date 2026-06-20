@@ -5,15 +5,15 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCount200Response.swift)
+Retourneert: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCountResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getCachedNotificationCount Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Bij problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.getCachedNotificationCount(tenantId: tenantId, id: id) { (response, e
     }
 }
 [inline-code-end]
-
----

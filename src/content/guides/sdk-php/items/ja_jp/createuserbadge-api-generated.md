@@ -6,7 +6,7 @@
 
 ## レスポンス
 
-戻り値: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateUserBadge200Response.php)
+戻り値: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APICreateUserBadgeResponse.php)
 
 ## 例
 
@@ -18,17 +18,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには下の行のコメントを外してください
+// 必要に応じて、APIキーの接頭辞（例: Bearer）を設定するには以下の行のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは省略可能です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
+    // これは任意です。デフォルトでは`GuzzleHttp\Client`が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string 型
+$tenant_id = 'tenant_id_example'; // string
 $create_user_badge_params = new \FastComments\Client\Model\CreateUserBadgeParams(); // \FastComments\Client\Model\CreateUserBadgeParams
 
 try {
@@ -38,5 +38,3 @@ try {
     echo 'Exception when calling DefaultApi->createUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

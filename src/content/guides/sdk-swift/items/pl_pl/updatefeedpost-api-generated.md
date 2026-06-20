@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Przykład
 
@@ -31,5 +31,3 @@ DefaultAPI.updateFeedPost(tenantId: tenantId, id: id, feedPost: feedPost) { (res
     }
 }
 [inline-code-end]
-
----

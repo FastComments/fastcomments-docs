@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Da |  |
@@ -10,29 +10,29 @@
 
 ## Odgovor
 
-Vrne: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Vrača: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'create_vote Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov poglejte configuration.py.
+# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
+# Za seznam vseh podprtih konfiguracijskih parametrov glejte configuration.py.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre preverjanja pristnosti in avtorizacije
+# Odjemalec mora konfigurirati parametre overjanja in avtorizacije
 # v skladu s politiko varnosti API strežnika.
-# Spodaj so podani primeri za vsako metodo overjanja, uporabite primer, ki
+# Spodaj so prikazani primeri za vsako metodo overjanja, uporabite primer, ki
 # ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Konfigurirajte overjanje z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
@@ -55,5 +55,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_vote: %s\n" % e)
 [inline-code-end]
-
----

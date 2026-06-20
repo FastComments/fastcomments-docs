@@ -1,46 +1,46 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | skip | integer | query | Не |  |
 
 ## Отговор
 
-Връща: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users200_response.py)
+Връща: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_sso_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_sso_users Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_sso_users200_response import GetSSOUsers200Response
+from client.models.get_sso_users_response import GetSSOUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
+# Задаването на host е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за автентикация и овластяване
+# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод за автентикация са показани по-долу, използвайте примера който
-# отговаря на вашия случай на използване за автентикация.
+# Примерите за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
+# отговаря на вашия сценарий за удостоверяване.
 
-# Конфигурирайте авторизация с API ключ: api_key
+# Конфигурирайте удостоверяване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходим
+# Разкоментирайте по-долу, за да зададете префикс (e.g. Bearer) за API ключ, ако е необходим
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с инстанция на API клиента
+# Влезте в контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Създайте екземпляр на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 56 # int |  (незадължително)
+    skip = 56 # int |  (по избор)
 
     try:
         api_response = api_instance.get_sso_users(tenant_id, skip=skip)
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_sso_users: %s\n" % e)
 [inline-code-end]
-
----

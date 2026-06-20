@@ -8,9 +8,9 @@
 | broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_public200_response.py)
+Retourneert: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_response.py)
 
 ## Voorbeeld
 
@@ -18,12 +18,12 @@ Retourneert: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/
 [inline-code-start]
 import client
 from client.models.react_body_params import ReactBodyParams
-from client.models.react_feed_post_public200_response import ReactFeedPostPublic200Response
+from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en staat standaard op https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Het instellen van de host is optioneel en standaardwaarde is https://fastcomments.com
+# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

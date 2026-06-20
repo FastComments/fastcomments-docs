@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Возвращает: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Пример
 
@@ -15,7 +15,7 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка авторизации
+# Настройка авторизации
 FastCommentsClient.configure do |config|
   # Настроить авторизацию по API-ключу: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
@@ -24,9 +24,9 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Строка | 
 opts = {
-  skip: 1.2 # Float | 
+  skip: 1.2 # Число с плавающей точкой | 
 }
 
 begin

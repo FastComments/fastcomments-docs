@@ -1,21 +1,21 @@
-## Parameter
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| usernameStartsWith | string | query | Nein |  |
-| mentionGroupIds | array | query | Nein |  |
-| sso | string | query | Nein |  |
-| searchSection | string | query | Nein |  |
+| tenantId | string | Pfad | Ja |  |
+| urlId | string | Abfrage | Ja |  |
+| usernameStartsWith | string | Abfrage | Nein |  |
+| mentionGroupIds | array | Abfrage | Nein |  |
+| sso | string | Abfrage | Nein |  |
+| searchSection | string | Abfrage | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
+Gibt zurück: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'searchUsers Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für searchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

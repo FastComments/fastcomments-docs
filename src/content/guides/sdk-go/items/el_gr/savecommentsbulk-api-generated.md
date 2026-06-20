@@ -1,3 +1,4 @@
+---
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
@@ -8,9 +9,9 @@
 | sendEmails | boolean | query | Όχι |  |
 | populateNotifications | boolean | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: `[]SaveComment200Response`
+Επιστρέφει: [`[]SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_bulk_response.go)
 
 ## Παράδειγμα
 
@@ -22,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SaveCommentsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απάντηση από `SaveCommentsBulk`: []SaveComment200Response
+	// απόκριση από `SaveCommentsBulk`: []SaveCommentsBulkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SaveCommentsBulk`: %v\n", resp)
 }
 [inline-code-end]

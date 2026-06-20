@@ -1,33 +1,33 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | postId | string | path | כן |  |
 | broadcastId | string | query | לא |  |
 | sso | string | query | לא |  |
 
-## תגובה
+## תשובה
 
-מוחזר: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public200_response.py)
+מחזיר: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'delete_feed_post_public דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_feed_post_public200_response import DeleteFeedPostPublic200Response
+from client.models.delete_feed_post_public_response import DeleteFeedPostPublicResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# עיין בקובץ configuration.py כדי לקבל רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנס להקשר (context) עם מופע של קליינט ה-API
+# היכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)

@@ -2,21 +2,21 @@ Omogoči ali onemogoči obvestila za določen komentar.
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| notificationId | string | path | Yes |  |
-| optedInOrOut | string | path | Yes |  |
-| commentId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| notificationId | string | path | Da |  |
+| optedInOrOut | string | path | Da |  |
+| commentId | string | query | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+Vrača: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_comment_subscription_status_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer UpdateUserNotificationCommentSubscriptionStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer posodobitve stanja naročnine na obvestila za komentar uporabnika'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,15 +24,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	notificationId := "notificationId_example" // string | 
-	optedInOrOut := "optedInOrOut_example" // string | 
-	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (neobvezno)
+	tenantId := "tenantId_example" // niz | 
+	notificationId := "notificationId_example" // niz | 
+	optedInOrOut := "optedInOrOut_example" // niz | 
+	commentId := "commentId_example" // niz | 
+	sso := "sso_example" // niz |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `UpdateUserNotificationCommentSubscriptionStatus`: UpdateUserNotificationStatus200Response
+	// odgovor iz `UpdateUserNotificationCommentSubscriptionStatus`: UpdateUserNotificationCommentSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

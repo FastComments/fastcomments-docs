@@ -1,13 +1,14 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| skip | number | query | No |  |
+| tenantId | string | consulta | Sí |  |
+| skip | number | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsers200Response.php)
+Devuelve: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
 
 ## Ejemplo
 
@@ -17,9 +18,9 @@ Devuelve: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar la autorización de la clave API: api_key
+// Configurar la autorización de la clave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abajo para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
+// Descomentar abajo para configurar el prefijo (p. ej. Bearer) para la clave de API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -39,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

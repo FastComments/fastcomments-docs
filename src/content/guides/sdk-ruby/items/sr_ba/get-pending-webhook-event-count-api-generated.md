@@ -1,30 +1,30 @@
-## Parametri
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentId | string | query | Ne |  |
-| externalId | string | query | Ne |  |
-| eventType | string | query | Ne |  |
-| type | string | query | Ne |  |
-| domain | string | query | Ne |  |
-| attemptCountGT | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| commentId | string | query | Не |  |
+| externalId | string | query | Не |  |
+| eventType | string | query | Не |  |
+| type | string | query | Не |  |
+| domain | string | query | Не |  |
+| attemptCountGT | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'get_pending_webhook_event_count Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_event_count Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# подешавање овлашћења
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključa: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uklonite komentar sa sljedeće linije da postavite prefiks za API ključ, npr. 'Bearer' (zadano je nil)
+  # Откоментаришите следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано је nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,3 +47,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_event_count: #{e}"
 end
 [inline-code-end]
+
+---

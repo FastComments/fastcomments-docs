@@ -1,6 +1,6 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | limit | number | query | Nee |  |
@@ -9,9 +9,9 @@
 | after | number | query | Nee |  |
 | before | number | query | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs200_response.rb)
+Retourneert: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_audit_logs_response.rb)
 
 ## Voorbeeld
 
@@ -19,11 +19,11 @@ Retourneert: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcom
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# autorisatie instellen
+# authorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutelautorisatie: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de volgende regel uit de commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
+  # Haal het commentaarteken van de volgende regel weg om een prefix voor de API-sleutel in te stellen, bv. 'Bearer' (standaard nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -45,5 +45,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_audit_logs: #{e}"
 end
 [inline-code-end]
-
----

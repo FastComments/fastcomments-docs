@@ -1,16 +1,16 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| postId | string | path | Yes |  |
+| tenantId | string | path | Sì |  |
+| postId | string | path | Sì |  |
 | isUndo | boolean | query | No |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_public200_response.py)
+Restituisce: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_response.py)
 
 ## Esempio
 
@@ -18,18 +18,18 @@ Restituisce: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/
 [inline-code-start]
 import client
 from client.models.react_body_params import ReactBodyParams
-from client.models.react_feed_post_public200_response import ReactFeedPostPublic200Response
+from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
+# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
 # Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto utilizzando un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.PublicApi(api_client)
@@ -47,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->react_feed_post_public: %s\n" % e)
 [inline-code-end]
-
----

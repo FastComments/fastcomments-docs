@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -11,7 +11,7 @@
 
 ## Réponse
 
-Renvoie : [`VoteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteComment200Response.php)
+Renvoie : [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
 ## Exemple
 
@@ -42,5 +42,3 @@ try {
     echo 'Exception when calling PublicApi->voteComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

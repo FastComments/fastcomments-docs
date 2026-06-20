@@ -1,43 +1,42 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Отговор
 
-Връща: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions200_response.py)
+Връща: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за get_email_template_definitions'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_definitions200_response import GetEmailTemplateDefinitions200Response
+from client.models.get_email_template_definitions_response import GetEmailTemplateDefinitionsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
+# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
-# отговаря на вашия случай на употреба при удостоверяване.
+# По-долу са дадени примери за всеки метод на удостоверяване, използвайте примера,
+# който отговаря на вашия случай на употреба за удостоверяване.
 
-# Конфигурирайте удостоверяване чрез API ключ: api_key
+# Конфигурирайте упълномощаването с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирaйте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+# Премахнете коментара отдолу, за да зададете префикс (напр. Bearer) за API ключа, ако е нужно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с инстанция на API клиента
+# Влезте в контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Създайте екземпляр на API клас
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
 
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_email_template_definitions: %s\n" % e)
 [inline-code-end]
-
----

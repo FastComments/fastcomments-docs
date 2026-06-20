@@ -4,7 +4,7 @@ afterId
 
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必要 | 描述 |
+| 名稱 | Type | Location | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | afterId | string | query | 否 |  |
@@ -16,7 +16,7 @@ afterId
 
 ## 回應
 
-回傳: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_public200_response.rb)
+回傳: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_feed_posts_response.rb)
 
 ## 範例
 
@@ -26,14 +26,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字串 | 
 opts = {
-  after_id: 'after_id_example', # String | 
-  limit: 56, # Integer | 
-  tags: ['inner_example'], # Array<String> | 
-  sso: 'sso_example', # String | 
-  is_crawler: true, # Boolean | 
-  include_user_info: true # Boolean | 
+  after_id: 'after_id_example', # 字串 | 
+  limit: 56, # 整數 | 
+  tags: ['inner_example'], # 陣列<String> | 
+  sso: 'sso_example', # 字串 | 
+  is_crawler: true, # 布林值 | 
+  include_user_info: true # 布林值 | 
 }
 
 begin

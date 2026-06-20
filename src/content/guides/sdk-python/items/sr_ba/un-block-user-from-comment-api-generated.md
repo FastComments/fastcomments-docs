@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -9,36 +9,35 @@
 
 ## Одговор
 
-Враћа: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/un_block_comment_public200_response.py)
+Враћа: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'un_block_user_from_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.un_block_comment_public200_response import UnBlockCommentPublic200Response
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
+from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Дефинисање хоста је опционално и подразумева се https://fastcomments.com
+# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клијент мора конфигурисати параметре аутентификације и овлашћења
-# у складу са безбедносном политиком API сервера.
-# Примјери за сваки метод аутентификације су дати доле, употребите примјер који
-# одговара вашем случају коришћења аутентификације.
-
+# у складу са безбједносном политиком API сервера.
+# Примјери за сваки метод аутентификације дати су доле, користите примјер који
+# одговара вашем случају употребе.
 # Конфигуришите ауторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Ако је потребно, уклоните коментар да бисте подесили префикс (нпр. Bearer) за API кључ
+# Уклоните коментар доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Унесите контекст са инстанцом API клијента
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
     # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
@@ -55,5 +54,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->un_block_user_from_comment: %s\n" % e)
 [inline-code-end]
-
----

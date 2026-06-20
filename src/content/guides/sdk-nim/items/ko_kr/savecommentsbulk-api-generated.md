@@ -1,21 +1,19 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| createCommentParams | seq[CreateCommentParams] | 아니요 |  |
-| isLive | bool | 아니요 |  |
-| doSpamCheck | bool | 아니요 |  |
-| sendEmails | bool | 아니요 |  |
-| populateNotifications | bool): (Option[seq[SaveComment_200_response]] | 아니요 |  |
-| id | string | 아니요 |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | 아니요 |  |
-| userId | string | 아니요 |  |
-| anonUserId | string | 아니요 |  |
+| createCommentParams | seq[CreateCommentParams] | 아니오 |  |
+| isLive | bool | 아니오 |  |
+| doSpamCheck | bool | 아니오 |  |
+| sendEmails | bool | 아니오 |  |
+| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | 아니오 |  |
+| id | string | 아니오 |  |
+| fromName | string | 아니오 |  |
 
 ## 응답
 
-반환: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 예제
 
@@ -24,20 +22,19 @@
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = true,
-  doSpamCheck = true,
+  isLive = false,
+  doSpamCheck = false,
   sendEmails = false,
-  populateNotifications = true,
-  id = "batch-20251122",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = "anon-789"
+  populateNotifications = false,
+  id = "",
+  fromName = ""
 )
+
 if response.isSome:
-  let unblocked = response.get()
-  echo "Unblocked response received: ", unblocked
+  let apiResp = response.get()
+  echo "Bulk save succeeded, tenant:", " my-tenant-123"
 else:
-  echo "No unblocked response, httpResponse: ", $httpResponse
+  echo "Bulk save returned no API response"
 [inline-code-end]
 
 ---

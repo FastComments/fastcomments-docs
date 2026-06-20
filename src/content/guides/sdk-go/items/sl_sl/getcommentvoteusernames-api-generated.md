@@ -2,14 +2,14 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| dir | integer | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | pot | Da |  |
+| commentId | string | pot | Da |  |
+| dir | integer | poizvedba | Da |  |
+| sso | string | poizvedba | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_vote_user_names_200_response.go)
+Vrača: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_vote_user_names_success_response.go)
 
 ## Primer
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentVoteUserNames``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetCommentVoteUserNames`: GetCommentVoteUserNames200Response
+	// odgovor iz `GetCommentVoteUserNames`: GetCommentVoteUserNamesSuccessResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentVoteUserNames`: %v\n", resp)
 }
 [inline-code-end]

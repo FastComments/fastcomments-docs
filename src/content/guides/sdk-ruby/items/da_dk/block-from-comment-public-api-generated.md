@@ -1,14 +1,14 @@
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | sso | string | query | Nej |  |
 
-## Response
+## Svar
 
-Returnerer: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+Returnerer: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## Eksempel
 
@@ -33,3 +33,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->block_from_comment_public: #{e}"
 end
 [inline-code-end]
+
+---

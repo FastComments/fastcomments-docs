@@ -1,38 +1,38 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 
 ## Risposta
 
-Restituisce: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user200_response.py)
+Restituisce: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di create_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_user200_response import CreateTenantUser200Response
 from client.models.create_tenant_user_body import CreateTenantUserBody
+from client.models.create_tenant_user_response import CreateTenantUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e predefinita a https://fastcomments.com
-# Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# L'impostazione dell'host è opzionale e il valore predefinito è https://fastcomments.com
+# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la policy di sicurezza del server API.
-# Gli esempi per ogni metodo di autenticazione sono forniti qui sotto; usa l'esempio che
-# soddisfa il tuo caso d'uso.
+# Di seguito sono forniti esempi per ciascun metodo di autenticazione; usa l'esempio che
+# soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autorizzazione con API key: api_key
+# Configura l'autorizzazione tramite API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommenta la riga seguente per impostare il prefisso (es. Bearer) per la API key, se necessario
+# Decommenta qui sotto per impostare un prefisso (es. Bearer) per l'API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entra in un contesto con un'istanza del client API

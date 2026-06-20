@@ -7,13 +7,13 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigs200Response.java)
+Επιστρέφει: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetQuestionConfigsResponse.java)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getQuestionConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,17 +26,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetQuestionConfigs200Response result = apiInstance.getQuestionConfigs(tenantId)
+      GetQuestionConfigsResponse result = apiInstance.getQuestionConfigs(tenantId)
             .skip(skip)
             .execute();
       System.out.println(result);

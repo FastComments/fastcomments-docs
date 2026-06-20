@@ -1,34 +1,36 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Не |  |
-| badgeId | string | Не |  |
-| displayedOnComments | bool | Не |  |
-| limit | float64 | Не |  |
-| skip | float64 | Не |  |
+| tenantId | string | Da |  |
+| userId | string | Ne |  |
+| badgeId | string | Ne |  |
+| displayedOnComments | bool | Ne |  |
+| limit | float64 | Ne |  |
+| skip | float64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetUserBadges_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_badges200response.nim)
+Vraća: [`Option[APIGetUserBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badges_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getUserBadges Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadges Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getUserBadges(
   tenantId = "my-tenant-123",
-  userId = "user-789",
+  userId = "user-9876",
   badgeId = "top-commenter",
   displayedOnComments = true,
-  limit = 50.0,
+  limit = 20.0,
   skip = 0.0
 )
 
 if response.isSome:
   let badges = response.get()
-  echo "Retrieved badges: ", $badges
+  echo "Badges response:", badges
+else:
+  echo "No badges found (HTTP status: ", httpResponse.status, ")"
 [inline-code-end]
 
 ---

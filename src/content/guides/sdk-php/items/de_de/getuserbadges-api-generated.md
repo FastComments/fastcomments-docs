@@ -1,18 +1,18 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nein |  |
-| badgeId | string | query | Nein |  |
-| type | number | query | Nein |  |
-| displayedOnComments | boolean | query | Nein |  |
-| limit | number | query | Nein |  |
-| skip | number | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadges200Response.php)
+Gibt zurück: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgesResponse.php)
 
 ## Beispiel
 
@@ -22,14 +22,14 @@ Gibt zurück: [`GetUserBadges200Response`](https://github.com/FastComments/fastc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Autorisierung konfigurieren: api_key
+// API-Schlüssel-Authentifizierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entkommentieren Sie das Folgende, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
+// Entfernen Sie das folgende Kommentarzeichen, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config

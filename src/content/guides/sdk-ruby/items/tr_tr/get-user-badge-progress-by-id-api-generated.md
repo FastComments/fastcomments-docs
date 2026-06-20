@@ -1,13 +1,14 @@
+---
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
+| tenantId | string | sorgu | Evet |  |
+| id | string | yol | Evet |  |
 
 ## Yanıt
 
-Dönen değer: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Döndürür: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Örnek
 
@@ -15,11 +16,11 @@ Dönen değer: [`GetUserBadgeProgressById200Response`](https://github.com/FastCo
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Yetkilendirmeyi ayarla
+# yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın başındaki yorum işaretini kaldırarak API anahtarına bir önek ayarlayın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

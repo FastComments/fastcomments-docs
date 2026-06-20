@@ -1,7 +1,6 @@
----
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Evet |  |
 | after_id | String | Hayır |  |
@@ -13,7 +12,7 @@
 
 ## Yanıt
 
-Döndürür: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_200_response.rs)
+Döndürür: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
 
 ## Örnek
 
@@ -22,17 +21,15 @@ Döndürür: [`ResetUserNotifications200Response`](https://github.com/FastCommen
 async fn run_reset() -> Result<(), Error> {
     let params: ResetUserNotificationsParams = ResetUserNotificationsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        after_id: Some("notif_987654321".to_string()),
-        after_created_at: Some(1672531200),
+        after_id: Some("notif-20260619-0001".to_string()),
+        after_created_at: Some(1_787_400_000i64),
         unread_only: Some(true),
         dm_only: Some(false),
         no_dm: Some(false),
-        sso: Some("sso-enterprise".to_string()),
+        sso: Some("saml".to_string()),
     };
-    let resp: ResetUserNotifications200Response = reset_user_notifications(&configuration, params).await?;
-    let _ = resp;
+    let response: ResetUserNotificationsResponse =
+        reset_user_notifications(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

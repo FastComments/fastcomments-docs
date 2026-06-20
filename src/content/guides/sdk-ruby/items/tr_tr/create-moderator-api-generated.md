@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -6,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+Döndürür: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## Örnek
 
@@ -14,11 +15,11 @@ Döndürür: [`CreateModerator200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi yapılandır
+# yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, ör. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_moderator: #{e}"
 end
 [inline-code-end]
+
+---

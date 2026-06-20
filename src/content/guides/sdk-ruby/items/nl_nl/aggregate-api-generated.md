@@ -1,5 +1,5 @@
-Aggregeert documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
-Verschillende bewerkingen (bijv. sum, countDistinct, avg, etc.) worden ondersteund.
+Agregeert documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
+Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteund.
 
 ## Parameters
 
@@ -9,9 +9,9 @@ Verschillende bewerkingen (bijv. sum, countDistinct, avg, etc.) worden ondersteu
 | parentTenantId | string | query | Nee |  |
 | includeStats | boolean | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Geeft terug: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Voorbeeld
 
@@ -19,11 +19,11 @@ Retourneert: [`AggregationResponse`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Autorisatie instellen
+# autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Haal de commentaarstreep van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

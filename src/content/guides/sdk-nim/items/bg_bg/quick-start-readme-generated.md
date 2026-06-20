@@ -1,6 +1,6 @@
-### Използване на аутентифицирани API (DefaultAPI)
+### Използване на удостоверени API-та (DefaultAPI)
 
-**Важно:** Аутентифицираните крайни точки изискват вашият API ключ да бъде зададен като заглавие `x-api-key`.
+**Важно:** Удостоверените крайни точки изискват вашият API ключ да бъде зададен като заглавие `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Изпълнете удостоверени повиквания към API
+# Извършване на удостоверени API извиквания
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -37,7 +37,7 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Използване на публични API (PublicAPI)
+### Използване на публични API-та (PublicAPI)
 
 Публичните крайни точки не изискват удостоверяване:
 
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Изпълнете публични повиквания към API
+# Извършване на публични API извиквания
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Използване на модерационни API-та (ModerationAPI)
+
+Модерационните крайни точки захранват таблото за модератори и се удостоверяват със SSO токен за действащия модератор:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Изброяване на коментари в таблото за модерация
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Чести проблеми
 
-1. **401 грешка при удостоверяване**: Уверете се, че сте задали заглавието `x-api-key` на вашия HttpClient преди да извършите заявки към DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Грешен клас на API**: Използвайте `api_default` за сървърни удостоверени заявки, `api_public` за клиентски/публични заявки.
+1. **401 грешка при удостоверяване**: Уверете се, че сте задали заглавието `x-api-key` на вашия HttpClient преди да правите заявки към DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Грешен клас на API**: Използвайте `api_default` за удостоверени заявки от страна на сървъра, `api_public` за клиентски/публични заявки, и `api_moderation` за заявки към таблото за модераторите.

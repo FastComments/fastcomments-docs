@@ -7,14 +7,14 @@
 
 ## Response
 
-Returns: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes200_response.py)
+Returns: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_votes Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes200_response import GetVotes200Response
+from client.models.get_votes_response import GetVotesResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -32,7 +32,7 @@ configuration = client.Configuration(
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to set up prefix (e.g. Bearer) for API key, if needed
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client

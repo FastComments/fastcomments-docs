@@ -1,13 +1,13 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назив | Type | Location | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | forceRecalculate | boolean | query | Не |  |
 
 ## Одговор
 
-Враћа: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_aggregate_question_results_200_response.go)
+Враћа: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_aggregate_question_results_response.go)
 
 ## Пример
 
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.BulkAggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `BulkAggregateQuestionResults`: BulkAggregateQuestionResults200Response
+	// одговор од `BulkAggregateQuestionResults`: BulkAggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.BulkAggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

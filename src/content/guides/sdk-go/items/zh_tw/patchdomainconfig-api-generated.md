@@ -1,13 +1,13 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | 是 |  |
-| domainToUpdate | string | 路徑 | 是 |  |
+| tenantId | string | query | 是 |  |
+| domainToUpdate | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+回傳: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_patch_domain_config_response.go)
 
 ## 範例
 
@@ -19,12 +19,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	domainToUpdate := "domainToUpdate_example" // string | 
+	tenantId := "tenantId_example" // 字串 | 
+	domainToUpdate := "domainToUpdate_example" // 字串 | 
 	patchDomainConfigParams := *openapiclient.NewPatchDomainConfigParams() // PatchDomainConfigParams | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `PatchDomainConfig` 的回應： GetDomainConfig200Response
+	// 來自 `PatchDomainConfig` 的回應：PatchDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,44 +1,45 @@
+---
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-update_question_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_question_config_body import UpdateQuestionConfigBody
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל הפרמטרים הנתמכים.
+# הגדרת ה-host אינה חובה ויש ברירת מחדל של https://fastcomments.com
+# ראה configuration.py לקבלת רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות והרשאה
+# על הלקוח להגדיר את פרמטרי האימות וההרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה
-# שתואמת את מקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה ש
+# שמתאימה למקרה השימוש שלך.
 
-# הגדר הרשאת מפתח API: api_key
+# הגדר את האימות באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
+# הסר הערת שורה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם צריך
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# הכנס להקשר עם מופע של ApiClient
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -51,3 +52,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->update_question_config: %s\n" % e)
 [inline-code-end]
+
+---

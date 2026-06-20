@@ -1,22 +1,24 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | skip | float64 | Нет |  |
 
 ## Ответ
 
-Возвращает: [`Option[GetEmailTemplates_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates200response.nim)
+Возвращает: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getEmailTemplates'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример использования getEmailTemplates'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let templates = response.get()
   echo templates
 else:
-  echo "No templates returned"
+  echo "No email templates available"
 [inline-code-end]
+
+---

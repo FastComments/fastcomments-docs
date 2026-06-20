@@ -1,8 +1,8 @@
-啟用或停用頁面的通知。當使用者訂閱頁面時，會為新的根留言建立通知，並且也會
+啟用或停用頁面的通知。當使用者訂閱頁面時，系統會在有新的根留言時建立通知，並且還會
 
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | urlId | string | query | 是 |  |
@@ -11,29 +11,29 @@
 | subscribedOrUnsubscribed | string | path | 是 |  |
 | sso | string | query | 否 |  |
 
-## 回傳
+## 回應
 
-回傳: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+回傳： [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'update_user_notification_page_subscription_status 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 有關所有支援的設定參數清單，請參閱 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# 使用 API 客戶端實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 

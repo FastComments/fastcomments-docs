@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
@@ -12,18 +12,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+Zwraca: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,10 +31,10 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj przykładu który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj tego, który
+# spełnia Twój przypadek użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację za pomocą klucza API: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
@@ -45,12 +45,12 @@ with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    url_id = 'url_id_example' # str |  (optional)
-    from_comment_id = 'from_comment_id_example' # str |  (optional)
-    viewed = True # bool |  (optional)
-    type = 'type_example' # str |  (optional)
-    skip = 3.4 # float |  (optional)
+    user_id = 'user_id_example' # str |  (opcjonalne)
+    url_id = 'url_id_example' # str |  (opcjonalne)
+    from_comment_id = 'from_comment_id_example' # str |  (opcjonalne)
+    viewed = True # bool |  (opcjonalne)
+    type = 'type_example' # str |  (opcjonalne)
+    skip = 3.4 # float |  (opcjonalne)
 
     try:
         api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)

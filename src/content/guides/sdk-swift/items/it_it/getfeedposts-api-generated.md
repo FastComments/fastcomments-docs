@@ -4,8 +4,8 @@ afterId
 
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Type | Location | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | afterId | string | query | No |  |
 | limit | integer | query | No |  |
@@ -13,7 +13,7 @@ afterId
 
 ## Risposta
 
-Restituisce: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPosts200Response.swift)
+Restituisce: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
 ## Esempio
 

@@ -7,17 +7,17 @@
 
 ## Odgovor
 
-Vrne: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotes200Response.swift)
+Vrne: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getVotes Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getVotes'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za kakršnokoli težavo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za morebitne težave poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // Niz | 
-let urlId = "urlId_example" // Niz | 
+let tenantId = "tenantId_example" // String | 
+let urlId = "urlId_example" // String | 
 
 DefaultAPI.getVotes(tenantId: tenantId, urlId: urlId) { (response, error) in
     guard error == nil else {
@@ -30,3 +30,5 @@ DefaultAPI.getVotes(tenantId: tenantId, urlId: urlId) { (response, error) in
     }
 }
 [inline-code-end]
+
+---

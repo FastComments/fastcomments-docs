@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Location | Obligatoire | Description |
+|------|------|----------|------------|-------------|
 | tenantId | string | query | Oui |  |
 | urlId | string | query | Non |  |
 | userId | string | query | Non |  |
@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResults200Response.php)
+Renvoie : [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultsResponse.php)
 
 ## Exemple
 
@@ -22,9 +22,9 @@ Renvoie : [`GetQuestionResults200Response`](https://github.com/FastComments/fast
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'autorisation de la clé API : api_key
+// Configurer l'autorisation par clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci-dessous pour configurer le préfixe (ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

@@ -5,17 +5,17 @@ userIdWS
 
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
 | userIdWS | string | query | Oui |  |
 | startTime | integer | query | Oui |  |
-| endTime | integer | query | Oui |  |
+| endTime | integer | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEventLog200Response.swift)
+Renvoie: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEventLogResponse.swift)
 
 ## Exemple
 
@@ -28,7 +28,7 @@ let tenantId = "tenantId_example" // String |
 let urlId = "urlId_example" // String | 
 let userIdWS = "userIdWS_example" // String | 
 let startTime = 987 // Int64 | 
-let endTime = 987 // Int64 | 
+let endTime = 987 // Int64 |  (optionnel)
 
 PublicAPI.getGlobalEventLog(tenantId: tenantId, urlId: urlId, userIdWS: userIdWS, startTime: startTime, endTime: endTime) { (response, error) in
     guard error == nil else {

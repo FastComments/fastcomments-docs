@@ -10,45 +10,45 @@
 
 ## Одговор
 
-Враћа: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Враћа: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'save_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора подесити параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Испод су примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе аутентификације.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Конфигуришите API кључ за ауторизацију: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте испод да бисте поставили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (опционо)
-    do_spam_check = True # bool |  (опционо)
-    send_emails = True # bool |  (опционо)
-    populate_notifications = True # bool |  (опционо)
+    is_live = True # bool |  (опционално)
+    do_spam_check = True # bool |  (опционално)
+    send_emails = True # bool |  (опционално)
+    populate_notifications = True # bool |  (опционално)
 
     try:
         api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)

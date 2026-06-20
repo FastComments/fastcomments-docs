@@ -10,35 +10,35 @@
 
 ## Antwort
 
-Gibt zurück: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Gibt zurück: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'create_vote Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com.
+# Die Definition des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter konfigurieren
-# gemäß der Sicherheitsrichtlinie des API-Servers.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt; verwenden Sie das Beispiel, 
-# das Ihrem Authentifizierungsfall entspricht.
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Auth-Methode sind unten aufgeführt. Verwenden Sie das Beispiel,
+# das Ihren Authentifizierungsfall erfüllt.
 
-# Konfigurieren Sie die API-Key-Authentifizierung: api_key
+# API-Key-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie die Kommentierung unten, um bei Bedarf ein Präfix (z. B. 'Bearer') für den API-Schlüssel festzulegen
+# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Key festzulegen, falls benötigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)

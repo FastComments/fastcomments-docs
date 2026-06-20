@@ -7,38 +7,38 @@
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'update_feed_post Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Примјер update_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.feed_post import FeedPost
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање хоста је опционално и подразумевано је https://fastcomments.com
+# Дефинисање host-а је опционално и подразумјевано је https://fastcomments.com
 # Погледајте configuration.py за списак свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора подесити параметре аутентификације и овлашћења
-# у складу са безбједносном политиком API сервера.
-# Испод су примјери за сваки метод аутентификације; користите онај који
-# задовољава ваш случај употребе аутентификације.
+# Клијент мора конфигурисати параметре аутентификације и овлашћења
+# у складу са политиком безбједности API сервера.
+# Примјери за сваки метод аутентификације су наведени доле; користите примјер
+# који одговара вашем случају употребе аутентификације.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Окоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

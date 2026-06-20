@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
@@ -9,19 +9,18 @@
 
 ## Réponse
 
-Renvoie : [`Option[DeleteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment200response.nim)
+Retourne : [`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de deleteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-456abc", contextUserId = "user-789", isLive = true)
+let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-98765", contextUserId = "user-456", isLive = true)
 if response.isSome:
-  let deleted = response.get()
-  discard deleted
-  echo "Delete succeeded"
+  let result = response.get()
+  echo "DeleteCommentResult received"
 else:
-  echo "No delete response"
+  echo "No result, HTTP status: ", httpResponse.status
 [inline-code-end]
 
 ---

@@ -1,26 +1,25 @@
----
 ## פרמטרים
 
-| Name | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | id | String | כן |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+מחזיר: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של delete_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה עבור delete_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_example() -> Result<(), Error> {
     let params: DeleteTenantPackageParams = DeleteTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-comments-package-2026-03".to_string(),
+        id: "premium-comment-moderation".to_string(),
     };
-    let response: FlagCommentPublic200Response = delete_tenant_package(&configuration, params).await?;
-    Ok(response)
+    let response: ApiEmptyResponse = delete_tenant_package(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

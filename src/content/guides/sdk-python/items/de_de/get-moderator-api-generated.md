@@ -2,19 +2,19 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Antwort
 
-Gibt zurück: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderator200_response.py)
+Gibt zurück: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderator_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_moderator Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderator200_response import GetModerator200Response
+from client.models.get_moderator_response import GetModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,17 +25,17 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten angegeben, verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt; verwenden
+# Sie das Beispiel, das Ihren Authentifizierungsfall erfüllt.
 
-# Konfigurieren Sie die API-Schlüssel-Authentifizierung: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie unten die Auskommentierung, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls benötigt
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)

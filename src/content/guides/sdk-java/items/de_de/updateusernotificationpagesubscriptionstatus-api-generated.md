@@ -1,19 +1,19 @@
-Aktivieren oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer für eine Seite abonniert sind, werden Benachrichtigungen für neue Root-Kommentare erstellt, und auch
+Aktivieren oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer für eine Seite angemeldet sind, werden Benachrichtigungen für neue Root-Kommentare erstellt, und auch
 
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Ja |  |
+| url | string | query | Ja |  |
+| pageTitle | string | query | Ja |  |
+| subscribedOrUnsubscribed | string | path | Ja |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Gibt zurück: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Beispiel
 
@@ -39,7 +39,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count200_response.rb)
+Returns: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count_response.rb)
 
 ## Example
 

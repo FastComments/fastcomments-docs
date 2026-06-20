@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳：[`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+回傳: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## 範例
 
@@ -31,6 +31,8 @@ begin
   result = api_instance.pin_comment(tenant_id, comment_id, broadcast_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling PublicApi->pin_comment: #{e}"
+  puts "呼叫 PublicApi->pin_comment 時發生錯誤: #{e}"
 end
 [inline-code-end]
+
+---

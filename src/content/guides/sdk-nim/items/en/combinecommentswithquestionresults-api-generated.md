@@ -14,7 +14,7 @@
 
 ## Response
 
-Returns: [`Option[CombineCommentsWithQuestionResults_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_comments_with_question_results200response.nim)
+Returns: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_question_results_with_comments_response.nim)
 
 ## Example
 
@@ -24,7 +24,7 @@ let (response, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
   questionId = "",
   questionIds = @[],
-  urlId = "news/earthquake-2026-10-05",
+  urlId = "news/article-2026-climate-change",
   startDate = "",
   forceRecalculate = false,
   minValue = 0.0,
@@ -33,6 +33,8 @@ let (response, httpResponse) = client.combineCommentsWithQuestionResults(
 )
 
 if response.isSome:
-  let result = response.get()
-  discard result
+  let combined = response.get()
+  echo "Combined results received for tenant:", " my-tenant-123"
+else:
+  echo "No combined results returned"
 [inline-code-end]

@@ -5,9 +5,9 @@
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Przykład
 
@@ -26,7 +26,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację kluczem API: api_key
+    // Skonfiguruj uwierzytelnianie przy użyciu klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
@@ -37,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     ReplaceTenantPackageBody replaceTenantPackageBody = new ReplaceTenantPackageBody(); // ReplaceTenantPackageBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
+      APIEmptyResponse result = apiInstance.replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

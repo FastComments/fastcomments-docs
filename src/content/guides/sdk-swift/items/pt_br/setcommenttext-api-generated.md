@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Location | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | commentId | string | path | Sim |  |
@@ -10,7 +10,7 @@
 
 ## Resposta
 
-Retorna: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetCommentText200Response.swift)
+Retorna: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
 
 ## Exemplo
 
@@ -37,3 +37,5 @@ PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: 
     }
 }
 [inline-code-end]
+
+---

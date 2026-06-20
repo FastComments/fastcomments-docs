@@ -12,37 +12,37 @@
 
 ## תגובה
 
-מחזיר: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+מחזיר: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה את configuration.py לרשימת כל פרמטרי הקונפיגורציה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# על הלקוח להגדיר את פרמטרי האימות והרשאות
+# בהתאם למדיניות האבטחה של שרת ה-API.
+# דוגמאות לכל שיטת אימות מסופקות להלן; השתמש בדוגמה ש
+# שמתאימה למקרה השימוש שלך.
 
-# Configure API key authorization: api_key
+# הגדר הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# הסר הערת שורה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# כניסה להקשר עם מופע של הלקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (אופציונלי)

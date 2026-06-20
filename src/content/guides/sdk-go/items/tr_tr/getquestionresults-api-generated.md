@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -12,7 +13,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_200_response.go)
+Döndürür: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_response.go)
 
 ## Örnek
 
@@ -43,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetQuestionResults`: GetQuestionResults200Response
+	// `GetQuestionResults`'den gelen yanıt: GetQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
+
+---

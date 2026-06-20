@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | notificationId | string | path | כן |  |
@@ -9,7 +9,7 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+מחזיר: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
 
 ## דוגמה
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-notification_id = 'notification_id_example' # String | 
-new_status = 'read' # String | 
+tenant_id = 'tenant_id_example' # מחרוזת | 
+notification_id = 'notification_id_example' # מחרוזת | 
+new_status = 'read' # מחרוזת | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # מחרוזת | 
 }
 
 begin

@@ -1,18 +1,18 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | Списък с идентификатори на коментари, разделени със запетая. |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| commentIds | string | query | Да | Списък от идентификатори на коментари, разделени със запетая. |
+| sso | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Връща: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример checkedCommentsForBlocked'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
@@ -28,10 +28,10 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
-    String commentIds = "commentIds_example"; // String | Списък с идентификатори на коментари, разделени със запетая.
+    String commentIds = "commentIds_example"; // String | Списък от идентификатори на коментари, разделени със запетая.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

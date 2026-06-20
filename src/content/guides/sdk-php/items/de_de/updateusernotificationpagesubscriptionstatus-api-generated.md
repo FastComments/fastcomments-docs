@@ -1,8 +1,10 @@
-Benachrichtigungen für eine Seite aktivieren oder deaktivieren. Wenn Benutzer für eine Seite abonniert sind, werden Benachrichtigungen für neue Root-Kommentare erstellt, und auch
+---
+Aktivieren oder Deaktivieren von Benachrichtigungen für eine Seite. Wenn Benutzer eine Seite abonniert haben, werden Benachrichtigungen für neue Root-Kommentare erstellt
+für neue Root-Kommentare, und auch
 
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
@@ -13,11 +15,11 @@ Benachrichtigungen für eine Seite aktivieren oder deaktivieren. Wenn Benutzer f
 
 ## Antwort
 
-Gibt zurück: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Gibt zurück: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -43,3 +45,5 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

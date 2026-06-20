@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateUserBadge200Response.java)
+Returns: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APICreateUserBadgeResponse.java)
 
 ## Example
 
@@ -35,7 +35,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     CreateUserBadgeParams createUserBadgeParams = new CreateUserBadgeParams(); // CreateUserBadgeParams | 
     try {
-      CreateUserBadge200Response result = apiInstance.createUserBadge(tenantId, createUserBadgeParams)
+      APICreateUserBadgeResponse result = apiInstance.createUserBadge(tenantId, createUserBadgeParams)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

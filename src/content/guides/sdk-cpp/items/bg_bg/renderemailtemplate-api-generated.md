@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | Да |  |
@@ -8,34 +9,28 @@
 
 ## Отговор
 
-Връща: [`RenderEmailTemplate_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplate_200_response.h)
+Връща: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
 
 ## Пример
 
-[inline-code-attrs-start title = 'renderEmailTemplate Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за renderEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-RenderEmailTemplateBody renderEmailTemplateBody;
-renderEmailTemplateBody.setTemplateName(U("welcome_wagon"));
-renderEmailTemplateBody.setRecipient(U("alice@example.com"));
-web::json::value vars;
-vars[U("firstName")] = web::json::value::string(U("Alice"));
-renderEmailTemplateBody.setVariables(vars);
-boost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U("en-US"));
-auto placeholder = std::make_shared<RenderEmailTemplate_200_response>();
-api->renderEmailTemplate(tenantId, renderEmailTemplateBody, locale)
-.then([](pplx::task<std::shared_ptr<RenderEmailTemplate_200_response>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            std::cout << "Email template rendered successfully" << std::endl;
-        } else {
-            std::cerr << "No response returned" << std::endl;
+auto body = std::make_shared<RenderEmailTemplateBody>();
+body->templateId = U("welcome-email");
+body->recipientEmail = U("user@example.com");
+boost::optional<utility::string_t> locale = U("en-US");
+api->renderEmailTemplate(tenantId, *body, locale)
+    .then([](pplx::task<std::shared_ptr<RenderEmailTemplateResponse>> t) {
+        try {
+            auto resp = t.get();
+            if (resp) {
+                std::cout << "Rendered email template received for tenant\n";
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "Error: " << e.what() << '\n';
         }
-    } catch (const std::exception& e) {
-        std::cerr << "Render failed: " << e.what() << std::endl;
-    }
-});
+    });
 [inline-code-end]
 
 ---

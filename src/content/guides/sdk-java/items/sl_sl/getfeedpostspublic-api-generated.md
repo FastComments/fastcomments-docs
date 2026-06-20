@@ -4,19 +4,19 @@ afterId
 
 ## Parametri
 
-| Ime | Type | Lokacija | Obvezno | Opis |
+| Ime | Type | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | pot | Da |  |
-| afterId | string | poizvedba | Ne |  |
-| limit | integer | poizvedba | Ne |  |
-| tags | array | poizvedba | Ne |  |
-| sso | string | poizvedba | Ne |  |
-| isCrawler | boolean | poizvedba | Ne |  |
-| includeUserInfo | boolean | poizvedba | Ne |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Odgovor
 
-Vrača: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetFeedPostsPublic200Response.java)
+Vrača: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PublicFeedPostsResponse.java)
 
 ## Primer
 
@@ -43,7 +43,7 @@ public class Example {
     Boolean isCrawler = true; // Boolean | 
     Boolean includeUserInfo = true; // Boolean | 
     try {
-      GetFeedPostsPublic200Response result = apiInstance.getFeedPostsPublic(tenantId)
+      PublicFeedPostsResponse result = apiInstance.getFeedPostsPublic(tenantId)
             .afterId(afterId)
             .limit(limit)
             .tags(tags)
@@ -62,3 +62,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

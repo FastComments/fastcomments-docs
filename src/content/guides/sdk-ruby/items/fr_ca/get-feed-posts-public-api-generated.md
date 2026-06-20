@@ -4,7 +4,7 @@ afterId
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | afterId | string | query | Non |  |
@@ -16,7 +16,7 @@ afterId
 
 ## Réponse
 
-Renvoie : [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_public200_response.rb)
+Renvoie: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_feed_posts_response.rb)
 
 ## Exemple
 
@@ -26,14 +26,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
 opts = {
-  after_id: 'after_id_example', # String | 
-  limit: 56, # Integer | 
-  tags: ['inner_example'], # Array<String> | 
-  sso: 'sso_example', # String | 
-  is_crawler: true, # Boolean | 
-  include_user_info: true # Boolean | 
+  after_id: 'after_id_example', # Chaîne | 
+  limit: 56, # Entier | 
+  tags: ['inner_example'], # Tableau<String> | 
+  sso: 'sso_example', # Chaîne | 
+  is_crawler: true, # Booléen | 
+  include_user_info: true # Booléen | 
 }
 
 begin

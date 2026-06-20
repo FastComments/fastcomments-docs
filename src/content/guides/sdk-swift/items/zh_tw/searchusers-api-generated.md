@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
@@ -11,21 +11,21 @@
 
 ## 回應
 
-回傳: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+回傳: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'searchUsers 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式範例仍為測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 下列程式範例仍處於 beta 階段。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (選用)
-let mentionGroupIds = ["inner_example"] // [String] |  (選用)
-let sso = "sso_example" // String |  (選用)
-let searchSection = "searchSection_example" // String |  (選用)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (可選)
+let mentionGroupIds = ["inner_example"] // [String] |  (可選)
+let sso = "sso_example" // String |  (可選)
+let searchSection = "searchSection_example" // String |  (可選)
 
 PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {

@@ -10,9 +10,9 @@
 | domain | string | query | Não |  |
 | attemptCountGT | number | query | Não |  |
 
-## Response
+## Resposta
 
-Retorna: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+Retorna: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
 ## Exemplo
 
@@ -22,9 +22,9 @@ require 'time'
 require 'fastcomments-client'
 # configurar autorização
 FastCommentsClient.configure do |config|
-  # Configurar autorização por chave da API: api_key
+  # Configurar autorização por chave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente a linha a seguir para definir um prefixo para a chave da API, p.ex. 'Bearer' (padrão: nil)
+  # Descomente a linha a seguir para definir um prefixo para a chave da API, ex. 'Bearer' (padrão: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_event_count: #{e}"
 end
 [inline-code-end]
-
----

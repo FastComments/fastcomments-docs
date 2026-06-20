@@ -2,23 +2,23 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| voteId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Tak |  |
+| commentId | string | path | Tak |  |
+| voteId | string | path | Tak |  |
+| urlId | string | query | Tak |  |
+| broadcastId | string | query | Tak |  |
+| editKey | string | query | Nie |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+Zwraca: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w fazie beta. W przypadku problemów zgłoś je na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w fazie beta. W razie problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,8 +26,8 @@ let commentId = "commentId_example" // String |
 let voteId = "voteId_example" // String | 
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
-let editKey = "editKey_example" // String |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let editKey = "editKey_example" // String |  (opcjonalnie)
+let sso = "sso_example" // String |  (opcjonalnie)
 
 PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
     guard error == nil else {
@@ -40,3 +40,5 @@ PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: vo
     }
 }
 [inline-code-end]
+
+---

@@ -8,7 +8,7 @@
 
 ## Risposta
 
-Restituisce: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicket200Response.swift)
+Restituisce: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketResponse.swift)
 
 ## Esempio
 

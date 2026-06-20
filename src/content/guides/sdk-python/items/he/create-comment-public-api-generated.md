@@ -1,7 +1,7 @@
 ---
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
@@ -11,7 +11,7 @@
 
 ## תגובה
 
-מחזיר: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+מחזיר: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## דוגמה
 
@@ -19,18 +19,18 @@
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
+# הגדרת ה-host אינה חובה וברירת המחדל היא https://fastcomments.com
 # ראו את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# נכנסים להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # יצירת מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)

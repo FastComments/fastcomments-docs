@@ -4,7 +4,7 @@ afterId
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | afterId | string | query | Ні |  |
@@ -16,25 +16,25 @@ afterId
 
 ## Відповідь
 
-Повертає: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Повертає: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення host необов'язкове й за замовчуванням — https://fastcomments.com
+# Визначення host необов'язкове і за замовчуванням = https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст із екземпляром клієнта API
+# Перейдіть у контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)

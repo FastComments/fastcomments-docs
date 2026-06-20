@@ -1,3 +1,4 @@
+---
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -8,7 +9,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_200_response.go)
+Devuelve: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_ticket_response.go)
 
 ## Ejemplo
 
@@ -35,7 +36,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTicket``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respuesta de `GetTicket`: GetTicket200Response
+	// respuesta de `GetTicket`: GetTicketResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTicket`: %v\n", resp)
 }
 [inline-code-end]
+
+---

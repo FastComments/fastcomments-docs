@@ -1,15 +1,15 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| postId | string | path | Oui |  |
-| broadcastId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Retourne: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+Renvoie : [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## Exemple
 
@@ -19,12 +19,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-post_id = 'post_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
+post_id = 'post_id_example' # Chaîne | 
 update_feed_post_params = FastCommentsClient::UpdateFeedPostParams.new # UpdateFeedPostParams | 
 opts = {
-  broadcast_id: 'broadcast_id_example', # String | 
-  sso: 'sso_example' # String | 
+  broadcast_id: 'broadcast_id_example', # Chaîne | 
+  sso: 'sso_example' # Chaîne | 
 }
 
 begin
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_feed_post_public: #{e}"
 end
 [inline-code-end]
-
----

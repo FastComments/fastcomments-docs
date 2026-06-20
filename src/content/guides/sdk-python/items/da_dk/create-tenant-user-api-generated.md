@@ -1,32 +1,38 @@
----
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Lokation | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Svar
+## Respons
 
-Returnerer: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user200_response.py)
+Returnerer: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_user_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'Eksempel på create_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_user200_response import CreateTenantUser200Response
 from client.models.create_tenant_user_body import CreateTenantUserBody
+from client.models.create_tenant_user_response import CreateTenantUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host; standard er https://fastcomments.com
+# Det er valgfrit at definere host, standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-# Klienten skal konfigurere autentificerings- og autorisationsparametre
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentificeringsmetode er angivet nedenfor, brug det
-# eksempel, der passer til dit autentificeringsbehov.
+# Eksempler for hver autentificeringsmetode er angivet nedenfor; brug det eksempel der
+# passer til dit autentificeringsbrugsscenarie.
+
 # Konfigurer API-nøgleautorisation: api_key
-# Fjern kommentar fra linjen nedenfor for at sætte et præfiks (fx Bearer) for API-nøglen, hvis nødvendigt
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Fjern kommentaren nedenfor for at sætte præfiks (fx Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -43,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_tenant_user: %s\n" % e)
 [inline-code-end]
-
----

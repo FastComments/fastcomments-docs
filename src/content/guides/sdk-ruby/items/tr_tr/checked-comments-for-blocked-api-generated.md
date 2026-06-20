@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -9,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Döndürür: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Örnek
 
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
-
----

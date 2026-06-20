@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Παράδειγμα
 
@@ -16,20 +16,15 @@
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 auto configId = utility::string_t(U("question-config-456"));
-auto body = std::make_shared<UpdateQuestionConfigBody>();
-body->enabled = true;
-body->threshold = 5;
-body->moderatorEmail = utility::string_t(U("moderator@example.com"));
-body->notifyUsers = boost::optional<bool>(true);
-body->description = boost::optional<utility::string_t>(utility::string_t(U("Tighten question moderation for new users")));
-
-api->updateQuestionConfig(tenantId, configId, *body)
-    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {
+auto updateBody = std::make_shared<UpdateQuestionConfigBody>();
+updateBody->allowAnonymous = boost::optional<bool>(false);
+updateBody->moderationRequired = boost::optional<bool>(true);
+updateBody->defaultAssignee = boost::optional<utility::string_t>(U("moderator@example.com"));
+api->updateQuestionConfig(tenantId, configId, *updateBody)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
         try {
             auto resp = t.get();
-            std::cout << (resp ? "updateQuestionConfig succeeded\n" : "updateQuestionConfig returned null\n");
-        } catch (const std::exception& e) {
-            std::cerr << "updateQuestionConfig failed: " << e.what() << '\n';
+        } catch (const std::exception&) {
         }
     });
 [inline-code-end]

@@ -1,15 +1,15 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| urlId | string | query | Evet |  |
-| userId | string | query | Hayır |  |
-| anonUserId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_for_user200_response.rb)
+Döndürür: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_for_user_response.rb)
 
 ## Örnek
 
@@ -19,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 # yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API anahtarı yetkilendirmesini yapılandırın: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir önek ayarlayın, ör. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

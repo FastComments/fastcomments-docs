@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Име | Тип | Location | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | meta | string | query | Не |  |
@@ -8,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenants200_response.rb)
+Връща: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenants_response.rb)
 
 ## Пример
 
@@ -16,11 +17,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка на авторизация
+# Настройване на удостоверяване
 FastCommentsClient.configure do |config|
-  # Конфигуриране на API ключ за авторизация: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране: nil)
+  # Разкоментирайте следващия ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

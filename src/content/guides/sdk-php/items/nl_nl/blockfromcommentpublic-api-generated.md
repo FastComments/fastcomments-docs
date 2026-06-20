@@ -1,3 +1,4 @@
+---
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -8,7 +9,7 @@
 
 ## Respons
 
-Retourneert: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockFromCommentPublic200Response.php)
+Retourneert: [`BlockSuccess`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockSuccess.php)
 
 ## Voorbeeld
 
@@ -36,3 +37,5 @@ try {
     echo 'Exception when calling PublicApi->blockFromCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

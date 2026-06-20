@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template200_response.rb)
+Επιστρέφει: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template_response.rb)
 
 ## Παράδειγμα
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # Ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+  # Διαμόρφωση εξουσιοδότησης με API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Καταργήστε το σχόλιο από την επόμενη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
+  # Αποσχολίασε την παρακάτω γραμμή για να ορίσεις ένα πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->render_email_template: #{e}"
 end
 [inline-code-end]
-
----

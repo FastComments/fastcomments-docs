@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -7,36 +8,37 @@
 
 ## תגובה
 
-מחזיר: [`GetComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment200_response.py)
+מחזיר: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comment_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת get_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment200_response import GetComment200Response
+from client.models.api_get_comment_response import APIGetCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת host אופציונלית והברירת מחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל פרמטרי ההגדרה הנתמכים.
+# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה את configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# על ה-client להגדיר את פרמטרי האימות וההרשאה
+# על הלקוח להגדיר את פרמטרי האימות וההרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה — השתמש בדוגמה שמתאימה למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות להלן; השתמש בדוגמה
+# שמתאימה למקרה השימוש שלך.
 
-# קבע הרשאת מפתח API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה למטה כדי לקבוע קידומת (למשל Bearer) עבור מפתח ה-API, אם צריך
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# פתח הקשר עם מופע של ה-API client
+# הכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -48,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_comment: %s\n" % e)
 [inline-code-end]
+
+---

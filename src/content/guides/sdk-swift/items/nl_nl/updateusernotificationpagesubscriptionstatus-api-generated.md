@@ -1,8 +1,9 @@
-Meldingen voor een pagina inschakelen of uitschakelen. Wanneer gebruikers op een pagina geabonneerd zijn, worden er meldingen aangemaakt voor nieuwe root-opmerkingen, en ook
+Schakel meldingen voor een pagina in of uit. Wanneer gebruikers op een pagina zijn geabonneerd, worden meldingen aangemaakt
+voor nieuwe root-opmerkingen, en ook
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
@@ -13,13 +14,13 @@ Meldingen voor een pagina inschakelen of uitschakelen. Wanneer gebruikers op een
 
 ## Antwoord
 
-Geeft terug: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+Retourneert: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationPageSubscriptionStatusResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen kunt u rapporteren via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld deze via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -40,3 +41,5 @@ PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId
     }
 }
 [inline-code-end]
+
+---

@@ -5,15 +5,15 @@
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadge200Response.swift)
+Vrne: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgeResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUserBadge Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za morebitne težave jih prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za katero koli težavo, prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

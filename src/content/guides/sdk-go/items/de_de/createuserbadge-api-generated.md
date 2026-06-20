@@ -1,16 +1,16 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_user_badge_200_response.go)
+Gibt zurück: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_create_user_badge_response.go)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für CreateUserBadge'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CreateUserBadge Beispiel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateUserBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `CreateUserBadge`: CreateUserBadge200Response
+	// Antwort von `CreateUserBadge`: APICreateUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateUserBadge`: %v\n", resp)
 }
 [inline-code-end]
-
----

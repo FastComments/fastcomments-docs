@@ -1,21 +1,21 @@
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|-------|------------|-----------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | postIds | array | query | Não |  |
 | sso | string | query | Não |  |
 
-## Resposta
+## Response
 
-Retorna: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_reacts_public200_response.py)
+Retorna: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
-## Exemplo
+## Example
 
 [inline-code-attrs-start title = 'Exemplo de get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_reacts_public200_response import GetUserReactsPublic200Response
+from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,7 +28,7 @@ configuration = client.Configuration(
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_ids = ['post_ids_example'] # List[str] |  (opcional)

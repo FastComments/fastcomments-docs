@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Name | Type | Location | Required | Description |
@@ -12,7 +13,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Zwraca: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Przykład
 

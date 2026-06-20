@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | Name | Type | Location | Required | Description |
@@ -5,9 +6,9 @@
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 
-## 戻り値
+## レスポンス
 
-戻り値: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant200_response.rb)
+戻り値: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_response.rb)
 
 ## 例
 
@@ -15,11 +16,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証の設定
+# 認証のセットアップ
 FastCommentsClient.configure do |config|
   # APIキー認証の設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックスを設定するには、以下の行のコメントアウトを外してください。例: 'Bearer'（デフォルトは nil）
+  # APIキーのプレフィックスを設定するには、次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

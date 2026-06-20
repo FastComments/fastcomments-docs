@@ -1,24 +1,24 @@
-Aktiver eller deaktiver notifikationer for en side. Når brugere er tilmeldt en side, oprettes notifikationer
+Aktivér eller deaktiver notifikationer for en side. Når brugere er abonneret på en side, oprettes notifikationer
 for nye rodkommentarer, og også
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Ja |  |
+| url | string | query | Ja |  |
+| pageTitle | string | query | Ja |  |
+| subscribedOrUnsubscribed | string | path | Ja |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Returnerer: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på updateUserNotificationPageSubscriptionStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -40,7 +40,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

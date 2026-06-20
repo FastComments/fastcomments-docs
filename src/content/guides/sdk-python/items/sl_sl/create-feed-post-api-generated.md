@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | broadcastId | string | query | Ne |  |
@@ -10,45 +10,45 @@
 
 ## Odgovor
 
-Vrača: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post200_response.py)
+Vrne: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post200_response import CreateFeedPost200Response
 from client.models.create_feed_post_params import CreateFeedPostParams
+from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je opcijsko in privzeto nastavljena na https://fastcomments.com
+# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre overitve in pooblastil
-# skladno s politiko varnosti strežnika API.
-# Spodaj so podani primeri za vsako metodo overitve; uporabite primer, ki
-# ustreza vašemu primeru uporabe.
+# Odjemalec mora nastaviti parametre za avtentikacijo in avtorizacijo
+# v skladu s politiko varnosti API strežnika.
+# Primeri za vsako metodo avtentikacije so podani spodaj, uporabite primer, ki
+# ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte avtorizacijo z API ključem: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (neobvezno)
-    is_live = True # bool |  (neobvezno)
-    do_spam_check = True # bool |  (neobvezno)
-    skip_dup_check = True # bool |  (neobvezno)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    skip_dup_check = True # bool |  (optional)
 
     try:
         api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check)

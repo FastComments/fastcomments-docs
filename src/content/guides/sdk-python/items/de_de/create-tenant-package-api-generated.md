@@ -6,15 +6,15 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_package200_response.py)
+Gibt zurück: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_package_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'create_tenant_package Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_package200_response import CreateTenantPackage200Response
 from client.models.create_tenant_package_body import CreateTenantPackageBody
+from client.models.create_tenant_package_response import CreateTenantPackageResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,19 +25,19 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Für jede Authentifizierungsmethode sind unten Beispiele angegeben; verwende das Beispiel, das
-# deinen Authentifizierungsfall erfüllt.
+# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Auth-Methode sind unten angegeben, verwenden Sie
+# das Beispiel, das Ihren Authentifizierungsanforderungen entspricht.
 
-# API-Key-Authentifizierung konfigurieren: api_key
+# API-Key-Autorisierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Kommentarzeichen unten entfernen, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Key zu setzen, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_tenant_package_body = client.CreateTenantPackageBody() # CreateTenantPackageBody | 

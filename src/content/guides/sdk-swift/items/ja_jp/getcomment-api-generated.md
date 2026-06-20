@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComment200Response.swift)
+戻り値: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentResponse.swift)
 
 ## 例
 
@@ -30,5 +30,3 @@ DefaultAPI.getComment(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

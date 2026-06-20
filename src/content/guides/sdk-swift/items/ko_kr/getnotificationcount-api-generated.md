@@ -3,21 +3,21 @@
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| userId | string | query | 아니오 |  |
-| urlId | string | query | 아니오 |  |
-| fromCommentId | string | query | 아니오 |  |
-| viewed | boolean | query | 아니오 |  |
-| type | string | query | 아니오 |  |
+| userId | string | query | 아니요 |  |
+| urlId | string | query | 아니요 |  |
+| fromCommentId | string | query | 아니요 |  |
+| viewed | boolean | query | 아니요 |  |
+| type | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCount200Response.swift)
+반환: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getNotificationCount 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 보고해 주세요
+// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

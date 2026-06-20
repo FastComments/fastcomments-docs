@@ -7,35 +7,35 @@
 
 ## Odgovor
 
-Vrne: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users200_response.py)
+Vrne: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_sso_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_sso_users200_response import GetSSOUsers200Response
+from client.models.get_sso_users_response import GetSSOUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
-# Oglejte si datoteko configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre preverjanja pristnosti in pooblastil
-# v skladu s varnostno politiko API strežnika.
-# Spodaj so navedeni primeri za vsako metodo avtentikacije, uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora konfigurirati parametre overjanja in pooblastil
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so podani primeri za vsako metodo overjanja; uporabite primer, ki
+# ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Konfigurirajte overjanje z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnjo vrstico za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnje za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Vstopite v kontekst z instanco odjemalca API
+# Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
     # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)

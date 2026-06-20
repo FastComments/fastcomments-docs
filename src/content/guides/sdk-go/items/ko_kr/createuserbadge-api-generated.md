@@ -1,12 +1,12 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 
 ## 응답
 
-반환: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_user_badge_200_response.go)
+반환: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_create_user_badge_response.go)
 
 ## 예제
 
@@ -18,11 +18,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
+	tenantId := "tenantId_example" // 문자열 | 
 	createUserBadgeParams := *openapiclient.NewCreateUserBadgeParams("UserId_example", "BadgeId_example") // CreateUserBadgeParams | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateUserBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateUserBadge`의 응답: CreateUserBadge200Response
+	// `CreateUserBadge`의 응답: APICreateUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateUserBadge`: %v\n", resp)
 }
 [inline-code-end]

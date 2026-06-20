@@ -7,9 +7,9 @@
 | userId | string | query | Όχι |  |
 | anonUserId | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagComment200Response.swift)
+Επιστρέφει: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
 ## Παράδειγμα
 
@@ -34,5 +34,3 @@ DefaultAPI.flagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: a
     }
 }
 [inline-code-end]
-
----

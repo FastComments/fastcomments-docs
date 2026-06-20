@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | userId | string | query | Tak |  |
@@ -8,25 +8,25 @@
 
 ## Odpowiedź
 
-Zwraca: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeTicketState200Response.php)
+Zwraca: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeTicketStateResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'changeTicketState Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład changeTicketState'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Skonfiguruj autoryzację kluczem API: api_key
+// Skonfiguruj uwierzytelnianie kluczem API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniższą linię, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie będzie używany `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć niestandardowego klienta http, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
+    // To opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -42,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->changeTicketState: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

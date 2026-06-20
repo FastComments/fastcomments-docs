@@ -1,15 +1,16 @@
+---
 ## Parameters
 
-| Name | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
 | broadcastId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Voorbeeld
 

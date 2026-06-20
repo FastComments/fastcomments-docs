@@ -2,33 +2,33 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路徑 | 是 |  |
-| postIds | array | 查詢 | 是 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | path | 是 |  |
+| postIds | array | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_stats200_response.py)
+回傳: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/feed_posts_stats_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_feed_posts_stats 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_stats200_response import GetFeedPostsStats200Response
+from client.models.feed_posts_stats_response import FeedPostsStatsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 為選用，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的設定參數清單。
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API client 的實例進入一個上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 建立 API 類別的實例
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_ids = ['post_ids_example'] # List[str] | 

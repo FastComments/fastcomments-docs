@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Type | Location | Gerekli | Açıklama |
+| İsim | Tip | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
@@ -8,40 +8,40 @@
 
 ## Yanıt
 
-Döndürür: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Döndürür: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'delete_vote Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametreleri listesi için configuration.py dosyasına bakın.
+# Hostu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Tüm desteklenen yapılandırma parametreleri için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusu güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
-
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
+# API sunucusunun güvenlik politikasına uygun olarak.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanın
+# kimlik doğrulama kullanım durumunuza uygun olan örneği.
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak üzere aşağıdakinin yorumunu kaldırın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneğiyle bir bağlam açın
+# API istemcisinin bir örneği ile bir bağlam başlatın
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (optional)
+    edit_key = 'edit_key_example' # str |  (opsiyonel)
 
     try:
         api_response = api_instance.delete_vote(tenant_id, id, edit_key=edit_key)
@@ -50,5 +50,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_vote: %s\n" % e)
 [inline-code-end]
-
----

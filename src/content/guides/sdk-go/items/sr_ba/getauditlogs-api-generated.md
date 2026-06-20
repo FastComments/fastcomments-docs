@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| order | string | query | Ne |  |
-| after | number | query | Ne |  |
-| before | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
+| order | string | query | Не |  |
+| after | number | query | Не |  |
+| before | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_200_response.go)
+Враћа: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer GetAuditLogs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetAuditLogs Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,16 +23,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	limit := float64(1.2) // float64 |  (neobavezno)
-	skip := float64(1.2) // float64 |  (neobavezno)
-	order := openapiclient.SORT_DIR("ASC") // SORTDIR |  (neobavezno)
-	after := float64(1.2) // float64 |  (neobavezno)
-	before := float64(1.2) // float64 |  (neobavezno)
+	limit := float64(1.2) // float64 |  (опционо)
+	skip := float64(1.2) // float64 |  (опционо)
+	order := openapiclient.SORT_DIR("ASC") // SORTDIR |  (опционо)
+	after := float64(1.2) // float64 |  (опционо)
+	before := float64(1.2) // float64 |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAuditLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetAuditLogs`: GetAuditLogs200Response
+	// одговор од `GetAuditLogs`: GetAuditLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAuditLogs`: %v\n", resp)
 }
 [inline-code-end]
+
+---

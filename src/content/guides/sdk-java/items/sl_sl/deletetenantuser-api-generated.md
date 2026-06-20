@@ -7,13 +7,13 @@
 | deleteComments | string | query | Ne |  |
 | commentDeleteMode | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'deleteTenantUser Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer deleteTenantUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -28,7 +28,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj avtentikacijo z API ključem: api_key
+    // Konfiguriraj avtorizacijo API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentirajte naslednjo vrstico za nastavitev predpone za API ključ, npr. "Token" (privzeto null)
@@ -40,7 +40,7 @@ public class Example {
     String deleteComments = "deleteComments_example"; // String | 
     String commentDeleteMode = "commentDeleteMode_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteTenantUser(tenantId, id)
+      APIEmptyResponse result = apiInstance.deleteTenantUser(tenantId, id)
             .deleteComments(deleteComments)
             .commentDeleteMode(commentDeleteMode)
             .execute();
@@ -55,5 +55,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

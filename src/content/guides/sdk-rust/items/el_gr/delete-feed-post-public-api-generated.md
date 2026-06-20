@@ -9,21 +9,21 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_feed_post_public_200_response.rs)
+Επιστρέφει: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_feed_post_public_response.rs)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα delete_feed_post_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn run(configuration: &configuration::Configuration) -> Result<DeleteFeedPostPublicResponse, Error> {
     let params: DeleteFeedPostPublicParams = DeleteFeedPostPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        post_id: "news/article-2026-03-25-12345".to_string(),
-        broadcast_id: Some("broadcast-9876".to_string()),
-        sso: Some("user-42-sso-token".to_string()),
+        post_id: "news/article-2026-06-19".to_string(),
+        broadcast_id: Some("broadcast-789".to_string()),
+        sso: Some("sso-token-abc123".to_string()),
     };
-    let response: DeleteFeedPostPublic200Response = delete_feed_post_public(&configuration, params).await?;
-    Ok(())
+    let response: DeleteFeedPostPublicResponse = delete_feed_post_public(configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

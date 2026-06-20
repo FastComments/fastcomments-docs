@@ -1,10 +1,10 @@
-zahtev
+req
 tenantId
 afterId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Location | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | afterId | string | query | Ne |  |
@@ -16,7 +16,7 @@ afterId
 
 ## Odgovor
 
-Vraća: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## Primer
 
@@ -28,8 +28,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, koristiće se `GuzzleHttp\Client` kao podrazumevani.
+    // Ako želite da koristite prilagođeni http klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, podrazumevano će biti korišćen `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

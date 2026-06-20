@@ -11,7 +11,7 @@
 
 ## Response
 
-Returns: [`Option[SetCommentText_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text200response.nim)
+Returns: [`Option[PublicAPISetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_set_comment_text_response.nim)
 
 ## Example
 
@@ -19,16 +19,13 @@ Returns: [`Option[SetCommentText_200_response]`](https://github.com/FastComments
 [inline-code-start]
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  broadcastId = "bcast-2026-01",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text = "Updated comment text for clarity and formatting"),
+  commentId = "cmt-456789",
+  broadcastId = "",
+  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
   editKey = "",
   sso = ""
 )
-
 if response.isSome:
-  let updated = response.get()
-  echo "Comment updated:", updated
-else:
-  echo "Update failed, status:", httpResponse.status
+  let result = response.get()
+  discard result
 [inline-code-end]

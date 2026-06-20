@@ -1,36 +1,39 @@
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|-------------|
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|----------|-------------|
 | tenant_id | String | Ja |  |
 | id | String | Ja |  |
 | update_question_config_body | models::UpdateQuestionConfigBody | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Gibt zurück: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'update_question_config Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für update_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateQuestionConfigParams = UpdateQuestionConfigParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "news/article-2026-03-readability".to_string(),
-    update_question_config_body: models::UpdateQuestionConfigBody {
-        question_text: Some("Was this article helpful?".to_string()),
-        required: Some(true),
-        rendering_type: Some(models::QuestionRenderingType::Inline),
-        custom_options: Some(vec![
-            models::QuestionConfigCustomOptionsInner { label: "Very helpful".to_string(), value: "very_helpful".to_string() },
-            models::QuestionConfigCustomOptionsInner { label: "Somewhat helpful".to_string(), value: "somewhat_helpful".to_string() },
-            models::QuestionConfigCustomOptionsInner { label: "Not helpful".to_string(), value: "not_helpful".to_string() },
-        ]),
-        when_save: Some(models::QuestionWhenSave::AskOnSave),
-        ..Default::default()
-    },
-};
-let response: FlagCommentPublic200Response = update_question_config(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: UpdateQuestionConfigParams = UpdateQuestionConfigParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "question-config-789".to_string(),
+        update_question_config_body: models::UpdateQuestionConfigBody {
+            label: Some("Article feedback".to_string()),
+            enabled: Some(true),
+            require_login: Some(false),
+            custom_options: Some(vec![
+                models::QuestionConfigCustomOptionsInner {
+                    key: "category".to_string(),
+                    value: "news".to_string(),
+                },
+            ]),
+        },
+    };
+
+    let _response: ApiEmptyResponse = update_question_config(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

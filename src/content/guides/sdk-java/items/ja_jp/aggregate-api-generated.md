@@ -1,4 +1,6 @@
-ドキュメントをグループ化（groupBy が指定されている場合）して複数の操作を適用して集約します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
+---
+ドキュメントをグループ化して（groupBy が指定されている場合）複数の操作を適用して集計します。
+異なる操作（例: sum、countDistinct、avg など）がサポートされています。
 
 ## パラメータ
 
@@ -10,7 +12,7 @@
 
 ## レスポンス
 
-戻り値: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+返却: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## 例
 
@@ -32,7 +34,7 @@ public class Example {
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 次の行のコメントを外して API キーにプレフィックスを設定します（例: "Token"、デフォルトは null）
+    // APIキーにプレフィックスを設定するには、次の行のコメントを外してください（例: "Token"、デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -41,7 +43,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();
@@ -56,3 +58,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

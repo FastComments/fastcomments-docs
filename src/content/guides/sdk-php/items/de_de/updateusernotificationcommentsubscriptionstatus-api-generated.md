@@ -1,22 +1,22 @@
-Benachrichtigungen für einen bestimmten Kommentar aktivieren oder deaktivieren.
+Aktivieren oder Deaktivieren von Benachrichtigungen für einen bestimmten Kommentar.
 
-## Parameter
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Typ | Location | Erforderlich | Beschreibung |
+|------|------|----------|-------------|-------------|
 | tenantId | string | query | Ja |  |
 | notificationId | string | path | Ja |  |
 | optedInOrOut | string | path | Ja |  |
 | commentId | string | query | Ja |  |
 | sso | string | query | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Gibt zurück: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
-## Beispiel
+## Example
 
-[inline-code-attrs-start title = 'Beispiel für updateUserNotificationCommentSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,8 +24,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, geben Sie Ihren Client an, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, standardmäßig wird `GuzzleHttp\Client` verwendet.
+    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

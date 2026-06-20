@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -8,11 +9,11 @@
 
 ## レスポンス
 
-戻り値: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_public_200_response.go)
+戻り値: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_response.go)
 
 ## 例
 
-[inline-code-attrs-start title = 'CreateFeedPostPublic の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CreateFeedPostPublicの例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -20,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createFeedPostParams := *openapiclient.NewCreateFeedPostParams() // CreateFeedPostParams | 
-	broadcastId := "broadcastId_example" // string |  （オプション）
-	sso := "sso_example" // string |  （オプション）
+	broadcastId := "broadcastId_example" // string |  (任意)
+	sso := "sso_example" // string |  (任意)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -36,7 +37,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CreateFeedPostPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateFeedPostPublic` からのレスポンス: CreateFeedPostPublic200Response
+	// `CreateFeedPostPublic` のレスポンス: CreateFeedPostResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CreateFeedPostPublic`: %v\n", resp)
 }
 [inline-code-end]
+
+---

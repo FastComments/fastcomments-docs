@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必要 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -9,24 +9,21 @@
 
 ## 回應
 
-回傳: [`GetCommentVoteUserNames_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentVoteUserNames_200_response.h)
+回傳: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentVoteUserNamesSuccessResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456");
+utility::string_t commentId = U("comment-456");
 int32_t dir = 1;
-boost::optional<utility::string_t> sso{ utility::string_t(U("user@example.com")) };
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
 api->getCommentVoteUserNames(tenantId, commentId, dir, sso)
-    .then([](pplx::task<std::shared_ptr<GetCommentVoteUserNames_200_response>> t) {
-        try {
-            auto resp = t.get();
-            if (!resp) resp = std::make_shared<GetCommentVoteUserNames_200_response>();
-        } catch (const std::exception&) {
-        }
-    });
+.then([](std::shared_ptr<GetCommentVoteUserNamesSuccessResponse> resp){
+    auto result = resp ? resp : std::make_shared<GetCommentVoteUserNamesSuccessResponse>();
+    std::cout << "Fetched comment vote user names" << std::endl;
+});
 [inline-code-end]
 
 ---

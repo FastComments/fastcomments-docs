@@ -1,16 +1,16 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| broadcastId | string | query | 否 |  |
-| isLive | boolean | query | 否 |  |
-| doSpamCheck | boolean | query | 否 |  |
-| skipDupCheck | boolean | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## 回應
 
-回傳: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_200_response.go)
+回傳: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_posts_response.go)
 
 ## 範例
 
@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createFeedPostParams := *openapiclient.NewCreateFeedPostParams() // CreateFeedPostParams | 
-	broadcastId := "broadcastId_example" // string |  (選用)
-	isLive := true // bool |  (選用)
-	doSpamCheck := true // bool |  (選用)
-	skipDupCheck := true // bool |  (選用)
+	broadcastId := "broadcastId_example" // string |  (可選)
+	isLive := true // bool |  (可選)
+	doSpamCheck := true // bool |  (可選)
+	skipDupCheck := true // bool |  (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateFeedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateFeedPost` 的回應：CreateFeedPost200Response
+	// `CreateFeedPost` 的回應: CreateFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]

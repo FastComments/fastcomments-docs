@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Ime | Tip | Lokacija | Obavezno | Opis |
@@ -7,37 +8,37 @@
 
 ## Odgovor
 
-Vraća: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_packages200_response.py)
+Vraća: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_packages_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_tenant_packages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_packages200_response import GetTenantPackages200Response
+from client.models.get_tenant_packages_response import GetTenantPackagesResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa bezbednosnom politikom API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# u skladu sa politikom bezbednosti API servera.
+# Primeri za svaku metodu autentifikacije su dati ispod, koristite primer koji
 # odgovara vašem slučaju upotrebe autentifikacije.
 
-# Konfigurišite autorizaciju pomoću API ključa: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
+# Otkomenarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst sa instancom API klijenta
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     skip = 3.4 # float |  (optional)

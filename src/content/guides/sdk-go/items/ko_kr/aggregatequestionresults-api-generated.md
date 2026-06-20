@@ -3,16 +3,16 @@
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| questionId | string | query | 아니오 |  |
-| questionIds | array | query | 아니오 |  |
-| urlId | string | query | 아니오 |  |
-| timeBucket | string | query | 아니오 |  |
-| startDate | string | query | 아니오 |  |
-| forceRecalculate | boolean | query | 아니오 |  |
+| questionId | string | query | 아니요 |  |
+| questionIds | array | query | 아니요 |  |
+| urlId | string | query | 아니요 |  |
+| timeBucket | string | query | 아니요 |  |
+| startDate | string | query | 아니요 |  |
+| forceRecalculate | boolean | query | 아니요 |  |
 
 ## 응답
 
-반환: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_200_response.go)
+반환: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_response.go)
 
 ## 예제
 
@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `AggregateQuestionResults`의 응답: AggregateQuestionResults200Response
+	// `AggregateQuestionResults`의 응답: AggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

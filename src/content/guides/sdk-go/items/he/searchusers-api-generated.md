@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
@@ -11,7 +11,7 @@
 
 ## תגובה
 
-מחזיר: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+מחזיר: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## דוגמה
 
@@ -27,12 +27,12 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // מחרוזת | 
-	urlId := "urlId_example" // מחרוזת | 
-	usernameStartsWith := "usernameStartsWith_example" // מחרוזת |  (אופציונלי)
-	mentionGroupIds := []string{"Inner_example"} // []מחרוזת |  (אופציונלי)
-	sso := "sso_example" // מחרוזת |  (אופציונלי)
-	searchSection := "searchSection_example" // מחרוזת |  (אופציונלי)
+	tenantId := "tenantId_example" // string | 
+	urlId := "urlId_example" // string | 
+	usernameStartsWith := "usernameStartsWith_example" // string |  (אופציונלי)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (אופציונלי)
+	sso := "sso_example" // string |  (אופציונלי)
+	searchSection := "searchSection_example" // string |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`SearchUsers`: SearchUsers200Response
+	// תגובה מ-`SearchUsers`: SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]

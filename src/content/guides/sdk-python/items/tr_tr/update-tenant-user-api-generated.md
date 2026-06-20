@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Location | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
@@ -8,36 +8,36 @@
 
 ## Yanıt
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'update_tenant_user Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_tenant_user_body import UpdateTenantUserBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Tüm desteklenen yapılandırma parametreleri için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # İstemci kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusunun güvenlik politikasıyla uyumlu olarak.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır,
-# kullanım durumunuza uyan örneği kullanın
+# API sunucusunun güvenlik politikasına uygun olarak.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir;
+# kullanım durumunuza uygun olan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandırın: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki satırı yorumdan çıkarın
+# Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak üzere aşağıdaki satırın başındaki yorum işaretini kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Bir API istemcisi örneği ile bir bağlam içine girin
+# API istemcisi örneği ile bir bağlam (context) açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)

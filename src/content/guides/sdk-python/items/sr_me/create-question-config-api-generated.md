@@ -1,38 +1,38 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Одговор
 
-Враћа: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config200_response.py)
+Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config_response.py)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'Пример create_question_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_question_config Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_config200_response import CreateQuestionConfig200Response
 from client.models.create_question_config_body import CreateQuestionConfigBody
+from client.models.create_question_config_response import CreateQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опциони и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Постављање host-а је опционално и подразумева се https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и овлашћења
+# Клијент мора да подеси параметре аутентификације и овлашћења
 # у складу са безбедносном политиком API сервера.
-# Испод су наведени примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе аутентификације.
+# Испод су примјери за сваки метод аутентификације, користите пример који
+# одговара вашем случају коришћења аутентификације.
 
-# Configure API key authorization: api_key
+# Конфигуришите ауторизацију помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_question_config: %s\n" % e)
 [inline-code-end]
+
+---

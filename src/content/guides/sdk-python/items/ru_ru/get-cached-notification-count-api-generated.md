@@ -7,18 +7,18 @@
 
 ## Ответ
 
-Возвращает: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count200_response.py)
+Возвращает: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_cached_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_cached_notification_count200_response import GetCachedNotificationCount200Response
+from client.models.get_cached_notification_count_response import GetCachedNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# Задать host не обязательно, по умолчанию используется https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,16 +26,16 @@ configuration = client.Configuration(
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности API-сервера.
-# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
-# соответствует вашему случаю использования аутентификации.
+# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
+# соответствует вашему сценарию использования.
 
-# Настройте авторизацию ключа API: api_key
+# Настройка авторизации по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (e.g. Bearer) для ключа API, если это необходимо
+# Раскомментируйте ниже, чтобы задать префикс (e.g. Bearer) для API-ключа, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Откройте контекст с экземпляром клиента API
+# Войдите в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)

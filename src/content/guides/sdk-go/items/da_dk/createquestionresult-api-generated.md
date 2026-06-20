@@ -6,11 +6,11 @@
 
 ## Svar
 
-Returnerer: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_200_response.go)
+Returnerer: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_response.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på CreateQuestionResult'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CreateQuestionResult Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -32,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `CreateQuestionResult`: CreateQuestionResult200Response
+	// svar fra `CreateQuestionResult`: CreateQuestionResultResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,31 +1,31 @@
-Omogućite ili onemogućite obaveštenja za određeni komentar.
+Омогућите или онемогућите обавештења за одређени коментар.
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| notificationId | string | path | Da |  |
-| optedInOrOut | string | path | Da |  |
-| commentId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| notificationId | string | path | Да |  |
+| optedInOrOut | string | path | Да |  |
+| commentId | string | query | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+Враћа: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationCommentSubscriptionStatusResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationCommentSubscriptionStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још увек бета. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let notificationId = "notificationId_example" // String | 
 let optedInOrOut = "optedInOrOut_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (opciono)
+let sso = "sso_example" // String |  (необавезно)
 
 PublicAPI.updateUserNotificationCommentSubscriptionStatus(tenantId: tenantId, notificationId: notificationId, optedInOrOut: optedInOrOut, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
@@ -38,5 +38,3 @@ PublicAPI.updateUserNotificationCommentSubscriptionStatus(tenantId: tenantId, no
     }
 }
 [inline-code-end]
-
----

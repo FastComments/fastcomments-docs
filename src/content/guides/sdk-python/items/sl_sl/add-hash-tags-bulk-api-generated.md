@@ -2,45 +2,45 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Ne |  |
 
 ## Odgovor
 
-Vrača: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tags_bulk200_response.py)
+Vrne: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_create_hash_tags_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer add_hash_tags_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tags_bulk200_response import AddHashTagsBulk200Response
 from client.models.bulk_create_hash_tags_body import BulkCreateHashTagsBody
+from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre overjanja in pooblastil
+# Odjemalec mora nastaviti parametre preverjanja pristnosti in avtorizacije
 # v skladu s politiko varnosti API strežnika.
 # Spodaj so navedeni primeri za vsako metodo overjanja, uporabite primer, ki
 # ustreza vašemu primeru uporabe overjanja.
 
-# Nastavite overjanje s pomočjo API ključa: api_key
+# Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
     # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (neobvezno)
-    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (neobvezno)
+    tenant_id = 'tenant_id_example' # str |  (optional)
+    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
         api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)

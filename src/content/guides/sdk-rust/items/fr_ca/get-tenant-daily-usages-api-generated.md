@@ -10,22 +10,24 @@
 
 ## Réponse
 
-Renvoie : [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_daily_usages_200_response.rs)
+Retourne: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_daily_usages_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'get_tenant_daily_usages Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_tenant_daily_usages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_usage() -> Result<GetTenantDailyUsages200Response, Error> {
-    let params = GetTenantDailyUsagesParams {
-        tenant_id: "acme-corp-tenant".to_string(),
+async fn run() -> Result<(), Error> {
+    let params: GetTenantDailyUsagesParams = GetTenantDailyUsagesParams {
+        tenant_id: String::from("acme-corp-tenant"),
         year_number: Some(2026.0),
-        month_number: Some(3.0),
-        day_number: Some(25.0),
+        month_number: Some(6.0),
+        day_number: Some(19.0),
         skip: Some(0.0),
     };
-    let response = get_tenant_daily_usages(&configuration, params).await?;
-    Ok(response)
+    let daily_usages: GetTenantDailyUsagesResponse =
+        get_tenant_daily_usages(&configuration, params).await?;
+    let _ = daily_usages;
+    Ok(())
 }
 [inline-code-end]
 

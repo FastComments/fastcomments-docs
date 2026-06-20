@@ -1,22 +1,22 @@
-## パラメーター
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| postId | string | path | はい |  |
-| isUndo | boolean | query | いいえ |  |
-| broadcastId | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | パス | はい |  |
+| postId | string | パス | はい |  |
+| isUndo | boolean | クエリ | いいえ |  |
+| broadcastId | string | クエリ | いいえ |  |
+| sso | string | クエリ | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ReactFeedPostPublic200Response.java)
+戻り値: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ReactFeedPostResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'reactFeedPostPublic の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// クラスをインポートします:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,7 +36,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ReactFeedPostPublic200Response result = apiInstance.reactFeedPostPublic(tenantId, postId, reactBodyParams)
+      ReactFeedPostResponse result = apiInstance.reactFeedPostPublic(tenantId, postId, reactBodyParams)
             .isUndo(isUndo)
             .broadcastId(broadcastId)
             .sso(sso)

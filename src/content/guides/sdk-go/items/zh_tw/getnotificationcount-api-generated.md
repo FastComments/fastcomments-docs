@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 型別 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | userId | string | query | 否 |  |
@@ -11,7 +11,7 @@
 
 ## 回應
 
-回傳: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_200_response.go)
+回傳: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_response.go)
 
 ## 範例
 
@@ -28,11 +28,11 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (可選)
-	urlId := "urlId_example" // string |  (可選)
-	fromCommentId := "fromCommentId_example" // string |  (可選)
-	viewed := true // bool |  (可選)
-	type_ := "type__example" // string |  (可選)
+	userId := "userId_example" // string |  (選用)
+	urlId := "urlId_example" // string |  (選用)
+	fromCommentId := "fromCommentId_example" // string |  (選用)
+	viewed := true // bool |  (選用)
+	type_ := "type__example" // string |  (選用)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetNotificationCount` 的回應: GetNotificationCount200Response
+	// `GetNotificationCount` 的回應：GetNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

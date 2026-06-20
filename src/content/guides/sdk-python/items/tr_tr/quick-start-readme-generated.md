@@ -1,25 +1,25 @@
 ### Kimlik Doğrulamalı API'leri Kullanma (DefaultApi)
 
-**Önemli:** Kimlik doğrulamalı istekler yapmadan önce Configuration üzerinde API anahtarınızı ayarlamanız gerekir. Ayarlamazsanız istekler 401 hatası ile başarısız olur.
+**Important:** Kimlik doğrulamalı istekler yapmadan önce Configuration üzerinde API anahtarınızı ayarlamalısınız. Ayarlamazsanız, istekler 401 hatasıyla başarısız olur.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# API istemcisini oluşturun ve yapılandırın
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# GEREKLİ: API anahtarınızı ayarlayın (bunu FastComments panonuzdan alın)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Yapılandırılmış client ile API örneğini oluşturun
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Artık kimlik doğrulamalı API çağrıları yapabilirsiniz
 try:
-    # Example: Add an SSO user
+    # Örnek: Bir SSO kullanıcısı ekleyin
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Yaygın hatalar:
+    # - 401: API anahtarı eksik veya geçersiz
+    # - 400: İstek doğrulaması başarısız
 ```
 
-### Genel API'leri Kullanma (PublicApi)
+### Herkese Açık API'leri Kullanma (PublicApi)
 
-Genel uç noktalar kimlik doğrulama gerektirmez:
+Herkese açık uç noktalar kimlik doğrulama gerektirmez:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### SSO (Tek Oturum Açma) Kullanımı
+### Moderasyon Panosunu Kullanma (ModerationApi)
 
-SDK, güvenli SSO token'ları oluşturmak için yardımcı araçlar içerir:
+The `ModerationApi` moderatör panosunu sağlar. Yöntemler, bir moderatör adına bir `sso` token'i geçilerek çağrılır:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Moderasyonda bekleyen yorum sayısını alın
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### SSO (Single Sign-On) Kullanımı
+
+SDK güvenli SSO tokenleri oluşturmak için yardımcı araçlar içerir:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# Kullanıcı verilerini oluşturun
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
+# API secret'inizle SSO örneği oluşturun
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generate the SSO token
+# SSO token'ını oluşturun
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Bu token'ı frontend'inizde kullanın veya API çağrılarına iletin
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -107,7 +128,7 @@ sso_token = sso.create_token()
 ### Yaygın Sorunlar
 
 1. **401 "missing-api-key" hatası**: DefaultApi örneğini oluşturmadan önce `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` ayarladığınızdan emin olun.
-2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci tarafı/genel istekler için `PublicApi` kullanın.
-3. **İçe aktarma hataları**: Doğru modülden içe aktardığınızdan emin olun:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci/halka açık istekler için `PublicApi`, moderatör paneli istekleri için `ModerationApi` kullanın.
+3. **İçe aktarma hataları**: Doğru modülden ithal ettiğinizden emin olun:
+   - API istemcisi: `from client import ...`
+   - SSO yardımcı araçları: `from sso import ...`

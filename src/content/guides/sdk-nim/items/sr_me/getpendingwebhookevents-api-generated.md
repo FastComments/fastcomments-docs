@@ -1,26 +1,26 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| externalId | string | Ne |  |
-| eventType | string | Ne |  |
-| domain | string | Ne |  |
-| attemptCountGT | float64 | Ne |  |
-| skip | float64 | Ne |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| externalId | string | Не |  |
+| eventType | string | Не |  |
+| domain | string | Не |  |
+| attemptCountGT | float64 | Не |  |
+| skip | float64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetPendingWebhookEvents_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events200response.nim)
+Враћа: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
+  commentId = "cmt-987654",
   externalId = "",
   eventType = "",
   domain = "",
@@ -30,9 +30,6 @@ let (response, httpResponse) = client.getPendingWebhookEvents(
 if response.isSome:
   let pending = response.get()
   discard pending
-  echo "Received pending webhook events"
-else:
-  echo "No pending webhook events"
 [inline-code-end]
 
 ---

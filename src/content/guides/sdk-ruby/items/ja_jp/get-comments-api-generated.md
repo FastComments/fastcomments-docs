@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -17,10 +18,12 @@
 | hashTag | string | query | いいえ |  |
 | parentId | string | query | いいえ |  |
 | direction | string | query | いいえ |  |
+| fromDate | integer | query | いいえ |  |
+| toDate | integer | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+戻り値: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## 例
 
@@ -28,31 +31,33 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証のセットアップ
+# 認証の設定
 FastCommentsClient.configure do |config|
   # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックスを設定するには、次の行のコメントを外します。例: 'Bearer'（デフォルトは nil）
+  # APIキーに接頭辞を設定するには以下の行のコメントを解除してください。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 文字列 | 
 opts = {
-  page: 56, # Integer | 
-  limit: 56, # Integer | 
-  skip: 56, # Integer | 
-  as_tree: true, # Boolean | 
-  skip_children: 56, # Integer | 
-  limit_children: 56, # Integer | 
-  max_tree_depth: 56, # Integer | 
-  url_id: 'url_id_example', # String | 
-  user_id: 'user_id_example', # String | 
-  anon_user_id: 'anon_user_id_example', # String | 
-  context_user_id: 'context_user_id_example', # String | 
-  hash_tag: 'hash_tag_example', # String | 
-  parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  page: 56, # 整数 | 
+  limit: 56, # 整数 | 
+  skip: 56, # 整数 | 
+  as_tree: true, # ブール値 | 
+  skip_children: 56, # 整数 | 
+  limit_children: 56, # 整数 | 
+  max_tree_depth: 56, # 整数 | 
+  url_id: 'url_id_example', # 文字列 | 
+  user_id: 'user_id_example', # 文字列 | 
+  anon_user_id: 'anon_user_id_example', # 文字列 | 
+  context_user_id: 'context_user_id_example', # 文字列 | 
+  hash_tag: 'hash_tag_example', # 文字列 | 
+  parent_id: 'parent_id_example', # 文字列 | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # 整数 | 
+  to_date: 789 # 整数 | 
 }
 
 begin

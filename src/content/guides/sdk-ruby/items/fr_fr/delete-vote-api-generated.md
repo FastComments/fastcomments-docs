@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Renvoie : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Exemple
 
@@ -16,11 +16,11 @@ Renvoie: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configuration de l'authentification
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configure l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_vote: #{e}"
 end
 [inline-code-end]
+
+---

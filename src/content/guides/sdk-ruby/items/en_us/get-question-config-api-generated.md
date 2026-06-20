@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config200_response.rb)
+Returns: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_config_response.rb)
 
 ## Example
 
@@ -15,7 +15,7 @@ Returns: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Set up authorization
+# setup authorization
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'

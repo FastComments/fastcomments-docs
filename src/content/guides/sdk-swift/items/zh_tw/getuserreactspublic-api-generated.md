@@ -1,25 +1,25 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路徑 | 是 |  |
-| postIds | array | 查詢 | 否 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | path | 是 |  |
+| postIds | array | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserReactsPublic200Response.swift)
+回傳: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UserReactsResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUserReactsPublic 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式範例仍為測試版。若發生任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 下列程式範例仍為 beta 版本。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let postIds = ["inner_example"] // [String] |  (可選)
-let sso = "sso_example" // String |  (可選)
+let postIds = ["inner_example"] // [String] |  (選填)
+let sso = "sso_example" // String |  (選填)
 
 PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
     guard error == nil else {

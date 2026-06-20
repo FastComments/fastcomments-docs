@@ -1,24 +1,24 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | page | f64 | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_200_response.rs)
+Повертає: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад get_hash_tags'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_hash_tags() -> Result<GetHashTags200Response, Error> {
+async fn example_get_hash_tags() -> Result<GetHashTagsResponse, Error> {
     let params: GetHashTagsParams = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(1.0),
+        page: Some(2.0),
     };
-    let response: GetHashTags200Response = get_hash_tags(&configuration, params).await?;
+    let response: GetHashTagsResponse = get_hash_tags(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

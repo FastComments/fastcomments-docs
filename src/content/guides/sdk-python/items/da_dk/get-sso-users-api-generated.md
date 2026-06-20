@@ -7,31 +7,40 @@
 
 ## Svar
 
-Returnerer: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users200_response.py)
+Returnerer: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_sso_users_response.py)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på get_sso_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_sso_users Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_sso_users200_response import GetSSOUsers200Response
+from client.models.get_sso_users_response import GetSSOUsersResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, standard er https://fastcomments.com
+# Det er valgfrit at definere host, standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-# Klienten skal konfigurere autentificerings- og autorisationsparametre
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+# Klienten skal konfigurere autentifikations- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor, brug det eksempel som
+# Eksempler på hver auth-metode er vist nedenfor; brug det eksempel der
 # passer til dit auth-brugstilfælde.
-# Konfigurer API-nøgleautorisation: api_key
-# Fjern kommentaren nedenfor for at sætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+
+# Konfigurer API-nøgle-autorisering: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # Gå ind i en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 56 # int |  (valgfrit)
+    skip = 56 # int |  (valgfri)
 
     try:
         api_response = api_instance.get_sso_users(tenant_id, skip=skip)

@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Коришћење SSO за аутентификацију
+### Коришћење API-ја за модерацију
+
+Методе за модерацију покрећу контролну таблу модератора. Оне користе `Configuration` са API кључем исто као аутентификовани API, и свака метода прихвата опциони `sso` токен тако да се позив може извршити у име модератора аутентификованог преко SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Креирајте конфигурацију са API кључем
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Избројте коментаре који чекају у реду за модерацију
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // проследите SSO токен да бисте деловали као модератор аутентификован преко SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Коришћење SSO-а за аутентификацију
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -110,12 +148,12 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Креирајте безбједне SSO податке корисника (само на серверу!)
+    // Креирајте сигурне SSO податке о кориснику (само на серверу!)
     let user_data = SecureSSOUserData::new(
-        "user-123".to_string(),           // User ID
-        "user@example.com".to_string(),   // Email
-        "John Doe".to_string(),            // Username
-        "https://example.com/avatar.jpg".to_string(), // Avatar URL
+        "user-123".to_string(),           // ИД корисника
+        "user@example.com".to_string(),   // Е-пошта
+        "John Doe".to_string(),            // Корисничко име
+        "https://example.com/avatar.jpg".to_string(), // URL аватара
     );
 
     // Генеришите SSO токен

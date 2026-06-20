@@ -6,23 +6,23 @@ afterId
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
-| sso | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeUserInfo | boolean | query | No |  |
+| tenantId | string | path | Да |  |
+| afterId | string | query | Нет |  |
+| limit | integer | query | Нет |  |
+| tags | array | query | Нет |  |
+| sso | string | query | Нет |  |
+| isCrawler | boolean | query | Нет |  |
+| includeUserInfo | boolean | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Возвращает: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все ещё находятся в бета-версии. Для любых проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё находятся в бета-версии. По любым проблемам, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

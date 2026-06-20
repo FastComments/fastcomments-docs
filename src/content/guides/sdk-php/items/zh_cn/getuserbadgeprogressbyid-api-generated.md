@@ -7,7 +7,7 @@
 
 ## 响应
 
-返回：[`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadgeProgressById200Response.php)
+返回: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
 
 ## 示例
 
@@ -19,18 +19,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // 配置 API 密钥授权：api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，取消注释下面以设置 API 密钥的前缀（例如 Bearer）
+// 如有需要，取消注释以下代码以设置前缀（例如 Bearer）
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+$tenant_id = 'tenant_id_example'; // 字符串
+$id = 'id_example'; // 字符串
 
 try {
     $result = $apiInstance->getUserBadgeProgressById($tenant_id, $id);
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressById: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

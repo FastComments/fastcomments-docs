@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | commentId | string | query | Sì |  |
@@ -10,18 +10,18 @@
 
 ## Risposta
 
-Restituisce: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Restituisce: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
+# La definizione dell'host è opzionale e predefinita a https://fastcomments.com
 # Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,13 +29,13 @@ configuration = client.Configuration(
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la policy di sicurezza del server API.
-# Gli esempi per ogni metodo di auth sono forniti sotto, usa l'esempio che
+# Esempi per ogni metodo di autenticazione sono riportati sotto; usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autorizzazione tramite API key: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommenta qui sotto per impostare il prefisso (es. Bearer) per la API key, se necessario
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entra in un contesto con un'istanza del client API
@@ -45,8 +45,8 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     direction = 'direction_example' # str | 
-    user_id = 'user_id_example' # str |  (opzionale)
-    anon_user_id = 'anon_user_id_example' # str |  (opzionale)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
         api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)

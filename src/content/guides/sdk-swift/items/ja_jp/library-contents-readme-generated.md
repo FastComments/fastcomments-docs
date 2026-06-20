@@ -1,9 +1,9 @@
-The FastComments Swift SDK は、いくつかのモジュールで構成されています:
+FastComments Swift SDK はいくつかのモジュールで構成されています:
 
-- **Client Module** - FastComments REST API 用に自動生成された API クライアント
+- **Client Module** - FastComments REST API 用の API クライアント
   - すべての API モデルに対する完全な型定義
-  - 認証済み（`DefaultAPI`）とパブリック（`PublicAPI`）の両方のエンドポイント
-  - 完全な async/await サポート
+  - 認証済み（`DefaultAPI`）、パブリック（`PublicAPI`）、およびモデレーション（`ModerationAPI`）のメソッド
+  - 完全な async/await のサポート
   - 詳細な API ドキュメントは [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) を参照してください
 
 - **SSO Module** - サーバーサイドのシングルサインオン用ユーティリティ

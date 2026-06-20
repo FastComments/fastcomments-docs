@@ -14,7 +14,7 @@ for new root comments, and also
 
 ## Response
 
-Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Returns: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Example
 
@@ -22,13 +22,16 @@ Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.co
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/article-title-456",
+  urlId = "news/economy/market-rally-2026-06-19",
   url = "",
   pageTitle = "",
   subscribedOrUnsubscribed = "",
   sso = ""
 )
+
 if response.isSome:
-  let result = response.get()
-  echo "Subscription update returned:", $result
+  let updateResp = response.get()
+  echo "Subscription update received: ", updateResp
+else:
+  echo "No subscription update returned."
 [inline-code-end]

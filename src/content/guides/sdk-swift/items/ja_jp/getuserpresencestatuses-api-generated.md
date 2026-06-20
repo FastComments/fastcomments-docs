@@ -1,14 +1,15 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| urlIdWS | string | query | はい |  |
-| userIds | string | query | はい |  |
+| tenantId | string | クエリ | はい |  |
+| urlIdWS | string | クエリ | はい |  |
+| userIds | string | クエリ | はい |  |
 
 ## レスポンス
 
-返却: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserPresenceStatuses200Response.swift)
+返却: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserPresenceStatusesResponse.swift)
 
 ## 例
 

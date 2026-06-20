@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | commentId | string | query | No |  |
@@ -13,7 +13,7 @@
 
 ## Risposta
 
-Restituisce: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+Restituisce: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## Esempio
 
@@ -21,22 +21,22 @@ Restituisce: [`GetPendingWebhookEvents200Response`](https://github.com/FastComme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configurazione dell'autenticazione
+# configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autenticazione tramite API key: api_key
+  # Configura l'autorizzazione con API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per l'API key, es. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Stringa | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  comment_id: 'comment_id_example', # Stringa | 
-  external_id: 'external_id_example', # Stringa | 
-  event_type: 'event_type_example', # Stringa | 
-  type: 'type_example', # Stringa | 
-  domain: 'domain_example', # Stringa | 
+  comment_id: 'comment_id_example', # String | 
+  external_id: 'external_id_example', # String | 
+  event_type: 'event_type_example', # String | 
+  type: 'type_example', # String | 
+  domain: 'domain_example', # String | 
   attempt_count_gt: 1.2, # Float | 
   skip: 1.2 # Float | 
 }

@@ -1,14 +1,13 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| urlId | string | query | Так |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
 
 ## Відповідь
 
-Повертає: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_200_response.go)
+Повертає: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_response.go)
 
 ## Приклад
 
@@ -24,8 +23,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	urlId := "urlId_example" // string | 
+	tenantId := "tenantId_example" // рядок | 
+	urlId := "urlId_example" // рядок | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `GetVotes`: GetVotes200Response
+	// відповідь від `GetVotes`: GetVotesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotes`: %v\n", resp)
 }
 [inline-code-end]
-
----

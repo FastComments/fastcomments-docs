@@ -8,14 +8,14 @@
 
 ## Response
 
-Returns: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket200_response.py)
+Returns: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'get_ticket Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_ticket200_response import GetTicket200Response
+from client.models.get_ticket_response import GetTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 

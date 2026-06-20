@@ -1,4 +1,4 @@
-### Gebruik van geauthenticeerde API's (DefaultAPI)
+### Geauthenticeerde API's gebruiken (DefaultAPI)
 
 **Belangrijk:** Geauthenticeerde endpoints vereisen dat uw API-sleutel is ingesteld als de `x-api-key` header.
 
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Maak geauthenticeerde API-aanroepen
+# Voer geauthenticeerde API-aanroepen uit
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -37,7 +37,7 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Gebruik van openbare API's (PublicAPI)
+### Openbare API's gebruiken (PublicAPI)
 
 Openbare endpoints vereisen geen authenticatie:
 
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Maak openbare API-aanroepen
+# Voer openbare API-aanroepen uit
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Moderatie-API's gebruiken (ModerationAPI)
+
+Moderatie-endpoints voorzien het moderatiedashboard en worden geauthenticeerd met een SSO-token voor de actieve moderator:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Lijst reacties in het moderatiedashboard
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Veelvoorkomende problemen
 
-1. **401 authentication error**: Zorg ervoor dat u de `x-api-key` header op uw HttpClient instelt voordat u DefaultAPI-aanvragen doet: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Gebruik `api_default` voor server-side geauthenticeerde verzoeken, `api_public` voor client-side/openbare verzoeken.
+1. **401 authenticatiefout**: Zorg dat u de `x-api-key` header op uw HttpClient instelt voordat u DefaultAPI-aanvragen doet: `client.headers["x-api-key"] = "your-api-key"`
+2. **Verkeerde API-klasse**: Gebruik `api_default` voor server-side geauthenticeerde verzoeken, `api_public` voor client-side/openbare verzoeken, en `api_moderation` voor verzoeken van het moderatiedashboard.

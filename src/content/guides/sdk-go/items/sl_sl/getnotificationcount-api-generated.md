@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Tip | Location | Obvezno | Opis |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -11,7 +11,7 @@
 
 ## Odgovor
 
-Vrne: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_200_response.go)
+Vrne: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_response.go)
 
 ## Primer
 
@@ -28,11 +28,11 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (neobvezno)
-	urlId := "urlId_example" // string |  (neobvezno)
-	fromCommentId := "fromCommentId_example" // string |  (neobvezno)
-	viewed := true // bool |  (neobvezno)
-	type_ := "type__example" // string |  (neobvezno)
+	userId := "userId_example" // string |  (izbirno)
+	urlId := "urlId_example" // string |  (izbirno)
+	fromCommentId := "fromCommentId_example" // string |  (izbirno)
+	viewed := true // bool |  (izbirno)
+	type_ := "type__example" // string |  (izbirno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetNotificationCount`: GetNotificationCount200Response
+	// odgovor od `GetNotificationCount`: GetNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotificationCount`: %v\n", resp)
 }
 [inline-code-end]

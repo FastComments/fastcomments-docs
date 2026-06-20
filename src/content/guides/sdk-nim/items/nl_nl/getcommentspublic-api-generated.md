@@ -1,7 +1,11 @@
+req
+tenantId
+urlId
+
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | page | int | Nee |  |
@@ -33,7 +37,7 @@
 
 ## Respons
 
-Retourneert: [`Option[GetCommentsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_public200response.nim)
+Retourneert: [`Option[GetCommentsResponseWithPresencePublicComment]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_response_with_presence_public_comment.nim)
 
 ## Voorbeeld
 
@@ -41,16 +45,16 @@ Retourneert: [`Option[GetCommentsPublic_200_response]`](https://github.com/FastC
 [inline-code-start]
 let (response, httpResponse) = client.getCommentsPublic(
   tenantId = "my-tenant-123",
-  urlId = "news/world/article-2025",
-  page = 1,
-  direction = SortDirections(0),
-  sso = "sso_token_abc",
+  urlId = "news/article-title",
+  page = 2,
+  direction = SortDirections.Descending,
+  sso = "",
   skip = 0,
   skipChildren = 0,
-  limit = 20,
+  limit = 25,
   limitChildren = 5,
   countChildren = false,
-  fetchPageForCommentId = "cmt_789",
+  fetchPageForCommentId = "",
   includeConfig = true,
   countAll = false,
   includei10n = true,
@@ -61,18 +65,19 @@ let (response, httpResponse) = client.getCommentsPublic(
   asTree = true,
   maxTreeDepth = 3,
   useFullTranslationIds = false,
-  parentId = "parent_123",
-  searchText = "openAI integration",
-  hashTags = @["ai", "technology"],
-  userId = "user_456",
-  customConfigStr = "{}",
-  afterCommentId = "cmt_100",
+  parentId = "",
+  searchText = "climate change",
+  hashTags = @["climate", "research"],
+  userId = "user-789",
+  customConfigStr = "",
+  afterCommentId = "",
   beforeCommentId = ""
 )
 
 if response.isSome:
-  let comments = response.get()
-  discard comments
+  let commentsResp = response.get()
+  echo "Received comments response:"
+  echo commentsResp
 else:
-  discard httpResponse
+  echo "No comments returned. HTTP status:", httpResponse.status
 [inline-code-end]

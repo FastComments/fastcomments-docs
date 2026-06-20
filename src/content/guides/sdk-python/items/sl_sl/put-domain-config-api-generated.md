@@ -5,21 +5,21 @@
 | tenantId | string | query | Da |  |
 | domainToUpdate | string | path | Da |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Vrne: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/put_domain_config_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer put_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_domain_config Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.put_domain_config_response import PutDomainConfigResponse
 from client.models.update_domain_config_params import UpdateDomainConfigParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
+# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -27,9 +27,10 @@ configuration = client.Configuration(
 
 # Odjemalec mora konfigurirati parametre overjanja in avtorizacije
 # v skladu z varnostno politiko API strežnika.
-# Spodaj so navedeni primeri za vsako metodo overjanja; uporabite primer, ki
-# ustreza vašemu primeru uporabe.
-# Configure API key authorization: api_key
+# Spodaj so primeri za vsako metodo avtentikacije; uporabite tisti
+# ki ustreza vašemu primeru uporabe.
+
+# Konfigurirajte avtentikacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
@@ -37,7 +38,7 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     domain_to_update = 'domain_to_update_example' # str | 

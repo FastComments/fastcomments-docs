@@ -4,26 +4,26 @@ afterId
 
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| afterId | string | query | Nie |  |
-| limit | integer | query | Nie |  |
-| tags | array | query | Nie |  |
-| sso | string | query | Nie |  |
-| isCrawler | boolean | query | Nie |  |
-| includeUserInfo | boolean | query | Nie |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Zwraca: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -34,17 +34,17 @@ configuration = client.Configuration(
 )
 
 
-# Wejdź w kontekst z instancją klienta API
+# Otwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (opcjonalne)
-    limit = 56 # int |  (opcjonalne)
-    tags = ['tags_example'] # List[str] |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
-    is_crawler = True # bool |  (opcjonalne)
-    include_user_info = True # bool |  (opcjonalne)
+    after_id = 'after_id_example' # str |  (optional)
+    limit = 56 # int |  (optional)
+    tags = ['tags_example'] # List[str] |  (optional)
+    sso = 'sso_example' # str |  (optional)
+    is_crawler = True # bool |  (optional)
+    include_user_info = True # bool |  (optional)
 
     try:
         api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)
@@ -53,3 +53,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_feed_posts_public: %s\n" % e)
 [inline-code-end]
+
+---

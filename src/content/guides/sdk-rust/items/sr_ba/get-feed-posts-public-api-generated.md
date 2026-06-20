@@ -1,40 +1,39 @@
----
 req
 tenantId
 afterId
 
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| after_id | String | Не |  |
-| limit | i32 | Не |  |
-| tags | Vec<String> | Не |  |
-| sso | String | Не |  |
-| is_crawler | bool | Не |  |
-| include_user_info | bool | Не |  |
+| tenant_id | String | Da |  |
+| after_id | String | Ne |  |
+| limit | i32 | Ne |  |
+| tags | Vec<String> | Ne |  |
+| sso | String | Ne |  |
+| is_crawler | bool | Ne |  |
+| include_user_info | bool | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_public_200_response.rs)
+Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/public_feed_posts_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример get_feed_posts_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_feed_posts_public Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<GetFeedPostsPublic200Response, Error> {
+async fn run_example() -> Result<(), Error> {
     let params: GetFeedPostsPublicParams = GetFeedPostsPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        after_id: Some("post_987654".to_string()),
-        limit: Some(25),
-        tags: Some(vec!["news".to_string(), "technology".to_string()]),
-        sso: Some("sso-token-abc123".to_string()),
+        after_id: Some("post_9f8d7c".to_string()),
+        limit: Some(20),
+        tags: Some(vec!["news".to_string(), "product-updates".to_string()]),
+        sso: Some("sso-token-9a8b7c".to_string()),
         is_crawler: Some(false),
         include_user_info: Some(true),
     };
-    let response: GetFeedPostsPublic200Response = get_feed_posts_public(&configuration, params).await?;
-    Ok(response)
+    let response: PublicFeedPostsResponse = get_feed_posts_public(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -8,19 +8,19 @@
 
 ## Svar
 
-Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'update_notification Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på update_notification'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_notification_body import UpdateNotificationBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host; standard er https://fastcomments.com
+# Det er valgfrit at angive værten, og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,13 +28,13 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentificeringsmetode er angivet nedenfor; brug det eksempel som
-# passer til dit autentificeringsscenarie.
+# Eksempler for hver godkendelsesmetode er vist nedenfor, brug det eksempel
+# der opfylder dit autentificeringsbehov.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentar på nedenstående for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at sætte et præfiks (f.eks. Bearer) til API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -44,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     update_notification_body = client.UpdateNotificationBody() # UpdateNotificationBody | 
-    user_id = 'user_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (valgfri)
 
     try:
         api_response = api_instance.update_notification(tenant_id, id, update_notification_body, user_id=user_id)

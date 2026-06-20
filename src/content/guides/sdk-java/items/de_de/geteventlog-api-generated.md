@@ -5,17 +5,17 @@ userIdWS
 
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+| Name | Type | Location | Erforderlich | Beschreibung |
+|------|------|----------|-------------:|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | userIdWS | string | query | Ja |  |
 | startTime | integer | query | Ja |  |
-| endTime | integer | query | Ja |  |
+| endTime | integer | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+Gibt zurück: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## Beispiel
 
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

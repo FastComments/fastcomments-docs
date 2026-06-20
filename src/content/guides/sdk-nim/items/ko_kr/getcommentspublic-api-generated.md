@@ -1,39 +1,43 @@
+req
+tenantId
+urlId
+
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| urlId | string | 예 |  |
-| page | int | 아니오 |  |
-| direction | SortDirections | 아니오 |  |
-| sso | string | 아니오 |  |
-| skip | int | 아니오 |  |
-| skipChildren | int | 아니오 |  |
-| limit | int | 아니오 |  |
-| limitChildren | int | 아니오 |  |
-| countChildren | bool | 아니오 |  |
-| fetchPageForCommentId | string | 아니오 |  |
-| includeConfig | bool | 아니오 |  |
-| countAll | bool | 아니오 |  |
-| includei10n | bool | 아니오 |  |
-| locale | string | 아니오 |  |
-| modules | string | 아니오 |  |
-| isCrawler | bool | 아니오 |  |
-| includeNotificationCount | bool | 아니오 |  |
-| asTree | bool | 아니오 |  |
-| maxTreeDepth | int | 아니오 |  |
-| useFullTranslationIds | bool | 아니오 |  |
-| parentId | string | 아니오 |  |
-| searchText | string | 아니오 |  |
-| hashTags | seq[string] | 아니오 |  |
-| userId | string | 아니오 |  |
-| customConfigStr | string | 아니오 |  |
-| afterCommentId | string | 아니오 |  |
-| beforeCommentId | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| page | int | No |  |
+| direction | SortDirections | No |  |
+| sso | string | No |  |
+| skip | int | No |  |
+| skipChildren | int | No |  |
+| limit | int | No |  |
+| limitChildren | int | No |  |
+| countChildren | bool | No |  |
+| fetchPageForCommentId | string | No |  |
+| includeConfig | bool | No |  |
+| countAll | bool | No |  |
+| includei10n | bool | No |  |
+| locale | string | No |  |
+| modules | string | No |  |
+| isCrawler | bool | No |  |
+| includeNotificationCount | bool | No |  |
+| asTree | bool | No |  |
+| maxTreeDepth | int | No |  |
+| useFullTranslationIds | bool | No |  |
+| parentId | string | No |  |
+| searchText | string | No |  |
+| hashTags | seq[string] | No |  |
+| userId | string | No |  |
+| customConfigStr | string | No |  |
+| afterCommentId | string | No |  |
+| beforeCommentId | string | No |  |
 
 ## 응답
 
-반환: [`Option[GetCommentsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_public200response.nim)
+반환값: [`Option[GetCommentsResponseWithPresencePublicComment]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_response_with_presence_public_comment.nim)
 
 ## 예제
 
@@ -41,16 +45,16 @@
 [inline-code-start]
 let (response, httpResponse) = client.getCommentsPublic(
   tenantId = "my-tenant-123",
-  urlId = "news/world/article-2025",
-  page = 1,
-  direction = SortDirections(0),
-  sso = "sso_token_abc",
+  urlId = "news/article-title",
+  page = 2,
+  direction = SortDirections.Descending,
+  sso = "",
   skip = 0,
   skipChildren = 0,
-  limit = 20,
+  limit = 25,
   limitChildren = 5,
   countChildren = false,
-  fetchPageForCommentId = "cmt_789",
+  fetchPageForCommentId = "",
   includeConfig = true,
   countAll = false,
   includei10n = true,
@@ -61,20 +65,21 @@ let (response, httpResponse) = client.getCommentsPublic(
   asTree = true,
   maxTreeDepth = 3,
   useFullTranslationIds = false,
-  parentId = "parent_123",
-  searchText = "openAI integration",
-  hashTags = @["ai", "technology"],
-  userId = "user_456",
-  customConfigStr = "{}",
-  afterCommentId = "cmt_100",
+  parentId = "",
+  searchText = "climate change",
+  hashTags = @["climate", "research"],
+  userId = "user-789",
+  customConfigStr = "",
+  afterCommentId = "",
   beforeCommentId = ""
 )
 
 if response.isSome:
-  let comments = response.get()
-  discard comments
+  let commentsResp = response.get()
+  echo "Received comments response:"
+  echo commentsResp
 else:
-  discard httpResponse
+  echo "No comments returned. HTTP status:", httpResponse.status
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | yearNumber | float64 | Ne |  |
@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`Option[GetTenantDailyUsages_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages200response.nim)
+Vrne: [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages_response.nim)
 
 ## Primer
 
@@ -18,15 +18,15 @@ Vrne: [`Option[GetTenantDailyUsages_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.getTenantDailyUsages(
   tenantId = "my-tenant-123",
-  yearNumber = 2025.0,
+  yearNumber = 2026.0,
   monthNumber = 6.0,
-  dayNumber = 15.0,
+  dayNumber = 19.0,
   skip = 0.0
 )
 
 if response.isSome:
-  let usages = response.get()
-  echo usages
-else:
-  echo "No daily usages returned"
+  let usage = response.get()
+  discard usage
 [inline-code-end]
+
+---

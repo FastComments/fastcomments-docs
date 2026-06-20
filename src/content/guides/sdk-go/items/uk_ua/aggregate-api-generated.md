@@ -1,9 +1,9 @@
-Агрегує документи, групуючи їх (якщо вказано groupBy) та застосовуючи кілька операцій.
+Агрегує документи, групуючи їх (якщо надано groupBy) та застосовуючи кілька операцій.
 Підтримуються різні операції (наприклад sum, countDistinct, avg тощо).
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язкове | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | parentTenantId | string | query | Ні |  |
@@ -11,7 +11,7 @@
 
 ## Відповідь
 
-Повертає: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Повертає: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Приклад
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Aggregate`: AggregationResponse
+	// відповідь від `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Ne |  |
@@ -12,45 +12,45 @@
 
 ## Odgovor
 
-Vraća: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count200_response.py)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_pending_webhook_event_count Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_event_count200_response import GetPendingWebhookEventCount200Response
+from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Klijent mora podesiti parametre autentikacije i autorizacije
+# u skladu sa politikom sigurnosti API servera.
+# Primjeri za svaku metodu autentikacije su dati ispod, koristite primjer koji
+# zadovoljava vaš slučaj upotrebe autentikacije.
 
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (neobavezno)
-    external_id = 'external_id_example' # str |  (neobavezno)
-    event_type = 'event_type_example' # str |  (neobavezno)
-    type = 'type_example' # str |  (neobavezno)
-    domain = 'domain_example' # str |  (neobavezno)
-    attempt_count_gt = 3.4 # float |  (neobavezno)
+    comment_id = 'comment_id_example' # str |  (opciono)
+    external_id = 'external_id_example' # str |  (opciono)
+    event_type = 'event_type_example' # str |  (opciono)
+    type = 'type_example' # str |  (opciono)
+    domain = 'domain_example' # str |  (opciono)
+    attempt_count_gt = 3.4 # float |  (opciono)
 
     try:
         api_response = api_instance.get_pending_webhook_event_count(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt)

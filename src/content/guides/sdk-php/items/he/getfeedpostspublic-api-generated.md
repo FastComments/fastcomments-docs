@@ -1,3 +1,4 @@
+---
 req
 tenantId
 afterId
@@ -16,7 +17,7 @@ afterId
 
 ## תגובה
 
-מחזיר: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+מחזיר: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## דוגמה
 
@@ -28,17 +29,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש בלקוח http מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$after_id = 'after_id_example'; // מחרוזת
-$limit = 56; // מספר שלם
-$tags = array('tags_example'); // מערך מחרוזות
-$sso = 'sso_example'; // מחרוזת
-$is_crawler = True; // בוליאני
-$include_user_info = True; // בוליאני
+$tenant_id = 'tenant_id_example'; // string
+$after_id = 'after_id_example'; // string
+$limit = 56; // int
+$tags = array('tags_example'); // string[]
+$sso = 'sso_example'; // string
+$is_crawler = True; // bool
+$include_user_info = True; // bool
 
 try {
     $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
@@ -47,3 +48,5 @@ try {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,41 +1,41 @@
+---
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Location | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | path | Yes |  |
+| tenantId | string | query | Ja |  |
+| userId | string | path | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_by_id200_response.py)
+Gibt zurück: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_user_badge_progress_by_user_id Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_by_id200_response import GetUserBadgeProgressById200Response
+from client.models.api_get_user_badge_progress_response import APIGetUserBadgeProgressResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Festlegung des Hosts ist optional und standardmäßig https://fastcomments.com
+# Die Angabe des Hosts ist optional und standardmäßig auf https://fastcomments.com eingestellt
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten angegeben, verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsanforderungen entspricht.
-
-# API-Schlüssel-Authentifizierung konfigurieren: api_key
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter konfigurieren
+# gemäß der Sicherheitsrichtlinie des API-Servers.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt. Verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsfall erfüllt.
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Einen Kontext mit einer Instanz des API-Clients verwenden
 with client.ApiClient(configuration) as api_client:
     # Eine Instanz der API-Klasse erstellen
     api_instance = client.DefaultApi(api_client)
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge_progress_by_user_id: %s\n" % e)
 [inline-code-end]
+
+---

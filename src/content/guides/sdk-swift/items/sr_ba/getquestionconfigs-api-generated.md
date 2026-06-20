@@ -1,23 +1,23 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionConfigs200Response.swift)
+Vraća: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionConfigsResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getQuestionConfigs Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfigs Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем пријавите путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Double |  (опционо)
+let skip = 987 // Double |  (neobavezno)
 
 DefaultAPI.getQuestionConfigs(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.getQuestionConfigs(tenantId: tenantId, skip: skip) { (response, error
     }
 }
 [inline-code-end]
-
----

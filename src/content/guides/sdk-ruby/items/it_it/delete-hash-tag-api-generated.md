@@ -1,13 +1,13 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tag | string | path | Sì |  |
 | tenantId | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Esempio
 
@@ -15,11 +15,11 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configura l'autorizzazione
+# impostazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione tramite chiave API: api_key
+  # Configura l'autorizzazione con chiave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
+  # Decommentare la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -27,7 +27,7 @@ api_instance = FastCommentsClient::DefaultApi.new
 tag = 'tag_example' # String | 
 opts = {
   tenant_id: 'tenant_id_example', # String | 
-  delete_hash_tag_request: FastCommentsClient::DeleteHashTagRequest.new # DeleteHashTagRequest | 
+  delete_hash_tag_request_body: FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
 }
 
 begin

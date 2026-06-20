@@ -1,7 +1,6 @@
----
 ## Parametreler
 
-| Name | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Hayır |  |
@@ -10,16 +9,18 @@
 
 ## Yanıt
 
-Döner: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'deleteTenantUser Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-456", deleteComments = "", commentDeleteMode = "")
+let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
 if response.isSome:
-  let flagResp = response.get()
-  echo flagResp
+  let apiResp = response.get()
+  echo "Tenant user deleted, response: ", apiResp
+else:
+  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | query | Oui |  |
@@ -10,7 +10,7 @@
 
 ## Réponse
 
-Retourne: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteComment200Response.swift)
+Renvoie : [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## Exemple
 
@@ -36,5 +36,3 @@ DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direc
     }
 }
 [inline-code-end]
-
----

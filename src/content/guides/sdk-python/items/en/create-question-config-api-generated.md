@@ -6,15 +6,15 @@
 
 ## Response
 
-Returns: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config200_response.py)
+Returns: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'create_question_config Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_config200_response import CreateQuestionConfig200Response
 from client.models.create_question_config_body import CreateQuestionConfigBody
+from client.models.create_question_config_response import CreateQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 

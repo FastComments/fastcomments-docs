@@ -1,8 +1,8 @@
-Združuje dokumente z razvrščanjem v skupine (če je podan groupBy) in izvajanjem več operacij. Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
+Združuje dokumente z grupiranjem (če je podan groupBy) in izvajanjem več operacij. Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | parentTenantId | string | query | Ne |  |
@@ -10,7 +10,7 @@ Združuje dokumente z razvrščanjem v skupine (če je podan groupBy) in izvajan
 
 ## Odgovor
 
-Vrne: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Vrača: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Primer
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `Aggregate`: AggregationResponse
+	// response from `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,49 +1,52 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| userId | string | query | いいえ |  |
-| state | number | query | いいえ |  |
-| skip | number | query | いいえ |  |
-| limit | number | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets200_response.py)
+戻り値: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'get_tickets の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tickets200_response import GetTickets200Response
+from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# ホストの定義は省略可能で、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
 
-# クライアントは認証および認可のパラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 各認証方式の例は以下に示されています。該当する例を
-# ご利用の認証ユースケースに合わせて選んでください。
+# クライアントは認証および認可パラメータを設定する必要があります
+# API サーバのセキュリティポリシーに従ってください。
+# 各認証方式の例を以下に示します。
+# ご利用の認証方法に合う例を使用してください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# コメントアウトを外して、必要に応じて API キーにプレフィックス（例: Bearer）を設定してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# API クライアントのインスタンスを用いてコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API クラスのインスタンスを作成
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (オプション)
-    state = 3.4 # float |  (オプション)
-    skip = 3.4 # float |  (オプション)
-    limit = 3.4 # float |  (オプション)
+    user_id = 'user_id_example' # str |  (optional)
+    state = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
+    limit = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)

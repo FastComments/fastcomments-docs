@@ -1,34 +1,29 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Location | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user200_response.py)
+Restituisce: [`GetUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user200_response import GetUser200Response
+from client.models.get_user_response import GetUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la policy di sicurezza del server API.
-# Di seguito sono forniti esempi per ogni metodo di autenticazione, usa l'esempio che
-# soddisfa il tuo caso d'uso di autenticazione.
-
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 

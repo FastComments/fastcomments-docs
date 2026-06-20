@@ -1,6 +1,6 @@
 Activer ou désactiver les notifications pour un commentaire spécifique.
 
-## Parameters
+## Paramètres
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -10,9 +10,9 @@ Activer ou désactiver les notifications pour un commentaire spécifique.
 | commentId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
-## Response
+## Réponse
 
-Renvoie : [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Renvoie : [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## Exemple
 
@@ -24,7 +24,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );

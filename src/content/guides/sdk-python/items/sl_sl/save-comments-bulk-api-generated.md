@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | isLive | boolean | query | Ne |  |
@@ -10,7 +11,7 @@
 
 ## Odgovor
 
-Vrne: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Vrne: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## Primer
 
@@ -18,25 +19,25 @@ Vrne: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-py
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljeno na https://fastcomments.com
+# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# Odjemalec mora konfigurirati parametre overjanja in pooblastil
 # v skladu s politiko varnosti API strežnika.
-# Spodaj so navedeni primeri za vsako metodo avtentikacije; uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Spodaj so podani primeri za vsako metodo overjanja, uporabite tistega,
+# ki ustreza vašemu primeru uporabe.
 
 # Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Če je potrebno, odkomentirajte spodnje za nastavitev prefiksa (npr. Bearer) za API ključ
+# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
@@ -45,10 +46,10 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (optional)
-    do_spam_check = True # bool |  (optional)
-    send_emails = True # bool |  (optional)
-    populate_notifications = True # bool |  (optional)
+    is_live = True # bool |  (izbirno)
+    do_spam_check = True # bool |  (izbirno)
+    send_emails = True # bool |  (izbirno)
+    populate_notifications = True # bool |  (izbirno)
 
     try:
         api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
@@ -57,3 +58,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->save_comments_bulk: %s\n" % e)
 [inline-code-end]
+
+---

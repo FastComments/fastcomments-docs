@@ -1,24 +1,25 @@
+---
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'deleteNotificationCount Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteNotificationCount(tenantId = "my-tenant-123", id = "notif-456")
+let (response, httpResponse) = client.deleteNotificationCount(tenantId = "my-tenant-123", id = "notification-789")
 if response.isSome:
-  let deleted = response.get()
-  echo "Deleted notification count:", deleted
+  let emptyResp = response.get()
+  echo "Notification count deleted for tenant: ", "my-tenant-123"
 else:
-  echo "No response body; HTTP response:", httpResponse
+  echo "Failed to delete notification count, status: ", $httpResponse.statusCode
 [inline-code-end]
 
 ---

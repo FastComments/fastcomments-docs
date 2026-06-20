@@ -1,16 +1,16 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| commentId | string | path | Sí |  |
-| broadcastId | string | query | Sí |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| commentId | string | ruta | Sí |  |
+| broadcastId | string | consulta | Sí |  |
+| editKey | string | consulta | No |  |
+| sso | string | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentText200Response.php)
+Devuelve: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPISetCommentTextResponse.php)
 
 ## Ejemplo
 
@@ -23,7 +23,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
+    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

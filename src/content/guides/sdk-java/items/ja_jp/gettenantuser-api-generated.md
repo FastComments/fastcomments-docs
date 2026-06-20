@@ -5,9 +5,9 @@
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 
-## Response
+## レスポンス
 
-戻り値: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUser200Response.java)
+戻り値: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantUserResponse.java)
 
 ## 例
 
@@ -29,14 +29,14 @@ public class Example {
     // APIキー認証の設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーのプレフィックスを設定するには、次の行のコメントを外してください。例: "Token"（デフォルトは null）
+    // 次の行のコメントアウトを解除して、APIキーにプレフィックス（例: "Token"、デフォルトは null）を設定してください
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
     try {
-      GetTenantUser200Response result = apiInstance.getTenantUser(tenantId, id)
+      GetTenantUserResponse result = apiInstance.getTenantUser(tenantId, id)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

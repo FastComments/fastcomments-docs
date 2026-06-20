@@ -7,29 +7,29 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_configs200_response.py)
+Zwraca: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_configs_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_question_configs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_configs200_response import GetQuestionConfigs200Response
+from client.models.get_question_configs_response import GetQuestionConfigsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz plik configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z polityką bezpieczeństwa serwera API.
-# Przykłady dla każdej metody uwierzytelniania podano poniżej; użyj przykładu, który
-# spełnia Twój przypadek użycia uwierzytelniania.
+# zgodnie z zasadami bezpieczeństwa serwera API.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj tego
+# który odpowiada Twojemu przypadkowi użycia.
 
-# Konfiguracja autoryzacji kluczem API: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne

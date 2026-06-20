@@ -1,6 +1,6 @@
 ### 使用已认证的 API (DefaultApi)
 
-**重要：** 在进行已认证的请求之前，您必须在 Configuration 上设置您的 API 密钥。如果不设置，请求将以 401 错误失败。
+**重要：** 在进行需要认证的请求之前，您必须在 Configuration 上设置您的 API 密钥。如果不设置，请求会以 401 错误失败。
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -10,16 +10,16 @@ from client.models import CreateAPISSOUserData
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# 必填：设置你的 API 密钥（从 FastComments 仪表板获取）
+# 必需：设置您的 API 密钥（从您的 FastComments 仪表板获取）
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
 # 使用配置好的客户端创建 API 实例
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# 现在你可以进行已认证的 API 调用
+# 现在您可以进行已认证的 API 调用
 try:
-    # 示例：添加 SSO 用户
+    # 示例：添加一个 SSO 用户
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -41,7 +41,7 @@ except Exception as e:
 
 ### 使用公共 API (PublicApi)
 
-公共端点不需要认证：
+公共端点不需要身份验证：
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,9 +62,30 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### 使用审核仪表板 (ModerationApi)
+
+`ModerationApi` 为版主仪表板提供支持。通过传递 `sso` 令牌，方法会以版主的身份被调用：
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # 统计等待审核的评论数
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### 使用 SSO（单点登录）
 
-该 SDK 包含用于生成安全 SSO 令牌的实用工具：
+SDK 包含用于生成安全 SSO 令牌的工具：
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -77,7 +98,7 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# 使用你的 API 密钥（secret）创建 SSO 实例
+# 使用您的 API 密钥创建 SSO 实例
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
@@ -90,7 +111,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-对于简单 SSO（不太安全，仅用于测试）：
+用于简单 SSO（安全性较低，仅用于测试）：
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -107,7 +128,7 @@ sso_token = sso.create_token()
 ### 常见问题
 
 1. **401 "missing-api-key" 错误**：确保在创建 DefaultApi 实例之前设置 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}`。
-2. **错误的 API 类**：对服务器端的已认证请求使用 `DefaultApi`，对客户端/公共请求使用 `PublicApi`。
-3. **导入错误**：确保你从正确的模块导入：
-   - API 客户端：`from client import ...`
-   - SSO 实用工具：`from sso import ...`
+2. **错误的 API 类**：服务器端需认证的请求使用 `DefaultApi`，客户端/公共请求使用 `PublicApi`，版主仪表板请求使用 `ModerationApi`。
+3. **导入错误**：确保您从正确的模块导入：
+   - API 客户端: `from client import ...`
+   - SSO 工具: `from sso import ...`

@@ -2,42 +2,42 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| startDate | string | query | No |  |
-| questionId | string | query | No |  |
-| questionIds | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| urlId | string | query | Нет |  |
+| userId | string | query | Нет |  |
+| startDate | string | query | Нет |  |
+| questionId | string | query | Нет |  |
+| questionIds | string | query | Нет |  |
+| skip | number | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results200_response.py)
+Возвращает: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_results200_response import GetQuestionResults200Response
+from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Определение хоста необязательно и по умолчанию равно https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
-# соответствует вашему сценарию аутентификации.
+# в соответствии с политикой безопасности API-сервера.
+# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
+# соответствует вашему сценарию использования аутентификации.
 
-# Настройте авторизацию по API-ключу: api_key
+# Настройка авторизации с помощью API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
+# Раскомментируйте ниже, чтобы настроить префикс (например, Bearer) для API-ключа, если это необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Войдите в контекст с экземпляром API-клиента

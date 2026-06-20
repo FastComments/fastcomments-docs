@@ -1,7 +1,8 @@
+---
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | commentId | string | Sì |  |
 | broadcastId | string | Sì |  |
@@ -9,31 +10,24 @@
 
 ## Risposta
 
-Restituisce: [`LockComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/LockComment_200_response.h)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di lockComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456");
-utility::string_t broadcastId = U("brdcst-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->lockComment(tenantId, commentId, broadcastId, sso)
-    .then([](pplx::task<std::shared_ptr<LockComment_200_response>> t)
-    {
-        try
-        {
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t commentId = utility::conversions::to_string_t("cmt-987654321");
+utility::string_t broadcastId = utility::conversions::to_string_t("live-456");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
+auto lockTask = api->lockComment(tenantId, commentId, broadcastId, sso)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) -> std::shared_ptr<APIEmptyResponse> {
+        try {
             auto resp = t.get();
-            if(!resp)
-            {
-                resp = std::make_shared<LockComment_200_response>();
-            }
-        }
-        catch(const std::exception& ex)
-        {
-            (void)ex;
+            if (!resp) resp = std::make_shared<APIEmptyResponse>();
+            return resp;
+        } catch (...) {
+            return std::make_shared<APIEmptyResponse>();
         }
     });
 [inline-code-end]

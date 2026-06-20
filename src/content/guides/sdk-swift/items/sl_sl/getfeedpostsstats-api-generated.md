@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | postIds | array | query | Da |  |
@@ -8,18 +8,18 @@
 
 ## Odgovor
 
-Vrne: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsStats200Response.swift)
+Vrne: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FeedPostsStatsResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getFeedPostsStats'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za morebitne težave poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za kakršenkoli problem, prosimo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postIds = ["inner_example"] // [String] | 
-let sso = "sso_example" // String |  (neobvezno)
+let sso = "sso_example" // String |  (izbirno)
 
 PublicAPI.getFeedPostsStats(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
     guard error == nil else {
@@ -32,5 +32,3 @@ PublicAPI.getFeedPostsStats(tenantId: tenantId, postIds: postIds, sso: sso) { (r
     }
 }
 [inline-code-end]
-
----

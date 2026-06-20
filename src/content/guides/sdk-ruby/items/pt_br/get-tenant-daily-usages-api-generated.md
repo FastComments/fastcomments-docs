@@ -1,16 +1,16 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| yearNumber | number | query | No |  |
-| monthNumber | number | query | No |  |
-| dayNumber | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Sim |  |
+| yearNumber | number | query | Não |  |
+| monthNumber | number | query | Não |  |
+| dayNumber | number | query | Não |  |
+| skip | number | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_daily_usages200_response.rb)
+Retorna: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_daily_usages_response.rb)
 
 ## Exemplo
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # configurar autorização
 FastCommentsClient.configure do |config|
-  # Configurar autorização por chave API: api_key
+  # Configurar autorização da chave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente a linha a seguir para definir um prefixo para a chave API, ex.: 'Bearer' (padrão: nil)
+  # Descomente a linha seguinte para definir um prefixo para a chave da API, por exemplo 'Bearer' (padrão: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

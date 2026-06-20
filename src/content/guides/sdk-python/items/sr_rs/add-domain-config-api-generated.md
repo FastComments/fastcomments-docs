@@ -1,4 +1,4 @@
-## Parametri
+## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
@@ -6,38 +6,38 @@
 
 ## Одговор
 
-Враћа: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_domain_config200_response.py)
+Враћа: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_domain_config_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'add_domain_config Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_domain_config пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_domain_config200_response import AddDomainConfig200Response
 from client.models.add_domain_config_params import AddDomainConfigParams
+from client.models.add_domain_config_response import AddDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Клијент мора да конфигурише параметре аутентификације и авторизације
+# у складу са политиком безбедности API сервера.
+# Испод су наведени примери за сваки метод аутентикације, користите пример који
+# одговара вашем сценарију аутентификације.
 
-# Configure API key authorization: api_key
+# Конфигуришите овлашћење помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Откоментујте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     add_domain_config_params = client.AddDomainConfigParams() # AddDomainConfigParams | 

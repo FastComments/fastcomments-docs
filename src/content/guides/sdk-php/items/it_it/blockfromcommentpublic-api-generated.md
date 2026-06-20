@@ -6,9 +6,9 @@
 | commentId | string | path | Sì |  |
 | sso | string | query | No |  |
 
-## Response
+## Risposta
 
-Restituisce: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockFromCommentPublic200Response.php)
+Restituisce: [`BlockSuccess`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BlockSuccess.php)
 
 ## Esempio
 

@@ -1,14 +1,15 @@
+---
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| editKey | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| id | string | path | Evet |  |
+| editKey | string | query | Hayır |  |
 
 ## Yanıt
 
-Dönen Değer: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Döndürür: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Örnek
 
@@ -20,7 +21,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. 'Bearer' (varsayılan olarak nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,3 +40,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_vote: #{e}"
 end
 [inline-code-end]
+
+---

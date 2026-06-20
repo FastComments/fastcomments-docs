@@ -6,7 +6,7 @@
 
 ## Risposta
 
-Restituisce: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tag200_response.rb)
+Restituisce: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_hash_tag_response.rb)
 
 ## Esempio
 
@@ -14,11 +14,11 @@ Restituisce: [`AddHashTag200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# impostazione dell'autorizzazione
+# configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
   # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Decommenta la seguente riga per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

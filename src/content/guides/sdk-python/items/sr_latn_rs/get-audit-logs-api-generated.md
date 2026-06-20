@@ -1,24 +1,24 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
-| order | string | query | No |  |
-| after | number | query | No |  |
-| before | number | query | No |  |
+| tenantId | string | query | Da |  |
+| limit | number | query | Ne |  |
+| skip | number | query | Ne |  |
+| order | string | query | Ne |  |
+| after | number | query | Ne |  |
+| before | number | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs200_response.py)
+Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_audit_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_audit_logs Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_audit_logs200_response import GetAuditLogs200Response
+from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
@@ -30,14 +30,14 @@ configuration = client.Configuration(
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
-# Primeri za svaku metodu autentifikacije su dati ispod, koristite primer koji
-# odgovara vašem slučaju upotrebe autentifikacije.
+# u skladu sa bezbednosnom politikom API servera.
+# Primeri za svaki metod autentifikacije dati su ispod, upotrebite primer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
-# Konfigurišite autorizaciju putem API ključa: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite dole da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta
@@ -45,11 +45,11 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    limit = 3.4 # float |  (opciono)
-    skip = 3.4 # float |  (opciono)
-    order = client.SORTDIR() # SORTDIR |  (opciono)
-    after = 3.4 # float |  (opciono)
-    before = 3.4 # float |  (opciono)
+    limit = 3.4 # float |  (neobavezno)
+    skip = 3.4 # float |  (neobavezno)
+    order = client.SORTDIR() # SORTDIR |  (neobavezno)
+    after = 3.4 # float |  (neobavezno)
+    before = 3.4 # float |  (neobavezno)
 
     try:
         api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)

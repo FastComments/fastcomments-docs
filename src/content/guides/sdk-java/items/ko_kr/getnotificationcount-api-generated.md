@@ -1,17 +1,17 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| userId | string | query | 아니오 |  |
-| urlId | string | query | 아니오 |  |
-| fromCommentId | string | query | 아니오 |  |
-| viewed | boolean | query | 아니오 |  |
-| type | string | query | 아니오 |  |
+| userId | string | query | 아니요 |  |
+| urlId | string | query | 아니요 |  |
+| fromCommentId | string | query | 아니요 |  |
+| viewed | boolean | query | 아니요 |  |
+| type | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCount200Response.java)
+반환: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCountResponse.java)
 
 ## 예제
 
@@ -33,7 +33,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요. 예: "Token" (기본값은 null)
+    // API 키의 접두사를 설정하려면 아래 줄의 주석 처리를 해제하세요. 예: "Token" (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Boolean viewed = true; // Boolean | 
     String type = "type_example"; // String | 
     try {
-      GetNotificationCount200Response result = apiInstance.getNotificationCount(tenantId)
+      GetNotificationCountResponse result = apiInstance.getNotificationCount(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)

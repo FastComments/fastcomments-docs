@@ -1,25 +1,25 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | query | Nein |  |
-| externalId | string | query | Nein |  |
-| eventType | string | query | Nein |  |
-| type | string | query | Nein |  |
-| domain | string | query | Nein |  |
-| attemptCountGT | number | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count200_response.py)
+Gibt zurück: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_pending_webhook_event_count Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_event_count200_response import GetPendingWebhookEventCount200Response
+from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,17 +30,17 @@ configuration = client.Configuration(
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Für jede Authentifizierungsmethode werden unten Beispiele bereitgestellt. Verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Für jede Auth-Methode sind unten Beispiele angegeben; verwenden Sie das Beispiel,
+# das Ihrem Authentifizierungsfall entspricht.
 
-# Configure API key authorization: api_key
+# API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entkommentieren Sie unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Key einzurichten
+# Entfernen Sie die Kommentarzeichen unten, um ein Präfix (z.B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Einen Kontext mit einer Instanz des API-Clients verwenden
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)

@@ -1,14 +1,14 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路徑 | 是 |  |
-| postIds | array | 查詢 | 否 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | path | 是 |  |
+| postIds | array | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+回傳: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## 範例
 

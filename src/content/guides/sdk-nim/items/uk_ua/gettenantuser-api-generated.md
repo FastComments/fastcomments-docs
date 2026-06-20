@@ -1,25 +1,24 @@
----
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`Option[GetTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_user200response.nim)
+Повертає: [`Option[GetTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_user_response.nim)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getTenantUser Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-456")
+let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-789")
 if response.isSome:
   let tenantUser = response.get()
-  discard tenantUser
+  echo "User fetched:", tenantUser
 else:
-  discard httpResponse
+  echo "No user found, HTTP status:", httpResponse.status
 [inline-code-end]
 
 ---

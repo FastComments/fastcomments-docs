@@ -7,19 +7,19 @@
 
 ## Risposta
 
-Restituisce: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user200_response.rb)
+Restituisce: [`GetUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_response.rb)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio get_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di get_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# configura l'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configura l'autorizzazione tramite API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovere il commento dalla riga seguente per impostare un prefisso per la API key, e.g. 'Bearer' (predefinito nil)
+  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (valore predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

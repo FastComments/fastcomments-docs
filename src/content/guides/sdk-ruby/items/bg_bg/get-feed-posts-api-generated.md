@@ -1,4 +1,4 @@
-заявка
+req
 tenantId
 afterId
 
@@ -13,19 +13,19 @@ afterId
 
 ## Отговор
 
-Връща: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+Връща: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_feed_posts Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_feed_posts'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройка на удостоверяване
+# Настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Конфигуриране на удостоверяване с API ключ: api_key
+  # Конфигуриране на API ключ за авторизация: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, например 'Bearer' (по подразбиране е nil)
+  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

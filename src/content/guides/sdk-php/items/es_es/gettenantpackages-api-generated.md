@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackages200Response.php)
+Devuelve: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackagesResponse.php)
 
 ## Ejemplo
 

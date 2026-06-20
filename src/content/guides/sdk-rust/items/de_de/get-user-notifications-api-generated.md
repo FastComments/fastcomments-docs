@@ -1,37 +1,46 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| page_size | i32 | Nein |  |
-| after_id | String | Nein |  |
-| include_context | bool | Nein |  |
-| after_created_at | i64 | Nein |  |
-| unread_only | bool | Nein |  |
-| dm_only | bool | Nein |  |
-| no_dm | bool | Nein |  |
-| include_translations | bool | Nein |  |
-| sso | String | Nein |  |
+| tenant_id | String | Yes |  |
+| url_id | String | No |  |
+| page_size | i32 | No |  |
+| after_id | String | No |  |
+| include_context | bool | No |  |
+| after_created_at | i64 | No |  |
+| unread_only | bool | No |  |
+| dm_only | bool | No |  |
+| no_dm | bool | No |  |
+| include_translations | bool | No |  |
+| include_tenant_notifications | bool | No |  |
+| sso | String | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notifications_200_response.rs)
+Gibt zurück: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_my_notifications_response.rs)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für get_user_notifications'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_notifications Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = GetUserNotificationsParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    page_size: Some(25),
-    after_id: Some("notif_98765".to_string()),
-    include_context: Some(true),
-    after_created_at: Some(1_681_500_000i64),
-    unread_only: Some(true),
-    dm_only: Some(false),
-    no_dm: Some(false),
-    include_translations: Some(true),
-    sso: Some("sso_user_token_ab12".to_string()),
-};
-let notifications: GetUserNotifications200Response = get_user_notifications(&configuration, params).await?;
+async fn fetch_notifications() -> Result<GetMyNotificationsResponse, Error> {
+    let params: GetUserNotificationsParams = GetUserNotificationsParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: Some(String::from("news/product-launch")),
+        page_size: Some(25),
+        after_id: Some(String::from("notif_1024")),
+        include_context: Some(true),
+        after_created_at: Some(1_676_000_000i64),
+        unread_only: Some(true),
+        dm_only: Some(false),
+        no_dm: Some(false),
+        include_translations: Some(true),
+        include_tenant_notifications: Some(false),
+        sso: Some(String::from("sso_token_abc123")),
+    };
+    let notifications: GetMyNotificationsResponse = get_user_notifications(&configuration, params).await?;
+    Ok(notifications)
+}
 [inline-code-end]
+
+---

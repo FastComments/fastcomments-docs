@@ -6,15 +6,15 @@
 
 ## Одговор
 
-Враћа: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config200_response.py)
+Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_config_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'create_question_config Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_config200_response import CreateQuestionConfig200Response
 from client.models.create_question_config_body import CreateQuestionConfigBody
+from client.models.create_question_config_response import CreateQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,14 +25,14 @@ configuration = client.Configuration(
 )
 
 # Клијент мора конфигурисати параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Испод су наведени примјери за сваки метод аутентификације, користите примјер који
+# у складу са безбједносном политиком API сервера.
+# Испод су примјери за сваки метод аутентификације, користите примјер који
 # одговара вашем случају коришћења аутентификације.
 
-# Конфигуришите ауторизацију помоћу API кључа: api_key
+# Конфигуришите API кључ за ауторизацију: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте доле да бисте поставили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Ако је потребно, уклоните коментар испод да поставите префикс (нпр. Bearer) за API кључ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента

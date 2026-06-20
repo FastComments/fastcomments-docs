@@ -1,25 +1,25 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| contextUserId | string | query | No |  |
-| isLive | boolean | query | No |  |
+| tenantId | string | query | Sim |  |
+| id | string | path | Sim |  |
+| contextUserId | string | query | Não |  |
+| isLive | boolean | query | Não |  |
 
 ## Resposta
 
-Retorna: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment200_response.rb)
+Retorna: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_result.rb)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'delete_comment Exemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de delete_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # configurar autorização
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configurar autorização da chave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomente a linha a seguir para definir um prefixo para a chave de API, por exemplo 'Bearer' (padrão: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

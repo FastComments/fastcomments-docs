@@ -1,8 +1,9 @@
-Schakel meldingen in of uit voor een specifieke reactie.
+---
+Schakel meldingen voor een specifieke reactie in of uit.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | notificationId | string | path | Ja |  |
@@ -10,9 +11,9 @@ Schakel meldingen in of uit voor een specifieke reactie.
 | commentId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Retourneert: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## Voorbeeld
 
@@ -41,3 +42,5 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationCommentSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

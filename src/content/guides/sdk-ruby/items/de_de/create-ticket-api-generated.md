@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_ticket200_response.rb)
+Gibt zurück: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_ticket_response.rb)
 
 ## Beispiel
 
@@ -15,11 +15,11 @@ Gibt zurück: [`CreateTicket200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Einrichtung der Autorisierung
+# Autorisierung einrichten
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfiguriere API-Schlüssel-Autorisierung: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
+  # Kommentiere die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

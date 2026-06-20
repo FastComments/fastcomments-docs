@@ -1,33 +1,31 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| public_block_from_comment_params | models::PublicBlockFromCommentParams | Da |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| public_block_from_comment_params | models::PublicBlockFromCommentParams | Yes |  |
+| sso | String | No |  |
 
 ## Odgovor
 
-Vraća: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/block_from_comment_public_200_response.rs)
+Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/block_success.rs)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer block_from_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-pub async fn run_block_example() -> Result<(), Error> {
+async fn example_block_comment() -> Result<(), Error> {
     let params: BlockFromCommentPublicParams = BlockFromCommentPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article/2026-03-25-12345".to_string(),
+        comment_id: "cmt-news-20250615-9876".to_string(),
         public_block_from_comment_params: models::PublicBlockFromCommentParams {
-            reason: "Repeated promotional links".to_string(),
-            reporter_id: Some("reader-2048".to_string()),
-            permanent: Some(false),
+            reason: "Repeated harassment and targeted insults".to_string(),
+            duration_hours: Some(24),
         },
-        sso: Some("sso:user:acme:2048".to_string()),
+        sso: Some("sso:eyJhbGciOiJIUzI1Ni...".to_string()),
     };
-    let response: BlockFromCommentPublic200Response = block_from_comment_public(&configuration, params).await?;
-    println!("{:#?}", response);
+    let block_result: BlockSuccess = block_from_comment_public(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

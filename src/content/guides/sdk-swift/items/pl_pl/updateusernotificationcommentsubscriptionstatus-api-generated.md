@@ -1,24 +1,24 @@
-Włącz lub wyłącz powiadomienia dla konkretnego komentarza.
+Włączanie lub wyłączanie powiadomień dla konkretnego komentarza.
 
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| notificationId | string | ścieżka | Tak |  |
-| optedInOrOut | string | ścieżka | Tak |  |
-| commentId | string | zapytanie | Tak |  |
-| sso | string | zapytanie | Nie |  |
+| tenantId | string | query | Tak |  |
+| notificationId | string | path | Tak |  |
+| optedInOrOut | string | path | Tak |  |
+| commentId | string | query | Tak |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+Zwraca: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationCommentSubscriptionStatusResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład updateUserNotificationCommentSubscriptionStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -38,5 +38,3 @@ PublicAPI.updateUserNotificationCommentSubscriptionStatus(tenantId: tenantId, no
     }
 }
 [inline-code-end]
-
----

@@ -2,45 +2,45 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| locale | string | query | No |  |
+| tenantId | string | query | はい |  |
+| locale | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template200_response.py)
+戻り値: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'render_email_template の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.render_email_template200_response import RenderEmailTemplate200Response
 from client.models.render_email_template_body import RenderEmailTemplateBody
+from client.models.render_email_template_response import RenderEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は省略可能で、デフォルトは https://fastcomments.com です
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方法の例を以下に示します。ご自身の認証ユースケースに合う例を使用してください。
+# クライアントは API サーバのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
+# 以下に各認証方法の例を示します。あなたの認証ユースケースに合う例を使用してください。
 
-# API キー認証を設定します: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて下の行のコメントを解除して API キーのプレフィックス（例: Bearer）を設定してください
+# 必要に応じて、下記のコメントアウトを解除して API キーのプレフィックス（例: Bearer）を設定してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスを使うコンテキストを開始します
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     render_email_template_body = client.RenderEmailTemplateBody() # RenderEmailTemplateBody | 
-    locale = 'locale_example' # str |  （オプション）
+    locale = 'locale_example' # str |  (optional)
 
     try:
         api_response = api_instance.render_email_template(tenant_id, render_email_template_body, locale=locale)

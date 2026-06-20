@@ -7,35 +7,35 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user200_response.py)
+Επιστρέφει: [`GetUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_response.py)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user200_response import GetUser200Response
+from client.models.get_user_response import GetUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλέγεται σε https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του διακομιστή API.
-# Παρέχονται παραδείγματα για κάθε μέθοδο auth παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# που ικανοποιεί το σενάριό σας για auth.
+# Ο client πρέπει να ρυθμίσει τις παραμέτρους έλεγχου ταυτότητας και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφάλειας του API server.
+# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης δίνονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί τη δική σας περίπτωση χρήσης αυθεντικοποίησης.
 
-# Διαμορφώστε την εξουσιοδότηση με κλειδί API: api_key
+# Διαμορφώστε εξουσιοδότηση με API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Απο-σχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισέλθετε σε context με ένα instance του API client
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.DefaultApi(api_client)

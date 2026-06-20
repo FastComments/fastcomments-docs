@@ -1,30 +1,35 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteQuestionResult 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> maybeTenant = boost::none;
-utility::string_t defaultTenant = U("my-tenant-123");
-utility::string_t questionId = U("question-456");
-utility::string_t tenant = maybeTenant ? *maybeTenant : defaultTenant;
-api->deleteQuestionResult(tenant, questionId)
-.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> task){
-    try {
-        auto resp = task.get();
-        auto processed = std::make_shared<FlagCommentPublic_200_response>(*resp);
-    } catch (const std::exception&) {
-    }
-});
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto questionId = utility::string_t(U("qst-456789"));
+boost::optional<utility::string_t> operatorNote = boost::optional<utility::string_t>(U("admin-request-001"));
+
+api->deleteQuestionResult(tenantId, questionId)
+    .then([operatorNote](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
+            if (operatorNote) std::cout << "Deleted (note): " << utility::conversions::to_utf8string(*operatorNote) << std::endl;
+            else std::cout << "Deleted" << std::endl;
+            return result;
+        } catch (const std::exception& e) {
+            std::cerr << "Delete failed: " << e.what() << std::endl;
+            return std::shared_ptr<APIEmptyResponse>(nullptr);
+        }
+    });
 [inline-code-end]
 
 ---

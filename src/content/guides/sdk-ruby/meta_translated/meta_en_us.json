@@ -39,6 +39,12 @@
       "type": "api"
     },
     {
+      "name": "logout_public",
+      "file": "logout-public-api-generated.md",
+      "subCat": "Auth",
+      "type": "api"
+    },
+    {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
       "subCat": "Block From Comment",
@@ -186,6 +192,12 @@
       "name": "vote_comment",
       "file": "vote-comment-api-generated.md",
       "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "get_comments_for_user",
+      "file": "get-comments-for-user-api-generated.md",
+      "subCat": "Comments For User",
       "type": "api"
     },
     {
@@ -357,6 +369,24 @@
       "type": "api"
     },
     {
+      "name": "get_gif_large",
+      "file": "get-gif-large-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "get_gifs_search",
+      "file": "get-gifs-search-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "get_gifs_trending",
+      "file": "get-gifs-trending-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
       "name": "add_hash_tag",
       "file": "add-hash-tag-api-generated.md",
       "subCat": "Hash Tags",
@@ -384,6 +414,264 @@
       "name": "patch_hash_tag",
       "file": "patch-hash-tag-api-generated.md",
       "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "delete_moderation_vote",
+      "file": "delete-moderation-vote-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_api_comments",
+      "file": "get-api-comments-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_api_export_status",
+      "file": "get-api-export-status-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_api_ids",
+      "file": "get-api-ids-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_ban_users_from_comment",
+      "file": "get-ban-users-from-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_comment_ban_status",
+      "file": "get-comment-ban-status-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_comment_children",
+      "file": "get-comment-children-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_count",
+      "file": "get-count-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_counts",
+      "file": "get-counts-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_logs",
+      "file": "get-logs-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_manual_badges",
+      "file": "get-manual-badges-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_manual_badges_for_user",
+      "file": "get-manual-badges-for-user-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_moderation_comment",
+      "file": "get-moderation-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_moderation_comment_text",
+      "file": "get-moderation-comment-text-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_pre_ban_summary",
+      "file": "get-pre-ban-summary-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_search_comments_summary",
+      "file": "get-search-comments-summary-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_search_pages",
+      "file": "get-search-pages-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_search_sites",
+      "file": "get-search-sites-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_search_suggest",
+      "file": "get-search-suggest-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_search_users",
+      "file": "get-search-users-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_trust_factor",
+      "file": "get-trust-factor-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_user_ban_preference",
+      "file": "get-user-ban-preference-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "get_user_internal_profile",
+      "file": "get-user-internal-profile-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_adjust_comment_votes",
+      "file": "post-adjust-comment-votes-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_api_export",
+      "file": "post-api-export-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_ban_user_from_comment",
+      "file": "post-ban-user-from-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_ban_user_undo",
+      "file": "post-ban-user-undo-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_bulk_pre_ban_summary",
+      "file": "post-bulk-pre-ban-summary-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_comments_by_ids",
+      "file": "post-comments-by-ids-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_flag_comment",
+      "file": "post-flag-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_remove_comment",
+      "file": "post-remove-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_restore_deleted_comment",
+      "file": "post-restore-deleted-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_approval_status",
+      "file": "post-set-comment-approval-status-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_review_status",
+      "file": "post-set-comment-review-status-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_spam_status",
+      "file": "post-set-comment-spam-status-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_text",
+      "file": "post-set-comment-text-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_un_flag_comment",
+      "file": "post-un-flag-comment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "post_vote",
+      "file": "post-vote-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "put_award_badge",
+      "file": "put-award-badge-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "put_close_thread",
+      "file": "put-close-thread-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "put_remove_badge",
+      "file": "put-remove-badge-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "put_reopen_thread",
+      "file": "put-reopen-thread-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "set_trust_factor",
+      "file": "set-trust-factor-api-generated.md",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
@@ -453,6 +741,48 @@
       "type": "api"
     },
     {
+      "name": "create_v1_page_react",
+      "file": "create-v1-page-react-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "create_v2_page_react",
+      "file": "create-v2-page-react-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "delete_v1_page_react",
+      "file": "delete-v1-page-react-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "delete_v2_page_react",
+      "file": "delete-v2-page-react-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "get_v1_page_likes",
+      "file": "get-v1-page-likes-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "get_v2_page_react_users",
+      "file": "get-v2-page-react-users-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "get_v2_page_reacts",
+      "file": "get-v2-page-reacts-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
       "name": "add_page",
       "file": "add-page-api-generated.md",
       "subCat": "Pages",
@@ -465,6 +795,18 @@
       "type": "api"
     },
     {
+      "name": "get_offline_users",
+      "file": "get-offline-users-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "get_online_users",
+      "file": "get-online-users-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
       "name": "get_page_by_urlid",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "Pages",
@@ -473,6 +815,18 @@
     {
       "name": "get_pages",
       "file": "get-pages-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "get_pages_public",
+      "file": "get-pages-public-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "get_users_info",
+      "file": "get-users-info-api-generated.md",
       "subCat": "Pages",
       "type": "api"
     },
@@ -780,6 +1134,12 @@
       "name": "get_tickets",
       "file": "get-tickets-api-generated.md",
       "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "get_translations",
+      "file": "get-translations-api-generated.md",
+      "subCat": "Translations",
       "type": "api"
     },
     {

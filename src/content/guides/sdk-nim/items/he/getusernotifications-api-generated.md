@@ -1,8 +1,9 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
+| urlId | string | כן |  |
 | pageSize | int | לא |  |
 | afterId | string | לא |  |
 | includeContext | bool | לא |  |
@@ -11,33 +12,35 @@
 | dmOnly | bool | לא |  |
 | noDm | bool | לא |  |
 | includeTranslations | bool | לא |  |
+| includeTenantNotifications | bool | לא |  |
 | sso | string | לא |  |
 
 ## תגובה
 
-מחזיר: [`Option[GetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notifications200response.nim)
+מחזיר: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_my_notifications_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
-  pageSize = 50,
-  afterId = "notif_9a1b2c3d",
-  includeContext = true,
-  afterCreatedAt = int64(1699999999000),
+  urlId = "news/article-title",
+  pageSize = 0,
+  afterId = "",
+  includeContext = false,
+  afterCreatedAt = 0,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   includeTranslations = false,
+  includeTenantNotifications = false,
   sso = ""
 )
+
 if response.isSome:
   let notifications = response.get()
-  discard notifications
-else:
-  discard httpResponse
+  echo notifications
 [inline-code-end]
 
 ---

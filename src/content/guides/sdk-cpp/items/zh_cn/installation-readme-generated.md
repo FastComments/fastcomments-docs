@@ -1,10 +1,10 @@
-### 安装依赖
+### Install Dependencies
 
 ```bash
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### 从源码构建
+### Building from Source
 
 ```bash
 mkdir build
@@ -13,19 +13,22 @@ cmake ..
 make
 ```
 
-### 安装
+### Installing
 
 ```bash
 sudo make install
 ```
 
-### 库内容
+### Library Contents
 
-该库包含生成的 API 客户端和 SSO 实用工具，使与 API 的集成更简单。
+This library contains the generated API client and the SSO utilities to make working with the API easier.
 
-- [API 客户端库 文档](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### 公共与受保护的 API
+### Public vs Secured APIs
 
-对于 API 客户端，有两个类：`DefaultAPI` 和 `PublicAPI`。`DefaultAPI` 包含需要使用您 API 密钥的方法，`PublicAPI` 包含 API 调用
-可以直接从浏览器/移动设备等发起且无需认证。
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains
+methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains methods that power the moderator dashboard - listing,
+counting, searching, exporting and pulling logs for comments, moderation actions (remove/restore, flag, set review/spam/approval status, adjust votes, reopen/close threads),
+bans (ban from a comment, undo bans, pre-ban summaries, ban status and preferences, banned-user counts), and badges & trust (award/remove badges, manual badges, get/set trust
+factor, user internal profile). Every `ModerationApi` method accepts an `sso` parameter so the call is performed on behalf of an SSO-authenticated moderator.

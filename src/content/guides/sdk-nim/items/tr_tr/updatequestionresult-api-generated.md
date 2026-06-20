@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Hayır |  |
@@ -8,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Örnek
 
@@ -16,17 +16,18 @@ Döndürür: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastC
 [inline-code-start]
 let (response, httpResponse) = client.updateQuestionResult(
   tenantId = "my-tenant-123",
-  id = "question-456",
+  id = "question-result-456",
   updateQuestionResultBody = UpdateQuestionResultBody(
-    result = "approved",
-    reviewerId = "moderator-42",
-    notes = "Valid question, no action required",
-    isSpam = false
+    questionId: "q-789",
+    userId: "user-42",
+    score: 92,
+    passed: true,
+    tags: @["quiz", "math"]
   )
 )
 if response.isSome:
-  let flagResponse = response.get()
-  discard flagResponse
+  let apiResp = response.get()
+  echo "Question result updated successfully"
+else:
+  echo "No response body; HTTP status: ", httpResponse.status.code
 [inline-code-end]
-
----

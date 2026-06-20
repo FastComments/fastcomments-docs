@@ -1,36 +1,37 @@
 ---
-Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају
-за нове коренске коментаре, и такође
+Omogućava ili onemogućava obavijesti za stranicu. Kada su korisnici pretplaćeni na stranicu, obavijesti se kreiraju
+za nove korijenske komentare, i također
 
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
-| url | String | Да |  |
-| page_title | String | Да |  |
-| subscribed_or_unsubscribed | String | Да |  |
-| sso | String | Не |  |
+| tenant_id | String | Da |  |
+| url_id | String | Da |  |
+| url | String | Da |  |
+| page_title | String | Da |  |
+| subscribed_or_unsubscribed | String | Da |  |
+| sso | String | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_status_200_response.rs)
+Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer update_user_notification_page_subscription_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<UpdateUserNotificationStatus200Response, Error> {
-    let params = UpdateUserNotificationPageSubscriptionStatusParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        url_id: String::from("article-12345"),
-        url: String::from("https://news.acme.com/articles/2026/03/25/advances-in-ai"),
-        page_title: String::from("Advances in AI: What to Expect in 2026"),
-        subscribed_or_unsubscribed: String::from("subscribed"),
-        sso: Some(String::from("user-jwt-xyz123")),
+async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {
+    let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/rocket-launch-2026".to_string(),
+        url: "https://acme.example.com/news/rocket-launch-2026".to_string(),
+        page_title: "Acme Rocket Launch — June 2026".to_string(),
+        subscribed_or_unsubscribed: "subscribed".to_string(),
+        sso: Some("user:alice@acme.com".to_string()),
     };
-    let response = update_user_notification_page_subscription_status(&configuration, params).await?;
+    let response: UpdateUserNotificationPageSubscriptionStatusResponse =
+        update_user_notification_page_subscription_status(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

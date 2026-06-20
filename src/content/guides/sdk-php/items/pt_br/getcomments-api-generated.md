@@ -17,14 +17,16 @@
 | hashTag | string | query | Não |  |
 | parentId | string | query | Não |  |
 | direction | string | query | Não |  |
+| fromDate | integer | query | Não |  |
+| toDate | integer | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetComments200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetComments200Response.php)
+Retorna: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetCommentsResponse.php)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo getComments'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de getComments'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -32,12 +34,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configurar autorização da chave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+// Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave da API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Se quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
     // Isto é opcional, `GuzzleHttp\Client` será usado por padrão.
     new GuzzleHttp\Client(),
     $config
@@ -57,9 +59,11 @@ $context_user_id = 'context_user_id_example'; // string
 $hash_tag = 'hash_tag_example'; // string
 $parent_id = 'parent_id_example'; // string
 $direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
+$from_date = 56; // int
+$to_date = 56; // int
 
 try {
-    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction);
+    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction, $from_date, $to_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getComments: ', $e->getMessage(), PHP_EOL;

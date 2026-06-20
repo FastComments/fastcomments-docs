@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Location | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | notificationId | string | path | Tak |  |
@@ -9,14 +9,14 @@
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Zwraca: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład update_user_notification_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_status_response import UpdateUserNotificationStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,14 +27,14 @@ configuration = client.Configuration(
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Użyj kontekstu z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     notification_id = 'notification_id_example' # str | 
     new_status = 'new_status_example' # str | 
-    sso = 'sso_example' # str |  (opcjonalne)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.update_user_notification_status(tenant_id, notification_id, new_status, sso=sso)
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_user_notification_status: %s\n" % e)
 [inline-code-end]
-
----

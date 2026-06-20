@@ -2,48 +2,48 @@ req
 tenantId
 urlId
 
-## Parametri
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| page | integer | query | Ne |  |
-| direction | string | query | Ne |  |
-| sso | string | query | Ne |  |
-| skip | integer | query | Ne |  |
-| skipChildren | integer | query | Ne |  |
-| limit | integer | query | Ne |  |
-| limitChildren | integer | query | Ne |  |
-| countChildren | boolean | query | Ne |  |
-| fetchPageForCommentId | string | query | Ne |  |
-| includeConfig | boolean | query | Ne |  |
-| countAll | boolean | query | Ne |  |
-| includei10n | boolean | query | Ne |  |
-| locale | string | query | Ne |  |
-| modules | string | query | Ne |  |
-| isCrawler | boolean | query | Ne |  |
-| includeNotificationCount | boolean | query | Ne |  |
-| asTree | boolean | query | Ne |  |
-| maxTreeDepth | integer | query | Ne |  |
-| useFullTranslationIds | boolean | query | Ne |  |
-| parentId | string | query | Ne |  |
-| searchText | string | query | Ne |  |
-| hashTags | array | query | Ne |  |
-| userId | string | query | Ne |  |
-| customConfigStr | string | query | Ne |  |
-| afterCommentId | string | query | Ne |  |
-| beforeCommentId | string | query | Ne |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| page | integer | query | Не |  |
+| direction | string | query | Не |  |
+| sso | string | query | Не |  |
+| skip | integer | query | Не |  |
+| skipChildren | integer | query | Не |  |
+| limit | integer | query | Не |  |
+| limitChildren | integer | query | Не |  |
+| countChildren | boolean | query | Не |  |
+| fetchPageForCommentId | string | query | Не |  |
+| includeConfig | boolean | query | Не |  |
+| countAll | boolean | query | Не |  |
+| includei10n | boolean | query | Не |  |
+| locale | string | query | Не |  |
+| modules | string | query | Не |  |
+| isCrawler | boolean | query | Не |  |
+| includeNotificationCount | boolean | query | Не |  |
+| asTree | boolean | query | Не |  |
+| maxTreeDepth | integer | query | Не |  |
+| useFullTranslationIds | boolean | query | Не |  |
+| parentId | string | query | Не |  |
+| searchText | string | query | Не |  |
+| hashTags | array | query | Не |  |
+| userId | string | query | Не |  |
+| customConfigStr | string | query | Не |  |
+| afterCommentId | string | query | Не |  |
+| beforeCommentId | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsPublic200Response.java)
+Враћа: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer getCommentsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsPublic Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -85,7 +85,7 @@ public class Example {
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
     try {
-      GetCommentsPublic200Response result = apiInstance.getCommentsPublic(tenantId, urlId)
+      GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
             .direction(direction)
             .sso(sso)
@@ -124,5 +124,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

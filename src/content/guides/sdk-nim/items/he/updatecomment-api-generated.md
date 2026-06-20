@@ -11,24 +11,28 @@
 
 ## תגובה
 
-מחזיר: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+מחזיר: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updatableCommentParams = UpdatableCommentParams(content: "Fixed a typo in the second paragraph", tags: @["article-edit", "typo"], isApproved: true)
 let (response, httpResponse) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "comment-456",
-  updatableCommentParams = updatableCommentParams,
-  contextUserId = "user-789",
+  id = "cmt-987654",
+  updatableCommentParams = UpdatableCommentParams(
+    text = "Updated comment: corrected facts and clarified wording.",
+    isApproved = true,
+    tags = @["news", "update"]
+  ),
+  contextUserId = "user-456",
   doSpamCheck = true,
   isLive = true
 )
+
 if response.isSome:
-  let flagResp = response.get()
-  discard flagResp
+  let apiResp = response.get()
+  discard apiResp
 [inline-code-end]
 
 ---

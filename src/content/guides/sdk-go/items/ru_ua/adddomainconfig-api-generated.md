@@ -1,12 +1,12 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Ответ
 
-Возвращает: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_domain_config_200_response.go)
+Возвращает: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_domain_config_response.go)
 
 ## Пример
 
@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `AddDomainConfig`: AddDomainConfig200Response
+	// ответ от `AddDomainConfig`: AddDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

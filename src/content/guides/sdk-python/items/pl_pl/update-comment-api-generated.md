@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
@@ -10,19 +10,19 @@
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład update_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
-from client.models.pick_api_comment_updatable_comment_fields import PickAPICommentUpdatableCommentFields
+from client.models.api_empty_response import APIEmptyResponse
+from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Określenie hosta jest opcjonalne, domyślnie https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,28 +30,28 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Przykłady dla każdej metody uwierzytelniania są podane poniżej — użyj tego,
-# który odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania — użyj tego,
+# który odpowiada Twojemu przypadkowi użycia.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Konfiguracja autoryzacji kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to potrzebne
+# Odkomentuj poniższą linię, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Wejdź w kontekst z instancją klienta API
+# Otwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    body = client.PickAPICommentUpdatableCommentFields() # PickAPICommentUpdatableCommentFields | 
+    updatable_comment_params = client.UpdatableCommentParams() # UpdatableCommentParams | 
     context_user_id = 'context_user_id_example' # str |  (opcjonalne)
     do_spam_check = True # bool |  (opcjonalne)
     is_live = True # bool |  (opcjonalne)
 
     try:
-        api_response = api_instance.update_comment(tenant_id, id, body, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
+        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
         print("The response of DefaultApi->update_comment:\n")
         pprint(api_response)
     except Exception as e:

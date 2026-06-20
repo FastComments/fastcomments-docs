@@ -1,28 +1,29 @@
-Dodajte ovu liniju u Gemfile vaše aplikacije:
+Додајте ову линију у Gemfile ваше апликације:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-A zatim izvršite:
+И затим извршите:
 
 ```bash
 bundle install
 ```
 
-Ili ga instalirajte sami kao:
+Или га инсталирајте ручно као:
 
 ```bash
 gem install fastcomments
 ```
 
-### Sadržaj biblioteke
+### Садржај библиотеке
 
-Ova biblioteka sadrži generisan API klijent i SSO pomoćne alatke koje olakšavaju rad sa API-jem.
+Ова библиотека садржи генерисан API клијент и SSO алатке које олакшавају рад са API-јем.
 
-- [Dokumentacija API klijenta biblioteke](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Документација API клијента](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Javni i zaštićeni API-ji
+### Јавни и заштићени API-ји
 
-Za API klijenta postoje dve klase, `DefaultApi` i `PublicApi`. `DefaultApi` sadrži metode koje zahtevaju vaš API ključ, a `PublicApi` sadrži API pozive
-koji se mogu pozivati direktno iz pregledača/mobilnog uređaja/itd. bez autentifikacije.
+За API клијент постоје три класе, `DefaultApi`, `PublicApi` и `ModerationApi`. Класа `DefaultApi` садржи методе које захтевају ваш API кључ, а `PublicApi` садржи API позиве који се могу извршити директно из прегледача/мобилног уређаја/итд. без аутентификације. Класа `ModerationApi` садржи методе које покрећу модераторску контролну таблу.
+
+Класа `ModerationApi` обухвата модерацију коментара (списак, бројање, претрага, логови, извоз), модераторске акције (уклањање/враћање, означавање, подешавање статуса за преглед/спам/одобрење, гласови, поновно отварање/затварање теме), забране (забрана по коментару, поништавање, резиме пре забране, статус/подешавања забране, број забрањених корисника) и значке и поверење (додела/уклањање значке, ручне значке, добијање/постављање фактора поверења, унутрашњи кориснички профил). Сваки метод `ModerationApi` прихвата `sso` параметар тако да захтев може бити направљен у име модератора аутентификованог преко SSO.

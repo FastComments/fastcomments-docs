@@ -1,17 +1,17 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| urlId | string | Ναι |  |
-| usernameStartsWith | string | Όχι |  |
-| mentionGroupIds | seq[string] | Όχι |  |
-| sso | string | Όχι |  |
-| searchSection | string | Όχι |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| usernameStartsWith | string | No |  |
+| mentionGroupIds | seq[string] | No |  |
+| sso | string | No |  |
+| searchSection | string | No |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`Option[SearchUsers_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users200response.nim)
+Επιστρέφει: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
 
 ## Παράδειγμα
 
@@ -19,15 +19,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/ai-product-launch",
+  urlId = "news/top-story",
   usernameStartsWith = "",
   mentionGroupIds = @[],
   sso = "",
   searchSection = ""
 )
+
 if response.isSome:
-  let users = response.get()
-  echo "Received users:", users.toString()
+  let searchResult = response.get()
+  echo "SearchUsersResult:", searchResult
+else:
+  echo "No result or error. HTTP response:", httpResponse
 [inline-code-end]
 
 ---

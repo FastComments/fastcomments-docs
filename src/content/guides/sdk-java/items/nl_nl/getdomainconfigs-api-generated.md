@@ -1,18 +1,18 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Omschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigs200Response.java)
+Retourneert: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigsResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getDomainConfigs Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,16 +25,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutelautorisatie: api_key
+    // API-sleutelautorisatie configureren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard = null)
+    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetDomainConfigs200Response result = apiInstance.getDomainConfigs(tenantId)
+      GetDomainConfigsResponse result = apiInstance.getDomainConfigs(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -47,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

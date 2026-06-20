@@ -1,6 +1,6 @@
 ## Parametri
 
-| Nome | Tipo | Location | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | isLive | boolean | query | No |  |
@@ -10,7 +10,7 @@
 
 ## Risposta
 
-Restituisce: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/array&lt;_save_comment200_response&gt;.rb)
+Restituisce: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
 
 ## Esempio
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione tramite API key: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovi il commento dalla riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

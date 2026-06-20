@@ -1,14 +1,13 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Ejemplo
 
@@ -16,11 +15,11 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar la autorización
+# configurar autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización de clave API: api_key
+  # Configurar la autorización de la clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente la siguiente línea para establecer un prefijo para la API key, p. ej. 'Bearer' (por defecto es nil)
+  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (predeterminado nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_question_result: #{e}"
 end
 [inline-code-end]
-
----

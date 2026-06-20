@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | Location | 必填 | 說明 |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -8,15 +8,15 @@
 | editKey | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
-## 回應
+## 回傳
 
-回傳: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetCommentText200Response.swift)
+回傳: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'setCommentText 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式範例仍為 beta。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 下列程式碼範例仍處於測試階段。 如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -37,5 +37,3 @@ PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: 
     }
 }
 [inline-code-end]
-
----

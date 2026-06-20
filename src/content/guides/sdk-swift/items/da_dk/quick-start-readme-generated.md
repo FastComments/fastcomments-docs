@@ -31,7 +31,7 @@ import FastCommentsSwift
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Hent kommentarer ved hjælp af den autentificerede API
+// Hent kommentarer ved hjælp af autentificeret API
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,6 +47,29 @@ do {
 }
 ```
 
+### Brug af Moderations-API
+
+```swift
+import FastCommentsSwift
+
+// Moderationsmetoder er autoriseret med et `sso`-token for den aktive moderator
+// (generer det med FastCommentsSSO, se SSO-sektionen ovenfor).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Brug af SSO til autentificering
 
 #### Sikker SSO (Anbefales til produktion)
@@ -56,7 +79,7 @@ import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Opret sikker SSO-brugerdata (kun på serversiden!)
+// Opret sikre SSO-brugerdata (kun på serveren!)
 let userData = SecureSSOUserData(
     id: "user-123",              // Bruger-ID
     email: "user@example.com",   // E-mail
@@ -70,7 +93,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Send denne token til din frontend til autentificering
+    // Send dette token til dit frontend for autentificering
 } catch {
     print("Error creating SSO token: \(error)")
 }

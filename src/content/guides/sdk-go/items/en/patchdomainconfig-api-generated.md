@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+Returns: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_patch_domain_config_response.go)
 
 ## Example
 
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchDomainConfig`: GetDomainConfig200Response
+	// response from `PatchDomainConfig`: PatchDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

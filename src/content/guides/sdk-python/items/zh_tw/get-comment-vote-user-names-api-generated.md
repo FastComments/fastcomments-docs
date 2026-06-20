@@ -9,32 +9,32 @@
 
 ## 回應
 
-回傳: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names200_response.py)
+回傳: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_vote_user_names_success_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_comment_vote_user_names 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_vote_user_names200_response import GetCommentVoteUserNames200Response
+from client.models.get_comment_vote_user_names_success_response import GetCommentVoteUserNamesSuccessResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的設定參數清單。
+# 設定 host 為選用，預設為 https://fastcomments.com
+# 查看 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 的實例進入一個上下文
+# 使用 API 用戶端實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     dir = 56 # int | 
-    sso = 'sso_example' # str |  (optional)
+    sso = 'sso_example' # str |  (選用)
 
     try:
         api_response = api_instance.get_comment_vote_user_names(tenant_id, comment_id, dir, sso=sso)

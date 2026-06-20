@@ -1,38 +1,38 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | 以逗號分隔的評論 ID 列表。 |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentIds | string | query | 是 | 以逗號分隔的 comment ids 列表。 |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-Returns: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+回傳: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# 定義 host 是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# 使用 ApiClient 的實例進入上下文
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | 以逗號分隔的評論 ID 列表。
-    sso = 'sso_example' # str | （可選）
+    comment_ids = 'comment_ids_example' # str | 以逗號分隔的 comment ids 列表。
+    sso = 'sso_example' # str |  (可選)
 
     try:
         api_response = api_instance.checked_comments_for_blocked(tenant_id, comment_ids, sso=sso)
@@ -41,3 +41,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->checked_comments_for_blocked: %s\n" % e)
 [inline-code-end]
+
+---

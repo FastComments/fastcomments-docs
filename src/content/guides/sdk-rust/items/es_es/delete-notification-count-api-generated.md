@@ -1,26 +1,26 @@
 ## Parámetros
 
-| Name | Type | Requerido | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Devuelve: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'delete_notification_count Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de delete_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<FlagCommentPublic200Response, Error> {
-    let params: DeleteNotificationCountParams = DeleteNotificationCountParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("notification-9876"),
-        user_id: Some(String::from("user-1234")),
+async fn delete_notification_count_example() -> Result<(), Error> {
+    let params = DeleteNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article/notification-827b".to_string(),
+        if_match: Some("W/\"etag-827b\"".to_string()),
     };
-    let response: FlagCommentPublic200Response = delete_notification_count(configuration, params).await?;
-    Ok(response)
+    let _response: ApiEmptyResponse = delete_notification_count(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

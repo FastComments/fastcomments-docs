@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -9,7 +10,7 @@
 
 ## Odgovor
 
-Vraća: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_list200_response.rb)
+Vraća: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_list_response.rb)
 
 ## Primjer
 
@@ -17,7 +18,7 @@ Vraća: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Postavljanje autorizacije
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
   # Konfigurirajte autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'

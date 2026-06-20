@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -8,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Primjer
 
@@ -32,3 +33,5 @@ DefaultAPI.sendInvite(tenantId: tenantId, id: id, fromName: fromName) { (respons
     }
 }
 [inline-code-end]
+
+---

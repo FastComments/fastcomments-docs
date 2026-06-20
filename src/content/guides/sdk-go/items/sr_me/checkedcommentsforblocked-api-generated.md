@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Zarezom odvojena lista ID-eva komentara. |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| commentIds | string | query | Да | Списак ID-ева коментара одвојених зарезом. |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_checked_comments_for_blocked_200_response.go)
+Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_check_blocked_comments_response.go)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer CheckedCommentsForBlocked'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример CheckedCommentsForBlocked'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -20,13 +20,13 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentIds := "commentIds_example" // string | Zarezom odvojena lista ID-eva komentara.
-	sso := "sso_example" // string |  (neobavezno)
+	commentIds := "commentIds_example" // string | Списак ID-ева коментара одвојених зарезом.
+	sso := "sso_example" // string |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CheckedCommentsForBlocked``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `CheckedCommentsForBlocked`: CheckedCommentsForBlocked200Response
+	// одговор од `CheckedCommentsForBlocked`: CheckBlockedCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CheckedCommentsForBlocked`: %v\n", resp)
 }
 [inline-code-end]

@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vraća: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Vraća: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## Primer
 
@@ -18,7 +18,7 @@ Vraća: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,25 +30,25 @@ configuration = client.Configuration(
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
 # u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# Primeri za svaki metod autentifikacije su navedeni ispod, koristite primer koji
 # odgovara vašem slučaju upotrebe autentifikacije.
 
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Napravite instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (optional)
-    do_spam_check = True # bool |  (optional)
-    send_emails = True # bool |  (optional)
-    populate_notifications = True # bool |  (optional)
+    is_live = True # bool |  (opciono)
+    do_spam_check = True # bool |  (opciono)
+    send_emails = True # bool |  (opciono)
+    populate_notifications = True # bool |  (opciono)
 
     try:
         api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
@@ -57,5 +57,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->save_comments_bulk: %s\n" % e)
 [inline-code-end]
-
----

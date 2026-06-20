@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | postIds | array | query | כן |  |
@@ -8,19 +8,19 @@
 
 ## תגובה
 
-מחזיר: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_stats200_response.py)
+מחזיר: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/feed_posts_stats_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_feed_posts_stats'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_stats200_response import GetFeedPostsStats200Response
+from client.models.feed_posts_stats_response import FeedPostsStatsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# קביעת ה-host היא אופציונלית ובברירת המחדל היא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראה את configuration.py לרשימת כל פרמטרי הקונפיגורציה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

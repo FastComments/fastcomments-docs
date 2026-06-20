@@ -8,9 +8,9 @@
 | skip | number | query | Nee |  |
 | limit | number | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTickets200Response.php)
+Geeft terug: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketsResponse.php)
 
 ## Voorbeeld
 
@@ -22,13 +22,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configureer API-sleutelautorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaarregel weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+// Verwijder de commentaar hieronder om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt als standaard gebruikt.
+    // Als u een eigen HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );

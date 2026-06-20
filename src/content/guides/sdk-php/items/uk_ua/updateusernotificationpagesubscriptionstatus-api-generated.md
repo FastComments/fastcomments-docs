@@ -1,8 +1,8 @@
 Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, створюються сповіщення для нових кореневих коментарів, а також
 
-## Параметри
+## Parameters
 
-| Назва | Тип | Location | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | urlId | string | query | Так |  |
@@ -11,11 +11,11 @@
 | subscribedOrUnsubscribed | string | path | Так |  |
 | sso | string | query | Ні |  |
 
-## Відповідь
+## Response
 
-Повертає: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Повертає: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,12 +29,12 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$url = 'url_example'; // string
-$page_title = 'page_title_example'; // string
-$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // рядок
+$url_id = 'url_id_example'; // рядок
+$url = 'url_example'; // рядок
+$page_title = 'page_title_example'; // рядок
+$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // рядок
+$sso = 'sso_example'; // рядок
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

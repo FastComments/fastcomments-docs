@@ -1,17 +1,17 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | Location | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domainToUpdate | string | path | Yes |  |
+| tenantId | string | query | כן |  |
+| domainToUpdate | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+מחזיר: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_put_domain_config_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-PutDomainConfig'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של PutDomainConfig'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -19,12 +19,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	domainToUpdate := "domainToUpdate_example" // string | 
+	tenantId := "tenantId_example" // מחרוזת | 
+	domainToUpdate := "domainToUpdate_example" // מחרוזת | 
 	updateDomainConfigParams := *openapiclient.NewUpdateDomainConfigParams("Domain_example") // UpdateDomainConfigParams | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`PutDomainConfig`: GetDomainConfig200Response
+	// תגובה מ`PutDomainConfig`: PutDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

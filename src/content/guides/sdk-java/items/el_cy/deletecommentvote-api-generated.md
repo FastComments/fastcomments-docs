@@ -2,21 +2,21 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | διαδρομή | Ναι |  |
-| commentId | string | διαδρομή | Ναι |  |
-| voteId | string | διαδρομή | Ναι |  |
-| urlId | string | ερώτημα | Ναι |  |
-| broadcastId | string | ερώτημα | Ναι |  |
-| editKey | string | ερώτημα | Όχι |  |
-| sso | string | ερώτημα | Όχι |  |
+| tenantId | string | path | Ναι |  |
+| commentId | string | path | Ναι |  |
+| voteId | string | path | Ναι |  |
+| urlId | string | query | Ναι |  |
+| broadcastId | string | query | Ναι |  |
+| editKey | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentVote200Response.java)
+Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'deleteCommentVote Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα deleteCommentVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -39,7 +39,7 @@ public class Example {
     String editKey = "editKey_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      DeleteCommentVote200Response result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
+      VoteDeleteResponse result = apiInstance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId)
             .editKey(editKey)
             .sso(sso)
             .execute();

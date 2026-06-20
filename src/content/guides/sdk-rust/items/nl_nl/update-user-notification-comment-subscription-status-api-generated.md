@@ -1,34 +1,34 @@
-Meldingen voor een specifieke opmerking in- of uitschakelen.
+Notificaties voor een specifieke opmerking in- of uitschakelen.
 
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| notification_id | String | Yes |  |
-| opted_in_or_out | String | Yes |  |
-| comment_id | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Ja |  |
+| notification_id | String | Ja |  |
+| opted_in_or_out | String | Ja |  |
+| comment_id | String | Ja |  |
+| sso | String | Nee |  |
 
 ## Respons
 
-Retourneert: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_status_200_response.rs)
+Geeft terug: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_comment_subscription_status_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_update_user_notification_comment_subscription_status() -> Result<(), Error> {
+async fn example() -> Result<UpdateUserNotificationCommentSubscriptionStatusResponse, Error> {
     let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        notification_id: "notif-2026-03-25-4f2b".to_string(),
-        opted_in_or_out: "opted_out".to_string(),
-        comment_id: "cmt-98a7b6c5d4".to_string(),
-        sso: Some("sso-token-abc123".to_string()),
+        notification_id: "news/winter-2026-update".to_string(),
+        opted_in_or_out: "opted_in".to_string(),
+        comment_id: "article-42-comment-7".to_string(),
+        sso: Some("user-123|eyJhbGciOi...".to_string()),
     };
-    let response: UpdateUserNotificationStatus200Response =
+    let response: UpdateUserNotificationCommentSubscriptionStatusResponse =
         update_user_notification_comment_subscription_status(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

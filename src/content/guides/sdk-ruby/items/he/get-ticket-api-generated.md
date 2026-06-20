@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket200_response.rb)
+מחזיר: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_ticket_response.rb)
 
 ## דוגמה
 
@@ -18,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת אימות
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדרת אימות באמצעות מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (defaults to nil)
+  # בטל את ההערה בשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,6 +1,6 @@
 ### 使用已驗證的 API (DefaultApi)
 
-**重要：** 您必須在 Configuration 上設定 API 金鑰，然後才能進行已驗證的請求。如果未設定，請求將以 401 錯誤失敗。
+**重要：** 您必須在發出已驗證的請求之前在 Configuration 上設定您的 API 金鑰。如果您沒有，請求會以 401 錯誤失敗。
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -39,7 +39,7 @@ except Exception as e:
     # - 400: Request validation failed
 ```
 
-### 使用公開 API (PublicApi)
+### 使用公開的 API (PublicApi)
 
 公開端點不需要驗證：
 
@@ -62,7 +62,28 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### 使用 SSO（單一登入）
+### 使用管理儀表板 (ModerationApi)
+
+`ModerationApi` 驅動管理員儀表板。透過傳遞 `sso` 令牌，以管理員身份呼叫方法：
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Count the comments awaiting moderation
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### 使用 SSO (單一登入)
 
 此 SDK 包含用於產生安全 SSO 令牌的工具：
 
@@ -106,8 +127,8 @@ sso_token = sso.create_token()
 
 ### 常見問題
 
-1. **401 "missing-api-key" error**：請在建立 DefaultApi 實例之前，確認已設定 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}`。
-2. **Wrong API class**：對於伺服器端需驗證的請求，請使用 `DefaultApi`；對於用戶端/公開的請求，請使用 `PublicApi`。
-3. **Import errors**：請確定您是從正確的模組匯入：
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+1. **401 "missing-api-key" 錯誤**：請確保在建立 DefaultApi 實例之前設定 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}`。
+2. **使用錯誤的 API 類別**：針對伺服器端需驗證的請求使用 `DefaultApi`，針對客戶端/公開的請求使用 `PublicApi`，針對管理員儀表板的請求使用 `ModerationApi`。
+3. **匯入錯誤**：請確保您是從正確的模組匯入：
+   - API 客戶端：`from client import ...`
+   - SSO 工具：`from sso import ...`

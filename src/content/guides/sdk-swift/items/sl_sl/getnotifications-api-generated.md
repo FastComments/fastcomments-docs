@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -10,24 +10,24 @@
 | type | string | query | Ne |  |
 | skip | number | query | Ne |  |
 
-## Response
+## Odgovor
 
-Vrne: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotifications200Response.swift)
+Vrne: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getNotifications Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za morebitne težave poročajte prek http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za kakršnokoli težavo prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (izbirno)
-let urlId = "urlId_example" // String |  (izbirno)
-let fromCommentId = "fromCommentId_example" // String |  (izbirno)
-let viewed = true // Bool |  (izbirno)
-let type = "type_example" // String |  (izbirno)
-let skip = 987 // Double |  (izbirno)
+let userId = "userId_example" // String |  (neobvezno)
+let urlId = "urlId_example" // String |  (neobvezno)
+let fromCommentId = "fromCommentId_example" // String |  (neobvezno)
+let viewed = true // Bool |  (neobvezno)
+let type = "type_example" // String |  (neobvezno)
+let skip = 987 // Double |  (neobvezno)
 
 DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
     guard error == nil else {
@@ -40,5 +40,3 @@ DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fr
     }
 }
 [inline-code-end]
-
----

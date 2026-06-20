@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -10,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public200_response.rb)
+Restituisce: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_feed_post_public_response.rb)
 
 ## Esempio
 
@@ -20,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Stringa | 
-post_id = 'post_id_example' # Stringa | 
+tenant_id = 'tenant_id_example' # String | 
+post_id = 'post_id_example' # String | 
 opts = {
-  broadcast_id: 'broadcast_id_example', # Stringa | 
-  sso: 'sso_example' # Stringa | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

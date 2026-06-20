@@ -1,6 +1,7 @@
+---
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | postId | string | path | Evet |  |
@@ -10,7 +11,7 @@
 
 ## Yanıt
 
-Döndürür: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_public200_response.py)
+Döndürür: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/react_feed_post_response.py)
 
 ## Örnek
 
@@ -18,18 +19,18 @@ Döndürür: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/
 [inline-code-start]
 import client
 from client.models.react_body_params import ReactBodyParams
-from client.models.react_feed_post_public200_response import ReactFeedPostPublic200Response
+from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu (host) tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
-# Desteklenen tüm yapılandırma parametreleri için configuration.py dosyasına bakın.
+# Host'u tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py'ye bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam oluşturun
+# API istemcisi örneği ile bir bağlam açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfından bir örnek oluşturun
     api_instance = client.PublicApi(api_client)
@@ -47,3 +48,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->react_feed_post_public: %s\n" % e)
 [inline-code-end]
+
+---

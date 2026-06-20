@@ -7,19 +7,19 @@ userIdWS
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| userIdWS | string | query | כן |  |
-| startTime | integer | query | כן |  |
-| endTime | integer | query | כן |  |
+| tenantId | string | נתיב | כן |  |
+| urlId | string | שאילתה | כן |  |
+| userIdWS | string | שאילתה | כן |  |
+| startTime | integer | שאילתה | כן |  |
+| endTime | integer | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+מחזיר: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLogResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של getEventLog'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getEventLog'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
@@ -40,7 +40,8 @@ public class Example {
     Long startTime = 56L; // Long | 
     Long endTime = 56L; // Long | 
     try {
-      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+      GetEventLogResponse result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime)
+            .endTime(endTime)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

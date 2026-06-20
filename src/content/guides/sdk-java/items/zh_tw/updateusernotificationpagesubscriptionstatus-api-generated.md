@@ -1,8 +1,8 @@
-啟用或停用頁面的通知。當使用者訂閱頁面時，會為新的根留言建立通知，並且還會
+啟用或停用頁面通知。當使用者訂閱頁面時，會為新的根評論建立通知，並且也
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | Type | Location | Required | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | urlId | string | query | 是 |  |
@@ -13,7 +13,7 @@
 
 ## 回應
 
-回傳: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+回傳: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## 範例
 
@@ -39,7 +39,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

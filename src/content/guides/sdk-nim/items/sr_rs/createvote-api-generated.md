@@ -1,33 +1,33 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| direction | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| direction | string | Не |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
 
 ## Одговор
 
-Враћа: [`Option[VoteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_comment200response.nim)
+Враћа: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'createVote Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
+  commentId = "cmt-987654",
   direction = "up",
   userId = "user-42",
   anonUserId = ""
 )
 if response.isSome:
   let vote = response.get()
-  echo "Vote recorded: ", $vote
+  echo "Vote created:", vote
 else:
-  echo "Vote not created, HTTP response: ", $httpResponse
+  echo "No vote returned"
 [inline-code-end]
 
 ---

@@ -1,3 +1,4 @@
+---
 ## 매개변수
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -7,7 +8,7 @@
 
 ## 응답
 
-반환: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+반환: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## 예제
 
@@ -29,7 +30,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotificationCount(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotificationCount(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +44,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

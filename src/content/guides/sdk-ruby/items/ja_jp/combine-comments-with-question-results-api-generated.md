@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | questionId | string | query | いいえ |  |
@@ -14,7 +14,7 @@
 
 ## レスポンス
 
-戻り値: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+戻り値: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## 例
 
@@ -22,12 +22,12 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証を設定
+# 認証の設定
 FastCommentsClient.configure do |config|
-  # APIキー認証を構成: api_key
+  # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
+  # APIキーにプレフィックス（例: 'Bearer'）を設定するには、次の行のコメントを外してください（既定値はnil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
-  # APIキーの接頭辞を設定するには、次の行のコメントを外してください。例: 'Bearer'（既定値: nil）
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
@@ -51,3 +51,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->combine_comments_with_question_results: #{e}"
 end
 [inline-code-end]
+
+---

@@ -4,21 +4,21 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
-## Odgovor
+## Response
 
-Vraća: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_result200_response.rb)
+Vraća: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_result_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer create_question_result'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_question_result Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Postavljanje autorizacije
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
   # Konfigurirajte autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uklonite komentar sa sljedećeg retka da postavite prefiks za API ključ, npr. 'Bearer' (zadano je nil)
+  # Uklonite komentar sa sljedećeg retka da postavite prefiks za API ključ, npr. 'Bearer' (zadano: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_question_result: #{e}"
 end
 [inline-code-end]
+
+---

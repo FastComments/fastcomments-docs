@@ -1,49 +1,50 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| userId | string | クエリ | いいえ |  |
-| limit | number | クエリ | いいえ |  |
-| skip | number | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| userId | string | query | いいえ |  |
+| limit | number | query | いいえ |  |
+| skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_list200_response.py)
+戻り値: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_user_badge_progress_list の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_list200_response import GetUserBadgeProgressList200Response
+from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可パラメータを
-# API サーバーのセキュリティポリシーに従って設定する必要があります。
-# 以下に各認証方式の例を示します。該当するものを使用してください。
+# クライアントは認証と認可のパラメータを設定する必要があります
+# API サーバーのセキュリティポリシーに従ってください。
+# 各認証方法の例は以下に示されています。 
+# 自分のユースケースに合う例を使用してください。
 
-# API キー認証の設定: api_key
+# API キーによる認証を設定: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには以下の行のコメントを外してください
+# 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスを用いてコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API クラスのインスタンスを作成
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  （オプション）
-    limit = 3.4 # float |  （オプション）
-    skip = 3.4 # float |  （オプション）
+    tenant_id = 'tenant_id_example' # str |  
+    user_id = 'user_id_example' # str |  （任意）
+    limit = 3.4 # float |  （任意）
+    skip = 3.4 # float |  （任意）
 
     try:
         api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)
@@ -52,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge_progress_list: %s\n" % e)
 [inline-code-end]
-
----

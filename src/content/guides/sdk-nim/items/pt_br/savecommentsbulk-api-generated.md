@@ -1,21 +1,19 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
+| Nome | Tipo | Obrigatório | Descrição |
 |------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | createCommentParams | seq[CreateCommentParams] | Não |  |
 | isLive | bool | Não |  |
 | doSpamCheck | bool | Não |  |
 | sendEmails | bool | Não |  |
-| populateNotifications | bool): (Option[seq[SaveComment_200_response]] | Não |  |
+| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | Não |  |
 | id | string | Não |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Não |  |
-| userId | string | Não |  |
-| anonUserId | string | Não |  |
+| fromName | string | Não |  |
 
 ## Resposta
 
-Retorna: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+Retorna: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Exemplo
 
@@ -24,20 +22,17 @@ Retorna: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastCo
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = true,
-  doSpamCheck = true,
+  isLive = false,
+  doSpamCheck = false,
   sendEmails = false,
-  populateNotifications = true,
-  id = "batch-20251122",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = "anon-789"
+  populateNotifications = false,
+  id = "",
+  fromName = ""
 )
-if response.isSome:
-  let unblocked = response.get()
-  echo "Unblocked response received: ", unblocked
-else:
-  echo "No unblocked response, httpResponse: ", $httpResponse
-[inline-code-end]
 
----
+if response.isSome:
+  let apiResp = response.get()
+  echo "Bulk save succeeded, tenant:", " my-tenant-123"
+else:
+  echo "Bulk save returned no API response"
+[inline-code-end]

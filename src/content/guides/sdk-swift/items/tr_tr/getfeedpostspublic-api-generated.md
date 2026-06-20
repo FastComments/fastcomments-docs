@@ -4,7 +4,7 @@ afterId
 
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | afterId | string | query | Hayır |  |
@@ -16,22 +16,22 @@ afterId
 
 ## Yanıt
 
-Döndürür: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Dönüş: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Örnek'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (optional)
-let limit = 987 // Int |  (optional)
-let tags = ["inner_example"] // [String] |  (optional)
-let sso = "sso_example" // String |  (optional)
-let isCrawler = true // Bool |  (optional)
-let includeUserInfo = true // Bool |  (optional)
+let afterId = "afterId_example" // String |  (isteğe bağlı)
+let limit = 987 // Int |  (isteğe bağlı)
+let tags = ["inner_example"] // [String] |  (isteğe bağlı)
+let sso = "sso_example" // String |  (isteğe bağlı)
+let isCrawler = true // Bool |  (isteğe bağlı)
+let includeUserInfo = true // Bool |  (isteğe bağlı)
 
 PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

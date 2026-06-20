@@ -20,21 +20,21 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -53,13 +53,13 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:1.3.2"
+    implementation "com.fastcomments:client:2.0.0"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    implementation "com.fastcomments:core:2.0.0"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
@@ -74,5 +74,10 @@ to make working with the API easier, and the `pubsub` module which is a library 
 
 ### Public vs Secured APIs
 
-For the API client, there are two classes, `DefaultApi` and `PublicApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
 that can be made directly from a browser/mobile device/etc without authentication.
+
+The `ModerationApi` powers the moderator dashboard. It contains methods for comment moderation (list, count, search, logs, and export), moderation actions (remove/restore,
+flag, set review/spam/approval status, votes, and reopen/close thread), bans (ban from comment, undo a ban, pre-ban summaries, ban status and preferences, and banned-user counts),
+and badges & trust (award/remove a badge, manual badges, get/set trust factor, and user internal profile). Every `ModerationApi` method accepts an `sso` parameter so the call can be
+performed on behalf of an SSO-authenticated moderator.

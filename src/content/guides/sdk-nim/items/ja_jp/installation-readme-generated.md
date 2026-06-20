@@ -1,10 +1,10 @@
-### Nimble の使用方法
+### Nimble の使用
 
 ```bash
 nimble install fastcomments
 ```
 
-### ソースからビルドする
+### ソースからビルド
 
 ```bash
 nimble build
@@ -12,10 +12,12 @@ nimble build
 
 ### ライブラリの内容
 
-このライブラリには、生成された API クライアントと、API の操作を簡単にする SSO ユーティリティが含まれています。
+このライブラリには、生成された API クライアントと、API の操作を容易にする SSO ユーティリティが含まれています。
 
-- [API クライアントライブラリのドキュメント](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [API クライアント ライブラリのドキュメント](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### 公開 API と保護された API
+### パブリック vs 保護された API
 
-API クライアントには、`api_default` と `api_public` の 2 つの API モジュールがあります。`api_default` は API キーを必要とするメソッドを含み、`api_public` は認証なしでブラウザやモバイル端末などから直接実行できる API 呼び出しを含みます。
+API クライアントには、`api_default`、`api_public`、`api_moderation` の 3 つの API モジュールがあります。`api_default` は API キーを必要とするメソッドを含み、`api_public` はブラウザ/モバイルデバイス等から認証なしに直接呼び出せる API コールを含みます。`api_moderation` モジュールはモデレーターダッシュボード用のメソッドを含みます。
+
+`api_moderation` のメソッドは、コメントおよびそのログの一覧取得、カウント、検索、エクスポート；コメントの削除/復元、フラグ付け、レビュー/スパム/承認ステータスの設定、投票の調整、スレッドの再開/クローズなどのモデレーション操作；バン（コメントからのユーザーのバン、バンの解除、事前バンのサマリー、バン状況と設定、バンされたユーザーの数）；およびバッジと信頼（バッジの付与/削除、手動バッジの一覧取得、ユーザーの信頼度の取得/設定、ユーザーの内部プロファイルの取得）をカバーします。すべての `api_moderation` メソッドは `sso` パラメータを受け取り、その呼び出しは SSO モデレーターとして認証されます。

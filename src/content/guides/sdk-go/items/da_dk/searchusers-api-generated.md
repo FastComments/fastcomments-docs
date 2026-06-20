@@ -11,11 +11,11 @@
 
 ## Svar
 
-Returnerer: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+Returnerer: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'SearchUsers Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på SearchUsers'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string |  (valgfrit)
-	mentionGroupIds := []string{"Inner_example"} // []string |  (valgfrit)
-	sso := "sso_example" // string |  (valgfrit)
-	searchSection := "searchSection_example" // string |  (valgfrit)
+	usernameStartsWith := "usernameStartsWith_example" // string |  (valgfri)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (valgfri)
+	sso := "sso_example" // string |  (valgfri)
+	searchSection := "searchSection_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `SearchUsers`: SearchUsers200Response
+	// svar fra `SearchUsers`: SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]
+
+---

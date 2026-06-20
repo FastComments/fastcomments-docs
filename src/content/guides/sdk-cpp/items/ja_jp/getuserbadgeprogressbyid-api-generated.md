@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -7,22 +8,27 @@
 
 ## レスポンス
 
-戻り値: [`GetUserBadgeProgressById_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserBadgeProgressById_200_response.h)
+戻り値: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserBadgeProgressById の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("badge-abc-456");
-boost::optional<utility::string_t> preferredLocale = boost::optional<utility::string_t>(U("en-US"));
-
-api->getUserBadgeProgressById(tenantId, id)
-.then([=](std::shared_ptr<GetUserBadgeProgressById_200_response> resp){
-    if(!resp) return;
-    auto copy = std::make_shared<GetUserBadgeProgressById_200_response>(*resp);
-    (void)copy;
-});
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t userId = utility::conversions::to_string_t("alice@acme.com");
+boost::optional<utility::string_t> locale = boost::optional<utility::string_t>(utility::conversions::to_string_t("en-US"));
+auto task = api->getUserBadgeProgressById(tenantId, userId)
+    .then([locale](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) -> std::shared_ptr<APIGetUserBadgeProgressResponse> {
+        try {
+            std::shared_ptr<APIGetUserBadgeProgressResponse> resp = t.get();
+            if (!resp) return std::shared_ptr<APIGetUserBadgeProgressResponse>();
+            auto result = std::make_shared<APIGetUserBadgeProgressResponse>(*resp);
+            if (locale) { auto lang = *locale; (void)lang; }
+            return result;
+        } catch (...) {
+            return std::shared_ptr<APIGetUserBadgeProgressResponse>();
+        }
+    });
 [inline-code-end]
 
 ---

@@ -1,25 +1,25 @@
-### 認証された API の使用 (DefaultApi)
+### 認証済み API の使用 (DefaultApi)
 
-**重要:** 認証されたリクエストを行う前に必ず Configuration に API キーを設定してください。設定しないと、リクエストは 401 エラーで失敗します。
+**重要:** 認証されたリクエストを行う前に、Configuration に API キーを設定する必要があります。設定していない場合、リクエストは 401 エラーで失敗します。
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# API クライアントを作成して設定
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# 必須: API キーを設定してください（FastComments のダッシュボードから取得）
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# 設定済みのクライアントで API インスタンスを作成
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# これで認証済みの API 呼び出しが可能です
 try:
-    # Example: Add an SSO user
+    # 例: SSO ユーザーを追加
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # よくあるエラー:
+    # - 401: API キーがないか無効です
+    # - 400: リクエストの検証に失敗しました
 ```
 
 ### パブリック API の使用 (PublicApi)
 
-パブリックエンドポイントは認証を必要としません：
+パブリックエンドポイントは認証不要です:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### SSO（シングルサインオン）の使用
+### モデレーションダッシュボードの使用 (ModerationApi)
 
-SDK には安全な SSO トークンを生成するユーティリティが含まれています：
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # モデレーション待ちのコメント数をカウントする
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### SSO (Single Sign-On) の使用
+
+SDK には安全な SSO トークンを生成するユーティリティが含まれています:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# ユーザーデータを作成
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,20 +98,20 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
+# API シークレットで SSO インスタンスを作成
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generate the SSO token
+# SSO トークンを生成
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# このトークンをフロントエンドで使用するか API 呼び出しに渡す
 print(f"SSO Token: {sso_token}")
 ```
 
-簡易 SSO（セキュリティが低く、テスト用）：
+簡易 SSO（安全性は低く、テスト用）:
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -106,8 +127,8 @@ sso_token = sso.create_token()
 
 ### よくある問題
 
-1. **401 "missing-api-key" エラー**: `DefaultApi` インスタンスを作成する前に `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` を設定していることを確認してください。
-2. **API クラスの間違い**: サーバー側の認証済みリクエストには `DefaultApi` を、クライアント側／パブリックリクエストには `PublicApi` を使用してください。
-3. **インポートエラー**: 正しいモジュールからインポートしていることを確認してください：
+1. **401 "missing-api-key" error**: DefaultApi インスタンスを作成する前に `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` を設定していることを確認してください。
+2. **API クラスの間違い**: サーバー側の認証済みリクエストには `DefaultApi` を、クライアント側/パブリックなリクエストには `PublicApi` を、モデレーターダッシュボードのリクエストには `ModerationApi` を使用してください。
+3. **インポートエラー**: 正しいモジュールからインポートしていることを確認してください:
    - API クライアント: `from client import ...`
    - SSO ユーティリティ: `from sso import ...`

@@ -10,9 +10,9 @@
 | questionIds | string | query | לא |  |
 | skip | number | query | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+מחזיר: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
 ## דוגמה
 
@@ -22,9 +22,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל היא nil)
+  # הסר את ההערה מקו הבא כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (בברירת מחדל nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_results: #{e}"
 end
 [inline-code-end]
-
----

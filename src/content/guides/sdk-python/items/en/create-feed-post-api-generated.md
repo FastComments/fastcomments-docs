@@ -10,15 +10,15 @@
 
 ## Response
 
-Returns: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post200_response.py)
+Returns: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'create_feed_post Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post200_response import CreateFeedPost200Response
 from client.models.create_feed_post_params import CreateFeedPostParams
+from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 

@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | notificationId | string | path | 是 |  |
@@ -9,14 +9,14 @@
 
 ## 回應
 
-回傳: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+回傳：[`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'update_user_notification_status 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_status_response import UpdateUserNotificationStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,14 +27,14 @@ configuration = client.Configuration(
 )
 
 
-# 使用 API 用戶端的實例進入一個上下文
+# 使用 API client 的實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     notification_id = 'notification_id_example' # str | 
     new_status = 'new_status_example' # str | 
-    sso = 'sso_example' # str |  (可選)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.update_user_notification_status(tenant_id, notification_id, new_status, sso=sso)
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_user_notification_status: %s\n" % e)
 [inline-code-end]
-
----

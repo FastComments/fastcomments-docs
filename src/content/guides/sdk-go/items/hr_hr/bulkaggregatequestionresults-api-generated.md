@@ -1,14 +1,13 @@
----
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | forceRecalculate | boolean | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_aggregate_question_results_200_response.go)
+Vraća: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_aggregate_question_results_response.go)
 
 ## Primjer
 
@@ -20,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -35,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.BulkAggregateQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `BulkAggregateQuestionResults`: BulkAggregateQuestionResults200Response
+	// odgovor iz `BulkAggregateQuestionResults`: BulkAggregateQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.BulkAggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

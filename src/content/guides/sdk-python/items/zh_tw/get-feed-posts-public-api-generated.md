@@ -4,47 +4,47 @@ afterId
 
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必要 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| afterId | string | query | 否 |  |
-| limit | integer | query | 否 |  |
-| tags | array | query | 否 |  |
-| sso | string | query | 否 |  |
-| isCrawler | boolean | query | 否 |  |
-| includeUserInfo | boolean | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## 回應
 
-回傳: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+回傳: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_feed_posts_public 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 為選用，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的設定參數清單。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py，查看所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 實例進入一個上下文
+# 使用 API client 的實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (可選)
-    limit = 56 # int |  (可選)
-    tags = ['tags_example'] # List[str] |  (可選)
-    sso = 'sso_example' # str |  (可選)
-    is_crawler = True # bool |  (可選)
-    include_user_info = True # bool |  (可選)
+    after_id = 'after_id_example' # str |  (選用)
+    limit = 56 # int |  (選用)
+    tags = ['tags_example'] # List[str] |  (選用)
+    sso = 'sso_example' # str |  (選用)
+    is_crawler = True # bool |  (選用)
+    include_user_info = True # bool |  (選用)
 
     try:
         api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)

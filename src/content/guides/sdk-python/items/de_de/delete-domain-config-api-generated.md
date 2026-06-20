@@ -1,43 +1,43 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | domain | string | path | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_domain_config200_response.py)
+Gibt zurück: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_domain_config_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'delete_domain_config Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_domain_config200_response import DeleteDomainConfig200Response
+from client.models.delete_domain_config_response import DeleteDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Definition des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
+# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten angegeben, verwenden Sie das Beispiel, 
-# das Ihren Authentifizierungsanforderungen entspricht.
+# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt. Verwenden Sie das Beispiel, das
+# Ihren Authentifizierungsanforderungen entspricht.
 
-# API-Key-Authentifizierung konfigurieren: api_key
+# API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Auskommentieren, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Key zu setzen
+# Auskommentieren, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Betreten eines Kontexts mit einer Instanz des API-Clients
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstelle eine Instanz der API-Klasse
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     domain = 'domain_example' # str | 

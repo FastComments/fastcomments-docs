@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
@@ -8,25 +8,25 @@
 
 ## Odgovor
 
-Vraća: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_badge_200_response.rs)
+Vraća: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer update_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateUserBadgeParams = UpdateUserBadgeParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "badge-verified-001".to_string(),
-    update_user_badge_params: models::UpdateUserBadgeParams {
-        name: Some("Verified Contributor".to_string()),
-        description: Some("Awarded for consistent, high-quality contributions".to_string()),
-        icon_url: Some("https://assets.acme.com/badges/verified.png".to_string()),
-        color_hex: Some("#1E90FF".to_string()),
-        min_posts: Some(100u32),
-        active: Some(true),
-    },
-};
-let response: UpdateUserBadge200Response = update_user_badge(&configuration, params).await?;
+async fn run_update_badge() -> Result<ApiEmptySuccessResponse, Error> {
+    let params: UpdateUserBadgeParams = UpdateUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-8742".to_string(),
+        update_user_badge_params: models::UpdateUserBadgeParams {
+            name: Some("Top Contributor".to_string()),
+            description: Some("Awarded for 100 helpful comments".to_string()),
+            icon_url: Some("https://assets.acme.com/badges/top-contributor.png".to_string()),
+            expires_at: None,
+            is_visible: Some(true),
+        },
+    };
+    let response: ApiEmptySuccessResponse = update_user_badge(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]
-
----

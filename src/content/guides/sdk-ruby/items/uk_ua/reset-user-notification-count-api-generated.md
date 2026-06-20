@@ -1,17 +1,17 @@
 ## Параметри
 
-| Ім'я | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+Повертає: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад reset_user_notification_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notification_count Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -30,3 +30,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notification_count: #{e}"
 end
 [inline-code-end]
+
+---

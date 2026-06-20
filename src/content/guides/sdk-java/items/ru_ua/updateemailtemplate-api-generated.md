@@ -1,14 +1,13 @@
----
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Пример
 
@@ -38,7 +37,7 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateEmailTemplateBody updateEmailTemplateBody = new UpdateEmailTemplateBody(); // UpdateEmailTemplateBody | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateEmailTemplate(tenantId, id, updateEmailTemplateBody)
+      APIEmptyResponse result = apiInstance.updateEmailTemplate(tenantId, id, updateEmailTemplateBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -51,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

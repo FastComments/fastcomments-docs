@@ -1,9 +1,9 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
+| urlId | string | query | לא | משמש לקבוע האם העמוד הנוכחי מנוי. |
 | pageSize | integer | query | לא |  |
 | afterId | string | query | לא |  |
 | includeContext | boolean | query | לא |  |
@@ -12,15 +12,16 @@
 | dmOnly | boolean | query | לא |  |
 | noDm | boolean | query | לא |  |
 | includeTranslations | boolean | query | לא |  |
+| includeTenantNotifications | boolean | query | לא |  |
 | sso | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+מחזיר: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getUserNotifications'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getUserNotifications'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // ייבוא מחלקות:
 import com.fastcomments.invoker.ApiClient;
@@ -36,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | משמש לקבוע האם העמוד הנוכחי מנוי.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -44,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -55,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -68,5 +73,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -8,41 +8,41 @@
 
 ## Antwoord
 
-Retourneert: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket200_response.py)
+Retourneert: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_ticket Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_ticket200_response import GetTicket200Response
+from client.models.get_ticket_response import GetTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaard staat deze op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard ingesteld op https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # De client moet de authenticatie- en autorisatieparameters configureren
-# in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
-# bij uw authenticatiegeval past.
+# overeenkomstig het beveiligingsbeleid van de API-server.
+# Voor elk authenticatiemethode zijn er voorbeelden hieronder, gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegeval.
 
-# Configureer API-sleutelauthenticatie: api_key
+# Configureer API-sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de onderstaande regel uit commentaar om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Open een context met een instantie van de API-client
+# Ga een context in met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (optioneel)
+    user_id = 'user_id_example' # str |  (optional)
 
     try:
         api_response = api_instance.get_ticket(tenant_id, id, user_id=user_id)

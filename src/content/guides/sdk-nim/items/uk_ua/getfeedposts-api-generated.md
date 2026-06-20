@@ -1,26 +1,34 @@
+---
+req
+tenantId
+afterId
+
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| afterId | string | No |  |
-| limit | int | No |  |
-| tags | seq[string] | No |  |
+| tenantId | string | Так |  |
+| afterId | string | Ні |  |
+| limit | int | Ні |  |
+| tags | seq[string] | Ні |  |
 
 ## Відповідь
 
-Повертає: [`Option[GetFeedPosts_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts200response.nim)
+Повертає: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_response.nim)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(tenantId = "my-tenant-123", afterId = "post_abc123", limit = 20, tags = @["news", "sports"])
+let (response, httpResponse) = client.getFeedPosts(
+  tenantId = "my-tenant-123",
+  afterId = "",
+  limit = 0,
+  tags = @[]
+)
 if response.isSome:
   let feed = response.get()
-  echo "Feed posts retrieved for tenant my-tenant-123"
-else:
-  echo "No feed posts returned, HTTP status: ", $httpResponse.status
+  echo "Feed retrieved for tenant my-tenant-123"
 [inline-code-end]
 
 ---

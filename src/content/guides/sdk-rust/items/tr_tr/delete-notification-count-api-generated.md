@@ -1,27 +1,27 @@
 ---
 ## Parametreler
 
-| Ad | Tip | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenant_id | String | Evet |  |
 | id | String | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Dönüş: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'delete_notification_count Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<FlagCommentPublic200Response, Error> {
-    let params: DeleteNotificationCountParams = DeleteNotificationCountParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("notification-9876"),
-        user_id: Some(String::from("user-1234")),
+async fn delete_notification_count_example() -> Result<(), Error> {
+    let params = DeleteNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article/notification-827b".to_string(),
+        if_match: Some("W/\"etag-827b\"".to_string()),
     };
-    let response: FlagCommentPublic200Response = delete_notification_count(configuration, params).await?;
-    Ok(response)
+    let _response: ApiEmptyResponse = delete_notification_count(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

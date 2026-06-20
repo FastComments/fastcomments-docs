@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## 示例
 
@@ -19,7 +19,7 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let redirectURL = "redirectURL_example" // String |  （可选）
+let redirectURL = "redirectURL_example" // String |  (可选)
 
 DefaultAPI.sendLoginLink(tenantId: tenantId, id: id, redirectURL: redirectURL) { (response, error) in
     guard error == nil else {
@@ -32,5 +32,3 @@ DefaultAPI.sendLoginLink(tenantId: tenantId, id: id, redirectURL: redirectURL) {
     }
 }
 [inline-code-end]
-
----

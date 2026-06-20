@@ -1,43 +1,43 @@
-захтјев
+req
 tenantId
 urlId
 
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Захтевано | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| page | integer | query | Не |  |
-| direction | string | query | Не |  |
-| sso | string | query | Не |  |
-| skip | integer | query | Не |  |
-| skipChildren | integer | query | Не |  |
-| limit | integer | query | Не |  |
-| limitChildren | integer | query | Не |  |
-| countChildren | boolean | query | Не |  |
-| fetchPageForCommentId | string | query | Не |  |
-| includeConfig | boolean | query | Не |  |
-| countAll | boolean | query | Не |  |
-| includei10n | boolean | query | Не |  |
-| locale | string | query | Не |  |
-| modules | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
-| includeNotificationCount | boolean | query | Не |  |
-| asTree | boolean | query | Не |  |
-| maxTreeDepth | integer | query | Не |  |
-| useFullTranslationIds | boolean | query | Не |  |
-| parentId | string | query | Не |  |
-| searchText | string | query | Не |  |
-| hashTags | array | query | Не |  |
-| userId | string | query | Не |  |
-| customConfigStr | string | query | Не |  |
-| afterCommentId | string | query | Не |  |
-| beforeCommentId | string | query | Не |  |
+| tenantId | string | путања | Да |  |
+| urlId | string | упит | Да |  |
+| page | integer | упит | Не |  |
+| direction | string | упит | Не |  |
+| sso | string | упит | Не |  |
+| skip | integer | упит | Не |  |
+| skipChildren | integer | упит | Не |  |
+| limit | integer | упит | Не |  |
+| limitChildren | integer | упит | Не |  |
+| countChildren | boolean | упит | Не |  |
+| fetchPageForCommentId | string | упит | Не |  |
+| includeConfig | boolean | упит | Не |  |
+| countAll | boolean | упит | Не |  |
+| includei10n | boolean | упит | Не |  |
+| locale | string | упит | Не |  |
+| modules | string | упит | Не |  |
+| isCrawler | boolean | упит | Не |  |
+| includeNotificationCount | boolean | упит | Не |  |
+| asTree | boolean | упит | Не |  |
+| maxTreeDepth | integer | упит | Не |  |
+| useFullTranslationIds | boolean | упит | Не |  |
+| parentId | string | упит | Не |  |
+| searchText | string | упит | Не |  |
+| hashTags | array | упит | Не |  |
+| userId | string | упит | Не |  |
+| customConfigStr | string | упит | Не |  |
+| afterCommentId | string | упит | Не |  |
+| beforeCommentId | string | упит | Не |  |
 
 ## Одговор
 
-Враћа: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Враћа: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## Пример
 
@@ -86,5 +86,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comments_public: #{e}"
 end
 [inline-code-end]
-
----

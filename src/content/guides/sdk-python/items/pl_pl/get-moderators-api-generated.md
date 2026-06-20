@@ -1,38 +1,38 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| skip | number | query | Nie |  |
+| tenantId | string | zapytanie | Tak |  |
+| skip | number | zapytanie | Nie |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators200_response.py)
+Zwraca: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_moderators'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderators200_response import GetModerators200Response
+from client.models.get_moderators_response import GetModeratorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z polityką bezpieczeństwa serwera API.
-# Przykłady dla każdej metody uwierzytelniania znajdują się poniżej, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# zgodnie z polityką zabezpieczeń serwera API.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
+# spełnia Twój scenariusz użycia uwierzytelniania.
 
-# Skonfiguruj uwierzytelnianie kluczem API: api_key
+# Skonfiguruj autoryzację za pomocą klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (e.g. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API

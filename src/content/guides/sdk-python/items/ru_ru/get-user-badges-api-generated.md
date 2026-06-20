@@ -2,47 +2,55 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| badgeId | string | query | Нет |  |
-| type | number | query | Нет |  |
-| displayedOnComments | boolean | query | Нет |  |
-| limit | number | query | Нет |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+Возвращает: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badges Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию — https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Defining the host is optional and defaults to https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
+# The client must configure the authentication and authorization parameters
 # Клиент должен настроить параметры аутентификации и авторизации
+# in accordance with the API server security policy.
 # в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте пример,
-# который соответствует вашему сценарию аутентификации.
+# Examples for each auth method are provided below, use the example that
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
+# satisfies your auth use case.
+# соответствует вашему варианту использования аутентификации.
 
-# Настройка авторизации по API ключу: api_key
+# Configure API key authorization: api_key
+# Настроить авторизацию по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы при необходимости задать префикс (например, Bearer) для API ключа
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если нужно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Входим в контекст с экземпляром API клиента
+# Enter a context with an instance of the API client
+# Откройте контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Create an instance of the API class
+    # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (необязательно)
@@ -59,5 +67,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badges: %s\n" % e)
 [inline-code-end]
-
----

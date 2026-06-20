@@ -1,7 +1,8 @@
+---
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Location | Obrigatório | Descrição |
+|------|------|----------|------------|-----------|
 | tenantId | string | path | Sim |  |
 | commentId | string | path | Sim |  |
 | broadcastId | string | query | Sim |  |
@@ -9,7 +10,7 @@
 
 ## Resposta
 
-Retorna: [`PinComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pin_comment200_response.rb)
+Retorna: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/change_comment_pin_status_response.rb)
 
 ## Exemplo
 

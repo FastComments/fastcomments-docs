@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
@@ -9,16 +9,16 @@
 
 ## תגובה
 
-מחזיר: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+מחזיר: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-deleteTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-456", deleteComments = "", commentDeleteMode = "")
+let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
 if response.isSome:
-  let flagResp = response.get()
-  echo flagResp
+  let apiResp = response.get()
+  echo "Tenant user deleted, response: ", apiResp
+else:
+  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
 [inline-code-end]
-
----

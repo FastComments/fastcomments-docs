@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tag200_response.rb)
+מחזיר: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_hash_tag_response.rb)
 
 ## דוגמה
 
@@ -14,11 +14,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאה
+# הגדרת הרשאות
 FastCommentsClient.configure do |config|
-  # קבע תצורת אימות למפתח ה-API: api_key
+  # הגדר אישור מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # בטל את ההערה של השורה הבאה כדי להגדיר תחילית עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי לקבוע קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

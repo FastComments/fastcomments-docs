@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserBadge200Response.swift)
+Devuelve: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptySuccessResponse.swift)
 
 ## Ejemplo
 
@@ -31,5 +31,3 @@ DefaultAPI.updateUserBadge(tenantId: tenantId, id: id, updateUserBadgeParams: up
     }
 }
 [inline-code-end]
-
----

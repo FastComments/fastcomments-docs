@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tip | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | skip | float64 | Hayır |  |
 
 ## Yanıt
 
-Dönüş değeri: [`Option[GetEmailTemplates_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates200response.nim)
+Döndürür: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## Örnek
 
@@ -18,7 +18,7 @@ if response.isSome:
   let templates = response.get()
   echo templates
 else:
-  echo "No templates returned"
+  echo "No email templates available"
 [inline-code-end]
 
 ---

@@ -6,7 +6,7 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Δημιουργία διαμόρφωσης API
+    // Δημιουργία ρυθμίσεων API
     let config = Configuration::new();
 
     // Ανάκτηση σχολίων για μια σελίδα
@@ -53,7 +53,7 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Create configuration with API key
+    // Δημιουργία ρυθμίσεων με κλειδί API
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Χρήση SSO για Πιστοποίηση
+### Χρήση του API Εποπτείας
+
+Οι μέθοδοι εποπτείας τροφοδοτούν τον πίνακα ελέγχου των διαχειριστών. Χρησιμοποιούν μια `Configuration` με API-key όπως και το αυθεντικοποιημένο API, και κάθε μέθοδος δέχεται ένα προαιρετικό token `sso` ώστε η κλήση να μπορεί να γίνει εκ μέρους ενός διαχειριστή που έχει αυθεντικοποιηθεί μέσω SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Δημιουργία ρυθμίσεων με κλειδί API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Μέτρηση σχολίων που περιμένουν στην ουρά εποπτείας
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // περάστε ένα token SSO για να ενεργήσετε ως διαχειριστής αυθεντικοποιημένος μέσω SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Χρήση SSO για Αυθεντικοποίηση
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -112,17 +150,17 @@ fn main() {
 
     // Δημιουργία ασφαλών δεδομένων χρήστη SSO (μόνο στην πλευρά του διακομιστή!)
     let user_data = SecureSSOUserData::new(
-        "user-123".to_string(),           // Αναγνωριστικό χρήστη
-        "user@example.com".to_string(),   // Ηλεκτρονικό ταχυδρομείο
-        "John Doe".to_string(),            // Όνομα χρήστη
-        "https://example.com/avatar.jpg".to_string(), // URL avatar
+        "user-123".to_string(),           // ID Χρήστη
+        "user@example.com".to_string(),   // Ηλεκτρονική Διεύθυνση
+        "John Doe".to_string(),            // Όνομα Χρήστη
+        "https://example.com/avatar.jpg".to_string(), // URL εικόνας προφίλ
     );
 
-    // Δημιουργία SSO token
+    // Δημιουργία token SSO
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Δώσε αυτό το token στο frontend σου για πιστοποίηση
+    // Περάστε αυτό το token στο frontend σας για αυθεντικοποίηση
 }
 ```

@@ -2,33 +2,33 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример на update_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за update_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.feed_post import FeedPost
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри на конфигурацията.
+# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за автентикация и авторизация
+# Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на автентикация са показани по-долу, използвайте примера който
-# отговаря на вашия случай на използване за автентикация.
+# Примерите за всеки метод за удостоверяване са дадени по-долу; използвайте примера, който
+# отговаря на вашия случай на използване за удостоверяване.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->update_feed_post: %s\n" % e)
 [inline-code-end]
-
----

@@ -6,17 +6,17 @@ afterId
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| afterId | string | query | Nee |  |
-| limit | integer | query | Nee |  |
-| tags | array | query | Nee |  |
-| sso | string | query | Nee |  |
-| isCrawler | boolean | query | Nee |  |
-| includeUserInfo | boolean | query | Nee |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_public200_response.rb)
+Geeft terug: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_feed_posts_response.rb)
 
 ## Voorbeeld
 
@@ -44,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_public: #{e}"
 end
 [inline-code-end]
-
----

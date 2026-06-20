@@ -8,20 +8,20 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+מחזיר: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת send_login_link'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-send_login_link'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {
+async fn send_link_example() -> Result<(), Error> {
     let params: SendLoginLinkParams = SendLoginLinkParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("user-98765"),
-        redirect_url: Some(String::from("https://acme.example.com/dashboard")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "user-9876".to_string(),
+        redirect_url: Some("https://acme.example.com/welcome".to_string()),
     };
-    let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;
-    Ok(response)
+    let response: ApiEmptyResponse = send_login_link(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

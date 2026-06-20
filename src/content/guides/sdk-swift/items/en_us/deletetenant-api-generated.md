@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Example
 
@@ -32,5 +32,3 @@ DefaultAPI.deleteTenant(tenantId: tenantId, id: id, sure: sure) { (response, err
     }
 }
 [inline-code-end]
-
----

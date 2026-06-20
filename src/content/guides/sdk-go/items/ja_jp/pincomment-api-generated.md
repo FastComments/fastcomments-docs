@@ -1,4 +1,4 @@
-## パラメーター
+## パラメータ
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -9,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`PinComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pin_comment_200_response.go)
+戻り値: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_comment_pin_status_response.go)
 
 ## 例
 
@@ -21,14 +21,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	broadcastId := "broadcastId_example" // string | 
-	sso := "sso_example" // string |  (オプション)
+	sso := "sso_example" // string |  (任意)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.PinComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `PinComment` からのレスポンス: PinComment200Response
+	// `PinComment` からのレスポンス: ChangeCommentPinStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.PinComment`: %v\n", resp)
 }
 [inline-code-end]

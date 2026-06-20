@@ -2,12 +2,12 @@
 
 | Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | requête | Oui |  |
-| skip | number | requête | Non |  |
+| tenantId | string | query | Oui |  |
+| skip | number | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsers200Response.php)
+Renvoie : [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
 
 ## Exemple
 
@@ -39,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

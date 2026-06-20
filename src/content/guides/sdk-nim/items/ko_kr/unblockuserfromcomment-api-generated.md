@@ -1,32 +1,34 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| id | string | 아니요 |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | 아니요 |  |
-| userId | string | 아니요 |  |
-| anonUserId | string | 아니요 |  |
+| id | string | 아니오 |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | 아니오 |  |
+| userId | string | 아니오 |  |
+| anonUserId | string | 아니오 |  |
 
 ## 응답
 
-반환: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+반환: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'unBlockUserFromComment 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
-  tenantId = "news-site-001",
-  id = "cmt-8fj3k9",
+  tenantId = "my-tenant-123",
+  id = "comment-9f3b2a",
   unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-98765",
-  anonUserId = ""
+  userId = "user-1024",
+  anonUserId = "anon-77b"
 )
 
 if response.isSome:
-  let unblocked = response.get()
-  discard unblocked
+  let unblockResult = response.get()
+  echo unblockResult
+else:
+  echo "Unblock failed"
 [inline-code-end]
 
 ---

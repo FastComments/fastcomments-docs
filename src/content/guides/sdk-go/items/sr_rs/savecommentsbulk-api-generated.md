@@ -2,19 +2,19 @@
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | запит | Да |  |
-| isLive | boolean | запит | Не |  |
-| doSpamCheck | boolean | запит | Не |  |
-| sendEmails | boolean | запит | Не |  |
-| populateNotifications | boolean | запит | Не |  |
+| tenantId | string | query | Да |  |
+| isLive | boolean | query | Не |  |
+| doSpamCheck | boolean | query | Не |  |
+| sendEmails | boolean | query | Не |  |
+| populateNotifications | boolean | query | Не |  |
 
 ## Одговор
 
-Враћа: `[]SaveComment200Response`
+Враћа: [`[]SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_bulk_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример SaveCommentsBulk'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за SaveCommentsBulk'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createCommentParams := []openapiclient.CreateCommentParams{*openapiclient.NewCreateCommentParams("CommenterName_example", "Comment_example", "Url_example", "UrlId_example", "Locale_example")} // []CreateCommentParams | 
-	isLive := true // bool |  (опционално)
-	doSpamCheck := true // bool |  (опционално)
-	sendEmails := true // bool |  (опционално)
-	populateNotifications := true // bool |  (опционално)
+	isLive := true // bool |  (опционо)
+	doSpamCheck := true // bool |  (опционо)
+	sendEmails := true // bool |  (опционо)
+	populateNotifications := true // bool |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SaveCommentsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `SaveCommentsBulk`: []SaveComment200Response
+	// одговор од `SaveCommentsBulk`: []SaveCommentsBulkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SaveCommentsBulk`: %v\n", resp)
 }
 [inline-code-end]

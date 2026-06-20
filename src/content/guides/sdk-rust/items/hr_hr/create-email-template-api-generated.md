@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -7,27 +8,27 @@
 
 ## Odgovor
 
-Vraća: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_email_template_200_response.rs)
+Vraća: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_email_template_response.rs)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'create_email_template Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: CreateEmailTemplateParams = CreateEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".into(),
-        create_email_template_body: models::CreateEmailTemplateBody {
-            name: "Article Comment Notification".into(),
-            subject: "New comment on your article".into(),
-            body_html: "<p>Hi \{{recipient_name}},</p><p>\{{comment_author}} left a comment on your article \"\{{article_title}}\".</p>".into(),
-            from_name: Some("Acme News".into()),
-            from_email: Some("notifications@acme.example".into()),
-            reply_to: Some("no-reply@acme.example".into()),
-            enabled: Some(true),
-            tags: Some(vec!["comments".into(), "notifications".into()]),
-        },
-    };
-    let response: CreateEmailTemplate200Response = create_email_template(configuration, params).await?;
-    Ok(())
-}
+let params = CreateEmailTemplateParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    create_email_template_body: models::CreateEmailTemplateBody {
+        name: "Weekly Newsletter".to_string(),
+        slug: Some("news/weekly".to_string()),
+        subject: Some("Acme Corp — Weekly Updates".to_string()),
+        html_body: Some("<h1>Acme Weekly</h1><p>Top stories this week...</p>".to_string()),
+        text_body: Some("Acme Weekly — Top stories this week...".to_string()),
+        from_email: Some("newsletter@acme.com".to_string()),
+        reply_to: Some("support@acme.com".to_string()),
+        description: Some("Template used for the weekly customer newsletter".to_string()),
+        is_active: Some(true),
+    },
+};
+let created: CreateEmailTemplateResponse = create_email_template(&configuration, params).await?;
 [inline-code-end]
+
+---

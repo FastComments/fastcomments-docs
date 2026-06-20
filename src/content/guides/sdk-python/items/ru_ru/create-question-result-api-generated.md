@@ -6,19 +6,19 @@
 
 ## Ответ
 
-Возвращает: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result200_response.py)
+Возвращает: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'create_question_result Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример create_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_result200_response import CreateQuestionResult200Response
 from client.models.create_question_result_body import CreateQuestionResultBody
+from client.models.create_question_result_response import CreateQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию равно https://fastcomments.com
+# Задать хост необязательно и по умолчанию используется https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,16 +26,16 @@ configuration = client.Configuration(
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример,
-# который соответствует вашему сценарию использования аутентификации.
+# Ниже приведены примеры для каждого метода аутентификации, используйте
+# пример, который соответствует вашему сценарию использования аутентификации.
 
-# Настройка авторизации по API-ключу: api_key
+# Настройте авторизацию по API-ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если требуется
+# Раскомментируйте ниже, чтобы задать префикс (e.g. Bearer) для API-ключа, если требуется
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Вход в контекст с экземпляром API-клиента
+# Откройте контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)

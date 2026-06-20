@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
@@ -9,19 +9,18 @@
 
 ## 响应
 
-返回: [`Option[DeleteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment200response.nim)
+返回: [`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteComment 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-456abc", contextUserId = "user-789", isLive = true)
+let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-98765", contextUserId = "user-456", isLive = true)
 if response.isSome:
-  let deleted = response.get()
-  discard deleted
-  echo "Delete succeeded"
+  let result = response.get()
+  echo "DeleteCommentResult received"
 else:
-  echo "No delete response"
+  echo "No result, HTTP status: ", httpResponse.status
 [inline-code-end]
 
 ---

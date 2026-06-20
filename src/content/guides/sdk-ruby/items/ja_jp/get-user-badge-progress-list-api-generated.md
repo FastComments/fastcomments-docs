@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | userId | string | query | いいえ |  |
@@ -9,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_list200_response.rb)
+返却値: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_list_response.rb)
 
 ## 例
 
@@ -17,11 +17,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証の設定
+# 認証のセットアップ
 FastCommentsClient.configure do |config|
-  # APIキー認証を設定: api_key
+  # APIキー認証の設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーに接頭辞（例: 'Bearer'）を設定するには、以下の行のコメントを解除してください（デフォルトは nil）
+  # 以下の行のコメントを外すと、APIキーにプレフィックスを設定できます。例: 'Bearer'（デフォルトはnil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

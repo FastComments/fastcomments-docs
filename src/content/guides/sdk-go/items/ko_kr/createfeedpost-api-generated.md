@@ -1,20 +1,20 @@
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| broadcastId | string | query | 아니요 |  |
-| isLive | boolean | query | 아니요 |  |
-| doSpamCheck | boolean | query | 아니요 |  |
-| skipDupCheck | boolean | query | 아니요 |  |
+| broadcastId | string | query | 아니오 |  |
+| isLive | boolean | query | 아니오 |  |
+| doSpamCheck | boolean | query | 아니오 |  |
+| skipDupCheck | boolean | query | 아니오 |  |
 
 ## 응답
 
-반환: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_200_response.go)
+반환: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_posts_response.go)
 
 ## 예제
 
-[inline-code-attrs-start title = 'CreateFeedPost 예제'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CreateFeedPost Example'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateFeedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateFeedPost`의 응답: CreateFeedPost200Response
+	// `CreateFeedPost`의 응답: CreateFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]

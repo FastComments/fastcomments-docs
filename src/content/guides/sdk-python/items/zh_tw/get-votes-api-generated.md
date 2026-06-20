@@ -7,37 +7,37 @@
 
 ## 回應
 
-回傳: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes200_response.py)
+回傳：[`GetVotesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_votes 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes200_response import GetVotes200Response
+from client.models.get_votes_response import GetVotesResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # 定義 host 是可選的，預設為 https://fastcomments.com
-# 有關所有支援的設定參數列表，請參閱 configuration.py。
+# 請參閱 configuration.py 獲取所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 客戶端必須設定認證與授權參數
-# 以符合 API 伺服器的安全策略。
-# 下方提供每種認證方法的示例，請使用
-# 適合您使用情境的示例。
+# 用戶端必須設定驗證與授權參數
+# 以符合 API 伺服器的安全政策。
+# 下方提供每種認證方法的範例，
+# 請使用符合您驗證情境的範例。
 
 # 設定 API 金鑰授權：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如需，取消註解以下內容以設定 API 金鑰的前綴（例如 Bearer）
+# 如有需要，取消註解下列內容來設定 API 金鑰的前綴（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 使用 API client 的實例進入一個上下文
+# 使用 API 客戶端實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
-    # 建立 API 類別的實例
+    # 建立 API 類別的一個實例
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 

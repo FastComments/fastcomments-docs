@@ -1,24 +1,24 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| meta | string | query | Non |  |
-| skip | number | query | Non |  |
+| tenantId | string | requête | Oui |  |
+| meta | string | requête | Non |  |
+| skip | number | requête | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenants200_response.rb)
+Renvoie : [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenants_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple get_tenants'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_tenants'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # configuration de l'authentification
 FastCommentsClient.configure do |config|
-  # Configurer l'authentification par clé API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenants: #{e}"
 end
 [inline-code-end]
-
----

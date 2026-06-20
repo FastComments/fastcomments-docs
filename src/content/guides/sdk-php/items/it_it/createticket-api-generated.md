@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicket200Response.php)
+Restituisce: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
 
 ## Esempio
 
@@ -17,15 +17,15 @@ Restituisce: [`CreateTicket200Response`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autenticazione tramite API key: api_key
+// Configura l'autenticazione con API key: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per l'API key, se necessario
+// Rimuovi il commento qui sotto per impostare un prefisso (es. Bearer) per la API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` will be used as default.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale; verrà usato come client predefinito `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

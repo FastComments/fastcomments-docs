@@ -7,25 +7,24 @@
 
 ## Response
 
-Returns: [`DeleteDomainConfig_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfig_200_response.h)
+Returns: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfigResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'deleteDomainConfig Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t(U("my-tenant-123"));
-utility::string_t domain = utility::string_t(U("comments.example.com"));
-boost::optional<utility::string_t> requestId = utility::string_t(U("trace-789"));
-auto fallback = std::make_shared<DeleteDomainConfig_200_response>();
-api->deleteDomainConfig(tenantId, domain)
-    .then([fallback, requestId](pplx::task<std::shared_ptr<DeleteDomainConfig_200_response>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                *fallback = *resp;
-            }
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t domain = U("example.com");
+boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-789"));
+api->deleteDomainConfig(tenantId, domain).then([correlationId](pplx::task<std::shared_ptr<DeleteDomainConfigResponse>> t){
+    try {
+        auto resp = t.get();
+        if(!resp) resp = std::make_shared<DeleteDomainConfigResponse>();
+        utility::string_t cid = correlationId ? *correlationId : U("");
+        (void)cid;
+    } catch(const std::exception &){
+        auto err = std::make_shared<DeleteDomainConfigResponse>();
+        (void)err;
+    }
+});
 [inline-code-end]

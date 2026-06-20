@@ -1,5 +1,5 @@
-Aggrega documenti raggruppandoli (se viene fornito groupBy) e applicando più operazioni.
-Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
+---
+Esegue aggregazioni sui documenti raggruppandoli (se viene fornito groupBy) e applicando più operazioni. Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Parametri
 
@@ -11,43 +11,36 @@ Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Risposta
 
-Restituisce: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
+# La definizione dell'host è opzionale e predefinita a https://fastcomments.com
+# Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# Il client deve configurare i parametri di autenticazione e autorizzazione
+# in conformità con la policy di sicurezza del server API.
+# Di seguito sono forniti esempi per ogni metodo di autenticazione; usa quello
+# che soddisfa il tuo caso d'uso di autenticazione.
 # Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Decommenta quanto sotto per impostare un prefisso (ad es. Bearer) per la API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Crea un'istanza della classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (opzionale)
-    include_stats = True # bool |  (opzionale)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
+    include_stats = True # bool |  (optional)
 
     try:
         api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
@@ -56,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate: %s\n" % e)
 [inline-code-end]
+
+---

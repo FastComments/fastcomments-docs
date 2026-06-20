@@ -1,6 +1,4 @@
----
-Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują stronę, tworzone są powiadomienia
-dla nowych głównych komentarzy, oraz
+Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują stronę, tworzone są powiadomienia dla nowych komentarzy głównych, a także
 
 ## Parametry
 
@@ -15,13 +13,13 @@ dla nowych głównych komentarzy, oraz
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+Zwraca: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationPageSubscriptionStatusResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład updateUserNotificationPageSubscriptionStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w fazie beta. W razie problemu zgłoś go pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -42,5 +40,3 @@ PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId
     }
 }
 [inline-code-end]
-
----

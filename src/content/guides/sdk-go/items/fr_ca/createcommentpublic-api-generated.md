@@ -1,16 +1,16 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui |  |
-| broadcastId | string | query | Oui |  |
-| sessionId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | chemin | Oui |  |
+| urlId | string | requête | Oui |  |
+| broadcastId | string | requête | Oui |  |
+| sessionId | string | requête | Non |  |
+| sso | string | requête | Non |  |
 
 ## Réponse
 
-Renvoie: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_comment_public_200_response.go)
+Renvoie: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_response_with_presence.go)
 
 ## Exemple
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,9 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CreateCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `CreateCommentPublic` : CreateCommentPublic200Response
+	// réponse de `CreateCommentPublic`: SaveCommentsResponseWithPresence
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CreateCommentPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

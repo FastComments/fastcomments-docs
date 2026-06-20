@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Name | Type | Location | Required | Description |
@@ -8,32 +9,32 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'delete_moderator Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer delete_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre preverjanja pristnosti in avtorizacije
-# v skladu s politiko varnosti strežnika API.
-# Spodaj so prikazani primeri za vsako metodo preverjanja pristnosti, uporabite primer, ki
-# ustreza vašemu primeru uporabe preverjanja pristnosti.
+# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so prikazani primeri za vsako metodo avtentikacije; uporabite primer, ki
+# ustreza vašemu primeru uporabe.
 
 # Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
@@ -51,3 +52,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_moderator: %s\n" % e)
 [inline-code-end]
+
+---

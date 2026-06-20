@@ -1,16 +1,17 @@
-Groepeert documenten (als groupBy is opgegeven) en past meerdere bewerkingen toe. Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteund.
+Aggegregeert documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
+Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteund.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | parentTenantId | string | query | Nee |  |
 | includeStats | boolean | query | Nee |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Retourneert: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Voorbeeld
 
@@ -22,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -38,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `Aggregate`: AggregationResponse
+	// antwoord van `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

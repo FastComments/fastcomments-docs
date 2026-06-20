@@ -1,9 +1,9 @@
-### Χρήση του Δημόσιου API
+### Χρήση του Public API
 
 ```swift
 import FastCommentsSwift
 
-// Δημιουργία πελάτη API
+// Δημιουργία client API
 let publicApi = PublicAPI()
 
 // Ανάκτηση σχολίων για μια σελίδα
@@ -22,16 +22,16 @@ do {
 }
 ```
 
-### Χρήση του Αυθεντικοποιημένου API
+### Χρήση του Πιστοποιημένου API
 
 ```swift
 import FastCommentsSwift
 
-// Δημιουργία διαμόρφωσης με κλειδί API
+// Δημιουργία ρύθμισης με κλειδί API
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Ανάκτηση σχολίων χρησιμοποιώντας το αυθεντικοποιημένο API
+// Ανάκτηση σχολίων χρησιμοποιώντας πιστοποιημένο API
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,21 +47,44 @@ do {
 }
 ```
 
-### Χρήση SSO για αυθεντικοποίηση
+### Χρήση του Moderation API
 
-#### Ασφαλές SSO (Συνιστάται για Παραγωγή)
+```swift
+import FastCommentsSwift
+
+// Οι μέθοδοι moderation εξουσιοδοτούνται με ένα token `sso` για τον ενεργό moderator
+// (παράγετε το με FastCommentsSSO, δείτε την ενότητα SSO παραπάνω).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### Χρήση SSO για Αυθεντικοποίηση
+
+#### Secure SSO (Συνιστάται για Παραγωγή)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Δημιουργία ασφαλών δεδομένων χρήστη SSO (μόνο από τον διακομιστή!)
+// Δημιουργία ασφαλών δεδομένων χρήστη SSO (μόνο στο server!)
 let userData = SecureSSOUserData(
     id: "user-123",              // ID χρήστη
     email: "user@example.com",   // Email
     username: "johndoe",         // Όνομα χρήστη
-    avatar: "https://example.com/avatar.jpg" // URL εικόνας προφίλ
+    avatar: "https://example.com/avatar.jpg" // URL avatar
 )
 
 // Δημιουργία token SSO
@@ -70,13 +93,13 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Περάστε αυτό το token στο frontend σας για αυθεντικοποίηση
+    // Δώστε αυτό το token στο frontend σας για αυθεντικοποίηση
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### Απλό SSO (Για ανάπτυξη/δοκιμές)
+#### Simple SSO (Για Ανάπτυξη/Δοκιμές)
 
 ```swift
 import FastCommentsSwift
@@ -97,4 +120,3 @@ do {
     print("Error creating SSO token: \(error)")
 }
 ```
----

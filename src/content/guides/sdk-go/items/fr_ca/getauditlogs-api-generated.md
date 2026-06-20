@@ -1,18 +1,17 @@
----
 ## Paramètres
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| limit | number | query | Non |  |
-| skip | number | query | Non |  |
-| order | string | query | Non |  |
-| after | number | query | Non |  |
-| before | number | query | Non |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
 ## Réponse
 
-Renvoie: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_200_response.go)
+Renvoie: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_audit_logs_response.go)
 
 ## Exemple
 
@@ -24,16 +23,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	limit := float64(1.2) // float64 |  (facultatif)
-	skip := float64(1.2) // float64 |  (facultatif)
-	order := openapiclient.SORT_DIR("ASC") // SORTDIR |  (facultatif)
-	after := float64(1.2) // float64 |  (facultatif)
-	before := float64(1.2) // float64 |  (facultatif)
+	limit := float64(1.2) // float64 |  (optionnel)
+	skip := float64(1.2) // float64 |  (optionnel)
+	order := openapiclient.SORT_DIR("ASC") // SORTDIR |  (optionnel)
+	after := float64(1.2) // float64 |  (optionnel)
+	before := float64(1.2) // float64 |  (optionnel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -42,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAuditLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetAuditLogs`: GetAuditLogs200Response
+	// réponse de `GetAuditLogs`: GetAuditLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAuditLogs`: %v\n", resp)
 }
 [inline-code-end]
-
----

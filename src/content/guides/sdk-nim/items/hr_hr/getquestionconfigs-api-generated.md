@@ -7,16 +7,19 @@
 
 ## Odgovor
 
-Vraća: [`Option[GetQuestionConfigs_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_configs200response.nim)
+Vraća: [`Option[GetQuestionConfigsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_configs_response.nim)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getQuestionConfigs Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getQuestionConfigs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionConfigs(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let configs = response.get()
-  discard configs
+  echo "Received question configs for tenant my-tenant-123"
+  echo configs
+else:
+  echo "No question configs returned"
 [inline-code-end]
 
 ---

@@ -1,23 +1,23 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Omschrijving |
-|------|------|---------|---------|--------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
+| Naam | Type | Locatie | Vereist | Beschrijving |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
+| userId | string | query | Nee |  |
+| urlId | string | query | Nee |  |
+| fromCommentId | string | query | Nee |  |
+| viewed | boolean | query | Nee |  |
+| type | string | query | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCount200Response.swift)
+Retourneert: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getNotificationCount Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Voor problemen kunt u dit melden via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -1,52 +1,54 @@
-Агрегира документе груписањем (ако је groupBy наведен) и применом више операција. Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
+---
+Agregira dokumente grupišući ih (ako je groupBy naveden) i primjenjujući više operacija.
+Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| parentTenantId | string | query | Не |  |
-| includeStats | boolean | query | Не |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример за aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Definisanje hosta je opciono i podrazumijeva se https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора подесити параметре аутентификације и ауторизације
-# у складу са политиком безбедности API сервера.
-# Испод су наведени примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе аутентификације.
+# Klijent mora konfigurirati parametre autentikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Ispod su dati primjeri za svaku metodu autentikacije, koristite primjer koji
+# odgovara vašem slučaju upotrebe autentikacije.
 
-# Конфигуришите API key ауторизацију: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Ако је потребно, откоментирајте испод да подесите префикс (нпр. Bearer) за API key
+# Otkomentarišite dolje da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (опционо)
-    include_stats = True # bool |  (опционо)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (neobavezno)
+    include_stats = True # bool |  (neobavezno)
 
     try:
         api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
@@ -55,3 +57,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate: %s\n" % e)
 [inline-code-end]
+
+---

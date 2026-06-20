@@ -2,19 +2,19 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| commentIds | string | query | Evet | Yorum kimliklerinin virgülle ayrılmış listesi. |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Yorum kimliklerinin virgülle ayrılmış listesi. |
+| sso | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckedCommentsForBlocked200Response.java)
+Döndürür: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CheckBlockedCommentsResponse.java)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'checkedCommentsForBlocked Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Sınıfları içe aktar:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,17 +31,19 @@ public class Example {
     String commentIds = "commentIds_example"; // String | Yorum kimliklerinin virgülle ayrılmış listesi.
     String sso = "sso_example"; // String | 
     try {
-      CheckedCommentsForBlocked200Response result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
+      CheckBlockedCommentsResponse result = apiInstance.checkedCommentsForBlocked(tenantId, commentIds)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#checkedCommentsForBlocked");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("PublicApi#checkedCommentsForBlocked çağrılırken oluşan istisna");
+      System.err.println("Durum kodu: " + e.getCode());
+      System.err.println("Sebep: " + e.getResponseBody());
+      System.err.println("Yanıt üstbilgileri: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

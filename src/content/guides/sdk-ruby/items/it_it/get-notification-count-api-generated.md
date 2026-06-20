@@ -2,7 +2,7 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sì |  |
 | userId | string | query | No |  |
 | urlId | string | query | No |  |
 | fromCommentId | string | query | No |  |
@@ -11,7 +11,7 @@
 
 ## Risposta
 
-Restituisce: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notification_count200_response.rb)
+Restituisce: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notification_count_response.rb)
 
 ## Esempio
 
@@ -19,9 +19,9 @@ Restituisce: [`GetNotificationCount200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configura l'autorizzazione
+# configurazione dell'autenticazione
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configura l'autenticazione con API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -45,3 +45,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_notification_count: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,3 +1,7 @@
+req
+tenantId
+afterId
+
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -10,9 +14,9 @@
 | isCrawler | bool | Nee |  |
 | includeUserInfo | bool | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+Retourneert: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
 ## Voorbeeld
 
@@ -27,8 +31,9 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
+
+---

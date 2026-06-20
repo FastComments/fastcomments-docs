@@ -1,35 +1,38 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Да |  |
-| id | string | Да |  |
-| changeTicketStateBody | ChangeTicketStateBody | Да |  |
+| tenantId | string | Da |  |
+| userId | string | Da |  |
+| id | string | Da |  |
+| changeTicketStateBody | ChangeTicketStateBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ChangeTicketState_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeTicketState_200_response.h)
+Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример changeTicketState'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer changeTicketState'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("agent@example.com");
-utility::string_t id = U("TICKET-456");
-auto changeBody = std::make_shared<ChangeTicketStateBody>();
-changeBody->state = U("resolved");
-changeBody->comment = U("Resolved as duplicate after review");
-changeBody->notify = boost::optional<bool>(true);
-api->changeTicketState(tenantId, userId, id, *changeBody)
-.then([](pplx::task<std::shared_ptr<ChangeTicketState_200_response>> t){
+utility::string_t userId = U("support-agent@example.com");
+utility::string_t ticketId = U("ticket-98765");
+auto bodyPtr = std::make_shared<ChangeTicketStateBody>();
+bodyPtr->state = U("closed");
+bodyPtr->reason = boost::optional<utility::string_t>(U("Resolved by support team"));
+api->changeTicketState(tenantId, userId, ticketId, *bodyPtr)
+.then([](pplx::task<std::shared_ptr<ChangeTicketStateResponse>> task) {
     try {
-        auto resp = t.get();
+        auto resp = task.get();
         if (resp) {
-            auto copy = std::make_shared<ChangeTicketState_200_response>(*resp);
+            std::cout << "Ticket state changed successfully" << std::endl;
+        } else {
+            std::cout << "No response received" << std::endl;
         }
-    } catch (const std::exception&) {}
+    } catch (const std::exception &e) {
+        std::cerr << "Error changing ticket state: " << e.what() << std::endl;
+    }
 });
 [inline-code-end]
 

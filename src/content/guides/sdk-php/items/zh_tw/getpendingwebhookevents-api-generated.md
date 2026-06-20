@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 否 |  |
@@ -11,9 +11,9 @@
 | attemptCountGT | number | query | 否 |  |
 | skip | number | query | 否 |  |
 
-## 回應
+## Response
 
-回傳： [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEvents200Response.php)
+回傳: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventsResponse.php)
 
 ## 範例
 
@@ -23,26 +23,26 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// 設定 API 金鑰授權：api_key
+// 設定 API 金鑰授權: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如需，取消註解下方以為 API 金鑰設定前綴（例如 Bearer）
+// 如有需要，取消註解下列以設定 API 金鑰的前綴（例如 Bearer）
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 若要使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果想要使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$external_id = 'external_id_example'; // string
-$event_type = 'event_type_example'; // string
-$type = 'type_example'; // string
-$domain = 'domain_example'; // string
-$attempt_count_gt = 3.4; // float
-$skip = 3.4; // float
+$tenant_id = 'tenant_id_example'; // 字串
+$comment_id = 'comment_id_example'; // 字串
+$external_id = 'external_id_example'; // 字串
+$event_type = 'event_type_example'; // 字串
+$type = 'type_example'; // 字串
+$domain = 'domain_example'; // 字串
+$attempt_count_gt = 3.4; // 浮點數
+$skip = 3.4; // 浮點數
 
 try {
     $result = $apiInstance->getPendingWebhookEvents($tenant_id, $comment_id, $external_id, $event_type, $type, $domain, $attempt_count_gt, $skip);

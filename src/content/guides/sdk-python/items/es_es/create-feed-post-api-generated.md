@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | broadcastId | string | query | No |  |
@@ -10,36 +10,36 @@
 
 ## Respuesta
 
-Devuelve: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post200_response.py)
+Devuelve: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post200_response import CreateFeedPost200Response
 from client.models.create_feed_post_params import CreateFeedPostParams
+from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para ver la lista de todos los parámetros de configuración admitidos.
+# Consulte configuration.py para una lista de todos los parámetros de configuración soportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # El cliente debe configurar los parámetros de autenticación y autorización
 # de acuerdo con la política de seguridad del servidor de la API.
-# A continuación se muestran ejemplos para cada método de autenticación; use el ejemplo que
-# se ajuste a su caso de uso de autenticación.
+# A continuación se proporcionan ejemplos para cada método de autenticación; use el ejemplo que
+# satisfaga su caso de uso de autenticación.
 
-# Configure la autorización por clave API: api_key
+# Configurar la autorización por clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente la siguiente línea para configurar un prefijo (p. ej., Bearer) para la clave API, si es necesario
+# Descomente abajo para configurar el prefijo (p.ej. Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingrese en un contexto con una instancia del cliente API
+# Ingrese un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)

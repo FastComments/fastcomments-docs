@@ -1,12 +1,12 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 
-## Відповідь
+## Response
 
-Повертає: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateQuestionResult200Response.php)
+Повертає: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateQuestionResultResponse.php)
 
 ## Приклад
 
@@ -16,15 +16,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації API-ключем: api_key
+// Налаштуйте авторизацію API-ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижченаведене, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це не обов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -38,3 +38,5 @@ try {
     echo 'Exception when calling DefaultApi->createQuestionResult: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

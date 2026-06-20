@@ -2,20 +2,22 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| pageSize | integer | sorgu | Hayır |  |
-| afterId | string | sorgu | Hayır |  |
-| includeContext | boolean | sorgu | Hayır |  |
-| afterCreatedAt | integer | sorgu | Hayır |  |
-| unreadOnly | boolean | sorgu | Hayır |  |
-| dmOnly | boolean | sorgu | Hayır |  |
-| noDm | boolean | sorgu | Hayır |  |
-| includeTranslations | boolean | sorgu | Hayır |  |
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| urlId | string | query | Hayır | Mevcut sayfanın abone olup olmadığını belirlemek için kullanılır. |
+| pageSize | integer | query | Hayır |  |
+| afterId | string | query | Hayır |  |
+| includeContext | boolean | query | Hayır |  |
+| afterCreatedAt | integer | query | Hayır |  |
+| unreadOnly | boolean | query | Hayır |  |
+| dmOnly | boolean | query | Hayır |  |
+| noDm | boolean | query | Hayır |  |
+| includeTranslations | boolean | query | Hayır |  |
+| includeTenantNotifications | boolean | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Döndürür: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Örnek
 
@@ -27,6 +29,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
+  url_id: 'url_id_example', # String | Mevcut sayfanın abone olup olmadığını belirlemek için kullanılır.
   page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
   include_context: true, # Boolean | 
@@ -35,6 +38,7 @@ opts = {
   dm_only: true, # Boolean | 
   no_dm: true, # Boolean | 
   include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 

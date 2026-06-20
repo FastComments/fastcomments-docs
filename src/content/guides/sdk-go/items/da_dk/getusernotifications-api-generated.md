@@ -1,8 +1,9 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
+| urlId | string | query | Nej | Bruges til at afgøre, om den aktuelle side er abonneret. |
 | pageSize | integer | query | Nej |  |
 | afterId | string | query | Nej |  |
 | includeContext | boolean | query | Nej |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Nej |  |
 | noDm | boolean | query | Nej |  |
 | includeTranslations | boolean | query | Nej |  |
+| includeTenantNotifications | boolean | query | Nej |  |
 | sso | string | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_notifications_200_response.go)
+Returnerer: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_my_notifications_response.go)
 
 ## Eksempel
 
@@ -27,11 +29,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
+	urlId := "urlId_example" // string | Bruges til at afgøre, om den aktuelle side er abonneret. (valgfri)
 	pageSize := int32(56) // int32 |  (valgfri)
 	afterId := "afterId_example" // string |  (valgfri)
 	includeContext := true // bool |  (valgfri)
@@ -40,16 +43,19 @@ func main() {
 	dmOnly := true // bool |  (valgfri)
 	noDm := true // bool |  (valgfri)
 	includeTranslations := true // bool |  (valgfri)
+	includeTenantNotifications := true // bool |  (valgfri)
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.GetUserNotifications(context.Background()).TenantId(tenantId).PageSize(pageSize).AfterId(afterId).IncludeContext(includeContext).AfterCreatedAt(afterCreatedAt).UnreadOnly(unreadOnly).DmOnly(dmOnly).NoDm(noDm).IncludeTranslations(includeTranslations).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.GetUserNotifications(context.Background()).TenantId(tenantId).UrlId(urlId).PageSize(pageSize).AfterId(afterId).IncludeContext(includeContext).AfterCreatedAt(afterCreatedAt).UnreadOnly(unreadOnly).DmOnly(dmOnly).NoDm(noDm).IncludeTranslations(includeTranslations).IncludeTenantNotifications(includeTenantNotifications).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetUserNotifications`: GetUserNotifications200Response
+	// svar fra `GetUserNotifications`: GetMyNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,5 +1,5 @@
-Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
-Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+מאגד מסמכים על ידי קיבוצם (אם ה־groupBy מסופק) והפעלת מספר פעולות.
+פעולות שונות נתמכות (למשל sum, countDistinct, avg וכו').
 
 ## פרמטרים
 
@@ -11,11 +11,11 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## תגובה
 
-מחזיר: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+מחזיר: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-Aggregate'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת Aggregate'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,9 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`Aggregate`: AggregationResponse
+	// תגובה מ־`Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
-
----

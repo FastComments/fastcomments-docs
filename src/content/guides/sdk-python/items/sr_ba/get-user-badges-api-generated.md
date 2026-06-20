@@ -12,35 +12,35 @@
 
 ## Одговор
 
-Враћа: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+Враћа: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'get_user_badges Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badges Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционо и подразумјева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Дефинисање host-а је опционално и подразумјевано је https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и овлашћења
-# у складу са политиком безбједности API сервера.
-# Примјери за сваки метод аутентификације су дати у наставку, користите примјер који
-# одговара вашем случају употребе аутентификације.
+# Клијент мора конфигурисати параметре аутентификације и ауторизације
+# у складу са безбедносном политиком API сервера.
+# Примјери за сваки метод аутентификације су наведени испод, користите примјер који
+# задовољава ваш случај употребе аутентификације.
 
-# Конфигуришите аутентификацију API кључем: api_key
+# Конфигуришите API key ауторизацију: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Одкоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Унесите контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
     # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
@@ -59,5 +59,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badges: %s\n" % e)
 [inline-code-end]
-
----

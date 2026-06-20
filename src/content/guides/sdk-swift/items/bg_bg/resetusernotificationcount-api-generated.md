@@ -7,17 +7,17 @@
 
 ## Отговор
 
-Връща: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotifications200Response.swift)
+Връща: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotificationsResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за resetUserNotificationCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните образци на код все още са в бета. За проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let sso = "sso_example" // String |  (по избор)
+let sso = "sso_example" // String |  (незадължително)
 
 PublicAPI.resetUserNotificationCount(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
@@ -30,3 +30,5 @@ PublicAPI.resetUserNotificationCount(tenantId: tenantId, sso: sso) { (response, 
     }
 }
 [inline-code-end]
+
+---

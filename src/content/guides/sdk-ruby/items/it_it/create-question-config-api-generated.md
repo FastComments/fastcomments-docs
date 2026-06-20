@@ -6,7 +6,7 @@
 
 ## Risposta
 
-Restituisce: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config200_response.rb)
+Restituisce: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config_response.rb)
 
 ## Esempio
 
@@ -14,11 +14,11 @@ Restituisce: [`CreateQuestionConfig200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# impostazione dell'autorizzazione
+# configurazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione con la API key: api_key
+  # Configura l'autorizzazione tramite chiave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommentare la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito: nil)
+  # Decommenta la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

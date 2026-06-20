@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필요 여부 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | broadcastId | string | query | 아니요 |  |
@@ -8,7 +8,7 @@
 
 ## 응답
 
-반환: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+반환: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## 예제
 
@@ -33,3 +33,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

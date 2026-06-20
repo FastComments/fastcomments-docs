@@ -1,8 +1,8 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sì |  |
 | page | integer | query | No |  |
 | limit | integer | query | No |  |
 | skip | integer | query | No |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | No |  |
 | parentId | string | query | No |  |
 | direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetComments200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments200_response.rb)
+Restituisce: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comments_response.rb)
 
 ## Esempio
 
@@ -28,9 +30,9 @@ Restituisce: [`GetComments200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# impostazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione della API key: api_key
+  # Configura l'autorizzazione con API key: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
@@ -52,7 +54,9 @@ opts = {
   context_user_id: 'context_user_id_example', # String | 
   hash_tag: 'hash_tag_example', # String | 
   parent_id: 'parent_id_example', # String | 
-  direction: FastCommentsClient::SortDirections::OF # SortDirections | 
+  direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
+  from_date: 789, # Integer | 
+  to_date: 789 # Integer | 
 }
 
 begin
@@ -63,5 +67,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_comments: #{e}"
 end
 [inline-code-end]
-
----

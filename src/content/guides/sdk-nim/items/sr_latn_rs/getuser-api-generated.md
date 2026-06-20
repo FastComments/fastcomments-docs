@@ -1,24 +1,25 @@
+---
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`Option[GetUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user200response.nim)
+Vraća: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer upotrebe getUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-9876")
+let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
 if response.isSome:
   let user = response.get()
-  echo "User:", user
+  echo user
 else:
-  echo "No user found. HTTP response:", httpResponse
+  echo "User not found"
 [inline-code-end]
 
 ---

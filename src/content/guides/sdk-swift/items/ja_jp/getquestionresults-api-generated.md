@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | urlId | string | query | いいえ |  |
@@ -12,7 +12,7 @@
 
 ## レスポンス
 
-戻り値: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionResults200Response.swift)
+戻り値: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionResultsResponse.swift)
 
 ## 例
 
@@ -22,12 +22,12 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String |  (オプション)
-let userId = "userId_example" // String |  (オプション)
-let startDate = "startDate_example" // String |  (オプション)
-let questionId = "questionId_example" // String |  (オプション)
-let questionIds = "questionIds_example" // String |  (オプション)
-let skip = 987 // Double |  (オプション)
+let urlId = "urlId_example" // String |  (任意)
+let userId = "userId_example" // String |  (任意)
+let startDate = "startDate_example" // String |  (任意)
+let questionId = "questionId_example" // String |  (任意)
+let questionIds = "questionIds_example" // String |  (任意)
+let skip = 987 // Double |  (任意)
 
 DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
     guard error == nil else {
@@ -40,3 +40,5 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, 
     }
 }
 [inline-code-end]
+
+---

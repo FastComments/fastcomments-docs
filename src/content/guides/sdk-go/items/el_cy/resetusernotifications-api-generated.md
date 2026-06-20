@@ -12,11 +12,11 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_200_response.go)
+Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_reset_user_notifications_response.go)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα ResetUserNotifications'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ResetUserNotifications Παράδειγμα'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	afterId := "afterId_example" // string |  (προαιρετικό)
-	afterCreatedAt := int64(789) // int64 |  (προαιρετικό)
-	unreadOnly := true // bool |  (προαιρετικό)
-	dmOnly := true // bool |  (προαιρετικό)
-	noDm := true // bool |  (προαιρετικό)
-	sso := "sso_example" // string |  (προαιρετικό)
+	afterId := "afterId_example" // string |  (optional)
+	afterCreatedAt := int64(789) // int64 |  (optional)
+	unreadOnly := true // bool |  (optional)
+	dmOnly := true // bool |  (optional)
+	noDm := true // bool |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.ResetUserNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ResetUserNotifications`: ResetUserNotifications200Response
+	// response from `ResetUserNotifications`: ResetUserNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ResetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]

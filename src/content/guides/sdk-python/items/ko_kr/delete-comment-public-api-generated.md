@@ -5,19 +5,19 @@
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
 | broadcastId | string | query | 예 |  |
-| editKey | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| editKey | string | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_public200_response.py)
+반환: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'delete_comment_public 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_public200_response import DeleteCommentPublic200Response
+from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,9 +28,9 @@ configuration = client.Configuration(
 )
 
 
-# API 클라이언트 인스턴스와 컨텍스트를 엽니다
+# API 클라이언트 인스턴스로 컨텍스트에 진입합니다
 with client.ApiClient(configuration) as api_client:
-    # API 클래스의 인스턴스 생성
+    # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 

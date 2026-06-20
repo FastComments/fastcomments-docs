@@ -1,20 +1,21 @@
-## Параметри
+---
+## Parameters
 
-| Name | Type | Location | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 | userId | string | query | Не |  |
 
-## Одговор
+## Response
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример updateNotification'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи пример(и) кода су још увек бета. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још увек бета. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,3 +34,5 @@ DefaultAPI.updateNotification(tenantId: tenantId, id: id, updateNotificationBody
     }
 }
 [inline-code-end]
+
+---

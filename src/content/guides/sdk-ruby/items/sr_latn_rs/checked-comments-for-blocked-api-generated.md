@@ -1,15 +1,14 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Lista ID-jeva komentara odvojena zarezom. |
+| commentIds | string | query | Da | Lista ID-jeva komentara odvojena zarezima. |
 | sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Primer
 
@@ -20,7 +19,7 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | Lista ID-jeva komentara odvojena zarezom.
+comment_ids = 'comment_ids_example' # String | Lista ID-jeva komentara odvojena zarezima.
 opts = {
   sso: 'sso_example' # String | 
 }
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
-
----

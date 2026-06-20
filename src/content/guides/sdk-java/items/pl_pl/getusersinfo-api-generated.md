@@ -1,0 +1,51 @@
+---
+Zbiorcze informacje o użytkownikach dla tenant'a. Dla podanych userIds zwraca informacje wyświetlane z User / SSOUser.
+Używane przez widget komentarzy do wzbogacenia użytkowników, którzy właśnie pojawili się poprzez zdarzenie obecności.
+Brak kontekstu strony: prywatność jest egzekwowana jednolicie (prywatne profile są maskowane).
+
+## Parametry
+
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Tak |  |
+| ids | string | query | Tak | Identyfikatory użytkowników (userIds) rozdzielone przecinkami. |
+
+## Odpowiedź
+
+Zwraca: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PageUsersInfoResponse.java)
+
+## Przykład
+
+[inline-code-attrs-start title = 'Przykład getUsersInfo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// Import klas:
+import com.fastcomments.invoker.ApiClient;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.invoker.Configuration;
+import com.fastcomments.invoker.models.*;
+import com.fastcomments.api.PublicApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://fastcomments.com");
+
+    PublicApi apiInstance = new PublicApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
+    String ids = "ids_example"; // String | Identyfikatory użytkowników (userIds) rozdzielone przecinkami.
+    try {
+      PageUsersInfoResponse result = apiInstance.getUsersInfo(tenantId, ids)
+            .execute();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PublicApi#getUsersInfo");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+[inline-code-end]
+
+---

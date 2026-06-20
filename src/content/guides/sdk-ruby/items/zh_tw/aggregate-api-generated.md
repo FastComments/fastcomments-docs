@@ -1,17 +1,17 @@
-Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
-Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+---
+透過分組（若提供 groupBy）並套用多個運算來彙總文件。支援不同的運算（例如 sum、countDistinct、avg 等）。
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+| tenantId | string | query | 是 |  |
+| parentTenantId | string | query | 否 |  |
+| includeStats | boolean | query | 否 |  |
 
 ## 回應
 
-Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+回傳: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## 範例
 
@@ -23,7 +23,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解下列行以設定 API 金鑰的前綴，例如 'Bearer' (defaults to nil)
+  # 若要為 API 金鑰設定前綴（例如 'Bearer'，預設為 nil），請取消註解下列一行
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +43,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
+
+---

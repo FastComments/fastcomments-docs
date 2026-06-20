@@ -1,33 +1,33 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| editKey | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| editKey | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`GetCommentText_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentText_200_response.h)
+반환: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicAPIGetCommentTextResponse.h)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getCommentText 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId(U("my-tenant-123"));
-utility::string_t commentId(U("cmt-456"));
-boost::optional<utility::string_t> editKey(utility::string_t(U("edit-key-789")));
-boost::optional<utility::string_t> sso(utility::string_t(U("user@example.com")));
-auto task = api->getCommentText(tenantId, commentId, editKey, sso)
-    .then([](std::shared_ptr<GetCommentText_200_response> resp){
-        if (resp) {
-            std::cout << "Comment text retrieved\n";
-        } else {
-            std::cout << "Comment not found\n";
-        }
-    });
-task.wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-7f4b2a");
+boost::optional<utility::string_t> editKey(utility::conversions::to_string_t("edit-xyz-789"));
+boost::optional<utility::string_t> sso(utility::conversions::to_string_t("user@example.com"));
+api->getCommentText(tenantId, commentId, editKey, sso)
+.then([](pplx::task<std::shared_ptr<PublicAPIGetCommentTextResponse>> t){
+    try {
+        auto resp = t.get();
+        auto result = resp ? resp : std::make_shared<PublicAPIGetCommentTextResponse>();
+    } catch (...) {
+        auto empty = std::make_shared<PublicAPIGetCommentTextResponse>();
+    }
+});
 [inline-code-end]
 
 ---

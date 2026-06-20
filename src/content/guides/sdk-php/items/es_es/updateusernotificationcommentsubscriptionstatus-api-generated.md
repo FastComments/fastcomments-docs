@@ -1,8 +1,8 @@
-Habilitar o deshabilitar las notificaciones para un comentario específico.
+Habilitar o deshabilitar notificaciones para un comentario específico.
 
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | notificationId | string | path | Sí |  |
@@ -12,7 +12,7 @@ Habilitar o deshabilitar las notificaciones para un comentario específico.
 
 ## Respuesta
 
-Devuelve: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Devuelve: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## Ejemplo
 

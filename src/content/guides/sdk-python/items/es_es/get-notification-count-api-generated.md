@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Name | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | urlId | string | query | No |  |
 | fromCommentId | string | query | No |  |
@@ -11,19 +11,19 @@
 
 ## Respuesta
 
-Devuelve: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count200_response.py)
+Devuelve: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notification_count200_response import GetNotificationCount200Response
+from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
+# Consulte configuration.py para ver la lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,15 +33,15 @@ configuration = client.Configuration(
 # Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configure API key authorization: api_key
+# Configure la autorización por clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Descomente lo siguiente para establecer un prefijo (p. ej. Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Abra un contexto con una instancia del cliente API
+# Ingrese a un contexto con una instancia del cliente de la API
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (opcional)

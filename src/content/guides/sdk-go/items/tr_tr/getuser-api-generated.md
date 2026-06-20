@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_200_response.go)
+Döndürür: [`GetUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_response.go)
 
 ## Örnek
 
@@ -33,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUser` yanıtı: GetUser200Response
+	// `GetUser`'dan yanıt: GetUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUser`: %v\n", resp)
 }
 [inline-code-end]
+
+---

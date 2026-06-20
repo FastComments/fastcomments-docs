@@ -5,11 +5,11 @@
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
 | dir | integer | query | 예 |  |
-| sso | string | query | 아니요 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names200_response.rb)
+반환: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names_success_response.rb)
 
 ## 예제
 

@@ -1,0 +1,43 @@
+## Parameters
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| commentId | string | path | Ja |  |
+| voteId | string | path | Ja |  |
+| sso | string | query | Nee |  |
+
+## Antwoord
+
+Retourneert: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
+
+## Voorbeeld
+
+[inline-code-attrs-start title = 'delete_moderation_vote Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import client
+from client.models.vote_delete_response import VoteDeleteResponse
+from client.rest import ApiException
+from pprint import pprint
+
+# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
+# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+
+# Open een context met een instantie van de API-client
+with client.ApiClient(configuration) as api_client:
+    # Maak een instantie van de API-klasse
+    api_instance = client.ModerationApi(api_client)
+    comment_id = 'comment_id_example' # str | 
+    vote_id = 'vote_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.delete_moderation_vote(comment_id, vote_id, sso=sso)
+        print("The response of ModerationApi->delete_moderation_vote:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ModerationApi->delete_moderation_vote: %s\n" % e)
+[inline-code-end]

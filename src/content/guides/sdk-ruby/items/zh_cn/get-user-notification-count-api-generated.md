@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count200_response.rb)
+返回： [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notification_count_response.rb)
 
 ## 示例
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字符串 | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 字符串 | 
 }
 
 begin
@@ -30,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notification_count: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,10 +1,10 @@
-### Swift Package Manager
+### Gestore pacchetti Swift
 
 Aggiungi quanto segue al file `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
 ]
 ```
 
@@ -17,4 +17,3 @@ Oppure in Xcode:
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
----

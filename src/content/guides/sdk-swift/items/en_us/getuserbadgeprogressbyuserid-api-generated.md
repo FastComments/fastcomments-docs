@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadgeProgressById200Response.swift)
+Returns: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgeProgressResponse.swift)
 
 ## Example
 
@@ -30,5 +30,3 @@ DefaultAPI.getUserBadgeProgressByUserId(tenantId: tenantId, userId: userId) { (r
     }
 }
 [inline-code-end]
-
----

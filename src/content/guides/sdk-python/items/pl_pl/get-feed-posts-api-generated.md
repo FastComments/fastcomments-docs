@@ -4,23 +4,23 @@ afterId
 
 ## Parametry
 
-| Name | Type | Location | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| afterId | string | query | Nie |  |
-| limit | integer | query | Nie |  |
-| tags | array | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts200_response.py)
+Zwraca: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts200_response import GetFeedPosts200Response
+from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -35,20 +35,20 @@ configuration = client.Configuration(
 # Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
 # odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Konfiguracja autoryzacji za pomocą klucza API: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to potrzebne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Wejdź w kontekst z instancją klienta API
+# Otwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (optional)
-    limit = 56 # int |  (optional)
-    tags = ['tags_example'] # List[str] |  (optional)
+    after_id = 'after_id_example' # str |  (opcjonalne)
+    limit = 56 # int |  (opcjonalne)
+    tags = ['tags_example'] # List[str] |  (opcjonalne)
 
     try:
         api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)

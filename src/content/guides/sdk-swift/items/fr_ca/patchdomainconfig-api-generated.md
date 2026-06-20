@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Nom | Type | Location | Obligatoire | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | domainToUpdate | string | path | Oui |  |
 
-## Réponse
+## Response
 
-Renvoie: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+Renvoie: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PatchDomainConfigResponse.swift)
 
 ## Exemple
 
@@ -31,5 +31,3 @@ DefaultAPI.patchDomainConfig(tenantId: tenantId, domainToUpdate: domainToUpdate,
     }
 }
 [inline-code-end]
-
----

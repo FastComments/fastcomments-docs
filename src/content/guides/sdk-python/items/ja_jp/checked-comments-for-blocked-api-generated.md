@@ -1,37 +1,37 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | コメントIDのカンマ区切りの一覧。 |
+| commentIds | string | query | Yes | コメントIDのカンマ区切りリスト。 |
 | sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+戻り値: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py に、サポートされているすべての設定パラメータの一覧があります。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# API クライアントのインスタンスを使ってコンテキストを開始します
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API クラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | コメントIDのカンマ区切りの一覧。
+    comment_ids = 'comment_ids_example' # str | コメントIDのカンマ区切りリスト。
     sso = 'sso_example' # str |  (オプション)
 
     try:

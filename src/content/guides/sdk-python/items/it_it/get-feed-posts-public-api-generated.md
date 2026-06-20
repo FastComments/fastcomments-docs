@@ -4,8 +4,8 @@ afterId
 
 ## Parametri
 
-| Nome | Type | Location | Obbligatorio | Descrizione |
-|------|------|----------|--------------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | afterId | string | query | No |  |
 | limit | integer | query | No |  |
@@ -16,25 +16,25 @@ afterId
 
 ## Risposta
 
-Restituisce: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Restituisce: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è facoltativo e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# La definizione dell'host è opzionale e di default è https://fastcomments.com
+# Vedere configuration.py per la lista di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Apri un contesto con un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.PublicApi(api_client)

@@ -1,6 +1,7 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | postIds | vector<string | No |  |
@@ -8,24 +9,20 @@
 
 ## Respuesta
 
-Devuelve: [`GetUserReactsPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserReactsPublic_200_response.h)
+Devuelve: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UserReactsResponse.h)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de getUserReactsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-std::vector<utility::string_t> postIdsVec = {
-    utility::conversions::to_string_t("post-456"),
-    utility::conversions::to_string_t("post-789")
-};
-boost::optional<std::vector<utility::string_t>> postIdsOpt = postIdsVec;
-boost::optional<utility::string_t> ssoOpt = utility::conversions::to_string_t("user@example.com");
-api->getUserReactsPublic(tenantId, postIdsOpt, ssoOpt)
-    .then([](pplx::task<std::shared_ptr<GetUserReactsPublic_200_response>> t) {
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<std::vector<utility::string_t>> postIds = std::vector<utility::string_t>{ U("post-7f3a"), U("post-b2c9") };
+boost::optional<utility::string_t> sso = U("user@example.com");
+api->getUserReactsPublic(tenantId, postIds, sso)
+    .then([](pplx::task<std::shared_ptr<UserReactsResponse>> task) {
         try {
-            auto resp = t.get();
-            if (!resp) resp = std::make_shared<GetUserReactsPublic_200_response>();
+            auto resp = task.get();
+            if (!resp) resp = std::make_shared<UserReactsResponse>();
         } catch (const std::exception&) {
         }
     });

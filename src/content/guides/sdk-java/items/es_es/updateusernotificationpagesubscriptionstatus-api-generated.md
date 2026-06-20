@@ -1,9 +1,9 @@
 Habilitar o deshabilitar las notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones
 para nuevos comentarios raíz, y también
 
-## Parameters
+## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | urlId | string | query | Sí |  |
@@ -12,9 +12,9 @@ para nuevos comentarios raíz, y también
 | subscribedOrUnsubscribed | string | path | Sí |  |
 | sso | string | query | No |  |
 
-## Response
+## Respuesta
 
-Devuelve: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Ejemplo
 
@@ -40,15 +40,15 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Excepción al llamar a PublicApi#updateUserNotificationPageSubscriptionStatus");
-      System.err.println("Código de estado: " + e.getCode());
-      System.err.println("Razón: " + e.getResponseBody());
-      System.err.println("Encabezados de la respuesta: " + e.getResponseHeaders());
+      System.err.println("Exception when calling PublicApi#updateUserNotificationPageSubscriptionStatus");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

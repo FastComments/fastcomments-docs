@@ -1,46 +1,40 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Не |  |
+| tenantId | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tag200_response.py)
+Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_hash_tag_response.py)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'Примјер add_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer add_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tag200_response import AddHashTag200Response
 from client.models.create_hash_tag_body import CreateHashTagBody
+from client.models.create_hash_tag_response import CreateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање хоста је опционално и подразумевано је на https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definisanje hosta je opcionalno i podrazumijevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Klijent mora konfigurirati parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaku metodu autentifikacije su prikazani ispod, koristite primjer koji
+# odgovara vašem slučaju upotrebe autentifikacije.
 
-# Клијент мора подесити параметре аутентификације и овлашћења
-# у складу са безбједносном политиком API сервера.
-# Испод су наведени примјери за сваки метод аутентификације, употребите примјер који
-# одговара вашем случају употребе аутентификације.
-
-# Конфигуришите овлашћење помоћу API кључа: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Откоментирајте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Konfigurišite autorizaciju API ključa: api_key
+# Otkomentarišite dolje da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (опционо)
-    create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (опционо)
+    tenant_id = 'tenant_id_example' # str |  (neobavezno)
+    create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (neobavezno)
 
     try:
         api_response = api_instance.add_hash_tag(tenant_id=tenant_id, create_hash_tag_body=create_hash_tag_body)
@@ -49,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->add_hash_tag: %s\n" % e)
 [inline-code-end]
-
----

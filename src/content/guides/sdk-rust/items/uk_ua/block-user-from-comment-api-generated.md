@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | id | String | Так |  |
@@ -10,26 +10,26 @@
 
 ## Відповідь
 
-Повертає: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/block_from_comment_public_200_response.rs)
+Повертає: [`BlockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/block_success.rs)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'block_user_from_comment Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад block_user_from_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
+async fn block_example() -> Result<BlockSuccess, Error> {
     let params: BlockUserFromCommentParams = BlockUserFromCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-03-25/comment-842".to_string(),
+        id: "comments/98765".to_string(),
         block_from_comment_params: models::BlockFromCommentParams {
-            reason: Some("Repeated promotional links".to_string()),
-            duration_minutes: Some(7_200),
+            reason: "Repeated harassment".to_string(),
+            duration_minutes: Some(60 * 24),
             notify_user: Some(true),
         },
-        user_id: Some("user-9812".to_string()),
-        anon_user_id: None,
+        user_id: Some("user_42".to_string()),
+        anon_user_id: Some("anon-7a3f".to_string()),
     };
-    let response: BlockFromCommentPublic200Response = block_user_from_comment(&configuration, params).await?;
-    Ok(())
+    let success: BlockSuccess = block_user_from_comment(&configuration, params).await?;
+    Ok(success)
 }
 [inline-code-end]
 

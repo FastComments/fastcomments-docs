@@ -1,30 +1,29 @@
----
-Dodajte ovu liniju u Gemfile vaše aplikacije:
+Додајте ову линију у Gemfile ваше апликације:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-A zatim izvršite:
+И онда извршите:
 
 ```bash
 bundle install
 ```
 
-Ili ga instalirajte sami kao:
+Или га сами инсталирајте као:
 
 ```bash
 gem install fastcomments
 ```
 
-### Sadržaj biblioteke
+### Садржај библиотеке
 
-Ova biblioteka sadrži generisan API klijent i SSO pomoćne alatke da olakša rad sa API-jem.
+Ова библиотека садржи генерисани API клијент и SSO алатке које олакшавају рад са API-јем.
 
-- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Javne naspram zaštićenih API-ja
+### Јавни и заштићени API-ји
 
-Za API klijenta postoje dvije klase, `DefaultApi` i `PublicApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži pozive API-ja
-koji se mogu izvršiti direktno iz pregledača/mobilnog uređaja/itd. bez autentifikacije.
----
+За API клијента постоје три класе, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` садржи методе које захтијевају ваш API кључ, а `PublicApi` садржи API позиве који се могу извршити директно из прегледача/мобилног уређаја/итд. без аутентификације. `ModerationApi` садржи методе које покрећу контролни панел модератора.
+
+`ModerationApi` обухвата модерацију коментара (листинг, број, претрага, логови, извоз), акције модерације (уклањање/враћање, означавање, постављање статуса за преглед/спам/одобрење, гласови, поновно отварање/затварање теме), забране (забрана са коментара, поништавање, прегледи пре-забране, статус/поставке забране, бројеви забрањених корисника) и значке и поверење (додјељивање/уклањање значке, ручне значке, добијање/постављање фактора поверења, интерни кориснички профил). Свака метода `ModerationApi` прихвата `sso` параметар тако да захтев може бити направљен у име модератора који је аутентификован путем SSO-а.

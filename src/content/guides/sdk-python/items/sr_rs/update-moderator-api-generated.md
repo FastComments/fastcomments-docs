@@ -7,32 +7,32 @@
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за update_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_moderator_body import UpdateModeratorBody
 from client.rest import ApiException
 from pprint import pprint
 
 # Дефинисање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентикације и овлашћења
+# Клијент мора конфигурисати параметре аутентификације и ауторизације
 # у складу са безбедносном политиком API сервера.
-# Испод су наведени примери за сваки метод аутентификације, користите пример који
+# Примери за сваки метод аутентификације дати су у наставку, користите пример који
 # одговара вашем случају употребе.
-# Конфигурисање овлашћења помоћу API кључа: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
@@ -50,5 +50,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->update_moderator: %s\n" % e)
 [inline-code-end]
-
----

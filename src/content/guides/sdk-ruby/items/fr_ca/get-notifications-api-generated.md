@@ -1,7 +1,6 @@
----
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
@@ -13,7 +12,7 @@
 
 ## Réponse
 
-Renvoie: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Renvoie : [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Exemple
 
@@ -21,11 +20,11 @@ Renvoie: [`GetNotifications200Response`](https://github.com/FastComments/fastcom
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'autorisation
+# Mise en place de l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (valeur par défaut : nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -37,7 +36,7 @@ opts = {
   from_comment_id: 'from_comment_id_example', # Chaîne | 
   viewed: true, # Booléen | 
   type: 'type_example', # Chaîne | 
-  skip: 1.2 # Flottant | 
+  skip: 1.2 # Nombre à virgule flottante | 
 }
 
 begin

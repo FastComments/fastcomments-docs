@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
+| tag | string | path | כן |  |
+| tenantId | string | query | לא |  |
 
 ## תגובה
 
-Returns: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_hash_tag200_response.rb)
+מחזיר: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
 
 ## דוגמה
 
@@ -15,11 +15,11 @@ Returns: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת הרשאה
+# הגדרת הרשאות
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדר אימות באמצעות מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי לקבוע קידומת עבור מפתח ה-API, למשל 'Bearer' (ברירת המחדל nil)
+  # בטל את ההערה על השורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

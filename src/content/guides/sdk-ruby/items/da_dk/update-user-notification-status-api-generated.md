@@ -1,19 +1,19 @@
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| notificationId | string | path | Ja |  |
-| newStatus | string | path | Ja |  |
-| sso | string | query | Nej |  |
+| tenantId | string | forespørgsel | Ja |  |
+| notificationId | string | sti | Ja |  |
+| newStatus | string | sti | Ja |  |
+| sso | string | forespørgsel | Nej |  |
 
 ## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Returnerer: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på update_user_notification_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_status Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_status: #{e}"
 end
 [inline-code-end]
-
----

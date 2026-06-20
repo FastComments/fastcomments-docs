@@ -1,13 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | skip | number | query | 否 |  |
 
 ## 响应
 
-返回：[`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs200_response.rb)
+返回: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs_response.rb)
 
 ## 示例
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释下面的行以为 API 密钥设置前缀，例如 'Bearer'（默认值为 nil）
+  # 取消注释下行以为 API 密钥设置前缀，例如 'Bearer'（默认为 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

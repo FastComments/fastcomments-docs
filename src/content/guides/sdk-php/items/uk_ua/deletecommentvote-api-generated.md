@@ -1,18 +1,18 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | шлях | Так |  |
-| commentId | string | шлях | Так |  |
-| voteId | string | шлях | Так |  |
-| urlId | string | запит | Так |  |
-| broadcastId | string | запит | Так |  |
-| editKey | string | запит | Ні |  |
-| sso | string | запит | Ні |  |
+| tenantId | string | path | Так |  |
+| commentId | string | path | Так |  |
+| voteId | string | path | Так |  |
+| urlId | string | query | Так |  |
+| broadcastId | string | query | Так |  |
+| editKey | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentVote200Response.php)
+Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
 ## Приклад
 
@@ -28,13 +28,13 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$vote_id = 'vote_id_example'; // string
-$url_id = 'url_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // рядок
+$comment_id = 'comment_id_example'; // рядок
+$vote_id = 'vote_id_example'; // рядок
+$url_id = 'url_id_example'; // рядок
+$broadcast_id = 'broadcast_id_example'; // рядок
+$edit_key = 'edit_key_example'; // рядок
+$sso = 'sso_example'; // рядок
 
 try {
     $result = $apiInstance->deleteCommentVote($tenant_id, $comment_id, $vote_id, $url_id, $broadcast_id, $edit_key, $sso);

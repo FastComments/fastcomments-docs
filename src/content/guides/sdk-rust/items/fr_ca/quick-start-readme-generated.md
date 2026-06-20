@@ -9,7 +9,7 @@ async fn main() {
     // Crée la configuration de l'API
     let config = Configuration::new();
 
-    // Récupérer les commentaires d'une page
+    // Récupère les commentaires pour une page
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -53,14 +53,14 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Créer la configuration avec la clé API
+    // Crée la configuration avec la clé API
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
         key: "your-api-key".to_string(),
     });
 
-    // Récupérer les commentaires en utilisant l'API authentifiée
+    // Récupère les commentaires en utilisant l'API authentifiée
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### API de modération
+
+Les méthodes de modération alimentent le tableau de bord du modérateur. Elles utilisent une `Configuration` avec clé API tout comme l'API authentifiée, et chaque méthode accepte un jeton `sso` optionnel afin que l'appel puisse être effectué au nom d'un modérateur authentifié via SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Crée la configuration avec la clé API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Compte les commentaires en attente dans la file de modération
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // passe un jeton SSO pour agir au nom d'un modérateur authentifié via SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Utilisation du SSO pour l'authentification
 
 ```rust
@@ -110,7 +148,7 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Créer les données utilisateur SSO sécurisées (côté serveur seulement !)
+    // Crée les données utilisateur SSO sécurisées (côté serveur seulement !)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // ID de l'utilisateur
         "user@example.com".to_string(),   // Courriel
@@ -118,7 +156,7 @@ fn main() {
         "https://example.com/avatar.jpg".to_string(), // URL de l'avatar
     );
 
-    // Générer le jeton SSO
+    // Génère le jeton SSO
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 

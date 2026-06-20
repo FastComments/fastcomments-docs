@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | domain | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+Retourne: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfigResponse.swift)
 
 ## Exemple
 
@@ -30,3 +30,5 @@ DefaultAPI.getDomainConfig(tenantId: tenantId, domain: domain) { (response, erro
     }
 }
 [inline-code-end]
+
+---

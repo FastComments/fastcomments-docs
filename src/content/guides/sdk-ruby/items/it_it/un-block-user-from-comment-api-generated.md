@@ -1,15 +1,15 @@
 ## Parametri
 
-| Name | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Sì |  |
+| id | string | path | Sì |  |
 | userId | string | query | No |  |
 | anonUserId | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Restituisce: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Esempio
 
@@ -17,11 +17,11 @@ Restituisce: [`UnBlockCommentPublic200Response`](https://github.com/FastComments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurazione dell'autorizzazione
+# impostare l'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autorizzazione tramite API key: api_key
+  # Configurare l'autenticazione con chiave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommenta la riga seguente per impostare un prefisso per la API key, es. 'Bearer' (predefinito nil)
+  # Rimuovere il commento dalla riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (valore predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

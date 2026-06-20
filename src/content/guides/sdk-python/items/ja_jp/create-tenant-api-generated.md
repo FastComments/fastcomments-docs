@@ -1,3 +1,4 @@
+---
 ## パラメータ
 
 | Name | Type | Location | Required | Description |
@@ -6,34 +7,34 @@
 
 ## レスポンス
 
-戻り値: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant200_response.py)
+戻り値: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'create_tenant の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant200_response import CreateTenant200Response
 from client.models.create_tenant_body import CreateTenantBody
+from client.models.create_tenant_response import CreateTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義はオプションで、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータ一覧は configuration.py を参照してください。
+# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 下記に各認証方式の例を示します。あなたの認証ユースケースに合う例を使用してください。
+# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
+# 各認証方式の例を以下に示します。自分の認証ユースケースに合う例を使ってください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、下の行のコメントを外してください
+# 必要であれば、API キーに対するプレフィックス（例: Bearer）を設定するために以下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスでコンテキストに入ります
+# API クライアントのインスタンスを使ってコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
@@ -47,3 +48,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_tenant: %s\n" % e)
 [inline-code-end]
+
+---

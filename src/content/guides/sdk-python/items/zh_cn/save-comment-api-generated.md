@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | isLive | boolean | query | 否 |  |
@@ -10,27 +10,27 @@
 
 ## 响应
 
-返回: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+返回: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'save_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义 host 是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # 客户端必须根据 API 服务器的安全策略配置身份验证和授权参数。
-# 下方提供了每种认证方法的示例，请使用适合您认证用例的示例。
-#
+# 下方提供了每种身份验证方法的示例，请使用满足您用例的示例。
+
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
@@ -43,10 +43,10 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (可选)
-    do_spam_check = True # bool |  (可选)
-    send_emails = True # bool |  (可选)
-    populate_notifications = True # bool |  (可选)
+    is_live = True # bool |  （可选）
+    do_spam_check = True # bool |  （可选）
+    send_emails = True # bool |  （可选）
+    populate_notifications = True # bool |  （可选）
 
     try:
         api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
@@ -55,5 +55,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->save_comment: %s\n" % e)
 [inline-code-end]
-
----

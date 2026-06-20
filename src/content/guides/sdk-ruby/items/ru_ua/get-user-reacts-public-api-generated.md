@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postIds | array | query | Нет |  |
@@ -8,20 +8,20 @@
 
 ## Ответ
 
-Возвращает: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+Возвращает: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_user_reacts_public Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_user_reacts_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  post_ids: ['inner_example'], # Массив<String> | 
-  sso: 'sso_example' # Строка | 
+  post_ids: ['inner_example'], # Array<String> | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_reacts_public: #{e}"
 end
 [inline-code-end]
-
----

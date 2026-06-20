@@ -1,3 +1,4 @@
+---
 ## Παράμετροι
 
 | Name | Type | Location | Required | Description |
@@ -9,7 +10,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Επιστρέφει: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Παράδειγμα
 
@@ -19,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+  # Ρύθμιση εξουσιοδότησης με κλειδί API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Απο-σχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (η προεπιλογή είναι nil)
+  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Primer
 
@@ -18,15 +18,15 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
+// Konfiguriši autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite liniju ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Otkomentari ispod da postaviš prefiks (npr. Bearer) za API ključ, ukoliko je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
+    // Ako želite koristiti prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, po defaultu će biti korišćen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -41,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->sendInvite: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

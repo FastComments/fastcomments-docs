@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Ejemplo
 
@@ -16,19 +16,19 @@ Devuelve: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorización
+# Configurar autorización
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configure la autorización por clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto es nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Cadena | 
-id = 'id_example' # Cadena | 
+tenant_id = 'tenant_id_example' # String | 
+id = 'id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example' # Cadena | 
+  edit_key: 'edit_key_example' # String | 
 }
 
 begin

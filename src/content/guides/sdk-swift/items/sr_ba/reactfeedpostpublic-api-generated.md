@@ -1,30 +1,31 @@
+---
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | putanja | Yes |  |
-| postId | string | putanja | Yes |  |
-| isUndo | boolean | упит | No |  |
-| broadcastId | string | упит | No |  |
-| sso | string | упит | No |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| isUndo | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Одговор
 
-Враћа: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostPublic200Response.swift)
+Враћа: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још у бета фази. За сваки проблем, пријавите на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postId = "postId_example" // String | 
 let reactBodyParams = ReactBodyParams(reactType: "reactType_example") // ReactBodyParams | 
-let isUndo = true // Bool |  (опционално)
-let broadcastId = "broadcastId_example" // String |  (опционално)
-let sso = "sso_example" // String |  (опционално)
+let isUndo = true // Bool |  (опционо)
+let broadcastId = "broadcastId_example" // String |  (опционо)
+let sso = "sso_example" // String |  (опционо)
 
 PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
     guard error == nil else {

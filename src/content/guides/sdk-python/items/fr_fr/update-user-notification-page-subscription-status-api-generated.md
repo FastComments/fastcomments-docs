@@ -1,6 +1,6 @@
-Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racine, et aussi
+Activer ou désactiver les notifications pour une page. Lorsqu'un utilisateur est abonné à une page, des notifications sont créées pour les nouveaux commentaires racines, et aussi
 
-## Paramètres
+## Parameters
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
@@ -13,14 +13,14 @@ Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs
 
 ## Réponse
 
-Renvoie : [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+Renvoie : [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_page_subscription_status_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de update_user_notification_page_subscription_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_page_subscription_status_response import UpdateUserNotificationPageSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 

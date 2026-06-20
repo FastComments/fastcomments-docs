@@ -1,11 +1,10 @@
----
 req
 tenantId
 urlId
 
 ## Parámetros
 
-| Name | Type | Location | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
@@ -38,13 +37,13 @@ urlId
 
 ## Respuesta
 
-Devuelve: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsPublic200Response.swift)
+Devuelve: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor infórmelo a través de http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -87,5 +86,3 @@ PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direct
     }
 }
 [inline-code-end]
-
----

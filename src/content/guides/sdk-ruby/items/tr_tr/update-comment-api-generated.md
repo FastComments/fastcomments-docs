@@ -1,6 +1,6 @@
-## Parametreler
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
@@ -8,11 +8,11 @@
 | doSpamCheck | boolean | query | Hayır |  |
 | isLive | boolean | query | Hayır |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+Dönüş: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'update_comment Örneği'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,10 +20,8 @@ require 'time'
 require 'fastcomments-client'
 # yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandır: api_key
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
+  # API anahtarı yetkilendirmesini yapılandırın: api_key
+  # API anahtarı için bir önek ayarlamak amacıyla aşağıdaki satırın yorumunu kaldırın, ör. 'Bearer' (varsayılan nil)
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
@@ -44,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_comment: #{e}"
 end
 [inline-code-end]
-
----

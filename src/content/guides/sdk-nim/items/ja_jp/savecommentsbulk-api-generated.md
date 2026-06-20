@@ -7,15 +7,13 @@
 | isLive | bool | いいえ |  |
 | doSpamCheck | bool | いいえ |  |
 | sendEmails | bool | いいえ |  |
-| populateNotifications | bool): (Option[seq[SaveComment_200_response]] | いいえ |  |
+| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | いいえ |  |
 | id | string | いいえ |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | いいえ |  |
-| userId | string | いいえ |  |
-| anonUserId | string | いいえ |  |
+| fromName | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+戻り値: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 例
 
@@ -24,20 +22,17 @@
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = true,
-  doSpamCheck = true,
+  isLive = false,
+  doSpamCheck = false,
   sendEmails = false,
-  populateNotifications = true,
-  id = "batch-20251122",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = "anon-789"
+  populateNotifications = false,
+  id = "",
+  fromName = ""
 )
-if response.isSome:
-  let unblocked = response.get()
-  echo "Unblocked response received: ", unblocked
-else:
-  echo "No unblocked response, httpResponse: ", $httpResponse
-[inline-code-end]
 
----
+if response.isSome:
+  let apiResp = response.get()
+  echo "Bulk save succeeded, tenant:", " my-tenant-123"
+else:
+  echo "Bulk save returned no API response"
+[inline-code-end]

@@ -1,14 +1,14 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
-| commentIds | string | query | 是 | 用逗号分隔的评论 ID 列表。 |
+| commentIds | string | query | 是 | 以逗号分隔的评论 ID 列表。 |
 | sso | string | query | 否 |  |
 
 ## 响应
 
-返回：[`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+返回：[`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## 示例
 
@@ -19,7 +19,7 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | 用逗号分隔的评论 ID 列表。
+comment_ids = 'comment_ids_example' # String | 以逗号分隔的评论 ID 列表。
 opts = {
   sso: 'sso_example' # String | 
 }
@@ -32,3 +32,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
+
+---

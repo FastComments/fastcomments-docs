@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Location | Obligatorisk | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Ja |  |
@@ -8,36 +8,36 @@
 
 ## Svar
 
-Returnerer: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_ticket_state200_response.py)
+Returnerer: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/change_ticket_state_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'change_ticket_state Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.change_ticket_state200_response import ChangeTicketState200Response
 from client.models.change_ticket_state_body import ChangeTicketStateBody
+from client.models.change_ticket_state_response import ChangeTicketStateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definering af hosten er valgfri og som standard https://fastcomments.com
+# Angivelse af host er valgfri og standardværdien er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# Klienten skal konfigurere autentifikations- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler på hver godkendelsesmetode er vist nedenfor, brug det eksempel der
-# passer til dit brugstilfælde.
+# Eksempler for hver auth-metode er angivet nedenfor; brug det eksempel der
+# opfylder dit auth-brugsscenarie.
 
-# Konfigurer API-nøgle-autorisering: api_key
+# Konfigurer API-nøglegodkendelse: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentar fra nedenstående for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Gå ind i en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.DefaultApi(api_client)

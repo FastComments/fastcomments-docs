@@ -1,34 +1,35 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
 ## Odgovor
 
-Vraća: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result200_response.py)
+Vraća: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_question_result_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer create_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_question_result Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_question_result200_response import CreateQuestionResult200Response
 from client.models.create_question_result_body import CreateQuestionResultBody
+from client.models.create_question_result_response import CreateQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurisati parametre autentifikacije i autorizacije
-# u skladu sa bezbednosnom politikom API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa politikom bezbednosti API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite onaj primer koji
 # odgovara vašem slučaju upotrebe.
-# Konfigurišite autorizaciju putem API ključa: api_key
+ 
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
@@ -48,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_question_result: %s\n" % e)
 [inline-code-end]
-
----

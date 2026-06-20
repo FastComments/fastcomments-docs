@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Wymagane | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
@@ -9,24 +9,22 @@
 
 ## Odpowiedź
 
-Zwraca: [`DeleteComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteComment_200_response.h)
+Zwraca: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteCommentResult.h)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład deleteComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U("moderator@acme.com"));
+utility::string_t commentId = U("cmt-456789");
+boost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U("user@example.com"));
 boost::optional<bool> isLive = boost::optional<bool>(true);
+
 api->deleteComment(tenantId, commentId, contextUserId, isLive)
-.then([](pplx::task<std::shared_ptr<DeleteComment_200_response>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto processed = std::make_shared<DeleteComment_200_response>(*resp);
-        }
-    } catch (const std::exception&) {
-    }
-});
+    .then([](std::shared_ptr<DeleteCommentResult> result){
+        auto res = result ? result : std::make_shared<DeleteCommentResult>();
+        std::cout << "DeleteCommentResult ptr=" << static_cast<const void*>(res.get()) << std::endl;
+    });
 [inline-code-end]
+
+---

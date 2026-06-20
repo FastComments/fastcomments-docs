@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Name | Type | Location | Required | Description |
@@ -12,18 +13,18 @@
 
 ## Risposta
 
-Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Restituisce: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di delete_comment_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e per default è https://fastcomments.com
+# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
 # Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_vote: %s\n" % e)
 [inline-code-end]
+
+---

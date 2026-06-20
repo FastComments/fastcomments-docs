@@ -1,34 +1,34 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | No |  |
+|------|------|---------|-------------|
+| tenantId | string | Ja |  |
+| id | string | Nee |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'replaceTenantPackage Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let replaceBody = ReplaceTenantPackageBody(
-  packageName = "Community Pro",
-  seats = 500,
-  enableModeration = true,
-  features = @["moderation", "analytics", "single-sign-on"]
-)
-
 let (response, httpResponse) = client.replaceTenantPackage(
   tenantId = "my-tenant-123",
-  id = "community-pro",
-  replaceTenantPackageBody = replaceBody
+  id = "pkg-987",
+  replaceTenantPackageBody = ReplaceTenantPackageBody(
+    name = "Premium Plan",
+    priceCents = 999,
+    seats = 50,
+    enabled = true,
+    features = @["moderation", "analytics", "priority-support"]
+  )
 )
 
 if response.isSome:
-  let flagResp = response.get()
-  echo "Package replaced for tenant: ", "my-tenant-123"
-  discard flagResp
+  let apiEmpty = response.get()
+  discard apiEmpty
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | Type | Location | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tag | string | 路径 | 是 |  |
-| tenantId | string | 查询 | 否 |  |
+| tag | string | path | 是 |  |
+| tenantId | string | query | 否 |  |
 
 ## 响应
 
-返回: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PatchHashTag200Response.swift)
+返回: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateHashTagResponse.swift)
 
 ## 示例
 
@@ -17,8 +17,8 @@
 import FastCommentsSwift
 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (可选)
-let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (可选)
+let tenantId = "tenantId_example" // String |  （可选）
+let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  （可选）
 
 DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateHashTagBody) { (response, error) in
     guard error == nil else {

@@ -1,35 +1,33 @@
+---
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | replaceTenantPackageBody | ReplaceTenantPackageBody | Ja |  |
 
-## Svar
+## Respons
 
-Returnerer: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'Eksempel på replaceTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
-utility::string_t packageId = utility::string_t("pkg-456");
-ReplaceTenantPackageBody body;
-body.name = utility::string_t("Premium Plan");
-body.planId = utility::string_t("premium_monthly");
-body.seats = 25;
-body.billingEmail = utility::string_t("billing@acme.com");
-boost::optional<utility::string_t> notes = boost::optional<utility::string_t>(utility::string_t("Migrated subscription"));
-body.notes = notes;
-api->replaceTenantPackage(tenantId, packageId, body).then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> task){
-    try{
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t packageId = U("pkg-456");
+auto replaceBody = std::make_shared<ReplaceTenantPackageBody>();
+replaceBody->name = U("Pro Plan");
+replaceBody->description = boost::optional<utility::string_t>(U("Enterprise package with enhanced support"));
+replaceBody->maxSeats = boost::optional<int>(500);
+api->replaceTenantPackage(tenantId, packageId, *replaceBody)
+.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
+    try {
         auto resp = task.get();
-        if(resp){
-            auto resultCopy = std::make_shared<FlagCommentPublic_200_response>(*resp);
-        }
-    } catch(const std::exception&){
+        std::cout << "Package replaced successfully\n";
+    } catch (const std::exception &e) {
+        std::cerr << "Error replacing package: " << e.what() << '\n';
     }
 });
 [inline-code-end]

@@ -1,32 +1,28 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | createHashTagBody | CreateHashTagBody | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`Option[AddHashTag_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_add_hash_tag200response.nim)
+Επιστρέφει: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_hash_tag_response.nim)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα addHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createBody = CreateHashTagBody(
-  name = "sports",
-  description = "Articles and discussions about sports",
-  aliases = @["sport", "athletics"],
-  isActive = true
-)
-
-let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123", createHashTagBody = createBody)
-
+let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123",
+  createHashTagBody = CreateHashTagBody(name = "Breaking News",
+    slug = "breaking-news",
+    description = "Major breaking news items",
+    color = "#ff0000",
+    isTrending = true,
+    aliases = @["breaking", "news"]))
 if response.isSome:
-  let added = response.get()
-  echo "HashTag added successfully"
-else:
-  echo "Failed to add HashTag"
+  let created = response.get()
+  echo created
 [inline-code-end]
 
 ---

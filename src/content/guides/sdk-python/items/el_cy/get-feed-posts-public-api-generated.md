@@ -4,7 +4,7 @@ afterId
 
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | afterId | string | query | Όχι |  |
@@ -16,35 +16,35 @@ afterId
 
 ## Απόκριση
 
-Επιστρέφει: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_feed_posts_public Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο ορισμός του host είναι προαιρετικός και προκαθορισμένο είναι https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ορισμός του host είναι προαιρετικός και έχει ως προεπιλογή το https://fastcomments.com
+# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα instance του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (optional)
-    limit = 56 # int |  (optional)
-    tags = ['tags_example'] # List[str] |  (optional)
-    sso = 'sso_example' # str |  (optional)
-    is_crawler = True # bool |  (optional)
-    include_user_info = True # bool |  (optional)
+    after_id = 'after_id_example' # str |  (προαιρετικό)
+    limit = 56 # int |  (προαιρετικό)
+    tags = ['tags_example'] # List[str] |  (προαιρετικό)
+    sso = 'sso_example' # str |  (προαιρετικό)
+    is_crawler = True # bool |  (προαιρετικό)
+    include_user_info = True # bool |  (προαιρετικό)
 
     try:
         api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)
@@ -53,3 +53,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_feed_posts_public: %s\n" % e)
 [inline-code-end]
+
+---

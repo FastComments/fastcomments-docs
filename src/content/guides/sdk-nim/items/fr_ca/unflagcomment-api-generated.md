@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
@@ -9,22 +9,22 @@
 
 ## Réponse
 
-Renvoie: [`Option[FlagComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment200response.nim)
+Renvoie : [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de unFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'unFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unFlagComment(
-  tenantId = "my-tenant-123",
-  id = "flag-789",
-  userId = "",
-  anonUserId = ""
-)
+let (response, httpResponse) = client.unFlagComment(tenantId = "my-tenant-123",
+  id = "comment-98765",
+  userId = "user-12345",
+  anonUserId = "")
 
 if response.isSome:
-  let flagResponse = response.get()
-  echo "Comment unflagged successfully"
+  let flagResp = response.get()
+  echo "Unflagged comment response:", flagResp
+else:
+  echo "Unflag failed, HTTP status:", httpResponse.status
 [inline-code-end]
 
 ---

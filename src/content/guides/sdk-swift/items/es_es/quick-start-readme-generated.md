@@ -1,4 +1,4 @@
-### Uso de la API Pública
+### Uso de la API pública
 
 ```swift
 import FastCommentsSwift
@@ -6,7 +6,7 @@ import FastCommentsSwift
 // Crear cliente de la API
 let publicApi = PublicAPI()
 
-// Obtener comentarios para una página
+// Obtener comentarios de una página
 do {
     let response = try await publicApi.getCommentsPublic(
         tenantId: "your-tenant-id",
@@ -22,12 +22,12 @@ do {
 }
 ```
 
-### Uso de la API Autenticada
+### Uso de la API autenticada
 
 ```swift
 import FastCommentsSwift
 
-// Crear configuración con la clave API
+// Crear configuración con la clave de API
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
@@ -47,6 +47,29 @@ do {
 }
 ```
 
+### Uso de la API de moderación
+
+```swift
+import FastCommentsSwift
+
+// Los métodos de moderación se autorizan con un token `sso` para el moderador que actúa
+// (genérelo con FastCommentsSSO, vea la sección SSO más arriba).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Uso de SSO para la autenticación
 
 #### SSO seguro (recomendado para producción)
@@ -58,7 +81,7 @@ let apiKey = "your-api-key"
 
 // Crear datos de usuario SSO seguros (¡solo del lado del servidor!)
 let userData = SecureSSOUserData(
-    id: "user-123",              // ID de usuario
+    id: "user-123",              // ID del usuario
     email: "user@example.com",   // Correo electrónico
     username: "johndoe",         // Nombre de usuario
     avatar: "https://example.com/avatar.jpg" // URL del avatar
@@ -81,7 +104,7 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Crear datos de usuario SSO simples (no se necesita clave API)
+// Crear datos de usuario SSO simples (no se necesita clave de API)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

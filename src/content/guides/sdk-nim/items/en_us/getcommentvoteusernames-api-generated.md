@@ -9,15 +9,14 @@
 
 ## Response
 
-Returns: [`Option[GetCommentVoteUserNames_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_vote_user_names200response.nim)
+Returns: [`Option[GetCommentVoteUserNamesSuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_vote_user_names_success_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "c_987654321", dir = 0, sso = "")
+let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "cmt-987654", dir = 0, sso = "")
 if response.isSome:
-  let res = response.get()
-  for userName in res.userNames:
-    echo userName
+  let success: GetCommentVoteUserNamesSuccessResponse = response.get()
+  discard success
 [inline-code-end]

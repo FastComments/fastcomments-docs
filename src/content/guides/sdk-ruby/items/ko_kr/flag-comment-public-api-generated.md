@@ -1,3 +1,4 @@
+---
 ## 매개변수
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
@@ -5,11 +6,11 @@
 | tenantId | string | query | 예 |  |
 | commentId | string | path | 예 |  |
 | isFlagged | boolean | query | 예 |  |
-| sso | string | query | 아니오 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 예제
 
@@ -21,7 +22,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # 문자열 | 
 comment_id = 'comment_id_example' # 문자열 | 
-is_flagged = true # 부울 | 
+is_flagged = true # 불리언 | 
 opts = {
   sso: 'sso_example' # 문자열 | 
 }

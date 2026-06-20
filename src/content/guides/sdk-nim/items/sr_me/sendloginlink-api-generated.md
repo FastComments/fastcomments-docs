@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| redirectURL | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| redirectURL | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer sendLoginLink'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример sendLoginLink'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.sendLoginLink(tenantId = "fastcomments-tenant-42", id = "user-9876", redirectURL = "https://news.example.com/articles/2026/fastcomments-login")
+let (response, httpResponse) = client.sendLoginLink(tenantId = "my-tenant-123", id = "user-456", redirectURL = "https://app.newsportal.com/welcome")
 if response.isSome:
-  let loginResp = response.get()
+  let apiResp = response.get()
   echo "Login link sent successfully"
 else:
-  echo "Failed to send login link"
+  echo "Failed to send login link, HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

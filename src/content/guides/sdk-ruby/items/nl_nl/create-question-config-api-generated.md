@@ -1,12 +1,12 @@
 ## Parameters
 
-| Naam | Type | Location | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Respons
+## Response
 
-Retourneert: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config200_response.rb)
+Retourneert: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_question_config_response.rb)
 
 ## Voorbeeld
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API key-autorisatie: api_key
+  # Configureer autorisatie met API-sleutel: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal de commentaarstreep van de volgende regel om een voorvoegsel voor de API key in te stellen, bijv. 'Bearer' (standaard is nil)
+  # Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_question_config: #{e}"
 end
 [inline-code-end]
-
----

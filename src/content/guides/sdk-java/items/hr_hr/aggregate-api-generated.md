@@ -1,9 +1,8 @@
-Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija.
-Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
+Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija. Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | parentTenantId | string | query | Ne |  |
@@ -11,11 +10,11 @@ Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
 ## Odgovor
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer aggregate'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -33,7 +32,7 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Poništi komentiranje sljedećeg retka da biste postavili prefiks za API ključ, npr. "Token" (zadano null)
+    // Otkomentirajte sljedeću liniju da postavite prefiks za API ključ, npr. "Token" (zadano: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,7 +41,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();

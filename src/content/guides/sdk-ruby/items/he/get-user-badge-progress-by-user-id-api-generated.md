@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+מחזיר: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## דוגמה
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # קביעת הרשאת מפתח ה-API: api_key
+  # הגדר אישור מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר הערה מהשורה הבאה כדי לקבוע קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # בטל את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -32,6 +32,6 @@ begin
   result = api_instance.get_user_badge_progress_by_user_id(tenant_id, user_id)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "שגיאה בעת קריאה ל-DefaultApi->get_user_badge_progress_by_user_id: #{e}"
+  puts "Error when calling DefaultApi->get_user_badge_progress_by_user_id: #{e}"
 end
 [inline-code-end]

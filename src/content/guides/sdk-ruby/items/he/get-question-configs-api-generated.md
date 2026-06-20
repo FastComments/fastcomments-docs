@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs200_response.rb)
+מחזיר: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_configs_response.rb)
 
 ## דוגמה
 
@@ -15,18 +15,16 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדר אישור
+# הגדרת אימות
 FastCommentsClient.configure do |config|
-  # קבע אימות מפתח API: api_key
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר תחילית למפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
+  # הגדר אימות באמצעות מפתח API: api_key
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת המחדל: nil)
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  skip: 1.2 # מספר עשרוני | 
+  skip: 1.2 # Float | 
 }
 
 begin

@@ -1,6 +1,6 @@
 ### Verwendung authentifizierter APIs (DefaultApi)
 
-**Wichtig:** Du musst deinen API-Schlüssel in der Configuration setzen, bevor du authentifizierte Anfragen durchführst. Wenn du das nicht tust, schlagen Anfragen mit einem 401-Fehler fehl.
+**Wichtig:** Sie müssen Ihren API-Schlüssel in der Configuration setzen, bevor Sie authentifizierte Anfragen stellen. Wenn Sie das nicht tun, schlagen Anfragen mit einem 401-Fehler fehl.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -10,14 +10,14 @@ from client.models import CreateAPISSOUserData
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# ERFORDERLICH: Setze deinen API-Schlüssel (diesen bekommst du in deinem FastComments-Dashboard)
+# ERFORDERLICH: Setzen Sie Ihren API-Schlüssel (diesen finden Sie im FastComments-Dashboard)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
 # Erstelle die API-Instanz mit dem konfigurierten Client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Jetzt kannst du authentifizierte API-Aufrufe machen
+# Nun können Sie authentifizierte API-Aufrufe durchführen
 try:
     # Beispiel: Einen SSO-Benutzer hinzufügen
     user_data = CreateAPISSOUserData(
@@ -36,7 +36,7 @@ except Exception as e:
     print(f"Error: {e}")
     # Häufige Fehler:
     # - 401: API-Schlüssel fehlt oder ist ungültig
-    # - 400: Anfragevalidierung fehlgeschlagen
+    # - 400: Anforderungsvalidierung fehlgeschlagen
 ```
 
 ### Verwendung öffentlicher APIs (PublicApi)
@@ -62,6 +62,27 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+### Verwendung des Moderations-Dashboards (ModerationApi)
+
+Die `ModerationApi` betreibt das Moderator-Dashboard. Methoden werden im Namen eines Moderators durch Übergeben eines `sso`-Tokens aufgerufen:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Zähle die zur Moderation wartenden Kommentare
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
 ### Verwendung von SSO (Single Sign-On)
 
 Das SDK enthält Hilfsfunktionen zum Erzeugen sicherer SSO-Tokens:
@@ -77,16 +98,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Erstelle eine SSO-Instanz mit deinem API-Geheimnis
+# Erstelle eine SSO-Instanz mit Ihrem API-Geheimnis
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generiere das SSO-Token
+# Erzeuge das SSO-Token
 sso_token = sso.create_token()
 
-# Verwende dieses Token im Frontend oder übergib es an API-Aufrufe
+# Verwenden Sie dieses Token in Ihrem Frontend oder übergeben Sie es an API-Aufrufe
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -106,8 +127,8 @@ sso_token = sso.create_token()
 
 ### Häufige Probleme
 
-1. **401 "missing-api-key" Fehler**: Stelle sicher, dass du `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` setzt, bevor du die DefaultApi-Instanz erstellst.
-2. **Falsche API-Klasse**: Verwende `DefaultApi` für serverseitige authentifizierte Anfragen, `PublicApi` für clientseitige/öffentliche Anfragen.
-3. **Importfehler**: Stelle sicher, dass du aus dem richtigen Modul importierst:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+1. **401 "missing-api-key" Fehler**: Stellen Sie sicher, dass Sie `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` setzen, bevor Sie die DefaultApi-Instanz erstellen.
+2. **Falsche API-Klasse**: Verwenden Sie `DefaultApi` für serverseitige authentifizierte Anfragen, `PublicApi` für clientseitige / öffentliche Anfragen und `ModerationApi` für Anfragen des Moderator-Dashboards.
+3. **Importfehler**: Stellen Sie sicher, dass Sie aus dem richtigen Modul importieren:
+   - API-Client: `from client import ...`
+   - SSO-Dienstprogramme: `from sso import ...`

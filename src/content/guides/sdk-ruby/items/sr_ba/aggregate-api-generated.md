@@ -1,29 +1,28 @@
-Агрегира документе групишући их (ако је groupBy наведен) и примјењујући више операција.
-Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
+Agregira dokumente grupišući ih (ako je groupBy naveden) i primjenjujući više operacija. Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| parentTenantId | string | query | Не |  |
-| includeStats | boolean | query | Не |  |
+| tenantId | string | query | Da |  |
+| parentTenantId | string | query | Ne |  |
+| includeStats | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример агрегирања'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигуришите API кључ за ауторизацију: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментујте сљедећу линију да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумјевано nil)
+  # Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
-
----

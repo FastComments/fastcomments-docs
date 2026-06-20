@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Name | Type | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | post_ids | Vec<String> | Da |  |
@@ -8,24 +8,23 @@
 
 ## Odgovor
 
-Vrne: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_stats_200_response.rs)
+Vrne: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/feed_posts_stats_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_feed_posts_stats'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_feed_stats() -> Result<(), Error> {
+async fn example_main(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: vec![
-            "news/article/2026/03/25/product-launch".to_string(),
-            "blog/product-updates/q1-2026".to_string(),
+            "news/2026-product-launch".to_string(),
+            "blog/engineering-architecture".to_string()
         ],
-        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.examplepayload.signature".to_string()),
+        sso: Some("sso.jwt.token.eyJhbGci...".to_string()),
     };
-    let stats: GetFeedPostsStats200Response = get_feed_posts_stats(&configuration, params).await?;
+    let stats: FeedPostsStatsResponse = get_feed_posts_stats(configuration, params).await?;
+    let _api_status: ApiStatus = /* uporabite stats po potrebi */ stats.into();
     Ok(())
 }
 [inline-code-end]
-
----

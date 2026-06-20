@@ -1,4 +1,5 @@
-Agrège des documents en les regroupant (si groupBy est fourni) et en appliquant plusieurs opérations. Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en charge.
+Agrège des documents en les groupant (si groupBy est fourni) et en appliquant plusieurs opérations.
+Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en charge.
 
 ## Paramètres
 
@@ -10,19 +11,19 @@ Agrège des documents en les regroupant (si groupBy est fourni) et en appliquant
 
 ## Réponse
 
-Renvoie : [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Renvoie : [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d’agrégation'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'agrégation'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configurer l'autorisation par clé API: api_key
+  # Configurez l'autorisation par clé API : api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (valeur par défaut : nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

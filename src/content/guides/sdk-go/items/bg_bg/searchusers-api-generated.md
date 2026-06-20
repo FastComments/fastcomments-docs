@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -12,7 +11,7 @@
 
 ## Отговор
 
-Връща: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+Връща: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## Пример
 
@@ -30,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string |  (не е задължително)
-	mentionGroupIds := []string{"Inner_example"} // []string |  (не е задължително)
-	sso := "sso_example" // string |  (не е задължително)
-	searchSection := "searchSection_example" // string |  (не е задължително)
+	usernameStartsWith := "usernameStartsWith_example" // string |  (незадължително)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (незадължително)
+	sso := "sso_example" // string |  (незадължително)
+	searchSection := "searchSection_example" // string |  (незадължително)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -42,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `SearchUsers`: SearchUsers200Response
+	// отговор от `SearchUsers`: SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

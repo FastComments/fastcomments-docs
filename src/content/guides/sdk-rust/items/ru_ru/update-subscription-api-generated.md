@@ -15,19 +15,19 @@
 
 [inline-code-attrs-start title = 'Пример update_subscription'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_update_subscription() -> Result<(), Error> {
+async fn run_update() -> Result<UpdateSubscriptionApiResponse, Error> {
     let params: UpdateSubscriptionParams = UpdateSubscriptionParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "sub_8f9a2b".to_string(),
+        id: "sub-8f3a2b".to_string(),
         update_api_user_subscription_data: models::UpdateApiUserSubscriptionData {
-            plan: "newsletter-weekly".to_string(),
             active: true,
-            renewal_period_days: Some(30),
+            plan: "standard".to_string(),
+            topics: vec!["news/article".to_string(), "product/updates".to_string()],
         },
-        user_id: Some("user_42".to_string()),
+        user_id: Some("user-987".to_string()),
     };
-    let response: UpdateSubscriptionApiResponse = update_subscription(&configuration, params).await?;
-    Ok(())
+    let updated: UpdateSubscriptionApiResponse = update_subscription(&configuration, params).await?;
+    Ok(updated)
 }
 [inline-code-end]
 

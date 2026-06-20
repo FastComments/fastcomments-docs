@@ -21,895 +21,1255 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "Aggregatie",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregatie",
       "type": "api"
     },
     {
-      "name": "getAuditLogs",
+      "name": "Auditlogs ophalen",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Auditlogboeken",
+      "subCat": "Auditlogs",
       "type": "api"
     },
     {
-      "name": "blockFromCommentPublic",
+      "name": "Uitloggen (publiek)",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "Authenticatie",
+      "type": "api"
+    },
+    {
+      "name": "Blokkeren vanaf opmerking (publiek)",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van opmerking",
+      "subCat": "Blokkeren vanaf opmerking",
       "type": "api"
     },
     {
-      "name": "unBlockCommentPublic",
+      "name": "Opmerking deblokkeren (publiek)",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van opmerking",
+      "subCat": "Blokkeren vanaf opmerking",
       "type": "api"
     },
     {
-      "name": "checkedCommentsForBlocked",
+      "name": "Gecontroleerde geblokkeerde reacties",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Geblokkeerde opmerkingen controleren",
+      "subCat": "Geblokkeerde reacties controleren",
       "type": "api"
     },
     {
-      "name": "blockUserFromComment",
+      "name": "Gebruiker blokkeren bij opmerking",
       "file": "blockuserfromcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "createCommentPublic",
+      "name": "Reactie aanmaken (publiek)",
       "file": "createcommentpublic-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "deleteComment",
+      "name": "Reactie verwijderen",
       "file": "deletecomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "deleteCommentPublic",
+      "name": "Reactie verwijderen (publiek)",
       "file": "deletecommentpublic-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "deleteCommentVote",
+      "name": "Reactiestem verwijderen",
       "file": "deletecommentvote-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "flagComment",
+      "name": "Reactie melden",
       "file": "flagcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "getComment",
+      "name": "Reactie ophalen",
       "file": "getcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "getComments",
+      "name": "Reacties ophalen",
       "file": "getcomments-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "getCommentsPublic",
+      "name": "Reacties ophalen (publiek)",
       "file": "getcommentspublic-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "getCommentText",
+      "name": "Reactietekst ophalen",
       "file": "getcommenttext-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "getCommentVoteUserNames",
+      "name": "Gebruikersnamen van reactiestemmen ophalen",
       "file": "getcommentvoteusernames-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "lockComment",
+      "name": "Reactie vergrendelen",
       "file": "lockcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "pinComment",
+      "name": "Reactie vastzetten",
       "file": "pincomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "saveComment",
+      "name": "Reactie opslaan",
       "file": "savecomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "saveCommentsBulk",
+      "name": "Reacties in bulk opslaan",
       "file": "savecommentsbulk-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "setCommentText",
+      "name": "Reactietekst instellen",
       "file": "setcommenttext-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "unBlockUserFromComment",
+      "name": "Gebruiker deblokkeren bij reactie",
       "file": "unblockuserfromcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "unFlagComment",
+      "name": "Reactie melding intrekken",
       "file": "unflagcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "unLockComment",
+      "name": "Reactie ontgrendelen",
       "file": "unlockcomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "unPinComment",
+      "name": "Reactie ontpinnen",
       "file": "unpincomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "updateComment",
+      "name": "Reactie bijwerken",
       "file": "updatecomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "voteComment",
+      "name": "Stem op reactie",
       "file": "votecomment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
-      "name": "addDomainConfig",
+      "name": "Reacties voor gebruiker ophalen",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Reacties voor gebruiker",
+      "type": "api"
+    },
+    {
+      "name": "Domeinconfiguratie toevoegen",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Domeinconfiguraties",
       "type": "api"
     },
     {
-      "name": "deleteDomainConfig",
+      "name": "Domeinconfiguratie verwijderen",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "Domeinconfiguraties",
       "type": "api"
     },
     {
-      "name": "getDomainConfig",
+      "name": "Domeinconfiguratie ophalen",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "Domeinconfiguraties",
       "type": "api"
     },
     {
-      "name": "getDomainConfigs",
+      "name": "Domeinconfiguraties ophalen",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Domeinconfiguraties",
       "type": "api"
     },
     {
-      "name": "patchDomainConfig",
+      "name": "Domeinconfiguratie gedeeltelijk bijwerken",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Domeinconfiguraties",
       "type": "api"
     },
     {
-      "name": "putDomainConfig",
+      "name": "Domeinconfiguratie vervangen",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Domeinconfiguraties",
       "type": "api"
     },
     {
-      "name": "createEmailTemplate",
+      "name": "E-mailsjabloon aanmaken",
       "file": "createemailtemplate-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "deleteEmailTemplate",
+      "name": "E-mailsjabloon verwijderen",
       "file": "deleteemailtemplate-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "deleteEmailTemplateRenderError",
+      "name": "Weergavefout e-mailsjabloon verwijderen",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "getEmailTemplate",
+      "name": "E-mailsjabloon ophalen",
       "file": "getemailtemplate-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "getEmailTemplateDefinitions",
+      "name": "Definities e-mailsjablonen ophalen",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "getEmailTemplateRenderErrors",
+      "name": "Weergavefouten e-mailsjablonen ophalen",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "getEmailTemplates",
+      "name": "E-mailsjablonen ophalen",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "renderEmailTemplate",
+      "name": "E-mailsjabloon weergeven",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "updateEmailTemplate",
+      "name": "E-mailsjabloon bijwerken",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
-      "name": "getEventLog",
+      "name": "Gebeurtenislogboek ophalen",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Evenementenlogboek",
+      "subCat": "Gebeurtenislogboek",
       "type": "api"
     },
     {
-      "name": "getGlobalEventLog",
+      "name": "Globaal gebeurtenislogboek ophalen",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Evenementenlogboek",
+      "subCat": "Gebeurtenislogboek",
       "type": "api"
     },
     {
-      "name": "createFeedPost",
+      "name": "Feedbericht aanmaken",
       "file": "createfeedpost-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "createFeedPostPublic",
+      "name": "Feedbericht aanmaken (publiek)",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "deleteFeedPostPublic",
+      "name": "Feedbericht verwijderen (publiek)",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "getFeedPosts",
+      "name": "Feedberichten ophalen",
       "file": "getfeedposts-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "getFeedPostsPublic",
+      "name": "Feedberichten ophalen (publiek)",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "getFeedPostsStats",
+      "name": "Statistieken feedberichten ophalen",
       "file": "getfeedpostsstats-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "getUserReactsPublic",
+      "name": "Gebruikersreacties ophalen (publiek)",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "reactFeedPostPublic",
+      "name": "Reageren op feedbericht (publiek)",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "updateFeedPost",
+      "name": "Feedbericht bijwerken",
       "file": "updatefeedpost-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "updateFeedPostPublic",
+      "name": "Feedbericht bijwerken (publiek)",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Feedberichten",
       "type": "api"
     },
     {
-      "name": "flagCommentPublic",
+      "name": "Reactie melden (publiek)",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Opmerking markeren",
+      "subCat": "Opmerking melden",
       "type": "api"
     },
     {
-      "name": "addHashTag",
+      "name": "Grote GIF ophalen",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIFs",
+      "type": "api"
+    },
+    {
+      "name": "GIF's zoeken",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIFs",
+      "type": "api"
+    },
+    {
+      "name": "Trending GIF's ophalen",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIFs",
+      "type": "api"
+    },
+    {
+      "name": "Hashtag toevoegen",
       "file": "addhashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "addHashTagsBulk",
+      "name": "Hashtags in bulk toevoegen",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "deleteHashTag",
+      "name": "Hashtag verwijderen",
       "file": "deletehashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "getHashTags",
+      "name": "Hashtags ophalen",
       "file": "gethashtags-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "patchHashTag",
+      "name": "Hashtag gedeeltelijk bijwerken",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "createModerator",
+      "name": "Moderatiestem verwijderen",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "API-reacties ophalen",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "API-exportstatus ophalen",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "API-IDs ophalen",
+      "file": "getapiids-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Gebannen gebruikers van reactie ophalen",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Banstatus van reactie ophalen",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reactiekinderen ophalen",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Aantal ophalen",
+      "file": "getcount-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Aantallen ophalen",
+      "file": "getcounts-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Logboeken ophalen",
+      "file": "getlogs-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Handmatige badges ophalen",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Handmatige badges voor gebruiker ophalen",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Moderatiereactie ophalen",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Tekst moderatiereactie ophalen",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Samenvatting vóór verbanning ophalen",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Samenvatting zoekreacties ophalen",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Zoekpagina's ophalen",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Zoeksites ophalen",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Zoeksuggesties ophalen",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Zoekgebruikers ophalen",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Vertrouwensfactor ophalen",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Voorkeur gebruikersban ophalen",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Interne gebruikersprofiel ophalen",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Stemmen op reactie aanpassen",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "API-export starten",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Gebruiker verbannen vanaf reactie",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Ban gebruiker ongedaan maken",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Bulk pre-ban samenvatting",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reacties ophalen per ID",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reactie melden (POST)",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reactie verwijderen (POST)",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Verwijderde reactie herstellen",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Goedkeuringsstatus reactie instellen",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reviewstatus reactie instellen",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Spamstatus reactie instellen",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reactietekst instellen",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Reactie melding intrekken (POST)",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Stem plaatsen (POST)",
+      "file": "postvote-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Badge toekennen (PUT)",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Thread sluiten (PUT)",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Badge verwijderen (PUT)",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Thread heropenen (PUT)",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Vertrouwensfactor instellen",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "Moderatie",
+      "type": "api"
+    },
+    {
+      "name": "Moderator aanmaken",
       "file": "createmoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
-      "name": "deleteModerator",
+      "name": "Moderator verwijderen",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
-      "name": "getModerator",
+      "name": "Moderator ophalen",
       "file": "getmoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
-      "name": "getModerators",
+      "name": "Moderatoren ophalen",
       "file": "getmoderators-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
-      "name": "sendInvite",
+      "name": "Uitnodiging verzenden",
       "file": "sendinvite-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
-      "name": "updateModerator",
+      "name": "Moderator bijwerken",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
-      "name": "deleteNotificationCount",
+      "name": "Meldingtelling verwijderen",
       "file": "deletenotificationcount-api-generated.md",
       "subCat": "Aantal meldingen",
       "type": "api"
     },
     {
-      "name": "getCachedNotificationCount",
+      "name": "Gecachte meldingtelling ophalen",
       "file": "getcachednotificationcount-api-generated.md",
       "subCat": "Aantal meldingen",
       "type": "api"
     },
     {
-      "name": "getNotificationCount",
+      "name": "Meldingtelling ophalen",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Meldingen",
       "type": "api"
     },
     {
-      "name": "getNotifications",
+      "name": "Meldingen ophalen",
       "file": "getnotifications-api-generated.md",
       "subCat": "Meldingen",
       "type": "api"
     },
     {
-      "name": "updateNotification",
+      "name": "Melding bijwerken",
       "file": "updatenotification-api-generated.md",
       "subCat": "Meldingen",
       "type": "api"
     },
     {
-      "name": "addPage",
+      "name": "Pagina-reactie V1 aanmaken",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Pagina-reactie V2 aanmaken",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Pagina-reactie V1 verwijderen",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Pagina-reactie V2 verwijderen",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Pagina-likes V1 ophalen",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Pagina-reacties V2 ophalen",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Gebruikers pagina-reacties V2 ophalen",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Pagina-reacties",
+      "type": "api"
+    },
+    {
+      "name": "Pagina toevoegen",
       "file": "addpage-api-generated.md",
       "subCat": "Pagina's",
       "type": "api"
     },
     {
-      "name": "deletePage",
+      "name": "Pagina verwijderen",
       "file": "deletepage-api-generated.md",
       "subCat": "Pagina's",
       "type": "api"
     },
     {
-      "name": "getPageByURLId",
+      "name": "Offline gebruikers ophalen",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
+      "name": "Online gebruikers ophalen",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
+      "name": "Pagina ophalen via URL-ID",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Pagina's",
       "type": "api"
     },
     {
-      "name": "getPages",
+      "name": "Pagina's ophalen",
       "file": "getpages-api-generated.md",
       "subCat": "Pagina's",
       "type": "api"
     },
     {
-      "name": "patchPage",
+      "name": "Pagina's ophalen (publiek)",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
+      "name": "Gebruikersinformatie ophalen",
+      "file": "getusersinfo-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
+      "name": "Pagina gedeeltelijk bijwerken",
       "file": "patchpage-api-generated.md",
       "subCat": "Pagina's",
       "type": "api"
     },
     {
-      "name": "deletePendingWebhookEvent",
+      "name": "Wachtende webhook-gebeurtenis verwijderen",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Wachtende webhook-gebeurtenissen",
+      "subCat": "Openstaande webhook-gebeurtenissen",
       "type": "api"
     },
     {
-      "name": "getPendingWebhookEventCount",
+      "name": "Aantal wachtende webhook-gebeurtenissen ophalen",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Wachtende webhook-gebeurtenissen",
+      "subCat": "Openstaande webhook-gebeurtenissen",
       "type": "api"
     },
     {
-      "name": "getPendingWebhookEvents",
+      "name": "Wachtende webhook-gebeurtenissen ophalen",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Wachtende webhook-gebeurtenissen",
+      "subCat": "Openstaande webhook-gebeurtenissen",
       "type": "api"
     },
     {
-      "name": "createQuestionConfig",
+      "name": "Vraagconfiguratie aanmaken",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Vraagconfiguraties",
       "type": "api"
     },
     {
-      "name": "deleteQuestionConfig",
+      "name": "Vraagconfiguratie verwijderen",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "Vraagconfiguraties",
       "type": "api"
     },
     {
-      "name": "getQuestionConfig",
+      "name": "Vraagconfiguratie ophalen",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "Vraagconfiguraties",
       "type": "api"
     },
     {
-      "name": "getQuestionConfigs",
+      "name": "Vraagconfiguraties ophalen",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Vraagconfiguraties",
       "type": "api"
     },
     {
-      "name": "updateQuestionConfig",
+      "name": "Vraagconfiguratie bijwerken",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "Vraagconfiguraties",
       "type": "api"
     },
     {
-      "name": "createQuestionResult",
+      "name": "Vraagresultaat aanmaken",
       "file": "createquestionresult-api-generated.md",
       "subCat": "Vraagresultaten",
       "type": "api"
     },
     {
-      "name": "deleteQuestionResult",
+      "name": "Vraagresultaat verwijderen",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "Vraagresultaten",
       "type": "api"
     },
     {
-      "name": "getQuestionResult",
+      "name": "Vraagresultaat ophalen",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Vraagresultaten",
       "type": "api"
     },
     {
-      "name": "getQuestionResults",
+      "name": "Vraagresultaten ophalen",
       "file": "getquestionresults-api-generated.md",
       "subCat": "Vraagresultaten",
       "type": "api"
     },
     {
-      "name": "updateQuestionResult",
+      "name": "Vraagresultaat bijwerken",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Vraagresultaten",
       "type": "api"
     },
     {
-      "name": "aggregateQuestionResults",
+      "name": "Vraagresultaten aggregeren",
       "file": "aggregatequestionresults-api-generated.md",
       "subCat": "Aggregatie van vraagresultaten",
       "type": "api"
     },
     {
-      "name": "bulkAggregateQuestionResults",
+      "name": "Vraagresultaten in bulk aggregeren",
       "file": "bulkaggregatequestionresults-api-generated.md",
       "subCat": "Aggregatie van vraagresultaten",
       "type": "api"
     },
     {
-      "name": "combineCommentsWithQuestionResults",
+      "name": "Reacties combineren met vraagresultaten",
       "file": "combinecommentswithquestionresults-api-generated.md",
       "subCat": "Aggregatie van vraagresultaten",
       "type": "api"
     },
     {
-      "name": "addSSOUser",
+      "name": "SSO-gebruiker toevoegen",
       "file": "addssouser-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "deleteSSOUser",
+      "name": "SSO-gebruiker verwijderen",
       "file": "deletessouser-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "getSSOUserByEmail",
+      "name": "SSO-gebruiker ophalen op e-mail",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "getSSOUserById",
+      "name": "SSO-gebruiker ophalen op ID",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "getSSOUsers",
+      "name": "SSO-gebruikers ophalen",
       "file": "getssousers-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "patchSSOUser",
+      "name": "SSO-gebruiker gedeeltelijk bijwerken",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "putSSOUser",
+      "name": "SSO-gebruiker vervangen",
       "file": "putssouser-api-generated.md",
       "subCat": "SSO-gebruikers",
       "type": "api"
     },
     {
-      "name": "createSubscription",
+      "name": "Abonnement aanmaken",
       "file": "createsubscription-api-generated.md",
       "subCat": "Abonnementen",
       "type": "api"
     },
     {
-      "name": "deleteSubscription",
+      "name": "Abonnement verwijderen",
       "file": "deletesubscription-api-generated.md",
       "subCat": "Abonnementen",
       "type": "api"
     },
     {
-      "name": "getSubscriptions",
+      "name": "Abonnementen ophalen",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "Abonnementen",
       "type": "api"
     },
     {
-      "name": "updateSubscription",
+      "name": "Abonnement bijwerken",
       "file": "updatesubscription-api-generated.md",
       "subCat": "Abonnementen",
       "type": "api"
     },
     {
-      "name": "getTenantDailyUsages",
+      "name": "Dagelijks gebruik per tenant ophalen",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dagelijks gebruik voor tenant",
+      "subCat": "Dagelijks gebruik per tenant",
       "type": "api"
     },
     {
-      "name": "createTenantPackage",
+      "name": "Tenantpakket aanmaken",
       "file": "createtenantpackage-api-generated.md",
       "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
-      "name": "deleteTenantPackage",
+      "name": "Tenantpakket verwijderen",
       "file": "deletetenantpackage-api-generated.md",
       "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
-      "name": "getTenantPackage",
+      "name": "Tenantpakket ophalen",
       "file": "gettenantpackage-api-generated.md",
       "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
-      "name": "getTenantPackages",
+      "name": "Tenantpakketten ophalen",
       "file": "gettenantpackages-api-generated.md",
       "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
-      "name": "replaceTenantPackage",
+      "name": "Tenantpakket vervangen",
       "file": "replacetenantpackage-api-generated.md",
       "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
-      "name": "updateTenantPackage",
+      "name": "Tenantpakket bijwerken",
       "file": "updatetenantpackage-api-generated.md",
       "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
-      "name": "createTenantUser",
+      "name": "Tenantgebruiker aanmaken",
       "file": "createtenantuser-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "deleteTenantUser",
+      "name": "Tenantgebruiker verwijderen",
       "file": "deletetenantuser-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "getTenantUser",
+      "name": "Tenantgebruiker ophalen",
       "file": "gettenantuser-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "getTenantUsers",
+      "name": "Tenantgebruikers ophalen",
       "file": "gettenantusers-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "replaceTenantUser",
+      "name": "Tenantgebruiker vervangen",
       "file": "replacetenantuser-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "sendLoginLink",
+      "name": "Loginlink verzenden",
       "file": "sendloginlink-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "updateTenantUser",
+      "name": "Tenantgebruiker bijwerken",
       "file": "updatetenantuser-api-generated.md",
       "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
-      "name": "createTenant",
+      "name": "Tenant aanmaken",
       "file": "createtenant-api-generated.md",
       "subCat": "Tenants",
       "type": "api"
     },
     {
-      "name": "deleteTenant",
+      "name": "Tenant verwijderen",
       "file": "deletetenant-api-generated.md",
       "subCat": "Tenants",
       "type": "api"
     },
     {
-      "name": "getTenant",
+      "name": "Tenant ophalen",
       "file": "gettenant-api-generated.md",
       "subCat": "Tenants",
       "type": "api"
     },
     {
-      "name": "getTenants",
+      "name": "Tenants ophalen",
       "file": "gettenants-api-generated.md",
       "subCat": "Tenants",
       "type": "api"
     },
     {
-      "name": "updateTenant",
+      "name": "Tenant bijwerken",
       "file": "updatetenant-api-generated.md",
       "subCat": "Tenants",
       "type": "api"
     },
     {
-      "name": "changeTicketState",
+      "name": "Ticketstatus wijzigen",
       "file": "changeticketstate-api-generated.md",
       "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "createTicket",
+      "name": "Ticket aanmaken",
       "file": "createticket-api-generated.md",
       "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "getTicket",
+      "name": "Ticket ophalen",
       "file": "getticket-api-generated.md",
       "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "getTickets",
+      "name": "Tickets ophalen",
       "file": "gettickets-api-generated.md",
       "subCat": "Tickets",
       "type": "api"
     },
     {
-      "name": "uploadImage",
+      "name": "Vertalingen ophalen",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Vertalingen",
+      "type": "api"
+    },
+    {
+      "name": "Afbeelding uploaden",
       "file": "uploadimage-api-generated.md",
       "subCat": "Afbeelding uploaden",
       "type": "api"
     },
     {
-      "name": "getUserBadgeProgressById",
+      "name": "Voortgang gebruikersbadge ophalen op ID",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Voortgang gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "getUserBadgeProgressByUserId",
+      "name": "Voortgang gebruikersbadge ophalen op gebruikers-ID",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Voortgang gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "getUserBadgeProgressList",
+      "name": "Lijst voortgang gebruikersbadges ophalen",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Voortgang gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "createUserBadge",
+      "name": "Gebruikersbadge aanmaken",
       "file": "createuserbadge-api-generated.md",
       "subCat": "Gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "deleteUserBadge",
+      "name": "Gebruikersbadge verwijderen",
       "file": "deleteuserbadge-api-generated.md",
       "subCat": "Gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "getUserBadge",
+      "name": "Gebruikersbadge ophalen",
       "file": "getuserbadge-api-generated.md",
       "subCat": "Gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "getUserBadges",
+      "name": "Gebruikersbadges ophalen",
       "file": "getuserbadges-api-generated.md",
       "subCat": "Gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "updateUserBadge",
+      "name": "Gebruikersbadge bijwerken",
       "file": "updateuserbadge-api-generated.md",
       "subCat": "Gebruikersbadges",
       "type": "api"
     },
     {
-      "name": "getUserNotificationCount",
+      "name": "Aantal gebruikersmeldingen ophalen",
       "file": "getusernotificationcount-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "getUserNotifications",
+      "name": "Gebruikersmeldingen ophalen",
       "file": "getusernotifications-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "resetUserNotificationCount",
+      "name": "Aantal gebruikersmeldingen resetten",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "resetUserNotifications",
+      "name": "Gebruikersmeldingen resetten",
       "file": "resetusernotifications-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "updateUserNotificationCommentSubscriptionStatus",
+      "name": "Abonnementsstatus reactiemeldingen bijwerken",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "updateUserNotificationPageSubscriptionStatus",
+      "name": "Abonnementsstatus paginameldingen bijwerken",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "updateUserNotificationStatus",
+      "name": "Gebruikersmeldingstatus bijwerken",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "Gebruikersmeldingen",
       "type": "api"
     },
     {
-      "name": "getUserPresenceStatuses",
+      "name": "Gebruikersaanwezigheidsstatussen ophalen",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Aanwezigheidsstatus gebruikers",
+      "subCat": "Gebruikersaanwezigheidsstatus",
       "type": "api"
     },
     {
-      "name": "searchUsers",
+      "name": "Gebruikers zoeken",
       "file": "searchusers-api-generated.md",
-      "subCat": "Gebruikers zoeken",
+      "subCat": "Zoeken naar gebruikers",
       "type": "api"
     },
     {
-      "name": "getUser",
+      "name": "Gebruiker ophalen",
       "file": "getuser-api-generated.md",
       "subCat": "Gebruikers",
       "type": "api"
     },
     {
-      "name": "createVote",
+      "name": "Stem aanmaken",
       "file": "createvote-api-generated.md",
       "subCat": "Stemmen",
       "type": "api"
     },
     {
-      "name": "deleteVote",
+      "name": "Stem verwijderen",
       "file": "deletevote-api-generated.md",
       "subCat": "Stemmen",
       "type": "api"
     },
     {
-      "name": "getVotes",
+      "name": "Stemmen ophalen",
       "file": "getvotes-api-generated.md",
       "subCat": "Stemmen",
       "type": "api"
     },
     {
-      "name": "getVotesForUser",
+      "name": "Stemmen voor gebruiker ophalen",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Stemmen",
       "type": "api"

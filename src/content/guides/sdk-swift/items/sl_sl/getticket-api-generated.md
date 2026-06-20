@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -8,18 +8,18 @@
 
 ## Odgovor
 
-Vrača: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicket200Response.swift)
+Vrne: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getTicket'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za kakršenkoli problem poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta različici. Za kakršen koli problem, prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let userId = "userId_example" // String |  (neobvezno)
+let userId = "userId_example" // String |  (izbirno)
 
 DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, error) in
     guard error == nil else {
@@ -32,5 +32,3 @@ DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, er
     }
 }
 [inline-code-end]
-
----

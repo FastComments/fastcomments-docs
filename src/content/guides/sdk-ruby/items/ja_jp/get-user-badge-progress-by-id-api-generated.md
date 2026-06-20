@@ -1,13 +1,13 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 
 ## レスポンス
 
-返却値: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+戻り値: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## 例
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # 認証のセットアップ
 FastCommentsClient.configure do |config|
-  # APIキー認証を設定: api_key
+  # APIキー認証の設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 以下の行のコメントアウトを外すと、APIキーにプレフィックスを設定できます。例: 'Bearer'（デフォルトは nil）
+  # APIキーにプレフィックスを設定するには、次の行のコメントを解除してください。例: 'Bearer' (デフォルトは nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badge_progress_by_id: #{e}"
 end
 [inline-code-end]
-
----

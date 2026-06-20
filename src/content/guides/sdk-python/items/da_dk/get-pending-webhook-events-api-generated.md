@@ -1,44 +1,44 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | query | Nej |  |
+| externalId | string | query | Nej |  |
+| eventType | string | query | Nej |  |
+| type | string | query | Nej |  |
+| domain | string | query | Nej |  |
+| attemptCountGT | number | query | Nej |  |
+| skip | number | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+Returnerer: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_pending_webhook_events Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host; standard er https://fastcomments.com
+# Angivelse af host er valgfri og som standard bruges https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametre
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor, brug det eksempel der
-# passer til dit autentificeringsbrugstilfælde.
+# Eksempler for hver autentificeringsmetode er vist nedenfor, brug det
+# eksempel, der passer til din brugssag.
 
-# Konfigurer API-nøgleautorisering: api_key
+# Konfigurer API-nøglegodkendelse: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentar nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -61,5 +61,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_pending_webhook_events: %s\n" % e)
 [inline-code-end]
-
----

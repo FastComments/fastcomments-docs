@@ -1,11 +1,10 @@
----
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | percorso | Sì |  |
-| commentId | string | percorso | Sì |  |
-| voteId | string | percorso | Sì |  |
+| tenantId | string | path | Sì |  |
+| commentId | string | path | Sì |  |
+| voteId | string | path | Sì |  |
 | urlId | string | query | Sì |  |
 | broadcastId | string | query | Sì |  |
 | editKey | string | query | No |  |
@@ -13,13 +12,13 @@
 
 ## Risposta
 
-Restituisce: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+Restituisce: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalarlo via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -41,5 +40,3 @@ PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: vo
     }
 }
 [inline-code-end]
-
----

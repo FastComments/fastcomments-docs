@@ -5,12 +5,12 @@
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
 | broadcastId | string | query | 예 |  |
-| editKey | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| editKey | string | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_public200_response.rb)
+반환: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
 
 ## 예제
 
@@ -36,3 +36,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_public: #{e}"
 end
 [inline-code-end]
+
+---

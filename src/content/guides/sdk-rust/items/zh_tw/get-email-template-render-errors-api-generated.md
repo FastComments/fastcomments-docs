@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
@@ -8,22 +8,18 @@
 
 ## 回應
 
-回傳: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_render_errors_200_response.rs)
+回傳: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_render_errors_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_email_template_render_errors 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_example() -> Result<(), Error> {
-    let params: GetEmailTemplateRenderErrorsParams = GetEmailTemplateRenderErrorsParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "welcome-email-template".to_string(),
-        skip: Some(10.0),
-    };
-    let response: GetEmailTemplateRenderErrors200Response =
-        get_email_template_render_errors(&configuration, params).await?;
-    Ok(())
-}
+let params: GetEmailTemplateRenderErrorsParams = GetEmailTemplateRenderErrorsParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    id: "welcome-email-v2".to_string(),
+    skip: Some(10.0),
+};
+let response: GetEmailTemplateRenderErrorsResponse = get_email_template_render_errors(&configuration, params).await?;
 [inline-code-end]
 
 ---

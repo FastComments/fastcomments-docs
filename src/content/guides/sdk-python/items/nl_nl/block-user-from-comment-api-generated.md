@@ -9,33 +9,33 @@
 
 ## Respons
 
-Retourneert: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_from_comment_public200_response.py)
+Retourneert: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/block_success.py)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'block_user_from_comment Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.block_from_comment_params import BlockFromCommentParams
-from client.models.block_from_comment_public200_response import BlockFromCommentPublic200Response
+from client.models.block_success import BlockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
 # Het definiëren van de host is optioneel en standaard https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# De client moet de authenticatie- en autorisatieparameters
-# configureren in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voor elk auth-mechanisme zijn hieronder voorbeelden opgenomen; gebruik het voorbeeld dat
+# De client moet de authenticatie- en autorisatieparameters configureren
+# in overeenstemming met het beveiligingsbeleid van de API-server.
+# Voorbeelden voor elke auth-methode worden hieronder gegeven; gebruik het voorbeeld dat
 # past bij uw authenticatiegeval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API-sleutel-autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de commentaarteken weg hieronder om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Haal onderstaande regel uit commentaar om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Ga een context in met een instantie van de API-client

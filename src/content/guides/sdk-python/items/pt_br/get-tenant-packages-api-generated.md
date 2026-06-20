@@ -1,20 +1,20 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | skip | number | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_packages200_response.py)
+Retorna: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_packages_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_tenant_packages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_packages200_response import GetTenantPackages200Response
+from client.models.get_tenant_packages_response import GetTenantPackagesResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,12 +27,12 @@ configuration = client.Configuration(
 # O cliente deve configurar os parâmetros de autenticação e autorização
 # de acordo com a política de segurança do servidor da API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# satisfaz seu caso de uso de autenticação.
+# satisfaça seu caso de uso de autenticação.
 
-# Configure a autorização por chave de API: api_key
+# Configurar autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar prefixo (por exemplo Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API

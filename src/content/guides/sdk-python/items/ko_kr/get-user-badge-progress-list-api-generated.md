@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | Type | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | userId | string | query | 아니오 |  |
@@ -9,37 +9,39 @@
 
 ## 응답
 
-반환: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_list200_response.py)
+반환: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_user_badge_progress_list 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_list200_response import GetUserBadgeProgressList200Response
+from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
+# Defining the host is optional and defaults to https://fastcomments.com
+# configuration.py에서 지원되는 모든 구성 매개변수 목록을 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 클라이언트는 인증 및 권한 부여 매개변수를
-# API 서버 보안 정책에 따라 구성해야 합니다.
-# 각 인증 방식에 대한 예제가 아래에 제공되어 있으니,
-# 자신의 인증 사용 사례에 맞는 예제를 사용하세요.
-
+# The client must configure the authentication and authorization parameters
+# 인증 및 권한 부여 매개변수를 API 서버 보안 정책에 따라 구성해야 합니다.
+# Examples for each auth method are provided below, use the example that
+# 각 인증 방법에 대한 예제가 아래에 제공됩니다. 다음 예제 중
+# 귀하의 인증 사용 사례에 맞는 것을 사용하세요.
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# 필요하면 아래의 주석을 해제하여 API 키에 접두사(예: Bearer)를 설정하세요
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
+    # API 클래스의 인스턴스를 생성합니다
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (선택 사항)

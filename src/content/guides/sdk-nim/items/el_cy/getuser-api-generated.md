@@ -1,24 +1,24 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`Option[GetUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user200response.nim)
+Επιστρέφει: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-9876")
+let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
 if response.isSome:
   let user = response.get()
-  echo "User:", user
+  echo user
 else:
-  echo "No user found. HTTP response:", httpResponse
+  echo "User not found"
 [inline-code-end]
 
 ---

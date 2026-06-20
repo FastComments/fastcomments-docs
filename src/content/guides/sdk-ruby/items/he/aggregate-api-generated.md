@@ -1,4 +1,4 @@
-מאגד מסמכים על ידי קיבוץ שלהם (אם groupBy נמסר) ויישום מספר פעולות.
+מאגד מסמכים על ידי קיבוצם (אם groupBy מסופק) ויישום מספר פעולות.
 נתמכות פעולות שונות (למשל sum, countDistinct, avg וכו').
 
 ## פרמטרים
@@ -11,7 +11,7 @@
 
 ## תגובה
 
-מחזיר: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+מחזיר: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## דוגמה
 
@@ -21,9 +21,9 @@ require 'time'
 require 'fastcomments-client'
 # הגדרת אימות
 FastCommentsClient.configure do |config|
-  # הגדר אימות באמצעות מפתח API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +43,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
+
+---

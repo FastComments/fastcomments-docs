@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createCommentParams | CreateCommentParams | Nee |  |
@@ -9,28 +9,29 @@
 | sendEmails | bool | Nee |  |
 | populateNotifications | bool | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`Option[SaveComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_save_comment200response.nim)
+Retourneert: [`Option[APISaveCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_save_comment_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'saveComment Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let createCommentParams = CreateCommentParams(
+  urlId = "news/2026/major-policy-change",
+  content = "This is a thoughtful comment on the policy change and its potential impacts.",
+  authorName = "Morgan Lee",
+  authorEmail = "morgan.lee@example.org",
+  tags = @["policy","analysis"],
+  extraData = @[])
+
 let (response, httpResponse) = client.saveComment(
   tenantId = "my-tenant-123",
-  createCommentParams = CreateCommentParams(
-    content = "This article was really helpful, thanks!",
-    urlId = "news/2025-11/ai-regulations",
-    authorName = "Jane Doe",
-    authorEmail = "jane.doe@example.com",
-    tags = @["policy", "analysis"]
-  ),
+  createCommentParams = createCommentParams,
   isLive = true,
   doSpamCheck = true,
-  sendEmails = true,
-  populateNotifications = false
-)
+  sendEmails = false,
+  populateNotifications = true)
 
 if response.isSome:
   let saved = response.get()

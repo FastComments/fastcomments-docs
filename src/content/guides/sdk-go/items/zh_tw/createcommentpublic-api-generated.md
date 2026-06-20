@@ -1,16 +1,16 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| broadcastId | string | query | 是 |  |
-| sessionId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 路徑 | 是 |  |
+| urlId | string | 查詢 | 是 |  |
+| broadcastId | string | 查詢 | 是 |  |
+| sessionId | string | 查詢 | 否 |  |
+| sso | string | 查詢 | 否 |  |
 
 ## 回應
 
-回傳: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_comment_public_200_response.go)
+傳回: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_response_with_presence.go)
 
 ## 範例
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.CreateCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `CreateCommentPublic` 的回應: CreateCommentPublic200Response
+	// `CreateCommentPublic` 的回應：SaveCommentsResponseWithPresence
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CreateCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

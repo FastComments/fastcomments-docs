@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Esempio
 
@@ -31,5 +31,3 @@ DefaultAPI.updateTenant(tenantId: tenantId, id: id, updateTenantBody: updateTena
     }
 }
 [inline-code-end]
-
----

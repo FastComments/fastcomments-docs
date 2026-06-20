@@ -1,4 +1,4 @@
-Agregira dokumente grupiranjem (ako je specificirano groupBy) i primjenom više operacija.
+Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija.
 Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
 
 ## Parametri
@@ -11,19 +11,19 @@ Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
 
 ## Odgovor
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za aggregate'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer aggregate'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurirajte autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Okomentirajte sljedeći redak da biste postavili prefiks za API ključ, npr. 'Bearer' (zadano: nil)
+  # Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. 'Bearer' (zadano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

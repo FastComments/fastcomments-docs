@@ -9,7 +9,7 @@
 
 ## Ответ
 
-Возвращает: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagComment200Response.php)
+Возвращает: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentResponse.php)
 
 ## Пример
 
@@ -19,22 +19,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации ключа API: api_key
+// Настройка авторизации по API-ключу: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например Bearer) для API-ключа, если нужно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
+$user_id = 'user_id_example'; // строка
+$anon_user_id = 'anon_user_id_example'; // строка
 
 try {
     $result = $apiInstance->unFlagComment($tenant_id, $id, $user_id, $anon_user_id);

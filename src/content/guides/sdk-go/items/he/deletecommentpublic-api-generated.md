@@ -1,16 +1,16 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | כן |  |
+| commentId | string | path | כן |  |
+| broadcastId | string | query | כן |  |
+| editKey | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_comment_public_200_response.go)
+מחזיר: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_public_api_delete_comment_response.go)
 
 ## דוגמה
 
@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteCommentPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`DeleteCommentPublic`: DeleteCommentPublic200Response
+	// תשובה מ-`DeleteCommentPublic`: PublicAPIDeleteCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteCommentPublic`: %v\n", resp)
 }
 [inline-code-end]

@@ -11,7 +11,7 @@
 
 ## Respons
 
-Retourneert: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+Retourneert: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Voorbeeld
 
@@ -19,12 +19,12 @@ Retourneert: [`VoteComment200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en heeft standaardwaarde https://fastcomments.com
-# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
+# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

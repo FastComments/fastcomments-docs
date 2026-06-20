@@ -1,13 +1,13 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | ロケーション | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package200_response.rb)
+戻り値: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package_response.rb)
 
 ## 例
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # 認証の設定
 FastCommentsClient.configure do |config|
-  # API キー認証の設定: api_key
+  # APIキー認証の設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 次の行のコメントを外すと API キーにプレフィックスを設定できます（例: 'Bearer'、デフォルトは nil）
+  # APIキーのプレフィックスを設定するには、次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_package: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | id | String | Oui |  |
 | delete_comments | String | Non |  |
@@ -9,21 +9,21 @@
 
 ## Réponse
 
-Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Renvoie: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de delete_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple delete_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<FlagCommentPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteTenantUserParams = DeleteTenantUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-9876".to_string(),
-        delete_comments: Some("true".to_string()),
+        id: "user-8421".to_string(),
+        delete_comments: Some("yes".to_string()),
         comment_delete_mode: Some("permanent".to_string()),
     };
-    let response: FlagCommentPublic200Response = delete_tenant_user(&configuration, params).await?;
-    Ok(response)
+    let _response: ApiEmptyResponse = delete_tenant_user(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

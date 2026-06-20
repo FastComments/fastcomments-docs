@@ -8,7 +8,7 @@
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 範例
 
@@ -20,7 +20,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # 設定 API 金鑰授權：api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解下面一行以設定 API 金鑰的前綴，例如 'Bearer'（預設為 nil）
+  # 取消註解下列行以為 API 金鑰設定前綴，例如 'Bearer'（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

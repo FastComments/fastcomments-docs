@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | commentIds | string | Hayır |  |
@@ -8,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`Option[CheckedCommentsForBlocked_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_checked_comments_for_blocked200response.nim)
+Döndürür: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
 ## Örnek
 
@@ -20,11 +20,10 @@ let (response, httpResponse) = client.checkedCommentsForBlocked(
   sso = ""
 )
 if response.isSome:
-  let checked = response.get()
-  echo "Checked comments received for tenant my-tenant-123"
-  echo checked
+  let blockedResp = response.get()
+  echo "Received blocked comments response: ", blockedResp
 else:
-  echo "No checked comments (HTTP status: ", $httpResponse.statusCode, ")"
+  echo "No response body; HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

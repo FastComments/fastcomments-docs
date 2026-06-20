@@ -7,34 +7,35 @@
 
 ## 回應
 
-回傳： [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template200_response.py)
+回傳: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/render_email_template_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'render_email_template 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.render_email_template200_response import RenderEmailTemplate200Response
 from client.models.render_email_template_body import RenderEmailTemplateBody
+from client.models.render_email_template_response import RenderEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義主機是可選的，預設為 https://fastcomments.com
+# 定義 host 是可選的，預設為 https://fastcomments.com
 # 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 用戶端必須根據 API 伺服器的安全政策設定驗證與授權參數。
-# 下方提供了每種驗證方法的範例，請使用符合您驗證需求的範例。
+# 用戶端必須設定驗證與授權參數
+# 以符合 API 伺服器的安全政策。
+# 下方提供每種驗證方法的範例，請使用符合您驗證情境的範例。
 
-# 設定 API key 授權：api_key
+# 設定 API 金鑰授權：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如有需要，取消註解以下內容以設定 API key 的前綴（例如 Bearer）
+# 如需要，取消註解以下以設定 API 金鑰的前綴（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 建立一個 API client 的上下文
+# 以 ApiClient 實例進入一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.DefaultApi(api_client)
@@ -49,5 +50,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->render_email_template: %s\n" % e)
 [inline-code-end]
-
----

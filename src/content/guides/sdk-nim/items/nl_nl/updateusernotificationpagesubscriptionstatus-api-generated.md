@@ -1,6 +1,8 @@
+Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich op een pagina abonneren, worden meldingen aangemaakt voor nieuwe root-reacties, en ook
+
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
@@ -9,9 +11,9 @@
 | subscribedOrUnsubscribed | string | Nee |  |
 | sso | string | Nee |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Retourneert: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Voorbeeld
 
@@ -19,14 +21,18 @@ Retourneert: [`Option[UpdateUserNotificationStatus_200_response]`](https://githu
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2025-11-22",
-  url = "https://example.com/news/article-2025-11-22",
-  pageTitle = "Breaking News: Market Update",
-  subscribedOrUnsubscribed = "subscribed",
-  sso = "sso-token-abc123"
+  urlId = "news/economy/market-rally-2026-06-19",
+  url = "",
+  pageTitle = "",
+  subscribedOrUnsubscribed = "",
+  sso = ""
 )
 
 if response.isSome:
-  let result = response.get()
-  discard result
+  let updateResp = response.get()
+  echo "Subscription update received: ", updateResp
+else:
+  echo "No subscription update returned."
 [inline-code-end]
+
+---

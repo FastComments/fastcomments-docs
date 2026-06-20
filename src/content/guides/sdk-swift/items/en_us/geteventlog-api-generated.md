@@ -1,3 +1,4 @@
+
 req
 tenantId
 urlId
@@ -11,24 +12,24 @@ userIdWS
 | urlId | string | query | Yes |  |
 | userIdWS | string | query | Yes |  |
 | startTime | integer | query | Yes |  |
-| endTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
 ## Response
 
-Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEventLog200Response.swift)
+Returns: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEventLogResponse.swift)
 
 ## Example
 
 [inline-code-attrs-start title = 'getEventLog Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// The following code samples are still in beta. If you encounter an issue, please report it at http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let userIdWS = "userIdWS_example" // String | 
 let startTime = 987 // Int64 | 
-let endTime = 987 // Int64 | 
+let endTime = 987 // Int64 |  (optional)
 
 PublicAPI.getEventLog(tenantId: tenantId, urlId: urlId, userIdWS: userIdWS, startTime: startTime, endTime: endTime) { (response, error) in
     guard error == nil else {

@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -5,20 +6,20 @@
 | tenantId | string | Da |  |
 | sso | string | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`Option[GetUserNotificationCount_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notification_count200response.nim)
+Vrne: [`Option[GetUserNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notification_count_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotificationCount(tenantId = "my-tenant-123", sso = "")
+let (response, httpResponse) = client.getUserNotificationCount(tenantId = "news-tenant-123", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTI0NyIsImlhdCI6MTYw945600fQ.sflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
 if response.isSome:
-  let notificationData = response.get()
-  echo "Received notification data: ", $notificationData
+  let countResp = response.get()
+  echo "Received user notification count response: ", countResp
 else:
-  echo "No notification data returned. HTTP response: ", $httpResponse.status
+  echo "No notification count returned"
 [inline-code-end]
 
 ---

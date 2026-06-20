@@ -1,22 +1,22 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| userId | string | query | 否 |  |
-| state | number | query | 否 |  |
-| skip | number | query | 否 |  |
-| limit | number | query | 否 |  |
+| tenantId | string | 查詢 | 是 |  |
+| userId | string | 查詢 | 否 |  |
+| state | number | 查詢 | 否 |  |
+| skip | number | 查詢 | 否 |  |
+| limit | number | 查詢 | 否 |  |
 
 ## 回應
 
-回傳: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTickets200Response.swift)
+回傳: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getTickets 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式範例仍為測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 下列程式範例仍為測試版。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -36,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: sk
     }
 }
 [inline-code-end]
-
----

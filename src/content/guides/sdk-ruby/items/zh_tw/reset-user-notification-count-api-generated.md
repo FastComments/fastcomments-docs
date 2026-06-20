@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
@@ -8,7 +7,7 @@
 
 ## 回應
 
-回傳: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications200_response.rb)
+回傳: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/reset_user_notifications_response.rb)
 
 ## 範例
 
@@ -18,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字串 | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 字串 | 
 }
 
 begin

@@ -1,21 +1,20 @@
+---
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createCommentParams | seq[CreateCommentParams] | Ne |  |
-| isLive | bool | Ne |  |
-| doSpamCheck | bool | Ne |  |
-| sendEmails | bool | Ne |  |
-| populateNotifications | bool): (Option[seq[SaveComment_200_response]] | Ne |  |
-| id | string | Ne |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Ne |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| tenantId | string | Yes |  |
+| createCommentParams | seq[CreateCommentParams] | No |  |
+| isLive | bool | No |  |
+| doSpamCheck | bool | No |  |
+| sendEmails | bool | No |  |
+| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | No |  |
+| id | string | No |  |
+| fromName | string | No |  |
 
 ## Odgovor
 
-Vraća: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Primjer
 
@@ -24,20 +23,19 @@ Vraća: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastCom
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = true,
-  doSpamCheck = true,
+  isLive = false,
+  doSpamCheck = false,
   sendEmails = false,
-  populateNotifications = true,
-  id = "batch-20251122",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = "anon-789"
+  populateNotifications = false,
+  id = "",
+  fromName = ""
 )
+
 if response.isSome:
-  let unblocked = response.get()
-  echo "Unblocked response received: ", unblocked
+  let apiResp = response.get()
+  echo "Bulk save succeeded, tenant:", " my-tenant-123"
 else:
-  echo "No unblocked response, httpResponse: ", $httpResponse
+  echo "Bulk save returned no API response"
 [inline-code-end]
 
 ---

@@ -1,6 +1,11 @@
+---
+req
+tenantId
+afterId
+
 ## Παράμετροι
 
-| Όνομα | Type | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | afterId | string | Όχι |  |
@@ -12,7 +17,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+Επιστρέφει: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
 ## Παράδειγμα
 
@@ -27,10 +32,9 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
 
 ---

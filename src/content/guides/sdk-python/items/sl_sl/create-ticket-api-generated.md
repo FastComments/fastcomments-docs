@@ -7,15 +7,15 @@
 
 ## Odgovor
 
-Vrne: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket200_response.py)
+Vrača: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_ticket_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer create_ticket'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_ticket Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_ticket200_response import CreateTicket200Response
 from client.models.create_ticket_body import CreateTicketBody
+from client.models.create_ticket_response import CreateTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -27,13 +27,13 @@ configuration = client.Configuration(
 
 # Odjemalec mora konfigurirati parametre za overjanje in avtorizacijo
 # v skladu s varnostno politiko API strežnika.
-# Spodaj so prikazani primeri za vsak način overjanja, uporabite primer, ki
-# ustreza vašemu primeru uporabe overjanja.
+# Spodaj so navedeni primeri za posamezen način overjanja; uporabite primer,
+# ki ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte overjanje z API ključem: api_key
+# Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, če potrebujete nastavitev predpone (npr. Bearer) za API ključ
+# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
@@ -51,3 +51,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_ticket: %s\n" % e)
 [inline-code-end]
+
+---

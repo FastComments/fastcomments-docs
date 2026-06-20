@@ -1,26 +1,28 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| page | int | 否 |  |
-| limit | int | 否 |  |
-| skip | int | 否 |  |
-| asTree | bool | 否 |  |
-| skipChildren | int | 否 |  |
-| limitChildren | int | 否 |  |
-| maxTreeDepth | int | 否 |  |
-| urlId | string | 是 |  |
-| userId | string | 否 |  |
-| anonUserId | string | 否 |  |
-| contextUserId | string | 否 |  |
-| hashTag | string | 否 |  |
-| parentId | string | 否 |  |
-| direction | SortDirections | 否 |  |
+| tenantId | string | Yes |  |
+| page | int | No |  |
+| limit | int | No |  |
+| skip | int | No |  |
+| asTree | bool | No |  |
+| skipChildren | int | No |  |
+| limitChildren | int | No |  |
+| maxTreeDepth | int | No |  |
+| urlId | string | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
+| contextUserId | string | No |  |
+| hashTag | string | No |  |
+| parentId | string | No |  |
+| direction | SortDirections | No |  |
+| fromDate | int64 | No |  |
+| toDate | int64 | No |  |
 
 ## 回應
 
-回傳: [`Option[GetComments_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments200response.nim)
+回傳：[`Option[APIGetCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comments_response.nim)
 
 ## 範例
 
@@ -29,24 +31,23 @@
 let (response, httpResponse) = client.getComments(
   tenantId = "my-tenant-123",
   page = 1,
-  limit = 20,
+  limit = 25,
   skip = 0,
-  asTree = false,
+  asTree = true,
   skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "news/2025-election-night",
-  userId = "",
+  limitChildren = 5,
+  maxTreeDepth = 3,
+  urlId = "news/2026-global-economy",
+  userId = "user-789",
   anonUserId = "",
   contextUserId = "",
-  hashTag = "",
+  hashTag = "economy",
   parentId = "",
-  direction = SortDirections.Desc
+  direction = SortDirections.Desc,
+  fromDate = 1710000000000'i64,
+  toDate = 1710100000000'i64
 )
-
 if response.isSome:
-  let comments = response.get()
-  echo "Status: ", httpResponse.status, " Comments: ", comments
+  let commentsResp = response.get()
+  discard commentsResp
 [inline-code-end]
-
----

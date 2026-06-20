@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadge200Response.php)
+Возвращает: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeResponse.php)
 
 ## Пример
 
@@ -24,13 +24,13 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // строка
-$id = 'id_example'; // строка
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getUserBadge($tenant_id, $id);
@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

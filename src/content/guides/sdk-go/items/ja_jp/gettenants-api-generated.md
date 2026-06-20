@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | meta | string | query | いいえ |  |
@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-戻り値: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_200_response.go)
+戻り値: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenants_response.go)
 
 ## 例
 
@@ -25,8 +25,8 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	meta := "meta_example" // string |  (オプション)
-	skip := float64(1.2) // float64 |  (オプション)
+	meta := "meta_example" // string |  （オプション）
+	skip := float64(1.2) // float64 |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenants``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenants` からのレスポンス: GetTenants200Response
+	// `GetTenants` のレスポンス: GetTenantsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenants`: %v\n", resp)
 }
 [inline-code-end]

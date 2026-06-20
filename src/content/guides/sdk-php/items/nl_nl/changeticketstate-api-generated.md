@@ -6,9 +6,9 @@
 | userId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Response
+## Respons
 
-Geeft terug: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeTicketState200Response.php)
+Geeft terug: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeTicketStateResponse.php)
 
 ## Voorbeeld
 

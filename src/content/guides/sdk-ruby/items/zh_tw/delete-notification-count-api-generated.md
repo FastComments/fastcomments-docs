@@ -2,12 +2,12 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | 查詢 | 是 |  |
+| id | string | 路徑 | 是 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 範例
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # 設定授權
 FastCommentsClient.configure do |config|
-  # 設定 API 金鑰授權: api_key
+  # 設定 API 金鑰授權：api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 若要設定 API 金鑰的前綴（例如 'Bearer'），請取消註解以下行（預設為 nil）
+  # 若要設定 API 金鑰的前綴（例如 'Bearer'），請取消註解下列程式碼（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_notification_count: #{e}"
 end
 [inline-code-end]
-
----

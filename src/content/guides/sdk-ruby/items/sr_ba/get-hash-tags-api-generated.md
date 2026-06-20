@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Потребно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| page | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| page | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags200_response.rb)
+Враћа: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_hash_tags_response.rb)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'get_hash_tags Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_hash_tags Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Podesi autorizaciju API ključa: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentari sljedeći red da postaviš prefiks za API ključ, npr. 'Bearer' (podrazumijevano nil)
+  # Откоментирајте следећи ред да поставите префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

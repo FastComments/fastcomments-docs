@@ -2,12 +2,12 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tag | string | path | はい |  |
-| tenantId | string | query | いいえ |  |
+| tag | string | path | Yes |  |
+| tenantId | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_hash_tag200_response.rb)
+戻り値: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
 
 ## 例
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証を設定
+# 認証の設定
 FastCommentsClient.configure do |config|
-  # API キー認証を設定: api_key
+  # APIキー認証の設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API キーのプレフィックスを設定するには、次の行のコメントを解除してください。例: 'Bearer'（デフォルトは nil）
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,3 +38,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"
 end
 [inline-code-end]
+
+---

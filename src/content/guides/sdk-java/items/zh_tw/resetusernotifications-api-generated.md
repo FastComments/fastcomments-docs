@@ -1,24 +1,24 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 型別 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | 是 |  |
-| afterId | string | 查詢 | 否 |  |
-| afterCreatedAt | integer | 查詢 | 否 |  |
-| unreadOnly | boolean | 查詢 | 否 |  |
-| dmOnly | boolean | 查詢 | 否 |  |
-| noDm | boolean | 查詢 | 否 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | 是 |  |
+| afterId | string | query | 否 |  |
+| afterCreatedAt | integer | query | 否 |  |
+| unreadOnly | boolean | query | 否 |  |
+| dmOnly | boolean | query | 否 |  |
+| noDm | boolean | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotifications200Response.java)
+回傳：[`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ResetUserNotificationsResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'resetUserNotifications 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -39,7 +39,7 @@ public class Example {
     Boolean noDm = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ResetUserNotifications200Response result = apiInstance.resetUserNotifications(tenantId)
+      ResetUserNotificationsResponse result = apiInstance.resetUserNotifications(tenantId)
             .afterId(afterId)
             .afterCreatedAt(afterCreatedAt)
             .unreadOnly(unreadOnly)
@@ -58,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

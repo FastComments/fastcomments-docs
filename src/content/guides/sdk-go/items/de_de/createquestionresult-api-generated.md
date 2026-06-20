@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -7,11 +6,11 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_200_response.go)
+Gibt zurück: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_question_result_response.go)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für CreateQuestionResult'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CreateQuestionResult Beispiel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateQuestionResult``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Antwort von `CreateQuestionResult`: CreateQuestionResult200Response
+	// response from `CreateQuestionResult`: CreateQuestionResultResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,36 +1,36 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| questionId | string | query | Ne |  |
-| questionIds | array | query | Ne |  |
-| urlId | string | query | Ne |  |
-| timeBucket | string | query | Ne |  |
-| startDate | string | query | Ne |  |
-| forceRecalculate | boolean | query | Ne |  |
+| tenantId | string | query | Да |  |
+| questionId | string | query | Не |  |
+| questionIds | array | query | Не |  |
+| urlId | string | query | Не |  |
+| timeBucket | string | query | Не |  |
+| startDate | string | query | Не |  |
+| forceRecalculate | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateQuestionResults200Response.php)
+Враћа: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateQuestionResultsResponse.php)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer aggregateQuestionResults'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример aggregateQuestionResults'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
+// Конфигуришите ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite liniju ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ако желите користити прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -49,5 +49,3 @@ try {
     echo 'Exception when calling DefaultApi->aggregateQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

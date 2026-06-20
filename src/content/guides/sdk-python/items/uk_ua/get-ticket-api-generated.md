@@ -1,48 +1,48 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
-| userId | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket200_response.py)
+Повертає: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_ticket_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад get_ticket'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_ticket200_response import GetTicket200Response
+from client.models.get_ticket_response import GetTicketResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням дорівнює https://fastcomments.com
-# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста необов'язкове та за замовчуванням має значення https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки API-сервера.
-# Приклади для кожного методу автентифікації наведені нижче, використайте той приклад, який
-# відповідає вашому випадку використання автентифікації.
+# відповідно до політики безпеки серверу API.
+# Нижче наведено приклади для кожного методу автентифікації, використайте той,
+# що відповідає вашому випадку використання автентифікації.
 
-# Налаштуйте авторизацію за API-ключем: api_key
+# Налаштування авторизації за допомогою API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Використайте контекст із екземпляром API-клієнта
+# Відкрийте контекст із екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (необов'язково)
+    user_id = 'user_id_example' # str |  (optional)
 
     try:
         api_response = api_instance.get_ticket(tenant_id, id, user_id=user_id)
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_ticket: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,17 +1,17 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | No |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
-| searchSection | string | query | No |  |
+| tenantId | string | path | Ναι |  |
+| urlId | string | query | Ναι |  |
+| usernameStartsWith | string | query | Όχι |  |
+| mentionGroupIds | array | query | Όχι |  |
+| sso | string | query | Όχι |  |
+| searchSection | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
+Επιστρέφει: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## Παράδειγμα
 
@@ -23,16 +23,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί το `GuzzleHttp\Client` ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί ως προεπιλογή το `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // συμβολοσειρά
-$url_id = 'url_id_example'; // συμβολοσειρά
-$username_starts_with = 'username_starts_with_example'; // συμβολοσειρά
-$mention_group_ids = array('mention_group_ids_example'); // πίνακας συμβολοσειρών
-$sso = 'sso_example'; // συμβολοσειρά
-$search_section = 'search_section_example'; // συμβολοσειρά
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$username_starts_with = 'username_starts_with_example'; // string
+$mention_group_ids = array('mention_group_ids_example'); // string[]
+$sso = 'sso_example'; // string
+$search_section = 'search_section_example'; // string
 
 try {
     $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

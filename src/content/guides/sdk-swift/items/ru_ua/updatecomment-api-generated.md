@@ -1,22 +1,22 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| contextUserId | string | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| isLive | boolean | query | No |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| contextUserId | string | query | Нет |  |
+| doSpamCheck | boolean | query | Нет |  |
+| isLive | boolean | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример updateComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. В случае проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода все еще находятся в стадии бета. В случае проблем, пожалуйста, сообщите об этом на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

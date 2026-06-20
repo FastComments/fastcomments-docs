@@ -1,16 +1,16 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|-------------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
+| userId | string | query | Nein |  |
+| state | number | query | Nein |  |
+| skip | number | query | Nein |  |
+| limit | number | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets200_response.rb)
+Gibt zurück: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets_response.rb)
 
 ## Beispiel
 
@@ -20,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # Autorisierung einrichten
 FastCommentsClient.configure do |config|
-  # API-Schlüssel-Authorisierung konfigurieren: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Heben Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
+  # Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel zu setzen, z. B. 'Bearer' (Standardwert: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +43,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tickets: #{e}"
 end
 [inline-code-end]
+
+---

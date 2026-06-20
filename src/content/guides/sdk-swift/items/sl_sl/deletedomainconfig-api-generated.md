@@ -5,19 +5,19 @@
 | tenantId | string | query | Da |  |
 | domain | string | path | Da |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfig200Response.swift)
+Vrne: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfigResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer deleteDomainConfig'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za kakršnokoli težavo poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta različici. Za kakršnokoli težavo prosimo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // Niz | 
-let domain = "domain_example" // Niz | 
+let tenantId = "tenantId_example" // String | 
+let domain = "domain_example" // String | 
 
 DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, error) in
     guard error == nil else {

@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_hash_tag200_response.rb)
+Gibt zurück: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
 
 ## Beispiel
 
@@ -15,11 +15,11 @@ Gibt zurück: [`PatchHashTag200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Authentifizierung einrichten
+# Autorisierung einrichten
 FastCommentsClient.configure do |config|
-  # Konfigurieren der API-Schlüssel-Authentifizierung: api_key
+  # API-Schlüssel-Autorisierung konfigurieren: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Kommentarzeichen der folgenden Zeile entfernen, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standardwert: nil)
+  # Heben Sie die Auskommentierung der folgenden Zeile auf, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

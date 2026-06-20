@@ -6,13 +6,13 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigs200Response.java)
+Zwraca: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetDomainConfigsResponse.java)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getDomainConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getDomainConfigs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Zaimportuj klasy:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,16 +34,18 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     try {
-      GetDomainConfigs200Response result = apiInstance.getDomainConfigs(tenantId)
+      GetDomainConfigsResponse result = apiInstance.getDomainConfigs(tenantId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Wyjątek podczas wywoływania DefaultApi#getDomainConfigs");
-      System.err.println("Kod statusu: " + e.getCode());
-      System.err.println("Powód: " + e.getResponseBody());
-      System.err.println("Nagłówki odpowiedzi: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#getDomainConfigs");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

@@ -6,33 +6,32 @@
 
 ## Odgovor
 
-Vraća: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator200_response.py)
+Vraća: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_moderator_response.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer create_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_moderator200_response import CreateModerator200Response
 from client.models.create_moderator_body import CreateModeratorBody
+from client.models.create_moderator_response import CreateModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
+# Navođenje hosta je neobavezno i po zadanom je https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurirati parametre autentifikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentifikacije su navedeni u nastavku, upotrijebite primjer koji
-# odgovara vašem scenariju korištenja.
-
-# Konfigurirajte autorizaciju API ključa: api_key
+# Klijent mora konfigurirati parametre autentikacije i autorizacije
+# u skladu s politikom sigurnosti API servera.
+# Donje su navedeni primjeri za svaki način autentikacije; koristite onaj
+# koji odgovara vašem slučaju upotrebe.
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Ako je potrebno, otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ
+# Poništite komentar ispod za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta

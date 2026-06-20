@@ -7,32 +7,32 @@
 
 ## Одговор
 
-Враћа: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant200_response.py)
+Враћа: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant200_response import GetTenant200Response
+from client.models.get_tenant_response import GetTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционо и подразумево је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
+# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора подесити параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Испод су наведени примери за сваки метод аутентификације, користите примјер који
+# Клијент мора да подеси параметре за аутентификацију и ауторизацију
+# у складу са политиком безбедности API сервера.
+# Испод су дати примери за сваки метод аутентификације, користите онај који
 # одговара вашем случају коришћења аутентификације.
 
-# Конфигуришите овлашћење API кључа: api_key
+# Подесите API key ауторизацију: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента

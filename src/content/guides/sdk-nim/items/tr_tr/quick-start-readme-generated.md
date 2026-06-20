@@ -1,6 +1,6 @@
 ### Kimlik Doğrulamalı API'leri Kullanma (DefaultAPI)
 
-**Önemli:** Kimlik doğrulamalı uç noktalar için API anahtarınızın `x-api-key` başlığı olarak ayarlanması gerekir.
+**Önemli:** Kimlik doğrulamalı uç noktalar, API anahtarınızın `x-api-key` başlığı olarak ayarlanmasını gerektirir.
 
 ```nim
 import httpclient
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Kimlik doğrulamalı API çağrıları yap
+# Kimlik doğrulamalı API çağrıları yapın
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -37,9 +37,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Halka Açık API'leri Kullanma (PublicAPI)
+### Public API'leri Kullanma (PublicAPI)
 
-Halka açık uç noktalar kimlik doğrulama gerektirmez:
+Genel uç noktalar kimlik doğrulama gerektirmez:
 
 ```nim
 import httpclient
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Halka açık API çağrıları yap
+# Genel API çağrıları yapın
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Moderasyon API'lerini Kullanma (ModerationAPI)
+
+Moderasyon uç noktaları moderatör panosunu destekler ve görev yapan moderatör için bir SSO belirteciyle kimlik doğrulanır:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Moderasyon panosundaki yorumları listeleyin
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Yaygın Sorunlar
 
-1. **401 authentication error**: DefaultAPI istekleri yapmadan önce HttpClient üzerinde `x-api-key` başlığını ayarladığınızdan emin olun: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Sunucu tarafı kimlik doğrulamalı istekler için `api_default`, istemci tarafı/halka açık istekler için `api_public` kullanın.
+1. **401 kimlik doğrulama hatası**: DefaultAPI istekleri yapmadan önce HttpClient üzerinde `x-api-key` başlığını ayarladığınızdan emin olun: `client.headers["x-api-key"] = "your-api-key"`
+2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `api_default` kullanın, istemci tarafı/genel istekler için `api_public` kullanın ve moderatör panosu istekleri için `api_moderation` kullanın.

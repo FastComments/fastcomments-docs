@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Ime | Tip | Lokacija | Obavezno | Opis |
@@ -7,14 +8,14 @@
 
 ## Odgovor
 
-Vraća: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags200_response.py)
+Vraća: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_hash_tags Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_hash_tags'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_hash_tags200_response import GetHashTags200Response
+from client.models.get_hash_tags_response import GetHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -24,15 +25,15 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurirati parametre autentifikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentifikacije dani su u nastavku, koristite primjer koji
-# zadovoljava vaš slučaj korištenja autentifikacije.
+# Klijent mora konfigurirati parametre autentikacije i autorizacije
+# u skladu sa sigurnosnom politikom API poslužitelja.
+# Primjeri za svaku metodu autentikacije navedeni su u nastavku; upotrijebite primjer koji
+# odgovara vašem slučaju upotrebe autentikacije.
 
-# Configure API key authorization: api_key
+# Konfigurirajte autorizaciju putem API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
+# Ako je potrebno, otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta
@@ -49,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_hash_tags: %s\n" % e)
 [inline-code-end]
+
+---

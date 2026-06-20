@@ -1,22 +1,22 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Не |  |
-| externalId | string | query | Не |  |
-| eventType | string | query | Не |  |
-| type | string | query | Не |  |
-| domain | string | query | Не |  |
-| attemptCountGT | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| commentId | string | query | Ne |  |
+| externalId | string | query | Ne |  |
+| eventType | string | query | Ne |  |
+| type | string | query | Ne |  |
+| domain | string | query | Ne |  |
+| attemptCountGT | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример GetPendingWebhookEventCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer GetPendingWebhookEventCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  (опционално)
-	externalId := "externalId_example" // string |  (опционално)
-	eventType := "eventType_example" // string |  (опционално)
-	type_ := "type__example" // string |  (опционално)
-	domain := "domain_example" // string |  (опционално)
-	attemptCountGT := float64(1.2) // float64 |  (опционално)
+	commentId := "commentId_example" // string |  (opciono)
+	externalId := "externalId_example" // string |  (opciono)
+	eventType := "eventType_example" // string |  (opciono)
+	type_ := "type__example" // string |  (opciono)
+	domain := "domain_example" // string |  (opciono)
+	attemptCountGT := float64(1.2) // float64 |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetPendingWebhookEventCount`: GetPendingWebhookEventCount200Response
+	// odgovor od `GetPendingWebhookEventCount`: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

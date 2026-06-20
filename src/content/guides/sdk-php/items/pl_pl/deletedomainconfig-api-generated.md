@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteDomainConfig200Response.php)
+Zwraca: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteDomainConfigResponse.php)
 
 ## Przykład
 

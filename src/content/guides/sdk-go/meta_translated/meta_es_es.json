@@ -27,19 +27,25 @@
       "type": "api"
     },
     {
+      "name": "Cerrar sesión (público)",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "Autenticación",
+      "type": "api"
+    },
+    {
       "name": "Bloquear desde comentario (público)",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Bloquear desde comentario",
+      "subCat": "Bloquear por comentario",
       "type": "api"
     },
     {
       "name": "Desbloquear comentario (público)",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Bloquear desde comentario",
+      "subCat": "Bloquear por comentario",
       "type": "api"
     },
     {
-      "name": "Comprobar comentarios bloqueados",
+      "name": "Verificar comentarios bloqueados",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "Comprobar comentarios bloqueados",
       "type": "api"
@@ -75,7 +81,7 @@
       "type": "api"
     },
     {
-      "name": "Reportar comentario",
+      "name": "Denunciar comentario",
       "file": "flagcomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -105,7 +111,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener nombres de usuarios que votaron",
+      "name": "Obtener nombres de usuarios que votaron el comentario",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -147,7 +153,7 @@
       "type": "api"
     },
     {
-      "name": "Quitar reporte de comentario",
+      "name": "Quitar denuncia de comentario",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -174,6 +180,12 @@
       "name": "Votar comentario",
       "file": "votecomment-api-generated.md",
       "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "Obtener comentarios del usuario",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Comentarios del usuario",
       "type": "api"
     },
     {
@@ -273,7 +285,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener registro global de eventos",
+      "name": "Obtener registro de eventos global",
       "file": "getglobaleventlog-api-generated.md",
       "subCat": "Registro de eventos",
       "type": "api"
@@ -315,7 +327,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener reacciones de usuarios (públicas)",
+      "name": "Obtener reacciones de usuario (público)",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -339,9 +351,27 @@
       "type": "api"
     },
     {
-      "name": "Reportar comentario (público)",
+      "name": "Denunciar comentario (público)",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Reportar comentario",
+      "subCat": "Denunciar comentario",
+      "type": "api"
+    },
+    {
+      "name": "Obtener GIF grande",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "Buscar GIFs",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "Obtener GIFs de tendencia",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Gifs",
       "type": "api"
     },
     {
@@ -372,6 +402,264 @@
       "name": "Actualizar parcialmente hashtag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "Eliminar voto de moderación",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener comentarios de la API",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener estado de exportación de la API",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener IDs de la API",
+      "file": "getapiids-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener usuarios baneados por comentario",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener estado de baneo del comentario",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener respuestas del comentario",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener recuento",
+      "file": "getcount-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener recuentos",
+      "file": "getcounts-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener registros",
+      "file": "getlogs-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener insignias manuales",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener insignias manuales para usuario",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener comentario de moderación",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener texto del comentario de moderación",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener resumen previo al baneo",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener resumen de búsqueda de comentarios",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener páginas de búsqueda",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener sitios de búsqueda",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener sugerencias de búsqueda",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener usuarios de búsqueda",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener factor de confianza",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener preferencia de baneo del usuario",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener perfil interno del usuario",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Ajustar votos de comentario",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Iniciar exportación de la API",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Banear usuario por comentario",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Deshacer baneo de usuario",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Enviar resumen previo al baneo en bloque",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Obtener comentarios por IDs",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Denunciar comentario (moderación)",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Eliminar comentario (moderación)",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Restaurar comentario eliminado",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Establecer estado de aprobación del comentario",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Establecer estado de revisión del comentario",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Establecer estado de spam del comentario",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Establecer texto del comentario (moderación)",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Quitar denuncia del comentario (moderación)",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Votar (moderación)",
+      "file": "postvote-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Otorgar insignia",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Cerrar hilo",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Quitar insignia",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Reabrir hilo",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "Moderación",
+      "type": "api"
+    },
+    {
+      "name": "Establecer factor de confianza",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "Moderación",
       "type": "api"
     },
     {
@@ -441,6 +729,48 @@
       "type": "api"
     },
     {
+      "name": "Crear reacción de página V1",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
+      "name": "Crear reacción de página V2",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
+      "name": "Eliminar reacción de página V1",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
+      "name": "Eliminar reacción de página V2",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
+      "name": "Obtener 'me gusta' de página V1",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
+      "name": "Obtener reacciones de página V2",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
+      "name": "Obtener usuarios que reaccionaron en página V2",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Reacciones de página",
+      "type": "api"
+    },
+    {
       "name": "Agregar página",
       "file": "addpage-api-generated.md",
       "subCat": "Páginas",
@@ -453,7 +783,19 @@
       "type": "api"
     },
     {
-      "name": "Obtener página por URL/ID",
+      "name": "Obtener usuarios desconectados",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "Obtener usuarios conectados",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "Obtener página por ID de URL",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
@@ -461,6 +803,18 @@
     {
       "name": "Obtener páginas",
       "file": "getpages-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "Obtener páginas (públicas)",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "Obtener información de usuarios",
+      "file": "getusersinfo-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
     },
@@ -489,13 +843,13 @@
       "type": "api"
     },
     {
-      "name": "Crear configuración de preguntas",
+      "name": "Crear configuración de pregunta",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Configuraciones de preguntas",
       "type": "api"
     },
     {
-      "name": "Eliminar configuración de preguntas",
+      "name": "Eliminar configuración de pregunta",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "Configuraciones de preguntas",
       "type": "api"
@@ -507,7 +861,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener configuraciones de preguntas",
+      "name": "Obtener configuraciones de pregunta",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Configuraciones de preguntas",
       "type": "api"
@@ -579,7 +933,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener usuario SSO por correo electrónico",
+      "name": "Obtener usuario SSO por correo",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "Usuarios SSO",
       "type": "api"
@@ -639,39 +993,39 @@
       "type": "api"
     },
     {
-      "name": "Crear paquete de inquilino",
+      "name": "Crear paquete del inquilino",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paquetes de inquilinos",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "Eliminar paquete de inquilino",
+      "name": "Eliminar paquete del inquilino",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paquetes de inquilinos",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "Obtener paquete de inquilino",
+      "name": "Obtener paquete del inquilino",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paquetes de inquilinos",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "Obtener paquetes de inquilinos",
+      "name": "Obtener paquetes del inquilino",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paquetes de inquilinos",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "Reemplazar paquete de inquilino",
+      "name": "Reemplazar paquete del inquilino",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paquetes de inquilinos",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "Actualizar paquete de inquilino",
+      "name": "Actualizar paquete del inquilino",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paquetes de inquilinos",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
@@ -747,7 +1101,7 @@
       "type": "api"
     },
     {
-      "name": "Cambiar estado del ticket",
+      "name": "Cambiar estado de ticket",
       "file": "changeticketstate-api-generated.md",
       "subCat": "Tickets",
       "type": "api"
@@ -771,6 +1125,12 @@
       "type": "api"
     },
     {
+      "name": "Obtener traducciones",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Traducciones",
+      "type": "api"
+    },
+    {
       "name": "Subir imagen",
       "file": "uploadimage-api-generated.md",
       "subCat": "Subir imagen",
@@ -783,7 +1143,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener progreso de insignia por ID de usuario",
+      "name": "Obtener progreso de insignia de usuario por ID de usuario",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "Progreso de insignias de usuario",
       "type": "api"
@@ -827,43 +1187,43 @@
     {
       "name": "Obtener recuento de notificaciones del usuario",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
       "name": "Obtener notificaciones del usuario",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
       "name": "Restablecer recuento de notificaciones del usuario",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
       "name": "Restablecer notificaciones del usuario",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "Actualizar estado de suscripción a notificaciones de comentarios del usuario",
+      "name": "Actualizar estado de suscripción a comentarios del usuario",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "Actualizar estado de suscripción a notificaciones de página del usuario",
+      "name": "Actualizar estado de suscripción a páginas del usuario",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
       "name": "Actualizar estado de notificación del usuario",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Notificaciones del usuario",
+      "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {

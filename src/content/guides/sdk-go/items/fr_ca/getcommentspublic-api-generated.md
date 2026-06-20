@@ -37,7 +37,7 @@ urlId
 
 ## Réponse
 
-Retourne : [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Renvoie : [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## Exemple
 
@@ -49,38 +49,38 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	page := int32(56) // int32 |  (facultatif)
-	direction := openapiclient.SortDirections("OF") // SortDirections |  (facultatif)
-	sso := "sso_example" // string |  (facultatif)
-	skip := int32(56) // int32 |  (facultatif)
-	skipChildren := int32(56) // int32 |  (facultatif)
-	limit := int32(56) // int32 |  (facultatif)
-	limitChildren := int32(56) // int32 |  (facultatif)
-	countChildren := true // bool |  (facultatif)
-	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (facultatif)
-	includeConfig := true // bool |  (facultatif)
-	countAll := true // bool |  (facultatif)
-	includei10n := true // bool |  (facultatif)
-	locale := "locale_example" // string |  (facultatif)
-	modules := "modules_example" // string |  (facultatif)
-	isCrawler := true // bool |  (facultatif)
-	includeNotificationCount := true // bool |  (facultatif)
-	asTree := true // bool |  (facultatif)
-	maxTreeDepth := int32(56) // int32 |  (facultatif)
-	useFullTranslationIds := true // bool |  (facultatif)
-	parentId := "parentId_example" // string |  (facultatif)
-	searchText := "searchText_example" // string |  (facultatif)
-	hashTags := []string{"Inner_example"} // []string |  (facultatif)
-	userId := "userId_example" // string |  (facultatif)
-	customConfigStr := "customConfigStr_example" // string |  (facultatif)
-	afterCommentId := "afterCommentId_example" // string |  (facultatif)
-	beforeCommentId := "beforeCommentId_example" // string |  (facultatif)
+	page := int32(56) // int32 |  (optionnel)
+	direction := openapiclient.SortDirections("OF") // SortDirections |  (optionnel)
+	sso := "sso_example" // string |  (optionnel)
+	skip := int32(56) // int32 |  (optionnel)
+	skipChildren := int32(56) // int32 |  (optionnel)
+	limit := int32(56) // int32 |  (optionnel)
+	limitChildren := int32(56) // int32 |  (optionnel)
+	countChildren := true // bool |  (optionnel)
+	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (optionnel)
+	includeConfig := true // bool |  (optionnel)
+	countAll := true // bool |  (optionnel)
+	includei10n := true // bool |  (optionnel)
+	locale := "locale_example" // string |  (optionnel)
+	modules := "modules_example" // string |  (optionnel)
+	isCrawler := true // bool |  (optionnel)
+	includeNotificationCount := true // bool |  (optionnel)
+	asTree := true // bool |  (optionnel)
+	maxTreeDepth := int32(56) // int32 |  (optionnel)
+	useFullTranslationIds := true // bool |  (optionnel)
+	parentId := "parentId_example" // string |  (optionnel)
+	searchText := "searchText_example" // string |  (optionnel)
+	hashTags := []string{"Inner_example"} // []string |  (optionnel)
+	userId := "userId_example" // string |  (optionnel)
+	customConfigStr := "customConfigStr_example" // string |  (optionnel)
+	afterCommentId := "afterCommentId_example" // string |  (optionnel)
+	beforeCommentId := "beforeCommentId_example" // string |  (optionnel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetCommentsPublic` : GetCommentsPublic200Response
+	// réponse de `GetCommentsPublic`: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

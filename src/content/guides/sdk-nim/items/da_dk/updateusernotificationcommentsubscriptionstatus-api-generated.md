@@ -1,6 +1,8 @@
+Aktivér eller deaktiver notifikationer for en bestemt kommentar.
+
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | notificationId | string | Nej |  |
@@ -10,7 +12,7 @@
 
 ## Respons
 
-Returnerer: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Returnerer: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## Eksempel
 
@@ -18,16 +20,13 @@ Returnerer: [`Option[UpdateUserNotificationStatus_200_response]`](https://github
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "notif-456",
-  optedInOrOut = "opted_in",
+  notificationId = "",
+  optedInOrOut = "",
   commentId = "cmt-789",
-  sso = "sso-token-abc"
+  sso = ""
 )
-if response.isSome:
-  let updatedStatus = response.get()
-  discard updatedStatus
-else:
-  discard httpResponse
-[inline-code-end]
 
----
+if response.isSome:
+  let updateResp = response.get()
+  echo "Subscription update response: ", updateResp
+[inline-code-end]

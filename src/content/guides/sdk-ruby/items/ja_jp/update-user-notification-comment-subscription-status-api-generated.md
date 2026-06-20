@@ -1,4 +1,4 @@
-特定のコメントに対する通知を有効または無効にします。
+特定のコメントに対する通知を有効化または無効化します。
 
 ## パラメータ
 
@@ -12,7 +12,7 @@
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+戻り値: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## 例
 
@@ -22,12 +22,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 文字列 | 
-notification_id = 'notification_id_example' # 文字列 | 
-opted_in_or_out = 'in' # 文字列 | 
-comment_id = 'comment_id_example' # 文字列 | 
+tenant_id = 'tenant_id_example' # String | 
+notification_id = 'notification_id_example' # String | 
+opted_in_or_out = 'in' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # 文字列 | 
+  sso: 'sso_example' # String | 
 }
 
 begin

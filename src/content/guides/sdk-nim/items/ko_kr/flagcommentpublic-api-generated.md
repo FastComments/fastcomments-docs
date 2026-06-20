@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | Type | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | commentId | string | 예 |  |
@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 예제
 
@@ -17,11 +17,14 @@
 [inline-code-start]
 let (response, httpResponse) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-98765",
-  isFlagged = false,
+  commentId = "cmt-456789",
+  isFlagged = true,
   sso = ""
 )
+
 if response.isSome:
-  let flagResult = response.get()
-  discard flagResult
+  let apiResp = response.get()
+  discard apiResp
+else:
+  discard httpResponse
 [inline-code-end]

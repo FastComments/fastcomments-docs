@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | page | integer | query | Non |  |
@@ -17,14 +17,16 @@
 | hashTag | string | query | Non |  |
 | parentId | string | query | Non |  |
 | direction | string | query | Non |  |
+| fromDate | integer | query | Non |  |
+| toDate | integer | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetComments200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_200_response.go)
+Renvoie : [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_comments_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -32,34 +34,36 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	page := int32(56) // int32 |  (facultatif)
-	limit := int32(56) // int32 |  (facultatif)
-	skip := int32(56) // int32 |  (facultatif)
-	asTree := true // bool |  (facultatif)
-	skipChildren := int32(56) // int32 |  (facultatif)
-	limitChildren := int32(56) // int32 |  (facultatif)
-	maxTreeDepth := int32(56) // int32 |  (facultatif)
-	urlId := "urlId_example" // string |  (facultatif)
-	userId := "userId_example" // string |  (facultatif)
-	anonUserId := "anonUserId_example" // string |  (facultatif)
-	contextUserId := "contextUserId_example" // string |  (facultatif)
-	hashTag := "hashTag_example" // string |  (facultatif)
-	parentId := "parentId_example" // string |  (facultatif)
-	direction := openapiclient.SortDirections("OF") // SortDirections |  (facultatif)
+	page := int32(56) // int32 |  (optionnel)
+	limit := int32(56) // int32 |  (optionnel)
+	skip := int32(56) // int32 |  (optionnel)
+	asTree := true // bool |  (optionnel)
+	skipChildren := int32(56) // int32 |  (optionnel)
+	limitChildren := int32(56) // int32 |  (optionnel)
+	maxTreeDepth := int32(56) // int32 |  (optionnel)
+	urlId := "urlId_example" // string |  (optionnel)
+	userId := "userId_example" // string |  (optionnel)
+	anonUserId := "anonUserId_example" // string |  (optionnel)
+	contextUserId := "contextUserId_example" // string |  (optionnel)
+	hashTag := "hashTag_example" // string |  (optionnel)
+	parentId := "parentId_example" // string |  (optionnel)
+	direction := openapiclient.SortDirections("OF") // SortDirections |  (optionnel)
+	fromDate := int64(789) // int64 |  (optionnel)
+	toDate := int64(789) // int64 |  (optionnel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.GetComments(context.Background()).TenantId(tenantId).Page(page).Limit(limit).Skip(skip).AsTree(asTree).SkipChildren(skipChildren).LimitChildren(limitChildren).MaxTreeDepth(maxTreeDepth).UrlId(urlId).UserId(userId).AnonUserId(anonUserId).ContextUserId(contextUserId).HashTag(hashTag).ParentId(parentId).Direction(direction).Execute()
+	resp, r, err := apiClient.DefaultAPI.GetComments(context.Background()).TenantId(tenantId).Page(page).Limit(limit).Skip(skip).AsTree(asTree).SkipChildren(skipChildren).LimitChildren(limitChildren).MaxTreeDepth(maxTreeDepth).UrlId(urlId).UserId(userId).AnonUserId(anonUserId).ContextUserId(contextUserId).HashTag(hashTag).ParentId(parentId).Direction(direction).FromDate(fromDate).ToDate(toDate).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetComments`: GetComments200Response
+	// réponse de `GetComments` : APIGetCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetComments`: %v\n", resp)
 }
 [inline-code-end]

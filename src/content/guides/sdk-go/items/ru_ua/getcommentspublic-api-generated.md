@@ -1,4 +1,4 @@
-запрос
+req
 tenantId
 urlId
 
@@ -6,38 +6,38 @@ urlId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| page | integer | query | Нет |  |
-| direction | string | query | Нет |  |
-| sso | string | query | Нет |  |
-| skip | integer | query | Нет |  |
-| skipChildren | integer | query | Нет |  |
-| limit | integer | query | Нет |  |
-| limitChildren | integer | query | Нет |  |
-| countChildren | boolean | query | Нет |  |
-| fetchPageForCommentId | string | query | Нет |  |
-| includeConfig | boolean | query | Нет |  |
-| countAll | boolean | query | Нет |  |
-| includei10n | boolean | query | Нет |  |
-| locale | string | query | Нет |  |
-| modules | string | query | Нет |  |
-| isCrawler | boolean | query | Нет |  |
-| includeNotificationCount | boolean | query | Нет |  |
-| asTree | boolean | query | Нет |  |
-| maxTreeDepth | integer | query | Нет |  |
-| useFullTranslationIds | boolean | query | Нет |  |
-| parentId | string | query | Нет |  |
-| searchText | string | query | Нет |  |
-| hashTags | array | query | Нет |  |
-| userId | string | query | Нет |  |
-| customConfigStr | string | query | Нет |  |
-| afterCommentId | string | query | Нет |  |
-| beforeCommentId | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Возвращает: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## Пример
 
@@ -49,7 +49,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetCommentsPublic`: GetCommentsPublic200Response
+	// ответ от `GetCommentsPublic`: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

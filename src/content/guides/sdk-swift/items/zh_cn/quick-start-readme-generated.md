@@ -1,4 +1,3 @@
----
 ### 使用公共 API
 
 ```swift
@@ -48,9 +47,32 @@ do {
 }
 ```
 
-### 使用 SSO 进行认证
+### 使用审核 API
 
-#### 安全 SSO（推荐用于生产环境）
+```swift
+import FastCommentsSwift
+
+// 管理方法需由执行审核的管理员使用 `sso` 令牌授权
+// （使用 FastCommentsSSO 生成，参见上面的 SSO 部分）。
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### 使用 SSO 进行身份验证
+
+#### 安全 SSO（推荐用于生产）
 
 ```swift
 import FastCommentsSwift
@@ -71,7 +93,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // 将此令牌传递到前端以进行认证
+    // 将此令牌传递给前端以进行身份验证
 } catch {
     print("Error creating SSO token: \(error)")
 }
@@ -82,7 +104,7 @@ do {
 ```swift
 import FastCommentsSwift
 
-// 创建简单 SSO 用户数据（无需 API 密钥）
+// 创建简单 SSO 用户数据（不需要 API 密钥）
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
@@ -98,4 +120,3 @@ do {
     print("Error creating SSO token: \(error)")
 }
 ```
----

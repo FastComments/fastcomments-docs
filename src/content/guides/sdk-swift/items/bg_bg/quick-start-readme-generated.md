@@ -6,7 +6,7 @@ import FastCommentsSwift
 // Създаване на API клиент
 let publicApi = PublicAPI()
 
-// Получаване на коментари за страница
+// Извличане на коментари за страница
 do {
     let response = try await publicApi.getCommentsPublic(
         tenantId: "your-tenant-id",
@@ -22,7 +22,7 @@ do {
 }
 ```
 
-### Използване на удостоверения API
+### Използване на удостовереното API
 
 ```swift
 import FastCommentsSwift
@@ -31,7 +31,7 @@ import FastCommentsSwift
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Вземане на коментари чрез удостоверено API
+// Извличане на коментари, използвайки удостовереното API
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -41,6 +41,29 @@ do {
     print("Total comments: \(response.count ?? 0)")
     for comment in response.comments ?? [] {
         print("Comment ID: \(comment.id ?? ""), Text: \(comment.comment ?? "")")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### Използване на API за модерация
+
+```swift
+import FastCommentsSwift
+
+// Методите за модерация се упълномощават с `sso` токен за действащия модератор
+// (генерирайте го с FastCommentsSSO, вижте раздела за SSO по-горе).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
     }
 } catch {
     print("Error: \(error)")
@@ -61,7 +84,7 @@ let userData = SecureSSOUserData(
     id: "user-123",              // Идентификатор на потребителя
     email: "user@example.com",   // Имейл
     username: "johndoe",         // Потребителско име
-    avatar: "https://example.com/avatar.jpg" // URL към аватар
+    avatar: "https://example.com/avatar.jpg" // URL на аватар
 )
 
 // Генериране на SSO токен
@@ -70,7 +93,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Предайте този токен на своя фронтенд за удостоверяване
+    // Предайте този токен на фронтенда си за удостоверяване
 } catch {
     print("Error creating SSO token: \(error)")
 }
@@ -81,7 +104,7 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Създаване на опростени SSO данни за потребителя (не е нужен API ключ)
+// Създаване на прост SSO потребителски данни (не е необходим API ключ)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

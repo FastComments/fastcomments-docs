@@ -1,9 +1,10 @@
+---
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|----------|----------|-------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 | usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
@@ -11,7 +12,7 @@
 
 ## Respuesta
 
-Devuelve: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+Devuelve: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## Ejemplo
 
@@ -38,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
+
+---

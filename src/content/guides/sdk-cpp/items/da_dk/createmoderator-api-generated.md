@@ -7,31 +7,26 @@
 
 ## Svar
 
-Returnerer: [`CreateModerator_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModerator_200_response.h)
+Returnerer: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'createModerator Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator-eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-CreateModeratorBody createModeratorBody;
-createModeratorBody.email = U("moderator@example.com");
-createModeratorBody.displayName = U("Support Moderator");
-createModeratorBody.roles = std::vector<utility::string_t>{ U("moderator"), U("support") };
-createModeratorBody.notes = boost::optional<utility::string_t>(U("Temporary moderator for Q1"));
-api->createModerator(tenantId, createModeratorBody)
-.then([](pplx::task<std::shared_ptr<CreateModerator_200_response>> t)
-{
-    try
-    {
-        auto resp = t.get();
-        auto respCopy = std::make_shared<CreateModerator_200_response>(*resp);
-        (void)respCopy;
-    }
-    catch (const std::exception&)
-    {
+auto bodyPtr = std::make_shared<CreateModeratorBody>();
+bodyPtr->email = utility::string_t(U("moderator@mycompany.com"));
+bodyPtr->role = utility::string_t(U("moderator"));
+bodyPtr->displayName = boost::optional<utility::string_t>(U("Jane Moderator"));
+bodyPtr->isActive = boost::optional<bool>(true);
+
+api->createModerator(tenantId, *bodyPtr).then([](pplx::task<std::shared_ptr<CreateModeratorResponse>> task){
+    try {
+        auto resp = task.get();
+        if (resp) {
+            utility::string_t newModeratorId = resp->id;
+        }
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]
-
----

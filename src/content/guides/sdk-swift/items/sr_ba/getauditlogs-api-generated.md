@@ -1,31 +1,31 @@
-## Parametri
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| order | string | query | Ne |  |
-| after | number | query | Ne |  |
-| before | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
+| order | string | query | Не |  |
+| after | number | query | Не |  |
+| before | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogs200Response.swift)
+Враћа: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogsResponse.swift)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getAuditLogs Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примјери кода су још у бета фази. За било какав проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let limit = 987 // Double |  (neobavezno)
-let skip = 987 // Double |  (neobavezno)
-let order = SORT_DIR() // SORTDIR |  (neobavezno)
-let after = 987 // Double |  (neobavezno)
-let before = 987 // Double |  (neobavezno)
+let limit = 987 // Double |  (необавезно)
+let skip = 987 // Double |  (необавезно)
+let order = SORT_DIR() // SORTDIR |  (необавезно)
+let after = 987 // Double |  (необавезно)
+let before = 987 // Double |  (необавезно)
 
 DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
     guard error == nil else {
@@ -38,5 +38,3 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
-
----

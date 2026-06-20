@@ -1,19 +1,18 @@
-Agrega documentos agrupando-os (se groupBy for fornecido) e aplicando múltiplas operações.
-Diferentes operações (por exemplo sum, countDistinct, avg, etc.) são suportadas.
+Agrega documentos agrupando-os (se groupBy for fornecido) e aplicando múltiplas operações. Diferentes operações (por exemplo sum, countDistinct, avg, etc.) são suportadas.
 
-## Parameters
+## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | parentTenantId | string | query | Não |  |
 | includeStats | boolean | query | Não |  |
 
-## Response
+## Resposta
 
-Retorna: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Retorna: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
-## Example
+## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de Agregação'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,7 +38,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Aggregate`: AggregationResponse
+	// resposta de `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
+
+---

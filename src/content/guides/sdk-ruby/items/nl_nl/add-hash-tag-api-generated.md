@@ -1,12 +1,12 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Nee |  |
 
-## Antwoord
+## Response
 
-Geeft terug: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tag200_response.rb)
+Geeft terug: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_hash_tag_response.rb)
 
 ## Voorbeeld
 
@@ -14,11 +14,11 @@ Geeft terug: [`AddHashTag200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# autorisatie instellen
+# Autorisatie instellen
 FastCommentsClient.configure do |config|
   # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaarteken van de volgende regel weg om een prefix voor de API-sleutel in te stellen, bv. 'Bearer' (standaard: nil)
+  # Decommenteer de volgende regel om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

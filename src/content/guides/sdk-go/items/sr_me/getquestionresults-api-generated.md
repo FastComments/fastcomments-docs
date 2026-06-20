@@ -1,22 +1,22 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| questionId | string | query | Не |  |
-| questionIds | string | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Ne |  |
+| userId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| questionId | string | query | Ne |  |
+| questionIds | string | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_200_response.go)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_response.go)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'GetQuestionResults Примјер'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetQuestionResults Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	urlId := "urlId_example" // string |  (опционо)
-	userId := "userId_example" // string |  (опционо)
-	startDate := "startDate_example" // string |  (опционо)
-	questionId := "questionId_example" // string |  (опционо)
-	questionIds := "questionIds_example" // string |  (опционо)
-	skip := float64(1.2) // float64 |  (опционо)
+	urlId := "urlId_example" // string |  (neobavezno)
+	userId := "userId_example" // string |  (neobavezno)
+	startDate := "startDate_example" // string |  (neobavezno)
+	questionId := "questionId_example" // string |  (neobavezno)
+	questionIds := "questionIds_example" // string |  (neobavezno)
+	skip := float64(1.2) // float64 |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetQuestionResults`: GetQuestionResults200Response
+	// odgovor od `GetQuestionResults`: GetQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

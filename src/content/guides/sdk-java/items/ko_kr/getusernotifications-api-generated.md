@@ -1,21 +1,23 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| pageSize | integer | query | 아니요 |  |
-| afterId | string | query | 아니요 |  |
-| includeContext | boolean | query | 아니요 |  |
-| afterCreatedAt | integer | query | 아니요 |  |
-| unreadOnly | boolean | query | 아니요 |  |
-| dmOnly | boolean | query | 아니요 |  |
-| noDm | boolean | query | 아니요 |  |
-| includeTranslations | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| urlId | string | query | 아니오 | Used to determine whether the current page is subscribed. |
+| pageSize | integer | query | 아니오 |  |
+| afterId | string | query | 아니오 |  |
+| includeContext | boolean | query | 아니오 |  |
+| afterCreatedAt | integer | query | 아니오 |  |
+| unreadOnly | boolean | query | 아니오 |  |
+| dmOnly | boolean | query | 아니오 |  |
+| noDm | boolean | query | 아니오 |  |
+| includeTranslations | boolean | query | 아니오 |  |
+| includeTenantNotifications | boolean | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+반환: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## 예제
 
@@ -35,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 현재 페이지가 구독되어 있는지 여부를 판단하는 데 사용됩니다.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -43,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -54,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);

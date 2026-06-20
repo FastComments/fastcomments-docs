@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Location | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
 | tenantId | string | path | Sì |  |
 | commentId | string | path | Sì |  |
 | broadcastId | string | query | Sì |  |
@@ -9,19 +9,19 @@
 
 ## Risposta
 
-Restituisce: [`LockComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/lock_comment200_response.py)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di un_lock_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.lock_comment200_response import LockComment200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e predefinita a https://fastcomments.com
-# Consultare configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

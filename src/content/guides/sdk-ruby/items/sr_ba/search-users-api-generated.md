@@ -1,21 +1,21 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| usernameStartsWith | string | query | Не |  |
-| mentionGroupIds | array | query | Не |  |
-| sso | string | query | Не |  |
-| searchSection | string | query | Не |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| usernameStartsWith | string | query | Ne |  |
+| mentionGroupIds | array | query | Ne |  |
+| sso | string | query | Ne |  |
+| searchSection | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'search_users Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'search_users Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

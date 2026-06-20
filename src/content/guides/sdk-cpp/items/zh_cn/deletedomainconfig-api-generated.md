@@ -1,29 +1,30 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | domain | string | 是 |  |
 
 ## 响应
 
-返回: [`DeleteDomainConfig_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfig_200_response.h)
+返回: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfigResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteDomainConfig 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domain = U("comments.example.com");
-boost::optional<utility::string_t> ifMatch = boost::optional<utility::string_t>(U("W/\"abc123\""));
-api->deleteDomainConfig(tenantId, domain)
-.then([](pplx::task<std::shared_ptr<DeleteDomainConfig_200_response>> t) {
+utility::string_t domain = U("example.com");
+boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-789"));
+api->deleteDomainConfig(tenantId, domain).then([correlationId](pplx::task<std::shared_ptr<DeleteDomainConfigResponse>> t){
     try {
         auto resp = t.get();
-        if (resp) {
-            auto resultCopy = std::make_shared<DeleteDomainConfig_200_response>(*resp);
-        }
-    } catch (const std::exception&) {
+        if(!resp) resp = std::make_shared<DeleteDomainConfigResponse>();
+        utility::string_t cid = correlationId ? *correlationId : U("");
+        (void)cid;
+    } catch(const std::exception &){
+        auto err = std::make_shared<DeleteDomainConfigResponse>();
+        (void)err;
     }
 });
 [inline-code-end]

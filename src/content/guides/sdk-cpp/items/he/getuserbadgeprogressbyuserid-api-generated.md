@@ -1,29 +1,34 @@
 ## פרמטרים
 
-| שם | סוג | דרוש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| userId | string | כן |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
 
 ## תגובה
 
-מחזיר: [`GetUserBadgeProgressById_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserBadgeProgressById_200_response.h)
+מחזיר: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getUserBadgeProgressByUserId דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getUserBadgeProgressByUserId'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> optUserId = utility::string_t(U("user@example.com"));
-api->getUserBadgeProgressByUserId(tenantId, optUserId.value()).then(
-    [](pplx::task<std::shared_ptr<GetUserBadgeProgressById_200_response>> t){
-        try {
-            auto resp = t.get();
-            auto copy = std::make_shared<GetUserBadgeProgressById_200_response>(*resp);
-        } catch (const std::exception&) {
-        }
+utility::string_t userId = U("user@example.com");
+boost::optional<utility::string_t> locale;
+api->getUserBadgeProgressByUserId(tenantId, userId)
+.then([=](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {
+    try {
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<APIGetUserBadgeProgressResponse>();
+        return resp;
+    } catch (...) {
+        return std::shared_ptr<APIGetUserBadgeProgressResponse>(nullptr);
     }
-);
+})
+.then([](std::shared_ptr<APIGetUserBadgeProgressResponse> resp) {
+    (void)resp;
+});
 [inline-code-end]
 
 ---

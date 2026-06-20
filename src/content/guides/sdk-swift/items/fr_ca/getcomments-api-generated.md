@@ -17,16 +17,18 @@
 | hashTag | string | query | Non |  |
 | parentId | string | query | Non |  |
 | direction | string | query | Non |  |
+| fromDate | integer | query | Non |  |
+| toDate | integer | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+Renvoie : [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -44,8 +46,10 @@ let contextUserId = "contextUserId_example" // String |  (optionnel)
 let hashTag = "hashTag_example" // String |  (optionnel)
 let parentId = "parentId_example" // String |  (optionnel)
 let direction = SortDirections() // SortDirections |  (optionnel)
+let fromDate = 987 // Int64 |  (optionnel)
+let toDate = 987 // Int64 |  (optionnel)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -56,5 +60,3 @@ DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip,
     }
 }
 [inline-code-end]
-
----

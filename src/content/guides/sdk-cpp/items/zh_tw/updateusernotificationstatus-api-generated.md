@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 是否必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | notificationId | string | 是 |  |
@@ -9,24 +10,27 @@
 
 ## 回應
 
-回傳: [`UpdateUserNotificationStatus_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatus_200_response.h)
+回傳: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatusResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateUserNotificationStatus 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notification-789");
-utility::string_t newStatus = U("read");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc123"));
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+utility::string_t notificationId = utility::string_t("notif-456");
+utility::string_t newStatus = utility::string_t("read");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t("sso-token-xyz"));
+
 api->updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task){
+.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatusResponse>> task){
     try {
         auto resp = task.get();
         if (resp) {
-            auto result = std::make_shared<UpdateUserNotificationStatus_200_response>(*resp);
+            auto localCopy = std::make_shared<UpdateUserNotificationStatusResponse>(*resp);
+            (void)localCopy;
         }
-    } catch (...) {
+    } catch (const std::exception& e) {
+        (void)e;
     }
 });
 [inline-code-end]

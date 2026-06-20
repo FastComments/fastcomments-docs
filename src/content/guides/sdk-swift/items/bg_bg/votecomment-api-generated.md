@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -11,13 +11,13 @@
 
 ## Отговор
 
-Връща: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteComment200Response.swift)
+Връща: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери за код все още са в бета версия. За проблеми, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примери с код все още са в бета. Ако имате проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,8 +25,8 @@ let commentId = "commentId_example" // String |
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", commenterName: "commenterName_example", voteDir: "voteDir_example", url: "url_example") // VoteBodyParams | 
-let sessionId = "sessionId_example" // String |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let sessionId = "sessionId_example" // String |  (по избор)
+let sso = "sso_example" // String |  (по избор)
 
 PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
     guard error == nil else {

@@ -1,4 +1,5 @@
-Включить или выключить уведомления для страницы. Когда пользователи подписаны на страницу, создаются уведомления для новых корневых комментариев, и также
+Включение или отключение уведомлений для страницы. Когда пользователи подписаны на страницу, создаются уведомления
+для новых корневых комментариев, а также
 
 ## Параметры
 
@@ -13,7 +14,7 @@
 
 ## Ответ
 
-Возвращает: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Возвращает: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Пример
 
@@ -23,13 +24,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
-url_id = 'url_id_example' # Строка | 
-url = 'url_example' # Строка | 
-page_title = 'page_title_example' # Строка | 
-subscribed_or_unsubscribed = 'subscribe' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
+url = 'url_example' # String | 
+page_title = 'page_title_example' # String | 
+subscribed_or_unsubscribed = 'subscribe' # String | 
 opts = {
-  sso: 'sso_example' # Строка | 
+  sso: 'sso_example' # String | 
 }
 
 begin

@@ -1,4 +1,4 @@
-### Χρήση του Δημόσιου API
+### Χρήση του δημόσιου API
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::Configuration;
@@ -6,10 +6,10 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Δημιουργία ρύθμισης παραμέτρων API
+    // Δημιουργία ρύθμισης API
     let config = Configuration::new();
 
-    // Φόρτωση σχολίων για μια σελίδα
+    // Λήψη σχολίων για μια σελίδα
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Χρήση του Αυθεντικοποιημένου API
+### Χρήση του API με έλεγχο ταυτότητας
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -53,14 +53,14 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Δημιουργία ρύθμισης με κλειδί API
+    // Δημιουργία διαμόρφωσης με κλειδί API
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
         key: "your-api-key".to_string(),
     });
 
-    // Ανάκτηση σχολίων χρησιμοποιώντας το αυθεντικοποιημένο API
+    // Λήψη σχολίων χρησιμοποιώντας το API με έλεγχο ταυτότητας
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Χρήση SSO για Αυθεντικοποίηση
+### Χρήση του API Μετριοποίησης
+
+Οι μέθοδοι μετριοποίησης υποστηρίζουν τον πίνακα ελέγχου του διαχειριστή. Χρησιμοποιούν μια `Configuration` με κλειδί API όπως και το API με έλεγχο ταυτότητας, και κάθε μέθοδος δέχεται ένα προαιρετικό token `sso` ώστε η κλήση να μπορεί να γίνει εκ μέρους ενός διαχειριστή που έχει πιστοποιηθεί μέσω SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Δημιουργία διαμόρφωσης με κλειδί API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Μέτρηση σχολίων που περιμένουν στην ουρά μετριοποίησης
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // περάστε ένα token SSO για να δράσετε ως διαχειριστής πιστοποιημένος μέσω SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Χρήση του SSO για πιστοποίηση
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -110,12 +148,12 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Δημιουργία ασφαλών δεδομένων χρήστη SSO (μόνο στο διακομιστή!)
+    // Δημιουργία ασφαλών δεδομένων χρήστη SSO (μόνο στο server!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // Αναγνωριστικό χρήστη
-        "user@example.com".to_string(),   // Ηλεκτρονική διεύθυνση
+        "user@example.com".to_string(),   // Email
         "John Doe".to_string(),            // Όνομα χρήστη
-        "https://example.com/avatar.jpg".to_string(), // Διεύθυνση URL avatar
+        "https://example.com/avatar.jpg".to_string(), // URL avatar
     );
 
     // Δημιουργία token SSO
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Περάστε αυτό το token στο frontend σας για αυθεντικοποίηση
+    // Περνάτε αυτό το token στο frontend σας για πιστοποίηση
 }
 ```

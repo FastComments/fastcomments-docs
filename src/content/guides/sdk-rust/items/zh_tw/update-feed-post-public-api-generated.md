@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必要 | 說明 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | post_id | String | 是 |  |
@@ -10,7 +11,7 @@
 
 ## 回應
 
-回傳: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_feed_post_public_200_response.rs)
+回傳： [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_feed_post_response.rs)
 
 ## 範例
 
@@ -18,32 +19,30 @@
 [inline-code-start]
 let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    post_id: "news/article-2026-03-25".to_string(),
+    post_id: "news/product-launch-2026".to_string(),
     update_feed_post_params: models::UpdateFeedPostParams {
-        title: "Acme Widget Launch".to_string(),
-        body: "Acme today launched the next-generation Widget with improved performance and battery life.".to_string(),
-        tags: vec!["product".to_string(), "launch".to_string()],
-        media: vec![
+        title: "Acme Product Launch".to_string(),
+        content: "Acme releases version 2.0 with major performance and security improvements.".to_string(),
+        media: Some(vec![
             models::FeedPostMediaItem {
-                url: "https://cdn.acme.com/images/widget-launch.jpg".to_string(),
-                asset: Some(models::FeedPostMediaItemAsset {
-                    mime_type: "image/jpeg".to_string(),
-                    size: Some(142000),
-                }),
+                asset: models::FeedPostMediaItemAsset {
+                    url: "https://cdn.acme.com/images/product-v2.jpg".to_string(),
+                    mime_type: Some("image/jpeg".to_string())
+                }
             }
-        ],
-        links: vec![
+        ]),
+        links: Some(vec![
             models::FeedPostLink {
-                url: "https://acme.com/blog/widget-launch".to_string(),
-                title: Some("Read the full announcement".to_string()),
+                url: "https://acme.com/blog/product-v2".to_string(),
+                title: Some("Product v2 announcement".to_string())
             }
-        ],
+        ]),
+        ..Default::default()
     },
-    broadcast_id: Some("broadcast-2026-03".to_string()),
-    sso: Some("sso-token-9f8e7d".to_string()),
+    broadcast_id: Some("broadcast-789".to_string()),
+    sso: Some("sso-token-eyJhbGciOiJIUzI1Ni".to_string()),
 };
-
-let response: CreateFeedPostPublic200Response = update_feed_post_public(configuration, params).await?;
+let response: CreateFeedPostResponse = update_feed_post_public(&configuration, params).await?;
 [inline-code-end]
 
 ---

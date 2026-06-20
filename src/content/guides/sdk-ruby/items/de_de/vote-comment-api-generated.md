@@ -2,8 +2,8 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | pfad | Ja |  |
-| commentId | string | pfad | Ja |  |
+| tenantId | string | path | Ja |  |
+| commentId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | broadcastId | string | query | Ja |  |
 | sessionId | string | query | Nein |  |
@@ -11,7 +11,7 @@
 
 ## Antwort
 
-Gibt zurück: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Gibt zurück: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Beispiel
 

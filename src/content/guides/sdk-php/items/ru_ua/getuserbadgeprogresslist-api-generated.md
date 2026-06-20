@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Нет |  |
@@ -9,7 +9,7 @@
 
 ## Ответ
 
-Возвращает: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadgeProgressList200Response.php)
+Возвращает: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressListResponse.php)
 
 ## Пример
 
@@ -19,22 +19,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию ключа API: api_key
+// Настройка авторизации по API-ключу: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // строка
-$user_id = 'user_id_example'; // строка
-$limit = 3.4; // число с плавающей точкой
-$skip = 3.4; // число с плавающей точкой
+$tenant_id = 'tenant_id_example'; // string
+$user_id = 'user_id_example'; // string
+$limit = 3.4; // float
+$skip = 3.4; // float
 
 try {
     $result = $apiInstance->getUserBadgeProgressList($tenant_id, $user_id, $limit, $skip);
@@ -43,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressList: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

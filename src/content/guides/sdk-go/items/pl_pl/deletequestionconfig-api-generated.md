@@ -7,7 +7,37 @@
 
 ## Odpowiedź
 
-Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+
+## Przykład
+
+[inline-code-attrs-start title = 'Przykład DeleteQuestionConfig'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openap
+## Parametry
+
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
+| id | string | path | Tak |  |
+
+## Odpowiedź
+
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Przykład
 
@@ -33,7 +63,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odpowiedź z `DeleteQuestionConfig`: FlagCommentPublic200Response
+	// odpowiedź z `DeleteQuestionConfig`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]

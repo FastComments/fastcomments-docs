@@ -1,47 +1,48 @@
+---
 ## パラメータ
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | query | いいえ |  |
+| externalId | string | query | いいえ |  |
+| eventType | string | query | いいえ |  |
+| type | string | query | いいえ |  |
+| domain | string | query | いいえ |  |
+| attemptCountGT | number | query | いいえ |  |
+| skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+戻り値: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_pending_webhook_events の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
+# ホストを定義することはオプションで、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを設定する必要があります
-# これは API サーバーのセキュリティポリシーに従って行ってください。
-# 各認証方法の例は以下に示しています。
-# ご自身の認証ユースケースに合う例を使用してください。
+# クライアントは認証および認可パラメータを設定する必要があります
+# API サーバーのセキュリティポリシーに従ってください。
+# 各認証方法の例を以下に示します。 
+# 自身の認証ユースケースに合うものを使用してください。
 
-# API キー認証を設定します: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定する場合は、以下のコメントアウトを外してください
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスでコンテキストに入ります
+# API クライアントのインスタンスを使ってコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
@@ -61,3 +62,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_pending_webhook_events: %s\n" % e)
 [inline-code-end]
+
+---

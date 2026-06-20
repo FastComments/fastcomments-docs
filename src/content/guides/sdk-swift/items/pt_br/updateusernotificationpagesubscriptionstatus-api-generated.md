@@ -1,10 +1,9 @@
-Ative ou desative notificações para uma página. Quando usuários estão inscritos em uma página, notificações são criadas
-para novos comentários raiz, e também
+Ativa ou desativa notificações para uma página. Quando usuários estão inscritos em uma página, notificações são criadas para novos comentários raiz, e também
 
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
 | urlId | string | query | Sim |  |
 | url | string | query | Sim |  |
@@ -14,7 +13,7 @@ para novos comentários raiz, e também
 
 ## Resposta
 
-Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationPageSubscriptionStatusResponse.swift)
 
 ## Exemplo
 

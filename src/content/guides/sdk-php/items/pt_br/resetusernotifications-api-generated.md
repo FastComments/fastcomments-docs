@@ -1,18 +1,18 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| afterCreatedAt | integer | query | No |  |
-| unreadOnly | boolean | query | No |  |
-| dmOnly | boolean | query | No |  |
-| noDm | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Sim |  |
+| afterId | string | query | Não |  |
+| afterCreatedAt | integer | query | Não |  |
+| unreadOnly | boolean | query | Não |  |
+| dmOnly | boolean | query | Não |  |
+| noDm | boolean | query | Não |  |
+| sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotifications200Response.php)
+Retorna: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## Exemplo
 
@@ -24,8 +24,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // Se você quiser usar um cliente HTTP personalizado, passe o seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional; `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -43,5 +43,3 @@ try {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

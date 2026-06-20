@@ -1,14 +1,14 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
-|------|------|----------|----------|-------------|
+| 名稱 | Type | Location | 必填 | 描述 |
+|------|------|----------|------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
 | editKey | string | query | 否 |  |
 
 ## 回應
 
-回傳：[`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentVote200Response.php)
+回傳: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
 ## 範例
 
@@ -25,8 +25,8 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 如要使用自訂的 http 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
-    // 這是選用的，預設將使用 `GuzzleHttp\Client`。
+    // 若要使用自訂的 HTTP 用戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );

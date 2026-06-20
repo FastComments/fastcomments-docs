@@ -4,16 +4,16 @@ afterId
 
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| afterId | string | query | 아니요 |  |
-| limit | integer | query | 아니요 |  |
-| tags | array | query | 아니요 |  |
+| afterId | string | query | 아니오 |  |
+| limit | integer | query | 아니오 |  |
+| tags | array | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+반환: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## 예제
 
@@ -23,9 +23,9 @@ require 'time'
 require 'fastcomments-client'
 # 인증 설정
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 다음 줄의 주석을 해제하여 API 키 접두사를 설정하세요. 예: 'Bearer' (기본값: nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: 'Bearer' (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

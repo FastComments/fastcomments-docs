@@ -7,9 +7,9 @@
 | broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Antwoord
 
-Geeft terug: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+Geeft terug: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## Voorbeeld
 

@@ -1,38 +1,38 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | domain | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Vraća: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config_response.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer get_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.get_domain_config_response import GetDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Postavljanje hosta je opcionalno i zadano je na https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com.
 # Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentikacije su navedeni dolje, koristite onaj koji
+# u skladu s politikom sigurnosti poslužitelja API-ja.
+# Primjeri za svaku metodu autentikacije dani su u nastavku; upotrijebite primjer koji
 # zadovoljava vaš slučaj upotrebe autentikacije.
 
-# Konfigurirajte autorizaciju putem API ključa: api_key
+# Konfigurirajte autorizaciju pomoću API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
+# Ako je potrebno, otkomentirajte dolje da postavite prefiks (npr. Bearer) za API ključ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_domain_config: %s\n" % e)
 [inline-code-end]
-
----

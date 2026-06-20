@@ -1,18 +1,18 @@
 ## Parametre
 
-| Name | Type | Location | Required | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | query | Nej |  |
+| externalId | string | query | Nej |  |
+| eventType | string | query | Nej |  |
+| type | string | query | Nej |  |
+| domain | string | query | Nej |  |
+| attemptCountGT | number | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCount200Response.php)
+Returnerer: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
 
 ## Eksempel
 
@@ -22,15 +22,15 @@ Returnerer: [`GetPendingWebhookEventCount200Response`](https://github.com/FastCo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøglegodkendelse: api_key
+// Konfigurer API-nøgleautorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis det er nødvendigt
+// Fjern kommentaren nedenfor for at sætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
+    // Dette er valgfrit; `GuzzleHttp\Client` bruges som standard.
     new GuzzleHttp\Client(),
     $config
 );

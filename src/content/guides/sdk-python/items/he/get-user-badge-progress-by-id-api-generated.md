@@ -1,43 +1,43 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_by_id200_response.py)
+מחזיר: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של get_user_badge_progress_by_id'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_user_badge_progress_by_id'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_by_id200_response import GetUserBadgeProgressById200Response
+from client.models.api_get_user_badge_progress_response import APIGetUserBadgeProgressResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית והברירת מחדל היא https://fastcomments.com
-# ראו את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אופציונלית ובברירת מחדל היא https://fastcomments.com
+# עיין ב-configuration.py לרשימת כל פרמטרי ההגדרות הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# על הלקוח להגדיר את פרמטרי האימות וההרשאה
+# הלקוח חייב להגדיר את פרמטרי האימות והרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה ש
-# מתאימה למקרה השימוש שלכם.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה ש
+# מתאימה למקרה השימוש שלך.
 
-# Configure API key authorization: api_key
+# הגדר הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
+# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# היכנסו להקשר עם מופע של לקוח ה-API
+# היכנס להקשר עם מופע של ה-API client
 with client.ApiClient(configuration) as api_client:
-    # צרו מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

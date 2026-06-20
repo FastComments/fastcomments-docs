@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | Type | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | broadcastId | string | query | いいえ |  |
@@ -10,15 +10,15 @@
 
 ## レスポンス
 
-戻り値: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post200_response.py)
+返却値: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'create_feed_post の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post200_response import CreateFeedPost200Response
 from client.models.create_feed_post_params import CreateFeedPostParams
+from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,27 +28,25 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可パラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 各認証方法の例を以下に示します。
-# 用途に合う例を使用してください。
+# クライアントは、API サーバのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
+# 各認証方式の例を以下に示します。自身の認証ユースケースに合う例を使用してください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下のコメントを解除してください
+# 必要に応じて API キーにプレフィックス（例: Bearer）を設定するには下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# API クライアントのインスタンスのコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (optional)
-    is_live = True # bool |  (optional)
-    do_spam_check = True # bool |  (optional)
-    skip_dup_check = True # bool |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  （オプション）
+    is_live = True # bool |  （オプション）
+    do_spam_check = True # bool |  （オプション）
+    skip_dup_check = True # bool |  （オプション）
 
     try:
         api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check)

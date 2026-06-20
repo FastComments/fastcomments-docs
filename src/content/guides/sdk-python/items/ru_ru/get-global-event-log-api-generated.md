@@ -5,35 +5,35 @@ userIdWS
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| userIdWS | string | query | Да |  |
-| startTime | integer | query | Да |  |
-| endTime | integer | query | Да |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| userIdWS | string | query | Yes |  |
+| startTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_event_log200_response.py)
+Возвращает: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_event_log_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_global_event_log'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_event_log200_response import GetEventLog200Response
+from client.models.get_event_log_response import GetEventLogResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию: https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Указание host необязательно и по умолчанию https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Откройте контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.PublicApi(api_client)
@@ -41,10 +41,10 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     user_id_ws = 'user_id_ws_example' # str | 
     start_time = 56 # int | 
-    end_time = 56 # int | 
+    end_time = 56 # int |  (необязательно)
 
     try:
-        api_response = api_instance.get_global_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+        api_response = api_instance.get_global_event_log(tenant_id, url_id, user_id_ws, start_time, end_time=end_time)
         print("The response of PublicApi->get_global_event_log:\n")
         pprint(api_response)
     except Exception as e:

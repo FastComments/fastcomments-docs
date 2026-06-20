@@ -5,15 +5,15 @@
 | tenantId | string | query | Da |  |
 | skip | integer | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetSSOUsers200Response.swift)
+Vrne: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetSSOUsersResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getSSOUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za težave poročajte prek http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v fazi beta. Za morebitne težave poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,5 +30,3 @@ DefaultAPI.getSSOUsers(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

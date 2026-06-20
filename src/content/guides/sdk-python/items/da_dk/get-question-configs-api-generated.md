@@ -1,38 +1,38 @@
-## Parametre
+## Parameters
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | skip | number | query | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_configs200_response.py)
+Returnerer: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_configs_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_question_configs Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_configs200_response import GetQuestionConfigs200Response
+from client.models.get_question_configs_response import GetQuestionConfigsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, og standard er https://fastcomments.com
+# Definering af host er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# Klienten skal konfigurere godkendelses- og autorisationsparametre
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er angivet nedenfor, brug det eksempel der
-# opfylder dit auth-brugsscenarie.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
+# opfylder dit godkendelsesbehov.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte prefix (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
@@ -40,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (valgfrit)
 
     try:
         api_response = api_instance.get_question_configs(tenant_id, skip=skip)

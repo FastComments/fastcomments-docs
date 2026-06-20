@@ -8,7 +8,7 @@
 
 ## Response
 
-Returns: [`BulkAggregateQuestionResults_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkAggregateQuestionResults_200_response.h)
+Returns: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
 
 ## Example
 
@@ -16,13 +16,14 @@ Returns: [`BulkAggregateQuestionResults_200_response`](https://github.com/FastCo
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 BulkAggregateQuestionResultsRequest request;
-boost::optional<bool> forceRecalculate = boost::optional<bool>(true);
+boost::optional<bool> forceRecalculate(true);
 api->bulkAggregateQuestionResults(tenantId, request, forceRecalculate)
-.then([](pplx::task<std::shared_ptr<BulkAggregateQuestionResults_200_response>> t){
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<BulkAggregateQuestionResults_200_response>();
-    } catch(const std::exception&) {
+.then([](std::shared_ptr<BulkAggregateQuestionResultsResponse> resp) {
+    if (resp) {
+        auto respCopy = std::make_shared<BulkAggregateQuestionResultsResponse>(*resp);
+        std::cout << "Aggregated question results received\n";
+    } else {
+        std::cout << "No aggregated results\n";
     }
-});
+}).wait();
 [inline-code-end]

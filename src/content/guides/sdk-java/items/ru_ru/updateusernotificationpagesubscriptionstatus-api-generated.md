@@ -1,8 +1,8 @@
 Включить или отключить уведомления для страницы. Когда пользователи подписаны на страницу, создаются уведомления для новых корневых комментариев, а также
 
-## Параметры
+## Parameters
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -11,11 +11,11 @@
 | subscribedOrUnsubscribed | string | path | Да |  |
 | sso | string | query | Нет |  |
 
-## Ответ
+## Response
 
-Возвращает: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Возвращает: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример updateUserNotificationPageSubscriptionStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,14 +32,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String urlId = "urlId_example"; // String | 
-    String url = "url_example"; // String | 
-    String pageTitle = "pageTitle_example"; // String | 
-    String subscribedOrUnsubscribed = "subscribe"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // Строка | 
+    String urlId = "urlId_example"; // Строка | 
+    String url = "url_example"; // Строка | 
+    String pageTitle = "pageTitle_example"; // Строка | 
+    String subscribedOrUnsubscribed = "subscribe"; // Строка | 
+    String sso = "sso_example"; // Строка | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,17 +1,16 @@
----
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Sim |  |
+| userId | string | query | Não |  |
+| state | number | query | Não |  |
+| skip | number | query | Não |  |
+| limit | number | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets200_response.rb)
+Retorna: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets_response.rb)
 
 ## Exemplo
 
@@ -19,11 +18,11 @@ Retorna: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar autorização
+# Configurar autorização
 FastCommentsClient.configure do |config|
-  # Configurar autorização por chave de API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente a linha a seguir para definir um prefixo para a chave de API, por exemplo 'Bearer' (padrão: nil)
+  # Descomente a linha seguinte para definir um prefixo para a chave de API, por exemplo 'Bearer' (padrão: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

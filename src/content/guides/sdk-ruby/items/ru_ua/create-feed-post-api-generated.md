@@ -1,28 +1,28 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| broadcastId | string | query | No |  |
-| isLive | boolean | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| skipDupCheck | boolean | query | No |  |
+| tenantId | string | query | Да |  |
+| broadcastId | string | query | Нет |  |
+| isLive | boolean | query | Нет |  |
+| doSpamCheck | boolean | query | Нет |  |
+| skipDupCheck | boolean | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post200_response.rb)
+Возвращает: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_posts_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'create_feed_post Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример create_feed_post'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройка авторизации
+# настройка авторизации
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Настройка авторизации по API-ключу: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы задать префикс для ключа API, например 'Bearer' (по умолчанию nil)
+  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

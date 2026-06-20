@@ -6,15 +6,15 @@
 
 ## Response
 
-Returns: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_domain_config200_response.py)
+Returns: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_domain_config_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'add_domain_config Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_domain_config200_response import AddDomainConfig200Response
 from client.models.add_domain_config_params import AddDomainConfigParams
+from client.models.add_domain_config_response import AddDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 

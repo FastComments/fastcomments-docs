@@ -6,38 +6,38 @@
 
 ## Одговор
 
-Враћа: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tag200_response.py)
+Враћа: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_hash_tag_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример add_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tag пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tag200_response import AddHashTag200Response
 from client.models.create_hash_tag_body import CreateHashTagBody
+from client.models.create_hash_tag_response import CreateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумева се на https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Дефинисање host-а је опционално и подразумевано је на https://fastcomments.com
+# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и авторизације
-# у складу са безбедносном политиком API сервера.
-# Испод су наведени примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе аутентификације.
+# Клијент мора конфигурисати параметре аутентификације и овлашћења
+# у складу са политиком безбедности API сервера.
+# Испод су примери за сваки метод аутентификације; користите пример који
+# одговара вашем случају коришћења аутентификације.
 
-# Конфигуришите овлашћење помоћу API кључа: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу класе API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str |  (optional)
     create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (optional)

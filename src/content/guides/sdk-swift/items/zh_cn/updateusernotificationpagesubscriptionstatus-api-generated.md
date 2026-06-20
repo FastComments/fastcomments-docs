@@ -2,18 +2,18 @@
 
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| urlId | string | query | 是 |  |
+| url | string | query | 是 |  |
+| pageTitle | string | query | 是 |  |
+| subscribedOrUnsubscribed | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationStatus200Response.swift)
+返回: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateUserNotificationPageSubscriptionStatusResponse.swift)
 
 ## 示例
 
@@ -27,7 +27,7 @@ let urlId = "urlId_example" // String |
 let url = "url_example" // String | 
 let pageTitle = "pageTitle_example" // String | 
 let subscribedOrUnsubscribed = "subscribedOrUnsubscribed_example" // String | 
-let sso = "sso_example" // String |  (可选)
+let sso = "sso_example" // String |  (optional)
 
 PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId: urlId, url: url, pageTitle: pageTitle, subscribedOrUnsubscribed: subscribedOrUnsubscribed, sso: sso) { (response, error) in
     guard error == nil else {

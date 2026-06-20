@@ -1,25 +1,24 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Type | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Da |  |
+| sso | String | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notification_count_200_response.rs)
+Vraća: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notification_count_response.rs)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_user_notification_count Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_user_notification_count() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params: GetUserNotificationCountParams = GetUserNotificationCountParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        sso: Some(String::from("sso-jwt-abc123")),
+        tenant_id: "acme-corp-tenant".to_owned(),
+        sso: Some("user-42.sso.example".to_owned()),
     };
-    let _response: GetUserNotificationCount200Response =
-        get_user_notification_count(&configuration, params).await?;
+    let response: GetUserNotificationCountResponse = get_user_notification_count(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

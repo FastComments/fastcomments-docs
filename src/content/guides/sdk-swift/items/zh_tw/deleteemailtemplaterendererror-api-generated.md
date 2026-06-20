@@ -8,7 +8,7 @@
 
 ## 回應
 
-Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## 範例
 
@@ -32,5 +32,3 @@ DefaultAPI.deleteEmailTemplateRenderError(tenantId: tenantId, id: id, errorId: e
     }
 }
 [inline-code-end]
-
----

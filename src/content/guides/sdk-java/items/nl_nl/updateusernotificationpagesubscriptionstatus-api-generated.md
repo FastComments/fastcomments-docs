@@ -1,4 +1,4 @@
-Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich abonneren op een pagina, worden meldingen aangemaakt voor nieuwe root-opmerkingen, en ook
+Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich op een pagina abonneren, worden meldingen aangemaakt voor nieuwe hoofdreacties, en ook
 
 ## Parameters
 
@@ -11,9 +11,9 @@ Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich abonneren o
 | subscribedOrUnsubscribed | string | path | Ja |  |
 | sso | string | query | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Retourneert: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## Voorbeeld
 
@@ -39,7 +39,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

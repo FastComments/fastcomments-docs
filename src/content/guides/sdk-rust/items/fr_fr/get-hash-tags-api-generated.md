@@ -1,24 +1,24 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Name | Type | Requis | Description |
+|------|------|--------|-------------|
 | tenant_id | String | Oui |  |
 | page | f64 | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_200_response.rs)
+Renvoie: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de get_hash_tags'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_hash_tags() -> Result<GetHashTags200Response, Error> {
+async fn example_get_hash_tags() -> Result<GetHashTagsResponse, Error> {
     let params: GetHashTagsParams = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(1.0),
+        page: Some(2.0),
     };
-    let response: GetHashTags200Response = get_hash_tags(&configuration, params).await?;
+    let response: GetHashTagsResponse = get_hash_tags(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | page | integer | query | Nee |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | Nee |  |
 | parentId | string | query | Nee |  |
 | direction | string | query | Nee |  |
+| fromDate | integer | query | Nee |  |
+| toDate | integer | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+Retourneert: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## Voorbeeld
 
@@ -44,8 +46,10 @@ let contextUserId = "contextUserId_example" // String |  (optioneel)
 let hashTag = "hashTag_example" // String |  (optioneel)
 let parentId = "parentId_example" // String |  (optioneel)
 let direction = SortDirections() // SortDirections |  (optioneel)
+let fromDate = 987 // Int64 |  (optioneel)
+let toDate = 987 // Int64 |  (optioneel)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -56,5 +60,3 @@ DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip,
     }
 }
 [inline-code-end]
-
----

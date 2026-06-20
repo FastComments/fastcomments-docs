@@ -1,9 +1,9 @@
 Агрегирует документы, группируя их (если указан groupBy) и применяя несколько операций.
-Поддерживаются различные операции (например, sum, countDistinct, avg и т.д.).
+Поддерживаются разные операции (например, sum, countDistinct, avg и т.д.).
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | parentTenantId | string | query | Нет |  |
@@ -11,13 +11,13 @@
 
 ## Ответ
 
-Возвращает: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Возвращает: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример aggregate'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. В случае проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода все ещё в бета. По любым проблемам, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -36,5 +36,3 @@ DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest,
     }
 }
 [inline-code-end]
-
----

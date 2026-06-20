@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfig200Response.php)
+回傳: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionConfigResponse.php)
 
 ## 範例
 
@@ -17,18 +17,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
 // 設定 API 金鑰授權：api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// 如有需要，取消註解下列程式以設定 API 金鑰的前綴（例如 Bearer）
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// 如需為 API 金鑰設定前綴（例如 Bearer），請取消註解下方程式
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // 此為可選，預設會使用 `GuzzleHttp\Client`。
+    // 若要使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
@@ -42,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getQuestionConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

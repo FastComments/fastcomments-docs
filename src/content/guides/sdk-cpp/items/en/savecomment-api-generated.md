@@ -11,35 +11,29 @@
 
 ## Response
 
-Returns: [`SaveComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveComment_200_response.h)
+Returns: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'saveComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto params = std::make_shared<CreateCommentParams>();
-params->content = utility::conversions::to_string_t("This is a test comment on the product page");
-params->authorEmail = utility::conversions::to_string_t("jane.doe@example.com");
-params->authorName = utility::conversions::to_string_t("Jane Doe");
-params->threadId = utility::conversions::to_string_t("product-123-thread");
-
+utility::string_t tenantId = U("my-tenant-123");
+CreateCommentParams createParams;
+createParams.threadId = utility::string_t(U("thread-789"));
+createParams.body = utility::string_t(U("This is a test comment posted via SDK."));
+createParams.authorEmail = utility::string_t(U("user@example.com"));
+createParams.authorName = utility::string_t(U("Jane Developer"));
 boost::optional<bool> isLive(true);
-boost::optional<bool> doSpamCheck(true);
-boost::optional<bool> sendEmails(false);
+boost::optional<bool> doSpamCheck(false);
+boost::optional<bool> sendEmails(true);
 boost::optional<bool> populateNotifications(true);
-
-api->saveComment(
-    utility::conversions::to_string_t("my-tenant-123"),
-    *params,
-    isLive,
-    doSpamCheck,
-    sendEmails,
-    populateNotifications
-).then([](pplx::task<std::shared_ptr<SaveComment_200_response>> t) {
+api->saveComment(tenantId, createParams, isLive, doSpamCheck, sendEmails, populateNotifications)
+.then([](pplx::task<std::shared_ptr<APISaveCommentResponse>> t){
     try {
         auto resp = t.get();
+        auto marker = std::make_shared<bool>(true);
         (void)resp;
-    } catch (const std::exception&) {
-    }
+        (void)marker;
+    } catch (const std::exception&) {}
 });
 [inline-code-end]

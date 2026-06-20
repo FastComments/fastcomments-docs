@@ -1,17 +1,17 @@
-Aggrega documenti raggruppandoli (se è fornito groupBy) e applicando più operazioni.
+Aggrega i documenti raggruppandoli (se groupBy è fornito) e applicando più operazioni.
 Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
+| tenantId | string | query | Yes |  |
 | parentTenantId | string | query | No |  |
 | includeStats | boolean | query | No |  |
 
 ## Risposta
 
-Restituisce: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Esempio
 

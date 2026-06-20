@@ -1,15 +1,14 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
-| commentIds | string | query | Ναι | Μια λίστα αναγνωριστικών σχολίων διαχωρισμένων με κόμμα. |
+| commentIds | string | query | Ναι | Μια λίστα αναγνωριστικών σχολίων, χωρισμένων με κόμμα. |
 | sso | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Επιστρέφει: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
 ## Παράδειγμα
 
@@ -20,7 +19,7 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | Μια λίστα αναγνωριστικών σχολίων διαχωρισμένων με κόμμα.
+comment_ids = 'comment_ids_example' # String | Μια λίστα αναγνωριστικών σχολίων, χωρισμένων με κόμμα.
 opts = {
   sso: 'sso_example' # String | 
 }

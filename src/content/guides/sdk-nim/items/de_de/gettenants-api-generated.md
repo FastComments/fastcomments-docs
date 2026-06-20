@@ -1,25 +1,27 @@
+---
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| meta | string | No |  |
-| skip | float64 | No |  |
+| tenantId | string | Ja |  |
+| meta | string | Nein |  |
+| skip | float64 | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[GetTenants_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenants200response.nim)
+Gibt zurück: [`Option[GetTenantsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenants_response.nim)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getTenants'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenants Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenants(tenantId = "my-tenant-123", meta = "include=details", skip = 0.0)
+let (response, httpResponse) = client.getTenants(tenantId = "my-tenant-123", meta = "env=production", skip = 0.0)
 if response.isSome:
-  let tenants = response.get()
-  echo "Received tenants: ", repr(tenants)
+  let tenantsResp = response.get()
+  discard tenantsResp
+  echo "Tenants fetched successfully"
 else:
-  echo "Failed to retrieve tenants"
+  echo "Request failed with status ", httpResponse.status
 [inline-code-end]
 
 ---

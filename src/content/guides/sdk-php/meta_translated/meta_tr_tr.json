@@ -15,8 +15,14 @@
       "type": "readme"
     },
     {
-      "name": "API Uç Noktaları",
-      "file": "api-endpoints-readme-generated.md",
+      "name": "API İstemcileri",
+      "file": "api-clients-readme-generated.md",
+      "subCat": "API Referansı",
+      "type": "readme"
+    },
+    {
+      "name": "API Yöntemleri",
+      "file": "api-methods-readme-generated.md",
       "subCat": "API Referansı",
       "type": "readme"
     },
@@ -45,31 +51,37 @@
       "type": "api"
     },
     {
-      "name": "Denetim Günlüklerini Al",
+      "name": "Denetim Kayıtlarını Al",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Denetim Günlükleri",
+      "subCat": "Denetim Kayıtları",
       "type": "api"
     },
     {
-      "name": "Genel Yorumu Engelle",
+      "name": "Genel Oturumu Kapat",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "Kimlik Doğrulama",
+      "type": "api"
+    },
+    {
+      "name": "Yorumdan Engelle (Genel)",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Yorumdan Engelleme",
       "type": "api"
     },
     {
-      "name": "Genel Yorum Engellemesini Kaldır",
+      "name": "Yorum Engelini Kaldır (Genel)",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "Yorumdan Engelleme",
       "type": "api"
     },
     {
-      "name": "Engellenen Yorumları Denetle",
+      "name": "Engellenmiş Yorumları Kontrol Et",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Engellenen Yorumları Kontrol Et",
+      "subCat": "Engellenen Yorumları Kontrol Etme",
       "type": "api"
     },
     {
-      "name": "Yorumdan Kullanıcıyı Engelle",
+      "name": "Yoruma Karşı Kullanıcıyı Engelle",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -93,7 +105,7 @@
       "type": "api"
     },
     {
-      "name": "Yorum Oyunu Sil",
+      "name": "Yorum Oyasını Sil",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -129,7 +141,7 @@
       "type": "api"
     },
     {
-      "name": "Yorum Oyu Veren Kullanıcı İsimlerini Al",
+      "name": "Yorum Oy Veren Kullanıcı İsimlerini Al",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -165,7 +177,7 @@
       "type": "api"
     },
     {
-      "name": "Yorumdan Kullanıcı Engellemesini Kaldır",
+      "name": "Yorumdan Kullanıcı Engelini Kaldır",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -201,13 +213,19 @@
       "type": "api"
     },
     {
+      "name": "Kullanıcı İçin Yorumları Al",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Kullanıcı İçin Yorumlar",
+      "type": "api"
+    },
+    {
       "name": "Alan Adı Yapılandırması Ekle",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Adı Yapılandırmasını Sil",
+      "name": "Alan Adı Yapılandırması Sil",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
@@ -225,13 +243,13 @@
       "type": "api"
     },
     {
-      "name": "Alan Adı Yapılandırmasını Yama Yap",
+      "name": "Alan Adı Yapılandırmasını Kısmi Güncelle",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Adı Yapılandırmasını Değiştir (PUT)",
+      "name": "Alan Adı Yapılandırmasını Değiştir",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
@@ -249,7 +267,7 @@
       "type": "api"
     },
     {
-      "name": "E-posta Şablonu Oluşturma Hatasını Sil",
+      "name": "E-posta Şablonu Render Hatasını Sil",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "E-posta Şablonları",
       "type": "api"
@@ -267,7 +285,7 @@
       "type": "api"
     },
     {
-      "name": "E-posta Şablonu Oluşturma Hatalarını Al",
+      "name": "E-posta Şablonu Render Hatalarını Al",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "E-posta Şablonları",
       "type": "api"
@@ -279,7 +297,7 @@
       "type": "api"
     },
     {
-      "name": "E-posta Şablonunu Oluştur (Render)",
+      "name": "E-posta Şablonunu Render Et",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "E-posta Şablonları",
       "type": "api"
@@ -291,81 +309,99 @@
       "type": "api"
     },
     {
-      "name": "Olay Günlüğünü Al",
+      "name": "Etkinlik Günlüğünü Al",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Etkinlik Günlüğü",
       "type": "api"
     },
     {
-      "name": "Küresel Olay Günlüğünü Al",
+      "name": "Genel Etkinlik Günlüğünü Al",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Etkinlik Günlüğü",
       "type": "api"
     },
     {
-      "name": "Besleme Gönderisi Oluştur",
+      "name": "Akış Gönderisi Oluştur",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Genel Besleme Gönderisi Oluştur",
+      "name": "Genel Akış Gönderisi Oluştur",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Genel Besleme Gönderisini Sil",
+      "name": "Genel Akış Gönderisini Sil",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Besleme Gönderilerini Al",
+      "name": "Akış Gönderilerini Al",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Genel Besleme Gönderilerini Al",
+      "name": "Genel Akış Gönderilerini Al",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Besleme Gönderileri İstatistiklerini Al",
+      "name": "Akış Gönderileri İstatistiklerini Al",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Kullanıcı Tepkilerini (Genel) Al",
+      "name": "Kullanıcı Tepkilerini Al (Genel)",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Genel Besleme Gönderisine Tepki Ver",
+      "name": "Akış Gönderisine Tepki Ver (Genel)",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Besleme Gönderisini Güncelle",
+      "name": "Akış Gönderisini Güncelle",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Genel Besleme Gönderisini Güncelle",
+      "name": "Genel Akış Gönderisini Güncelle",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Besleme Gönderileri",
+      "subCat": "Akış Gönderileri",
       "type": "api"
     },
     {
-      "name": "Genel Yorumu İşaretle",
+      "name": "Yorumu İşaretle (Genel)",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "Yorumu İşaretle",
+      "type": "api"
+    },
+    {
+      "name": "Büyük GIF Al",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIF'ler",
+      "type": "api"
+    },
+    {
+      "name": "GIF Arama Sonuçlarını Al",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIF'ler",
+      "type": "api"
+    },
+    {
+      "name": "Trend GIF'leri Al",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIF'ler",
       "type": "api"
     },
     {
@@ -381,7 +417,7 @@
       "type": "api"
     },
     {
-      "name": "Hashtag'i Sil",
+      "name": "Hashtag Sil",
       "file": "deletehashtag-api-generated.md",
       "subCat": "Hashtag'ler",
       "type": "api"
@@ -393,9 +429,267 @@
       "type": "api"
     },
     {
-      "name": "Hashtag'i Yama Yap",
+      "name": "Hashtag'ı Kısmi Güncelle",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtag'ler",
+      "type": "api"
+    },
+    {
+      "name": "Moderasyon Oyasını Sil",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "API Yorumlarını Al",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "API Dışa Aktarım Durumunu Al",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "API Kimliklerini Al",
+      "file": "getapiids-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorumdan Yasaklı Kullanıcıları Al",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum Yasak Durumunu Al",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum Çocuklarını Al",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Sayımı Al",
+      "file": "getcount-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Sayım Değerlerini Al",
+      "file": "getcounts-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Kayıtları Al",
+      "file": "getlogs-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Manuel Rozetleri Al",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Kullanıcı İçin Manuel Rozetleri Al",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Moderasyon Yorumu Al",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Moderasyon Yorum Metnini Al",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Ön Yasak Özetini Al",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Arama Yorumları Özetini Al",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Arama Sayfalarını Al",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Arama Sitelerini Al",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Arama Önerilerini Al",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Arama Kullanıcılarını Al",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Güven Faktörünü Al",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Kullanıcı Yasak Tercihini Al",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Kullanıcının Dahili Profilini Al",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum Oylarını Düzenle",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "API Dışa Aktarımı Başlat",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yoruma Karşı Kullanıcıyı Yasakla",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Kullanıcı Yasağını Geri Al",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Toplu Ön Yasak Özeti Gönder",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "ID'lere Göre Yorumları Gönder",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorumu İşaretle (Gönder)",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorumu Kaldır (Gönder)",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Silinmiş Yorumu Geri Yükle",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum Onay Durumunu Ayarla",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum İnceleme Durumunu Ayarla",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum Spam Durumunu Ayarla",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum Metnini Ayarla (Gönder)",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Yorum İşaretini Kaldır (Gönder)",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Oy Gönder",
+      "file": "postvote-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Rozet Ver",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Konuyu Kapat",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Rozeti Kaldır",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Konuyu Yeniden Aç",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "Moderasyon",
+      "type": "api"
+    },
+    {
+      "name": "Güven Faktörünü Ayarla",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "Moderasyon",
       "type": "api"
     },
     {
@@ -441,7 +735,7 @@
       "type": "api"
     },
     {
-      "name": "Önbelleğe Alınmış Bildirim Sayısını Al",
+      "name": "Önbellekteki Bildirim Sayısını Al",
       "file": "getcachednotificationcount-api-generated.md",
       "subCat": "Bildirim Sayısı",
       "type": "api"
@@ -465,6 +759,48 @@
       "type": "api"
     },
     {
+      "name": "V1 Sayfa Tepkisi Oluştur",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
+      "name": "V2 Sayfa Tepkisi Oluştur",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
+      "name": "V1 Sayfa Tepkisini Sil",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
+      "name": "V2 Sayfa Tepkisini Sil",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
+      "name": "V1 Sayfa Beğenilerini Al",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
+      "name": "V2 Sayfa Tepkilerini Al",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
+      "name": "V2 Sayfa Tepki Kullanıcılarını Al",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Sayfa Tepkileri",
+      "type": "api"
+    },
+    {
       "name": "Sayfa Ekle",
       "file": "addpage-api-generated.md",
       "subCat": "Sayfalar",
@@ -477,7 +813,19 @@
       "type": "api"
     },
     {
-      "name": "URL Kimliğine Göre Sayfayı Al",
+      "name": "Çevrimdışı Kullanıcıları Al",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Sayfalar",
+      "type": "api"
+    },
+    {
+      "name": "Çevrimiçi Kullanıcıları Al",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "Sayfalar",
+      "type": "api"
+    },
+    {
+      "name": "URL Id'ye Göre Sayfayı Al",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Sayfalar",
       "type": "api"
@@ -489,27 +837,39 @@
       "type": "api"
     },
     {
-      "name": "Sayfayı Yama Yap",
+      "name": "Genel Sayfaları Al",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Sayfalar",
+      "type": "api"
+    },
+    {
+      "name": "Kullanıcı Bilgilerini Al",
+      "file": "getusersinfo-api-generated.md",
+      "subCat": "Sayfalar",
+      "type": "api"
+    },
+    {
+      "name": "Sayfayı Kısmi Güncelle",
       "file": "patchpage-api-generated.md",
       "subCat": "Sayfalar",
       "type": "api"
     },
     {
-      "name": "Bekleyen Webhook Etkinliğini Sil",
+      "name": "Bekleyen Webhook Olayını Sil",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Bekleyen Webhook Etkinlikleri",
+      "subCat": "Bekleyen Webhook Olayları",
       "type": "api"
     },
     {
-      "name": "Bekleyen Webhook Etkinliği Sayısını Al",
+      "name": "Bekleyen Webhook Olay Sayısını Al",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Bekleyen Webhook Etkinlikleri",
+      "subCat": "Bekleyen Webhook Olayları",
       "type": "api"
     },
     {
-      "name": "Bekleyen Webhook Etkinliklerini Al",
+      "name": "Bekleyen Webhook Olaylarını Al",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Bekleyen Webhook Etkinlikleri",
+      "subCat": "Bekleyen Webhook Olayları",
       "type": "api"
     },
     {
@@ -573,21 +933,21 @@
       "type": "api"
     },
     {
-      "name": "Soru Sonuçlarını Toplama",
+      "name": "Soru Sonuçlarını Topla",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Soru Sonuçları Toplaması",
+      "subCat": "Soru Sonuçları Toplamı",
       "type": "api"
     },
     {
-      "name": "Soru Sonuçlarını Toplu Toplama",
+      "name": "Toplu Soru Sonuçlarını Topla",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Soru Sonuçları Toplaması",
+      "subCat": "Soru Sonuçları Toplamı",
       "type": "api"
     },
     {
       "name": "Yorumları Soru Sonuçlarıyla Birleştir",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Soru Sonuçları Toplaması",
+      "subCat": "Soru Sonuçları Toplamı",
       "type": "api"
     },
     {
@@ -621,13 +981,13 @@
       "type": "api"
     },
     {
-      "name": "SSO Kullanıcısını Yama Yap",
+      "name": "SSO Kullanıcısını Kısmi Güncelle",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO Kullanıcıları",
       "type": "api"
     },
     {
-      "name": "SSO Kullanıcısını Değiştir (PUT)",
+      "name": "SSO Kullanıcısını Değiştir",
       "file": "putssouser-api-generated.md",
       "subCat": "SSO Kullanıcıları",
       "type": "api"
@@ -795,9 +1155,15 @@
       "type": "api"
     },
     {
-      "name": "Görüntü Yükle",
+      "name": "Çevirileri Al",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Çeviriler",
+      "type": "api"
+    },
+    {
+      "name": "Resim Yükle",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Görüntü Yükle",
+      "subCat": "Resim Yükle",
       "type": "api"
     },
     {
@@ -807,13 +1173,13 @@
       "type": "api"
     },
     {
-      "name": "Rozet İlerlemesini Kullanıcı ID'sine Göre Al",
+      "name": "Kullanıcı ID'sine Göre Rozet İlerlemesini Al",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "Kullanıcı Rozet İlerlemesi",
       "type": "api"
     },
     {
-      "name": "Kullanıcı Rozet İlerleme Listesini Al",
+      "name": "Kullanıcı Rozet İlerlemesi Listesini Al",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "Kullanıcı Rozet İlerlemesi",
       "type": "api"
@@ -873,13 +1239,13 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcı Bildirim Yorum Aboneliği Durumunu Güncelle",
+      "name": "Kullanıcı Yorum Abonelik Durumunu Güncelle",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Kullanıcı Bildirimleri",
       "type": "api"
     },
     {
-      "name": "Kullanıcı Bildirim Sayfa Aboneliği Durumunu Güncelle",
+      "name": "Kullanıcı Sayfa Abonelik Durumunu Güncelle",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Kullanıcı Bildirimleri",
       "type": "api"
@@ -891,9 +1257,9 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcı Varlık Durumlarını Al",
+      "name": "Kullanıcı Bulunurluk Durumlarını Al",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Kullanıcı Varlık Durumu",
+      "subCat": "Kullanıcı Bulunurluk Durumu",
       "type": "api"
     },
     {

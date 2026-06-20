@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Тип | Локација | Обавезно | Опис |
+| Назив | Type | Location | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Не |  |
@@ -11,32 +11,32 @@
 
 ## Одговор
 
-Враћа: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count200_response.py)
+Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'get_notification_count Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notification_count Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notification_count200_response import GetNotificationCount200Response
+from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумјевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Постављање host-а је опционo и подразумевано је https://fastcomments.com
+# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клијент мора конфигурисати параметре аутентификације и овлашћења
-# у складу са политиком безбједности API сервера.
-# Примјери за сваки метод аутентификације су испод, користите примјер који
-# одговара вашем случају употребе аутентификације.
+# у складу са безбедносном политиком API сервера.
+# Испод су дати примјери за сваки метод аутентификације, користите примјер који
+# одговара вашем сценарију аутентификације.
 
-# Configure API key authorization: api_key
+# Конфигуришите ауторизацију API кључем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента

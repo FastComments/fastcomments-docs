@@ -1,20 +1,21 @@
-## Параметри
+---
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| errorId | string | path | Да |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| errorId | string | path | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/FlagCommentPublic200Response.java)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример deleteEmailTemplateRenderError'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите ауторизацију API кључа: api_key
+    // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте подесили префикс за API кључ, нпр. "Token" (подразумевано је null)
+    // Otkomentarišite sljedeću liniju da postavite prefiks za API ključ, npr. "Token" (zadano na null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +39,7 @@ public class Example {
     String id = "id_example"; // String | 
     String errorId = "errorId_example"; // String | 
     try {
-      FlagCommentPublic200Response result = apiInstance.deleteEmailTemplateRenderError(tenantId, id, errorId)
+      APIEmptyResponse result = apiInstance.deleteEmailTemplateRenderError(tenantId, id, errorId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,22 +1,21 @@
----
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tag | string | path | Yes |  |
+| tag | string | path | Sí |  |
 | tenantId | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/patch_hash_tag200_response.py)
+Devuelve: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'patch_hash_tag Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de patch_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.patch_hash_tag200_response import PatchHashTag200Response
 from client.models.update_hash_tag_body import UpdateHashTagBody
+from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,18 +27,18 @@ configuration = client.Configuration(
 
 # El cliente debe configurar los parámetros de autenticación y autorización
 # de acuerdo con la política de seguridad del servidor de la API.
-# Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
+# A continuación se proporcionan ejemplos para cada método de autenticación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar autorización por clave de API: api_key
+# Configure la autorización por clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej., Bearer) para la clave de API, si es necesario
+# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrar en un contexto con una instancia del cliente API
+# Ingrese a un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Crear una instancia de la clase API
+    # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tag = 'tag_example' # str | 
     tenant_id = 'tenant_id_example' # str |  (opcional)
@@ -52,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->patch_hash_tag: %s\n" % e)
 [inline-code-end]
-
----

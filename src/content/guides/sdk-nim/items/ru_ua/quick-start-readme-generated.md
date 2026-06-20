@@ -1,6 +1,6 @@
 ### Использование аутентифицированных API (DefaultAPI)
 
-**Важно:** Для аутентифицированных конечных точек необходимо установить ваш API-ключ в заголовке `x-api-key`.
+**Важно:** Аутентифицированные конечные точки требуют, чтобы ваш API-ключ был установлен в заголовке `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Выполнить аутентифицированные вызовы API
+# Выполнение аутентифицированных вызовов API
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Выполнить публичные вызовы API
+# Выполнение публичных вызовов API
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Частые проблемы
+### Использование API модерации (ModerationAPI)
+
+Конечные точки модерации обеспечивают работу панели модератора и аутентифицируются с помощью SSO-токена действующего модератора:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Список комментариев в панели модерации
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
+### Распространенные проблемы
 
 1. **401 ошибка аутентификации**: Убедитесь, что вы установили заголовок `x-api-key` в вашем HttpClient перед выполнением запросов DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Неправильный класс API**: Используйте `api_default` для серверных аутентифицированных запросов, `api_public` для клиентских/публичных запросов.
+2. **Неправильный класс API**: Используйте `api_default` для серверных аутентифицированных запросов, `api_public` для клиентских/публичных запросов, и `api_moderation` для запросов панели модератора.

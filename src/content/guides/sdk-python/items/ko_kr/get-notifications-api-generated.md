@@ -1,44 +1,45 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| userId | string | query | 아니요 |  |
-| urlId | string | query | 아니요 |  |
-| fromCommentId | string | query | 아니요 |  |
-| viewed | boolean | query | 아니요 |  |
-| type | string | query | 아니요 |  |
-| skip | number | query | 아니요 |  |
+| userId | string | query | 아니오 |  |
+| urlId | string | query | 아니오 |  |
+| fromCommentId | string | query | 아니오 |  |
+| viewed | boolean | query | 아니오 |  |
+| type | string | query | 아니오 |  |
+| skip | number | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+반환값: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_notifications 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트를 정의하는 것은 선택 사항이며 기본값은 https://fastcomments.com 입니다.
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
+# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
+# 모든 지원되는 구성 매개변수 목록은 configuration.py 를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 클라이언트는 API 서버 보안 정책에 따라 인증 및 권한 부여 매개변수를 구성해야 합니다.
+# 클라이언트는 인증 및 권한 부여 매개변수를 구성해야 합니다
+# API 서버 보안 정책에 따라.
 # 각 인증 방법에 대한 예제가 아래에 제공됩니다. 귀하의 인증 사용 사례에 맞는 예제를 사용하세요.
 
-# API 키 인증 구성: api_key
+# API key 인증 구성: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 필요하면 아래의 주석 처리를 해제하여 API 키 접두사(예: Bearer)를 설정하세요
+# 필요한 경우 API key에 대한 접두사(예: Bearer)를 설정하려면 아래 주석을 해제하세요
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API 클라이언트 인스턴스를 사용하여 컨텍스트를 엽니다
+# API 클라이언트 인스턴스로 컨텍스트에 진입합니다
 with client.ApiClient(configuration) as api_client:
     # API 클래스의 인스턴스를 생성합니다
     api_instance = client.DefaultApi(api_client)

@@ -1,16 +1,16 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| yearNumber | number | query | 否 |  |
-| monthNumber | number | query | 否 |  |
-| dayNumber | number | query | 否 |  |
-| skip | number | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
 ## 回應
 
-回傳: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+回傳: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## 範例
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	yearNumber := float64(1.2) // float64 |  （可選）
-	monthNumber := float64(1.2) // float64 |  （可選）
-	dayNumber := float64(1.2) // float64 |  （可選）
-	skip := float64(1.2) // float64 |  （可選）
+	yearNumber := float64(1.2) // float64 |  (可選)
+	monthNumber := float64(1.2) // float64 |  (可選)
+	dayNumber := float64(1.2) // float64 |  (可選)
+	skip := float64(1.2) // float64 |  (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,9 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetTenantDailyUsages` 的回應: GetTenantDailyUsages200Response
+	// 來自 `GetTenantDailyUsages` 的回應: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]
-
----

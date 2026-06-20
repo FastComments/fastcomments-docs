@@ -6,10 +6,10 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // API yapılandırmasını oluşturun
+    // Create API configuration
     let config = Configuration::new();
 
-    // Bir sayfanın yorumlarını alın
+    // Fetch comments for a page
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Kimlik Doğrulamalı API Kullanımı
+### Kimlik Doğrulanmış API Kullanımı
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -53,14 +53,14 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // API anahtarı ile yapılandırma oluşturun
+    // Create configuration with API key
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
         key: "your-api-key".to_string(),
     });
 
-    // Kimlik doğrulamalı API kullanarak yorumları alın
+    // Fetch comments using authenticated API
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Moderasyon API Kullanımı
+
+Moderasyon yöntemleri moderatör panosunu destekler. Bunlar yetkilendirilmiş API ile aynı şekilde bir API anahtarı `Configuration` kullanır ve her yöntem isteğin SSO ile kimlik doğrulanmış bir moderatör adına yapılabilmesi için isteğe bağlı bir `sso` belirteci kabul eder.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Create configuration with API key
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Count comments waiting in the moderation queue
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // pass an SSO token to act as an SSO-authenticated moderator
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Kimlik Doğrulama için SSO Kullanımı
 
 ```rust
@@ -110,19 +148,19 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Güvenli SSO kullanıcı verisi oluşturun (yalnızca sunucu tarafında!)
+    // Create secure SSO user data (server-side only!)
     let user_data = SecureSSOUserData::new(
-        "user-123".to_string(),           // Kullanıcı ID'si
-        "user@example.com".to_string(),   // E-posta
-        "John Doe".to_string(),            // Kullanıcı adı
-        "https://example.com/avatar.jpg".to_string(), // Avatar URL'si
+        "user-123".to_string(),           // User ID
+        "user@example.com".to_string(),   // Email
+        "John Doe".to_string(),            // Username
+        "https://example.com/avatar.jpg".to_string(), // Avatar URL
     );
 
-    // SSO token'ı oluşturun
+    // Generate SSO token
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Bu token'ı kimlik doğrulama için frontend'inize iletin
+    // Pass this token to your frontend for authentication
 }
 ```

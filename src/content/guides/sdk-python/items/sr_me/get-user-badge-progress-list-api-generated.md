@@ -1,50 +1,50 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge_progress_list200_response.py)
+Враћа: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer get_user_badge_progress_list'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_list Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge_progress_list200_response import GetUserBadgeProgressList200Response
+from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opcionalno i podrazumijevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
+# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurisati parametre autentikacije i autorizacije
-# u skladu sa bezbjednosnom politikom API servera.
-# Primjeri za svaki metod autentikacije su dati ispod; koristite primjer
-# koji odgovara vašem slučaju upotrebe autentikacije.
+# Клијент мора да подеси параметре аутентификације и ауторизације
+# у складу са безбедносном политиком API сервера.
+# Примери за сваки метод аутентификације су дати у наставку, користите пример који
+# задовољава ваш случај коришћења аутентификације.
 
-# Konfigurišite autorizaciju API ključem: api_key
+# Подесите овлашћење API кључем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uklonite komentare ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Откоментирајте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst koristeći instancu API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (neobavezno)
-    limit = 3.4 # float |  (neobavezno)
-    skip = 3.4 # float |  (neobavezno)
+    user_id = 'user_id_example' # str |  (опционо)
+    limit = 3.4 # float |  (опционо)
+    skip = 3.4 # float |  (опционо)
 
     try:
         api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)

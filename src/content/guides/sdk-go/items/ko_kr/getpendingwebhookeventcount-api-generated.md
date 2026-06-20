@@ -1,18 +1,19 @@
+---
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| commentId | string | query | 아니오 |  |
-| externalId | string | query | 아니오 |  |
-| eventType | string | query | 아니오 |  |
-| type | string | query | 아니오 |  |
-| domain | string | query | 아니오 |  |
-| attemptCountGT | number | query | 아니오 |  |
+| commentId | string | query | 아니요 |  |
+| externalId | string | query | 아니요 |  |
+| eventType | string | query | 아니요 |  |
+| type | string | query | 아니요 |  |
+| domain | string | query | 아니요 |  |
+| attemptCountGT | number | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+반환: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
 ## 예제
 
@@ -43,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetPendingWebhookEventCount`의 응답: GetPendingWebhookEventCount200Response
+	// `GetPendingWebhookEventCount`의 응답: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]
+
+---

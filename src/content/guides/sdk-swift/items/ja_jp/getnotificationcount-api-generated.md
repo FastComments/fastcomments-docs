@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | userId | string | query | いいえ |  |
@@ -11,7 +11,7 @@
 
 ## レスポンス
 
-戻り値: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCount200Response.swift)
+戻り値: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
 ## 例
 
@@ -21,11 +21,11 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  （オプション）
-let urlId = "urlId_example" // String |  （オプション）
-let fromCommentId = "fromCommentId_example" // String |  （オプション）
-let viewed = true // Bool |  （オプション）
-let type = "type_example" // String |  （オプション）
+let userId = "userId_example" // String |  (任意)
+let urlId = "urlId_example" // String |  (任意)
+let fromCommentId = "fromCommentId_example" // String |  (任意)
+let viewed = true // Bool |  (任意)
+let type = "type_example" // String |  (任意)
 
 DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
     guard error == nil else {
@@ -38,3 +38,5 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId
     }
 }
 [inline-code-end]
+
+---

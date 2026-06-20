@@ -8,37 +8,39 @@
 
 ## Risposta
 
-Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di send_invite'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è facoltativo e per impostazione predefinita è https://fastcomments.com
+# Defining the host is optional and defaults to https://fastcomments.com
 # Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la policy di sicurezza del server API.
-# Gli esempi per ogni metodo di autenticazione sono forniti qui sotto, usa l'esempio che
-# soddisfa il tuo caso d'uso.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Esempi per ogni metodo di autenticazione sono forniti di seguito, usa l'esempio che
+# soddisfa il tuo caso d'uso di autenticazione.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
+# Decommenta qui sotto per impostare il prefisso (es. Bearer) per la API key, se necessario
 
 # Enter a context with an instance of the API client
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
+    # Crea un'istanza della classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

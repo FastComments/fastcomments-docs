@@ -2,14 +2,14 @@
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| commentId | string | path | 예 |  |
-| broadcastId | string | query | 예 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | 경로 | 예 |  |
+| commentId | string | 경로 | 예 |  |
+| broadcastId | string | 쿼리 | 예 |  |
+| sso | string | 쿼리 | 아니오 |  |
 
 ## 응답
 
-반환: [`LockComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/LockComment200Response.java)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 예제
 
@@ -33,7 +33,7 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      LockComment200Response result = apiInstance.unLockComment(tenantId, commentId, broadcastId)
+      APIEmptyResponse result = apiInstance.unLockComment(tenantId, commentId, broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -47,3 +47,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

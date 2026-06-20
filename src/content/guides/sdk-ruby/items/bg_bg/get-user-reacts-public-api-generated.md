@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | postIds | array | query | Не |  |
@@ -8,20 +8,20 @@
 
 ## Отговор
 
-Връща: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+Връща: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример на get_user_reacts_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_reacts_public Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Низ | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  post_ids: ['inner_example'], # Масив<String> | 
-  sso: 'sso_example' # Низ | 
+  post_ids: ['inner_example'], # Array<String> | 
+  sso: 'sso_example' # String | 
 }
 
 begin

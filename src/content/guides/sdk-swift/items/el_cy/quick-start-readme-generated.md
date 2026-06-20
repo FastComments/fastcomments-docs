@@ -3,10 +3,10 @@
 ```swift
 import FastCommentsSwift
 
-// Δημιουργία πελάτη API
+// Δημιούργησε πελάτη API
 let publicApi = PublicAPI()
 
-// Ανάκτηση σχολίων για μια σελίδα
+// Ανάκτησε σχόλια για μια σελίδα
 do {
     let response = try await publicApi.getCommentsPublic(
         tenantId: "your-tenant-id",
@@ -22,16 +22,16 @@ do {
 }
 ```
 
-### Χρήση του Πιστοποιημένου API
+### Χρήση του API με Αυθεντικοποίηση
 
 ```swift
 import FastCommentsSwift
 
-// Δημιουργία ρύθμισης με κλειδί API
+// Δημιούργησε ρύθμιση με κλειδί API
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Ανάκτηση σχολίων χρησιμοποιώντας το πιστοποιημένο API
+// Ανάκτησε σχόλια χρησιμοποιώντας το αυθεντικοποιημένο API
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,6 +47,29 @@ do {
 }
 ```
 
+### Χρήση του API Εποπτείας
+
+```swift
+import FastCommentsSwift
+
+// Οι μέθοδοι εποπτείας εξουσιοδοτούνται με ένα `sso` token για τον λειτουργούντα συντονιστή
+// (παράγεται με το FastCommentsSSO, δείτε την ενότητα SSO πιο πάνω).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Χρήση SSO για Αυθεντικοποίηση
 
 #### Ασφαλές SSO (Συνιστάται για Παραγωγή)
@@ -56,21 +79,21 @@ import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Δημιουργία ασφαλών δεδομένων χρήστη SSO (μόνο πλευρά διακομιστή!)
+// Δημιούργησε ασφαλή δεδομένα χρήστη SSO (μόνο πλευρά διακομιστή!)
 let userData = SecureSSOUserData(
     id: "user-123",              // Αναγνωριστικό χρήστη
-    email: "user@example.com",   // Ηλεκτρονική διεύθυνση
-    username: "johndoe",         // Ονομα χρήστη
-    avatar: "https://example.com/avatar.jpg" // Διεύθυνση URL εικόνας προφίλ
+    email: "user@example.com",   // Ηλεκτρονικό ταχυδρομείο
+    username: "johndoe",         // Όνομα χρήστη
+    avatar: "https://example.com/avatar.jpg" // URL Άβαταρ
 )
 
-// Generate SSO token
+// Δημιούργησε token SSO
 do {
     let sso = try FastCommentsSSO.createSecure(apiKey: apiKey, secureSSOUserData: userData)
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Περνάτε αυτό το token στο frontend σας για αυθεντικοποίηση
+    // Πέρασε αυτό το token στο frontend σου για αυθεντικοποίηση
 } catch {
     print("Error creating SSO token: \(error)")
 }
@@ -81,14 +104,14 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Δημιουργία απλών δεδομένων χρήστη SSO (δεν απαιτείται κλειδί API)
+// Δημιούργησε απλά δεδομένα χρήστη SSO (δεν χρειάζεται κλειδί API)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
     avatar: "https://example.com/avatar.jpg"
 )
 
-// Δημιουργία απλού token SSO
+// Δημιούργησε απλό token SSO
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()

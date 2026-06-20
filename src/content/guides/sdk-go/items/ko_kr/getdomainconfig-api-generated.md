@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -8,7 +7,7 @@
 
 ## 응답
 
-반환: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_200_response.go)
+반환: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_domain_config_response.go)
 
 ## 예제
 
@@ -20,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -34,9 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetDomainConfig`의 응답: GetDomainConfig200Response
+	// `GetDomainConfig`의 응답: GetDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetDomainConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

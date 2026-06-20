@@ -6,17 +6,17 @@ afterId
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
-| sso | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeUserInfo | boolean | query | No |  |
+| tenantId | string | path | Ναι |  |
+| afterId | string | query | Όχι |  |
+| limit | integer | query | Όχι |  |
+| tags | array | query | Όχι |  |
+| sso | string | query | Όχι |  |
+| isCrawler | boolean | query | Όχι |  |
+| includeUserInfo | boolean | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## Παράδειγμα
 
@@ -28,8 +28,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, η `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε custom HTTP client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, ως προεπιλογή θα χρησιμοποιηθεί το `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -47,3 +47,5 @@ try {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

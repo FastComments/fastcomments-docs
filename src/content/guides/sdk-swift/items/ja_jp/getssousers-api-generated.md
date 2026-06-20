@@ -1,13 +1,13 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| skip | integer | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| skip | integer | query | No |  |
 
 ## レスポンス
 
-返却値: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetSSOUsers200Response.swift)
+戻り値: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetSSOUsersResponse.swift)
 
 ## 例
 
@@ -17,7 +17,7 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Int |  (オプション)
+let skip = 987 // Int |  (任意)
 
 DefaultAPI.getSSOUsers(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {

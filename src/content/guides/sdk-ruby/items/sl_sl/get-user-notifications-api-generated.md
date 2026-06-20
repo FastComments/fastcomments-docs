@@ -1,8 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Name | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
+| urlId | string | query | Ne | Uporablja se za določitev, ali je trenutna stran naročena. |
 | pageSize | integer | query | Ne |  |
 | afterId | string | query | Ne |  |
 | includeContext | boolean | query | Ne |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Ne |  |
 | noDm | boolean | query | Ne |  |
 | includeTranslations | boolean | query | Ne |  |
+| includeTenantNotifications | boolean | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Vrne: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Primer
 
@@ -27,6 +29,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
+  url_id: 'url_id_example', # String | Uporablja se za določitev, ali je trenutna stran naročena.
   page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
   include_context: true, # Boolean | 
@@ -35,6 +38,7 @@ opts = {
   dm_only: true, # Boolean | 
   no_dm: true, # Boolean | 
   include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 
@@ -46,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

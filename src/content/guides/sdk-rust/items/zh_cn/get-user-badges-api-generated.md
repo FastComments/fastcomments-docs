@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | user_id | String | 否 |  |
@@ -11,23 +11,23 @@
 
 ## 响应
 
-返回：[`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_badges_200_response.rs)
+返回: [`ApiGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badges_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_user_badges 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example_get_user_badges() -> Result<ApiGetUserBadgesResponse, Error> {
     let params: GetUserBadgesParams = GetUserBadgesParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        user_id: Some(String::from("user-9876")),
-        badge_id: Some(String::from("top-reviewer")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("user_7890".to_string()),
+        badge_id: Some("top-commenter".to_string()),
         displayed_on_comments: Some(true),
-        limit: Some(50.0),
+        limit: Some(25.0),
         skip: Some(0.0),
     };
-    let response: GetUserBadges200Response = get_user_badges(&configuration, params).await?;
-    Ok(())
+    let response: ApiGetUserBadgesResponse = get_user_badges(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

@@ -9,7 +9,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUser200Response.swift)
+Devuelve: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
 
 ## Ejemplo
 
@@ -34,5 +34,3 @@ DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, ano
     }
 }
 [inline-code-end]
-
----

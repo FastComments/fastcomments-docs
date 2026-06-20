@@ -2,15 +2,15 @@
 
 | 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 경로 | 예 |  |
-| postIds | array | 쿼리 | 아니오 |  |
-| sso | string | 쿼리 | 아니오 |  |
+| tenantId | string | path | 예 |  |
+| postIds | array | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+반환: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
-## 예제
+## 예
 
 [inline-code-attrs-start title = 'get_user_reacts_public 예제'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_reacts_public: #{e}"
 end
 [inline-code-end]
-
----

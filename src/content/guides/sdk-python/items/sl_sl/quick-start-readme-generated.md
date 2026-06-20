@@ -1,19 +1,19 @@
 ### Uporaba avtenticiranih API-jev (DefaultApi)
 
-**Pomembno:** Pred izvajanjem avtenticiranih zahtev morate na Configuration nastaviti svoj API ključ. Če tega ne storite, bodo zahteve vrnile napako 401.
+**Pomembno:** Pred ustvarjanjem avtenticiranih zahtev morate nastaviti svoj API ključ v Configuration. Če tega ne storite, bodo zahtevki spodleteli z napako 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Ustvari in konfiguriraj API odjemalca
+# Ustvarite in konfigurirajte API odjemalca
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
 # OBVEZNO: Nastavite svoj API ključ (pridobite ga na nadzorni plošči FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Ustvari instanco API-ja s konfiguriranim odjemalcem
+# Ustvarite instanco API z konfiguriranim odjemalcem
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
@@ -35,8 +35,8 @@ try:
 except Exception as e:
     print(f"Error: {e}")
     # Pogoste napake:
-    # - 401: API ključ manjka ali ni veljaven
-    # - 400: Preverjanje zahteve ni uspelo
+    # - 401: API ključ manjka ali je neveljaven
+    # - 400: Validacija zahtevka ni uspela
 ```
 
 ### Uporaba javnih API-jev (PublicApi)
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Uporaba SSO (Single Sign-On)
+### Uporaba nadzorne plošče moderacije (ModerationApi)
 
-SDK vključuje pripomočke za generiranje varnih SSO žetonov:
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Preštejte komentarje, ki čakajo na moderacijo
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### Uporaba SSO (enotna prijava)
+
+SDK vsebuje pripomočke za ustvarjanje varnih SSO žetonov:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Ustvari podatke o uporabniku
+# Ustvarite podatke o uporabniku
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,25 +98,24 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Ustvari SSO instanco z vašim API skrivnim ključem
+# Ustvarite SSO instanco z vašim API skrivnostjo
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generiraj SSO žeton
+# Generirajte SSO žeton
 sso_token = sso.create_token()
 
-# Uporabite ta žeton v frontend-u ali ga posredujte klicem API-ja
+# Ta žeton uporabite v frontend aplikaciji ali ga posredujte klicem API-ja
 print(f"SSO Token: {sso_token}")
 ```
 
-Za preprost SSO (manj varen, za testiranje):
+Za preprosto SSO (manj varno, za testiranje):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
 
-# Ustvari podatke o uporabniku
 user_data = SimpleSSOUserData(
     user_id="user-123",
     email="user@example.com"
@@ -107,8 +127,8 @@ sso_token = sso.create_token()
 
 ### Pogoste težave
 
-1. **401 napaka "missing-api-key"**: Poskrbite, da nastavite `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` pred ustvarjanjem instance DefaultApi.
-2. **Napačen razred API-ja**: Uporabite `DefaultApi` za strežniške avtenticirane zahteve, `PublicApi` za odjemalske/javne zahteve.
-3. **Napake pri uvozu**: Prepričajte se, da uvažate iz pravilnega modula:
+1. **401 "missing-api-key" error**: Prepričajte se, da nastavite `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` pred ustvarjanjem instance DefaultApi.
+2. **Wrong API class**: Uporabite `DefaultApi` za strežniške avtenticirane zahteve, `PublicApi` za odjemalske/javne zahteve in `ModerationApi` za zahteve nadzorne plošče moderatorja.
+3. **Import errors**: Prepričajte se, da uvažate iz pravilnega modula:
    - API client: `from client import ...`
    - SSO utilities: `from sso import ...`

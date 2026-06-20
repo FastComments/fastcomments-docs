@@ -5,17 +5,17 @@ userIdWS
 
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
 | userIdWS | string | query | 是 |  |
 | startTime | integer | query | 是 |  |
-| endTime | integer | query | 是 |  |
+| endTime | integer | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLog200Response.php)
+回傳: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## 範例
 
@@ -27,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 如果您想使用自訂 http 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
@@ -44,3 +44,5 @@ try {
     echo 'Exception when calling PublicApi->getGlobalEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

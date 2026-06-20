@@ -1,4 +1,4 @@
-必填
+req
 tenantId
 urlId
 userIdWS
@@ -11,11 +11,11 @@ userIdWS
 | urlId | string | query | 是 |  |
 | userIdWS | string | query | 是 |  |
 | startTime | integer | query | 是 |  |
-| endTime | integer | query | 是 |  |
+| endTime | integer | query | 否 |  |
 
 ## 响应
 
-返回: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log200_response.rb)
+返回：[`GetEventLogResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log_response.rb)
 
 ## 示例
 
@@ -29,15 +29,15 @@ tenant_id = 'tenant_id_example' # 字符串 |
 url_id = 'url_id_example' # 字符串 | 
 user_id_ws = 'user_id_ws_example' # 字符串 | 
 start_time = 789 # 整数 | 
-end_time = 789 # 整数 | 
+opts = {
+  end_time: 789 # 整数 | 
+}
 
 begin
   
-  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_event_log: #{e}"
 end
 [inline-code-end]
-
----

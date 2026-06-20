@@ -1,26 +1,25 @@
----
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | domainToUpdate | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_domain_config200_response.py)
+Връща: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/put_domain_config_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за put_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_domain_config Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_domain_config200_response import GetDomainConfig200Response
+from client.models.put_domain_config_response import PutDomainConfigResponse
 from client.models.update_domain_config_params import UpdateDomainConfigParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на host е по избор и по подразбиране е https://fastcomments.com
+# Задаването на хоста е по избор и по подразбиране е https://fastcomments.com
 # Вижте configuration.py за списък на всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,13 +27,13 @@ configuration = client.Configuration(
 
 # Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са предоставени по-долу, използвайте примера, който
+# Примерите за всеки метод за удостоверяване са дадени по-долу, използвайте примера, който
 # отговаря на вашия случай на използване за удостоверяване.
 
 # Конфигурирайте удостоверяване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+# Разкоментарирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Влезте в контекст с инстанция на API клиента
@@ -52,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->put_domain_config: %s\n" % e)
 [inline-code-end]
-
----

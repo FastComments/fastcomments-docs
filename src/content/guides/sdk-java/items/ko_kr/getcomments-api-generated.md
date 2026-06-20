@@ -1,26 +1,28 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| page | integer | query | 아니오 |  |
-| limit | integer | query | 아니오 |  |
-| skip | integer | query | 아니오 |  |
-| asTree | boolean | query | 아니오 |  |
-| skipChildren | integer | query | 아니오 |  |
-| limitChildren | integer | query | 아니오 |  |
-| maxTreeDepth | integer | query | 아니오 |  |
-| urlId | string | query | 아니오 |  |
-| userId | string | query | 아니오 |  |
-| anonUserId | string | query | 아니오 |  |
-| contextUserId | string | query | 아니오 |  |
-| hashTag | string | query | 아니오 |  |
-| parentId | string | query | 아니오 |  |
-| direction | string | query | 아니오 |  |
+| page | integer | query | 아니요 |  |
+| limit | integer | query | 아니요 |  |
+| skip | integer | query | 아니요 |  |
+| asTree | boolean | query | 아니요 |  |
+| skipChildren | integer | query | 아니요 |  |
+| limitChildren | integer | query | 아니요 |  |
+| maxTreeDepth | integer | query | 아니요 |  |
+| urlId | string | query | 아니요 |  |
+| userId | string | query | 아니요 |  |
+| anonUserId | string | query | 아니요 |  |
+| contextUserId | string | query | 아니요 |  |
+| hashTag | string | query | 아니요 |  |
+| parentId | string | query | 아니요 |  |
+| direction | string | query | 아니요 |  |
+| fromDate | integer | query | 아니요 |  |
+| toDate | integer | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+반환: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## 예제
 
@@ -42,7 +44,7 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값은 null)
+    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값: null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -89,3 +95,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

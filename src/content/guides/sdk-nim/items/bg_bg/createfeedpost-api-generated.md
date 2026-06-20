@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createFeedPostParams | CreateFeedPostParams | Не |  |
@@ -11,32 +11,32 @@
 
 ## Отговор
 
-Връща: [`Option[CreateFeedPost_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post200response.nim)
+Връща: [`Option[CreateFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_posts_response.nim)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за createFeedPost'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createParams = CreateFeedPostParams(
-  content = "We're rolling out realtime comments to all users!",
-  title = "Realtime Comments Rollout",
-  url = "news/realtime-comments-rollout-2025",
-  authorId = "prod-team",
-  tags = @["release", "comments"]
+let postParams = CreateFeedPostParams(
+  title = "Major Acquisition by TechCorp",
+  content = "TechCorp has acquired SoftWorks in a deal valued at $1.2B, creating a new market leader.",
+  url = "news/tech/major-acquisition",
+  tags = @["business", "technology"],
+  authorId = "journalist-321"
 )
 
 let (response, httpResponse) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = createParams,
-  broadcastId = "broadcast-2025-11",
-  isLive = true,
-  doSpamCheck = true,
+  createFeedPostParams = postParams,
+  broadcastId = "",
+  isLive = false,
+  doSpamCheck = false,
   skipDupCheck = false
 )
 
 if response.isSome:
   let created = response.get()
-  echo "Feed post created, id: ", $created.id
-else:
-  echo "Failed to create feed post, HTTP status: ", $httpResponse.statusCode
+  discard created
 [inline-code-end]
+
+---

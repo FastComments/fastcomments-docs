@@ -1,41 +1,41 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Ім'я | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Так |  |
+| id | string | path | Так |  |
 
 ## Відповідь
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'delete_question_result Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням становить https://fastcomments.com
-# Перегляньте configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста необов'язкове і за замовчуванням — https://fastcomments.com
+# Дивіться configuration.py для переліку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт має налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки API-сервера.
-# Нижче наведено приклади для кожного методу автентифікації, використайте той приклад, що
-# відповідає вашому випадку використання.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# відповідно до політики безпеки сервера API.
+# Нижче наведено приклади для кожного методу автентифікації; використайте приклад,
+# що відповідає вашому випадку використання автентифікації.
 
-# Configure API key authorization: api_key
+# Налаштуйте авторизацію за допомогою ключа API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Використайте контекст з екземпляром API-клієнта
+# Використайте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)

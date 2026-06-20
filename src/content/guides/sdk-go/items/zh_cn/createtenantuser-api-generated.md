@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -7,7 +6,7 @@
 
 ## 响应
 
-返回: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_200_response.go)
+返回: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_tenant_user_response.go)
 
 ## 示例
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateTenantUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `CreateTenantUser` 的响应: CreateTenantUser200Response
+	// 来自 `CreateTenantUser` 的响应: CreateTenantUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

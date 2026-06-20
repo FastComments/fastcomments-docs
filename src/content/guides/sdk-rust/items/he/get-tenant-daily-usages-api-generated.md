@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | year_number | f64 | לא |  |
@@ -8,24 +8,26 @@
 | day_number | f64 | לא |  |
 | skip | f64 | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_daily_usages_200_response.rs)
+מחזיר: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_daily_usages_response.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_tenant_daily_usages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_usage() -> Result<GetTenantDailyUsages200Response, Error> {
-    let params = GetTenantDailyUsagesParams {
-        tenant_id: "acme-corp-tenant".to_string(),
+async fn run() -> Result<(), Error> {
+    let params: GetTenantDailyUsagesParams = GetTenantDailyUsagesParams {
+        tenant_id: String::from("acme-corp-tenant"),
         year_number: Some(2026.0),
-        month_number: Some(3.0),
-        day_number: Some(25.0),
+        month_number: Some(6.0),
+        day_number: Some(19.0),
         skip: Some(0.0),
     };
-    let response = get_tenant_daily_usages(&configuration, params).await?;
-    Ok(response)
+    let daily_usages: GetTenantDailyUsagesResponse =
+        get_tenant_daily_usages(&configuration, params).await?;
+    let _ = daily_usages;
+    Ok(())
 }
 [inline-code-end]
 

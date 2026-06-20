@@ -10,18 +10,18 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Создайте и настройте ApiClient
+        // Создаём и настраиваем API-клиент
         ApiClient apiClient = new ApiClient();
 
-        // ОБЯЗАТЕЛЬНО: Установите ваш API-ключ (получите его на панели управления FastComments)
+        // ОБЯЗАТЕЛЬНО: Установите ваш API-ключ (возьмите его из панели управления FastComments)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Создайте экземпляр API с настроенным клиентом
+        // Создаём экземпляр API с настроенным клиентом
         DefaultApi api = new DefaultApi(apiClient);
 
         // Теперь вы можете выполнять аутентифицированные вызовы API
         try {
-            // Пример: Добавление SSO-пользователя
+            // Пример: Добавить SSO-пользователя
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
             userData.setId("user-123");
             userData.setEmail("user@example.com");
@@ -33,7 +33,7 @@ public class Example {
 
         } catch (ApiException e) {
             System.err.println("Error: " + e.getResponseBody());
-            // Распространенные ошибки:
+            // Распространённые ошибки:
             // - 401: API-ключ отсутствует или недействителен
             // - 400: Ошибка валидации запроса
         }
@@ -60,8 +60,30 @@ try {
 }
 ```
 
-### Распространенные проблемы
+### Использование API модерации (ModerationApi)
+
+`ModerationApi` обеспечивает работу панели модератора. Каждый метод принимает параметр `sso`, который идентифицирует модератора, аутентифицированного через SSO, от имени которого выполняется запрос:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Список комментариев, ожидающих модерации
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
+### Распространённые проблемы
 
 1. **401 "missing-api-key" error**: Убедитесь, что вы вызываете `apiClient.setApiKey("YOUR_KEY")` перед созданием экземпляра DefaultApi.
 2. **Wrong API class**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов.
-3. **Null API key**: SDK тихо пропустит аутентификацию, если API-ключ равен null, что приведет к ошибкам 401.
+3. **Null API key**: SDK тихо пропустит аутентификацию, если API-ключ равен null, что приведёт к ошибкам 401.

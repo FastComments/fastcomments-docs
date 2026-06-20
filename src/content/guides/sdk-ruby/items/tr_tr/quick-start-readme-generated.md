@@ -1,9 +1,9 @@
-### Kimlik Doğrulamalı API'leri Kullanma (DefaultApi)
+### Yetkilendirilmiş API'leri Kullanma (DefaultApi)
 
-**Önemli:** Kimlik doğrulamalı istekler yapmadan önce ApiClient üzerinde API anahtarınızı ayarlamanız gerekir. Bunu yapmazsanız, istekler 401 hatasıyla başarısız olur.
+**Önemli:** Yetkilendirilmiş istekler yapmadan önce ApiClient üzerinde API anahtarınızı ayarlamanız gerekir. Ayarlamazsanız istekler 401 hatası ile başarısız olur.
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 # API istemcisini oluşturun ve yapılandırın
 config = FastCommentsClient::Configuration.new
@@ -15,7 +15,7 @@ config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 # Yapılandırılmış istemci ile API örneğini oluşturun
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Artık kimlik doğrulamalı API çağrıları yapabilirsiniz
+# Artık yetkilendirilmiş API çağrıları yapabilirsiniz
 begin
   # Örnek: Bir SSO kullanıcısı ekleyin
   user_data = {
@@ -35,12 +35,12 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Halka Açık API'leri Kullanma (PublicApi)
+### Public API'leri Kullanma (PublicApi)
 
-Halka açık uç noktalar kimlik doğrulama gerektirmez:
+Genel uç noktalar kimlik doğrulama gerektirmez:
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -55,8 +55,28 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
+### Moderasyon API'lerini Kullanma (ModerationApi)
+
+Moderasyon yöntemleri moderatör panosunu besler. İsteğin bir SSO ile kimlik doğrulanmış moderatör adına yapılması için bir `sso` tokeni geçirin:
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # Örnek: Moderasyon kuyruğundaki yorumları listeleyin
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
 ### Yaygın Sorunlar
 
 1. **401 "missing-api-key" hatası**: DefaultApi örneğini oluşturmadan önce `config.api_key['x-api-key'] = 'YOUR_KEY'` ayarladığınızdan emin olun.
-2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`'yi, istemci tarafı/halka açık istekler için `PublicApi`'yi kullanın.
-3. **Null API anahtarı**: API anahtarı null ise SDK kimlik doğrulamayı sessizce atlar ve bu 401 hatalarına yol açar.
+2. **Yanlış API sınıfı**: Sunucu tarafı yetkilendirilmiş istekler için `DefaultApi`, istemci tarafı/genel istekler için `PublicApi`, ve moderatör panosu istekleri için `ModerationApi` kullanın.
+3. **Null API anahtarı**: Eğer API anahtarı null ise SDK kimlik doğrulamayı sessizce atlar ve bu 401 hatalarına yol açar.

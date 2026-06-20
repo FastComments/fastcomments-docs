@@ -7,17 +7,17 @@
 
 ## 响应
 
-返回: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+返回： [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfigResponse.swift)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getDomainConfig 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍为测试版。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍处于测试阶段。如有问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let domain = "domain_example" // String | 
+let tenantId = "tenantId_example" // 字符串 | 
+let domain = "domain_example" // 字符串 | 
 
 DefaultAPI.getDomainConfig(tenantId: tenantId, domain: domain) { (response, error) in
     guard error == nil else {

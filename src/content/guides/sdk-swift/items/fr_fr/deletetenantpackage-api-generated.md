@@ -1,13 +1,13 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Oui |  |
+| id | string | path | Oui |  |
 
-## Réponse
+## Response
 
-Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Exemple
 
@@ -30,3 +30,5 @@ DefaultAPI.deleteTenantPackage(tenantId: tenantId, id: id) { (response, error) i
     }
 }
 [inline-code-end]
+
+---

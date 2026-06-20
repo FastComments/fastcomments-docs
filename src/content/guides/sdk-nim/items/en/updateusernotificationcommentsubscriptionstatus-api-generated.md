@@ -12,7 +12,7 @@ Enable or disable notifications for a specific comment.
 
 ## Response
 
-Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Returns: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## Example
 
@@ -22,11 +22,11 @@ let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionS
   tenantId = "my-tenant-123",
   notificationId = "",
   optedInOrOut = "",
-  commentId = "comment-789",
+  commentId = "cmt-789",
   sso = ""
 )
 
 if response.isSome:
   let updateResp = response.get()
-  discard updateResp
+  echo "Subscription update response: ", updateResp
 [inline-code-end]

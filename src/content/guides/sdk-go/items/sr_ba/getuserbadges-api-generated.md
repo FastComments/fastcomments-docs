@@ -1,22 +1,22 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| badgeId | string | query | Не |  |
-| type | number | query | Не |  |
-| displayedOnComments | boolean | query | Не |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| badgeId | string | query | Ne |  |
+| type | number | query | Ne |  |
+| displayedOnComments | boolean | query | Ne |  |
+| limit | number | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badges_200_response.go)
+Vraća: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badges_response.go)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример GetUserBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer GetUserBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (необавезно)
-	badgeId := "badgeId_example" // string |  (необавезно)
-	type_ := float64(1.2) // float64 |  (необавезно)
-	displayedOnComments := true // bool |  (необавезно)
-	limit := float64(1.2) // float64 |  (необавезно)
-	skip := float64(1.2) // float64 |  (необавезно)
+	userId := "userId_example" // string |  (neobavezno)
+	badgeId := "badgeId_example" // string |  (neobavezno)
+	type_ := float64(1.2) // float64 |  (neobavezno)
+	displayedOnComments := true // bool |  (neobavezno)
+	limit := float64(1.2) // float64 |  (neobavezno)
+	skip := float64(1.2) // float64 |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUserBadges`: GetUserBadges200Response
+	// odgovor iz `GetUserBadges`: APIGetUserBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadges`: %v\n", resp)
 }
 [inline-code-end]
+
+---

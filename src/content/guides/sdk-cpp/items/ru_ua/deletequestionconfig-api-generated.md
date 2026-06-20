@@ -2,27 +2,32 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Ответ
 
-Возвращает: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример deleteQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("qcfg-98765");
-boost::optional<utility::string_t> tenantOpt = tenantId;
-auto t = api->deleteQuestionConfig(tenantOpt.value_or(utility::string_t()), id)
-.then([](std::shared_ptr<FlagCommentPublic_200_response> resp) -> std::shared_ptr<FlagCommentPublic_200_response> {
-    auto out = std::make_shared<FlagCommentPublic_200_response>();
-    if (resp) *out = *resp;
-    return out;
+utility::string_t id = U("question-456");
+boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-12345"));
+auto placeholder = std::make_shared<APIEmptyResponse>();
+api->deleteQuestionConfig(tenantId, id)
+.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task)
+{
+    try {
+        auto resp = task.get();
+        if (resp) std::cout << "Question config deleted\n";
+        else std::cout << "No response body\n";
+    } catch (const std::exception &e) {
+        std::cerr << "Delete failed: " << e.what() << '\n';
+    }
 });
-t.wait();
 [inline-code-end]
 
 ---

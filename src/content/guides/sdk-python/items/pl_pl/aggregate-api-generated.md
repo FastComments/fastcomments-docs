@@ -1,25 +1,24 @@
----
-Agreguje dokumenty, grupując je (jeśli podano groupBy) i stosując wiele operacji. Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
+Agreguje dokumenty, grupując je (jeśli podano groupBy) i stosując różne operacje. Obsługiwane są różne operacje (np. sum, countDistinct, avg itp.).
 
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| parentTenantId | string | query | Nie |  |
-| includeStats | boolean | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`AggregationResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregation_response.py)
+Zwraca: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład agregacji'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
-from client.models.aggregation_response import AggregationResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,14 +29,14 @@ configuration = client.Configuration(
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z zasadami bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# zgodnie z polityką bezpieczeństwa serwera API.
+# Dla każdej metody uwierzytelniania poniżej podano przykłady, użyj tego,
+# który odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację za pomocą klucza API: api_key
+# Skonfiguruj autoryzację klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniższą linię, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API
@@ -46,8 +45,8 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
-    include_stats = True # bool |  (optional)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (opcjonalne)
+    include_stats = True # bool |  (opcjonalne)
 
     try:
         api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
@@ -56,5 +55,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate: %s\n" % e)
 [inline-code-end]
-
----

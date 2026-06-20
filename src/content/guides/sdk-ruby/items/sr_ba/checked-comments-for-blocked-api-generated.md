@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Оpis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Lista ID-eva komentara odvojena zarezima. |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| commentIds | string | query | Да | Листа идентификатора коментара одвојених зарезом. |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'checked_comments_for_blocked Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checked_comments_for_blocked Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | Lista ID-eva komentara odvojena zarezima.
+comment_ids = 'comment_ids_example' # String | Листа идентификатора коментара одвојених зарезом.
 opts = {
   sso: 'sso_example' # String | 
 }
@@ -32,3 +32,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
+
+---

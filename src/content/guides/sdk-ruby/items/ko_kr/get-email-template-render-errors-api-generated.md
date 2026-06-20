@@ -1,3 +1,4 @@
+---
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -8,7 +9,7 @@
 
 ## 응답
 
-반환: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors200_response.rb)
+반환: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_render_errors_response.rb)
 
 ## 예제
 
@@ -20,7 +21,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요, 예: 'Bearer' (기본값: nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: 'Bearer' (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

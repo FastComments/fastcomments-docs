@@ -1,6 +1,6 @@
 ### Maven
 
-הוסף את מאגר Repsy ל-POM של הפרויקט שלך:
+הוסף את מאגר Repsy לקובץ POM של הפרויקט שלך:
 
 ```xml
 <repositories>
@@ -16,25 +16,25 @@
 
 ```xml
 <dependencies>
-    <!-- לקוח API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- ספריית Core (כוללת SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- ספריית PubSub (לאירועים חיים) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // לקוח API
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // ספריית Core (כוללת SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // ספריית PubSub (לאירועים חיים)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
 ### Library Contents
 
-ספרייה זו מכילה שלושה מודולים. לקוח ה-API שנוצר, ספריית ה-Java המרכזית שמכילה כלי עזר שנכתבו ביד כדי להקל על העבודה עם ה-API, ומודול `pubsub` — ספרייה למנוי לזרמי שינויים.
+ספרייה זו מכילה שלושה מודולים. לקוח ה-API שנוצר באופן אוטומטי, ספריית ה-core ב-Java שמכילה עזרי קוד ידניים כדי להקל על העבודה עם ה-API, ומודול `pubsub` שהוא ספרייה למנוי על זרמי שינויים.
 
 - [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [תיעוד ספריית Core, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [תיעוד ספריית ה-core, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [תיעוד ספריית PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-לגבי לקוח ה-API, יש שתי מחלקות, `DefaultApi` ו-`PublicApi`. המחלקה `DefaultApi` מכילה שיטות שדורשות את מפתח ה-API שלך, ו-`PublicApi` מכילה קריאות API שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.
+ללקוח ה-API יש שלוש מחלקות: `DefaultApi`, `PublicApi`, ו-`ModerationApi`. ה-`DefaultApi` מכיל שיטות שדורשות את מפתח ה-API שלך, ו-`PublicApi` מכיל שיטות שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.
+
+ה-`ModerationApi` מפעיל את לוח הבקרה של המודרטור. הוא כולל שיטות למתן מענה על תגובות (רשימה, ספירה, חיפוש, לוגים וייצוא), פעולות Moderation (הסרה/שחזור, דגל, הגדרת מצב לסקירה/דואר-זבל/אישור, הצבעות, ופתיחה/סגירה של שרשור), איסורים (איסור מכתיבת תגובות, ביטול איסור, תקצירים לפני איסור, מצב האיסור והעדפות, וספירת משתמשים מנועים), ותגים ואמון (הענקה/הסרה של תג, תגיות ידניות, קבלת/הגדרת גורם אמון, ופרופיל פנימי של משתמש). כל שיטה ב-`ModerationApi` מקבלת פרמטר `sso` כך שהקריאה יכולה להתבצע בשם מודרטור שהאומת באמצעות SSO.

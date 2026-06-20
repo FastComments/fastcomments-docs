@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
@@ -8,23 +8,16 @@
 
 ## Odgovor
 
-Vraća: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'updateQuestionConfig Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(
-  tenantId = "my-tenant-123",
-  id = "q-config-456",
-  updateQuestionConfigBody = UpdateQuestionConfigBody()
-)
+let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
 if response.isSome:
-  let updated = response.get()
-  discard updated
-  echo "Question config updated"
-else:
-  echo "Update did not return a result"
+  let apiEmpty = response.get()
+  discard apiEmpty
 [inline-code-end]
 
 ---

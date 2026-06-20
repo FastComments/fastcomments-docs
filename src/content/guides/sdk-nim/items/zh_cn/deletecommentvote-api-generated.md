@@ -1,6 +1,7 @@
+---
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -12,7 +13,7 @@
 
 ## 响应
 
-返回: [`Option[DeleteCommentVote_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_vote200response.nim)
+返回: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
 ## 示例
 
@@ -20,19 +21,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-789",
-  voteId = "",
-  urlId = "news/breaking-story-2025",
+  commentId = "comment-456",
+  voteId = "vote-789",
+  urlId = "news/article-title",
   broadcastId = "",
   editKey = "",
   sso = ""
 )
 if response.isSome:
-  let deleted = response.get()
-  discard deleted
-  echo "Vote removed for comment cmt-789"
+  let voteResp = response.get()
+  echo "Vote delete response:", voteResp
 else:
-  echo "No response body returned"
+  echo "No response body, HTTP response:", httpResponse
 [inline-code-end]
 
 ---

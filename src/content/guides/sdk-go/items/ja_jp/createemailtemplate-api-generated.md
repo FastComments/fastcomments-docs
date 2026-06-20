@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -7,7 +6,7 @@
 
 ## レスポンス
 
-戻り値: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_200_response.go)
+戻り値: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_email_template_response.go)
 
 ## 例
 
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateEmailTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `CreateEmailTemplate` からのレスポンス: CreateEmailTemplate200Response
+	// `CreateEmailTemplate` からのレスポンス: CreateEmailTemplateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
-
----

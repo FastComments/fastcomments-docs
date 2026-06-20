@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Location | Required | Description |
@@ -8,13 +7,13 @@
 
 ## Risposta
 
-Restituisce: [`GetUser200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUser200Response.swift)
+Restituisce: [`GetUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserResponse.swift)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalare tramite http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,5 +30,3 @@ DefaultAPI.getUser(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Example
 
@@ -17,11 +17,14 @@ Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  isFlagged = false,
+  commentId = "cmt-456789",
+  isFlagged = true,
   sso = ""
 )
+
 if response.isSome:
-  let flagged = response.get()
-  discard flagged
+  let apiResp = response.get()
+  discard apiResp
+else:
+  discard httpResponse
 [inline-code-end]

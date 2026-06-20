@@ -1,36 +1,36 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| questionId | string | Ne |  |
-| questionIds | seq[string] | Ne |  |
-| urlId | string | Da |  |
-| timeBucket | AggregateTimeBucket | Ne |  |
-| startDate | string | Ne |  |
-| forceRecalculate | bool | Ne |  |
+| tenantId | string | Да |  |
+| questionId | string | Не |  |
+| questionIds | seq[string] | Не |  |
+| urlId | string | Да |  |
+| timeBucket | AggregateTimeBucket | Не |  |
+| startDate | string | Не |  |
+| forceRecalculate | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[AggregateQuestionResults_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results200response.nim)
+Враћа: [`Option[AggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.aggregateQuestionResults(
   tenantId = "my-tenant-123",
   questionId = "",
   questionIds = @[],
-  urlId = "news/economy/budget-2025",
+  urlId = "news/article-title",
   timeBucket = AggregateTimeBucket(0),
   startDate = "",
   forceRecalculate = false
 )
 
 if response.isSome:
-  let aggResults = response.get()
-  discard aggResults
+  let results = response.get()
+  discard results
 [inline-code-end]
 
 ---

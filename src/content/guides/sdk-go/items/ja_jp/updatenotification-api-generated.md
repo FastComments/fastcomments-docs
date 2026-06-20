@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
@@ -8,7 +9,7 @@
 
 ## レスポンス
 
-返却: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## 例
 
@@ -27,7 +28,7 @@ func main() {
 	tenantId := "tenantId_example" // string | 
 	id := "id_example" // string | 
 	updateNotificationBody := *openapiclient.NewUpdateNotificationBody() // UpdateNotificationBody | 
-	userId := "userId_example" // string |  (省略可能)
+	userId := "userId_example" // string |  (任意)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -36,7 +37,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UpdateNotification` のレスポンス: FlagCommentPublic200Response
+	// `UpdateNotification` のレスポンス: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateNotification`: %v\n", resp)
 }
 [inline-code-end]
+
+---

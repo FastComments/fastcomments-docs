@@ -1,14 +1,14 @@
 ## 参数
 
-| Name | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| postIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | 是 |  |
+| postIds | array | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回：[`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+返回: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## 示例
 
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_reacts_public: #{e}"
 end
 [inline-code-end]
-
----

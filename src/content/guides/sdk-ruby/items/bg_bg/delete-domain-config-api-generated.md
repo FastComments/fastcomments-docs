@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -7,7 +8,7 @@
 
 ## Отговор
 
-Връща: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_domain_config200_response.rb)
+Връща: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_domain_config_response.rb)
 
 ## Пример
 
@@ -17,15 +18,15 @@ require 'time'
 require 'fastcomments-client'
 # настройка на авторизация
 FastCommentsClient.configure do |config|
-  # Конфигуриране на API ключ за авторизация: api_key
+  # Конфигуриране на авторизация с API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Премахнете коментара от следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
+  # Премахнете коментара от следния ред, за да зададете префикс за API ключа, например 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Низ | 
-domain = 'domain_example' # Низ | 
+tenant_id = 'tenant_id_example' # String | 
+domain = 'domain_example' # String | 
 
 begin
   

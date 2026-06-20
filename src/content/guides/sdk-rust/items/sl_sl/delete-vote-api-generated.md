@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
@@ -8,20 +8,20 @@
 
 ## Odgovor
 
-Vrne: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_comment_vote_200_response.rs)
+Vrne: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
 
 ## Primer
 
-[inline-code-attrs-start title = 'delete_vote Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer delete_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn delete_vote_example() -> Result<DeleteCommentVote200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteVoteParams = DeleteVoteParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "comment-98765".to_string(),
-        edit_key: Some("edit-4f2b9c".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("article-5678-comment-1234"),
+        edit_key: Some(String::from("editkey-9b2f4e")),
     };
-    let response: DeleteCommentVote200Response = delete_vote(&configuration, params).await?;
-    Ok(response)
+    let response: VoteDeleteResponse = delete_vote(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

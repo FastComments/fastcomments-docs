@@ -3,6 +3,7 @@
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
+| urlId | string | query | Ні | Використовується для визначення, чи підписана поточна сторінка. |
 | pageSize | integer | query | Ні |  |
 | afterId | string | query | Ні |  |
 | includeContext | boolean | query | Ні |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Ні |  |
 | noDm | boolean | query | Ні |  |
 | includeTranslations | boolean | query | Ні |  |
+| includeTenantNotifications | boolean | query | Ні |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Повертає: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Приклад
 
@@ -27,6 +29,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
+  url_id: 'url_id_example', # String | Використовується для визначення, чи підписана поточна сторінка.
   page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
   include_context: true, # Boolean | 
@@ -35,6 +38,7 @@ opts = {
   dm_only: true, # Boolean | 
   no_dm: true, # Boolean | 
   include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 
@@ -46,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,48 +1,48 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Type | Location | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| editKey | string | query | No |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| editKey | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Връща: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за delete_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
+# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
+# Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на автентикация са дадени по-долу, използвайте примера, който
-# отговаря на вашия сценарий на използване.
+# По-долу са дадени примери за всеки метод за автентикация, използвайте примера, който
+# отговаря на вашия случай на използване.
 
-# Конфигурирайте удостоверяване с API ключ: api_key
+# Конфигуриране на удостоверяване чрез API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст със инстанция на API клиента
+# Влезте в контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
     # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (по избор)
+    edit_key = 'edit_key_example' # str |  (optional)
 
     try:
         api_response = api_instance.delete_vote(tenant_id, id, edit_key=edit_key)
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_vote: %s\n" % e)
 [inline-code-end]
-
----

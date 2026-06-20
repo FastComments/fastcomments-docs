@@ -13,37 +13,37 @@
 
 ## Odgovor
 
-Vrača: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+Vrne: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je izbirno in privzeto nastavljeno na https://fastcomments.com
+# Določitev gostitelja je opcijska in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre za preverjanje pristnosti in avtorizacijo
-# v skladu s politiko varnosti strežnika API.
-# Primeri za vsako metodo avtentikacije so prikazani spodaj, uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora konfigurirati parametre overjanja in avtorizacije
+# v skladu s politiko varnosti API strežnika.
+# Primeri za vsako metodo overjanja so podani spodaj; uporabite primer,
+# ki ustreza vašemu primeru uporabe.
 
-# Configure API key authorization: api_key
+# Nastavite avtorizacijo s ključem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnjo vrstico za nastavitev prefiksa (npr. Bearer) za ključ API, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str |  (izbirno)

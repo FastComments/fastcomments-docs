@@ -1,30 +1,30 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 
 ## 回應
 
-回傳: [`GetComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetComment_200_response.h)
+回傳：[`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetCommentResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getComment 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> maybeId = utility::conversions::to_string_t("comment-98765");
-auto getTask = api->getComment(tenantId, *maybeId)
-    .then([](pplx::task<std::shared_ptr<GetComment_200_response>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<GetComment_200_response>();
-            return result;
-        } catch (const std::exception&) {
-            return std::make_shared<GetComment_200_response>();
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-987654321");
+boost::optional<utility::string_t> include = boost::optional<utility::string_t>(U("author,replies"));
+
+api->getComment(tenantId, commentId).then([include](std::shared_ptr<APIGetCommentResponse> resp) {
+    if (resp) {
+        auto copy = std::make_shared<APIGetCommentResponse>(*resp);
+        std::cout << "Comment retrieved for tenant" << std::endl;
+    } else {
+        std::cout << "Comment not found" << std::endl;
+    }
+});
 [inline-code-end]
 
 ---

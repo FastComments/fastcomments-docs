@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators200_response.rb)
+Zwraca: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderators_response.rb)
 
 ## Przykład
 
@@ -15,7 +15,7 @@ Zwraca: [`GetModerators200Response`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# ustawienie autoryzacji
+# konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
   # Skonfiguruj autoryzację klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'

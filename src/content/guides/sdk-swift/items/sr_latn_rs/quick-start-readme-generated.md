@@ -3,10 +3,10 @@
 ```swift
 import FastCommentsSwift
 
-// Kreiraj API klijenta
+// Kreiraj API klijent
 let publicApi = PublicAPI()
 
-// Preuzmi komentare za stranicu
+// Dohvati komentare za stranicu
 do {
     let response = try await publicApi.getCommentsPublic(
         tenantId: "your-tenant-id",
@@ -31,7 +31,7 @@ import FastCommentsSwift
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Preuzmi komentare koristeći autentifikovani API
+// Dohvati komentare koristeći autentifikovani API
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,16 +47,39 @@ do {
 }
 ```
 
+### Korišćenje API-ja za moderaciju
+
+```swift
+import FastCommentsSwift
+
+// Metode za moderaciju su autorizovane `sso` tokenom za moderatora koji deluje
+// (generišite ga pomoću FastCommentsSSO, pogledajte odeljak SSO iznad).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Korišćenje SSO za autentifikaciju
 
-#### Siguran SSO (Preporučeno za produkciju)
+#### Sigurni SSO (Preporučeno za produkciju)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Kreiraj sigurne SSO podatke o korisniku (samo na serverskoj strani!)
+// Kreiraj sigurne SSO korisničke podatke (samo na serverskoj strani!)
 let userData = SecureSSOUserData(
     id: "user-123",              // ID korisnika
     email: "user@example.com",   // Email
@@ -70,18 +93,18 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Prosledi ovaj token svom frontend-u za autentifikaciju
+    // Prosledi ovaj token frontendu za autentifikaciju
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### Jednostavan SSO (Za razvoj/testiranje)
+#### Jednostavni SSO (Za razvoj/testiranje)
 
 ```swift
 import FastCommentsSwift
 
-// Kreiraj jednostavne SSO podatke o korisniku (nije potreban API ključ)
+// Kreiraj jednostavne SSO korisničke podatke (nije potreban API ključ)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

@@ -7,37 +7,37 @@
 
 ## Отговор
 
-Връща: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_templates200_response.py)
+Връща: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_templates_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за get_email_templates'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_templates200_response import GetEmailTemplates200Response
+from client.models.get_email_templates_response import GetEmailTemplatesResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Задаването на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
+# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод за удостоверяване са показани по-долу, използвайте примера,
-# който отговаря на вашия случай на използване.
+# По-долу са дадени примери за всеки метод на удостоверяване, използвайте примера, който
+# отговаря на вашия случай на използване за удостоверяване.
 
-# Configure API key authorization: api_key
+# Конфигурирайте удостоверяване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Разкоментарирайте по-долу, за да зададете префикс (например Bearer) за API ключ, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Отворете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     skip = 3.4 # float |  (по избор)

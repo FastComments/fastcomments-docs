@@ -1,3 +1,4 @@
+---
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -6,13 +7,13 @@
 
 ## Respons
 
-Geeft terug: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AddHashTagsBulk200Response.swift)
+Retourneert: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BulkCreateHashTagsResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'addHashTagsBulk Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, rapporteer deze via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De onderstaande codevoorbeelden zijn nog in bèta. Voor problemen, meld ze via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String |  (optioneel)
@@ -29,3 +30,5 @@ DefaultAPI.addHashTagsBulk(tenantId: tenantId, bulkCreateHashTagsBody: bulkCreat
     }
 }
 [inline-code-end]
+
+---

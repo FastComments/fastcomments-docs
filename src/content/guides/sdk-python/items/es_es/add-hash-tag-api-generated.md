@@ -6,20 +6,20 @@
 
 ## Respuesta
 
-Devuelve: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tag200_response.py)
+Devuelve: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_hash_tag_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de add_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tag200_response import AddHashTag200Response
 from client.models.create_hash_tag_body import CreateHashTagBody
+from client.models.create_hash_tag_response import CreateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para obtener una lista de todos los parámetros de configuración admitidos.
+# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,13 +29,13 @@ configuration = client.Configuration(
 # Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configure la autorización por clave API: api_key
+# Configurar la autorización por clave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente a continuación para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+# Descomente abajo para configurar un prefijo (por ejemplo Bearer) para la clave de API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Abra un contexto con una instancia del cliente API
+# Abra un contexto con una instancia del cliente de la API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)

@@ -4,7 +4,7 @@ urlId
 
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
@@ -37,7 +37,7 @@ urlId
 
 ## Odgovor
 
-Vrača: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Vrača: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## Primer
 
@@ -86,5 +86,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comments_public: #{e}"
 end
 [inline-code-end]
-
----

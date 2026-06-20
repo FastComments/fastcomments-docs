@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Name | Type | Obbligatorio | Descrizione |
 |------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | commentId | string | Sì |  |
@@ -11,7 +11,7 @@
 
 ## Risposta
 
-Restituisce: [`Option[SetCommentText_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text200response.nim)
+Restituisce: [`Option[PublicAPISetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_set_comment_text_response.nim)
 
 ## Esempio
 
@@ -19,15 +19,15 @@ Restituisce: [`Option[SetCommentText_200_response]`](https://github.com/FastComm
 [inline-code-start]
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-7890",
-  broadcastId = "broadcast-456",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text = "Updated comment text to fix typos and add clarity."),
-  editKey = "edit-key-abc123",
-  sso = "sso-token-xyz"
+  commentId = "cmt-456789",
+  broadcastId = "",
+  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
+  editKey = "",
+  sso = ""
 )
-
 if response.isSome:
-  let updated = response.get()
+  let result = response.get()
+  discard result
 [inline-code-end]
 
 ---

@@ -12,43 +12,44 @@
 
 ## レスポンス
 
-戻り値: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results200_response.py)
+戻り値: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_question_results の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_results200_response import GetQuestionResults200Response
+from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方式の例は下に示されています。自身の認証ユースケースに合う例を使用してください。
+# クライアントは認証および認可のパラメータを設定する必要があります
+# これらは API サーバーのセキュリティポリシーに従って行ってください。
+# 以下に各認証方式の例を示します。ご自身の認証ユースケースに合う例を使用してください。
 
-# API キー認証を設定: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには下のコメントを外してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定する場合は以下のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストを開きます
+# API クライアントのインスタンスを使用するコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str |  （オプション）
-    user_id = 'user_id_example' # str |  （オプション）
-    start_date = 'start_date_example' # str |  （オプション）
-    question_id = 'question_id_example' # str |  （オプション）
-    question_ids = 'question_ids_example' # str |  （オプション）
-    skip = 3.4 # float |  （オプション）
+    url_id = 'url_id_example' # str |  (オプション)
+    user_id = 'user_id_example' # str |  (オプション)
+    start_date = 'start_date_example' # str |  (オプション)
+    question_id = 'question_id_example' # str |  (オプション)
+    question_ids = 'question_ids_example' # str |  (オプション)
+    skip = 3.4 # float |  (オプション)
 
     try:
         api_response = api_instance.get_question_results(tenant_id, url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip)

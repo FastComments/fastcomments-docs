@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Location | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,21 +9,21 @@
 
 ## Réponse
 
-Renvoie : [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_text200_response.rb)
+Renvoie: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_get_comment_text_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour get_comment_text'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_comment_text'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
+comment_id = 'comment_id_example' # Chaîne | 
 opts = {
-  edit_key: 'edit_key_example', # String | 
-  sso: 'sso_example' # String | 
+  edit_key: 'edit_key_example', # Chaîne | 
+  sso: 'sso_example' # Chaîne | 
 }
 
 begin

@@ -7,20 +7,20 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user200_response.py)
+Retourneert: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_votes_for_user Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes_for_user200_response import GetVotesForUser200Response
+from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
+# Het instellen van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,13 +28,13 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voor elk authenticatiemethode zijn hieronder voorbeelden opgenomen; gebruik het voorbeeld dat
-# voldoet aan uw authenticatiegebruikssituatie.
+# Voorbeelden voor elke authenticatiemethode staan hieronder; gebruik het voorbeeld dat
+# overeenkomt met uw authenticatiegeval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API-sleutel-autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal hieronder de commentaarregel weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Haal de commentaar hieronder weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Ga een context in met een instantie van de API-client
@@ -43,8 +43,8 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optioneel)
+    anon_user_id = 'anon_user_id_example' # str |  (optioneel)
 
     try:
         api_response = api_instance.get_votes_for_user(tenant_id, url_id, user_id=user_id, anon_user_id=anon_user_id)
@@ -53,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_votes_for_user: %s\n" % e)
 [inline-code-end]
-
----

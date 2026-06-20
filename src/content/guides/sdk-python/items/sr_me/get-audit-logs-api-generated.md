@@ -2,54 +2,54 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
-| order | string | query | No |  |
-| after | number | query | No |  |
-| before | number | query | No |  |
+| tenantId | string | query | Да |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
+| order | string | query | Не |  |
+| after | number | query | Не |  |
+| before | number | query | Не |  |
 
 ## Одговор
 
-Враћа: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs200_response.py)
+Враћа: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'get_audit_logs Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_audit_logs200_response import GetAuditLogs200Response
+from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Поставка хоста је опционална и подразумева се https://fastcomments.com
+# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и овлашћења
-# у складу са безбедносном политиком API сервера.
-# Испод су дати примјери за сваки метод аутентификације, користите примјер који
-# одговара вашем случају коришћења аутентификације.
+# Клијент мора конфигурисати параметре аутентификације и овлашћења
+# у складу са политиком безбедности API сервера.
+# Испод су примери за сваки метод аутентификације, користите пример који
+# одговара вашем случају употребе.
 
-# Конфигуришите ауторизацију API кључем: api_key
+# Конфигуришите овлашћење помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Уклоните коментар испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Унесите контекст са примерком API клијента
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Креирајте пример класе API
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    limit = 3.4 # float |  (опционо)
-    skip = 3.4 # float |  (опционо)
-    order = client.SORTDIR() # SORTDIR |  (опционо)
-    after = 3.4 # float |  (опционо)
-    before = 3.4 # float |  (опционо)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
+    order = client.SORTDIR() # SORTDIR |  (optional)
+    after = 3.4 # float |  (optional)
+    before = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)

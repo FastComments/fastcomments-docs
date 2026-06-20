@@ -2,17 +2,17 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | путања | Да |  |
-| commentId | string | путања | Да |  |
-| voteId | string | путања | Да |  |
-| urlId | string | упит | Да |  |
-| broadcastId | string | упит | Да |  |
-| editKey | string | упит | Не |  |
-| sso | string | упит | Не |  |
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| voteId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| broadcastId | string | query | Да |  |
+| editKey | string | query | Не |  |
+| sso | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentVote200Response.php)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
 ## Пример
 
@@ -24,17 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити `GuzzleHttp\Client`.
+    // Ако желите користити прилагођени HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // низ
-$comment_id = 'comment_id_example'; // низ
-$vote_id = 'vote_id_example'; // низ
-$url_id = 'url_id_example'; // низ
-$broadcast_id = 'broadcast_id_example'; // низ
-$edit_key = 'edit_key_example'; // низ
-$sso = 'sso_example'; // низ
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$vote_id = 'vote_id_example'; // string
+$url_id = 'url_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$edit_key = 'edit_key_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->deleteCommentVote($tenant_id, $comment_id, $vote_id, $url_id, $broadcast_id, $edit_key, $sso);

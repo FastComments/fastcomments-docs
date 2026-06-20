@@ -1,16 +1,16 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| commentId | string | 路径 | 是 |  |
-| broadcastId | string | 查询 | 是 |  |
-| editKey | string | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | path | 是 |  |
+| commentId | string | path | 是 |  |
+| broadcastId | string | query | 是 |  |
+| editKey | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回：[`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_public200_response.rb)
+返回: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
 
 ## 示例
 
@@ -20,12 +20,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字符串 | 
-comment_id = 'comment_id_example' # 字符串 | 
-broadcast_id = 'broadcast_id_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example', # 字符串 | 
-  sso: 'sso_example' # 字符串 | 
+  edit_key: 'edit_key_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

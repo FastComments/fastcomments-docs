@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results200_response.rb)
+Restituisce: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_aggregate_question_results_response.rb)
 
 ## Esempio
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # impostazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configura l'autenticazione con la chiave API: api_key
+  # Configura l'autorizzazione tramite chiave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Rimuovere il commento dalla riga seguente per impostare un prefisso per la chiave API, ad es. 'Bearer' (predefinito: nil)
+  # Rimuovi il commento dalla riga seguente per impostare un prefisso per la chiave API, ad es. 'Bearer' (predefinito: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

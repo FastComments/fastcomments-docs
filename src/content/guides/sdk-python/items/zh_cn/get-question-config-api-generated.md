@@ -7,14 +7,14 @@
 
 ## 响应
 
-返回: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_config200_response.py)
+返回: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_config_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_question_config 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_config200_response import GetQuestionConfig200Response
+from client.models.get_question_config_response import GetQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_question_config: %s\n" % e)
 [inline-code-end]
+
+---

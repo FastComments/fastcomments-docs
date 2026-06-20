@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`Option[GetCommentVoteUserNames_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_vote_user_names200response.nim)
+Returns: [`Option[GetCommentVoteUserNamesSuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_vote_user_names_success_response.nim)
 
 ## Example
 
@@ -17,5 +17,6 @@ Returns: [`Option[GetCommentVoteUserNames_200_response]`](https://github.com/Fas
 [inline-code-start]
 let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "cmt-987654", dir = 0, sso = "")
 if response.isSome:
-  let voteUsers = response.get()
+  let success: GetCommentVoteUserNamesSuccessResponse = response.get()
+  discard success
 [inline-code-end]

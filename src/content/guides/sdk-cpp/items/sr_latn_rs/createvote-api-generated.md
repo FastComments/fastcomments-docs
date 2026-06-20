@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | commentId | string | Da |  |
@@ -10,22 +11,22 @@
 
 ## Odgovor
 
-Vraća: [`VoteComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteComment_200_response.h)
+Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteResponse.h)
 
 ## Primer
 
 [inline-code-attrs-start title = 'createVote Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-utility::string_t direction = U("up");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-api->createVote(tenantId, commentId, direction, userId, boost::none)
-.then([](pplx::task<std::shared_ptr<VoteComment_200_response>> task) {
+boost::optional<utility::string_t> userId(U("alice@example.com"));
+boost::optional<utility::string_t> anonUserId;
+api->createVote(U("my-tenant-123"), U("cmt-456"), U("upvote"), userId, anonUserId)
+.then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
     try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<VoteComment_200_response>();
-    } catch (...) {}
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<VoteResponse>();
+    } catch (const std::exception&) {
+        auto fallback = std::make_shared<VoteResponse>();
+    }
 });
 [inline-code-end]
 

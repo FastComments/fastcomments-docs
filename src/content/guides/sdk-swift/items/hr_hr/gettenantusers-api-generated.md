@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUsers200Response.swift)
+Vraća: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantUsersResponse.swift)
 
 ## Primjer
 

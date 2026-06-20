@@ -1,6 +1,6 @@
-### Geauthenticeerde API's gebruiken (DefaultApi)
+### Gebruik van geauthenticeerde API's (DefaultApi)
 
-**Belangrijk:** u moet uw API-sleutel op de ApiClient instellen voordat u geauthenticeerde aanvragen doet. Als u dat niet doet, zullen aanvragen mislukken met een 401-fout.
+**Belangrijk:** Je moet je API-sleutel instellen op de ApiClient voordat je geauthenticeerde verzoeken doet. Als je dat niet doet, zullen verzoeken mislukken met een 401-fout.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,18 +10,18 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Maak en configureer de API-client
+        // Create and configure the API client
         ApiClient apiClient = new ApiClient();
 
-        // VEREIST: Stel uw API-sleutel in (verkrijg deze via uw FastComments-dashboard)
+        // REQUIRED: Set your API key (get this from your FastComments dashboard)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Maak de API-instantie met de geconfigureerde client
+        // Create the API instance with the configured client
         DefaultApi api = new DefaultApi(apiClient);
 
-        // Nu kunt u geauthenticeerde API-aanroepen doen
+        // Now you can make authenticated API calls
         try {
-            // Voorbeeld: voeg een SSO-gebruiker toe
+            // Example: Add an SSO user
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
             userData.setId("user-123");
             userData.setEmail("user@example.com");
@@ -33,17 +33,17 @@ public class Example {
 
         } catch (ApiException e) {
             System.err.println("Error: " + e.getResponseBody());
-            // Veelvoorkomende fouten:
-            // - 401: API-sleutel ontbreekt of is ongeldig
-            // - 400: Validatie van het verzoek is mislukt
+            // Common errors:
+            // - 401: API key is missing or invalid
+            // - 400: Request validation failed
         }
     }
 }
 ```
 
-### Openbare API's gebruiken (PublicApi)
+### Gebruik van publieke API's (PublicApi)
 
-Openbare endpoints vereisen geen authenticatie:
+Publieke endpoints vereisen geen authenticatie:
 
 ```java
 import com.fastcomments.api.PublicApi;
@@ -60,8 +60,30 @@ try {
 }
 ```
 
+### Gebruik van moderatie-API's (ModerationApi)
+
+De `ModerationApi` stuurt het moderator-dashboard aan. Elke methode accepteert een `sso`-parameter die de SSO-geauthenticeerde moderator identificeert namens wie het verzoek wordt gedaan:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // List comments awaiting moderation
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
 ### Veelvoorkomende problemen
 
-1. **401 "missing-api-key" fout**: Zorg ervoor dat u `apiClient.setApiKey("YOUR_KEY")` aanroept voordat u de DefaultApi-instantie maakt.
-2. **Verkeerde API-klasse**: Gebruik `DefaultApi` voor server-side geauthenticeerde verzoeken, `PublicApi` voor client-side/openbare verzoeken.
-3. **Null API-sleutel**: De SDK zal authenticatie stilzwijgend overslaan als de API-sleutel null is, wat leidt tot 401-fouten.
+1. **401 "missing-api-key" error**: Zorg ervoor dat je `apiClient.setApiKey("YOUR_KEY")` aanroept voordat je de DefaultApi-instantie aanmaakt.
+2. **Verkeerde API-klasse**: Gebruik `DefaultApi` voor server-side geauthenticeerde verzoeken, `PublicApi` voor client-side/publieke verzoeken.
+3. **Null API key**: De SDK zal authenticatie stilzwijgend overslaan als de API-sleutel null is, wat leidt tot 401-fouten.

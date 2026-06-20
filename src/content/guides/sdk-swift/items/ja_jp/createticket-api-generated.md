@@ -1,13 +1,13 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | 位置 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | userId | string | query | はい |  |
 
 ## レスポンス
 
-戻り値: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTicket200Response.swift)
+返却値: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateTicketResponse.swift)
 
 ## 例
 
@@ -31,5 +31,3 @@ DefaultAPI.createTicket(tenantId: tenantId, userId: userId, createTicketBody: cr
     }
 }
 [inline-code-end]
-
----

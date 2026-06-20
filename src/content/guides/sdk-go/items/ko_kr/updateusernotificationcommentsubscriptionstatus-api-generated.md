@@ -2,17 +2,17 @@
 
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 쿼리 | 예 |  |
-| notificationId | string | 경로 | 예 |  |
-| optedInOrOut | string | 경로 | 예 |  |
-| commentId | string | 쿼리 | 예 |  |
-| sso | string | 쿼리 | 아니요 |  |
+| tenantId | string | query | 예 |  |
+| notificationId | string | path | 예 |  |
+| optedInOrOut | string | path | 예 |  |
+| commentId | string | query | 예 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_status_200_response.go)
+반환: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_user_notification_comment_subscription_status_response.go)
 
 ## 예제
 
@@ -24,15 +24,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // 문자열 | 
-	notificationId := "notificationId_example" // 문자열 | 
-	optedInOrOut := "optedInOrOut_example" // 문자열 | 
-	commentId := "commentId_example" // 문자열 | 
-	sso := "sso_example" // 문자열 |  (선택 사항)
+	tenantId := "tenantId_example" // string | 
+	notificationId := "notificationId_example" // string | 
+	optedInOrOut := "optedInOrOut_example" // string | 
+	commentId := "commentId_example" // string | 
+	sso := "sso_example" // string |  (선택 사항)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UpdateUserNotificationCommentSubscriptionStatus`의 응답: UpdateUserNotificationStatus200Response
+	// `UpdateUserNotificationCommentSubscriptionStatus`로부터의 응답: UpdateUserNotificationCommentSubscriptionStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]

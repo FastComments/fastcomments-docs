@@ -7,21 +7,18 @@
 
 ## Respons
 
-Retourneert: [`Option[AddHashTagsBulk_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_add_hash_tags_bulk200response.nim)
+Retourneert: [`Option[BulkCreateHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_create_hash_tags_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'addHashTagsBulk Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let bulkBody = BulkCreateHashTagsBody(
-  tags = @["breaking", "world-news", "economy"],
-  createdBy = "editor@dailynews.com",
-  replaceExisting = false
-)
-let (response, httpResponse) = client.addHashTagsBulk(tenantId = "newsroom-tenant-42", bulkCreateHashTagsBody = bulkBody)
+let (response, httpResponse) = client.addHashTagsBulk(tenantId = "my-tenant-123", bulkCreateHashTagsBody = BulkCreateHashTagsBody(hashTags = @["news", "breaking", "politics"], replaceExisting = false))
 if response.isSome:
-  let created = response.get()
-  echo created
+  let result = response.get()
+  echo "Bulk tags response:", result
 else:
-  echo "AddHashTagsBulk failed:", httpResponse
+  echo "No response body, HTTP status:", httpResponse.statusCode
 [inline-code-end]
+
+---

@@ -1,51 +1,49 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| yearNumber | number | クエリ | いいえ |  |
-| monthNumber | number | クエリ | いいえ |  |
-| dayNumber | number | クエリ | いいえ |  |
-| skip | number | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| yearNumber | number | query | いいえ |  |
+| monthNumber | number | query | いいえ |  |
+| dayNumber | number | query | いいえ |  |
+| skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_daily_usages200_response.py)
+戻り値: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_daily_usages_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_tenant_daily_usages の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_daily_usages200_response import GetTenantDailyUsages200Response
+from client.models.get_tenant_daily_usages_response import GetTenantDailyUsagesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
+# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
 
-# クライアントは API サーバのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方式の例は以下に示します。用途に合う例を使用してください。
+# クライアントは認証および認可のパラメータを設定する必要があります
+# APIサーバーのセキュリティポリシーに従ってください。
+# 各認証方法の例を以下に示します。例の中から
+# ご自身のユースケースに合うものを使用してください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて下記のコメントを解除し、API キーのプレフィックス（例: Bearer）を設定してください
+# 必要に応じて、以下のコメントアウトを外してAPIキーのプレフィックス（例: Bearer）を設定してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# APIクライアントのインスタンスを使ってコンテキストを開始します
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # APIクラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    year_number = 3.4 # float |  （オプション）
-    month_number = 3.4 # float |  （オプション）
-    day_number = 3.4 # float |  （オプション）
-    skip = 3.4 # float |  （オプション）
+    year_number = 3.4 # float |  (optional)
+    month_number = 3.4 # float |  (optional)
+    day_number = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_tenant_daily_usages(tenant_id, year_number=year_number, month_number=month_number, day_number=day_number, skip=skip)
@@ -54,5 +52,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_tenant_daily_usages: %s\n" % e)
 [inline-code-end]
-
----

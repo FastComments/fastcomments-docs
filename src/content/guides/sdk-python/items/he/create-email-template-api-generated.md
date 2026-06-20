@@ -1,43 +1,43 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 
 ## תגובה
 
-מחזיר: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template200_response.py)
+מחזיר: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת create_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-create_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_email_template200_response import CreateEmailTemplate200Response
 from client.models.create_email_template_body import CreateEmailTemplateBody
+from client.models.create_email_template_response import CreateEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית והערך המובנה הוא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי ההגדרות הנתמכים.
+# הגדרת host היא אופציונלית והערך המחדל הוא https://fastcomments.com
+# ראה configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
-# בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן — השתמש בדוגמה המתאימה
-# למקרה השימוש שלך.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# דוגמאות לכל שיטת אימות מובאות למטה, השתמשו בדוגמה
+# שמתאימה למקרה השימוש שלכם.
 
-# Configure API key authorization: api_key
+# הגדרו הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# פתחו הקשר באמצעות מופע של ApiClient
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צרו מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_email_template_body = client.CreateEmailTemplateBody() # CreateEmailTemplateBody | 
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->create_email_template: %s\n" % e)
 [inline-code-end]
+
+---

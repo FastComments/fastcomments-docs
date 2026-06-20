@@ -1,6 +1,7 @@
+---
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | query | Oui |  |
@@ -10,7 +11,7 @@
 
 ## Réponse
 
-Retourne : [`VoteComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteComment200Response.swift)
+Renvoie : [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## Exemple
 
@@ -22,8 +23,8 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let direction = "direction_example" // String | 
-let userId = "userId_example" // String |  (optionnel)
-let anonUserId = "anonUserId_example" // String |  (optionnel)
+let userId = "userId_example" // String |  (facultatif)
+let anonUserId = "anonUserId_example" // String |  (facultatif)
 
 DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, userId: userId, anonUserId: anonUserId) { (response, error) in
     guard error == nil else {

@@ -7,7 +7,7 @@
 
 ## 응답
 
-반환: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotes200Response.java)
+반환: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetVotesResponse.java)
 
 ## 예제
 
@@ -29,14 +29,14 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (기본값: null)
+    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요(예: "Token", 기본값은 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String urlId = "urlId_example"; // String | 
+    String tenantId = "tenantId_example"; // 문자열 | 
+    String urlId = "urlId_example"; // 문자열 | 
     try {
-      GetVotes200Response result = apiInstance.getVotes(tenantId, urlId)
+      GetVotesResponse result = apiInstance.getVotes(tenantId, urlId)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -49,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

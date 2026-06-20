@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
@@ -8,26 +8,23 @@
 
 ## תגובה
 
-מחזיר: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_badge200response.nim)
+מחזיר: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateParams = UpdateUserBadgeParams(
-  name = "Top Contributor",
-  description = "Awarded for consistent high-quality comments",
-  active = true,
-  tags = @["community", "milestone"]
+let (response, httpResponse) = client.updateUserBadge(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  updateUserBadgeParams = UpdateUserBadgeParams()
 )
 
-let (response, httpResponse) = client.updateUserBadge(tenantId = "my-tenant-123", id = "badge-456", updateUserBadgeParams = updateParams)
-
 if response.isSome:
-  let updated = response.get()
+  let success = response.get()
   echo "Badge updated successfully"
 else:
-  echo "Failed to update badge, HTTP status: ", $httpResponse.status
+  echo "Badge update failed"
 [inline-code-end]
 
 ---

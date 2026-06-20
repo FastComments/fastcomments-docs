@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | dize | yol | Evet |  |
-| commentId | dize | yol | Evet |  |
-| dir | tamsayı | sorgu | Evet |  |
-| sso | dize | sorgu | Hayır |  |
+| tenantId | string | path | Evet |  |
+| commentId | string | path | Evet |  |
+| dir | integer | query | Evet |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names200_response.rb)
+Döndürür: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_vote_user_names_success_response.rb)
 
 ## Örnek
 
@@ -21,7 +21,7 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # Dize | 
 comment_id = 'comment_id_example' # Dize | 
-dir = 56 # Tamsayı | 
+dir = 56 # Tam sayı | 
 opts = {
   sso: 'sso_example' # Dize | 
 }
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_vote_user_names: #{e}"
 end
 [inline-code-end]
+
+---

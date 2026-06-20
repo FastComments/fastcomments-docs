@@ -1,23 +1,23 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | skip | number | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplates200Response.swift)
+Vrne: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplatesResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getEmailTemplates Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getEmailTemplates'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za kakršnokoli težavo jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v fazi beta. Za kakršnokoli težavo jih prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Double |  (neobvezno)
+let skip = 987 // Double |  (izbirno)
 
 DefaultAPI.getEmailTemplates(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.getEmailTemplates(tenantId: tenantId, skip: skip) { (response, error)
     }
 }
 [inline-code-end]
-
----

@@ -2,18 +2,18 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
+| tenantId | string | query | Yes |  |
 
 ## レスポンス
 
-戻り値: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions200_response.py)
+戻り値: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_definitions_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_email_template_definitions の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_definitions200_response import GetEmailTemplateDefinitions200Response
+from client.models.get_email_template_definitions_response import GetEmailTemplateDefinitionsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -23,18 +23,18 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを構成する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 各認証方法の例は以下に示されています。
-# 自身の認証ユースケースに合う例を使用してください。
+# クライアントは認証と認可のパラメータを設定する必要があります
+# API サーバーのセキュリティポリシーに従って設定します。
+# 各認証方式の例を以下に示します。
+# ご利用の認証ユースケースに合致する例を使用してください。
 
-# Configure API key authorization: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには以下のコメントを外してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下の行のコメントを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使用してコンテキストへ入ります
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)

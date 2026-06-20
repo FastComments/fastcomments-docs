@@ -2,25 +2,27 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | sorgu | Evet |  |
-| page | integer | sorgu | Hayır |  |
-| limit | integer | sorgu | Hayır |  |
-| skip | integer | sorgu | Hayır |  |
-| asTree | boolean | sorgu | Hayır |  |
-| skipChildren | integer | sorgu | Hayır |  |
-| limitChildren | integer | sorgu | Hayır |  |
-| maxTreeDepth | integer | sorgu | Hayır |  |
-| urlId | string | sorgu | Hayır |  |
-| userId | string | sorgu | Hayır |  |
-| anonUserId | string | sorgu | Hayır |  |
-| contextUserId | string | sorgu | Hayır |  |
-| hashTag | string | sorgu | Hayır |  |
-| parentId | string | sorgu | Hayır |  |
-| direction | string | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| page | integer | query | Hayır |  |
+| limit | integer | query | Hayır |  |
+| skip | integer | query | Hayır |  |
+| asTree | boolean | query | Hayır |  |
+| skipChildren | integer | query | Hayır |  |
+| limitChildren | integer | query | Hayır |  |
+| maxTreeDepth | integer | query | Hayır |  |
+| urlId | string | query | Hayır |  |
+| userId | string | query | Hayır |  |
+| anonUserId | string | query | Hayır |  |
+| contextUserId | string | query | Hayır |  |
+| hashTag | string | query | Hayır |  |
+| parentId | string | query | Hayır |  |
+| direction | string | query | Hayır |  |
+| fromDate | integer | query | Hayır |  |
+| toDate | integer | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetComments200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetComments200Response.java)
+Döndürür: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIGetCommentsResponse.java)
 
 ## Örnek
 
@@ -42,7 +44,7 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarına bir önek atamak için aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
+    // Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -61,8 +63,10 @@ public class Example {
     String hashTag = "hashTag_example"; // String | 
     String parentId = "parentId_example"; // String | 
     SortDirections direction = SortDirections.fromValue("OF"); // SortDirections | 
+    Long fromDate = 56L; // Long | 
+    Long toDate = 56L; // Long | 
     try {
-      GetComments200Response result = apiInstance.getComments(tenantId)
+      APIGetCommentsResponse result = apiInstance.getComments(tenantId)
             .page(page)
             .limit(limit)
             .skip(skip)
@@ -77,6 +81,8 @@ public class Example {
             .hashTag(hashTag)
             .parentId(parentId)
             .direction(direction)
+            .fromDate(fromDate)
+            .toDate(toDate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -89,5 +95,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

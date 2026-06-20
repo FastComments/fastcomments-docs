@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
@@ -9,18 +9,18 @@
 
 ## Одговор
 
-Враћа: [`Option[PinComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_pin_comment200response.nim)
+Враћа: [`Option[ChangeCommentPinStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_change_comment_pin_status_response.nim)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример unPinComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unPinComment(tenantId = "my-tenant-123", commentId = "cmt-9f8b7a6", broadcastId = "", sso = "")
+let (response, httpResponse) = client.unPinComment(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", sso = "")
 if response.isSome:
-  let pinResp = response.get()
-  echo "Unpinned comment successfully"
+  let result = response.get()
+  echo "Unpinned comment:", $result
 else:
-  echo "Failed to unpin comment; HTTP response: ", httpResponse
+  echo "Unpin failed, HTTP status:", $httpResponse.status
 [inline-code-end]
 
 ---

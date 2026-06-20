@@ -1,26 +1,26 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | id | String | Да |  |
 
 ## Одговор
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Пример
 
 [inline-code-attrs-start title = 'delete_pending_webhook_event Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
-    let audit_note: Option<String> = Some("removed duplicate webhook event".to_string());
+async fn perform_delete() -> Result<ApiEmptyResponse, Error> {
+    let tenant_id: Option<String> = Some(String::from("acme-corp-tenant"));
+    let id: Option<String> = Some(String::from("wh_evt_2026_09f3"));
     let params: DeletePendingWebhookEventParams = DeletePendingWebhookEventParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "9f8b7a6c-1234-4b8d-9c3a-0e1f2d3c4b5a".to_string(),
+        tenant_id: tenant_id.unwrap(),
+        id: id.unwrap(),
     };
-    let response: FlagCommentPublic200Response = delete_pending_webhook_event(&configuration, params).await?;
-    let _ = audit_note;
+    let response: ApiEmptyResponse = delete_pending_webhook_event(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

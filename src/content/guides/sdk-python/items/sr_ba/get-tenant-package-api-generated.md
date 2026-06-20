@@ -2,23 +2,23 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_package200_response.py)
+Vraća: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_package_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_tenant_package Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_tenant_package'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_package200_response import GetTenantPackage200Response
+from client.models.get_tenant_package_response import GetTenantPackageResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opcionalno i podrazumijevano je https://fastcomments.com
+# Podešavanje hosta nije obavezno i podrazumijeva se https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,8 +26,8 @@ configuration = client.Configuration(
 
 # Klijent mora konfigurirati parametre autentifikacije i autorizacije
 # u skladu sa sigurnosnom politikom API servera.
-# Primjeri za svaki način autentifikacije su dati ispod; upotrijebite primjer koji
-# odgovara vašem slučaju upotrebe autentifikacije.
+# Primjeri za svaki metod autentifikacije su dati ispod, upotrijebite primjer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
 # Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]

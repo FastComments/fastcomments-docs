@@ -1,13 +1,13 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| id | string | パス | はい |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## レスポンス
 
-返却: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## 例
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | テナントID
-	id := "id_example" // string | ID
-	updateModeratorBody := *openapiclient.NewUpdateModeratorBody() // UpdateModeratorBody | モデレーター更新用のボディ
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
+	updateModeratorBody := *openapiclient.NewUpdateModeratorBody() // UpdateModeratorBody | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateModerator``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `UpdateModerator` のレスポンス: FlagCommentPublic200Response
+	// `UpdateModerator` のレスポンス: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateModerator`: %v\n", resp)
 }
 [inline-code-end]
-
----

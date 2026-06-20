@@ -4,61 +4,61 @@ urlId
 
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| page | integer | query | Нет |  |
+| direction | string | query | Нет |  |
+| sso | string | query | Нет |  |
+| skip | integer | query | Нет |  |
+| skipChildren | integer | query | Нет |  |
+| limit | integer | query | Нет |  |
+| limitChildren | integer | query | Нет |  |
+| countChildren | boolean | query | Нет |  |
+| fetchPageForCommentId | string | query | Нет |  |
+| includeConfig | boolean | query | Нет |  |
+| countAll | boolean | query | Нет |  |
+| includei10n | boolean | query | Нет |  |
+| locale | string | query | Нет |  |
+| modules | string | query | Нет |  |
+| isCrawler | boolean | query | Нет |  |
+| includeNotificationCount | boolean | query | Нет |  |
+| asTree | boolean | query | Нет |  |
+| maxTreeDepth | integer | query | Нет |  |
+| useFullTranslationIds | boolean | query | Нет |  |
+| parentId | string | query | Нет |  |
+| searchText | string | query | Нет |  |
+| hashTags | array | query | Нет |  |
+| userId | string | query | Нет |  |
+| customConfigStr | string | query | Нет |  |
+| afterCommentId | string | query | Нет |  |
+| beforeCommentId | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_public200_response.py)
+Возвращает: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_comments_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments_public200_response import GetCommentsPublic200Response
+from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию https://fastcomments.com
+# Указание host необязательно и по умолчанию равно https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Используем контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создаём экземпляр класса API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -96,3 +96,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_comments_public: %s\n" % e)
 [inline-code-end]
+
+---

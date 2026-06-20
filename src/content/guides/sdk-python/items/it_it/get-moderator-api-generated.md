@@ -1,43 +1,43 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
 ## Risposta
 
-Restituisce: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderator200_response.py)
+Restituisce: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderator_response.py)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_moderator'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderator200_response import GetModerator200Response
+from client.models.get_moderator_response import GetModeratorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e di default è https://fastcomments.com
-# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# Vedere configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la politica di sicurezza del server API.
-# Esempi per ciascun metodo di autenticazione sono forniti di seguito, usa l'esempio che
+# in conformità con la policy di sicurezza del server API.
+# Gli esempi per ogni metodo di autenticazione sono forniti di seguito, usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autorizzazione tramite API key: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommentare qui sotto per impostare un prefisso (es. Bearer) per la API key, se necessario
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrare in un contesto con un'istanza del client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_moderator: %s\n" % e)
 [inline-code-end]
-
----

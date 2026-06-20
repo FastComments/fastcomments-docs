@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Място | Задължително | Описание |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Не |  |
@@ -11,7 +11,7 @@
 
 ## Отговор
 
-Връща: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_200_response.go)
+Връща: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notification_count_response.go)
 
 ## Пример
 
@@ -28,11 +28,11 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (по избор)
-	urlId := "urlId_example" // string |  (по избор)
-	fromCommentId := "fromCommentId_example" // string |  (по избор)
-	viewed := true // bool |  (по избор)
-	type_ := "type__example" // string |  (по избор)
+	userId := "userId_example" // string |  (незадължително)
+	urlId := "urlId_example" // string |  (незадължително)
+	fromCommentId := "fromCommentId_example" // string |  (незадължително)
+	viewed := true // bool |  (незадължително)
+	type_ := "type__example" // string |  (незадължително)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotificationCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetNotificationCount`: GetNotificationCount200Response
+	// отговор от `GetNotificationCount`: GetNotificationCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotificationCount`: %v\n", resp)
 }
 [inline-code-end]

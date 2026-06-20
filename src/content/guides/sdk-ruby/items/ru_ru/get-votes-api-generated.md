@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes200_response.rb)
+Возвращает: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_votes_response.rb)
 
 ## Пример
 
@@ -24,8 +24,8 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
+tenant_id = 'tenant_id_example' # Строка | 
+url_id = 'url_id_example' # Строка | 
 
 begin
   
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_votes: #{e}"
 end
 [inline-code-end]
+
+---

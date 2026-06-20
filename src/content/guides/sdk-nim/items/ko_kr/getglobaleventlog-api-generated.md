@@ -1,16 +1,21 @@
+req
+tenantId
+urlId
+userIdWS
+
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
-| userIdWS | string | 아니오 |  |
-| startTime | int64 | 아니오 |  |
-| endTime | int64 | 아니오 |  |
+| userIdWS | string | 아니요 |  |
+| startTime | int64 | 아니요 |  |
+| endTime | int64 | 아니요 |  |
 
 ## 응답
 
-반환: [`Option[GetEventLog_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log200response.nim)
+반환: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
 ## 예제
 
@@ -18,16 +23,12 @@
 [inline-code-start]
 let (response, httpResponse) = client.getGlobalEventLog(
   tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  userIdWS = "",
-  startTime = int64(0),
-  endTime = int64(0)
+  urlId = "news/article-2026-06-19",
+  userIdWS = "user-987",
+  startTime = int64(1622505600),
+  endTime = int64(1625097600)
 )
 if response.isSome:
   let eventLog = response.get()
-  echo eventLog
-else:
-  echo "No event log returned"
+  echo eventLog, httpResponse.statusCode
 [inline-code-end]
-
----

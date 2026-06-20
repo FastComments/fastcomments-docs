@@ -1,29 +1,28 @@
-Agregira dokumente grupisanjem (ako je groupBy naveden) i primjenom više operacija.
-Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
+Агрегира документе групишући их (ако је groupBy наведен) и примјењући више операција. Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| parentTenantId | string | query | Ne |  |
-| includeStats | boolean | query | Ne |  |
+| tenantId | string | query | Да |  |
+| parentTenantId | string | query | Не |  |
+| includeStats | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer agregacije'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# podešavanje autorizacije
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju pomoću API ključa: api_key
+  # Конфигуришите овлашћење API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
+  # Уклоните коментар са следећег реда да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

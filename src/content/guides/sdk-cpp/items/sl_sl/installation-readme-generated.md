@@ -1,11 +1,10 @@
----
 ### Namestitev odvisnosti
 
 ```bash
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Gradnja iz izvorne kode
+### Sestavljanje iz izvorne kode
 
 ```bash
 mkdir build
@@ -22,11 +21,14 @@ sudo make install
 
 ### Vsebina knjižnice
 
-Ta knjižnica vsebuje generiran odjemalec API in SSO orodja, ki olajšajo delo z API-jem.
+Ta knjižnica vsebuje generiran API odjemalec in SSO pripomočke, da je delo z API-jem lažje.
 
-- [Dokumentacija knjižnice API odjemalca](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
 ### Javni in zaščiteni API-ji
 
-Za odjemalca API sta na voljo dva razreda, `DefaultAPI` in `PublicAPI`. `DefaultAPI` vsebuje metode, ki zahtevajo vaš API ključ, medtem ko `PublicAPI` vsebuje klice API-ja, ki jih je mogoče izvesti neposredno iz brskalnika/mobilne naprave/itd. brez preverjanja pristnosti.
----
+Za API odjemalca obstajajo trije razredi, `DefaultApi`, `PublicApi`, in `ModerationApi`. Razred `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, razred `PublicApi` pa vsebuje
+metode, ki jih je mogoče klicati neposredno iz brskalnika/mobilne naprave/itd. brez avtentikacije. Razred `ModerationApi` vsebuje metode, ki poganjajo nadzorno ploščo moderatorja - izpis,
+števanje, iskanje, izvoz in pridobivanje dnevnikov za komentarje, moderacijske akcije (odstrani/obnovi, prijavi, nastavi status pregleda/spama/odobritve, prilagodi glasove, ponovno odpri/zaključi niti),
+prepovedi (prepoved iz komentarja, razveljavitev prepovedi, povzetki pred prepovedjo, stanje prepovedi in nastavitve, število prepovedanih uporabnikov), in značke & zaupanje (podeli/odstrani značke, ročne značke, pridobi/nastavi faktor zaupanja
+faktor, notranji uporabniški profil). Vsaka metoda `ModerationApi` sprejme parameter `sso`, zato se klic izvede v imenu moderatorja, avtenticiranega preko SSO.

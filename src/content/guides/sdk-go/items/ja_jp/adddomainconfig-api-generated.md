@@ -2,11 +2,11 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
+| tenantId | string | クエリ | はい |  |
 
 ## レスポンス
 
-戻り値: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_domain_config_200_response.go)
+戻り値: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_domain_config_response.go)
 
 ## 例
 
@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `AddDomainConfig` からのレスポンス: AddDomainConfig200Response
+	// `AddDomainConfig` からのレスポンス: AddDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddDomainConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

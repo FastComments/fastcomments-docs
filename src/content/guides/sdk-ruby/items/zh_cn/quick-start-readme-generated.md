@@ -1,23 +1,23 @@
-### 使用已认证的 API（DefaultApi）
+### 使用已认证的 API (DefaultApi)
 
-**重要：** 您必须在发起已认证的请求之前在 ApiClient 上设置您的 API 密钥。如果不这样做，请求将以 401 错误失败。
+**重要：** 在发起需要认证的请求之前，您必须在 ApiClient 上设置您的 API 密钥。如果不设置，请求会返回 401 错误。
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 # 创建并配置 API 客户端
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# 必填：设置您的 API 密钥（可在 FastComments 仪表板获取）
+# 必需：设置您的 API 密钥（从 FastComments 仪表板获取）
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
 # 使用已配置的客户端创建 API 实例
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# 现在您可以发起已认证的 API 调用
+# 现在您可以发起带认证的 API 调用
 begin
-  # 示例：添加 SSO 用户
+  # 示例：添加一个 SSO 用户
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -35,12 +35,12 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### 使用公共 API（PublicApi）
+### 使用公共 API (PublicApi)
 
-公共端点不需要身份验证：
+公共端点不需要认证：
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -55,8 +55,28 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
+### 使用审核 API (ModerationApi)
+
+审核方法为审核者仪表板提供功能。传入 `sso` 令牌，使请求以经过 SSO 认证的审核者身份发出：
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # 示例：列出审核队列中的评论
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
 ### 常见问题
 
-1. **401 "missing-api-key" error**：确保在创建 DefaultApi 实例之前设置 `config.api_key['x-api-key'] = 'YOUR_KEY'`。
-2. **Wrong API class**：服务器端已认证的请求请使用 `DefaultApi`，客户端/公共请求请使用 `PublicApi`。
-3. **Null API key**：如果 API 密钥为 null，SDK 将静默跳过身份验证，导致 401 错误。
+1. **401 "missing-api-key" 错误**：在创建 DefaultApi 实例之前，请确保已设置 `config.api_key['x-api-key'] = 'YOUR_KEY'`。
+2. **错误的 API 类**：对服务器端的带认证请求使用 `DefaultApi`，对客户端/公共请求使用 `PublicApi`，对审核者仪表板请求使用 `ModerationApi`。
+3. **API 密钥为 null**：如果 API 密钥为 null，SDK 将静默跳过认证，导致 401 错误。

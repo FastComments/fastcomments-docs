@@ -1,8 +1,9 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
+| urlId | string | query | 否 | 用於判斷目前頁面是否已訂閱。 |
 | pageSize | integer | query | 否 |  |
 | afterId | string | query | 否 |  |
 | includeContext | boolean | query | 否 |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | 否 |  |
 | noDm | boolean | query | 否 |  |
 | includeTranslations | boolean | query | 否 |  |
+| includeTenantNotifications | boolean | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+回傳： [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## 範例
 
@@ -25,17 +27,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 字串 | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # 整數 | 
-  after_id: 'after_id_example', # 字串 | 
-  include_context: true, # 布林值 | 
-  after_created_at: 789, # 整數 | 
-  unread_only: true, # 布林值 | 
-  dm_only: true, # 布林值 | 
-  no_dm: true, # 布林值 | 
-  include_translations: true, # 布林值 | 
-  sso: 'sso_example' # 字串 | 
+  url_id: 'url_id_example', # String | 用於判斷目前頁面是否已訂閱。
+  page_size: 56, # Integer | 
+  after_id: 'after_id_example', # String | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin

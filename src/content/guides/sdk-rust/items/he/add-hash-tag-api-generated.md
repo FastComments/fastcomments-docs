@@ -2,28 +2,29 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | לא |  |
-| create_hash_tag_body | models::CreateHashTagBody | לא |  |
+| tenant_id | String | No |  |
+| create_hash_tag_body | models::CreateHashTagBody | No |  |
 
 ## תגובה
 
-מחזיר: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_hash_tag_200_response.rs)
+מחזיר: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_hash_tag_response.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-add_hash_tag'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: AddHashTagParams = AddHashTagParams {
-    tenant_id: Some("acme-corp-tenant".to_string()),
-    create_hash_tag_body: Some(models::CreateHashTagBody {
-        tag: "breaking-news".to_string(),
-        display_name: Some("Breaking News".to_string()),
-        description: Some("Articles covering breaking news events".to_string()),
-        enabled: Some(true),
-    }),
-};
-
-let response: AddHashTag200Response = add_hash_tag(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: AddHashTagParams = AddHashTagParams {
+        tenant_id: Some("acme-corp-tenant".to_string()),
+        create_hash_tag_body: Some(models::CreateHashTagBody {
+            name: "breaking-news".to_string(),
+            slug: "news/breaking".to_string(),
+        }),
+    };
+    let response: CreateHashTagResponse = add_hash_tag(&configuration, params).await?;
+    let _created_tag = response;
+    Ok(())
+}
 [inline-code-end]
 
 ---

@@ -1,46 +1,46 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Type | Location | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_hash_tags_bulk200_response.py)
+Повертає: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_create_hash_tags_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад add_hash_tags_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_hash_tags_bulk200_response import AddHashTagsBulk200Response
 from client.models.bulk_create_hash_tags_body import BulkCreateHashTagsBody
+from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення host необов'язкове й за замовчуванням https://fastcomments.com
+# Визначення host є необов'язковим і за замовчуванням дорівнює https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# client повинен налаштувати параметри аутентифікації та авторизації
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
 # відповідно до політики безпеки сервера API.
-# Приклади для кожного методу аутентифікації наведені нижче — використайте той,
-# який відповідає вашому сценарію.
-    
-# Налаштуйте авторизацію за допомогою API ключа: api_key
+# Нижче наведено приклади для кожного методу автентифікації, використовуйте приклад, який
+# задовольняє ваш випадок використання автентифікації.
+
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Увійдіть у контекст з екземпляром клієнта API
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | (необов'язковий)
-    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody | (необов'язковий)
+    tenant_id = 'tenant_id_example' # str |  (optional)
+    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
         api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)

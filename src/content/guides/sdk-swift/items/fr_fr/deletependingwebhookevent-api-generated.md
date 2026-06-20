@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Location | Required | Description |
@@ -8,11 +7,11 @@
 
 ## Réponse
 
-Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Retourne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour deletePendingWebhookEvent'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de deletePendingWebhookEvent'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -31,5 +30,3 @@ DefaultAPI.deletePendingWebhookEvent(tenantId: tenantId, id: id) { (response, er
     }
 }
 [inline-code-end]
-
----

@@ -1,0 +1,41 @@
+## Paramètres
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Oui |  |
+| urlId | string | query | Oui |  |
+
+## Réponse
+
+Retourne: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_v1_page_likes.py)
+
+## Exemple
+
+[inline-code-attrs-start title = 'Exemple de get_v1_page_likes'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import client
+from client.models.get_v1_page_likes import GetV1PageLikes
+from client.rest import ApiException
+from pprint import pprint
+
+# La définition de l'hôte est facultative et la valeur par défaut est https://fastcomments.com
+# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+
+# Entrez dans un contexte avec une instance du client API
+with client.ApiClient(configuration) as api_client:
+    # Créez une instance de la classe API
+    api_instance = client.PublicApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    url_id = 'url_id_example' # str | 
+
+    try:
+        api_response = api_instance.get_v1_page_likes(tenant_id, url_id)
+        print("The response of PublicApi->get_v1_page_likes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PublicApi->get_v1_page_likes: %s\n" % e)
+[inline-code-end]

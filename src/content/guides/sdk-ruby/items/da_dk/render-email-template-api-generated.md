@@ -1,13 +1,13 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | locale | string | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template200_response.rb)
+Returnerer: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/render_email_template_response.rb)
 
 ## Eksempel
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgles godkendelse: api_key
+  # Konfigurer API-nøgle-godkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentartegnet fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->render_email_template: #{e}"
 end
 [inline-code-end]
-
----

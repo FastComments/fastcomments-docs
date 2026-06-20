@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | ruta | Sí |  |
-| commentId | string | ruta | Sí |  |
-| broadcastId | string | consulta | Sí |  |
-| sso | string | consulta | No |  |
+| tenantId | string | path | Sí |  |
+| commentId | string | path | Sí |  |
+| broadcastId | string | query | Sí |  |
+| sso | string | query | No |  |
 
-## Response
+## Respuesta
 
-Devuelve: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Ejemplo
 
@@ -25,10 +25,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // cadena
+$comment_id = 'comment_id_example'; // cadena
+$broadcast_id = 'broadcast_id_example'; // cadena
+$sso = 'sso_example'; // cadena
 
 try {
     $result = $apiInstance->lockComment($tenant_id, $comment_id, $broadcast_id, $sso);

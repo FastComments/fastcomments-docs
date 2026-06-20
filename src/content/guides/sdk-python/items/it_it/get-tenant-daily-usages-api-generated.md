@@ -10,32 +10,32 @@
 
 ## Risposta
 
-Restituisce: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_daily_usages200_response.py)
+Restituisce: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_daily_usages_response.py)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di get_tenant_daily_usages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant_daily_usages200_response import GetTenantDailyUsages200Response
+from client.models.get_tenant_daily_usages_response import GetTenantDailyUsagesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# La definizione dell'host è opzionale e predefinita su https://fastcomments.com
+# Vedere configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la politica di sicurezza del server API.
-# Sono forniti di seguito esempi per ogni metodo di autenticazione; usa l'esempio che
+# Esempi per ogni metodo di autenticazione sono forniti di seguito, usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autorizzazione tramite API key: api_key
+# Configura l'autorizzazione con chiave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommentare qui sotto per impostare un prefisso (es. Bearer) per l'API key, se necessario
+# Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per la chiave API, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entra in un contesto con un'istanza del client API

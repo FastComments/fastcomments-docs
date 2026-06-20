@@ -1,13 +1,14 @@
+---
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| skip | number | query | Не |  |
 
 ## Отговор
 
-Връща: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModerators200Response.php)
+Връща: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorsResponse.php)
 
 ## Пример
 
@@ -17,18 +18,15 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// Конфигуриране на упълномощаването с API ключ: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Премахнете коментара по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+// Конфигуриране на авторизация с API ключ: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Разкоментирайте долния ред, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Ако искате да използвате собствен HTTP клиент, подайте клиента, който имплементира `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Това е опционално, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате собствен HTTP клиент, подайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
@@ -42,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->getModerators: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

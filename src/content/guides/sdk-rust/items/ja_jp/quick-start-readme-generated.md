@@ -1,4 +1,4 @@
-### パブリックAPIの使用
+### パブリック API の使用
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::Configuration;
@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### 認証済みAPIの使用
+### 認証済み API の使用
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -53,14 +53,14 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // APIキーで設定を作成
+    // API キーで設定を作成
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
         key: "your-api-key".to_string(),
     });
 
-    // 認証済みAPIを使ってコメントを取得
+    // 認証済み API を使ってコメントを取得
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### モデレーション API の使用
+
+モデレーション用のメソッドはモデレーターダッシュボードのバックエンドで動作します。これらは認証済み API と同様に API キーの `Configuration` を使用し、各メソッドはオプションの `sso` トークンを受け付けるため、SSO 認証されたモデレータを代理して呼び出すことができます。
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // API キーで設定を作成
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // モデレーションキューで待機中のコメントをカウント
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // SSO 認証されたモデレータとして動作するために SSO トークンを渡す
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### SSO を使用した認証
 
 ```rust
@@ -110,19 +148,19 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // セキュアSSOユーザーデータを作成（サーバー側のみ！）
+    // セキュアな SSO ユーザーデータを作成（サーバーサイドのみ！）
     let user_data = SecureSSOUserData::new(
-        "user-123".to_string(),           // ユーザーID
-        "user@example.com".to_string(),   // メール
+        "user-123".to_string(),           // ユーザー ID
+        "user@example.com".to_string(),   // メールアドレス
         "John Doe".to_string(),            // ユーザー名
-        "https://example.com/avatar.jpg".to_string(), // アバターのURL
+        "https://example.com/avatar.jpg".to_string(), // アバター URL
     );
 
-    // SSOトークンを生成
+    // SSO トークンを生成
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // このトークンをフロントエンドに渡して認証に使用してください
+    // このトークンをフロントエンドに渡して認証に使用する
 }
 ```

@@ -1,7 +1,8 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
-|--------|------|----------|----------|-------------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | afterId | string | query | No |  |
 | afterCreatedAt | integer | query | No |  |
@@ -12,7 +13,7 @@
 
 ## Respuesta
 
-Devuelve: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotifications200Response.swift)
+Devuelve: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ResetUserNotificationsResponse.swift)
 
 ## Ejemplo
 

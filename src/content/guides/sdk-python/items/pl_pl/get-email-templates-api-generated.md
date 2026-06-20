@@ -1,20 +1,20 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | skip | number | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_templates200_response.py)
+Zwraca: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_templates_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_email_templates'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_templates200_response import GetEmailTemplates200Response
+from client.models.get_email_templates_response import GetEmailTemplatesResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,8 +25,8 @@ configuration = client.Configuration(
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z polityką zabezpieczeń serwera API.
-# Przykłady dla każdej metody uwierzytelniania znajdują się poniżej, użyj przykładu który
+# zgodnie z polityką bezpieczeństwa serwera API.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
 # odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
 # Skonfiguruj autoryzację kluczem API: api_key
@@ -40,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    skip = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (opcjonalne)
 
     try:
         api_response = api_instance.get_email_templates(tenant_id, skip=skip)

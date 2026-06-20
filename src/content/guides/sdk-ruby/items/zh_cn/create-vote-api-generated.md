@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 是 |  |
@@ -8,9 +8,9 @@
 | userId | string | query | 否 |  |
 | anonUserId | string | query | 否 |  |
 
-## 响应
+## 返回
 
-返回: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+返回： [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## 示例
 
@@ -22,17 +22,17 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # 配置 API 密钥授权: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer'（默认值为 nil）
+  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer'（默认为 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
-comment_id = 'comment_id_example' # String | 
-direction = 'up' # String | 
+tenant_id = 'tenant_id_example' # 字符串 | 
+comment_id = 'comment_id_example' # 字符串 | 
+direction = 'up' # 字符串 | 
 opts = {
-  user_id: 'user_id_example', # String | 
-  anon_user_id: 'anon_user_id_example' # String | 
+  user_id: 'user_id_example', # 字符串 | 
+  anon_user_id: 'anon_user_id_example' # 字符串 | 
 }
 
 begin

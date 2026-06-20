@@ -12,7 +12,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotifications200Response.php)
+Gibt zurück: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationsResponse.php)
 
 ## Beispiel
 
@@ -22,18 +22,15 @@ Gibt zurück: [`GetNotifications200Response`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// API-Schlüssel-Autorisierung konfigurieren: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Entfernen Sie unten die Kommentarzeichen, um ein Präfix (z.B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );

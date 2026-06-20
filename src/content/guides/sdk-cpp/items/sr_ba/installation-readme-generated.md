@@ -1,10 +1,10 @@
-### Instalirajte zavisnosti
+### Инсталирајте зависности
 
 ```bash
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Kompiliranje iz izvornog koda
+### Изградња из извора
 
 ```bash
 mkdir build
@@ -13,18 +13,21 @@ cmake ..
 make
 ```
 
-### Instaliranje
+### Инсталирање
 
 ```bash
 sudo make install
 ```
 
-### Sadržaj biblioteke
+### Садржај библиотеке
 
-Ova biblioteka sadrži generisan API klijent i SSO alate koji olakšavaju rad sa API-jem.
+Ова библиотека садржи генерисан API клијент и SSO алате који олакшавају рад са API-јем.
 
-- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### Javni i zaštićeni API-ji
+### Јавни и заштићени API-ји
 
-Za API klijenta postoje dvije klase, `DefaultAPI` i `PublicAPI`. `DefaultAPI` sadrži metode koje zahtijevaju vaš API key, a `PublicAPI` sadrži API pozive koji se mogu direktno izvršavati iz preglednika/mobilnog uređaja/itd. bez autentifikacije.
+Код API клијента постоје три класе, `DefaultApi`, `PublicApi`, и `ModerationApi`. `DefaultApi` садржи методе које захтевају ваш API кључ, а `PublicApi` садржи
+методе које се могу позивати директно из прегледника/мобилног уређаја/итд. без аутентификације. `ModerationApi` садржи методе које покрећу контролну таблу модератора - листање,
+бројање, претрагу, извоз и повлачење логова за коментаре, акције модерирања (уклањање/враћање, означавање, подешавање статуса за преглед/спам/одобрење, подешавање гласова, поновно отварање/затварање тема),
+забране (забрана по коментару, поништавање забрана, пре-забранске сажетке, статус и преференце забране, број забанованих корисника), и значке и поверење (додавање/уклањање значки, ручне значке, добијање/постављање фактора поверења, унутрашњи профил корисника). Сваки `ModerationApi` метод прихвата `sso` параметар тако да се позив извршава у име SSO-аутентификованог модератора.

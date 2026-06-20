@@ -1,5 +1,4 @@
----
-Включить или отключить уведомления для страницы. Когда пользователи подписаны на страницу, создаются уведомления
+Включение или отключение уведомлений для страницы. Когда пользователи подписаны на страницу, уведомления создаются
 для новых корневых комментариев, а также
 
 ## Параметры
@@ -15,7 +14,7 @@
 
 ## Ответ
 
-Возвращает: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+Возвращает: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## Пример
 
@@ -45,5 +44,3 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

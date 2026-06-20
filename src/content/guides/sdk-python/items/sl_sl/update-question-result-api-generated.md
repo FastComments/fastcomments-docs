@@ -1,39 +1,39 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer update_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.models.update_question_result_body import UpdateQuestionResultBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja ni obvezna in privzeto je https://fastcomments.com
+# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre overjanja in pooblastil
+# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
 # v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo overjanja so podani spodaj, uporabite primer, ki
-# ustreza vašemu primeru uporabe overjanja.
+# Spodaj so podani primeri za vsako metodo avtentikacije, uporabite primer, ki
+# ustreza vašemu primeru uporabe avtentikacije.
 
-# Nastavite overjanje z API ključem: api_key
+# Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Če je potrebno, odkomentirajte spodnjo vrstico za nastavitev predpone (npr. Bearer) za API ključ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca

@@ -3,6 +3,7 @@
 | Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
+| urlId | string | query | Não | Usado para determinar se a página atual está inscrita. |
 | pageSize | integer | query | Não |  |
 | afterId | string | query | Não |  |
 | includeContext | boolean | query | Não |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Não |  |
 | noDm | boolean | query | Não |  |
 | includeTranslations | boolean | query | Não |  |
+| includeTenantNotifications | boolean | query | Não |  |
 | sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Retorna: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Exemplo
 
@@ -27,14 +29,16 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # Inteiro | 
+  url_id: 'url_id_example', # String | Usado para determinar se a página atual está inscrita.
+  page_size: 56, # Integer | 
   after_id: 'after_id_example', # String | 
-  include_context: true, # Booleano | 
-  after_created_at: 789, # Inteiro | 
-  unread_only: true, # Booleano | 
-  dm_only: true, # Booleano | 
-  no_dm: true, # Booleano | 
-  include_translations: true, # Booleano | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
   sso: 'sso_example' # String | 
 }
 
@@ -46,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

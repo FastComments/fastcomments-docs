@@ -2,15 +2,15 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | yol | Evet |  |
-| postId | string | yol | Evet |  |
-| isUndo | boolean | sorgu | Hayır |  |
-| broadcastId | string | sorgu | Hayır |  |
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | path | Evet |  |
+| postId | string | path | Evet |  |
+| isUndo | boolean | query | Hayır |  |
+| broadcastId | string | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostPublic200Response.php)
+Döndürür: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
 
 ## Örnek
 
@@ -22,7 +22,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Eğer özel bir http istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );

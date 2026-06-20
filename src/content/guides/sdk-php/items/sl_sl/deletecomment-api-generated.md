@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vrne: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteComment200Response.php)
+Vrne: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
 
 ## Primer
 
@@ -19,20 +19,21 @@ Vrne: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
-// Odkomentirajte spodnjo vrstico za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Konfigurirajte pooblastilo z API ključem: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lasten HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // Če želite uporabiti prilagojen HTTP odjemalec, podajte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
     // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
+$tenant_id = 'tenant_id_example'; // niz
+$id = 'id_example'; // niz
+$context_user_id = 'context_user_id_example'; // niz
 $is_live = True; // bool
 
 try {
@@ -42,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

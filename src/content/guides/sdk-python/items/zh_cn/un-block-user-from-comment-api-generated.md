@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
@@ -9,15 +9,15 @@
 
 ## 响应
 
-返回: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/un_block_comment_public200_response.py)
+返回: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'un_block_user_from_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.un_block_comment_public200_response import UnBlockCommentPublic200Response
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
+from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
@@ -28,12 +28,12 @@ configuration = client.Configuration(
 )
 
 # 客户端必须根据 API 服务器的安全策略配置身份验证和授权参数。
-# 下面提供了每种身份验证方法的示例，请使用适合您用例的示例。
+# 下面为每种身份验证方法提供了示例，请使用适合您认证用例的示例。
 
 # 配置 API 密钥授权：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如有需要，取消注释下面的行以设置 API 密钥的前缀（例如 Bearer）
+# 如有需要，取消注释下面内容以设置 API 密钥的前缀（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # 使用 API 客户端实例进入上下文
@@ -53,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->un_block_user_from_comment: %s\n" % e)
 [inline-code-end]
-
----

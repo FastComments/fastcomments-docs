@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
@@ -9,14 +10,14 @@
 
 ## レスポンス
 
-戻り値: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+戻り値: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'flag_comment の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,10 +27,10 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 以下に各認証方式の例を示します、
-# ユースケースに合った例を使用してください。
+# クライアントは認証および認可のパラメータを設定する必要があります。
+# これは API サーバーのセキュリティポリシーに従って行ってください。
+# 以下に各認証方式の例を示します。
+# あなたの認証ユースケースに合う例を使用してください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -37,14 +38,14 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入る
+# API クライアントのインスタンスを使ってコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成する
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (オプション)
-    anon_user_id = 'anon_user_id_example' # str |  (オプション)
+    user_id = 'user_id_example' # str |  (任意)
+    anon_user_id = 'anon_user_id_example' # str |  (任意)
 
     try:
         api_response = api_instance.flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
@@ -53,3 +54,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->flag_comment: %s\n" % e)
 [inline-code-end]
+
+---

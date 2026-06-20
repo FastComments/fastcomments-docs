@@ -1,43 +1,43 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
 
 ## レスポンス
 
-戻り値: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count200_response.py)
+戻り値: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_cached_notification_count_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_cached_notification_count の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_cached_notification_count200_response import GetCachedNotificationCount200Response
+from client.models.get_cached_notification_count_response import GetCachedNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、省略すると https://fastcomments.com がデフォルトになります
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可パラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 各認証方式の例を以下に示します。
-# ご利用の認証ユースケースに合う例を使用してください。
+# クライアントは認証および認可のパラメータを
+# API サーバのセキュリティポリシーに従って設定する必要があります。
+# 各認証方式の例を以下に示します。 
+# ご利用の認証ケースに適した例を使用してください。
 
-# API キー認証を設定: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要であれば以下のコメントアウトを外して、API キーのプレフィックス（例: Bearer）を設定してください
+# 必要に応じて、API キー用のプレフィックス（例: Bearer）を設定するには、以下の行のコメントアウトを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入る
+# API クライアントのインスタンスを用いてコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

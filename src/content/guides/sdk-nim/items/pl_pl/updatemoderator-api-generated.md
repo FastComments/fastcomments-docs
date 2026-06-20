@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Nie |  |
@@ -8,24 +8,24 @@
 
 ## Odpowiedź
 
-Zwraca: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Zwraca: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia updateModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateBody = UpdateModeratorBody(
-  name: "Alicia Gomez",
-  email: "alicia.gomez@dailynews.com",
-  active: true,
-  roles: @["moderator"]
+let modBody: UpdateModeratorBody = UpdateModeratorBody(
+  displayName = "Alice Moderator",
+  email = "alice@newsdaily.com",
+  isActive = true,
+  permissions = @["delete_comments", "ban_users"]
 )
 
-let (response, httpResponse) = client.updateModerator(tenantId = "my-tenant-123", id = "moderator-789", updateModeratorBody = updateBody)
+let (response, httpResponse) = client.updateModerator(tenantId = "news-tenant-456", id = "moderator-789", updateModeratorBody = modBody)
 
 if response.isSome:
-  let updated = response.get()
-  echo "Moderator updated:", updated
+  let apiEmpty = response.get()
+  echo "Moderator updated successfully. HTTP status: ", httpResponse.status
+else:
+  echo "Failed to update moderator. HTTP status: ", httpResponse.status
 [inline-code-end]
-
----

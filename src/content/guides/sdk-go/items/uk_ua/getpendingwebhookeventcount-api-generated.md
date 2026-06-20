@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Location | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | commentId | string | query | Ні |  |
@@ -13,7 +12,7 @@
 
 ## Відповідь
 
-Повертає: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+Повертає: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
 ## Приклад
 
@@ -30,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  (необов'язково)
-	externalId := "externalId_example" // string |  (необов'язково)
-	eventType := "eventType_example" // string |  (необов'язково)
-	type_ := "type__example" // string |  (необов'язково)
-	domain := "domain_example" // string |  (необов'язково)
-	attemptCountGT := float64(1.2) // float64 |  (необов'язково)
+	commentId := "commentId_example" // string |  (необов'язковий)
+	externalId := "externalId_example" // string |  (необов'язковий)
+	eventType := "eventType_example" // string |  (необов'язковий)
+	type_ := "type__example" // string |  (необов'язковий)
+	domain := "domain_example" // string |  (необов'язковий)
+	attemptCountGT := float64(1.2) // float64 |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -44,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `GetPendingWebhookEventCount`: GetPendingWebhookEventCount200Response
+	// відповідь від `GetPendingWebhookEventCount`: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

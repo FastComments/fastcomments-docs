@@ -1,76 +1,80 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| page | integer | query | Ne |  |
-| limit | integer | query | Ne |  |
-| skip | integer | query | Ne |  |
-| asTree | boolean | query | Ne |  |
-| skipChildren | integer | query | Ne |  |
-| limitChildren | integer | query | Ne |  |
-| maxTreeDepth | integer | query | Ne |  |
-| urlId | string | query | Ne |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
-| contextUserId | string | query | Ne |  |
-| hashTag | string | query | Ne |  |
-| parentId | string | query | Ne |  |
-| direction | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Odgovor
 
-Vraća: [`GetComments200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments200_response.py)
+Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'get_comments Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments200_response import GetComments200Response
+from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Ispod su dati primeri za svaki metod autentifikacije; koristite primer koji
+# odgovara vašem slučaju upotrebe.
 
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju pomoću API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  (optional)
-    limit = 56 # int |  (optional)
-    skip = 56 # int |  (optional)
-    as_tree = True # bool |  (optional)
-    skip_children = 56 # int |  (optional)
-    limit_children = 56 # int |  (optional)
-    max_tree_depth = 56 # int |  (optional)
-    url_id = 'url_id_example' # str |  (optional)
-    user_id = 'user_id_example' # str |  (optional)
-    anon_user_id = 'anon_user_id_example' # str |  (optional)
-    context_user_id = 'context_user_id_example' # str |  (optional)
-    hash_tag = 'hash_tag_example' # str |  (optional)
-    parent_id = 'parent_id_example' # str |  (optional)
-    direction = client.SortDirections() # SortDirections |  (optional)
+    page = 56 # int |  (opciono)
+    limit = 56 # int |  (opciono)
+    skip = 56 # int |  (opciono)
+    as_tree = True # bool |  (opciono)
+    skip_children = 56 # int |  (opciono)
+    limit_children = 56 # int |  (opciono)
+    max_tree_depth = 56 # int |  (opciono)
+    url_id = 'url_id_example' # str |  (opciono)
+    user_id = 'user_id_example' # str |  (opciono)
+    anon_user_id = 'anon_user_id_example' # str |  (opciono)
+    context_user_id = 'context_user_id_example' # str |  (opciono)
+    hash_tag = 'hash_tag_example' # str |  (opciono)
+    parent_id = 'parent_id_example' # str |  (opciono)
+    direction = client.SortDirections() # SortDirections |  (opciono)
+    from_date = 56 # int |  (opciono)
+    to_date = 56 # int |  (opciono)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction)
+        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

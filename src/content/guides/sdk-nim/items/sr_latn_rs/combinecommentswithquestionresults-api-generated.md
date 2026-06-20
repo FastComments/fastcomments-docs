@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | questionId | string | Ne |  |
@@ -14,25 +14,29 @@
 
 ## Odgovor
 
-Vraća: [`Option[CombineCommentsWithQuestionResults_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_comments_with_question_results200response.nim)
+Vraća: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_question_results_with_comments_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer combineCommentsWithQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "q-9876",
-  questionIds = @["q-9876", "q-9877"],
-  urlId = "news/article-title",
-  startDate = "2025-01-01T00:00:00Z",
+  questionId = "",
+  questionIds = @[],
+  urlId = "news/article-2026-climate-change",
+  startDate = "",
   forceRecalculate = false,
-  minValue = 1.0,
-  maxValue = 5.0,
-  limit = 100.0
+  minValue = 0.0,
+  maxValue = 0.0,
+  limit = 0.0
 )
 
 if response.isSome:
   let combined = response.get()
-  discard combined
+  echo "Combined results received for tenant:", " my-tenant-123"
+else:
+  echo "No combined results returned"
 [inline-code-end]
+
+---

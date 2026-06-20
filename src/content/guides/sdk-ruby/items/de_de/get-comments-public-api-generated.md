@@ -1,11 +1,11 @@
-erforderlich
+req
 tenantId
 urlId
 
 ## Parameter
 
-| Name | Type | Location | Erforderlich | Beschreibung |
-|------|------|----------|--------------|-------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | page | integer | query | Nein |  |
@@ -37,7 +37,7 @@ urlId
 
 ## Antwort
 
-Gibt zurück: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Gibt zurück: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## Beispiel
 
@@ -86,3 +86,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comments_public: #{e}"
 end
 [inline-code-end]
+
+---

@@ -1,21 +1,21 @@
-Aggrega i documenti raggruppandoli (se viene fornito groupBy) e applicando più operazioni.
-Sono supportate diverse operazioni (es. sum, countDistinct, avg, ecc.).
+Aggrega i documenti raggruppandoli (se groupBy è specificato) e applicando più operazioni.
+Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
+| tenantId | string | query | Yes |  |
 | parentTenantId | string | query | No |  |
 | includeStats | boolean | query | No |  |
 
 ## Risposta
 
-Restituisce: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di aggregate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio aggregate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,13 +23,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configura l'autenticazione con API key: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per l'API key, se necessario
+// Decommenta il codice sottostante per impostare il prefisso (es. Bearer) per la API key, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se desideri usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
+    // Questo è opzionale; verrà utilizzato di default `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

@@ -14,7 +14,7 @@
 
 ## Одговор
 
-Враћа: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_comments_with_question_results_200_response.go)
+Враћа: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_combine_question_results_with_comments_response.go)
 
 ## Пример
 
@@ -27,19 +27,19 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	questionId := "questionId_example" // string |  (необавезно)
-	questionIds := []string{"Inner_example"} // []string |  (необавезно)
-	urlId := "urlId_example" // string |  (необавезно)
-	startDate := time.Now() // time.Time |  (необавезno)
-	forceRecalculate := true // bool |  (необавезно)
-	minValue := float64(1.2) // float64 |  (необавезно)
-	maxValue := float64(1.2) // float64 |  (необавезно)
-	limit := float64(1.2) // float64 |  (необавезно)
+	questionId := "questionId_example" // string |  (опционо)
+	questionIds := []string{"Inner_example"} // []string |  (опционо)
+	urlId := "urlId_example" // string |  (опционо)
+	startDate := time.Now() // time.Time |  (опционо)
+	forceRecalculate := true // bool |  (опционо)
+	minValue := float64(1.2) // float64 |  (опционо)
+	maxValue := float64(1.2) // float64 |  (опционо)
+	limit := float64(1.2) // float64 |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CombineCommentsWithQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор из `CombineCommentsWithQuestionResults`: CombineCommentsWithQuestionResults200Response
+	// response from `CombineCommentsWithQuestionResults`: CombineQuestionResultsWithCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CombineCommentsWithQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | commentId | string | query | לא |  |
@@ -13,7 +13,7 @@
 
 ## תגובה
 
-מחזיר: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+מחזיר: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events_response.rb)
 
 ## דוגמה
 
@@ -21,24 +21,24 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדרת אימות
+# הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # קבע אימות באמצעות מפתח ה-API: api_key
+  # הגדרת הרשאת מפתח API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל nil)
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  comment_id: 'comment_id_example', # מחרוזת | 
-  external_id: 'external_id_example', # מחרוזת | 
-  event_type: 'event_type_example', # מחרוזת | 
-  type: 'type_example', # מחרוזת | 
-  domain: 'domain_example', # מחרוזת | 
-  attempt_count_gt: 1.2, # מספר עשרוני | 
-  skip: 1.2 # מספר עשרוני | 
+  comment_id: 'comment_id_example', # String | 
+  external_id: 'external_id_example', # String | 
+  event_type: 'event_type_example', # String | 
+  type: 'type_example', # String | 
+  domain: 'domain_example', # String | 
+  attempt_count_gt: 1.2, # Float | 
+  skip: 1.2 # Float | 
 }
 
 begin

@@ -1,6 +1,6 @@
 ### Χρήση Αυθεντικοποιημένων API (DefaultAPI)
 
-**Σημαντικό:** Οι αυθεντικοποιημένοι endpoints απαιτούν το API key σας να οριστεί ως κεφαλίδα `x-api-key`.
+**Σημαντικό:** Τα αυθεντικοποιημένα endpoints απαιτούν το API key σας να οριστεί στην κεφαλίδα `x-api-key`.
 
 ```nim
 import httpclient
@@ -39,7 +39,7 @@ if response.isSome:
 
 ### Χρήση Δημόσιων API (PublicAPI)
 
-Οι δημόσιοι endpoints δεν απαιτούν αυθεντικοποίηση:
+Τα δημόσια endpoints δεν απαιτούν αυθεντικοποίηση:
 
 ```nim
 import httpclient
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Χρήση API Εποπτείας (ModerationAPI)
+
+Τα endpoints εποπτείας τροφοδοτούν τον πίνακα ελέγχου των συντονιστών και αυθεντικοποιούνται με ένα SSO token για τον συντονιστή που ενεργεί:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Λίστα σχολίων στον πίνακα ελέγχου εποπτείας
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Συνηθισμένα Προβλήματα
 
-1. **401 authentication error**: Βεβαιωθείτε ότι έχετε ρυθμίσει την κεφαλίδα `x-api-key` στον HttpClient σας πριν κάνετε αιτήσεις DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Χρησιμοποιήστε `api_default` για αιτήσεις με αυθεντικοποίηση στην πλευρά του διακομιστή και `api_public` για αιτήσεις στην πλευρά του πελάτη/δημόσιες.
+1. **401 authentication error**: Βεβαιωθείτε ότι έχετε ορίσει την κεφαλίδα `x-api-key` στο HttpClient σας πριν κάνετε κλήσεις στην DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Wrong API class**: Χρησιμοποιήστε `api_default` για server-side αυθεντικοποιημένες αιτήσεις, `api_public` για client-side/δημόσιες αιτήσεις, και `api_moderation` για αιτήσεις του πίνακα ελέγχου των συντονιστών.

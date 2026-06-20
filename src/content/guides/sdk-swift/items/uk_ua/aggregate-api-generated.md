@@ -1,22 +1,23 @@
-Агрегує документи, групуючи їх (якщо задано groupBy) та застосовуючи кілька операцій. Підтримуються різні операції (наприклад sum, countDistinct, avg тощо).
+Агрегує документи шляхом групування (якщо вказано groupBy) та застосування кількох операцій.
+Підтримуються різні операції (наприклад sum, countDistinct, avg тощо).
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| parentTenantId | string | query | Ні |  |
-| includeStats | boolean | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Відповідь
 
-Повертає: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Повертає: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад aggregate'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще в бета-версії. У разі проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще в бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -35,5 +36,3 @@ DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest,
     }
 }
 [inline-code-end]
-
----

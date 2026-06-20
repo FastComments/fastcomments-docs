@@ -4,7 +4,7 @@ afterId
 
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | afterId | string | query | Не |  |
@@ -13,36 +13,42 @@ afterId
 
 ## Одговор
 
-Враћа: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts200_response.py)
+Враћа: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_feed_posts Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts200_response import GetFeedPosts200Response
+from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање хоста је опционо и подразумева се https://fastcomments.com
+# Дефинисање host-а је опционално и подразумевано је https://fastcomments.com
 # Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
-# Клијент мора да конфигурише параметре аутентификације и овлашћења
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+# Клијент мора подесити параметре аутентификације и ауторизације
 # у складу са безбедносном политиком API сервера.
-# Испод су примери за сваки метод аутентификације, користите пример који
+# Испод су дати примери за сваки метод аутентификације, користите пример који
 # одговара вашем случају коришћења аутентификације.
 
-# Конфигуришите овлашћење API кључа: api_key
-# Откоменаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Уклоните коментар испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (необавезно)
-    limit = 56 # int |  (необавезно)
-    tags = ['tags_example'] # List[str] |  (необавезно)
+    after_id = 'after_id_example' # str |  (опционо)
+    limit = 56 # int |  (опционо)
+    tags = ['tags_example'] # List[str] |  (опционо)
 
     try:
         api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)

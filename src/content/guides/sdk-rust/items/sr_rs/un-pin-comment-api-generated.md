@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | comment_id | String | Да |  |
@@ -10,21 +9,21 @@
 
 ## Одговор
 
-Враћа: [`PinComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/pin_comment_200_response.rs)
+Враћа: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_comment_pin_status_response.rs)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример un_pin_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_pin_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_unpin() -> Result<(), Error> {
+async fn example() -> Result<ChangeCommentPinStatusResponse, Error> {
     let params: UnPinCommentParams = UnPinCommentParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-20260325-7a9".to_string(),
-        broadcast_id: "news/homepage/launch-article".to_string(),
-        sso: Some("sso-jwt-user-0a1b2c3d".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        comment_id: String::from("cmt-8f3b2a1e"),
+        broadcast_id: String::from("news/2024/product-launch"),
+        sso: Some(String::from("sso-user-abcdef123456")),
     };
-    let response: PinComment200Response = un_pin_comment(&configuration, params).await?;
-    Ok(())
+    let response: ChangeCommentPinStatusResponse = un_pin_comment(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

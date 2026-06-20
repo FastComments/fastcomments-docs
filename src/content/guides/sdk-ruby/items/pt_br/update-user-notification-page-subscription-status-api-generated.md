@@ -1,22 +1,22 @@
-Ativar ou desativar notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas
+Ativar ou desativar notificações para uma página. Quando os usuários estão inscritos em uma página, são criadas notificações
 para novos comentários raiz, e também
 
-## Parameters
+## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Sim |  |
+| urlId | string | query | Sim |  |
+| url | string | query | Sim |  |
+| pageTitle | string | query | Sim |  |
+| subscribedOrUnsubscribed | string | path | Sim |  |
+| sso | string | query | Não |  |
 
-## Response
+## Resposta
 
-Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
-## Example
+## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de update_user_notification_page_subscription_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

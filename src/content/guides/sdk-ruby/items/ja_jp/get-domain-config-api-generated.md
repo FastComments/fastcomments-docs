@@ -1,13 +1,13 @@
 ## パラメータ
 
-| 名称 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | はい |  |
+| domain | string | path | はい |  |
 
 ## レスポンス
 
-返却値: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+戻り値: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config_response.rb)
 
 ## 例
 
@@ -19,13 +19,13 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックスを設定するには、次の行のコメントを外してください（例: 'Bearer'、デフォルトは nil）
+  # APIキーのプレフィックス（例: 'Bearer'）を設定するには、以下の行のコメントを外してください（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # 文字列 | 
-domain = 'domain_example' # 文字列 | 
+tenant_id = 'tenant_id_example' # String | 
+domain = 'domain_example' # String | 
 
 begin
   

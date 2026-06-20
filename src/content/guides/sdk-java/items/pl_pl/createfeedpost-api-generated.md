@@ -1,16 +1,16 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| broadcastId | string | query | Nie |  |
-| isLive | boolean | query | Nie |  |
-| doSpamCheck | boolean | query | Nie |  |
-| skipDupCheck | boolean | query | Nie |  |
+| tenantId | string | zapytanie | Tak |  |
+| broadcastId | string | zapytanie | Nie |  |
+| isLive | boolean | zapytanie | Nie |  |
+| doSpamCheck | boolean | zapytanie | Nie |  |
+| skipDupCheck | boolean | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPost200Response.java)
+Zwraca: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostsResponse.java)
 
 ## Przykład
 
@@ -29,7 +29,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację klucza API: api_key
+    // Skonfiguruj uwierzytelnianie kluczem API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
@@ -43,7 +43,7 @@ public class Example {
     Boolean doSpamCheck = true; // Boolean | 
     Boolean skipDupCheck = true; // Boolean | 
     try {
-      CreateFeedPost200Response result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
+      CreateFeedPostsResponse result = apiInstance.createFeedPost(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .isLive(isLive)
             .doSpamCheck(doSpamCheck)
@@ -60,5 +60,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

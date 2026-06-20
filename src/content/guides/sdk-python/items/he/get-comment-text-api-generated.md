@@ -9,25 +9,25 @@
 
 ## תגובה
 
-מחזיר: [`GetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_text200_response.py)
+מחזיר: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_get_comment_text_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה של get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment_text200_response import GetCommentText200Response
+from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אינה חובה וערך ברירת המחדל הוא https://fastcomments.com
-# עיין ב-configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת host אינה חובה וברירת המחדל היא https://fastcomments.com
+# ראה את configuration.py עבור רשימת כל פרמטרי ההגדרות הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנסו לקונטקסט עם מופע של לקוח ה-API
+# כניסה להקשר עם מופע של ApiClient
 with client.ApiClient(configuration) as api_client:
     # יצירת מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)

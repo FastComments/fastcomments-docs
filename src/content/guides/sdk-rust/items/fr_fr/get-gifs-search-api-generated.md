@@ -1,0 +1,33 @@
+## Paramètres
+
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Oui |  |
+| search | String | Oui |  |
+| locale | String | Non |  |
+| rating | String | Non |  |
+| page | f64 | Non |  |
+
+## Réponse
+
+Retourne: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
+
+## Exemple
+
+[inline-code-attrs-start title = 'Exemple get_gifs_search'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run_gif_search() -> Result<(), Error> {
+    let params: GetGifsSearchParams = GetGifsSearchParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        search: "breaking news".to_string(),
+        locale: Some("en-US".to_string()),
+        rating: Some("pg-13".to_string()),
+        page: Some(1.0),
+    };
+    let response: GetGifsSearchResponse = get_gifs_search(&configuration, params).await?;
+    println!("{:#?}", response);
+    Ok(())
+}
+[inline-code-end]
+
+---

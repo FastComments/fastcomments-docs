@@ -35,9 +35,9 @@ urlId
 | afterCommentId | string | query | Nee |  |
 | beforeCommentId | string | query | Nee |  |
 
-## Respons
+## Response
 
-Geeft terug: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Retourneert: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## Voorbeeld
 
@@ -86,5 +86,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comments_public: #{e}"
 end
 [inline-code-end]
-
----

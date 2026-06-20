@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sí |  |
 | broadcastId | string | query | No |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
@@ -10,7 +10,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPost200Response.swift)
+Devuelve: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostsResponse.swift)
 
 ## Ejemplo
 

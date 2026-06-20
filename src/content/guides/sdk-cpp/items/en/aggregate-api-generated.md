@@ -12,25 +12,24 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregationResponse.h)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'aggregate Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
 AggregationRequest aggregationRequest;
-utility::string_t tenantId( "my-tenant-123" );
-boost::optional<utility::string_t> parentTenant( utility::string_t("global-tenant") );
-boost::optional<bool> includeStats( true );
-auto defaultResp = std::make_shared<AggregationResponse>();
+boost::optional<utility::string_t> parentTenant = boost::optional<utility::string_t>(utility::conversions::to_string_t("parent-tenant-456"));
+boost::optional<bool> includeStats = boost::optional<bool>(true);
 api->aggregate(tenantId, aggregationRequest, parentTenant, includeStats)
-    .then([defaultResp](pplx::task<std::shared_ptr<AggregationResponse>> task){
+    .then([](pplx::task<std::shared_ptr<AggregateResponse>> t) {
         try {
-            auto resp = task.get();
-            if (!resp) resp = defaultResp;
-            (void)resp;
-        } catch (...) {
-            throw;
+            auto resp = t.get();
+            if (resp) {
+                auto resultCopy = std::make_shared<AggregateResponse>(*resp);
+            }
+        } catch (const std::exception&) {
         }
     });
 [inline-code-end]

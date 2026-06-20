@@ -1,26 +1,25 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | skip | float64 | לא |  |
 
 ## תגובה
 
-מחזיר: [`Option[GetTenantUsers_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_users200response.nim)
+מחזיר: [`Option[GetTenantUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_users_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getTenantUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getTenantUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantUsers(tenantId = "my-tenant-123", skip = 0.0)
+
 if response.isSome:
   let tenantUsers = response.get()
-  echo "Fetched tenant users for my-tenant-123"
-  discard tenantUsers
+  echo "Retrieved tenant users"
 else:
-  echo "No users returned"
-  discard httpResponse
+  echo "No tenant users returned"
 [inline-code-end]
 
 ---

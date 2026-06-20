@@ -1,21 +1,23 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| pageSize | integer | query | Nie |  |
-| afterId | string | query | Nie |  |
-| includeContext | boolean | query | Nie |  |
-| afterCreatedAt | integer | query | Nie |  |
-| unreadOnly | boolean | query | Nie |  |
-| dmOnly | boolean | query | Nie |  |
-| noDm | boolean | query | Nie |  |
-| includeTranslations | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Używane do określenia, czy bieżąca strona jest subskrybowana. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotifications200Response.php)
+Zwraca: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetMyNotificationsResponse.php)
 
 ## Przykład
 
@@ -28,10 +30,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
+    // To opcjonalne, jako domyślny zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string | Używane do określenia, czy bieżąca strona jest subskrybowana.
 $page_size = 56; // int
 $after_id = 'after_id_example'; // string
 $include_context = True; // bool
@@ -40,10 +43,11 @@ $unread_only = True; // bool
 $dm_only = True; // bool
 $no_dm = True; // bool
 $include_translations = True; // bool
+$include_tenant_notifications = True; // bool
 $sso = 'sso_example'; // string
 
 try {
-    $result = $apiInstance->getUserNotifications($tenant_id, $page_size, $after_id, $include_context, $after_created_at, $unread_only, $dm_only, $no_dm, $include_translations, $sso);
+    $result = $apiInstance->getUserNotifications($tenant_id, $url_id, $page_size, $after_id, $include_context, $after_created_at, $unread_only, $dm_only, $no_dm, $include_translations, $include_tenant_notifications, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getUserNotifications: ', $e->getMessage(), PHP_EOL;

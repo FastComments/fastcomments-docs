@@ -1,56 +1,56 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Нет |  |
-| externalId | string | query | Нет |  |
-| eventType | string | query | Нет |  |
-| type | string | query | Нет |  |
-| domain | string | query | Нет |  |
-| attemptCountGT | number | query | Нет |  |
+| tenantId | string | query | Так |  |
+| commentId | string | query | Ні |  |
+| externalId | string | query | Ні |  |
+| eventType | string | query | Ні |  |
+| type | string | query | Ні |  |
+| domain | string | query | Ні |  |
+| attemptCountGT | number | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count200_response.py)
+Повертає: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_event_count200_response import GetPendingWebhookEventCount200Response
+from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста необов'язкове і за замовчуванням дорівнює https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример,
-# который соответствует вашему сценарию использования.
+# Клієнту потрібно налаштувати параметри автентифікації та авторизації
+# відповідно до політики безпеки сервера API.
+# Приклади для кожного методу автентифікації наведені нижче, використайте той приклад, який
+# відповідає вашому сценарію автентифікації.
 
-# Настройка авторизации по API-ключу: api_key
+# Налаштуйте авторизацію за API-ключем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если необходимо
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром API-клиента
+# Увійдіть у контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (необязательно)
-    external_id = 'external_id_example' # str |  (необязательно)
-    event_type = 'event_type_example' # str |  (необязательно)
-    type = 'type_example' # str |  (необязательно)
-    domain = 'domain_example' # str |  (необязательно)
-    attempt_count_gt = 3.4 # float |  (необязательно)
+    comment_id = 'comment_id_example' # str |  (необов'язково)
+    external_id = 'external_id_example' # str |  (необов'язково)
+    event_type = 'event_type_example' # str |  (необов'язково)
+    type = 'type_example' # str |  (необов'язково)
+    domain = 'domain_example' # str |  (необов'язково)
+    attempt_count_gt = 3.4 # float |  (необов'язково)
 
     try:
         api_response = api_instance.get_pending_webhook_event_count(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt)

@@ -1,8 +1,8 @@
-הפעל או השבת התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרות התראות עבור תגובות שורש חדשות, וגם
+הפעל או השבת התראות עבור דף. כאשר משתמשים מנויים על דף, נוצרת התראה עבור תגובות שורש חדשות, וגם
 
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | urlId | string | query | כן |  |
@@ -13,7 +13,7 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+מחזיר: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## דוגמה
 
@@ -32,14 +32,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // מחרוזת | 
-    String urlId = "urlId_example"; // מחרוזת | 
-    String url = "url_example"; // מחרוזת | 
-    String pageTitle = "pageTitle_example"; // מחרוזת | 
-    String subscribedOrUnsubscribed = "subscribe"; // מחרוזת | 
-    String sso = "sso_example"; // מחרוזת | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String url = "url_example"; // String | 
+    String pageTitle = "pageTitle_example"; // String | 
+    String subscribedOrUnsubscribed = "subscribe"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

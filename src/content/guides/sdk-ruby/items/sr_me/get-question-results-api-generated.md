@@ -1,30 +1,30 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| questionId | string | query | Не |  |
-| questionIds | string | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Ne |  |
+| userId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| questionId | string | query | Ne |  |
+| questionIds | string | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример get_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_results Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Постављање ауторизације
+# podešavanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигурисање API кључа за ауторизацију: api_key
+  # Konfigurišite autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

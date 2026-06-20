@@ -1,8 +1,10 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
+| urlId | string | Όχι |  |
 | pageSize | int32_t | Όχι |  |
 | afterId | string | Όχι |  |
 | includeContext | bool | Όχι |  |
@@ -11,35 +13,39 @@
 | dmOnly | bool | Όχι |  |
 | noDm | bool | Όχι |  |
 | includeTranslations | bool | Όχι |  |
+| includeTenantNotifications | bool | Όχι |  |
 | sso | string | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUserNotifications_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotifications_200_response.h)
+Επιστρέφει: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetMyNotificationsResponse.h)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<int32_t> pageSize = 50;
-boost::optional<utility::string_t> afterId = utility::conversions::to_string_t("notif_98765");
-boost::optional<bool> includeContext = true;
-boost::optional<int64_t> afterCreatedAt = static_cast<int64_t>(1672531200);
-boost::optional<bool> unreadOnly = true;
-boost::optional<bool> dmOnly = false;
-boost::optional<bool> noDm = false;
-boost::optional<bool> includeTranslations = true;
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("user@example.com");
-
-api->getUserNotifications(tenantId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, sso)
-.then([](pplx::task<std::shared_ptr<GetUserNotifications_200_response>> task){
+auto tenantId = U("my-tenant-123");
+api->getUserNotifications(
+    tenantId,
+    boost::optional<utility::string_t>(U("post-456")),
+    boost::optional<int32_t>(50),
+    boost::optional<utility::string_t>(U("notif-789")),
+    boost::optional<bool>(true),
+    boost::optional<int64_t>(1625097600000LL),
+    boost::optional<bool>(true),
+    boost::optional<bool>(false),
+    boost::optional<bool>(false),
+    boost::optional<bool>(true),
+    boost::optional<bool>(false),
+    boost::optional<utility::string_t>(U("user@example.com"))
+).then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> t){
     try {
-        auto resp = task.get();
-        auto copy = std::make_shared<GetUserNotifications_200_response>(*resp);
-        return copy;
-    } catch (...) {
-        return std::shared_ptr<GetUserNotifications_200_response>();
+        auto resp = t.get();
+        if(!resp) resp = std::make_shared<GetMyNotificationsResponse>();
+        // χρησιμοποιήστε το resp, π.χ. επιθεωρήστε τα πεδία
+    } catch(const std::exception &e) {
     }
 });
 [inline-code-end]
+
+---

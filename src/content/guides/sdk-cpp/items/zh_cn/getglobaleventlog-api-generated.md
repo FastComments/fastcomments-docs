@@ -7,36 +7,34 @@ userIdWS
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| urlId | string | 是 |  |
-| userIdWS | string | 是 |  |
-| startTime | int64_t | 是 |  |
-| endTime | int64_t | 是 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| userIdWS | string | Yes |  |
+| startTime | int64_t | Yes |  |
+| endTime | int64_t | No |  |
 
 ## 响应
 
-返回: [`GetEventLog_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEventLog_200_response.h)
+返回: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEventLogResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getGlobalEventLog 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t defaultUrlId = U("article-456");
-boost::optional<utility::string_t> maybeUrlId = boost::optional<utility::string_t>(U("article-456"));
-utility::string_t urlId = maybeUrlId ? *maybeUrlId : defaultUrlId;
+utility::string_t urlId = U("article-456");
 utility::string_t userIdWS = U("user@example.com");
 int64_t startTime = 1622505600000LL;
-int64_t endTime = 1622592000000LL;
-auto defaultResp = std::make_shared<GetEventLog_200_response>();
-api->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
-.then([](pplx::task<std::shared_ptr<GetEventLog_200_response>> task){
-    try {
-        auto resp = task.get();
-        if (resp) std::cout << "Received event log with entries\n";
-        else std::cout << "No event log returned\n";
-    } catch (const std::exception &e) {
-        std::cerr << "getGlobalEventLog failed: " << e.what() << '\n';
-    }
-});
+boost::optional<int64_t> endTime = boost::optional<int64_t>(1622592000000LL);
+auto task = api->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){
+        try {
+            auto resp = t.get();
+            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();
+        } catch (const std::exception& e) {
+            (void)e;
+        }
+    });
 [inline-code-end]
+
+---

@@ -2,37 +2,37 @@
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| afterId | string | query | 아니오 |  |
-| afterCreatedAt | integer | query | 아니오 |  |
-| unreadOnly | boolean | query | 아니오 |  |
-| dmOnly | boolean | query | 아니오 |  |
-| noDm | boolean | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
-반환: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+반환: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'reset_user_notifications 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com입니다
+# 모든 지원 구성 매개변수 목록은 configuration.py를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# API 클라이언트 인스턴스로 컨텍스트를 엽니다
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (선택 사항)

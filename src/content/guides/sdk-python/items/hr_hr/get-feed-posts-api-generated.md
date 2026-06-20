@@ -13,37 +13,28 @@ afterId
 
 ## Odgovor
 
-Vraća: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts200_response.py)
+Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'get_feed_posts Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts200_response import GetFeedPosts200Response
+from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Postavljanje hosta je opcionalno i zadano je na https://fastcomments.com
+# Defining the host is optional and defaults to https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s pravilnikom o sigurnosti API servera.
-# Primjeri za svaku metodu autorizacije su navedeni dolje, koristite primjer koji
-# zadovoljava vaš slučaj korištenja autentikacije.
-
-# Konfigurirajte autorizaciju API ključa: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
+# The client must configure the authentication and authorization parameters
+# u skladu s politikom sigurnosti API poslužitelja.
+# Primjeri za svaku metodu autentikacije su navedeni u nastavku, upotrijebite primjer koji
+# satisfies your auth use case.
+# Configure API key authorization: api_key
 # Otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# Uđite u kontekst s instancom API klijenta
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Stvorite instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (neobavezno)

@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -6,17 +5,17 @@ userIdWS
 
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
 | userIdWS | string | Да |  |
 | startTime | int64_t | Да |  |
-| endTime | int64_t | Да |  |
+| endTime | int64_t | Не |  |
 
 ## Одговор
 
-Враћа: [`GetEventLog_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEventLog_200_response.h)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEventLogResponse.h)
 
 ## Пример
 
@@ -25,15 +24,16 @@ userIdWS
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("article-456");
 utility::string_t userIdWS = U("user@example.com");
-int64_t startTime = 1672531200LL;
-boost::optional<int64_t> endTimeOpt = 1672617600LL;
-api->getEventLog(tenantId, urlId, userIdWS, startTime, *endTimeOpt)
-    .then([](pplx::task<std::shared_ptr<GetEventLog_200_response>> t){
+int64_t startTime = 1654041600000LL;
+boost::optional<int64_t> endTime = boost::optional<int64_t>(1656643200000LL);
+api->getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){
         try {
             auto resp = t.get();
-            if (!resp) resp = std::make_shared<GetEventLog_200_response>();
-        } catch (const std::exception&) {}
+            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();
+            std::cout << "Event log fetched, pointer: " << result.get() << std::endl;
+        } catch (const std::exception &e) {
+            std::cerr << "getEventLog error: " << e.what() << std::endl;
+        }
     });
 [inline-code-end]
-
----

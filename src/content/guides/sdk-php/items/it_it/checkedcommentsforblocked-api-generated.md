@@ -1,16 +1,16 @@
-## Parameters
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
-| commentIds | string | query | Sì | Un elenco separato da virgole di id dei commenti. |
+| commentIds | string | query | Sì | Una lista separata da virgole di id dei commenti. |
 | sso | string | query | No |  |
 
-## Response
+## Risposta
 
-Restituisce: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckedCommentsForBlocked200Response.php)
+Restituisce: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
-## Example
+## Esempio
 
 [inline-code-attrs-start title = 'Esempio di checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,12 +20,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
+    // Se desideri usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Un elenco separato da virgole di id dei commenti.
+$comment_ids = 'comment_ids_example'; // string | Una lista separata da virgole di id dei commenti.
 $sso = 'sso_example'; // string
 
 try {

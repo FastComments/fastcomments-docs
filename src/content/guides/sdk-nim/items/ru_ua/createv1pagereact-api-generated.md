@@ -1,0 +1,30 @@
+## Параметры
+
+| Имя | Тип | Обязательно | Описание |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| title | string | Нет |  |
+
+## Ответ
+
+Возвращает: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример createV1PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.createV1PageReact(
+  tenantId = "my-tenant-123",
+  urlId = "news/2026/market-rally",
+  title = "Breaking News: Markets Rally Today"
+)
+
+if response.isSome:
+  let pageReact = response.get()
+  echo "Page react created: ", pageReact
+else:
+  echo "Failed to create page react: ", httpResponse
+[inline-code-end]
+
+---

@@ -11,11 +11,11 @@ userIdWS
 | urlId | string | query | Da |  |
 | userIdWS | string | query | Da |  |
 | startTime | integer | query | Da |  |
-| endTime | integer | query | Da |  |
+| endTime | integer | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log200_response.rb)
+Vrne: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log_response.rb)
 
 ## Primer
 
@@ -29,11 +29,13 @@ tenant_id = 'tenant_id_example' # Niz |
 url_id = 'url_id_example' # Niz | 
 user_id_ws = 'user_id_ws_example' # Niz | 
 start_time = 789 # Celo število | 
-end_time = 789 # Celo število | 
+opts = {
+  end_time: 789 # Celo število | 
+}
 
 begin
   
-  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_event_log: #{e}"

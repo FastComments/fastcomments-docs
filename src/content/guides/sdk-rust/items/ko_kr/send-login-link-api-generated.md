@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
@@ -8,20 +8,20 @@
 
 ## 응답
 
-반환: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+반환: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## 예제
 
-[inline-code-attrs-start title = 'send_login_link Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'send_login_link 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {
+async fn send_link_example() -> Result<(), Error> {
     let params: SendLoginLinkParams = SendLoginLinkParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("user-98765"),
-        redirect_url: Some(String::from("https://acme.example.com/dashboard")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "user-9876".to_string(),
+        redirect_url: Some("https://acme.example.com/welcome".to_string()),
     };
-    let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;
-    Ok(response)
+    let response: ApiEmptyResponse = send_login_link(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

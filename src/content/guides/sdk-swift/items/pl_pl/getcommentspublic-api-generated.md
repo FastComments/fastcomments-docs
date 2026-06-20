@@ -6,44 +6,44 @@ urlId
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | ścieżka | Tak |  |
-| urlId | string | zapytanie | Tak |  |
-| page | integer | zapytanie | Nie |  |
-| direction | string | zapytanie | Nie |  |
-| sso | string | zapytanie | Nie |  |
-| skip | integer | zapytanie | Nie |  |
-| skipChildren | integer | zapytanie | Nie |  |
-| limit | integer | zapytanie | Nie |  |
-| limitChildren | integer | zapytanie | Nie |  |
-| countChildren | boolean | zapytanie | Nie |  |
-| fetchPageForCommentId | string | zapytanie | Nie |  |
-| includeConfig | boolean | zapytanie | Nie |  |
-| countAll | boolean | zapytanie | Nie |  |
-| includei10n | boolean | zapytanie | Nie |  |
-| locale | string | zapytanie | Nie |  |
-| modules | string | zapytanie | Nie |  |
-| isCrawler | boolean | zapytanie | Nie |  |
-| includeNotificationCount | boolean | zapytanie | Nie |  |
-| asTree | boolean | zapytanie | Nie |  |
-| maxTreeDepth | integer | zapytanie | Nie |  |
-| useFullTranslationIds | boolean | zapytanie | Nie |  |
-| parentId | string | zapytanie | Nie |  |
-| searchText | string | zapytanie | Nie |  |
-| hashTags | array | zapytanie | Nie |  |
-| userId | string | zapytanie | Nie |  |
-| customConfigStr | string | zapytanie | Nie |  |
-| afterCommentId | string | zapytanie | Nie |  |
-| beforeCommentId | string | zapytanie | Nie |  |
+| tenantId | string | path | Tak |  |
+| urlId | string | query | Tak |  |
+| page | integer | query | Nie |  |
+| direction | string | query | Nie |  |
+| sso | string | query | Nie |  |
+| skip | integer | query | Nie |  |
+| skipChildren | integer | query | Nie |  |
+| limit | integer | query | Nie |  |
+| limitChildren | integer | query | Nie |  |
+| countChildren | boolean | query | Nie |  |
+| fetchPageForCommentId | string | query | Nie |  |
+| includeConfig | boolean | query | Nie |  |
+| countAll | boolean | query | Nie |  |
+| includei10n | boolean | query | Nie |  |
+| locale | string | query | Nie |  |
+| modules | string | query | Nie |  |
+| isCrawler | boolean | query | Nie |  |
+| includeNotificationCount | boolean | query | Nie |  |
+| asTree | boolean | query | Nie |  |
+| maxTreeDepth | integer | query | Nie |  |
+| useFullTranslationIds | boolean | query | Nie |  |
+| parentId | string | query | Nie |  |
+| searchText | string | query | Nie |  |
+| hashTags | array | query | Nie |  |
+| userId | string | query | Nie |  |
+| customConfigStr | string | query | Nie |  |
+| afterCommentId | string | query | Nie |  |
+| beforeCommentId | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsPublic200Response.swift)
+Zwraca: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu, prosimy zgłosić go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go za pomocą http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

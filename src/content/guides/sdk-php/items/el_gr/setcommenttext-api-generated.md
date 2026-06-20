@@ -10,7 +10,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`SetCommentText200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentText200Response.php)
+Επιστρέφει: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPISetCommentTextResponse.php)
 
 ## Παράδειγμα
 
@@ -22,16 +22,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
     // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$comment_text_update_request = new \FastComments\Client\Model\CommentTextUpdateRequest(); // \FastComments\Client\Model\CommentTextUpdateRequest
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // τύπος: string
+$comment_id = 'comment_id_example'; // τύπος: string
+$broadcast_id = 'broadcast_id_example'; // τύπος: string
+$comment_text_update_request = new \FastComments\Client\Model\CommentTextUpdateRequest(); // τύπος: \FastComments\Client\Model\CommentTextUpdateRequest
+$edit_key = 'edit_key_example'; // τύπος: string
+$sso = 'sso_example'; // τύπος: string
 
 try {
     $result = $apiInstance->setCommentText($tenant_id, $comment_id, $broadcast_id, $comment_text_update_request, $edit_key, $sso);

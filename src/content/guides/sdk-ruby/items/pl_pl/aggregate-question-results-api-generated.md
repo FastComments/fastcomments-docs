@@ -2,17 +2,17 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| questionId | string | query | Nie |  |
-| questionIds | array | query | Nie |  |
-| urlId | string | query | Nie |  |
-| timeBucket | string | query | Nie |  |
-| startDate | string | query | Nie |  |
-| forceRecalculate | boolean | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| timeBucket | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+Zwraca: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## Przykład
 
@@ -20,11 +20,11 @@ Zwraca: [`AggregateQuestionResults200Response`](https://github.com/FastComments/
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# skonfiguruj autoryzację
+# ustaw autoryzację
 FastCommentsClient.configure do |config|
   # Skonfiguruj autoryzację klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
+  # Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

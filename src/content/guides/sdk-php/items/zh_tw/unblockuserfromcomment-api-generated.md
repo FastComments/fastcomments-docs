@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UnBlockCommentPublic200Response.php)
+回傳: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UnblockSuccess.php)
 
 ## 範例
 
@@ -19,14 +19,17 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_key
 // 設定 API 金鑰授權：api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，取消下面註解以設定 API 金鑰的前綴（例如 Bearer）
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 如有需要，取消註解以設定 API 金鑰的前綴 (例如 Bearer)
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // 若要使用自訂的 HTTP client，傳入實作 `GuzzleHttp\ClientInterface` 的 client。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
@@ -44,3 +47,5 @@ try {
     echo 'Exception when calling DefaultApi->unBlockUserFromComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

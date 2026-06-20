@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | postIds | array | query | 예 |  |
@@ -8,7 +8,7 @@
 
 ## 응답
 
-반환: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+반환: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## 예제
 
@@ -18,10 +18,10 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # 문자열 | 
 post_ids = ['inner_example'] # Array<String> | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # 문자열 | 
 }
 
 begin

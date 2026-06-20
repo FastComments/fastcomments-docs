@@ -1,13 +1,13 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 쿼리 | 예 |  |
-| locale | string | 쿼리 | 아니요 |  |
+| tenantId | string | query | 예 |  |
+| locale | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplate200Response.php)
+반환: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplateResponse.php)
 
 ## 예제
 
@@ -19,7 +19,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API 키 인증 구성: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 필요한 경우 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래의 주석을 해제하세요
+// 필요한 경우 API 키 접두사(예: Bearer)를 설정하려면 아래의 주석을 해제하세요
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

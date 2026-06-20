@@ -1,12 +1,13 @@
+---
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 
 ## 响应
 
-返回: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUser200Response.php)
+返回: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUserResponse.php)
 
 ## 示例
 
@@ -18,13 +19,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // 配置 API 密钥授权: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，取消下面注释以为 API 密钥设置前缀（例如 Bearer）
+// 如需为 API 密钥设置前缀（例如 Bearer），请取消下面的注释
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 如果想使用自定义 HTTP 客户端，传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
+    // 如果想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
@@ -38,3 +39,5 @@ try {
     echo 'Exception when calling DefaultApi->createTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Type | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Örnek
 
@@ -31,3 +31,5 @@ DefaultAPI.updateQuestionResult(tenantId: tenantId, id: id, updateQuestionResult
     }
 }
 [inline-code-end]
+
+---

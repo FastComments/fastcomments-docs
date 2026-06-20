@@ -6,10 +6,10 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Ustvarite konfiguracijo API-ja
+    // Ustvari konfiguracijo API-ja
     let config = Configuration::new();
 
-    // Pridobite komentarje za stran
+    // Pridobi komentarje za stran
     let result = public_api::get_comments_public(
         &config,
         public_api::GetCommentsPublicParams {
@@ -53,14 +53,14 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Ustvarite konfiguracijo z API ključem
+    // Ustvari konfiguracijo z API ključem
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
         key: "your-api-key".to_string(),
     });
 
-    // Pridobite komentarje z avtenticiranim API-jem
+    // Pridobi komentarje z avtenticiranim API-jem
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Uporaba moderacijskega API-ja
+
+Metode za moderacijo podpirajo nadzorno ploščo moderatorja. Uporabljajo `Configuration` z API-ključem enako kot avtenticirani API, in vsaka metoda sprejme opcijski `sso` žeton, tako da je klic mogoče izvesti v imenu moderatorja, avtenticiranega preko SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Ustvari konfiguracijo z API ključem
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Preštej komentarje, ki čakajo v moderacijski vrsti
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // posredujte SSO žeton, da delujete v imenu moderatorja, avtenticiranega prek SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Uporaba SSO za avtentikacijo
 
 ```rust
@@ -110,19 +148,19 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Ustvarite varne SSO podatke o uporabniku (samo na strežniku!)
+    // Ustvari varne SSO uporabniške podatke (samo na strežniški strani!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // ID uporabnika
         "user@example.com".to_string(),   // E-pošta
-        "John Doe".to_string(),            // Uporabniško ime
-        "https://example.com/avatar.jpg".to_string(), // URL avatarja
+        "John Doe".to_string(),            // Ime uporabnika
+        "https://example.com/avatar.jpg".to_string(), // URL avatara
     );
 
-    // Generirajte SSO žeton
+    // Generiraj SSO žeton
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Posredujte ta žeton v vaš frontend za avtentikacijo
+    // Posredujte ta žeton vaši sprednji strani za preverjanje pristnosti
 }
 ```

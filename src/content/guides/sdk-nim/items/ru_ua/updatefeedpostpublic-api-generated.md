@@ -1,7 +1,6 @@
----
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | postId | string | Нет |  |
@@ -11,31 +10,24 @@
 
 ## Ответ
 
-Возвращает: [`Option[CreateFeedPostPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_public200response.nim)
+Возвращает: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример updateFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример использования updateFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-var updateParams: UpdateFeedPostParams = UpdateFeedPostParams(
-  title = "Breaking: Service Update",
-  content = "We improved feed performance and UX for all users.",
-  tags = @["performance", "release"],
-  isPublic = true
-)
-
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",
   postId = "post-456",
-  updateFeedPostParams = updateParams,
-  broadcastId = "broadcast-789",
-  sso = "sso-token-abc123"
+  updateFeedPostParams = UpdateFeedPostParams(title = "Weekly Product Update", content = "Released bug fixes and performance improvements in v2.1.", tags = @["release", "product"], pinned = false),
+  broadcastId = "",
+  sso = ""
 )
-
 if response.isSome:
-  let post = response.get()
-  echo "Updated post title: ", post.title
-  echo "HTTP status: ", httpResponse.status
+  let created = response.get()
+  echo "Updated feed post id: ", created.postId
+else:
+  echo "Update failed with HTTP status: ", httpResponse.status
 [inline-code-end]
 
 ---

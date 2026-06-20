@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vrne: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostPublic200Response.php)
+Vrne: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
 
 ## Primer
 
@@ -20,8 +20,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte svojega odjemalca, ki izvršuje `GuzzleHttp\ClientInterface`.
-    // To je neobvezno; privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojenega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeti.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

@@ -2,46 +2,42 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
 ## Отговор
 
-Връща: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant200_response.py)
+Връща: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за get_tenant'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenant200_response import GetTenant200Response
+from client.models.get_tenant_response import GetTenantResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# По-долу са дадени примери за всеки метод за удостоверяване, използвайте примера, който
+# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
+# в съответствие с политиката за сигурност на API сървъра.
+# По-долу са предоставени примери за всеки метод на удостоверяване, използвайте примера, който
 # отговаря на вашия случай на използване за удостоверяване.
 
-# Configure API key authorization: api_key
-# Конфигурирайте упълномощаването чрез API ключ: api_key
+# Конфигуриране на API ключ за авторизация: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# Разкоментирайте по-долу, за да настроите префикс (напр. Bearer) за API ключа, ако е необходимо
+# Разкоментрайте по-долу, за да настроите префикс (напр. Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
-# Влезте в контекст с инстанция на API клиента
+# Влезте в контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    # Създайте инстанция на API класа
+    # Създаване на екземпляр на класа API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

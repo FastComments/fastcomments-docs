@@ -1,9 +1,9 @@
-Belgeleri (groupBy sağlanmışsa) gruplayarak ve birden fazla işlem uygulayarak toplar.
-Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
+Belgeleri, (groupBy sağlanmışsa) gruplayarak ve birden fazla işlem uygulayarak toplar.
+Farklı işlemler (ör. sum, countDistinct, avg vb.) desteklenir.
 
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | parentTenantId | string | query | Hayır |  |
@@ -11,7 +11,7 @@ Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
 
 ## Yanıt
 
-Döndürür: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Örnek
 
@@ -19,11 +19,11 @@ Döndürür: [`AggregationResponse`](https://github.com/FastComments/fastcomment
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Yetkilendirmeyi yapılandır
+# yetkilendirme ayarları
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek belirlemek üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -6,7 +6,7 @@ import FastCommentsSwift
 // צור לקוח API
 let publicApi = PublicAPI()
 
-// שלוף תגובות עבור דף
+// קבל תגובות עבור דף
 do {
     let response = try await publicApi.getCommentsPublic(
         tenantId: "your-tenant-id",
@@ -27,11 +27,11 @@ do {
 ```swift
 import FastCommentsSwift
 
-// צור תצורה עם מפתח ה-API
+// צור תצורה עם מפתח API
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// שלוף תגובות באמצעות ה-API המאומת
+// קבל תגובות באמצעות ה-API המאומת
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -41,6 +41,29 @@ do {
     print("Total comments: \(response.count ?? 0)")
     for comment in response.comments ?? [] {
         print("Comment ID: \(comment.id ?? ""), Text: \(comment.comment ?? "")")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### שימוש ב-API המודרציה
+
+```swift
+import FastCommentsSwift
+
+// שיטות המודרציה מאושרות באמצעות אסימון `sso` עבור המודרטור הפעיל
+// (צור אותו באמצעות FastCommentsSSO, ראה את הסעיף על SSO לעיל).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
     }
 } catch {
     print("Error: \(error)")
@@ -59,9 +82,9 @@ let apiKey = "your-api-key"
 // צור נתוני משתמש SSO מאובטחים (צד שרת בלבד!)
 let userData = SecureSSOUserData(
     id: "user-123",              // מזהה משתמש
-    email: "user@example.com",   // דוא"ל
+    email: "user@example.com",   // אימייל
     username: "johndoe",         // שם משתמש
-    avatar: "https://example.com/avatar.jpg" // כתובת ה-URL של האווטאר
+    avatar: "https://example.com/avatar.jpg" // כתובת URL של ה-avatar
 )
 
 // צור אסימון SSO
@@ -70,7 +93,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // העבר אסימון זה לצד הלקוח שלך לצורכי אימות
+    // העבר אסימון זה לצד הלקוח שלך לצורך אימות
 } catch {
     print("Error creating SSO token: \(error)")
 }

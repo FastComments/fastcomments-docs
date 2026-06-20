@@ -1,3 +1,4 @@
+---
 ## Paramètres
 
 | Nom | Type | Emplacement | Requis | Description |
@@ -7,7 +8,7 @@
 
 ## Réponse
 
-Retourne : [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PatchHashTag200Response.swift)
+Renvoie: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateHashTagResponse.swift)
 
 ## Exemple
 

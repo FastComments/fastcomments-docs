@@ -1,17 +1,17 @@
-## Parameters
+## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | postId | string | path | Sí |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Respuesta
 
-Devuelve: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostPublic200Response.php)
+Devuelve: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
 
-## Example
+## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de updateFeedPostPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

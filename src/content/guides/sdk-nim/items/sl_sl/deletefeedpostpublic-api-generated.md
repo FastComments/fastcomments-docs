@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | postId | string | Ne |  |
@@ -9,20 +9,18 @@
 
 ## Odgovor
 
-Vrne: [`Option[DeleteFeedPostPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public200response.nim)
+Vrača: [`Option[DeleteFeedPostPublicResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'deleteFeedPostPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer deleteFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(
-  tenantId = "my-tenant-123",
-  postId = "post-456",
-  broadcastId = "broadcast-789",
-  sso = ""
-)
+let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
 if response.isSome:
-  let result = response.get()
+  let deleted = response.get()
+  echo "Delete successful"
+else:
+  echo "Delete failed"
 [inline-code-end]
 
 ---

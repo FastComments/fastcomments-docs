@@ -1,3 +1,4 @@
+---
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -9,18 +10,24 @@
 
 ## Antwort
 
-Gibt zurück: [`Option[FlagComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment200response.nim)
+Gibt zurück: [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'flagComment Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagComment(tenantId = "my-tenant-123", id = "cmt-98765", userId = "user-8342", anonUserId = "")
+let (response, httpResponse) = client.flagComment(
+  tenantId = "my-tenant-123",
+  id = "cmt-98765",
+  userId = "user-12345",
+  anonUserId = ""
+)
+
 if response.isSome:
-  let flagged = response.get()
-  echo "Flagged comment response: ", flagged
+  let flagResp = response.get()
+  echo "Flag response received"
 else:
-  echo "Flag comment failed: ", httpResponse
+  echo "No flag response returned"
 [inline-code-end]
 
 ---

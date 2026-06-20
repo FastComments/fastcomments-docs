@@ -1,24 +1,24 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | domain | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_config200response.nim)
+Повертає: [`Option[GetDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_config_response.nim)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news/top-story-2026")
 if response.isSome:
-  let domainConfig = response.get()
-  echo "Loaded domain config for tenant my-tenant-123:", $domainConfig
+  let cfg = response.get()
+  discard cfg
 else:
-  echo "No domain config; HTTP status:", $httpResponse.status
+  discard httpResponse
 [inline-code-end]
 
 ---

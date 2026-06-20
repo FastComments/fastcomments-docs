@@ -1,18 +1,19 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | query | いいえ |  |
+| externalId | string | query | いいえ |  |
+| eventType | string | query | いいえ |  |
+| type | string | query | いいえ |  |
+| domain | string | query | いいえ |  |
+| attemptCountGT | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+戻り値: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
 ## 例
 
@@ -22,9 +23,9 @@ require 'time'
 require 'fastcomments-client'
 # 認証の設定
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API キー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックスを設定する場合は次の行のコメントアウトを解除してください。例: 'Bearer' (デフォルトは nil)
+  # APIキーにプレフィックスを設定するには以下の行のコメントアウトを外します。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

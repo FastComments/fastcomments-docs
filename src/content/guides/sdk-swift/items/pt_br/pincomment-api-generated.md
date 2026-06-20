@@ -9,7 +9,7 @@
 
 ## Resposta
 
-Retorna: [`PinComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PinComment200Response.swift)
+Retorna: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ChangeCommentPinStatusResponse.swift)
 
 ## Exemplo
 
@@ -34,3 +34,5 @@ PublicAPI.pinComment(tenantId: tenantId, commentId: commentId, broadcastId: broa
     }
 }
 [inline-code-end]
+
+---

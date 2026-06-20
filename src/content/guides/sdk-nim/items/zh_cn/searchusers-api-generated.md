@@ -1,6 +1,7 @@
+---
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 说明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
@@ -11,7 +12,7 @@
 
 ## 响应
 
-返回: [`Option[SearchUsers_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users200response.nim)
+返回: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
 
 ## 示例
 
@@ -19,15 +20,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/ai-product-launch",
+  urlId = "news/top-story",
   usernameStartsWith = "",
   mentionGroupIds = @[],
   sso = "",
   searchSection = ""
 )
+
 if response.isSome:
-  let users = response.get()
-  echo "Received users:", users.toString()
+  let searchResult = response.get()
+  echo "SearchUsersResult:", searchResult
+else:
+  echo "No result or error. HTTP response:", httpResponse
 [inline-code-end]
 
 ---

@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_users200_response.rb)
+Döndürür: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_users_response.rb)
 
 ## Örnek
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandır: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarı için bir önek ayarlayın, ör. 'Bearer' (varsayılan olarak nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -8,7 +7,7 @@
 
 ## Odgovor
 
-Vrača: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user200_response.rb)
+Vrne: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user_response.rb)
 
 ## Primer
 
@@ -36,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_user: #{e}"
 end
 [inline-code-end]
-
----

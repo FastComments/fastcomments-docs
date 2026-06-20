@@ -1,11 +1,10 @@
----
 req
 tenantId
 afterId
 
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| 名稱 | 型別 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | afterId | string | query | 否 |  |
@@ -17,7 +16,7 @@ afterId
 
 ## 回應
 
-回傳： [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+回傳: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## 範例
 
@@ -45,5 +44,3 @@ PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit,
     }
 }
 [inline-code-end]
-
----

@@ -1,0 +1,34 @@
+## Parametre
+
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|----------|----------|-------------|
+| commentId | string | path | Ja |  |
+| sso | string | query | Nej |  |
+
+## Svar
+
+Returnerer: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_text_response.rb)
+
+## Eksempel
+
+[inline-code-attrs-start title = 'get_moderation_comment_text Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+require 'time'
+require 'fastcomments-client'
+
+api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # Streng | 
+opts = {
+  sso: 'sso_example' # Streng | 
+}
+
+begin
+  
+  result = api_instance.get_moderation_comment_text(comment_id, opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling ModerationApi->get_moderation_comment_text: #{e}"
+end
+[inline-code-end]
+
+---

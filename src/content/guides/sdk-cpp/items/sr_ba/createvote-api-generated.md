@@ -1,31 +1,31 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Потребно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| direction | string | Da |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| direction | string | Да |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteComment_200_response.h)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteResponse.h)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer createVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-utility::string_t direction = U("up");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-api->createVote(tenantId, commentId, direction, userId, boost::none)
-.then([](pplx::task<std::shared_ptr<VoteComment_200_response>> task) {
+boost::optional<utility::string_t> userId(U("alice@example.com"));
+boost::optional<utility::string_t> anonUserId;
+api->createVote(U("my-tenant-123"), U("cmt-456"), U("upvote"), userId, anonUserId)
+.then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
     try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<VoteComment_200_response>();
-    } catch (...) {}
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<VoteResponse>();
+    } catch (const std::exception&) {
+        auto fallback = std::make_shared<VoteResponse>();
+    }
 });
 [inline-code-end]
 

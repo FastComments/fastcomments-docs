@@ -1,5 +1,5 @@
 Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.
-Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
+Se admiten diferentes operaciones (p. ej. sum, countDistinct, avg, etc.).
 
 ## Parámetros
 
@@ -11,19 +11,19 @@ Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
 
 ## Respuesta
 
-Devuelve: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Devuelve: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de aggregate'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de agregación'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # configurar autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización de la clave API: api_key
+  # Configurar la autorización de la clave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave de API, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +43,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
+
+---

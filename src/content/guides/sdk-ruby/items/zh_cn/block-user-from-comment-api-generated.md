@@ -1,15 +1,15 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 说明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查询 | 是 |  |
-| id | string | 路径 | 是 |  |
-| userId | string | 查询 | 否 |  |
-| anonUserId | string | 查询 | 否 |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## 响应
 
-返回: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_from_comment_public200_response.rb)
+返回: [`BlockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/block_success.rb)
 
 ## 示例
 
@@ -19,9 +19,9 @@ require 'time'
 require 'fastcomments-client'
 # 设置授权
 FastCommentsClient.configure do |config|
-  # 配置 API 密钥授权: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释下一行以为 API 密钥设置前缀，例如 'Bearer'（默认为 nil）
+  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer'（默认值为 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

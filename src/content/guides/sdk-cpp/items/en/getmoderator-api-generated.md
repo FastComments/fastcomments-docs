@@ -7,24 +7,27 @@
 
 ## Response
 
-Returns: [`GetModerator_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModerator_200_response.h)
+Returns: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModeratorResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'getModerator Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t moderatorId = U("moderator-456");
-boost::optional<utility::string_t> requestLocale = U("en-US");
-auto fallbackModerator = std::make_shared<GetModerator_200_response>();
-
-api->getModerator(tenantId, moderatorId)
-    .then([fallbackModerator, requestLocale](std::shared_ptr<GetModerator_200_response> resp) -> pplx::task<std::shared_ptr<GetModerator_200_response>> {
-        auto moderator = resp ? resp : fallbackModerator;
-        if (requestLocale) { auto loc = *requestLocale; (void)loc; }
-        return pplx::task_from_result(moderator);
+boost::optional<utility::string_t> tenant = utility::string_t(U("my-tenant-123"));
+boost::optional<utility::string_t> moderatorId = utility::string_t(U("moderator-456"));
+api->getModerator(tenant.value(), moderatorId.value())
+    .then([](pplx::task<std::shared_ptr<GetModeratorResponse>> task) {
+        try {
+            auto resp = task.get();
+            if (resp) return std::make_shared<GetModeratorResponse>(*resp);
+            return std::shared_ptr<GetModeratorResponse>();
+        } catch (...) {
+            return std::shared_ptr<GetModeratorResponse>();
+        }
     })
-    .then([](std::shared_ptr<GetModerator_200_response> finalResp) -> void {
-        (void)finalResp;
+    .then([](std::shared_ptr<GetModeratorResponse> result) {
+        if (result) {
+            /* use result */
+        }
     });
 [inline-code-end]

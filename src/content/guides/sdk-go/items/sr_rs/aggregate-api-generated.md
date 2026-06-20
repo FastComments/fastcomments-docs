@@ -1,8 +1,8 @@
-Агрегира документе груписањем (ако је groupBy наведен) и примењујући више операција. Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
+Агрегира документе групишући их (ако је groupBy наведено) и примењући више операција. Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | parentTenantId | string | query | Не |  |
@@ -10,7 +10,7 @@
 
 ## Одговор
 
-Враћа: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Пример
 
@@ -22,14 +22,14 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	aggregationRequest := *openapiclient.NewAggregationRequest("ResourceName_example", []openapiclient.AggregationOperation{*openapiclient.NewAggregationOperation("Field_example", openapiclient.AggregationOpType("sum"))}) // AggregationRequest | 
-	parentTenantId := "parentTenantId_example" // string |  (опционо)
-	includeStats := true // bool |  (опционо)
+	parentTenantId := "parentTenantId_example" // string |  (опционално)
+	includeStats := true // bool |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `Aggregate`: AggregationResponse
+	// одговор од `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

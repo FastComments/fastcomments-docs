@@ -1,7 +1,7 @@
 ## Параметры
 
-| Name | Type | Обязательный | Описание |
-|------|------|-------------|-------------|
+| Имя | Тип | Обязательный | Описание |
+|------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | user_id | String | Нет |  |
 | url_id | String | Нет |  |
@@ -10,23 +10,20 @@
 
 ## Ответ
 
-Возвращает: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_200_response.rs)
+Возвращает: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример get_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetNotificationCountParams = GetNotificationCountParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-67890".to_string()),
-        url_id: Some("news/2026/03/25/election-updates".to_string()),
-        from_comment_id: Some("cmt_42".to_string()),
-        viewed: Some(false),
-    };
-    let response: GetNotificationCount200Response = get_notification_count(&configuration, params).await?;
-    Ok(())
-}
+let params: GetNotificationCountParams = GetNotificationCountParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    user_id: Some("user-123".to_string()),
+    url_id: Some("news/article/2026/06/19".to_string()),
+    from_comment_id: Some("cmt-98765".to_string()),
+    viewed: Some(false),
+};
+let notification_count: GetNotificationCountResponse = get_notification_count(configuration, params).await?;
 [inline-code-end]
 
 ---

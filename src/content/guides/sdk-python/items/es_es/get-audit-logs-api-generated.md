@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | limit | number | query | No |  |
@@ -11,14 +11,14 @@
 
 ## Respuesta
 
-Devuelve: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs200_response.py)
+Devuelve: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_audit_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_audit_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_audit_logs200_response import GetAuditLogs200Response
+from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
@@ -31,18 +31,18 @@ configuration = client.Configuration(
 
 # El cliente debe configurar los parámetros de autenticación y autorización
 # de acuerdo con la política de seguridad del servidor API.
-# Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
+# Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
 # Configurar autorización por clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+# Descomente lo siguiente para configurar un prefijo (p. ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingresar a un contexto con una instancia del cliente API
+# Entre en un contexto con una instancia del cliente de la API
 with client.ApiClient(configuration) as api_client:
-    # Crear una instancia de la clase API
+    # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     limit = 3.4 # float |  (opcional)

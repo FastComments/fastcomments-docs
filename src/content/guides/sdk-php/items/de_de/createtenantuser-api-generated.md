@@ -6,7 +6,7 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUser200Response.php)
+Gibt zurück: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUserResponse.php)
 
 ## Beispiel
 
@@ -18,7 +18,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API-Schlüssel-Autorisierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Unten entkommentieren, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen
+// Entfernen Sie die Kommentarzeichen unten, um das Präfix einzurichten (z. B. Bearer) für den API-Schlüssel, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

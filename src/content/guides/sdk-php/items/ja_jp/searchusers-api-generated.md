@@ -1,17 +1,17 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | パス | はい |  |
-| urlId | string | クエリ | はい |  |
-| usernameStartsWith | string | クエリ | いいえ |  |
-| mentionGroupIds | array | クエリ | いいえ |  |
-| sso | string | クエリ | いいえ |  |
-| searchSection | string | クエリ | いいえ |  |
+| tenantId | string | path | はい |  |
+| urlId | string | query | はい |  |
+| usernameStartsWith | string | query | いいえ |  |
+| mentionGroupIds | array | query | いいえ |  |
+| sso | string | query | いいえ |  |
+| searchSection | string | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
+戻り値: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## 例
 
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムのHTTPクライアントを使用する場合、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

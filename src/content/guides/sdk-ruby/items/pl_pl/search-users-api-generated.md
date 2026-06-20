@@ -1,22 +1,21 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| urlId | string | query | Tak |  |
-| usernameStartsWith | string | query | Nie |  |
-| mentionGroupIds | array | query | Nie |  |
-| sso | string | query | Nie |  |
-| searchSection | string | query | Nie |  |
+| tenantId | string | ścieżka | Tak |  |
+| urlId | string | zapytanie | Tak |  |
+| usernameStartsWith | string | zapytanie | Nie |  |
+| mentionGroupIds | array | zapytanie | Nie |  |
+| sso | string | zapytanie | Nie |  |
+| searchSection | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+Zwraca: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład search_users'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia search_users'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
-
----

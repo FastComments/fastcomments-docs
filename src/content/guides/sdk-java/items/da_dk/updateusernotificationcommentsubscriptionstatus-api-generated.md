@@ -1,4 +1,5 @@
-Aktiver eller deaktiver notifikationer for en bestemt kommentar.
+---
+Slå notifikationer til eller fra for en bestemt kommentar.
 
 ## Parametre
 
@@ -12,7 +13,7 @@ Aktiver eller deaktiver notifikationer for en bestemt kommentar.
 
 ## Svar
 
-Returnerer: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+Returnerer: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationCommentSubscriptionStatusResponse.java)
 
 ## Eksempel
 
@@ -37,7 +38,7 @@ public class Example {
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
+      UpdateUserNotificationCommentSubscriptionStatusResponse result = apiInstance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -51,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

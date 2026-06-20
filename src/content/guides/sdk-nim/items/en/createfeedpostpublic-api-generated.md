@@ -9,28 +9,25 @@
 
 ## Response
 
-Returns: [`Option[CreateFeedPostPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_public200response.nim)
+Returns: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'createFeedPostPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let params = CreateFeedPostParams(
-  title: "Local Elections Update",
-  content: "Final results will be posted after polls close at 8pm.",
-  authorId: "reporter-789",
-  tags: @["politics", "local"],
-  isPublic: true
+  title = "Breaking: Major Update on Product X",
+  content = "Today we released Product X v2.0 with performance improvements and bug fixes.",
+  author = "jane.doe",
+  tags = @["product", "release", "v2"],
+  isPinned = false
 )
-let (response, httpResponse) = client.createFeedPostPublic(
-  tenantId = "my-tenant-123",
-  createFeedPostParams = params,
-  broadcastId = "bcast-456",
-  sso = "sso-token-abc"
-)
+
+let (response, httpResponse) = client.createFeedPostPublic(tenantId = "my-tenant-123", createFeedPostParams = params, broadcastId = "", sso = "")
+
 if response.isSome:
   let created = response.get()
-  echo "created post id: ", created.id
+  echo "Created feed post:", created
 else:
-  echo "request failed, status: ", httpResponse.status
+  echo "Failed to create feed post; HTTP status:", httpResponse.status
 [inline-code-end]

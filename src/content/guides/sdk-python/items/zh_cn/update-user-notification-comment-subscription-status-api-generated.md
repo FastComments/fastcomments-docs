@@ -1,4 +1,4 @@
-启用或禁用特定评论的通知。
+为特定评论启用或禁用通知。
 
 ## 参数
 
@@ -12,19 +12,19 @@
 
 ## 响应
 
-返回：[`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status200_response.py)
+返回: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_comment_subscription_status_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.update_user_notification_status200_response import UpdateUserNotificationStatus200Response
+from client.models.update_user_notification_comment_subscription_status_response import UpdateUserNotificationCommentSubscriptionStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# 定义主机是可选的，默认为 https://fastcomments.com
+# 有关所有受支持的配置参数列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

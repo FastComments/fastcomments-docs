@@ -7,32 +7,32 @@
 
 ## Resposta
 
-Retorna: [`GetComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment200_response.py)
+Retorna: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comment_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de get_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment200_response import GetComment200Response
+from client.models.api_get_comment_response import APIGetCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão usa https://fastcomments.com
+# Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
-# Exemplos para cada método de autenticação são fornecidos abaixo; use o exemplo que
-# atende ao seu caso de uso de autenticação.
+# de acordo com a política de segurança do servidor de API.
+# Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
+# satisfaça seu caso de uso de autenticação.
 
-# Configurar autorização por chave de API: api_key
+# Configure a autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar prefixo (por exemplo, Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar prefixo (por ex. Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API

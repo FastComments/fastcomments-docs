@@ -1,14 +1,15 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| id | string | パス | はい |  |
-| userId | string | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
+| userId | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## 例
 
@@ -20,7 +21,7 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
 let updateNotificationBody = UpdateNotificationBody(viewed: false, optedOut: false) // UpdateNotificationBody | 
-let userId = "userId_example" // String |  （任意）
+let userId = "userId_example" // String |  (オプション)
 
 DefaultAPI.updateNotification(tenantId: tenantId, id: id, updateNotificationBody: updateNotificationBody, userId: userId) { (response, error) in
     guard error == nil else {

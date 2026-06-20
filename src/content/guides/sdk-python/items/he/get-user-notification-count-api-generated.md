@@ -7,27 +7,27 @@
 
 ## תגובה
 
-מחזיר: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_notification_count200_response.py)
+מחזיר: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_notification_count_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'get_user_notification_count דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_user_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_notification_count200_response import GetUserNotificationCount200Response
+from client.models.get_user_notification_count_response import GetUserNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ובברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
+# קביעת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראו את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# פתחו הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צרו מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (אופציונלי)
@@ -39,3 +39,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_user_notification_count: %s\n" % e)
 [inline-code-end]
+
+---

@@ -8,14 +8,18 @@
 
 ## 응답
 
-반환: [`Option[RenderEmailTemplate_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_render_email_template200response.nim)
+반환: [`Option[RenderEmailTemplateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_render_email_template_response.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'renderEmailTemplate 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let renderBody = RenderEmailTemplateBody(templateId: "comment-notification", subject: "New comment on your article", variables: @["John Doe", "news/global-climate"])
-let (response, httpResponse) = client.renderEmailTemplate(tenantId = "my-tenant-123", renderEmailTemplateBody = renderBody, locale = "en-US")
+let (response, httpResponse) = client.renderEmailTemplate(
+  tenantId = "my-tenant-123",
+  renderEmailTemplateBody = RenderEmailTemplateBody(),
+  locale = "en-US"
+)
+
 if response.isSome:
   let rendered = response.get()
   echo rendered

@@ -1,43 +1,43 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
 ## Odgovor
 
-Vrača: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badge200_response.py)
+Vrne: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_user_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badge200_response import GetUserBadge200Response
+from client.models.api_get_user_badge_response import APIGetUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov si oglejte configuration.py.
+# Nastavitev gostitelja je neobvezna in privzeta je https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
+# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
 # v skladu s politiko varnosti API strežnika.
-# Spodaj so prikazani primeri za vsako metodo avtentikacije; uporabite primer, ki
+# Spodaj so podani primeri za vsak način avtentikacije; uporabite primer, ki
 # ustreza vašemu primeru uporabe avtentikacije.
 
-# Nastavite avtentikacijo z API ključem: api_key
+# Nastavite avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Če je potrebno, odkomentirajte spodnje za nastavitev predpone (npr. Bearer) za API ključ
+# Po potrebi odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge: %s\n" % e)
 [inline-code-end]
+
+---

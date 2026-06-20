@@ -1,9 +1,9 @@
-Agrège des documents en les regroupant (si groupBy est fourni) et en appliquant plusieurs opérations.
+Agrège des documents en les groupant (si groupBy est fourni) et en appliquant plusieurs opérations.
 Différentes opérations (par ex. sum, countDistinct, avg, etc.) sont prises en charge.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | parentTenantId | string | query | Non |  |
@@ -11,11 +11,11 @@ Différentes opérations (par ex. sum, countDistinct, avg, etc.) sont prises en 
 
 ## Réponse
 
-Renvoie: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+Renvoie : [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d’agrégation'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'agrégation'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -39,7 +39,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Aggregate`: AggregationResponse
+	// réponse de `Aggregate` : AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
+
+---

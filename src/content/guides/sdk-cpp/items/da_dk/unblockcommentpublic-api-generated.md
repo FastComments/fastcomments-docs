@@ -1,32 +1,31 @@
----
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | publicBlockFromCommentParams | PublicBlockFromCommentParams | Ja |  |
 | sso | string | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`UnBlockCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnBlockCommentPublic_200_response.h)
+Returnerer: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnblockSuccess.h)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'unBlockCommentPublic Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto publicParams = std::make_shared<PublicBlockFromCommentParams>();
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U("user@example.com")));
-api->unBlockCommentPublic(utility::string_t(U("my-tenant-123")), utility::string_t(U("comment-98765")), *publicParams, sso)
-.then([](pplx::task<std::shared_ptr<UnBlockCommentPublic_200_response>> task) {
-    try {
-        auto resp = task.get();
-        if (resp) std::cout << "Unblocked comment successfully" << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Unblock failed: " << e.what() << std::endl;
-    }
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("comment-7890");
+PublicBlockFromCommentParams params;
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+
+api->unBlockCommentPublic(tenantId, commentId, params, sso)
+.then([](std::shared_ptr<UnblockSuccess> res) {
+    if (!res) res = std::make_shared<UnblockSuccess>();
+    return res;
+})
+.then([](std::shared_ptr<UnblockSuccess> finalResult){
+    (void)finalResult;
 });
 [inline-code-end]
-
----

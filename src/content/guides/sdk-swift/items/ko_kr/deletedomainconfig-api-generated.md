@@ -1,23 +1,23 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | 예 |  |
+| domain | string | path | 예 |  |
 
-## 응답
+## Response
 
-반환: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfig200Response.swift)
+반환: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfigResponse.swift)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'deleteDomainConfig 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제가 있는 경우 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요
+// 다음 코드 샘플은 아직 베타입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 으로 보고해 주세요
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // 문자열 | 
-let domain = "domain_example" // 문자열 | 
+let tenantId = "tenantId_example" // String | 
+let domain = "domain_example" // String | 
 
 DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, error) in
     guard error == nil else {
@@ -30,3 +30,5 @@ DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, e
     }
 }
 [inline-code-end]
+
+---

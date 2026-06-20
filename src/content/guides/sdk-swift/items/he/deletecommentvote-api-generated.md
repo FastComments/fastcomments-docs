@@ -1,24 +1,24 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| commentId | string | path | כן |  |
-| voteId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| broadcastId | string | query | כן |  |
-| editKey | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | נתיב | כן |  |
+| commentId | string | נתיב | כן |  |
+| voteId | string | נתיב | כן |  |
+| urlId | string | שאילתה | כן |  |
+| broadcastId | string | שאילתה | כן |  |
+| editKey | string | שאילתה | לא |  |
+| sso | string | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentVote200Response.swift)
+מחזיר: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד שלהלן עדיין בבטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, נא לדווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -40,5 +40,3 @@ PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: vo
     }
 }
 [inline-code-end]
-
----

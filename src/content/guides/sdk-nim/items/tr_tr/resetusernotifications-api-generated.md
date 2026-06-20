@@ -12,7 +12,7 @@
 
 ## Yanıt
 
-Döndürür: [`Option[ResetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications200response.nim)
+Döndürür: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Örnek
 
@@ -21,15 +21,17 @@ Döndürür: [`Option[ResetUserNotifications_200_response]`](https://github.com/
 let (response, httpResponse) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
   afterId = "",
-  afterCreatedAt = int64(0),
+  afterCreatedAt = 0'i64,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   sso = ""
 )
-
 if response.isSome:
-  let result = response.get()
+  let resetResp = response.get()
+  echo "ResetUserNotificationsResponse received"
+else:
+  echo "No ResetUserNotificationsResponse"
 [inline-code-end]
 
 ---

@@ -10,7 +10,7 @@ from client.models import CreateAPISSOUserData
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# 필수: API 키를 설정하세요 (FastComments 대시보드에서 가져오세요)
+# 필수: API 키 설정 (FastComments 대시보드에서 가져오세요)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
 # 구성된 클라이언트로 API 인스턴스 생성
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # 일반적인 오류:
-    # - 401: API 키가 없거나 유효하지 않음
+    # 일반 오류:
+    # - 401: API 키가 없거나 유효하지 않습니다
     # - 400: 요청 검증 실패
 ```
 
-### 퍼블릭 API 사용 (PublicApi)
+### 공개 API 사용 (PublicApi)
 
-퍼블릭 엔드포인트는 인증이 필요하지 않습니다:
+공개 엔드포인트는 인증이 필요하지 않습니다:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,9 +62,30 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### SSO (싱글 사인온) 사용
+### 모더레이션 대시보드 사용 (ModerationApi)
 
-SDK에는 안전한 SSO 토큰을 생성하는 유틸리티가 포함되어 있습니다:
+`ModerationApi`는 모더레이터 대시보드를 구동합니다. 메서드는 모더레이터를 대신하여 `sso` 토큰을 전달하여 호출됩니다:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # 검토 대기 중인 댓글 수 세기
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### SSO (Single Sign-On) 사용
+
+SDK는 안전한 SSO 토큰을 생성하기 위한 유틸리티를 포함합니다:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -86,11 +107,11 @@ sso = FastCommentsSSO.new_secure(
 # SSO 토큰 생성
 sso_token = sso.create_token()
 
-# 이 토큰을 프런트엔드에서 사용하거나 API 호출에 전달하세요
+# 이 토큰을 프론트엔드에서 사용하거나 API 호출에 전달하세요
 print(f"SSO Token: {sso_token}")
 ```
 
-간단한 SSO(덜 안전하며 테스트용):
+간단한 SSO(보안 수준 낮음, 테스트용):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### 일반적인 문제
+### 자주 발생하는 문제
 
-1. **401 "missing-api-key" 오류**: DefaultApi 인스턴스를 생성하기 전에 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` 를 설정했는지 확인하세요.
-2. **잘못된 API 클래스**: 서버 측 인증 요청에는 `DefaultApi`를 사용하고, 클라이언트 측/퍼블릭 요청에는 `PublicApi`를 사용하세요.
-3. **임포트 오류**: 올바른 모듈에서 임포트하고 있는지 확인하세요:
+1. **401 "missing-api-key" error**: `DefaultApi` 인스턴스를 생성하기 전에 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` 를 설정했는지 확인하세요.
+2. **Wrong API class**: 서버 측 인증된 요청에는 `DefaultApi`를, 클라이언트 측/공개 요청에는 `PublicApi`를, 모더레이터 대시보드 요청에는 `ModerationApi`를 사용하세요.
+3. **Import errors**: 올바른 모듈에서 임포트하고 있는지 확인하세요:
    - API 클라이언트: `from client import ...`
    - SSO 유틸리티: `from sso import ...`

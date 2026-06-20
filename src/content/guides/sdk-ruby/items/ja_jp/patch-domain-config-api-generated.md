@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-返却: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config200_response.rb)
+戻り値: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_domain_config_response.rb)
 
 ## 例
 
@@ -15,11 +15,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# 認証の設定
+# 認証を設定
 FastCommentsClient.configure do |config|
-  # APIキー認証を設定: api_key
+  # APIキー認証を構成: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックスを設定するには、以下の行のコメントを外します。例: 'Bearer'（デフォルトは nil）
+  # 以下の行のコメントを外すと、APIキーのプレフィックスを設定できます。例: 'Bearer'（デフォルトはnil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

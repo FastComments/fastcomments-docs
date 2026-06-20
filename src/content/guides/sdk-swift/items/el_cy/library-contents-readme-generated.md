@@ -1,12 +1,12 @@
-The FastComments Swift SDK αποτελείται από αρκετές μονάδες:
+Το FastComments Swift SDK αποτελείται από αρκετές μονάδες:
 
-- **Client Module** - Αυτόματος πελάτης API που δημιουργείται για τα FastComments REST APIs
+- **Μονάδα Πελάτη** - Πελάτης API για τα REST APIs του FastComments
   - Πλήρεις ορισμοί τύπων για όλα τα μοντέλα API
-  - Και τα εξουσιοδοτημένα (`DefaultAPI`) και τα δημόσια (`PublicAPI`) endpoints
-  - Πλήρης υποστήριξη για async/await
-  - Δείτε [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) για λεπτομερή τεκμηρίωση API
+  - Μέθοδοι για αυθεντικοποίηση (`DefaultAPI`), δημόσιες (`PublicAPI`) και για moderation (`ModerationAPI`)
+  - Πλήρης υποστήριξη async/await
+  - Δείτε [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) για λεπτομερή τεκμηρίωση του API
 
-- **SSO Module** - Εργαλεία Single Sign-On από την πλευρά του διακομιστή
-  - Ασφαλής δημιουργία token για επαλήθευση ταυτότητας χρηστών
-  - Υποστήριξη τόσο του απλού όσο και του ασφαλούς τρόπου SSO
-  - Υπογραφή token βασισμένη σε HMAC-SHA256 χρησιμοποιώντας CryptoKit
+- **Μονάδα SSO** - Εργαλεία Single Sign-On από την πλευρά του διακομιστή
+  - Ασφαλής δημιουργία token για την πιστοποίηση χρήστη
+  - Υποστήριξη τόσο απλού όσο και ασφαλούς τρόπου λειτουργίας SSO
+  - Υπογραφή token βάσει HMAC-SHA256 χρησιμοποιώντας CryptoKit

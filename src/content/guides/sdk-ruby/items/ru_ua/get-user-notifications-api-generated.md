@@ -1,8 +1,9 @@
 ## Параметры
 
-| Название | Type | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
+| urlId | string | query | Нет | Используется для определения, подписана ли текущая страница. |
 | pageSize | integer | query | Нет |  |
 | afterId | string | query | Нет |  |
 | includeContext | boolean | query | Нет |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Нет |  |
 | noDm | boolean | query | Нет |  |
 | includeTranslations | boolean | query | Нет |  |
+| includeTenantNotifications | boolean | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Возвращает: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Пример
 
@@ -25,17 +27,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # Целое число | 
-  after_id: 'after_id_example', # Строка | 
-  include_context: true, # Логическое | 
-  after_created_at: 789, # Целое число | 
-  unread_only: true, # Логическое | 
-  dm_only: true, # Логическое | 
-  no_dm: true, # Логическое | 
-  include_translations: true, # Логическое | 
-  sso: 'sso_example' # Строка | 
+  url_id: 'url_id_example', # String | Используется для определения, подписана ли текущая страница.
+  page_size: 56, # Integer | 
+  after_id: 'after_id_example', # String | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin

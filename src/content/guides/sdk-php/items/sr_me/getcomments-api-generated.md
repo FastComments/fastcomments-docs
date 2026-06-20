@@ -1,44 +1,46 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| page | integer | query | Не |  |
-| limit | integer | query | Не |  |
-| skip | integer | query | Не |  |
-| asTree | boolean | query | Не |  |
-| skipChildren | integer | query | Не |  |
-| limitChildren | integer | query | Не |  |
-| maxTreeDepth | integer | query | Не |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| anonUserId | string | query | Не |  |
-| contextUserId | string | query | Не |  |
-| hashTag | string | query | Не |  |
-| parentId | string | query | Не |  |
-| direction | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| page | integer | query | Ne |  |
+| limit | integer | query | Ne |  |
+| skip | integer | query | Ne |  |
+| asTree | boolean | query | Ne |  |
+| skipChildren | integer | query | Ne |  |
+| limitChildren | integer | query | Ne |  |
+| maxTreeDepth | integer | query | Ne |  |
+| urlId | string | query | Ne |  |
+| userId | string | query | Ne |  |
+| anonUserId | string | query | Ne |  |
+| contextUserId | string | query | Ne |  |
+| hashTag | string | query | Ne |  |
+| parentId | string | query | Ne |  |
+| direction | string | query | Ne |  |
+| fromDate | integer | query | Ne |  |
+| toDate | integer | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetComments200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetComments200Response.php)
+Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetCommentsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getComments Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getComments'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоменаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођен HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišćen po defaultu.
     new GuzzleHttp\Client(),
     $config
 );
@@ -57,9 +59,11 @@ $context_user_id = 'context_user_id_example'; // string
 $hash_tag = 'hash_tag_example'; // string
 $parent_id = 'parent_id_example'; // string
 $direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
+$from_date = 56; // int
+$to_date = 56; // int
 
 try {
-    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction);
+    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction, $from_date, $to_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getComments: ', $e->getMessage(), PHP_EOL;

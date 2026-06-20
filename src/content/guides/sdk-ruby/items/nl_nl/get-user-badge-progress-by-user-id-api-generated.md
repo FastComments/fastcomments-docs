@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | userId | string | path | Ja |  |
 
-## Response
+## Antwoord
 
-Geeft terug: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Retourneert: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Voorbeeld
 
@@ -15,11 +15,11 @@ Geeft terug: [`GetUserBadgeProgressById200Response`](https://github.com/FastComm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Authenticatie instellen
+# Autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutel authenticatie: api_key
+  # Configureer API-sleutelautorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Verwijder het commentaarteken van de volgende regel om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
+  # Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard is nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badge_progress_by_user_id: #{e}"
 end
 [inline-code-end]
+
+---

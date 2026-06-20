@@ -1,16 +1,16 @@
 ## Paramètres
 
-| Name | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | chemin | Oui |  |
-| commentId | string | chemin | Oui |  |
-| broadcastId | string | paramètre de requête | Oui |  |
-| editKey | string | paramètre de requête | Non |  |
-| sso | string | paramètre de requête | Non |  |
+| tenantId | string | path | Oui |  |
+| commentId | string | path | Oui |  |
+| broadcastId | string | query | Oui |  |
+| editKey | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne : [`DeleteCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentPublic200Response.php)
+Renvoie : [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
 
 ## Exemple
 
@@ -26,11 +26,11 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // chaîne
-$comment_id = 'comment_id_example'; // chaîne
-$broadcast_id = 'broadcast_id_example'; // chaîne
-$edit_key = 'edit_key_example'; // chaîne
-$sso = 'sso_example'; // chaîne
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$edit_key = 'edit_key_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $edit_key, $sso);

@@ -7,32 +7,32 @@
 
 ## Отговор
 
-Връща: [`GetQuestionResult200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result200_response.py)
+Връща: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_result_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_question_result Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_question_result'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_result200_response import GetQuestionResult200Response
+from client.models.get_question_result_response import GetQuestionResultResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Дефинирането на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
+# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за автентикация и авторизация
-# в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод за удостоверяване са дадени по-долу, използвайте примера, който
+# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
+# съгласно политиката за сигурност на API сървъра.
+# Примери за всеки метод за удостоверяване са дадени по-долу; използвайте примера, който
 # отговаря на вашия случай на използване за удостоверяване.
 
-# Конфигуриране на удостоверяване с API ключ: api_key
+# Конфигурирайте удостоверяване чрез API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+# Разкоментирайте по-долу, за да настроите префикс (напр. Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Влезте в контекст с инстанция на API клиента

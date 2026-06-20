@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Распространенные проблемы
+### Использование модерационных API (ModerationAPI)
 
-1. **401 ошибка аутентификации**: Убедитесь, что вы установили заголовок `x-api-key` на вашем HttpClient перед выполнением запросов DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Неверный класс API**: Используйте `api_default` для серверных аутентифицированных запросов, `api_public` для клиентских/публичных запросов.
+Модерационные конечные точки обеспечивают работу панели модератора и аутентифицируются с помощью SSO-токена действующего модератора:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Получить список комментариев в панели модератора
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
+### Распространённые проблемы
+
+1. **401 authentication error**: Make sure you set the `x-api-key` header on your HttpClient before making DefaultAPI requests: `client.headers["x-api-key"] = "your-api-key"`
+2. **Wrong API class**: Use `api_default` for server-side authenticated requests, `api_public` for client-side/public requests, and `api_moderation` for moderator dashboard requests.

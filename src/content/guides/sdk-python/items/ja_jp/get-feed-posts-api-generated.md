@@ -13,42 +13,42 @@ afterId
 
 ## レスポンス
 
-戻り値: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts200_response.py)
+返却値: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_feed_posts の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts200_response import GetFeedPosts200Response
+from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、省略した場合のデフォルトは https://fastcomments.com です
-# サポートされている構成パラメータの一覧は configuration.py を参照してください。
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
+# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを API サーバのセキュリティポリシーに従って構成する必要があります。
-# 以下に各認証方式の例を示します。
-# 下の例から
-# あなたの認証ユースケースに合うものを選んで使用してください。
+# クライアントは認証および認可パラメータを設定する必要があります
+# API サーバーのセキュリティポリシーに従ってください。
+# 各認証方法の例は以下に示されています。
+# 自分の認証ユースケースに合った例を使用してください。
 
-# Configure API key authorization: api_key
+# API キー認証を設定: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# 必要に応じて以下のコメントを外し、API キーのプレフィックス（例: Bearer）を設定してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# APIクライアントのインスタンスでコンテキストに入ります
+# API クライアントのインスタンスのコンテキストに入る
 with client.ApiClient(configuration) as api_client:
-    # APIクラスのインスタンスを作成
+    # API クラスのインスタンスを作成
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (オプション)
-    limit = 56 # int |  (オプション)
-    tags = ['tags_example'] # List[str] |  (オプション)
+    after_id = 'after_id_example' # str |  (任意)
+    limit = 56 # int |  (任意)
+    tags = ['tags_example'] # List[str] |  (任意)
 
     try:
         api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)

@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | limit | number | query | いいえ |  |
@@ -11,44 +11,45 @@
 
 ## レスポンス
 
-返却: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs200_response.py)
+戻り値: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_audit_logs の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_audit_logs200_response import GetAuditLogs200Response
+from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされている全ての設定パラメータの一覧は configuration.py を参照してください。
+# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証と認可のパラメータを設定する必要があります
-# API サーバーのセキュリティポリシーに従ってください。
-# 各認証方式の例を以下に示します。ご利用の認証ケースに合う例を使用してください。
+# クライアントは認証および認可のパラメータを
+# API サーバーのセキュリティポリシーに従って設定する必要があります。
+# 各認証方式の例を以下に示します。
+# ご自身のユースケースに合う例を使用してください。
 
-# API キー認証を設定します: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するために以下の行のコメントを外してください
+# 必要に応じて API キー用の接頭辞（例: Bearer）を設定するには、以下のコメントアウトを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスコンテキストに入ります
+# API クライアントのインスタンスを使用してコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    limit = 3.4 # float |  (オプション)
-    skip = 3.4 # float |  (オプション)
-    order = client.SORTDIR() # SORTDIR |  (オプション)
-    after = 3.4 # float |  (オプション)
-    before = 3.4 # float |  (オプション)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
+    order = client.SORTDIR() # SORTDIR |  (optional)
+    after = 3.4 # float |  (optional)
+    before = 3.4 # float |  (optional)
 
     try:
         api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)

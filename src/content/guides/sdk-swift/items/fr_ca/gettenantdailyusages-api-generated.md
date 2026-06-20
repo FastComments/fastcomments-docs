@@ -10,20 +10,20 @@
 
 ## Réponse
 
-Renvoie: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsages200Response.swift)
+Renvoie : [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'getTenantDailyUsages Exemple'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let yearNumber = 987 // Double |  (optional)
-let monthNumber = 987 // Double |  (optional)
-let dayNumber = 987 // Double |  (optional)
-let skip = 987 // Double |  (optional)
+let yearNumber = 987 // Double |  (optionnel)
+let monthNumber = 987 // Double |  (optionnel)
+let dayNumber = 987 // Double |  (optionnel)
+let skip = 987 // Double |  (optionnel)
 
 DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
     guard error == nil else {

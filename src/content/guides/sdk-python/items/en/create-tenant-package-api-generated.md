@@ -6,15 +6,15 @@
 
 ## Response
 
-Returns: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_package200_response.py)
+Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_tenant_package_response.py)
 
 ## Example
 
 [inline-code-attrs-start title = 'create_tenant_package Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_tenant_package200_response import CreateTenantPackage200Response
 from client.models.create_tenant_package_body import CreateTenantPackageBody
+from client.models.create_tenant_package_response import CreateTenantPackageResponse
 from client.rest import ApiException
 from pprint import pprint
 

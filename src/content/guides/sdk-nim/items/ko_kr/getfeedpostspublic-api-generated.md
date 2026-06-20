@@ -1,18 +1,24 @@
+---
+
+req
+tenantId
+afterId
+
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| afterId | string | 아니오 |  |
-| limit | int | 아니오 |  |
-| tags | seq[string] | 아니오 |  |
-| sso | string | 아니오 |  |
-| isCrawler | bool | 아니오 |  |
-| includeUserInfo | bool | 아니오 |  |
+| afterId | string | 아니요 |  |
+| limit | int | 아니요 |  |
+| tags | seq[string] | 아니요 |  |
+| sso | string | 아니요 |  |
+| isCrawler | bool | 아니요 |  |
+| includeUserInfo | bool | 아니요 |  |
 
 ## 응답
 
-반환: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+반환: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
 ## 예제
 
@@ -27,10 +33,9 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
 
 ---

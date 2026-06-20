@@ -1,16 +1,16 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | postId | string | path | 예 |  |
-| isUndo | boolean | query | 아니오 |  |
-| broadcastId | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| isUndo | boolean | query | 아니요 |  |
+| broadcastId | string | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_public200_response.rb)
+반환: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_response.rb)
 
 ## 예제
 
@@ -37,3 +37,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->react_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

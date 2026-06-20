@@ -1,4 +1,4 @@
-Agregira dokumente grupišući ih (ako je groupBy naveden) i primenjujući više operacija.
+Agregira dokumente grupisanjem (ako je groupBy naveden) i primenom više operacija.
 Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
 
 ## Parametri
@@ -11,19 +11,19 @@ Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
 
 ## Odgovor
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer aggregate'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# podešavanje autorizacije
+# postavljanje autorizacije
 FastCommentsClient.configure do |config|
   # Konfiguriši autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
+  # Poništite zakomentarisanje sledeće linije da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -43,3 +43,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
+
+---

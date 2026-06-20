@@ -1,8 +1,8 @@
 The FastComments Swift SDK consists of several modules:
 
-- **Client Module** - Auto-generated API client for FastComments REST APIs
+- **Client Module** - API client for FastComments REST APIs
   - Complete type definitions for all API models
-  - Both authenticated (`DefaultAPI`) and public (`PublicAPI`) endpoints
+  - Authenticated (`DefaultAPI`), public (`PublicAPI`), and moderation (`ModerationAPI`) methods
   - Full async/await support
   - See [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) for detailed API documentation
 

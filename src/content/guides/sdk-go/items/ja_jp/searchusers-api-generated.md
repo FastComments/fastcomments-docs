@@ -11,7 +11,7 @@
 
 ## レスポンス
 
-戻り値: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+戻り値: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## 例
 
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string |  (省略可能)
-	mentionGroupIds := []string{"Inner_example"} // []string |  (省略可能)
-	sso := "sso_example" // string |  (省略可能)
-	searchSection := "searchSection_example" // string |  (省略可能)
+	usernameStartsWith := "usernameStartsWith_example" // string |  （オプション）
+	mentionGroupIds := []string{"Inner_example"} // []string |  （オプション）
+	sso := "sso_example" // string |  （オプション）
+	searchSection := "searchSection_example" // string |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchUsers`: SearchUsers200Response
+	// `SearchUsers` のレスポンス: SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -12,7 +12,7 @@
 
 ## レスポンス
 
-返却: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badges_200_response.go)
+戻り値: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badges_response.go)
 
 ## 例
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  （任意）
-	badgeId := "badgeId_example" // string |  （任意）
-	type_ := float64(1.2) // float64 |  （任意）
-	displayedOnComments := true // bool |  （任意）
-	limit := float64(1.2) // float64 |  （任意）
-	skip := float64(1.2) // float64 |  （任意）
+	userId := "userId_example" // string |  （オプション）
+	badgeId := "badgeId_example" // string |  （オプション）
+	type_ := float64(1.2) // float64 |  （オプション）
+	displayedOnComments := true // bool |  （オプション）
+	limit := float64(1.2) // float64 |  （オプション）
+	skip := float64(1.2) // float64 |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserBadges` のレスポンス: GetUserBadges200Response
+	// `GetUserBadges` のレスポンス: APIGetUserBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadges`: %v\n", resp)
 }
 [inline-code-end]

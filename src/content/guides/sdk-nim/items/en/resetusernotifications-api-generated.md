@@ -12,7 +12,7 @@
 
 ## Response
 
-Returns: [`Option[ResetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications200response.nim)
+Returns: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Example
 
@@ -28,8 +28,8 @@ let (response, httpResponse) = client.resetUserNotifications(
   sso = ""
 )
 if response.isSome:
-  let resetResult = response.get()
-  echo "ResetUserNotifications succeeded: ", resetResult
+  let resetResp = response.get()
+  echo "ResetUserNotificationsResponse received"
 else:
-  echo "ResetUserNotifications returned no body, status: ", httpResponse.status
+  echo "No ResetUserNotificationsResponse"
 [inline-code-end]

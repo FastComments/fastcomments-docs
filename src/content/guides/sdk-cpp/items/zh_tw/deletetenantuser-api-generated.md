@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 範例
 
@@ -18,18 +18,17 @@
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t userId = U("user@example.com");
 boost::optional<utility::string_t> deleteComments = boost::optional<utility::string_t>(U("true"));
-boost::optional<utility::string_t> commentDeleteMode = boost::optional<utility::string_t>(U("soft"));
-auto fallback = std::make_shared<FlagCommentPublic_200_response>();
+boost::optional<utility::string_t> commentDeleteMode = boost::optional<utility::string_t>(U("cascade"));
 api->deleteTenantUser(tenantId, userId, deleteComments, commentDeleteMode)
-.then([fallback](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = fallback;
-        std::cout << "deleteTenantUser completed\n";
-    } catch (const std::exception &e) {
-        std::cout << "deleteTenantUser failed: " << e.what() << "\n";
-    }
-}).wait();
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
+        try {
+            auto resp = task.get();
+            if (!resp) resp = std::make_shared<APIEmptyResponse>();
+            std::cout << "Tenant user deleted successfully\n";
+        } catch (const std::exception &e) {
+            std::cerr << "Failed to delete tenant user: " << e.what() << '\n';
+        }
+    });
 [inline-code-end]
 
 ---

@@ -1,23 +1,23 @@
-## 매개변수
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
-| usernameStartsWith | string | query | 아니오 |  |
-| mentionGroupIds | array | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
-| searchSection | string | query | 아니오 |  |
+| usernameStartsWith | string | query | 아니요 |  |
+| mentionGroupIds | array | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
+| searchSection | string | query | 아니요 |  |
 
-## 응답
+## Response
 
-반환: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'searchUsers 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 보고해 주세요
+// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

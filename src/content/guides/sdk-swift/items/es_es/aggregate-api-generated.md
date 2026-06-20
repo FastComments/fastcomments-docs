@@ -1,23 +1,23 @@
 Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.
-Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
+Se admiten diferentes operaciones (por ejemplo sum, countDistinct, avg, etc.).
 
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | parentTenantId | string | query | No |  |
 | includeStats | boolean | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Devuelve: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de agregación'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor infórmelo a través de http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código aún están en beta. Si tiene algún problema, infórmelo en http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

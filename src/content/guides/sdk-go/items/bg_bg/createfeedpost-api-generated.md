@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | broadcastId | string | query | Не |  |
@@ -10,7 +10,7 @@
 
 ## Отговор
 
-Връща: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_post_200_response.go)
+Връща: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_feed_posts_response.go)
 
 ## Пример
 
@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createFeedPostParams := *openapiclient.NewCreateFeedPostParams() // CreateFeedPostParams | 
-	broadcastId := "broadcastId_example" // string |  (по избор)
-	isLive := true // bool |  (по избор)
-	doSpamCheck := true // bool |  (по избор)
-	skipDupCheck := true // bool |  (по избор)
+	broadcastId := "broadcastId_example" // string |  (незадължително)
+	isLive := true // bool |  (незадължително)
+	doSpamCheck := true // bool |  (незадължително)
+	skipDupCheck := true // bool |  (незадължително)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,9 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateFeedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `CreateFeedPost`: CreateFeedPost200Response
+	// отговор от `CreateFeedPost`: CreateFeedPostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]
-
----

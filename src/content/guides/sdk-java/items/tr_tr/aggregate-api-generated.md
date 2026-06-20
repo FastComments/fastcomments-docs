@@ -1,16 +1,16 @@
-Belgeleri (groupBy sağlanmışsa) gruplandırarak ve birden çok işlem uygulayarak toplar. Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
+Belgeleri (groupBy sağlanmışsa) gruplandırarak ve birden çok işlem uygulayarak toplar. Farklı işlemler (örn. sum, countDistinct, avg, vb.) desteklenir.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+| tenantId | string | query | Evet |  |
+| parentTenantId | string | query | Hayır |  |
+| includeStats | boolean | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`AggregationResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregationResponse.java)
+Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AggregateResponse.java)
 
 ## Örnek
 
@@ -32,7 +32,7 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak isterseniz aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
+    // API anahtarı için bir önek ayarlamak isterseniz aşağıdaki satırın yorumunu kaldırın, örn. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -41,7 +41,7 @@ public class Example {
     String parentTenantId = "parentTenantId_example"; // String | 
     Boolean includeStats = true; // Boolean | 
     try {
-      AggregationResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
+      AggregateResponse result = apiInstance.aggregate(tenantId, aggregationRequest)
             .parentTenantId(parentTenantId)
             .includeStats(includeStats)
             .execute();

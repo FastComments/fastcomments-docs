@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Name | Type | Location | Required | Description |
@@ -9,18 +10,18 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user200_response.py)
+Zwraca: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_votes_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes_for_user200_response import GetVotesForUser200Response
+from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Ustalenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,10 +29,10 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody autoryzacji, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia.
+# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj tego,
+# który odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację za pomocą klucza API: api_key
+# Skonfiguruj uwierzytelnianie kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
@@ -53,3 +54,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_votes_for_user: %s\n" % e)
 [inline-code-end]
+
+---

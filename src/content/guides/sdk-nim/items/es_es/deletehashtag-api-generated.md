@@ -1,23 +1,30 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Name | Type | Obligatorio | Descripción |
+|------|------|------------|-------------|
 | tag | string | No |  |
 | tenantId | string | Sí |  |
-| deleteHashTagRequest | DeleteHashTagRequest | No |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
 
 ## Respuesta
 
-Devuelve: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Devuelve: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de deleteHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteHashTag(tag = "breaking-news", tenantId = "my-tenant-123", deleteHashTagRequest = DeleteHashTagRequest())
+let (response, httpResponse) = client.deleteHashTag(
+  tag = "",
+  tenantId = "my-tenant-123",
+  deleteHashTagRequestBody = DeleteHashTagRequestBody()
+)
+
 if response.isSome:
-  let result = response.get()
-  discard result
+  let emptyResp = response.get()
+  echo "Deleted hashtag for tenant my-tenant-123; response:", $emptyResp, " status:", $httpResponse.status
+else:
+  echo "No response body; status:", $httpResponse.status
 [inline-code-end]
 
 ---

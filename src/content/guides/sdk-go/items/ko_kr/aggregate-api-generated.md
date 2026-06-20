@@ -1,5 +1,4 @@
----
-문서를 그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 집계합니다.
+문서를 그룹화(groupBy가 제공된 경우)하여 집계하고 여러 연산을 적용합니다.
 다양한 연산(예: sum, countDistinct, avg 등)을 지원합니다.
 
 ## 매개변수
@@ -7,12 +6,12 @@
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| parentTenantId | string | query | 아니오 |  |
-| includeStats | boolean | query | 아니오 |  |
+| parentTenantId | string | query | 아니요 |  |
+| includeStats | boolean | query | 아니요 |  |
 
 ## 응답
 
-반환: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+반환: [`AggregateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_response.go)
 
 ## 예제
 
@@ -24,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -40,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `Aggregate`의 응답: AggregationResponse
+	// response from `Aggregate`: AggregateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,4 +1,4 @@
-### Utilizzo dell'API Pubblica
+### Utilizzo dell'API pubblica
 
 ```swift
 import FastCommentsSwift
@@ -22,16 +22,16 @@ do {
 }
 ```
 
-### Utilizzo dell'API Autenticata
+### Utilizzo dell'API autenticata
 
 ```swift
 import FastCommentsSwift
 
-// Crea la configurazione con API key
+// Crea la configurazione con la chiave API
 let defaultApi = DefaultAPI()
 defaultApi.apiKey = "your-api-key"
 
-// Recupera i commenti usando l'API autenticata
+// Recupera commenti usando l'API autenticata
 do {
     let response = try await defaultApi.getComments(
         tenantId: "your-tenant-id",
@@ -47,9 +47,32 @@ do {
 }
 ```
 
+### Utilizzo dell'API di moderazione
+
+```swift
+import FastCommentsSwift
+
+// I metodi di moderazione sono autorizzati con un token `sso` per il moderatore attivo
+// (generalo con FastCommentsSSO, vedi la sezione SSO sopra).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Utilizzo di SSO per l'autenticazione
 
-#### SSO sicuro (Raccomandato per la produzione)
+#### SSO sicuro (consigliato per la produzione)
 
 ```swift
 import FastCommentsSwift
@@ -61,7 +84,7 @@ let userData = SecureSSOUserData(
     id: "user-123",              // ID utente
     email: "user@example.com",   // Email
     username: "johndoe",         // Nome utente
-    avatar: "https://example.com/avatar.jpg" // URL avatar
+    avatar: "https://example.com/avatar.jpg" // URL dell'avatar
 )
 
 // Genera il token SSO
@@ -76,12 +99,12 @@ do {
 }
 ```
 
-#### SSO semplice (Per sviluppo/test)
+#### SSO semplice (per sviluppo/test)
 
 ```swift
 import FastCommentsSwift
 
-// Crea i dati utente SSO semplici (non serve API key)
+// Crea i dati utente SSO semplici (non è necessaria una chiave API)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

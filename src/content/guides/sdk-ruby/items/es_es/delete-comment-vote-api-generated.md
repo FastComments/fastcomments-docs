@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | commentId | string | path | Sí |  |
@@ -12,7 +12,7 @@
 
 ## Respuesta
 
-Devuelve: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Ejemplo
 
@@ -22,14 +22,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Cadena | 
-comment_id = 'comment_id_example' # Cadena | 
-vote_id = 'vote_id_example' # Cadena | 
-url_id = 'url_id_example' # Cadena | 
-broadcast_id = 'broadcast_id_example' # Cadena | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+vote_id = 'vote_id_example' # String | 
+url_id = 'url_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example', # Cadena | 
-  sso: 'sso_example' # Cadena | 
+  edit_key: 'edit_key_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

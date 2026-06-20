@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | notificationId | string | Da |  |
@@ -9,24 +9,27 @@
 
 ## Odgovor
 
-Vraća: [`UpdateUserNotificationStatus_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatus_200_response.h)
+Vraća: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatusResponse.h)
 
 ## Primer
 
-[inline-code-attrs-start title = 'updateUserNotificationStatus Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za updateUserNotificationStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notification-789");
-utility::string_t newStatus = U("read");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc123"));
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+utility::string_t notificationId = utility::string_t("notif-456");
+utility::string_t newStatus = utility::string_t("read");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t("sso-token-xyz"));
+
 api->updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task){
+.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatusResponse>> task){
     try {
         auto resp = task.get();
         if (resp) {
-            auto result = std::make_shared<UpdateUserNotificationStatus_200_response>(*resp);
+            auto localCopy = std::make_shared<UpdateUserNotificationStatusResponse>(*resp);
+            (void)localCopy;
         }
-    } catch (...) {
+    } catch (const std::exception& e) {
+        (void)e;
     }
 });
 [inline-code-end]

@@ -3,12 +3,12 @@
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| commentIds | string | query | 예 | 쉼표로 구분된 댓글 ID 목록입니다. |
-| sso | string | query | 아니요 |  |
+| commentIds | string | query | 예 | 쉼표로 구분된 댓글 ID 목록. |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckedCommentsForBlocked200Response.php)
+반환: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
 ## 예제
 
@@ -20,12 +20,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이것은 옵션입니다. 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | 쉼표로 구분된 댓글 ID 목록입니다.
+$comment_ids = 'comment_ids_example'; // string | 쉼표로 구분된 댓글 ID 목록.
 $sso = 'sso_example'; // string
 
 try {

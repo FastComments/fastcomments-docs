@@ -1,8 +1,8 @@
-Attiva o disattiva le notifiche per un commento specifico.
+Abilita o disabilita le notifiche per un commento specifico.
 
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | notificationId | string | path | Sì |  |
@@ -12,7 +12,7 @@ Attiva o disattiva le notifiche per un commento specifico.
 
 ## Risposta
 
-Restituisce: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Restituisce: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## Esempio
 
@@ -22,12 +22,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-notification_id = 'notification_id_example' # String | 
-opted_in_or_out = 'in' # String | 
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # Stringa | 
+notification_id = 'notification_id_example' # Stringa | 
+opted_in_or_out = 'in' # Stringa | 
+comment_id = 'comment_id_example' # Stringa | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Stringa | 
 }
 
 begin

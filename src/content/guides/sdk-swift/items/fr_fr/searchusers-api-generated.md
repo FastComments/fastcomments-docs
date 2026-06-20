@@ -11,7 +11,7 @@
 
 ## Réponse
 
-Retourne: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+Renvoie: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## Exemple
 
@@ -22,10 +22,10 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (optionnel)
-let mentionGroupIds = ["inner_example"] // [String] |  (optionnel)
-let sso = "sso_example" // String |  (optionnel)
-let searchSection = "searchSection_example" // String |  (optionnel)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (facultatif)
+let mentionGroupIds = ["inner_example"] // [String] |  (facultatif)
+let sso = "sso_example" // String |  (facultatif)
+let searchSection = "searchSection_example" // String |  (facultatif)
 
 PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {

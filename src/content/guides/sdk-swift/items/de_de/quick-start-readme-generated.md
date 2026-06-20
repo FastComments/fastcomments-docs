@@ -47,9 +47,32 @@ do {
 }
 ```
 
-### SSO für die Authentifizierung verwenden
+### Verwendung der Moderations-API
 
-#### Sicheres SSO (Für den Produktiveinsatz empfohlen)
+```swift
+import FastCommentsSwift
+
+// Moderationsmethoden sind mit einem `sso`-Token für den handelnden Moderator autorisiert
+// (erzeuge ihn mit FastCommentsSSO, siehe den SSO-Abschnitt weiter oben).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### Verwendung von SSO zur Authentifizierung
+
+#### Sicheres SSO (empfohlen für die Produktion)
 
 ```swift
 import FastCommentsSwift
@@ -70,13 +93,13 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Übergeben Sie dieses Token an Ihr Frontend zur Authentifizierung
+    // Übergebe dieses Token an dein Frontend zur Authentifizierung
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### Einfaches SSO (Für Entwicklung/Tests)
+#### Einfaches SSO (für Entwicklung/Tests)
 
 ```swift
 import FastCommentsSwift

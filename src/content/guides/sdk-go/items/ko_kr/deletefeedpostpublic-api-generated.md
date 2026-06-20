@@ -1,15 +1,15 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| postId | string | path | 예 |  |
-| broadcastId | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | 경로 | 예 |  |
+| postId | string | 경로 | 예 |  |
+| broadcastId | string | 쿼리 | 아니오 |  |
+| sso | string | 쿼리 | 아니오 |  |
 
 ## 응답
 
-반환: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_feed_post_public_200_response.go)
+반환: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_delete_feed_post_public_response.go)
 
 ## 예제
 
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -37,7 +37,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.DeleteFeedPostPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `DeleteFeedPostPublic`의 응답: DeleteFeedPostPublic200Response
+	// `DeleteFeedPostPublic`의 응답: DeleteFeedPostPublicResponse
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteFeedPostPublic`: %v\n", resp)
 }
 [inline-code-end]
+
+---

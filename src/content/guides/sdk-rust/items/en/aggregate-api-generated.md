@@ -12,33 +12,37 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregation_response.rs)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregate_response.rs)
 
 ## Example
 
 [inline-code-attrs-start title = 'aggregate Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: AggregateParams = AggregateParams {
+let params = AggregateParams {
     tenant_id: "acme-corp-tenant".to_string(),
     aggregation_request: models::AggregationRequest {
-        query: Some(models::QueryPredicate {
-            field: "resource".to_string(),
-            op: "equals".to_string(),
-            value: models::QueryPredicateValue::String("news/article".to_string()),
-        }),
+        predicates: Some(vec![
+            models::QueryPredicate {
+                field: "path".to_string(),
+                operator: "EQUALS".to_string(),
+                values: Some(vec![
+                    models::QueryPredicateValue { value: "news/article".to_string() }
+                ]),
+            }
+        ]),
         operations: vec![
             models::AggregationOperation {
                 op_type: models::AggregationOpType::COUNT,
-                field: Some("id".to_string()),
-                alias: Some("comment_count".to_string()),
-            },
+                field: Some("comment_id".to_string()),
+                alias: Some("total_comments".to_string()),
+            }
         ],
-        group_by: Some(vec!["author_id".to_string()]),
-        size: Some(50),
-        sort: None,
+        sort: Some(vec![
+            models::AggregationRequestSort { field: "total_comments".to_string(), direction: "DESC".to_string() }
+        ]),
     },
     parent_tenant_id: Some("acme-parent-tenant".to_string()),
     include_stats: Some(true),
 };
-let aggregation_response: AggregationResponse = aggregate(&configuration, params).await?;
+let aggregate_response: AggregateResponse = aggregate(&configuration, params).await?;
 [inline-code-end]

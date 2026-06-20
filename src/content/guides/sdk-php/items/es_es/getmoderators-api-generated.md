@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModerators200Response.php)
+Devuelve: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorsResponse.php)
 
 ## Ejemplo
 
@@ -17,14 +17,17 @@ Devuelve: [`GetModerators200Response`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar la autorización de la clave API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente lo siguiente para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+// Configure API key authorization: api_key
+// Configurar autorización de clave API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Descomente abajo para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client(),
     $config

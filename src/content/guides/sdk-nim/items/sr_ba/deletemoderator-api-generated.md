@@ -1,25 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| sendEmail | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
+| sendEmail | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteModerator Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerator Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerator(tenantId = "my-tenant-123", id = "moderator-456", sendEmail = "false")
+let (response, httpResponse) = client.deleteModerator(tenantId = "my-tenant-123", id = "", sendEmail = "")
 if response.isSome:
-  let flagResp = response.get()
-  echo "Moderator deletion response: ", $flagResp
+  let apiEmpty = response.get()
+  echo "Moderator deleted successfully for tenant my-tenant-123"
 else:
-  echo "No response body; HTTP status: ", $httpResponse.status
+  echo "No response returned; inspect httpResponse"
 [inline-code-end]
 
 ---

@@ -1,22 +1,23 @@
-### Korišćenje Nimble
+### Коришћење Nimble
 
 ```bash
 nimble install fastcomments
 ```
 
-### Gradnja iz izvornog koda
+### Састављање из извора
 
 ```bash
 nimble build
 ```
 
-### Sadržaj biblioteke
+### Садржај библиотеке
 
-Ova biblioteka sadrži generisan API klijent i SSO pomoćne alate koji olakšavaju rad sa API-jem.
+Ова библиотека садржи генерисани API клијент и SSO алате који олакшавају рад са API-јем.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [Документација API клијент библиотеке](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### Javni naspram zaštićenih API-ja
+### Јавни и заштићени API-ји
 
-Za API klijenta postoje dva API modula, `api_default` i `api_public`. `api_default` sadrži metode koje zahtijevaju vaš API ključ, a `api_public` sadrži API pozive
-koje je moguće izvršiti direktno iz preglednika/mobilnog uređaja/itd. bez autentifikacije.
+За API клијент постоје три API модула, `api_default`, `api_public` и `api_moderation`. `api_default` садржи методе којима је потребан ваш API кључ, а `api_public` садржи API позиве који се могу извршити директно из прегледача/мобилног уређаја/итд. без аутентикације. Модул `api_moderation` садржи методе за контролну таблу модератора.
+
+Методе `api_moderation` обухватају листање, бројање, претраживање и извоз коментара и њихових логова; акције модерације као што су уклањање/враћање коментара, пријављивање, постављање статуса преглед/спам/одобрење, подешавање гласова и поновно отварање/затварање тема; забране (забрана корисника од коментарисања, поништавање забране, резимеи пре забране, статус и преференције забране, и бројеви забрањених корисника); и значке и поверење (додавање/уклањање значке, листање ручних значки, добијање/постављање фактора поверења корисника и преузимање унутрашњег профила корисника). Свака метода из `api_moderation` прихвата параметар `sso` тако да је позив аутентификован као SSO модератор.

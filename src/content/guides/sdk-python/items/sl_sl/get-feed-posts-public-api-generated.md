@@ -1,4 +1,5 @@
-req
+---
+obvezno
 tenantId
 afterId
 
@@ -16,25 +17,25 @@ afterId
 
 ## Odgovor
 
-Vrača: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Vrne: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in je privzeto https://fastcomments.com
+# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco odjemalca API
+# Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
     # Ustvarite instanco razreda API
     api_instance = client.PublicApi(api_client)
@@ -53,3 +54,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_feed_posts_public: %s\n" % e)
 [inline-code-end]
+
+---

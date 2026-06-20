@@ -5,17 +5,17 @@ userIdWS
 
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
 | userIdWS | string | query | Sí |  |
 | startTime | integer | query | Sí |  |
-| endTime | integer | query | Sí |  |
+| endTime | integer | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log200_response.rb)
+Devuelve: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_event_log_response.rb)
 
 ## Ejemplo
 
@@ -29,15 +29,15 @@ tenant_id = 'tenant_id_example' # Cadena |
 url_id = 'url_id_example' # Cadena | 
 user_id_ws = 'user_id_ws_example' # Cadena | 
 start_time = 789 # Entero | 
-end_time = 789 # Entero | 
+opts = {
+  end_time: 789 # Entero | 
+}
 
 begin
   
-  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+  result = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_event_log: #{e}"
 end
 [inline-code-end]
-
----

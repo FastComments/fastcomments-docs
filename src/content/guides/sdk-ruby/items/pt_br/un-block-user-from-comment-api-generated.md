@@ -9,7 +9,7 @@
 
 ## Resposta
 
-Retorna: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/un_block_comment_public200_response.rb)
+Retorna: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/unblock_success.rb)
 
 ## Exemplo
 
@@ -21,7 +21,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # Configurar autorização por chave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomente a linha a seguir para definir um prefixo para a chave de API, ex.: 'Bearer' (padrão: nil)
+  # Descomente a linha a seguir para definir um prefixo para a chave de API, por exemplo 'Bearer' (padrão nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -42,3 +42,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_block_user_from_comment: #{e}"
 end
 [inline-code-end]
+
+---

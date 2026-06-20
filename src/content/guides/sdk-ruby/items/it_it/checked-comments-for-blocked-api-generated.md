@@ -1,25 +1,25 @@
-## Parametri
+## Parameters
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
-| commentIds | string | query | Sì | Una lista separata da virgole di id dei commenti. |
+| commentIds | string | query | Sì | Elenco separato da virgole di ID dei commenti. |
 | sso | string | query | No |  |
 
-## Risposta
+## Response
 
-Restituisce: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/checked_comments_for_blocked200_response.rb)
+Restituisce: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/check_blocked_comments_response.rb)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di checked_comments_for_blocked'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio checked_comments_for_blocked'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-comment_ids = 'comment_ids_example' # String | Una lista separata da virgole di id dei commenti.
+comment_ids = 'comment_ids_example' # String | Elenco separato da virgole di ID dei commenti.
 opts = {
   sso: 'sso_example' # String | 
 }
@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked: #{e}"
 end
 [inline-code-end]
-
----

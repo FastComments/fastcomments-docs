@@ -1,16 +1,16 @@
-透過分組（若提供 groupBy）並套用多個操作來彙總文件。支援不同的操作（例如 sum、countDistinct、avg 等）。
+透過分組（若提供 groupBy）並套用多個運算來彙總文件。支援不同的運算（例如 sum、countDistinct、avg 等）。
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+| tenantId | string | query | 是 |  |
+| parentTenantId | string | query | 否 |  |
+| includeStats | boolean | query | 否 |  |
 
 ## 回應
 
-回傳: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+回傳: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## 範例
 
@@ -21,15 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: api_key
-// 若需要，解除註解以下以設定 API 金鑰的前綴（例如 Bearer）
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );

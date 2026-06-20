@@ -1,26 +1,26 @@
-ページの通知を有効または無効にします。ユーザーがページを購読していると、通知が作成され、
-新しいルートコメントに対して、また
+---
+ページの通知を有効または無効にします。ユーザーがページを購読している場合、新しいルートコメントに対して通知が作成され、また
 
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| urlId | string | query | はい |  |
-| url | string | query | はい |  |
-| pageTitle | string | query | はい |  |
-| subscribedOrUnsubscribed | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | クエリ | はい |  |
+| urlId | string | クエリ | はい |  |
+| url | string | クエリ | はい |  |
+| pageTitle | string | クエリ | はい |  |
+| subscribedOrUnsubscribed | string | パス | はい |  |
+| sso | string | クエリ | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+戻り値: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// クラスのインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -40,7 +40,7 @@ public class Example {
     String subscribedOrUnsubscribed = "subscribe"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -54,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

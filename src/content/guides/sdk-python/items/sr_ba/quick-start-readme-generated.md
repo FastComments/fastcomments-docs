@@ -1,25 +1,25 @@
-### Korištenje autentifikovanih API-ja (DefaultApi)
+### Коришћење аутентификованих API-ја (DefaultApi)
 
-**Važno:** Morate postaviti svoj API ključ u Configuration prije nego što napravite autentifikovane zahtjeve. Ako to ne uradite, zahtjevi će završiti sa greškom 401.
+**Важно:** Морате подесити ваш API кључ у Configuration пре слања аутентификованих захтева. Ако то не урадите, захтеви ће бити одбијени са 401 грешком.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# Креирајте и конфигуришите API клијента
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# ОБАВЕЗНО: Подесите ваш API кључ (преузмите га са вашe FastComments контролне табле)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Креирајте API инстанцу са конфигурисаним клијентом
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Сада можете правити аутентификоване API позиве
 try:
-    # Example: Add an SSO user
+    # Пример: Додавање SSO корисника
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -34,14 +34,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Уобичајене грешке:
+    # - 401: API кључ недостаје или је неважећи
+    # - 400: Валидација захтева није успела
 ```
 
-### Korištenje javnih API-ja (PublicApi)
+### Коришћење јавних API-ја (PublicApi)
 
-Javni endpointi ne zahtijevaju autentifikaciju:
+Јавни ендпоинти не захтевају аутентификацију:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Korištenje SSO (jedinstvena prijava)
+### Коришћење модерацијске контролне табле (ModerationApi)
 
-SDK uključuje alate za generisanje sigurnih SSO tokena:
+`ModerationApi` покреће модерацијску контролну таблу. Методе се позивају у име модератора прослеђивањем `sso` токена:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Броји коментаре који чекају модерацију
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### Коришћење SSO (Single Sign-On)
+
+SDK садржи алате за генерисање сигурних SSO токена:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# Креирајте податке о кориснику
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,20 +98,20 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
+# Креирајте SSO инстанцу са вашим API секретом
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generate the SSO token
+# Генеришите SSO токен
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Користите овај токен у вашем фронтенду или прослиједите у API позиве
 print(f"SSO Token: {sso_token}")
 ```
 
-Za jednostavni SSO (manje sigurno, za testiranje):
+За једноставан SSO (мање сигурно, за тестирање):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Uobičajeni problemi
+### Уобичајени проблеми
 
-1. **401 "missing-api-key" greška**: Provjerite da li ste postavili `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` prije kreiranja DefaultApi instance.
-2. **Pogrešna API klasa**: Koristite `DefaultApi` za serverske autentifikovane zahtjeve, `PublicApi` za klijentske/javne zahtjeve.
-3. **Greške pri importu**: Provjerite da importujete iz ispravnog modula:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+1. **401 "missing-api-key" error**: Уверите се да сте поставили `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` пре креирања DefaultApi инстанце.
+2. **Погрешна API класа**: Користите `DefaultApi` за серверске аутентификоване захтеве, `PublicApi` за клијентске/јавне захтеве, и `ModerationApi` за захтеве модерацијске контролне табле.
+3. **Грешке при увозу**: Уверите се да увозите из исправног модула:
+   - API клијент: `from client import ...`
+   - SSO алати: `from sso import ...`

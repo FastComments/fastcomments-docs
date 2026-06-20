@@ -4,7 +4,7 @@ afterId
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | afterId | string | query | Не |  |
@@ -16,22 +16,22 @@ afterId
 
 ## Отговор
 
-Връща: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Връща: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примери за код все още са в бета. Ако има проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примери с код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (по избор)
-let limit = 987 // Int |  (по избор)
-let tags = ["inner_example"] // [String] |  (по избор)
-let sso = "sso_example" // String |  (по избор)
-let isCrawler = true // Bool |  (по избор)
-let includeUserInfo = true // Bool |  (по избор)
+let afterId = "afterId_example" // String |  (незадължително)
+let limit = 987 // Int |  (незадължително)
+let tags = ["inner_example"] // [String] |  (незадължително)
+let sso = "sso_example" // String |  (незадължително)
+let isCrawler = true // Bool |  (незадължително)
+let includeUserInfo = true // Bool |  (незадължително)
 
 PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

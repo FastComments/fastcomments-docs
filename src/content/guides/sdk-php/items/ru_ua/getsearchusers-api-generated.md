@@ -1,0 +1,35 @@
+## Параметры
+
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|----------|----------|-------------|
+| value | string | query | Нет |  |
+| sso | string | query | Нет |  |
+
+## Ответ
+
+Возвращает: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationUserSearchResponse.php)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример getSearchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\ModerationApi(
+    // Если вы хотите использовать собственный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    new GuzzleHttp\Client()
+);
+$value = 'value_example'; // строка
+$sso = 'sso_example'; // строка
+
+try {
+    $result = $apiInstance->getSearchUsers($value, $sso);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ModerationApi->getSearchUsers: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]

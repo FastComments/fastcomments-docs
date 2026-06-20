@@ -14,24 +14,24 @@
 
 ## Odgovor
 
-Vraća: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineCommentsWithQuestionResults200Response.swift)
+Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineQuestionResultsWithCommentsResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (neobavezno)
-let questionIds = ["inner_example"] // [String] |  (neobavezno)
-let urlId = "urlId_example" // String |  (neobavezno)
-let startDate = Date() // Date |  (neobavezno)
-let forceRecalculate = true // Bool |  (neobavezno)
-let minValue = 987 // Double |  (neobavezno)
-let maxValue = 987 // Double |  (neobavezno)
-let limit = 987 // Double |  (neobavezno)
+let questionId = "questionId_example" // String |  (optional)
+let questionIds = ["inner_example"] // [String] |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let startDate = Date() // Date |  (optional)
+let forceRecalculate = true // Bool |  (optional)
+let minValue = 987 // Double |  (optional)
+let maxValue = 987 // Double |  (optional)
+let limit = 987 // Double |  (optional)
 
 DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
     guard error == nil else {

@@ -1,12 +1,13 @@
+---
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Navn | Type | Location | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | forespørgsel | Ja |  |
+| tenantId | string | query | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_domain_config_200_response.go)
+Returnerer: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_add_domain_config_response.go)
 
 ## Eksempel
 
@@ -18,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -32,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddDomainConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respons fra `AddDomainConfig`: AddDomainConfig200Response
+	// svar fra `AddDomainConfig`: AddDomainConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddDomainConfig`: %v\n", resp)
 }
 [inline-code-end]

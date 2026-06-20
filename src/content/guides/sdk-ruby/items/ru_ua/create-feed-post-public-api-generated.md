@@ -1,18 +1,19 @@
-## Параметри
+---
+## Параметры
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | шлях | Так |  |
-| broadcastId | string | параметр запиту | Ні |  |
-| sso | string | параметр запиту | Ні |  |
+| tenantId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Відповідь
+## Ответ
 
-Повертає: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+Возвращает: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
-## Приклад
+## Пример
 
-[inline-code-attrs-start title = 'Приклад create_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post_public Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

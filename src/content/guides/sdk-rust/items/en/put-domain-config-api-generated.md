@@ -8,26 +8,31 @@
 
 ## Response
 
-Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_config_200_response.rs)
+Returns: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/put_domain_config_response.rs)
 
 ## Example
 
 [inline-code-attrs-start title = 'put_domain_config Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let cfg: &configuration::Configuration = &configuration;
-let params: PutDomainConfigParams = PutDomainConfigParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    domain_to_update: "news/article".to_string(),
-    update_domain_config_params: models::UpdateDomainConfigParams {
-        allow_comments: Some(true),
-        moderation_required: Some(true),
+async fn update_domain_config_example() -> Result<(), Error> {
+    let update_params: models::UpdateDomainConfigParams = models::UpdateDomainConfigParams {
+        enable_comments: Some(true),
+        moderation_mode: Some("pre_moderation".to_string()),
         allowed_origins: Some(vec![
-            "https://www.acme.com".to_string(),
-            "https://news.acme.com".to_string(),
+            "https://news.example.com".to_string(),
+            "https://www.news.example.com".to_string(),
         ]),
-        custom_css_url: Some("https://cdn.acme.com/styles/comments.css".to_string()),
-        default_moderation: Some("pre".to_string()),
-    },
-};
-let response: GetDomainConfig200Response = put_domain_config(cfg, params).await?;
+        require_https: Some(true),
+        max_comment_length: Some(1000),
+    };
+
+    let params: PutDomainConfigParams = PutDomainConfigParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain_to_update: "news.example.com".to_string(),
+        update_domain_config_params: update_params,
+    };
+
+    let response: PutDomainConfigResponse = put_domain_config(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Location | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Ne |  |
@@ -13,23 +14,23 @@
 
 ## Odgovor
 
-Vraća: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEvents200Response.swift)
+Vraća: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventsResponse.swift)
 
 ## Primer
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još uvek beta. Za bilo kakav problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let commentId = "commentId_example" // String |  (neobavezno)
-let externalId = "externalId_example" // String |  (neobavezno)
-let eventType = "eventType_example" // String |  (neobavezno)
-let type = "type_example" // String |  (neobavezno)
-let domain = "domain_example" // String |  (neobavezno)
-let attemptCountGT = 987 // Double |  (neobavezno)
-let skip = 987 // Double |  (neobavezno)
+let commentId = "commentId_example" // String |  (opciono)
+let externalId = "externalId_example" // String |  (opciono)
+let eventType = "eventType_example" // String |  (opciono)
+let type = "type_example" // String |  (opciono)
+let domain = "domain_example" // String |  (opciono)
+let attemptCountGT = 987 // Double |  (opciono)
+let skip = 987 // Double |  (opciono)
 
 DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
     guard error == nil else {
@@ -42,3 +43,5 @@ DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, ext
     }
 }
 [inline-code-end]
+
+---

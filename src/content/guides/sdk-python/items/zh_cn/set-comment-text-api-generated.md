@@ -1,3 +1,4 @@
+---
 ## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
@@ -10,7 +11,7 @@
 
 ## 响应
 
-返回：[`SetCommentText200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text200_response.py)
+返回: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## 示例
 
@@ -18,18 +19,18 @@
 [inline-code-start]
 import client
 from client.models.comment_text_update_request import CommentTextUpdateRequest
-from client.models.set_comment_text200_response import SetCommentText200Response
+from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数的列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 实例进入上下文
+# 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)

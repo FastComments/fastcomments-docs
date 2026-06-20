@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| skip | float64 | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| skip | float64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetEmailTemplateRenderErrors_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_render_errors200response.nim)
+Враћа: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_render_errors_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "welcome-email-template-001", skip = 0.0)
+let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
 if response.isSome:
-  let result = response.get()
-  echo "Render errors:", result
+  let templateErrors = response.get()
+  discard templateErrors
 else:
-  echo "No render errors or request failed. HTTP status:", httpResponse.status
+  discard httpResponse
 [inline-code-end]
 
 ---

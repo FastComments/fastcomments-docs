@@ -4,31 +4,31 @@ afterId
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| afterId | string | query | Не |  |
-| limit | integer | query | Не |  |
-| tags | array | query | Не |  |
-| sso | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
-| includeUserInfo | boolean | query | Не |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Отговор
 
-Връща: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+Връща: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
+# Задаването на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -36,15 +36,15 @@ configuration = client.Configuration(
 
 # Влезте в контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на класа API
+    # Създайте инстанция на API класа
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (по избор)
-    limit = 56 # int |  (по избор)
-    tags = ['tags_example'] # List[str] |  (по избор)
-    sso = 'sso_example' # str |  (по избор)
-    is_crawler = True # bool |  (по избор)
-    include_user_info = True # bool |  (по избор)
+    after_id = 'after_id_example' # str |  (незадължително)
+    limit = 56 # int |  (незадължително)
+    tags = ['tags_example'] # List[str] |  (незадължително)
+    sso = 'sso_example' # str |  (незадължително)
+    is_crawler = True # bool |  (незадължително)
+    include_user_info = True # bool |  (незадължително)
 
     try:
         api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)

@@ -1,20 +1,21 @@
-Aktivieren oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer für eine Seite abonniert sind, werden Benachrichtigungen erstellt
-für neue Root-Kommentare, und auch
+---
+Aktivieren oder Deaktivieren von Benachrichtigungen für eine Seite. Wenn Benutzer eine Seite abonniert haben, werden Benachrichtigungen
+für neue Root-Kommentare erstellt, und auch
 
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Ja |  |
+| url | string | query | Ja |  |
+| pageTitle | string | query | Ja |  |
+| subscribedOrUnsubscribed | string | path | Ja |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Gibt zurück: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Beispiel
 

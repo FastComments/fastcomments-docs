@@ -11,9 +11,9 @@ afterId
 | limit | integer | query | Nej |  |
 | tags | array | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts200_response.rb)
+Returnerer: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_response.rb)
 
 ## Eksempel
 
@@ -21,11 +21,10 @@ Returnerer: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt godkendelse
+# opsætning af autorisation
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentar på følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Konfigurer API-nøgleautorisation: api_key
+  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

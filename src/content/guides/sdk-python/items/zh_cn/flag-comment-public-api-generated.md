@@ -2,32 +2,32 @@
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| commentId | string | path | 是 |  |
-| isFlagged | boolean | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 查询 | 是 |  |
+| commentId | string | 路径 | 是 |  |
+| isFlagged | boolean | 查询 | 是 |  |
+| sso | string | 查询 | 否 |  |
 
 ## 响应
 
-返回：[`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'flag_comment_public 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 指定 host 是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 有关所有支持的配置参数列表，请参阅 configuration.py。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 客户端实例进入上下文
+# 使用 API 客户端的实例进入上下文
 with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)

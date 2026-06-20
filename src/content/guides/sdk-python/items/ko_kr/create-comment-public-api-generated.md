@@ -5,12 +5,12 @@
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
 | broadcastId | string | query | 예 |  |
-| sessionId | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| sessionId | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+반환: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## 예제
 
@@ -18,18 +18,18 @@
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
+# 호스트를 정의하는 것은 선택 사항이며 기본값은 https://fastcomments.com 입니다
 # 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API 클라이언트 인스턴스와 함께 컨텍스트를 엽니다
+# API 클라이언트 인스턴스로 컨텍스트를 엽니다
 with client.ApiClient(configuration) as api_client:
     # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)

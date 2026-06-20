@@ -7,19 +7,19 @@
 
 ## Response
 
-Returns: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_200_response.rs)
+Returns: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
 
 ## Example
 
 [inline-code-attrs-start title = 'delete_domain_config Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_domain_config() -> Result<DeleteDomainConfig200Response, Error> {
-    let params: DeleteDomainConfigParams = DeleteDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        domain: "news/acme".to_string(),
-        site_id: Some("main-site".to_string()),
+async fn run_delete_domain_config() -> Result<DeleteDomainConfigResponse, Error> {
+    let params = DeleteDomainConfigParams {
+        tenant_id: "acme-corp-tenant".to_owned(),
+        domain: "news/acme-corp".to_owned(),
+        force: Some(true),
     };
-    let response: DeleteDomainConfig200Response = delete_domain_config(&configuration, params).await?;
+    let response: DeleteDomainConfigResponse = delete_domain_config(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

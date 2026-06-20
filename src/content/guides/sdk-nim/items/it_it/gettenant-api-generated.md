@@ -1,27 +1,24 @@
----
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | No |  |
 
 ## Risposta
 
-Restituisce: [`Option[GetTenant_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant200response.nim)
+Restituisce: [`Option[GetTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_response.nim)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "")
+let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "tenant-789")
 if response.isSome:
   let tenant = response.get()
-  echo "Tenant retrieved"
   discard tenant
 else:
-  echo "No tenant found"
-  echo "HTTP status:", httpResponse.status
+  discard httpResponse
 [inline-code-end]
 
 ---

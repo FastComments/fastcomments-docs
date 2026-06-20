@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`Option[GetVotesForUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user200response.nim)
+반환: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user_response.nim)
 
 ## 예제
 
@@ -17,14 +17,15 @@
 [inline-code-start]
 let (response, httpResponse) = client.getVotesForUser(
   tenantId = "my-tenant-123",
-  urlId = "news/economy-update-2026",
+  urlId = "news/article-title",
   userId = "user-789",
   anonUserId = ""
 )
-
 if response.isSome:
   let votes = response.get()
-  discard votes
+  echo "User votes retrieved"
+else:
+  echo "No votes found"
 [inline-code-end]
 
 ---

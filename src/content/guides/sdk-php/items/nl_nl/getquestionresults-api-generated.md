@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Nee |  |
@@ -10,9 +10,9 @@
 | questionIds | string | query | Nee |  |
 | skip | number | query | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResults200Response.php)
+Retourneert: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultsResponse.php)
 
 ## Voorbeeld
 
@@ -22,9 +22,9 @@ Retourneert: [`GetQuestionResults200Response`](https://github.com/FastComments/f
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutel autorisatie: api_key
+// Configureer autorisatie voor API-sleutel: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal de volgende regel uit commentaar om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+// Haal onderstaande regel uit commentaar om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

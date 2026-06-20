@@ -1,9 +1,8 @@
-Включение или отключение уведомлений для страницы. Когда пользователи подписаны на страницу, создаются уведомления
-для новых корневых комментариев, а также
+Включает или отключает уведомления для страницы. Когда пользователи подписываются на страницу, уведомления создаются для новых корневых комментариев, а также
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -14,7 +13,7 @@
 
 ## Ответ
 
-Возвращает: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Возвращает: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Пример
 
@@ -24,13 +23,13 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
-url = 'url_example' # String | 
-page_title = 'page_title_example' # String | 
-subscribed_or_unsubscribed = 'subscribe' # String | 
+tenant_id = 'tenant_id_example' # Строка | 
+url_id = 'url_id_example' # Строка | 
+url = 'url_example' # Строка | 
+page_title = 'page_title_example' # Строка | 
+subscribed_or_unsubscribed = 'subscribe' # Строка | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Строка | 
 }
 
 begin

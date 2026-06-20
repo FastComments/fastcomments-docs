@@ -1,41 +1,33 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| postId | string | Da |  |
-| reactBodyParams | ReactBodyParams | Da |  |
-| isUndo | bool | Ne |  |
-| broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Да |  |
+| postId | string | Да |  |
+| reactBodyParams | ReactBodyParams | Да |  |
+| isUndo | bool | Не |  |
+| broadcastId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ReactFeedPostPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostPublic_200_response.h)
+Враћа: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'reactFeedPostPublic Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("post-987");
+utility::string_t postId = U("feed-post-456");
 ReactBodyParams reactBodyParams;
-reactBodyParams.userId = U("jane.doe@example.com");
 reactBodyParams.reaction = U("like");
-boost::optional<bool> isUndo = boost::optional<bool>(false);
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-001"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-xyz"));
+boost::optional<bool> isUndo = false;
+boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-01"));
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
 api->reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)
-    .then([](pplx::task<std::shared_ptr<ReactFeedPostPublic_200_response>> task) {
-        try {
-            auto resp = task.get();
-            auto out = resp ? resp : std::make_shared<ReactFeedPostPublic_200_response>();
-            std::cout << "Reaction processed\n";
-        } catch (const std::exception &e) {
-            std::cerr << "React failed: " << e.what() << '\n';
-        }
-    });
+.then([](std::shared_ptr<ReactFeedPostResponse> resp) {
+    if (resp) {
+        auto resultCopy = std::make_shared<ReactFeedPostResponse>(*resp);
+    }
+});
 [inline-code-end]
-
----

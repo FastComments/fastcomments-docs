@@ -1,36 +1,36 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Name | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| afterCreatedAt | integer | query | No |  |
-| unreadOnly | boolean | query | No |  |
-| dmOnly | boolean | query | No |  |
-| noDm | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| afterId | string | query | Ні |  |
+| afterCreatedAt | integer | query | Ні |  |
+| unreadOnly | boolean | query | Ні |  |
+| dmOnly | boolean | query | Ні |  |
+| noDm | boolean | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
-Повертає: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+Повертає: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста не обов'язкове і за замовчуванням — https://fastcomments.com
-# Див. configuration.py для переліку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста необов'язкове і за замовчуванням має значення https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Увійдіть у контекст з екземпляром клієнта API
+# Відкрийте контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)

@@ -1,20 +1,21 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| questionId | string | query | 아니오 |  |
-| questionIds | array | query | 아니오 |  |
-| urlId | string | query | 아니오 |  |
-| startDate | string | query | 아니오 |  |
-| forceRecalculate | boolean | query | 아니오 |  |
-| minValue | number | query | 아니오 |  |
-| maxValue | number | query | 아니오 |  |
-| limit | number | query | 아니오 |  |
+| questionId | string | query | 아니요 |  |
+| questionIds | array | query | 아니요 |  |
+| urlId | string | query | 아니요 |  |
+| startDate | string | query | 아니요 |  |
+| forceRecalculate | boolean | query | 아니요 |  |
+| minValue | number | query | 아니요 |  |
+| maxValue | number | query | 아니요 |  |
+| limit | number | query | 아니요 |  |
 
 ## 응답
 
-반환: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_comments_with_question_results200_response.rb)
+반환: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/combine_question_results_with_comments_response.rb)
 
 ## 예제
 
@@ -24,9 +25,9 @@ require 'time'
 require 'fastcomments-client'
 # 인증 설정
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: 'Bearer' (기본값은 nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: 'Bearer' (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -51,3 +52,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->combine_comments_with_question_results: #{e}"
 end
 [inline-code-end]
+
+---

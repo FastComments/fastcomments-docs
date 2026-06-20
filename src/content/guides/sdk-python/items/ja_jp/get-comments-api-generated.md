@@ -17,42 +17,40 @@
 | hashTag | string | query | いいえ |  |
 | parentId | string | query | いいえ |  |
 | direction | string | query | いいえ |  |
+| fromDate | integer | query | いいえ |  |
+| toDate | integer | query | いいえ |  |
 
 ## レスポンス
 
-Returns: [`GetComments200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments200_response.py)
+戻り値: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_comments の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments200_response import GetComments200Response
+from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は省略可能で、デフォルトは https://fastcomments.com です
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
 # サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方法の例を以下に示します。あなたの認証ユースケースに合う例を使用してください。
+# クライアントは、API サーバーのセキュリティポリシーに従って認証および認可のパラメータを設定する必要があります。
+# 各認証方法の例を以下に示します。自身の認証ユースケースに合う例を使用してください。
 
-# Configure API key authorization: api_key
-# API キー認証を設定: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには以下のコメントを外してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
-# API クライアントのインスタンスをコンテキストに入れます
+# API クライアントのインスタンスのコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
@@ -70,9 +68,11 @@ with client.ApiClient(configuration) as api_client:
     hash_tag = 'hash_tag_example' # str |  （オプション）
     parent_id = 'parent_id_example' # str |  （オプション）
     direction = client.SortDirections() # SortDirections |  （オプション）
+    from_date = 56 # int |  （オプション）
+    to_date = 56 # int |  （オプション）
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction)
+        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

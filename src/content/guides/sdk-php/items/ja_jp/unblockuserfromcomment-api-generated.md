@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| id | string | path | はい |  |
-| userId | string | query | いいえ |  |
-| anonUserId | string | query | いいえ |  |
+| tenantId | string | クエリ | はい |  |
+| id | string | パス | はい |  |
+| userId | string | クエリ | いいえ |  |
+| anonUserId | string | クエリ | いいえ |  |
 
 ## レスポンス
 
-返却: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UnBlockCommentPublic200Response.php)
+戻り値: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UnblockSuccess.php)
 
 ## 例
 
@@ -19,14 +19,14 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証を設定します: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて以下のコメントを外し、APIキーの接頭辞（例: Bearer）を設定してください
+// 必要に応じて、APIキーの接頭辞（例: Bearer）を設定するには、以下のコメントアウトを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムの HTTP クライアントを使用する場合、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // カスタムの HTTP クライアントを使用したい場合、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
     // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config

@@ -1,4 +1,4 @@
-## パラメーター
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
@@ -8,39 +8,39 @@
 
 ## レスポンス
 
-返却値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'delete_moderator の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメーターの一覧は configuration.py を参照してください。
+# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメーターを設定する必要があります。
-# 各認証方式の例を以下に示します。ご利用の認証方法に合った例を使用してください。
+# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
+# 各認証方式の例を以下に示します。あなたの認証ケースに合う例を使用してください。
 
-# Configure API key authorization: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて、API キーの接頭辞（例: Bearer）を設定するには以下のコメントを解除してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには下の行のコメントを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストを開きます
+# API クライアントのインスタンスとのコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    send_email = 'send_email_example' # str |  (任意)
+    send_email = 'send_email_example' # str |  (オプション)
 
     try:
         api_response = api_instance.delete_moderator(tenant_id, id, send_email=send_email)

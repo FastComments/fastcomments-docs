@@ -1,9 +1,9 @@
-Agrège des documents en les groupant (si groupBy est fourni) et en appliquant plusieurs opérations.
+Agrège des documents en les regroupant (si groupBy est fourni) et en appliquant plusieurs opérations.
 Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en charge.
 
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | parentTenantId | string | query | Non |  |
@@ -11,11 +11,11 @@ Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en c
 
 ## Réponse
 
-Renvoie: [`AggregationResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregationResponse.swift)
+Retourne: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d’agrégation'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'agrégation'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift

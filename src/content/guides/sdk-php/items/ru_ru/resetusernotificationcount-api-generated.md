@@ -1,13 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
-Возвращает: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotifications200Response.php)
+Возвращает: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## Пример
 
@@ -23,8 +23,8 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$sso = 'sso_example'; // строка
+$tenant_id = 'tenant_id_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->resetUserNotificationCount($tenant_id, $sso);

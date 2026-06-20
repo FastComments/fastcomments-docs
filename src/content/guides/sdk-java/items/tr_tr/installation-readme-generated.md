@@ -12,36 +12,36 @@ Projenizin POM dosyasına Repsy deposunu ekleyin:
 </repositories>
 ```
 
-Sonra ihtiyacınız olan bağımlılıkları ekleyin:
+Ardından ihtiyaç duyduğunuz bağımlılıkları ekleyin:
 
 ```xml
 <dependencies>
-    <!-- API İstemcisi -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Çekirdek Kütüphane (SSO içerir) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- PubSub Kütüphanesi (canlı olaylar için) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Repsy deposunu build.gradle dosyanıza ekleyin:
+build.gradle dosyanıza Repsy deposunu ekleyin:
 
 ```groovy
 repositories {
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API İstemcisi
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Çekirdek Kütüphane (SSO içerir)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // PubSub Kütüphanesi (canlı etkinlikler için)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Kütüphane İçeriği
+### Library Contents
 
-Bu kütüphane üç modül içerir. Oluşturulmuş API istemcisi, API ile çalışmayı kolaylaştırmak için elle yazılmış yardımcılar içeren çekirdek Java kütüphanesi ve değişiklik akışlarına abonelik için bir kütüphane olan `pubsub` modülü.
+Bu kütüphane üç modül içerir. Oluşturulmuş API istemcisi, API ile çalışmayı kolaylaştırmak için elle yazılmış yardımcıları içeren core Java kütüphanesi ve değişiklik akışlarına abone olmak için bir kütüphane olan `pubsub` modülü.
 
-- [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Çekirdek Kütüphane Belgeleri, SSO Örnekleri Dahil](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Genel vs Güvenli API'ler
+### Public vs Secured APIs
 
-API istemcisi için iki sınıf vardır: `DefaultApi` ve `PublicApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerir; `PublicApi` ise kimlik doğrulama olmadan bir tarayıcı/taşınabilir cihaz vb. üzerinden doğrudan yapılabilen API çağrılarını içerir.
+API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerir ve `PublicApi`, tarayıcı/mobil cihaz vb. üzerinden kimlik doğrulama olmadan doğrudan yapılabilecek yöntemleri içerir.
+
+`ModerationApi` moderatör panosunu besler. Yorum moderasyonu için yöntemler içerir (listeleme, sayma, arama, günlükler ve dışa aktarma), moderasyon eylemleri (kaldır/geri yükle, işaretleme, inceleme/spam/onay durumunu ayarlama, oylar ve konuyu yeniden aç/kapat), yasaklar (yoruma yasaklama, yasağı geri alma, ön-yasak özetleri, yasak durumu ve tercihleri ve yasaklı kullanıcı sayıları) ve rozetler & güven (rozet verme/kaldırma, manuel rozetler, güven faktörünü al/ayarla ve kullanıcının dahili profili). Her `ModerationApi` yöntemi, çağrının SSO ile kimlik doğrulaması yapılmış bir moderatör adına gerçekleştirilebilmesi için bir `sso` parametresi kabul eder.

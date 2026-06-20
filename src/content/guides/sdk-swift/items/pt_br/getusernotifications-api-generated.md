@@ -1,8 +1,9 @@
 ## Parâmetros
 
-| Nome | Type | Location | Obrigatório | Descrição |
+| Nome | Tipo | Location | Obrigatório | Descrição |
 |------|------|----------|------------|-----------|
 | tenantId | string | query | Sim |  |
+| urlId | string | query | Não | Usado para determinar se a página atual está inscrita. |
 | pageSize | integer | query | Não |  |
 | afterId | string | query | Não |  |
 | includeContext | boolean | query | Não |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | Não |  |
 | noDm | boolean | query | Não |  |
 | includeTranslations | boolean | query | Não |  |
+| includeTenantNotifications | boolean | query | Não |  |
 | sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotifications200Response.swift)
+Retorna: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
 ## Exemplo
 
@@ -25,6 +27,7 @@ Retorna: [`GetUserNotifications200Response`](https://github.com/FastComments/fas
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
+let urlId = "urlId_example" // String | Usado para determinar se a página atual está inscrita. (opcional)
 let pageSize = 987 // Int |  (opcional)
 let afterId = "afterId_example" // String |  (opcional)
 let includeContext = true // Bool |  (opcional)
@@ -33,9 +36,10 @@ let unreadOnly = true // Bool |  (opcional)
 let dmOnly = true // Bool |  (opcional)
 let noDm = true // Bool |  (opcional)
 let includeTranslations = true // Bool |  (opcional)
+let includeTenantNotifications = true // Bool |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -46,5 +50,3 @@ PublicAPI.getUserNotifications(tenantId: tenantId, pageSize: pageSize, afterId: 
     }
 }
 [inline-code-end]
-
----

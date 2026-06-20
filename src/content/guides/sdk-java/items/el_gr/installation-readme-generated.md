@@ -12,36 +12,36 @@
 </repositories>
 ```
 
-Στη συνέχεια προσθέστε τις εξαρτήσεις που χρειάζεστε:
+Στη συνέχεια, προσθέστε τις εξαρτήσεις που χρειάζεστε:
 
 ```xml
 <dependencies>
-    <!-- Πελάτης API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Βασική Βιβλιοθήκη (περιλαμβάνει SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη PubSub (για live συμβάντα) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Προσθέστε το αποθετήριο Repsy στο αρχείο build.gradle:
+Προσθέστε το αποθετήριο Repsy στο αρχείο build.gradle σας:
 
 ```groovy
 repositories {
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // Πελάτης API
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Βασική Βιβλιοθήκη (περιλαμβάνει SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // Βιβλιοθήκη PubSub (για live συμβάντα)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Περιεχόμενα Βιβλιοθήκης
+### Περιεχόμενα βιβλιοθήκης
 
-Αυτή η βιβλιοθήκη περιέχει τρία modules. Ο παραγόμενος πελάτης API, η βασική Java βιβλιοθήκη που περιέχει χειρογραμμένα βοηθητικά εργαλεία για να διευκολύνουν τη δουλειά με το API, και το module `pubsub` το οποίο είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
+Αυτή η βιβλιοθήκη περιέχει τρεις μονάδες. Ο παραγόμενος client API, η βασική βιβλιοθήκη Java η οποία περιέχει χειροποίητα βοηθητικά εργαλεία για να διευκολύνει την εργασία με το API, και το module `pubsub` που είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
 
-- [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Τεκμηρίωση Βασικής Βιβλιοθήκης, Περιλαμβάνει Παραδείγματα SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Τεκμηρίωση Βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Τεκμηρίωση βιβλιοθήκης API Πελάτη](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Τεκμηρίωση βασικής βιβλιοθήκης, συμπεριλαμβανομένων παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Τεκμηρίωση βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Δημόσια έναντι Προστατευμένων API
 
-Για τον πελάτη API, υπάρχουν δύο κλάσεις, `DefaultApi` και `PublicApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, ενώ η `PublicApi` περιέχει κλήσεις API που μπορούν να γίνουν απευθείας από έναν browser/συσκευή κινητού/κ.λπ. χωρίς έλεγχο ταυτότητας.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, και η `PublicApi` περιέχει μεθόδους που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς πιστοποίηση.
+
+Η `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου (dashboard) του διαχειριστή. Περιέχει μεθόδους για την επιτήρηση σχολίων (λίστα, καταμέτρηση, αναζήτηση, αρχεία καταγραφής και εξαγωγή), ενέργειες επιτήρησης (αφαίρεση/επαναφορά, σήμανση, ορισμός κατάστασης αναθεώρησης/spam/έγκρισης, ψήφοι, και επαναφορά/κλείσιμο νήματος), αποκλεισμούς (απαγόρευση σχολιασμού, άρση αποκλεισμού, προ-αποκλειστικές περιλήψεις, κατάσταση και προτιμήσεις αποκλεισμού, και αριθμοί αποκλεισμένων χρηστών), και διακριτικά & εμπιστοσύνη (απονομή/αφαίρεση διακριτικού, χειροκίνητα διακριτικά, λήψη/ρύθμιση παράγοντα εμπιστοσύνης, και εσωτερικό προφίλ χρήστη). Κάθε μέθοδος της `ModerationApi` δέχεται παράμετρο `sso`, ώστε η κλήση να μπορεί να εκτελεστεί εκ μέρους ενός διαχειριστή που έχει πιστοποιηθεί μέσω SSO.

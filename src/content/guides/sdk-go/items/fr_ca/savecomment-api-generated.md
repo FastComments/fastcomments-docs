@@ -1,3 +1,4 @@
+---
 ## Paramètres
 
 | Nom | Type | Emplacement | Requis | Description |
@@ -10,7 +11,7 @@
 
 ## Réponse
 
-Renvoie : [`SaveComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comment_200_response.go)
+Renvoie: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_save_comment_response.go)
 
 ## Exemple
 
@@ -22,16 +23,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createCommentParams := *openapiclient.NewCreateCommentParams("CommenterName_example", "Comment_example", "Url_example", "UrlId_example", "Locale_example") // CreateCommentParams | 
-	isLive := true // bool |  (optionnel)
-	doSpamCheck := true // bool |  (optionnel)
-	sendEmails := true // bool |  (optionnel)
-	populateNotifications := true // bool |  (optionnel)
+	isLive := true // bool |  (facultatif)
+	doSpamCheck := true // bool |  (facultatif)
+	sendEmails := true // bool |  (facultatif)
+	populateNotifications := true // bool |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +41,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SaveComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `SaveComment` : SaveComment200Response
+	// réponse de `SaveComment` : APISaveCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SaveComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

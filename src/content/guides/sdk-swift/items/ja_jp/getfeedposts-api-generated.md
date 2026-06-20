@@ -4,16 +4,16 @@ afterId
 
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| afterId | string | query | いいえ |  |
-| limit | integer | query | いいえ |  |
-| tags | array | query | いいえ |  |
+| tenantId | string | query | 必須 |  |
+| afterId | string | query | 任意 |  |
+| limit | integer | query | 任意 |  |
+| tags | array | query | 任意 |  |
 
 ## レスポンス
 
-戻り値: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPosts200Response.swift)
+返却: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
 ## 例
 
@@ -23,9 +23,9 @@ afterId
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  （任意）
-let limit = 987 // Int |  （任意）
-let tags = ["inner_example"] // [String] |  （任意）
+let afterId = "afterId_example" // String |  (任意)
+let limit = 987 // Int |  (任意)
+let tags = ["inner_example"] // [String] |  (任意)
 
 DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
     guard error == nil else {

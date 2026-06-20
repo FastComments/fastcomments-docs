@@ -1,46 +1,47 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | Type | Location | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | כן |  |
+| commentId | string | query | לא |  |
+| externalId | string | query | לא |  |
+| eventType | string | query | לא |  |
+| type | string | query | לא |  |
+| domain | string | query | לא |  |
+| attemptCountGT | number | query | לא |  |
+| skip | number | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events200_response.py)
+מחזיר: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_pending_webhook_events200_response import GetPendingWebhookEvents200Response
+from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ומעוגנת כברירת מחדל ל-https://fastcomments.com
-# ראה את configuration.py לקבלת רשימה של כל פרמטרי הקונפיגורציה הנתמכים.
+# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
+# ראה configuration.py לרשימה של כל פרמטרי ההגדרה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאות
+# הלקוח חייב להגדיר את פרמטרי האימות והרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטה מוצגות למטה; השתמש בדוגמה המתאימה למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה ש
+# מספקת את המקרה השימושי שלך.
 
 # הגדר הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API במידת הצורך
+# הסר את ההערה להלן על מנת להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס לקונטקסט עם מופע של לקוח ה-API
+# הכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
@@ -60,5 +61,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_pending_webhook_events: %s\n" % e)
 [inline-code-end]
-
----

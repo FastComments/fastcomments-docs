@@ -1,14 +1,14 @@
-## パラメータ
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| sure | string | query | No |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
+| sure | string | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 例
 
@@ -18,9 +18,9 @@ require 'time'
 require 'fastcomments-client'
 # 認証の設定
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # APIキー認証を構成: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーにプレフィックス（例: 'Bearer'）を設定するには以下の行のコメントを外してください（デフォルトはnil）
+  # APIキーにプレフィックスを設定するには、次の行のコメントを外してください。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_tenant: #{e}"
 end
 [inline-code-end]
-
----

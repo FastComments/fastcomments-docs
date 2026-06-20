@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | limit | float64 | Ne |  |
@@ -11,23 +11,26 @@
 
 ## Odgovor
 
-Vraća: [`Option[GetAuditLogs_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_audit_logs200response.nim)
+Vraća: [`Option[GetAuditLogsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_audit_logs_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getAuditLogs Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getAuditLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getAuditLogs(
   tenantId = "my-tenant-123",
-  limit = 100.0,
+  limit = 50.0,
   skip = 0.0,
-  order = SORTDIR(0),
-  after = 0.0,
-  before = 0.0
+  order = SORTDIR.DESC,
+  after = 1622505600.0,
+  before = 1625097600.0
 )
+
 if response.isSome:
-  let audit = response.get()
-  echo audit
+  let logs = response.get()
+  echo logs
+else:
+  echo "No audit logs returned"
 [inline-code-end]
 
 ---

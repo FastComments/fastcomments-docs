@@ -3,13 +3,13 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| postIds | array | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | נתיב | כן |  |
+| postIds | array | שאילתה | לא |  |
+| sso | string | שאילתה | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_reacts_public200_response.rb)
+מחזיר: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/user_reacts_response.rb)
 
 ## דוגמה
 

@@ -7,14 +7,14 @@
 
 ## Risposta
 
-Restituisce: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators200_response.py)
+Restituisce: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_moderators_response.py)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_moderators'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_moderators'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_moderators200_response import GetModerators200Response
+from client.models.get_moderators_response import GetModeratorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,17 +25,17 @@ configuration = client.Configuration(
 )
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la policy di sicurezza del server API.
-# Gli esempi per ogni metodo di autenticazione sono forniti di seguito, usa l'esempio che
+# in conformità con la politica di sicurezza del server API.
+# Gli esempi per ciascun metodo di autenticazione sono forniti di seguito; usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configura l'autenticazione tramite API key: api_key
+# Configura l'autorizzazione tramite API key: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommenta la riga qui sotto per impostare il prefisso (es. Bearer) per la chiave API, se necessario
+# Decommenta la riga sottostante per impostare il prefisso (es. Bearer) per l'API key, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Accedi a un contesto con un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.DefaultApi(api_client)
@@ -49,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_moderators: %s\n" % e)
 [inline-code-end]
+
+---

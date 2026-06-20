@@ -1,25 +1,25 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | skip | float64 | לא |  |
 
 ## תגובה
 
-מחזיר: [`Option[GetTenantPackages_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_packages200response.nim)
+מחזיר: [`Option[GetTenantPackagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_packages_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getTenantPackages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTenantPackages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let packages = response.get()
-  echo "Received packages for tenant:", " my-tenant-123"
+  echo "Received tenant packages:"
   echo packages
 else:
-  echo "No packages found, status:", httpResponse.status
+  echo "No packages found for tenant 'my-tenant-123'"
 [inline-code-end]
 
 ---

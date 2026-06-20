@@ -1,21 +1,23 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| pageSize | integer | query | No |  |
-| afterId | string | query | No |  |
-| includeContext | boolean | query | No |  |
-| afterCreatedAt | integer | query | No |  |
-| unreadOnly | boolean | query | No |  |
-| dmOnly | boolean | query | No |  |
-| noDm | boolean | query | No |  |
-| includeTranslations | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Oui |  |
+| urlId | string | query | Non | Utilisé pour déterminer si la page actuelle est abonnée. |
+| pageSize | integer | query | Non |  |
+| afterId | string | query | Non |  |
+| includeContext | boolean | query | Non |  |
+| afterCreatedAt | integer | query | Non |  |
+| unreadOnly | boolean | query | Non |  |
+| dmOnly | boolean | query | Non |  |
+| noDm | boolean | query | Non |  |
+| includeTranslations | boolean | query | Non |  |
+| includeTenantNotifications | boolean | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserNotifications200Response.java)
+Retourne: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMyNotificationsResponse.java)
 
 ## Exemple
 
@@ -35,6 +37,7 @@ public class Example {
 
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | Utilisé pour déterminer si la page actuelle est abonnée.
     Integer pageSize = 56; // Integer | 
     String afterId = "afterId_example"; // String | 
     Boolean includeContext = true; // Boolean | 
@@ -43,9 +46,11 @@ public class Example {
     Boolean dmOnly = true; // Boolean | 
     Boolean noDm = true; // Boolean | 
     Boolean includeTranslations = true; // Boolean | 
+    Boolean includeTenantNotifications = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserNotifications200Response result = apiInstance.getUserNotifications(tenantId)
+      GetMyNotificationsResponse result = apiInstance.getUserNotifications(tenantId)
+            .urlId(urlId)
             .pageSize(pageSize)
             .afterId(afterId)
             .includeContext(includeContext)
@@ -54,6 +59,7 @@ public class Example {
             .dmOnly(dmOnly)
             .noDm(noDm)
             .includeTranslations(includeTranslations)
+            .includeTenantNotifications(includeTenantNotifications)
             .sso(sso)
             .execute();
       System.out.println(result);

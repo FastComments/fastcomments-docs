@@ -5,9 +5,9 @@
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package200_response.rb)
+Returnerer: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_package_response.rb)
 
 ## Eksempel
 
@@ -15,11 +15,11 @@ Returnerer: [`GetTenantPackage200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Opsætning af autorisation
+# opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurer API key-godkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren fra følgende linje for at angive et præfiks for API key, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_tenant_package: #{e}"
 end
 [inline-code-end]
-
----

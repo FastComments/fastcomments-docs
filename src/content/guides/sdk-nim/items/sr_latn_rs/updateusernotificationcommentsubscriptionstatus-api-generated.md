@@ -1,6 +1,8 @@
+Omogući ili onemogući obaveštenja za određeni komentar.
+
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | notificationId | string | Ne |  |
@@ -10,7 +12,7 @@
 
 ## Odgovor
 
-Vraća: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status200response.nim)
+Vraća: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## Primer
 
@@ -18,16 +20,15 @@ Vraća: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.com
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "notif-456",
-  optedInOrOut = "opted_in",
+  notificationId = "",
+  optedInOrOut = "",
   commentId = "cmt-789",
-  sso = "sso-token-abc"
+  sso = ""
 )
+
 if response.isSome:
-  let updatedStatus = response.get()
-  discard updatedStatus
-else:
-  discard httpResponse
+  let updateResp = response.get()
+  echo "Subscription update response: ", updateResp
 [inline-code-end]
 
 ---

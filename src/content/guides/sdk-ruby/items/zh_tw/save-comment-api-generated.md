@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
@@ -11,7 +10,7 @@
 
 ## 回應
 
-回傳: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+回傳: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
 
 ## 範例
 
@@ -21,9 +20,9 @@ require 'time'
 require 'fastcomments-client'
 # 設定授權
 FastCommentsClient.configure do |config|
-  # 設定 API 金鑰授權：api_key
+  # 設定 API 金鑰授權: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 若要為 API 金鑰設定前綴（例如 'Bearer'），請取消註解下列行（預設為 nil）
+  # 若要為 API 金鑰設定前綴（例如 'Bearer'），請取消註解下行（預設為 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -45,5 +44,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->save_comment: #{e}"
 end
 [inline-code-end]
-
----

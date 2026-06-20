@@ -2,46 +2,46 @@ req
 tenantId
 urlId
 
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| page | integer | query | Ne |  |
+| direction | string | query | Ne |  |
+| sso | string | query | Ne |  |
+| skip | integer | query | Ne |  |
+| skipChildren | integer | query | Ne |  |
+| limit | integer | query | Ne |  |
+| limitChildren | integer | query | Ne |  |
+| countChildren | boolean | query | Ne |  |
+| fetchPageForCommentId | string | query | Ne |  |
+| includeConfig | boolean | query | Ne |  |
+| countAll | boolean | query | Ne |  |
+| includei10n | boolean | query | Ne |  |
+| locale | string | query | Ne |  |
+| modules | string | query | Ne |  |
+| isCrawler | boolean | query | Ne |  |
+| includeNotificationCount | boolean | query | Ne |  |
+| asTree | boolean | query | Ne |  |
+| maxTreeDepth | integer | query | Ne |  |
+| useFullTranslationIds | boolean | query | Ne |  |
+| parentId | string | query | Ne |  |
+| searchText | string | query | Ne |  |
+| hashTags | array | query | Ne |  |
+| userId | string | query | Ne |  |
+| customConfigStr | string | query | Ne |  |
+| afterCommentId | string | query | Ne |  |
+| beforeCommentId | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Vraća: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'get_comments_public Примјер'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comments_public Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

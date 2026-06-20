@@ -2,15 +2,15 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | שאילתה | כן |  |
-| commentId | string | שאילתה | כן |  |
-| direction | string | שאילתה | כן |  |
-| userId | string | שאילתה | לא |  |
-| anonUserId | string | שאילתה | לא |  |
+| tenantId | string | query | כן |  |
+| commentId | string | query | כן |  |
+| direction | string | query | כן |  |
+| userId | string | query | לא |  |
+| anonUserId | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_comment_200_response.go)
+מחזיר: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
 ## דוגמה
 
@@ -26,11 +26,11 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // מחרוזת | 
-	commentId := "commentId_example" // מחרוזת | 
-	direction := "direction_example" // מחרוזת | 
-	userId := "userId_example" // מחרוזת |  (אופציונלי)
-	anonUserId := "anonUserId_example" // מחרוזת |  (אופציונלי)
+	tenantId := "tenantId_example" // string | 
+	commentId := "commentId_example" // string | 
+	direction := "direction_example" // string | 
+	userId := "userId_example" // string |  (אופציונלי)
+	anonUserId := "anonUserId_example" // string |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.CreateVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`CreateVote`: VoteComment200Response
+	// תגובה מ-`CreateVote`: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateVote`: %v\n", resp)
 }
 [inline-code-end]
+
+---

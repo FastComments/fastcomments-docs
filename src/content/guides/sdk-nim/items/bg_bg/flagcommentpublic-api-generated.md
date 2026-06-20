@@ -1,29 +1,30 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| isFlagged | bool | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| isFlagged | bool | No |  |
+| sso | string | No |  |
 
 ## Отговор
 
-Връща: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Връща: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример на flagCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagCommentPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-98765",
-  isFlagged = false,
+  commentId = "cmt-456789",
+  isFlagged = true,
   sso = ""
 )
-if response.isSome:
-  let flagResult = response.get()
-  discard flagResult
-[inline-code-end]
 
----
+if response.isSome:
+  let apiResp = response.get()
+  discard apiResp
+else:
+  discard httpResponse
+[inline-code-end]

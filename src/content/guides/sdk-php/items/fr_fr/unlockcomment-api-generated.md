@@ -7,9 +7,9 @@
 | broadcastId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
-## Réponse
+## Response
 
-Renvoie: [`LockComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/LockComment200Response.php)
+Renvoie: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Exemple
 

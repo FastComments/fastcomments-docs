@@ -2,12 +2,12 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | 是 |  |
-| id | string | 路徑 | 是 |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 範例
 
@@ -29,8 +29,8 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // 字串
-$id = 'id_example'; // 字串
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
 $update_tenant_body = new \FastComments\Client\Model\UpdateTenantBody(); // \FastComments\Client\Model\UpdateTenantBody
 
 try {

@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+Retourne : [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
 ## Exemple
 
@@ -20,23 +20,23 @@ Renvoie : [`GetQuestionResults200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configuration de l'authentification
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
-  # Configurer l'autorisation par clé API: api_key
+  # Configure l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. 'Bearer' (par défaut nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Chaîne | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  url_id: 'url_id_example', # Chaîne | 
-  user_id: 'user_id_example', # Chaîne | 
-  start_date: 'start_date_example', # Chaîne | 
-  question_id: 'question_id_example', # Chaîne | 
-  question_ids: 'question_ids_example', # Chaîne | 
-  skip: 1.2 # Nombre à virgule flottante | 
+  url_id: 'url_id_example', # String | 
+  user_id: 'user_id_example', # String | 
+  start_date: 'start_date_example', # String | 
+  question_id: 'question_id_example', # String | 
+  question_ids: 'question_ids_example', # String | 
+  skip: 1.2 # Float | 
 }
 
 begin
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_results: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,24 +1,24 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Name | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Списък от идентификатори на коментари, разделени със запетая. |
+| commentIds | string | query | Да | Списък с идентификатори на коментари, разделени със запетая. |
 | sso | string | query | Не |  |
 
-## Отговор
+## Response
 
-Връща: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckedCommentsForBlocked200Response.swift)
+Връща: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckBlockedCommentsResponse.swift)
 
 ## Пример
 
 [inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примерни кодове все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. За проблеми, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let commentIds = "commentIds_example" // String | Списък от идентификатори на коментари, разделени със запетая.
+let commentIds = "commentIds_example" // String | Списък с идентификатори на коментари, разделени със запетая.
 let sso = "sso_example" // String |  (по избор)
 
 PublicAPI.checkedCommentsForBlocked(tenantId: tenantId, commentIds: commentIds, sso: sso) { (response, error) in
@@ -32,5 +32,3 @@ PublicAPI.checkedCommentsForBlocked(tenantId: tenantId, commentIds: commentIds, 
     }
 }
 [inline-code-end]
-
----

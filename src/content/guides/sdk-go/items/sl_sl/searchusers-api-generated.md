@@ -1,8 +1,7 @@
----
 ## Parametri
 
-| Name | Type | Location | Obvezno | Description |
-|------|------|----------|---------|-------------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | usernameStartsWith | string | query | Ne |  |
@@ -12,7 +11,7 @@
 
 ## Odgovor
 
-Vrne: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+Vrača: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## Primer
 
@@ -30,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string |  (izbirno)
-	mentionGroupIds := []string{"Inner_example"} // []string |  (izbirno)
-	sso := "sso_example" // string |  (izbirno)
-	searchSection := "searchSection_example" // string |  (izbirno)
+	usernameStartsWith := "usernameStartsWith_example" // string |  (neobvezno)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (neobvezno)
+	sso := "sso_example" // string |  (neobvezno)
+	searchSection := "searchSection_example" // string |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -42,9 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `SearchUsers`: SearchUsers200Response
+	// odgovor iz `SearchUsers`: SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

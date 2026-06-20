@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -8,9 +8,9 @@
 | skip | number | query | Ne |  |
 | limit | number | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets200_response.rb)
+Vrne: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets_response.rb)
 
 ## Primer
 
@@ -29,10 +29,10 @@ end
 api_instance = FastCommentsClient::DefaultApi.new
 tenant_id = 'tenant_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # String | 
-  state: 1.2, # Float | 
-  skip: 1.2, # Float | 
-  limit: 1.2 # Float | 
+  user_id: 'user_id_example', # Niz | 
+  state: 1.2, # Plavajoče število | 
+  skip: 1.2, # Plavajoče število | 
+  limit: 1.2 # Plavajoče število | 
 }
 
 begin

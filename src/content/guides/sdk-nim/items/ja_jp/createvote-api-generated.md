@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | commentId | string | はい |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`Option[VoteComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_comment200response.nim)
+戻り値: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## 例
 
@@ -18,16 +18,16 @@
 [inline-code-start]
 let (response, httpResponse) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
+  commentId = "cmt-987654",
   direction = "up",
   userId = "user-42",
   anonUserId = ""
 )
 if response.isSome:
   let vote = response.get()
-  echo "Vote recorded: ", $vote
+  echo "Vote created:", vote
 else:
-  echo "Vote not created, HTTP response: ", $httpResponse
+  echo "No vote returned"
 [inline-code-end]
 
 ---

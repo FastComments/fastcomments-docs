@@ -9,11 +9,11 @@
 
 ## Odgovor
 
-Vraća: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadgeProgressList200Response.swift)
+Vraća: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgeProgressListResponse.swift)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getUserBadgeProgressList'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressList Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -34,5 +34,3 @@ DefaultAPI.getUserBadgeProgressList(tenantId: tenantId, userId: userId, limit: l
     }
 }
 [inline-code-end]
-
----

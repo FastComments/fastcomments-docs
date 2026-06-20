@@ -1,9 +1,9 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|------------|-------------|
 | tenantId | string | Sim |  |
+| urlId | string | Sim |  |
 | pageSize | int | Não |  |
 | afterId | string | Não |  |
 | includeContext | bool | Não |  |
@@ -12,11 +12,12 @@
 | dmOnly | bool | Não |  |
 | noDm | bool | Não |  |
 | includeTranslations | bool | Não |  |
+| includeTenantNotifications | bool | Não |  |
 | sso | string | Não |  |
 
 ## Resposta
 
-Retorna: [`Option[GetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notifications200response.nim)
+Retorna: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_my_notifications_response.nim)
 
 ## Exemplo
 
@@ -24,21 +25,22 @@ Retorna: [`Option[GetUserNotifications_200_response]`](https://github.com/FastCo
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
-  pageSize = 50,
-  afterId = "notif_9a1b2c3d",
-  includeContext = true,
-  afterCreatedAt = int64(1699999999000),
+  urlId = "news/article-title",
+  pageSize = 0,
+  afterId = "",
+  includeContext = false,
+  afterCreatedAt = 0,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   includeTranslations = false,
+  includeTenantNotifications = false,
   sso = ""
 )
+
 if response.isSome:
   let notifications = response.get()
-  discard notifications
-else:
-  discard httpResponse
+  echo notifications
 [inline-code-end]
 
 ---

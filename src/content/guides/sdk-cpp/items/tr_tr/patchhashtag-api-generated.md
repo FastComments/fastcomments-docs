@@ -1,35 +1,29 @@
 ## Parametreler
 
-| Ad | Tip | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| updateHashTagBody | UpdateHashTagBody | No |  |
+| tag | string | Evet |  |
+| tenantId | string | Hayır |  |
+| updateHashTagBody | UpdateHashTagBody | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`PatchHashTag_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchHashTag_200_response.h)
+Döndürür: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'patchHashTag Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tag = U("release-1.0");
-boost::optional<utility::string_t> tenantId = boost::optional<utility::string_t>(U("my-tenant-123"));
+utility::string_t tag = U("bug");
+boost::optional<utility::string_t> tenantId{ U("my-tenant-123") };
 UpdateHashTagBody body;
-boost::optional<UpdateHashTagBody> updateBody = boost::optional<UpdateHashTagBody>(body);
+boost::optional<UpdateHashTagBody> updateBody{ body };
 api->patchHashTag(tag, tenantId, updateBody)
-.then([](pplx::task<std::shared_ptr<PatchHashTag_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copied = std::make_shared<PatchHashTag_200_response>(*resp);
-            std::cout << "PatchHashTag succeeded" << std::endl;
-        } else {
-            std::cout << "PatchHashTag returned no data" << std::endl;
-        }
-    } catch (const std::exception &e) {
-        std::cerr << "PatchHashTag error: " << e.what() << std::endl;
+.then([](std::shared_ptr<UpdateHashTagResponse> resp)
+{
+    if (resp)
+    {
+        auto localCopy = std::make_shared<UpdateHashTagResponse>(*resp);
     }
 });
 [inline-code-end]

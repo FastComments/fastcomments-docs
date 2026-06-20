@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
@@ -11,7 +11,7 @@
 
 ## 응답
 
-반환: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_200_response.go)
+반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_search_users_result.go)
 
 ## 예제
 
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string |  (선택)
-	mentionGroupIds := []string{"Inner_example"} // []string |  (선택)
-	sso := "sso_example" // string |  (선택)
-	searchSection := "searchSection_example" // string |  (선택)
+	usernameStartsWith := "usernameStartsWith_example" // string |  (선택 사항)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (선택 사항)
+	sso := "sso_example" // string |  (선택 사항)
+	searchSection := "searchSection_example" // string |  (선택 사항)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `SearchUsers`의 응답: SearchUsers200Response
+	// `SearchUsers`의 응답: SearchUsersResult
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]

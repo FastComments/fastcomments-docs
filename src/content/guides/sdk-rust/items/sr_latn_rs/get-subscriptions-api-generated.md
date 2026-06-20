@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | user_id | String | Ne |  |
@@ -11,15 +11,16 @@ Vraća: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomm
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_subscriptions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_subscriptions Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_subscriptions() -> Result<GetSubscriptionsApiResponse, Error> {
     let params: GetSubscriptionsParams = GetSubscriptionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-42@example.com".to_string()),
+        user_id: Some("user-9876".to_string()),
     };
     let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;
-    let _ = subscriptions;
-    Ok(())
+    Ok(subscriptions)
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ### Maven
 
-Додайте репозиторій Repsy до POM вашого проєкту:
+Додайте репозиторій Repsy у POM вашого проекту:
 
 ```xml
 <repositories>
@@ -12,36 +12,36 @@
 </repositories>
 ```
 
-Потім додайте необхідні залежності:
+Потім додайте потрібні залежності:
 
 ```xml
 <dependencies>
-    <!-- Клієнт API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Основна бібліотека (включає SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Бібліотека PubSub (для живих подій) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Додайте репозиторій Repsy до файлу build.gradle:
+Додайте репозиторій Repsy у файл build.gradle:
 
 ```groovy
 repositories {
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // Клієнт API
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Основна бібліотека (включає SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // Бібліотека PubSub (для живих подій)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Library Contents
+### Вміст бібліотеки
 
-Ця бібліотека містить три модулі. Згенерований клієнт API, основна Java-бібліотека, яка містить вручну написані утиліти, що полегшують роботу з API, та модуль `pubsub`, який є бібліотекою для підписки на потоки змін.
+Ця бібліотека містить три модулі. Згенерований клієнт API, базова Java-бібліотека, яка містить вручну написані утиліти для спрощення роботи з API, та модуль `pubsub`, який є бібліотекою для підписки на стрічки змін.
 
-- [Документація бібліотеки клієнта API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документація основної бібліотеки, включаючи приклади SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Документація бібліотеки PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Публічні та захищені API
 
-Для клієнта API існують два класи: `DefaultApi` та `PublicApi`. `DefaultApi` містить методи, які вимагають вашого API-ключа, а `PublicApi` містить виклики API, які можна виконувати без аутентифікації безпосередньо з браузера, мобільного пристрою тощо.
+Для клієнта API існують три класи: `DefaultApi`, `PublicApi` і `ModerationApi`. `DefaultApi` містить методи, які вимагають вашого API-ключа, а `PublicApi` містить методи, які можна викликати безпосередньо з браузера/мобільного пристрою тощо без автентифікації.
+
+`ModerationApi` забезпечує роботу панелі модерації. Він містить методи для модерації коментарів (перелік, підрахунок, пошук, журнали та експорт), дії модерації (видалення/відновлення, позначення, встановлення статусу на перегляд/спам/підтвердження, голоси та повторне відкриття/закриття треду), банів (заборона коментувати, скасування бану, підсумки перед баном, статус бану та налаштування, а також підрахунок заблокованих користувачів) та значків і довіри (нагородження/видалення значка, ручні значки, отримання/встановлення коефіцієнта довіри та внутрішній профіль користувача). Кожен метод `ModerationApi` приймає параметр `sso`, щоб виклик можна було виконати від імені модератора, автентифікованого через SSO.

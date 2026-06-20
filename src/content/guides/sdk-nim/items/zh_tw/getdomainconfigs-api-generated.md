@@ -1,12 +1,12 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 
 ## 回應
 
-回傳: [`Option[GetDomainConfigs_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_configs200response.nim)
+回傳：[`Option[GetDomainConfigsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_configs_response.nim)
 
 ## 範例
 
@@ -15,11 +15,10 @@
 let (response, httpResponse) = client.getDomainConfigs(tenantId = "my-tenant-123")
 if response.isSome:
   let domainConfigs = response.get()
-  echo "Domain configs received:"
+  echo "Received domain configs for tenant my-tenant-123"
   echo domainConfigs
 else:
-  echo "Failed to retrieve domain configs."
-  echo httpResponse
+  echo "No domain configs returned"
 [inline-code-end]
 
 ---

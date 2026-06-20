@@ -7,37 +7,37 @@
 
 ## Отговор
 
-Връща: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes200_response.py)
+Връща: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_votes'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_votes Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes200_response import GetVotes200Response
+from client.models.get_votes_response import GetVotesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
+# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
 # Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
+# Клиентът трябва да конфигурира параметрите за автентикация и авторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# По-долу са показани примери за всеки метод за удостоверяване, използвайте примера, 
-# който отговаря на вашия случай на използване.
+# Примерите за всеки метод на автентикация са предоставени по-долу; използвайте примера, който
+# отговаря на вашия случай на използване за автентикация.
 
-# Конфигурирайте авторизация с API ключ: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментрирайте по-долу, за да зададете префикс (напр. Bearer) за API ключ, ако е необходимо
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с екземпляр на API клиента
+# Влезте в контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на API класа
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -49,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_votes: %s\n" % e)
 [inline-code-end]
-
----

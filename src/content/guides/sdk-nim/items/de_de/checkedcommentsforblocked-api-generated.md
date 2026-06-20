@@ -2,17 +2,17 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentIds | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ja |  |
+| commentIds | string | Nein |  |
+| sso | string | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[CheckedCommentsForBlocked_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_checked_comments_for_blocked200response.nim)
+Gibt zurück: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für checkedCommentsForBlocked'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
@@ -20,11 +20,10 @@ let (response, httpResponse) = client.checkedCommentsForBlocked(
   sso = ""
 )
 if response.isSome:
-  let checked = response.get()
-  echo "Checked comments received for tenant my-tenant-123"
-  echo checked
+  let blockedResp = response.get()
+  echo "Received blocked comments response: ", blockedResp
 else:
-  echo "No checked comments (HTTP status: ", $httpResponse.statusCode, ")"
+  echo "No response body; HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

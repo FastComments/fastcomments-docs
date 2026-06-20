@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | userId | string | query | Ні |  |
@@ -10,47 +10,47 @@
 | limit | number | query | Ні |  |
 | skip | number | query | Ні |  |
 
-## Response
+## Відповідь
 
-Повертає: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+Повертає: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badges Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста є необов'язковим і за замовчуванням встановлено https://fastcomments.com
+# Визначення хоста необов'язкове й за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки серверу API.
-# Приклади для кожного методу автентифікації наведені нижче, використайте приклад, який
-# відповідає вашому випадку використання автентифікації.
+# відповідно до політики безпеки API-сервера.
+# Приклади для кожного методу авторизації наведено нижче, використайте приклад, який
+# відповідає вашому випадку використання авторизації.
 
-# Налаштуйте авторизацію за допомогою API-ключа: api_key
+# Налаштування авторизації за API-ключем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Увійдіть у контекст з екземпляром API-клієнта
+# Увійдіть у контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
-    # Створіть екземпляр класу API
+    # Створити екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    badge_id = 'badge_id_example' # str |  (optional)
-    type = 3.4 # float |  (optional)
-    displayed_on_comments = True # bool |  (optional)
-    limit = 3.4 # float |  (optional)
-    skip = 3.4 # float |  (optional)
+    user_id = 'user_id_example' # str |  (необов'язково)
+    badge_id = 'badge_id_example' # str |  (необов'язково)
+    type = 3.4 # float |  (необов'язково)
+    displayed_on_comments = True # bool |  (необов'язково)
+    limit = 3.4 # float |  (необов'язково)
+    skip = 3.4 # float |  (необов'язково)
 
     try:
         api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)

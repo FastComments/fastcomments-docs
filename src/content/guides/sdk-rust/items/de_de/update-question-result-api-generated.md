@@ -1,33 +1,32 @@
----
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+| Name | Type | Erforderlich | Beschreibung |
+|------|------|--------------|-------------|
 | tenant_id | String | Ja |  |
 | id | String | Ja |  |
 | update_question_result_body | models::UpdateQuestionResultBody | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Gibt zurück: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für update_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_question_result Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update_question_result() -> Result<(), Error> {
-    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/2026/03/25/12345".to_string(),
-        update_question_result_body: models::UpdateQuestionResultBody {
-            question_id: Some("q-987".to_string()),
-            result: Some(true),
-            reviewer_id: Some("moderator-7".to_string()),
-            notes: Some("Marked as resolved after editorial review".to_string()),
-        },
+async fn example_update_question_result() -> Result<(), Error> {
+    let body: models::UpdateQuestionResultBody = models::UpdateQuestionResultBody {
+        answered: Some(true),
+        confidence: Some(0.92),
+        responder: Some("editor-zoe".to_string()),
+        notes: Some("Validated against article sources".to_string()),
     };
-    let response: FlagCommentPublic200Response = update_question_result(&configuration, params).await?;
-    println!("update result: {:?}", response);
+    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {
+        tenant_id: "acme-news-tenant".to_string(),
+        id: "news/article/5621/question/12".to_string(),
+        update_question_result_body: body,
+    };
+    let _resp: ApiEmptyResponse = update_question_result(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

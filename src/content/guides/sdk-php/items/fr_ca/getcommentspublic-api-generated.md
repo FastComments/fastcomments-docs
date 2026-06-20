@@ -37,7 +37,7 @@ urlId
 
 ## Réponse
 
-Renvoie : [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Renvoie: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Exemple
 
@@ -89,5 +89,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

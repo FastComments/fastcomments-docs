@@ -1,42 +1,43 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | パス | はい |  |
-| tenantId | string | クエリ | いいえ |  |
+| tag | string | path | はい |  |
+| tenantId | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/patch_hash_tag200_response.py)
+返却: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
 ## 例
 
-[inline-code-attrs-start title = 'patch_hash_tag の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_hash_tagの例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.patch_hash_tag200_response import PatchHashTag200Response
 from client.models.update_hash_tag_body import UpdateHashTagBody
+from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方式の例を以下に示します。自分の認証ユースケースに合う例を使用してください。
+# クライアントは API サーバーのセキュリティポリシーに従って認証および認可のパラメータを設定する必要があります。
+# 各認証方式の例を以下に示します。
+# ご使用の認証ユースケースに適した例を選んでください。
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要な場合は下をコメント解除して API キーの接頭辞（例: Bearer）を設定してください
+# 必要に応じて API キーの接頭辞（例: Bearer）を設定するために下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスでコンテキストに入ります
+# API クライアントのインスタンスを使用するコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tag = 'tag_example' # str | 
     tenant_id = 'tenant_id_example' # str |  (オプション)

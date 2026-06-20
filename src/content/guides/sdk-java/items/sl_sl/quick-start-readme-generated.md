@@ -1,6 +1,6 @@
 ### Uporaba avtenticiranih API-jev (DefaultApi)
 
-**Pomembno:** Pred izvajanjem avtenticiranih zahtev morate nastaviti svoj API ključ na ApiClient. Če tega ne storite, bodo zahtevki neuspešni s 401 napako.
+**Pomembno:** Pred izvajanjem avtenticiranih zahtev morate nastaviti svoj API ključ na ApiClientu. Če tega ne storite, bodo zahteve neuspešne z napako 401.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -13,15 +13,15 @@ public class Example {
         // Ustvarite in konfigurirajte API odjemalca
         ApiClient apiClient = new ApiClient();
 
-        // OBVEZNO: Nastavite svoj API ključ (pridobite ga na nadzorni plošči FastComments)
+        // OBVEZNO: Nastavite svoj API ključ (pridobite ga iz FastComments nadzorne plošče)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Ustvarite instanco API-ja s konfiguriranim odjemalcem
+        // Ustvarite instanco API z konfiguriranim odjemalcem
         DefaultApi api = new DefaultApi(apiClient);
 
         // Zdaj lahko izvajate avtenticirane klice API-ja
         try {
-            // Primer: Dodajanje SSO uporabnika
+            // Primer: dodajanje SSO uporabnika
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
             userData.setId("user-123");
             userData.setEmail("user@example.com");
@@ -34,8 +34,8 @@ public class Example {
         } catch (ApiException e) {
             System.err.println("Error: " + e.getResponseBody());
             // Pogoste napake:
-            // - 401: API ključ manjka ali je neveljaven
-            // - 400: Preverjanje zahtevka ni uspelo
+            // - 401: API ključ manjka ali ni veljaven
+            // - 400: Validacija zahtevka ni uspela
         }
     }
 }
@@ -43,7 +43,7 @@ public class Example {
 
 ### Uporaba javnih API-jev (PublicApi)
 
-Javne končne točke ne zahtevajo overjanja:
+Javne končne točke ne zahtevajo avtentikacije:
 
 ```java
 import com.fastcomments.api.PublicApi;
@@ -60,8 +60,30 @@ try {
 }
 ```
 
+### Uporaba moderacijskih API-jev (ModerationApi)
+
+Razred `ModerationApi` poganja nadzorno ploščo moderatorjev. Vsaka metoda sprejme parameter `sso`, ki identificira moderatorja, avtenticiranega z SSO, v čigar imenu je zahteva poslana:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Naštejte komentarje, ki čakajo na moderacijo
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
 ### Pogoste težave
 
 1. **401 "missing-api-key" error**: Prepričajte se, da pokličete `apiClient.setApiKey("YOUR_KEY")` pred ustvarjanjem instance DefaultApi.
-2. **Napačen razred API-ja**: Uporabite `DefaultApi` za strežniške avtenticirane zahteve, `PublicApi` za odjemalske/javne zahteve.
-3. **Null API key**: SDK bo tiho preskočil avtentikacijo, če je API ključ null, kar bo povzročilo 401 napake.
+2. **Napačen razred API**: Uporabite `DefaultApi` za avtenticirane zahtevke na strežniški strani, `PublicApi` za odjemalske/javne zahtevke.
+3. **API ključ je null**: SDK bo tiho preskočil avtentikacijo, če je API ključ null, kar bo vodilo do 401 napak.

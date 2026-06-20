@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | commentId | string | Da |  |
@@ -12,15 +12,15 @@
 
 ## Odgovor
 
-Vrne: [`Option[GetPendingWebhookEvents_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events200response.nim)
+Vrne: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getPendingWebhookEvents Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
+  commentId = "cmt-987654",
   externalId = "",
   eventType = "",
   domain = "",
@@ -30,9 +30,6 @@ let (response, httpResponse) = client.getPendingWebhookEvents(
 if response.isSome:
   let pending = response.get()
   discard pending
-  echo "Received pending webhook events"
-else:
-  echo "No pending webhook events"
 [inline-code-end]
 
 ---

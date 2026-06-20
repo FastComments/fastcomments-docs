@@ -1,12 +1,12 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Name | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | No |  |
 
 ## Respuesta
 
-Devuelve: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_hash_tags_bulk200_response.rb)
+Devuelve: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
 
 ## Ejemplo
 
@@ -14,11 +14,11 @@ Devuelve: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcom
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurar la autorización
+# Configurar la autorización
 FastCommentsClient.configure do |config|
-  # Configurar autorización por clave API: api_key
+  # Configure API key authorization: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
+  # Descomenta la siguiente línea para establecer un prefijo para la API key, p. ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

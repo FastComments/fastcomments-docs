@@ -1,25 +1,30 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Devuelve: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de delete_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_template() -> Result<(), Error> {
-    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "welcome-email-template".to_string(),
+async fn run() -> Result<(), Error> {
+    let version: Option<&str> = Some("2025");
+    let template_id: String = if let Some(ver) = version {
+        format!("welcome-email-{}", ver)
+    } else {
+        "welcome-email".to_owned()
     };
-    let confirm_deletion: Option<bool> = Some(true);
-    let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;
+    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".to_owned(),
+        id: template_id,
+    };
+    let _response: ApiEmptyResponse = delete_email_template(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

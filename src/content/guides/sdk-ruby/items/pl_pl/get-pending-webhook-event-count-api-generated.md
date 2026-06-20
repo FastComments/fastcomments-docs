@@ -2,17 +2,17 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| commentId | string | query | Nie |  |
-| externalId | string | query | Nie |  |
-| eventType | string | query | Nie |  |
-| type | string | query | Nie |  |
-| domain | string | query | Nie |  |
-| attemptCountGT | number | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+Zwraca: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
 ## Przykład
 
@@ -20,11 +20,11 @@ Zwraca: [`GetPendingWebhookEventCount200Response`](https://github.com/FastCommen
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# ustawienie autoryzacji
+# konfiguracja autoryzacji
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfiguracja autoryzacji klucza API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
+  # Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. 'Bearer' (domyślnie nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_event_count: #{e}"
 end
 [inline-code-end]
-
----

@@ -9,17 +9,22 @@
 
 ## Response
 
-Returns: [`Option[FlagComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment200response.nim)
+Returns: [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'flagComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagComment(tenantId = "my-tenant-123", id = "comment-9876", userId = "", anonUserId = "anon-4f2b9c")
+let (response, httpResponse) = client.flagComment(
+  tenantId = "my-tenant-123",
+  id = "cmt-98765",
+  userId = "user-12345",
+  anonUserId = ""
+)
 
 if response.isSome:
-  let flagResult = response.get()
-  echo "Flag succeeded: ", $flagResult
+  let flagResp = response.get()
+  echo "Flag response received"
 else:
-  echo "Flag failed, HTTP response status: ", $httpResponse.status
+  echo "No flag response returned"
 [inline-code-end]

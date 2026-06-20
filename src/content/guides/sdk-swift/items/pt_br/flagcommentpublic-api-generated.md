@@ -2,14 +2,14 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| isFlagged | boolean | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Sim |  |
+| commentId | string | path | Sim |  |
+| isFlagged | boolean | query | Sim |  |
+| sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Exemplo
 
@@ -34,3 +34,5 @@ PublicAPI.flagCommentPublic(tenantId: tenantId, commentId: commentId, isFlagged:
     }
 }
 [inline-code-end]
+
+---

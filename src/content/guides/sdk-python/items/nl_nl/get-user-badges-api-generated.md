@@ -1,29 +1,29 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| badgeId | string | query | No |  |
-| type | number | query | No |  |
-| displayedOnComments | boolean | query | No |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| userId | string | query | Nee |  |
+| badgeId | string | query | Nee |  |
+| type | number | query | Nee |  |
+| displayedOnComments | boolean | query | Nee |  |
+| limit | number | query | Nee |  |
+| skip | number | query | Nee |  |
 
-## Response
+## Antwoord
 
-Retourneert: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_badges200_response.py)
+Retourneert: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_user_badges Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_user_badges200_response import GetUserBadges200Response
+from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard ingesteld op https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,13 +31,13 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voor elk authenticatiemethode wordt hieronder een voorbeeld gegeven; gebruik het voorbeeld dat
-# past bij uw authenticatiegeval.
+# Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegeval.
 
-# Configureer autorisatie met API-sleutel: api_key
+# Configureer API-sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Verwijder hieronder de commentaarstreep om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Haal de commentaarteken weg hieronder om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Ga een context in met een instantie van de API-client

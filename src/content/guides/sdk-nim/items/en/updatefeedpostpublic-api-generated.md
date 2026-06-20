@@ -10,29 +10,22 @@
 
 ## Response
 
-Returns: [`Option[CreateFeedPostPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_public200response.nim)
+Returns: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateParams = UpdateFeedPostParams(
-  title = "Launch: FastComments v2.0",
-  content = "Announcing the v2.0 release with performance and moderation improvements.",
-  visible = true,
-  tags = @["release", "announcement"],
-  priority = 1
-)
-
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",
-  postId = "news/launch-fastcomments-v2",
-  updateFeedPostParams = updateParams,
+  postId = "post-456",
+  updateFeedPostParams = UpdateFeedPostParams(title = "Weekly Product Update", content = "Released bug fixes and performance improvements in v2.1.", tags = @["release", "product"], pinned = false),
   broadcastId = "",
   sso = ""
 )
-
 if response.isSome:
-  let updated = response.get()
-  echo "Feed post updated successfully"
+  let created = response.get()
+  echo "Updated feed post id: ", created.postId
+else:
+  echo "Update failed with HTTP status: ", httpResponse.status
 [inline-code-end]

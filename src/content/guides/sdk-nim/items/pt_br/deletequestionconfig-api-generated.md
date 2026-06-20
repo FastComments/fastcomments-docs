@@ -1,24 +1,25 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
+| Nome | Tipo | Obrigatório | Descrição |
 |------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | id | string | Não |  |
 
 ## Resposta
 
-Retorna: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Retorna: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo deleteQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de deleteQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "qcfg-456")
+let (response, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "")
+
 if response.isSome:
-  let respVal = response.get()
-  echo "Delete succeeded for tenant my-tenant-123"
+  let deleted = response.get()
+  echo "Question config deleted for tenant: ", "my-tenant-123"
 else:
-  echo "Delete returned no data (status: ", $httpResponse.status, ")"
+  echo "Failed to delete question config"
 [inline-code-end]
 
 ---

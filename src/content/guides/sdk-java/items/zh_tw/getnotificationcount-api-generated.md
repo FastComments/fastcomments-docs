@@ -2,16 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| userId | string | query | 否 |  |
-| urlId | string | query | 否 |  |
-| fromCommentId | string | query | 否 |  |
-| viewed | boolean | query | 否 |  |
-| type | string | query | 否 |  |
+| tenantId | string | 查詢 | 是 |  |
+| userId | string | 查詢 | 否 |  |
+| urlId | string | 查詢 | 否 |  |
+| fromCommentId | string | 查詢 | 否 |  |
+| viewed | boolean | 查詢 | 否 |  |
+| type | string | 查詢 | 否 |  |
 
 ## 回應
 
-回傳: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCount200Response.java)
+回傳： [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetNotificationCountResponse.java)
 
 ## 範例
 
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 設定 API 金鑰授權：api_key
+    // 設定 API 金鑰授權: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解以下行以為 API 金鑰設定前綴，例如 "Token"（預設為 null）
+    // 取消註解下列行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,7 +44,7 @@ public class Example {
     Boolean viewed = true; // Boolean | 
     String type = "type_example"; // String | 
     try {
-      GetNotificationCount200Response result = apiInstance.getNotificationCount(tenantId)
+      GetNotificationCountResponse result = apiInstance.getNotificationCount(tenantId)
             .userId(userId)
             .urlId(urlId)
             .fromCommentId(fromCommentId)

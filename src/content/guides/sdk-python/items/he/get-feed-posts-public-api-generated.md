@@ -4,7 +4,7 @@ afterId
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | afterId | string | query | לא |  |
@@ -16,35 +16,35 @@ afterId
 
 ## תגובה
 
-מחזיר: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+מחזיר: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל הפרמטרים הנתמכים.
+# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראו configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# פתחו הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # צרו מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (optional)
-    limit = 56 # int |  (optional)
-    tags = ['tags_example'] # List[str] |  (optional)
-    sso = 'sso_example' # str |  (optional)
-    is_crawler = True # bool |  (optional)
-    include_user_info = True # bool |  (optional)
+    after_id = 'after_id_example' # str |  (אופציונלי)
+    limit = 56 # int |  (אופציונלי)
+    tags = ['tags_example'] # List[str] |  (אופציונלי)
+    sso = 'sso_example' # str |  (אופציונלי)
+    is_crawler = True # bool |  (אופציונלי)
+    include_user_info = True # bool |  (אופציונלי)
 
     try:
         api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)

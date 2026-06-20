@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательно | Описание |
@@ -13,7 +12,7 @@
 
 ## Ответ
 
-Возвращает: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+Возвращает: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## Пример
 

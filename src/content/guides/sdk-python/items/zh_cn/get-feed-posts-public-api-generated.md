@@ -4,7 +4,7 @@ afterId
 
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | afterId | string | query | 否 |  |
@@ -16,19 +16,19 @@ afterId
 
 ## 响应
 
-返回: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+返回: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_feed_posts_public 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数的列表，请参阅 configuration.py。
+# 定义主机为可选，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有支持的配置参数的列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

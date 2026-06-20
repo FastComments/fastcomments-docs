@@ -4,37 +4,37 @@ afterId
 
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
-| afterId | string | query | 아니요 |  |
-| limit | integer | query | 아니요 |  |
-| tags | array | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
-| isCrawler | boolean | query | 아니요 |  |
-| includeUserInfo | boolean | query | 아니요 |  |
+| afterId | string | query | 아니오 |  |
+| limit | integer | query | 아니오 |  |
+| tags | array | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
+| isCrawler | boolean | query | 아니오 |  |
+| includeUserInfo | boolean | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_public200_response.py)
+반환: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_feed_posts_public 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_feed_posts_public200_response import GetFeedPostsPublic200Response
+from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트를 정의하는 것은 선택 사항이며 기본값은 https://fastcomments.com 입니다
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참고하세요.
+# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
+# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API 클라이언트 인스턴스와 함께 컨텍스트를 엽니다
+# API 클라이언트 인스턴스와 함께 컨텍스트에 진입합니다
 with client.ApiClient(configuration) as api_client:
     # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)

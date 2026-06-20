@@ -8,16 +8,18 @@
 
 ## Response
 
-Returns: [`Option[GetUserReactsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_reacts_public200response.nim)
+Returns: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_user_reacts_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'getUserReactsPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserReactsPublic(tenantId = "my-tenant-123", postIds = @["post-987", "post-654"], sso = "sso-token-abc123")
+let (response, httpResponse) = client.getUserReactsPublic(
+  tenantId = "my-tenant-123",
+  postIds = @["news/article-2026", "blog/opinion-987"],
+  sso = ""
+)
 if response.isSome:
   let reacts = response.get()
-  echo "Received reacts:", repr(reacts)
-else:
-  echo "No reacts returned, HTTP status:", $httpResponse.status
+  echo "Received user reacts for tenant: ", "my-tenant-123"
 [inline-code-end]

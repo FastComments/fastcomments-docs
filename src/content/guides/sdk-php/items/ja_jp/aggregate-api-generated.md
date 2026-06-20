@@ -1,16 +1,18 @@
-ドキュメントをグループ化（groupBy が提供されている場合）し、複数の操作を適用して集計します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
+---
+ドキュメントを集約します（groupBy が提供されている場合はグルーピングを行い）、複数の操作を適用します。
+sum、countDistinct、avg などの異なる操作がサポートされています。
 
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| parentTenantId | string | クエリ | いいえ |  |
-| includeStats | boolean | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| parentTenantId | string | query | いいえ |  |
+| includeStats | boolean | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+戻り値: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## 例
 
@@ -20,15 +22,19 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API キー認証を設定: api_key
+ // Configure API key authorization: api_key
+// APIキー認証を構成: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、API キー用のプレフィックス（例: Bearer）を設定するには下の行のコメントを解除してください
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 必要に応じて APIキーのプレフィックスを設定するには、以下のコメントアウトを解除してください（例: Bearer）
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );

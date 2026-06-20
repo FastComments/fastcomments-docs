@@ -10,32 +10,32 @@
 
 ## Одговор
 
-Враћа: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets200_response.py)
+Враћа: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_tickets Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_tickets'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tickets200_response import GetTickets200Response
+from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Дефинисање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре за аутентификацију и овлашћење
-# у складу са безбедносном политиком API сервера.
-# Примери за сваки метод аутентификације су дати у наставку, искористите пример који
-# одговара вашем случају коришћења аутентификације.
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
+# у складу са безбједносном политиком API сервера.
+# Испод су примери за сваки метод аутентификације; користите онај који
+# одговара вашем случају употребе.
 
-# Конфигуришите овлашћење API кључем: api_key
+# Конфигуришите ауторизацију помоћу API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Уђите у контекст са инстанцом API клијента

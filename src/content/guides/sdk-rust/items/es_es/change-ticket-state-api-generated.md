@@ -1,8 +1,7 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|------------|-------------|
 | tenant_id | String | Sí |  |
 | user_id | String | Sí |  |
 | id | String | Sí |  |
@@ -10,27 +9,26 @@
 
 ## Respuesta
 
-Devuelve: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_ticket_state_200_response.rs)
+Devuelve: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_ticket_state_response.rs)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de change_ticket_state'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<ChangeTicketState200Response, Error> {
-    let params: ChangeTicketStateParams = ChangeTicketStateParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: "agent_jdoe".to_string(),
-        id: "ticket-2026-03-25-001".to_string(),
-        change_ticket_state_body: models::ChangeTicketStateBody {
-            state: "closed".to_string(),
-            note: Some("Issue resolved after patch deployment".to_string()),
-            assignee_id: Some("agent_jdoe".to_string()),
-            priority: Some("low".to_string()),
-        },
-    };
-    let response: ChangeTicketState200Response = change_ticket_state(&configuration, params).await?;
-    Ok(response)
-}
+let change_ticket_state_body: models::ChangeTicketStateBody = models::ChangeTicketStateBody {
+    state: Some("resolved".to_string()),
+    comment: Some("Fixed in release 1.2.3".to_string()),
+    notify_subscribers: Some(true),
+};
+
+let params: ChangeTicketStateParams = ChangeTicketStateParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    user_id: "john.doe@acme.com".to_string(),
+    id: "ticket-98765".to_string(),
+    change_ticket_state_body,
+};
+
+let response: ChangeTicketStateResponse = change_ticket_state(configuration, params).await?;
 [inline-code-end]
 
 ---

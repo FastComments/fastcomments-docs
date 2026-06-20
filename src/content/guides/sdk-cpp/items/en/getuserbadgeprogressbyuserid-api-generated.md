@@ -7,23 +7,26 @@
 
 ## Response
 
-Returns: [`GetUserBadgeProgressById_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserBadgeProgressById_200_response.h)
+Returns: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'getUserBadgeProgressByUserId Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> userIdOpt = utility::string_t(U("user@example.com"));
-auto task = api->getUserBadgeProgressByUserId(tenantId, userIdOpt.value())
-    .then([](pplx::task<std::shared_ptr<GetUserBadgeProgressById_200_response>> prev) {
-        try {
-            auto resp = prev.get();
-            if (!resp) return std::shared_ptr<GetUserBadgeProgressById_200_response>{};
-            auto copy = std::make_shared<GetUserBadgeProgressById_200_response>(*resp);
-            return copy;
-        } catch (...) {
-            return std::shared_ptr<GetUserBadgeProgressById_200_response>{};
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t userId = U("user@example.com");
+boost::optional<utility::string_t> locale;
+api->getUserBadgeProgressByUserId(tenantId, userId)
+.then([=](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {
+    try {
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<APIGetUserBadgeProgressResponse>();
+        return resp;
+    } catch (...) {
+        return std::shared_ptr<APIGetUserBadgeProgressResponse>(nullptr);
+    }
+})
+.then([](std::shared_ptr<APIGetUserBadgeProgressResponse> resp) {
+    (void)resp;
+});
 [inline-code-end]

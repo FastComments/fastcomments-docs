@@ -1,10 +1,28 @@
-## Параметри
+---
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
+| tenant_id | String | Da |  |
+| url_id | String | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetPageByUrlidApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_page_by_urlid_api_response.rs)
+Vraća: [`GetPageByUrlidApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_page_by_urlid_api_response.rs)
+
+## Primjer
+
+[inline-code-attrs-start title = 'get_page_by_urlid Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn fetch_page() -> Result<GetPageByUrlidApiResponse, Error> {
+    let params: GetPageByUrlidParams = GetPageByUrlidParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/article/how-to-build-an-api".to_string(),
+        locale: Some("en-US".to_string()),
+    };
+    let page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;
+    Ok(page)
+}
+[inline-code-end]
+
+---

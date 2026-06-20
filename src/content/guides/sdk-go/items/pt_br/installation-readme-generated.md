@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Usando o Cliente da API
+### Usando o API Client
 
-#### PublicAPI (Sem Autenticação)
+#### Public API (Sem Autenticação)
 
-A PublicAPI permite acesso não autenticado a endpoints públicos:
+The PublicAPI allows unauthenticated access to public endpoints:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### DefaultAPI (Requer chave de API)
+#### Default API (Requer Chave de API)
 
-A DefaultAPI requer autenticação usando sua chave de API:
+The DefaultAPI requires authentication using your API key:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Criar contexto autenticado com a chave de API
+    // Criar contexto autenticado com chave de API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -67,6 +67,43 @@ func main() {
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
         Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```
+
+#### Moderation API (Painel do Moderador)
+
+The ModerationAPI powers the moderator dashboard. It provides methods for listing,
+counting, searching, and exporting comments, moderation actions (remove/restore,
+flag, set review/spam/approval status, votes, reopen/close threads), bans (ban from
+comment, undo, pre-ban summaries, ban status and preferences, banned-user counts),
+and badges & trust (award/remove badges, manual badges, get/set trust factor, user
+internal profile). All Moderation methods accept an `sso` parameter for
+SSO-authenticated moderators:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // Listar comentários para moderação usando a ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
 
     if err != nil {
         panic(err)

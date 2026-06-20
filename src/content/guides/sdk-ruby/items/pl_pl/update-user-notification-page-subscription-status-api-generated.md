@@ -1,9 +1,8 @@
-Włącz lub wyłącz powiadomienia dla strony. Kiedy użytkownicy subskrybują stronę, tworzone są powiadomienia
-dla nowych komentarzy głównych, oraz także
+Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują stronę, tworzone są powiadomienia dla nowych komentarzy głównych, i także
 
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | urlId | string | query | Tak |  |
@@ -12,13 +11,13 @@ dla nowych komentarzy głównych, oraz także
 | subscribedOrUnsubscribed | string | path | Tak |  |
 | sso | string | query | Nie |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Zwraca: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład update_user_notification_page_subscription_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -41,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_page_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

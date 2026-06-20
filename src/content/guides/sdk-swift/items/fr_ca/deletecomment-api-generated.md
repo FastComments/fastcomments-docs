@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie : [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteComment200Response.swift)
+Renvoie: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteCommentResult.swift)
 
 ## Exemple
 
@@ -20,8 +20,8 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let contextUserId = "contextUserId_example" // String |  (facultatif)
-let isLive = true // Bool |  (facultatif)
+let contextUserId = "contextUserId_example" // String |  (optionnel)
+let isLive = true // Bool |  (optionnel)
 
 DefaultAPI.deleteComment(tenantId: tenantId, id: id, contextUserId: contextUserId, isLive: isLive) { (response, error) in
     guard error == nil else {

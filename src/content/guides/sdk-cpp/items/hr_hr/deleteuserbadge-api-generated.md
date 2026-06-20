@@ -2,30 +2,29 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Odgovor
 
-Vraća: [`UpdateUserBadge_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserBadge_200_response.h)
+Vraća: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer deleteUserBadge'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t badgeId = utility::conversions::to_string_t("badge-456");
-boost::optional<utility::string_t> traceId = boost::none;
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t badgeId = U("badge-456");
+boost::optional<utility::string_t> requestId = boost::optional<utility::string_t>(U("req-789"));
 api->deleteUserBadge(tenantId, badgeId)
-.then([traceId](pplx::task<std::shared_ptr<UpdateUserBadge_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<UpdateUserBadge_200_response>();
-        return resp;
-    } catch (const std::exception&) {
-        return std::shared_ptr<UpdateUserBadge_200_response>();
-    }
-});
+    .then([tenantId, requestId](std::shared_ptr<APIEmptySuccessResponse> resp) {
+        auto result = resp ? resp : std::make_shared<APIEmptySuccessResponse>();
+        std::cout << "Deleted badge '" << badgeId << "' for tenant '" << tenantId << "'\n";
+        return result;
+    })
+    .then([](std::shared_ptr<APIEmptySuccessResponse>){
+    })
+    .wait();
 [inline-code-end]
 
 ---

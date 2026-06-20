@@ -1,6 +1,6 @@
 ### Utilisation des API authentifiées (DefaultApi)
 
-**Important :** Vous devez définir votre clé API sur ApiClient avant d'effectuer des requêtes authentifiées. Sinon, les requêtes échoueront avec une erreur 401.
+**Important :** Vous devez définir votre clé API sur ApiClient avant d'effectuer des requêtes authentifiées. Si vous ne le faites pas, les requêtes échoueront avec une erreur 401.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,10 +10,10 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Créer et configurer le client API
+        // Créez et configurez le client API
         ApiClient apiClient = new ApiClient();
 
-        // REQUIS : Définissez votre clé API (obtenez-la depuis le tableau de bord FastComments)
+        // OBLIGATOIRE : Définissez votre clé API (obtenez-la depuis votre tableau de bord FastComments)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
         // Créez l'instance API avec le client configuré
@@ -60,8 +60,30 @@ try {
 }
 ```
 
+### Utilisation des API de modération (ModerationApi)
+
+L'API `ModerationApi` alimente le tableau de bord des modérateurs. Chaque méthode accepte un paramètre `sso` identifiant le modérateur authentifié via SSO au nom duquel la requête est effectuée :
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Lister les commentaires en attente de modération
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
 ### Problèmes courants
 
 1. **Erreur 401 "missing-api-key"** : Assurez-vous d'appeler `apiClient.setApiKey("YOUR_KEY")` avant de créer l'instance DefaultApi.
-2. **Mauvaise classe API** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/public.
+2. **Classe API incorrecte** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/publiques.
 3. **Clé API nulle** : Le SDK ignorera silencieusement l'authentification si la clé API est nulle, ce qui entraînera des erreurs 401.

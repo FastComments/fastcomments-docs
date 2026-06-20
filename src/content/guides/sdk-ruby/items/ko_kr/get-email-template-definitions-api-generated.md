@@ -6,7 +6,7 @@
 
 ## 응답
 
-반환: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_definitions200_response.rb)
+반환: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_template_definitions_response.rb)
 
 ## 예제
 
@@ -16,9 +16,9 @@ require 'time'
 require 'fastcomments-client'
 # 인증 설정
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사 설정을 위해 다음 줄의 주석 처리를 해제하세요. 예: 'Bearer' (기본값: nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: 'Bearer' (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_email_template_definitions: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,3 +1,4 @@
+---
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -7,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_templates200_response.rb)
+Devuelve: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_email_templates_response.rb)
 
 ## Ejemplo
 
@@ -15,9 +16,9 @@ Devuelve: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configurar autorización
+# configurar autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización con la clave API: api_key
+  # Configurar autorización por clave de API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Descomente la siguiente línea para establecer un prefijo para la clave API, por ejemplo 'Bearer' (por defecto es nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'

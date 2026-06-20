@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | urlId | string | query | Ne |  |
@@ -12,11 +12,11 @@
 
 ## Odgovor
 
-Vraća: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_200_response.go)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'GetQuestionResults Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer GetQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	urlId := "urlId_example" // string |  (opciono)
-	userId := "userId_example" // string |  (opciono)
-	startDate := "startDate_example" // string |  (opciono)
-	questionId := "questionId_example" // string |  (opciono)
-	questionIds := "questionIds_example" // string |  (opciono)
-	skip := float64(1.2) // float64 |  (opciono)
+	urlId := "urlId_example" // string |  (neobavezno)
+	userId := "userId_example" // string |  (neobavezno)
+	startDate := "startDate_example" // string |  (neobavezno)
+	questionId := "questionId_example" // string |  (neobavezno)
+	questionIds := "questionIds_example" // string |  (neobavezno)
+	skip := float64(1.2) // float64 |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetQuestionResults`: GetQuestionResults200Response
+	// odgovor od `GetQuestionResults`: GetQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionResults`: %v\n", resp)
 }
 [inline-code-end]

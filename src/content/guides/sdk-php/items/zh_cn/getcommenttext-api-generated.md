@@ -9,7 +9,7 @@
 
 ## 响应
 
-返回：[`GetCommentText200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentText200Response.php)
+返回: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIGetCommentTextResponse.php)
 
 ## 示例
 
@@ -21,14 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 如果您想使用自定义的 http 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$comment_id = 'comment_id_example'; // 字符串
-$edit_key = 'edit_key_example'; // 字符串
-$sso = 'sso_example'; // 字符串
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$edit_key = 'edit_key_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->getCommentText($tenant_id, $comment_id, $edit_key, $sso);

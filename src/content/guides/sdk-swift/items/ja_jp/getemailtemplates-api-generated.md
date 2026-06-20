@@ -1,14 +1,13 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | はい |  |
+| skip | number | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplates200Response.swift)
+返却値: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetEmailTemplatesResponse.swift)
 
 ## 例
 
@@ -18,7 +17,7 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Double |  (任意)
+let skip = 987 // Double |  (省略可能)
 
 DefaultAPI.getEmailTemplates(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {

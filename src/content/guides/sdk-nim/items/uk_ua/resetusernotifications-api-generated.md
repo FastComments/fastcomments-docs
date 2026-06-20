@@ -1,7 +1,7 @@
 ## Параметри
 
-| Name | Type | Обов'язковий | Опис |
-|------|------|--------------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Так |  |
 | afterId | string | Ні |  |
 | afterCreatedAt | int64 | Ні |  |
@@ -12,7 +12,7 @@
 
 ## Відповідь
 
-Повертає: [`Option[ResetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications200response.nim)
+Повертає: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Приклад
 
@@ -21,13 +21,17 @@
 let (response, httpResponse) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
   afterId = "",
-  afterCreatedAt = int64(0),
+  afterCreatedAt = 0'i64,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   sso = ""
 )
-
 if response.isSome:
-  let result = response.get()
+  let resetResp = response.get()
+  echo "ResetUserNotificationsResponse received"
+else:
+  echo "No ResetUserNotificationsResponse"
 [inline-code-end]
+
+---

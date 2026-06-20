@@ -1,8 +1,8 @@
-הפעל או השבת התראות עבור תגובה ספציפית.
+הפעל או בטל התראות עבור תגובה ספציפית.
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | notificationId | string | path | כן |  |
@@ -10,9 +10,9 @@
 | commentId | string | query | כן |  |
 | sso | string | query | לא |  |
 
-## תגובה
+## Response
 
-מחזיר: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+מחזיר: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
 
 ## דוגמה
 

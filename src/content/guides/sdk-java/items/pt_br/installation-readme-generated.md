@@ -12,29 +12,29 @@ Adicione o repositório Repsy ao POM do seu projeto:
 </repositories>
 ```
 
-Em seguida, adicione as dependências que você precisa:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
-    <!-- Cliente da API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Biblioteca Core (inclui SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Biblioteca PubSub (para eventos ao vivo) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // Cliente da API
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Biblioteca Core (inclui SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // Biblioteca PubSub (para eventos ao vivo)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Conteúdo da Biblioteca
+### Library Contents
 
-Esta biblioteca contém três módulos. O cliente de API gerado, a biblioteca Java core que contém utilitários escritos manualmente para facilitar o trabalho com a API, e o módulo `pubsub`, que é uma biblioteca para assinar feeds de alteração.
+Esta biblioteca contém três módulos. O cliente de API gerado, a biblioteca Java core que contém utilitários escritos à mão para facilitar o trabalho com a API, e o módulo `pubsub`, que é uma biblioteca para assinar feeds de alterações.
 
-- [Documentação da Biblioteca do Cliente da API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentação da Biblioteca Core, incluindo exemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentação da Biblioteca PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentação da API Client Library](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentação da Core Library, incluindo exemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentação da PubSub Library](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### APIs Públicas vs APIs Protegidas
+### Public vs Secured APIs
 
-Para o cliente de API, existem duas classes, `DefaultApi` e `PublicApi`. A `DefaultApi` contém métodos que requerem sua chave de API, e a `PublicApi` contém chamadas de API que podem ser feitas diretamente de um navegador/dispositivo móvel/etc sem autenticação.
+Para o cliente de API, há três classes, `DefaultApi`, `PublicApi`, e `ModerationApi`. O `DefaultApi` contém métodos que requerem sua chave de API, e o `PublicApi` contém métodos que podem ser executados diretamente de um navegador/dispositivo móvel/etc sem autenticação.
+
+O `ModerationApi` alimenta o painel do moderador. Ele contém métodos para moderação de comentários (listar, contar, pesquisar, registros e exportar), ações de moderação (remover/restaurar, sinalizar, definir status de revisão/spam/aprovação, votos, e reabrir/fechar thread), banimentos (banir de comentar, desfazer um banimento, resumos pré-banimento, status e preferências de banimento, e contagens de usuários banidos), e badges & trust (conceder/remover um badge, badges manuais, obter/definir fator de confiança, e perfil interno do usuário). Todo método do `ModerationApi` aceita um parâmetro `sso` para que a chamada possa ser realizada em nome de um moderador autenticado via SSO.

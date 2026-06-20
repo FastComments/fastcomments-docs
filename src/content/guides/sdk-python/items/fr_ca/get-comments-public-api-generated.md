@@ -4,7 +4,7 @@ urlId
 
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
@@ -37,57 +37,57 @@ urlId
 
 ## Réponse
 
-Renvoie: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_public200_response.py)
+Renvoie : [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour get_comments_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_comments_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments_public200_response import GetCommentsPublic200Response
+from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Définir l'hôte est optionnel et la valeur par défaut est https://fastcomments.com
+# Définir l'hôte est facultatif et la valeur par défaut est https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrer dans un contexte avec une instance du client API
+# Ouvrir un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    page = 56 # int |  (optionnel)
-    direction = client.SortDirections() # SortDirections |  (optionnel)
-    sso = 'sso_example' # str |  (optionnel)
-    skip = 56 # int |  (optionnel)
-    skip_children = 56 # int |  (optionnel)
-    limit = 56 # int |  (optionnel)
-    limit_children = 56 # int |  (optionnel)
-    count_children = True # bool |  (optionnel)
-    fetch_page_for_comment_id = 'fetch_page_for_comment_id_example' # str |  (optionnel)
-    include_config = True # bool |  (optionnel)
-    count_all = True # bool |  (optionnel)
-    includei10n = True # bool |  (optionnel)
-    locale = 'locale_example' # str |  (optionnel)
-    modules = 'modules_example' # str |  (optionnel)
-    is_crawler = True # bool |  (optionnel)
-    include_notification_count = True # bool |  (optionnel)
-    as_tree = True # bool |  (optionnel)
-    max_tree_depth = 56 # int |  (optionnel)
-    use_full_translation_ids = True # bool |  (optionnel)
-    parent_id = 'parent_id_example' # str |  (optionnel)
-    search_text = 'search_text_example' # str |  (optionnel)
-    hash_tags = ['hash_tags_example'] # List[str] |  (optionnel)
-    user_id = 'user_id_example' # str |  (optionnel)
-    custom_config_str = 'custom_config_str_example' # str |  (optionnel)
-    after_comment_id = 'after_comment_id_example' # str |  (optionnel)
-    before_comment_id = 'before_comment_id_example' # str |  (optionnel)
+    page = 56 # int |  (facultatif)
+    direction = client.SortDirections() # SortDirections |  (facultatif)
+    sso = 'sso_example' # str |  (facultatif)
+    skip = 56 # int |  (facultatif)
+    skip_children = 56 # int |  (facultatif)
+    limit = 56 # int |  (facultatif)
+    limit_children = 56 # int |  (facultatif)
+    count_children = True # bool |  (facultatif)
+    fetch_page_for_comment_id = 'fetch_page_for_comment_id_example' # str |  (facultatif)
+    include_config = True # bool |  (facultatif)
+    count_all = True # bool |  (facultatif)
+    includei10n = True # bool |  (facultatif)
+    locale = 'locale_example' # str |  (facultatif)
+    modules = 'modules_example' # str |  (facultatif)
+    is_crawler = True # bool |  (facultatif)
+    include_notification_count = True # bool |  (facultatif)
+    as_tree = True # bool |  (facultatif)
+    max_tree_depth = 56 # int |  (facultatif)
+    use_full_translation_ids = True # bool |  (facultatif)
+    parent_id = 'parent_id_example' # str |  (facultatif)
+    search_text = 'search_text_example' # str |  (facultatif)
+    hash_tags = ['hash_tags_example'] # List[str] |  (facultatif)
+    user_id = 'user_id_example' # str |  (facultatif)
+    custom_config_str = 'custom_config_str_example' # str |  (facultatif)
+    after_comment_id = 'after_comment_id_example' # str |  (facultatif)
+    before_comment_id = 'before_comment_id_example' # str |  (facultatif)
 
     try:
         api_response = api_instance.get_comments_public(tenant_id, url_id, page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id)

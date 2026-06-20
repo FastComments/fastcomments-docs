@@ -3,35 +3,35 @@
 | Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sim |  |
-| commentIds | string | query | Sim | Uma lista separada por vírgulas de IDs de comentários. |
+| commentIds | string | query | Sim | Uma lista de ids de comentários separados por vírgula. |
 | sso | string | query | Não |  |
 
 ## Resposta
 
-Retorna: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Retorna: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e padrão é https://fastcomments.com
+# Definir o host é opcional e padrão para https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Abra um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Crie uma instância da classe da API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | Uma lista separada por vírgulas de IDs de comentários.
+    comment_ids = 'comment_ids_example' # str | Uma lista de ids de comentários separados por vírgula.
     sso = 'sso_example' # str |  (opcional)
 
     try:

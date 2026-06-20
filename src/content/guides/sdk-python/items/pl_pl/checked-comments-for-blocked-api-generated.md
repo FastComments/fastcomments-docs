@@ -1,21 +1,22 @@
+---
 ## Parametry
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
-| commentIds | string | query | Tak | Lista identyfikatorów komentarzy oddzielonych przecinkami. |
+| commentIds | string | query | Tak | Lista identyfikatorów komentarzy rozdzielona przecinkami. |
 | sso | string | query | Nie |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Zwraca: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'checked_comments_for_blocked Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład checked_comments_for_blocked'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -31,7 +32,7 @@ with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | Lista identyfikatorów komentarzy oddzielonych przecinkami.
+    comment_ids = 'comment_ids_example' # str | Lista identyfikatorów komentarzy rozdzielona przecinkami.
     sso = 'sso_example' # str |  (opcjonalne)
 
     try:
@@ -41,3 +42,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->checked_comments_for_blocked: %s\n" % e)
 [inline-code-end]
+
+---

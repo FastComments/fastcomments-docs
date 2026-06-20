@@ -1,13 +1,14 @@
+---
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
-|------|------|------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | skip | float64 | 否 |  |
 
-## 回傳
+## 回應
 
-回傳：[`Option[GetEmailTemplates_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates200response.nim)
+回傳: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## 範例
 
@@ -18,5 +19,7 @@ if response.isSome:
   let templates = response.get()
   echo templates
 else:
-  echo "No templates returned"
+  echo "No email templates available"
 [inline-code-end]
+
+---

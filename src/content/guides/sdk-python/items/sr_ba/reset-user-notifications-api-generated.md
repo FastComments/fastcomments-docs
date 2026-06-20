@@ -1,46 +1,48 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Не |  |
-| afterCreatedAt | integer | query | Не |  |
-| unreadOnly | boolean | query | Не |  |
-| dmOnly | boolean | query | Не |  |
-| noDm | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| afterId | string | query | Ne |  |
+| afterCreatedAt | integer | query | Ne |  |
+| unreadOnly | boolean | query | Ne |  |
+| dmOnly | boolean | query | Ne |  |
+| noDm | boolean | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications200_response.py)
+Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.reset_user_notifications200_response import ResetUserNotifications200Response
+from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумјевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Defining the host is optional and defaults to https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Отворите контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (опционо)
-    after_created_at = 56 # int |  (опционо)
-    unread_only = True # bool |  (опционо)
-    dm_only = True # bool |  (опционо)
-    no_dm = True # bool |  (опционо)
-    sso = 'sso_example' # str |  (опционо)
+    after_id = 'after_id_example' # str |  (neobavezno)
+    after_created_at = 56 # int |  (neobavezno)
+    unread_only = True # bool |  (neobavezno)
+    dm_only = True # bool |  (neobavezno)
+    no_dm = True # bool |  (neobavezno)
+    sso = 'sso_example' # str |  (neobavezno)
 
     try:
         api_response = api_instance.reset_user_notifications(tenant_id, after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso)

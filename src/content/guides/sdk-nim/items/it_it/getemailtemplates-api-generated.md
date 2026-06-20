@@ -1,14 +1,13 @@
----
 ## Parametri
 
-| Nome | Tipo | Obbligatorio | Descrizione |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | skip | float64 | No |  |
 
 ## Risposta
 
-Restituisce: [`Option[GetEmailTemplates_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates200response.nim)
+Restituisce: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## Esempio
 
@@ -19,7 +18,7 @@ if response.isSome:
   let templates = response.get()
   echo templates
 else:
-  echo "No templates returned"
+  echo "No email templates available"
 [inline-code-end]
 
 ---

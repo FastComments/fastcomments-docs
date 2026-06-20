@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### Brug af SSO til godkendelse
+### Brug af moderations-API'et
+
+Moderationsmetoderne understøtter moderator-dashboardet. De bruger en API-nøgle `Configuration` ligesom den autentificerede API, og hver metode accepterer et valgfrit `sso`-token, så kaldet kan foretages på vegne af en SSO-autentificeret moderator.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Opret konfiguration med API-nøgle
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Tæl kommentarer, der venter i moderationskøen
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // send et SSO-token for at handle som en SSO-autentificeret moderator
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### Brug af SSO til autentificering
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -113,7 +151,7 @@ fn main() {
     // Opret sikker SSO-brugerdata (kun serverside!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // Bruger-ID
-        "user@example.com".to_string(),   // E-mail
+        "user@example.com".to_string(),   // Email
         "John Doe".to_string(),            // Brugernavn
         "https://example.com/avatar.jpg".to_string(), // Avatar-URL
     );
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Giv dette token til dit frontend for godkendelse
+    // Overfør dette token til din frontend til autentificering
 }
 ```

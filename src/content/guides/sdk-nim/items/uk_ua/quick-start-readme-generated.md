@@ -1,6 +1,6 @@
 ### Використання автентифікованих API (DefaultAPI)
 
-**Важливо:** Для автентифікованих кінцевих точок ваш API-ключ повинен бути встановлений у заголовку `x-api-key`.
+**Важливо:** Автентифіковані кінцеві точки вимагають встановлення вашого API-ключа в заголовку `x-api-key`.
 
 ```nim
 import httpclient
@@ -39,7 +39,7 @@ if response.isSome:
 
 ### Використання публічних API (PublicAPI)
 
-Публічні кінцеві точки не потребують автентифікації:
+Публічні кінцеві точки не вимагають автентифікації:
 
 ```nim
 import httpclient
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Поширені проблеми
+### Використання модераційних API (ModerationAPI)
+
+Модераційні кінцеві точки забезпечують роботу панелі модератора та автентифікуються за допомогою SSO-токена для поточного модератора:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Перелік коментарів у панелі модератора
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
+### Типові проблеми
 
 1. **401 помилка автентифікації**: Переконайтеся, що ви встановили заголовок `x-api-key` на вашому HttpClient перед виконанням запитів DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Неправильний клас API**: Використовуйте `api_default` для серверних автентифікованих запитів, `api_public` для клієнтських/публічних запитів.
+2. **Неправильний клас API**: Використовуйте `api_default` для серверних автентифікованих запитів, `api_public` для клієнтських/публічних запитів, та `api_moderation` для запитів панелі модератора.

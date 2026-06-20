@@ -1,15 +1,15 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
 
-## Відповідь
+## Response
 
-Повертає: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderator200_response.rb)
+Повертає: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_moderator_response.rb)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад get_moderator'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

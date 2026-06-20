@@ -1,3 +1,4 @@
+---
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательно | Описание |
@@ -7,7 +8,7 @@
 
 ## Ответ
 
-Возвращает: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badge_progress_by_id200_response.rb)
+Возвращает: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
 
 ## Пример
 
@@ -24,8 +25,8 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Строка | 
-user_id = 'user_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+user_id = 'user_id_example' # String | 
 
 begin
   

@@ -1,9 +1,9 @@
-Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija.
+Agregira dokumente grupiranjem (ako je groupBy dostavljen) i primjenom više operacija.
 Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | parentTenantId | string | query | Ne |  |
@@ -11,11 +11,11 @@ Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
 ## Odgovor
 
-Vraća: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'aggregate Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer aggregate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

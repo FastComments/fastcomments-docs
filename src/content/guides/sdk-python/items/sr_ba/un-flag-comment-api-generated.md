@@ -9,42 +9,42 @@
 
 ## Одговор
 
-Враћа: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'un_flag_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример un_flag_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подавање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Постављање хоста је опционално, подразумева се https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора подесити параметре аутентификације и овлашћења
+# Клијент мора конфигурисати параметре аутентификације и ауторизације
 # у складу са безбедносном политиком API сервера.
-# Испод су дат примјери за сваки метод аутентификације, користите примјер који
-# одговара вашем случају коришћења за аутентификацију.
+# Примјери за сваки метод аутентикације су наведени доле, користите примјер који
+# одговара вашем случају употребе аутентификације.
 
-# Конфигуришите ауторизацију са API кључем: api_key
+# Конфигуришите ауторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Откоментирајте доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Отворите контекст са инстанцом API клијента
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
     # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (опционално)
-    anon_user_id = 'anon_user_id_example' # str |  (опционално)
+    user_id = 'user_id_example' # str |  (опционо)
+    anon_user_id = 'anon_user_id_example' # str |  (опционо)
 
     try:
         api_response = api_instance.un_flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
@@ -53,3 +53,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->un_flag_comment: %s\n" % e)
 [inline-code-end]
+
+---

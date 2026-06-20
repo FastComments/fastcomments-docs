@@ -7,9 +7,9 @@
 | isFlagged | boolean | query | 是 |  |
 | sso | string | query | 否 |  |
 
-## 回傳
+## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentPublic200Response.php)
+回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 範例
 
@@ -21,13 +21,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 若要使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // 字串
 $comment_id = 'comment_id_example'; // 字串
-$is_flagged = True; // 布林
+$is_flagged = True; // 布林值
 $sso = 'sso_example'; // 字串
 
 try {

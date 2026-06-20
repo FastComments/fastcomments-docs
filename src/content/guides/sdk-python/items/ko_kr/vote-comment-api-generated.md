@@ -1,17 +1,17 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | commentId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
 | broadcastId | string | query | 예 |  |
-| sessionId | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| sessionId | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_comment200_response.py)
+반환: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## 예제
 
@@ -19,18 +19,18 @@
 [inline-code-start]
 import client
 from client.models.vote_body_params import VoteBodyParams
-from client.models.vote_comment200_response import VoteComment200Response
+from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# 모든 지원 구성 매개변수 목록은 configuration.py를 참조하세요.
+# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
+# 모든 지원되는 구성 매개변수 목록은 configuration.py를 참조하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API 클라이언트 인스턴스와 함께 컨텍스트를 엽니다
+# API 클라이언트 인스턴스와 함께 컨텍스트에 들어갑니다
 with client.ApiClient(configuration) as api_client:
     # API 클래스의 인스턴스를 생성합니다
     api_instance = client.PublicApi(api_client)

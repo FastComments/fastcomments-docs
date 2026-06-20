@@ -1,33 +1,33 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| broadcastId | string | No |  |
-| commentTextUpdateRequest | CommentTextUpdateRequest | No |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| broadcastId | string | Не |  |
+| commentTextUpdateRequest | CommentTextUpdateRequest | Не |  |
+| editKey | string | Не |  |
+| sso | string | Не |  |
 
 ## Одговор
 
-Враћа: [`Option[SetCommentText_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text200response.nim)
+Враћа: [`Option[PublicAPISetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_set_comment_text_response.nim)
 
-## Примјер
+## Пример
 
-[inline-code-attrs-start title = 'setCommentText Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример setCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-7890",
-  broadcastId = "broadcast-456",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text = "Updated comment text to fix typos and add clarity."),
-  editKey = "edit-key-abc123",
-  sso = "sso-token-xyz"
+  commentId = "cmt-456789",
+  broadcastId = "",
+  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
+  editKey = "",
+  sso = ""
 )
-
 if response.isSome:
-  let updated = response.get()
+  let result = response.get()
+  discard result
 [inline-code-end]
 
 ---

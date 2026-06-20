@@ -1,8 +1,9 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
 | sendEmails | boolean | query | No |  |
@@ -10,15 +11,15 @@
 
 ## Respuesta
 
-Devuelve: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Devuelve: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de save_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
 from client.rest import ApiException
 from pprint import pprint
 
@@ -33,13 +34,13 @@ configuration = client.Configuration(
 # Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar la autorización mediante clave API: api_key
+# Configurar la autorización por clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+# Descomente a continuación para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre en un contexto con una instancia del cliente de la API
+# Abra un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
@@ -57,3 +58,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->save_comment: %s\n" % e)
 [inline-code-end]
+
+---

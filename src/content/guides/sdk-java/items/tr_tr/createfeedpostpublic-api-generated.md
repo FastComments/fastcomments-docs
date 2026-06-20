@@ -1,18 +1,18 @@
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| broadcastId | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | yol | Evet |  |
+| broadcastId | string | sorgu | Hayır |  |
+| sso | string | sorgu | Hayır |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostPublic200Response.java)
+Döndürür: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateFeedPostResponse.java)
 
-## Example
+## Örnek
 
-[inline-code-attrs-start title = 'createFeedPostPublic Örnek'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPostPublic Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Sınıfları içe aktar:
 import com.fastcomments.invoker.ApiClient;
@@ -32,16 +32,16 @@ public class Example {
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      CreateFeedPostPublic200Response result = apiInstance.createFeedPostPublic(tenantId, createFeedPostParams)
+      CreateFeedPostResponse result = apiInstance.createFeedPostPublic(tenantId, createFeedPostParams)
             .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#createFeedPostPublic");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("PublicApi#createFeedPostPublic çağrılırken istisna oluştu");
+      System.err.println("Durum kodu: " + e.getCode());
+      System.err.println("Sebep: " + e.getResponseBody());
+      System.err.println("Yanıt başlıkları: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

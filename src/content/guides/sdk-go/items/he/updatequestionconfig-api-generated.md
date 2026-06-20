@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -7,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_flag_comment_public_200_response.go)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## דוגמה
 
@@ -23,8 +24,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // מחרוזת | 
-	id := "id_example" // מחרוזת | 
+	tenantId := "tenantId_example" // string | 
+	id := "id_example" // string | 
 	updateQuestionConfigBody := *openapiclient.NewUpdateQuestionConfigBody() // UpdateQuestionConfigBody | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -34,7 +35,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateQuestionConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`UpdateQuestionConfig`: FlagCommentPublic200Response
+	// תגובה מ-`UpdateQuestionConfig`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateQuestionConfig`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -7,34 +7,35 @@
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_config200_response.py)
+מחזיר: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_config_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת get_question_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_question_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_config200_response import GetQuestionConfig200Response
+from client.models.get_question_config_response import GetQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
-# עיין ב-configuration.py כדי לראות רשימה של כל פרמטרי ההגדרה הנתמכים.
+# הגדרת ה-host אינה חובה וברירת המחדל היא https://fastcomments.com
+# עיין בקובץ configuration.py לרשימת כל פרמטרי הקונפיגורציה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
+# הלקוח חייב להגדיר את פרמטרי האימות והרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה; השתמש בדוגמה שמתאימה למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות למטה; השתמש בדוגמה ש
+# מתאימה למקרה השימוש שלך.
 
-# הגדר הרשאת מפתח ה-API: api_key
+# הגדר אימות באמצעות מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# היכנס להקשר עם מופע של לקוח ה-API
+# הכנס להקשר (context) עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
@@ -48,3 +49,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_question_config: %s\n" % e)
 [inline-code-end]
+
+---

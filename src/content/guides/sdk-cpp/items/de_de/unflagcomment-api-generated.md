@@ -1,34 +1,35 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| userId | string | Nein |  |
-| anonUserId | string | Nein |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagComment_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagComment_200_response.h)
+Gibt zurück: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'unFlagComment-Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für unFlagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> userId(U("user@example.com"));
+utility::string_t commentId = U("comment-7890");
+boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
 boost::optional<utility::string_t> anonUserId;
-auto fallback = std::make_shared<FlagComment_200_response>();
 api->unFlagComment(tenantId, commentId, userId, anonUserId)
-    .then([fallback](pplx::task<std::shared_ptr<FlagComment_200_response>> t) {
-        try {
-            auto resp = t.get();
-            if (!resp) resp = fallback;
-        } catch (...) {
-        }
-    });
+.then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {
+    try {
+        auto resp = t.get();
+        auto fallback = std::make_shared<FlagCommentResponse>();
+        if (!resp) resp = fallback;
+        (void)resp;
+    } catch (const std::exception &e) {
+        (void)e;
+    }
+});
 [inline-code-end]
 
 ---

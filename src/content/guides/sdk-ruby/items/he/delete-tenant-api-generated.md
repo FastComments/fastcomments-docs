@@ -6,9 +6,9 @@
 | id | string | path | כן |  |
 | sure | string | query | לא |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## דוגמה
 
@@ -16,11 +16,11 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# הגדר הרשאה
+# הגדרת הרשאה
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # הגדרת הרשאת מפתח ה-API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # בטל את ההערה בשורה הבאה כדי להגדיר קידומת עבור מפתח ה-API, לדוגמה 'Bearer' (ברירת מחדל: nil)
+  # הסר את ההערה מהשורה הבאה כדי לקבוע קידומת עבור מפתח ה-API, למשל 'Bearer' (ברירת המחדל: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

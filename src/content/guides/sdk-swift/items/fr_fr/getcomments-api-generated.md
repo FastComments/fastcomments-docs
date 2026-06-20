@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+| Name | Type | Emplacement | Required | Description |
+|------|------|-------------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | page | integer | query | Non |  |
 | limit | integer | query | Non |  |
@@ -17,10 +17,12 @@
 | hashTag | string | query | Non |  |
 | parentId | string | query | Non |  |
 | direction | string | query | Non |  |
+| fromDate | integer | query | Non |  |
+| toDate | integer | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetComments200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetComments200Response.swift)
+Retourne: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
 ## Exemple
 
@@ -44,8 +46,10 @@ let contextUserId = "contextUserId_example" // String |  (optionnel)
 let hashTag = "hashTag_example" // String |  (optionnel)
 let parentId = "parentId_example" // String |  (optionnel)
 let direction = SortDirections() // SortDirections |  (optionnel)
+let fromDate = 987 // Int64 |  (optionnel)
+let toDate = 987 // Int64 |  (optionnel)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
     guard error == nil else {
         print(error)
         return

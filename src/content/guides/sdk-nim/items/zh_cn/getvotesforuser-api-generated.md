@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 是否必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
@@ -9,7 +9,7 @@
 
 ## 响应
 
-返回：[`Option[GetVotesForUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user200response.nim)
+返回: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user_response.nim)
 
 ## 示例
 
@@ -17,14 +17,15 @@
 [inline-code-start]
 let (response, httpResponse) = client.getVotesForUser(
   tenantId = "my-tenant-123",
-  urlId = "news/economy-update-2026",
+  urlId = "news/article-title",
   userId = "user-789",
   anonUserId = ""
 )
-
 if response.isSome:
   let votes = response.get()
-  discard votes
+  echo "User votes retrieved"
+else:
+  echo "No votes found"
 [inline-code-end]
 
 ---

@@ -5,28 +5,32 @@
 | tenant_id | String | Ja |  |
 | create_tenant_package_body | models::CreateTenantPackageBody | Ja |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_200_response.rs)
+Retourneert: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'create_tenant_package Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn run() -> Result<CreateTenantPackageResponse, Error> {
+    let create_tenant_package_body: models::CreateTenantPackageBody = models::CreateTenantPackageBody {
+        name: "Premium Support".to_string(),
+        plan: "enterprise".to_string(),
+        seats: Some(50),
+        price_cents: Some(19900),
+        currency: Some("USD".to_string()),
+        features: Some(vec!["priority-support".to_string(), "white-label".to_string()]),
+        auto_renew: Some(true),
+        notes: Some("Includes monthly account review".to_string()),
+    };
     let params: CreateTenantPackageParams = CreateTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        create_tenant_package_body: models::CreateTenantPackageBody {
-            name: "Acme Standard Moderation".to_string(),
-            description: Some("Standard moderation package for news and blog sites".to_string()),
-            enabled: Some(true),
-            custom_config: Some(CustomConfigParameters { max_comment_length: Some(1000), require_moderation: Some(true) }),
-            gif_rating: Some(GifRating::PG13),
-            image_content_profanity_level: Some(ImageContentProfanityLevel::Moderate),
-            tos: Some(TosConfig { require_acceptance: Some(true), tos_url: Some("https://acme.example.com/terms".to_string()) }),
-        },
+        create_tenant_package_body,
     };
-    let response: CreateTenantPackage200Response = create_tenant_package(&configuration, params).await?;
-    Ok(())
+    let response: CreateTenantPackageResponse = create_tenant_package(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
+
+---

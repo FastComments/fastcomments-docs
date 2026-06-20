@@ -1,28 +1,29 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|-------------|-----------|
+|------|------|------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 | updateTenantPackageBody | UpdateTenantPackageBody | Sim |  |
 
 ## Resposta
 
-Retorna: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de updateTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t packageId = U("pkg-456");
-auto bodyPtr = std::make_shared<UpdateTenantPackageBody>();
-bodyPtr->name = utility::string_t(U("Pro Monthly"));
-bodyPtr->description = boost::optional<utility::string_t>(U("Monthly subscription for pro users"));
-bodyPtr->enabled = boost::optional<bool>(true);
-api->updateTenantPackage(tenantId, packageId, *bodyPtr)
-.then([](std::shared_ptr<FlagCommentPublic_200_response> resp){
-    std::cout << (resp ? "updateTenantPackage succeeded\n" : "updateTenantPackage returned null\n");
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto packageId = utility::string_t(U("pkg-987"));
+auto body = std::make_shared<UpdateTenantPackageBody>();
+body->plan = utility::string_t(U("premium"));
+body->seats = boost::optional<int>(50);
+body->expiresAt = boost::optional<utility::string_t>(U("2026-12-31T23:59:59Z"));
+body->contactEmail = boost::optional<utility::string_t>(U("ops@acme-corp.com"));
+api->updateTenantPackage(tenantId, packageId, body)
+.then([](std::shared_ptr<APIEmptyResponse> resp){
+    if(!resp) throw std::runtime_error("Failed to update tenant package");
 });
 [inline-code-end]
 

@@ -8,14 +8,14 @@
 
 ## レスポンス
 
-戻り値: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenants200_response.py)
+戻り値: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenants_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_tenants の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tenants200_response import GetTenants200Response
+from client.models.get_tenants_response import GetTenantsResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,23 +26,22 @@ configuration = client.Configuration(
 )
 
 # クライアントは認証および認可のパラメータを設定する必要があります
-# API サーバのセキュリティポリシーに従ってください。
-# 以下に各認証方式の例を示します。
-# ご自身の認証ユースケースに合う例を使用してください。
+# API サーバーのセキュリティポリシーに従って設定してください。
+# 以下に各認証方法の例を示します。ご利用の認証ケースに合った例を使用してください。
 
-# API キー認証の設定: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーの接頭辞（例: Bearer）を設定するには、下のコメントを解除してください
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスを使ってコンテキストを開始します
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    meta = 'meta_example' # str |  （省略可）
-    skip = 3.4 # float |  （省略可）
+    meta = 'meta_example' # str |  （任意）
+    skip = 3.4 # float |  （任意）
 
     try:
         api_response = api_instance.get_tenants(tenant_id, meta=meta, skip=skip)

@@ -10,7 +10,7 @@
 
 ## Réponse
 
-Renvoie : [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_comment_public200_response.py)
+Renvoie : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## Exemple
 
@@ -18,20 +18,20 @@ Renvoie : [`CreateCommentPublic200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 import client
 from client.models.comment_data import CommentData
-from client.models.create_comment_public200_response import CreateCommentPublic200Response
+from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut : https://fastcomments.com
+# La définition de l'hôte est facultative et la valeur par défaut est https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrer dans un contexte avec une instance du client API
+# Entrez dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Créez une instance de la classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 

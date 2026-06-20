@@ -1,30 +1,27 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetTenantPackage_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantPackage_200_response.h)
+מחזיר: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantPackageResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getTenantPackage דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t packageId = U("pkg-456");
-boost::optional<utility::string_t> requestTrace = U("trace-20260112-01");
-api->getTenantPackage(tenantId, packageId)
-.then([requestTrace](std::shared_ptr<GetTenantPackage_200_response> resp){
-    auto result = resp ? resp : std::make_shared<GetTenantPackage_200_response>();
-    if (requestTrace) { auto trace = *requestTrace; (void)trace; }
-    return result;
-})
-.then([](std::shared_ptr<GetTenantPackage_200_response> finalResp){
-    (void)finalResp;
-});
+utility::string_t id = U("pkg-basic-001");
+boost::optional<utility::string_t> requestedBy = U("admin@example.com");
+auto task = api->getTenantPackage(tenantId, id)
+    .then([requestedBy](std::shared_ptr<GetTenantPackageResponse> resp) -> std::shared_ptr<GetTenantPackageResponse> {
+        if(!resp) return std::make_shared<GetTenantPackageResponse>();
+        if(requestedBy) {}
+        return std::make_shared<GetTenantPackageResponse>(*resp);
+    });
 [inline-code-end]
 
 ---

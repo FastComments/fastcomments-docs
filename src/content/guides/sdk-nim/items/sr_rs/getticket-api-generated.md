@@ -1,23 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| userId | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| userId | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetTicket_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket200response.nim)
+Враћа: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTicket Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "", userId = "")
+let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
 if response.isSome:
   let ticket = response.get()
-  discard ticket
+  echo "Got ticket:", ticket
+else:
+  echo "No ticket returned; HTTP response:", httpResponse
 [inline-code-end]
 
 ---

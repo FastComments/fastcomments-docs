@@ -7,19 +7,19 @@
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Gibt zurück: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'delete_question_config Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-pub async fn run_delete_question_config() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_question_config() -> Result<(), Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "question-config-8742".to_string(),
+        tenant_id: "acme-corp-tenant".to_owned(),
+        id: "faq/general-2026".to_owned(),
     };
-    let response: FlagCommentPublic200Response = delete_question_config(&configuration, params).await?;
-    Ok(response)
+    let _response: ApiEmptyResponse = delete_question_config(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

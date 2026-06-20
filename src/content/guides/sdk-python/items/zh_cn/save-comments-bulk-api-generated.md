@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+返回: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## 示例
 
@@ -18,7 +18,7 @@
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -29,24 +29,24 @@ configuration = client.Configuration(
 )
 
 # 客户端必须根据 API 服务器的安全策略配置身份验证和授权参数。
-# 下方提供了每种身份验证方法的示例，请使用满足您身份验证用例的示例。
+# 下面为每种认证方法提供了示例，请使用满足您认证用例的示例。
 
 # 配置 API 密钥授权：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如果需要，请取消注释下面以为 API 密钥设置前缀（例如 Bearer）
+# 如有需要，取消注释下面以为 API 密钥设置前缀（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (optional)
-    do_spam_check = True # bool |  (optional)
-    send_emails = True # bool |  (optional)
-    populate_notifications = True # bool |  (optional)
+    is_live = True # bool |  （可选）
+    do_spam_check = True # bool |  （可选）
+    send_emails = True # bool |  （可选）
+    populate_notifications = True # bool |  （可选）
 
     try:
         api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)

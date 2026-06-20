@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | questionId | string | query | Non |  |
@@ -14,24 +14,24 @@
 
 ## Réponse
 
-Retourne : [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineCommentsWithQuestionResults200Response.swift)
+Renvoie: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineQuestionResultsWithCommentsResponse.swift)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (optionnel)
-let questionIds = ["inner_example"] // [String] |  (optionnel)
-let urlId = "urlId_example" // String |  (optionnel)
-let startDate = Date() // Date |  (optionnel)
-let forceRecalculate = true // Bool |  (optionnel)
-let minValue = 987 // Double |  (optionnel)
-let maxValue = 987 // Double |  (optionnel)
-let limit = 987 // Double |  (optionnel)
+let questionId = "questionId_example" // String |  (facultatif)
+let questionIds = ["inner_example"] // [String] |  (facultatif)
+let urlId = "urlId_example" // String |  (facultatif)
+let startDate = Date() // Date |  (facultatif)
+let forceRecalculate = true // Bool |  (facultatif)
+let minValue = 987 // Double |  (facultatif)
+let maxValue = 987 // Double |  (facultatif)
+let limit = 987 // Double |  (facultatif)
 
 DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
     guard error == nil else {
@@ -44,5 +44,3 @@ DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: qu
     }
 }
 [inline-code-end]
-
----

@@ -7,9 +7,9 @@
 | broadcastId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`PinComment200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PinComment200Response.php)
+Retourneert: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeCommentPinStatusResponse.php)
 
 ## Voorbeeld
 

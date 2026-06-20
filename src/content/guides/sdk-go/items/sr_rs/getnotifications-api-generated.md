@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Не |  |
@@ -12,7 +12,7 @@
 
 ## Одговор
 
-Враћа: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_200_response.go)
+Враћа: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_response.go)
 
 ## Пример
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (опционално)
-	urlId := "urlId_example" // string |  (опционално)
-	fromCommentId := "fromCommentId_example" // string |  (опционално)
-	viewed := true // bool |  (опционално)
-	type_ := "type__example" // string |  (опционално)
-	skip := float64(1.2) // float64 |  (опционално)
+	userId := "userId_example" // string |  (опционо)
+	urlId := "urlId_example" // string |  (опционо)
+	fromCommentId := "fromCommentId_example" // string |  (опционо)
+	viewed := true // bool |  (опционо)
+	type_ := "type__example" // string |  (опционо)
+	skip := float64(1.2) // float64 |  (опционо)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetNotifications`: GetNotifications200Response
+	// одговор од `GetNotifications`: GetNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotifications`: %v\n", resp)
 }
 [inline-code-end]

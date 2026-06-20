@@ -1,28 +1,28 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Name | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Oui |  |
+| userId | string | query | Non |  |
+| state | number | query | Non |  |
+| skip | number | query | Non |  |
+| limit | number | query | Non |  |
 
 ## Réponse
 
-Retourne: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets200_response.py)
+Renvoie: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple get_tickets'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_tickets200_response import GetTickets200Response
+from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut à https://fastcomments.com
-# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -38,15 +38,15 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # Décommentez ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrez dans un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (facultatif)
-    state = 3.4 # float |  (facultatif)
-    skip = 3.4 # float |  (facultatif)
-    limit = 3.4 # float |  (facultatif)
+    user_id = 'user_id_example' # str |  (optionnel)
+    state = 3.4 # float |  (optionnel)
+    skip = 3.4 # float |  (optionnel)
+    limit = 3.4 # float |  (optionnel)
 
     try:
         api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)

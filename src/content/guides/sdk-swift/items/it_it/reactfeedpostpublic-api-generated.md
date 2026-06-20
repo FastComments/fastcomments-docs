@@ -1,16 +1,16 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| postId | string | path | Sì |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
 | isUndo | boolean | query | No |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Risposta
 
-Restituisce: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostPublic200Response.swift)
+Restituisce: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostResponse.swift)
 
 ## Esempio
 
@@ -37,5 +37,3 @@ PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParam
     }
 }
 [inline-code-end]
-
----

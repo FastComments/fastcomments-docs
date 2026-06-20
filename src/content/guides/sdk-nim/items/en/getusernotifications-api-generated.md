@@ -3,6 +3,7 @@
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 | pageSize | int | No |  |
 | afterId | string | No |  |
 | includeContext | bool | No |  |
@@ -11,11 +12,12 @@
 | dmOnly | bool | No |  |
 | noDm | bool | No |  |
 | includeTranslations | bool | No |  |
+| includeTenantNotifications | bool | No |  |
 | sso | string | No |  |
 
 ## Response
 
-Returns: [`Option[GetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notifications200response.nim)
+Returns: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_my_notifications_response.nim)
 
 ## Example
 
@@ -23,14 +25,16 @@ Returns: [`Option[GetUserNotifications_200_response]`](https://github.com/FastCo
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
+  urlId = "news/article-title",
   pageSize = 0,
   afterId = "",
   includeContext = false,
-  afterCreatedAt = int64(0),
+  afterCreatedAt = 0,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   includeTranslations = false,
+  includeTenantNotifications = false,
   sso = ""
 )
 

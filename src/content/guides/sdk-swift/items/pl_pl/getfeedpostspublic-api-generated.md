@@ -6,23 +6,23 @@ afterId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| afterId | string | query | Nie |  |
-| limit | integer | query | Nie |  |
-| tags | array | query | Nie |  |
-| sso | string | query | Nie |  |
-| isCrawler | boolean | query | Nie |  |
-| includeUserInfo | boolean | query | Nie |  |
+| tenantId | string | ścieżka | Tak |  |
+| afterId | string | zapytanie | Nie |  |
+| limit | integer | zapytanie | Nie |  |
+| tags | array | zapytanie | Nie |  |
+| sso | string | zapytanie | Nie |  |
+| isCrawler | boolean | zapytanie | Nie |  |
+| includeUserInfo | boolean | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsPublic200Response.swift)
+Zwraca: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W razie jakichkolwiek problemów, zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

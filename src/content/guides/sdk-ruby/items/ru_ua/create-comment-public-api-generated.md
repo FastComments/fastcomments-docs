@@ -2,19 +2,19 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| broadcastId | string | query | Да |  |
-| sessionId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | путь | Да |  |
+| urlId | string | параметр запроса | Да |  |
+| broadcastId | string | параметр запроса | Да |  |
+| sessionId | string | параметр запроса | Нет |  |
+| sso | string | параметр запроса | Нет |  |
 
 ## Ответ
 
-Возвращает: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_comment_public200_response.rb)
+Возвращает: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_response_with_presence.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример create_comment_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример использования create_comment_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

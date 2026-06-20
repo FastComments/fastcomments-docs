@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Name | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | create_api_user_subscription_data | models::CreateApiUserSubscriptionData | Oui |  |
@@ -11,28 +11,18 @@ Renvoie : [`CreateSubscriptionApiResponse`](https://github.com/FastComments/fast
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour create_subscription'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de create_subscription'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: CreateSubscriptionParams = CreateSubscriptionParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        create_api_user_subscription_data: models::CreateApiUserSubscriptionData {
-            api_user_id: "api_user_9843".to_string(),
-            resource: "news/article".to_string(),
-            plan: Some("pro".to_string()),
-            start_at: Some("2026-03-01T12:00:00Z".to_string()),
-            metadata: Some(std::collections::HashMap::from([
-                ("source".to_string(), "signup_form".to_string()),
-                ("utm_campaign".to_string(), "spring_launch".to_string()),
-            ])),
-            active: Some(true),
-        },
-    };
-
-    let subscription_response: CreateSubscriptionApiResponse =
-        create_subscription(&configuration, params).await?;
-    Ok(())
-}
+let params: CreateSubscriptionParams = CreateSubscriptionParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    create_api_user_subscription_data: models::CreateApiUserSubscriptionData {
+        user_id: "user-987".to_string(),
+        plan_id: "pro-monthly".to_string(),
+        source: Some("website".to_string()),
+        topics: Some(vec!["news/article".to_string(), "product/updates".to_string()]),
+        auto_renew: Some(true),
+        metadata: Some(std::collections::HashMap::from([("ref".to_string(), "signup_form".to_string())])),
+    },
+};
+let response: CreateSubscriptionApiResponse = create_subscription(&configuration, params).await?;
 [inline-code-end]
-
----

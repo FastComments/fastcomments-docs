@@ -1,18 +1,19 @@
+---
 ## パラメータ
 
-| 名前 | タイプ | 場所 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| userId | string | query | いいえ |  |
-| urlId | string | query | いいえ |  |
-| fromCommentId | string | query | いいえ |  |
-| viewed | boolean | query | いいえ |  |
-| type | string | query | いいえ |  |
-| skip | number | query | いいえ |  |
+| tenantId | string | クエリ | はい |  |
+| userId | string | クエリ | いいえ |  |
+| urlId | string | クエリ | いいえ |  |
+| fromCommentId | string | クエリ | いいえ |  |
+| viewed | boolean | クエリ | いいえ |  |
+| type | string | クエリ | いいえ |  |
+| skip | number | クエリ | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_200_response.go)
+戻り値: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_response.go)
 
 ## 例
 
@@ -29,12 +30,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (任意)
-	urlId := "urlId_example" // string |  (任意)
-	fromCommentId := "fromCommentId_example" // string |  (任意)
-	viewed := true // bool |  (任意)
-	type_ := "type__example" // string |  (任意)
-	skip := float64(1.2) // float64 |  (任意)
+	userId := "userId_example" // string |  （オプション）
+	urlId := "urlId_example" // string |  （オプション）
+	fromCommentId := "fromCommentId_example" // string |  （オプション）
+	viewed := true // bool |  （オプション）
+	type_ := "type__example" // string |  （オプション）
+	skip := float64(1.2) // float64 |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +44,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetNotifications` のレスポンス: GetNotifications200Response
+	// `GetNotifications` のレスポンス: GetNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotifications`: %v\n", resp)
 }
 [inline-code-end]
+
+---

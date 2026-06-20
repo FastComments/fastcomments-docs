@@ -1,33 +1,30 @@
+---
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | create_question_result_body | models::CreateQuestionResultBody | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_question_result_200_response.rs)
+Retourne : [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_question_result_response.rs)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de create_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_create_question_result() -> Result<(), Error> {
-    let params: CreateQuestionResultParams = CreateQuestionResultParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        create_question_result_body: models::CreateQuestionResultBody {
-            question_id: "article-123-comment-rating".to_string(),
-            user_id: Some("reader-456".to_string()),
-            result: Some("helpful".to_string()),
-            context: Some("news/article".to_string()),
-            submitted_at: Some("2026-03-25T12:34:56Z".to_string()),
-        },
-    };
-
-    let response: CreateQuestionResult200Response = create_question_result(&configuration, params).await?;
-    Ok(())
-}
+let params: CreateQuestionResultParams = CreateQuestionResultParams {
+    tenant_id: String::from("acme-corp-tenant"),
+    create_question_result_body: models::CreateQuestionResultBody {
+        question_id: String::from("news/article/1234"),
+        user_id: Some(String::from("reader-9876")),
+        answer: String::from("B"),
+        correct: Some(false),
+        score: Some(0.0),
+    },
+};
+let response: CreateQuestionResultResponse = create_question_result(&configuration, params).await?;
 [inline-code-end]
 
 ---

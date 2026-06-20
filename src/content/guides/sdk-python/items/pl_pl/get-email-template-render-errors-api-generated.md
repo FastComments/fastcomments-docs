@@ -1,25 +1,25 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Tak |  |
+| id | string | path | Tak |  |
+| skip | number | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors200_response.py)
+Zwraca: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_email_template_render_errors_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_email_template_render_errors'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_email_template_render_errors200_response import GetEmailTemplateRenderErrors200Response
+from client.models.get_email_template_render_errors_response import GetEmailTemplateRenderErrorsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -27,8 +27,8 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania — użyj
+# przykładu, który odpowiada Twojemu przypadkowi użycia.
 
 # Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -42,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    skip = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (opcjonalne)
 
     try:
         api_response = api_instance.get_email_template_render_errors(tenant_id, id, skip=skip)
@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_email_template_render_errors: %s\n" % e)
 [inline-code-end]
-
----

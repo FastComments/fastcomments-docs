@@ -1,8 +1,9 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | Location | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
+| urlId | string | query | いいえ | 現在のページが購読されているかどうかを判断するために使用されます。 |
 | pageSize | integer | query | いいえ |  |
 | afterId | string | query | いいえ |  |
 | includeContext | boolean | query | いいえ |  |
@@ -11,11 +12,12 @@
 | dmOnly | boolean | query | いいえ |  |
 | noDm | boolean | query | いいえ |  |
 | includeTranslations | boolean | query | いいえ |  |
+| includeTenantNotifications | boolean | query | いいえ |  |
 | sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+返却: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## 例
 
@@ -25,17 +27,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 文字列 | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # 整数 | 
-  after_id: 'after_id_example', # 文字列 | 
-  include_context: true, # ブール値 | 
-  after_created_at: 789, # 整数 | 
-  unread_only: true, # ブール値 | 
-  dm_only: true, # ブール値 | 
-  no_dm: true, # ブール値 | 
-  include_translations: true, # ブール値 | 
-  sso: 'sso_example' # 文字列 | 
+  url_id: 'url_id_example', # String | 現在のページが購読されているかどうかを判断するために使用されます。
+  page_size: 56, # Integer | 
+  after_id: 'after_id_example', # String | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -46,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

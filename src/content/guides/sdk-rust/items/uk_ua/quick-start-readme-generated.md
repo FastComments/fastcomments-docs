@@ -45,7 +45,7 @@ async fn main() {
 }
 ```
 
-### Використання автентифікованого API
+### Використання аутентифікованого API
 
 ```rust
 use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
@@ -60,7 +60,7 @@ async fn main() {
         key: "your-api-key".to_string(),
     });
 
-    // Отримати коментарі за допомогою автентифікованого API
+    // Отримати коментарі за допомогою аутентифікованого API
     let result = default_api::get_comments(
         &config,
         default_api::GetCommentsParams {
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Використання API модерації
+
+Методи модерації підтримують панель модератора. Вони використовують `Configuration` з API-ключем так само, як і аутентифікований API, і кожен метод приймає необов'язковий токен `sso`, щоб виклик міг бути виконаний від імені модератора, автентифікованого через SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Створити конфігурацію з API-ключем
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Порахувати коментарі, що очікують у черзі модерації
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // передайте токен SSO, щоб діяти від імені модератора, автентифікованого через SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Використання SSO для автентифікації
 
 ```rust
@@ -110,19 +148,19 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Створити безпечні дані користувача SSO (тільки на сервері!)
+    // Створити захищені дані користувача SSO (тільки на сервері!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // Ідентифікатор користувача
         "user@example.com".to_string(),   // Електронна пошта
         "John Doe".to_string(),            // Ім'я користувача
-        "https://example.com/avatar.jpg".to_string(), // URL аватара
+        "https://example.com/avatar.jpg".to_string(), // URL аватарки
     );
 
-    // Згенерувати SSO токен
+    // Згенерувати SSO-токен
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Передайте цей токен на ваш фронтенд для автентифікації
+    // Передайте цей токен на фронтенд для автентифікації
 }
 ```

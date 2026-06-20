@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_user_badge_200_response.rs)
+Returnerer: [`ApiCreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_create_user_badge_response.rs)
 
 ## Eksempel
 
@@ -15,17 +15,19 @@ Returnerer: [`CreateUserBadge200Response`](https://github.com/FastComments/fastc
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: CreateUserBadgeParams = CreateUserBadgeParams {
-        tenant_id: "acme-corp-tenant".into(),
+        tenant_id: "acme-corp-tenant".to_string(),
         create_user_badge_params: models::CreateUserBadgeParams {
-            name: "Top Contributor".into(),
-            description: Some("Awarded for sustained high-quality contributions".into()),
-            image_url: Some("https://cdn.acme.com/badges/top-contributor.png".into()),
-            criteria: Some("100 upvotes across articles and comments".into()),
-            is_active: Some(true),
-            tags: Some(vec!["community".into(), "milestone".into()]),
+            user_id: "user-7890".to_string(),
+            badge_key: "top-commenter".to_string(),
+            title: "Top Commenter".to_string(),
+            description: Some("Consistently provided insightful comments".to_string()),
+            image_url: Some("https://assets.news.example.com/badges/top-commenter.png".to_string()),
+            is_visible: Some(true),
+            expires_at: None,
         },
     };
-    let response: CreateUserBadge200Response = create_user_badge(&configuration, params).await?;
+
+    let response: ApiCreateUserBadgeResponse = create_user_badge(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

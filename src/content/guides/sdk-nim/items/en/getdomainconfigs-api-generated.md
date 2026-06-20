@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`Option[GetDomainConfigs_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_configs200response.nim)
+Returns: [`Option[GetDomainConfigsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_domain_configs_response.nim)
 
 ## Example
 
@@ -15,7 +15,8 @@ Returns: [`Option[GetDomainConfigs_200_response]`](https://github.com/FastCommen
 let (response, httpResponse) = client.getDomainConfigs(tenantId = "my-tenant-123")
 if response.isSome:
   let domainConfigs = response.get()
-  echo "Received domain configs for tenant:", domainConfigs
+  echo "Received domain configs for tenant my-tenant-123"
+  echo domainConfigs
 else:
-  echo "No domain configs returned, HTTP status:", httpResponse.status.code
+  echo "No domain configs returned"
 [inline-code-end]

@@ -1,14 +1,13 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
+| tenantId | string | sorgu | Evet |  |
+| id | string | yol | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`GetTenantUser200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user200_response.rb)
+Döndürür: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tenant_user_response.rb)
 
 ## Örnek
 
@@ -16,11 +15,11 @@ Döndürür: [`GetTenantUser200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi ayarla
+# yetkilendirme yapılandırması
 FastCommentsClient.configure do |config|
-  # API anahtarı yetkilendirmesini yapılandır: api_key
+  # API anahtarı yetkilendirmesini yapılandırın: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın başındaki yorum işaretini kaldırarak API anahtarı için bir önek ayarlayabilirsiniz, örn. 'Bearer' (varsayılan nil)
+  # Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir önek ayarlayın, örn. 'Bearer' (varsayılan olarak nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

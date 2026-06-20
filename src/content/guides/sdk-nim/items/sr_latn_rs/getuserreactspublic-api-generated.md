@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | postIds | seq[string] | Ne |  |
@@ -8,16 +8,18 @@
 
 ## Odgovor
 
-Vraća: [`Option[GetUserReactsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_reacts_public200response.nim)
+Vraća: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_user_reacts_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getUserReactsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserReactsPublic(tenantId = "my-tenant-123", postIds = @[], sso = "")
+let (response, httpResponse) = client.getUserReactsPublic(
+  tenantId = "my-tenant-123",
+  postIds = @["news/article-2026", "blog/opinion-987"],
+  sso = ""
+)
 if response.isSome:
   let reacts = response.get()
-  discard reacts
+  echo "Received user reacts for tenant: ", "my-tenant-123"
 [inline-code-end]
-
----

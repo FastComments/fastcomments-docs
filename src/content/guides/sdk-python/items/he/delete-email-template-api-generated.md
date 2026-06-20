@@ -2,42 +2,42 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | כן |  |
+| id | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-delete_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה עבור delete_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וערך ברירת המחדל הוא https://fastcomments.com
-# ראו configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אינה חובה והבררת המחדל היא https://fastcomments.com
+# עבור לרשימת כל פרמטרי התצורה הנתמכים עיין ב-configuration.py.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# על הלקוח להגדיר את פרמטרי האימות וההרשאה
+# על הלקוח להגדיר את פרמטרי האימות והרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן; השתמשו בדוגמה ש
-# שמתאימה למקרה השימוש שלכם.
+# דוגמאות לכל שיטת אימות מסופקות למטה; השתמש בדוגמה
+# שמתאימה למקרה השימוש שלך לאימות.
 
-# הגדרו אישור באמצעות מפתח API: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# היכנסו להקשר עם מופע של לקוח ה-API
+# השתמש בקונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צרו מופע של מחלקת ה-API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

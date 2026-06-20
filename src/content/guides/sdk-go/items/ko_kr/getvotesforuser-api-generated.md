@@ -1,15 +1,15 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | urlId | string | query | 예 |  |
-| userId | string | query | 아니요 |  |
-| anonUserId | string | query | 아니요 |  |
+| userId | string | query | 아니오 |  |
+| anonUserId | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_200_response.go)
+반환: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_votes_for_user_response.go)
 
 ## 예제
 
@@ -25,10 +25,10 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	urlId := "urlId_example" // string | 
-	userId := "userId_example" // string |  (선택 사항)
-	anonUserId := "anonUserId_example" // string |  (선택 사항)
+	tenantId := "tenantId_example" // 문자열 | 
+	urlId := "urlId_example" // 문자열 | 
+	userId := "userId_example" // 문자열 |  (선택 사항)
+	anonUserId := "anonUserId_example" // 문자열 |  (선택 사항)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetVotesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetVotesForUser`의 응답: GetVotesForUser200Response
+	// `GetVotesForUser`의 응답: GetVotesForUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotesForUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

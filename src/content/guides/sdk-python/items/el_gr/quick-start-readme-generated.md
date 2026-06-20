@@ -1,23 +1,23 @@
-### Χρήση Πιστοποιημένων API (DefaultApi)
+### Χρήση Αυθεντικοποιημένων API (DefaultApi)
 
-**Σημαντικό:** Πρέπει να ορίσετε το API key σας στο Configuration πριν κάνετε πιστοποιημένες κλήσεις. Αν δεν το κάνετε, οι αιτήσεις θα αποτύχουν με σφάλμα 401.
+**Σημαντικό:** Πρέπει να ορίσετε το κλειδί API στο Configuration πριν κάνετε αιτήματα που απαιτούν αυθεντικοποίηση. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Δημιουργήστε και διαμορφώστε τον client του API
+# Δημιουργία και ρύθμιση του πελάτη API
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το API key σας (λάβετε το από τον πίνακα ελέγχου του FastComments)
+# ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το κλειδί API σας (πάρτε το από το ταμπλό FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Δημιουργήστε το στιγμιότυπο του API με τον διαμορφωμένο client
+# Δημιουργία του instance του API με τον διαμορφωμένο client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Τώρα μπορείτε να κάνετε πιστοποιημένες κλήσεις API
+# Τώρα μπορείτε να κάνετε αιτήματα API με αυθεντικοποίηση
 try:
     # Παράδειγμα: Προσθήκη χρήστη SSO
     user_data = CreateAPISSOUserData(
@@ -35,7 +35,7 @@ try:
 except Exception as e:
     print(f"Error: {e}")
     # Συνήθη σφάλματα:
-    # - 401: Το API key λείπει ή είναι άκυρο
+    # - 401: Το κλειδί API λείπει ή είναι άκυρο
     # - 400: Η επικύρωση του αιτήματος απέτυχε
 ```
 
@@ -62,14 +62,35 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Χρήση SSO (Μοναδική Σύνδεση)
+### Χρήση του Πίνακα Ελέγχου Εποπτείας (ModerationApi)
 
-Το SDK περιλαμβάνει εργαλεία για τη δημιουργία ασφαλών SSO token:
+Το `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου του επόπτη. Οι μέθοδοι καλούνται εκ μέρους ενός επόπτη παρέχοντας ένα token `sso`:
+
+```python
+from client import ApiClient, Configuration, ModerationApi
+
+config = Configuration()
+config.host = "https://fastcomments.com/api"
+
+api_client = ApiClient(configuration=config)
+moderation_api = ModerationApi(api_client)
+
+try:
+    # Μετρήστε τα σχόλια που αναμένουν έγκριση
+    response = moderation_api.get_count(sso="SSO_TOKEN")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+### Χρήση SSO (Single Sign-On)
+
+Το SDK περιλαμβάνει βοηθητικά εργαλεία για τη δημιουργία ασφαλών token SSO:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Δημιουργήστε τα δεδομένα χρήστη
+# Δημιουργία δεδομένων χρήστη
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -77,13 +98,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Δημιουργήστε το στιγμιότυπο SSO με το API secret σας
+# Δημιουργία στιγμιότυπου SSO με το μυστικό API σας
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Γεννήστε το token SSO
+# Δημιουργία του SSO token
 sso_token = sso.create_token()
 
 # Χρησιμοποιήστε αυτό το token στο frontend σας ή περάστε το σε κλήσεις API
@@ -104,10 +125,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Συνηθισμένα προβλήματα
+### Συνηθισμένα Προβλήματα
 
-1. **401 "missing-api-key" error**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` πριν δημιουργήσετε το στιγμιότυπο DefaultApi.
-2. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για αιτήσεις που γίνονται από την πλευρά του διακομιστή με αυθεντικοποίηση, και `PublicApi` για αιτήσεις από την πλευρά του πελάτη/δημόσιες αιτήσεις.
-3. **Import errors**: Βεβαιωθείτε ότι εισάγετε από το σωστό module:
-   - API client: `from client import ...`
-   - Βοηθήματα SSO: `from sso import ...`
+1. **401 "missing-api-key" σφάλμα**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` πριν δημιουργήσετε το instance του DefaultApi.
+2. **Λάθος κλάση API**: Χρησιμοποιήστε `DefaultApi` για server-side αιτήματα με αυθεντικοποίηση, `PublicApi` για client-side/δημόσια αιτήματα, και `ModerationApi` για αιτήματα του πίνακα ελέγχου επόπτη.
+3. **Σφάλματα εισαγωγής**: Βεβαιωθείτε ότι εισάγετε από το σωστό module:
+   - Πελάτης API: `from client import ...`
+   - Βοηθητικά εργαλεία SSO: `from sso import ...`

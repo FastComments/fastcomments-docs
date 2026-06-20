@@ -1,21 +1,23 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| pageSize | int | No |  |
-| afterId | string | No |  |
-| includeContext | bool | No |  |
-| afterCreatedAt | int64 | No |  |
-| unreadOnly | bool | No |  |
-| dmOnly | bool | No |  |
-| noDm | bool | No |  |
-| includeTranslations | bool | No |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| urlId | string | はい |  |
+| pageSize | int | いいえ |  |
+| afterId | string | いいえ |  |
+| includeContext | bool | いいえ |  |
+| afterCreatedAt | int64 | いいえ |  |
+| unreadOnly | bool | いいえ |  |
+| dmOnly | bool | いいえ |  |
+| noDm | bool | いいえ |  |
+| includeTranslations | bool | いいえ |  |
+| includeTenantNotifications | bool | いいえ |  |
+| sso | string | いいえ |  |
 
 ## レスポンス
 
-返却値: [`Option[GetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notifications200response.nim)
+戻り値: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_my_notifications_response.nim)
 
 ## 例
 
@@ -23,21 +25,20 @@
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
-  pageSize = 50,
-  afterId = "notif_9a1b2c3d",
-  includeContext = true,
-  afterCreatedAt = int64(1699999999000),
+  urlId = "news/article-title",
+  pageSize = 0,
+  afterId = "",
+  includeContext = false,
+  afterCreatedAt = 0,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   includeTranslations = false,
+  includeTenantNotifications = false,
   sso = ""
 )
+
 if response.isSome:
   let notifications = response.get()
-  discard notifications
-else:
-  discard httpResponse
+  echo notifications
 [inline-code-end]
-
----

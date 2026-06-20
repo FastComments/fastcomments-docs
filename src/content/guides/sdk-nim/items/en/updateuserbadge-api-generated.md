@@ -8,15 +8,21 @@
 
 ## Response
 
-Returns: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_badge200response.nim)
+Returns: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
 
 ## Example
 
 [inline-code-attrs-start title = 'updateUserBadge Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = UpdateUserBadgeParams(badgeId: "badge-moderator", label: "Moderator", active: true)
-let (response, httpResponse) = client.updateUserBadge(tenantId = "my-tenant-123", id = "user-456", updateUserBadgeParams = params)
+let (response, httpResponse) = client.updateUserBadge(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  updateUserBadgeParams = UpdateUserBadgeParams()
+)
+
 if response.isSome:
-  let badgeResp = response.get()
-  discard badgeResp
+  let success = response.get()
+  echo "Badge updated successfully"
+else:
+  echo "Badge update failed"
 [inline-code-end]

@@ -1,12 +1,13 @@
-## 參數
+---
+## Parameters
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
+| tenantId | string | query | Yes |  |
 
-## 回應
+## Response
 
-回傳: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator200_response.rb)
+回傳: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_moderator_response.rb)
 
 ## 範例
 
@@ -16,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # 設定授權
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # 設定 API 金鑰授權: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消註解以下行以設定 API 金鑰的前綴，例如 'Bearer'（預設為 nil）
+  # 取消註解以下行以為 API 金鑰設定前綴，例如 'Bearer' (預設為 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

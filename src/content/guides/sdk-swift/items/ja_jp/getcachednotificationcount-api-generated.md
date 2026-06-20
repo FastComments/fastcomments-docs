@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCount200Response.swift)
+戻り値: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCachedNotificationCountResponse.swift)
 
 ## 例
 
@@ -30,3 +30,5 @@ DefaultAPI.getCachedNotificationCount(tenantId: tenantId, id: id) { (response, e
     }
 }
 [inline-code-end]
+
+---

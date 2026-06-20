@@ -2,24 +2,24 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Lista ID-ova komentara razdvojenih zarezom. |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Lista ID-jeva komentara odvojenih zarezom. |
+| sso | string | query | No |  |
 
 ## Odgovor
 
-Vraća: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/checked_comments_for_blocked200_response.py)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/check_blocked_comments_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.checked_comments_for_blocked200_response import CheckedCommentsForBlocked200Response
+from client.models.check_blocked_comments_response import CheckBlockedCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,7 +31,7 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_ids = 'comment_ids_example' # str | Lista ID-ova komentara razdvojenih zarezom.
+    comment_ids = 'comment_ids_example' # str | Lista ID-jeva komentara odvojenih zarezom.
     sso = 'sso_example' # str |  (opciono)
 
     try:

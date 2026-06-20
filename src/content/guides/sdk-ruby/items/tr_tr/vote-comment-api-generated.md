@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -11,7 +12,7 @@
 
 ## Yanıt
 
-Döndürür: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+Döndürür: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## Örnek
 

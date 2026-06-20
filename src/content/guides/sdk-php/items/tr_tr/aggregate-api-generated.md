@@ -1,9 +1,8 @@
-Belgeleri gruplayarak (groupBy sağlanmışsa) ve birden çok işlem uygulayarak toplar.
-Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
+Belgeleri gruplayarak (groupBy sağlanmışsa) toplar ve birden fazla işlem uygular. Farklı işlemler (ör. sum, countDistinct, avg vb.) desteklenir.
 
-## Parametreler
+## Parameters
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Type | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | parentTenantId | string | query | Hayır |  |
@@ -11,7 +10,7 @@ Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
 
 ## Yanıt
 
-Döndürür: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Örnek
 
@@ -21,14 +20,14 @@ Döndürür: [`AggregationResponse`](https://github.com/FastComments/fastcomment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API anahtarı yetkilendirmesini yapılandırın: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki yorumu kaldırın
+// Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özelleştirilmiş bir http istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi iletin.
+    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client(),
     $config

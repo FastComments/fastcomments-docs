@@ -6,45 +6,45 @@ urlId
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| page | integer | query | Nein |  |
-| direction | string | query | Nein |  |
-| sso | string | query | Nein |  |
-| skip | integer | query | Nein |  |
-| skipChildren | integer | query | Nein |  |
-| limit | integer | query | Nein |  |
-| limitChildren | integer | query | Nein |  |
-| countChildren | boolean | query | Nein |  |
-| fetchPageForCommentId | string | query | Nein |  |
-| includeConfig | boolean | query | Nein |  |
-| countAll | boolean | query | Nein |  |
-| includei10n | boolean | query | Nein |  |
-| locale | string | query | Nein |  |
-| modules | string | query | Nein |  |
-| isCrawler | boolean | query | Nein |  |
-| includeNotificationCount | boolean | query | Nein |  |
-| asTree | boolean | query | Nein |  |
-| maxTreeDepth | integer | query | Nein |  |
-| useFullTranslationIds | boolean | query | Nein |  |
-| parentId | string | query | Nein |  |
-| searchText | string | query | Nein |  |
-| hashTags | array | query | Nein |  |
-| userId | string | query | Nein |  |
-| customConfigStr | string | query | Nein |  |
-| afterCommentId | string | query | Nein |  |
-| beforeCommentId | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_public200_response.py)
+Gibt zurück: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_comments_public Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comments_public200_response import GetCommentsPublic200Response
+from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
@@ -56,7 +56,7 @@ configuration = client.Configuration(
 )
 
 
-# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
+# Kontext mit einer Instanz des API-Clients öffnen
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)

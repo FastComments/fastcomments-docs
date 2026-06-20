@@ -1,44 +1,51 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tag | string | path | כן |  |
 | tenantId | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של delete_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת delete_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_hash_tag_request import DeleteHashTagRequest
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
+from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת המארח אינה חובה וברירת המחדל היא https://fastcomments.com
-# עיין בקובץ configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
-# על הלקוח להגדיר את פרמטרי האימות והרשאה
+# הגדרת host היא אופציונלית ובברירת המחדל היא https://fastcomments.com
+# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
+# על client להגדיר את פרמטרי האימות וההרשאות
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן; השתמש בדוגמה
+# בדוגמאות להלן מופיעות דוגמאות לכל שיטת אימות; השתמש בדוגמה
 # שמתאימה למקרה השימוש שלך.
+
 # Configure API key authorization: api_key
-# הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# הסר את ההערה מהשורה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# פתח הקשר (context) עם מופע של לקוח ה-API
+# פתח הקשר עם מופע של ה-API client
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tag = 'tag_example' # str | 
     tenant_id = 'tenant_id_example' # str |  (אופציונלי)
-    delete_hash_tag_request = client.DeleteHashTagRequest() # DeleteHashTagRequest |  (אופציונלי)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (אופציונלי)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request=delete_hash_tag_request)
+        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

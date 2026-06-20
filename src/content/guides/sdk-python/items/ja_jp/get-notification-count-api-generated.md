@@ -11,42 +11,44 @@
 
 ## レスポンス
 
-戻り値: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count200_response.py)
+戻り値: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_notification_count の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notification_count200_response import GetNotificationCount200Response
+from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方法の例を以下に示します。あなたのユースケースに合った例を使用してください。
+# クライアントは認証および認可パラメータを設定する必要があります
+# それは API サーバーのセキュリティポリシーに従って行ってください。
+# 各認証方式の例を以下に示します。
+# あなたの認証ユースケースに合う例を使用してください。
 
 # API キー認証を設定: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには以下の行のコメントを外してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定する場合は、以下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスとともにコンテキストに入ります
+# API クライアントのインスタンスを使ってコンテキストを開きます
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # API クラスのインスタンスを作成
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  （省略可能）
-    url_id = 'url_id_example' # str |  （省略可能）
-    from_comment_id = 'from_comment_id_example' # str |  （省略可能）
-    viewed = True # bool |  （省略可能）
-    type = 'type_example' # str |  （省略可能）
+    user_id = 'user_id_example' # str |  (オプション)
+    url_id = 'url_id_example' # str |  (オプション)
+    from_comment_id = 'from_comment_id_example' # str |  (オプション)
+    viewed = True # bool |  (オプション)
+    type = 'type_example' # str |  (オプション)
 
     try:
         api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)

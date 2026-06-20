@@ -4,7 +4,7 @@ urlId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sì |  |
 | urlId | string | query | Sì |  |
@@ -37,11 +37,11 @@ urlId
 
 ## Risposta
 
-Restituisce: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Restituisce: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio GetCommentsPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di GetCommentsPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -49,38 +49,38 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	page := int32(56) // int32 |  (facoltativo)
-	direction := openapiclient.SortDirections("OF") // SortDirections |  (facoltativo)
-	sso := "sso_example" // string |  (facoltativo)
-	skip := int32(56) // int32 |  (facoltativo)
-	skipChildren := int32(56) // int32 |  (facoltativo)
-	limit := int32(56) // int32 |  (facoltativo)
-	limitChildren := int32(56) // int32 |  (facoltativo)
-	countChildren := true // bool |  (facoltativo)
-	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (facoltativo)
-	includeConfig := true // bool |  (facoltativo)
-	countAll := true // bool |  (facoltativo)
-	includei10n := true // bool |  (facoltativo)
-	locale := "locale_example" // string |  (facoltativo)
-	modules := "modules_example" // string |  (facoltativo)
-	isCrawler := true // bool |  (facoltativo)
-	includeNotificationCount := true // bool |  (facoltativo)
-	asTree := true // bool |  (facoltativo)
-	maxTreeDepth := int32(56) // int32 |  (facoltativo)
-	useFullTranslationIds := true // bool |  (facoltativo)
-	parentId := "parentId_example" // string |  (facoltativo)
-	searchText := "searchText_example" // string |  (facoltativo)
-	hashTags := []string{"Inner_example"} // []string |  (facoltativo)
-	userId := "userId_example" // string |  (facoltativo)
-	customConfigStr := "customConfigStr_example" // string |  (facoltativo)
-	afterCommentId := "afterCommentId_example" // string |  (facoltativo)
-	beforeCommentId := "beforeCommentId_example" // string |  (facoltativo)
+	page := int32(56) // int32 |  (opzionale)
+	direction := openapiclient.SortDirections("OF") // SortDirections |  (opzionale)
+	sso := "sso_example" // string |  (opzionale)
+	skip := int32(56) // int32 |  (opzionale)
+	skipChildren := int32(56) // int32 |  (opzionale)
+	limit := int32(56) // int32 |  (opzionale)
+	limitChildren := int32(56) // int32 |  (opzionale)
+	countChildren := true // bool |  (opzionale)
+	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (opzionale)
+	includeConfig := true // bool |  (opzionale)
+	countAll := true // bool |  (opzionale)
+	includei10n := true // bool |  (opzionale)
+	locale := "locale_example" // string |  (opzionale)
+	modules := "modules_example" // string |  (opzionale)
+	isCrawler := true // bool |  (opzionale)
+	includeNotificationCount := true // bool |  (opzionale)
+	asTree := true // bool |  (opzionale)
+	maxTreeDepth := int32(56) // int32 |  (opzionale)
+	useFullTranslationIds := true // bool |  (opzionale)
+	parentId := "parentId_example" // string |  (opzionale)
+	searchText := "searchText_example" // string |  (opzionale)
+	hashTags := []string{"Inner_example"} // []string |  (opzionale)
+	userId := "userId_example" // string |  (opzionale)
+	customConfigStr := "customConfigStr_example" // string |  (opzionale)
+	afterCommentId := "afterCommentId_example" // string |  (opzionale)
+	beforeCommentId := "beforeCommentId_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// risposta da `GetCommentsPublic`: GetCommentsPublic200Response
+	// risposta da `GetCommentsPublic`: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

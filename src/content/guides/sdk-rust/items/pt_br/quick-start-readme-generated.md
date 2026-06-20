@@ -53,7 +53,7 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Criar configuração com a chave da API
+    // Criar configuração com a chave de API
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Usando a API de Moderação
+
+Os métodos de moderação sustentam o painel do moderador. Eles usam uma `Configuration` com chave de API assim como a API autenticada, e cada método aceita um token opcional `sso` para que a chamada possa ser feita em nome de um moderador autenticado por SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Criar configuração com a chave de API
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Contar comentários aguardando na fila de moderação
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // Passe um token SSO para atuar em nome de um moderador autenticado por SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Usando SSO para Autenticação
 
 ```rust
@@ -110,7 +148,7 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Criar dados de usuário SSO seguros (somente no servidor!)
+    // Criar dados seguros de usuário SSO (somente no servidor!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // ID do usuário
         "user@example.com".to_string(),   // E-mail
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Envie este token para seu frontend para autenticação
+    // Passe este token para seu frontend para autenticação
 }
 ```

@@ -1,23 +1,23 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必要 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | 是 |  |
+| domain | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfig200Response.swift)
+Returns: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfigResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteDomainConfig 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式碼範例仍為測試版。如有任何問題，請經由 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 下列程式範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let domain = "domain_example" // String | 
+let tenantId = "tenantId_example" // 字串 | 
+let domain = "domain_example" // 字串 | 
 
 DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, error) in
     guard error == nil else {
@@ -30,5 +30,3 @@ DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, e
     }
 }
 [inline-code-end]
-
----

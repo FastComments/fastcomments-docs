@@ -6,22 +6,22 @@
 
 ## Odgovor
 
-Vraća: [`GetEmailTemplateDefinitions_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateDefinitions_200_response.h)
+Vraća: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateDefinitionsResponse.h)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getEmailTemplateDefinitions'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantIdOpt = utility::string_t(U("my-tenant-123"));
-api->getEmailTemplateDefinitions(tenantIdOpt.value())
-.then([](pplx::task<std::shared_ptr<GetEmailTemplateDefinitions_200_response>> task) {
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> locale = boost::none;
+api->getEmailTemplateDefinitions(tenantId)
+.then([=](pplx::task<std::shared_ptr<GetEmailTemplateDefinitionsResponse>> task) {
     try {
         auto resp = task.get();
-        auto localCopy = std::make_shared<GetEmailTemplateDefinitions_200_response>(*resp);
-        (void)localCopy;
-    } catch (const std::exception& e) {
-        auto fallback = std::make_shared<GetEmailTemplateDefinitions_200_response>();
-        (void)fallback;
+        auto safeResp = resp ? resp : std::make_shared<GetEmailTemplateDefinitionsResponse>();
+        return safeResp;
+    } catch (const std::exception&) {
+        return std::make_shared<GetEmailTemplateDefinitionsResponse>();
     }
 });
 [inline-code-end]

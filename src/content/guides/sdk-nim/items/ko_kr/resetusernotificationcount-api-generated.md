@@ -1,25 +1,25 @@
 ---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| sso | string | 아니요 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`Option[ResetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications200response.nim)
+반환: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'resetUserNotificationCount 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "sso-jwt-9a8b7c6d")
+let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-sso-token-456")
 if response.isSome:
-  let resetResult = response.get()
-  echo resetResult
+  let result = response.get()
+  echo "ResetUserNotificationsResponse:", result
 else:
-  echo "Reset failed, status: ", httpResponse.status
+  echo "Reset failed, HTTP response:", httpResponse
 [inline-code-end]
 
 ---

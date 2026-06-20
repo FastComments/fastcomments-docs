@@ -1,20 +1,20 @@
-## Parameters
+## Parametry
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_domain_config200_response.py)
+Zwraca: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/add_domain_config_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład add_domain_config'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.add_domain_config200_response import AddDomainConfig200Response
 from client.models.add_domain_config_params import AddDomainConfigParams
+from client.models.add_domain_config_response import AddDomainConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -25,14 +25,14 @@ configuration = client.Configuration(
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
-# zgodnie z polityką zabezpieczeń serwera API.
-# Przykłady dla każdej metody uwierzytelniania są podane poniżej. Użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# zgodnie z polityką bezpieczeństwa serwera API.
+# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj przykładu,
+# który odpowiada Twojemu przypadkowi użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Konfiguruj uwierzytelnianie kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to potrzebne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API

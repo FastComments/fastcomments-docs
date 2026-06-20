@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | query | 否 |  |
@@ -12,7 +12,7 @@
 
 ## 响应
 
-返回: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_200_response.go)
+返回: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_event_count_response.go)
 
 ## 示例
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  （可选）
-	externalId := "externalId_example" // string |  （可选）
-	eventType := "eventType_example" // string |  （可选）
-	type_ := "type__example" // string |  （可选）
-	domain := "domain_example" // string |  （可选）
-	attemptCountGT := float64(1.2) // float64 |  （可选）
+	commentId := "commentId_example" // string |  (可选)
+	externalId := "externalId_example" // string |  (可选)
+	eventType := "eventType_example" // string |  (可选)
+	type_ := "type__example" // string |  (可选)
+	domain := "domain_example" // string |  (可选)
+	attemptCountGT := float64(1.2) // float64 |  (可选)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEventCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetPendingWebhookEventCount` 的响应: GetPendingWebhookEventCount200Response
+	// 来自 `GetPendingWebhookEventCount` 的响应: GetPendingWebhookEventCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]

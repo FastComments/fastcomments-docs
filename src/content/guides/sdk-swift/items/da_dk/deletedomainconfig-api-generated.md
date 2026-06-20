@@ -1,19 +1,19 @@
 ## Parametre
 
-| Navn | Type | Placering | Obligatorisk | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| domain | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| domain | string | path | Yes |  |
 
 ## Svar
 
-Returnerer: [`DeleteDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfig200Response.swift)
+Returnerer: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteDomainConfigResponse.swift)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'deleteDomainConfig Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, indrapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende eksempelkode er stadig i beta. Hvis der opstår problemer, så rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

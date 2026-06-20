@@ -1,18 +1,18 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| userId | string | zapytanie | Nie |  |
-| urlId | string | zapytanie | Nie |  |
-| fromCommentId | string | zapytanie | Nie |  |
-| viewed | boolean | zapytanie | Nie |  |
-| type | string | zapytanie | Nie |  |
-| skip | number | zapytanie | Nie |  |
+| tenantId | string | query | Tak |  |
+| userId | string | query | Nie |  |
+| urlId | string | query | Nie |  |
+| fromCommentId | string | query | Nie |  |
+| viewed | boolean | query | Nie |  |
+| type | string | query | Nie |  |
+| skip | number | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_200_response.go)
+Zwraca: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_notifications_response.go)
 
 ## Przykład
 
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetNotifications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odpowiedź z `GetNotifications`: GetNotifications200Response
+	// odpowiedź z `GetNotifications`: GetNotificationsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetNotifications`: %v\n", resp)
 }
 [inline-code-end]
-
----

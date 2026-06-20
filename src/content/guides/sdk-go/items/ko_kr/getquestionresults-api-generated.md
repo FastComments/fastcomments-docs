@@ -1,18 +1,18 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| urlId | string | query | 아니오 |  |
-| userId | string | query | 아니오 |  |
-| startDate | string | query | 아니오 |  |
-| questionId | string | query | 아니오 |  |
-| questionIds | string | query | 아니오 |  |
-| skip | number | query | 아니오 |  |
+| urlId | string | query | 아니요 |  |
+| userId | string | query | 아니요 |  |
+| startDate | string | query | 아니요 |  |
+| questionId | string | query | 아니요 |  |
+| questionIds | string | query | 아니요 |  |
+| skip | number | query | 아니요 |  |
 
 ## 응답
 
-반환: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_200_response.go)
+반환: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_response.go)
 
 ## 예제
 
@@ -43,7 +43,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetQuestionResults`의 응답: GetQuestionResults200Response
+	// response from `GetQuestionResults`: GetQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
+
+---

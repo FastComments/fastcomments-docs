@@ -1,6 +1,6 @@
 ### Maven
 
-Dodaj repozytorium Repsy do pliku POM projektu:
+Dodaj repozytorium Repsy do pliku POM swojego projektu:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Dodaj repozytorium Repsy do pliku POM projektu:
 </repositories>
 ```
 
-Następnie dodaj potrzebne zależności:
+Następnie dodaj wymagane zależności:
 
 ```xml
 <dependencies>
@@ -20,21 +20,21 @@ Następnie dodaj potrzebne zależności:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -53,24 +53,26 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:1.3.2"
+    implementation "com.fastcomments:client:2.0.0"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    implementation "com.fastcomments:core:2.0.0"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Zawartość biblioteki
+### Library Contents
 
-Ta biblioteka zawiera trzy moduły. Wygenerowanego klienta API, bibliotekę Core w Javie, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, oraz moduł `pubsub`, który jest biblioteką do subskrybowania kanałów zmian.
+Ta biblioteka zawiera trzy moduły. Wygenerowany klient API, biblioteka core w Javie, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, oraz moduł `pubsub`, który jest biblioteką do subskrybowania strumieni zmian.
 
 - [Dokumentacja biblioteki klienta API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Dokumentacja biblioteki Core, w tym przykłady SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Dokumentacja biblioteki PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Publiczne vs Zabezpieczone API
+### Public vs Secured APIs
 
-Dla klienta API dostępne są dwie klasy: `DefaultApi` i `PublicApi`. `DefaultApi` zawiera metody, które wymagają twojego klucza API, a `PublicApi` zawiera wywołania API, które można wykonywać bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelniania.
+Dla klienta API istnieją trzy klasy: `DefaultApi`, `PublicApi` oraz `ModerationApi`. `DefaultApi` zawiera metody, które wymagają Twojego klucza API, a `PublicApi` zawiera metody, które można wywołać bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelniania.
+
+`ModerationApi` zasila panel moderatora. Zawiera metody do moderacji komentarzy (lista, zliczanie, wyszukiwanie, logi i eksport), akcje moderacji (usuwanie/przywracanie, oznaczanie, ustawianie statusu do weryfikacji/spam/akceptacja, głosowanie oraz ponowne otwieranie/zamykanie wątku), blokady (zablokowanie komentowania, cofnięcie blokady, podsumowania przed blokadą, status i preferencje blokady oraz liczba zablokowanych użytkowników) oraz odznaki i zaufanie (przyznawanie/usuwanie odznaki, odznaki ręczne, pobieranie/ustawianie współczynnika zaufania oraz wewnętrzny profil użytkownika). Każda metoda `ModerationApi` przyjmuje parametr `sso`, dzięki czemu wywołanie może zostać wykonane w imieniu moderatora uwierzytelnionego przez SSO.

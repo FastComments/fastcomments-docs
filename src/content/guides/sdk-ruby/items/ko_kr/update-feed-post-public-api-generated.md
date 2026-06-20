@@ -2,14 +2,14 @@
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 경로 | 예 |  |
-| postId | string | 경로 | 예 |  |
-| broadcastId | string | 쿼리 | 아니오 |  |
-| sso | string | 쿼리 | 아니오 |  |
+| tenantId | string | path | 예 |  |
+| postId | string | path | 예 |  |
+| broadcastId | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+반환: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## 예제
 
@@ -19,12 +19,12 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 문자열 | 
-post_id = 'post_id_example' # 문자열 | 
+tenant_id = 'tenant_id_example' # String | 
+post_id = 'post_id_example' # String | 
 update_feed_post_params = FastCommentsClient::UpdateFeedPostParams.new # UpdateFeedPostParams | 
 opts = {
-  broadcast_id: 'broadcast_id_example', # 문자열 | 
-  sso: 'sso_example' # 문자열 | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

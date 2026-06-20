@@ -4,40 +4,40 @@ urlId
 
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| page | integer | query | Nej |  |
-| direction | string | query | Nej |  |
-| sso | string | query | Nej |  |
-| skip | integer | query | Nej |  |
-| skipChildren | integer | query | Nej |  |
-| limit | integer | query | Nej |  |
-| limitChildren | integer | query | Nej |  |
-| countChildren | boolean | query | Nej |  |
-| fetchPageForCommentId | string | query | Nej |  |
-| includeConfig | boolean | query | Nej |  |
-| countAll | boolean | query | Nej |  |
-| includei10n | boolean | query | Nej |  |
-| locale | string | query | Nej |  |
-| modules | string | query | Nej |  |
-| isCrawler | boolean | query | Nej |  |
-| includeNotificationCount | boolean | query | Nej |  |
-| asTree | boolean | query | Nej |  |
-| maxTreeDepth | integer | query | Nej |  |
-| useFullTranslationIds | boolean | query | Nej |  |
-| parentId | string | query | Nej |  |
-| searchText | string | query | Nej |  |
-| hashTags | array | query | Nej |  |
-| userId | string | query | Nej |  |
-| customConfigStr | string | query | Nej |  |
-| afterCommentId | string | query | Nej |  |
-| beforeCommentId | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | sti | Ja |  |
+| urlId | string | forespørgsel | Ja |  |
+| page | integer | forespørgsel | Nej |  |
+| direction | string | forespørgsel | Nej |  |
+| sso | string | forespørgsel | Nej |  |
+| skip | integer | forespørgsel | Nej |  |
+| skipChildren | integer | forespørgsel | Nej |  |
+| limit | integer | forespørgsel | Nej |  |
+| limitChildren | integer | forespørgsel | Nej |  |
+| countChildren | boolean | forespørgsel | Nej |  |
+| fetchPageForCommentId | string | forespørgsel | Nej |  |
+| includeConfig | boolean | forespørgsel | Nej |  |
+| countAll | boolean | forespørgsel | Nej |  |
+| includei10n | boolean | forespørgsel | Nej |  |
+| locale | string | forespørgsel | Nej |  |
+| modules | string | forespørgsel | Nej |  |
+| isCrawler | boolean | forespørgsel | Nej |  |
+| includeNotificationCount | boolean | forespørgsel | Nej |  |
+| asTree | boolean | forespørgsel | Nej |  |
+| maxTreeDepth | integer | forespørgsel | Nej |  |
+| useFullTranslationIds | boolean | forespørgsel | Nej |  |
+| parentId | string | forespørgsel | Nej |  |
+| searchText | string | forespørgsel | Nej |  |
+| hashTags | array | forespørgsel | Nej |  |
+| userId | string | forespørgsel | Nej |  |
+| customConfigStr | string | forespørgsel | Nej |  |
+| afterCommentId | string | forespørgsel | Nej |  |
+| beforeCommentId | string | forespørgsel | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+Returnerer: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## Eksempel
 

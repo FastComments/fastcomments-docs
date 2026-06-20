@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Zahtevano | Opis |
@@ -10,32 +9,32 @@
 
 ## Odgovor
 
-Vrne: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment200_response.py)
+Vrača: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer un_flag_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment200_response import FlagComment200Response
+from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je izbirno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre overjanja in avtorizacije
+# Odjemalec mora konfigurirati parametre preverjanja pristnosti in avtorizacije
 # v skladu s politiko varnosti API strežnika.
-# Spodaj so navedeni primeri za vsako metodo overjanja, uporabite primer,
-# ki ustreza vašemu primeru uporabe overjanja.
+# Primeri za vsako metodo preverjanja pristnosti so podani spodaj; uporabite primer, ki
+# ustreza vašemu primeru uporabe preverjanja pristnosti.
 
-# Nastavite overjanje z API ključem: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
@@ -44,8 +43,8 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (neobvezno)
-    anon_user_id = 'anon_user_id_example' # str |  (neobvezno)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
         api_response = api_instance.un_flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
@@ -54,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->un_flag_comment: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,25 +1,27 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
 
 ## 응답
 
-반환: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_200_response.rs)
+반환: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
 
 ## 예제
 
 [inline-code-attrs-start title = 'get_question_config 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_question_config() -> Result<GetQuestionConfig200Response, Error> {
-    let tenant: Option<String> = Some("acme-corp-tenant".to_string());
-    let params: GetQuestionConfigParams = GetQuestionConfigParams {
-        tenant_id: tenant.unwrap(),
-        id: "news/article/2026/03/25/space-launch".to_string(),
+async fn example_get_question_config() -> Result<GetQuestionConfigResponse, Error> {
+    let configuration: configuration::Configuration = configuration::Configuration::default();
+    let optional_tenant: Option<String> = Some("acme-corp-tenant".to_string());
+    let tenant_id: String = optional_tenant.unwrap_or_else(|| "acme-default".to_string());
+    let params = GetQuestionConfigParams {
+        tenant_id,
+        id: "news/article/2026-06-18".to_string(),
     };
-    let response: GetQuestionConfig200Response = get_question_config(&configuration, params).await?;
+    let response: GetQuestionConfigResponse = get_question_config(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

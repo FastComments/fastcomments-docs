@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | שאילתה | כן |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | query | כן |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotificationCount200Response.php)
+מחזיר: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotificationCountResponse.php)
 
 ## דוגמה
 
@@ -23,8 +23,8 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+$tenant_id = 'tenant_id_example'; // string
+$sso = 'sso_example'; // string
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);

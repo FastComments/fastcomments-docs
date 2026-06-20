@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Using the Moderation API
+
+The moderation methods back the moderator dashboard. They use an API-key `Configuration` just like the authenticated API, and each method accepts an optional `sso` token so the call can be made on behalf of an SSO-authenticated moderator.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Create configuration with API key
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Count comments waiting in the moderation queue
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // pass an SSO token to act as an SSO-authenticated moderator
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Using SSO for Authentication
 
 ```rust

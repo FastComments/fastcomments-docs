@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -6,32 +7,28 @@
 | id | string | Evet |  |
 | feedPost | FeedPost | Evet |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentPublic_200_response.h)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'updateFeedPost Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("post-987654321");
-FeedPost feedPost;
-feedPost.title = U("Weekly status update");
-feedPost.content = U("Completed the migration of the comments service to the new infra.");
-feedPost.authorEmail = U("developer@acme-corp.com");
-boost::optional<utility::string_t> summary = boost::optional<utility::string_t>(U("Migration complete"));
-feedPost.summary = summary;
-auto updateTask = api->updateFeedPost(tenantId, postId, feedPost)
-    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto cloned = std::make_shared<FlagCommentPublic_200_response>(*resp);
-            }
-        } catch (...) {
-        }
-    });
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto postId = utility::string_t(U("feedpost-456"));
+auto post = std::make_shared<FeedPost>();
+post->title = utility::string_t(U("Weekly Update"));
+post->content = utility::string_t(U("This week's changes include bug fixes and performance improvements."));
+post->authorEmail = boost::optional<utility::string_t>(utility::string_t(U("author@example.com")));
+post->published = boost::optional<bool>(true);
+api->updateFeedPost(tenantId, postId, *post)
+.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
+    try {
+        auto resp = t.get();
+        (void)resp;
+    } catch (...) {}
+});
 [inline-code-end]
 
 ---

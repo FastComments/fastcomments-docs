@@ -11,7 +11,7 @@
 
 ## レスポンス
 
-戻り値: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsers200Response.swift)
+戻り値: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## 例
 
@@ -22,10 +22,10 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (任意)
-let mentionGroupIds = ["inner_example"] // [String] |  (任意)
-let sso = "sso_example" // String |  (任意)
-let searchSection = "searchSection_example" // String |  (任意)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (オプション)
+let mentionGroupIds = ["inner_example"] // [String] |  (オプション)
+let sso = "sso_example" // String |  (オプション)
+let searchSection = "searchSection_example" // String |  (オプション)
 
 PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
@@ -38,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

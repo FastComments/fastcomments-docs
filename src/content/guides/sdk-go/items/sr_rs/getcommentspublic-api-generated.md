@@ -1,47 +1,47 @@
-захтев
+req
 tenantId
 urlId
 
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| page | integer | query | Не |  |
-| direction | string | query | Не |  |
-| sso | string | query | Не |  |
-| skip | integer | query | Не |  |
-| skipChildren | integer | query | Не |  |
-| limit | integer | query | Не |  |
-| limitChildren | integer | query | Не |  |
-| countChildren | boolean | query | Не |  |
-| fetchPageForCommentId | string | query | Не |  |
-| includeConfig | boolean | query | Не |  |
-| countAll | boolean | query | Не |  |
-| includei10n | boolean | query | Не |  |
-| locale | string | query | Не |  |
-| modules | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
-| includeNotificationCount | boolean | query | Не |  |
-| asTree | boolean | query | Не |  |
-| maxTreeDepth | integer | query | Не |  |
-| useFullTranslationIds | boolean | query | Не |  |
-| parentId | string | query | Не |  |
-| searchText | string | query | Не |  |
-| hashTags | array | query | Не |  |
-| userId | string | query | Не |  |
-| customConfigStr | string | query | Не |  |
-| afterCommentId | string | query | Не |  |
-| beforeCommentId | string | query | Не |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| page | integer | query | Ne |  |
+| direction | string | query | Ne |  |
+| sso | string | query | Ne |  |
+| skip | integer | query | Ne |  |
+| skipChildren | integer | query | Ne |  |
+| limit | integer | query | Ne |  |
+| limitChildren | integer | query | Ne |  |
+| countChildren | boolean | query | Ne |  |
+| fetchPageForCommentId | string | query | Ne |  |
+| includeConfig | boolean | query | Ne |  |
+| countAll | boolean | query | Ne |  |
+| includei10n | boolean | query | Ne |  |
+| locale | string | query | Ne |  |
+| modules | string | query | Ne |  |
+| isCrawler | boolean | query | Ne |  |
+| includeNotificationCount | boolean | query | Ne |  |
+| asTree | boolean | query | Ne |  |
+| maxTreeDepth | integer | query | Ne |  |
+| useFullTranslationIds | boolean | query | Ne |  |
+| parentId | string | query | Ne |  |
+| searchText | string | query | Ne |  |
+| hashTags | array | query | Ne |  |
+| userId | string | query | Ne |  |
+| customConfigStr | string | query | Ne |  |
+| afterCommentId | string | query | Ne |  |
+| beforeCommentId | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Vraća: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример GetCommentsPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer GetCommentsPublic'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -49,38 +49,38 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	page := int32(56) // int32 |  (опционално)
-	direction := openapiclient.SortDirections("OF") // SortDirections |  (опционално)
-	sso := "sso_example" // string |  (опционално)
-	skip := int32(56) // int32 |  (опционално)
-	skipChildren := int32(56) // int32 |  (опционално)
-	limit := int32(56) // int32 |  (опционално)
-	limitChildren := int32(56) // int32 |  (опционално)
-	countChildren := true // bool |  (опционално)
-	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (опционално)
-	includeConfig := true // bool |  (опционално)
-	countAll := true // bool |  (опционално)
-	includei10n := true // bool |  (опционално)
-	locale := "locale_example" // string |  (опционално)
-	modules := "modules_example" // string |  (опционално)
-	isCrawler := true // bool |  (опционално)
-	includeNotificationCount := true // bool |  (опционално)
-	asTree := true // bool |  (опционално)
-	maxTreeDepth := int32(56) // int32 |  (опционално)
-	useFullTranslationIds := true // bool |  (опционално)
-	parentId := "parentId_example" // string |  (опционално)
-	searchText := "searchText_example" // string |  (опционално)
-	hashTags := []string{"Inner_example"} // []string |  (опционално)
-	userId := "userId_example" // string |  (опционално)
-	customConfigStr := "customConfigStr_example" // string |  (опционално)
-	afterCommentId := "afterCommentId_example" // string |  (опционално)
-	beforeCommentId := "beforeCommentId_example" // string |  (опционално)
+	page := int32(56) // int32 |  (neobavezno)
+	direction := openapiclient.SortDirections("OF") // SortDirections |  (neobavezno)
+	sso := "sso_example" // string |  (neobavezno)
+	skip := int32(56) // int32 |  (neobavezno)
+	skipChildren := int32(56) // int32 |  (neobavezno)
+	limit := int32(56) // int32 |  (neobavezno)
+	limitChildren := int32(56) // int32 |  (neobavezno)
+	countChildren := true // bool |  (neobavezno)
+	fetchPageForCommentId := "fetchPageForCommentId_example" // string |  (neobavezno)
+	includeConfig := true // bool |  (neobavezno)
+	countAll := true // bool |  (neobavezno)
+	includei10n := true // bool |  (neobavezno)
+	locale := "locale_example" // string |  (neobavezno)
+	modules := "modules_example" // string |  (neobavezno)
+	isCrawler := true // bool |  (neobavezno)
+	includeNotificationCount := true // bool |  (neobavezno)
+	asTree := true // bool |  (neobavezno)
+	maxTreeDepth := int32(56) // int32 |  (neobavezno)
+	useFullTranslationIds := true // bool |  (neobavezno)
+	parentId := "parentId_example" // string |  (neobavezno)
+	searchText := "searchText_example" // string |  (neobavezno)
+	hashTags := []string{"Inner_example"} // []string |  (neobavezno)
+	userId := "userId_example" // string |  (neobavezno)
+	customConfigStr := "customConfigStr_example" // string |  (neobavezno)
+	afterCommentId := "afterCommentId_example" // string |  (neobavezno)
+	beforeCommentId := "beforeCommentId_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetCommentsPublic`: GetCommentsPublic200Response
+	// odgovor od `GetCommentsPublic`: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

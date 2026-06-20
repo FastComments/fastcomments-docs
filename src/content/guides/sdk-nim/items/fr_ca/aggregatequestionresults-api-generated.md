@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | questionId | string | Non |  |
@@ -12,25 +12,25 @@
 
 ## Réponse
 
-Retourne : [`Option[AggregateQuestionResults_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results200response.nim)
+Retourne : [`Option[AggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.aggregateQuestionResults(
   tenantId = "my-tenant-123",
   questionId = "",
   questionIds = @[],
-  urlId = "news/economy/budget-2025",
+  urlId = "news/article-title",
   timeBucket = AggregateTimeBucket(0),
   startDate = "",
   forceRecalculate = false
 )
 
 if response.isSome:
-  let aggResults = response.get()
-  discard aggResults
+  let results = response.get()
+  discard results
 [inline-code-end]
 
 ---

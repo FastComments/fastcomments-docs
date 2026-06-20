@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
@@ -9,11 +9,11 @@
 
 ## 回應
 
-回傳: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteComment200Response.java)
+回傳：[`DeleteCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/DeleteCommentResult.java)
 
 ## 範例
 
-[inline-code-attrs-start title = 'deleteComment 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 匯入類別：
 import com.fastcomments.invoker.ApiClient;
@@ -35,12 +35,12 @@ public class Example {
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String id = "id_example"; // String | 
-    String contextUserId = "contextUserId_example"; // String | 
-    Boolean isLive = true; // Boolean | 
+    String tenantId = "tenantId_example"; // 字串 | 
+    String id = "id_example"; // 字串 | 
+    String contextUserId = "contextUserId_example"; // 字串 | 
+    Boolean isLive = true; // 布林值 | 
     try {
-      DeleteComment200Response result = apiInstance.deleteComment(tenantId, id)
+      DeleteCommentResult result = apiInstance.deleteComment(tenantId, id)
             .contextUserId(contextUserId)
             .isLive(isLive)
             .execute();

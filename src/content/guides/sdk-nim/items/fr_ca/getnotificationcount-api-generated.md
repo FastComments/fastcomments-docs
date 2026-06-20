@@ -1,34 +1,25 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| userId | string | Non |  |
-| urlId | string | Oui |  |
-| fromCommentId | string | Non |  |
-| viewed | bool | Non |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| urlId | string | Yes |  |
+| fromCommentId | string | No |  |
+| viewed | bool | No |  |
 
 ## Réponse
 
-Renvoie: [`Option[GetNotificationCount_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notification_count200response.nim)
+Renvoie: [`Option[GetNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notification_count_response.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotificationCount(
-  tenantId = "acme-corp-tenant-12",
-  userId = "user-84",
-  urlId = "news/2026/market-update",
-  fromCommentId = "cmt-20251234",
-  viewed = false
-)
-
+let (response, httpResponse) = client.getNotificationCount(tenantId = "my-tenant-123", userId = "user-987", urlId = "news/2026/06/election-results", fromCommentId = "", viewed = false)
 if response.isSome:
-  let notificationData = response.get()
-  echo "Received notification data"
-else:
-  echo "No notification data"
+  let notifyData = response.get()
+  echo notifyData
 [inline-code-end]
 
 ---

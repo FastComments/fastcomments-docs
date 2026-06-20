@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Obligatorisk | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlIdWS | string | Nej |  |
@@ -8,22 +8,18 @@
 
 ## Svar
 
-Returnerer: [`Option[GetUserPresenceStatuses_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_presence_statuses200response.nim)
+Returnerer: [`Option[GetUserPresenceStatusesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_presence_statuses_response.nim)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getUserPresenceStatuses Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getUserPresenceStatuses'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserPresenceStatuses(
-  tenantId = "my-tenant-123",
-  urlIdWS = "news/2025/technology/ai-ethics",
-  userIds = "user-789,user-456"
-)
+let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user-123,user-456")
 if response.isSome:
-  let presence = response.get()
-  echo "Presence received: ", presence
+  let presenceStatuses = response.get()
+  echo presenceStatuses
 else:
-  echo "No presence information returned, HTTP status: ", httpResponse.status.code
+  echo "No presence data"
 [inline-code-end]
 
 ---

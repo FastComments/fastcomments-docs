@@ -27,6 +27,12 @@
       "type": "api"
     },
     {
+      "name": "LogoutPublic",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "Auth",
+      "type": "api"
+    },
+    {
       "name": "BlockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Block From Comment",
@@ -174,6 +180,12 @@
       "name": "VoteComment",
       "file": "votecomment-api-generated.md",
       "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Comments For User",
       "type": "api"
     },
     {
@@ -345,6 +357,24 @@
       "type": "api"
     },
     {
+      "name": "GetGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "GetGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "GetGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
       "name": "AddHashTag",
       "file": "addhashtag-api-generated.md",
       "subCat": "Hash Tags",
@@ -372,6 +402,264 @@
       "name": "PatchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "DeleteModerationVote",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetApiComments",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetApiExportStatus",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetApiIds",
+      "file": "getapiids-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetBanUsersFromComment",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentBanStatus",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentChildren",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetCount",
+      "file": "getcount-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetCounts",
+      "file": "getcounts-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetLogs",
+      "file": "getlogs-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetManualBadges",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetManualBadgesForUser",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetModerationComment",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetModerationCommentText",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetPreBanSummary",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchCommentsSummary",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchPages",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchSites",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchSuggest",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchUsers",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetTrustFactor",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBanPreference",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "GetUserInternalProfile",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostAdjustCommentVotes",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostApiExport",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostBanUserFromComment",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostBanUserUndo",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostBulkPreBanSummary",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostCommentsByIds",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostFlagComment",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostRemoveComment",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostRestoreDeletedComment",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentApprovalStatus",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentReviewStatus",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentSpamStatus",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentText",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostUnFlagComment",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PostVote",
+      "file": "postvote-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PutAwardBadge",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PutCloseThread",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PutRemoveBadge",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "PutReopenThread",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "Moderation",
+      "type": "api"
+    },
+    {
+      "name": "SetTrustFactor",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
@@ -441,6 +729,48 @@
       "type": "api"
     },
     {
+      "name": "CreateV1PageReact",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "CreateV2PageReact",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "DeleteV1PageReact",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "DeleteV2PageReact",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "GetV1PageLikes",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "GetV2PageReacts",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
+      "name": "GetV2PageReactUsers",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "Page Reacts",
+      "type": "api"
+    },
+    {
       "name": "AddPage",
       "file": "addpage-api-generated.md",
       "subCat": "Pages",
@@ -453,6 +783,18 @@
       "type": "api"
     },
     {
+      "name": "GetOfflineUsers",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "GetOnlineUsers",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
       "name": "GetPageByURLId",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Pages",
@@ -461,6 +803,18 @@
     {
       "name": "GetPages",
       "file": "getpages-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "GetPagesPublic",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "GetUsersInfo",
+      "file": "getusersinfo-api-generated.md",
       "subCat": "Pages",
       "type": "api"
     },
@@ -768,6 +1122,12 @@
       "name": "GetTickets",
       "file": "gettickets-api-generated.md",
       "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "GetTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Translations",
       "type": "api"
     },
     {

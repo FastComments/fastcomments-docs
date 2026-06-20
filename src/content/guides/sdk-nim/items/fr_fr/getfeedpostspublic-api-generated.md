@@ -1,7 +1,11 @@
+req
+tenantId
+afterId
+
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|-------------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | afterId | string | Non |  |
 | limit | int | Non |  |
@@ -12,11 +16,11 @@
 
 ## Réponse
 
-Renvoie: [`Option[GetFeedPostsPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_public200response.nim)
+Renvoie: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getFeedPostsPublic(
   tenantId = "my-tenant-123",
@@ -27,10 +31,7 @@ let (response, httpResponse) = client.getFeedPostsPublic(
   isCrawler = false,
   includeUserInfo = false
 )
-
 if response.isSome:
   let feed = response.get()
-  echo feed
+  discard feed
 [inline-code-end]
-
----

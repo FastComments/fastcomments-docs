@@ -1,10 +1,9 @@
----
-Habilitar ou desabilitar notificações para um comentário específico.
+Ativar ou desativar notificações para um comentário específico.
 
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | notificationId | string | Sim |  |
 | optedInOrOut | string | Sim |  |
@@ -13,23 +12,26 @@ Habilitar ou desabilitar notificações para um comentário específico.
 
 ## Resposta
 
-Retorna: [`UpdateUserNotificationStatus_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatus_200_response.h)
+Retorna: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de updateUserNotificationCommentSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t(U("my-tenant-123"));
-utility::string_t notificationId = utility::string_t(U("notif-789"));
-utility::string_t optedInOrOut = utility::string_t(U("opted_in"));
-utility::string_t commentId = utility::string_t(U("cmt-456"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U("user@example.com")));
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t notificationId = U("notif-456");
+utility::string_t optedInOrOut = U("opted_in");
+utility::string_t commentId = U("cmt-789");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-abc123"));
 api->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> t){
+.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {
     try {
         auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<UpdateUserNotificationStatus_200_response>();
-    } catch (const std::exception&) {}
+        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();
+        std::cout << "Subscription update completed" << std::endl;
+    } catch(const std::exception& e) {
+        std::cout << "Error updating subscription: " << e.what() << std::endl;
+    }
 });
 [inline-code-end]
 

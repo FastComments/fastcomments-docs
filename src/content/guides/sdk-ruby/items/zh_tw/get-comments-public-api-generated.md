@@ -4,7 +4,7 @@ urlId
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
@@ -37,7 +37,7 @@ urlId
 
 ## 回應
 
-回傳: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_public200_response.rb)
+回傳: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comments_response_with_presence_public_comment.rb)
 
 ## 範例
 
@@ -47,35 +47,35 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字串 | 
+url_id = 'url_id_example' # 字串 | 
 opts = {
-  page: 56, # Integer | 
+  page: 56, # 整數 | 
   direction: FastCommentsClient::SortDirections::OF, # SortDirections | 
-  sso: 'sso_example', # String | 
-  skip: 56, # Integer | 
-  skip_children: 56, # Integer | 
-  limit: 56, # Integer | 
-  limit_children: 56, # Integer | 
-  count_children: true, # Boolean | 
-  fetch_page_for_comment_id: 'fetch_page_for_comment_id_example', # String | 
-  include_config: true, # Boolean | 
-  count_all: true, # Boolean | 
-  includei10n: true, # Boolean | 
-  locale: 'locale_example', # String | 
-  modules: 'modules_example', # String | 
-  is_crawler: true, # Boolean | 
-  include_notification_count: true, # Boolean | 
-  as_tree: true, # Boolean | 
-  max_tree_depth: 56, # Integer | 
-  use_full_translation_ids: true, # Boolean | 
-  parent_id: 'parent_id_example', # String | 
-  search_text: 'search_text_example', # String | 
-  hash_tags: ['inner_example'], # Array<String> | 
-  user_id: 'user_id_example', # String | 
-  custom_config_str: 'custom_config_str_example', # String | 
-  after_comment_id: 'after_comment_id_example', # String | 
-  before_comment_id: 'before_comment_id_example' # String | 
+  sso: 'sso_example', # 字串 | 
+  skip: 56, # 整數 | 
+  skip_children: 56, # 整數 | 
+  limit: 56, # 整數 | 
+  limit_children: 56, # 整數 | 
+  count_children: true, # 布林值 | 
+  fetch_page_for_comment_id: 'fetch_page_for_comment_id_example', # 字串 | 
+  include_config: true, # 布林值 | 
+  count_all: true, # 布林值 | 
+  includei10n: true, # 布林值 | 
+  locale: 'locale_example', # 字串 | 
+  modules: 'modules_example', # 字串 | 
+  is_crawler: true, # 布林值 | 
+  include_notification_count: true, # 布林值 | 
+  as_tree: true, # 布林值 | 
+  max_tree_depth: 56, # 整數 | 
+  use_full_translation_ids: true, # 布林值 | 
+  parent_id: 'parent_id_example', # 字串 | 
+  search_text: 'search_text_example', # 字串 | 
+  hash_tags: ['inner_example'], # 字串陣列 | 
+  user_id: 'user_id_example', # 字串 | 
+  custom_config_str: 'custom_config_str_example', # 字串 | 
+  after_comment_id: 'after_comment_id_example', # 字串 | 
+  before_comment_id: 'before_comment_id_example' # 字串 | 
 }
 
 begin

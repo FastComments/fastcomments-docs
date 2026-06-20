@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_badges200_response.rb)
+Retourne : [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badges_response.rb)
 
 ## Exemple
 
@@ -20,23 +20,23 @@ Renvoie : [`GetUserBadges200Response`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configurer l'autorisation
+# configurer l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. 'Bearer' (par défaut nil)
+  # Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. 'Bearer' (par défaut à nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # String | 
+tenant_id = 'tenant_id_example' # Chaîne | 
 opts = {
-  user_id: 'user_id_example', # String | 
-  badge_id: 'badge_id_example', # String | 
-  type: 1.2, # Float | 
-  displayed_on_comments: true, # Boolean | 
-  limit: 1.2, # Float | 
-  skip: 1.2 # Float | 
+  user_id: 'user_id_example', # Chaîne | 
+  badge_id: 'badge_id_example', # Chaîne | 
+  type: 1.2, # Flottant | 
+  displayed_on_comments: true, # Booléen | 
+  limit: 1.2, # Flottant | 
+  skip: 1.2 # Flottant | 
 }
 
 begin
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badges: #{e}"
 end
 [inline-code-end]
-
----

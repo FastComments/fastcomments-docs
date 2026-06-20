@@ -1,6 +1,6 @@
 ### Utilisation des API authentifiées (DefaultAPI)
 
-**Important :** Les points de terminaison authentifiés exigent que votre clé API soit définie dans l'en-tête `x-api-key`.
+**Important :** Les points de terminaison authentifiés exige que votre clé API soit définie en tant qu'en-tête `x-api-key`.
 
 ```nim
 import httpclient
@@ -39,7 +39,7 @@ if response.isSome:
 
 ### Utilisation des API publiques (PublicAPI)
 
-Les points de terminaison publics ne nécessitent pas d'authentification :
+Les points de terminaison publics n'exigent pas d'authentification :
 
 ```nim
 import httpclient
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Utilisation des API de modération (ModerationAPI)
+
+Les points de terminaison de modération alimentent le tableau de bord du modérateur et sont authentifiés avec un jeton SSO pour le modérateur en action :
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Lister les commentaires dans le tableau de bord de modération
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Problèmes courants
 
 1. **Erreur d'authentification 401** : Assurez-vous de définir l'en-tête `x-api-key` sur votre HttpClient avant d'effectuer des requêtes DefaultAPI : `client.headers["x-api-key"] = "your-api-key"`
-2. **Mauvaise classe d'API** : Utilisez `api_default` pour les requêtes authentifiées côté serveur, et `api_public` pour les requêtes côté client/public.
+2. **Mauvaise classe d'API** : Utilisez `api_default` pour les requêtes authentifiées côté serveur, `api_public` pour les requêtes côté client/publiques, et `api_moderation` pour les requêtes du tableau de bord du modérateur.

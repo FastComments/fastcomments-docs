@@ -1,6 +1,6 @@
 ### Maven
 
-Добавете репозитория Repsy към POM файла на вашия проект:
+Добавете хранилището Repsy към POM-а на вашия проект:
 
 ```xml
 <repositories>
@@ -12,36 +12,36 @@
 </repositories>
 ```
 
-След това добавете зависимостите, които са ви необходими:
+След това добавете зависимостите, от които имате нужда:
 
 ```xml
 <dependencies>
-    <!-- API клиент -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- Основна библиотека (включва SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
-    <!-- PubSub библиотека (за събития в реално време) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Добавете репозитория Repsy във файла build.gradle:
+Добавете хранилището Repsy във вашия файл build.gradle:
 
 ```groovy
 repositories {
@@ -52,25 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API клиент
-    implementation "com.fastcomments:client:1.3.2"
+    // API Client
+    implementation "com.fastcomments:client:2.0.0"
     
-    // Основна библиотека (включва SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:2.0.0"
     
-    // PubSub библиотека (за събития в реално време)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
 ### Съдържание на библиотеката
 
-Тази библиотека съдържа три модула. Генерираният API клиент, основната Java библиотека, която съдържа ръчно написани помощни средства, за да улесни работата с API-то, и модулът `pubsub`, който е библиотека за абониране за потоци от промени.
+Тази библиотека съдържа три модула. Генерираният API клиент, основната Java библиотека, която съдържа ръчно написани помощни средства за улесняване на работата с API, и модулът `pubsub`, който е библиотека за абониране за потоци с промени.
 
-- [Документация за библиотеката на API клиента](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документация на основната библиотека, включително примери за SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Документация за PubSub библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Документация на API клиент библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документация на Core библиотеката, включително примери за SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Документация на PubSub библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Публични срещу защитени API-та
+### Публични и защитени API
 
-За API клиента има два класа, `DefaultApi` и `PublicApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа API повиквания, които могат да се извършват директно от браузър/мобилно устройство/и т.н. без удостоверяване.
+За API клиента има три класа, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да се извикват директно от браузър/мобилно устройство/и т.н. без удостоверяване.
+
+`ModerationApi` захранва таблото на модератора. Той съдържа методи за модериране на коментари (списък, брой, търсене, логове и експорт), модераторски действия (премахване/възстановяване, маркиране, задаване на статус преглед/спам/одобрение, гласове и повторно отваряне/затваряне на тема), забрани (блокиране от коментиране, отмяна на бан, обобщения преди бан, статус на бана и предпочитания, и брой блокирани потребители) и значки & доверие (присъждане/премахване на значка, ръчни значки, получаване/задаване на фактор на доверие и вътрешен профил на потребителя). Всеки метод на `ModerationApi` приема параметър `sso`, за да може повикването да се извърши от името на модератор, удостоверен чрез SSO.

@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Hent kommentarer via PublicAPI
+    // Hent kommentarer ved hjælp af PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -38,7 +38,7 @@ func main() {
 
 #### Default API (Kræver API-nøgle)
 
-DefaultAPI kræver autentificering med din API-nøgle:
+DefaultAPI kræver autentificering ved hjælp af din API-nøgle:
 
 ```go
 package main
@@ -62,11 +62,42 @@ func main() {
         },
     )
 
-    // Hent kommentarer via autentificeret DefaultAPI
+    // Hent kommentarer ved hjælp af autentificeret DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
         Execute()
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("Status: %d\n", httpResp.StatusCode)
+    fmt.Printf("Comments: %+v\n", response)
+}
+```
+
+#### Moderation API (Moderator-dashboard)
+
+ModerationAPI driver moderator-dashboardet. Den leverer metoder til at liste, tælle, søge i og eksportere kommentarer, moderationshandlinger (fjern/gendan, marker, sæt review/spam/approval-status, stemmer, genåbn/luk tråde), bans (blokér fra at kommentere, fortryd, præ-ban-sammendrag, banestatus og præferencer, antal blokerede brugere), og badges & tillid (tildel/fjern badges, manuelle badges, få/sæt tillidsfaktor, brugerintern profil). Alle Moderation-metoder accepterer en `sso`-parameter for SSO-godkendte moderatorer:
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/fastcomments/fastcomments-go/client"
+)
+
+func main() {
+    config := client.NewConfiguration()
+    apiClient := client.NewAPIClient(config)
+
+    // Hent liste over kommentarer til moderation ved hjælp af ModerationAPI
+    response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
+        context.Background(),
+    ).Sso("your-sso-token").Execute()
 
     if err != nil {
         panic(err)

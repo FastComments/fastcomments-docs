@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Назва | Тип | Обов'язковий | Опис |
@@ -7,20 +8,19 @@
 
 ## Відповідь
 
-Повертає: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_200_response.rs)
+Повертає: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_response.rs)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_configs Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
     let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(10.0),
+        skip: Some(20.0),
     };
-    let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    println!("{:#?}", response);
-    Ok(())
+    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

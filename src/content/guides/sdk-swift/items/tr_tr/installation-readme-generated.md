@@ -1,15 +1,16 @@
+---
 ### Swift Paket Yöneticisi
 
 Aşağıdakileri `Package.swift` dosyanıza ekleyin:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
 ]
 ```
 
 Veya Xcode'da:
-1. File > Add Packages...
+1. Dosya > Paketleri Ekle...
 2. Depo URL'sini girin: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Kullanmak istediğiniz sürümü seçin
 

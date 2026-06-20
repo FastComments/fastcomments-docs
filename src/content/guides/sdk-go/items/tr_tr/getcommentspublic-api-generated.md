@@ -4,40 +4,40 @@ urlId
 
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Evet |  |
+| urlId | string | query | Evet |  |
+| page | integer | query | Hayır |  |
+| direction | string | query | Hayır |  |
+| sso | string | query | Hayır |  |
+| skip | integer | query | Hayır |  |
+| skipChildren | integer | query | Hayır |  |
+| limit | integer | query | Hayır |  |
+| limitChildren | integer | query | Hayır |  |
+| countChildren | boolean | query | Hayır |  |
+| fetchPageForCommentId | string | query | Hayır |  |
+| includeConfig | boolean | query | Hayır |  |
+| countAll | boolean | query | Hayır |  |
+| includei10n | boolean | query | Hayır |  |
+| locale | string | query | Hayır |  |
+| modules | string | query | Hayır |  |
+| isCrawler | boolean | query | Hayır |  |
+| includeNotificationCount | boolean | query | Hayır |  |
+| asTree | boolean | query | Hayır |  |
+| maxTreeDepth | integer | query | Hayır |  |
+| useFullTranslationIds | boolean | query | Hayır |  |
+| parentId | string | query | Hayır |  |
+| searchText | string | query | Hayır |  |
+| hashTags | array | query | Hayır |  |
+| userId | string | query | Hayır |  |
+| customConfigStr | string | query | Hayır |  |
+| afterCommentId | string | query | Hayır |  |
+| beforeCommentId | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_public_200_response.go)
+Döndürür: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comments_response_with_presence_public_comment_.go)
 
 ## Örnek
 
@@ -49,7 +49,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -89,7 +89,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetCommentsPublic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetCommentsPublic`'ten gelen yanıt: GetCommentsPublic200Response
+	// `GetCommentsPublic`'tan yanıt: GetCommentsResponseWithPresencePublicComment
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsPublic`: %v\n", resp)
 }
 [inline-code-end]

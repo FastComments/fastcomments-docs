@@ -1,35 +1,35 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template200_response.py)
+Vrača: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_email_template_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'create_email_template Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer create_email_template'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_email_template200_response import CreateEmailTemplate200Response
 from client.models.create_email_template_body import CreateEmailTemplateBody
+from client.models.create_email_template_response import CreateEmailTemplateResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
+# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre overjanja in avtorizacije
-# v skladu s politiko varnosti strežnika API.
-# Primeri za vsako metodo avtentikacije so prikazani spodaj, uporabite primer, ki
+# Odjemalec mora nastaviti parametre preverjanja pristnosti in avtorizacije
+# v skladu s politiko varnosti API strežnika.
+# Spodaj so podani primeri za vsako metodo avtentikacije, uporabite primer, ki
 # ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte avtorizacijo z API ključem: api_key
+# Nastavite avtentikacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
@@ -37,7 +37,7 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_email_template_body = client.CreateEmailTemplateBody() # CreateEmailTemplateBody | 

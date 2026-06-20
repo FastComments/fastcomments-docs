@@ -1,34 +1,25 @@
 ## パラメータ
 
-| Name | Type | 必須 | 説明 |
-|------|------|------|-------------|
-| tenantId | string | 必須 |  |
-| userId | string | 任意 |  |
-| urlId | string | 必須 |  |
-| fromCommentId | string | 任意 |  |
-| viewed | bool | 任意 |  |
+| 名前 | 型 | 必須 | 説明 |
+|------|------|----------|-------------|
+| tenantId | string | はい |  |
+| userId | string | いいえ |  |
+| urlId | string | はい |  |
+| fromCommentId | string | いいえ |  |
+| viewed | bool | いいえ |  |
 
 ## レスポンス
 
-返却: [`Option[GetNotificationCount_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notification_count200response.nim)
+戻り値: [`Option[GetNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notification_count_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'getNotificationCount の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotificationCount(
-  tenantId = "acme-corp-tenant-12",
-  userId = "user-84",
-  urlId = "news/2026/market-update",
-  fromCommentId = "cmt-20251234",
-  viewed = false
-)
-
+let (response, httpResponse) = client.getNotificationCount(tenantId = "my-tenant-123", userId = "user-987", urlId = "news/2026/06/election-results", fromCommentId = "", viewed = false)
 if response.isSome:
-  let notificationData = response.get()
-  echo "Received notification data"
-else:
-  echo "No notification data"
+  let notifyData = response.get()
+  echo notifyData
 [inline-code-end]
 
 ---

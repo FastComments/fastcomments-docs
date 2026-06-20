@@ -1,16 +1,15 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | パス | はい |  |
-| commentId | string | パス | はい |  |
-| broadcastId | string | クエリ | はい |  |
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | path | はい |  |
+| commentId | string | path | はい |  |
+| broadcastId | string | query | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`LockComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/lock_comment200_response.rb)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 例
 
@@ -20,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 文字列 | 
-comment_id = 'comment_id_example' # 文字列 | 
-broadcast_id = 'broadcast_id_example' # 文字列 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 opts = {
-  sso: 'sso_example' # 文字列 | 
+  sso: 'sso_example' # String | 
 }
 
 begin

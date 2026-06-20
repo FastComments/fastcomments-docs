@@ -1,5 +1,4 @@
-Агрегира документе груписањем (ако је groupBy наведен) и применом више операција.
-Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
+Агрегира документе групишући их (ако је groupBy наведен) и примењујући више операција. Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
 ## Параметри
 
@@ -11,25 +10,25 @@
 
 ## Одговор
 
-Враћа: [`AggregationResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregationResponse.php)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример aggregate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример агрегирања'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Подесите овлашћење за API кључ: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскоментирајте ред испод да поставите префикс (нпр. Bearer) за API кључ ако је потребно
+// Откомунтујте линију испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите свој клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, као подразумевано ће се користити `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, као подразумевани ће се користити `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );

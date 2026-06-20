@@ -2,40 +2,44 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| pageSize | integer | query | Нет |  |
-| afterId | string | query | Нет |  |
-| includeContext | boolean | query | Нет |  |
-| afterCreatedAt | integer | query | Нет |  |
-| unreadOnly | boolean | query | Нет |  |
-| dmOnly | boolean | query | Нет |  |
-| noDm | boolean | query | Нет |  |
-| includeTranslations | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Используется для определения, подписана ли текущая страница. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
-Возвращает: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Возвращает: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_user_notifications Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_user_notifications'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # Целое число | 
-  after_id: 'after_id_example', # Строка | 
-  include_context: true, # Логическое значение | 
-  after_created_at: 789, # Целое число | 
-  unread_only: true, # Логическое значение | 
-  dm_only: true, # Логическое значение | 
-  no_dm: true, # Логическое значение | 
-  include_translations: true, # Логическое значение | 
-  sso: 'sso_example' # Строка | 
+  url_id: 'url_id_example', # String | Используется для определения, подписана ли текущая страница.
+  page_size: 56, # Integer | 
+  after_id: 'after_id_example', # String | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin

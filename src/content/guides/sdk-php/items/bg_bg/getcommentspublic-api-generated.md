@@ -1,44 +1,43 @@
----
 req
 tenantId
 urlId
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| page | integer | query | Не |  |
+| direction | string | query | Не |  |
+| sso | string | query | Не |  |
+| skip | integer | query | Не |  |
+| skipChildren | integer | query | Не |  |
+| limit | integer | query | Не |  |
+| limitChildren | integer | query | Не |  |
+| countChildren | boolean | query | Не |  |
+| fetchPageForCommentId | string | query | Не |  |
+| includeConfig | boolean | query | Не |  |
+| countAll | boolean | query | Не |  |
+| includei10n | boolean | query | Не |  |
+| locale | string | query | Не |  |
+| modules | string | query | Не |  |
+| isCrawler | boolean | query | Не |  |
+| includeNotificationCount | boolean | query | Не |  |
+| asTree | boolean | query | Не |  |
+| maxTreeDepth | integer | query | Не |  |
+| useFullTranslationIds | boolean | query | Не |  |
+| parentId | string | query | Не |  |
+| searchText | string | query | Не |  |
+| hashTags | array | query | Не |  |
+| userId | string | query | Не |  |
+| customConfigStr | string | query | Не |  |
+| afterCommentId | string | query | Не |  |
+| beforeCommentId | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Връща: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Пример
 
@@ -50,8 +49,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонален HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е незадължително; по подразбиране ще бъде използван `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор; по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -90,5 +89,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,30 +1,30 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| timeBucket | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | query | Evet |  |
+| questionId | string | query | Hayır |  |
+| questionIds | array | query | Hayır |  |
+| urlId | string | query | Hayır |  |
+| timeBucket | string | query | Hayır |  |
+| startDate | string | query | Hayır |  |
+| forceRecalculate | boolean | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results200_response.py)
+Döndürür: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_question_results_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'aggregate_question_results Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.aggregate_question_results200_response import AggregateQuestionResults200Response
+from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
+# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -32,16 +32,15 @@ configuration = client.Configuration(
 
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
 # API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir; kullanım durumunuza
-# uygun olan örneği kullanın.
-
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, 
+# kullandığınız kimlik doğrulama durumuna uygun olanı kullanın.
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için ön eki (ör. Bearer) ayarlamak üzere aşağıdaki satırı yorumdan çıkarın
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemci örneği ile bir bağlam başlatın
+# API istemcisinin bir örneğiyle bir bağlam açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfından bir örnek oluşturun
     api_instance = client.DefaultApi(api_client)
@@ -60,3 +59,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate_question_results: %s\n" % e)
 [inline-code-end]
+
+---

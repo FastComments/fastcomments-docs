@@ -9,7 +9,7 @@
 
 ## Response
 
-Returns: [`Option[DeleteFeedPostPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public200response.nim)
+Returns: [`Option[DeleteFeedPostPublicResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public_response.nim)
 
 ## Example
 
@@ -18,7 +18,7 @@ Returns: [`Option[DeleteFeedPostPublic_200_response]`](https://github.com/FastCo
 let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
 if response.isSome:
   let deleted = response.get()
-  discard deleted
+  echo "Delete successful"
 else:
-  discard httpResponse
+  echo "Delete failed"
 [inline-code-end]

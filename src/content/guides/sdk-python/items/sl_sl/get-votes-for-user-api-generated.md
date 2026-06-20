@@ -7,34 +7,34 @@
 | userId | string | query | Ne |  |
 | anonUserId | string | query | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user200_response.py)
+Vrne: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_votes_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes_for_user200_response import GetVotesForUser200Response
+from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
-# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre overitve in avtorizacije
+# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
 # v skladu s politiko varnosti API strežnika.
-# Spodaj so podani primeri za vsak način overitve; uporabite primer, ki
-# ustreza vašemu primeru uporabe overitve.
+# Spodaj so navedeni primeri za vsako metodo overjanja; uporabite tistega,
+# ki ustreza vašemu primeru uporabe.
 
-# Konfigurirajte overjanje z API ključem: api_key
+# Konfigurirajte avtorizacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodaj, če želite nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca

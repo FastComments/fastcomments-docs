@@ -1,37 +1,33 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | Ναι |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`CreateEmailTemplate_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateEmailTemplate_200_response.h)
+Επιστρέφει: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateEmailTemplateResponse.h)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα createEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createEmailTemplate Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-auto body = std::make_shared<CreateEmailTemplateBody>();
-body->name = utility::string_t(U("Welcome Email"));
-body->subject = utility::string_t(U("Welcome to Our Service"));
-body->fromEmail = utility::string_t(U("no-reply@mycompany.com"));
-body->fromName = utility::string_t(U("MyCompany Support"));
-body->html = utility::string_t(U("<p>Hello {{user.name}}, welcome to MyCompany.</p>"));
-body->description = boost::optional<utility::string_t>(utility::string_t(U("Onboarding welcome template")));
-api->createEmailTemplate(tenantId, *body)
-.then([](pplx::task<std::shared_ptr<CreateEmailTemplate_200_response>> task){
+auto bodyPtr = std::make_shared<CreateEmailTemplateBody>();
+bodyPtr->name = U("Welcome Email");
+bodyPtr->subject = U("Welcome to MyApp");
+bodyPtr->fromEmail = U("no-reply@myapp.com");
+bodyPtr->htmlTemplate = U("<h1>Welcome, \{{user.name}}!</h1>");
+bodyPtr->plainText = boost::optional<utility::string_t>(U("Welcome, \{{user.name}}!"));
+bodyPtr->replyTo = boost::optional<utility::string_t>(U("support@myapp.com"));
+api->createEmailTemplate(tenantId, *bodyPtr)
+.then([](pplx::task<std::shared_ptr<CreateEmailTemplateResponse>> t){
     try {
-        auto resp = task.get();
-        if (resp) {
-            bool created = true;
-            (void)created;
-        }
-    } catch (const std::exception&) {
+        auto resp = t.get();
+        if (resp) std::cout << "Created template ID: " << resp->id << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "Create failed: " << e.what() << std::endl;
     }
 });
 [inline-code-end]
-
----

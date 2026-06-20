@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Потребно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | userId | string | query | Не |  |
@@ -12,11 +12,11 @@
 
 ## Одговор
 
-Враћа: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_badges_200_response.go)
+Враћа: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_get_user_badges_response.go)
 
 ## Примјер
 
-[inline-code-attrs-start title = 'Примјер GetUserBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetUserBadges Примјер'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,17 +24,17 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (опционо)
-	badgeId := "badgeId_example" // string |  (опционо)
-	type_ := float64(1.2) // float64 |  (опционо)
-	displayedOnComments := true // bool |  (опционо)
-	limit := float64(1.2) // float64 |  (опционо)
-	skip := float64(1.2) // float64 |  (опционо)
+	userId := "userId_example" // string |  (опционално)
+	badgeId := "badgeId_example" // string |  (опционално)
+	type_ := float64(1.2) // float64 |  (опционално)
+	displayedOnComments := true // bool |  (опционално)
+	limit := float64(1.2) // float64 |  (опционално)
+	skip := float64(1.2) // float64 |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetUserBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetUserBadges`: GetUserBadges200Response
+	// одговор од `GetUserBadges`: APIGetUserBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadges`: %v\n", resp)
 }
 [inline-code-end]

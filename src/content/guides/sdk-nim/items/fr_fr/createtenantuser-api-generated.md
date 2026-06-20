@@ -1,27 +1,25 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | createTenantUserBody | CreateTenantUserBody | Non |  |
 
 ## Réponse
 
-Renvoie : [`Option[CreateTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user200response.nim)
+Retourne : [`Option[CreateTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user_response.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createBody = CreateTenantUserBody(
-  email = "jane.doe@acmepub.com",
-  displayName = "Jane Doe",
-  disabled = false
-)
-let (response, httpResponse) = client.createTenantUser(tenantId = "my-tenant-123", createTenantUserBody = createBody)
+let (response, httpResponse) = client.createTenantUser(tenantId = "my-tenant-123",
+  createTenantUserBody = CreateTenantUserBody(userId = "user-456",
+    email = "jane.doe@example.com",
+    displayName = "Jane Doe",
+    roles = @["editor"],
+    isAdmin = false))
 if response.isSome:
-  let createdUser = response.get()
-  echo createdUser
+  let created = response.get()
+  discard created
 [inline-code-end]
-
----

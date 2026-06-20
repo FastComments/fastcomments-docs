@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantPackages200Response.swift)
+戻り値: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantPackagesResponse.swift)
 
 ## 例
 
@@ -17,7 +17,7 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let skip = 987 // Double |  (省略可)
+let skip = 987 // Double |  (オプション)
 
 DefaultAPI.getTenantPackages(tenantId: tenantId, skip: skip) { (response, error) in
     guard error == nil else {
@@ -30,3 +30,5 @@ DefaultAPI.getTenantPackages(tenantId: tenantId, skip: skip) { (response, error)
     }
 }
 [inline-code-end]
+
+---

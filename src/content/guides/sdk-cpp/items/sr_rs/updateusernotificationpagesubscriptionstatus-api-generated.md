@@ -1,8 +1,8 @@
-Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, креирају се обавештења за нове коментаре највишег нивоа, и такође
+Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове root коментаре, и такође
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
@@ -11,30 +11,27 @@
 | subscribedOrUnsubscribed | string | Да |  |
 | sso | string | Не |  |
 
-## Response
+## Одговор
 
-Враћа: [`UpdateUserNotificationStatus_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatus_200_response.h)
+Враћа: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("page-456");
-utility::string_t url = U("https://www.example.com/articles/2026/new-feature");
-utility::string_t pageTitle = U("New Feature Announcement");
-utility::string_t subscribedOrUnsubscribed = U("subscribed");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto placeholder = std::make_shared<UpdateUserNotificationStatus_200_response>();
-api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task){
+boost::optional<utility::string_t> sso(utility::conversions::to_string_t("sso-token-abc123"));
+api->updateUserNotificationPageSubscriptionStatus(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("article-456"),
+    utility::conversions::to_string_t("https://www.example.com/posts/456"),
+    utility::conversions::to_string_t("How to Test C++ SDK"),
+    utility::conversions::to_string_t("subscribed"),
+    sso
+).then([](pplx::task<std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse>> t){
     try {
-        auto resp = task.get();
-        (void)resp;
-    } catch (const std::exception &e) {
-        (void)e;
-    }
+        auto resp = t.get();
+        auto copy = std::make_shared<UpdateUserNotificationPageSubscriptionStatusResponse>(*resp);
+        (void)copy;
+    } catch (const std::exception&) { }
 });
 [inline-code-end]
-
----

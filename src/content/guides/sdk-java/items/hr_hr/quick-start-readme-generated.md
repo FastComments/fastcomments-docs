@@ -1,6 +1,6 @@
 ### Korištenje autentificiranih API-ja (DefaultApi)
 
-**Važno:** Morate postaviti svoj API ključ na ApiClient prije slanja autentificiranih zahtjeva. Ako to ne učinite, zahtjevi će vratiti grešku 401.
+**Važno:** Morate postaviti svoj API ključ na ApiClient prije slanja autentificiranih zahtjeva. Ako to ne učinite, zahtjevi će rezultirati pogreškom 401.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -13,13 +13,13 @@ public class Example {
         // Kreirajte i konfigurirajte API klijent
         ApiClient apiClient = new ApiClient();
 
-        // OBAVEZNO: Postavite svoj API ključ (dohvatite ga s FastComments nadzorne ploče)
+        // OBAVEZNO: Postavite svoj API ključ (nabavite ga s FastComments nadzorne ploče)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Kreirajte instancu API-ja s konfiguriranim klijentom
+        // Stvorite instancu API-ja s konfiguriranim klijentom
         DefaultApi api = new DefaultApi(apiClient);
 
-        // Sada možete izvoditi autentificirane API pozive
+        // Sada možete upućivati autentificirane API pozive
         try {
             // Primjer: Dodavanje SSO korisnika
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
@@ -35,7 +35,7 @@ public class Example {
             System.err.println("Error: " + e.getResponseBody());
             // Uobičajene pogreške:
             // - 401: API ključ nedostaje ili je neispravan
-            // - 400: Provjera valjanosti zahtjeva nije uspjela
+            // - 400: Validacija zahtjeva nije uspjela
         }
     }
 }
@@ -60,8 +60,30 @@ try {
 }
 ```
 
+### Korištenje moderacijskih API-ja (ModerationApi)
+
+The `ModerationApi` pokreće nadzornu ploču moderatora. Svaka metoda prihvaća parametar `sso` koji identificira SSO-autentificiranog moderatora u čije ime se zahtjev izvršava:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // Nabrojite komentare koji čekaju na moderaciju
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
 ### Uobičajeni problemi
 
-1. **401 "missing-api-key" error**: Pobrinite se da pozovete `apiClient.setApiKey("YOUR_KEY")` prije kreiranja instance DefaultApi.
-2. **Pogrešna API klasa**: Koristite `DefaultApi` za poslužiteljske autentificirane zahtjeve, `PublicApi` za klijentske/javne zahtjeve.
-3. **Null API ključ**: SDK će tiho preskočiti autentifikaciju ako je API ključ null, što dovodi do 401 pogrešaka.
+1. **401 "missing-api-key" pogreška**: Provjerite da pozivate `apiClient.setApiKey("YOUR_KEY")` prije nego što stvarate instancu DefaultApi.
+2. **Pogrešna API klasa**: Koristite `DefaultApi` za serverske autentificirane zahtjeve, `PublicApi` za klijentske/javne zahtjeve.
+3. **Null API ključ**: SDK će tiho preskočiti autentifikaciju ako je API ključ null, što će dovesti do 401 pogrešaka.

@@ -1,38 +1,35 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 | updateTenantUserBody | UpdateTenantUserBody | Όχι |  |
 | updateComments | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Επιστρέφει: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα updateTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-var body: UpdateTenantUserBody
-body.email = "jane.doe@example.com"
-body.displayName = "Jane Doe"
-body.roles = @["moderator", "editor"]
-body.isActive = true
-
 let (response, httpResponse) = client.updateTenantUser(
   tenantId = "my-tenant-123",
-  id = "user-789",
-  updateTenantUserBody = body,
-  updateComments = "Promoted user to moderator and editor roles"
+  id = "user-987",
+  updateTenantUserBody = UpdateTenantUserBody(
+    displayName = "Jane Doe",
+    email = "jane.doe@example.com",
+    roles = @["moderator", "editor"],
+    isActive = true
+  ),
+  updateComments = "true"
 )
 
 if response.isSome:
-  let flagResp = response.get()
-  echo flagResp
-else:
-  echo "Update failed, status: ", httpResponse.status
+  let apiEmpty = response.get()
+  discard apiEmpty
 [inline-code-end]
 
 ---

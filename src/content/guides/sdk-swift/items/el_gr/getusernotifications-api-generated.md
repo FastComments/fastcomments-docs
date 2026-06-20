@@ -1,8 +1,9 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
+| urlId | string | query | Όχι | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. |
 | pageSize | integer | query | Όχι |  |
 | afterId | string | query | Όχι |  |
 | includeContext | boolean | query | Όχι |  |
@@ -11,20 +12,22 @@
 | dmOnly | boolean | query | Όχι |  |
 | noDm | boolean | query | Όχι |  |
 | includeTranslations | boolean | query | Όχι |  |
+| includeTenantNotifications | boolean | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotifications200Response.swift)
+Επιστρέφει: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
+let urlId = "urlId_example" // String | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. (προαιρετικό)
 let pageSize = 987 // Int |  (προαιρετικό)
 let afterId = "afterId_example" // String |  (προαιρετικό)
 let includeContext = true // Bool |  (προαιρετικό)
@@ -33,9 +36,10 @@ let unreadOnly = true // Bool |  (προαιρετικό)
 let dmOnly = true // Bool |  (προαιρετικό)
 let noDm = true // Bool |  (προαιρετικό)
 let includeTranslations = true // Bool |  (προαιρετικό)
+let includeTenantNotifications = true // Bool |  (προαιρετικό)
 let sso = "sso_example" // String |  (προαιρετικό)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -46,3 +50,5 @@ PublicAPI.getUserNotifications(tenantId: tenantId, pageSize: pageSize, afterId: 
     }
 }
 [inline-code-end]
+
+---

@@ -7,11 +7,11 @@
 
 ## Odpowiedź
 
-Zwraca: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplate200Response.php)
+Zwraca: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplateResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'renderEmailTemplate Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład renderEmailTemplate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -25,7 +25,7 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne — domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // To jest opcjonalne, `GuzzleHttp\Client` będzie użyty jako domyślny.
     new GuzzleHttp\Client(),
     $config
 );

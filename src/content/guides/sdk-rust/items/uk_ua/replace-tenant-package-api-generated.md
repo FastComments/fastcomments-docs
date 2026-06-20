@@ -1,35 +1,38 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | id | String | Так |  |
 | replace_tenant_package_body | models::ReplaceTenantPackageBody | Так |  |
 
-## Відповідь
+## Response
 
-Повертає: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Повертає: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Приклад
+## Example
 
-[inline-code-attrs-start title = 'replace_tenant_package Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад replace_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_replace_package() -> Result<FlagCommentPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: ReplaceTenantPackageParams = ReplaceTenantPackageParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "enterprise-package-2026".to_string(),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("news/article-package"),
         replace_tenant_package_body: models::ReplaceTenantPackageBody {
-            name: "Acme Enterprise".to_string(),
-            plan: "enterprise".to_string(),
-            seats: Some(50),
-            allowed_domains: Some(vec![
-                "acme.com".to_string(),
-                "news.acme.com".to_string(),
-            ]),
+            name: Some(String::from("Article Comments Package")),
+            plan: Some(String::from("pro")),
+            enabled: Some(true),
+            features: Some(vec![String::from("moderation"), String::from("reactions")]),
+            metadata: Some(std::collections::HashMap::from([
+                (String::from("region"), String::from("us-east-1")),
+                (String::from("contact"), String::from("ops@acme.example")),
+            ])),
         },
     };
 
-    let response: FlagCommentPublic200Response = replace_tenant_package(&configuration, params).await?;
-    Ok(response)
+    let _response: ApiEmptyResponse = replace_tenant_package(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
+
+---

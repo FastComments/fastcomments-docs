@@ -7,9 +7,9 @@
 | newStatus | string | path | Ναι |  |
 | sso | string | query | Όχι |  |
 
-## Response
+## Απόκριση
 
-Επιστρέφει: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status200_response.rb)
+Επιστρέφει: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
 
 ## Παράδειγμα
 
@@ -19,11 +19,11 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Συμβολοσειρά | 
-notification_id = 'notification_id_example' # Συμβολοσειρά | 
-new_status = 'read' # Συμβολοσειρά | 
+tenant_id = 'tenant_id_example' # String | 
+notification_id = 'notification_id_example' # String | 
+new_status = 'read' # String | 
 opts = {
-  sso: 'sso_example' # Συμβολοσειρά | 
+  sso: 'sso_example' # String | 
 }
 
 begin

@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Exemple
 
@@ -30,5 +30,3 @@ DefaultAPI.deleteQuestionConfig(tenantId: tenantId, id: id) { (response, error) 
     }
 }
 [inline-code-end]
-
----

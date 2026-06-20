@@ -1,8 +1,9 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
+| urlId | string | query | No | Utilizzato per determinare se la pagina corrente è sottoscritta. |
 | pageSize | integer | query | No |  |
 | afterId | string | query | No |  |
 | includeContext | boolean | query | No |  |
@@ -11,20 +12,22 @@
 | dmOnly | boolean | query | No |  |
 | noDm | boolean | query | No |  |
 | includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserNotifications200Response.swift)
+Restituisce: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio di getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per eventuali problemi, segnalarli tramite http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
+let urlId = "urlId_example" // String | Utilizzato per determinare se la pagina corrente è sottoscritta. (opzionale)
 let pageSize = 987 // Int |  (opzionale)
 let afterId = "afterId_example" // String |  (opzionale)
 let includeContext = true // Bool |  (opzionale)
@@ -33,9 +36,10 @@ let unreadOnly = true // Bool |  (opzionale)
 let dmOnly = true // Bool |  (opzionale)
 let noDm = true // Bool |  (opzionale)
 let includeTranslations = true // Bool |  (opzionale)
+let includeTenantNotifications = true // Bool |  (opzionale)
 let sso = "sso_example" // String |  (opzionale)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserBadge200Response.php)
+戻り値: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeResponse.php)
 
 ## 例
 
@@ -17,13 +17,17 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証を設定: api_key
-// 必要に応じて、APIキー用のプレフィックス（例: Bearer）を設定するために下の行のコメントアウトを外してください
+// Configure API key authorization: api_key
+// APIキー認証を設定します: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 必要に応じて、APIキーにプレフィックス（例: Bearer）を設定するには下記のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // これはオプションです。デフォルトでは`GuzzleHttp\Client`が使用されます。
     new GuzzleHttp\Client(),
     $config
@@ -38,5 +42,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

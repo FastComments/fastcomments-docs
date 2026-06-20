@@ -8,7 +8,7 @@
 
 ## Ответ
 
-Возвращает: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_feed_posts_stats200_response.rb)
+Возвращает: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/feed_posts_stats_response.rb)
 
 ## Пример
 
@@ -18,10 +18,10 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-post_ids = ['inner_example'] # Array<String> | 
+tenant_id = 'tenant_id_example' # Строка | 
+post_ids = ['inner_example'] # Массив<String> | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Строка | 
 }
 
 begin

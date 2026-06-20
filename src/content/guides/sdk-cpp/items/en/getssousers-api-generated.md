@@ -7,22 +7,22 @@
 
 ## Response
 
-Returns: [`GetSSOUsers_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSSOUsers_200_response.h)
+Returns: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSSOUsersResponse.h)
 
 ## Example
 
 [inline-code-attrs-start title = 'getSSOUsers Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<int32_t> skip = boost::optional<int32_t>(20);
+boost::optional<int32_t> skip = 25;
 api->getSSOUsers(tenantId, skip)
-    .then([=](pplx::task<std::shared_ptr<GetSSOUsers_200_response>> task){
+    .then([](pplx::task<std::shared_ptr<GetSSOUsersResponse>> task) {
         try {
             auto resp = task.get();
-            if(!resp) resp = std::make_shared<GetSSOUsers_200_response>();
-            std::cout << "Fetched SSO users successfully\n";
-        } catch(const std::exception& e) {
-            std::cerr << "Error fetching SSO users: " << e.what() << '\n';
+            if (!resp) resp = std::make_shared<GetSSOUsersResponse>();
+            (void)resp;
+        } catch (const std::exception& ex) {
+            (void)ex;
         }
     });
 [inline-code-end]

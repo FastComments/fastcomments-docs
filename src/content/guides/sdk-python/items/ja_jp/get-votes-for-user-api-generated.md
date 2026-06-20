@@ -2,21 +2,21 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | はい |  |
+| urlId | string | query | はい |  |
+| userId | string | query | いいえ |  |
+| anonUserId | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user200_response.py)
+戻り値: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_votes_for_user の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_votes_for_user200_response import GetVotesForUser200Response
+from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -26,25 +26,25 @@ configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは認証および認可のパラメータを
-# API サーバのセキュリティポリシーに従って設定する必要があります。
-# 各認証方式の例を以下に示します。使う例は
-# あなたの認証ユースケースに合うものを選んでください。
+# クライアントは認証および認可のパラメータを設定する必要があります
+# API サーバのセキュリティポリシーに従って設定してください。
+# 各認証方法の例を以下に示します。
+# ご自身の認証ユースケースに合った例を使用してください。
 
-# API キー認証を設定: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下の行のコメントを外してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスを用いてコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    user_id = 'user_id_example' # str |  (任意)
-    anon_user_id = 'anon_user_id_example' # str |  (任意)
+    user_id = 'user_id_example' # str |  (オプション)
+    anon_user_id = 'anon_user_id_example' # str |  (オプション)
 
     try:
         api_response = api_instance.get_votes_for_user(tenant_id, url_id, user_id=user_id, anon_user_id=anon_user_id)

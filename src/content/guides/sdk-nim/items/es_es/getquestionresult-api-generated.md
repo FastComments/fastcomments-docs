@@ -1,13 +1,13 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | No |  |
 
 ## Respuesta
 
-Devuelve: [`Option[GetQuestionResult_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_result200response.nim)
+Devuelve: [`Option[GetQuestionResultResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_result_response.nim)
 
 ## Ejemplo
 
@@ -16,10 +16,10 @@ Devuelve: [`Option[GetQuestionResult_200_response]`](https://github.com/FastComm
 let (response, httpResponse) = client.getQuestionResult(tenantId = "my-tenant-123", id = "question-456")
 if response.isSome:
   let result = response.get()
-  echo "Received question result:"
+  echo "Question result received:"
   echo result
 else:
-  echo "No question result returned"
+  echo "No question result returned, HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

@@ -11,7 +11,7 @@
 
 ## Отговор
 
-Връща: [`Option[GetAuditLogs_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_audit_logs200response.nim)
+Връща: [`Option[GetAuditLogsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_audit_logs_response.nim)
 
 ## Пример
 
@@ -19,15 +19,18 @@
 [inline-code-start]
 let (response, httpResponse) = client.getAuditLogs(
   tenantId = "my-tenant-123",
-  limit = 100.0,
+  limit = 50.0,
   skip = 0.0,
-  order = SORTDIR(0),
-  after = 0.0,
-  before = 0.0
+  order = SORTDIR.DESC,
+  after = 1622505600.0,
+  before = 1625097600.0
 )
+
 if response.isSome:
-  let audit = response.get()
-  echo audit
+  let logs = response.get()
+  echo logs
+else:
+  echo "No audit logs returned"
 [inline-code-end]
 
 ---

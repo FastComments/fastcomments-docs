@@ -2,7 +2,7 @@ req
 tenantId
 afterId
 
-## Parameters
+## 參數
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -14,11 +14,11 @@ afterId
 | isCrawler | boolean | query | 否 |  |
 | includeUserInfo | boolean | query | 否 |  |
 
-## Response
+## 回應
 
-回傳: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+回傳: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getFeedPostsPublic 範例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,8 +28,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選的，`GuzzleHttp\Client` 將會被用作預設值。
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

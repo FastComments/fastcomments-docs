@@ -2,17 +2,17 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | Yes |  |
-| commentId | string | 查詢 | No |  |
-| externalId | string | 查詢 | No |  |
-| eventType | string | 查詢 | No |  |
-| type | string | 查詢 | No |  |
-| domain | string | 查詢 | No |  |
-| attemptCountGT | number | 查詢 | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | query | 否 |  |
+| externalId | string | query | 否 |  |
+| eventType | string | query | 否 |  |
+| type | string | query | 否 |  |
+| domain | string | query | 否 |  |
+| attemptCountGT | number | query | 否 |  |
 
-## 回傳
+## 回應
 
-Returns: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCount200Response.java)
+Returns: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPendingWebhookEventCountResponse.java)
 
 ## 範例
 
@@ -34,7 +34,7 @@ public class Example {
     // 設定 API 金鑰授權: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解下面一行以設定 API 金鑰的前綴，例如 "Token" (預設為 null)
+    // 取消註解以下行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -46,7 +46,7 @@ public class Example {
     String domain = "domain_example"; // String | 
     Double attemptCountGT = 3.4D; // Double | 
     try {
-      GetPendingWebhookEventCount200Response result = apiInstance.getPendingWebhookEventCount(tenantId)
+      GetPendingWebhookEventCountResponse result = apiInstance.getPendingWebhookEventCount(tenantId)
             .commentId(commentId)
             .externalId(externalId)
             .eventType(eventType)

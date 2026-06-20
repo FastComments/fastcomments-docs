@@ -11,7 +11,7 @@
 
 ## 응답
 
-반환: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_comment200_response.rb)
+반환: [`VoteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_response.rb)
 
 ## 예제
 
@@ -21,14 +21,14 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # 문자열 | 
-comment_id = 'comment_id_example' # 문자열 | 
-url_id = 'url_id_example' # 문자열 | 
-broadcast_id = 'broadcast_id_example' # 문자열 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+url_id = 'url_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
 vote_body_params = FastCommentsClient::VoteBodyParams.new({commenter_email: 'commenter_email_example', commenter_name: 'commenter_name_example', vote_dir: 'up', url: 'url_example'}) # VoteBodyParams | 
 opts = {
-  session_id: 'session_id_example', # 문자열 | 
-  sso: 'sso_example' # 문자열 | 
+  session_id: 'session_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -39,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->vote_comment: #{e}"
 end
 [inline-code-end]
+
+---

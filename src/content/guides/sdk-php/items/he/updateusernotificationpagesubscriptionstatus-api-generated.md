@@ -1,8 +1,9 @@
-הפעל או השבת התראות עבור עמוד. כאשר משתמשים נרשמים לעמוד, נוצרות התראות עבור תגובות שורש חדשות, וגם
+הפעל או כבה התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרות התראות
+לתגובות שורש חדשות, וגם
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | urlId | string | query | כן |  |
@@ -13,7 +14,7 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatus200Response.php)
+מחזיר: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## דוגמה
 
@@ -29,12 +30,12 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$url = 'url_example'; // string
-$page_title = 'page_title_example'; // string
-$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$url_id = 'url_id_example'; // מחרוזת
+$url = 'url_example'; // מחרוזת
+$page_title = 'page_title_example'; // מחרוזת
+$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // מחרוזת
+$sso = 'sso_example'; // מחרוזת
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

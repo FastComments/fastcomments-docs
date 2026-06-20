@@ -37,43 +37,43 @@ urlId
 
 ## Odgovor
 
-Vraća: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsPublic200Response.swift)
+Vraća: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getCommentsPublic Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let page = 987 // Int |  (opciono)
-let direction = SortDirections() // SortDirections |  (opciono)
-let sso = "sso_example" // String |  (opciono)
-let skip = 987 // Int |  (opciono)
-let skipChildren = 987 // Int |  (opciono)
-let limit = 987 // Int |  (opciono)
-let limitChildren = 987 // Int |  (opciono)
-let countChildren = true // Bool |  (opciono)
-let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (opciono)
-let includeConfig = true // Bool |  (opciono)
-let countAll = true // Bool |  (opciono)
-let includei10n = true // Bool |  (opciono)
-let locale = "locale_example" // String |  (opciono)
-let modules = "modules_example" // String |  (opciono)
-let isCrawler = true // Bool |  (opciono)
-let includeNotificationCount = true // Bool |  (opciono)
-let asTree = true // Bool |  (opciono)
-let maxTreeDepth = 987 // Int |  (opciono)
-let useFullTranslationIds = true // Bool |  (opciono)
-let parentId = "parentId_example" // String |  (opciono)
-let searchText = "searchText_example" // String |  (opciono)
-let hashTags = ["inner_example"] // [String] |  (opciono)
-let userId = "userId_example" // String |  (opciono)
-let customConfigStr = "customConfigStr_example" // String |  (opciono)
-let afterCommentId = "afterCommentId_example" // String |  (opciono)
-let beforeCommentId = "beforeCommentId_example" // String |  (opciono)
+let page = 987 // Int |  (neobavezno)
+let direction = SortDirections() // SortDirections |  (neobavezno)
+let sso = "sso_example" // String |  (neobavezno)
+let skip = 987 // Int |  (neobavezno)
+let skipChildren = 987 // Int |  (neobavezno)
+let limit = 987 // Int |  (neobavezno)
+let limitChildren = 987 // Int |  (neobavezno)
+let countChildren = true // Bool |  (neobavezno)
+let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (neobavezno)
+let includeConfig = true // Bool |  (neobavezno)
+let countAll = true // Bool |  (neobavezno)
+let includei10n = true // Bool |  (neobavezno)
+let locale = "locale_example" // String |  (neobavezno)
+let modules = "modules_example" // String |  (neobavezno)
+let isCrawler = true // Bool |  (neobavezno)
+let includeNotificationCount = true // Bool |  (neobavezno)
+let asTree = true // Bool |  (neobavezno)
+let maxTreeDepth = 987 // Int |  (neobavezno)
+let useFullTranslationIds = true // Bool |  (neobavezno)
+let parentId = "parentId_example" // String |  (neobavezno)
+let searchText = "searchText_example" // String |  (neobavezno)
+let hashTags = ["inner_example"] // [String] |  (neobavezno)
+let userId = "userId_example" // String |  (neobavezno)
+let customConfigStr = "customConfigStr_example" // String |  (neobavezno)
+let afterCommentId = "afterCommentId_example" // String |  (neobavezno)
+let beforeCommentId = "beforeCommentId_example" // String |  (neobavezno)
 
 PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId) { (response, error) in
     guard error == nil else {

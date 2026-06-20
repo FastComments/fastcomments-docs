@@ -2,17 +2,17 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| userId | string | query | いいえ |  |
-| badgeId | string | query | いいえ |  |
-| type | number | query | いいえ |  |
-| displayedOnComments | boolean | query | いいえ |  |
-| limit | number | query | いいえ |  |
-| skip | number | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## 戻り値
+## レスポンス
 
-Returns: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadges200Response.swift)
+戻り値: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
 
 ## 例
 
@@ -22,12 +22,12 @@ Returns: [`GetUserBadges200Response`](https://github.com/FastComments/fastcommen
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (オプション)
-let badgeId = "badgeId_example" // String |  (オプション)
-let type = 987 // Double |  (オプション)
-let displayedOnComments = true // Bool |  (オプション)
-let limit = 987 // Double |  (オプション)
-let skip = 987 // Double |  (オプション)
+let userId = "userId_example" // String |  (任意)
+let badgeId = "badgeId_example" // String |  (任意)
+let type = 987 // Double |  (任意)
+let displayedOnComments = true // Bool |  (任意)
+let limit = 987 // Double |  (任意)
+let skip = 987 // Double |  (任意)
 
 DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
     guard error == nil else {

@@ -1,6 +1,6 @@
-### Utilizzo delle API Autenticate (DefaultAPI)
+### Utilizzo delle API autenticate (DefaultAPI)
 
-**Importante:** Gli endpoint autenticati richiedono che la tua chiave API sia impostata nell'intestazione `x-api-key`.
+**Importante:** Gli endpoint autenticati richiedono che la tua chiave API sia impostata nell'header `x-api-key`.
 
 ```nim
 import httpclient
@@ -37,7 +37,7 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Utilizzo delle API Pubbliche (PublicAPI)
+### Utilizzo delle API pubbliche (PublicAPI)
 
 Gli endpoint pubblici non richiedono autenticazione:
 
@@ -87,8 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Utilizzo delle API di moderazione (ModerationAPI)
+
+Gli endpoint di moderazione alimentano la dashboard dei moderatori e sono autenticati con un token SSO per il moderatore che agisce:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Elenca i commenti nella dashboard di moderazione
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Problemi comuni
 
-1. **Errore di autenticazione 401**: Assicurati di impostare l'intestazione `x-api-key` sul tuo HttpClient prima di effettuare richieste DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Classe API errata**: Usa `api_default` per richieste autenticate lato server, `api_public` per richieste lato client/pubbliche.
----
+1. **401 authentication error**: Assicurati di impostare l'header `x-api-key` sul tuo HttpClient prima di effettuare richieste a DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Wrong API class**: Usa `api_default` per le richieste autenticate lato server, `api_public` per le richieste lato client/pubbliche e `api_moderation` per le richieste della dashboard dei moderatori.

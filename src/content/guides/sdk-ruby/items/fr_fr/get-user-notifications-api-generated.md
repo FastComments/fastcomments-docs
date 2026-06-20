@@ -1,8 +1,9 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
+| urlId | string | query | Non | Utilisé pour déterminer si la page actuelle est abonnée. |
 | pageSize | integer | query | Non |  |
 | afterId | string | query | Non |  |
 | includeContext | boolean | query | Non |  |
@@ -11,31 +12,34 @@
 | dmOnly | boolean | query | Non |  |
 | noDm | boolean | query | Non |  |
 | includeTranslations | boolean | query | Non |  |
+| includeTenantNotifications | boolean | query | Non |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_notifications200_response.rb)
+Renvoie : [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_my_notifications_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'get_user_notifications Exemple'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_user_notifications'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # Chaîne | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page_size: 56, # Entier | 
-  after_id: 'after_id_example', # Chaîne | 
-  include_context: true, # Booléen | 
-  after_created_at: 789, # Entier | 
-  unread_only: true, # Booléen | 
-  dm_only: true, # Booléen | 
-  no_dm: true, # Booléen | 
-  include_translations: true, # Booléen | 
-  sso: 'sso_example' # Chaîne | 
+  url_id: 'url_id_example', # String | Utilisé pour déterminer si la page actuelle est abonnée.
+  page_size: 56, # Integer | 
+  after_id: 'after_id_example', # String | 
+  include_context: true, # Boolean | 
+  after_created_at: 789, # Integer | 
+  unread_only: true, # Boolean | 
+  dm_only: true, # Boolean | 
+  no_dm: true, # Boolean | 
+  include_translations: true, # Boolean | 
+  include_tenant_notifications: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin

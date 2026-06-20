@@ -1,13 +1,12 @@
----
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 
 ## 回應
 
-回傳: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigs200Response.php)
+回傳: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigsResponse.php)
 
 ## 範例
 
@@ -17,14 +16,14 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// 設定 API Key 授權: api_key
+// 設定 API 金鑰授權：api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，取消註解下方以設定 API key 的前綴 (例如 Bearer)
+// 若需要，取消註解以下以設定前綴（例如 Bearer）給 API 金鑰
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 若要使用自訂的 http 客戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的 client。
+    // 若您想使用自訂的 HTTP 客戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config

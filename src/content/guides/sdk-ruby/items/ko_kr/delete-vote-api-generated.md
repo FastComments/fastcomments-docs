@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -9,7 +8,7 @@
 
 ## 응답
 
-반환: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_comment_vote200_response.rb)
+반환: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/vote_delete_response.rb)
 
 ## 예제
 
@@ -21,15 +20,15 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 대한 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요. 예: 'Bearer' (기본값: nil)
+  # 다음 줄의 주석을 해제하여 API 키의 접두사를 설정하세요. 예: 'Bearer' (기본값은 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # 문자열 | 
-id = 'id_example' # 문자열 | 
+tenant_id = 'tenant_id_example' # String | 
+id = 'id_example' # String | 
 opts = {
-  edit_key: 'edit_key_example' # 문자열 | 
+  edit_key: 'edit_key_example' # String | 
 }
 
 begin
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_vote: #{e}"
 end
 [inline-code-end]
-
----

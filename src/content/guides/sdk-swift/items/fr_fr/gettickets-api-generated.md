@@ -10,20 +10,20 @@
 
 ## Réponse
 
-Renvoie : [`GetTickets200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTickets200Response.swift)
+Renvoie : [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en bêta. Pour tout problème, merci de le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (facultatif)
-let state = 987 // Double |  (facultatif)
-let skip = 987 // Double |  (facultatif)
-let limit = 987 // Double |  (facultatif)
+let userId = "userId_example" // String |  (optionnel)
+let state = 987 // Double |  (optionnel)
+let skip = 987 // Double |  (optionnel)
+let limit = 987 // Double |  (optionnel)
 
 DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
     guard error == nil else {
@@ -36,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: sk
     }
 }
 [inline-code-end]
-
----

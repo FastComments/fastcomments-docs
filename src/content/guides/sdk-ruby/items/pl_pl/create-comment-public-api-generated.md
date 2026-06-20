@@ -1,16 +1,16 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | ścieżka | Tak |  |
-| urlId | string | query | Tak |  |
-| broadcastId | string | query | Tak |  |
-| sessionId | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| urlId | string | zapytanie | Tak |  |
+| broadcastId | string | zapytanie | Tak |  |
+| sessionId | string | zapytanie | Nie |  |
+| sso | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_comment_public200_response.rb)
+Zwraca: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_response_with_presence.rb)
 
 ## Przykład
 
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_comment_public: #{e}"
 end
 [inline-code-end]
-
----

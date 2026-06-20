@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | isLive | boolean | query | 아니오 |  |
@@ -10,7 +10,7 @@
 
 ## 응답
 
-반환: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
+반환: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
 
 ## 예제
 
@@ -22,7 +22,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 대한 접두사(예: 'Bearer')를 설정하려면 다음 줄의 주석을 해제하세요 (기본값: nil)
+  # 다음 줄의 주석 처리를 해 API 키 접두사를 설정하세요. 예: 'Bearer' (기본값 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

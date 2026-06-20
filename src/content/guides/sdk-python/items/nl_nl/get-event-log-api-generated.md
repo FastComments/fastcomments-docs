@@ -5,35 +5,35 @@ userIdWS
 
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | userIdWS | string | query | Ja |  |
 | startTime | integer | query | Ja |  |
-| endTime | integer | query | Ja |  |
+| endTime | integer | query | Nee |  |
 
 ## Antwoord
 
-Geeft terug: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_event_log200_response.py)
+Retourneert: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_event_log_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_event_log Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_event_log200_response import GetEventLog200Response
+from client.models.get_event_log_response import GetEventLogResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en staat standaard op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Betreed een context met een instantie van de API-client
+# Ga een context in met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.PublicApi(api_client)
@@ -41,10 +41,10 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     user_id_ws = 'user_id_ws_example' # str | 
     start_time = 56 # int | 
-    end_time = 56 # int | 
+    end_time = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time)
+        api_response = api_instance.get_event_log(tenant_id, url_id, user_id_ws, start_time, end_time=end_time)
         print("The response of PublicApi->get_event_log:\n")
         pprint(api_response)
     except Exception as e:

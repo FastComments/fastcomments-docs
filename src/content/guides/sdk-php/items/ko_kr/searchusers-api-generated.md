@@ -1,17 +1,17 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
-| usernameStartsWith | string | query | 아니요 |  |
-| mentionGroupIds | array | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
-| searchSection | string | query | 아니요 |  |
+| usernameStartsWith | string | query | 아니오 |  |
+| mentionGroupIds | array | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
+| searchSection | string | query | 아니오 |  |
 
 ## 응답
 
-반환: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
+반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## 예제
 
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 선택 사항입니다. 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 선택 사항이며 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

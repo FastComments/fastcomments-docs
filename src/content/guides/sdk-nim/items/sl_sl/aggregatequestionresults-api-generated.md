@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Name | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | questionId | string | Ne |  |
@@ -12,25 +12,25 @@
 
 ## Odgovor
 
-Vrne: [`Option[AggregateQuestionResults_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results200response.nim)
+Vrne: [`Option[AggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.aggregateQuestionResults(
   tenantId = "my-tenant-123",
   questionId = "",
   questionIds = @[],
-  urlId = "news/economy/budget-2025",
+  urlId = "news/article-title",
   timeBucket = AggregateTimeBucket(0),
   startDate = "",
   forceRecalculate = false
 )
 
 if response.isSome:
-  let aggResults = response.get()
-  discard aggResults
+  let results = response.get()
+  discard results
 [inline-code-end]
 
 ---

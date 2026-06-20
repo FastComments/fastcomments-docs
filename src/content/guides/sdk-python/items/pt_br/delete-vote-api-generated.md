@@ -8,14 +8,14 @@
 
 ## Resposta
 
-Retorna: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_vote200_response.py)
+Retorna: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de delete_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.delete_comment_vote200_response import DeleteCommentVote200Response
+from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,15 +30,15 @@ configuration = client.Configuration(
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
 # atenda ao seu caso de uso de autenticação.
 
-# Configurar autorização por chave de API: api_key
+# Configure autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar prefixo (e.g. Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe de API
+    # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 

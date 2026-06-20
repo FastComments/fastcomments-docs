@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Name | Type | Location | Required | Description |
@@ -12,7 +13,7 @@
 
 ## Risposta
 
-Restituisce: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+Restituisce: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
 ## Esempio
 
@@ -20,11 +21,11 @@ Restituisce: [`GetPendingWebhookEventCount200Response`](https://github.com/FastC
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurare l'autorizzazione
+# Impostazione dell'autorizzazione
 FastCommentsClient.configure do |config|
-  # Configurare l'autorizzazione tramite chiave API: api_key
+  # Configura l'autorizzazione con la chiave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Decommentare la riga seguente per impostare un prefisso per la chiave API, es. 'Bearer' (predefinito: nil)
+  # Decommenta la riga seguente per impostare un prefisso per la chiave API, ad es. 'Bearer' (predefinito nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

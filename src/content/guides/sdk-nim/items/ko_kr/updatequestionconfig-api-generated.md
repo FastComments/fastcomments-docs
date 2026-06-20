@@ -1,30 +1,23 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | No |  |
+| tenantId | string | 예 |  |
+| id | string | 아니오 |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | 아니오 |  |
 
 ## 응답
 
-반환: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 예제
 
 [inline-code-attrs-start title = 'updateQuestionConfig 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(
-  tenantId = "my-tenant-123",
-  id = "q-config-456",
-  updateQuestionConfigBody = UpdateQuestionConfigBody()
-)
+let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
 if response.isSome:
-  let updated = response.get()
-  discard updated
-  echo "Question config updated"
-else:
-  echo "Update did not return a result"
+  let apiEmpty = response.get()
+  discard apiEmpty
 [inline-code-end]
 
 ---

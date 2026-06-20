@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -8,35 +7,35 @@
 
 ## Yanıt
 
-Döndürür: [`GetComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment200_response.py)
+Döndürür: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comment_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_comment Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_comment200_response import GetComment200Response
+from client.models.api_get_comment_response import APIGetCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ana bilgisayarın (host) tanımlanması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kullanım durumunuza uygun
-# olan örneği kullanın.
+# API sunucusu güvenlik politikasına uygun olarak yapılandırmalıdır.
+# Her bir kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır;
+# kullanım durumunuza uyanı kullanın.
 
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekiyorsa API anahtarı için önek (örn. Bearer) ayarlamak üzere aşağıdaki satırı yorumdan çıkarın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdakinin yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneğiyle bir bağlam (context) girin
+# API istemcisi örneği ile bir bağlam açın
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.DefaultApi(api_client)
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_comment: %s\n" % e)
 [inline-code-end]
-
----

@@ -2,16 +2,16 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| usernameStartsWith | string | query | Nein |  |
-| mentionGroupIds | array | query | Nein |  |
-| sso | string | query | Nein |  |
-| searchSection | string | query | Nein |  |
+| tenantId | string | Pfad | Ja |  |
+| urlId | string | Abfrage | Ja |  |
+| usernameStartsWith | string | Abfrage | Nein |  |
+| mentionGroupIds | array | Abfrage | Nein |  |
+| sso | string | Abfrage | Nein |  |
+| searchSection | string | Abfrage | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+Gibt zurück: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsersResult.java)
 
 ## Beispiel
 
@@ -37,7 +37,7 @@ public class Example {
     String sso = "sso_example"; // String | 
     String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+      SearchUsersResult result = apiInstance.searchUsers(tenantId, urlId)
             .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)

@@ -1,14 +1,14 @@
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|---------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | meta | string | query | Nee |  |
 | skip | number | query | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenants200Response.java)
+Geeft terug: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantsResponse.java)
 
 ## Voorbeeld
 
@@ -27,10 +27,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer autorisatie met API-sleutel: api_key
+    // Configureer API-sleutel autorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de commentaarstreep van de volgende regel om een prefix voor de API-sleutel in te stellen, bv. "Token" (standaard null)
+    // Haal de volgende regel uit commentaar om een voorvoegsel in te stellen voor de API-sleutel, bijv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +38,7 @@ public class Example {
     String meta = "meta_example"; // String | 
     Double skip = 3.4D; // Double | 
     try {
-      GetTenants200Response result = apiInstance.getTenants(tenantId)
+      GetTenantsResponse result = apiInstance.getTenants(tenantId)
             .meta(meta)
             .skip(skip)
             .execute();
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

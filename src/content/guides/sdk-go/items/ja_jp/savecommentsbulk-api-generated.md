@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -11,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: `[]SaveComment200Response`
+戻り値: [`[]SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_bulk_response.go)
 
 ## 例
 
@@ -23,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createCommentParams := []openapiclient.CreateCommentParams{*openapiclient.NewCreateCommentParams("CommenterName_example", "Comment_example", "Url_example", "UrlId_example", "Locale_example")} // []CreateCommentParams | 
-	isLive := true // bool |  （オプション）
-	doSpamCheck := true // bool |  （オプション）
-	sendEmails := true // bool |  （オプション）
-	populateNotifications := true // bool |  （オプション）
+	isLive := true // bool |  (オプション)
+	doSpamCheck := true // bool |  (オプション)
+	sendEmails := true // bool |  (オプション)
+	populateNotifications := true // bool |  (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,9 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SaveCommentsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `SaveCommentsBulk` からのレスポンス: []SaveComment200Response
+	// response from `SaveCommentsBulk`: []SaveCommentsBulkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SaveCommentsBulk`: %v\n", resp)
 }
 [inline-code-end]
-
----

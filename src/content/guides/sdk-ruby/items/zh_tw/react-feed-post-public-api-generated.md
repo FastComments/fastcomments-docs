@@ -1,16 +1,16 @@
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| postId | string | path | 是 |  |
-| isUndo | boolean | query | 否 |  |
-| broadcastId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 路徑 | 是 |  |
+| postId | string | 路徑 | 是 |  |
+| isUndo | boolean | 查詢 | 否 |  |
+| broadcastId | string | 查詢 | 否 |  |
+| sso | string | 查詢 | 否 |  |
 
 ## 回應
 
-回傳：[`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_public200_response.rb)
+回傳：[`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/react_feed_post_response.rb)
 
 ## 範例
 
@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->react_feed_post_public: #{e}"
 end
 [inline-code-end]
-
----

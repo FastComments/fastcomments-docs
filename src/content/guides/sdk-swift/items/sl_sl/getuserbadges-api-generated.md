@@ -12,22 +12,22 @@
 
 ## Odgovor
 
-Vrne: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserBadges200Response.swift)
+Vrača: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadges Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za kakršnokoli težavo jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v fazi beta. Za kakršnokoli težavo poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (izbirno)
-let badgeId = "badgeId_example" // String |  (izbirno)
-let type = 987 // Double |  (izbirno)
-let displayedOnComments = true // Bool |  (izbirno)
-let limit = 987 // Double |  (izbirno)
-let skip = 987 // Double |  (izbirno)
+let userId = "userId_example" // String |  (neobvezno)
+let badgeId = "badgeId_example" // String |  (neobvezno)
+let type = 987 // Double |  (neobvezno)
+let displayedOnComments = true // Bool |  (neobvezno)
+let limit = 987 // Double |  (neobvezno)
+let skip = 987 // Double |  (neobvezno)
 
 DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
     guard error == nil else {

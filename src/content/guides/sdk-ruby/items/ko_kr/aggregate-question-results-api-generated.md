@@ -3,16 +3,16 @@
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| questionId | string | query | 아니요 |  |
-| questionIds | array | query | 아니요 |  |
-| urlId | string | query | 아니요 |  |
-| timeBucket | string | query | 아니요 |  |
-| startDate | string | query | 아니요 |  |
-| forceRecalculate | boolean | query | 아니요 |  |
+| questionId | string | query | 아니오 |  |
+| questionIds | array | query | 아니오 |  |
+| urlId | string | query | 아니오 |  |
+| timeBucket | string | query | 아니오 |  |
+| startDate | string | query | 아니오 |  |
+| forceRecalculate | boolean | query | 아니오 |  |
 
 ## 응답
 
-반환: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results200_response.rb)
+반환: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_question_results_response.rb)
 
 ## 예제
 
@@ -24,7 +24,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키에 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요. 예: 'Bearer' (기본값: nil)
+  # API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: 'Bearer' (기본값: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

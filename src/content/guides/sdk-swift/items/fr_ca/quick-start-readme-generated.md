@@ -1,4 +1,3 @@
----
 ### Utilisation de l'API publique
 
 ```swift
@@ -7,7 +6,7 @@ import FastCommentsSwift
 // Créer le client API
 let publicApi = PublicAPI()
 
-// Récupérer les commentaires d'une page
+// Récupérer les commentaires pour une page
 do {
     let response = try await publicApi.getCommentsPublic(
         tenantId: "your-tenant-id",
@@ -48,16 +47,39 @@ do {
 }
 ```
 
+### Utilisation de l'API de modération
+
+```swift
+import FastCommentsSwift
+
+// Les méthodes de modération sont autorisées avec un jeton `sso` pour le modérateur agissant
+// (générez-le avec FastCommentsSSO, voir la section SSO ci‑dessus).
+do {
+    let response = try await ModerationAPI.getApiComments(
+        page: 0,
+        count: 30,
+        sso: ssoToken
+    )
+
+    print("Found \(response.comments.count) comments to moderate")
+    for comment in response.comments {
+        print("Comment ID: \(comment.id), Text: \(comment.commentHTML)")
+    }
+} catch {
+    print("Error: \(error)")
+}
+```
+
 ### Utilisation du SSO pour l'authentification
 
-#### SSO sécurisé (Recommandé pour la production)
+#### SSO sécurisé (recommandé pour la production)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Créer les données utilisateur SSO sécurisées (côté serveur seulement !)
+// Créer des données utilisateur SSO sécurisées (côté serveur uniquement !)
 let userData = SecureSSOUserData(
     id: "user-123",              // ID de l'utilisateur
     email: "user@example.com",   // Courriel
@@ -77,19 +99,19 @@ do {
 }
 ```
 
-#### SSO simple (Pour le développement/les tests)
+#### SSO simple (pour développement/test)
 
 ```swift
 import FastCommentsSwift
 
-// Créer les données utilisateur SSO simples (aucune clé API requise)
+// Créer des données utilisateur SSO simples (aucune clé API nécessaire)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
     avatar: "https://example.com/avatar.jpg"
 )
 
-// Générer un jeton SSO simple
+// Générer le jeton SSO simple
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()
@@ -98,4 +120,3 @@ do {
     print("Error creating SSO token: \(error)")
 }
 ```
----

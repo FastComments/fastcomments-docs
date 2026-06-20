@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 是否必填 | 說明 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | comment_id | String | 是 |  |
@@ -9,20 +9,23 @@
 
 ## 回應
 
-回傳: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+回傳: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'flag_comment_public 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_flag() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_flag_comment() -> Result<(), Error> {
     let params: FlagCommentPublicParams = FlagCommentPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article-2026-03-25-8a7b6c".to_string(),
+        tenant_id: String::from("acme-corp-tenant"),
+        comment_id: String::from("comment-89b3"),
         is_flagged: true,
-        sso: Some("sso-token-user-123".to_string()),
+        sso: Some(String::from("sso-uid-7a2f")),
     };
-    let response: FlagCommentPublic200Response = flag_comment_public(&configuration, params).await?;
-    Ok(response)
+
+    let _response: ApiEmptyResponse = flag_comment_public(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
+
+---

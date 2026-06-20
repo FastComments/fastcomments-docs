@@ -2,19 +2,19 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Respons
+## Antwoord
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'delete_pending_webhook_event Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van delete_pending_webhook_event'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -22,10 +22,11 @@ from pprint import pprint
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
-# past bij uw auth-gebruikssituatie.
-# Configureer API-sleutelautorisatie: api_key
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Voorbeelden voor elke auth-methode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan uw auth-gebruikssituatie.
+
+# Configureer API key-autorisatie: api_key
+# Haal de commentaarteken weg hieronder om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Open een context met een instantie van de API-client

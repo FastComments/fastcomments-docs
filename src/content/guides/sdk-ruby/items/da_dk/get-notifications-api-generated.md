@@ -1,18 +1,18 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Ja |  |
+| userId | string | query | Nej |  |
+| urlId | string | query | Nej |  |
+| fromCommentId | string | query | Nej |  |
+| viewed | boolean | query | Nej |  |
+| type | string | query | Nej |  |
+| skip | number | query | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications200_response.rb)
+Returnerer: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_notifications_response.rb)
 
 ## Eksempel
 
@@ -20,11 +20,11 @@ Returnerer: [`GetNotifications200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsætning af autorisering
+# opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøgle-autorisering: api_key
+  # Konfigurer API-nøglegodkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren på følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentartegnet fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

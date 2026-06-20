@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | いいえ |  |
@@ -8,24 +8,23 @@
 
 ## レスポンス
 
-戻り値: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_badge200response.nim)
+戻り値: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateUserBadge の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateParams = UpdateUserBadgeParams(
-  name = "Top Contributor",
-  description = "Awarded for consistent high-quality comments",
-  active = true,
-  tags = @["community", "milestone"]
+let (response, httpResponse) = client.updateUserBadge(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  updateUserBadgeParams = UpdateUserBadgeParams()
 )
 
-let (response, httpResponse) = client.updateUserBadge(tenantId = "my-tenant-123", id = "badge-456", updateUserBadgeParams = updateParams)
-
 if response.isSome:
-  let updated = response.get()
+  let success = response.get()
   echo "Badge updated successfully"
 else:
-  echo "Failed to update badge, HTTP status: ", $httpResponse.status
+  echo "Badge update failed"
 [inline-code-end]
+
+---

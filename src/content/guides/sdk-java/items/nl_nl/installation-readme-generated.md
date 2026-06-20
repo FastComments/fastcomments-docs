@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Voeg de Repsy-repository toe aan de POM van je project:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Voeg vervolgens de benodigde afhankelijkheden toe:
+Voeg daarna de benodigde dependencies toe:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Voeg vervolgens de benodigde afhankelijkheden toe:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.2</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Voeg de Repsy-repository toe aan je build.gradle-bestand:
 
 ```groovy
 repositories {
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:1.3.2"
+    implementation "com.fastcomments:client:2.0.0"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.2"
+    implementation "com.fastcomments:core:2.0.0"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.2"
+    implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
 ### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Deze bibliotheek bevat drie modules. De gegenereerde API-client, de core Java-bibliotheek die handgeschreven hulpprogramma's bevat om het werken met de API te vergemakkelijken, en de `pubsub`-module die een bibliotheek is voor het abonneren op wijzigingsfeeds.
 
-- [Documentatie van de API-clientbibliotheek](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentatie van de core-bibliotheek, inclusief SSO-voorbeelden](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentatie van de PubSub-bibliotheek](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Openbare versus beveiligde API's
+### Public vs Secured APIs
 
-For the API client, there are two classes, `DefaultApi` and `PublicApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication.
+Voor de API-client zijn er drie klassen, `DefaultApi`, `PublicApi` en `ModerationApi`. De `DefaultApi` bevat methoden die je API-sleutel vereisen, en `PublicApi` bevat methoden die direct vanuit een browser/mobiel apparaat/etc kunnen worden aangeroepen zonder authenticatie.
+
+De `ModerationApi` verzorgt het moderator-dashboard. Het bevat methoden voor commentaarmoderatie (lijst, aantal, zoeken, logboeken en export), moderatie-acties (verwijderen/terugzetten, markeren, review/spam/goedkeuringsstatus instellen, stemmen en draad heropenen/sluiten), bans (verbieden van commentaar, een ban ongedaan maken, pre-ban-samenvattingen, ban-status en voorkeuren, en tellingen van gebande gebruikers), en badges & vertrouwen (een badge toekennen/verwijderen, handmatige badges, trust factor ophalen/instellen en interne gebruikersprofiel). Elke `ModerationApi`-methode accepteert een `sso`-parameter zodat de oproep namens een via SSO geauthenticeerde moderator kan worden uitgevoerd.

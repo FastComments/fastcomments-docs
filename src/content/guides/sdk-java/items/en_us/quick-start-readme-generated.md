@@ -60,6 +60,28 @@ try {
 }
 ```
 
+### Using Moderation APIs (ModerationApi)
+
+The `ModerationApi` drives the moderator dashboard. Each method accepts an `sso` parameter identifying the SSO-authenticated moderator on whose behalf the request is made:
+
+```java
+import com.fastcomments.api.ModerationApi;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.model.*;
+
+ModerationApi moderationApi = new ModerationApi();
+
+try {
+    // List comments awaiting moderation
+    ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
+        .sso("YOUR_SSO_TOKEN")
+        .execute();
+    System.out.println(response);
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+```
+
 ### Common Issues
 
 1. **401 "missing-api-key" error**: Make sure you call `apiClient.setApiKey("YOUR_KEY")` before creating the DefaultApi instance.

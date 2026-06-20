@@ -8,21 +8,21 @@
 | sendEmails | boolean | query | Nej |  |
 | populateNotifications | boolean | query | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/array&lt;_save_comment200_response&gt;.rb)
+Returnerer: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på save_comments_bulk'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'save_comments_bulk Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt autorisation
+# Opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Konfigurer API-nøgle-godkendelse: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra linjen nedenfor for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentartegnet foran følgende linje for at angive et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

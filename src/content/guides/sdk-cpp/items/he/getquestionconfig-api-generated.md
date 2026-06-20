@@ -1,29 +1,33 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfig_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfig_200_response.h)
+מחזיר: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-getQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("question-456");
-boost::optional<utility::string_t> locale = U("en-US");
-auto defaultResp = std::make_shared<GetQuestionConfig_200_response>();
-api->getQuestionConfig(tenantId, id).then([defaultResp](pplx::task<std::shared_ptr<GetQuestionConfig_200_response>> t) {
+utility::string_t questionId = U("qstn-456");
+boost::optional<utility::string_t> ifNoneMatch = U("W/\"5a2f3c\"");
+api->getQuestionConfig(tenantId, questionId)
+.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){
     try {
         auto resp = t.get();
-        if(!resp) resp = defaultResp;
-        std::cout << "Question config retrieved" << std::endl;
-    } catch(const std::exception &e) {
-        std::cerr << "Failed to get question config: " << e.what() << std::endl;
+        if (ifNoneMatch) {
+            auto etag = *ifNoneMatch;
+            (void)etag;
+        }
+        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();
+        (void)cfg;
+    } catch (const std::exception &ex) {
+        (void)ex;
     }
 });
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | meta | string | Nie |  |
@@ -8,20 +8,19 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetTenants_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenants_200_response.h)
+Zwraca: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantsResponse.h)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getTenants'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> meta = boost::optional<utility::string_t>(U("admin@example.com"));
-boost::optional<double> skip = boost::optional<double>(10.0);
-auto task = api->getTenants(tenantId, meta, skip)
-    .then([](std::shared_ptr<GetTenants_200_response> resp){
-        if (resp) {
-            auto copy = std::make_shared<GetTenants_200_response>(*resp);
-        }
+boost::optional<utility::string_t> meta(U("user@example.com"));
+boost::optional<double> skip(10.0);
+api->getTenants(U("my-tenant-123"), meta, skip)
+    .then([](std::shared_ptr<GetTenantsResponse> resp) {
+        auto out = resp ? resp : std::make_shared<GetTenantsResponse>();
+        if (resp) std::cout << "Fetched tenants successfully\n";
+        else std::cout << "No tenants returned, using default\n";
     });
 [inline-code-end]
 

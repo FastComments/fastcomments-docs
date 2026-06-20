@@ -1,6 +1,7 @@
+---
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | questionId | string | query | Hayır |  |
@@ -12,7 +13,7 @@
 
 ## Yanıt
 
-Dönen değer: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_200_response.go)
+Dönüş: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregate_question_results_response.go)
 
 ## Örnek
 
@@ -25,7 +26,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
@@ -41,10 +42,12 @@ func main() {
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.AggregateQuestionResults(context.Background()).TenantId(tenantId).QuestionId(questionId).QuestionIds(questionIds).UrlId(urlId).TimeBucket(timeBucket).StartDate(startDate).ForceRecalculate(forceRecalculate).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Çağrı yapılırken `DefaultAPI.AggregateQuestionResults``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Tam HTTP yanıtı: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AggregateQuestionResults``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// yanıt `AggregateQuestionResults`'ten: AggregateQuestionResults200Response
-	fmt.Fprintf(os.Stdout, "Yanıt `DefaultAPI.AggregateQuestionResults`'ten: %v\n", resp)
+	// `AggregateQuestionResults`'ten dönen yanıt: AggregateQuestionResultsResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
+
+---

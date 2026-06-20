@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | userId | string | query | いいえ |  |
@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`GetTickets200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTickets200Response.swift)
+戻り値: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
 ## 例
 
@@ -20,10 +20,10 @@
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (オプション)
-let state = 987 // Double |  (オプション)
-let skip = 987 // Double |  (オプション)
-let limit = 987 // Double |  (オプション)
+let userId = "userId_example" // String |  (任意)
+let state = 987 // Double |  (任意)
+let skip = 987 // Double |  (任意)
+let limit = 987 // Double |  (任意)
 
 DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
     guard error == nil else {

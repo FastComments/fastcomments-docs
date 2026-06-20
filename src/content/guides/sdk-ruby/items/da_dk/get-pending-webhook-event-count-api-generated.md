@@ -12,7 +12,7 @@
 
 ## Svar
 
-Returnerer: [`GetPendingWebhookEventCount200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count200_response.rb)
+Returnerer: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_event_count_response.rb)
 
 ## Eksempel
 
@@ -22,9 +22,9 @@ require 'time'
 require 'fastcomments-client'
 # opsæt godkendelse
 FastCommentsClient.configure do |config|
-  # Konfigurer API-nøglegodkendelse: api_key
+  # Konfigurer autorisation med API-nøgle: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren foran følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentaren foran den følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard: nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,3 +47,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pending_webhook_event_count: #{e}"
 end
 [inline-code-end]
+
+---

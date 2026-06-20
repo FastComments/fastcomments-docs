@@ -1,26 +1,27 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
-| error_id | String | Да |  |
+| tenant_id | String | Da |  |
+| id | String | Da |  |
+| error_id | String | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'delete_email_template_render_error Примјер'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_email_template_render_error Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let error_id_opt: Option<String> = Some("render-failure-9f3b".to_string());
 let params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "welcome-email".to_string(),
-    error_id: error_id_opt.unwrap(),
+    tenant_id: String::from("acme-corp-tenant"),
+    id: String::from("marketing/newsletter/welcome"),
+    error_id: String::from("render_err_2026-06-15-7a3f"),
+    request_id: Some(String::from("req-83b2f9a1")),
 };
-let response: FlagCommentPublic200Response = delete_email_template_render_error(&configuration, params).await?;
+
+let response: ApiEmptyResponse = delete_email_template_render_error(&configuration, params).await?;
 [inline-code-end]
 
 ---

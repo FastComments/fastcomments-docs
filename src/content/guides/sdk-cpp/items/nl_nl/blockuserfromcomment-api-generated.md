@@ -2,33 +2,34 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| blockFromCommentParams | BlockFromCommentParams | Ja |  |
-| userId | string | Nee |  |
-| anonUserId | string | Nee |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| blockFromCommentParams | BlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`BlockFromCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockFromCommentPublic_200_response.h)
+Retourneert: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockSuccess.h)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van blockUserFromComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-auto blockParams = std::make_shared<BlockFromCommentParams>();
+utility::string_t commentId = U("cmt-987654321");
+BlockFromCommentParams params;
 boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = boost::optional<utility::string_t>(U("anon-98765"));
-api->blockUserFromComment(tenantId, commentId, *blockParams, userId, anonUserId)
-.then([](std::shared_ptr<BlockFromCommentPublic_200_response> resp){
-    if (resp) {
-        std::cout << "User blocked successfully\n";
-    } else {
-        std::cout << "Block request returned empty response\n";
-    }
-}).wait();
+boost::optional<utility::string_t> anonUserId;
+api->blockUserFromComment(tenantId, commentId, params, userId, anonUserId)
+.then([](pplx::task<std::shared_ptr<BlockSuccess>> task){
+    try {
+        auto result = task.get();
+        auto ack = std::make_shared<BlockSuccess>();
+        bool blocked = (result != nullptr);
+        (void)ack; (void)blocked;
+    } catch(...) {}
+});
 [inline-code-end]
 
 ---

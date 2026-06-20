@@ -1,4 +1,5 @@
-## Parameters
+---
+## Parametre
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -9,13 +10,13 @@
 | sso | string | query | Nej |  |
 | searchSection | string | query | Nej |  |
 
-## Response
+## Svar
 
-Returnerer: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+Returnerer: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på search_users'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'search_users Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -38,3 +39,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
+
+---

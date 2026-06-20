@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | afterId | string | Не |  |
@@ -12,24 +12,26 @@
 
 ## Одговор
 
-Враћа: [`Option[ResetUserNotifications_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications200response.nim)
+Враћа: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример resetUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
   afterId = "",
-  afterCreatedAt = int64(0),
+  afterCreatedAt = 0'i64,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   sso = ""
 )
-
 if response.isSome:
-  let result = response.get()
+  let resetResp = response.get()
+  echo "ResetUserNotificationsResponse received"
+else:
+  echo "No ResetUserNotificationsResponse"
 [inline-code-end]
 
 ---

@@ -1,30 +1,30 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Type | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | път | Да |  |
-| postId | string | път | Да |  |
-| broadcastId | string | заявка | Не |  |
-| sso | string | заявка | Не |  |
+| tenantId | string | path | Да |  |
+| postId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
 ## Отговор
 
-Връща: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_public200_response.rb)
+Връща: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/create_feed_post_response.rb)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за update_feed_post_public'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_feed_post_public Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # String | 
-post_id = 'post_id_example' # String | 
+tenant_id = 'tenant_id_example' # Низ | 
+post_id = 'post_id_example' # Низ | 
 update_feed_post_params = FastCommentsClient::UpdateFeedPostParams.new # UpdateFeedPostParams | 
 opts = {
-  broadcast_id: 'broadcast_id_example', # String | 
-  sso: 'sso_example' # String | 
+  broadcast_id: 'broadcast_id_example', # Низ | 
+  sso: 'sso_example' # Низ | 
 }
 
 begin
@@ -35,3 +35,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_feed_post_public: #{e}"
 end
 [inline-code-end]
+
+---

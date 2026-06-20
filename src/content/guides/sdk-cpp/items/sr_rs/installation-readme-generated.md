@@ -13,7 +13,7 @@ cmake ..
 make
 ```
 
-### Инсталирање
+### Инсталација
 
 ```bash
 sudo make install
@@ -21,11 +21,14 @@ sudo make install
 
 ### Садржај библиотеке
 
-Ова библиотека садржи генерисан API клијент и SSO алатке које олakшавају рад са API-јем.
+Ова библиотека садржи генерисани API клијент и SSO алате који олакшавају рад са API-јем.
 
-- [Документација API клијент библиотеке](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [Документација библиотеке API клијента](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
 ### Јавни и заштићени API-ји
 
-За API клијента постоје две класе, `DefaultAPI` и `PublicAPI`. `DefaultAPI` садржи методе које захтевају ваш API кључ, а `PublicAPI` садржи API позиве
-који се могу извршити директно из прегледача/мобилног уређаја/итд. без аутентификације.
+За API клијента постоје три класе, `DefaultApi`, `PublicApi`, и `ModerationApi`. The `DefaultApi` садржи методе које захтевају ваш API кључ, а `PublicApi` садржи
+методе које се могу позивати директно из прегледача/мобилног уређаја/итд. без аутентификације. The `ModerationApi` садржи методе које покрећу контролну таблу модератора - listing,
+counting, searching, exporting and pulling logs for comments, акције модерирања (remove/restore, flag, set review/spam/approval status, adjust votes, reopen/close threads),
+забране (ban from a comment, undo bans, pre-ban summaries, ban status and preferences, banned-user counts), and badges & trust (award/remove badges, manual badges, get/set trust
+factor, user internal profile). Every `ModerationApi` method accepts an `sso` parameter so the call is performed on behalf of an SSO-authenticated moderator.

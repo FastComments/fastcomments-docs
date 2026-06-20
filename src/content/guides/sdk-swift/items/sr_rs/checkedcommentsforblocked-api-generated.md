@@ -1,24 +1,24 @@
 ## Параметри
 
-| Име | Тип | Локација | Захтевано | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Списак ID-јева коментара одвојених зарезом. |
+| commentIds | string | query | Да | Листа ID-ова коментара, одвојених зарезом. |
 | sso | string | query | Не |  |
 
 ## Одговор
 
-Враћа: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckedCommentsForBlocked200Response.swift)
+Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CheckBlockedCommentsResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још увек у бета фази. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let commentIds = "commentIds_example" // String | Списак ID-јева коментара одвојених зарезом.
+let commentIds = "commentIds_example" // String | Листа ID-ова коментара, одвојених зарезом.
 let sso = "sso_example" // String |  (опционо)
 
 PublicAPI.checkedCommentsForBlocked(tenantId: tenantId, commentIds: commentIds, sso: sso) { (response, error) in

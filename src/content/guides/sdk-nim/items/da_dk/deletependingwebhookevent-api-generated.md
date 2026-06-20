@@ -1,22 +1,22 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Nej |  |
 
-## Svar
+## Respons
 
-Returnerer: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'deletePendingWebhookEvent Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på deletePendingWebhookEvent'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deletePendingWebhookEvent(tenantId = "my-tenant-123", id = "wh_evt_6f1e3b2a")
+let (response, httpResponse) = client.deletePendingWebhookEvent(tenantId = "my-tenant-123", id = "wh_evt_9f8b7a6c")
 if response.isSome:
-  let flagResp = response.get()
-  discard flagResp
+  let apiEmpty = response.get()
+  echo "Pending webhook event deleted for tenant my-tenant-123"
+else:
+  echo "Failed to delete pending webhook event"
 [inline-code-end]
-
----

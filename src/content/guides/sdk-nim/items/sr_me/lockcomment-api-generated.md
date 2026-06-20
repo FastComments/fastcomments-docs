@@ -1,27 +1,26 @@
-## Parametri
+## Параметри
 
-| Name | Type | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| broadcastId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[LockComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_lock_comment200response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer lockComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример lockComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.lockComment(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-98765",
-  broadcastId = "",
-  sso = ""
-)
+let (response, httpResponse) = client.lockComment(tenantId = "news-tenant-42", commentId = "cmt-8f3a2b9d", broadcastId = "", sso = "")
 if response.isSome:
-  let lockResp = response.get()
-  discard lockResp
+  let apiResp = response.get()
+  echo "Locked comment successfully for tenant news-tenant-42"
+else:
+  echo "Failed to lock comment, HTTP status: ", $httpResponse.status
 [inline-code-end]
+
+---

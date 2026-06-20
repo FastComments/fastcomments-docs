@@ -1,26 +1,26 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 型別 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| postId | string | 否 |  |
+| broadcastId | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 回應
 
-回傳: [`Option[DeleteFeedPostPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public200response.nim)
+回傳: [`Option[DeleteFeedPostPublicResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(
-  tenantId = "my-tenant-123",
-  postId = "post-456",
-  broadcastId = "broadcast-789",
-  sso = ""
-)
+let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
 if response.isSome:
-  let result = response.get()
+  let deleted = response.get()
+  echo "Delete successful"
+else:
+  echo "Delete failed"
 [inline-code-end]
+
+---

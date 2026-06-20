@@ -12,11 +12,11 @@
 
 ## Отговор
 
-Връща: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_200_response.go)
+Връща: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_question_results_response.go)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример на GetQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за GetQuestionResults'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	urlId := "urlId_example" // string |  (незадължително)
-	userId := "userId_example" // string |  (незадължително)
-	startDate := "startDate_example" // string |  (незадължително)
-	questionId := "questionId_example" // string |  (незадължително)
-	questionIds := "questionIds_example" // string |  (незадължително)
-	skip := float64(1.2) // float64 |  (незадължително)
+	urlId := "urlId_example" // string |  (не е задължително)
+	userId := "userId_example" // string |  (не е задължително)
+	startDate := "startDate_example" // string |  (не е задължително)
+	questionId := "questionId_example" // string |  (не е задължително)
+	questionIds := "questionIds_example" // string |  (не е задължително)
+	skip := float64(1.2) // float64 |  (не е задължително)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,9 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetQuestionResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetQuestionResults`: GetQuestionResults200Response
+	// отговор от `GetQuestionResults`: GetQuestionResultsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

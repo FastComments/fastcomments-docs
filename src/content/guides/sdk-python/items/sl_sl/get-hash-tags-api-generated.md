@@ -5,42 +5,42 @@
 | tenantId | string | query | Da |  |
 | page | number | query | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags200_response.py)
+Vrne: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_hash_tags_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_hash_tags Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_hash_tags'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_hash_tags200_response import GetHashTags200Response
+from client.models.get_hash_tags_response import GetHashTagsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# Odjemalec mora nastaviti parametre overjanja in avtorizacije
 # v skladu s politiko varnosti API strežnika.
-# Spodaj so prikazani primeri za vsako metodo avtentikacije, uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Spodaj so prikazani primeri za vsako metodo overjanja, uporabite tistega, ki
+# ustreza vašemu primeru uporabe.
 
-# Konfigurirajte avtorizacijo preko API ključa: api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, če potrebujete nastavitev predpone (npr. Bearer) za API ključ
+# Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Vstopite v kontekst z instance API odjemalca
+# Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
     # Ustvarite instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 3.4 # float |  (izbirno)
+    page = 3.4 # float |  (neobvezno)
 
     try:
         api_response = api_instance.get_hash_tags(tenant_id, page=page)

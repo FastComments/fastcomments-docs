@@ -1,36 +1,35 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| user_id | String | 是 |  |
-| create_ticket_body | models::CreateTicketBody | 是 |  |
+| tenant_id | String | Yes |  |
+| user_id | String | Yes |  |
+| create_ticket_body | models::CreateTicketBody | Yes |  |
 
 ## 回應
 
-回傳: [`CreateTicket200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_ticket_200_response.rs)
+回傳: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_ticket_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'create_ticket 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn create_ticket_example() -> Result<CreateTicket200Response, Error> {
-    let params = CreateTicketParams {
+async fn create_ticket_example() -> Result<CreateTicketResponse, Error> {
+    let params: CreateTicketParams = CreateTicketParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: "user-12345".to_string(),
+        user_id: "alice-7d9".to_string(),
         create_ticket_body: models::CreateTicketBody {
-            subject: "Moderation request: abusive comments".to_string(),
-            description: "Several abusive comments reported on the article 'Election 2026: Key Races'".to_string(),
+            subject: "Payment issue: double charge on subscription".to_string(),
+            message: "I was charged twice for the July subscription. Please refund one charge.".to_string(),
             priority: Some("high".to_string()),
-            tags: Some(vec!["moderation".to_string(), "priority-high".to_string()]),
-            reporter_email: Some("editor@news.example.com".to_string()),
-            source_url: Some("https://news.example.com/articles/election-2026-key-races".to_string()),
-            custom_fields: Some(std::collections::HashMap::from([
-                ("article_id".to_string(), "news-20260324-001".to_string())
-            ])),
+            tags: Some(vec!["billing".to_string(), "subscription".to_string()]),
+            contact_email: Some("alice@acme-corp.com".to_string()),
         },
     };
-    let response: CreateTicket200Response = create_ticket(&configuration, params).await?;
+
+    let response: CreateTicketResponse = create_ticket(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]
+
+---

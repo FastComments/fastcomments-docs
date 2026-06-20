@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Name | Type | Requis | Description |
+|------|------|--------|-------------|
 | tenant_id | String | Oui |  |
 | comment_id | String | Oui |  |
 | public_block_from_comment_params | models::PublicBlockFromCommentParams | Oui |  |
@@ -9,25 +9,24 @@
 
 ## Réponse
 
-Retourne: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/un_block_comment_public_200_response.rs)
+Renvoie : [`UnblockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/unblock_success.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de un_block_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple un_block_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<UnBlockCommentPublic200Response, Error> {
-    let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article/2026-03-25/comment-98765".to_string(),
-        public_block_from_comment_params: models::PublicBlockFromCommentParams {
-            unblocked_by: "moderator@acme.com".to_string(),
-            reason: "Reviewed and determined not to be spam".to_string(),
-        },
-        sso: Some("sso-session-token-abc123".to_string()),
-    };
-    let response: UnBlockCommentPublic200Response = un_block_comment_public(&configuration, params).await?;
-    Ok(response)
-}
+let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    comment_id: "news/article/2026/06/19/cmt-987654".to_string(),
+    public_block_from_comment_params: models::PublicBlockFromCommentParams {
+        reason: "harassment".to_string(),
+        duration_minutes: Some(1440),
+        notify_author: Some(true),
+    },
+    sso: Some("sso-token-7f3b9a".to_string()),
+};
+
+let unblock_success: UnblockSuccess = un_block_comment_public(&configuration, params).await?;
 [inline-code-end]
 
 ---

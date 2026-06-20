@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
@@ -8,32 +9,30 @@
 
 ## Odgovor
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer update_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
+async fn run_update_package() -> Result<(), Error> {
     let params: UpdateTenantPackageParams = UpdateTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "pkg-professional-2026".to_string(),
+        id: "package-premium".to_string(),
         update_tenant_package_body: models::UpdateTenantPackageBody {
-            name: "Acme Professional".to_string(),
-            plan: "professional".to_string(),
-            enabled: Some(true),
-            api_status: Some(ApiStatus::Enabled),
-            custom_config: Some(CustomConfigParameters {
-                moderation_webhook: Some("https://acme.example.com/hooks/moderation".to_string()),
-                sso_security_level: Some(SsoSecurityLevel::Strict),
-            }),
-            tos_config: Some(TosConfig {
-                enabled: Some(true),
-                url: Some("https://acme.example.com/terms".to_string()),
-            }),
+            name: Some("Premium".to_string()),
+            description: Some("Premium moderation and analytics package".to_string()),
+            price_cents: Some(2999),
+            features: Some(vec![
+                "moderation".to_string(),
+                "analytics".to_string(),
+                "priority-support".to_string(),
+            ]),
+            active: Some(true),
         },
     };
-    let response: FlagCommentPublic200Response = update_tenant_package(&configuration, params).await?;
+
+    let _response: ApiEmptyResponse = update_tenant_package(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

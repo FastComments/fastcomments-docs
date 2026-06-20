@@ -1,14 +1,14 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | 是 |  |
+| userId | string | query | 是 |  |
+| id | string | path | 是 |  |
 
 ## 响应
 
-返回: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_200_response.go)
+返回: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_change_ticket_state_response.go)
 
 ## 示例
 
@@ -24,9 +24,9 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // 字符串 | 
-	userId := "userId_example" // 字符串 | 
-	id := "id_example" // 字符串 | 
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string | 
+	id := "id_example" // string | 
 	changeTicketStateBody := *openapiclient.NewChangeTicketStateBody(int32(123)) // ChangeTicketStateBody | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.ChangeTicketState``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `ChangeTicketState` 的响应: ChangeTicketState200Response
+	// 来自 `ChangeTicketState` 的响应: ChangeTicketStateResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.ChangeTicketState`: %v\n", resp)
 }
 [inline-code-end]

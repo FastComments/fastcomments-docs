@@ -1,22 +1,21 @@
 ---
-페이지에 대한 알림을 활성화하거나 비활성화합니다.  
-사용자가 페이지를 구독하면 알림이 생성됩니다
-새 루트 댓글에 대해, 그리고 또한
+페이지에 대한 알림을 활성화하거나 비활성화합니다. 사용자가 페이지를 구독하면 알림이 생성되며
+새 루트 댓글에 대한 알림 등이 생성됩니다.
 
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| urlId | string | query | 예 |  |
-| url | string | query | 예 |  |
-| pageTitle | string | query | 예 |  |
-| subscribedOrUnsubscribed | string | path | 예 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationStatus200Response.java)
+반환: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateUserNotificationPageSubscriptionStatusResponse.java)
 
 ## 예제
 
@@ -35,14 +34,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String urlId = "urlId_example"; // String | 
-    String url = "url_example"; // String | 
-    String pageTitle = "pageTitle_example"; // String | 
-    String subscribedOrUnsubscribed = "subscribe"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // 문자열 | 
+    String urlId = "urlId_example"; // 문자열 | 
+    String url = "url_example"; // 문자열 | 
+    String pageTitle = "pageTitle_example"; // 문자열 | 
+    String subscribedOrUnsubscribed = "subscribe"; // 문자열 | 
+    String sso = "sso_example"; // 문자열 | 
     try {
-      UpdateUserNotificationStatus200Response result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
+      UpdateUserNotificationPageSubscriptionStatusResponse result = apiInstance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed)
             .sso(sso)
             .execute();
       System.out.println(result);

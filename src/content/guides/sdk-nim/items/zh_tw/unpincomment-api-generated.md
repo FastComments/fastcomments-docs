@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -9,18 +9,18 @@
 
 ## 回應
 
-回傳: [`Option[PinComment_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_pin_comment200response.nim)
+回傳: [`Option[ChangeCommentPinStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_change_comment_pin_status_response.nim)
 
 ## 範例
 
-[inline-code-attrs-start title = '取消固定評論 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unPinComment 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unPinComment(tenantId = "my-tenant-123", commentId = "cmt-9f8b7a6", broadcastId = "", sso = "")
+let (response, httpResponse) = client.unPinComment(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", sso = "")
 if response.isSome:
-  let pinResp = response.get()
-  echo "Unpinned comment successfully"
+  let result = response.get()
+  echo "Unpinned comment:", $result
 else:
-  echo "Failed to unpin comment; HTTP response: ", httpResponse
+  echo "Unpin failed, HTTP status:", $httpResponse.status
 [inline-code-end]
 
 ---

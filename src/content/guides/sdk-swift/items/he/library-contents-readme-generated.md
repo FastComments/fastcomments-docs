@@ -1,12 +1,12 @@
-ערכת ה-SDK של FastComments עבור Swift מורכבת ממספר מודולים:
+ה‑FastComments Swift SDK מורכב ממספר מודולים:
 
-- **מודול לקוח** - לקוח API שנוצר אוטומטית עבור ממשקי ה-REST של FastComments
-  - הגדרות טיפוס מלאות לכל דגמי ה-API
-  - נקודות קצה מאובטחות (`DefaultAPI`) וציבוריות (`PublicAPI`)
-  - תמיכה מלאה ב-async/await
-  - עיין ב-[client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) לתיעוד מפורט של ה-API
+- **Client Module** - לקוח API עבור REST APIs של FastComments
+  - הגדרות טיפוסים מלאות לכל מודלי ה‑API
+  - שיטות מאומתות (`DefaultAPI`), ציבוריות (`PublicAPI`), ושיטות למודרציה (`ModerationAPI`)
+  - תמיכה מלאה ב‑async/await
+  - ראה [client/README.md](https://github.com/FastComments/fastcomments-swift/blob/main/client/README.md) לתיעוד מפורט של ה‑API
 
-- **מודול SSO** - כלי עזר ל-Single Sign-On בצד השרת
-  - יצירת אסימונים מאובטחים לאימות משתמשים
-  - תמיכה במצבי SSO פשוטים ומאובטחים
+- **SSO Module** - כלים ל‑Single Sign‑On בצד השרת
+  - יצירת אסימונים מאובטחת לאימות משתמשים
+  - תמיכה בשני מצבי SSO — פשוט ומאובטח
   - חתימת אסימונים מבוססת HMAC-SHA256 באמצעות CryptoKit

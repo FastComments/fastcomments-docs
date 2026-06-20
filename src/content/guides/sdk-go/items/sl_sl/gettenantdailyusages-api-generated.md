@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | yearNumber | number | query | Ne |  |
@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`GetTenantDailyUsages200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_200_response.go)
+Vrne: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_daily_usages_response.go)
 
 ## Primer
 
@@ -27,10 +27,10 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	yearNumber := float64(1.2) // float64 |  (neobvezno)
-	monthNumber := float64(1.2) // float64 |  (neobvezno)
-	dayNumber := float64(1.2) // float64 |  (neobvezno)
-	skip := float64(1.2) // float64 |  (neobvezno)
+	yearNumber := float64(1.2) // float64 |  (izbirno)
+	monthNumber := float64(1.2) // float64 |  (izbirno)
+	dayNumber := float64(1.2) // float64 |  (izbirno)
+	skip := float64(1.2) // float64 |  (izbirno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetTenantDailyUsages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetTenantDailyUsages`: GetTenantDailyUsages200Response
+	// odgovor iz `GetTenantDailyUsages`: GetTenantDailyUsagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetTenantDailyUsages`: %v\n", resp)
 }
 [inline-code-end]

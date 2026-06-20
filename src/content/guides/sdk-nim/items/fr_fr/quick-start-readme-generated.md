@@ -1,6 +1,6 @@
 ### Utilisation des API authentifiées (DefaultAPI)
 
-**Important :** Les endpoints authentifiés nécessitent que votre clé API soit définie en tant qu'en-tête `x-api-key`.
+**Important :** Les endpoints authentifiés exigent que votre clé API soit définie dans l'en-tête `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,7 +11,7 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Effectuer des appels API authentifiés
+# Effectuer des appels d'API authentifiés
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -48,7 +48,7 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Effectuer des appels API publics
+# Effectuer des appels d'API publics
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### Utilisation des API de modération (ModerationAPI)
+
+Les endpoints de modération alimentent le tableau de bord des modérateurs et s'authentifient avec un token SSO pour le modérateur agissant :
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# Lister les commentaires dans le tableau de bord de modération
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### Problèmes courants
 
-1. **401 authentication error** : Assurez-vous de définir l'en-tête `x-api-key` sur votre HttpClient avant d'effectuer des requêtes DefaultAPI : `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class** : Utilisez `api_default` pour les requêtes authentifiées côté serveur, `api_public` pour les requêtes côté client/publiques.
+1. **Erreur d'authentification 401** : Assurez-vous de définir l'en-tête `x-api-key` sur votre HttpClient avant d'effectuer des requêtes DefaultAPI : `client.headers["x-api-key"] = "your-api-key"`
+2. **Mauvaise classe d'API** : Utilisez `api_default` pour les requêtes authentifiées côté serveur, `api_public` pour les requêtes côté client/public, et `api_moderation` pour le tableau de bord des modérateurs.

@@ -1,16 +1,17 @@
+---
 ## Parametreler
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| id | string | Evet |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Evet |  |
-| userId | string | Hayır |  |
-| anonUserId | string | Hayır |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Yanıt
 
-Döndürür: [`UnBlockCommentPublic_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnBlockCommentPublic_200_response.h)
+Döndürür: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnblockSuccess.h)
 
 ## Örnek
 
@@ -18,14 +19,18 @@ Döndürür: [`UnBlockCommentPublic_200_response`](https://github.com/FastCommen
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t commentId = U("cmt-456789");
-auto paramsPtr = std::make_shared<UnBlockFromCommentParams>();
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = boost::none;
-api->unBlockUserFromComment(tenantId, commentId, *paramsPtr, userId, anonUserId)
-    .then([](std::shared_ptr<UnBlockCommentPublic_200_response> resp){
-        (void)resp;
-    })
-    .wait();
+UnBlockFromCommentParams params;
+boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
+boost::optional<utility::string_t> anonUserId = utility::string_t(U("anon-98765"));
+auto unblockTask = api->unBlockUserFromComment(tenantId, commentId, params, userId, anonUserId)
+    .then([](pplx::task<std::shared_ptr<UnblockSuccess>> t) -> std::shared_ptr<UnblockSuccess> {
+        try {
+            auto result = t.get();
+            return result ? result : std::make_shared<UnblockSuccess>();
+        } catch (...) {
+            return std::make_shared<UnblockSuccess>();
+        }
+    });
 [inline-code-end]
 
 ---

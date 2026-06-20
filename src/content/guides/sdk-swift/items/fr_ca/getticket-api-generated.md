@@ -1,14 +1,14 @@
 ## Paramètres
 
-| Name | Type | Location | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
 | userId | string | query | Non |  |
 
-## Response
+## Réponse
 
-Renvoie: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicket200Response.swift)
+Retourne: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketResponse.swift)
 
 ## Exemple
 
@@ -17,9 +17,9 @@ Renvoie: [`GetTicket200Response`](https://github.com/FastComments/fastcomments-s
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // Chaîne | 
-let id = "id_example" // Chaîne | 
-let userId = "userId_example" // Chaîne |  (optionnel)
+let tenantId = "tenantId_example" // String | 
+let id = "id_example" // String | 
+let userId = "userId_example" // String |  (facultatif)
 
 DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, error) in
     guard error == nil else {
@@ -32,5 +32,3 @@ DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, er
     }
 }
 [inline-code-end]
-
----

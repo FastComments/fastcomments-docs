@@ -1,24 +1,25 @@
+---
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | id | String | Oui |  |
 
 ## Réponse
 
-Retourne: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_cached_notification_count_200_response.rs)
+Renvoie : [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_cached_notification_count_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple get_cached_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_cached_notification_count Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-pub async fn example_get_cached_notification_count(configuration: &configuration::Configuration) -> Result<GetCachedNotificationCount200Response, Error> {
+async fn run_get_cached_notification_count() -> Result<GetCachedNotificationCountResponse, Error> {
     let params: GetCachedNotificationCountParams = GetCachedNotificationCountParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-12345".to_string(),
+        id: "news/article/12345".to_string(),
     };
-    let response: GetCachedNotificationCount200Response = get_cached_notification_count(configuration, params).await?;
+    let response: GetCachedNotificationCountResponse = get_cached_notification_count(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

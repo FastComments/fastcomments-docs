@@ -1,0 +1,32 @@
+## Paramètres
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| value | string | query | Non |  |
+| sso | string | query | Non |  |
+
+## Réponse
+
+Retourne : [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_site_search_response.rb)
+
+## Exemple
+
+[inline-code-attrs-start title = 'Exemple de get_search_sites'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+require 'time'
+require 'fastcomments-client'
+
+api_instance = FastCommentsClient::ModerationApi.new
+opts = {
+  value: 'value_example', # Chaîne | 
+  sso: 'sso_example' # Chaîne | 
+}
+
+begin
+  
+  result = api_instance.get_search_sites(opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling ModerationApi->get_search_sites: #{e}"
+end
+[inline-code-end]

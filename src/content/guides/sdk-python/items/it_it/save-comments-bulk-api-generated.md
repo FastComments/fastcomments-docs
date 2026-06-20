@@ -2,7 +2,7 @@
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sì |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
 | sendEmails | boolean | query | No |  |
@@ -10,7 +10,7 @@
 
 ## Risposta
 
-Restituisce: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comment200_response.py)
+Restituisce: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
 ## Esempio
 
@@ -18,19 +18,19 @@ Restituisce: [`SaveComment200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 import client
 from client.models.create_comment_params import CreateCommentParams
-from client.models.save_comment200_response import SaveComment200Response
+from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e per impostazione predefinita è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è facoltativo e per impostazione predefinita è https://fastcomments.com
+# Vedi configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la policy di sicurezza del server API.
-# Di seguito sono forniti esempi per ogni metodo di autenticazione; usa l'esempio che
+# Gli esempi per ciascun metodo di autenticazione sono forniti di seguito, usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
 # Configura l'autorizzazione tramite chiave API: api_key
@@ -57,5 +57,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->save_comments_bulk: %s\n" % e)
 [inline-code-end]
-
----

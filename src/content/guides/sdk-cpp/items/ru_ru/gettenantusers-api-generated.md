@@ -7,25 +7,20 @@
 
 ## Ответ
 
-Возвращает: [`GetTenantUsers_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantUsers_200_response.h)
+Возвращает: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantUsersResponse.h)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getTenantUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> skip = boost::optional<double>(20);
+boost::optional<double> skip = 20;
+auto defaultResp = std::make_shared<GetTenantUsersResponse>();
 api->getTenantUsers(tenantId, skip)
-    .then([=](pplx::task<std::shared_ptr<GetTenantUsers_200_response>> t) {
-        try {
-            std::shared_ptr<GetTenantUsers_200_response> resp = t.get();
-            if (!resp) resp = std::make_shared<GetTenantUsers_200_response>();
-            (void)resp;
-        } catch (const std::exception& ex) {
-            (void)ex;
-            std::shared_ptr<GetTenantUsers_200_response> err = std::make_shared<GetTenantUsers_200_response>();
-        }
-    });
+.then([defaultResp](std::shared_ptr<GetTenantUsersResponse> resp){
+    auto result = resp ? resp : defaultResp;
+    std::cout << (resp ? "Tenant users retrieved successfully\n" : "Using default response\n");
+}).wait();
 [inline-code-end]
 
 ---

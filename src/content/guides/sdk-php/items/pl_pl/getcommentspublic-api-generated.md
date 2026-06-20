@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -7,38 +6,38 @@ urlId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Tak |  |
+| urlId | string | query | Tak |  |
+| page | integer | query | Nie |  |
+| direction | string | query | Nie |  |
+| sso | string | query | Nie |  |
+| skip | integer | query | Nie |  |
+| skipChildren | integer | query | Nie |  |
+| limit | integer | query | Nie |  |
+| limitChildren | integer | query | Nie |  |
+| countChildren | boolean | query | Nie |  |
+| fetchPageForCommentId | string | query | Nie |  |
+| includeConfig | boolean | query | Nie |  |
+| countAll | boolean | query | Nie |  |
+| includei10n | boolean | query | Nie |  |
+| locale | string | query | Nie |  |
+| modules | string | query | Nie |  |
+| isCrawler | boolean | query | Nie |  |
+| includeNotificationCount | boolean | query | Nie |  |
+| asTree | boolean | query | Nie |  |
+| maxTreeDepth | integer | query | Nie |  |
+| useFullTranslationIds | boolean | query | Nie |  |
+| parentId | string | query | Nie |  |
+| searchText | string | query | Nie |  |
+| hashTags | array | query | Nie |  |
+| userId | string | query | Nie |  |
+| customConfigStr | string | query | Nie |  |
+| afterCommentId | string | query | Nie |  |
+| beforeCommentId | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsPublic200Response.php)
+Zwraca: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
 ## Przykład
 
@@ -51,7 +50,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, `GuzzleHttp\Client` będzie używany domyślnie.
+    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -90,5 +89,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

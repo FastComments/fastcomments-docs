@@ -1,0 +1,40 @@
+## Paramètres
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| text-search | string | query | Non |  |
+| byIPFromComment | string | query | Non |  |
+| filter | string | query | Non |  |
+| searchFilters | string | query | Non |  |
+| demo | boolean | query | Non |  |
+| sso | string | query | Non |  |
+
+## Réponse
+
+Renvoie : [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_count_comments_response.rb)
+
+## Exemple
+
+[inline-code-attrs-start title = 'Exemple de get_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+require 'time'
+require 'fastcomments-client'
+
+api_instance = FastCommentsClient::ModerationApi.new
+opts = {
+  text_search: 'text_search_example', # Chaîne | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # Chaîne | 
+  filter: 'filter_example', # Chaîne | 
+  search_filters: 'search_filters_example', # Chaîne | 
+  demo: true, # Booléen | 
+  sso: 'sso_example' # Chaîne | 
+}
+
+begin
+  
+  result = api_instance.get_count(opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling ModerationApi->get_count: #{e}"
+end
+[inline-code-end]

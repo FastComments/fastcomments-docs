@@ -1,27 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| sure | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| sure | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primjer
+## Примјер
 
-[inline-code-attrs-start title = 'deleteTenant Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
-
 if response.isSome:
-  let flagResp = response.get()
-  echo "Tenant deletion response received for tenant: ", "my-tenant-123"
-  discard flagResp
+  let emptyResp = response.get()
 else:
-  echo "No response body returned for tenant deletion"
+  discard httpResponse
 [inline-code-end]
 
 ---

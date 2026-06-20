@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
@@ -10,7 +10,7 @@
 
 ## Réponse
 
-Renvoie : [`GetTickets200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets200_response.rb)
+Renvoie : [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_tickets_response.rb)
 
 ## Exemple
 
@@ -18,7 +18,7 @@ Renvoie : [`GetTickets200Response`](https://github.com/FastComments/fastcomments
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# configurer l'autorisation
+# configuration de l'autorisation
 FastCommentsClient.configure do |config|
   # Configurer l'autorisation par clé API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
@@ -27,12 +27,12 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-tenant_id = 'tenant_id_example' # Chaîne | 
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # Chaîne | 
-  state: 1.2, # Flottant | 
-  skip: 1.2, # Flottant | 
-  limit: 1.2 # Flottant | 
+  user_id: 'user_id_example', # String | 
+  state: 1.2, # Float | 
+  skip: 1.2, # Float | 
+  limit: 1.2 # Float | 
 }
 
 begin

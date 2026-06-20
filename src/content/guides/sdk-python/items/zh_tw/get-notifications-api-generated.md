@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | userId | string | query | 否 |  |
@@ -12,43 +12,45 @@
 
 ## 回應
 
-回傳：[`GetNotifications200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications200_response.py)
+回傳：[`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_notifications 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_notifications200_response import GetNotifications200Response
+from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
+# 設定 host 為選用，預設為 https://fastcomments.com
 # 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 用戶端必須依照 API 伺服器的安全性政策設定驗證與授權參數。
-# 下方提供各種驗證方法的範例，請使用符合您驗證情境的範例。
+# 用戶端必須設定認證與授權參數
+# 以符合 API 伺服器的安全性政策。
+# 下方提供每種認證方法的範例，請使用
+# 符合您認證使用情境的範例。
 
-# 設定 API key 驗證：api_key
+# 設定 API 金鑰授權：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 若需要，取消註解下列程式以設定 API key 的前綴 (例如 Bearer)
+# 如需，取消註解下方以設定 API 金鑰的前綴（例如 Bearer）
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 以 API client 實例進入 context
+# 使用 API client 實例開啟一個上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (可選)
-    url_id = 'url_id_example' # str |  (可選)
-    from_comment_id = 'from_comment_id_example' # str |  (可選)
-    viewed = True # bool |  (可選)
-    type = 'type_example' # str |  (可選)
-    skip = 3.4 # float |  (可選)
+    user_id = 'user_id_example' # str |  (選用)
+    url_id = 'url_id_example' # str |  (選用)
+    from_comment_id = 'from_comment_id_example' # str |  (選用)
+    viewed = True # bool |  (選用)
+    type = 'type_example' # str |  (選用)
+    skip = 3.4 # float |  (選用)
 
     try:
         api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)

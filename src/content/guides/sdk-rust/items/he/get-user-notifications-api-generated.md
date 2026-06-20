@@ -1,8 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
+| url_id | String | לא |  |
 | page_size | i32 | לא |  |
 | after_id | String | לא |  |
 | include_context | bool | לא |  |
@@ -11,27 +12,35 @@
 | dm_only | bool | לא |  |
 | no_dm | bool | לא |  |
 | include_translations | bool | לא |  |
+| include_tenant_notifications | bool | לא |  |
 | sso | String | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetUserNotifications200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notifications_200_response.rs)
+מחזיר: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_my_notifications_response.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-get_user_notifications'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = GetUserNotificationsParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    page_size: Some(25),
-    after_id: Some("notif_98765".to_string()),
-    include_context: Some(true),
-    after_created_at: Some(1_681_500_000i64),
-    unread_only: Some(true),
-    dm_only: Some(false),
-    no_dm: Some(false),
-    include_translations: Some(true),
-    sso: Some("sso_user_token_ab12".to_string()),
-};
-let notifications: GetUserNotifications200Response = get_user_notifications(&configuration, params).await?;
+async fn fetch_notifications() -> Result<GetMyNotificationsResponse, Error> {
+    let params: GetUserNotificationsParams = GetUserNotificationsParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: Some(String::from("news/product-launch")),
+        page_size: Some(25),
+        after_id: Some(String::from("notif_1024")),
+        include_context: Some(true),
+        after_created_at: Some(1_676_000_000i64),
+        unread_only: Some(true),
+        dm_only: Some(false),
+        no_dm: Some(false),
+        include_translations: Some(true),
+        include_tenant_notifications: Some(false),
+        sso: Some(String::from("sso_token_abc123")),
+    };
+    let notifications: GetMyNotificationsResponse = get_user_notifications(&configuration, params).await?;
+    Ok(notifications)
+}
 [inline-code-end]
+
+---

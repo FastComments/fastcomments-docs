@@ -2,27 +2,27 @@
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| postId | string | path | Sí |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| postId | string | ruta | Sí |  |
+| broadcastId | string | consulta | No |  |
+| sso | string | consulta | No |  |
 
 ## Respuesta
 
-Devuelve: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_public200_response.py)
+Devuelve: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_post_response.py)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de update_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.create_feed_post_public200_response import CreateFeedPostPublic200Response
+from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.models.update_feed_post_params import UpdateFeedPostParams
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
+# Consulte configuration.py para ver la lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )

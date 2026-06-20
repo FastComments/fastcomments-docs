@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | Location | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | isLive | boolean | query | 否 |  |
@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: `[]SaveComment200Response`
+返回: [`[]SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_save_comments_bulk_response.go)
 
 ## 示例
 
@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	createCommentParams := []openapiclient.CreateCommentParams{*openapiclient.NewCreateCommentParams("CommenterName_example", "Comment_example", "Url_example", "UrlId_example", "Locale_example")} // []CreateCommentParams | 
-	isLive := true // bool |  (可选)
-	doSpamCheck := true // bool |  (可选)
-	sendEmails := true // bool |  (可选)
-	populateNotifications := true // bool |  (可选)
+	isLive := true // bool |  （可选）
+	doSpamCheck := true // bool |  （可选）
+	sendEmails := true // bool |  （可选）
+	populateNotifications := true // bool |  （可选）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SaveCommentsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `SaveCommentsBulk` 的响应: []SaveComment200Response
+	// 来自 `SaveCommentsBulk` 的响应： []SaveCommentsBulkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SaveCommentsBulk`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | query | Не |  |
@@ -13,7 +13,7 @@
 
 ## Отговор
 
-Връща: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_200_response.go)
+Връща: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_response.go)
 
 ## Пример
 
@@ -30,13 +30,13 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  (незадължително)
-	externalId := "externalId_example" // string |  (незадължително)
-	eventType := "eventType_example" // string |  (незадължително)
-	type_ := "type__example" // string |  (незадължително)
-	domain := "domain_example" // string |  (незадължително)
-	attemptCountGT := float64(1.2) // float64 |  (незадължително)
-	skip := float64(1.2) // float64 |  (незадължително)
+	commentId := "commentId_example" // string |  (по избор)
+	externalId := "externalId_example" // string |  (по избор)
+	eventType := "eventType_example" // string |  (по избор)
+	type_ := "type__example" // string |  (по избор)
+	domain := "domain_example" // string |  (по избор)
+	attemptCountGT := float64(1.2) // float64 |  (по избор)
+	skip := float64(1.2) // float64 |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEvents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetPendingWebhookEvents`: GetPendingWebhookEvents200Response
+	// отговор от `GetPendingWebhookEvents`: GetPendingWebhookEventsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEvents`: %v\n", resp)
 }
 [inline-code-end]

@@ -4,9 +4,9 @@ afterId
 
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
+| tenantId | string | path | Yes |  |
 | afterId | string | query | No |  |
 | limit | integer | query | No |  |
 | tags | array | query | No |  |
@@ -16,7 +16,7 @@ afterId
 
 ## Risposta
 
-Restituisce: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsPublic200Response.php)
+Restituisce: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## Esempio
 
@@ -29,7 +29,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come impostazione predefinita.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string

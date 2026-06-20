@@ -13,23 +13,18 @@ Returns: [`AddPageApiResponse`](https://github.com/FastComments/fastcomments-rus
 
 [inline-code-attrs-start title = 'add_page Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn create_page() -> Result<AddPageApiResponse, Error> {
-    let params: AddPageParams = AddPageParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        create_api_page_data: models::CreateApiPageData {
-            path: "news/article".to_string(),
-            title: "Rust 2.0 Released".to_string(),
-            url: Some("https://acme.example/news/rust-2".to_string()),
-            allow_comments: Some(true),
-            tags: Some(vec!["rust".to_string(), "release".to_string()]),
-            metadata: Some(std::collections::HashMap::from([
-                ("author".to_string(), "Jane Doe".to_string()),
-                ("section".to_string(), "technology".to_string())
-            ])),
-            published: Some(true)
-        }
-    };
-    let response: AddPageApiResponse = add_page(&configuration, params).await?;
-    Ok(response)
-}
+let create_api_page_data: models::CreateApiPageData = models::CreateApiPageData {
+    path: "news/article".to_string(),
+    title: "Breaking: Market Rally".to_string(),
+    url: Some("https://acme.example.com/news/market-rally".to_string()),
+    meta_description: Some("Markets surge after earnings beat expectations".to_string()),
+    tags: Some(vec!["finance".to_string(), "markets".to_string()]),
+};
+
+let params: AddPageParams = AddPageParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    create_api_page_data,
+};
+
+let response: AddPageApiResponse = add_page(&configuration, params).await?;
 [inline-code-end]

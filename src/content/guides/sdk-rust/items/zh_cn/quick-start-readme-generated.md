@@ -99,7 +99,45 @@ async fn main() {
 }
 ```
 
-### 使用 SSO 进行身份验证
+### 使用审核 API
+
+审核方法为版主仪表板提供支持。它们像已认证的 API 一样使用 API 密钥 `Configuration`，并且每个方法接受一个可选的 `sso` 令牌，以便代表通过 SSO 验证的版主进行调用。
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // 使用 API 密钥创建配置
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // 统计等待审核队列中的评论
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // 传入 SSO 令牌以作为通过 SSO 验证的版主执行
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
+### 使用 SSO 进行认证
 
 ```rust
 use fastcomments_sdk::sso::{
@@ -113,7 +151,7 @@ fn main() {
     // 创建安全的 SSO 用户数据（仅限服务器端！）
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // 用户 ID
-        "user@example.com".to_string(),   // 电子邮件
+        "user@example.com".to_string(),   // 邮箱
         "John Doe".to_string(),            // 用户名
         "https://example.com/avatar.jpg".to_string(), // 头像 URL
     );
@@ -123,6 +161,6 @@ fn main() {
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // 将此令牌传递给前端以进行身份验证
+    // 将此令牌传递给前端用于认证
 }
 ```

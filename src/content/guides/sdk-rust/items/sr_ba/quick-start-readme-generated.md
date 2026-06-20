@@ -6,7 +6,7 @@ use fastcomments_sdk::client::apis::public_api;
 
 #[tokio::main]
 async fn main() {
-    // Kreiraj konfiguraciju API-ja
+    // Napravite konfiguraciju API-ja
     let config = Configuration::new();
 
     // Dohvati komentare za stranicu
@@ -53,7 +53,7 @@ use fastcomments_sdk::client::apis::default_api;
 
 #[tokio::main]
 async fn main() {
-    // Kreiraj konfiguraciju sa API ključem
+    // Napravite konfiguraciju sa API ključem
     let mut config = Configuration::new();
     config.api_key = Some(ApiKey {
         prefix: None,
@@ -99,6 +99,44 @@ async fn main() {
 }
 ```
 
+### Korištenje API-ja za moderaciju
+
+Metode za moderaciju pokreću nadzornu ploču moderatora. One koriste API-ključ `Configuration` isto kao i autentificirani API, i svaka metoda prihvata opcioni `sso` token tako da se poziv može izvršiti u ime moderatora autentifikovanog putem SSO.
+
+```rust
+use fastcomments_sdk::client::apis::configuration::{ApiKey, Configuration};
+use fastcomments_sdk::client::apis::moderation_api;
+
+#[tokio::main]
+async fn main() {
+    // Napravite konfiguraciju sa API ključem
+    let mut config = Configuration::new();
+    config.api_key = Some(ApiKey {
+        prefix: None,
+        key: "your-api-key".to_string(),
+    });
+
+    // Prebroj komentare koji čekaju u redu za moderaciju
+    let result = moderation_api::get_count(
+        &config,
+        moderation_api::GetCountParams {
+            text_search: None,
+            by_ip_from_comment: None,
+            filter: None,
+            search_filters: None,
+            demo: None,
+            sso: None, // proslijedite SSO token da biste djelovali kao moderator autentifikovan putem SSO
+        },
+    )
+    .await;
+
+    match result {
+        Ok(response) => println!("Comments to moderate: {}", response.count),
+        Err(e) => eprintln!("Error: {:?}", e),
+    }
+}
+```
+
 ### Korištenje SSO za autentifikaciju
 
 ```rust
@@ -110,19 +148,19 @@ use fastcomments_sdk::sso::{
 fn main() {
     let api_key = "your-api-key".to_string();
 
-    // Kreiraj sigurne SSO podatke korisnika (samo na serverskoj strani!)
+    // Napravite sigurne SSO podatke korisnika (samo na serverskoj strani!)
     let user_data = SecureSSOUserData::new(
         "user-123".to_string(),           // ID korisnika
-        "user@example.com".to_string(),   // E-pošta
+        "user@example.com".to_string(),   // Email
         "John Doe".to_string(),            // Korisničko ime
         "https://example.com/avatar.jpg".to_string(), // URL avatara
     );
 
-    // Generiši SSO token
+    // Generišite SSO token
     let sso = FastCommentsSSO::new_secure(api_key, &user_data).unwrap();
     let token = sso.create_token().unwrap();
 
     println!("SSO Token: {}", token);
-    // Proslijedi ovaj token svom frontendu za autentifikaciju
+    // Proslijedite ovaj token vašem frontendu radi autentifikacije
 }
 ```

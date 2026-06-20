@@ -9,41 +9,42 @@
 
 ## תגובה
 
-מחזיר: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/flag_comment_public200_response.py)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-delete_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.flag_comment_public200_response import FlagCommentPublic200Response
+from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host אינה חובה ובבררת מחדל היא https://fastcomments.com
+# ראו configuration.py לרשימת כל פרמטרי ההגדרות הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# דוגמאות לכל שיטת אימות מסופקות להלן, השתמש בדוגמה המתאימה למקרה השימוש שלך.
+# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
+# בהתאם למדיניות האבטחה של שרת ה-API.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה ש-
+# מתאימה למקרה השימוש שלכם באימות.
 
-# Configure API key authorization: api_key
+# הגדר הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# הכנסו לקונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צרו מופע של המחלקה API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (optional)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
+    delete_comments = 'delete_comments_example' # str |  (אופציונלי)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (אופציונלי)
 
     try:
         api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
@@ -52,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_tenant_user: %s\n" % e)
 [inline-code-end]
-
----

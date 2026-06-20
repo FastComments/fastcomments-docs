@@ -3,7 +3,7 @@
   "pageHeader": "FastComments Ruby SDK",
   "itemsOrdered": [
     {
-      "name": "Инсталация",
+      "name": "Инсталиране",
       "file": "installation-readme-generated.md",
       "subCat": "Първи стъпки",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "Използване на SSO",
       "file": "sso-usage-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Използване",
       "type": "readme"
     },
     {
@@ -35,7 +35,13 @@
     {
       "name": "get_audit_logs",
       "file": "get-audit-logs-api-generated.md",
-      "subCat": "Дневници на одита",
+      "subCat": "Логове за одит",
+      "type": "api"
+    },
+    {
+      "name": "logout_public",
+      "file": "logout-public-api-generated.md",
+      "subCat": "Аутентификация",
       "type": "api"
     },
     {
@@ -186,6 +192,12 @@
       "name": "vote_comment",
       "file": "vote-comment-api-generated.md",
       "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "get_comments_for_user",
+      "file": "get-comments-for-user-api-generated.md",
+      "subCat": "Коментари за потребителя",
       "type": "api"
     },
     {
@@ -353,7 +365,25 @@
     {
       "name": "flag_comment_public",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Докладване на коментар",
+      "subCat": "Сигнализиране на коментар",
+      "type": "api"
+    },
+    {
+      "name": "get_gif_large",
+      "file": "get-gif-large-api-generated.md",
+      "subCat": "Гифове",
+      "type": "api"
+    },
+    {
+      "name": "get_gifs_search",
+      "file": "get-gifs-search-api-generated.md",
+      "subCat": "Гифове",
+      "type": "api"
+    },
+    {
+      "name": "get_gifs_trending",
+      "file": "get-gifs-trending-api-generated.md",
+      "subCat": "Гифове",
       "type": "api"
     },
     {
@@ -384,6 +414,264 @@
       "name": "patch_hash_tag",
       "file": "patch-hash-tag-api-generated.md",
       "subCat": "Хаштагове",
+      "type": "api"
+    },
+    {
+      "name": "delete_moderation_vote",
+      "file": "delete-moderation-vote-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_api_comments",
+      "file": "get-api-comments-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_api_export_status",
+      "file": "get-api-export-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_api_ids",
+      "file": "get-api-ids-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_ban_users_from_comment",
+      "file": "get-ban-users-from-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_comment_ban_status",
+      "file": "get-comment-ban-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_comment_children",
+      "file": "get-comment-children-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_count",
+      "file": "get-count-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_counts",
+      "file": "get-counts-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_logs",
+      "file": "get-logs-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_manual_badges",
+      "file": "get-manual-badges-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_manual_badges_for_user",
+      "file": "get-manual-badges-for-user-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_moderation_comment",
+      "file": "get-moderation-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_moderation_comment_text",
+      "file": "get-moderation-comment-text-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_pre_ban_summary",
+      "file": "get-pre-ban-summary-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_search_comments_summary",
+      "file": "get-search-comments-summary-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_search_pages",
+      "file": "get-search-pages-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_search_sites",
+      "file": "get-search-sites-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_search_suggest",
+      "file": "get-search-suggest-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_search_users",
+      "file": "get-search-users-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_trust_factor",
+      "file": "get-trust-factor-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_user_ban_preference",
+      "file": "get-user-ban-preference-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "get_user_internal_profile",
+      "file": "get-user-internal-profile-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_adjust_comment_votes",
+      "file": "post-adjust-comment-votes-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_api_export",
+      "file": "post-api-export-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_ban_user_from_comment",
+      "file": "post-ban-user-from-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_ban_user_undo",
+      "file": "post-ban-user-undo-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_bulk_pre_ban_summary",
+      "file": "post-bulk-pre-ban-summary-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_comments_by_ids",
+      "file": "post-comments-by-ids-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_flag_comment",
+      "file": "post-flag-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_remove_comment",
+      "file": "post-remove-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_restore_deleted_comment",
+      "file": "post-restore-deleted-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_approval_status",
+      "file": "post-set-comment-approval-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_review_status",
+      "file": "post-set-comment-review-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_spam_status",
+      "file": "post-set-comment-spam-status-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_set_comment_text",
+      "file": "post-set-comment-text-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_un_flag_comment",
+      "file": "post-un-flag-comment-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "post_vote",
+      "file": "post-vote-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "put_award_badge",
+      "file": "put-award-badge-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "put_close_thread",
+      "file": "put-close-thread-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "put_remove_badge",
+      "file": "put-remove-badge-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "put_reopen_thread",
+      "file": "put-reopen-thread-api-generated.md",
+      "subCat": "Модерация",
+      "type": "api"
+    },
+    {
+      "name": "set_trust_factor",
+      "file": "set-trust-factor-api-generated.md",
+      "subCat": "Модерация",
       "type": "api"
     },
     {
@@ -453,6 +741,48 @@
       "type": "api"
     },
     {
+      "name": "create_v1_page_react",
+      "file": "create-v1-page-react-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
+      "name": "create_v2_page_react",
+      "file": "create-v2-page-react-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
+      "name": "delete_v1_page_react",
+      "file": "delete-v1-page-react-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
+      "name": "delete_v2_page_react",
+      "file": "delete-v2-page-react-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
+      "name": "get_v1_page_likes",
+      "file": "get-v1-page-likes-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
+      "name": "get_v2_page_react_users",
+      "file": "get-v2-page-react-users-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
+      "name": "get_v2_page_reacts",
+      "file": "get-v2-page-reacts-api-generated.md",
+      "subCat": "Реакции на страница",
+      "type": "api"
+    },
+    {
       "name": "add_page",
       "file": "add-page-api-generated.md",
       "subCat": "Страници",
@@ -461,6 +791,18 @@
     {
       "name": "delete_page",
       "file": "delete-page-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "get_offline_users",
+      "file": "get-offline-users-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "get_online_users",
+      "file": "get-online-users-api-generated.md",
       "subCat": "Страници",
       "type": "api"
     },
@@ -477,6 +819,18 @@
       "type": "api"
     },
     {
+      "name": "get_pages_public",
+      "file": "get-pages-public-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "get_users_info",
+      "file": "get-users-info-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
       "name": "patch_page",
       "file": "patch-page-api-generated.md",
       "subCat": "Страници",
@@ -485,49 +839,49 @@
     {
       "name": "delete_pending_webhook_event",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "Чакащи webhook събития",
+      "subCat": "Очакващи Webhook събития",
       "type": "api"
     },
     {
       "name": "get_pending_webhook_event_count",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "Чакащи webhook събития",
+      "subCat": "Очакващи Webhook събития",
       "type": "api"
     },
     {
       "name": "get_pending_webhook_events",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "Чакащи webhook събития",
+      "subCat": "Очакващи Webhook събития",
       "type": "api"
     },
     {
       "name": "create_question_config",
       "file": "create-question-config-api-generated.md",
-      "subCat": "Конфигурации за въпроси",
+      "subCat": "Конфигурации на въпроси",
       "type": "api"
     },
     {
       "name": "delete_question_config",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "Конфигурации за въпроси",
+      "subCat": "Конфигурации на въпроси",
       "type": "api"
     },
     {
       "name": "get_question_config",
       "file": "get-question-config-api-generated.md",
-      "subCat": "Конфигурации за въпроси",
+      "subCat": "Конфигурации на въпроси",
       "type": "api"
     },
     {
       "name": "get_question_configs",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "Конфигурации за въпроси",
+      "subCat": "Конфигурации на въпроси",
       "type": "api"
     },
     {
       "name": "update_question_config",
       "file": "update-question-config-api-generated.md",
-      "subCat": "Конфигурации за въпроси",
+      "subCat": "Конфигурации на въпроси",
       "type": "api"
     },
     {
@@ -647,115 +1001,115 @@
     {
       "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
-      "subCat": "Дневна употреба на наемателя",
+      "subCat": "Дневна употреба на тенант",
       "type": "api"
     },
     {
       "name": "create_tenant_package",
       "file": "create-tenant-package-api-generated.md",
-      "subCat": "Пакети на наемателя",
+      "subCat": "Пакети на тенант",
       "type": "api"
     },
     {
       "name": "delete_tenant_package",
       "file": "delete-tenant-package-api-generated.md",
-      "subCat": "Пакети на наемателя",
+      "subCat": "Пакети на тенант",
       "type": "api"
     },
     {
       "name": "get_tenant_package",
       "file": "get-tenant-package-api-generated.md",
-      "subCat": "Пакети на наемателя",
+      "subCat": "Пакети на тенант",
       "type": "api"
     },
     {
       "name": "get_tenant_packages",
       "file": "get-tenant-packages-api-generated.md",
-      "subCat": "Пакети на наемателя",
+      "subCat": "Пакети на тенант",
       "type": "api"
     },
     {
       "name": "replace_tenant_package",
       "file": "replace-tenant-package-api-generated.md",
-      "subCat": "Пакети на наемателя",
+      "subCat": "Пакети на тенант",
       "type": "api"
     },
     {
       "name": "update_tenant_package",
       "file": "update-tenant-package-api-generated.md",
-      "subCat": "Пакети на наемателя",
+      "subCat": "Пакети на тенант",
       "type": "api"
     },
     {
       "name": "create_tenant_user",
       "file": "create-tenant-user-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "delete_tenant_user",
       "file": "delete-tenant-user-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "get_tenant_user",
       "file": "get-tenant-user-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "get_tenant_users",
       "file": "get-tenant-users-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "replace_tenant_user",
       "file": "replace-tenant-user-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "send_login_link",
       "file": "send-login-link-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "update_tenant_user",
       "file": "update-tenant-user-api-generated.md",
-      "subCat": "Потребители на наемателя",
+      "subCat": "Потребители на тенант",
       "type": "api"
     },
     {
       "name": "create_tenant",
       "file": "create-tenant-api-generated.md",
-      "subCat": "Наематели",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "delete_tenant",
       "file": "delete-tenant-api-generated.md",
-      "subCat": "Наематели",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "get_tenant",
       "file": "get-tenant-api-generated.md",
-      "subCat": "Наематели",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "get_tenants",
       "file": "get-tenants-api-generated.md",
-      "subCat": "Наематели",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "update_tenant",
       "file": "update-tenant-api-generated.md",
-      "subCat": "Наематели",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
@@ -783,6 +1137,12 @@
       "type": "api"
     },
     {
+      "name": "get_translations",
+      "file": "get-translations-api-generated.md",
+      "subCat": "Преводи",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
       "subCat": "Качване на изображение",
@@ -791,19 +1151,19 @@
     {
       "name": "get_user_badge_progress_by_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Напредък на значката на потребителя",
+      "subCat": "Напредък на значки на потребителя",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_by_user_id",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Напредък на значката на потребителя",
+      "subCat": "Напредък на значки на потребителя",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_list",
       "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Напредък на значката на потребителя",
+      "subCat": "Напредък на значки на потребителя",
       "type": "api"
     },
     {
@@ -899,25 +1259,25 @@
     {
       "name": "create_vote",
       "file": "create-vote-api-generated.md",
-      "subCat": "Гласувания",
+      "subCat": "Гласове",
       "type": "api"
     },
     {
       "name": "delete_vote",
       "file": "delete-vote-api-generated.md",
-      "subCat": "Гласувания",
+      "subCat": "Гласове",
       "type": "api"
     },
     {
       "name": "get_votes",
       "file": "get-votes-api-generated.md",
-      "subCat": "Гласувания",
+      "subCat": "Гласове",
       "type": "api"
     },
     {
       "name": "get_votes_for_user",
       "file": "get-votes-for-user-api-generated.md",
-      "subCat": "Гласувания",
+      "subCat": "Гласове",
       "type": "api"
     }
   ]

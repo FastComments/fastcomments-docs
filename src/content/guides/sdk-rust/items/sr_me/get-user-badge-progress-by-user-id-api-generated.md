@@ -1,29 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| user_id | String | Da |  |
+| tenant_id | String | Да |  |
+| user_id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_badge_progress_by_id_200_response.rs)
+Враћа: [`ApiGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badge_progress_response.rs)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'get_user_badge_progress_by_user_id Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_by_user_id Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<GetUserBadgeProgressById200Response, Error> {
-    let cfg: &configuration::Configuration = &configuration;
+async fn run() -> Result<(), Error> {
+    let user_id_opt: Option<&str> = Some("user-7823");
     let params: GetUserBadgeProgressByUserIdParams = GetUserBadgeProgressByUserIdParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: "journalist-9876".to_string(),
-        include_inactive: Some(false),
-        locale: Some("en-US".to_string()),
+        user_id: user_id_opt.unwrap().to_string(),
     };
-    let response: GetUserBadgeProgressById200Response =
-        get_user_badge_progress_by_user_id(cfg, params).await?;
-    Ok(response)
+    let response: ApiGetUserBadgeProgressResponse =
+        get_user_badge_progress_by_user_id(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

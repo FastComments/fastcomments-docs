@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| id | string | パス | はい |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
 
 ## レスポンス
 
-戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/flag_comment_public200_response.rb)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 例
 
@@ -17,9 +17,9 @@ require 'time'
 require 'fastcomments-client'
 # 認証の設定
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # APIキー認証の設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーに接頭辞を設定するには、以下の行のコメントを解除してください。例: 'Bearer'（デフォルトは nil）
+  # APIキーにプレフィックスを設定するには、次の行のコメントを外します。例: 'Bearer'（デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

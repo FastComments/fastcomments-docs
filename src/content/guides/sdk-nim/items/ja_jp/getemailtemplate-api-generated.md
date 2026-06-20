@@ -1,24 +1,22 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | いいえ |  |
 
 ## レスポンス
 
-返却値: [`Option[GetEmailTemplate_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template200response.nim)
+戻り値: [`Option[GetEmailTemplateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_response.nim)
 
 ## 例
 
-[inline-code-attrs-start title = 'getEmailTemplate の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplate 使用例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email-01")
 if response.isSome:
   let template = response.get()
-  echo "Template ID: ", template.id
-  echo "Subject: ", template.subject
-  echo "Body: ", template.body
+  discard template
 [inline-code-end]
 
 ---

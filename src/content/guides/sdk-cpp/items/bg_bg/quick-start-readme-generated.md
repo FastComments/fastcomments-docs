@@ -1,8 +1,8 @@
-### Използване на удостоверени API-та (DefaultAPI)
+### Използване на удостоверени API (DefaultAPI)
 
 **Важно:**
-1. Трябва да зададете базовия URL (cpp-restsdk генераторът не го чете от OpenAPI спецификацията)
-2. Трябва да зададете вашия API ключ на ApiClient преди да правите удостоверени заявки. Ако не го направите, заявките ще върнат грешка 401.
+1. Трябва да зададете базовия URL (генераторът cpp-restsdk не го чете от OpenAPI спецификацията)
+2. Трябва да зададете своя API ключ в ApiClient преди да правите удостоверени заявки. Ако не го направите, заявките ще се провалят с грешка 401.
 
 ```cpp
 #include <iostream>
@@ -15,20 +15,20 @@ int main() {
 
     // ЗАДЪЛЖИТЕЛНО: Задайте базовия URL (изберете вашия регион)
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));  // US
-    // OR: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
+    // ИЛИ: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
 
-    // ЗАДЪЛЖИТЕЛНО: Задайте вашия API ключ
+    // ЗАДЪЛЖИТЕЛНО: Задайте своя API ключ
     config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_API_KEY_HERE"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::DefaultApi api(apiClient);
 
-    // Сега извършете удостоверени повиквания към API-то
+    // Сега направете удостоверени API извиквания
     return 0;
 }
 ```
 
-### Използване на публични API-та (PublicAPI)
+### Използване на публични API (PublicAPI)
 
 Публичните крайни точки не изискват удостоверяване:
 
@@ -47,13 +47,49 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::PublicApi publicApi(apiClient);
 
-    // Извършете публични повиквания към API-то
+    // Правете публични API извиквания
     return 0;
 }
 ```
 
-### Общи проблеми
+### Използване на Moderation API (ModerationApi)
 
-1. **"URI must contain a hostname" error**: Уверете се, че извиквате `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` преди да създадете ApiClient. cpp-restsdk генераторът не чете автоматично URL-а на сървъра от OpenAPI спецификацията.
-2. **401 "missing-api-key" error**: Уверете се, че извиквате `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` преди да създадете инстанция на DefaultAPI.
-3. **Wrong API class**: Използвайте `DefaultAPI` за удостоверени заявки от страна на сървъра, `PublicAPI` за клиентски/публични заявки.
+`ModerationApi` захранва таблото за модерация. Всеки метод приема параметър `sso`, така че извикването се изпълнява от името на модератор, удостоверен чрез SSO (вижте раздела SSO по-долу за това как да създадете токен):
+
+```cpp
+#include <iostream>
+#include "FastCommentsClient/api/ModerationApi.h"
+#include "FastCommentsClient/ApiClient.h"
+#include "FastCommentsClient/ApiConfiguration.h"
+
+int main() {
+    auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
+
+    // ЗАДЪЛЖИТЕЛНО: Задайте базовия URL
+    config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
+
+    auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
+    org::openapitools::client::api::ModerationApi moderationApi(apiClient);
+
+    // Предайте SSO токена на модератора, за да удостоверите заявката
+    auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
+
+    auto response = moderationApi.getCount(
+        boost::none,  // textSearch
+        boost::none,  // byIPFromComment
+        boost::none,  // filter
+        boost::none,  // searchFilters
+        boost::none,  // demo
+        ssoToken      // sso
+    ).get();
+
+    return 0;
+}
+```
+
+### Чести проблеми
+
+1. **Грешка "URI must contain a hostname"**: Уверете се, че извиквате `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` преди да създадете ApiClient. Генераторът cpp-restsdk не чете автоматично URL на сървъра от OpenAPI спецификацията.
+2. **401 "missing-api-key" грешка**: Уверете се, че извиквате `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` преди да създадете DefaultAPI инстанция.
+3. **Неправилен клас на API**: Използвайте `DefaultApi` за удостоверени заявки от страна на сървъра, `PublicApi` за заявки от страна на клиента/публични заявки и `ModerationApi` за заявки към таблото за модерация (удостоверени с SSO токен на модератор).
+---

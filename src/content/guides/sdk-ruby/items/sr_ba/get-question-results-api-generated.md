@@ -1,30 +1,30 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| questionId | string | query | Не |  |
-| questionIds | string | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Ne |  |
+| userId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| questionId | string | query | Ne |  |
+| questionIds | string | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetQuestionResults200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results200_response.rb)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_question_results_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_question_results Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_question_results'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање овлашћења
+# Postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Конфигуришите овлашћење помоћу API кључа: api_key
+  # Konfigurišite autorizaciju pomoću API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Уклоните коментар са следеће линије да бисте поставили префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Uklonite komentar sa naredne linije da biste postavili prefiks za API ključ, npr. 'Bearer' (po defaultu nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -47,5 +47,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_results: #{e}"
 end
 [inline-code-end]
-
----

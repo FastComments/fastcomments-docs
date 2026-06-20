@@ -1,21 +1,21 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
-| anonUserId | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
+| userId | string | query | 否 |  |
+| anonUserId | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagComment200Response.swift)
+回傳: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'unFlagComment 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式範例仍屬測試版。若有任何問題，請經由 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式範例仍為測試版。如遇任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,3 +34,5 @@ DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId:
     }
 }
 [inline-code-end]
+
+---

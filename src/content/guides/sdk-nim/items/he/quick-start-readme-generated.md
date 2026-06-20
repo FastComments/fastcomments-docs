@@ -1,6 +1,6 @@
 ### שימוש ב-APIs מאומתים (DefaultAPI)
 
-**חשוב:** נקודות קצה מאומתות דורשות שהמפתח של ה-API יוגדר בכותרת `x-api-key`.
+**חשוב:** נקודות קצה המאומתות דורשות שמפתח ה-API שלך יוגדר בכותרת `x-api-key`.
 
 ```nim
 import httpclient
@@ -39,7 +39,7 @@ if response.isSome:
 
 ### שימוש ב-APIs ציבוריים (PublicAPI)
 
-נקודות קצה ציבוריות אינן דורשות אימות:
+נקודות קצה ציבוריות לא דורשות אימות:
 
 ```nim
 import httpclient
@@ -87,7 +87,37 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
+### שימוש ב-APIs למודרציה (ModerationAPI)
+
+נקודות קצה של מודרציה מאפשרות את לוח הבקרה של המודרטור ומאומתות באמצעות אסימון SSO עבור המודרטור הפעיל:
+
+```nim
+import httpclient
+import fastcomments
+import fastcomments/apis/api_moderation
+
+let client = newHttpClient()
+
+# הצג תגובות בלוח הבקרה של המודרטור
+let (response, httpResponse) = getApiComments(
+  httpClient = client,
+  page = 0,
+  count = 30,
+  textSearch = "",
+  byIPFromComment = "",
+  filters = "",
+  searchFilters = "",
+  sorts = "",
+  demo = false,
+  sso = "your-sso-token"
+)
+
+if response.isSome:
+  let resp = response.get()
+  echo "Found ", resp.comments.len, " comments"
+```
+
 ### בעיות נפוצות
 
-1. **שגיאת 401 באימות**: ודא שהגדרת את כותרת `x-api-key` על HttpClient שלך לפני ביצוע בקשות ל-DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **מחלקת API שגויה**: השתמש ב-`api_default` עבור בקשות מאומתות בצד השרת, וב-`api_public` עבור בקשות בצד הלקוח/ציבוריות.
+1. **שגיאת אימות 401**: וודא כי הגדרת את כותרת `x-api-key` על ה-HttpClient שלך לפני ביצוע בקשות ל-DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **מחלקת API שגויה**: השתמש ב-`api_default` עבור בקשות מאומתות בצד השרת, ב-`api_public` עבור בקשות בצד הלקוח/ציבוריות, וב-`api_moderation` עבור בקשות ללוח הבקרה של המודרטור.

@@ -1,16 +1,16 @@
-문서를 그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 집계합니다. 다양한 연산(예: sum, countDistinct, avg 등)을 지원합니다.
+문서를 그룹화(groupBy가 제공된 경우)하고 여러 연산을 적용하여 집계합니다. sum, countDistinct, avg 등 다양한 연산을 지원합니다.
 
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
-| parentTenantId | string | query | 아니요 |  |
-| includeStats | boolean | query | 아니요 |  |
+| parentTenantId | string | query | 아니오 |  |
+| includeStats | boolean | query | 아니오 |  |
 
 ## 응답
 
-반환: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregation_response.rb)
+반환: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
 
 ## 예제
 
@@ -22,7 +22,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API 키 인증 구성: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API 키의 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: 'Bearer' (기본값: nil)
+  # API 키에 접두사를 설정하려면 다음 줄의 주석 처리를 해제하세요. 예: 'Bearer' (기본값은 nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

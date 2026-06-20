@@ -7,32 +7,32 @@
 
 ## Svar
 
-Returnerer: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_config200_response.py)
+Returnerer: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_config_response.py)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'get_question_config Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.get_question_config200_response import GetQuestionConfig200Response
+from client.models.get_question_config_response import GetQuestionConfigResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host og standarden er https://fastcomments.com
+# Det er valgfrit at angive værten; standarden er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametrene
+# Klienten skal konfigurere autentificerings- og autorisationsparametre
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler på hver godkendelsesmetode er vist nedenfor; brug det eksempel, der
-# opfylder dit godkendelsesbehov.
+# Eksempler på hver autentificeringsmetode er vist nedenfor — brug det
+# eksempel, der passer til dit brugsscenarie.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentering nedenfor for at sætte et præfiks (f.eks. Bearer) til API-nøglen, hvis nødvendigt
+# Fjern kommentartegnet nedenfor for at sætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Gå ind i en kontekst med en instans af API-klienten
