@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "491cf28aede8b55a12e63557437668c9c7e6f033f6224e414c2bcba62cc8f60f",
+  "generatedAt": "2026-06-22T07:28:35.872Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst badgeId: string = 'userbadge-7f2c9a';\nconst response: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);\n// No optional parameters for getUserBadge; both tenantId and id are required.",
+  "model": "gpt-5-mini"
+}

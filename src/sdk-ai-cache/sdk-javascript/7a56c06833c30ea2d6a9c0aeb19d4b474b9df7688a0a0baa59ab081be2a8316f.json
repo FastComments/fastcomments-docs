@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "7a56c06833c30ea2d6a9c0aeb19d4b474b9df7688a0a0baa59ab081be2a8316f",
+  "generatedAt": "2026-06-22T07:28:39.320Z",
+  "codeExample": "const tenantId: string = \"tenant_4f2b8c9f\";\nconst postIds: Array<string> = [\"post-2026-06-22-news-342\", \"post-2026-05-10-review-17\"];\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSIsIm5hbWUiOiJKb2huIERvZSJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst response: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, sso);",
+  "model": "gpt-5-mini"
+}

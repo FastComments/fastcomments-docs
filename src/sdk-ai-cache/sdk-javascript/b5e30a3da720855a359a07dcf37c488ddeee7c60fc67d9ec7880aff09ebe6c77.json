@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "b5e30a3da720855a359a07dcf37c488ddeee7c60fc67d9ec7880aff09ebe6c77",
+  "generatedAt": "2026-06-22T07:28:41.914Z",
+  "codeExample": "const tenantId: string = \"tenant_8b3f4c2d\";\nconst createFeedPostParams: CreateFeedPostParams = {\n  feedPost: {\n    title: \"June 2026 Release Notes\",\n    body: \"We've shipped performance improvements and accessibility updates.\",\n    media: [\n      {\n        type: \"image\",\n        caption: \"Release hero\",\n        assets: [{ url: \"https://cdn.fastcomments.example/hero-june2026.jpg\", mimeType: \"image/jpeg\", width: 1200, height: 630 }]\n      }\n    ],\n    links: [{ url: \"https://example.com/release-notes\", title: \"Full release notes\" }],\n    visibility: \"public\"\n  }\n};\nconst broadcastId: string = \"broadcast_2026_06\";\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\nconst response: CreateFeedPostResponse1 = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini"
+}

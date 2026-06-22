@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "9d189359fd78a0f994dd9672e8c1305d3c54b9bcfd73e86cf902a8fdb549fd4f",
+  "generatedAt": "2026-06-22T07:28:36.283Z",
+  "codeExample": "const value: string = 'climate change';\nconst filters: string = 'status:approved;language:en;hasImages:true';\nconst searchFilters: string | undefined = undefined;\nconst tenantId: string = 'tenant_8f3a2b';\nconst sso: string | undefined = undefined;\nconst summary: GetSearchCommentsSummaryResponse = await getSearchCommentsSummary(value, filters, searchFilters, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

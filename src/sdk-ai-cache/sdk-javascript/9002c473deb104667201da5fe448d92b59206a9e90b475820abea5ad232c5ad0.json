@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "9002c473deb104667201da5fe448d92b59206a9e90b475820abea5ad232c5ad0",
+  "generatedAt": "2026-06-22T07:28:35.002Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst afterId: string = 'feed_post_987654';\nconst tags: string[] = ['news', 'sports'];\nconst response: GetFeedPostsPublicResponse = await getFeedPostsPublic(tenantId, afterId, 25, tags, 'sso_token_4f3b2a1c', false, true);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "7741c97121986711e8e411a88cb1706702f4f295c2558039ae2ca83617473a9a",
+  "generatedAt": "2026-06-22T07:28:36.228Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_78';\nconst id: string = 'comment_1024';\nconst updatableCommentParams: UpdatableCommentParams = {\n  content: 'I clarified the timeline and added sources for the claim.',\n  visible: true,\n  tags: ['clarification', 'sources']\n};\nconst contextUserId: string = 'user_314159';\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = true;\nconst result: UpdateCommentResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);",
+  "model": "gpt-5-mini"
+}

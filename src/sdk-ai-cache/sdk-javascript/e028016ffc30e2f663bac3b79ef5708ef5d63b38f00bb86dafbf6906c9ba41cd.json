@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "e028016ffc30e2f663bac3b79ef5708ef5d63b38f00bb86dafbf6906c9ba41cd",
+  "generatedAt": "2026-06-22T07:28:40.892Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3b1c9a2d4f';\nconst createEmailTemplateBody: CreateEmailTemplateBody = {\n  name: 'CommentReplyNotification',\n  subject: 'Someone replied to your comment on TechDaily',\n  html: '<p>{{commenterName}} replied to your comment:</p><blockquote>{{commentText}}</blockquote>',\n  fromName: 'TechDaily Notifications',\n  fromEmail: 'no-reply@techdaily.com',\n  replyTo: 'support@techdaily.com', // optional parameter demonstrated\n  enabled: true\n};\nconst result: CreateEmailTemplateResponse1 = await createEmailTemplate(tenantId, createEmailTemplateBody);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

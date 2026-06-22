@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "63e0be2f7f5eba2fb0bc713fa93afccd4d3f12896e8d68c63dedbab9c76b2389",
+  "generatedAt": "2026-06-22T07:28:39.387Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-42';\n  const skip: number = 50;\n  const usersFirstPage: GetTenantUsersResponse1 = await getTenantUsers(tenantId);\n  const usersSecondPage: GetTenantUsersResponse1 = await getTenantUsers(tenantId, skip);\n  console.log(usersFirstPage, usersSecondPage);\n})();",
+  "model": "gpt-5-mini"
+}

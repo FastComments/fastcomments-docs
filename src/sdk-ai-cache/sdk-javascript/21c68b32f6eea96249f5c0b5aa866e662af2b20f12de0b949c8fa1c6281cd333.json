@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "21c68b32f6eea96249f5c0b5aa866e662af2b20f12de0b949c8fa1c6281cd333",
+  "generatedAt": "2026-06-22T07:28:40.683Z",
+  "codeExample": "const tenantId: string = 'f9a2e6d3-1c3b-4d2f-8a9b-0123456789ab';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSIsImlhdCI6MTYzMDAwMDAwMH0.sZ3k7qX9tY0h2vK1f4Lr8ZpD5eQwXy1';\nconst counts: GetCountsResponse = await getCounts(tenantId, ssoToken);\nconst countsWithoutSSO: GetCountsResponse = await getCounts(tenantId);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "929990b1412a56e79146684c5c82ec14c3401ad98d663c1117992adc65cb3323",
+  "generatedAt": "2026-06-22T07:28:36.937Z",
+  "codeExample": "const tenantId: string = \"tenant_72f9d4b3\";\nconst urlId: string = \"https://www.techdaily.com/articles/2026/06/22/web-standards-update\";\nconst urlIdOverride: string | undefined = undefined; // optional override if available\nconst urlToFetch: string = urlIdOverride ?? urlId;\nconst response: GetV2PageReactsResponse = await getV2PageReacts(tenantId, urlToFetch);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

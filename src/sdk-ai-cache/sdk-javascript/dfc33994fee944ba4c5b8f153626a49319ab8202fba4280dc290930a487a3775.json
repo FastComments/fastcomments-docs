@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "dfc33994fee944ba4c5b8f153626a49319ab8202fba4280dc290930a487a3775",
+  "generatedAt": "2026-06-22T07:28:41.881Z",
+  "codeExample": "const commentId: string = '8f3b2a9e-4c1f-4a7b-9e5d-1a2b3c4d5e6f';\nconst broadcastId: string = 'bcast_20260622_001';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NjcifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst result: PostUnFlagCommentResponse = await postUnFlagComment(commentId, broadcastId, undefined, sso);",
+  "model": "gpt-5-mini"
+}

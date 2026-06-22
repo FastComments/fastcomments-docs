@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "d5c0ba2ed546564b7b53e68ddeb717604a718a3cb5a4dbe74a900e009de06d09",
+  "generatedAt": "2026-06-22T07:28:38.601Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_94';\nconst idBase: string = 'tpl_welcome_01';\nconst idSuffix: string | undefined = undefined; // optional suffix for environment\nconst id: string = idSuffix ? `${idBase}-${idSuffix}` : idBase;\nconst result: GetEmailTemplateResponse1 = await getEmailTemplate(tenantId, id);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

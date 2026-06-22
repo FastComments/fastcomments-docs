@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "473758903425d30c2d719a5e5753f2dac37cd990a1579173f9ec8a315d000e64",
+  "generatedAt": "2026-06-22T07:28:34.252Z",
+  "codeExample": "const commentId: string = \"cmt_92f3b1a5\";\nconst setCommentTextParams: SetCommentTextParams = {\n  text: \"Thanks for the feedback — we've scheduled an update next week and will follow up here.\",\n  isEdited: true,\n  editReason: \"Clarify timeline\",\n  notifySubscribers: false\n};\nconst broadcastId: string = \"brd_58d2\";\nconst tenantId: string = \"tenant_44\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature\";\nconst result: PostSetCommentTextResponse = await postSetCommentText(commentId, setCommentTextParams, broadcastId, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

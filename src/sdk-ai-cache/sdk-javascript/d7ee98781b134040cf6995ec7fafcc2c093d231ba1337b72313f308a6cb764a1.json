@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "d7ee98781b134040cf6995ec7fafcc2c093d231ba1337b72313f308a6cb764a1",
+  "generatedAt": "2026-06-22T07:28:33.966Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b2a';\nconst id: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\nconst userId: string = 'admin_user_42';\nconst updateNotificationBody: UpdateNotificationBody = {\n  enabled: true,\n  name: 'Comment reply notification',\n  channels: ['email', 'webhook'],\n  template: {\n    subject: 'Someone replied to your comment',\n    body: '<p>Your comment on the article received a reply.</p>'\n  },\n  webhookUrl: 'https://hooks.acme-corp.com/fastcomments'\n};\nconst result: UpdateNotificationResponse = await updateNotification(tenantId, id, updateNotificationBody, userId);",
+  "model": "gpt-5-mini"
+}

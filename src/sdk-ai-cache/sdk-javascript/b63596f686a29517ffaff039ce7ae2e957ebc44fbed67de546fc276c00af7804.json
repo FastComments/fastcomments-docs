@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "b63596f686a29517ffaff039ce7ae2e957ebc44fbed67de546fc276c00af7804",
+  "generatedAt": "2026-06-22T07:28:35.352Z",
+  "codeExample": "const tenantId: string = \"acme-tenant-42\";\nconst notificationCountWithoutSso: GetUserNotificationCountResponse1 = await getUserNotificationCount(tenantId);\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature\";\nconst notificationCountWithSso: GetUserNotificationCountResponse1 = await getUserNotificationCount(tenantId, ssoToken);",
+  "model": "gpt-5-mini"
+}

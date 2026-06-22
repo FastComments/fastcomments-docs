@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "7490c8b3d3cde66392a7c71752937419c16f8ef8a3524bf24b2b129201ea62d5",
+  "generatedAt": "2026-06-22T07:28:39.765Z",
+  "codeExample": "const tenantId: string = \"tenant_98765\";\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  key: \"support_satisfaction\",\n  label: \"How satisfied are you with the support you received?\",\n  required: true,\n  renderingType: \"radio\",\n  options: [\n    { value: \"1\", label: \"Very dissatisfied\" },\n    { value: \"2\", label: \"Dissatisfied\" },\n    { value: \"3\", label: \"Neutral\" },\n    { value: \"4\", label: \"Satisfied\" },\n    { value: \"5\", label: \"Very satisfied\" }\n  ],\n  description: \"Choose the option that best describes your experience\" // optional field demonstrated\n};\nconst response: CreateQuestionConfigResponse1 = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

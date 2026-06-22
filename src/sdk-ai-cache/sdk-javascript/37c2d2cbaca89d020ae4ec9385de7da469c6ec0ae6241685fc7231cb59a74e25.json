@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "37c2d2cbaca89d020ae4ec9385de7da469c6ec0ae6241685fc7231cb59a74e25",
+  "generatedAt": "2026-06-22T07:28:34.298Z",
+  "codeExample": "const textSearch: string = \"slow image loading on article pages\";\nconst tenantId: string = \"3fa85f64-5717-4562-b3fc-2c963f66afa6\";\nconst response: GetSearchSuggestResponse = await getSearchSuggest(textSearch, tenantId);",
+  "model": "gpt-5-mini"
+}

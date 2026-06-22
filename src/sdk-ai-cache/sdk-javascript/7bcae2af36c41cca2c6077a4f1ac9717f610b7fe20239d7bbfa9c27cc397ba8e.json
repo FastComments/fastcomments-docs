@@ -1,0 +1,7 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "7bcae2af36c41cca2c6077a4f1ac9717f610b7fe20239d7bbfa9c27cc397ba8e",
+  "generatedAt": "2026-06-22T07:28:36.442Z",
+  "codeExample": "const tenantId: string = \"tenant_42f8b1\";\nconst commentId: string = \"cmt_8a3e9b\";\nconst broadcastId: string = \"brd_2026_live\";\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature\";\nconst unpinnedWithSSO: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId, ssoToken);\nconst unpinnedWithoutSSO: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "4e8751bafffad943c9493e52f85bcdc4378ab176363a6e5318b4e7e28510e86e",
+  "generatedAt": "2026-06-22T07:28:38.439Z",
+  "codeExample": "const tag: string = \"release-2.3.1\";\nconst tenantId: string = \"tenant_9b2f47\";\nconst updateHashTagBody: UpdateHashTagBody = {\n  label: \"Release 2.3.1\",\n  description: \"Bugfixes for login flow and image uploads\",\n  color: \"#1F8A70\",\n  isActive: true\n};\nconst result: PatchHashTagResponse = await patchHashTag(tag, tenantId, updateHashTagBody);",
+  "model": "gpt-5-mini"
+}

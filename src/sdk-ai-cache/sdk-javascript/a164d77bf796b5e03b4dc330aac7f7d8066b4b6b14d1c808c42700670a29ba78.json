@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "a164d77bf796b5e03b4dc330aac7f7d8066b4b6b14d1c808c42700670a29ba78",
+  "generatedAt": "2026-06-22T07:28:41.880Z",
+  "codeExample": "const tenantId: string = \"tenant_84f3a2b1\";\nconst id: string = \"qcfg_00123\";\nconst updateQuestionConfigBody: UpdateQuestionConfigBody = {\n  title: \"Was this article helpful?\",\n  required: true,\n  renderingType: \"single_choice\",\n  customOptions: [\n    { label: \"Yes\", value: \"yes\" },\n    { label: \"No\", value: \"no\" }\n  ],\n  helpText: \"Select one option\" // optional parameter demonstrated\n};\nconst result: UpdateQuestionConfigResponse = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

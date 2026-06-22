@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "46c448e2c7baa3f83d34b3f8cd0cf2e0f0a69add2feff172110c3ead762c5acb",
+  "generatedAt": "2026-06-22T07:28:35.445Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst id: string = 'user_8421';\nconst optionalConfig: CustomConfigParameters | undefined = undefined;\nconst result: GetCachedNotificationCountResponse1 = await getCachedNotificationCount(tenantId, id);",
+  "model": "gpt-5-mini"
+}

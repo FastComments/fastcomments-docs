@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "d228f89ca05bc11d6753b5fff06758f35f926b87f4ad1a25828e9a3977439ab0",
+  "generatedAt": "2026-06-22T07:28:36.582Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-001';\nconst id: string = 'qcfg-84a3';\nconst deletedConfig: DeleteQuestionConfigResponse = await deleteQuestionConfig(tenantId, id);",
+  "model": "gpt-5-mini"
+}

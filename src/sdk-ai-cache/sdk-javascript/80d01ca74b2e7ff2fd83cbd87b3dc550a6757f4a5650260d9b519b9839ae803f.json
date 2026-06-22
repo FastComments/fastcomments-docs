@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "80d01ca74b2e7ff2fd83cbd87b3dc550a6757f4a5650260d9b519b9839ae803f",
+  "generatedAt": "2026-06-22T07:28:39.394Z",
+  "codeExample": "const tenantId: string = 'tenant_ab12cd34';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImV4cCI6MTc1MDAwMDAwMH0.DX1y7KQh3Z8u9v5pN2qR4sT';\nconst preferenceWithBoth: GetUserBanPreferenceResponse = await getUserBanPreference(tenantId, ssoToken);\nconst preferenceWithTenantOnly: GetUserBanPreferenceResponse = await getUserBanPreference(tenantId);",
+  "model": "gpt-5-mini"
+}

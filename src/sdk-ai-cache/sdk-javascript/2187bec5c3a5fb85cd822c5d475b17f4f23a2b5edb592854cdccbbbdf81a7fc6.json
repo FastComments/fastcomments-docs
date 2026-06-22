@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "2187bec5c3a5fb85cd822c5d475b17f4f23a2b5edb592854cdccbbbdf81a7fc6",
+  "generatedAt": "2026-06-22T07:28:38.371Z",
+  "codeExample": "const tenantId: string = \"newsroom-247\";\nconst id: string = \"cmt_8f14e45fceea167a5a36\";\nconst response: GetCommentResponse = await getComment(tenantId, id);\nconst authorName: string | undefined = response.comment?.user?.displayName;\nconst userBadges: CommentUserBadgeInfo[] | undefined = response.comment?.user?.badges;",
+  "model": "gpt-5-mini"
+}

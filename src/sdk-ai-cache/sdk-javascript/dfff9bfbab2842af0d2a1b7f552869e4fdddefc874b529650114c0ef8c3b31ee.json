@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "dfff9bfbab2842af0d2a1b7f552869e4fdddefc874b529650114c0ef8c3b31ee",
+  "generatedAt": "2026-06-22T07:28:44.649Z",
+  "codeExample": "const params: CommentsByIdsParams = { commentIds: ['cmt_1001', 'cmt_1002'] };\nconst tenantId: string = 'tenant_42';\nconst sso: string = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI1Njc4OSJ9.Z3Vlc3RUb2tlblNhbXBsZQ';\nconst result: PostCommentsByIdsResponse = await postCommentsByIds(params, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

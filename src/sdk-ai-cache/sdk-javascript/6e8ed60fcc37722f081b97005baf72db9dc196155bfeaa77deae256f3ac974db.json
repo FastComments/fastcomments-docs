@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "6e8ed60fcc37722f081b97005baf72db9dc196155bfeaa77deae256f3ac974db",
+  "generatedAt": "2026-06-22T07:28:42.266Z",
+  "codeExample": "const result: GetTrustFactorResponse = await getTrustFactor('b3e9f1a4-9c2d-4f1e-8a2b-123456789abc', 'acme-corp-tenant-001');",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "21d3360d41226e111ac0ed67c089303054331d62588d1effc24aa1ec1ad7329c",
+  "generatedAt": "2026-06-22T07:28:38.791Z",
+  "codeExample": "const tenantId: string = \"tenant_9f3b2e6a\";\nconst id: string = \"org_3a6b9c2d\";\nconst updateTenantBody: UpdateTenantBody = {\n  name: \"Northside Media\",\n  enabled: true,\n  apiDomainConfiguration: {\n    allowedOrigins: [\"https://northsidemedia.com\", \"https://blog.northsidemedia.com\"],\n    enforceHttps: true\n  } as APIDomainConfiguration,\n  billingInfo: {\n    billingEmail: \"billing@northsidemedia.com\",\n    planId: \"business\"\n  } as BillingInfo,\n  importedSites: [\n    { siteId: \"site_77\", origin: \"https://blog.northsidemedia.com\" }\n  ] as ImportedSiteType[]\n};\nconst result: UpdateTenantResponse = await updateTenant(tenantId, id, updateTenantBody);",
+  "model": "gpt-5-mini"
+}

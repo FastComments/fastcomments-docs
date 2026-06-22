@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "c952a4536fce3a022b5bbc53d403975c09434c2cba83f290dda8186d019ec24e",
+  "generatedAt": "2026-06-22T07:28:35.554Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant-001\";\nconst emailTemplates: GetEmailTemplateDefinitionsResponse1 = await getEmailTemplateDefinitions(tenantId);\nconsole.log(emailTemplates);",
+  "model": "gpt-5-mini"
+}

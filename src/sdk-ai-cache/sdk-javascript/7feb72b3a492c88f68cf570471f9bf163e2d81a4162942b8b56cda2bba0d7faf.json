@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "7feb72b3a492c88f68cf570471f9bf163e2d81a4162942b8b56cda2bba0d7faf",
+  "generatedAt": "2026-06-22T07:28:37.953Z",
+  "codeExample": "const tenantId: string = 'tenant_7a2b3c9f';\nconst feedResponse: GetFeedPostsResponse1 = await getFeedPosts(tenantId);\n\nconst tenantIdWithOpts: string = 'tenant_7a2b3c9f';\nconst afterId: string = 'post_000123456';\nconst limit: number = 25;\nconst tags: Array<string> = ['news', 'product-updates'];\nconst feedResponseWithOpts: GetFeedPostsResponse1 = await getFeedPosts(tenantIdWithOpts, afterId, limit, tags);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "e75836cb02f52289f2afeda3595e497e7510bd3522b2bf98eb3137a5b2e0c619",
+  "generatedAt": "2026-06-22T07:28:36.748Z",
+  "codeExample": "const tenantId: string = \"acme-blog\";\nconst page: number = 2;\nconst limit: number = 25;\nconst asTree: boolean = true;\nconst maxTreeDepth: number = 3;\nconst urlId: string = \"posts/2025/typesafe-apis\";\nconst fromDate: number = Date.UTC(2025, 0, 1);\nconst toDate: number = Date.UTC(2025, 5, 30);\n\nconst response: GetCommentsResponse = await getComments(\n  tenantId,\n  page,\n  limit,\n  undefined,\n  asTree,\n  undefined,\n  undefined,\n  maxTreeDepth,\n  urlId,\n  undefined,\n  undefined,\n  undefined,\n  \"typescript\",\n  undefined,\n  undefined,\n  fromDate,\n  toDate\n);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "b39e21c2e4c6a66e9899bbb224796b8306b24e02a67a803ff8ff76f269b296f3",
+  "generatedAt": "2026-06-22T07:28:43.234Z",
+  "codeExample": "const tenantId: string = 'tenant_9d2f4c7b-4e3a-47f1-b2c9';\nconst postIds: string[] = ['post_82b9a1f4', 'post_1a2b3c4d'];\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NTY3ODkwIiwibmFtZSI6IlVzZXIgTmFtZSIsImlhdCI6MTYwOTAwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst statsWithSSO: GetFeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds, sso);\nconst statsWithoutSSO: GetFeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds);",
+  "model": "gpt-5-mini"
+}

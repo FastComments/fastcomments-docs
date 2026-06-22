@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "950251c6fa5f163be42b80728d38e79030b417f306e28d86cdda68e15b44cc0d",
+  "generatedAt": "2026-06-22T07:28:38.969Z",
+  "codeExample": "const tenantId: string = 'tenant-4a2f-us-west';\nconst idOptional: string | undefined = 'mod-9876';\nconst moderatorId: string = idOptional ?? 'mod-0001';\nconst moderatorResponse: GetModeratorResponse1 = await getModerator(tenantId, moderatorId);\nconsole.log(moderatorResponse);",
+  "model": "gpt-5-mini"
+}

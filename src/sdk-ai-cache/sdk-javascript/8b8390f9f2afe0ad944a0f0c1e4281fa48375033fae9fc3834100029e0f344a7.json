@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "8b8390f9f2afe0ad944a0f0c1e4281fa48375033fae9fc3834100029e0f344a7",
+  "generatedAt": "2026-06-22T07:28:35.932Z",
+  "codeExample": "const tenantId: string = \"tenant_4f12b8\";\nconst id: string = \"badge_7a9c21\";\nconst updateUserBadgeParams: UpdateUserBadgeParams = {\n  name: \"Verified Contributor\",\n  iconUrl: \"https://cdn.fastcomments.com/badges/verified.svg\",\n  visible: true,\n  priority: 10,\n  description: \"Awarded for consistent high-quality comments\",\n  expiresAt: \"2027-12-31T23:59:59Z\",\n  metadata: { awardedBy: \"moderator_82\" } // optional parameters demonstrated\n};\nconst result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, id, updateUserBadgeParams);",
+  "model": "gpt-5-mini"
+}

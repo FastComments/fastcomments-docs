@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "560a0753518de9d257525477d7cd66a7b48a7f973f02047139c28af77b035a35",
+  "generatedAt": "2026-06-22T07:28:35.022Z",
+  "codeExample": "const query: string = 'site:news.example.com climate policy';\nconst tenantId: string = 'tenant_42';\nconst result: GetSearchPagesResponse = await getSearchPages(query, tenantId);",
+  "model": "gpt-5-mini"
+}

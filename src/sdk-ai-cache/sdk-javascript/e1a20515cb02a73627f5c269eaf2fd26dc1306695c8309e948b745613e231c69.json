@@ -1,0 +1,7 @@
+{
+  "method": "setTrustFactor",
+  "signatureHash": "e1a20515cb02a73627f5c269eaf2fd26dc1306695c8309e948b745613e231c69",
+  "generatedAt": "2026-06-22T07:29:18.407Z",
+  "codeExample": "const userId: string = \"user_63f92b\";\nconst trustFactor: string = \"medium\";\nconst tenantId: string = \"tenant_2244\";\n\nconst result: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor, tenantId);",
+  "model": "gpt-5-mini"
+}

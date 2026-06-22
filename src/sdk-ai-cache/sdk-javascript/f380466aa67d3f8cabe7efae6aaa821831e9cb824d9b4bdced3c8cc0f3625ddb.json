@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "f380466aa67d3f8cabe7efae6aaa821831e9cb824d9b4bdced3c8cc0f3625ddb",
+  "generatedAt": "2026-06-22T07:28:40.798Z",
+  "codeExample": "const tenantId: string = 'tenant_8421';\nconst urlId: string = 'news-article-20260622';\nconst url: string = 'https://www.bbc.com/news/technology-2026-06-22-ai-newsrooms';\nconst pageTitle: string = 'AI Reshapes Newsrooms';\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjEifQ.signature';\n\nconst result: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "5dc0caaf8c13b6f03db3fc8afba6fdc483ff00362273ddaf2f3b13870113b75c",
+  "generatedAt": "2026-06-22T07:28:35.817Z",
+  "codeExample": "const searchValue: string = 'newsportal.mycompany.com';\nconst tenantId: string = 'tenant_9a8b7c';\nconst result: GetSearchSitesResponse = await getSearchSites(searchValue, tenantId);",
+  "model": "gpt-5-mini"
+}

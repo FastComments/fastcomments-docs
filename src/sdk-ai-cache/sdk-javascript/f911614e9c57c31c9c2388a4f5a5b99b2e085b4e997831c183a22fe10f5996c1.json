@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "f911614e9c57c31c9c2388a4f5a5b99b2e085b4e997831c183a22fe10f5996c1",
+  "generatedAt": "2026-06-22T07:28:38.105Z",
+  "codeExample": "const tenantId: string = 'acme-corp-123';\nconst userId: string = 'user_987654321';\nconst userIdOverride: string | undefined = undefined; // optional override if available\nconst result: GetUserBadgeProgressByUserIdResponse = await getUserBadgeProgressByUserId(tenantId, userIdOverride ?? userId);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

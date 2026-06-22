@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "fe236290cc19066e4fad0b24979344d78fd99926f2e3169a2b72e85ad18012b0",
+  "generatedAt": "2026-06-22T07:28:36.463Z",
+  "codeExample": "const tenantId: string = 'tenant_8fd3b24c';\nconst postId: string = 'post_5f7a9c1e';\nconst reactBodyParams: ReactBodyParams = {\n  reaction: 'like',\n  userId: 'user_42',\n  source: 'web',\n  clientTimestamp: new Date().toISOString()\n};\nconst isUndo: boolean = false;\nconst broadcastId: string = 'bcast_d9a7c';\nconst sso: string = 'sso_tok_3xYz9';\nconst result: ReactFeedPostPublicResponse = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

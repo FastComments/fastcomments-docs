@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "08ca5af5a4f71b986b8b35bffb7c943a9abd68537fef6ca9cd1f11762f374d75",
+  "generatedAt": "2026-06-22T07:28:35.677Z",
+  "codeExample": "const tenantId: string = 'tenant_4f9c2b1a';\nconst urlId: string = 'page_9876abc';\nconst title: string | undefined = 'City Council Approves FY2026 Budget';\nconst response: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId, title);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "2f87dc8633d5f475e0e8e66066eb4fca5510929b375e7f562d0157604cb8ce40",
+  "generatedAt": "2026-06-22T07:28:38.919Z",
+  "codeExample": "const tenantId: string = \"tenant_9f3b2a1c\";\nconst id: string = \"tmpl_4a7c9e2b\";\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  name: \"Comment Reply Notification\",\n  subject: \"Someone replied to your comment on OurSite\",\n  htmlTemplate: \"<p><strong>{{commenter}}</strong> replied:</p><blockquote>{{comment}}</blockquote>\",\n  textTemplate: \"{{commenter}} replied: {{comment}}\",\n  isEnabled: true, // optional setting enabled\n  locale: \"en-US\" // optional locale\n};\nconst result: UpdateEmailTemplateResponse = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}

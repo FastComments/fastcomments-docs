@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "307af57c63e54a8cf0e2dfaeed448418475326012930db5146487425129a7ad2",
+  "generatedAt": "2026-06-22T07:28:36.401Z",
+  "codeExample": "const tenantId: string = 'tenant_72f4c9';\nconst createUserBadgeParams: CreateUserBadgeParams = {\n  slug: 'community-helper',\n  name: 'Community Helper',\n  description: 'Awarded for consistently helpful answers and constructive feedback',\n  imageUrl: 'https://assets.fastcomments.com/badges/community-helper.png',\n  isActive: true,\n  criteria: { helpfulResponses: 50 }, // optional criteria object demonstrated\n  customConfig: { color: '#FFD700', priority: 1 } // optional custom config\n};\nconst result: CreateUserBadgeResponse = await createUserBadge(tenantId, createUserBadgeParams);",
+  "model": "gpt-5-mini"
+}

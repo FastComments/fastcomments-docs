@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "c097d31d2ff6723eae413e145dd04b34854cf2ae4435bf2a825d4a517d5b2525",
+  "generatedAt": "2026-06-22T07:28:43.105Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst sitePath: string = 'news.example.com/articles/2026/06/22/product-launch';\nconst queryPage: number | undefined = 2;\nconst urlId: string = queryPage ? `${sitePath}?page=${queryPage}` : sitePath;\nconst votes: GetVotesResponse1 = await getVotes(tenantId, urlId);",
+  "model": "gpt-5-mini"
+}

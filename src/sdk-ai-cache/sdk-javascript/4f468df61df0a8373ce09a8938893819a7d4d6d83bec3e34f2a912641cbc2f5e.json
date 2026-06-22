@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "4f468df61df0a8373ce09a8938893819a7d4d6d83bec3e34f2a912641cbc2f5e",
+  "generatedAt": "2026-06-22T07:28:37.979Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-42';\n  const limit: number = 100;\n  const skip: number = 0;\n  const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // one week ago\n  const before: number = Date.now();\n  const response: GetAuditLogsResponse1 = await getAuditLogs(tenantId, limit, skip, undefined, after, before);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "9def7c0adf9e9f5c1487c78ae79676e2615029c0894f8179b80dd87e0233a8ff",
+  "generatedAt": "2026-06-22T07:28:39.833Z",
+  "codeExample": "(async () => {\n  const urlId: string = 'https://news.example.com/articles/2026/06/fastcomments-thread-9876';\n  const tenantId: string = 'tenant_abc123';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\n  const result: PutReopenThreadResponse = await putReopenThread(urlId, tenantId, sso);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

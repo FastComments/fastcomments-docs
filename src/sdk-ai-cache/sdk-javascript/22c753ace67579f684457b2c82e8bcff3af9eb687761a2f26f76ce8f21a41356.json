@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "22c753ace67579f684457b2c82e8bcff3af9eb687761a2f26f76ce8f21a41356",
+  "generatedAt": "2026-06-22T07:28:35.487Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst ticketsWithFilters: GetTicketsResponse1 = await getTickets(tenantId, 'user_1023', 1, 0, 25);\nconst ticketsAll: GetTicketsResponse1 = await getTickets(tenantId);",
+  "model": "gpt-5-mini"
+}

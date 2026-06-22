@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "fd2520cb53d9c5a7777321800f288da13b1e388e6599563d024b768487934426",
+  "generatedAt": "2026-06-22T07:28:34.617Z",
+  "codeExample": "const tenantId: string = \"tenant_9f2b3c\";\nconst userId: string = \"user_4a7d1e\";\nconst urlId: string = \"https://news-site.com/articles/2026/06/ai-updates\";\nconst fromCommentId: string = \"cmt_1138\";\nconst viewed: boolean = false;\nconst type: string = \"reply\";\nconst skip: number = 0;\nconst notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);",
+  "model": "gpt-5-mini"
+}

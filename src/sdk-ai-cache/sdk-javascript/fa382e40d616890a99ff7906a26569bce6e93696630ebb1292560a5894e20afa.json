@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "fa382e40d616890a99ff7906a26569bce6e93696630ebb1292560a5894e20afa",
+  "generatedAt": "2026-06-22T07:28:37.514Z",
+  "codeExample": "const textSearch: string = 'john.doe@example.com';\nconst filters: string = 'status:active AND flagged:false';\nconst afterId: string = '5f3d2b1a';\nconst demo: boolean = false;\nconst tenantId: string = 'site_98765';\nconst apiIds: GetApiIdsResponse = await getApiIds(textSearch, undefined, filters, undefined, afterId, demo, tenantId);",
+  "model": "gpt-5-mini"
+}

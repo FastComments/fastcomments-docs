@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "5c6524283b30be1df2b3c43f4ba8d713d6dc453d4a01aab4076803100fc9caec",
+  "generatedAt": "2026-06-22T07:28:40.835Z",
+  "codeExample": "const tenantId: string = 'tenant_8b3f2c';\nconst commentId: string = 'cmt_9f4d2b7a';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: 'Violation of community guidelines',\n  durationHours: 72,\n  notifyCommenter: true\n};\nconst sso: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: BlockFromCommentPublicResponse = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini"
+}

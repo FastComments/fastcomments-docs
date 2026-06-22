@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "6dfc97392b7cef3e583907e59ecbff0e44334563dde9a180b1fa9bd27508a896",
+  "generatedAt": "2026-06-22T07:28:33.265Z",
+  "codeExample": "const tenantId: string = 'tenant-4f2b9c';\nconst userId: string = 'user-82a7d1';\nconst id: string = 'ticket-009874';\nconst changeTicketStateBody: ChangeTicketStateBody = {\n  state: 'closed',\n  notifySubscribers: true, // optional parameter\n  resolutionNote: 'Resolved after duplicate merge' // optional parameter\n};\nconst result: ChangeTicketStateResponse1 = await changeTicketState(tenantId, userId, id, changeTicketStateBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "db48e62c18f9bcb63c66f5fb4f1631ec78890ced198ed9c9f78faf55b95b337d",
+  "generatedAt": "2026-06-22T07:28:41.577Z",
+  "codeExample": "const commentId: string = 'cmt_9f2b3a4d';\nconst tenantId: string = 'tenant_acme';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZHVtbXkiLCJpYXQiOjE2MDAwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst banStatusFull: GetCommentBanStatusResponse1 = await getCommentBanStatus(commentId, tenantId, sso);\nconst banStatusMinimal: GetCommentBanStatusResponse1 = await getCommentBanStatus(commentId);",
+  "model": "gpt-5-mini"
+}

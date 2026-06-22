@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "c32688d04f4bf0fb679b0b20c4e150813aff7960423aa9b9c6ec8b439c5ac301",
+  "generatedAt": "2026-06-22T07:28:39.688Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_7421';\n  const commentId: string = 'c2415b9f-3d7a-4c9e-b1f7-2e8c6a12d34a';\n  const broadcastId: string = 'site_main_broadcast';\n  const editKey: string = 'edk-4f3b2a9c';\n  const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n  const result: DeleteCommentPublicResponse = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

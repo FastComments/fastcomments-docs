@@ -1,0 +1,7 @@
+{
+  "method": "putRemoveBadge",
+  "signatureHash": "f9ff1a60447e03f094107a9389d769212c459b1c45a1e11f84736b4b749cd4e0",
+  "generatedAt": "2026-06-22T07:28:38.295Z",
+  "codeExample": "const badgeId: string = 'badge-moderator-01';\nconst userId: string = 'user_842';\nconst tenantId: string = 'tenant_acme';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzg0MiIsImlhdCI6MTYyODAwMDAwMH0.signature';\nconst result: PutRemoveBadgeResponse = await putRemoveBadge(badgeId, userId, undefined, undefined, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

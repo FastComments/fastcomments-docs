@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "d69f7c0235171c5eeb67d89f2aa8af61f1b9462f64417d6c4357a94cb0c96808",
+  "generatedAt": "2026-06-22T07:28:40.705Z",
+  "codeExample": "(async () => {\n  const commentId: string = 'cmt_92f3b1a7';\n  const tenantId: string = 'tenant_1042';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY5Nzc2MDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n  const childrenResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);\n  console.log(childrenResponse);\n})();",
+  "model": "gpt-5-mini"
+}

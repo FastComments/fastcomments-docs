@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "622b19902b4a4b6070f80dae93a6d53bb6a64b7c7e0666ef315fd396cc2f31b7",
+  "generatedAt": "2026-06-22T07:28:37.633Z",
+  "codeExample": "const tenantId: string = \"tenant_8b2f2c4a\";\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: \"Product update: threaded replies\",\n  body: \"Threaded replies are now available across all comment widgets. Moderation tools have been enhanced.\",\n  authorName: \"FastComments Team\",\n  mediaItems: [\n    {\n      type: \"image\",\n      assets: [\n        { url: \"https://cdn.fastcomments.com/assets/threaded-replies.png\", width: 1200, height: 630 }\n      ]\n    }\n  ],\n  links: [{ url: \"https://fastcomments.com/docs/threaded-replies\", title: \"Documentation\" }],\n  isPublished: true\n};\nconst result: CreateFeedPostPublicResponse = await createFeedPostPublic(tenantId, createFeedPostParams, \"broadcast_2026_06_22\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\");",
+  "model": "gpt-5-mini"
+}

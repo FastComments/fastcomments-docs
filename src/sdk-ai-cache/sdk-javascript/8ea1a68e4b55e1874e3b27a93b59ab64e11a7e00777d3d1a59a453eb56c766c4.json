@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "8ea1a68e4b55e1874e3b27a93b59ab64e11a7e00777d3d1a59a453eb56c766c4",
+  "generatedAt": "2026-06-22T07:28:34.606Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3b2a\";\nconst id: string = \"mod_8c1d4e\";\nconst updateModeratorBody: UpdateModeratorBody = {\n  email: \"jane.miller@newsroom.com\",\n  displayName: \"Jane Miller\",\n  role: \"senior_moderator\",\n  active: true,\n  notify: true // optional parameter demonstrated\n};\nconst result: UpdateModeratorResponse = await updateModerator(tenantId, id, updateModeratorBody);",
+  "model": "gpt-5-mini"
+}

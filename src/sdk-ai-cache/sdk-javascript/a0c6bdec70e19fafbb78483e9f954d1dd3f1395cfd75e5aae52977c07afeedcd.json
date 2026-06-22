@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "a0c6bdec70e19fafbb78483e9f954d1dd3f1395cfd75e5aae52977c07afeedcd",
+  "generatedAt": "2026-06-22T07:28:39.381Z",
+  "codeExample": "const tenantId: string = 'tn_84b2c1';\nconst commentId: string = 'cmt_9a7b6c';\nconst voteId: string = 'v_112358';\nconst urlId: string = 'products/widget-42';\nconst broadcastId: string = 'bcast-2026-06-22-01';\nconst editKey: string = 'edk_73hG9k';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload.signature';\nconst result: DeleteCommentVoteResponse = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);",
+  "model": "gpt-5-mini"
+}

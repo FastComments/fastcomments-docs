@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "23e3081a2544eb329d105fcb3e2447ba357ea22df63f5d32e36b08ae9f6652bc",
+  "generatedAt": "2026-06-22T07:28:35.178Z",
+  "codeExample": "const commentId: string = \"cmt_8d4b2f1a\";\nconst approved: boolean = true;\nconst broadcastId: string = \"broadcast_20250622\";\nconst tenantId: string = \"tenant_acme_corp\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst result: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(commentId, approved, broadcastId, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

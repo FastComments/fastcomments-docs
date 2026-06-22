@@ -1,0 +1,7 @@
+{
+  "method": "postRemoveComment",
+  "signatureHash": "7eb4dc42482e894f0f2e46e3c59671b19898bbe611a5ad6505e46c8c5b171710",
+  "generatedAt": "2026-06-22T07:28:37.490Z",
+  "codeExample": "const commentId: string = 'cmt_9b3f2d1e';\nconst broadcastId: string = 'broadcast_2026-06-22_01';\nconst tenantId: string = 'tenant_acme_corp';\nconst result: PostRemoveCommentResponse = await postRemoveComment(commentId, broadcastId, tenantId);",
+  "model": "gpt-5-mini"
+}

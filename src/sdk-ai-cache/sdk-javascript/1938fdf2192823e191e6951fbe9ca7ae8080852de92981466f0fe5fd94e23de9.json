@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "1938fdf2192823e191e6951fbe9ca7ae8080852de92981466f0fe5fd94e23de9",
+  "generatedAt": "2026-06-22T07:28:35.539Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst commentId: string = 'cmt_9f8e7d6c5b';\nconst dir: number = 1;\nconst resultWithoutSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(tenantId, commentId, dir);\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';\nconst resultWithSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(tenantId, commentId, -1, ssoToken);",
+  "model": "gpt-5-mini"
+}

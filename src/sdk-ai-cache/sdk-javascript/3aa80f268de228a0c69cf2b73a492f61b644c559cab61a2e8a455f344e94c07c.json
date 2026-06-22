@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "3aa80f268de228a0c69cf2b73a492f61b644c559cab61a2e8a455f344e94c07c",
+  "generatedAt": "2026-06-22T07:28:36.165Z",
+  "codeExample": "(async function main(): Promise<void> {\n  const tenantId: string = 'acme-tenant-01';\n  const id: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\n  const skip: number = 10;\n  const result: GetEmailTemplateRenderErrorsResponse1 = await getEmailTemplateRenderErrors(tenantId, id, skip);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

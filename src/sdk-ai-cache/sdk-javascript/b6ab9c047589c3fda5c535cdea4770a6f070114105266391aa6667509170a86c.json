@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "b6ab9c047589c3fda5c535cdea4770a6f070114105266391aa6667509170a86c",
+  "generatedAt": "2026-06-22T07:28:37.406Z",
+  "codeExample": "const tenantId: string = \"tenant_42acfc2b\";\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: \"welcome-new-user\",\n  subject: \"Welcome to DailyNews\",\n  variables: { userName: \"Marisol Rivera\", siteTitle: \"DailyNews\" }\n};\nconst locale: string = \"en-US\";\nconst result: RenderEmailTemplateResponse1 = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
+  "model": "gpt-5-mini"
+}

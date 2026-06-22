@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "2fdcc3f13e16d63be306c14dd3b9992a101c9249ba60e8eb46c348a0c77fed75",
+  "generatedAt": "2026-06-22T07:28:46.633Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-987';\nconst largeInternalURLSanitized: string = 'https://cdn.fastcomments.com/gifs/98765_large.gif';\nconst cacheKey: string | undefined = undefined; // optional parameter example (may be used by caller)\nconst response: GetGifLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);",
+  "model": "gpt-5-mini"
+}

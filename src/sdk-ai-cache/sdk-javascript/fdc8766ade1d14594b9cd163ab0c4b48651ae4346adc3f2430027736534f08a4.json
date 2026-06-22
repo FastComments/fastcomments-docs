@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "fdc8766ade1d14594b9cd163ab0c4b48651ae4346adc3f2430027736534f08a4",
+  "generatedAt": "2026-06-22T07:28:37.760Z",
+  "codeExample": "const tenantId: string = '3f8a9b2c-1b4d-4c3a-9aef-1234567890ab';\nconst userId: string = '5d7e2c4b-8a9f-4b6c-9876-abcdef123456';\nconst redirectURL: string = 'https://app.myservice.com/dashboard';\n\nconst responseWithRedirect: SendLoginLinkResponse = await sendLoginLink(tenantId, userId, redirectURL);\nconst responseNoRedirect: SendLoginLinkResponse = await sendLoginLink(tenantId, userId);",
+  "model": "gpt-5-mini"
+}

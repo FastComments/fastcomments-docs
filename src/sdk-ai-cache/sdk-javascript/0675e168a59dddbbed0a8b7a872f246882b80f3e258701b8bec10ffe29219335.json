@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "0675e168a59dddbbed0a8b7a872f246882b80f3e258701b8bec10ffe29219335",
+  "generatedAt": "2026-06-22T07:28:36.983Z",
+  "codeExample": "const commentId: string = 'cmt_60b8a9f3e1d4a2f7';\nconst broadcastId: string = 'brd_live_2048';\nconst tenantId: string = 'tenant_314159';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTYwOTAwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n\nconst result: PostRestoreDeletedCommentResponse = await postRestoreDeletedComment(commentId, broadcastId, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "c441b54d3dbaadb243070c382485ff30d3ea6289c411ce22fdac72a30572475c",
+  "generatedAt": "2026-06-22T07:28:42.135Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b2a9c';\nconst templateId: string = 'tmpl_4c2d1f0b';\nconst renderErrorId: string = 'err_2026-06-22-143210';\nconst options: { notifyAdmin?: boolean; reason?: string } = { notifyAdmin: true }; // optional parameters\nconst response: DeleteEmailTemplateRenderErrorResponse = await deleteEmailTemplateRenderError(tenantId, templateId, renderErrorId, options);\nconsole.log(response);",
+  "model": "gpt-5-mini"
+}

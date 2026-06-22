@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "92a915145194b1af52e4291fff3346363d843856a7992f747a8fb657f53cf712",
+  "generatedAt": "2026-06-22T07:28:41.115Z",
+  "codeExample": "const tenantId: string = 'tenant-91b2c3';\nconst id: string = 'qr-8f7a1b6c';\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  score: 4,\n  comment: 'Moderation complete — result accepted',\n  published: true,\n  meta: [{ key: 'reviewer', value: 'moderator@fastcomments.io' } as MetaItem] // optional metadata\n};\nconst result: UpdateQuestionResultResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "model": "gpt-5-mini"
+}

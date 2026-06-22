@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "0a6b6e7e4e6693972976fc241448edb722be88923716ee50e50e460f6d33d2ab",
+  "generatedAt": "2026-06-22T07:28:45.892Z",
+  "codeExample": "const tenantId: string = 'tenant-9f3b2c';\nconst commentId: string = 'cmt_20250621_87';\nconst broadcastId: string = 'bcast_newsroom_20250621';\nconst commentTextUpdateRequest: CommentTextUpdateRequest = { text: 'Updated to clarify sources and remove ambiguity in the second paragraph.' } as CommentTextUpdateRequest;\nconst editKey: string = 'edk_47b2e9f1';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VySWQifQ.s5mpleSignature';\nconst result: SetCommentTextResponse1 = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);",
+  "model": "gpt-5-mini"
+}

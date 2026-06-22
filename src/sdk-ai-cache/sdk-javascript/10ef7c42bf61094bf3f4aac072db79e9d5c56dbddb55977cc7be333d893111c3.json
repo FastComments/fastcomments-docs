@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "10ef7c42bf61094bf3f4aac072db79e9d5c56dbddb55977cc7be333d893111c3",
+  "generatedAt": "2026-06-22T07:28:35.521Z",
+  "codeExample": "const tenantId: string = \"tenant_9c1f2d\";\nconst id: string = \"pkg_3a8f4b\";\nconst result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, id);",
+  "model": "gpt-5-mini"
+}

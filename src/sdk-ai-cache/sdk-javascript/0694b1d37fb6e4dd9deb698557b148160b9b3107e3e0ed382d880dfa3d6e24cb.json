@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "0694b1d37fb6e4dd9deb698557b148160b9b3107e3e0ed382d880dfa3d6e24cb",
+  "generatedAt": "2026-06-22T07:28:47.650Z",
+  "codeExample": "const tenantId: string = 'fastcomments-acme-001';\nconst idSuffix?: string = 'sessionA';\nconst id: string = `u-9f3b2c${idSuffix ? '-' + idSuffix : ''}`;\nconst result: GetTenantUserResponse1 = await getTenantUser(tenantId, id);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

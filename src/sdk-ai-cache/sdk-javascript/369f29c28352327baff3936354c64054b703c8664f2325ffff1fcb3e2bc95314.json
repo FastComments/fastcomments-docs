@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "369f29c28352327baff3936354c64054b703c8664f2325ffff1fcb3e2bc95314",
+  "generatedAt": "2026-06-22T07:28:46.842Z",
+  "codeExample": "const tenantId: string = \"tenant_8f3c\";\nconst bulkCreateHashTagsBody: BulkCreateHashTagsBody = {\n  tags: [\n    { name: \"product-feedback\", description: \"User feedback about product quality and issues\", color: \"#1E90FF\", isActive: true, customConfig: { displayPriority: 10 } },\n    { name: \"feature-request\", description: \"Suggestions for new capabilities\", color: \"#28A745\", isActive: true, synonyms: [\"feature\", \"request\"] }\n  ]\n};\nconst result: AddHashTagsBulkResponse = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);",
+  "model": "gpt-5-mini"
+}

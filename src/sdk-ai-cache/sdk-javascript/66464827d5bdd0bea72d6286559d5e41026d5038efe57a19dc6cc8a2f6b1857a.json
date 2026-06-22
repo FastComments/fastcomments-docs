@@ -1,0 +1,7 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "66464827d5bdd0bea72d6286559d5e41026d5038efe57a19dc6cc8a2f6b1857a",
+  "generatedAt": "2026-06-22T07:28:39.549Z",
+  "codeExample": "const tenantId: string = 'tenant-9f3a2b';\nconst urlId: string = '/articles/2026/06/fastcomments-release';\nconst userIdWS: string = 'ws-user-78b2';\nconst startTime: number = Date.now() - 24 * 60 * 60 * 1000;\nconst endTime: number = Date.now();\n\nconst responseWithEnd: GetGlobalEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);\nconst responseWithoutEnd: GetGlobalEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "b0a70d442ef3e3024eb2763da37642610dc28bfbe98b8ebb8d1f6fa300a30d49",
+  "generatedAt": "2026-06-22T07:28:35.721Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_5f8a3b2a\";\n  const yearNumber: number = 2026;\n  const monthNumber: number = 6;\n  const skip: number = 0;\n  const result: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, undefined, skip);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

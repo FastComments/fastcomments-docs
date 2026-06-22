@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "7413bfdfd78eae529462e280c960fa394b7396add52fe630258beb451074e1cc",
+  "generatedAt": "2026-06-22T07:28:40.199Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b';\nconst urlId: string = 'https://news-site.com/articles/2026/06/22/in-depth-report';\nconst broadcastId: string = 'broadcast_20260622_live';\nconst commentData: CommentData = {\n  content: 'Great reporting — I appreciate the deep dive. Any sources for the statistics cited around 3:14?',\n  authorName: 'Jordan Reyes',\n  authorEmail: 'jordan.reyes@news-site.com',\n  metadata: { browser: 'Chrome 114', locale: 'en-US' }\n};\nconst sessionId: string = 'sess_6a8f3b';\nconst sso: string = 'sso_tok_ab12cd34';\nconst response: CreateCommentPublicResponse = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
+  "model": "gpt-5-mini"
+}

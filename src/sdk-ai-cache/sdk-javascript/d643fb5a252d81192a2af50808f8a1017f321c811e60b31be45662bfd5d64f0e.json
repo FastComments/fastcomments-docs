@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "d643fb5a252d81192a2af50808f8a1017f321c811e60b31be45662bfd5d64f0e",
+  "generatedAt": "2026-06-22T07:28:41.187Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_8b7f3a9c\";\n  const urlId: string = \"https://news.acme.com/articles/2026/06/22/fast-comments-integration\";\n  const response: DeleteV1PageReactResponse = await deleteV1PageReact(tenantId, urlId);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

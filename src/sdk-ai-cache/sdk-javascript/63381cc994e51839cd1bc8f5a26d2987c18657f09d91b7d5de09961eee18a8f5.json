@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "63381cc994e51839cd1bc8f5a26d2987c18657f09d91b7d5de09961eee18a8f5",
+  "generatedAt": "2026-06-22T07:28:34.890Z",
+  "codeExample": "const commentId: string = \"cmt_923f1b2a3e\";\nconst reviewed: boolean = true;\nconst broadcastId: string = \"brd_44a7f9c2\";\nconst tenantId: string = \"tenant_81\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NDMyIn0.signature\";\n\nconst result: PostSetCommentReviewStatusResponse = await postSetCommentReviewStatus(\n  commentId,\n  reviewed,\n  broadcastId,\n  tenantId,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

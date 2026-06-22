@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "cc03a676206a165269222f185fafec146358c5823834ab7207ff1bb17d68ff1a",
+  "generatedAt": "2026-06-22T07:28:36.668Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_1001\";\nconst urlId: string = \"news/2026/06/fastcomments-release\";\nconst afterName: string = \"sarah.connor\";\nconst afterUserId: string = \"user_0b9c7d\";\nconst offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);",
+  "model": "gpt-5-mini"
+}

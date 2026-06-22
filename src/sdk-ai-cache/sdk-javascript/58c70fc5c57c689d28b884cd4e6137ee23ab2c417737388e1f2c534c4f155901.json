@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "58c70fc5c57c689d28b884cd4e6137ee23ab2c417737388e1f2c534c4f155901",
+  "generatedAt": "2026-06-22T07:28:39.599Z",
+  "codeExample": "const tenantId: string = 'tenant_42';\nconst createCommentParams: CreateCommentParams = {\n  content: 'I found this article very insightful and wanted to add a couple of sources.',\n  author: { id: 'user_789', displayName: 'Jordan Lee', email: 'jordan.lee@example.com' },\n  parentId: 'comment_654321',\n  metadata: { userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }\n};\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst sendEmails: boolean = false;\nconst populateNotifications: boolean = true;\nconst result: SaveCommentResponse = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications)",
+  "model": "gpt-5-mini"
+}

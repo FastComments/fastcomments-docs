@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "aa0cd7859d6008caa040e2a7f442f0adcf009720ad50101d5021053a52c231b2",
+  "generatedAt": "2026-06-22T07:28:36.045Z",
+  "codeExample": "const banUndoParams: BanUserUndoParams = {\n  banId: 'ban_8c3f1e',\n  userId: 'user_42',\n  undoneBy: 'moderator_7',\n  reason: 'Evidence reviewed; ban lifted',\n  timestamp: new Date().toISOString()\n};\n\nconst tenantId: string = 'tenant_9f1b6c';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoSignature';\n\nconst response: PostBanUserUndoResponse = await postBanUserUndo(banUndoParams, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "ae17f12879c2359f675f4639e0b784de85673ca0560a973c3d0f290b9b299deb",
+  "generatedAt": "2026-06-22T07:28:39.058Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8f3a6b2c';\n  const maybeUrlId: string | undefined = undefined; // optional source\n  const urlId: string = maybeUrlId ?? 'https://news.example.com/articles/2026/06/22/product-update';\n  const pageLikes: GetV1PageLikesResponse = await getV1PageLikes(tenantId, urlId);\n  console.log(pageLikes);\n})();",
+  "model": "gpt-5-mini"
+}

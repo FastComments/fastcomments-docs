@@ -1,0 +1,7 @@
+{
+  "method": "postAdjustCommentVotes",
+  "signatureHash": "3b2cabd162ab0e9d669062a8e96943e4efe27b282ef723821d8cbb832adc28ef",
+  "generatedAt": "2026-06-22T07:28:38.257Z",
+  "codeExample": "const commentId: string = 'cmt_8f3b2a9e';\nconst adjustCommentVotesParams: AdjustCommentVotesParams = {\n  voteIncrement: 1,\n  moderatorId: 'mod_12',\n  reason: 'Adjusting after spam rollback'\n};\nconst broadcastId: string = 'brd_2026-06-22_001';\nconst tenantId: string = 'tenant_42';\n\nconst response: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(\n  commentId,\n  adjustCommentVotesParams,\n  broadcastId,\n  tenantId\n);",
+  "model": "gpt-5-mini"
+}

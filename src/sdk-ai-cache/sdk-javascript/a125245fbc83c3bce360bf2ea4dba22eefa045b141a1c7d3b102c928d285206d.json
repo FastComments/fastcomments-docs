@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "a125245fbc83c3bce360bf2ea4dba22eefa045b141a1c7d3b102c928d285206d",
+  "generatedAt": "2026-06-22T07:28:42.112Z",
+  "codeExample": "const createHashTagBody: CreateHashTagBody = {\n  tag: 'news',\n  label: 'News',\n  description: 'Topical news and current events',\n  color: '#FF4500',\n  isPublic: true,\n  synonyms: ['current-events', 'breaking']\n};\n\nconst result: AddHashTagResponse = await addHashTag(undefined, createHashTagBody);",
+  "model": "gpt-5-mini"
+}

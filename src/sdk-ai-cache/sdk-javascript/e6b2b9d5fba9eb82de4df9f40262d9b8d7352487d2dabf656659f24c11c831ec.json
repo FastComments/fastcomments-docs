@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "e6b2b9d5fba9eb82de4df9f40262d9b8d7352487d2dabf656659f24c11c831ec",
+  "generatedAt": "2026-06-22T07:28:36.384Z",
+  "codeExample": "const bulkParams: BulkPreBanParams = {\n  entries: [\n    {\n      commenterId: 'user-842',\n      email: 'marie.johnson@startup.io',\n      ipAddress: '203.0.113.45',\n      contentSnippet: 'Repeated promotional links and short spammy message',\n      detectedAt: '2026-06-20T09:30:00Z'\n    }\n  ],\n  action: 'preban',\n  reason: 'automated spam detection',\n  initiatedBy: 'moderation-bot'\n};\n\nconst result: PostBulkPreBanSummaryResponse = await postBulkPreBanSummary(\n  bulkParams,\n  true,                // includeByUserIdAndEmail\n  true,                // includeByIP\n  false,               // includeByEmailDomain\n  'tenant_57b3',       // tenantId\n  'sso-token-4f9b'     // sso\n);",
+  "model": "gpt-5-mini"
+}

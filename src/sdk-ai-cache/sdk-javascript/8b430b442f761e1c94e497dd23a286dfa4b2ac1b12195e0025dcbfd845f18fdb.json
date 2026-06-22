@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "8b430b442f761e1c94e497dd23a286dfa4b2ac1b12195e0025dcbfd845f18fdb",
+  "generatedAt": "2026-06-22T07:28:38.951Z",
+  "codeExample": "const tenantId: string = \"tenant_7f4a2c9b3e\";\nconst commentId: string = \"cmt_9a3b2f1d4\";\nconst urlId: string = \"url_5d8c3e2f1\";\nconst broadcastId: string = \"brd_4b6f8a0c2\";\nconst voteBodyParams: VoteBodyParams = { vote: 1 };\nconst sessionId: string = \"sess_12ab34cd56\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload\";\nconst result: VoteCommentResponse = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);",
+  "model": "gpt-5-mini"
+}

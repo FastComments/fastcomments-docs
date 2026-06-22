@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "d2c1037b46854fa3c501d6e367a16e5951250b34f7c98d76950ff9738732c348",
+  "generatedAt": "2026-06-22T07:28:40.904Z",
+  "codeExample": "const textSearch: string = \"privacy policy\";\nconst byIPFromComment: string = \"203.0.113.45\";\nconst filter: string = \"approved\";\nconst demo: boolean = false;\nconst tenantId: string = \"tenant_42\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\n\nconst countResponse: GetCountResponse = await getCount(textSearch, byIPFromComment, filter, undefined, demo, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

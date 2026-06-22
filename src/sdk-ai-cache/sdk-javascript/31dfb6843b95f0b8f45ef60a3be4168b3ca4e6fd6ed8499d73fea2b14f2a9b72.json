@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "31dfb6843b95f0b8f45ef60a3be4168b3ca4e6fd6ed8499d73fea2b14f2a9b72",
+  "generatedAt": "2026-06-22T07:28:35.506Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3a2b9c';\nconst questionId: string = 'q_4c12d9f8';\nconst overrideId: string | undefined = undefined; // optional override when present\nconst idToUse: string = overrideId ?? questionId;\nconst result: GetQuestionResultResponse1 = await getQuestionResult(tenantId, idToUse);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "328b26a798fb1f9c51af16ba5ea44847ced0c88c56e5ea16fffe68021a32df56",
+  "generatedAt": "2026-06-22T07:28:34.844Z",
+  "codeExample": "const searchValue: string = \"john.doe@acme-corp.com\";\nconst tenantId: string = \"tenant_7f4b2a1c\";\nconst usersResult: GetSearchUsersResponse = await getSearchUsers(searchValue, tenantId);",
+  "model": "gpt-5-mini"
+}

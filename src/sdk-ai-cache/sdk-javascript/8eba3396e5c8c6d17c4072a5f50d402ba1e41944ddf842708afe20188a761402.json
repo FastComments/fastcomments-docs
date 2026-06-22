@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "8eba3396e5c8c6d17c4072a5f50d402ba1e41944ddf842708afe20188a761402",
+  "generatedAt": "2026-06-22T07:28:34.922Z",
+  "codeExample": "const tag: string = \"summer-2026\";\nconst tenantId: string = \"tenant_42\";\nconst deleteHashTagRequestBody: DeleteHashTagRequestBody = {\n  reason: \"Consolidating seasonal tags\",\n  requestedBy: \"moderator@fastcomments.com\",\n  forceDelete: true\n};\nconst result: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, deleteHashTagRequestBody);",
+  "model": "gpt-5-mini"
+}

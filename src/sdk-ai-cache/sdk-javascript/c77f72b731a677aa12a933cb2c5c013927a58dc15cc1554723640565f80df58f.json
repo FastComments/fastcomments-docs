@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReactUsers",
+  "signatureHash": "c77f72b731a677aa12a933cb2c5c013927a58dc15cc1554723640565f80df58f",
+  "generatedAt": "2026-06-22T07:28:35.925Z",
+  "codeExample": "const tenantId: string = 'tenant_8f4c2b9a';\nconst urlId: string = 'news/2026/06/22/new-tech-release';\nconst id: string = 'react_7f3a1b4';\nlet locale: string | undefined = 'en-US'; // optional context that may be used elsewhere\n\nconst result: GetV2PageReactUsersResponse1 = await getV2PageReactUsers(tenantId, urlId, id);",
+  "model": "gpt-5-mini"
+}

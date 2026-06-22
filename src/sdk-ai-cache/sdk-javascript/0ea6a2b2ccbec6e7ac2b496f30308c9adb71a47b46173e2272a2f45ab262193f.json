@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "0ea6a2b2ccbec6e7ac2b496f30308c9adb71a47b46173e2272a2f45ab262193f",
+  "generatedAt": "2026-06-22T07:28:39.618Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b7a6c';\nconst userId: string = 'user_3b2a1c';\nconst limit: number = 25;\nconst skip: number = 10;\nconst responseWithUser: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);\nconst responseAllUsers: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);",
+  "model": "gpt-5-mini"
+}

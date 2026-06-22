@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "147a2342954d79d2509b0e5923540093a0986c6aa520bae7082fb05fb1b75f0e",
+  "generatedAt": "2026-06-22T07:28:35.897Z",
+  "codeExample": "const commentId: string = 'cmt_7f3b2a9d4e6';\nconst includeEmail: boolean = true;\nconst includeIP: boolean = false;\nconst tenantId: string = 'tenant_9812';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5ODEyIn0.signature';\nconst response: GetModerationCommentResponse = await getModerationComment(commentId, includeEmail, includeIP, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

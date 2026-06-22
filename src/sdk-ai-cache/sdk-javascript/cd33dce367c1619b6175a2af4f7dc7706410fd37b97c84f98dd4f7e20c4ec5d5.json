@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "cd33dce367c1619b6175a2af4f7dc7706410fd37b97c84f98dd4f7e20c4ec5d5",
+  "generatedAt": "2026-06-22T07:28:34.290Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst userId: string = 'user_5591';\nconst urlId: string = 'articles/2026/06/new-ui-release';\nconst fromCommentId: string = 'cmt_8812';\nconst viewed: boolean = false;\nconst type: string = 'mention';\n\nconst response: GetNotificationCountResponse1 = await getNotificationCount(\n  tenantId,\n  userId,\n  urlId,\n  fromCommentId,\n  viewed,\n  type\n);",
+  "model": "gpt-5-mini"
+}

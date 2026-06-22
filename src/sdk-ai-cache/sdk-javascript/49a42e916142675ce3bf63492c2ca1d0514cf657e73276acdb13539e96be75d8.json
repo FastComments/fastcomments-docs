@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "49a42e916142675ce3bf63492c2ca1d0514cf657e73276acdb13539e96be75d8",
+  "generatedAt": "2026-06-22T07:28:37.044Z",
+  "codeExample": "const tenantId: string = \"fastcomments-main-01\";\nconst id: string = \"badge_4f9e7a21\";\nconst result: DeleteUserBadgeResponse = await deleteUserBadge(tenantId, id);",
+  "model": "gpt-5-mini"
+}

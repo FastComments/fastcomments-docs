@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "d6dfc3e8d141db14eee6208ac61532bcd57aee78028d3fe1b1260f481ad0a30f",
+  "generatedAt": "2026-06-22T07:28:36.414Z",
+  "codeExample": "const tenantId: string = 'acme-corp-42';\nconst createModeratorBody: CreateModeratorBody = {\n  moderator: {\n    email: 'susan.jensen@acme.com',\n    displayName: 'Susan Jensen',\n    roles: ['moderator'],\n    phoneNumber: '+1-415-555-0132'\n  },\n  notifyByEmail: true, // optional parameter\n  sendWelcomeEmail: false // optional parameter\n};\nconst result: CreateModeratorResponse1 = await createModerator(tenantId, createModeratorBody);",
+  "model": "gpt-5-mini"
+}

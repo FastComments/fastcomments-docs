@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "44d7b963398dca527f437104473292abe02cd7db85b8b564f591ae280bdcba0c",
+  "generatedAt": "2026-06-22T07:28:42.953Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3b2c1a\";\nconst postId: string = \"post_4a9d8f33\";\nconst updateFeedPostParams: UpdateFeedPostParams = {\n  title: \"Summer Product Launch Highlights\",\n  contentHtml: \"<p>We've rolled out the new features including improved search and faster load times.</p>\",\n  isPublished: true,\n  tags: [\"release\", \"product\", \"announcement\"],\n  media: [\n    {\n      type: \"image\",\n      caption: \"New dashboard view\",\n      assets: [{ url: \"https://cdn.fastcomments.com/media/dashboard.jpg\", mimeType: \"image/jpeg\", width: 1200, height: 675 }]\n    }\n  ],\n  links: [{ url: \"https://www.company.com/blog/launch\", title: \"Read full announcement\" }]\n};\nconst broadcastId: string = \"broadcast_20260622_01\";\nconst sso: string = \"sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\nconst result: UpdateFeedPostPublicResponse = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

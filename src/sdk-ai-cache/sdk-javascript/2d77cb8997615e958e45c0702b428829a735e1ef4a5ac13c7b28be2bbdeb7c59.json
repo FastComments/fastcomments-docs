@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "2d77cb8997615e958e45c0702b428829a735e1ef4a5ac13c7b28be2bbdeb7c59",
+  "generatedAt": "2026-06-22T07:28:36.216Z",
+  "codeExample": "const badgeId: string = 'gold-moderator-2026';\nconst userId: string = 'user_7392';\nconst tenantId: string = 'tenant_acme_corp';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso.signature';\nconst result: PutAwardBadgeResponse = await putAwardBadge(badgeId, userId, undefined, undefined, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

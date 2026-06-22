@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "67791bfa67d6106208fc4bd263e321f437f901021eed094465fb1ba4104246ec",
+  "generatedAt": "2026-06-22T07:28:38.146Z",
+  "codeExample": "const textSearch: string = 'site:news author:\"John Doe\"';\nconst byIPFromComment: string = '198.51.100.23';\nconst filters: string = 'status:approved OR status:pending';\nconst searchFilters: string | undefined = undefined; // optional\nconst sorts: string = 'created:desc';\nconst tenantId: string = 'tenant_42';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst response: PostApiExportResponse = await postApiExport(\n  textSearch,\n  byIPFromComment,\n  filters,\n  searchFilters,\n  sorts,\n  tenantId,\n  sso\n);",
+  "model": "gpt-5-mini"
+}

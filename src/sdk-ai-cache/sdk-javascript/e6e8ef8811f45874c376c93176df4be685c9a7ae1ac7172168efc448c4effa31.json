@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "e6e8ef8811f45874c376c93176df4be685c9a7ae1ac7172168efc448c4effa31",
+  "generatedAt": "2026-06-22T07:28:44.717Z",
+  "codeExample": "const tenantId: string = 'tenant_9f2b6c';\nconst createTenantPackageBody: CreateTenantPackageBody = {\n  name: 'Acme Comments Pro',\n  seats: 25,\n  description: 'Moderation-enabled package for Acme marketing sites', // optional field demonstrated\n  enableSSO: true,\n  ssoSecurityLevel: 'strict' as SSOSecurityLevel,\n  config: {\n    imageContentProfanityLevel: 'medium' as ImageContentProfanityLevel,\n    mentionAutoCompleteMode: 'live' as MentionAutoCompleteMode\n  }\n};\nconst result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, createTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

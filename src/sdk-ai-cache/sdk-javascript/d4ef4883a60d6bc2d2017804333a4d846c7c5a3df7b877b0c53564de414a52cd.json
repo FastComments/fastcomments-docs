@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "d4ef4883a60d6bc2d2017804333a4d846c7c5a3df7b877b0c53564de414a52cd",
+  "generatedAt": "2026-06-22T07:28:33.669Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst urlId: string = 'news/2026/fast-comments-launch';\nconst userId: string = 'user_892';\nconst startDate: string = '2026-06-01T00:00:00Z';\nconst questionId: string = 'q_17';\nconst questionIds: string = 'q_17,q_18';\nconst skip: number = 0;\nconst result: GetQuestionResultsResponse1 = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);",
+  "model": "gpt-5-mini"
+}

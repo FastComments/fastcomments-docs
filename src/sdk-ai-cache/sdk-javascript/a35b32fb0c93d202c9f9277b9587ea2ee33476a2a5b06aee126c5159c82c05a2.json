@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "a35b32fb0c93d202c9f9277b9587ea2ee33476a2a5b06aee126c5159c82c05a2",
+  "generatedAt": "2026-06-22T07:28:37.501Z",
+  "codeExample": "const commentId: string = 'a3f9b2e4-6d8c-4f2b-9a1e-7c3b2d6e8f90';\nconst direction: string = 'up';\nconst broadcastId: string = 'bcast-9f8e7d6c';\nconst tenantId: string = 'tenant_82';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst response: PostVoteResponse = await postVote(commentId, direction, broadcastId, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

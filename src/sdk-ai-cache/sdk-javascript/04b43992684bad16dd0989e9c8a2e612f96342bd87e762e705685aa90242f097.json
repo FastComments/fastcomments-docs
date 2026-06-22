@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "04b43992684bad16dd0989e9c8a2e612f96342bd87e762e705685aa90242f097",
+  "generatedAt": "2026-06-22T07:28:35.592Z",
+  "codeExample": "const commentId: string = 'cmt_4f3b2a9e';\nconst broadcastId: string = 'live_news_2026';\nconst tenantId: string = 'tenant_acme_corp';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\nconst result: PostFlagCommentResponse = await postFlagComment(commentId, broadcastId, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

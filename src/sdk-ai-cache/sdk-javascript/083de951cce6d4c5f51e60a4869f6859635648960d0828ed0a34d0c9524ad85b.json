@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "083de951cce6d4c5f51e60a4869f6859635648960d0828ed0a34d0c9524ad85b",
+  "generatedAt": "2026-06-22T07:28:39.718Z",
+  "codeExample": "const tenantId: string = '3f2a1b9c-8d4e-4a2b-9f77-1c2d3e4f5a6b';\nconst urlId: string = '/news/2026/06/22/global-economy-update';\nconst usernameStartsWith: string = 'alex';\nconst mentionGroupIds: Array<string> = ['editors', 'community_managers'];\nconst sso: string = 'oauth:google:75231';\nconst result: SearchUsersResponse1 = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);",
+  "model": "gpt-5-mini"
+}

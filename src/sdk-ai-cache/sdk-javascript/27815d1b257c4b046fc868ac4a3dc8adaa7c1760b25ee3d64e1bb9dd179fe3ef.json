@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "27815d1b257c4b046fc868ac4a3dc8adaa7c1760b25ee3d64e1bb9dd179fe3ef",
+  "generatedAt": "2026-06-22T07:28:35.597Z",
+  "codeExample": "const tenantId: string = 'tenant_4f67c2';\nconst urlId: string = '/news/politics/poll-results-2026';\nconst onlineInitial: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);\n\nconst afterName: string = 'samantha.green';\nconst afterUserId: string = 'user_9d3a7';\nconst onlinePage2: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);",
+  "model": "gpt-5-mini"
+}

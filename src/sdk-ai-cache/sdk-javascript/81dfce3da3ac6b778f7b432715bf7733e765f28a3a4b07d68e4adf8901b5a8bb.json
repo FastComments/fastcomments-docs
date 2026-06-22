@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "81dfce3da3ac6b778f7b432715bf7733e765f28a3a4b07d68e4adf8901b5a8bb",
+  "generatedAt": "2026-06-22T07:28:35.763Z",
+  "codeExample": "const tenantId: string = 'acme-corp-8421';\nconst skip: number = 20;\nconst responseWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);\nconst responseWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);",
+  "model": "gpt-5-mini"
+}

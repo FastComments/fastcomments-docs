@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "085d55b265d807e7a9f4c0b44e804b3120a0579310e85a9f6ab99d4e80e067e5",
+  "generatedAt": "2026-06-22T07:28:37.787Z",
+  "codeExample": "(async () => {\n  const tenantId: string | undefined = 'acme-enterprises';\n  const id: string = 'q-73f9b2';\n  const config: GetQuestionConfigResponse1 = await getQuestionConfig(tenantId ?? 'acme-enterprises', id);\n  console.log(config);\n})();",
+  "model": "gpt-5-mini"
+}

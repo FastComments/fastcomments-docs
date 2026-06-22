@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "ff3e5193e48feceef2ceaf835c513721143e444f05bc9779d052e0e069de0780",
+  "generatedAt": "2026-06-22T07:28:51.399Z",
+  "codeExample": "const tenantId: string = \"tenant_9f3b2\";\nconst userId: string = \"user_7421a\";\nconst fromName: string = \"Ava Thompson\";\nconst optionalConfig: Partial<CustomConfigParameters> = {}; // example optional parameters container\nconst result: SendInviteResponse = await sendInvite(tenantId, userId, fromName);",
+  "model": "gpt-5-mini"
+}

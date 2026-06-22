@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "a006c79c2d21397732c98911c1f3467d166ecf042c51fbadf64df269fc4a3ba2",
+  "generatedAt": "2026-06-22T07:28:41.442Z",
+  "codeExample": "(async (): Promise<void> => {\n  const tenantId: string = \"acme-tenant-042\";\n  const createTenantBody: CreateTenantBody = {\n    name: \"Acme Corporation\",\n    adminEmail: \"it-admin@acme.com\",\n    apiDomainConfiguration: { primaryDomain: \"comments.acme.com\", allowSubdomains: true },\n    billingInfo: { planId: \"enterprise_monthly\", contactEmail: \"billing@acme.com\" }, // optional\n    importedSites: [{ siteId: \"acme-blog\", origin: \"https://blog.acme.com\" }] // optional\n  };\n  const result: CreateTenantResponse1 = await createTenant(tenantId, createTenantBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "dc569869038ad81e9b8bd06a857ac949c07f4f3d10170a80df3ca384dfb034f5",
+  "generatedAt": "2026-06-22T07:28:35.305Z",
+  "codeExample": "const tenantId: string = '3c9d2b7f-8a1e-4f6b-9d2a-2c5b1e6f7a8b';\nconst hashTagsDefaultPage: GetHashTagsResponse1 = await getHashTags(tenantId);\nconst hashTagsSecondPage: GetHashTagsResponse1 = await getHashTags(tenantId, 2);",
+  "model": "gpt-5-mini"
+}

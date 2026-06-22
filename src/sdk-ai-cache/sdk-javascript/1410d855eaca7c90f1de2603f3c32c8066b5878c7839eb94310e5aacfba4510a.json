@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "1410d855eaca7c90f1de2603f3c32c8066b5878c7839eb94310e5aacfba4510a",
+  "generatedAt": "2026-06-22T07:28:40.554Z",
+  "codeExample": "const tenantId: string = 'tenant_8c4f2b';\nconst urlId: string = 'blog/releases/june-2026';\nconst id: string = 'react_0f9d3a';\nconst confirmDelete: boolean | undefined = true; // optional flag example\nconst result: DeleteV2PageReactResponse = await deleteV2PageReact(tenantId, urlId, id);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

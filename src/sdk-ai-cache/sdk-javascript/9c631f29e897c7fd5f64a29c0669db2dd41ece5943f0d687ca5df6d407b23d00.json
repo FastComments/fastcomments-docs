@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "9c631f29e897c7fd5f64a29c0669db2dd41ece5943f0d687ca5df6d407b23d00",
+  "generatedAt": "2026-06-22T07:28:40.989Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_72b3f1';\n  const id: string = 'questionResult_9c4a2e';\n  const result: DeleteQuestionResultResponse = await deleteQuestionResult(tenantId, id);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "6fae9711d99c3b7b75d4bef1e9843982805fb04479ef182b766b9ead310d7e8c",
+  "generatedAt": "2026-06-22T07:28:35.764Z",
+  "codeExample": "const tenantId: string = 'tenant_9f2b1c';\nconst postId: string = 'post_7a3c21';\nconst broadcastId: string = 'broadcast-2026-06-22-01';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidmFyIiwiaWF0IjoxNjkyNzU2MDB9.sflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst result: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "29faf1c51badc56b34c8124a4c8adee33f71fe92b6dbec36b8e834cffbc484bd",
+  "generatedAt": "2026-06-22T07:28:37.713Z",
+  "codeExample": "(async function unblockExample(): Promise<void> {\n  const tenantId: string = 'tenant_001';\n  const id: string = 'cmt_987654321';\n  const unBlockFromCommentParams: UnBlockFromCommentParams = {\n    reason: 'Duplicate content resolved',\n    adminNote: 'Reviewed by moderator team, unblock approved'\n  };\n  const userId: string = 'user_2468';\n  const response: UnBlockUserFromCommentResponse = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

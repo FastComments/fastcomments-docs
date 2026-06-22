@@ -1,0 +1,7 @@
+{
+  "method": "getLogs",
+  "signatureHash": "040586f9128e0de7ab41a0372747c594961cdfad2249162add2cd04f35266fc6",
+  "generatedAt": "2026-06-22T07:28:35.295Z",
+  "codeExample": "const commentId: string = \"c_7f2a9b3d\";\nconst tenantId: string = \"acme-corp\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDMyMSJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst logs: GetLogsResponse = await getLogs(commentId, tenantId, sso);\nconsole.log(logs);",
+  "model": "gpt-5-mini"
+}

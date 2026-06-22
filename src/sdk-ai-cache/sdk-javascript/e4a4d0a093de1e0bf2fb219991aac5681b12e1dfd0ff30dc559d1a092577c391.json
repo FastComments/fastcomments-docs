@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "e4a4d0a093de1e0bf2fb219991aac5681b12e1dfd0ff30dc559d1a092577c391",
+  "generatedAt": "2026-06-22T07:28:38.709Z",
+  "codeExample": "const userId: string = 'user_1A2b3C';\nconst page: number = 2;\nconst includei10n: boolean = true;\nconst locale: string = 'en-GB';\nconst isCrawler: boolean = false;\nconst response: GetCommentsForUserResponse1 = await getCommentsForUser(userId, undefined, undefined, page, includei10n, locale, isCrawler);",
+  "model": "gpt-5-mini"
+}

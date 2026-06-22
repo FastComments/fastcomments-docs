@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "cbb0cad7cd74e3c0b0f83c21ac1254f6f8089d05ab6eda4570d79682072d4b7a",
+  "generatedAt": "2026-06-22T07:28:56.052Z",
+  "codeExample": "const tenantId: string = 'fc_tenant_12345';\nconst urlId: string = '/news/2026/06/fastcomments-typescript';\nconst page: number = 1;\nconst skip: number = 0;\nconst limit: number = 25;\nconst countChildren: boolean = true;\nconst includeConfig: boolean = true;\nconst locale: string = 'en-US';\nconst isCrawler: boolean = false;\nconst asTree: boolean = true;\nconst maxTreeDepth: number = 3;\nconst hashTags: Array<string> = ['release', 'typescript'];\nconst userId: string = 'user_9876';\nconst response: GetCommentsPublicResponse = await getCommentsPublic(\n  tenantId,\n  urlId,\n  page,\n  undefined,\n  undefined,\n  skip,\n  undefined,\n  limit,\n  undefined,\n  countChildren,\n  undefined,\n  includeConfig,\n  undefined,\n  undefined,\n  locale,\n  undefined,\n  isCrawler,\n  undefined,\n  asTree,\n  maxTreeDepth,\n  undefined,\n  undefined,\n  undefined,\n  hashTags,\n  userId\n);",
+  "model": "gpt-5-mini"
+}

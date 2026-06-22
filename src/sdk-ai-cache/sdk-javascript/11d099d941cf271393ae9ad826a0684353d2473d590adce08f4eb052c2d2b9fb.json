@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "11d099d941cf271393ae9ad826a0684353d2473d590adce08f4eb052c2d2b9fb",
+  "generatedAt": "2026-06-22T07:28:36.481Z",
+  "codeExample": "const batchJobId: string = \"batch_2026_06_22_001\";\nconst tenantId: string = \"tenant-42\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.SSO_PAYLOAD.signature\";\n\nconst responseWithSSO: GetApiExportStatusResponse = await getApiExportStatus(batchJobId, tenantId, sso);\nconst responseMinimal: GetApiExportStatusResponse = await getApiExportStatus(batchJobId)",
+  "model": "gpt-5-mini"
+}

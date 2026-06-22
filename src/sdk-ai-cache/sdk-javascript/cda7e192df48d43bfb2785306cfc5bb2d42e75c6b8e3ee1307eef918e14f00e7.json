@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "cda7e192df48d43bfb2785306cfc5bb2d42e75c6b8e3ee1307eef918e14f00e7",
+  "generatedAt": "2026-06-22T07:28:38.307Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12ab34';\n  const urlId: string = 'posts/2026/how-to-write-ts-examples';\n  const userId: string = 'user_98765';\n  const anonUserId: string = 'anon_x7y9z3';\n  const votesForUser: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId, userId);\n  const votesForAnon: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId, undefined, anonUserId);\n  console.log(votesForUser, votesForAnon);\n})();",
+  "model": "gpt-5-mini"
+}

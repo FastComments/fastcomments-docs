@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "d9c71b300083fe183038882d85a6179cb1d78b0a453f3f411145b736ab6c77a9",
+  "generatedAt": "2026-06-22T07:28:45.388Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b7c6d';\nconst id: string = 'site-42';\nconst response: GetTenantResponse1 = await getTenant(tenantId, id);\nconst tenantDetails: APITenant | undefined = (response as { APITenant?: APITenant }).APITenant;\nconst billingEmail: string | undefined = tenantDetails?.billingInfo?.email;",
+  "model": "gpt-5-mini"
+}

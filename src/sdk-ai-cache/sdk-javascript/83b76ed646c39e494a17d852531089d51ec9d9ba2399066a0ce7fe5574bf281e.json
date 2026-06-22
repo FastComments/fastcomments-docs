@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "83b76ed646c39e494a17d852531089d51ec9d9ba2399066a0ce7fe5574bf281e",
+  "generatedAt": "2026-06-22T07:28:32.593Z",
+  "codeExample": "const tenantId: string = 'tenant_4f7b9c2e';\nconst skip: number = 20;\nconst templatesWithSkip: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, skip);\nconst templatesWithoutSkip: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);",
+  "model": "gpt-5-mini"
+}

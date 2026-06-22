@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "d5be24a9d8b05297f2cc1814d2d20525448d7f7dbc08f762d8c39d3e5eda577e",
+  "generatedAt": "2026-06-22T07:28:39.435Z",
+  "codeExample": "const commentId: string = 'cmt_8f4d2a9b';\nconst spam: boolean = true;\nconst permNotSpam: boolean = false;\nconst broadcastId: string = 'brd_0a1b2c3d';\nconst tenantId: string = 'tenant_42';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyOjQyIiwiaWF0IjoxNjk0MDAwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n\nconst result: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus({\n  commentId,\n  spam,\n  permNotSpam,\n  broadcastId,\n  tenantId,\n  sso\n});",
+  "model": "gpt-5-mini"
+}

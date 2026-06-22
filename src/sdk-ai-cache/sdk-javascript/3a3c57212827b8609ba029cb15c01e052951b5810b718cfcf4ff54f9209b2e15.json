@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "3a3c57212827b8609ba029cb15c01e052951b5810b718cfcf4ff54f9209b2e15",
+  "generatedAt": "2026-06-22T07:28:47.986Z",
+  "codeExample": "const tenantId: string = \"tenant_9f2b1d\";\nconst id: string = \"pkg-paid-comments-v2\";\nconst updateTenantPackageBody: UpdateTenantPackageBody = {\n  name: \"Premium Comments Package\",\n  description: \"Adds moderation, image uploads and priority support\", // optional\n  enabled: true,\n  retentionDays: 365\n};\nconst result: UpdateTenantPackageResponse = await updateTenantPackage(tenantId, id, updateTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

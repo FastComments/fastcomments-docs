@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "be6a5813bfc7fa54129a079b86d60f5ea6dae44f4a6920e6ee763984def23710",
+  "generatedAt": "2026-06-22T07:28:46.405Z",
+  "codeExample": "const tenantId: string = \"tenant_9a2b4c\";\nconst id: string = \"pkg_e9f1c3_enterprise_plus\";\nconst gifRating: GifRating | undefined = undefined;\nconst replaceTenantPackageBody: ReplaceTenantPackageBody = {\n  name: \"Enterprise Plus\",\n  seats: 250,\n  apiStatus: { enabled: true, message: \"active\" } as APIStatus,\n  customConfigParameters: { allowImages: true, profanityFilterLevel: \"high\" } as CustomConfigParameters,\n  commentHTMLRenderingMode: { mode: \"trusted\" } as CommentHTMLRenderingMode,\n  gifRating: gifRating\n};\nconst result: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "8d850664e3f678508049b4f544f9daeb87d4f6789e6e38e1091b5213b11051e7",
+  "generatedAt": "2026-06-22T07:28:40.246Z",
+  "codeExample": "const tenantId: string = 'tenant_4f9b2c';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MjMifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\nconst result: GetUserInternalProfileResponse1 = await getUserInternalProfile(undefined, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

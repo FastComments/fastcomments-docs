@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "39e9fc70024a067f6833ef8e5f6d5c05268125879855d432cdad1d99a6690a5e",
+  "generatedAt": "2026-06-22T07:28:34.026Z",
+  "codeExample": "const tenantId: string = 'acme_corp';\nconst urlId: string = 'products/5501';\nconst id: string = 'page-prod-5501';\nconst title: string = 'Acme Vacuum 5501 — Product Page';\nconst response: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, id, title);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "c8b14f7a80308701844f62418d3deb89336dccb21258e5a249a44ebc89d62598",
+  "generatedAt": "2026-06-22T07:28:40.606Z",
+  "codeExample": "const tenantId: string = 'acme-corp-42';\nconst ids: string = ['user_9a12','user_3f44','user_7b88'].join(',');\nconst response: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);",
+  "model": "gpt-5-mini"
+}

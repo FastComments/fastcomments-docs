@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "b54872f0a916d595fd36880c419ae5980b221fd36fa8ab66ba3f71944f0fc499",
+  "generatedAt": "2026-06-22T07:28:42.924Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'f4a1c2d9-8b3e-4b1a-9f6e-2c1d7a8e9b0c';\n  const id: string = '6a2f9b3e-1d4c-4f8a-9c3b-5e2f7d1a0b9c';\n  const feedPost: FeedPost = {\n    title: 'Quarterly Product Update',\n    content: 'We shipped improvements to performance and the user interface, plus smaller bug fixes.',\n    authorId: 'user_8427',\n    isPublished: true,\n    // optional media and links demonstrated\n    media: [\n      {\n        type: 'image',\n        caption: 'New dashboard',\n        assets: [\n          { url: 'https://cdn.fastcomments.com/images/dashboard-1200.jpg', width: 1200, height: 800 }\n        ]\n      }\n    ],\n    links: [{ url: 'https://blog.example.com/q2-update', title: 'Full changelog' }]\n  };\n  const result: UpdateFeedPostResponse = await updateFeedPost(tenantId, id, feedPost);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

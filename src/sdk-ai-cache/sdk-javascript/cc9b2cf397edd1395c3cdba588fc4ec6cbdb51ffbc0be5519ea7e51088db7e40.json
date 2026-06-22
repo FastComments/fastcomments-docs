@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "cc9b2cf397edd1395c3cdba588fc4ec6cbdb51ffbc0be5519ea7e51088db7e40",
+  "generatedAt": "2026-06-22T07:28:40.760Z",
+  "codeExample": "const tenantId: string = \"tenant_8f4b2c\";\nconst urlIdWS: string = \"wss://realtime.fastcomments.net/ws/tenant_8f4b2c\";\nlet includeGuests: boolean | undefined = undefined;\nconst baseUserIds: string = \"user_102,user_203\";\nconst guestUserIds: string | undefined = \"guest_7\";\nconst userIds: string = includeGuests ? `${baseUserIds},${guestUserIds}` : baseUserIds;\nconst result: GetUserPresenceStatusesResponse1 = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);",
+  "model": "gpt-5-mini"
+}

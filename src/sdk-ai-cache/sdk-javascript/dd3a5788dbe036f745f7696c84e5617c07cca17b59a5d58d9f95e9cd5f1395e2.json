@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "dd3a5788dbe036f745f7696c84e5617c07cca17b59a5d58d9f95e9cd5f1395e2",
+  "generatedAt": "2026-06-22T07:28:44.546Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2c';\nconst userId: string = 'user_4a7f1b';\nconst createTicketBody: CreateTicketBody = {\n  subject: 'Billing discrepancy on invoice #4832',\n  description: 'Charged twice for subscription renewal on 2026-06-01; please refund the duplicate charge.',\n  priority: 'high', // optional parameter demonstrated\n  tags: ['billing', 'urgent'] // optional parameter demonstrated\n};\nconst response: CreateTicketResponse1 = await createTicket(tenantId, userId, createTicketBody);",
+  "model": "gpt-5-mini"
+}

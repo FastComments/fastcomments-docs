@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "1a008e78bc8614f4027a74e89ec45a5eae1c30a308eed92b59ed65758ba282fe",
+  "generatedAt": "2026-06-22T07:28:45.311Z",
+  "codeExample": "const tenantId: string = \"d9f8b2a0-4b2c-11ec-9a03-0242ac130003\";\nconst maybeBadgeId: string | undefined = \"b423c9f2-7d8a-4e1a-9c3b-5f6a7b8c9d0e\"; // optional source\nconst id: string = maybeBadgeId ?? \"00000000-0000-0000-0000-000000000000\";\nconst result: GetUserBadgeProgressByIdResponse = await getUserBadgeProgressById(tenantId, id);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "9ce71e271c0420cc6f55c3db87eecd9984cba43cc5d16267dfbb13f8c1db5a51",
+  "generatedAt": "2026-06-22T07:28:39.427Z",
+  "codeExample": "const commentId: string = \"comment_7a2b3c9e\";\nconst bannedUntil: string = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(); // 30 days from now\nconst result: PostBanUserFromCommentResponse = await postBanUserFromComment(\n  commentId,\n  true, // banEmail\n  true, // banEmailDomain\n  true, // banIP\n  true, // deleteAllUsersComments\n  bannedUntil,\n  false, // isShadowBan\n  \"update_20260622_001\",\n  \"Repeated harassment and policy violations\",\n  \"tenant_prod_12\",\n  \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"\n);",
+  "model": "gpt-5-mini"
+}

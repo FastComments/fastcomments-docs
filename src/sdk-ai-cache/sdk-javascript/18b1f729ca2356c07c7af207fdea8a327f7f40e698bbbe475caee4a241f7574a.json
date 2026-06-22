@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "18b1f729ca2356c07c7af207fdea8a327f7f40e698bbbe475caee4a241f7574a",
+  "generatedAt": "2026-06-22T07:28:37.390Z",
+  "codeExample": "const tenantId: string = \"tenant_78421\";\nconst commentId: string = \"comment_193847\";\nconst direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Up;\nconst anonUserId: string = \"anon_5f4d3a2b\";\nconst voteResult: CreateVoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);",
+  "model": "gpt-5-mini"
+}

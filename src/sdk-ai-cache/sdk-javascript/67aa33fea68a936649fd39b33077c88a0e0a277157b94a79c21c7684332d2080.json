@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "67aa33fea68a936649fd39b33077c88a0e0a277157b94a79c21c7684332d2080",
+  "generatedAt": "2026-06-22T07:28:38.067Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2c';\nconst commentId: string = 'cmt_8f1a2b3';\nconst broadcastId: string = 'brd_5d7e9f';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature';\nconst resultWithSSO: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);\nconst resultWithoutSSO: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId);",
+  "model": "gpt-5-mini"
+}

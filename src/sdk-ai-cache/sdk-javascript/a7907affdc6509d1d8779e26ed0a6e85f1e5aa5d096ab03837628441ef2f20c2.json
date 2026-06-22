@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "a7907affdc6509d1d8779e26ed0a6e85f1e5aa5d096ab03837628441ef2f20c2",
+  "generatedAt": "2026-06-22T07:28:45.868Z",
+  "codeExample": "const tenantId: string = 'tenant_acc_7d4f2b';\nconst templateId: string = 'tpl_newsletter_03';\nconst optionalNote: string | undefined = undefined;\nconst result: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);",
+  "model": "gpt-5-mini"
+}

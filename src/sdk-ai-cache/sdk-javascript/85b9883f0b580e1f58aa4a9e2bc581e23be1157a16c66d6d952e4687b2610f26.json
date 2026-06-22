@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "85b9883f0b580e1f58aa4a9e2bc581e23be1157a16c66d6d952e4687b2610f26",
+  "generatedAt": "2026-06-22T07:28:34.535Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-001';\nconst notificationId: string = 'notif_3f2e1d9b7c6a4b8e9f0a';\nconst result: DeleteNotificationCountResponse = await deleteNotificationCount(tenantId, notificationId);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

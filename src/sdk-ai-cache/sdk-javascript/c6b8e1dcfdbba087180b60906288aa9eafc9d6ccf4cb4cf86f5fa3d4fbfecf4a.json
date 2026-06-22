@@ -1,0 +1,7 @@
+{
+  "method": "putCloseThread",
+  "signatureHash": "c6b8e1dcfdbba087180b60906288aa9eafc9d6ccf4cb4cf86f5fa3d4fbfecf4a",
+  "generatedAt": "2026-06-22T07:28:44.154Z",
+  "codeExample": "const urlId: string = \"7f9c3b2a-5d6e-4a7b-9c1d-2e3f4a5b6c7d\";\nconst tenantId: string | undefined = \"acme-corp-tenant-01\";\nconst sso: string | undefined = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst closeThreadResponse: PutCloseThreadResponse = await putCloseThread(urlId, tenantId, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "f4439398931b32910c9229080edeebd436e6d7807a2cdb90901a8eb83192f434",
+  "generatedAt": "2026-06-22T07:28:39.485Z",
+  "codeExample": "(async () => {\n  const page: number = 3;\n  const count: number = 50;\n  const textSearch: string = \"payment failed\";\n  const byIPFromComment: string | undefined = undefined;\n  const filters: string = \"status:pending,hasImages:false\";\n  const searchFilters: string | undefined = undefined;\n  const sorts: string = \"createdAt:desc\";\n  const demo: boolean = false;\n  const tenantId: string = \"acme-corp\";\n  const sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\n\n  const response: GetApiCommentsResponse = await getApiComments(page, count, textSearch, byIPFromComment, filters, searchFilters, sorts, demo, tenantId, sso);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "57f9a898851e708806164daf9a95e2cebe12decf39294860a368fb0a9731f846",
+  "generatedAt": "2026-06-22T07:28:37.741Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = 'acme-tenant-001';\n  const commentId: string = 'cmt_8d6a3b4c';\n  const userId: string = 'user_6591';\n  const result: UnFlagCommentResponse = await unFlagComment(tenantId, commentId, userId);\n  console.log(result);\n}\nmain();",
+  "model": "gpt-5-mini"
+}
