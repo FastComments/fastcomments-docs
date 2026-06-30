@@ -311,7 +311,7 @@ Full type definitions: https://github.com/FastComments/fastcomments-typescript/b
 | Language | Package | Install |
 |----------|---------|---------|
 | JavaScript/TypeScript | [fastcomments-sdk-js](https://github.com/FastComments/fastcomments-sdk-js) | `npm install fastcomments-sdk-js` |
-| Python | [fastcomments-python](https://github.com/FastComments/fastcomments-python) | `pip install fastcomments` |
+| Python | [fastcomments-python](https://github.com/FastComments/fastcomments-python) | `pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0` |
 | Java | [fastcomments-java](https://github.com/FastComments/fastcomments-java) | Maven/Gradle |
 | PHP | [fastcomments-php](https://github.com/FastComments/fastcomments-php) | `composer require fastcomments/fastcomments` |
 | Ruby | [fastcomments-ruby](https://github.com/FastComments/fastcomments-ruby) | `gem install fastcomments` |
